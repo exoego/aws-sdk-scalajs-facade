@@ -23,6 +23,10 @@ package object stepfunctions {
   type IncludeExecutionDataGetExecutionHistory = Boolean
   type ListExecutionsPageToken = String
   type LogDestinationList = js.Array[LogDestination]
+  type LongArn = String
+  type MapRunLabel = String
+  type MapRunList = js.Array[MapRunListItem]
+  type MaxConcurrency = Int
   type Name = String
   type PageSize = Int
   type PageToken = String
@@ -39,8 +43,11 @@ package object stepfunctions {
   type TaskToken = String
   type TimeoutInSeconds = Double
   type Timestamp = js.Date
+  type ToleratedFailureCount = Double
+  type ToleratedFailurePercentage = Float
   type TraceHeader = String
   type UnsignedInteger = Int
+  type UnsignedLong = Double
   type includedDetails = Boolean
   type truncated = Boolean
 
@@ -52,12 +59,14 @@ package object stepfunctions {
     @inline def deleteStateMachineFuture(params: DeleteStateMachineInput): Future[DeleteStateMachineOutput] = service.deleteStateMachine(params).promise().toFuture
     @inline def describeActivityFuture(params: DescribeActivityInput): Future[DescribeActivityOutput] = service.describeActivity(params).promise().toFuture
     @inline def describeExecutionFuture(params: DescribeExecutionInput): Future[DescribeExecutionOutput] = service.describeExecution(params).promise().toFuture
+    @inline def describeMapRunFuture(params: DescribeMapRunInput): Future[DescribeMapRunOutput] = service.describeMapRun(params).promise().toFuture
     @inline def describeStateMachineForExecutionFuture(params: DescribeStateMachineForExecutionInput): Future[DescribeStateMachineForExecutionOutput] = service.describeStateMachineForExecution(params).promise().toFuture
     @inline def describeStateMachineFuture(params: DescribeStateMachineInput): Future[DescribeStateMachineOutput] = service.describeStateMachine(params).promise().toFuture
     @inline def getActivityTaskFuture(params: GetActivityTaskInput): Future[GetActivityTaskOutput] = service.getActivityTask(params).promise().toFuture
     @inline def getExecutionHistoryFuture(params: GetExecutionHistoryInput): Future[GetExecutionHistoryOutput] = service.getExecutionHistory(params).promise().toFuture
     @inline def listActivitiesFuture(params: ListActivitiesInput): Future[ListActivitiesOutput] = service.listActivities(params).promise().toFuture
     @inline def listExecutionsFuture(params: ListExecutionsInput): Future[ListExecutionsOutput] = service.listExecutions(params).promise().toFuture
+    @inline def listMapRunsFuture(params: ListMapRunsInput): Future[ListMapRunsOutput] = service.listMapRuns(params).promise().toFuture
     @inline def listStateMachinesFuture(params: ListStateMachinesInput): Future[ListStateMachinesOutput] = service.listStateMachines(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
     @inline def sendTaskFailureFuture(params: SendTaskFailureInput): Future[SendTaskFailureOutput] = service.sendTaskFailure(params).promise().toFuture
@@ -68,6 +77,7 @@ package object stepfunctions {
     @inline def stopExecutionFuture(params: StopExecutionInput): Future[StopExecutionOutput] = service.stopExecution(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
+    @inline def updateMapRunFuture(params: UpdateMapRunInput): Future[UpdateMapRunOutput] = service.updateMapRun(params).promise().toFuture
     @inline def updateStateMachineFuture(params: UpdateStateMachineInput): Future[UpdateStateMachineOutput] = service.updateStateMachine(params).promise().toFuture
 
   }
@@ -83,12 +93,14 @@ package object stepfunctions {
     def deleteStateMachine(params: DeleteStateMachineInput): Request[DeleteStateMachineOutput] = js.native
     def describeActivity(params: DescribeActivityInput): Request[DescribeActivityOutput] = js.native
     def describeExecution(params: DescribeExecutionInput): Request[DescribeExecutionOutput] = js.native
+    def describeMapRun(params: DescribeMapRunInput): Request[DescribeMapRunOutput] = js.native
     def describeStateMachine(params: DescribeStateMachineInput): Request[DescribeStateMachineOutput] = js.native
     def describeStateMachineForExecution(params: DescribeStateMachineForExecutionInput): Request[DescribeStateMachineForExecutionOutput] = js.native
     def getActivityTask(params: GetActivityTaskInput): Request[GetActivityTaskOutput] = js.native
     def getExecutionHistory(params: GetExecutionHistoryInput): Request[GetExecutionHistoryOutput] = js.native
     def listActivities(params: ListActivitiesInput): Request[ListActivitiesOutput] = js.native
     def listExecutions(params: ListExecutionsInput): Request[ListExecutionsOutput] = js.native
+    def listMapRuns(params: ListMapRunsInput): Request[ListMapRunsOutput] = js.native
     def listStateMachines(params: ListStateMachinesInput): Request[ListStateMachinesOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
     def sendTaskFailure(params: SendTaskFailureInput): Request[SendTaskFailureOutput] = js.native
@@ -99,6 +111,7 @@ package object stepfunctions {
     def stopExecution(params: StopExecutionInput): Request[StopExecutionOutput] = js.native
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
+    def updateMapRun(params: UpdateMapRunInput): Request[UpdateMapRunOutput] = js.native
     def updateStateMachine(params: UpdateStateMachineInput): Request[UpdateStateMachineOutput] = js.native
   }
   object StepFunctions {
@@ -539,8 +552,11 @@ package object stepfunctions {
     var startDate: Timestamp
     var stateMachineArn: Arn
     var status: ExecutionStatus
+    var cause: js.UndefOr[SensitiveCause]
+    var error: js.UndefOr[SensitiveError]
     var input: js.UndefOr[SensitiveData]
     var inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
+    var mapRunArn: js.UndefOr[LongArn]
     var name: js.UndefOr[Name]
     var output: js.UndefOr[SensitiveData]
     var outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails]
@@ -555,8 +571,11 @@ package object stepfunctions {
         startDate: Timestamp,
         stateMachineArn: Arn,
         status: ExecutionStatus,
+        cause: js.UndefOr[SensitiveCause] = js.undefined,
+        error: js.UndefOr[SensitiveError] = js.undefined,
         input: js.UndefOr[SensitiveData] = js.undefined,
         inputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
+        mapRunArn: js.UndefOr[LongArn] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         output: js.UndefOr[SensitiveData] = js.undefined,
         outputDetails: js.UndefOr[CloudWatchEventsExecutionDataDetails] = js.undefined,
@@ -570,14 +589,79 @@ package object stepfunctions {
         "status" -> status.asInstanceOf[js.Any]
       )
 
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
+      mapRunArn.foreach(__v => __obj.updateDynamic("mapRunArn")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
       outputDetails.foreach(__v => __obj.updateDynamic("outputDetails")(__v.asInstanceOf[js.Any]))
       stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
       traceHeader.foreach(__v => __obj.updateDynamic("traceHeader")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExecutionOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeMapRunInput extends js.Object {
+    var mapRunArn: LongArn
+  }
+
+  object DescribeMapRunInput {
+    @inline
+    def apply(
+        mapRunArn: LongArn
+    ): DescribeMapRunInput = {
+      val __obj = js.Dynamic.literal(
+        "mapRunArn" -> mapRunArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeMapRunInput]
+    }
+  }
+
+  @js.native
+  trait DescribeMapRunOutput extends js.Object {
+    var executionArn: Arn
+    var executionCounts: MapRunExecutionCounts
+    var itemCounts: MapRunItemCounts
+    var mapRunArn: LongArn
+    var maxConcurrency: MaxConcurrency
+    var startDate: Timestamp
+    var status: MapRunStatus
+    var toleratedFailureCount: ToleratedFailureCount
+    var toleratedFailurePercentage: ToleratedFailurePercentage
+    var stopDate: js.UndefOr[Timestamp]
+  }
+
+  object DescribeMapRunOutput {
+    @inline
+    def apply(
+        executionArn: Arn,
+        executionCounts: MapRunExecutionCounts,
+        itemCounts: MapRunItemCounts,
+        mapRunArn: LongArn,
+        maxConcurrency: MaxConcurrency,
+        startDate: Timestamp,
+        status: MapRunStatus,
+        toleratedFailureCount: ToleratedFailureCount,
+        toleratedFailurePercentage: ToleratedFailurePercentage,
+        stopDate: js.UndefOr[Timestamp] = js.undefined
+    ): DescribeMapRunOutput = {
+      val __obj = js.Dynamic.literal(
+        "executionArn" -> executionArn.asInstanceOf[js.Any],
+        "executionCounts" -> executionCounts.asInstanceOf[js.Any],
+        "itemCounts" -> itemCounts.asInstanceOf[js.Any],
+        "mapRunArn" -> mapRunArn.asInstanceOf[js.Any],
+        "maxConcurrency" -> maxConcurrency.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "toleratedFailureCount" -> toleratedFailureCount.asInstanceOf[js.Any],
+        "toleratedFailurePercentage" -> toleratedFailurePercentage.asInstanceOf[js.Any]
+      )
+
+      stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMapRunOutput]
     }
   }
 
@@ -605,7 +689,9 @@ package object stepfunctions {
     var roleArn: Arn
     var stateMachineArn: Arn
     var updateDate: Timestamp
+    var label: js.UndefOr[MapRunLabel]
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
+    var mapRunArn: js.UndefOr[LongArn]
     var tracingConfiguration: js.UndefOr[TracingConfiguration]
   }
 
@@ -617,7 +703,9 @@ package object stepfunctions {
         roleArn: Arn,
         stateMachineArn: Arn,
         updateDate: Timestamp,
+        label: js.UndefOr[MapRunLabel] = js.undefined,
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
+        mapRunArn: js.UndefOr[LongArn] = js.undefined,
         tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined
     ): DescribeStateMachineForExecutionOutput = {
       val __obj = js.Dynamic.literal(
@@ -628,7 +716,9 @@ package object stepfunctions {
         "updateDate" -> updateDate.asInstanceOf[js.Any]
       )
 
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
+      mapRunArn.foreach(__v => __obj.updateDynamic("mapRunArn")(__v.asInstanceOf[js.Any]))
       tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStateMachineForExecutionOutput]
     }
@@ -659,6 +749,7 @@ package object stepfunctions {
     var roleArn: Arn
     var stateMachineArn: Arn
     var `type`: StateMachineType
+    var label: js.UndefOr[MapRunLabel]
     var loggingConfiguration: js.UndefOr[LoggingConfiguration]
     var status: js.UndefOr[StateMachineStatus]
     var tracingConfiguration: js.UndefOr[TracingConfiguration]
@@ -673,6 +764,7 @@ package object stepfunctions {
         roleArn: Arn,
         stateMachineArn: Arn,
         `type`: StateMachineType,
+        label: js.UndefOr[MapRunLabel] = js.undefined,
         loggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined,
         status: js.UndefOr[StateMachineStatus] = js.undefined,
         tracingConfiguration: js.UndefOr[TracingConfiguration] = js.undefined
@@ -686,6 +778,7 @@ package object stepfunctions {
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
       loggingConfiguration.foreach(__v => __obj.updateDynamic("loggingConfiguration")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tracingConfiguration.foreach(__v => __obj.updateDynamic("tracingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -744,6 +837,8 @@ package object stepfunctions {
     var startDate: Timestamp
     var stateMachineArn: Arn
     var status: ExecutionStatus
+    var itemCount: js.UndefOr[UnsignedInteger]
+    var mapRunArn: js.UndefOr[LongArn]
     var stopDate: js.UndefOr[Timestamp]
   }
 
@@ -755,6 +850,8 @@ package object stepfunctions {
         startDate: Timestamp,
         stateMachineArn: Arn,
         status: ExecutionStatus,
+        itemCount: js.UndefOr[UnsignedInteger] = js.undefined,
+        mapRunArn: js.UndefOr[LongArn] = js.undefined,
         stopDate: js.UndefOr[Timestamp] = js.undefined
     ): ExecutionListItem = {
       val __obj = js.Dynamic.literal(
@@ -765,6 +862,8 @@ package object stepfunctions {
         "status" -> status.asInstanceOf[js.Any]
       )
 
+      itemCount.foreach(__v => __obj.updateDynamic("itemCount")(__v.asInstanceOf[js.Any]))
+      mapRunArn.foreach(__v => __obj.updateDynamic("mapRunArn")(__v.asInstanceOf[js.Any]))
       stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionListItem]
     }
@@ -955,6 +1054,8 @@ package object stepfunctions {
     var mapIterationFailedEventDetails: js.UndefOr[MapIterationEventDetails]
     var mapIterationStartedEventDetails: js.UndefOr[MapIterationEventDetails]
     var mapIterationSucceededEventDetails: js.UndefOr[MapIterationEventDetails]
+    var mapRunFailedEventDetails: js.UndefOr[MapRunFailedEventDetails]
+    var mapRunStartedEventDetails: js.UndefOr[MapRunStartedEventDetails]
     var mapStateStartedEventDetails: js.UndefOr[MapStateStartedEventDetails]
     var previousEventId: js.UndefOr[EventId]
     var stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails]
@@ -996,6 +1097,8 @@ package object stepfunctions {
         mapIterationFailedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
         mapIterationStartedEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
         mapIterationSucceededEventDetails: js.UndefOr[MapIterationEventDetails] = js.undefined,
+        mapRunFailedEventDetails: js.UndefOr[MapRunFailedEventDetails] = js.undefined,
+        mapRunStartedEventDetails: js.UndefOr[MapRunStartedEventDetails] = js.undefined,
         mapStateStartedEventDetails: js.UndefOr[MapStateStartedEventDetails] = js.undefined,
         previousEventId: js.UndefOr[EventId] = js.undefined,
         stateEnteredEventDetails: js.UndefOr[StateEnteredEventDetails] = js.undefined,
@@ -1036,6 +1139,8 @@ package object stepfunctions {
       mapIterationFailedEventDetails.foreach(__v => __obj.updateDynamic("mapIterationFailedEventDetails")(__v.asInstanceOf[js.Any]))
       mapIterationStartedEventDetails.foreach(__v => __obj.updateDynamic("mapIterationStartedEventDetails")(__v.asInstanceOf[js.Any]))
       mapIterationSucceededEventDetails.foreach(__v => __obj.updateDynamic("mapIterationSucceededEventDetails")(__v.asInstanceOf[js.Any]))
+      mapRunFailedEventDetails.foreach(__v => __obj.updateDynamic("mapRunFailedEventDetails")(__v.asInstanceOf[js.Any]))
+      mapRunStartedEventDetails.foreach(__v => __obj.updateDynamic("mapRunStartedEventDetails")(__v.asInstanceOf[js.Any]))
       mapStateStartedEventDetails.foreach(__v => __obj.updateDynamic("mapStateStartedEventDetails")(__v.asInstanceOf[js.Any]))
       previousEventId.foreach(__v => __obj.updateDynamic("previousEventId")(__v.asInstanceOf[js.Any]))
       stateEnteredEventDetails.foreach(__v => __obj.updateDynamic("stateEnteredEventDetails")(__v.asInstanceOf[js.Any]))
@@ -1070,7 +1175,7 @@ package object stepfunctions {
     }
   }
 
-  /** Contains details about a lambda function that failed during an execution.
+  /** Contains details about a Lambda function that failed during an execution.
     */
   @js.native
   trait LambdaFunctionFailedEventDetails extends js.Object {
@@ -1091,7 +1196,7 @@ package object stepfunctions {
     }
   }
 
-  /** Contains details about a failed lambda function schedule event that occurred during an execution.
+  /** Contains details about a failed Lambda function schedule event that occurred during an execution.
     */
   @js.native
   trait LambdaFunctionScheduleFailedEventDetails extends js.Object {
@@ -1112,13 +1217,14 @@ package object stepfunctions {
     }
   }
 
-  /** Contains details about a lambda function scheduled during an execution.
+  /** Contains details about a Lambda function scheduled during an execution.
     */
   @js.native
   trait LambdaFunctionScheduledEventDetails extends js.Object {
     var resource: Arn
     var input: js.UndefOr[SensitiveData]
     var inputDetails: js.UndefOr[HistoryEventExecutionDataDetails]
+    var taskCredentials: js.UndefOr[TaskCredentials]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
@@ -1128,6 +1234,7 @@ package object stepfunctions {
         resource: Arn,
         input: js.UndefOr[SensitiveData] = js.undefined,
         inputDetails: js.UndefOr[HistoryEventExecutionDataDetails] = js.undefined,
+        taskCredentials: js.UndefOr[TaskCredentials] = js.undefined,
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): LambdaFunctionScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
@@ -1136,6 +1243,7 @@ package object stepfunctions {
 
       input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       inputDetails.foreach(__v => __obj.updateDynamic("inputDetails")(__v.asInstanceOf[js.Any]))
+      taskCredentials.foreach(__v => __obj.updateDynamic("taskCredentials")(__v.asInstanceOf[js.Any]))
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionScheduledEventDetails]
     }
@@ -1162,7 +1270,7 @@ package object stepfunctions {
     }
   }
 
-  /** Contains details about a lambda function that successfully terminated during an execution.
+  /** Contains details about a Lambda function that successfully terminated during an execution.
     */
   @js.native
   trait LambdaFunctionSucceededEventDetails extends js.Object {
@@ -1183,7 +1291,7 @@ package object stepfunctions {
     }
   }
 
-  /** Contains details about a lambda function timeout that occurred during an execution.
+  /** Contains details about a Lambda function timeout that occurred during an execution.
     */
   @js.native
   trait LambdaFunctionTimedOutEventDetails extends js.Object {
@@ -1246,26 +1354,27 @@ package object stepfunctions {
 
   @js.native
   trait ListExecutionsInput extends js.Object {
-    var stateMachineArn: Arn
+    var mapRunArn: js.UndefOr[LongArn]
     var maxResults: js.UndefOr[PageSize]
     var nextToken: js.UndefOr[ListExecutionsPageToken]
+    var stateMachineArn: js.UndefOr[Arn]
     var statusFilter: js.UndefOr[ExecutionStatus]
   }
 
   object ListExecutionsInput {
     @inline
     def apply(
-        stateMachineArn: Arn,
+        mapRunArn: js.UndefOr[LongArn] = js.undefined,
         maxResults: js.UndefOr[PageSize] = js.undefined,
         nextToken: js.UndefOr[ListExecutionsPageToken] = js.undefined,
+        stateMachineArn: js.UndefOr[Arn] = js.undefined,
         statusFilter: js.UndefOr[ExecutionStatus] = js.undefined
     ): ListExecutionsInput = {
-      val __obj = js.Dynamic.literal(
-        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      mapRunArn.foreach(__v => __obj.updateDynamic("mapRunArn")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      stateMachineArn.foreach(__v => __obj.updateDynamic("stateMachineArn")(__v.asInstanceOf[js.Any]))
       statusFilter.foreach(__v => __obj.updateDynamic("statusFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExecutionsInput]
     }
@@ -1289,6 +1398,51 @@ package object stepfunctions {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExecutionsOutput]
+    }
+  }
+
+  @js.native
+  trait ListMapRunsInput extends js.Object {
+    var executionArn: Arn
+    var maxResults: js.UndefOr[PageSize]
+    var nextToken: js.UndefOr[PageToken]
+  }
+
+  object ListMapRunsInput {
+    @inline
+    def apply(
+        executionArn: Arn,
+        maxResults: js.UndefOr[PageSize] = js.undefined,
+        nextToken: js.UndefOr[PageToken] = js.undefined
+    ): ListMapRunsInput = {
+      val __obj = js.Dynamic.literal(
+        "executionArn" -> executionArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMapRunsInput]
+    }
+  }
+
+  @js.native
+  trait ListMapRunsOutput extends js.Object {
+    var mapRuns: MapRunList
+    var nextToken: js.UndefOr[PageToken]
+  }
+
+  object ListMapRunsOutput {
+    @inline
+    def apply(
+        mapRuns: MapRunList,
+        nextToken: js.UndefOr[PageToken] = js.undefined
+    ): ListMapRunsOutput = {
+      val __obj = js.Dynamic.literal(
+        "mapRuns" -> mapRuns.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMapRunsOutput]
     }
   }
 
@@ -1425,6 +1579,157 @@ package object stepfunctions {
       index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MapIterationEventDetails]
+    }
+  }
+
+  /** Contains details about all of the child workflow executions started by a Map Run.
+    */
+  @js.native
+  trait MapRunExecutionCounts extends js.Object {
+    var aborted: UnsignedLong
+    var failed: UnsignedLong
+    var pending: UnsignedLong
+    var resultsWritten: UnsignedLong
+    var running: UnsignedLong
+    var succeeded: UnsignedLong
+    var timedOut: UnsignedLong
+    var total: UnsignedLong
+  }
+
+  object MapRunExecutionCounts {
+    @inline
+    def apply(
+        aborted: UnsignedLong,
+        failed: UnsignedLong,
+        pending: UnsignedLong,
+        resultsWritten: UnsignedLong,
+        running: UnsignedLong,
+        succeeded: UnsignedLong,
+        timedOut: UnsignedLong,
+        total: UnsignedLong
+    ): MapRunExecutionCounts = {
+      val __obj = js.Dynamic.literal(
+        "aborted" -> aborted.asInstanceOf[js.Any],
+        "failed" -> failed.asInstanceOf[js.Any],
+        "pending" -> pending.asInstanceOf[js.Any],
+        "resultsWritten" -> resultsWritten.asInstanceOf[js.Any],
+        "running" -> running.asInstanceOf[js.Any],
+        "succeeded" -> succeeded.asInstanceOf[js.Any],
+        "timedOut" -> timedOut.asInstanceOf[js.Any],
+        "total" -> total.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MapRunExecutionCounts]
+    }
+  }
+
+  /** Contains details about a Map Run failure event that occurred during a state machine execution.
+    */
+  @js.native
+  trait MapRunFailedEventDetails extends js.Object {
+    var cause: js.UndefOr[SensitiveCause]
+    var error: js.UndefOr[SensitiveError]
+  }
+
+  object MapRunFailedEventDetails {
+    @inline
+    def apply(
+        cause: js.UndefOr[SensitiveCause] = js.undefined,
+        error: js.UndefOr[SensitiveError] = js.undefined
+    ): MapRunFailedEventDetails = {
+      val __obj = js.Dynamic.literal()
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MapRunFailedEventDetails]
+    }
+  }
+
+  /** Contains details about items that were processed in all of the child workflow executions that were started by a Map Run.
+    */
+  @js.native
+  trait MapRunItemCounts extends js.Object {
+    var aborted: UnsignedLong
+    var failed: UnsignedLong
+    var pending: UnsignedLong
+    var resultsWritten: UnsignedLong
+    var running: UnsignedLong
+    var succeeded: UnsignedLong
+    var timedOut: UnsignedLong
+    var total: UnsignedLong
+  }
+
+  object MapRunItemCounts {
+    @inline
+    def apply(
+        aborted: UnsignedLong,
+        failed: UnsignedLong,
+        pending: UnsignedLong,
+        resultsWritten: UnsignedLong,
+        running: UnsignedLong,
+        succeeded: UnsignedLong,
+        timedOut: UnsignedLong,
+        total: UnsignedLong
+    ): MapRunItemCounts = {
+      val __obj = js.Dynamic.literal(
+        "aborted" -> aborted.asInstanceOf[js.Any],
+        "failed" -> failed.asInstanceOf[js.Any],
+        "pending" -> pending.asInstanceOf[js.Any],
+        "resultsWritten" -> resultsWritten.asInstanceOf[js.Any],
+        "running" -> running.asInstanceOf[js.Any],
+        "succeeded" -> succeeded.asInstanceOf[js.Any],
+        "timedOut" -> timedOut.asInstanceOf[js.Any],
+        "total" -> total.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MapRunItemCounts]
+    }
+  }
+
+  /** Contains details about a specific Map Run.
+    */
+  @js.native
+  trait MapRunListItem extends js.Object {
+    var executionArn: Arn
+    var mapRunArn: LongArn
+    var startDate: Timestamp
+    var stateMachineArn: Arn
+    var stopDate: js.UndefOr[Timestamp]
+  }
+
+  object MapRunListItem {
+    @inline
+    def apply(
+        executionArn: Arn,
+        mapRunArn: LongArn,
+        startDate: Timestamp,
+        stateMachineArn: Arn,
+        stopDate: js.UndefOr[Timestamp] = js.undefined
+    ): MapRunListItem = {
+      val __obj = js.Dynamic.literal(
+        "executionArn" -> executionArn.asInstanceOf[js.Any],
+        "mapRunArn" -> mapRunArn.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any],
+        "stateMachineArn" -> stateMachineArn.asInstanceOf[js.Any]
+      )
+
+      stopDate.foreach(__v => __obj.updateDynamic("stopDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MapRunListItem]
+    }
+  }
+
+  /** Contains details about a Map Run that was started during a state machine execution.
+    */
+  @js.native
+  trait MapRunStartedEventDetails extends js.Object {
+    var mapRunArn: js.UndefOr[LongArn]
+  }
+
+  object MapRunStartedEventDetails {
+    @inline
+    def apply(
+        mapRunArn: js.UndefOr[LongArn] = js.undefined
+    ): MapRunStartedEventDetails = {
+      val __obj = js.Dynamic.literal()
+      mapRunArn.foreach(__v => __obj.updateDynamic("mapRunArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MapRunStartedEventDetails]
     }
   }
 
@@ -1792,7 +2097,7 @@ package object stepfunctions {
     }
   }
 
-  /** Tags are key-value pairs that can be associated with Step Functions state machines and activities. An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>AWS Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]]. Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+  /** Tags are key-value pairs that can be associated with Step Functions state machines and activities. An array of key-value pairs. For more information, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html|Using Cost Allocation Tags]] in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html|Controlling Access Using IAM Tags]]. Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1844,6 +2149,24 @@ package object stepfunctions {
     }
   }
 
+  /** Contains details about the credentials that Step Functions uses for a task.
+    */
+  @js.native
+  trait TaskCredentials extends js.Object {
+    var roleArn: js.UndefOr[LongArn]
+  }
+
+  object TaskCredentials {
+    @inline
+    def apply(
+        roleArn: js.UndefOr[LongArn] = js.undefined
+    ): TaskCredentials = {
+      val __obj = js.Dynamic.literal()
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TaskCredentials]
+    }
+  }
+
   /** Contains details about a task failure event.
     */
   @js.native
@@ -1882,6 +2205,7 @@ package object stepfunctions {
     var resource: Name
     var resourceType: Name
     var heartbeatInSeconds: js.UndefOr[TimeoutInSeconds]
+    var taskCredentials: js.UndefOr[TaskCredentials]
     var timeoutInSeconds: js.UndefOr[TimeoutInSeconds]
   }
 
@@ -1893,6 +2217,7 @@ package object stepfunctions {
         resource: Name,
         resourceType: Name,
         heartbeatInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined,
+        taskCredentials: js.UndefOr[TaskCredentials] = js.undefined,
         timeoutInSeconds: js.UndefOr[TimeoutInSeconds] = js.undefined
     ): TaskScheduledEventDetails = {
       val __obj = js.Dynamic.literal(
@@ -1903,6 +2228,7 @@ package object stepfunctions {
       )
 
       heartbeatInSeconds.foreach(__v => __obj.updateDynamic("heartbeatInSeconds")(__v.asInstanceOf[js.Any]))
+      taskCredentials.foreach(__v => __obj.updateDynamic("taskCredentials")(__v.asInstanceOf[js.Any]))
       timeoutInSeconds.foreach(__v => __obj.updateDynamic("timeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskScheduledEventDetails]
     }
@@ -2075,7 +2401,7 @@ package object stepfunctions {
     }
   }
 
-  /** Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is <code>false</code>
+  /** Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code>
     */
   @js.native
   trait TracingConfiguration extends js.Object {
@@ -2121,6 +2447,44 @@ package object stepfunctions {
     def apply(): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateMapRunInput extends js.Object {
+    var mapRunArn: LongArn
+    var maxConcurrency: js.UndefOr[MaxConcurrency]
+    var toleratedFailureCount: js.UndefOr[ToleratedFailureCount]
+    var toleratedFailurePercentage: js.UndefOr[ToleratedFailurePercentage]
+  }
+
+  object UpdateMapRunInput {
+    @inline
+    def apply(
+        mapRunArn: LongArn,
+        maxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
+        toleratedFailureCount: js.UndefOr[ToleratedFailureCount] = js.undefined,
+        toleratedFailurePercentage: js.UndefOr[ToleratedFailurePercentage] = js.undefined
+    ): UpdateMapRunInput = {
+      val __obj = js.Dynamic.literal(
+        "mapRunArn" -> mapRunArn.asInstanceOf[js.Any]
+      )
+
+      maxConcurrency.foreach(__v => __obj.updateDynamic("maxConcurrency")(__v.asInstanceOf[js.Any]))
+      toleratedFailureCount.foreach(__v => __obj.updateDynamic("toleratedFailureCount")(__v.asInstanceOf[js.Any]))
+      toleratedFailurePercentage.foreach(__v => __obj.updateDynamic("toleratedFailurePercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMapRunInput]
+    }
+  }
+
+  @js.native
+  trait UpdateMapRunOutput extends js.Object
+
+  object UpdateMapRunOutput {
+    @inline
+    def apply(): UpdateMapRunOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateMapRunOutput]
     }
   }
 

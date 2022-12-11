@@ -17,6 +17,21 @@ object AlertManagerDefinitionStatusCode {
   @inline def values: js.Array[AlertManagerDefinitionStatusCode] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED, UPDATE_FAILED)
 }
 
+/** State of a logging configuration.
+  */
+@js.native
+sealed trait LoggingConfigurationStatusCode extends js.Any
+object LoggingConfigurationStatusCode {
+  val CREATING = "CREATING".asInstanceOf[LoggingConfigurationStatusCode]
+  val ACTIVE = "ACTIVE".asInstanceOf[LoggingConfigurationStatusCode]
+  val UPDATING = "UPDATING".asInstanceOf[LoggingConfigurationStatusCode]
+  val DELETING = "DELETING".asInstanceOf[LoggingConfigurationStatusCode]
+  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[LoggingConfigurationStatusCode]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[LoggingConfigurationStatusCode]
+
+  @inline def values: js.Array[LoggingConfigurationStatusCode] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED, UPDATE_FAILED)
+}
+
 /** State of a namespace.
   */
 @js.native

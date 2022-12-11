@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object globalaccelerator {
+  type AcceleratorEvents = js.Array[AcceleratorEvent]
   type Accelerators = js.Array[Accelerator]
   type ByoipCidrEvents = js.Array[ByoipCidrEvent]
   type ByoipCidrs = js.Array[ByoipCidr]
@@ -25,6 +26,7 @@ package object globalaccelerator {
   type EndpointConfigurations = js.Array[EndpointConfiguration]
   type EndpointDescriptions = js.Array[EndpointDescription]
   type EndpointGroups = js.Array[EndpointGroup]
+  type EndpointIdentifiers = js.Array[EndpointIdentifier]
   type EndpointIds = js.Array[GenericString]
   type EndpointWeight = Int
   type GenericBoolean = Boolean
@@ -57,6 +59,7 @@ package object globalaccelerator {
   final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
     @inline def addCustomRoutingEndpointsFuture(params: AddCustomRoutingEndpointsRequest): Future[AddCustomRoutingEndpointsResponse] = service.addCustomRoutingEndpoints(params).promise().toFuture
+    @inline def addEndpointsFuture(params: AddEndpointsRequest): Future[AddEndpointsResponse] = service.addEndpoints(params).promise().toFuture
     @inline def advertiseByoipCidrFuture(params: AdvertiseByoipCidrRequest): Future[AdvertiseByoipCidrResponse] = service.advertiseByoipCidr(params).promise().toFuture
     @inline def allowCustomRoutingTrafficFuture(params: AllowCustomRoutingTrafficRequest): Future[js.Object] = service.allowCustomRoutingTraffic(params).promise().toFuture
     @inline def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] = service.createAccelerator(params).promise().toFuture
@@ -93,6 +96,7 @@ package object globalaccelerator {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def provisionByoipCidrFuture(params: ProvisionByoipCidrRequest): Future[ProvisionByoipCidrResponse] = service.provisionByoipCidr(params).promise().toFuture
     @inline def removeCustomRoutingEndpointsFuture(params: RemoveCustomRoutingEndpointsRequest): Future[js.Object] = service.removeCustomRoutingEndpoints(params).promise().toFuture
+    @inline def removeEndpointsFuture(params: RemoveEndpointsRequest): Future[js.Object] = service.removeEndpoints(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAcceleratorAttributesFuture(params: UpdateAcceleratorAttributesRequest): Future[UpdateAcceleratorAttributesResponse] = service.updateAcceleratorAttributes(params).promise().toFuture
@@ -112,6 +116,7 @@ package object globalaccelerator {
     def this(config: AWSConfig) = this()
 
     def addCustomRoutingEndpoints(params: AddCustomRoutingEndpointsRequest): Request[AddCustomRoutingEndpointsResponse] = js.native
+    def addEndpoints(params: AddEndpointsRequest): Request[AddEndpointsResponse] = js.native
     def advertiseByoipCidr(params: AdvertiseByoipCidrRequest): Request[AdvertiseByoipCidrResponse] = js.native
     def allowCustomRoutingTraffic(params: AllowCustomRoutingTrafficRequest): Request[js.Object] = js.native
     def createAccelerator(params: CreateAcceleratorRequest): Request[CreateAcceleratorResponse] = js.native
@@ -148,6 +153,7 @@ package object globalaccelerator {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def provisionByoipCidr(params: ProvisionByoipCidrRequest): Request[ProvisionByoipCidrResponse] = js.native
     def removeCustomRoutingEndpoints(params: RemoveCustomRoutingEndpointsRequest): Request[js.Object] = js.native
+    def removeEndpoints(params: RemoveEndpointsRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccelerator(params: UpdateAcceleratorRequest): Request[UpdateAcceleratorResponse] = js.native
@@ -172,7 +178,9 @@ package object globalaccelerator {
     var AcceleratorArn: js.UndefOr[GenericString]
     var CreatedTime: js.UndefOr[Timestamp]
     var DnsName: js.UndefOr[GenericString]
+    var DualStackDnsName: js.UndefOr[GenericString]
     var Enabled: js.UndefOr[GenericBoolean]
+    var Events: js.UndefOr[AcceleratorEvents]
     var IpAddressType: js.UndefOr[IpAddressType]
     var IpSets: js.UndefOr[IpSets]
     var LastModifiedTime: js.UndefOr[Timestamp]
@@ -186,7 +194,9 @@ package object globalaccelerator {
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DnsName: js.UndefOr[GenericString] = js.undefined,
+        DualStackDnsName: js.UndefOr[GenericString] = js.undefined,
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
+        Events: js.UndefOr[AcceleratorEvents] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         IpSets: js.UndefOr[IpSets] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -197,7 +207,9 @@ package object globalaccelerator {
       AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
+      DualStackDnsName.foreach(__v => __obj.updateDynamic("DualStackDnsName")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
       IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       IpSets.foreach(__v => __obj.updateDynamic("IpSets")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
@@ -228,6 +240,27 @@ package object globalaccelerator {
       FlowLogsS3Bucket.foreach(__v => __obj.updateDynamic("FlowLogsS3Bucket")(__v.asInstanceOf[js.Any]))
       FlowLogsS3Prefix.foreach(__v => __obj.updateDynamic("FlowLogsS3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceleratorAttributes]
+    }
+  }
+
+  /** A complex type that contains a <code>Timestamp</code> value and <code>Message</code> for changes that you make to an accelerator in Global Accelerator. Messages stored here provide progress or error information when you update an accelerator from IPv4 to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages.
+    */
+  @js.native
+  trait AcceleratorEvent extends js.Object {
+    var Message: js.UndefOr[GenericString]
+    var Timestamp: js.UndefOr[Timestamp]
+  }
+
+  object AcceleratorEvent {
+    @inline
+    def apply(
+        Message: js.UndefOr[GenericString] = js.undefined,
+        Timestamp: js.UndefOr[Timestamp] = js.undefined
+    ): AcceleratorEvent = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceleratorEvent]
     }
   }
 
@@ -267,6 +300,45 @@ package object globalaccelerator {
       EndpointDescriptions.foreach(__v => __obj.updateDynamic("EndpointDescriptions")(__v.asInstanceOf[js.Any]))
       EndpointGroupArn.foreach(__v => __obj.updateDynamic("EndpointGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddCustomRoutingEndpointsResponse]
+    }
+  }
+
+  @js.native
+  trait AddEndpointsRequest extends js.Object {
+    var EndpointConfigurations: EndpointConfigurations
+    var EndpointGroupArn: GenericString
+  }
+
+  object AddEndpointsRequest {
+    @inline
+    def apply(
+        EndpointConfigurations: EndpointConfigurations,
+        EndpointGroupArn: GenericString
+    ): AddEndpointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndpointConfigurations" -> EndpointConfigurations.asInstanceOf[js.Any],
+        "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AddEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait AddEndpointsResponse extends js.Object {
+    var EndpointDescriptions: js.UndefOr[EndpointDescriptions]
+    var EndpointGroupArn: js.UndefOr[GenericString]
+  }
+
+  object AddEndpointsResponse {
+    @inline
+    def apply(
+        EndpointDescriptions: js.UndefOr[EndpointDescriptions] = js.undefined,
+        EndpointGroupArn: js.UndefOr[GenericString] = js.undefined
+    ): AddEndpointsResponse = {
+      val __obj = js.Dynamic.literal()
+      EndpointDescriptions.foreach(__v => __obj.updateDynamic("EndpointDescriptions")(__v.asInstanceOf[js.Any]))
+      EndpointGroupArn.foreach(__v => __obj.updateDynamic("EndpointGroupArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddEndpointsResponse]
     }
   }
 
@@ -333,9 +405,9 @@ package object globalaccelerator {
     }
   }
 
-  /** Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP address (BYOIP). The following describes each BYOIP <code>State</code> that your IP address range can be in. * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with AWS Global Accelerator. * ```READY``` — The address range is provisioned with AWS Global Accelerator and can be advertised. * ```PENDING_ADVERTISING``` — You’ve submitted a request for AWS Global Accelerator to advertise an address range but it is not yet being advertised. * ```ADVERTISING``` — The address range is being advertised by AWS Global Accelerator. * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by AWS Global Accelerator. * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from AWS Global
-    * Accelerator but it is still provisioned. * ```DEPROVISIONED``` — The address range is deprovisioned from AWS Global Accelerator. * ```FAILED_PROVISION ``` — The request to provision the address range from AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_ADVERTISING``` — The request for AWS Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support. * ```FAILED_DEPROVISION ``` — The request to deprovision the address range from
-    * AWS Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact AWS support.
+  /** Information about an IP address range that is provisioned for use with your Amazon Web Services resources through bring your own IP address (BYOIP). The following describes each BYOIP <code>State</code> that your IP address range can be in. * ```PENDING_PROVISIONING``` — You’ve submitted a request to provision an IP address range but it is not yet provisioned with Global Accelerator. * ```READY``` — The address range is provisioned with Global Accelerator and can be advertised. * ```PENDING_ADVERTISING``` — You’ve submitted a request for Global Accelerator to advertise an address range but it is not yet being advertised. * ```ADVERTISING``` — The address range is being advertised by Global Accelerator. * ```PENDING_WITHDRAWING``` — You’ve submitted a request to withdraw an address range from being advertised but it is still being advertised by Global Accelerator. * ```PENDING_DEPROVISIONING``` — You’ve submitted a request to deprovision an address range from Global Accelerator
+    * but it is still provisioned. * ```DEPROVISIONED``` — The address range is deprovisioned from Global Accelerator. * ```FAILED_PROVISION ``` — The request to provision the address range from Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support. * ```FAILED_ADVERTISING``` — The request for Global Accelerator to advertise the address range was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support. * ```FAILED_WITHDRAW``` — The request to withdraw the address range from advertising by Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support. * ```FAILED_DEPROVISION ``` — The request to deprovision the
+    * address range from Global Accelerator was not successful. Please make sure that you provide all of the correct information, and try again. If the request fails a second time, contact Amazon Web Services support.
     */
   @js.native
   trait ByoipCidr extends js.Object {
@@ -359,7 +431,7 @@ package object globalaccelerator {
     }
   }
 
-  /** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+  /** A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value for changes that you make in the status of an IP address range that you bring to Global Accelerator through bring your own IP address (BYOIP).
     */
   @js.native
   trait ByoipCidrEvent extends js.Object {
@@ -380,7 +452,7 @@ package object globalaccelerator {
     }
   }
 
-  /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
+  /** Provides authorization for Amazon to bring a specific IP address range to a specific Amazon Web Services account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring your own IP addresses (BYOIP)]] in the <i>Global Accelerator Developer Guide</i>.
     */
   @js.native
   trait CidrAuthorizationContext extends js.Object {
@@ -842,7 +914,7 @@ package object globalaccelerator {
     }
   }
 
-  /** A complex type for the endpoint group for a custom routing accelerator. An AWS Region can have only one endpoint group for a specific listener.
+  /** A complex type for the endpoint group for a custom routing accelerator. An Amazon Web Services Region can have only one endpoint group for a specific listener.
     */
   @js.native
   trait CustomRoutingEndpointGroup extends js.Object {
@@ -1412,7 +1484,7 @@ package object globalaccelerator {
     }
   }
 
-  /** A complex type for the endpoint group. An AWS Region can have only one endpoint group for a specific listener.
+  /** A complex type for the endpoint group. An Amazon Web Services Region can have only one endpoint group for a specific listener.
     */
   @js.native
   trait EndpointGroup extends js.Object {
@@ -1457,10 +1529,34 @@ package object globalaccelerator {
     }
   }
 
+  /** A complex type for an endpoint. Specifies information about the endpoint to remove from the endpoint group.
+    */
+  @js.native
+  trait EndpointIdentifier extends js.Object {
+    var EndpointId: GenericString
+    var ClientIPPreservationEnabled: js.UndefOr[GenericBoolean]
+  }
+
+  object EndpointIdentifier {
+    @inline
+    def apply(
+        EndpointId: GenericString,
+        ClientIPPreservationEnabled: js.UndefOr[GenericBoolean] = js.undefined
+    ): EndpointIdentifier = {
+      val __obj = js.Dynamic.literal(
+        "EndpointId" -> EndpointId.asInstanceOf[js.Any]
+      )
+
+      ClientIPPreservationEnabled.foreach(__v => __obj.updateDynamic("ClientIPPreservationEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointIdentifier]
+    }
+  }
+
   /** A complex type for the set of IP addresses for an accelerator.
     */
   @js.native
   trait IpSet extends js.Object {
+    var IpAddressFamily: js.UndefOr[IpAddressFamily]
     var IpAddresses: js.UndefOr[IpAddresses]
     var IpFamily: js.UndefOr[GenericString]
   }
@@ -1468,10 +1564,12 @@ package object globalaccelerator {
   object IpSet {
     @inline
     def apply(
+        IpAddressFamily: js.UndefOr[IpAddressFamily] = js.undefined,
         IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
         IpFamily: js.UndefOr[GenericString] = js.undefined
     ): IpSet = {
       val __obj = js.Dynamic.literal()
+      IpAddressFamily.foreach(__v => __obj.updateDynamic("IpAddressFamily")(__v.asInstanceOf[js.Any]))
       IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
       IpFamily.foreach(__v => __obj.updateDynamic("IpFamily")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpSet]
@@ -1916,7 +2014,7 @@ package object globalaccelerator {
     }
   }
 
-  /** Returns the ports and associated IP addresses and ports of Amazon EC2 instances in your virtual private cloud (VPC) subnets. Custom routing is a port mapping protocol in AWS Global Accelerator that statically associates port ranges with VPC subnets, which allows Global Accelerator to route to specific instances and ports within one or more subnets.
+  /** Returns the ports and associated IP addresses and ports of Amazon EC2 instances in your virtual private cloud (VPC) subnets. Custom routing is a port mapping protocol in Global Accelerator that statically associates port ranges with VPC subnets, which allows Global Accelerator to route to specific instances and ports within one or more subnets.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -1949,7 +2047,7 @@ package object globalaccelerator {
     }
   }
 
-  /** Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints. For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html| Port overrides]] in the <i>AWS Global Accelerator Developer Guide</i>.
+  /** Override specific listener ports used to route traffic to endpoints that are part of an endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints. For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html| Overriding listener ports]] in the <i>Global Accelerator Developer Guide</i>.
     */
   @js.native
   trait PortOverride extends js.Object {
@@ -2044,6 +2142,26 @@ package object globalaccelerator {
         "EndpointIds" -> EndpointIds.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[RemoveCustomRoutingEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveEndpointsRequest extends js.Object {
+    var EndpointGroupArn: GenericString
+    var EndpointIdentifiers: EndpointIdentifiers
+  }
+
+  object RemoveEndpointsRequest {
+    @inline
+    def apply(
+        EndpointGroupArn: GenericString,
+        EndpointIdentifiers: EndpointIdentifiers
+    ): RemoveEndpointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any],
+        "EndpointIdentifiers" -> EndpointIdentifiers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveEndpointsRequest]
     }
   }
 

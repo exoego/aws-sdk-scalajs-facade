@@ -21,8 +21,11 @@ package object fsx {
   type BackupIds = js.Array[BackupId]
   type Backups = js.Array[Backup]
   type BatchImportMetaDataOnCreate = Boolean
+  type CapacityToRelease = Double
   type ClientRequestToken = String
   type CoolingPeriod = Int
+  type CopyTagsToDataRepositoryAssociations = Boolean
+  type CreateFileCacheDataRepositoryAssociations = js.Array[FileCacheDataRepositoryAssociation]
   type CreationTime = js.Date
   type DNSName = String
   type DailyTime = String
@@ -36,6 +39,7 @@ package object fsx {
   type DataRepositoryTaskPaths = js.Array[DataRepositoryTaskPath]
   type DataRepositoryTasks = js.Array[DataRepositoryTask]
   type DeleteDataInFileSystem = Boolean
+  type DeleteFileSystemOpenZFSOptions = js.Array[DeleteFileSystemOpenZFSOption]
   type DeleteOpenZFSVolumeOptions = js.Array[DeleteOpenZFSVolumeOption]
   type DirectoryId = String
   type DirectoryPassword = String
@@ -45,6 +49,9 @@ package object fsx {
   type ErrorMessage = String
   type EventTypes = js.Array[EventType]
   type FailedCount = Double
+  type FileCacheId = String
+  type FileCacheIds = js.Array[FileCacheId]
+  type FileCaches = js.Array[FileCache]
   type FileSystemAdministratorsGroupName = String
   type FileSystemId = String
   type FileSystemIds = js.Array[FileSystemId]
@@ -57,6 +64,8 @@ package object fsx {
   type Flag = Boolean
   type GeneralARN = String
   type IntegerNoMax = Int
+  type IntegerNoMaxFromNegativeOne = Int
+  type IntegerRecordSizeKiB = Int
   type Iops = Double
   type IpAddress = String
   type IpAddressRange = String
@@ -65,9 +74,13 @@ package object fsx {
   type LastUpdatedTime = js.Date
   type LimitedMaxResults = Int
   type LustreFileSystemMountName = String
+  type LustreNoSquashNid = String
+  type LustreNoSquashNids = js.Array[LustreNoSquashNid]
+  type LustreRootSquash = String
   type MaxResults = Int
   type Megabytes = Int
   type MegabytesPerSecond = Int
+  type MetadataStorageCapacity = Int
   type Namespace = String
   type NetBiosAlias = String
   type NetworkInterfaceId = String
@@ -85,6 +98,8 @@ package object fsx {
   type ProgressPercent = Int
   type ReadOnly = Boolean
   type Region = String
+  type ReleasedCapacity = Double
+  type RepositoryDnsIps = js.Array[IpAddress]
   type RequestTime = js.Date
   type ResourceARN = String
   type RestoreOpenZFSVolumeOptions = js.Array[RestoreOpenZFSVolumeOption]
@@ -98,6 +113,7 @@ package object fsx {
   type SnapshotId = String
   type SnapshotIds = js.Array[SnapshotId]
   type SnapshotName = String
+  type SnapshotPolicy = String
   type Snapshots = js.Array[Snapshot]
   type SourceBackupId = String
   type StartTime = js.Date
@@ -109,6 +125,7 @@ package object fsx {
   type StorageVirtualMachineIds = js.Array[StorageVirtualMachineId]
   type StorageVirtualMachineName = String
   type StorageVirtualMachines = js.Array[StorageVirtualMachine]
+  type SubDirectoriesPaths = js.Array[Namespace]
   type SubnetId = String
   type SubnetIds = js.Array[SubnetId]
   type SucceededCount = Double
@@ -140,6 +157,7 @@ package object fsx {
     @inline def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] = service.createBackup(params).promise().toFuture
     @inline def createDataRepositoryAssociationFuture(params: CreateDataRepositoryAssociationRequest): Future[CreateDataRepositoryAssociationResponse] = service.createDataRepositoryAssociation(params).promise().toFuture
     @inline def createDataRepositoryTaskFuture(params: CreateDataRepositoryTaskRequest): Future[CreateDataRepositoryTaskResponse] = service.createDataRepositoryTask(params).promise().toFuture
+    @inline def createFileCacheFuture(params: CreateFileCacheRequest): Future[CreateFileCacheResponse] = service.createFileCache(params).promise().toFuture
     @inline def createFileSystemFromBackupFuture(params: CreateFileSystemFromBackupRequest): Future[CreateFileSystemFromBackupResponse] = service.createFileSystemFromBackup(params).promise().toFuture
     @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[CreateFileSystemResponse] = service.createFileSystem(params).promise().toFuture
     @inline def createSnapshotFuture(params: CreateSnapshotRequest): Future[CreateSnapshotResponse] = service.createSnapshot(params).promise().toFuture
@@ -148,6 +166,7 @@ package object fsx {
     @inline def createVolumeFuture(params: CreateVolumeRequest): Future[CreateVolumeResponse] = service.createVolume(params).promise().toFuture
     @inline def deleteBackupFuture(params: DeleteBackupRequest): Future[DeleteBackupResponse] = service.deleteBackup(params).promise().toFuture
     @inline def deleteDataRepositoryAssociationFuture(params: DeleteDataRepositoryAssociationRequest): Future[DeleteDataRepositoryAssociationResponse] = service.deleteDataRepositoryAssociation(params).promise().toFuture
+    @inline def deleteFileCacheFuture(params: DeleteFileCacheRequest): Future[DeleteFileCacheResponse] = service.deleteFileCache(params).promise().toFuture
     @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[DeleteFileSystemResponse] = service.deleteFileSystem(params).promise().toFuture
     @inline def deleteSnapshotFuture(params: DeleteSnapshotRequest): Future[DeleteSnapshotResponse] = service.deleteSnapshot(params).promise().toFuture
     @inline def deleteStorageVirtualMachineFuture(params: DeleteStorageVirtualMachineRequest): Future[DeleteStorageVirtualMachineResponse] = service.deleteStorageVirtualMachine(params).promise().toFuture
@@ -155,6 +174,7 @@ package object fsx {
     @inline def describeBackupsFuture(params: DescribeBackupsRequest): Future[DescribeBackupsResponse] = service.describeBackups(params).promise().toFuture
     @inline def describeDataRepositoryAssociationsFuture(params: DescribeDataRepositoryAssociationsRequest): Future[DescribeDataRepositoryAssociationsResponse] = service.describeDataRepositoryAssociations(params).promise().toFuture
     @inline def describeDataRepositoryTasksFuture(params: DescribeDataRepositoryTasksRequest): Future[DescribeDataRepositoryTasksResponse] = service.describeDataRepositoryTasks(params).promise().toFuture
+    @inline def describeFileCachesFuture(params: DescribeFileCachesRequest): Future[DescribeFileCachesResponse] = service.describeFileCaches(params).promise().toFuture
     @inline def describeFileSystemAliasesFuture(params: DescribeFileSystemAliasesRequest): Future[DescribeFileSystemAliasesResponse] = service.describeFileSystemAliases(params).promise().toFuture
     @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] = service.describeFileSystems(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResponse] = service.describeSnapshots(params).promise().toFuture
@@ -167,6 +187,7 @@ package object fsx {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDataRepositoryAssociationFuture(params: UpdateDataRepositoryAssociationRequest): Future[UpdateDataRepositoryAssociationResponse] = service.updateDataRepositoryAssociation(params).promise().toFuture
+    @inline def updateFileCacheFuture(params: UpdateFileCacheRequest): Future[UpdateFileCacheResponse] = service.updateFileCache(params).promise().toFuture
     @inline def updateFileSystemFuture(params: UpdateFileSystemRequest): Future[UpdateFileSystemResponse] = service.updateFileSystem(params).promise().toFuture
     @inline def updateSnapshotFuture(params: UpdateSnapshotRequest): Future[UpdateSnapshotResponse] = service.updateSnapshot(params).promise().toFuture
     @inline def updateStorageVirtualMachineFuture(params: UpdateStorageVirtualMachineRequest): Future[UpdateStorageVirtualMachineResponse] = service.updateStorageVirtualMachine(params).promise().toFuture
@@ -185,6 +206,7 @@ package object fsx {
     def createBackup(params: CreateBackupRequest): Request[CreateBackupResponse] = js.native
     def createDataRepositoryAssociation(params: CreateDataRepositoryAssociationRequest): Request[CreateDataRepositoryAssociationResponse] = js.native
     def createDataRepositoryTask(params: CreateDataRepositoryTaskRequest): Request[CreateDataRepositoryTaskResponse] = js.native
+    def createFileCache(params: CreateFileCacheRequest): Request[CreateFileCacheResponse] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[CreateFileSystemResponse] = js.native
     def createFileSystemFromBackup(params: CreateFileSystemFromBackupRequest): Request[CreateFileSystemFromBackupResponse] = js.native
     def createSnapshot(params: CreateSnapshotRequest): Request[CreateSnapshotResponse] = js.native
@@ -193,6 +215,7 @@ package object fsx {
     def createVolumeFromBackup(params: CreateVolumeFromBackupRequest): Request[CreateVolumeFromBackupResponse] = js.native
     def deleteBackup(params: DeleteBackupRequest): Request[DeleteBackupResponse] = js.native
     def deleteDataRepositoryAssociation(params: DeleteDataRepositoryAssociationRequest): Request[DeleteDataRepositoryAssociationResponse] = js.native
+    def deleteFileCache(params: DeleteFileCacheRequest): Request[DeleteFileCacheResponse] = js.native
     def deleteFileSystem(params: DeleteFileSystemRequest): Request[DeleteFileSystemResponse] = js.native
     def deleteSnapshot(params: DeleteSnapshotRequest): Request[DeleteSnapshotResponse] = js.native
     def deleteStorageVirtualMachine(params: DeleteStorageVirtualMachineRequest): Request[DeleteStorageVirtualMachineResponse] = js.native
@@ -200,6 +223,7 @@ package object fsx {
     def describeBackups(params: DescribeBackupsRequest): Request[DescribeBackupsResponse] = js.native
     def describeDataRepositoryAssociations(params: DescribeDataRepositoryAssociationsRequest): Request[DescribeDataRepositoryAssociationsResponse] = js.native
     def describeDataRepositoryTasks(params: DescribeDataRepositoryTasksRequest): Request[DescribeDataRepositoryTasksResponse] = js.native
+    def describeFileCaches(params: DescribeFileCachesRequest): Request[DescribeFileCachesResponse] = js.native
     def describeFileSystemAliases(params: DescribeFileSystemAliasesRequest): Request[DescribeFileSystemAliasesResponse] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResponse] = js.native
@@ -212,6 +236,7 @@ package object fsx {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDataRepositoryAssociation(params: UpdateDataRepositoryAssociationRequest): Request[UpdateDataRepositoryAssociationResponse] = js.native
+    def updateFileCache(params: UpdateFileCacheRequest): Request[UpdateFileCacheResponse] = js.native
     def updateFileSystem(params: UpdateFileSystemRequest): Request[UpdateFileSystemResponse] = js.native
     def updateSnapshot(params: UpdateSnapshotRequest): Request[UpdateSnapshotResponse] = js.native
     def updateStorageVirtualMachine(params: UpdateStorageVirtualMachineRequest): Request[UpdateStorageVirtualMachineResponse] = js.native
@@ -369,7 +394,7 @@ package object fsx {
     }
   }
 
-  /** Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx automatically exports the defined changes asynchronously once your application finishes modifying the file. This <code>AutoExportPolicy</code> is supported only for file systems with the <code>Persistent_2</code> deployment type.
+  /** Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code> defines the types of updated objects on the file system that will be automatically exported to the data repository. As you create, modify, or delete files, Amazon FSx for Lustre automatically exports the defined changes asynchronously once your application finishes modifying the file. This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.
     */
   @js.native
   trait AutoExportPolicy extends js.Object {
@@ -387,7 +412,7 @@ package object fsx {
     }
   }
 
-  /** Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your file system as you modify objects in a linked S3 bucket. This <code>AutoImportPolicy</code> is supported only for file systems with the <code>Persistent_2</code> deployment type.
+  /** Describes the data repository association's automatic import policy. The AutoImportPolicy defines how Amazon FSx keeps your file metadata and directory listings up to date by importing changes to your Amazon FSx for Lustre file system as you modify objects in a linked S3 bucket. The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the <code>Persistent_2</code> deployment type.
     */
   @js.native
   trait AutoImportPolicy extends js.Object {
@@ -653,9 +678,9 @@ package object fsx {
   trait CreateDataRepositoryAssociationRequest extends js.Object {
     var DataRepositoryPath: ArchivePath
     var FileSystemId: FileSystemId
-    var FileSystemPath: Namespace
     var BatchImportMetaDataOnCreate: js.UndefOr[BatchImportMetaDataOnCreate]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var FileSystemPath: js.UndefOr[Namespace]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
     var S3: js.UndefOr[S3DataRepositoryConfiguration]
     var Tags: js.UndefOr[Tags]
@@ -666,21 +691,21 @@ package object fsx {
     def apply(
         DataRepositoryPath: ArchivePath,
         FileSystemId: FileSystemId,
-        FileSystemPath: Namespace,
         BatchImportMetaDataOnCreate: js.UndefOr[BatchImportMetaDataOnCreate] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        FileSystemPath: js.UndefOr[Namespace] = js.undefined,
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
         S3: js.UndefOr[S3DataRepositoryConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDataRepositoryAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "DataRepositoryPath" -> DataRepositoryPath.asInstanceOf[js.Any],
-        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
-        "FileSystemPath" -> FileSystemPath.asInstanceOf[js.Any]
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any]
       )
 
       BatchImportMetaDataOnCreate.foreach(__v => __obj.updateDynamic("BatchImportMetaDataOnCreate")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      FileSystemPath.foreach(__v => __obj.updateDynamic("FileSystemPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -709,6 +734,7 @@ package object fsx {
     var FileSystemId: FileSystemId
     var Report: CompletionReport
     var Type: DataRepositoryTaskType
+    var CapacityToRelease: js.UndefOr[CapacityToRelease]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Paths: js.UndefOr[DataRepositoryTaskPaths]
     var Tags: js.UndefOr[Tags]
@@ -720,6 +746,7 @@ package object fsx {
         FileSystemId: FileSystemId,
         Report: CompletionReport,
         Type: DataRepositoryTaskType,
+        CapacityToRelease: js.UndefOr[CapacityToRelease] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Paths: js.UndefOr[DataRepositoryTaskPaths] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -730,6 +757,7 @@ package object fsx {
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      CapacityToRelease.foreach(__v => __obj.updateDynamic("CapacityToRelease")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Paths.foreach(__v => __obj.updateDynamic("Paths")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -753,6 +781,99 @@ package object fsx {
     }
   }
 
+  /** The Amazon File Cache configuration for the cache that you are creating.
+    */
+  @js.native
+  trait CreateFileCacheLustreConfiguration extends js.Object {
+    var DeploymentType: FileCacheLustreDeploymentType
+    var MetadataConfiguration: FileCacheLustreMetadataConfiguration
+    var PerUnitStorageThroughput: PerUnitStorageThroughput
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
+  }
+
+  object CreateFileCacheLustreConfiguration {
+    @inline
+    def apply(
+        DeploymentType: FileCacheLustreDeploymentType,
+        MetadataConfiguration: FileCacheLustreMetadataConfiguration,
+        PerUnitStorageThroughput: PerUnitStorageThroughput,
+        WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
+    ): CreateFileCacheLustreConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DeploymentType" -> DeploymentType.asInstanceOf[js.Any],
+        "MetadataConfiguration" -> MetadataConfiguration.asInstanceOf[js.Any],
+        "PerUnitStorageThroughput" -> PerUnitStorageThroughput.asInstanceOf[js.Any]
+      )
+
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFileCacheLustreConfiguration]
+    }
+  }
+
+  @js.native
+  trait CreateFileCacheRequest extends js.Object {
+    var FileCacheType: FileCacheType
+    var FileCacheTypeVersion: FileSystemTypeVersion
+    var StorageCapacity: StorageCapacity
+    var SubnetIds: SubnetIds
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var CopyTagsToDataRepositoryAssociations: js.UndefOr[CopyTagsToDataRepositoryAssociations]
+    var DataRepositoryAssociations: js.UndefOr[CreateFileCacheDataRepositoryAssociations]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var LustreConfiguration: js.UndefOr[CreateFileCacheLustreConfiguration]
+    var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateFileCacheRequest {
+    @inline
+    def apply(
+        FileCacheType: FileCacheType,
+        FileCacheTypeVersion: FileSystemTypeVersion,
+        StorageCapacity: StorageCapacity,
+        SubnetIds: SubnetIds,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        CopyTagsToDataRepositoryAssociations: js.UndefOr[CopyTagsToDataRepositoryAssociations] = js.undefined,
+        DataRepositoryAssociations: js.UndefOr[CreateFileCacheDataRepositoryAssociations] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        LustreConfiguration: js.UndefOr[CreateFileCacheLustreConfiguration] = js.undefined,
+        SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateFileCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileCacheType" -> FileCacheType.asInstanceOf[js.Any],
+        "FileCacheTypeVersion" -> FileCacheTypeVersion.asInstanceOf[js.Any],
+        "StorageCapacity" -> StorageCapacity.asInstanceOf[js.Any],
+        "SubnetIds" -> SubnetIds.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      CopyTagsToDataRepositoryAssociations.foreach(__v => __obj.updateDynamic("CopyTagsToDataRepositoryAssociations")(__v.asInstanceOf[js.Any]))
+      DataRepositoryAssociations.foreach(__v => __obj.updateDynamic("DataRepositoryAssociations")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFileCacheRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFileCacheResponse extends js.Object {
+    var FileCache: js.UndefOr[FileCacheCreating]
+  }
+
+  object CreateFileCacheResponse {
+    @inline
+    def apply(
+        FileCache: js.UndefOr[FileCacheCreating] = js.undefined
+    ): CreateFileCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      FileCache.foreach(__v => __obj.updateDynamic("FileCache")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFileCacheResponse]
+    }
+  }
+
   /** The request object for the <code>CreateFileSystemFromBackup</code> operation.
     */
   @js.native
@@ -765,6 +886,7 @@ package object fsx {
     var LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration]
     var OpenZFSConfiguration: js.UndefOr[CreateFileSystemOpenZFSConfiguration]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
+    var StorageCapacity: js.UndefOr[StorageCapacity]
     var StorageType: js.UndefOr[StorageType]
     var Tags: js.UndefOr[Tags]
     var WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration]
@@ -781,6 +903,7 @@ package object fsx {
         LustreConfiguration: js.UndefOr[CreateFileSystemLustreConfiguration] = js.undefined,
         OpenZFSConfiguration: js.UndefOr[CreateFileSystemOpenZFSConfiguration] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
+        StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
         StorageType: js.UndefOr[StorageType] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         WindowsConfiguration: js.UndefOr[CreateFileSystemWindowsConfiguration] = js.undefined
@@ -796,6 +919,7 @@ package object fsx {
       LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
       OpenZFSConfiguration.foreach(__v => __obj.updateDynamic("OpenZFSConfiguration")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      StorageCapacity.foreach(__v => __obj.updateDynamic("StorageCapacity")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WindowsConfiguration.foreach(__v => __obj.updateDynamic("WindowsConfiguration")(__v.asInstanceOf[js.Any]))
@@ -839,6 +963,7 @@ package object fsx {
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
     var LogConfiguration: js.UndefOr[LustreLogCreateConfiguration]
     var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
+    var RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
@@ -857,6 +982,7 @@ package object fsx {
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
         LogConfiguration: js.UndefOr[LustreLogCreateConfiguration] = js.undefined,
         PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
+        RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): CreateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -872,6 +998,7 @@ package object fsx {
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
       LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
       PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
+      RootSquashConfiguration.foreach(__v => __obj.updateDynamic("RootSquashConfiguration")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFileSystemLustreConfiguration]
     }
@@ -924,7 +1051,7 @@ package object fsx {
     }
   }
 
-  /** The OpenZFS configuration properties for the file system that you are creating.
+  /** The Amazon FSx for OpenZFS configuration properties for the file system that you are creating.
     */
   @js.native
   trait CreateFileSystemOpenZFSConfiguration extends js.Object {
@@ -1096,32 +1223,41 @@ package object fsx {
     */
   @js.native
   trait CreateOntapVolumeConfiguration extends js.Object {
-    var JunctionPath: JunctionPath
     var SizeInMegabytes: VolumeCapacity
-    var StorageEfficiencyEnabled: Flag
     var StorageVirtualMachineId: StorageVirtualMachineId
+    var CopyTagsToBackups: js.UndefOr[Flag]
+    var JunctionPath: js.UndefOr[JunctionPath]
+    var OntapVolumeType: js.UndefOr[InputOntapVolumeType]
     var SecurityStyle: js.UndefOr[SecurityStyle]
+    var SnapshotPolicy: js.UndefOr[SnapshotPolicy]
+    var StorageEfficiencyEnabled: js.UndefOr[Flag]
     var TieringPolicy: js.UndefOr[TieringPolicy]
   }
 
   object CreateOntapVolumeConfiguration {
     @inline
     def apply(
-        JunctionPath: JunctionPath,
         SizeInMegabytes: VolumeCapacity,
-        StorageEfficiencyEnabled: Flag,
         StorageVirtualMachineId: StorageVirtualMachineId,
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
+        JunctionPath: js.UndefOr[JunctionPath] = js.undefined,
+        OntapVolumeType: js.UndefOr[InputOntapVolumeType] = js.undefined,
         SecurityStyle: js.UndefOr[SecurityStyle] = js.undefined,
+        SnapshotPolicy: js.UndefOr[SnapshotPolicy] = js.undefined,
+        StorageEfficiencyEnabled: js.UndefOr[Flag] = js.undefined,
         TieringPolicy: js.UndefOr[TieringPolicy] = js.undefined
     ): CreateOntapVolumeConfiguration = {
       val __obj = js.Dynamic.literal(
-        "JunctionPath" -> JunctionPath.asInstanceOf[js.Any],
         "SizeInMegabytes" -> SizeInMegabytes.asInstanceOf[js.Any],
-        "StorageEfficiencyEnabled" -> StorageEfficiencyEnabled.asInstanceOf[js.Any],
         "StorageVirtualMachineId" -> StorageVirtualMachineId.asInstanceOf[js.Any]
       )
 
+      CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
+      JunctionPath.foreach(__v => __obj.updateDynamic("JunctionPath")(__v.asInstanceOf[js.Any]))
+      OntapVolumeType.foreach(__v => __obj.updateDynamic("OntapVolumeType")(__v.asInstanceOf[js.Any]))
       SecurityStyle.foreach(__v => __obj.updateDynamic("SecurityStyle")(__v.asInstanceOf[js.Any]))
+      SnapshotPolicy.foreach(__v => __obj.updateDynamic("SnapshotPolicy")(__v.asInstanceOf[js.Any]))
+      StorageEfficiencyEnabled.foreach(__v => __obj.updateDynamic("StorageEfficiencyEnabled")(__v.asInstanceOf[js.Any]))
       TieringPolicy.foreach(__v => __obj.updateDynamic("TieringPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOntapVolumeConfiguration]
     }
@@ -1149,7 +1285,7 @@ package object fsx {
     }
   }
 
-  /** Specifies the configuration of the OpenZFS volume that you are creating.
+  /** Specifies the configuration of the Amazon FSx for OpenZFS volume that you are creating.
     */
   @js.native
   trait CreateOpenZFSVolumeConfiguration extends js.Object {
@@ -1159,8 +1295,9 @@ package object fsx {
     var NfsExports: js.UndefOr[OpenZFSNfsExports]
     var OriginSnapshot: js.UndefOr[CreateOpenZFSOriginSnapshotConfiguration]
     var ReadOnly: js.UndefOr[ReadOnly]
-    var StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax]
-    var StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax]
+    var RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB]
+    var StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMaxFromNegativeOne]
+    var StorageCapacityReservationGiB: js.UndefOr[IntegerNoMaxFromNegativeOne]
     var UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas]
   }
 
@@ -1173,8 +1310,9 @@ package object fsx {
         NfsExports: js.UndefOr[OpenZFSNfsExports] = js.undefined,
         OriginSnapshot: js.UndefOr[CreateOpenZFSOriginSnapshotConfiguration] = js.undefined,
         ReadOnly: js.UndefOr[ReadOnly] = js.undefined,
-        StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax] = js.undefined,
-        StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax] = js.undefined,
+        RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB] = js.undefined,
+        StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMaxFromNegativeOne] = js.undefined,
+        StorageCapacityReservationGiB: js.UndefOr[IntegerNoMaxFromNegativeOne] = js.undefined,
         UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas] = js.undefined
     ): CreateOpenZFSVolumeConfiguration = {
       val __obj = js.Dynamic.literal(
@@ -1186,6 +1324,7 @@ package object fsx {
       NfsExports.foreach(__v => __obj.updateDynamic("NfsExports")(__v.asInstanceOf[js.Any]))
       OriginSnapshot.foreach(__v => __obj.updateDynamic("OriginSnapshot")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RecordSizeKiB.foreach(__v => __obj.updateDynamic("RecordSizeKiB")(__v.asInstanceOf[js.Any]))
       StorageCapacityQuotaGiB.foreach(__v => __obj.updateDynamic("StorageCapacityQuotaGiB")(__v.asInstanceOf[js.Any]))
       StorageCapacityReservationGiB.foreach(__v => __obj.updateDynamic("StorageCapacityReservationGiB")(__v.asInstanceOf[js.Any]))
       UserAndGroupQuotas.foreach(__v => __obj.updateDynamic("UserAndGroupQuotas")(__v.asInstanceOf[js.Any]))
@@ -1406,7 +1545,7 @@ package object fsx {
     }
   }
 
-  /** The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket. The data repository association configuration object is returned in the response of the following operations: * <code>CreateDataRepositoryAssociation</code> * <code>UpdateDataRepositoryAssociation</code> * <code>DescribeDataRepositoryAssociations</code> Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.
+  /** The configuration of a data repository association that links an Amazon FSx for Lustre file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3 bucket or an NFS file system. The data repository association configuration object is returned in the response of the following operations: * <code>CreateDataRepositoryAssociation</code> * <code>UpdateDataRepositoryAssociation</code> * <code>DescribeDataRepositoryAssociations</code> Data repository associations are supported only for an Amazon FSx for Lustre file system with the <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.
     */
   @js.native
   trait DataRepositoryAssociation extends js.Object {
@@ -1414,11 +1553,15 @@ package object fsx {
     var BatchImportMetaDataOnCreate: js.UndefOr[BatchImportMetaDataOnCreate]
     var CreationTime: js.UndefOr[CreationTime]
     var DataRepositoryPath: js.UndefOr[ArchivePath]
+    var DataRepositorySubdirectories: js.UndefOr[SubDirectoriesPaths]
     var FailureDetails: js.UndefOr[DataRepositoryFailureDetails]
+    var FileCacheId: js.UndefOr[FileCacheId]
+    var FileCachePath: js.UndefOr[Namespace]
     var FileSystemId: js.UndefOr[FileSystemId]
     var FileSystemPath: js.UndefOr[Namespace]
     var ImportedFileChunkSize: js.UndefOr[Megabytes]
     var Lifecycle: js.UndefOr[DataRepositoryLifecycle]
+    var NFS: js.UndefOr[NFSDataRepositoryConfiguration]
     var ResourceARN: js.UndefOr[ResourceARN]
     var S3: js.UndefOr[S3DataRepositoryConfiguration]
     var Tags: js.UndefOr[Tags]
@@ -1431,11 +1574,15 @@ package object fsx {
         BatchImportMetaDataOnCreate: js.UndefOr[BatchImportMetaDataOnCreate] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         DataRepositoryPath: js.UndefOr[ArchivePath] = js.undefined,
+        DataRepositorySubdirectories: js.UndefOr[SubDirectoriesPaths] = js.undefined,
         FailureDetails: js.UndefOr[DataRepositoryFailureDetails] = js.undefined,
+        FileCacheId: js.UndefOr[FileCacheId] = js.undefined,
+        FileCachePath: js.UndefOr[Namespace] = js.undefined,
         FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
         FileSystemPath: js.UndefOr[Namespace] = js.undefined,
         ImportedFileChunkSize: js.UndefOr[Megabytes] = js.undefined,
         Lifecycle: js.UndefOr[DataRepositoryLifecycle] = js.undefined,
+        NFS: js.UndefOr[NFSDataRepositoryConfiguration] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         S3: js.UndefOr[S3DataRepositoryConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -1445,11 +1592,15 @@ package object fsx {
       BatchImportMetaDataOnCreate.foreach(__v => __obj.updateDynamic("BatchImportMetaDataOnCreate")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DataRepositoryPath.foreach(__v => __obj.updateDynamic("DataRepositoryPath")(__v.asInstanceOf[js.Any]))
+      DataRepositorySubdirectories.foreach(__v => __obj.updateDynamic("DataRepositorySubdirectories")(__v.asInstanceOf[js.Any]))
       FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      FileCacheId.foreach(__v => __obj.updateDynamic("FileCacheId")(__v.asInstanceOf[js.Any]))
+      FileCachePath.foreach(__v => __obj.updateDynamic("FileCachePath")(__v.asInstanceOf[js.Any]))
       FileSystemId.foreach(__v => __obj.updateDynamic("FileSystemId")(__v.asInstanceOf[js.Any]))
       FileSystemPath.foreach(__v => __obj.updateDynamic("FileSystemPath")(__v.asInstanceOf[js.Any]))
       ImportedFileChunkSize.foreach(__v => __obj.updateDynamic("ImportedFileChunkSize")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      NFS.foreach(__v => __obj.updateDynamic("NFS")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1490,7 +1641,7 @@ package object fsx {
     }
   }
 
-  /** Provides detailed information about the data respository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.
+  /** Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.
     */
   @js.native
   trait DataRepositoryFailureDetails extends js.Object {
@@ -1508,17 +1659,19 @@ package object fsx {
     }
   }
 
-  /** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between your Amazon FSx file system and a linked data repository.
+  /** A description of the data repository task. You use data repository tasks to perform bulk transfer operations between an Amazon FSx for Lustre file system and a linked data repository. An Amazon File Cache resource uses a task to automatically release files from the cache.
     */
   @js.native
   trait DataRepositoryTask extends js.Object {
     var CreationTime: CreationTime
-    var FileSystemId: FileSystemId
     var Lifecycle: DataRepositoryTaskLifecycle
     var TaskId: TaskId
     var Type: DataRepositoryTaskType
+    var CapacityToRelease: js.UndefOr[CapacityToRelease]
     var EndTime: js.UndefOr[EndTime]
     var FailureDetails: js.UndefOr[DataRepositoryTaskFailureDetails]
+    var FileCacheId: js.UndefOr[FileCacheId]
+    var FileSystemId: js.UndefOr[FileSystemId]
     var Paths: js.UndefOr[DataRepositoryTaskPaths]
     var Report: js.UndefOr[CompletionReport]
     var ResourceARN: js.UndefOr[ResourceARN]
@@ -1531,12 +1684,14 @@ package object fsx {
     @inline
     def apply(
         CreationTime: CreationTime,
-        FileSystemId: FileSystemId,
         Lifecycle: DataRepositoryTaskLifecycle,
         TaskId: TaskId,
         Type: DataRepositoryTaskType,
+        CapacityToRelease: js.UndefOr[CapacityToRelease] = js.undefined,
         EndTime: js.UndefOr[EndTime] = js.undefined,
         FailureDetails: js.UndefOr[DataRepositoryTaskFailureDetails] = js.undefined,
+        FileCacheId: js.UndefOr[FileCacheId] = js.undefined,
+        FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
         Paths: js.UndefOr[DataRepositoryTaskPaths] = js.undefined,
         Report: js.UndefOr[CompletionReport] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -1546,14 +1701,16 @@ package object fsx {
     ): DataRepositoryTask = {
       val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
-        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
         "Lifecycle" -> Lifecycle.asInstanceOf[js.Any],
         "TaskId" -> TaskId.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
+      CapacityToRelease.foreach(__v => __obj.updateDynamic("CapacityToRelease")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      FileCacheId.foreach(__v => __obj.updateDynamic("FileCacheId")(__v.asInstanceOf[js.Any]))
+      FileSystemId.foreach(__v => __obj.updateDynamic("FileSystemId")(__v.asInstanceOf[js.Any]))
       Paths.foreach(__v => __obj.updateDynamic("Paths")(__v.asInstanceOf[js.Any]))
       Report.foreach(__v => __obj.updateDynamic("Report")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
@@ -1609,6 +1766,7 @@ package object fsx {
   trait DataRepositoryTaskStatus extends js.Object {
     var FailedCount: js.UndefOr[FailedCount]
     var LastUpdatedTime: js.UndefOr[LastUpdatedTime]
+    var ReleasedCapacity: js.UndefOr[ReleasedCapacity]
     var SucceededCount: js.UndefOr[SucceededCount]
     var TotalCount: js.UndefOr[TotalCount]
   }
@@ -1618,12 +1776,14 @@ package object fsx {
     def apply(
         FailedCount: js.UndefOr[FailedCount] = js.undefined,
         LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        ReleasedCapacity: js.UndefOr[ReleasedCapacity] = js.undefined,
         SucceededCount: js.UndefOr[SucceededCount] = js.undefined,
         TotalCount: js.UndefOr[TotalCount] = js.undefined
     ): DataRepositoryTaskStatus = {
       val __obj = js.Dynamic.literal()
       FailedCount.foreach(__v => __obj.updateDynamic("FailedCount")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      ReleasedCapacity.foreach(__v => __obj.updateDynamic("ReleasedCapacity")(__v.asInstanceOf[js.Any]))
       SucceededCount.foreach(__v => __obj.updateDynamic("SucceededCount")(__v.asInstanceOf[js.Any]))
       TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataRepositoryTaskStatus]
@@ -1677,23 +1837,23 @@ package object fsx {
   @js.native
   trait DeleteDataRepositoryAssociationRequest extends js.Object {
     var AssociationId: DataRepositoryAssociationId
-    var DeleteDataInFileSystem: DeleteDataInFileSystem
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var DeleteDataInFileSystem: js.UndefOr[DeleteDataInFileSystem]
   }
 
   object DeleteDataRepositoryAssociationRequest {
     @inline
     def apply(
         AssociationId: DataRepositoryAssociationId,
-        DeleteDataInFileSystem: DeleteDataInFileSystem,
-        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        DeleteDataInFileSystem: js.UndefOr[DeleteDataInFileSystem] = js.undefined
     ): DeleteDataRepositoryAssociationRequest = {
       val __obj = js.Dynamic.literal(
-        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
-        "DeleteDataInFileSystem" -> DeleteDataInFileSystem.asInstanceOf[js.Any]
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      DeleteDataInFileSystem.foreach(__v => __obj.updateDynamic("DeleteDataInFileSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDataRepositoryAssociationRequest]
     }
   }
@@ -1717,6 +1877,46 @@ package object fsx {
       DeleteDataInFileSystem.foreach(__v => __obj.updateDynamic("DeleteDataInFileSystem")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDataRepositoryAssociationResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFileCacheRequest extends js.Object {
+    var FileCacheId: FileCacheId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+  }
+
+  object DeleteFileCacheRequest {
+    @inline
+    def apply(
+        FileCacheId: FileCacheId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
+    ): DeleteFileCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileCacheId" -> FileCacheId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFileCacheRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFileCacheResponse extends js.Object {
+    var FileCacheId: js.UndefOr[FileCacheId]
+    var Lifecycle: js.UndefOr[FileCacheLifecycle]
+  }
+
+  object DeleteFileCacheResponse {
+    @inline
+    def apply(
+        FileCacheId: js.UndefOr[FileCacheId] = js.undefined,
+        Lifecycle: js.UndefOr[FileCacheLifecycle] = js.undefined
+    ): DeleteFileCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      FileCacheId.foreach(__v => __obj.updateDynamic("FileCacheId")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFileCacheResponse]
     }
   }
 
@@ -1762,11 +1962,12 @@ package object fsx {
     }
   }
 
-  /** The configuration object for the OpenZFS file system used in the <code>DeleteFileSystem</code> operation.
+  /** The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code> operation.
     */
   @js.native
   trait DeleteFileSystemOpenZFSConfiguration extends js.Object {
     var FinalBackupTags: js.UndefOr[Tags]
+    var Options: js.UndefOr[DeleteFileSystemOpenZFSOptions]
     var SkipFinalBackup: js.UndefOr[Flag]
   }
 
@@ -1774,10 +1975,12 @@ package object fsx {
     @inline
     def apply(
         FinalBackupTags: js.UndefOr[Tags] = js.undefined,
+        Options: js.UndefOr[DeleteFileSystemOpenZFSOptions] = js.undefined,
         SkipFinalBackup: js.UndefOr[Flag] = js.undefined
     ): DeleteFileSystemOpenZFSConfiguration = {
       val __obj = js.Dynamic.literal()
       FinalBackupTags.foreach(__v => __obj.updateDynamic("FinalBackupTags")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       SkipFinalBackup.foreach(__v => __obj.updateDynamic("SkipFinalBackup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileSystemOpenZFSConfiguration]
     }
@@ -2233,6 +2436,47 @@ package object fsx {
     }
   }
 
+  @js.native
+  trait DescribeFileCachesRequest extends js.Object {
+    var FileCacheIds: js.UndefOr[FileCacheIds]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFileCachesRequest {
+    @inline
+    def apply(
+        FileCacheIds: js.UndefOr[FileCacheIds] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileCachesRequest = {
+      val __obj = js.Dynamic.literal()
+      FileCacheIds.foreach(__v => __obj.updateDynamic("FileCacheIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileCachesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFileCachesResponse extends js.Object {
+    var FileCaches: js.UndefOr[FileCaches]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeFileCachesResponse {
+    @inline
+    def apply(
+        FileCaches: js.UndefOr[FileCaches] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeFileCachesResponse = {
+      val __obj = js.Dynamic.literal()
+      FileCaches.foreach(__v => __obj.updateDynamic("FileCaches")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFileCachesResponse]
+    }
+  }
+
   /** The request object for <code>DescribeFileSystemAliases</code> operation.
     */
   @js.native
@@ -2525,6 +2769,260 @@ package object fsx {
     }
   }
 
+  /** A description of a specific Amazon File Cache resource, which is a response object from the <code>DescribeFileCaches</code> operation.
+    */
+  @js.native
+  trait FileCache extends js.Object {
+    var CreationTime: js.UndefOr[CreationTime]
+    var DNSName: js.UndefOr[DNSName]
+    var DataRepositoryAssociationIds: js.UndefOr[DataRepositoryAssociationIds]
+    var FailureDetails: js.UndefOr[FileCacheFailureDetails]
+    var FileCacheId: js.UndefOr[FileCacheId]
+    var FileCacheType: js.UndefOr[FileCacheType]
+    var FileCacheTypeVersion: js.UndefOr[FileSystemTypeVersion]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Lifecycle: js.UndefOr[FileCacheLifecycle]
+    var LustreConfiguration: js.UndefOr[FileCacheLustreConfiguration]
+    var NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds]
+    var OwnerId: js.UndefOr[AWSAccountId]
+    var ResourceARN: js.UndefOr[ResourceARN]
+    var StorageCapacity: js.UndefOr[StorageCapacity]
+    var SubnetIds: js.UndefOr[SubnetIds]
+    var VpcId: js.UndefOr[VpcId]
+  }
+
+  object FileCache {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        DNSName: js.UndefOr[DNSName] = js.undefined,
+        DataRepositoryAssociationIds: js.UndefOr[DataRepositoryAssociationIds] = js.undefined,
+        FailureDetails: js.UndefOr[FileCacheFailureDetails] = js.undefined,
+        FileCacheId: js.UndefOr[FileCacheId] = js.undefined,
+        FileCacheType: js.UndefOr[FileCacheType] = js.undefined,
+        FileCacheTypeVersion: js.UndefOr[FileSystemTypeVersion] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Lifecycle: js.UndefOr[FileCacheLifecycle] = js.undefined,
+        LustreConfiguration: js.UndefOr[FileCacheLustreConfiguration] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
+        OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): FileCache = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
+      DataRepositoryAssociationIds.foreach(__v => __obj.updateDynamic("DataRepositoryAssociationIds")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      FileCacheId.foreach(__v => __obj.updateDynamic("FileCacheId")(__v.asInstanceOf[js.Any]))
+      FileCacheType.foreach(__v => __obj.updateDynamic("FileCacheType")(__v.asInstanceOf[js.Any]))
+      FileCacheTypeVersion.foreach(__v => __obj.updateDynamic("FileCacheTypeVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      StorageCapacity.foreach(__v => __obj.updateDynamic("StorageCapacity")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCache]
+    }
+  }
+
+  /** The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code> operation.
+    */
+  @js.native
+  trait FileCacheCreating extends js.Object {
+    var CopyTagsToDataRepositoryAssociations: js.UndefOr[CopyTagsToDataRepositoryAssociations]
+    var CreationTime: js.UndefOr[CreationTime]
+    var DNSName: js.UndefOr[DNSName]
+    var DataRepositoryAssociationIds: js.UndefOr[DataRepositoryAssociationIds]
+    var FailureDetails: js.UndefOr[FileCacheFailureDetails]
+    var FileCacheId: js.UndefOr[FileCacheId]
+    var FileCacheType: js.UndefOr[FileCacheType]
+    var FileCacheTypeVersion: js.UndefOr[FileSystemTypeVersion]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Lifecycle: js.UndefOr[FileCacheLifecycle]
+    var LustreConfiguration: js.UndefOr[FileCacheLustreConfiguration]
+    var NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds]
+    var OwnerId: js.UndefOr[AWSAccountId]
+    var ResourceARN: js.UndefOr[ResourceARN]
+    var StorageCapacity: js.UndefOr[StorageCapacity]
+    var SubnetIds: js.UndefOr[SubnetIds]
+    var Tags: js.UndefOr[Tags]
+    var VpcId: js.UndefOr[VpcId]
+  }
+
+  object FileCacheCreating {
+    @inline
+    def apply(
+        CopyTagsToDataRepositoryAssociations: js.UndefOr[CopyTagsToDataRepositoryAssociations] = js.undefined,
+        CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        DNSName: js.UndefOr[DNSName] = js.undefined,
+        DataRepositoryAssociationIds: js.UndefOr[DataRepositoryAssociationIds] = js.undefined,
+        FailureDetails: js.UndefOr[FileCacheFailureDetails] = js.undefined,
+        FileCacheId: js.UndefOr[FileCacheId] = js.undefined,
+        FileCacheType: js.UndefOr[FileCacheType] = js.undefined,
+        FileCacheTypeVersion: js.UndefOr[FileSystemTypeVersion] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Lifecycle: js.UndefOr[FileCacheLifecycle] = js.undefined,
+        LustreConfiguration: js.UndefOr[FileCacheLustreConfiguration] = js.undefined,
+        NetworkInterfaceIds: js.UndefOr[NetworkInterfaceIds] = js.undefined,
+        OwnerId: js.UndefOr[AWSAccountId] = js.undefined,
+        ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
+        StorageCapacity: js.UndefOr[StorageCapacity] = js.undefined,
+        SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
+    ): FileCacheCreating = {
+      val __obj = js.Dynamic.literal()
+      CopyTagsToDataRepositoryAssociations.foreach(__v => __obj.updateDynamic("CopyTagsToDataRepositoryAssociations")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
+      DataRepositoryAssociationIds.foreach(__v => __obj.updateDynamic("DataRepositoryAssociationIds")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      FileCacheId.foreach(__v => __obj.updateDynamic("FileCacheId")(__v.asInstanceOf[js.Any]))
+      FileCacheType.foreach(__v => __obj.updateDynamic("FileCacheType")(__v.asInstanceOf[js.Any]))
+      FileCacheTypeVersion.foreach(__v => __obj.updateDynamic("FileCacheTypeVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceIds.foreach(__v => __obj.updateDynamic("NetworkInterfaceIds")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      StorageCapacity.foreach(__v => __obj.updateDynamic("StorageCapacity")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCacheCreating]
+    }
+  }
+
+  /** The configuration for a data repository association (DRA) to be created during the Amazon File Cache resource creation. The DRA links the cache to either an Amazon S3 bucket or prefix, or a Network File System (NFS) data repository that supports the NFSv3 protocol. The DRA does not support automatic import or automatic export.
+    */
+  @js.native
+  trait FileCacheDataRepositoryAssociation extends js.Object {
+    var DataRepositoryPath: ArchivePath
+    var FileCachePath: Namespace
+    var DataRepositorySubdirectories: js.UndefOr[SubDirectoriesPaths]
+    var NFS: js.UndefOr[FileCacheNFSConfiguration]
+  }
+
+  object FileCacheDataRepositoryAssociation {
+    @inline
+    def apply(
+        DataRepositoryPath: ArchivePath,
+        FileCachePath: Namespace,
+        DataRepositorySubdirectories: js.UndefOr[SubDirectoriesPaths] = js.undefined,
+        NFS: js.UndefOr[FileCacheNFSConfiguration] = js.undefined
+    ): FileCacheDataRepositoryAssociation = {
+      val __obj = js.Dynamic.literal(
+        "DataRepositoryPath" -> DataRepositoryPath.asInstanceOf[js.Any],
+        "FileCachePath" -> FileCachePath.asInstanceOf[js.Any]
+      )
+
+      DataRepositorySubdirectories.foreach(__v => __obj.updateDynamic("DataRepositorySubdirectories")(__v.asInstanceOf[js.Any]))
+      NFS.foreach(__v => __obj.updateDynamic("NFS")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCacheDataRepositoryAssociation]
+    }
+  }
+
+  /** A structure providing details of any failures that occurred.
+    */
+  @js.native
+  trait FileCacheFailureDetails extends js.Object {
+    var Message: js.UndefOr[ErrorMessage]
+  }
+
+  object FileCacheFailureDetails {
+    @inline
+    def apply(
+        Message: js.UndefOr[ErrorMessage] = js.undefined
+    ): FileCacheFailureDetails = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCacheFailureDetails]
+    }
+  }
+
+  /** The configuration for the Amazon File Cache resource.
+    */
+  @js.native
+  trait FileCacheLustreConfiguration extends js.Object {
+    var DeploymentType: js.UndefOr[FileCacheLustreDeploymentType]
+    var LogConfiguration: js.UndefOr[LustreLogConfiguration]
+    var MetadataConfiguration: js.UndefOr[FileCacheLustreMetadataConfiguration]
+    var MountName: js.UndefOr[LustreFileSystemMountName]
+    var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
+  }
+
+  object FileCacheLustreConfiguration {
+    @inline
+    def apply(
+        DeploymentType: js.UndefOr[FileCacheLustreDeploymentType] = js.undefined,
+        LogConfiguration: js.UndefOr[LustreLogConfiguration] = js.undefined,
+        MetadataConfiguration: js.UndefOr[FileCacheLustreMetadataConfiguration] = js.undefined,
+        MountName: js.UndefOr[LustreFileSystemMountName] = js.undefined,
+        PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
+        WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
+    ): FileCacheLustreConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
+      MetadataConfiguration.foreach(__v => __obj.updateDynamic("MetadataConfiguration")(__v.asInstanceOf[js.Any]))
+      MountName.foreach(__v => __obj.updateDynamic("MountName")(__v.asInstanceOf[js.Any]))
+      PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCacheLustreConfiguration]
+    }
+  }
+
+  /** The configuration for a Lustre MDT (Metadata Target) storage volume. The metadata on Amazon File Cache is managed by a Lustre Metadata Server (MDS) while the actual metadata is persisted on an MDT.
+    */
+  @js.native
+  trait FileCacheLustreMetadataConfiguration extends js.Object {
+    var StorageCapacity: MetadataStorageCapacity
+  }
+
+  object FileCacheLustreMetadataConfiguration {
+    @inline
+    def apply(
+        StorageCapacity: MetadataStorageCapacity
+    ): FileCacheLustreMetadataConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "StorageCapacity" -> StorageCapacity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FileCacheLustreMetadataConfiguration]
+    }
+  }
+
+  /** The configuration for an NFS data repository association (DRA) created during the creation of the Amazon File Cache resource.
+    */
+  @js.native
+  trait FileCacheNFSConfiguration extends js.Object {
+    var Version: NfsVersion
+    var DnsIps: js.UndefOr[RepositoryDnsIps]
+  }
+
+  object FileCacheNFSConfiguration {
+    @inline
+    def apply(
+        Version: NfsVersion,
+        DnsIps: js.UndefOr[RepositoryDnsIps] = js.undefined
+    ): FileCacheNFSConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Version" -> Version.asInstanceOf[js.Any]
+      )
+
+      DnsIps.foreach(__v => __obj.updateDynamic("DnsIps")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileCacheNFSConfiguration]
+    }
+  }
+
   /** A description of a specific Amazon FSx file system.
     */
   @js.native
@@ -2645,7 +3143,7 @@ package object fsx {
     }
   }
 
-  /** A structure providing details of any failures that occurred when creating a file system.
+  /** A structure providing details of any failures that occurred.
     */
   @js.native
   trait FileSystemFailureDetails extends js.Object {
@@ -2763,6 +3261,7 @@ package object fsx {
     var LogConfiguration: js.UndefOr[LustreLogConfiguration]
     var MountName: js.UndefOr[LustreFileSystemMountName]
     var PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput]
+    var RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
@@ -2779,6 +3278,7 @@ package object fsx {
         LogConfiguration: js.UndefOr[LustreLogConfiguration] = js.undefined,
         MountName: js.UndefOr[LustreFileSystemMountName] = js.undefined,
         PerUnitStorageThroughput: js.UndefOr[PerUnitStorageThroughput] = js.undefined,
+        RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): LustreFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -2792,12 +3292,13 @@ package object fsx {
       LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
       MountName.foreach(__v => __obj.updateDynamic("MountName")(__v.asInstanceOf[js.Any]))
       PerUnitStorageThroughput.foreach(__v => __obj.updateDynamic("PerUnitStorageThroughput")(__v.asInstanceOf[js.Any]))
+      RootSquashConfiguration.foreach(__v => __obj.updateDynamic("RootSquashConfiguration")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LustreFileSystemConfiguration]
     }
   }
 
-  /** The configuration for Lustre logging used to write the enabled logging events for your file system to Amazon CloudWatch Logs. When logging is enabled, Lustre logs error and warning events from data repository operations such as automatic export and data repository tasks. To learn more about Lustre logging, see [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html|Logging with Amazon CloudWatch Logs]].
+  /** The configuration for Lustre logging used to write the enabled logging events for your Amazon FSx for Lustre file system or Amazon File Cache resource to Amazon CloudWatch Logs.
     */
   @js.native
   trait LustreLogConfiguration extends js.Object {
@@ -2820,7 +3321,7 @@ package object fsx {
     }
   }
 
-  /** The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. Lustre logging writes the enabled logging events for your file system to Amazon CloudWatch Logs. Error and warning events can be logged from the following data repository operations: * Automatic export * Data repository tasks To learn more about Lustre logging, see [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html|Logging to Amazon CloudWatch Logs]].
+  /** The Lustre logging configuration used when creating or updating an Amazon FSx for Lustre file system. An Amazon File Cache is created with Lustre logging enabled by default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't be changed. Lustre logging writes the enabled logging events for your file system or cache to Amazon CloudWatch Logs.
     */
   @js.native
   trait LustreLogCreateConfiguration extends js.Object {
@@ -2840,6 +3341,53 @@ package object fsx {
 
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LustreLogCreateConfiguration]
+    }
+  }
+
+  /** The configuration for Lustre root squash used to restrict root-level access from clients that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code> parameter to enable root squash. To learn more about Lustre root squash, see [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html|Lustre root squash]]. You can also use the <code>NoSquashNids</code> parameter to provide an array of clients who are not affected by the root squash setting. These clients will access the file system as root, with unrestricted privileges.
+    */
+  @js.native
+  trait LustreRootSquashConfiguration extends js.Object {
+    var NoSquashNids: js.UndefOr[LustreNoSquashNids]
+    var RootSquash: js.UndefOr[LustreRootSquash]
+  }
+
+  object LustreRootSquashConfiguration {
+    @inline
+    def apply(
+        NoSquashNids: js.UndefOr[LustreNoSquashNids] = js.undefined,
+        RootSquash: js.UndefOr[LustreRootSquash] = js.undefined
+    ): LustreRootSquashConfiguration = {
+      val __obj = js.Dynamic.literal()
+      NoSquashNids.foreach(__v => __obj.updateDynamic("NoSquashNids")(__v.asInstanceOf[js.Any]))
+      RootSquash.foreach(__v => __obj.updateDynamic("RootSquash")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LustreRootSquashConfiguration]
+    }
+  }
+
+  /** The configuration for a data repository association that links an Amazon File Cache resource to an NFS data repository.
+    */
+  @js.native
+  trait NFSDataRepositoryConfiguration extends js.Object {
+    var Version: NfsVersion
+    var AutoExportPolicy: js.UndefOr[AutoExportPolicy]
+    var DnsIps: js.UndefOr[RepositoryDnsIps]
+  }
+
+  object NFSDataRepositoryConfiguration {
+    @inline
+    def apply(
+        Version: NfsVersion,
+        AutoExportPolicy: js.UndefOr[AutoExportPolicy] = js.undefined,
+        DnsIps: js.UndefOr[RepositoryDnsIps] = js.undefined
+    ): NFSDataRepositoryConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Version" -> Version.asInstanceOf[js.Any]
+      )
+
+      AutoExportPolicy.foreach(__v => __obj.updateDynamic("AutoExportPolicy")(__v.asInstanceOf[js.Any]))
+      DnsIps.foreach(__v => __obj.updateDynamic("DnsIps")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NFSDataRepositoryConfiguration]
     }
   }
 
@@ -2892,11 +3440,13 @@ package object fsx {
     */
   @js.native
   trait OntapVolumeConfiguration extends js.Object {
+    var CopyTagsToBackups: js.UndefOr[Flag]
     var FlexCacheEndpointType: js.UndefOr[FlexCacheEndpointType]
     var JunctionPath: js.UndefOr[JunctionPath]
     var OntapVolumeType: js.UndefOr[OntapVolumeType]
     var SecurityStyle: js.UndefOr[SecurityStyle]
     var SizeInMegabytes: js.UndefOr[VolumeCapacity]
+    var SnapshotPolicy: js.UndefOr[SnapshotPolicy]
     var StorageEfficiencyEnabled: js.UndefOr[Flag]
     var StorageVirtualMachineId: js.UndefOr[StorageVirtualMachineId]
     var StorageVirtualMachineRoot: js.UndefOr[Flag]
@@ -2907,11 +3457,13 @@ package object fsx {
   object OntapVolumeConfiguration {
     @inline
     def apply(
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         FlexCacheEndpointType: js.UndefOr[FlexCacheEndpointType] = js.undefined,
         JunctionPath: js.UndefOr[JunctionPath] = js.undefined,
         OntapVolumeType: js.UndefOr[OntapVolumeType] = js.undefined,
         SecurityStyle: js.UndefOr[SecurityStyle] = js.undefined,
         SizeInMegabytes: js.UndefOr[VolumeCapacity] = js.undefined,
+        SnapshotPolicy: js.UndefOr[SnapshotPolicy] = js.undefined,
         StorageEfficiencyEnabled: js.UndefOr[Flag] = js.undefined,
         StorageVirtualMachineId: js.UndefOr[StorageVirtualMachineId] = js.undefined,
         StorageVirtualMachineRoot: js.UndefOr[Flag] = js.undefined,
@@ -2919,11 +3471,13 @@ package object fsx {
         UUID: js.UndefOr[UUID] = js.undefined
     ): OntapVolumeConfiguration = {
       val __obj = js.Dynamic.literal()
+      CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
       FlexCacheEndpointType.foreach(__v => __obj.updateDynamic("FlexCacheEndpointType")(__v.asInstanceOf[js.Any]))
       JunctionPath.foreach(__v => __obj.updateDynamic("JunctionPath")(__v.asInstanceOf[js.Any]))
       OntapVolumeType.foreach(__v => __obj.updateDynamic("OntapVolumeType")(__v.asInstanceOf[js.Any]))
       SecurityStyle.foreach(__v => __obj.updateDynamic("SecurityStyle")(__v.asInstanceOf[js.Any]))
       SizeInMegabytes.foreach(__v => __obj.updateDynamic("SizeInMegabytes")(__v.asInstanceOf[js.Any]))
+      SnapshotPolicy.foreach(__v => __obj.updateDynamic("SnapshotPolicy")(__v.asInstanceOf[js.Any]))
       StorageEfficiencyEnabled.foreach(__v => __obj.updateDynamic("StorageEfficiencyEnabled")(__v.asInstanceOf[js.Any]))
       StorageVirtualMachineId.foreach(__v => __obj.updateDynamic("StorageVirtualMachineId")(__v.asInstanceOf[js.Any]))
       StorageVirtualMachineRoot.foreach(__v => __obj.updateDynamic("StorageVirtualMachineRoot")(__v.asInstanceOf[js.Any]))
@@ -2933,7 +3487,7 @@ package object fsx {
     }
   }
 
-  /** Specifies who can mount the file system and the options that can be used while mounting the file system.
+  /** Specifies who can mount an OpenZFS file system and the options available while mounting the file system.
     */
   @js.native
   trait OpenZFSClientConfiguration extends js.Object {
@@ -2963,6 +3517,7 @@ package object fsx {
     var DataCompressionType: js.UndefOr[OpenZFSDataCompressionType]
     var NfsExports: js.UndefOr[OpenZFSNfsExports]
     var ReadOnly: js.UndefOr[ReadOnly]
+    var RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB]
     var UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas]
   }
 
@@ -2973,6 +3528,7 @@ package object fsx {
         DataCompressionType: js.UndefOr[OpenZFSDataCompressionType] = js.undefined,
         NfsExports: js.UndefOr[OpenZFSNfsExports] = js.undefined,
         ReadOnly: js.UndefOr[ReadOnly] = js.undefined,
+        RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB] = js.undefined,
         UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas] = js.undefined
     ): OpenZFSCreateRootVolumeConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -2980,6 +3536,7 @@ package object fsx {
       DataCompressionType.foreach(__v => __obj.updateDynamic("DataCompressionType")(__v.asInstanceOf[js.Any]))
       NfsExports.foreach(__v => __obj.updateDynamic("NfsExports")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RecordSizeKiB.foreach(__v => __obj.updateDynamic("RecordSizeKiB")(__v.asInstanceOf[js.Any]))
       UserAndGroupQuotas.foreach(__v => __obj.updateDynamic("UserAndGroupQuotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpenZFSCreateRootVolumeConfiguration]
     }
@@ -3027,7 +3584,7 @@ package object fsx {
     }
   }
 
-  /** The Network File System NFS) configurations for mounting an Amazon FSx for OpenZFS file system.
+  /** The Network File System (NFS) configurations for mounting an Amazon FSx for OpenZFS file system.
     */
   @js.native
   trait OpenZFSNfsExport extends js.Object {
@@ -3098,10 +3655,14 @@ package object fsx {
   trait OpenZFSVolumeConfiguration extends js.Object {
     var CopyTagsToSnapshots: js.UndefOr[Flag]
     var DataCompressionType: js.UndefOr[OpenZFSDataCompressionType]
+    var DeleteClonedVolumes: js.UndefOr[Flag]
+    var DeleteIntermediateSnaphots: js.UndefOr[Flag]
     var NfsExports: js.UndefOr[OpenZFSNfsExports]
     var OriginSnapshot: js.UndefOr[OpenZFSOriginSnapshotConfiguration]
     var ParentVolumeId: js.UndefOr[VolumeId]
     var ReadOnly: js.UndefOr[ReadOnly]
+    var RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB]
+    var RestoreToSnapshot: js.UndefOr[SnapshotId]
     var StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax]
     var StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax]
     var UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas]
@@ -3113,10 +3674,14 @@ package object fsx {
     def apply(
         CopyTagsToSnapshots: js.UndefOr[Flag] = js.undefined,
         DataCompressionType: js.UndefOr[OpenZFSDataCompressionType] = js.undefined,
+        DeleteClonedVolumes: js.UndefOr[Flag] = js.undefined,
+        DeleteIntermediateSnaphots: js.UndefOr[Flag] = js.undefined,
         NfsExports: js.UndefOr[OpenZFSNfsExports] = js.undefined,
         OriginSnapshot: js.UndefOr[OpenZFSOriginSnapshotConfiguration] = js.undefined,
         ParentVolumeId: js.UndefOr[VolumeId] = js.undefined,
         ReadOnly: js.UndefOr[ReadOnly] = js.undefined,
+        RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB] = js.undefined,
+        RestoreToSnapshot: js.UndefOr[SnapshotId] = js.undefined,
         StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax] = js.undefined,
         StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax] = js.undefined,
         UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas] = js.undefined,
@@ -3125,10 +3690,14 @@ package object fsx {
       val __obj = js.Dynamic.literal()
       CopyTagsToSnapshots.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshots")(__v.asInstanceOf[js.Any]))
       DataCompressionType.foreach(__v => __obj.updateDynamic("DataCompressionType")(__v.asInstanceOf[js.Any]))
+      DeleteClonedVolumes.foreach(__v => __obj.updateDynamic("DeleteClonedVolumes")(__v.asInstanceOf[js.Any]))
+      DeleteIntermediateSnaphots.foreach(__v => __obj.updateDynamic("DeleteIntermediateSnaphots")(__v.asInstanceOf[js.Any]))
       NfsExports.foreach(__v => __obj.updateDynamic("NfsExports")(__v.asInstanceOf[js.Any]))
       OriginSnapshot.foreach(__v => __obj.updateDynamic("OriginSnapshot")(__v.asInstanceOf[js.Any]))
       ParentVolumeId.foreach(__v => __obj.updateDynamic("ParentVolumeId")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RecordSizeKiB.foreach(__v => __obj.updateDynamic("RecordSizeKiB")(__v.asInstanceOf[js.Any]))
+      RestoreToSnapshot.foreach(__v => __obj.updateDynamic("RestoreToSnapshot")(__v.asInstanceOf[js.Any]))
       StorageCapacityQuotaGiB.foreach(__v => __obj.updateDynamic("StorageCapacityQuotaGiB")(__v.asInstanceOf[js.Any]))
       StorageCapacityReservationGiB.foreach(__v => __obj.updateDynamic("StorageCapacityReservationGiB")(__v.asInstanceOf[js.Any]))
       UserAndGroupQuotas.foreach(__v => __obj.updateDynamic("UserAndGroupQuotas")(__v.asInstanceOf[js.Any]))
@@ -3203,6 +3772,7 @@ package object fsx {
 
   @js.native
   trait RestoreVolumeFromSnapshotResponse extends js.Object {
+    var AdministrativeActions: js.UndefOr[AdministrativeActions]
     var Lifecycle: js.UndefOr[VolumeLifecycle]
     var VolumeId: js.UndefOr[VolumeId]
   }
@@ -3210,17 +3780,21 @@ package object fsx {
   object RestoreVolumeFromSnapshotResponse {
     @inline
     def apply(
+        AdministrativeActions: js.UndefOr[AdministrativeActions] = js.undefined,
         Lifecycle: js.UndefOr[VolumeLifecycle] = js.undefined,
         VolumeId: js.UndefOr[VolumeId] = js.undefined
     ): RestoreVolumeFromSnapshotResponse = {
       val __obj = js.Dynamic.literal()
+      AdministrativeActions.foreach(__v => __obj.updateDynamic("AdministrativeActions")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreVolumeFromSnapshotResponse]
     }
   }
 
-  /** The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration consists of an <code>AutoImportPolicy</code> that defines file events on the data repository are automatically imported to the file system and an <code>AutoExportPolicy</code> that defines which file events on the file system are automatically exported to the data repository. File events are when files or directories are added, changed, or deleted on the file system or the data repository.
+  /** The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre file system with a data repository association. The configuration consists of an <code>AutoImportPolicy</code> that defines which file events on the data repository are automatically imported to the file system and an <code>AutoExportPolicy</code> that defines which file events on the file system are automatically exported to the data repository. File events are when files or directories are added, changed, or deleted on the file system or the data repository.
+    *
+    * '''Note:'''Data repository associations on Amazon File Cache don't use <code>S3DataRepositoryConfiguration</code> because they don't support automatic import or automatic export.
     */
   @js.native
   trait S3DataRepositoryConfiguration extends js.Object {
@@ -3337,6 +3911,7 @@ package object fsx {
     var AdministrativeActions: js.UndefOr[AdministrativeActions]
     var CreationTime: js.UndefOr[CreationTime]
     var Lifecycle: js.UndefOr[SnapshotLifecycle]
+    var LifecycleTransitionReason: js.UndefOr[LifecycleTransitionReason]
     var Name: js.UndefOr[SnapshotName]
     var ResourceARN: js.UndefOr[ResourceARN]
     var SnapshotId: js.UndefOr[SnapshotId]
@@ -3350,6 +3925,7 @@ package object fsx {
         AdministrativeActions: js.UndefOr[AdministrativeActions] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         Lifecycle: js.UndefOr[SnapshotLifecycle] = js.undefined,
+        LifecycleTransitionReason: js.UndefOr[LifecycleTransitionReason] = js.undefined,
         Name: js.UndefOr[SnapshotName] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
@@ -3360,6 +3936,7 @@ package object fsx {
       AdministrativeActions.foreach(__v => __obj.updateDynamic("AdministrativeActions")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      LifecycleTransitionReason.foreach(__v => __obj.updateDynamic("LifecycleTransitionReason")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
@@ -3390,7 +3967,7 @@ package object fsx {
     }
   }
 
-  /** Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuraton.
+  /** Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.
     */
   @js.native
   trait StorageVirtualMachine extends js.Object {
@@ -3404,7 +3981,6 @@ package object fsx {
     var ResourceARN: js.UndefOr[ResourceARN]
     var RootVolumeSecurityStyle: js.UndefOr[StorageVirtualMachineRootVolumeSecurityStyle]
     var StorageVirtualMachineId: js.UndefOr[StorageVirtualMachineId]
-    var Subtype: js.UndefOr[StorageVirtualMachineSubtype]
     var Tags: js.UndefOr[Tags]
     var UUID: js.UndefOr[UUID]
   }
@@ -3422,7 +3998,6 @@ package object fsx {
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RootVolumeSecurityStyle: js.UndefOr[StorageVirtualMachineRootVolumeSecurityStyle] = js.undefined,
         StorageVirtualMachineId: js.UndefOr[StorageVirtualMachineId] = js.undefined,
-        Subtype: js.UndefOr[StorageVirtualMachineSubtype] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         UUID: js.UndefOr[UUID] = js.undefined
     ): StorageVirtualMachine = {
@@ -3437,7 +4012,6 @@ package object fsx {
       ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       RootVolumeSecurityStyle.foreach(__v => __obj.updateDynamic("RootVolumeSecurityStyle")(__v.asInstanceOf[js.Any]))
       StorageVirtualMachineId.foreach(__v => __obj.updateDynamic("StorageVirtualMachineId")(__v.asInstanceOf[js.Any]))
-      Subtype.foreach(__v => __obj.updateDynamic("Subtype")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageVirtualMachine]
@@ -3591,7 +4165,7 @@ package object fsx {
     }
   }
 
-  /** Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns.
+  /** Describes the data tiering policy for an ONTAP volume. When enabled, Amazon FSx for ONTAP's intelligent tiering automatically transitions a volume's data between the file system's primary storage and capacity pool storage based on your access patterns. Valid tiering policies are the following: * <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity pool storage tier. * <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage tier based on your access patterns. * <code>ALL</code> - moves all user data blocks in both the active file system and Snapshot copies to the storage pool tier. * <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing it from being moved to the capacity pool tier.
     */
   @js.native
   trait TieringPolicy extends js.Object {
@@ -3690,6 +4264,64 @@ package object fsx {
     }
   }
 
+  /** The configuration update for an Amazon File Cache resource.
+    */
+  @js.native
+  trait UpdateFileCacheLustreConfiguration extends js.Object {
+    var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
+  }
+
+  object UpdateFileCacheLustreConfiguration {
+    @inline
+    def apply(
+        WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
+    ): UpdateFileCacheLustreConfiguration = {
+      val __obj = js.Dynamic.literal()
+      WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileCacheLustreConfiguration]
+    }
+  }
+
+  @js.native
+  trait UpdateFileCacheRequest extends js.Object {
+    var FileCacheId: FileCacheId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var LustreConfiguration: js.UndefOr[UpdateFileCacheLustreConfiguration]
+  }
+
+  object UpdateFileCacheRequest {
+    @inline
+    def apply(
+        FileCacheId: FileCacheId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        LustreConfiguration: js.UndefOr[UpdateFileCacheLustreConfiguration] = js.undefined
+    ): UpdateFileCacheRequest = {
+      val __obj = js.Dynamic.literal(
+        "FileCacheId" -> FileCacheId.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      LustreConfiguration.foreach(__v => __obj.updateDynamic("LustreConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileCacheRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFileCacheResponse extends js.Object {
+    var FileCache: js.UndefOr[FileCache]
+  }
+
+  object UpdateFileCacheResponse {
+    @inline
+    def apply(
+        FileCache: js.UndefOr[FileCache] = js.undefined
+    ): UpdateFileCacheResponse = {
+      val __obj = js.Dynamic.literal()
+      FileCache.foreach(__v => __obj.updateDynamic("FileCache")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFileCacheResponse]
+    }
+  }
+
   /** The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code> operation.
     */
   @js.native
@@ -3699,6 +4331,7 @@ package object fsx {
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
     var DataCompressionType: js.UndefOr[DataCompressionType]
     var LogConfiguration: js.UndefOr[LustreLogCreateConfiguration]
+    var RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
@@ -3710,6 +4343,7 @@ package object fsx {
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
         DataCompressionType: js.UndefOr[DataCompressionType] = js.undefined,
         LogConfiguration: js.UndefOr[LustreLogCreateConfiguration] = js.undefined,
+        RootSquashConfiguration: js.UndefOr[LustreRootSquashConfiguration] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -3718,6 +4352,7 @@ package object fsx {
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
       DataCompressionType.foreach(__v => __obj.updateDynamic("DataCompressionType")(__v.asInstanceOf[js.Any]))
       LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
+      RootSquashConfiguration.foreach(__v => __obj.updateDynamic("RootSquashConfiguration")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemLustreConfiguration]
     }
@@ -3727,24 +4362,36 @@ package object fsx {
     */
   @js.native
   trait UpdateFileSystemOntapConfiguration extends js.Object {
+    var AddRouteTableIds: js.UndefOr[RouteTableIds]
     var AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays]
     var DailyAutomaticBackupStartTime: js.UndefOr[DailyTime]
+    var DiskIopsConfiguration: js.UndefOr[DiskIopsConfiguration]
     var FsxAdminPassword: js.UndefOr[AdminPassword]
+    var RemoveRouteTableIds: js.UndefOr[RouteTableIds]
+    var ThroughputCapacity: js.UndefOr[MegabytesPerSecond]
     var WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime]
   }
 
   object UpdateFileSystemOntapConfiguration {
     @inline
     def apply(
+        AddRouteTableIds: js.UndefOr[RouteTableIds] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
+        DiskIopsConfiguration: js.UndefOr[DiskIopsConfiguration] = js.undefined,
         FsxAdminPassword: js.UndefOr[AdminPassword] = js.undefined,
+        RemoveRouteTableIds: js.UndefOr[RouteTableIds] = js.undefined,
+        ThroughputCapacity: js.UndefOr[MegabytesPerSecond] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemOntapConfiguration = {
       val __obj = js.Dynamic.literal()
+      AddRouteTableIds.foreach(__v => __obj.updateDynamic("AddRouteTableIds")(__v.asInstanceOf[js.Any]))
       AutomaticBackupRetentionDays.foreach(__v => __obj.updateDynamic("AutomaticBackupRetentionDays")(__v.asInstanceOf[js.Any]))
       DailyAutomaticBackupStartTime.foreach(__v => __obj.updateDynamic("DailyAutomaticBackupStartTime")(__v.asInstanceOf[js.Any]))
+      DiskIopsConfiguration.foreach(__v => __obj.updateDynamic("DiskIopsConfiguration")(__v.asInstanceOf[js.Any]))
       FsxAdminPassword.foreach(__v => __obj.updateDynamic("FsxAdminPassword")(__v.asInstanceOf[js.Any]))
+      RemoveRouteTableIds.foreach(__v => __obj.updateDynamic("RemoveRouteTableIds")(__v.asInstanceOf[js.Any]))
+      ThroughputCapacity.foreach(__v => __obj.updateDynamic("ThroughputCapacity")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceStartTime.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFileSystemOntapConfiguration]
     }
@@ -3879,9 +4526,11 @@ package object fsx {
     */
   @js.native
   trait UpdateOntapVolumeConfiguration extends js.Object {
+    var CopyTagsToBackups: js.UndefOr[Flag]
     var JunctionPath: js.UndefOr[JunctionPath]
     var SecurityStyle: js.UndefOr[SecurityStyle]
     var SizeInMegabytes: js.UndefOr[VolumeCapacity]
+    var SnapshotPolicy: js.UndefOr[SnapshotPolicy]
     var StorageEfficiencyEnabled: js.UndefOr[Flag]
     var TieringPolicy: js.UndefOr[TieringPolicy]
   }
@@ -3889,16 +4538,20 @@ package object fsx {
   object UpdateOntapVolumeConfiguration {
     @inline
     def apply(
+        CopyTagsToBackups: js.UndefOr[Flag] = js.undefined,
         JunctionPath: js.UndefOr[JunctionPath] = js.undefined,
         SecurityStyle: js.UndefOr[SecurityStyle] = js.undefined,
         SizeInMegabytes: js.UndefOr[VolumeCapacity] = js.undefined,
+        SnapshotPolicy: js.UndefOr[SnapshotPolicy] = js.undefined,
         StorageEfficiencyEnabled: js.UndefOr[Flag] = js.undefined,
         TieringPolicy: js.UndefOr[TieringPolicy] = js.undefined
     ): UpdateOntapVolumeConfiguration = {
       val __obj = js.Dynamic.literal()
+      CopyTagsToBackups.foreach(__v => __obj.updateDynamic("CopyTagsToBackups")(__v.asInstanceOf[js.Any]))
       JunctionPath.foreach(__v => __obj.updateDynamic("JunctionPath")(__v.asInstanceOf[js.Any]))
       SecurityStyle.foreach(__v => __obj.updateDynamic("SecurityStyle")(__v.asInstanceOf[js.Any]))
       SizeInMegabytes.foreach(__v => __obj.updateDynamic("SizeInMegabytes")(__v.asInstanceOf[js.Any]))
+      SnapshotPolicy.foreach(__v => __obj.updateDynamic("SnapshotPolicy")(__v.asInstanceOf[js.Any]))
       StorageEfficiencyEnabled.foreach(__v => __obj.updateDynamic("StorageEfficiencyEnabled")(__v.asInstanceOf[js.Any]))
       TieringPolicy.foreach(__v => __obj.updateDynamic("TieringPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOntapVolumeConfiguration]
@@ -3912,8 +4565,9 @@ package object fsx {
     var DataCompressionType: js.UndefOr[OpenZFSDataCompressionType]
     var NfsExports: js.UndefOr[OpenZFSNfsExports]
     var ReadOnly: js.UndefOr[ReadOnly]
-    var StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax]
-    var StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax]
+    var RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB]
+    var StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMaxFromNegativeOne]
+    var StorageCapacityReservationGiB: js.UndefOr[IntegerNoMaxFromNegativeOne]
     var UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas]
   }
 
@@ -3923,14 +4577,16 @@ package object fsx {
         DataCompressionType: js.UndefOr[OpenZFSDataCompressionType] = js.undefined,
         NfsExports: js.UndefOr[OpenZFSNfsExports] = js.undefined,
         ReadOnly: js.UndefOr[ReadOnly] = js.undefined,
-        StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMax] = js.undefined,
-        StorageCapacityReservationGiB: js.UndefOr[IntegerNoMax] = js.undefined,
+        RecordSizeKiB: js.UndefOr[IntegerRecordSizeKiB] = js.undefined,
+        StorageCapacityQuotaGiB: js.UndefOr[IntegerNoMaxFromNegativeOne] = js.undefined,
+        StorageCapacityReservationGiB: js.UndefOr[IntegerNoMaxFromNegativeOne] = js.undefined,
         UserAndGroupQuotas: js.UndefOr[OpenZFSUserAndGroupQuotas] = js.undefined
     ): UpdateOpenZFSVolumeConfiguration = {
       val __obj = js.Dynamic.literal()
       DataCompressionType.foreach(__v => __obj.updateDynamic("DataCompressionType")(__v.asInstanceOf[js.Any]))
       NfsExports.foreach(__v => __obj.updateDynamic("NfsExports")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RecordSizeKiB.foreach(__v => __obj.updateDynamic("RecordSizeKiB")(__v.asInstanceOf[js.Any]))
       StorageCapacityQuotaGiB.foreach(__v => __obj.updateDynamic("StorageCapacityQuotaGiB")(__v.asInstanceOf[js.Any]))
       StorageCapacityReservationGiB.foreach(__v => __obj.updateDynamic("StorageCapacityReservationGiB")(__v.asInstanceOf[js.Any]))
       UserAndGroupQuotas.foreach(__v => __obj.updateDynamic("UserAndGroupQuotas")(__v.asInstanceOf[js.Any]))

@@ -86,6 +86,40 @@ object EndpointStatus {
 }
 
 @js.native
+sealed trait EphemerisInvalidReason extends js.Any
+object EphemerisInvalidReason {
+  val METADATA_INVALID = "METADATA_INVALID".asInstanceOf[EphemerisInvalidReason]
+  val TIME_RANGE_INVALID = "TIME_RANGE_INVALID".asInstanceOf[EphemerisInvalidReason]
+  val TRAJECTORY_INVALID = "TRAJECTORY_INVALID".asInstanceOf[EphemerisInvalidReason]
+  val KMS_KEY_INVALID = "KMS_KEY_INVALID".asInstanceOf[EphemerisInvalidReason]
+  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[EphemerisInvalidReason]
+
+  @inline def values: js.Array[EphemerisInvalidReason] = js.Array(METADATA_INVALID, TIME_RANGE_INVALID, TRAJECTORY_INVALID, KMS_KEY_INVALID, VALIDATION_ERROR)
+}
+
+@js.native
+sealed trait EphemerisSource extends js.Any
+object EphemerisSource {
+  val CUSTOMER_PROVIDED = "CUSTOMER_PROVIDED".asInstanceOf[EphemerisSource]
+  val SPACE_TRACK = "SPACE_TRACK".asInstanceOf[EphemerisSource]
+
+  @inline def values: js.Array[EphemerisSource] = js.Array(CUSTOMER_PROVIDED, SPACE_TRACK)
+}
+
+@js.native
+sealed trait EphemerisStatus extends js.Any
+object EphemerisStatus {
+  val VALIDATING = "VALIDATING".asInstanceOf[EphemerisStatus]
+  val INVALID = "INVALID".asInstanceOf[EphemerisStatus]
+  val ERROR = "ERROR".asInstanceOf[EphemerisStatus]
+  val ENABLED = "ENABLED".asInstanceOf[EphemerisStatus]
+  val DISABLED = "DISABLED".asInstanceOf[EphemerisStatus]
+  val EXPIRED = "EXPIRED".asInstanceOf[EphemerisStatus]
+
+  @inline def values: js.Array[EphemerisStatus] = js.Array(VALIDATING, INVALID, ERROR, ENABLED, DISABLED, EXPIRED)
+}
+
+@js.native
 sealed trait FrequencyUnits extends js.Any
 object FrequencyUnits {
   val GHz = "GHz".asInstanceOf[FrequencyUnits]

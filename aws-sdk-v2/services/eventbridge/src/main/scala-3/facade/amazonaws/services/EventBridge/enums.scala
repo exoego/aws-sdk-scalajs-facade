@@ -74,6 +74,19 @@ object ConnectionState {
   inline def values: js.Array[ConnectionState] = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
 }
 
+type EndpointState = "ACTIVE" | "CREATING" | "UPDATING" | "DELETING" | "CREATE_FAILED" | "UPDATE_FAILED" | "DELETE_FAILED"
+object EndpointState {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+
+  inline def values: js.Array[EndpointState] = js.Array(ACTIVE, CREATING, UPDATING, DELETING, CREATE_FAILED, UPDATE_FAILED, DELETE_FAILED)
+}
+
 type EventSourceState = "PENDING" | "ACTIVE" | "DELETED"
 object EventSourceState {
   inline val PENDING: "PENDING" = "PENDING"
@@ -126,6 +139,14 @@ object ReplayState {
   inline val FAILED: "FAILED" = "FAILED"
 
   inline def values: js.Array[ReplayState] = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
+}
+
+type ReplicationState = "ENABLED" | "DISABLED"
+object ReplicationState {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[ReplicationState] = js.Array(ENABLED, DISABLED)
 }
 
 type RuleState = "ENABLED" | "DISABLED"

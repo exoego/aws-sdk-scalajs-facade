@@ -72,6 +72,10 @@ object HistoryEventType {
   val WaitStateAborted = "WaitStateAborted".asInstanceOf[HistoryEventType]
   val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
   val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
+  val MapRunAborted = "MapRunAborted".asInstanceOf[HistoryEventType]
+  val MapRunFailed = "MapRunFailed".asInstanceOf[HistoryEventType]
+  val MapRunStarted = "MapRunStarted".asInstanceOf[HistoryEventType]
+  val MapRunSucceeded = "MapRunSucceeded".asInstanceOf[HistoryEventType]
 
   @inline def values: js.Array[HistoryEventType] = js.Array(
     ActivityFailed,
@@ -128,7 +132,11 @@ object HistoryEventType {
     TaskTimedOut,
     WaitStateAborted,
     WaitStateEntered,
-    WaitStateExited
+    WaitStateExited,
+    MapRunAborted,
+    MapRunFailed,
+    MapRunStarted,
+    MapRunSucceeded
   )
 }
 
@@ -141,6 +149,17 @@ object LogLevel {
   val OFF = "OFF".asInstanceOf[LogLevel]
 
   @inline def values: js.Array[LogLevel] = js.Array(ALL, ERROR, FATAL, OFF)
+}
+
+@js.native
+sealed trait MapRunStatus extends js.Any
+object MapRunStatus {
+  val RUNNING = "RUNNING".asInstanceOf[MapRunStatus]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[MapRunStatus]
+  val FAILED = "FAILED".asInstanceOf[MapRunStatus]
+  val ABORTED = "ABORTED".asInstanceOf[MapRunStatus]
+
+  @inline def values: js.Array[MapRunStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, ABORTED)
 }
 
 @js.native

@@ -10,13 +10,14 @@ object CustomHealthStatus {
   inline def values: js.Array[CustomHealthStatus] = js.Array(HEALTHY, UNHEALTHY)
 }
 
-type FilterCondition = "EQ" | "IN" | "BETWEEN"
+type FilterCondition = "EQ" | "IN" | "BETWEEN" | "BEGINS_WITH"
 object FilterCondition {
   inline val EQ: "EQ" = "EQ"
   inline val IN: "IN" = "IN"
   inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
 
-  inline def values: js.Array[FilterCondition] = js.Array(EQ, IN, BETWEEN)
+  inline def values: js.Array[FilterCondition] = js.Array(EQ, IN, BETWEEN, BEGINS_WITH)
 }
 
 type HealthCheckType = "HTTP" | "HTTPS" | "TCP"
@@ -47,11 +48,13 @@ object HealthStatusFilter {
   inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL, HEALTHY_OR_ELSE_ALL)
 }
 
-type NamespaceFilterName = "TYPE"
+type NamespaceFilterName = "TYPE" | "NAME" | "HTTP_NAME"
 object NamespaceFilterName {
   inline val TYPE: "TYPE" = "TYPE"
+  inline val NAME: "NAME" = "NAME"
+  inline val HTTP_NAME: "HTTP_NAME" = "HTTP_NAME"
 
-  inline def values: js.Array[NamespaceFilterName] = js.Array(TYPE)
+  inline def values: js.Array[NamespaceFilterName] = js.Array(TYPE, NAME, HTTP_NAME)
 }
 
 type NamespaceType = "DNS_PUBLIC" | "DNS_PRIVATE" | "HTTP"

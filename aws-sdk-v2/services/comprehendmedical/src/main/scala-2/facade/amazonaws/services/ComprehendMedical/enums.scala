@@ -9,8 +9,13 @@ object AttributeName {
   val SYMPTOM = "SYMPTOM".asInstanceOf[AttributeName]
   val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
   val NEGATION = "NEGATION".asInstanceOf[AttributeName]
+  val PERTAINS_TO_FAMILY = "PERTAINS_TO_FAMILY".asInstanceOf[AttributeName]
+  val HYPOTHETICAL = "HYPOTHETICAL".asInstanceOf[AttributeName]
+  val LOW_CONFIDENCE = "LOW_CONFIDENCE".asInstanceOf[AttributeName]
+  val PAST_HISTORY = "PAST_HISTORY".asInstanceOf[AttributeName]
+  val FUTURE = "FUTURE".asInstanceOf[AttributeName]
 
-  @inline def values: js.Array[AttributeName] = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
+  @inline def values: js.Array[AttributeName] = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION, PERTAINS_TO_FAMILY, HYPOTHETICAL, LOW_CONFIDENCE, PAST_HISTORY, FUTURE)
 }
 
 @js.native
@@ -54,6 +59,13 @@ object EntitySubType {
   val TIME_TO_TEST_NAME = "TIME_TO_TEST_NAME".asInstanceOf[EntitySubType]
   val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
   val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
+  val AMOUNT = "AMOUNT".asInstanceOf[EntitySubType]
+  val GENDER = "GENDER".asInstanceOf[EntitySubType]
+  val RACE_ETHNICITY = "RACE_ETHNICITY".asInstanceOf[EntitySubType]
+  val ALLERGIES = "ALLERGIES".asInstanceOf[EntitySubType]
+  val TOBACCO_USE = "TOBACCO_USE".asInstanceOf[EntitySubType]
+  val ALCOHOL_CONSUMPTION = "ALCOHOL_CONSUMPTION".asInstanceOf[EntitySubType]
+  val REC_DRUG_USE = "REC_DRUG_USE".asInstanceOf[EntitySubType]
 
   @inline def values: js.Array[EntitySubType] = js.Array(
     NAME,
@@ -93,7 +105,14 @@ object EntitySubType {
     TIME_TO_DX_NAME,
     TIME_TO_TEST_NAME,
     TIME_TO_PROCEDURE_NAME,
-    TIME_TO_TREATMENT_NAME
+    TIME_TO_TREATMENT_NAME,
+    AMOUNT,
+    GENDER,
+    RACE_ETHNICITY,
+    ALLERGIES,
+    TOBACCO_USE,
+    ALCOHOL_CONSUMPTION,
+    REC_DRUG_USE
   )
 }
 
@@ -106,8 +125,9 @@ object EntityType {
   val TEST_TREATMENT_PROCEDURE = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
   val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
   val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
+  val BEHAVIORAL_ENVIRONMENTAL_SOCIAL = "BEHAVIORAL_ENVIRONMENTAL_SOCIAL".asInstanceOf[EntityType]
 
-  @inline def values: js.Array[EntityType] = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
+  @inline def values: js.Array[EntityType] = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION, BEHAVIORAL_ENVIRONMENTAL_SOCIAL)
 }
 
 @js.native
@@ -157,8 +177,11 @@ object ICD10CMTraitName {
   val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
   val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
   val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
+  val PERTAINS_TO_FAMILY = "PERTAINS_TO_FAMILY".asInstanceOf[ICD10CMTraitName]
+  val HYPOTHETICAL = "HYPOTHETICAL".asInstanceOf[ICD10CMTraitName]
+  val LOW_CONFIDENCE = "LOW_CONFIDENCE".asInstanceOf[ICD10CMTraitName]
 
-  @inline def values: js.Array[ICD10CMTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
+  @inline def values: js.Array[ICD10CMTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM, PERTAINS_TO_FAMILY, HYPOTHETICAL, LOW_CONFIDENCE)
 }
 
 @js.native
@@ -205,6 +228,7 @@ object RelationshipType {
   val TEST_UNIT = "TEST_UNIT".asInstanceOf[RelationshipType]
   val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
   val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
+  val AMOUNT = "AMOUNT".asInstanceOf[RelationshipType]
 
   @inline def values: js.Array[RelationshipType] = js.Array(
     EVERY,
@@ -225,7 +249,8 @@ object RelationshipType {
     TEST_UNITS,
     TEST_UNIT,
     DIRECTION,
-    SYSTEM_ORGAN_SITE
+    SYSTEM_ORGAN_SITE,
+    AMOUNT
   )
 }
 
@@ -322,6 +347,11 @@ object SNOMEDCTTraitName {
   val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[SNOMEDCTTraitName]
   val SIGN = "SIGN".asInstanceOf[SNOMEDCTTraitName]
   val SYMPTOM = "SYMPTOM".asInstanceOf[SNOMEDCTTraitName]
+  val PERTAINS_TO_FAMILY = "PERTAINS_TO_FAMILY".asInstanceOf[SNOMEDCTTraitName]
+  val HYPOTHETICAL = "HYPOTHETICAL".asInstanceOf[SNOMEDCTTraitName]
+  val LOW_CONFIDENCE = "LOW_CONFIDENCE".asInstanceOf[SNOMEDCTTraitName]
+  val PAST_HISTORY = "PAST_HISTORY".asInstanceOf[SNOMEDCTTraitName]
+  val FUTURE = "FUTURE".asInstanceOf[SNOMEDCTTraitName]
 
-  @inline def values: js.Array[SNOMEDCTTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
+  @inline def values: js.Array[SNOMEDCTTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM, PERTAINS_TO_FAMILY, HYPOTHETICAL, LOW_CONFIDENCE, PAST_HISTORY, FUTURE)
 }

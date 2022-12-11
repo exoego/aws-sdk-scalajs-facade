@@ -292,7 +292,7 @@ package object docdb {
     }
   }
 
-  /** A certificate authority (CA) certificate for an account.
+  /** A certificate authority (CA) certificate for an Amazon Web Services account.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -651,6 +651,9 @@ package object docdb {
     var Engine: String
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var AvailabilityZone: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
+    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
+    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PromotionTier: js.UndefOr[IntegerOptional]
     var Tags: js.UndefOr[TagList]
@@ -665,6 +668,9 @@ package object docdb {
         Engine: String,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
+        PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -678,6 +684,9 @@ package object docdb {
 
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -861,6 +870,7 @@ package object docdb {
     var AssociatedRoles: js.UndefOr[DBClusterRoles]
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
+    var CloneGroupId: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
     var DBClusterArn: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
@@ -897,6 +907,7 @@ package object docdb {
         AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
+        CloneGroupId: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
         DBClusterArn: js.UndefOr[String] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -930,6 +941,7 @@ package object docdb {
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      CloneGroupId.foreach(__v => __obj.updateDynamic("CloneGroupId")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
       DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -1184,7 +1196,7 @@ package object docdb {
     }
   }
 
-  /** Contains the name and values of a manual cluster snapshot attribute. Manual cluster snapshot attributes are used to authorize other accounts to restore a manual cluster snapshot.
+  /** Contains the name and values of a manual cluster snapshot attribute. Manual cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1315,6 +1327,7 @@ package object docdb {
     var AvailabilityZone: js.UndefOr[String]
     var BackupRetentionPeriod: js.UndefOr[Int]
     var CACertificateIdentifier: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBInstanceArn: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
@@ -1346,6 +1359,7 @@ package object docdb {
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[Int] = js.undefined,
         CACertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceArn: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -1374,6 +1388,7 @@ package object docdb {
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
@@ -2755,8 +2770,11 @@ package object docdb {
     var ApplyImmediately: js.UndefOr[Boolean]
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var CACertificateIdentifier: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBInstanceClass: js.UndefOr[String]
+    var EnablePerformanceInsights: js.UndefOr[BooleanOptional]
     var NewDBInstanceIdentifier: js.UndefOr[String]
+    var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PromotionTier: js.UndefOr[IntegerOptional]
   }
@@ -2768,8 +2786,11 @@ package object docdb {
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         CACertificateIdentifier: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
+        EnablePerformanceInsights: js.UndefOr[BooleanOptional] = js.undefined,
         NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): ModifyDBInstanceMessage = {
@@ -2780,8 +2801,11 @@ package object docdb {
       ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      EnablePerformanceInsights.foreach(__v => __obj.updateDynamic("EnablePerformanceInsights")(__v.asInstanceOf[js.Any]))
       NewDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("NewDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBInstanceMessage]
@@ -3432,6 +3456,7 @@ package object docdb {
     var KmsKeyId: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var RestoreToTime: js.UndefOr[TStamp]
+    var RestoreType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var UseLatestRestorableTime: js.UndefOr[Boolean]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -3448,6 +3473,7 @@ package object docdb {
         KmsKeyId: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         RestoreToTime: js.UndefOr[TStamp] = js.undefined,
+        RestoreType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -3463,6 +3489,7 @@ package object docdb {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RestoreToTime.foreach(__v => __obj.updateDynamic("RestoreToTime")(__v.asInstanceOf[js.Any]))
+      RestoreType.foreach(__v => __obj.updateDynamic("RestoreType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))

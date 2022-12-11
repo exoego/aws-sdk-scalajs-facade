@@ -19,11 +19,14 @@ package object workspacesweb {
   type CertificateThumbprint = String
   type CertificateThumbprintList = js.Array[CertificateThumbprint]
   type ClientToken = String
+  type DisconnectTimeoutInMinutes = Int
   type DisplayName = String
   type EncryptionContextMap = js.Dictionary[StringType]
   type IdentityProviderDetails = js.Dictionary[StringType]
   type IdentityProviderList = js.Array[IdentityProviderSummary]
   type IdentityProviderName = String
+  type IdleDisconnectTimeoutInMinutes = Int
+  type KinesisStreamArn = String
   type MaxResults = Int
   type NetworkSettingsList = js.Array[NetworkSettingsSummary]
   type PaginationToken = String
@@ -42,6 +45,7 @@ package object workspacesweb {
   type TagValue = String
   type Timestamp = js.Date
   type TrustStoreSummaryList = js.Array[TrustStoreSummary]
+  type UserAccessLoggingSettingsList = js.Array[UserAccessLoggingSettingsSummary]
   type UserSettingsList = js.Array[UserSettingsSummary]
   type VpcId = String
   type keyArn = String
@@ -51,22 +55,26 @@ package object workspacesweb {
     @inline def associateBrowserSettingsFuture(params: AssociateBrowserSettingsRequest): Future[AssociateBrowserSettingsResponse] = service.associateBrowserSettings(params).promise().toFuture
     @inline def associateNetworkSettingsFuture(params: AssociateNetworkSettingsRequest): Future[AssociateNetworkSettingsResponse] = service.associateNetworkSettings(params).promise().toFuture
     @inline def associateTrustStoreFuture(params: AssociateTrustStoreRequest): Future[AssociateTrustStoreResponse] = service.associateTrustStore(params).promise().toFuture
+    @inline def associateUserAccessLoggingSettingsFuture(params: AssociateUserAccessLoggingSettingsRequest): Future[AssociateUserAccessLoggingSettingsResponse] = service.associateUserAccessLoggingSettings(params).promise().toFuture
     @inline def associateUserSettingsFuture(params: AssociateUserSettingsRequest): Future[AssociateUserSettingsResponse] = service.associateUserSettings(params).promise().toFuture
     @inline def createBrowserSettingsFuture(params: CreateBrowserSettingsRequest): Future[CreateBrowserSettingsResponse] = service.createBrowserSettings(params).promise().toFuture
     @inline def createIdentityProviderFuture(params: CreateIdentityProviderRequest): Future[CreateIdentityProviderResponse] = service.createIdentityProvider(params).promise().toFuture
     @inline def createNetworkSettingsFuture(params: CreateNetworkSettingsRequest): Future[CreateNetworkSettingsResponse] = service.createNetworkSettings(params).promise().toFuture
     @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] = service.createPortal(params).promise().toFuture
     @inline def createTrustStoreFuture(params: CreateTrustStoreRequest): Future[CreateTrustStoreResponse] = service.createTrustStore(params).promise().toFuture
+    @inline def createUserAccessLoggingSettingsFuture(params: CreateUserAccessLoggingSettingsRequest): Future[CreateUserAccessLoggingSettingsResponse] = service.createUserAccessLoggingSettings(params).promise().toFuture
     @inline def createUserSettingsFuture(params: CreateUserSettingsRequest): Future[CreateUserSettingsResponse] = service.createUserSettings(params).promise().toFuture
     @inline def deleteBrowserSettingsFuture(params: DeleteBrowserSettingsRequest): Future[DeleteBrowserSettingsResponse] = service.deleteBrowserSettings(params).promise().toFuture
     @inline def deleteIdentityProviderFuture(params: DeleteIdentityProviderRequest): Future[DeleteIdentityProviderResponse] = service.deleteIdentityProvider(params).promise().toFuture
     @inline def deleteNetworkSettingsFuture(params: DeleteNetworkSettingsRequest): Future[DeleteNetworkSettingsResponse] = service.deleteNetworkSettings(params).promise().toFuture
     @inline def deletePortalFuture(params: DeletePortalRequest): Future[DeletePortalResponse] = service.deletePortal(params).promise().toFuture
     @inline def deleteTrustStoreFuture(params: DeleteTrustStoreRequest): Future[DeleteTrustStoreResponse] = service.deleteTrustStore(params).promise().toFuture
+    @inline def deleteUserAccessLoggingSettingsFuture(params: DeleteUserAccessLoggingSettingsRequest): Future[DeleteUserAccessLoggingSettingsResponse] = service.deleteUserAccessLoggingSettings(params).promise().toFuture
     @inline def deleteUserSettingsFuture(params: DeleteUserSettingsRequest): Future[DeleteUserSettingsResponse] = service.deleteUserSettings(params).promise().toFuture
     @inline def disassociateBrowserSettingsFuture(params: DisassociateBrowserSettingsRequest): Future[DisassociateBrowserSettingsResponse] = service.disassociateBrowserSettings(params).promise().toFuture
     @inline def disassociateNetworkSettingsFuture(params: DisassociateNetworkSettingsRequest): Future[DisassociateNetworkSettingsResponse] = service.disassociateNetworkSettings(params).promise().toFuture
     @inline def disassociateTrustStoreFuture(params: DisassociateTrustStoreRequest): Future[DisassociateTrustStoreResponse] = service.disassociateTrustStore(params).promise().toFuture
+    @inline def disassociateUserAccessLoggingSettingsFuture(params: DisassociateUserAccessLoggingSettingsRequest): Future[DisassociateUserAccessLoggingSettingsResponse] = service.disassociateUserAccessLoggingSettings(params).promise().toFuture
     @inline def disassociateUserSettingsFuture(params: DisassociateUserSettingsRequest): Future[DisassociateUserSettingsResponse] = service.disassociateUserSettings(params).promise().toFuture
     @inline def getBrowserSettingsFuture(params: GetBrowserSettingsRequest): Future[GetBrowserSettingsResponse] = service.getBrowserSettings(params).promise().toFuture
     @inline def getIdentityProviderFuture(params: GetIdentityProviderRequest): Future[GetIdentityProviderResponse] = service.getIdentityProvider(params).promise().toFuture
@@ -75,6 +83,7 @@ package object workspacesweb {
     @inline def getPortalServiceProviderMetadataFuture(params: GetPortalServiceProviderMetadataRequest): Future[GetPortalServiceProviderMetadataResponse] = service.getPortalServiceProviderMetadata(params).promise().toFuture
     @inline def getTrustStoreCertificateFuture(params: GetTrustStoreCertificateRequest): Future[GetTrustStoreCertificateResponse] = service.getTrustStoreCertificate(params).promise().toFuture
     @inline def getTrustStoreFuture(params: GetTrustStoreRequest): Future[GetTrustStoreResponse] = service.getTrustStore(params).promise().toFuture
+    @inline def getUserAccessLoggingSettingsFuture(params: GetUserAccessLoggingSettingsRequest): Future[GetUserAccessLoggingSettingsResponse] = service.getUserAccessLoggingSettings(params).promise().toFuture
     @inline def getUserSettingsFuture(params: GetUserSettingsRequest): Future[GetUserSettingsResponse] = service.getUserSettings(params).promise().toFuture
     @inline def listBrowserSettingsFuture(params: ListBrowserSettingsRequest): Future[ListBrowserSettingsResponse] = service.listBrowserSettings(params).promise().toFuture
     @inline def listIdentityProvidersFuture(params: ListIdentityProvidersRequest): Future[ListIdentityProvidersResponse] = service.listIdentityProviders(params).promise().toFuture
@@ -83,6 +92,7 @@ package object workspacesweb {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTrustStoreCertificatesFuture(params: ListTrustStoreCertificatesRequest): Future[ListTrustStoreCertificatesResponse] = service.listTrustStoreCertificates(params).promise().toFuture
     @inline def listTrustStoresFuture(params: ListTrustStoresRequest): Future[ListTrustStoresResponse] = service.listTrustStores(params).promise().toFuture
+    @inline def listUserAccessLoggingSettingsFuture(params: ListUserAccessLoggingSettingsRequest): Future[ListUserAccessLoggingSettingsResponse] = service.listUserAccessLoggingSettings(params).promise().toFuture
     @inline def listUserSettingsFuture(params: ListUserSettingsRequest): Future[ListUserSettingsResponse] = service.listUserSettings(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -91,6 +101,7 @@ package object workspacesweb {
     @inline def updateNetworkSettingsFuture(params: UpdateNetworkSettingsRequest): Future[UpdateNetworkSettingsResponse] = service.updateNetworkSettings(params).promise().toFuture
     @inline def updatePortalFuture(params: UpdatePortalRequest): Future[UpdatePortalResponse] = service.updatePortal(params).promise().toFuture
     @inline def updateTrustStoreFuture(params: UpdateTrustStoreRequest): Future[UpdateTrustStoreResponse] = service.updateTrustStore(params).promise().toFuture
+    @inline def updateUserAccessLoggingSettingsFuture(params: UpdateUserAccessLoggingSettingsRequest): Future[UpdateUserAccessLoggingSettingsResponse] = service.updateUserAccessLoggingSettings(params).promise().toFuture
     @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[UpdateUserSettingsResponse] = service.updateUserSettings(params).promise().toFuture
 
   }
@@ -103,22 +114,26 @@ package object workspacesweb {
     def associateBrowserSettings(params: AssociateBrowserSettingsRequest): Request[AssociateBrowserSettingsResponse] = js.native
     def associateNetworkSettings(params: AssociateNetworkSettingsRequest): Request[AssociateNetworkSettingsResponse] = js.native
     def associateTrustStore(params: AssociateTrustStoreRequest): Request[AssociateTrustStoreResponse] = js.native
+    def associateUserAccessLoggingSettings(params: AssociateUserAccessLoggingSettingsRequest): Request[AssociateUserAccessLoggingSettingsResponse] = js.native
     def associateUserSettings(params: AssociateUserSettingsRequest): Request[AssociateUserSettingsResponse] = js.native
     def createBrowserSettings(params: CreateBrowserSettingsRequest): Request[CreateBrowserSettingsResponse] = js.native
     def createIdentityProvider(params: CreateIdentityProviderRequest): Request[CreateIdentityProviderResponse] = js.native
     def createNetworkSettings(params: CreateNetworkSettingsRequest): Request[CreateNetworkSettingsResponse] = js.native
     def createPortal(params: CreatePortalRequest): Request[CreatePortalResponse] = js.native
     def createTrustStore(params: CreateTrustStoreRequest): Request[CreateTrustStoreResponse] = js.native
+    def createUserAccessLoggingSettings(params: CreateUserAccessLoggingSettingsRequest): Request[CreateUserAccessLoggingSettingsResponse] = js.native
     def createUserSettings(params: CreateUserSettingsRequest): Request[CreateUserSettingsResponse] = js.native
     def deleteBrowserSettings(params: DeleteBrowserSettingsRequest): Request[DeleteBrowserSettingsResponse] = js.native
     def deleteIdentityProvider(params: DeleteIdentityProviderRequest): Request[DeleteIdentityProviderResponse] = js.native
     def deleteNetworkSettings(params: DeleteNetworkSettingsRequest): Request[DeleteNetworkSettingsResponse] = js.native
     def deletePortal(params: DeletePortalRequest): Request[DeletePortalResponse] = js.native
     def deleteTrustStore(params: DeleteTrustStoreRequest): Request[DeleteTrustStoreResponse] = js.native
+    def deleteUserAccessLoggingSettings(params: DeleteUserAccessLoggingSettingsRequest): Request[DeleteUserAccessLoggingSettingsResponse] = js.native
     def deleteUserSettings(params: DeleteUserSettingsRequest): Request[DeleteUserSettingsResponse] = js.native
     def disassociateBrowserSettings(params: DisassociateBrowserSettingsRequest): Request[DisassociateBrowserSettingsResponse] = js.native
     def disassociateNetworkSettings(params: DisassociateNetworkSettingsRequest): Request[DisassociateNetworkSettingsResponse] = js.native
     def disassociateTrustStore(params: DisassociateTrustStoreRequest): Request[DisassociateTrustStoreResponse] = js.native
+    def disassociateUserAccessLoggingSettings(params: DisassociateUserAccessLoggingSettingsRequest): Request[DisassociateUserAccessLoggingSettingsResponse] = js.native
     def disassociateUserSettings(params: DisassociateUserSettingsRequest): Request[DisassociateUserSettingsResponse] = js.native
     def getBrowserSettings(params: GetBrowserSettingsRequest): Request[GetBrowserSettingsResponse] = js.native
     def getIdentityProvider(params: GetIdentityProviderRequest): Request[GetIdentityProviderResponse] = js.native
@@ -127,6 +142,7 @@ package object workspacesweb {
     def getPortalServiceProviderMetadata(params: GetPortalServiceProviderMetadataRequest): Request[GetPortalServiceProviderMetadataResponse] = js.native
     def getTrustStore(params: GetTrustStoreRequest): Request[GetTrustStoreResponse] = js.native
     def getTrustStoreCertificate(params: GetTrustStoreCertificateRequest): Request[GetTrustStoreCertificateResponse] = js.native
+    def getUserAccessLoggingSettings(params: GetUserAccessLoggingSettingsRequest): Request[GetUserAccessLoggingSettingsResponse] = js.native
     def getUserSettings(params: GetUserSettingsRequest): Request[GetUserSettingsResponse] = js.native
     def listBrowserSettings(params: ListBrowserSettingsRequest): Request[ListBrowserSettingsResponse] = js.native
     def listIdentityProviders(params: ListIdentityProvidersRequest): Request[ListIdentityProvidersResponse] = js.native
@@ -135,6 +151,7 @@ package object workspacesweb {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTrustStoreCertificates(params: ListTrustStoreCertificatesRequest): Request[ListTrustStoreCertificatesResponse] = js.native
     def listTrustStores(params: ListTrustStoresRequest): Request[ListTrustStoresResponse] = js.native
+    def listUserAccessLoggingSettings(params: ListUserAccessLoggingSettingsRequest): Request[ListUserAccessLoggingSettingsResponse] = js.native
     def listUserSettings(params: ListUserSettingsRequest): Request[ListUserSettingsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -143,6 +160,7 @@ package object workspacesweb {
     def updateNetworkSettings(params: UpdateNetworkSettingsRequest): Request[UpdateNetworkSettingsResponse] = js.native
     def updatePortal(params: UpdatePortalRequest): Request[UpdatePortalResponse] = js.native
     def updateTrustStore(params: UpdateTrustStoreRequest): Request[UpdateTrustStoreResponse] = js.native
+    def updateUserAccessLoggingSettings(params: UpdateUserAccessLoggingSettingsRequest): Request[UpdateUserAccessLoggingSettingsResponse] = js.native
     def updateUserSettings(params: UpdateUserSettingsRequest): Request[UpdateUserSettingsResponse] = js.native
   }
   object WorkSpacesWeb {
@@ -268,6 +286,46 @@ package object workspacesweb {
         "trustStoreArn" -> trustStoreArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssociateTrustStoreResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateUserAccessLoggingSettingsRequest extends js.Object {
+    var portalArn: ARN
+    var userAccessLoggingSettingsArn: ARN
+  }
+
+  object AssociateUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        portalArn: ARN,
+        userAccessLoggingSettingsArn: ARN
+    ): AssociateUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "portalArn" -> portalArn.asInstanceOf[js.Any],
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateUserAccessLoggingSettingsResponse extends js.Object {
+    var portalArn: ARN
+    var userAccessLoggingSettingsArn: ARN
+  }
+
+  object AssociateUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(
+        portalArn: ARN,
+        userAccessLoggingSettingsArn: ARN
+    ): AssociateUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal(
+        "portalArn" -> portalArn.asInstanceOf[js.Any],
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateUserAccessLoggingSettingsResponse]
     }
   }
 
@@ -649,6 +707,47 @@ package object workspacesweb {
   }
 
   @js.native
+  trait CreateUserAccessLoggingSettingsRequest extends js.Object {
+    var kinesisStreamArn: KinesisStreamArn
+    var clientToken: js.UndefOr[ClientToken]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        kinesisStreamArn: KinesisStreamArn,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "kinesisStreamArn" -> kinesisStreamArn.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUserAccessLoggingSettingsResponse extends js.Object {
+    var userAccessLoggingSettingsArn: ARN
+  }
+
+  object CreateUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(
+        userAccessLoggingSettingsArn: ARN
+    ): CreateUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateUserAccessLoggingSettingsResponse]
+    }
+  }
+
+  @js.native
   trait CreateUserSettingsRequest extends js.Object {
     var copyAllowed: EnabledType
     var downloadAllowed: EnabledType
@@ -656,6 +755,8 @@ package object workspacesweb {
     var printAllowed: EnabledType
     var uploadAllowed: EnabledType
     var clientToken: js.UndefOr[ClientToken]
+    var disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes]
+    var idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes]
     var tags: js.UndefOr[TagList]
   }
 
@@ -668,6 +769,8 @@ package object workspacesweb {
         printAllowed: EnabledType,
         uploadAllowed: EnabledType,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes] = js.undefined,
+        idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateUserSettingsRequest = {
       val __obj = js.Dynamic.literal(
@@ -679,6 +782,8 @@ package object workspacesweb {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      disconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("disconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      idleDisconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("idleDisconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserSettingsRequest]
     }
@@ -842,6 +947,34 @@ package object workspacesweb {
   }
 
   @js.native
+  trait DeleteUserAccessLoggingSettingsRequest extends js.Object {
+    var userAccessLoggingSettingsArn: ARN
+  }
+
+  object DeleteUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        userAccessLoggingSettingsArn: ARN
+    ): DeleteUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteUserAccessLoggingSettingsResponse extends js.Object
+
+  object DeleteUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(): DeleteUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteUserAccessLoggingSettingsResponse]
+    }
+  }
+
+  @js.native
   trait DeleteUserSettingsRequest extends js.Object {
     var userSettingsArn: ARN
   }
@@ -950,6 +1083,34 @@ package object workspacesweb {
     def apply(): DisassociateTrustStoreResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateTrustStoreResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateUserAccessLoggingSettingsRequest extends js.Object {
+    var portalArn: ARN
+  }
+
+  object DisassociateUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        portalArn: ARN
+    ): DisassociateUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "portalArn" -> portalArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateUserAccessLoggingSettingsResponse extends js.Object
+
+  object DisassociateUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(): DisassociateUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateUserAccessLoggingSettingsResponse]
     }
   }
 
@@ -1220,6 +1381,39 @@ package object workspacesweb {
       val __obj = js.Dynamic.literal()
       trustStore.foreach(__v => __obj.updateDynamic("trustStore")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTrustStoreResponse]
+    }
+  }
+
+  @js.native
+  trait GetUserAccessLoggingSettingsRequest extends js.Object {
+    var userAccessLoggingSettingsArn: ARN
+  }
+
+  object GetUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        userAccessLoggingSettingsArn: ARN
+    ): GetUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait GetUserAccessLoggingSettingsResponse extends js.Object {
+    var userAccessLoggingSettings: js.UndefOr[UserAccessLoggingSettings]
+  }
+
+  object GetUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(
+        userAccessLoggingSettings: js.UndefOr[UserAccessLoggingSettings] = js.undefined
+    ): GetUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      userAccessLoggingSettings.foreach(__v => __obj.updateDynamic("userAccessLoggingSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserAccessLoggingSettingsResponse]
     }
   }
 
@@ -1584,6 +1778,44 @@ package object workspacesweb {
   }
 
   @js.native
+  trait ListUserAccessLoggingSettingsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait ListUserAccessLoggingSettingsResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var userAccessLoggingSettings: js.UndefOr[UserAccessLoggingSettingsList]
+  }
+
+  object ListUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        userAccessLoggingSettings: js.UndefOr[UserAccessLoggingSettingsList] = js.undefined
+    ): ListUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      userAccessLoggingSettings.foreach(__v => __obj.updateDynamic("userAccessLoggingSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUserAccessLoggingSettingsResponse]
+    }
+  }
+
+  @js.native
   trait ListUserSettingsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[PaginationToken]
@@ -1689,6 +1921,7 @@ package object workspacesweb {
     var rendererType: js.UndefOr[RendererType]
     var statusReason: js.UndefOr[StatusReason]
     var trustStoreArn: js.UndefOr[ARN]
+    var userAccessLoggingSettingsArn: js.UndefOr[ARN]
     var userSettingsArn: js.UndefOr[ARN]
   }
 
@@ -1706,6 +1939,7 @@ package object workspacesweb {
         rendererType: js.UndefOr[RendererType] = js.undefined,
         statusReason: js.UndefOr[StatusReason] = js.undefined,
         trustStoreArn: js.UndefOr[ARN] = js.undefined,
+        userAccessLoggingSettingsArn: js.UndefOr[ARN] = js.undefined,
         userSettingsArn: js.UndefOr[ARN] = js.undefined
     ): Portal = {
       val __obj = js.Dynamic.literal()
@@ -1720,6 +1954,7 @@ package object workspacesweb {
       rendererType.foreach(__v => __obj.updateDynamic("rendererType")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       trustStoreArn.foreach(__v => __obj.updateDynamic("trustStoreArn")(__v.asInstanceOf[js.Any]))
+      userAccessLoggingSettingsArn.foreach(__v => __obj.updateDynamic("userAccessLoggingSettingsArn")(__v.asInstanceOf[js.Any]))
       userSettingsArn.foreach(__v => __obj.updateDynamic("userSettingsArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Portal]
     }
@@ -1739,6 +1974,7 @@ package object workspacesweb {
     var portalStatus: js.UndefOr[PortalStatus]
     var rendererType: js.UndefOr[RendererType]
     var trustStoreArn: js.UndefOr[ARN]
+    var userAccessLoggingSettingsArn: js.UndefOr[ARN]
     var userSettingsArn: js.UndefOr[ARN]
   }
 
@@ -1755,6 +1991,7 @@ package object workspacesweb {
         portalStatus: js.UndefOr[PortalStatus] = js.undefined,
         rendererType: js.UndefOr[RendererType] = js.undefined,
         trustStoreArn: js.UndefOr[ARN] = js.undefined,
+        userAccessLoggingSettingsArn: js.UndefOr[ARN] = js.undefined,
         userSettingsArn: js.UndefOr[ARN] = js.undefined
     ): PortalSummary = {
       val __obj = js.Dynamic.literal()
@@ -1768,6 +2005,7 @@ package object workspacesweb {
       portalStatus.foreach(__v => __obj.updateDynamic("portalStatus")(__v.asInstanceOf[js.Any]))
       rendererType.foreach(__v => __obj.updateDynamic("rendererType")(__v.asInstanceOf[js.Any]))
       trustStoreArn.foreach(__v => __obj.updateDynamic("trustStoreArn")(__v.asInstanceOf[js.Any]))
+      userAccessLoggingSettingsArn.foreach(__v => __obj.updateDynamic("userAccessLoggingSettingsArn")(__v.asInstanceOf[js.Any]))
       userSettingsArn.foreach(__v => __obj.updateDynamic("userSettingsArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortalSummary]
     }
@@ -2117,11 +2355,54 @@ package object workspacesweb {
   }
 
   @js.native
+  trait UpdateUserAccessLoggingSettingsRequest extends js.Object {
+    var userAccessLoggingSettingsArn: ARN
+    var clientToken: js.UndefOr[ClientToken]
+    var kinesisStreamArn: js.UndefOr[KinesisStreamArn]
+  }
+
+  object UpdateUserAccessLoggingSettingsRequest {
+    @inline
+    def apply(
+        userAccessLoggingSettingsArn: ARN,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        kinesisStreamArn: js.UndefOr[KinesisStreamArn] = js.undefined
+    ): UpdateUserAccessLoggingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      kinesisStreamArn.foreach(__v => __obj.updateDynamic("kinesisStreamArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserAccessLoggingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateUserAccessLoggingSettingsResponse extends js.Object {
+    var userAccessLoggingSettings: UserAccessLoggingSettings
+  }
+
+  object UpdateUserAccessLoggingSettingsResponse {
+    @inline
+    def apply(
+        userAccessLoggingSettings: UserAccessLoggingSettings
+    ): UpdateUserAccessLoggingSettingsResponse = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettings" -> userAccessLoggingSettings.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateUserAccessLoggingSettingsResponse]
+    }
+  }
+
+  @js.native
   trait UpdateUserSettingsRequest extends js.Object {
     var userSettingsArn: ARN
     var clientToken: js.UndefOr[ClientToken]
     var copyAllowed: js.UndefOr[EnabledType]
+    var disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes]
     var downloadAllowed: js.UndefOr[EnabledType]
+    var idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes]
     var pasteAllowed: js.UndefOr[EnabledType]
     var printAllowed: js.UndefOr[EnabledType]
     var uploadAllowed: js.UndefOr[EnabledType]
@@ -2133,7 +2414,9 @@ package object workspacesweb {
         userSettingsArn: ARN,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         copyAllowed: js.UndefOr[EnabledType] = js.undefined,
+        disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes] = js.undefined,
         downloadAllowed: js.UndefOr[EnabledType] = js.undefined,
+        idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes] = js.undefined,
         pasteAllowed: js.UndefOr[EnabledType] = js.undefined,
         printAllowed: js.UndefOr[EnabledType] = js.undefined,
         uploadAllowed: js.UndefOr[EnabledType] = js.undefined
@@ -2144,7 +2427,9 @@ package object workspacesweb {
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       copyAllowed.foreach(__v => __obj.updateDynamic("copyAllowed")(__v.asInstanceOf[js.Any]))
+      disconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("disconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       downloadAllowed.foreach(__v => __obj.updateDynamic("downloadAllowed")(__v.asInstanceOf[js.Any]))
+      idleDisconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("idleDisconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       pasteAllowed.foreach(__v => __obj.updateDynamic("pasteAllowed")(__v.asInstanceOf[js.Any]))
       printAllowed.foreach(__v => __obj.updateDynamic("printAllowed")(__v.asInstanceOf[js.Any]))
       uploadAllowed.foreach(__v => __obj.updateDynamic("uploadAllowed")(__v.asInstanceOf[js.Any]))
@@ -2169,6 +2454,53 @@ package object workspacesweb {
     }
   }
 
+  /** A user access logging settings resource that can be associated with a web portal.
+    */
+  @js.native
+  trait UserAccessLoggingSettings extends js.Object {
+    var userAccessLoggingSettingsArn: ARN
+    var associatedPortalArns: js.UndefOr[ArnList]
+    var kinesisStreamArn: js.UndefOr[KinesisStreamArn]
+  }
+
+  object UserAccessLoggingSettings {
+    @inline
+    def apply(
+        userAccessLoggingSettingsArn: ARN,
+        associatedPortalArns: js.UndefOr[ArnList] = js.undefined,
+        kinesisStreamArn: js.UndefOr[KinesisStreamArn] = js.undefined
+    ): UserAccessLoggingSettings = {
+      val __obj = js.Dynamic.literal(
+        "userAccessLoggingSettingsArn" -> userAccessLoggingSettingsArn.asInstanceOf[js.Any]
+      )
+
+      associatedPortalArns.foreach(__v => __obj.updateDynamic("associatedPortalArns")(__v.asInstanceOf[js.Any]))
+      kinesisStreamArn.foreach(__v => __obj.updateDynamic("kinesisStreamArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserAccessLoggingSettings]
+    }
+  }
+
+  /** The summary of user access logging settings.
+    */
+  @js.native
+  trait UserAccessLoggingSettingsSummary extends js.Object {
+    var kinesisStreamArn: js.UndefOr[KinesisStreamArn]
+    var userAccessLoggingSettingsArn: js.UndefOr[ARN]
+  }
+
+  object UserAccessLoggingSettingsSummary {
+    @inline
+    def apply(
+        kinesisStreamArn: js.UndefOr[KinesisStreamArn] = js.undefined,
+        userAccessLoggingSettingsArn: js.UndefOr[ARN] = js.undefined
+    ): UserAccessLoggingSettingsSummary = {
+      val __obj = js.Dynamic.literal()
+      kinesisStreamArn.foreach(__v => __obj.updateDynamic("kinesisStreamArn")(__v.asInstanceOf[js.Any]))
+      userAccessLoggingSettingsArn.foreach(__v => __obj.updateDynamic("userAccessLoggingSettingsArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserAccessLoggingSettingsSummary]
+    }
+  }
+
   /** A user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices.
     */
   @js.native
@@ -2176,7 +2508,9 @@ package object workspacesweb {
     var userSettingsArn: ARN
     var associatedPortalArns: js.UndefOr[ArnList]
     var copyAllowed: js.UndefOr[EnabledType]
+    var disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes]
     var downloadAllowed: js.UndefOr[EnabledType]
+    var idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes]
     var pasteAllowed: js.UndefOr[EnabledType]
     var printAllowed: js.UndefOr[EnabledType]
     var uploadAllowed: js.UndefOr[EnabledType]
@@ -2188,7 +2522,9 @@ package object workspacesweb {
         userSettingsArn: ARN,
         associatedPortalArns: js.UndefOr[ArnList] = js.undefined,
         copyAllowed: js.UndefOr[EnabledType] = js.undefined,
+        disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes] = js.undefined,
         downloadAllowed: js.UndefOr[EnabledType] = js.undefined,
+        idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes] = js.undefined,
         pasteAllowed: js.UndefOr[EnabledType] = js.undefined,
         printAllowed: js.UndefOr[EnabledType] = js.undefined,
         uploadAllowed: js.UndefOr[EnabledType] = js.undefined
@@ -2199,7 +2535,9 @@ package object workspacesweb {
 
       associatedPortalArns.foreach(__v => __obj.updateDynamic("associatedPortalArns")(__v.asInstanceOf[js.Any]))
       copyAllowed.foreach(__v => __obj.updateDynamic("copyAllowed")(__v.asInstanceOf[js.Any]))
+      disconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("disconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       downloadAllowed.foreach(__v => __obj.updateDynamic("downloadAllowed")(__v.asInstanceOf[js.Any]))
+      idleDisconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("idleDisconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       pasteAllowed.foreach(__v => __obj.updateDynamic("pasteAllowed")(__v.asInstanceOf[js.Any]))
       printAllowed.foreach(__v => __obj.updateDynamic("printAllowed")(__v.asInstanceOf[js.Any]))
       uploadAllowed.foreach(__v => __obj.updateDynamic("uploadAllowed")(__v.asInstanceOf[js.Any]))
@@ -2212,7 +2550,9 @@ package object workspacesweb {
   @js.native
   trait UserSettingsSummary extends js.Object {
     var copyAllowed: js.UndefOr[EnabledType]
+    var disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes]
     var downloadAllowed: js.UndefOr[EnabledType]
+    var idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes]
     var pasteAllowed: js.UndefOr[EnabledType]
     var printAllowed: js.UndefOr[EnabledType]
     var uploadAllowed: js.UndefOr[EnabledType]
@@ -2223,7 +2563,9 @@ package object workspacesweb {
     @inline
     def apply(
         copyAllowed: js.UndefOr[EnabledType] = js.undefined,
+        disconnectTimeoutInMinutes: js.UndefOr[DisconnectTimeoutInMinutes] = js.undefined,
         downloadAllowed: js.UndefOr[EnabledType] = js.undefined,
+        idleDisconnectTimeoutInMinutes: js.UndefOr[IdleDisconnectTimeoutInMinutes] = js.undefined,
         pasteAllowed: js.UndefOr[EnabledType] = js.undefined,
         printAllowed: js.UndefOr[EnabledType] = js.undefined,
         uploadAllowed: js.UndefOr[EnabledType] = js.undefined,
@@ -2231,7 +2573,9 @@ package object workspacesweb {
     ): UserSettingsSummary = {
       val __obj = js.Dynamic.literal()
       copyAllowed.foreach(__v => __obj.updateDynamic("copyAllowed")(__v.asInstanceOf[js.Any]))
+      disconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("disconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       downloadAllowed.foreach(__v => __obj.updateDynamic("downloadAllowed")(__v.asInstanceOf[js.Any]))
+      idleDisconnectTimeoutInMinutes.foreach(__v => __obj.updateDynamic("idleDisconnectTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       pasteAllowed.foreach(__v => __obj.updateDynamic("pasteAllowed")(__v.asInstanceOf[js.Any]))
       printAllowed.foreach(__v => __obj.updateDynamic("printAllowed")(__v.asInstanceOf[js.Any]))
       uploadAllowed.foreach(__v => __obj.updateDynamic("uploadAllowed")(__v.asInstanceOf[js.Any]))

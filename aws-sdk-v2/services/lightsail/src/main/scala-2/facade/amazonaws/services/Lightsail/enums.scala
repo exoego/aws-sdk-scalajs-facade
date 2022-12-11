@@ -21,6 +21,17 @@ object AccessType {
 }
 
 @js.native
+sealed trait AccountLevelBpaSyncStatus extends js.Any
+object AccountLevelBpaSyncStatus {
+  val InSync = "InSync".asInstanceOf[AccountLevelBpaSyncStatus]
+  val Failed = "Failed".asInstanceOf[AccountLevelBpaSyncStatus]
+  val NeverSynced = "NeverSynced".asInstanceOf[AccountLevelBpaSyncStatus]
+  val Defaulted = "Defaulted".asInstanceOf[AccountLevelBpaSyncStatus]
+
+  @inline def values: js.Array[AccountLevelBpaSyncStatus] = js.Array(InSync, Failed, NeverSynced, Defaulted)
+}
+
+@js.native
 sealed trait AddOnType extends js.Any
 object AddOnType {
   val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
@@ -50,6 +61,17 @@ object AutoSnapshotStatus {
 }
 
 @js.native
+sealed trait BPAStatusMessage extends js.Any
+object BPAStatusMessage {
+  val DEFAULTED_FOR_SLR_MISSING = "DEFAULTED_FOR_SLR_MISSING".asInstanceOf[BPAStatusMessage]
+  val SYNC_ON_HOLD = "SYNC_ON_HOLD".asInstanceOf[BPAStatusMessage]
+  val DEFAULTED_FOR_SLR_MISSING_ON_HOLD = "DEFAULTED_FOR_SLR_MISSING_ON_HOLD".asInstanceOf[BPAStatusMessage]
+  val Unknown = "Unknown".asInstanceOf[BPAStatusMessage]
+
+  @inline def values: js.Array[BPAStatusMessage] = js.Array(DEFAULTED_FOR_SLR_MISSING, SYNC_ON_HOLD, DEFAULTED_FOR_SLR_MISSING_ON_HOLD, Unknown)
+}
+
+@js.native
 sealed trait BehaviorEnum extends js.Any
 object BehaviorEnum {
   val `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
@@ -74,6 +96,16 @@ object BucketMetricName {
   val NumberOfObjects = "NumberOfObjects".asInstanceOf[BucketMetricName]
 
   @inline def values: js.Array[BucketMetricName] = js.Array(BucketSizeBytes, NumberOfObjects)
+}
+
+@js.native
+sealed trait CertificateDomainValidationStatus extends js.Any
+object CertificateDomainValidationStatus {
+  val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[CertificateDomainValidationStatus]
+  val FAILED = "FAILED".asInstanceOf[CertificateDomainValidationStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[CertificateDomainValidationStatus]
+
+  @inline def values: js.Array[CertificateDomainValidationStatus] = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
 }
 
 @js.native
@@ -257,6 +289,16 @@ object DistributionMetricName {
 }
 
 @js.native
+sealed trait DnsRecordCreationStateCode extends js.Any
+object DnsRecordCreationStateCode {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[DnsRecordCreationStateCode]
+  val STARTED = "STARTED".asInstanceOf[DnsRecordCreationStateCode]
+  val FAILED = "FAILED".asInstanceOf[DnsRecordCreationStateCode]
+
+  @inline def values: js.Array[DnsRecordCreationStateCode] = js.Array(SUCCEEDED, STARTED, FAILED)
+}
+
+@js.native
 sealed trait ExportSnapshotRecordSourceType extends js.Any
 object ExportSnapshotRecordSourceType {
   val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
@@ -314,6 +356,33 @@ object HeaderEnum {
 }
 
 @js.native
+sealed trait HttpEndpoint extends js.Any
+object HttpEndpoint {
+  val disabled = "disabled".asInstanceOf[HttpEndpoint]
+  val enabled = "enabled".asInstanceOf[HttpEndpoint]
+
+  @inline def values: js.Array[HttpEndpoint] = js.Array(disabled, enabled)
+}
+
+@js.native
+sealed trait HttpProtocolIpv6 extends js.Any
+object HttpProtocolIpv6 {
+  val disabled = "disabled".asInstanceOf[HttpProtocolIpv6]
+  val enabled = "enabled".asInstanceOf[HttpProtocolIpv6]
+
+  @inline def values: js.Array[HttpProtocolIpv6] = js.Array(disabled, enabled)
+}
+
+@js.native
+sealed trait HttpTokens extends js.Any
+object HttpTokens {
+  val optional = "optional".asInstanceOf[HttpTokens]
+  val required = "required".asInstanceOf[HttpTokens]
+
+  @inline def values: js.Array[HttpTokens] = js.Array(optional, required)
+}
+
+@js.native
 sealed trait InstanceAccessProtocol extends js.Any
 object InstanceAccessProtocol {
   val ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
@@ -366,6 +435,15 @@ object InstanceHealthState {
 }
 
 @js.native
+sealed trait InstanceMetadataState extends js.Any
+object InstanceMetadataState {
+  val pending = "pending".asInstanceOf[InstanceMetadataState]
+  val applied = "applied".asInstanceOf[InstanceMetadataState]
+
+  @inline def values: js.Array[InstanceMetadataState] = js.Array(pending, applied)
+}
+
+@js.native
 sealed trait InstanceMetricName extends js.Any
 object InstanceMetricName {
   val CPUUtilization = "CPUUtilization".asInstanceOf[InstanceMetricName]
@@ -376,8 +454,19 @@ object InstanceMetricName {
   val StatusCheckFailed_System = "StatusCheckFailed_System".asInstanceOf[InstanceMetricName]
   val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
   val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
+  val MetadataNoToken = "MetadataNoToken".asInstanceOf[InstanceMetricName]
 
-  @inline def values: js.Array[InstanceMetricName] = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
+  @inline def values: js.Array[InstanceMetricName] = js.Array(
+    CPUUtilization,
+    NetworkIn,
+    NetworkOut,
+    StatusCheckFailed,
+    StatusCheckFailed_Instance,
+    StatusCheckFailed_System,
+    BurstCapacityTime,
+    BurstCapacityPercentage,
+    MetadataNoToken
+  )
 }
 
 @js.native
@@ -414,8 +503,10 @@ object LoadBalancerAttributeName {
   val HealthCheckPath = "HealthCheckPath".asInstanceOf[LoadBalancerAttributeName]
   val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
   val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
+  val HttpsRedirectionEnabled = "HttpsRedirectionEnabled".asInstanceOf[LoadBalancerAttributeName]
+  val TlsPolicyName = "TlsPolicyName".asInstanceOf[LoadBalancerAttributeName]
 
-  @inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
+  @inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds, HttpsRedirectionEnabled, TlsPolicyName)
 }
 
 @js.native
@@ -469,6 +560,16 @@ object LoadBalancerState {
   val unknown = "unknown".asInstanceOf[LoadBalancerState]
 
   @inline def values: js.Array[LoadBalancerState] = js.Array(active, provisioning, active_impaired, failed, unknown)
+}
+
+@js.native
+sealed trait LoadBalancerTlsCertificateDnsRecordCreationStateCode extends js.Any
+object LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[LoadBalancerTlsCertificateDnsRecordCreationStateCode]
+  val STARTED = "STARTED".asInstanceOf[LoadBalancerTlsCertificateDnsRecordCreationStateCode]
+  val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDnsRecordCreationStateCode]
+
+  @inline def values: js.Array[LoadBalancerTlsCertificateDnsRecordCreationStateCode] = js.Array(SUCCEEDED, STARTED, FAILED)
 }
 
 @js.native
@@ -680,6 +781,17 @@ object MetricUnit {
 }
 
 @js.native
+sealed trait NameServersUpdateStateCode extends js.Any
+object NameServersUpdateStateCode {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[NameServersUpdateStateCode]
+  val PENDING = "PENDING".asInstanceOf[NameServersUpdateStateCode]
+  val FAILED = "FAILED".asInstanceOf[NameServersUpdateStateCode]
+  val STARTED = "STARTED".asInstanceOf[NameServersUpdateStateCode]
+
+  @inline def values: js.Array[NameServersUpdateStateCode] = js.Array(SUCCEEDED, PENDING, FAILED, STARTED)
+}
+
+@js.native
 sealed trait NetworkProtocol extends js.Any
 object NetworkProtocol {
   val tcp = "tcp".asInstanceOf[NetworkProtocol]
@@ -784,6 +896,7 @@ object OperationType {
   val UpdateBucketBundle = "UpdateBucketBundle".asInstanceOf[OperationType]
   val UpdateBucket = "UpdateBucket".asInstanceOf[OperationType]
   val SetResourceAccessForBucket = "SetResourceAccessForBucket".asInstanceOf[OperationType]
+  val UpdateInstanceMetadataOptions = "UpdateInstanceMetadataOptions".asInstanceOf[OperationType]
 
   @inline def values: js.Array[OperationType] = js.Array(
     DeleteKnownHostKeys,
@@ -864,7 +977,8 @@ object OperationType {
     DeleteBucketAccessKey,
     UpdateBucketBundle,
     UpdateBucket,
-    SetResourceAccessForBucket
+    SetResourceAccessForBucket,
+    UpdateInstanceMetadataOptions
   )
 }
 
@@ -904,6 +1018,17 @@ object PortState {
   val closed = "closed".asInstanceOf[PortState]
 
   @inline def values: js.Array[PortState] = js.Array(open, closed)
+}
+
+@js.native
+sealed trait R53HostedZoneDeletionStateCode extends js.Any
+object R53HostedZoneDeletionStateCode {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[R53HostedZoneDeletionStateCode]
+  val PENDING = "PENDING".asInstanceOf[R53HostedZoneDeletionStateCode]
+  val FAILED = "FAILED".asInstanceOf[R53HostedZoneDeletionStateCode]
+  val STARTED = "STARTED".asInstanceOf[R53HostedZoneDeletionStateCode]
+
+  @inline def values: js.Array[R53HostedZoneDeletionStateCode] = js.Array(SUCCEEDED, PENDING, FAILED, STARTED)
 }
 
 @js.native

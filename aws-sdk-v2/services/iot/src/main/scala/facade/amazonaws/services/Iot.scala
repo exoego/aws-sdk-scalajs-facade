@@ -87,6 +87,7 @@ package object iot {
   type BillingGroupName = String
   type BillingGroupNameAndArnList = js.Array[GroupNameAndArn]
   type BooleanKey = Boolean
+  type BooleanWrapperObject = Boolean
   type BucketKeyValue = String
   type BucketName = String
   type Buckets = js.Array[Bucket]
@@ -116,6 +117,8 @@ package object iot {
   type ConnectivityTimestamp = Double
   type ConsecutiveDatapointsToAlarm = Int
   type ConsecutiveDatapointsToClear = Int
+  type ContentType = String
+  type CorrelationData = String
   type Count = Int
   type CreatedAtDate = js.Date
   type CreationDate = js.Date
@@ -224,6 +227,9 @@ package object iot {
   type IsDefaultVersion = Boolean
   type IsDisabled = Boolean
   type IsSuppressed = Boolean
+  type IssuerCertificateSerialNumber = String
+  type IssuerCertificateSubject = String
+  type IssuerId = String
   type JobArn = String
   type JobDescription = String
   type JobDocument = String
@@ -258,7 +264,9 @@ package object iot {
   type Maximum = Double
   type MaximumPerMinute = Int
   type Message = String
+  type MessageExpiry = String
   type MessageId = String
+  type MetricDatumList = js.Array[MetricDatum]
   type MetricName = String
   type MetricNames = js.Array[MetricName]
   type Minimum = Double
@@ -275,6 +283,7 @@ package object iot {
   type MqttClientId = String
   type MqttPassword = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type MqttUsername = String
+  type NamedShadowNamesFilter = js.Array[ShadowName]
   type NamespaceId = String
   type NextToken = String
   type NonCompliantChecksCount = Int
@@ -282,6 +291,7 @@ package object iot {
   type NullableBoolean = Boolean
   type Number = Double
   type NumberList = js.Array[Number]
+  type NumberOfRetries = Int
   type NumberOfThings = Int
   type OTAUpdateArn = String
   type OTAUpdateDescription = String
@@ -302,6 +312,7 @@ package object iot {
   type Parameters = js.Dictionary[Value]
   type PartitionKey = String
   type PayloadField = String
+  type PayloadFormatIndicator = String
   type PayloadVersion = String
   type Percent = Double
   type PercentList = js.Array[Percent]
@@ -368,6 +379,9 @@ package object iot {
   type ResourceArns = js.Dictionary[ResourceArn]
   type ResourceLogicalId = String
   type Resources = js.Array[Resource]
+  type ResponseTopic = String
+  type RetryAttempt = Int
+  type RetryCriteriaList = js.Array[RetryCriteria]
   type RoleAlias = String
   type RoleAliasArn = String
   type RoleAliases = js.Array[RoleAlias]
@@ -405,6 +419,7 @@ package object iot {
   type SetAsActive = Boolean
   type SetAsActiveFlag = Boolean
   type SetAsDefault = Boolean
+  type ShadowName = String
   type Signature = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type SignatureAlgorithm = String
   type SigningJobId = String
@@ -424,6 +439,7 @@ package object iot {
   type StreamName = String
   type StreamVersion = Int
   type StreamsSummary = js.Array[StreamSummary]
+  type StringDateTime = String
   type StringList = js.Array[stringValue]
   type StringMap = js.Dictionary[String]
   type SubnetId = String
@@ -498,6 +514,9 @@ package object iot {
   type UnsignedLong = Double
   type Url = String
   type UseBase64 = Boolean
+  type UserProperties = js.Array[UserProperty]
+  type UserPropertyKey = String
+  type UserPropertyValue = String
   type Valid = Boolean
   type ValidationErrors = js.Array[ValidationError]
   type Value = String
@@ -667,6 +686,7 @@ package object iot {
     @inline def listJobTemplatesFuture(params: ListJobTemplatesRequest): Future[ListJobTemplatesResponse] = service.listJobTemplates(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
     @inline def listManagedJobTemplatesFuture(params: ListManagedJobTemplatesRequest): Future[ListManagedJobTemplatesResponse] = service.listManagedJobTemplates(params).promise().toFuture
+    @inline def listMetricValuesFuture(params: ListMetricValuesRequest): Future[ListMetricValuesResponse] = service.listMetricValues(params).promise().toFuture
     @inline def listMitigationActionsFuture(params: ListMitigationActionsRequest): Future[ListMitigationActionsResponse] = service.listMitigationActions(params).promise().toFuture
     @inline def listOTAUpdatesFuture(params: ListOTAUpdatesRequest): Future[ListOTAUpdatesResponse] = service.listOTAUpdates(params).promise().toFuture
     @inline def listOutgoingCertificatesFuture(params: ListOutgoingCertificatesRequest): Future[ListOutgoingCertificatesResponse] = service.listOutgoingCertificates(params).promise().toFuture
@@ -675,6 +695,7 @@ package object iot {
     @inline def listPrincipalThingsFuture(params: ListPrincipalThingsRequest): Future[ListPrincipalThingsResponse] = service.listPrincipalThings(params).promise().toFuture
     @inline def listProvisioningTemplateVersionsFuture(params: ListProvisioningTemplateVersionsRequest): Future[ListProvisioningTemplateVersionsResponse] = service.listProvisioningTemplateVersions(params).promise().toFuture
     @inline def listProvisioningTemplatesFuture(params: ListProvisioningTemplatesRequest): Future[ListProvisioningTemplatesResponse] = service.listProvisioningTemplates(params).promise().toFuture
+    @inline def listRelatedResourcesForAuditFindingFuture(params: ListRelatedResourcesForAuditFindingRequest): Future[ListRelatedResourcesForAuditFindingResponse] = service.listRelatedResourcesForAuditFinding(params).promise().toFuture
     @inline def listRoleAliasesFuture(params: ListRoleAliasesRequest): Future[ListRoleAliasesResponse] = service.listRoleAliases(params).promise().toFuture
     @inline def listScheduledAuditsFuture(params: ListScheduledAuditsRequest): Future[ListScheduledAuditsResponse] = service.listScheduledAudits(params).promise().toFuture
     @inline def listSecurityProfilesForTargetFuture(params: ListSecurityProfilesForTargetRequest): Future[ListSecurityProfilesForTargetResponse] = service.listSecurityProfilesForTarget(params).promise().toFuture
@@ -911,6 +932,7 @@ package object iot {
     def listJobTemplates(params: ListJobTemplatesRequest): Request[ListJobTemplatesResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listManagedJobTemplates(params: ListManagedJobTemplatesRequest): Request[ListManagedJobTemplatesResponse] = js.native
+    def listMetricValues(params: ListMetricValuesRequest): Request[ListMetricValuesResponse] = js.native
     def listMitigationActions(params: ListMitigationActionsRequest): Request[ListMitigationActionsResponse] = js.native
     def listOTAUpdates(params: ListOTAUpdatesRequest): Request[ListOTAUpdatesResponse] = js.native
     def listOutgoingCertificates(params: ListOutgoingCertificatesRequest): Request[ListOutgoingCertificatesResponse] = js.native
@@ -919,6 +941,7 @@ package object iot {
     def listPrincipalThings(params: ListPrincipalThingsRequest): Request[ListPrincipalThingsResponse] = js.native
     def listProvisioningTemplateVersions(params: ListProvisioningTemplateVersionsRequest): Request[ListProvisioningTemplateVersionsResponse] = js.native
     def listProvisioningTemplates(params: ListProvisioningTemplatesRequest): Request[ListProvisioningTemplatesResponse] = js.native
+    def listRelatedResourcesForAuditFinding(params: ListRelatedResourcesForAuditFindingRequest): Request[ListRelatedResourcesForAuditFindingResponse] = js.native
     def listRoleAliases(params: ListRoleAliasesRequest): Request[ListRoleAliasesResponse] = js.native
     def listScheduledAudits(params: ListScheduledAuditsRequest): Request[ListScheduledAuditsResponse] = js.native
     def listSecurityProfiles(params: ListSecurityProfilesRequest): Request[ListSecurityProfilesResponse] = js.native
@@ -1085,6 +1108,7 @@ package object iot {
     var kafka: js.UndefOr[KafkaAction]
     var kinesis: js.UndefOr[KinesisAction]
     var lambda: js.UndefOr[LambdaAction]
+    var location: js.UndefOr[LocationAction]
     var openSearch: js.UndefOr[OpenSearchAction]
     var republish: js.UndefOr[RepublishAction]
     var s3: js.UndefOr[S3Action]
@@ -1112,6 +1136,7 @@ package object iot {
         kafka: js.UndefOr[KafkaAction] = js.undefined,
         kinesis: js.UndefOr[KinesisAction] = js.undefined,
         lambda: js.UndefOr[LambdaAction] = js.undefined,
+        location: js.UndefOr[LocationAction] = js.undefined,
         openSearch: js.UndefOr[OpenSearchAction] = js.undefined,
         republish: js.UndefOr[RepublishAction] = js.undefined,
         s3: js.UndefOr[S3Action] = js.undefined,
@@ -1136,6 +1161,7 @@ package object iot {
       kafka.foreach(__v => __obj.updateDynamic("kafka")(__v.asInstanceOf[js.Any]))
       kinesis.foreach(__v => __obj.updateDynamic("kinesis")(__v.asInstanceOf[js.Any]))
       lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       openSearch.foreach(__v => __obj.updateDynamic("openSearch")(__v.asInstanceOf[js.Any]))
       republish.foreach(__v => __obj.updateDynamic("republish")(__v.asInstanceOf[js.Any]))
       s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
@@ -1273,14 +1299,14 @@ package object iot {
   @js.native
   trait AddThingsToThingGroupParams extends js.Object {
     var thingGroupNames: ThingGroupNames
-    var overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups]
+    var overrideDynamicGroups: js.UndefOr[NullableBoolean]
   }
 
   object AddThingsToThingGroupParams {
     @inline
     def apply(
         thingGroupNames: ThingGroupNames,
-        overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined
+        overrideDynamicGroups: js.UndefOr[NullableBoolean] = js.undefined
     ): AddThingsToThingGroupParams = {
       val __obj = js.Dynamic.literal(
         "thingGroupNames" -> thingGroupNames.asInstanceOf[js.Any]
@@ -2380,6 +2406,7 @@ package object iot {
     var autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus]
     var certificateArn: js.UndefOr[CertificateArn]
     var certificateId: js.UndefOr[CertificateId]
+    var certificateMode: js.UndefOr[CertificateMode]
     var certificatePem: js.UndefOr[CertificatePem]
     var creationDate: js.UndefOr[DateType]
     var customerVersion: js.UndefOr[CustomerVersion]
@@ -2396,6 +2423,7 @@ package object iot {
         autoRegistrationStatus: js.UndefOr[AutoRegistrationStatus] = js.undefined,
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined,
+        certificateMode: js.UndefOr[CertificateMode] = js.undefined,
         certificatePem: js.UndefOr[CertificatePem] = js.undefined,
         creationDate: js.UndefOr[DateType] = js.undefined,
         customerVersion: js.UndefOr[CustomerVersion] = js.undefined,
@@ -2409,6 +2437,7 @@ package object iot {
       autoRegistrationStatus.foreach(__v => __obj.updateDynamic("autoRegistrationStatus")(__v.asInstanceOf[js.Any]))
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificateMode.foreach(__v => __obj.updateDynamic("certificateMode")(__v.asInstanceOf[js.Any]))
       certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       customerVersion.foreach(__v => __obj.updateDynamic("customerVersion")(__v.asInstanceOf[js.Any]))
@@ -3412,10 +3441,12 @@ package object iot {
     var document: js.UndefOr[JobDocument]
     var documentParameters: js.UndefOr[ParameterMap]
     var documentSource: js.UndefOr[JobDocumentSource]
+    var jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var jobTemplateArn: js.UndefOr[JobTemplateArn]
     var namespaceId: js.UndefOr[NamespaceId]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
+    var schedulingConfig: js.UndefOr[SchedulingConfig]
     var tags: js.UndefOr[TagList]
     var targetSelection: js.UndefOr[TargetSelection]
     var timeoutConfig: js.UndefOr[TimeoutConfig]
@@ -3431,10 +3462,12 @@ package object iot {
         document: js.UndefOr[JobDocument] = js.undefined,
         documentParameters: js.UndefOr[ParameterMap] = js.undefined,
         documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
+        jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig] = js.undefined,
         jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
         jobTemplateArn: js.UndefOr[JobTemplateArn] = js.undefined,
         namespaceId: js.UndefOr[NamespaceId] = js.undefined,
         presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
+        schedulingConfig: js.UndefOr[SchedulingConfig] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         targetSelection: js.UndefOr[TargetSelection] = js.undefined,
         timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
@@ -3449,10 +3482,12 @@ package object iot {
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       documentParameters.foreach(__v => __obj.updateDynamic("documentParameters")(__v.asInstanceOf[js.Any]))
       documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRetryConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRetryConfig")(__v.asInstanceOf[js.Any]))
       jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       jobTemplateArn.foreach(__v => __obj.updateDynamic("jobTemplateArn")(__v.asInstanceOf[js.Any]))
       namespaceId.foreach(__v => __obj.updateDynamic("namespaceId")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
+      schedulingConfig.foreach(__v => __obj.updateDynamic("schedulingConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
       timeoutConfig.foreach(__v => __obj.updateDynamic("timeoutConfig")(__v.asInstanceOf[js.Any]))
@@ -3490,6 +3525,7 @@ package object iot {
     var document: js.UndefOr[JobDocument]
     var documentSource: js.UndefOr[JobDocumentSource]
     var jobArn: js.UndefOr[JobArn]
+    var jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
     var tags: js.UndefOr[TagList]
@@ -3505,6 +3541,7 @@ package object iot {
         document: js.UndefOr[JobDocument] = js.undefined,
         documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig] = js.undefined,
         jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
         presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
@@ -3519,6 +3556,7 @@ package object iot {
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRetryConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRetryConfig")(__v.asInstanceOf[js.Any]))
       jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -3876,6 +3914,7 @@ package object iot {
     var enabled: js.UndefOr[Enabled]
     var preProvisioningHook: js.UndefOr[ProvisioningHook]
     var tags: js.UndefOr[TagList]
+    var `type`: js.UndefOr[TemplateType]
   }
 
   object CreateProvisioningTemplateRequest {
@@ -3887,7 +3926,8 @@ package object iot {
         description: js.UndefOr[TemplateDescription] = js.undefined,
         enabled: js.UndefOr[Enabled] = js.undefined,
         preProvisioningHook: js.UndefOr[ProvisioningHook] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
+        tags: js.UndefOr[TagList] = js.undefined,
+        `type`: js.UndefOr[TemplateType] = js.undefined
     ): CreateProvisioningTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "provisioningRoleArn" -> provisioningRoleArn.asInstanceOf[js.Any],
@@ -3899,6 +3939,7 @@ package object iot {
       enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
       preProvisioningHook.foreach(__v => __obj.updateDynamic("preProvisioningHook")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningTemplateRequest]
     }
   }
@@ -6188,6 +6229,7 @@ package object iot {
     var description: js.UndefOr[JobDescription]
     var document: js.UndefOr[JobDocument]
     var documentSource: js.UndefOr[JobDocumentSource]
+    var jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var jobTemplateArn: js.UndefOr[JobTemplateArn]
     var jobTemplateId: js.UndefOr[JobTemplateId]
@@ -6203,6 +6245,7 @@ package object iot {
         description: js.UndefOr[JobDescription] = js.undefined,
         document: js.UndefOr[JobDocument] = js.undefined,
         documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
+        jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig] = js.undefined,
         jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
         jobTemplateArn: js.UndefOr[JobTemplateArn] = js.undefined,
         jobTemplateId: js.UndefOr[JobTemplateId] = js.undefined,
@@ -6215,6 +6258,7 @@ package object iot {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRetryConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRetryConfig")(__v.asInstanceOf[js.Any]))
       jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       jobTemplateArn.foreach(__v => __obj.updateDynamic("jobTemplateArn")(__v.asInstanceOf[js.Any]))
       jobTemplateId.foreach(__v => __obj.updateDynamic("jobTemplateId")(__v.asInstanceOf[js.Any]))
@@ -6362,6 +6406,7 @@ package object iot {
     var templateArn: js.UndefOr[TemplateArn]
     var templateBody: js.UndefOr[TemplateBody]
     var templateName: js.UndefOr[TemplateName]
+    var `type`: js.UndefOr[TemplateType]
   }
 
   object DescribeProvisioningTemplateResponse {
@@ -6376,7 +6421,8 @@ package object iot {
         provisioningRoleArn: js.UndefOr[RoleArn] = js.undefined,
         templateArn: js.UndefOr[TemplateArn] = js.undefined,
         templateBody: js.UndefOr[TemplateBody] = js.undefined,
-        templateName: js.UndefOr[TemplateName] = js.undefined
+        templateName: js.UndefOr[TemplateName] = js.undefined,
+        `type`: js.UndefOr[TemplateType] = js.undefined
     ): DescribeProvisioningTemplateResponse = {
       val __obj = js.Dynamic.literal()
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
@@ -6389,6 +6435,7 @@ package object iot {
       templateArn.foreach(__v => __obj.updateDynamic("templateArn")(__v.asInstanceOf[js.Any]))
       templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
       templateName.foreach(__v => __obj.updateDynamic("templateName")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningTemplateResponse]
     }
   }
@@ -7126,6 +7173,8 @@ package object iot {
   }
 
   /** A map of key-value pairs containing the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.
+    *
+    * '''Note:'''<code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.
     */
   @js.native
   trait DocumentParameter extends js.Object {
@@ -8329,6 +8378,24 @@ package object iot {
     }
   }
 
+  /** Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.
+    */
+  @js.native
+  trait IndexingFilter extends js.Object {
+    var namedShadowNames: js.UndefOr[NamedShadowNamesFilter]
+  }
+
+  object IndexingFilter {
+    @inline
+    def apply(
+        namedShadowNames: js.UndefOr[NamedShadowNamesFilter] = js.undefined
+    ): IndexingFilter = {
+      val __obj = js.Dynamic.literal()
+      namedShadowNames.foreach(__v => __obj.updateDynamic("namedShadowNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IndexingFilter]
+    }
+  }
+
   /** Sends message data to an IoT Analytics channel.
     */
   @js.native
@@ -8407,6 +8474,30 @@ package object iot {
     }
   }
 
+  /** The certificate issuer indentifier.
+    */
+  @js.native
+  trait IssuerCertificateIdentifier extends js.Object {
+    var issuerCertificateSerialNumber: js.UndefOr[IssuerCertificateSerialNumber]
+    var issuerCertificateSubject: js.UndefOr[IssuerCertificateSubject]
+    var issuerId: js.UndefOr[IssuerId]
+  }
+
+  object IssuerCertificateIdentifier {
+    @inline
+    def apply(
+        issuerCertificateSerialNumber: js.UndefOr[IssuerCertificateSerialNumber] = js.undefined,
+        issuerCertificateSubject: js.UndefOr[IssuerCertificateSubject] = js.undefined,
+        issuerId: js.UndefOr[IssuerId] = js.undefined
+    ): IssuerCertificateIdentifier = {
+      val __obj = js.Dynamic.literal()
+      issuerCertificateSerialNumber.foreach(__v => __obj.updateDynamic("issuerCertificateSerialNumber")(__v.asInstanceOf[js.Any]))
+      issuerCertificateSubject.foreach(__v => __obj.updateDynamic("issuerCertificateSubject")(__v.asInstanceOf[js.Any]))
+      issuerId.foreach(__v => __obj.updateDynamic("issuerId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IssuerCertificateIdentifier]
+    }
+  }
+
   /** The <code>Job</code> object contains details about a job.
     */
   @js.native
@@ -8418,7 +8509,9 @@ package object iot {
     var description: js.UndefOr[JobDescription]
     var documentParameters: js.UndefOr[ParameterMap]
     var forceCanceled: js.UndefOr[Forced]
+    var isConcurrent: js.UndefOr[BooleanWrapperObject]
     var jobArn: js.UndefOr[JobArn]
+    var jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var jobId: js.UndefOr[JobId]
     var jobProcessDetails: js.UndefOr[JobProcessDetails]
@@ -8427,6 +8520,7 @@ package object iot {
     var namespaceId: js.UndefOr[NamespaceId]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
     var reasonCode: js.UndefOr[ReasonCode]
+    var schedulingConfig: js.UndefOr[SchedulingConfig]
     var status: js.UndefOr[JobStatus]
     var targetSelection: js.UndefOr[TargetSelection]
     var targets: js.UndefOr[JobTargets]
@@ -8443,7 +8537,9 @@ package object iot {
         description: js.UndefOr[JobDescription] = js.undefined,
         documentParameters: js.UndefOr[ParameterMap] = js.undefined,
         forceCanceled: js.UndefOr[Forced] = js.undefined,
+        isConcurrent: js.UndefOr[BooleanWrapperObject] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
+        jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig] = js.undefined,
         jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
         jobProcessDetails: js.UndefOr[JobProcessDetails] = js.undefined,
@@ -8452,6 +8548,7 @@ package object iot {
         namespaceId: js.UndefOr[NamespaceId] = js.undefined,
         presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
         reasonCode: js.UndefOr[ReasonCode] = js.undefined,
+        schedulingConfig: js.UndefOr[SchedulingConfig] = js.undefined,
         status: js.UndefOr[JobStatus] = js.undefined,
         targetSelection: js.UndefOr[TargetSelection] = js.undefined,
         targets: js.UndefOr[JobTargets] = js.undefined,
@@ -8465,7 +8562,9 @@ package object iot {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       documentParameters.foreach(__v => __obj.updateDynamic("documentParameters")(__v.asInstanceOf[js.Any]))
       forceCanceled.foreach(__v => __obj.updateDynamic("forceCanceled")(__v.asInstanceOf[js.Any]))
+      isConcurrent.foreach(__v => __obj.updateDynamic("isConcurrent")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRetryConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRetryConfig")(__v.asInstanceOf[js.Any]))
       jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       jobProcessDetails.foreach(__v => __obj.updateDynamic("jobProcessDetails")(__v.asInstanceOf[js.Any]))
@@ -8474,6 +8573,7 @@ package object iot {
       namespaceId.foreach(__v => __obj.updateDynamic("namespaceId")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
       reasonCode.foreach(__v => __obj.updateDynamic("reasonCode")(__v.asInstanceOf[js.Any]))
+      schedulingConfig.foreach(__v => __obj.updateDynamic("schedulingConfig")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
       targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
@@ -8555,6 +8655,7 @@ package object iot {
     var executionNumber: js.UndefOr[ExecutionNumber]
     var lastUpdatedAt: js.UndefOr[DateType]
     var queuedAt: js.UndefOr[DateType]
+    var retryAttempt: js.UndefOr[RetryAttempt]
     var startedAt: js.UndefOr[DateType]
     var status: js.UndefOr[JobExecutionStatus]
   }
@@ -8565,6 +8666,7 @@ package object iot {
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined,
         lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
         queuedAt: js.UndefOr[DateType] = js.undefined,
+        retryAttempt: js.UndefOr[RetryAttempt] = js.undefined,
         startedAt: js.UndefOr[DateType] = js.undefined,
         status: js.UndefOr[JobExecutionStatus] = js.undefined
     ): JobExecutionSummary = {
@@ -8572,6 +8674,7 @@ package object iot {
       executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       queuedAt.foreach(__v => __obj.updateDynamic("queuedAt")(__v.asInstanceOf[js.Any]))
+      retryAttempt.foreach(__v => __obj.updateDynamic("retryAttempt")(__v.asInstanceOf[js.Any]))
       startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionSummary]
@@ -8617,6 +8720,25 @@ package object iot {
       jobExecutionSummary.foreach(__v => __obj.updateDynamic("jobExecutionSummary")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionSummaryForThing]
+    }
+  }
+
+  /** The configuration that determines how many retries are allowed for each failure type for a job.
+    */
+  @js.native
+  trait JobExecutionsRetryConfig extends js.Object {
+    var criteriaList: RetryCriteriaList
+  }
+
+  object JobExecutionsRetryConfig {
+    @inline
+    def apply(
+        criteriaList: RetryCriteriaList
+    ): JobExecutionsRetryConfig = {
+      val __obj = js.Dynamic.literal(
+        "criteriaList" -> criteriaList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JobExecutionsRetryConfig]
     }
   }
 
@@ -8689,6 +8811,7 @@ package object iot {
   trait JobSummary extends js.Object {
     var completedAt: js.UndefOr[DateType]
     var createdAt: js.UndefOr[DateType]
+    var isConcurrent: js.UndefOr[BooleanWrapperObject]
     var jobArn: js.UndefOr[JobArn]
     var jobId: js.UndefOr[JobId]
     var lastUpdatedAt: js.UndefOr[DateType]
@@ -8702,6 +8825,7 @@ package object iot {
     def apply(
         completedAt: js.UndefOr[DateType] = js.undefined,
         createdAt: js.UndefOr[DateType] = js.undefined,
+        isConcurrent: js.UndefOr[BooleanWrapperObject] = js.undefined,
         jobArn: js.UndefOr[JobArn] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
         lastUpdatedAt: js.UndefOr[DateType] = js.undefined,
@@ -8712,6 +8836,7 @@ package object iot {
       val __obj = js.Dynamic.literal()
       completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      isConcurrent.foreach(__v => __obj.updateDynamic("isConcurrent")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -9297,6 +9422,7 @@ package object iot {
     var ascendingOrder: js.UndefOr[AscendingOrder]
     var marker: js.UndefOr[Marker]
     var pageSize: js.UndefOr[PageSize]
+    var templateName: js.UndefOr[TemplateName]
   }
 
   object ListCACertificatesRequest {
@@ -9304,12 +9430,14 @@ package object iot {
     def apply(
         ascendingOrder: js.UndefOr[AscendingOrder] = js.undefined,
         marker: js.UndefOr[Marker] = js.undefined,
-        pageSize: js.UndefOr[PageSize] = js.undefined
+        pageSize: js.UndefOr[PageSize] = js.undefined,
+        templateName: js.UndefOr[TemplateName] = js.undefined
     ): ListCACertificatesRequest = {
       val __obj = js.Dynamic.literal()
       ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
       marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
+      templateName.foreach(__v => __obj.updateDynamic("templateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCACertificatesRequest]
     }
   }
@@ -9771,6 +9899,7 @@ package object iot {
   @js.native
   trait ListJobExecutionsForThingRequest extends js.Object {
     var thingName: ThingName
+    var jobId: js.UndefOr[JobId]
     var maxResults: js.UndefOr[LaserMaxResults]
     var namespaceId: js.UndefOr[NamespaceId]
     var nextToken: js.UndefOr[NextToken]
@@ -9781,6 +9910,7 @@ package object iot {
     @inline
     def apply(
         thingName: ThingName,
+        jobId: js.UndefOr[JobId] = js.undefined,
         maxResults: js.UndefOr[LaserMaxResults] = js.undefined,
         namespaceId: js.UndefOr[NamespaceId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -9790,6 +9920,7 @@ package object iot {
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       namespaceId.foreach(__v => __obj.updateDynamic("namespaceId")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
@@ -9946,6 +10077,64 @@ package object iot {
       managedJobTemplates.foreach(__v => __obj.updateDynamic("managedJobTemplates")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListManagedJobTemplatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListMetricValuesRequest extends js.Object {
+    var endTime: Timestamp
+    var metricName: BehaviorMetric
+    var startTime: Timestamp
+    var thingName: DeviceDefenderThingName
+    var dimensionName: js.UndefOr[DimensionName]
+    var dimensionValueOperator: js.UndefOr[DimensionValueOperator]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricValuesRequest {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        metricName: BehaviorMetric,
+        startTime: Timestamp,
+        thingName: DeviceDefenderThingName,
+        dimensionName: js.UndefOr[DimensionName] = js.undefined,
+        dimensionValueOperator: js.UndefOr[DimensionValueOperator] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricValuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+
+      dimensionName.foreach(__v => __obj.updateDynamic("dimensionName")(__v.asInstanceOf[js.Any]))
+      dimensionValueOperator.foreach(__v => __obj.updateDynamic("dimensionValueOperator")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricValuesRequest]
+    }
+  }
+
+  @js.native
+  trait ListMetricValuesResponse extends js.Object {
+    var metricDatumList: js.UndefOr[MetricDatumList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricValuesResponse {
+    @inline
+    def apply(
+        metricDatumList: js.UndefOr[MetricDatumList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricValuesResponse = {
+      val __obj = js.Dynamic.literal()
+      metricDatumList.foreach(__v => __obj.updateDynamic("metricDatumList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricValuesResponse]
     }
   }
 
@@ -10383,6 +10572,49 @@ package object iot {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       templates.foreach(__v => __obj.updateDynamic("templates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisioningTemplatesResponse]
+    }
+  }
+
+  @js.native
+  trait ListRelatedResourcesForAuditFindingRequest extends js.Object {
+    var findingId: FindingId
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRelatedResourcesForAuditFindingRequest {
+    @inline
+    def apply(
+        findingId: FindingId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRelatedResourcesForAuditFindingRequest = {
+      val __obj = js.Dynamic.literal(
+        "findingId" -> findingId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRelatedResourcesForAuditFindingRequest]
+    }
+  }
+
+  @js.native
+  trait ListRelatedResourcesForAuditFindingResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var relatedResources: js.UndefOr[RelatedResources]
+  }
+
+  object ListRelatedResourcesForAuditFindingResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        relatedResources: js.UndefOr[RelatedResources] = js.undefined
+    ): ListRelatedResourcesForAuditFindingResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      relatedResources.foreach(__v => __obj.updateDynamic("relatedResources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRelatedResourcesForAuditFindingResponse]
     }
   }
 
@@ -11325,6 +11557,64 @@ package object iot {
     }
   }
 
+  /** The Amazon Location rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.
+    */
+  @js.native
+  trait LocationAction extends js.Object {
+    var deviceId: String
+    var latitude: String
+    var longitude: String
+    var roleArn: AwsArn
+    var trackerName: String
+    var timestamp: js.UndefOr[LocationTimestamp]
+  }
+
+  object LocationAction {
+    @inline
+    def apply(
+        deviceId: String,
+        latitude: String,
+        longitude: String,
+        roleArn: AwsArn,
+        trackerName: String,
+        timestamp: js.UndefOr[LocationTimestamp] = js.undefined
+    ): LocationAction = {
+      val __obj = js.Dynamic.literal(
+        "deviceId" -> deviceId.asInstanceOf[js.Any],
+        "latitude" -> latitude.asInstanceOf[js.Any],
+        "longitude" -> longitude.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "trackerName" -> trackerName.asInstanceOf[js.Any]
+      )
+
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocationAction]
+    }
+  }
+
+  /** Describes how to interpret an application-defined timestamp value from an MQTT message payload and the precision of that value.
+    */
+  @js.native
+  trait LocationTimestamp extends js.Object {
+    var value: String
+    var unit: js.UndefOr[String]
+  }
+
+  object LocationTimestamp {
+    @inline
+    def apply(
+        value: String,
+        unit: js.UndefOr[String] = js.undefined
+    ): LocationTimestamp = {
+      val __obj = js.Dynamic.literal(
+        "value" -> value.asInstanceOf[js.Any]
+      )
+
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocationTimestamp]
+    }
+  }
+
   /** A log target.
     */
   @js.native
@@ -11438,6 +11728,27 @@ package object iot {
       templateName.foreach(__v => __obj.updateDynamic("templateName")(__v.asInstanceOf[js.Any]))
       templateVersion.foreach(__v => __obj.updateDynamic("templateVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedJobTemplateSummary]
+    }
+  }
+
+  /** A metric.
+    */
+  @js.native
+  trait MetricDatum extends js.Object {
+    var timestamp: js.UndefOr[Timestamp]
+    var value: js.UndefOr[MetricValue]
+  }
+
+  object MetricDatum {
+    @inline
+    def apply(
+        timestamp: js.UndefOr[Timestamp] = js.undefined,
+        value: js.UndefOr[MetricValue] = js.undefined
+    ): MetricDatum = {
+      val __obj = js.Dynamic.literal()
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDatum]
     }
   }
 
@@ -11625,6 +11936,39 @@ package object iot {
       password.foreach(__v => __obj.updateDynamic("password")(__v.asInstanceOf[js.Any]))
       username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MqttContext]
+    }
+  }
+
+  /** Specifies MQTT Version 5.0 headers information. For more information, see [[https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html| MQTT]] from Amazon Web Services IoT Core Developer Guide.
+    */
+  @js.native
+  trait MqttHeaders extends js.Object {
+    var contentType: js.UndefOr[ContentType]
+    var correlationData: js.UndefOr[CorrelationData]
+    var messageExpiry: js.UndefOr[MessageExpiry]
+    var payloadFormatIndicator: js.UndefOr[PayloadFormatIndicator]
+    var responseTopic: js.UndefOr[ResponseTopic]
+    var userProperties: js.UndefOr[UserProperties]
+  }
+
+  object MqttHeaders {
+    @inline
+    def apply(
+        contentType: js.UndefOr[ContentType] = js.undefined,
+        correlationData: js.UndefOr[CorrelationData] = js.undefined,
+        messageExpiry: js.UndefOr[MessageExpiry] = js.undefined,
+        payloadFormatIndicator: js.UndefOr[PayloadFormatIndicator] = js.undefined,
+        responseTopic: js.UndefOr[ResponseTopic] = js.undefined,
+        userProperties: js.UndefOr[UserProperties] = js.undefined
+    ): MqttHeaders = {
+      val __obj = js.Dynamic.literal()
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      correlationData.foreach(__v => __obj.updateDynamic("correlationData")(__v.asInstanceOf[js.Any]))
+      messageExpiry.foreach(__v => __obj.updateDynamic("messageExpiry")(__v.asInstanceOf[js.Any]))
+      payloadFormatIndicator.foreach(__v => __obj.updateDynamic("payloadFormatIndicator")(__v.asInstanceOf[js.Any]))
+      responseTopic.foreach(__v => __obj.updateDynamic("responseTopic")(__v.asInstanceOf[js.Any]))
+      userProperties.foreach(__v => __obj.updateDynamic("userProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MqttHeaders]
     }
   }
 
@@ -11967,7 +12311,7 @@ package object iot {
     }
   }
 
-  /** A summary of information about a fleet provisioning template.
+  /** A summary of information about a provisioning template.
     */
   @js.native
   trait ProvisioningTemplateSummary extends js.Object {
@@ -11977,6 +12321,7 @@ package object iot {
     var lastModifiedDate: js.UndefOr[DateType]
     var templateArn: js.UndefOr[TemplateArn]
     var templateName: js.UndefOr[TemplateName]
+    var `type`: js.UndefOr[TemplateType]
   }
 
   object ProvisioningTemplateSummary {
@@ -11987,7 +12332,8 @@ package object iot {
         enabled: js.UndefOr[Enabled] = js.undefined,
         lastModifiedDate: js.UndefOr[DateType] = js.undefined,
         templateArn: js.UndefOr[TemplateArn] = js.undefined,
-        templateName: js.UndefOr[TemplateName] = js.undefined
+        templateName: js.UndefOr[TemplateName] = js.undefined,
+        `type`: js.UndefOr[TemplateType] = js.undefined
     ): ProvisioningTemplateSummary = {
       val __obj = js.Dynamic.literal()
       creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
@@ -11996,6 +12342,7 @@ package object iot {
       lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       templateArn.foreach(__v => __obj.updateDynamic("templateArn")(__v.asInstanceOf[js.Any]))
       templateName.foreach(__v => __obj.updateDynamic("templateName")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningTemplateSummary]
     }
   }
@@ -12155,32 +12502,35 @@ package object iot {
   @js.native
   trait RegisterCACertificateRequest extends js.Object {
     var caCertificate: CertificatePem
-    var verificationCertificate: CertificatePem
     var allowAutoRegistration: js.UndefOr[AllowAutoRegistration]
+    var certificateMode: js.UndefOr[CertificateMode]
     var registrationConfig: js.UndefOr[RegistrationConfig]
     var setAsActive: js.UndefOr[SetAsActive]
     var tags: js.UndefOr[TagList]
+    var verificationCertificate: js.UndefOr[CertificatePem]
   }
 
   object RegisterCACertificateRequest {
     @inline
     def apply(
         caCertificate: CertificatePem,
-        verificationCertificate: CertificatePem,
         allowAutoRegistration: js.UndefOr[AllowAutoRegistration] = js.undefined,
+        certificateMode: js.UndefOr[CertificateMode] = js.undefined,
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
+        tags: js.UndefOr[TagList] = js.undefined,
+        verificationCertificate: js.UndefOr[CertificatePem] = js.undefined
     ): RegisterCACertificateRequest = {
       val __obj = js.Dynamic.literal(
-        "caCertificate" -> caCertificate.asInstanceOf[js.Any],
-        "verificationCertificate" -> verificationCertificate.asInstanceOf[js.Any]
+        "caCertificate" -> caCertificate.asInstanceOf[js.Any]
       )
 
       allowAutoRegistration.foreach(__v => __obj.updateDynamic("allowAutoRegistration")(__v.asInstanceOf[js.Any]))
+      certificateMode.foreach(__v => __obj.updateDynamic("certificateMode")(__v.asInstanceOf[js.Any]))
       registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
       setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      verificationCertificate.foreach(__v => __obj.updateDynamic("verificationCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCACertificateRequest]
     }
   }
@@ -12342,17 +12692,20 @@ package object iot {
   trait RegistrationConfig extends js.Object {
     var roleArn: js.UndefOr[RoleArn]
     var templateBody: js.UndefOr[TemplateBody]
+    var templateName: js.UndefOr[TemplateName]
   }
 
   object RegistrationConfig {
     @inline
     def apply(
         roleArn: js.UndefOr[RoleArn] = js.undefined,
-        templateBody: js.UndefOr[TemplateBody] = js.undefined
+        templateBody: js.UndefOr[TemplateBody] = js.undefined,
+        templateName: js.UndefOr[TemplateName] = js.undefined
     ): RegistrationConfig = {
       val __obj = js.Dynamic.literal()
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
+      templateName.foreach(__v => __obj.updateDynamic("templateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegistrationConfig]
     }
   }
@@ -12523,6 +12876,7 @@ package object iot {
   trait RepublishAction extends js.Object {
     var roleArn: AwsArn
     var topic: TopicPattern
+    var headers: js.UndefOr[MqttHeaders]
     var qos: js.UndefOr[Qos]
   }
 
@@ -12531,6 +12885,7 @@ package object iot {
     def apply(
         roleArn: AwsArn,
         topic: TopicPattern,
+        headers: js.UndefOr[MqttHeaders] = js.undefined,
         qos: js.UndefOr[Qos] = js.undefined
     ): RepublishAction = {
       val __obj = js.Dynamic.literal(
@@ -12538,6 +12893,7 @@ package object iot {
         "topic" -> topic.asInstanceOf[js.Any]
       )
 
+      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
       qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepublishAction]
     }
@@ -12551,8 +12907,10 @@ package object iot {
     var caCertificateId: js.UndefOr[CertificateId]
     var clientId: js.UndefOr[ClientId]
     var cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId]
+    var deviceCertificateArn: js.UndefOr[CertificateArn]
     var deviceCertificateId: js.UndefOr[CertificateId]
     var iamRoleArn: js.UndefOr[RoleArn]
+    var issuerCertificateIdentifier: js.UndefOr[IssuerCertificateIdentifier]
     var policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier]
     var roleAliasArn: js.UndefOr[RoleAliasArn]
   }
@@ -12564,8 +12922,10 @@ package object iot {
         caCertificateId: js.UndefOr[CertificateId] = js.undefined,
         clientId: js.UndefOr[ClientId] = js.undefined,
         cognitoIdentityPoolId: js.UndefOr[CognitoIdentityPoolId] = js.undefined,
+        deviceCertificateArn: js.UndefOr[CertificateArn] = js.undefined,
         deviceCertificateId: js.UndefOr[CertificateId] = js.undefined,
         iamRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        issuerCertificateIdentifier: js.UndefOr[IssuerCertificateIdentifier] = js.undefined,
         policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined,
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
     ): ResourceIdentifier = {
@@ -12574,11 +12934,35 @@ package object iot {
       caCertificateId.foreach(__v => __obj.updateDynamic("caCertificateId")(__v.asInstanceOf[js.Any]))
       clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
       cognitoIdentityPoolId.foreach(__v => __obj.updateDynamic("cognitoIdentityPoolId")(__v.asInstanceOf[js.Any]))
+      deviceCertificateArn.foreach(__v => __obj.updateDynamic("deviceCertificateArn")(__v.asInstanceOf[js.Any]))
       deviceCertificateId.foreach(__v => __obj.updateDynamic("deviceCertificateId")(__v.asInstanceOf[js.Any]))
       iamRoleArn.foreach(__v => __obj.updateDynamic("iamRoleArn")(__v.asInstanceOf[js.Any]))
+      issuerCertificateIdentifier.foreach(__v => __obj.updateDynamic("issuerCertificateIdentifier")(__v.asInstanceOf[js.Any]))
       policyVersionIdentifier.foreach(__v => __obj.updateDynamic("policyVersionIdentifier")(__v.asInstanceOf[js.Any]))
       roleAliasArn.foreach(__v => __obj.updateDynamic("roleAliasArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceIdentifier]
+    }
+  }
+
+  /** The criteria that determines how many retries are allowed for each failure type for a job.
+    */
+  @js.native
+  trait RetryCriteria extends js.Object {
+    var failureType: RetryableFailureType
+    var numberOfRetries: NumberOfRetries
+  }
+
+  object RetryCriteria {
+    @inline
+    def apply(
+        failureType: RetryableFailureType,
+        numberOfRetries: NumberOfRetries
+    ): RetryCriteria = {
+      val __obj = js.Dynamic.literal(
+        "failureType" -> failureType.asInstanceOf[js.Any],
+        "numberOfRetries" -> numberOfRetries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RetryCriteria]
     }
   }
 
@@ -12741,6 +13125,30 @@ package object iot {
       scheduledAuditArn.foreach(__v => __obj.updateDynamic("scheduledAuditArn")(__v.asInstanceOf[js.Any]))
       scheduledAuditName.foreach(__v => __obj.updateDynamic("scheduledAuditName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledAuditMetadata]
+    }
+  }
+
+  /** Specifies the date and time that a job will begin the rollout of the job document to all devices in the target group. Additionally, you can specify the end behavior for each job execution when it reaches the scheduled end time.
+    */
+  @js.native
+  trait SchedulingConfig extends js.Object {
+    var endBehavior: js.UndefOr[JobEndBehavior]
+    var endTime: js.UndefOr[StringDateTime]
+    var startTime: js.UndefOr[StringDateTime]
+  }
+
+  object SchedulingConfig {
+    @inline
+    def apply(
+        endBehavior: js.UndefOr[JobEndBehavior] = js.undefined,
+        endTime: js.UndefOr[StringDateTime] = js.undefined,
+        startTime: js.UndefOr[StringDateTime] = js.undefined
+    ): SchedulingConfig = {
+      val __obj = js.Dynamic.literal()
+      endBehavior.foreach(__v => __obj.updateDynamic("endBehavior")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchedulingConfig]
     }
   }
 
@@ -13963,6 +14371,7 @@ package object iot {
     var thingIndexingMode: ThingIndexingMode
     var customFields: js.UndefOr[Fields]
     var deviceDefenderIndexingMode: js.UndefOr[DeviceDefenderIndexingMode]
+    var filter: js.UndefOr[IndexingFilter]
     var managedFields: js.UndefOr[Fields]
     var namedShadowIndexingMode: js.UndefOr[NamedShadowIndexingMode]
     var thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode]
@@ -13974,6 +14383,7 @@ package object iot {
         thingIndexingMode: ThingIndexingMode,
         customFields: js.UndefOr[Fields] = js.undefined,
         deviceDefenderIndexingMode: js.UndefOr[DeviceDefenderIndexingMode] = js.undefined,
+        filter: js.UndefOr[IndexingFilter] = js.undefined,
         managedFields: js.UndefOr[Fields] = js.undefined,
         namedShadowIndexingMode: js.UndefOr[NamedShadowIndexingMode] = js.undefined,
         thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined
@@ -13984,6 +14394,7 @@ package object iot {
 
       customFields.foreach(__v => __obj.updateDynamic("customFields")(__v.asInstanceOf[js.Any]))
       deviceDefenderIndexingMode.foreach(__v => __obj.updateDynamic("deviceDefenderIndexingMode")(__v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
       managedFields.foreach(__v => __obj.updateDynamic("managedFields")(__v.asInstanceOf[js.Any]))
       namedShadowIndexingMode.foreach(__v => __obj.updateDynamic("namedShadowIndexingMode")(__v.asInstanceOf[js.Any]))
       thingConnectivityIndexingMode.foreach(__v => __obj.updateDynamic("thingConnectivityIndexingMode")(__v.asInstanceOf[js.Any]))
@@ -15039,6 +15450,7 @@ package object iot {
     var jobId: JobId
     var abortConfig: js.UndefOr[AbortConfig]
     var description: js.UndefOr[JobDescription]
+    var jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig]
     var jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig]
     var namespaceId: js.UndefOr[NamespaceId]
     var presignedUrlConfig: js.UndefOr[PresignedUrlConfig]
@@ -15051,6 +15463,7 @@ package object iot {
         jobId: JobId,
         abortConfig: js.UndefOr[AbortConfig] = js.undefined,
         description: js.UndefOr[JobDescription] = js.undefined,
+        jobExecutionsRetryConfig: js.UndefOr[JobExecutionsRetryConfig] = js.undefined,
         jobExecutionsRolloutConfig: js.UndefOr[JobExecutionsRolloutConfig] = js.undefined,
         namespaceId: js.UndefOr[NamespaceId] = js.undefined,
         presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
@@ -15062,6 +15475,7 @@ package object iot {
 
       abortConfig.foreach(__v => __obj.updateDynamic("abortConfig")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRetryConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRetryConfig")(__v.asInstanceOf[js.Any]))
       jobExecutionsRolloutConfig.foreach(__v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any]))
       namespaceId.foreach(__v => __obj.updateDynamic("namespaceId")(__v.asInstanceOf[js.Any]))
       presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
@@ -15538,6 +15952,28 @@ package object iot {
     def apply(): UpdateTopicRuleDestinationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTopicRuleDestinationResponse]
+    }
+  }
+
+  /** A key-value pair that you define in the header. Both the key and the value are either literal strings or valid [[https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html|substitution templates]].
+    */
+  @js.native
+  trait UserProperty extends js.Object {
+    var key: UserPropertyKey
+    var value: UserPropertyValue
+  }
+
+  object UserProperty {
+    @inline
+    def apply(
+        key: UserPropertyKey,
+        value: UserPropertyValue
+    ): UserProperty = {
+      val __obj = js.Dynamic.literal(
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UserProperty]
     }
   }
 

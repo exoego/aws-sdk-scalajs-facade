@@ -34,17 +34,17 @@ package object wisdom {
   type QueryText = String
   type RecommendationIdList = js.Array[String]
   type RecommendationList = js.Array[RecommendationData]
+  type RecommendationTriggerList = js.Array[RecommendationTrigger]
   type RelevanceScore = Double
+  type SensitiveString = String
   type SessionSummaries = js.Array[SessionSummary]
-  type SyntheticContentDataUrl = String
-  type SyntheticDocumentTextString = String
-  type SyntheticStartContentUploadResponseUrl = String
   type SyntheticTimestamp_epoch_seconds = js.Date
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
   type Uri = String
+  type Url = String
   type Uuid = String
   type UuidOrArn = String
   type WaitTimeSeconds = Int
@@ -358,7 +358,7 @@ package object wisdom {
     var revisionId: NonEmptyString
     var status: ContentStatus
     var title: ContentTitle
-    var url: SyntheticContentDataUrl
+    var url: Url
     var urlExpiry: SyntheticTimestamp_epoch_seconds
     var linkOutUri: js.UndefOr[Uri]
     var tags: js.UndefOr[Tags]
@@ -377,7 +377,7 @@ package object wisdom {
         revisionId: NonEmptyString,
         status: ContentStatus,
         title: ContentTitle,
-        url: SyntheticContentDataUrl,
+        url: Url,
         urlExpiry: SyntheticTimestamp_epoch_seconds,
         linkOutUri: js.UndefOr[Uri] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -880,14 +880,14 @@ package object wisdom {
   @js.native
   trait DocumentText extends js.Object {
     var highlights: js.UndefOr[Highlights]
-    var text: js.UndefOr[SyntheticDocumentTextString]
+    var text: js.UndefOr[SensitiveString]
   }
 
   object DocumentText {
     @inline
     def apply(
         highlights: js.UndefOr[Highlights] = js.undefined,
-        text: js.UndefOr[SyntheticDocumentTextString] = js.undefined
+        text: js.UndefOr[SensitiveString] = js.undefined
     ): DocumentText = {
       val __obj = js.Dynamic.literal()
       highlights.foreach(__v => __obj.updateDynamic("highlights")(__v.asInstanceOf[js.Any]))
@@ -1125,16 +1125,20 @@ package object wisdom {
   @js.native
   trait GetRecommendationsResponse extends js.Object {
     var recommendations: RecommendationList
+    var triggers: js.UndefOr[RecommendationTriggerList]
   }
 
   object GetRecommendationsResponse {
     @inline
     def apply(
-        recommendations: RecommendationList
+        recommendations: RecommendationList,
+        triggers: js.UndefOr[RecommendationTriggerList] = js.undefined
     ): GetRecommendationsResponse = {
       val __obj = js.Dynamic.literal(
         "recommendations" -> recommendations.asInstanceOf[js.Any]
       )
+
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsResponse]
     }
   }
@@ -1628,6 +1632,24 @@ package object wisdom {
     }
   }
 
+  /** Data associated with the QUERY RecommendationTriggerType.
+    */
+  @js.native
+  trait QueryRecommendationTriggerData extends js.Object {
+    var text: js.UndefOr[QueryText]
+  }
+
+  object QueryRecommendationTriggerData {
+    @inline
+    def apply(
+        text: js.UndefOr[QueryText] = js.undefined
+    ): QueryRecommendationTriggerData = {
+      val __obj = js.Dynamic.literal()
+      text.foreach(__v => __obj.updateDynamic("text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryRecommendationTriggerData]
+    }
+  }
+
   /** Information about the recommendation.
     */
   @js.native
@@ -1636,6 +1658,7 @@ package object wisdom {
     var recommendationId: String
     var relevanceLevel: js.UndefOr[RelevanceLevel]
     var relevanceScore: js.UndefOr[RelevanceScore]
+    var `type`: js.UndefOr[RecommendationType]
   }
 
   object RecommendationData {
@@ -1644,7 +1667,8 @@ package object wisdom {
         document: Document,
         recommendationId: String,
         relevanceLevel: js.UndefOr[RelevanceLevel] = js.undefined,
-        relevanceScore: js.UndefOr[RelevanceScore] = js.undefined
+        relevanceScore: js.UndefOr[RelevanceScore] = js.undefined,
+        `type`: js.UndefOr[RecommendationType] = js.undefined
     ): RecommendationData = {
       val __obj = js.Dynamic.literal(
         "document" -> document.asInstanceOf[js.Any],
@@ -1653,7 +1677,57 @@ package object wisdom {
 
       relevanceLevel.foreach(__v => __obj.updateDynamic("relevanceLevel")(__v.asInstanceOf[js.Any]))
       relevanceScore.foreach(__v => __obj.updateDynamic("relevanceScore")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendationData]
+    }
+  }
+
+  /** A recommendation trigger provides context on the event that produced the referenced recommendations. Recommendations are only referenced in <code>recommendationIds</code> by a single RecommendationTrigger.
+    */
+  @js.native
+  trait RecommendationTrigger extends js.Object {
+    var data: RecommendationTriggerData
+    var id: Uuid
+    var recommendationIds: RecommendationIdList
+    var source: RecommendationSourceType
+    var `type`: RecommendationTriggerType
+  }
+
+  object RecommendationTrigger {
+    @inline
+    def apply(
+        data: RecommendationTriggerData,
+        id: Uuid,
+        recommendationIds: RecommendationIdList,
+        source: RecommendationSourceType,
+        `type`: RecommendationTriggerType
+    ): RecommendationTrigger = {
+      val __obj = js.Dynamic.literal(
+        "data" -> data.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "recommendationIds" -> recommendationIds.asInstanceOf[js.Any],
+        "source" -> source.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RecommendationTrigger]
+    }
+  }
+
+  /** A union type containing information related to the trigger.
+    */
+  @js.native
+  trait RecommendationTriggerData extends js.Object {
+    var query: js.UndefOr[QueryRecommendationTriggerData]
+  }
+
+  object RecommendationTriggerData {
+    @inline
+    def apply(
+        query: js.UndefOr[QueryRecommendationTriggerData] = js.undefined
+    ): RecommendationTriggerData = {
+      val __obj = js.Dynamic.literal()
+      query.foreach(__v => __obj.updateDynamic("query")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationTriggerData]
     }
   }
 
@@ -1964,7 +2038,7 @@ package object wisdom {
   trait StartContentUploadResponse extends js.Object {
     var headersToInclude: Headers
     var uploadId: NonEmptyString
-    var url: SyntheticStartContentUploadResponseUrl
+    var url: Url
     var urlExpiry: SyntheticTimestamp_epoch_seconds
   }
 
@@ -1973,7 +2047,7 @@ package object wisdom {
     def apply(
         headersToInclude: Headers,
         uploadId: NonEmptyString,
-        url: SyntheticStartContentUploadResponseUrl,
+        url: Url,
         urlExpiry: SyntheticTimestamp_epoch_seconds
     ): StartContentUploadResponse = {
       val __obj = js.Dynamic.literal(

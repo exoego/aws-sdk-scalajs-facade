@@ -21,8 +21,59 @@ object AppType {
   val IIS = "IIS".asInstanceOf[AppType]
   val Oracle = "Oracle".asInstanceOf[AppType]
   val Other = "Other".asInstanceOf[AppType]
+  val Tomcat = "Tomcat".asInstanceOf[AppType]
+  val JBoss = "JBoss".asInstanceOf[AppType]
+  val Spring = "Spring".asInstanceOf[AppType]
+  val `Mongo DB` = "Mongo DB".asInstanceOf[AppType]
+  val DB2 = "DB2".asInstanceOf[AppType]
+  val `Maria DB` = "Maria DB".asInstanceOf[AppType]
+  val MySQL = "MySQL".asInstanceOf[AppType]
+  val Sybase = "Sybase".asInstanceOf[AppType]
+  val PostgreSQLServer = "PostgreSQLServer".asInstanceOf[AppType]
+  val Cassandra = "Cassandra".asInstanceOf[AppType]
+  val `IBM WebSphere` = "IBM WebSphere".asInstanceOf[AppType]
+  val `Oracle WebLogic` = "Oracle WebLogic".asInstanceOf[AppType]
+  val `Visual Basic` = "Visual Basic".asInstanceOf[AppType]
+  val Unknown = "Unknown".asInstanceOf[AppType]
+  val DotnetCore = "DotnetCore".asInstanceOf[AppType]
+  val Dotnet = "Dotnet".asInstanceOf[AppType]
 
-  @inline def values: js.Array[AppType] = js.Array(DotNetFramework, Java, SQLServer, IIS, Oracle, Other)
+  @inline def values: js.Array[AppType] = js.Array(
+    DotNetFramework,
+    Java,
+    SQLServer,
+    IIS,
+    Oracle,
+    Other,
+    Tomcat,
+    JBoss,
+    Spring,
+    `Mongo DB`,
+    DB2,
+    `Maria DB`,
+    MySQL,
+    Sybase,
+    PostgreSQLServer,
+    Cassandra,
+    `IBM WebSphere`,
+    `Oracle WebLogic`,
+    `Visual Basic`,
+    Unknown,
+    DotnetCore,
+    Dotnet
+  )
+}
+
+@js.native
+sealed trait AppUnitErrorCategory extends js.Any
+object AppUnitErrorCategory {
+  val CREDENTIAL_ERROR = "CREDENTIAL_ERROR".asInstanceOf[AppUnitErrorCategory]
+  val CONNECTIVITY_ERROR = "CONNECTIVITY_ERROR".asInstanceOf[AppUnitErrorCategory]
+  val PERMISSION_ERROR = "PERMISSION_ERROR".asInstanceOf[AppUnitErrorCategory]
+  val UNSUPPORTED_ERROR = "UNSUPPORTED_ERROR".asInstanceOf[AppUnitErrorCategory]
+  val OTHER_ERROR = "OTHER_ERROR".asInstanceOf[AppUnitErrorCategory]
+
+  @inline def values: js.Array[AppUnitErrorCategory] = js.Array(CREDENTIAL_ERROR, CONNECTIVITY_ERROR, PERMISSION_ERROR, UNSUPPORTED_ERROR, OTHER_ERROR)
 }
 
 @js.native
@@ -34,8 +85,20 @@ object ApplicationComponentCriteria {
   val APP_TYPE = "APP_TYPE".asInstanceOf[ApplicationComponentCriteria]
   val STRATEGY = "STRATEGY".asInstanceOf[ApplicationComponentCriteria]
   val DESTINATION = "DESTINATION".asInstanceOf[ApplicationComponentCriteria]
+  val ANALYSIS_STATUS = "ANALYSIS_STATUS".asInstanceOf[ApplicationComponentCriteria]
+  val ERROR_CATEGORY = "ERROR_CATEGORY".asInstanceOf[ApplicationComponentCriteria]
 
-  @inline def values: js.Array[ApplicationComponentCriteria] = js.Array(NOT_DEFINED, APP_NAME, SERVER_ID, APP_TYPE, STRATEGY, DESTINATION)
+  @inline def values: js.Array[ApplicationComponentCriteria] = js.Array(NOT_DEFINED, APP_NAME, SERVER_ID, APP_TYPE, STRATEGY, DESTINATION, ANALYSIS_STATUS, ERROR_CATEGORY)
+}
+
+@js.native
+sealed trait ApplicationMode extends js.Any
+object ApplicationMode {
+  val ALL = "ALL".asInstanceOf[ApplicationMode]
+  val KNOWN = "KNOWN".asInstanceOf[ApplicationMode]
+  val UNKNOWN = "UNKNOWN".asInstanceOf[ApplicationMode]
+
+  @inline def values: js.Array[ApplicationMode] = js.Array(ALL, KNOWN, UNKNOWN)
 }
 
 @js.native
@@ -47,6 +110,16 @@ object AssessmentStatus {
   val STOPPED = "STOPPED".asInstanceOf[AssessmentStatus]
 
   @inline def values: js.Array[AssessmentStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED, STOPPED)
+}
+
+@js.native
+sealed trait AuthType extends js.Any
+object AuthType {
+  val NTLM = "NTLM".asInstanceOf[AuthType]
+  val SSH = "SSH".asInstanceOf[AuthType]
+  val CERT = "CERT".asInstanceOf[AuthType]
+
+  @inline def values: js.Array[AuthType] = js.Array(NTLM, SSH, CERT)
 }
 
 @js.native
@@ -66,6 +139,17 @@ object CollectorHealth {
   val COLLECTOR_UNHEALTHY = "COLLECTOR_UNHEALTHY".asInstanceOf[CollectorHealth]
 
   @inline def values: js.Array[CollectorHealth] = js.Array(COLLECTOR_HEALTHY, COLLECTOR_UNHEALTHY)
+}
+
+@js.native
+sealed trait Condition extends js.Any
+object Condition {
+  val EQUALS = "EQUALS".asInstanceOf[Condition]
+  val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[Condition]
+  val CONTAINS = "CONTAINS".asInstanceOf[Condition]
+  val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[Condition]
+
+  @inline def values: js.Array[Condition] = js.Array(EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS)
 }
 
 @js.native
@@ -183,6 +267,14 @@ object OutputFormat {
 }
 
 @js.native
+sealed trait PipelineType extends js.Any
+object PipelineType {
+  val AZURE_DEVOPS = "AZURE_DEVOPS".asInstanceOf[PipelineType]
+
+  @inline def values: js.Array[PipelineType] = js.Array(AZURE_DEVOPS)
+}
+
+@js.native
 sealed trait RecommendationReportStatus extends js.Any
 object RecommendationReportStatus {
   val FAILED = "FAILED".asInstanceOf[RecommendationReportStatus]
@@ -225,6 +317,17 @@ object RunTimeAssessmentStatus {
 }
 
 @js.native
+sealed trait RuntimeAnalysisStatus extends js.Any
+object RuntimeAnalysisStatus {
+  val ANALYSIS_TO_BE_SCHEDULED = "ANALYSIS_TO_BE_SCHEDULED".asInstanceOf[RuntimeAnalysisStatus]
+  val ANALYSIS_STARTED = "ANALYSIS_STARTED".asInstanceOf[RuntimeAnalysisStatus]
+  val ANALYSIS_SUCCESS = "ANALYSIS_SUCCESS".asInstanceOf[RuntimeAnalysisStatus]
+  val ANALYSIS_FAILED = "ANALYSIS_FAILED".asInstanceOf[RuntimeAnalysisStatus]
+
+  @inline def values: js.Array[RuntimeAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED)
+}
+
+@js.native
 sealed trait SelfManageTargetDestination extends js.Any
 object SelfManageTargetDestination {
   val `None specified` = "None specified".asInstanceOf[SelfManageTargetDestination]
@@ -243,8 +346,22 @@ object ServerCriteria {
   val STRATEGY = "STRATEGY".asInstanceOf[ServerCriteria]
   val DESTINATION = "DESTINATION".asInstanceOf[ServerCriteria]
   val SERVER_ID = "SERVER_ID".asInstanceOf[ServerCriteria]
+  val ANALYSIS_STATUS = "ANALYSIS_STATUS".asInstanceOf[ServerCriteria]
+  val ERROR_CATEGORY = "ERROR_CATEGORY".asInstanceOf[ServerCriteria]
 
-  @inline def values: js.Array[ServerCriteria] = js.Array(NOT_DEFINED, OS_NAME, STRATEGY, DESTINATION, SERVER_ID)
+  @inline def values: js.Array[ServerCriteria] = js.Array(NOT_DEFINED, OS_NAME, STRATEGY, DESTINATION, SERVER_ID, ANALYSIS_STATUS, ERROR_CATEGORY)
+}
+
+@js.native
+sealed trait ServerErrorCategory extends js.Any
+object ServerErrorCategory {
+  val CONNECTIVITY_ERROR = "CONNECTIVITY_ERROR".asInstanceOf[ServerErrorCategory]
+  val CREDENTIAL_ERROR = "CREDENTIAL_ERROR".asInstanceOf[ServerErrorCategory]
+  val PERMISSION_ERROR = "PERMISSION_ERROR".asInstanceOf[ServerErrorCategory]
+  val ARCHITECTURE_ERROR = "ARCHITECTURE_ERROR".asInstanceOf[ServerErrorCategory]
+  val OTHER_ERROR = "OTHER_ERROR".asInstanceOf[ServerErrorCategory]
+
+  @inline def values: js.Array[ServerErrorCategory] = js.Array(CONNECTIVITY_ERROR, CREDENTIAL_ERROR, PERMISSION_ERROR, ARCHITECTURE_ERROR, OTHER_ERROR)
 }
 
 @js.native
@@ -285,8 +402,11 @@ object SrcCodeOrDbAnalysisStatus {
   val ANALYSIS_STARTED = "ANALYSIS_STARTED".asInstanceOf[SrcCodeOrDbAnalysisStatus]
   val ANALYSIS_SUCCESS = "ANALYSIS_SUCCESS".asInstanceOf[SrcCodeOrDbAnalysisStatus]
   val ANALYSIS_FAILED = "ANALYSIS_FAILED".asInstanceOf[SrcCodeOrDbAnalysisStatus]
+  val ANALYSIS_PARTIAL_SUCCESS = "ANALYSIS_PARTIAL_SUCCESS".asInstanceOf[SrcCodeOrDbAnalysisStatus]
+  val UNCONFIGURED = "UNCONFIGURED".asInstanceOf[SrcCodeOrDbAnalysisStatus]
+  val CONFIGURED = "CONFIGURED".asInstanceOf[SrcCodeOrDbAnalysisStatus]
 
-  @inline def values: js.Array[SrcCodeOrDbAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED)
+  @inline def values: js.Array[SrcCodeOrDbAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED, ANALYSIS_PARTIAL_SUCCESS, UNCONFIGURED, CONFIGURED)
 }
 
 @js.native
@@ -309,8 +429,9 @@ object StrategyRecommendation {
   val recommended = "recommended".asInstanceOf[StrategyRecommendation]
   val viableOption = "viableOption".asInstanceOf[StrategyRecommendation]
   val notRecommended = "notRecommended".asInstanceOf[StrategyRecommendation]
+  val potential = "potential".asInstanceOf[StrategyRecommendation]
 
-  @inline def values: js.Array[StrategyRecommendation] = js.Array(recommended, viableOption, notRecommended)
+  @inline def values: js.Array[StrategyRecommendation] = js.Array(recommended, viableOption, notRecommended, potential)
 }
 
 @js.native
@@ -346,6 +467,7 @@ object TargetDestination {
   val `Amazon DocumentDB` = "Amazon DocumentDB".asInstanceOf[TargetDestination]
   val `Amazon DynamoDB` = "Amazon DynamoDB".asInstanceOf[TargetDestination]
   val `Amazon Relational Database Service` = "Amazon Relational Database Service".asInstanceOf[TargetDestination]
+  val `Babelfish for Aurora PostgreSQL` = "Babelfish for Aurora PostgreSQL".asInstanceOf[TargetDestination]
 
   @inline def values: js.Array[TargetDestination] = js.Array(
     `None specified`,
@@ -360,7 +482,8 @@ object TargetDestination {
     `Amazon Relational Database Service on PostgreSQL`,
     `Amazon DocumentDB`,
     `Amazon DynamoDB`,
-    `Amazon Relational Database Service`
+    `Amazon Relational Database Service`,
+    `Babelfish for Aurora PostgreSQL`
   )
 }
 
@@ -397,6 +520,17 @@ sealed trait VersionControl extends js.Any
 object VersionControl {
   val GITHUB = "GITHUB".asInstanceOf[VersionControl]
   val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[VersionControl]
+  val AZURE_DEVOPS_GIT = "AZURE_DEVOPS_GIT".asInstanceOf[VersionControl]
 
-  @inline def values: js.Array[VersionControl] = js.Array(GITHUB, GITHUB_ENTERPRISE)
+  @inline def values: js.Array[VersionControl] = js.Array(GITHUB, GITHUB_ENTERPRISE, AZURE_DEVOPS_GIT)
+}
+
+@js.native
+sealed trait VersionControlType extends js.Any
+object VersionControlType {
+  val GITHUB = "GITHUB".asInstanceOf[VersionControlType]
+  val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[VersionControlType]
+  val AZURE_DEVOPS_GIT = "AZURE_DEVOPS_GIT".asInstanceOf[VersionControlType]
+
+  @inline def values: js.Array[VersionControlType] = js.Array(GITHUB, GITHUB_ENTERPRISE, AZURE_DEVOPS_GIT)
 }

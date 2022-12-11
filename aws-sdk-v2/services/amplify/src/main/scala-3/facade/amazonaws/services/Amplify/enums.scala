@@ -39,11 +39,22 @@ object JobType {
   inline def values: js.Array[JobType] = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
 }
 
-type Platform = "WEB"
+type Platform = "WEB" | "WEB_DYNAMIC" | "WEB_COMPUTE"
 object Platform {
   inline val WEB: "WEB" = "WEB"
+  inline val WEB_DYNAMIC: "WEB_DYNAMIC" = "WEB_DYNAMIC"
+  inline val WEB_COMPUTE: "WEB_COMPUTE" = "WEB_COMPUTE"
 
-  inline def values: js.Array[Platform] = js.Array(WEB)
+  inline def values: js.Array[Platform] = js.Array(WEB, WEB_DYNAMIC, WEB_COMPUTE)
+}
+
+type RepositoryCloneMethod = "SSH" | "TOKEN" | "SIGV4"
+object RepositoryCloneMethod {
+  inline val SSH: "SSH" = "SSH"
+  inline val TOKEN: "TOKEN" = "TOKEN"
+  inline val SIGV4: "SIGV4" = "SIGV4"
+
+  inline def values: js.Array[RepositoryCloneMethod] = js.Array(SSH, TOKEN, SIGV4)
 }
 
 type Stage = "PRODUCTION" | "BETA" | "DEVELOPMENT" | "EXPERIMENTAL" | "PULL_REQUEST"

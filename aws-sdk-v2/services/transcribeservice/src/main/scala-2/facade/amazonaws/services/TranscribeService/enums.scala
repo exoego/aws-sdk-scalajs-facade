@@ -19,8 +19,10 @@ object CLMLanguageCode {
   val `es-US` = "es-US".asInstanceOf[CLMLanguageCode]
   val `en-GB` = "en-GB".asInstanceOf[CLMLanguageCode]
   val `en-AU` = "en-AU".asInstanceOf[CLMLanguageCode]
+  val `de-DE` = "de-DE".asInstanceOf[CLMLanguageCode]
+  val `ja-JP` = "ja-JP".asInstanceOf[CLMLanguageCode]
 
-  @inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
+  @inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`, `de-DE`, `ja-JP`)
 }
 
 @js.native
@@ -35,12 +37,20 @@ object CallAnalyticsJobStatus {
 }
 
 @js.native
+sealed trait InputType extends js.Any
+object InputType {
+  val REAL_TIME = "REAL_TIME".asInstanceOf[InputType]
+  val POST_CALL = "POST_CALL".asInstanceOf[InputType]
+
+  @inline def values: js.Array[InputType] = js.Array(REAL_TIME, POST_CALL)
+}
+
+@js.native
 sealed trait LanguageCode extends js.Any
 object LanguageCode {
   val `af-ZA` = "af-ZA".asInstanceOf[LanguageCode]
   val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
   val `ar-SA` = "ar-SA".asInstanceOf[LanguageCode]
-  val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
   val `da-DK` = "da-DK".asInstanceOf[LanguageCode]
   val `de-CH` = "de-CH".asInstanceOf[LanguageCode]
   val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
@@ -56,8 +66,6 @@ object LanguageCode {
   val `fa-IR` = "fa-IR".asInstanceOf[LanguageCode]
   val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
   val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
-  val `ga-IE` = "ga-IE".asInstanceOf[LanguageCode]
-  val `gd-GB` = "gd-GB".asInstanceOf[LanguageCode]
   val `he-IL` = "he-IL".asInstanceOf[LanguageCode]
   val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
   val `id-ID` = "id-ID".asInstanceOf[LanguageCode]
@@ -82,7 +90,6 @@ object LanguageCode {
     `af-ZA`,
     `ar-AE`,
     `ar-SA`,
-    `cy-GB`,
     `da-DK`,
     `de-CH`,
     `de-DE`,
@@ -98,8 +105,6 @@ object LanguageCode {
     `fa-IR`,
     `fr-CA`,
     `fr-FR`,
-    `ga-IE`,
-    `gd-GB`,
     `he-IL`,
     `hi-IN`,
     `id-ID`,
@@ -170,6 +175,25 @@ object ParticipantRole {
   val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
 
   @inline def values: js.Array[ParticipantRole] = js.Array(AGENT, CUSTOMER)
+}
+
+@js.native
+sealed trait PiiEntityType extends js.Any
+object PiiEntityType {
+  val BANK_ACCOUNT_NUMBER = "BANK_ACCOUNT_NUMBER".asInstanceOf[PiiEntityType]
+  val BANK_ROUTING = "BANK_ROUTING".asInstanceOf[PiiEntityType]
+  val CREDIT_DEBIT_NUMBER = "CREDIT_DEBIT_NUMBER".asInstanceOf[PiiEntityType]
+  val CREDIT_DEBIT_CVV = "CREDIT_DEBIT_CVV".asInstanceOf[PiiEntityType]
+  val CREDIT_DEBIT_EXPIRY = "CREDIT_DEBIT_EXPIRY".asInstanceOf[PiiEntityType]
+  val PIN = "PIN".asInstanceOf[PiiEntityType]
+  val EMAIL = "EMAIL".asInstanceOf[PiiEntityType]
+  val ADDRESS = "ADDRESS".asInstanceOf[PiiEntityType]
+  val NAME = "NAME".asInstanceOf[PiiEntityType]
+  val PHONE = "PHONE".asInstanceOf[PiiEntityType]
+  val SSN = "SSN".asInstanceOf[PiiEntityType]
+  val ALL = "ALL".asInstanceOf[PiiEntityType]
+
+  @inline def values: js.Array[PiiEntityType] = js.Array(BANK_ACCOUNT_NUMBER, BANK_ROUTING, CREDIT_DEBIT_NUMBER, CREDIT_DEBIT_CVV, CREDIT_DEBIT_EXPIRY, PIN, EMAIL, ADDRESS, NAME, PHONE, SSN, ALL)
 }
 
 @js.native

@@ -47,6 +47,7 @@ package object ram {
     @inline def getResourceShareInvitationsFuture(params: GetResourceShareInvitationsRequest): Future[GetResourceShareInvitationsResponse] = service.getResourceShareInvitations(params).promise().toFuture
     @inline def getResourceSharesFuture(params: GetResourceSharesRequest): Future[GetResourceSharesResponse] = service.getResourceShares(params).promise().toFuture
     @inline def listPendingInvitationResourcesFuture(params: ListPendingInvitationResourcesRequest): Future[ListPendingInvitationResourcesResponse] = service.listPendingInvitationResources(params).promise().toFuture
+    @inline def listPermissionVersionsFuture(params: ListPermissionVersionsRequest): Future[ListPermissionVersionsResponse] = service.listPermissionVersions(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
     @inline def listPrincipalsFuture(params: ListPrincipalsRequest): Future[ListPrincipalsResponse] = service.listPrincipals(params).promise().toFuture
     @inline def listResourceSharePermissionsFuture(params: ListResourceSharePermissionsRequest): Future[ListResourceSharePermissionsResponse] = service.listResourceSharePermissions(params).promise().toFuture
@@ -79,6 +80,7 @@ package object ram {
     def getResourceShareInvitations(params: GetResourceShareInvitationsRequest): Request[GetResourceShareInvitationsResponse] = js.native
     def getResourceShares(params: GetResourceSharesRequest): Request[GetResourceSharesResponse] = js.native
     def listPendingInvitationResources(params: ListPendingInvitationResourcesRequest): Request[ListPendingInvitationResourcesResponse] = js.native
+    def listPermissionVersions(params: ListPermissionVersionsRequest): Request[ListPermissionVersionsResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
     def listPrincipals(params: ListPrincipalsRequest): Request[ListPrincipalsResponse] = js.native
     def listResourceSharePermissions(params: ListResourceSharePermissionsRequest): Request[ListResourceSharePermissionsResponse] = js.native
@@ -725,6 +727,49 @@ package object ram {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPendingInvitationResourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListPermissionVersionsRequest extends js.Object {
+    var permissionArn: String
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListPermissionVersionsRequest {
+    @inline
+    def apply(
+        permissionArn: String,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListPermissionVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionArn" -> permissionArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPermissionVersionsResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var permissions: js.UndefOr[ResourceSharePermissionList]
+  }
+
+  object ListPermissionVersionsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        permissions: js.UndefOr[ResourceSharePermissionList] = js.undefined
+    ): ListPermissionVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionVersionsResponse]
     }
   }
 

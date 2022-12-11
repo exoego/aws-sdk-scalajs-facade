@@ -20,8 +20,10 @@ package object cognitoidentityprovider {
   type AttributeNameListType = js.Array[AttributeNameType]
   type AttributeNameType = String
   type AttributeValueType = String
+  type AttributesRequireVerificationBeforeUpdateType = js.Array[VerifiedAttributeType]
   type AuthEventsType = js.Array[AuthEventType]
   type AuthParametersType = js.Dictionary[StringType]
+  type AuthSessionValidityType = Int
   type BlockedIPRangeListType = js.Array[StringType]
   type BooleanType = Boolean
   type CSSType = String
@@ -95,6 +97,7 @@ package object cognitoidentityprovider {
   type RecoveryMechanismsType = js.Array[RecoveryOptionType]
   type RedirectUrlType = String
   type RefreshTokenValidityType = Int
+  type RegionCodeType = String
   type ResourceServerIdentifierType = String
   type ResourceServerNameType = String
   type ResourceServerScopeDescriptionType = String
@@ -1473,7 +1476,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The status response from the request to update the device, as an administrator.
+  /** The status response to the request to update the device, as an administrator.
     */
   @js.native
   trait AdminUpdateDeviceStatusResponse extends js.Object
@@ -1563,9 +1566,9 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
+  /** The Amazon Pinpoint analytics configuration necessary to collect metrics for a user pool.
     *
-    * '''Note:'''In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to Amazon Pinpoint projects within that same region.
+    * '''Note:'''In Regions where Amazon Pinpointisn't available, user pools only support sending events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint projects within that same Region.
     */
   @js.native
   trait AnalyticsConfigurationType extends js.Object {
@@ -1595,9 +1598,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** An Amazon Pinpoint analytics endpoint. An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.
-    *
-    * '''Note:'''Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.
+  /** An Amazon Pinpoint analytics endpoint. An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics. For more information about Amazon Web Services Regions that can contain Amazon Pinpoint resources for use with Amazon Cognito user pools, see [[https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html|Using Amazon Pinpoint analytics with Amazon Cognito user pools]].
     */
   @js.native
   trait AnalyticsMetadataType extends js.Object {
@@ -1807,7 +1808,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The code delivery details being returned from the server.
+  /** The delivery details for an email or SMS message that Amazon Cognito sent for authentication or verification.
     */
   @js.native
   trait CodeDeliveryDetailsType extends js.Object {
@@ -1831,7 +1832,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The compromised credentials actions type
+  /** The compromised credentials actions type.
     */
   @js.native
   trait CompromisedCredentialsActionsType extends js.Object {
@@ -2254,8 +2255,10 @@ package object cognitoidentityprovider {
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
+    var AuthSessionValidity: js.UndefOr[AuthSessionValidityType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType]
     var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var GenerateSecret: js.UndefOr[GenerateSecret]
@@ -2279,8 +2282,10 @@ package object cognitoidentityprovider {
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
+        AuthSessionValidity: js.UndefOr[AuthSessionValidityType] = js.undefined,
         CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType] = js.undefined,
         EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         GenerateSecret: js.UndefOr[GenerateSecret] = js.undefined,
@@ -2303,8 +2308,10 @@ package object cognitoidentityprovider {
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
+      AuthSessionValidity.foreach(__v => __obj.updateDynamic("AuthSessionValidity")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnablePropagateAdditionalUserContextData.foreach(__v => __obj.updateDynamic("EnablePropagateAdditionalUserContextData")(__v.asInstanceOf[js.Any]))
       EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       GenerateSecret.foreach(__v => __obj.updateDynamic("GenerateSecret")(__v.asInstanceOf[js.Any]))
@@ -2387,6 +2394,7 @@ package object cognitoidentityprovider {
     var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
     var AliasAttributes: js.UndefOr[AliasAttributesListType]
     var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
+    var DeletionProtection: js.UndefOr[DeletionProtectionType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
     var EmailConfiguration: js.UndefOr[EmailConfigurationType]
     var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
@@ -2398,6 +2406,7 @@ package object cognitoidentityprovider {
     var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
     var SmsConfiguration: js.UndefOr[SmsConfigurationType]
     var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
+    var UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType]
     var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
     var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
@@ -2413,6 +2422,7 @@ package object cognitoidentityprovider {
         AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
         AliasAttributes: js.UndefOr[AliasAttributesListType] = js.undefined,
         AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
+        DeletionProtection: js.UndefOr[DeletionProtectionType] = js.undefined,
         DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
         EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
         EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
@@ -2424,6 +2434,7 @@ package object cognitoidentityprovider {
         SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
         SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
         SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+        UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType] = js.undefined,
         UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
         UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
         UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
@@ -2438,6 +2449,7 @@ package object cognitoidentityprovider {
       AdminCreateUserConfig.foreach(__v => __obj.updateDynamic("AdminCreateUserConfig")(__v.asInstanceOf[js.Any]))
       AliasAttributes.foreach(__v => __obj.updateDynamic("AliasAttributes")(__v.asInstanceOf[js.Any]))
       AutoVerifiedAttributes.foreach(__v => __obj.updateDynamic("AutoVerifiedAttributes")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       EmailConfiguration.foreach(__v => __obj.updateDynamic("EmailConfiguration")(__v.asInstanceOf[js.Any]))
       EmailVerificationMessage.foreach(__v => __obj.updateDynamic("EmailVerificationMessage")(__v.asInstanceOf[js.Any]))
@@ -2449,6 +2461,7 @@ package object cognitoidentityprovider {
       SmsAuthenticationMessage.foreach(__v => __obj.updateDynamic("SmsAuthenticationMessage")(__v.asInstanceOf[js.Any]))
       SmsConfiguration.foreach(__v => __obj.updateDynamic("SmsConfiguration")(__v.asInstanceOf[js.Any]))
       SmsVerificationMessage.foreach(__v => __obj.updateDynamic("SmsVerificationMessage")(__v.asInstanceOf[js.Any]))
+      UserAttributeUpdateSettings.foreach(__v => __obj.updateDynamic("UserAttributeUpdateSettings")(__v.asInstanceOf[js.Any]))
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
@@ -2987,7 +3000,10 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The configuration for the user pool's device tracking.
+  /** The device-remembering configuration for a user pool. A [[https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html| DescribeUserPool]] request returns a null value for this object when the user pool isn't configured to remember devices. When device remembering is active, you can remember a user's device with a [[https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html|ConfirmDevice]] API request. Additionally. when the property <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>true</code>, you must follow <code>ConfirmDevice</code> with an [[https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html|UpdateDeviceStatus]] API request that sets the user's device to <code>remembered</code> or <code>not_remembered</code>. To sign in with a remembered device, include <code>DEVICE_KEY</code> in the authentication parameters in your user's
+    * [[https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html| InitiateAuth]] request. If your app doesn't include a <code>DEVICE_KEY</code> parameter, the [[https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html#API_InitiateAuth_ResponseSyntax|response]] from Amazon Cognito includes newly-generated <code>DEVICE_KEY</code> and <code>DEVICE_GROUP_KEY</code> values under <code>NewDeviceMetadata</code>. Store these values to use in future device-authentication requests.
+    *
+    * '''Note:'''When you provide a value for any property of <code>DeviceConfiguration</code>, you activate the device remembering for the user pool.
     */
   @js.native
   trait DeviceConfigurationType extends js.Object {
@@ -3008,7 +3024,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The device verifier against which it will be authenticated.
+  /** The device verifier against which it is authenticated.
     */
   @js.native
   trait DeviceSecretVerifierConfigType extends js.Object {
@@ -3098,9 +3114,9 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The email configuration type.
+  /** The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.
     *
-    * '''Note:'''Amazon Cognito has specific regions for use with Amazon SES. For more information on the supported regions, see [[https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html|Email Settings for Amazon Cognito User Pools]].
+    * '''Note:'''Amazon Cognito can send email messages with Amazon Simple Email Service resources in the Amazon Web Services Region where you created your user pool, and in alternate Regions in some cases. For more information on the supported Regions, see [[https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html|Email settings for Amazon Cognito user pools]].
     */
   @js.native
   trait EmailConfigurationType extends js.Object {
@@ -3268,7 +3284,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Respresents the response from the server regarding the request to reset a password.
+  /** The response from Amazon Cognito to a request to reset a password.
     */
   @js.native
   trait ForgotPasswordResponse extends js.Object {
@@ -3286,7 +3302,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Represents the request to get the header information for the .csv file for the user import job.
+  /** Represents the request to get the header information of the CSV file for the user import job.
     */
   @js.native
   trait GetCSVHeaderRequest extends js.Object {
@@ -3305,7 +3321,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Represents the response from the server to the request to get the header information for the .csv file for the user import job.
+  /** Represents the response from the server to the request to get the header information of the CSV file for the user import job.
     */
   @js.native
   trait GetCSVHeaderResponse extends js.Object {
@@ -3441,7 +3457,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Request to get a signing certificate from Cognito.
+  /** Request to get a signing certificate from Amazon Cognito.
     */
   @js.native
   trait GetSigningCertificateRequest extends js.Object {
@@ -3460,7 +3476,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Response from Cognito for a signing certificate request.
+  /** Response from Amazon Cognito for a signing certificate request.
     */
   @js.native
   trait GetSigningCertificateResponse extends js.Object {
@@ -3739,7 +3755,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** A container for information about an identity provider.
+  /** A container for information about an IdP.
     */
   @js.native
   trait IdentityProviderType extends js.Object {
@@ -4344,7 +4360,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.
+  /** <i>This data type is no longer supported.</i> Applies only to SMS multi-factor authentication (MFA) configurations. Does not apply to time-based one-time password (TOTP) software token MFA configurations.
     */
   @js.native
   trait MFAOptionType extends js.Object {
@@ -4471,7 +4487,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The minimum and maximum value of an attribute that is of the number data type.
+  /** The minimum and maximum values of an attribute that is of the number data type.
     */
   @js.native
   trait NumberAttributeConstraintsType extends js.Object {
@@ -4525,7 +4541,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** A container for identity provider details.
+  /** A container for IdP details.
     */
   @js.native
   trait ProviderDescription extends js.Object {
@@ -4552,7 +4568,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** A container for information about an identity provider for a user pool.
+  /** A container for information about an IdP for a user pool.
     */
   @js.native
   trait ProviderUserIdentifierType extends js.Object {
@@ -4633,7 +4649,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code.
+  /** The response from the server when Amazon Cognito makes the request to resend a confirmation code.
     */
   @js.native
   trait ResendConfirmationCodeResponse extends js.Object {
@@ -4854,7 +4870,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The type used for enabling SMS MFA at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is enabled for a user, the user will be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts, disable MFA for users and turn on Adaptive Authentication for the user pool.
+  /** The type used for enabling SMS multi-factor authentication (MFA) at the user level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.
     */
   @js.native
   trait SMSMfaSettingsType extends js.Object {
@@ -5191,25 +5207,28 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your account. The Cognito User Pool makes the request to the Amazon SNS Service by using an IAM role that you provide for your account.
+  /** The SMS configuration type is the settings that your Amazon Cognito user pool must use to send an SMS message from your Amazon Web Services account through Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account.
     */
   @js.native
   trait SmsConfigurationType extends js.Object {
     var SnsCallerArn: ArnType
     var ExternalId: js.UndefOr[StringType]
+    var SnsRegion: js.UndefOr[RegionCodeType]
   }
 
   object SmsConfigurationType {
     @inline
     def apply(
         SnsCallerArn: ArnType,
-        ExternalId: js.UndefOr[StringType] = js.undefined
+        ExternalId: js.UndefOr[StringType] = js.undefined,
+        SnsRegion: js.UndefOr[RegionCodeType] = js.undefined
     ): SmsConfigurationType = {
       val __obj = js.Dynamic.literal(
         "SnsCallerArn" -> SnsCallerArn.asInstanceOf[js.Any]
       )
 
       ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      SnsRegion.foreach(__v => __obj.updateDynamic("SnsRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SmsConfigurationType]
     }
   }
@@ -5253,7 +5272,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The type used for enabling software token MFA at the user level. If an MFA type is enabled for a user, the user will be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts, disable MFA for users and turn on Adaptive Authentication for the user pool.
+  /** The type used for enabling software token MFA at the user level. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.
     */
   @js.native
   trait SoftwareTokenMfaSettingsType extends js.Object {
@@ -5406,7 +5425,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The data type for TokenValidityUnits that specifics the time measurements for token validity.
+  /** The data type TokenValidityUnits specifies the time units you use when you set the duration of ID, access, and refresh tokens.
     */
   @js.native
   trait TokenValidityUnitsType extends js.Object {
@@ -5768,9 +5787,11 @@ package object cognitoidentityprovider {
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
+    var AuthSessionValidity: js.UndefOr[AuthSessionValidityType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
     var ClientName: js.UndefOr[ClientNameType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType]
     var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var IdTokenValidity: js.UndefOr[IdTokenValidityType]
@@ -5793,9 +5814,11 @@ package object cognitoidentityprovider {
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
+        AuthSessionValidity: js.UndefOr[AuthSessionValidityType] = js.undefined,
         CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
         ClientName: js.UndefOr[ClientNameType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType] = js.undefined,
         EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
@@ -5817,9 +5840,11 @@ package object cognitoidentityprovider {
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
+      AuthSessionValidity.foreach(__v => __obj.updateDynamic("AuthSessionValidity")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
       ClientName.foreach(__v => __obj.updateDynamic("ClientName")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnablePropagateAdditionalUserContextData.foreach(__v => __obj.updateDynamic("EnablePropagateAdditionalUserContextData")(__v.asInstanceOf[js.Any]))
       EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
@@ -5903,6 +5928,7 @@ package object cognitoidentityprovider {
     var AccountRecoverySetting: js.UndefOr[AccountRecoverySettingType]
     var AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType]
     var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
+    var DeletionProtection: js.UndefOr[DeletionProtectionType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
     var EmailConfiguration: js.UndefOr[EmailConfigurationType]
     var EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType]
@@ -5913,6 +5939,7 @@ package object cognitoidentityprovider {
     var SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType]
     var SmsConfiguration: js.UndefOr[SmsConfigurationType]
     var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
+    var UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType]
     var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
     var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType]
@@ -5925,6 +5952,7 @@ package object cognitoidentityprovider {
         AccountRecoverySetting: js.UndefOr[AccountRecoverySettingType] = js.undefined,
         AdminCreateUserConfig: js.UndefOr[AdminCreateUserConfigType] = js.undefined,
         AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
+        DeletionProtection: js.UndefOr[DeletionProtectionType] = js.undefined,
         DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
         EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
         EmailVerificationMessage: js.UndefOr[EmailVerificationMessageType] = js.undefined,
@@ -5935,6 +5963,7 @@ package object cognitoidentityprovider {
         SmsAuthenticationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
         SmsConfiguration: js.UndefOr[SmsConfigurationType] = js.undefined,
         SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
+        UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType] = js.undefined,
         UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
         UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
         VerificationMessageTemplate: js.UndefOr[VerificationMessageTemplateType] = js.undefined
@@ -5946,6 +5975,7 @@ package object cognitoidentityprovider {
       AccountRecoverySetting.foreach(__v => __obj.updateDynamic("AccountRecoverySetting")(__v.asInstanceOf[js.Any]))
       AdminCreateUserConfig.foreach(__v => __obj.updateDynamic("AdminCreateUserConfig")(__v.asInstanceOf[js.Any]))
       AutoVerifiedAttributes.foreach(__v => __obj.updateDynamic("AutoVerifiedAttributes")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       EmailConfiguration.foreach(__v => __obj.updateDynamic("EmailConfiguration")(__v.asInstanceOf[js.Any]))
       EmailVerificationMessage.foreach(__v => __obj.updateDynamic("EmailVerificationMessage")(__v.asInstanceOf[js.Any]))
@@ -5956,6 +5986,7 @@ package object cognitoidentityprovider {
       SmsAuthenticationMessage.foreach(__v => __obj.updateDynamic("SmsAuthenticationMessage")(__v.asInstanceOf[js.Any]))
       SmsConfiguration.foreach(__v => __obj.updateDynamic("SmsConfiguration")(__v.asInstanceOf[js.Any]))
       SmsVerificationMessage.foreach(__v => __obj.updateDynamic("SmsVerificationMessage")(__v.asInstanceOf[js.Any]))
+      UserAttributeUpdateSettings.foreach(__v => __obj.updateDynamic("UserAttributeUpdateSettings")(__v.asInstanceOf[js.Any]))
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       VerificationMessageTemplate.foreach(__v => __obj.updateDynamic("VerificationMessageTemplate")(__v.asInstanceOf[js.Any]))
@@ -5976,20 +6007,41 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
+  /** The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see [[https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates| Verifying updates to email addresses and phone numbers]].
+    */
+  @js.native
+  trait UserAttributeUpdateSettingsType extends js.Object {
+    var AttributesRequireVerificationBeforeUpdate: js.UndefOr[AttributesRequireVerificationBeforeUpdateType]
+  }
+
+  object UserAttributeUpdateSettingsType {
+    @inline
+    def apply(
+        AttributesRequireVerificationBeforeUpdate: js.UndefOr[AttributesRequireVerificationBeforeUpdateType] = js.undefined
+    ): UserAttributeUpdateSettingsType = {
+      val __obj = js.Dynamic.literal()
+      AttributesRequireVerificationBeforeUpdate.foreach(__v => __obj.updateDynamic("AttributesRequireVerificationBeforeUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserAttributeUpdateSettingsType]
+    }
+  }
+
+  /** Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an unexpected event by Amazon Cognito advanced security.
     */
   @js.native
   trait UserContextDataType extends js.Object {
     var EncodedData: js.UndefOr[StringType]
+    var IpAddress: js.UndefOr[StringType]
   }
 
   object UserContextDataType {
     @inline
     def apply(
-        EncodedData: js.UndefOr[StringType] = js.undefined
+        EncodedData: js.UndefOr[StringType] = js.undefined,
+        IpAddress: js.UndefOr[StringType] = js.undefined
     ): UserContextDataType = {
       val __obj = js.Dynamic.literal()
       EncodedData.foreach(__v => __obj.updateDynamic("EncodedData")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserContextDataType]
     }
   }
@@ -6100,12 +6152,14 @@ package object cognitoidentityprovider {
     var AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType]
     var AllowedOAuthScopes: js.UndefOr[ScopeListType]
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
+    var AuthSessionValidity: js.UndefOr[AuthSessionValidityType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
     var ClientId: js.UndefOr[ClientIdType]
     var ClientName: js.UndefOr[ClientNameType]
     var ClientSecret: js.UndefOr[ClientSecretType]
     var CreationDate: js.UndefOr[DateType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType]
     var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var IdTokenValidity: js.UndefOr[IdTokenValidityType]
@@ -6128,12 +6182,14 @@ package object cognitoidentityprovider {
         AllowedOAuthFlowsUserPoolClient: js.UndefOr[BooleanType] = js.undefined,
         AllowedOAuthScopes: js.UndefOr[ScopeListType] = js.undefined,
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
+        AuthSessionValidity: js.UndefOr[AuthSessionValidityType] = js.undefined,
         CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
         ClientId: js.UndefOr[ClientIdType] = js.undefined,
         ClientName: js.UndefOr[ClientNameType] = js.undefined,
         ClientSecret: js.UndefOr[ClientSecretType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnablePropagateAdditionalUserContextData: js.UndefOr[WrappedBooleanType] = js.undefined,
         EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
@@ -6153,12 +6209,14 @@ package object cognitoidentityprovider {
       AllowedOAuthFlowsUserPoolClient.foreach(__v => __obj.updateDynamic("AllowedOAuthFlowsUserPoolClient")(__v.asInstanceOf[js.Any]))
       AllowedOAuthScopes.foreach(__v => __obj.updateDynamic("AllowedOAuthScopes")(__v.asInstanceOf[js.Any]))
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
+      AuthSessionValidity.foreach(__v => __obj.updateDynamic("AuthSessionValidity")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
       ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
       ClientName.foreach(__v => __obj.updateDynamic("ClientName")(__v.asInstanceOf[js.Any]))
       ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnablePropagateAdditionalUserContextData.foreach(__v => __obj.updateDynamic("EnablePropagateAdditionalUserContextData")(__v.asInstanceOf[js.Any]))
       EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
@@ -6237,6 +6295,7 @@ package object cognitoidentityprovider {
     var AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType]
     var CreationDate: js.UndefOr[DateType]
     var CustomDomain: js.UndefOr[DomainType]
+    var DeletionProtection: js.UndefOr[DeletionProtectionType]
     var DeviceConfiguration: js.UndefOr[DeviceConfigurationType]
     var Domain: js.UndefOr[DomainType]
     var EmailConfiguration: js.UndefOr[EmailConfigurationType]
@@ -6256,6 +6315,7 @@ package object cognitoidentityprovider {
     var SmsConfigurationFailure: js.UndefOr[StringType]
     var SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType]
     var Status: js.UndefOr[StatusType]
+    var UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType]
     var UserPoolAddOns: js.UndefOr[UserPoolAddOnsType]
     var UserPoolTags: js.UndefOr[UserPoolTagsType]
     var UsernameAttributes: js.UndefOr[UsernameAttributesListType]
@@ -6273,6 +6333,7 @@ package object cognitoidentityprovider {
         AutoVerifiedAttributes: js.UndefOr[VerifiedAttributesListType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
         CustomDomain: js.UndefOr[DomainType] = js.undefined,
+        DeletionProtection: js.UndefOr[DeletionProtectionType] = js.undefined,
         DeviceConfiguration: js.UndefOr[DeviceConfigurationType] = js.undefined,
         Domain: js.UndefOr[DomainType] = js.undefined,
         EmailConfiguration: js.UndefOr[EmailConfigurationType] = js.undefined,
@@ -6292,6 +6353,7 @@ package object cognitoidentityprovider {
         SmsConfigurationFailure: js.UndefOr[StringType] = js.undefined,
         SmsVerificationMessage: js.UndefOr[SmsVerificationMessageType] = js.undefined,
         Status: js.UndefOr[StatusType] = js.undefined,
+        UserAttributeUpdateSettings: js.UndefOr[UserAttributeUpdateSettingsType] = js.undefined,
         UserPoolAddOns: js.UndefOr[UserPoolAddOnsType] = js.undefined,
         UserPoolTags: js.UndefOr[UserPoolTagsType] = js.undefined,
         UsernameAttributes: js.UndefOr[UsernameAttributesListType] = js.undefined,
@@ -6306,6 +6368,7 @@ package object cognitoidentityprovider {
       AutoVerifiedAttributes.foreach(__v => __obj.updateDynamic("AutoVerifiedAttributes")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       CustomDomain.foreach(__v => __obj.updateDynamic("CustomDomain")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       DeviceConfiguration.foreach(__v => __obj.updateDynamic("DeviceConfiguration")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       EmailConfiguration.foreach(__v => __obj.updateDynamic("EmailConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6325,6 +6388,7 @@ package object cognitoidentityprovider {
       SmsConfigurationFailure.foreach(__v => __obj.updateDynamic("SmsConfigurationFailure")(__v.asInstanceOf[js.Any]))
       SmsVerificationMessage.foreach(__v => __obj.updateDynamic("SmsVerificationMessage")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserAttributeUpdateSettings.foreach(__v => __obj.updateDynamic("UserAttributeUpdateSettings")(__v.asInstanceOf[js.Any]))
       UserPoolAddOns.foreach(__v => __obj.updateDynamic("UserPoolAddOns")(__v.asInstanceOf[js.Any]))
       UserPoolTags.foreach(__v => __obj.updateDynamic("UserPoolTags")(__v.asInstanceOf[js.Any]))
       UsernameAttributes.foreach(__v => __obj.updateDynamic("UsernameAttributes")(__v.asInstanceOf[js.Any]))
@@ -6334,7 +6398,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The user type.
+  /** A user profile in a Amazon Cognito user pool.
     */
   @js.native
   trait UserType extends js.Object {

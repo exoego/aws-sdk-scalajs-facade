@@ -13,6 +13,23 @@ object AdminStatus {
   @inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLING_IN_PROGRESS)
 }
 
+/** Indicates the current status of an allow list. Depending on the type of criteria that the list specifies, possible values are:
+  */
+@js.native
+sealed trait AllowListStatusCode extends js.Any
+object AllowListStatusCode {
+  val OK = "OK".asInstanceOf[AllowListStatusCode]
+  val S3_OBJECT_NOT_FOUND = "S3_OBJECT_NOT_FOUND".asInstanceOf[AllowListStatusCode]
+  val S3_USER_ACCESS_DENIED = "S3_USER_ACCESS_DENIED".asInstanceOf[AllowListStatusCode]
+  val S3_OBJECT_ACCESS_DENIED = "S3_OBJECT_ACCESS_DENIED".asInstanceOf[AllowListStatusCode]
+  val S3_THROTTLED = "S3_THROTTLED".asInstanceOf[AllowListStatusCode]
+  val S3_OBJECT_OVERSIZE = "S3_OBJECT_OVERSIZE".asInstanceOf[AllowListStatusCode]
+  val S3_OBJECT_EMPTY = "S3_OBJECT_EMPTY".asInstanceOf[AllowListStatusCode]
+  val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[AllowListStatusCode]
+
+  @inline def values: js.Array[AllowListStatusCode] = js.Array(OK, S3_OBJECT_NOT_FOUND, S3_USER_ACCESS_DENIED, S3_OBJECT_ACCESS_DENIED, S3_THROTTLED, S3_OBJECT_OVERSIZE, S3_OBJECT_EMPTY, UNKNOWN_ERROR)
+}
+
 @js.native
 sealed trait AllowsUnencryptedObjectUploads extends js.Any
 object AllowsUnencryptedObjectUploads {
@@ -23,7 +40,29 @@ object AllowsUnencryptedObjectUploads {
   @inline def values: js.Array[AllowsUnencryptedObjectUploads] = js.Array(TRUE, FALSE, UNKNOWN)
 }
 
-/** The error code for an error that prevented Amazon Macie from retrieving and processing information about an S3 bucket and the bucket's objects.
+/** The status of the automated sensitive data discovery configuration for an Amazon Macie account. Valid values are:
+  */
+@js.native
+sealed trait AutomatedDiscoveryStatus extends js.Any
+object AutomatedDiscoveryStatus {
+  val ENABLED = "ENABLED".asInstanceOf[AutomatedDiscoveryStatus]
+  val DISABLED = "DISABLED".asInstanceOf[AutomatedDiscoveryStatus]
+
+  @inline def values: js.Array[AutomatedDiscoveryStatus] = js.Array(ENABLED, DISABLED)
+}
+
+/** Specifies whether occurrences of sensitive data can be retrieved for a finding. Possible values are:
+  */
+@js.native
+sealed trait AvailabilityCode extends js.Any
+object AvailabilityCode {
+  val AVAILABLE = "AVAILABLE".asInstanceOf[AvailabilityCode]
+  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[AvailabilityCode]
+
+  @inline def values: js.Array[AvailabilityCode] = js.Array(AVAILABLE, UNAVAILABLE)
+}
+
+/** The error code for an error that prevented Amazon Macie from retrieving and processing metadata from Amazon S3 for an S3 bucket and the bucket's objects.
   */
 @js.native
 sealed trait BucketMetadataErrorCode extends js.Any
@@ -31,6 +70,18 @@ object BucketMetadataErrorCode {
   val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BucketMetadataErrorCode]
 
   @inline def values: js.Array[BucketMetadataErrorCode] = js.Array(ACCESS_DENIED)
+}
+
+/** Specifies how to apply changes to the S3 bucket exclusion list defined by the classification scope for an Amazon Macie account. Valid values are:
+  */
+@js.native
+sealed trait ClassificationScopeUpdateOperation extends js.Any
+object ClassificationScopeUpdateOperation {
+  val ADD = "ADD".asInstanceOf[ClassificationScopeUpdateOperation]
+  val REPLACE = "REPLACE".asInstanceOf[ClassificationScopeUpdateOperation]
+  val REMOVE = "REMOVE".asInstanceOf[ClassificationScopeUpdateOperation]
+
+  @inline def values: js.Array[ClassificationScopeUpdateOperation] = js.Array(ADD, REPLACE, REMOVE)
 }
 
 /** The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are:
@@ -53,6 +104,17 @@ object DataIdentifierSeverity {
   val HIGH = "HIGH".asInstanceOf[DataIdentifierSeverity]
 
   @inline def values: js.Array[DataIdentifierSeverity] = js.Array(LOW, MEDIUM, HIGH)
+}
+
+/** The type of data identifier that detected a specific type of sensitive data in an S3 bucket. Possible values are:
+  */
+@js.native
+sealed trait DataIdentifierType extends js.Any
+object DataIdentifierType {
+  val CUSTOM = "CUSTOM".asInstanceOf[DataIdentifierType]
+  val MANAGED = "MANAGED".asInstanceOf[DataIdentifierType]
+
+  @inline def values: js.Array[DataIdentifierType] = js.Array(CUSTOM, MANAGED)
 }
 
 @js.native
@@ -79,7 +141,7 @@ object EffectivePermission {
   @inline def values: js.Array[EffectivePermission] = js.Array(PUBLIC, NOT_PUBLIC, UNKNOWN)
 }
 
-/** The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Valid values are:
+/** The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Possible values are:
   */
 @js.native
 sealed trait EncryptionType extends js.Any
@@ -113,7 +175,7 @@ object FindingActionType {
   @inline def values: js.Array[FindingActionType] = js.Array(AWS_API_CALL)
 }
 
-/** The category of the finding. Valid values are:
+/** The category of the finding. Possible values are:
   */
 @js.native
 sealed trait FindingCategory extends js.Any
@@ -124,7 +186,7 @@ object FindingCategory {
   @inline def values: js.Array[FindingCategory] = js.Array(CLASSIFICATION, POLICY)
 }
 
-/** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see [[https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html|Monitoring and processing findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
+/** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch Events). For more information, see [[https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html|Monitoring and processing findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
   */
 @js.native
 sealed trait FindingPublishingFrequency extends js.Any
@@ -147,7 +209,7 @@ object FindingStatisticsSortAttributeName {
   @inline def values: js.Array[FindingStatisticsSortAttributeName] = js.Array(groupKey, count)
 }
 
-/** The type of finding. For details about each type, see [[https://docs.aws.amazon.com/macie/latest/user/findings-types.html|Types of Amazon Macie findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
+/** The type of finding. For details about each type, see [[https://docs.aws.amazon.com/macie/latest/user/findings-types.html|Types of Amazon Macie findings]] in the <i>Amazon Macie User Guide</i>. Possible values are:
   */
 @js.native
 sealed trait FindingType extends js.Any
@@ -177,7 +239,7 @@ object FindingType {
   )
 }
 
-/** The action to perform on findings that meet the filter criteria. To suppress (automatically archive) findings that meet the criteria, set this value to ARCHIVE. Valid values are:
+/** The action to perform on findings that match the filter criteria. To suppress (automatically archive) findings that match the criteria, set this value to ARCHIVE. Valid values are:
   */
 @js.native
 sealed trait FindingsFilterAction extends js.Any
@@ -219,7 +281,7 @@ object IsMonitoredByJob {
   @inline def values: js.Array[IsMonitoredByJob] = js.Array(TRUE, FALSE, UNKNOWN)
 }
 
-/** The operator to use in a condition. Valid values are:
+/** The operator to use in a condition. Depending on the type of condition, possible values are:
   */
 @js.native
 sealed trait JobComparator extends js.Any
@@ -332,6 +394,17 @@ object OrderBy {
   @inline def values: js.Array[OrderBy] = js.Array(ASC, DESC)
 }
 
+/** Specifies how Amazon Macie found the sensitive data that produced a finding. Possible values are:
+  */
+@js.native
+sealed trait OriginType extends js.Any
+object OriginType {
+  val SENSITIVE_DATA_DISCOVERY_JOB = "SENSITIVE_DATA_DISCOVERY_JOB".asInstanceOf[OriginType]
+  val AUTOMATED_SENSITIVE_DATA_DISCOVERY = "AUTOMATED_SENSITIVE_DATA_DISCOVERY".asInstanceOf[OriginType]
+
+  @inline def values: js.Array[OriginType] = js.Array(SENSITIVE_DATA_DISCOVERY_JOB, AUTOMATED_SENSITIVE_DATA_DISCOVERY)
+}
+
 /** The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are:
   */
 @js.native
@@ -349,6 +422,29 @@ object RelationshipStatus {
   val AccountSuspended = "AccountSuspended".asInstanceOf[RelationshipStatus]
 
   @inline def values: js.Array[RelationshipStatus] = js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended)
+}
+
+/** The status of a request to retrieve occurrences of sensitive data reported by a finding. Possible values are:
+  */
+@js.native
+sealed trait RevealRequestStatus extends js.Any
+object RevealRequestStatus {
+  val SUCCESS = "SUCCESS".asInstanceOf[RevealRequestStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[RevealRequestStatus]
+  val ERROR = "ERROR".asInstanceOf[RevealRequestStatus]
+
+  @inline def values: js.Array[RevealRequestStatus] = js.Array(SUCCESS, PROCESSING, ERROR)
+}
+
+/** The status of the configuration for retrieving occurrences of sensitive data reported by findings. Valid values are:
+  */
+@js.native
+sealed trait RevealStatus extends js.Any
+object RevealStatus {
+  val ENABLED = "ENABLED".asInstanceOf[RevealStatus]
+  val DISABLED = "DISABLED".asInstanceOf[RevealStatus]
+
+  @inline def values: js.Array[RevealStatus] = js.Array(ENABLED, DISABLED)
 }
 
 /** The property to use in a condition that determines whether an S3 object is included or excluded from a classification job. Valid values are:
@@ -497,6 +593,20 @@ object Type {
   @inline def values: js.Array[Type] = js.Array(NONE, AES256, `aws:kms`)
 }
 
+/** Specifies why occurrences of sensitive data can't be retrieved for a finding. Possible values are:
+  */
+@js.native
+sealed trait UnavailabilityReasonCode extends js.Any
+object UnavailabilityReasonCode {
+  val OBJECT_EXCEEDS_SIZE_QUOTA = "OBJECT_EXCEEDS_SIZE_QUOTA".asInstanceOf[UnavailabilityReasonCode]
+  val UNSUPPORTED_OBJECT_TYPE = "UNSUPPORTED_OBJECT_TYPE".asInstanceOf[UnavailabilityReasonCode]
+  val UNSUPPORTED_FINDING_TYPE = "UNSUPPORTED_FINDING_TYPE".asInstanceOf[UnavailabilityReasonCode]
+  val INVALID_CLASSIFICATION_RESULT = "INVALID_CLASSIFICATION_RESULT".asInstanceOf[UnavailabilityReasonCode]
+  val OBJECT_UNAVAILABLE = "OBJECT_UNAVAILABLE".asInstanceOf[UnavailabilityReasonCode]
+
+  @inline def values: js.Array[UnavailabilityReasonCode] = js.Array(OBJECT_EXCEEDS_SIZE_QUOTA, UNSUPPORTED_OBJECT_TYPE, UNSUPPORTED_FINDING_TYPE, INVALID_CLASSIFICATION_RESULT, OBJECT_UNAVAILABLE)
+}
+
 @js.native
 sealed trait Unit extends js.Any
 object Unit {
@@ -554,8 +664,10 @@ sealed trait UsageType extends js.Any
 object UsageType {
   val DATA_INVENTORY_EVALUATION = "DATA_INVENTORY_EVALUATION".asInstanceOf[UsageType]
   val SENSITIVE_DATA_DISCOVERY = "SENSITIVE_DATA_DISCOVERY".asInstanceOf[UsageType]
+  val AUTOMATED_SENSITIVE_DATA_DISCOVERY = "AUTOMATED_SENSITIVE_DATA_DISCOVERY".asInstanceOf[UsageType]
+  val AUTOMATED_OBJECT_MONITORING = "AUTOMATED_OBJECT_MONITORING".asInstanceOf[UsageType]
 
-  @inline def values: js.Array[UsageType] = js.Array(DATA_INVENTORY_EVALUATION, SENSITIVE_DATA_DISCOVERY)
+  @inline def values: js.Array[UsageType] = js.Array(DATA_INVENTORY_EVALUATION, SENSITIVE_DATA_DISCOVERY, AUTOMATED_SENSITIVE_DATA_DISCOVERY, AUTOMATED_OBJECT_MONITORING)
 }
 
 /** The type of entity that performed the action on the affected resource. Possible values are:

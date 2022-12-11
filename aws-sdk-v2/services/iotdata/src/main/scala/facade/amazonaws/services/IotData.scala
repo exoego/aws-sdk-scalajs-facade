@@ -8,20 +8,25 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object iotdata {
+  type ContentType = String
+  type CorrelationData = String
   type JsonDocument = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type MaxResults = Int
+  type MessageExpiry = Double
   type NamedShadowList = js.Array[ShadowName]
   type NextToken = String
   type PageSize = Int
   type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type PayloadSize = Double
   type Qos = Int
+  type ResponseTopic = String
   type Retain = Boolean
   type RetainedMessageList = js.Array[RetainedMessageSummary]
   type ShadowName = String
   type ThingName = String
   type Timestamp = Double
   type Topic = String
+  type UserProperties = String
 
   final class IotDataOps(private val service: IotData) extends AnyVal {
 
@@ -272,26 +277,44 @@ package object iotdata {
   @js.native
   trait PublishRequest extends js.Object {
     var topic: Topic
+    var contentType: js.UndefOr[ContentType]
+    var correlationData: js.UndefOr[CorrelationData]
+    var messageExpiry: js.UndefOr[MessageExpiry]
     var payload: js.UndefOr[Payload]
+    var payloadFormatIndicator: js.UndefOr[PayloadFormatIndicator]
     var qos: js.UndefOr[Qos]
+    var responseTopic: js.UndefOr[ResponseTopic]
     var retain: js.UndefOr[Retain]
+    var userProperties: js.UndefOr[UserProperties]
   }
 
   object PublishRequest {
     @inline
     def apply(
         topic: Topic,
+        contentType: js.UndefOr[ContentType] = js.undefined,
+        correlationData: js.UndefOr[CorrelationData] = js.undefined,
+        messageExpiry: js.UndefOr[MessageExpiry] = js.undefined,
         payload: js.UndefOr[Payload] = js.undefined,
+        payloadFormatIndicator: js.UndefOr[PayloadFormatIndicator] = js.undefined,
         qos: js.UndefOr[Qos] = js.undefined,
-        retain: js.UndefOr[Retain] = js.undefined
+        responseTopic: js.UndefOr[ResponseTopic] = js.undefined,
+        retain: js.UndefOr[Retain] = js.undefined,
+        userProperties: js.UndefOr[UserProperties] = js.undefined
     ): PublishRequest = {
       val __obj = js.Dynamic.literal(
         "topic" -> topic.asInstanceOf[js.Any]
       )
 
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      correlationData.foreach(__v => __obj.updateDynamic("correlationData")(__v.asInstanceOf[js.Any]))
+      messageExpiry.foreach(__v => __obj.updateDynamic("messageExpiry")(__v.asInstanceOf[js.Any]))
       payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      payloadFormatIndicator.foreach(__v => __obj.updateDynamic("payloadFormatIndicator")(__v.asInstanceOf[js.Any]))
       qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
+      responseTopic.foreach(__v => __obj.updateDynamic("responseTopic")(__v.asInstanceOf[js.Any]))
       retain.foreach(__v => __obj.updateDynamic("retain")(__v.asInstanceOf[js.Any]))
+      userProperties.foreach(__v => __obj.updateDynamic("userProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishRequest]
     }
   }

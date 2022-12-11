@@ -24,8 +24,9 @@ object AttachmentType {
   val CONNECT = "CONNECT".asInstanceOf[AttachmentType]
   val SITE_TO_SITE_VPN = "SITE_TO_SITE_VPN".asInstanceOf[AttachmentType]
   val VPC = "VPC".asInstanceOf[AttachmentType]
+  val TRANSIT_GATEWAY_ROUTE_TABLE = "TRANSIT_GATEWAY_ROUTE_TABLE".asInstanceOf[AttachmentType]
 
-  @inline def values: js.Array[AttachmentType] = js.Array(CONNECT, SITE_TO_SITE_VPN, VPC)
+  @inline def values: js.Array[AttachmentType] = js.Array(CONNECT, SITE_TO_SITE_VPN, VPC, TRANSIT_GATEWAY_ROUTE_TABLE)
 }
 
 @js.native
@@ -52,6 +53,17 @@ object ChangeSetState {
 }
 
 @js.native
+sealed trait ChangeStatus extends js.Any
+object ChangeStatus {
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[ChangeStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChangeStatus]
+  val COMPLETE = "COMPLETE".asInstanceOf[ChangeStatus]
+  val FAILED = "FAILED".asInstanceOf[ChangeStatus]
+
+  @inline def values: js.Array[ChangeStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETE, FAILED)
+}
+
+@js.native
 sealed trait ChangeType extends js.Any
 object ChangeType {
   val CORE_NETWORK_SEGMENT = "CORE_NETWORK_SEGMENT".asInstanceOf[ChangeType]
@@ -59,8 +71,22 @@ object ChangeType {
   val ATTACHMENT_MAPPING = "ATTACHMENT_MAPPING".asInstanceOf[ChangeType]
   val ATTACHMENT_ROUTE_PROPAGATION = "ATTACHMENT_ROUTE_PROPAGATION".asInstanceOf[ChangeType]
   val ATTACHMENT_ROUTE_STATIC = "ATTACHMENT_ROUTE_STATIC".asInstanceOf[ChangeType]
+  val CORE_NETWORK_CONFIGURATION = "CORE_NETWORK_CONFIGURATION".asInstanceOf[ChangeType]
+  val SEGMENTS_CONFIGURATION = "SEGMENTS_CONFIGURATION".asInstanceOf[ChangeType]
+  val SEGMENT_ACTIONS_CONFIGURATION = "SEGMENT_ACTIONS_CONFIGURATION".asInstanceOf[ChangeType]
+  val ATTACHMENT_POLICIES_CONFIGURATION = "ATTACHMENT_POLICIES_CONFIGURATION".asInstanceOf[ChangeType]
 
-  @inline def values: js.Array[ChangeType] = js.Array(CORE_NETWORK_SEGMENT, CORE_NETWORK_EDGE, ATTACHMENT_MAPPING, ATTACHMENT_ROUTE_PROPAGATION, ATTACHMENT_ROUTE_STATIC)
+  @inline def values: js.Array[ChangeType] = js.Array(
+    CORE_NETWORK_SEGMENT,
+    CORE_NETWORK_EDGE,
+    ATTACHMENT_MAPPING,
+    ATTACHMENT_ROUTE_PROPAGATION,
+    ATTACHMENT_ROUTE_STATIC,
+    CORE_NETWORK_CONFIGURATION,
+    SEGMENTS_CONFIGURATION,
+    SEGMENT_ACTIONS_CONFIGURATION,
+    ATTACHMENT_POLICIES_CONFIGURATION
+  )
 }
 
 @js.native
@@ -187,6 +213,25 @@ object LinkState {
   val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
   @inline def values: js.Array[LinkState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+}
+
+@js.native
+sealed trait PeeringState extends js.Any
+object PeeringState {
+  val CREATING = "CREATING".asInstanceOf[PeeringState]
+  val FAILED = "FAILED".asInstanceOf[PeeringState]
+  val AVAILABLE = "AVAILABLE".asInstanceOf[PeeringState]
+  val DELETING = "DELETING".asInstanceOf[PeeringState]
+
+  @inline def values: js.Array[PeeringState] = js.Array(CREATING, FAILED, AVAILABLE, DELETING)
+}
+
+@js.native
+sealed trait PeeringType extends js.Any
+object PeeringType {
+  val TRANSIT_GATEWAY = "TRANSIT_GATEWAY".asInstanceOf[PeeringType]
+
+  @inline def values: js.Array[PeeringType] = js.Array(TRANSIT_GATEWAY)
 }
 
 @js.native

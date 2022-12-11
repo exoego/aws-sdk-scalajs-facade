@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object resiliencehub {
   type AlarmRecommendationList = js.Array[AlarmRecommendation]
+  type AlarmReferenceIdList = js.Array[String500]
   type AppAssessmentSummaryList = js.Array[AppAssessmentSummary]
   type AppComponentList = js.Array[AppComponent]
   type AppSummaryList = js.Array[AppSummary]
@@ -34,6 +35,7 @@ package object resiliencehub {
   type EntityName = String
   type EntityNameList = js.Array[EntityName]
   type EntityVersion = String
+  type ErrorMessage = String
   type MaxResults = Int
   type NextToken = String
   type PhysicalResourceList = js.Array[PhysicalResource]
@@ -44,7 +46,9 @@ package object resiliencehub {
   type RecommendationTemplateStatusList = js.Array[RecommendationTemplateStatus]
   type RenderRecommendationTypeList = js.Array[RenderRecommendationType]
   type ResiliencyPolicies = js.Array[ResiliencyPolicy]
+  type ResourceErrorList = js.Array[ResourceError]
   type ResourceMappingList = js.Array[ResourceMapping]
+  type S3Url = String
   type Seconds = Int
   type SopRecommendationList = js.Array[SopRecommendation]
   type SpecReferenceId = String
@@ -56,6 +60,7 @@ package object resiliencehub {
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type TerraformSourceList = js.Array[TerraformSource]
   type TestRecommendationList = js.Array[TestRecommendation]
   type TimeStamp = js.Date
   type UnsupportedResourceList = js.Array[UnsupportedResource]
@@ -247,6 +252,7 @@ package object resiliencehub {
     var appArn: Arn
     var creationTime: TimeStamp
     var name: EntityName
+    var assessmentSchedule: js.UndefOr[AppAssessmentScheduleType]
     var complianceStatus: js.UndefOr[AppComplianceStatusType]
     var description: js.UndefOr[EntityDescription]
     var lastAppComplianceEvaluationTime: js.UndefOr[TimeStamp]
@@ -263,6 +269,7 @@ package object resiliencehub {
         appArn: Arn,
         creationTime: TimeStamp,
         name: EntityName,
+        assessmentSchedule: js.UndefOr[AppAssessmentScheduleType] = js.undefined,
         complianceStatus: js.UndefOr[AppComplianceStatusType] = js.undefined,
         description: js.UndefOr[EntityDescription] = js.undefined,
         lastAppComplianceEvaluationTime: js.UndefOr[TimeStamp] = js.undefined,
@@ -278,6 +285,7 @@ package object resiliencehub {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      assessmentSchedule.foreach(__v => __obj.updateDynamic("assessmentSchedule")(__v.asInstanceOf[js.Any]))
       complianceStatus.foreach(__v => __obj.updateDynamic("complianceStatus")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       lastAppComplianceEvaluationTime.foreach(__v => __obj.updateDynamic("lastAppComplianceEvaluationTime")(__v.asInstanceOf[js.Any]))
@@ -307,6 +315,7 @@ package object resiliencehub {
     var message: js.UndefOr[String500]
     var policy: js.UndefOr[ResiliencyPolicy]
     var resiliencyScore: js.UndefOr[ResiliencyScore]
+    var resourceErrorsDetails: js.UndefOr[ResourceErrorsDetails]
     var startTime: js.UndefOr[TimeStamp]
     var tags: js.UndefOr[TagMap]
   }
@@ -327,6 +336,7 @@ package object resiliencehub {
         message: js.UndefOr[String500] = js.undefined,
         policy: js.UndefOr[ResiliencyPolicy] = js.undefined,
         resiliencyScore: js.UndefOr[ResiliencyScore] = js.undefined,
+        resourceErrorsDetails: js.UndefOr[ResourceErrorsDetails] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): AppAssessment = {
@@ -346,6 +356,7 @@ package object resiliencehub {
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
       resiliencyScore.foreach(__v => __obj.updateDynamic("resiliencyScore")(__v.asInstanceOf[js.Any]))
+      resourceErrorsDetails.foreach(__v => __obj.updateDynamic("resourceErrorsDetails")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppAssessment]
@@ -467,9 +478,11 @@ package object resiliencehub {
     var appArn: Arn
     var creationTime: TimeStamp
     var name: EntityName
+    var assessmentSchedule: js.UndefOr[AppAssessmentScheduleType]
     var complianceStatus: js.UndefOr[AppComplianceStatusType]
     var description: js.UndefOr[EntityDescription]
     var resiliencyScore: js.UndefOr[Double]
+    var status: js.UndefOr[AppStatusType]
   }
 
   object AppSummary {
@@ -478,9 +491,11 @@ package object resiliencehub {
         appArn: Arn,
         creationTime: TimeStamp,
         name: EntityName,
+        assessmentSchedule: js.UndefOr[AppAssessmentScheduleType] = js.undefined,
         complianceStatus: js.UndefOr[AppComplianceStatusType] = js.undefined,
         description: js.UndefOr[EntityDescription] = js.undefined,
-        resiliencyScore: js.UndefOr[Double] = js.undefined
+        resiliencyScore: js.UndefOr[Double] = js.undefined,
+        status: js.UndefOr[AppStatusType] = js.undefined
     ): AppSummary = {
       val __obj = js.Dynamic.literal(
         "appArn" -> appArn.asInstanceOf[js.Any],
@@ -488,9 +503,11 @@ package object resiliencehub {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      assessmentSchedule.foreach(__v => __obj.updateDynamic("assessmentSchedule")(__v.asInstanceOf[js.Any]))
       complianceStatus.foreach(__v => __obj.updateDynamic("complianceStatus")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       resiliencyScore.foreach(__v => __obj.updateDynamic("resiliencyScore")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppSummary]
     }
   }
@@ -614,6 +631,7 @@ package object resiliencehub {
   @js.native
   trait CreateAppRequest extends js.Object {
     var name: EntityName
+    var assessmentSchedule: js.UndefOr[AppAssessmentScheduleType]
     var clientToken: js.UndefOr[ClientToken]
     var description: js.UndefOr[EntityDescription]
     var policyArn: js.UndefOr[Arn]
@@ -624,6 +642,7 @@ package object resiliencehub {
     @inline
     def apply(
         name: EntityName,
+        assessmentSchedule: js.UndefOr[AppAssessmentScheduleType] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         description: js.UndefOr[EntityDescription] = js.undefined,
         policyArn: js.UndefOr[Arn] = js.undefined,
@@ -633,6 +652,7 @@ package object resiliencehub {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      assessmentSchedule.foreach(__v => __obj.updateDynamic("assessmentSchedule")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
@@ -1245,19 +1265,23 @@ package object resiliencehub {
   @js.native
   trait ImportResourcesToDraftAppVersionRequest extends js.Object {
     var appArn: Arn
-    var sourceArns: ArnList
+    var sourceArns: js.UndefOr[ArnList]
+    var terraformSources: js.UndefOr[TerraformSourceList]
   }
 
   object ImportResourcesToDraftAppVersionRequest {
     @inline
     def apply(
         appArn: Arn,
-        sourceArns: ArnList
+        sourceArns: js.UndefOr[ArnList] = js.undefined,
+        terraformSources: js.UndefOr[TerraformSourceList] = js.undefined
     ): ImportResourcesToDraftAppVersionRequest = {
       val __obj = js.Dynamic.literal(
-        "appArn" -> appArn.asInstanceOf[js.Any],
-        "sourceArns" -> sourceArns.asInstanceOf[js.Any]
+        "appArn" -> appArn.asInstanceOf[js.Any]
       )
+
+      sourceArns.foreach(__v => __obj.updateDynamic("sourceArns")(__v.asInstanceOf[js.Any]))
+      terraformSources.foreach(__v => __obj.updateDynamic("terraformSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportResourcesToDraftAppVersionRequest]
     }
   }
@@ -1266,8 +1290,9 @@ package object resiliencehub {
   trait ImportResourcesToDraftAppVersionResponse extends js.Object {
     var appArn: Arn
     var appVersion: EntityVersion
-    var sourceArns: ArnList
     var status: ResourceImportStatusType
+    var sourceArns: js.UndefOr[ArnList]
+    var terraformSources: js.UndefOr[TerraformSourceList]
   }
 
   object ImportResourcesToDraftAppVersionResponse {
@@ -1275,15 +1300,18 @@ package object resiliencehub {
     def apply(
         appArn: Arn,
         appVersion: EntityVersion,
-        sourceArns: ArnList,
-        status: ResourceImportStatusType
+        status: ResourceImportStatusType,
+        sourceArns: js.UndefOr[ArnList] = js.undefined,
+        terraformSources: js.UndefOr[TerraformSourceList] = js.undefined
     ): ImportResourcesToDraftAppVersionResponse = {
       val __obj = js.Dynamic.literal(
         "appArn" -> appArn.asInstanceOf[js.Any],
         "appVersion" -> appVersion.asInstanceOf[js.Any],
-        "sourceArns" -> sourceArns.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
+
+      sourceArns.foreach(__v => __obj.updateDynamic("sourceArns")(__v.asInstanceOf[js.Any]))
+      terraformSources.foreach(__v => __obj.updateDynamic("terraformSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportResourcesToDraftAppVersionResponse]
     }
   }
@@ -1996,6 +2024,7 @@ package object resiliencehub {
     var identifier: String255
     var logicalStackName: js.UndefOr[String255]
     var resourceGroupName: js.UndefOr[EntityName]
+    var terraformSourceName: js.UndefOr[String255]
   }
 
   object LogicalResourceId {
@@ -2003,7 +2032,8 @@ package object resiliencehub {
     def apply(
         identifier: String255,
         logicalStackName: js.UndefOr[String255] = js.undefined,
-        resourceGroupName: js.UndefOr[EntityName] = js.undefined
+        resourceGroupName: js.UndefOr[EntityName] = js.undefined,
+        terraformSourceName: js.UndefOr[String255] = js.undefined
     ): LogicalResourceId = {
       val __obj = js.Dynamic.literal(
         "identifier" -> identifier.asInstanceOf[js.Any]
@@ -2011,6 +2041,7 @@ package object resiliencehub {
 
       logicalStackName.foreach(__v => __obj.updateDynamic("logicalStackName")(__v.asInstanceOf[js.Any]))
       resourceGroupName.foreach(__v => __obj.updateDynamic("resourceGroupName")(__v.asInstanceOf[js.Any]))
+      terraformSourceName.foreach(__v => __obj.updateDynamic("terraformSourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogicalResourceId]
     }
   }
@@ -2278,6 +2309,7 @@ package object resiliencehub {
     var logicalStackNames: js.UndefOr[String255List]
     var resourceGroupNames: js.UndefOr[EntityNameList]
     var resourceNames: js.UndefOr[EntityNameList]
+    var terraformSourceNames: js.UndefOr[String255List]
   }
 
   object RemoveDraftAppVersionResourceMappingsRequest {
@@ -2287,7 +2319,8 @@ package object resiliencehub {
         appRegistryAppNames: js.UndefOr[EntityNameList] = js.undefined,
         logicalStackNames: js.UndefOr[String255List] = js.undefined,
         resourceGroupNames: js.UndefOr[EntityNameList] = js.undefined,
-        resourceNames: js.UndefOr[EntityNameList] = js.undefined
+        resourceNames: js.UndefOr[EntityNameList] = js.undefined,
+        terraformSourceNames: js.UndefOr[String255List] = js.undefined
     ): RemoveDraftAppVersionResourceMappingsRequest = {
       val __obj = js.Dynamic.literal(
         "appArn" -> appArn.asInstanceOf[js.Any]
@@ -2297,6 +2330,7 @@ package object resiliencehub {
       logicalStackNames.foreach(__v => __obj.updateDynamic("logicalStackNames")(__v.asInstanceOf[js.Any]))
       resourceGroupNames.foreach(__v => __obj.updateDynamic("resourceGroupNames")(__v.asInstanceOf[js.Any]))
       resourceNames.foreach(__v => __obj.updateDynamic("resourceNames")(__v.asInstanceOf[js.Any]))
+      terraformSourceNames.foreach(__v => __obj.updateDynamic("terraformSourceNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveDraftAppVersionResourceMappingsRequest]
     }
   }
@@ -2430,6 +2464,51 @@ package object resiliencehub {
     }
   }
 
+  /** Defines application resource errors.
+    */
+  @js.native
+  trait ResourceError extends js.Object {
+    var logicalResourceId: js.UndefOr[String255]
+    var physicalResourceId: js.UndefOr[String255]
+    var reason: js.UndefOr[ErrorMessage]
+  }
+
+  object ResourceError {
+    @inline
+    def apply(
+        logicalResourceId: js.UndefOr[String255] = js.undefined,
+        physicalResourceId: js.UndefOr[String255] = js.undefined,
+        reason: js.UndefOr[ErrorMessage] = js.undefined
+    ): ResourceError = {
+      val __obj = js.Dynamic.literal()
+      logicalResourceId.foreach(__v => __obj.updateDynamic("logicalResourceId")(__v.asInstanceOf[js.Any]))
+      physicalResourceId.foreach(__v => __obj.updateDynamic("physicalResourceId")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceError]
+    }
+  }
+
+  /** A list of errors retrieving an application's resources.
+    */
+  @js.native
+  trait ResourceErrorsDetails extends js.Object {
+    var hasMoreErrors: js.UndefOr[BooleanOptional]
+    var resourceErrors: js.UndefOr[ResourceErrorList]
+  }
+
+  object ResourceErrorsDetails {
+    @inline
+    def apply(
+        hasMoreErrors: js.UndefOr[BooleanOptional] = js.undefined,
+        resourceErrors: js.UndefOr[ResourceErrorList] = js.undefined
+    ): ResourceErrorsDetails = {
+      val __obj = js.Dynamic.literal()
+      hasMoreErrors.foreach(__v => __obj.updateDynamic("hasMoreErrors")(__v.asInstanceOf[js.Any]))
+      resourceErrors.foreach(__v => __obj.updateDynamic("resourceErrors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceErrorsDetails]
+    }
+  }
+
   /** Defines a resource mapping.
     */
   @js.native
@@ -2440,6 +2519,7 @@ package object resiliencehub {
     var logicalStackName: js.UndefOr[String255]
     var resourceGroupName: js.UndefOr[EntityName]
     var resourceName: js.UndefOr[EntityName]
+    var terraformSourceName: js.UndefOr[String255]
   }
 
   object ResourceMapping {
@@ -2450,7 +2530,8 @@ package object resiliencehub {
         appRegistryAppName: js.UndefOr[EntityName] = js.undefined,
         logicalStackName: js.UndefOr[String255] = js.undefined,
         resourceGroupName: js.UndefOr[EntityName] = js.undefined,
-        resourceName: js.UndefOr[EntityName] = js.undefined
+        resourceName: js.UndefOr[EntityName] = js.undefined,
+        terraformSourceName: js.UndefOr[String255] = js.undefined
     ): ResourceMapping = {
       val __obj = js.Dynamic.literal(
         "mappingType" -> mappingType.asInstanceOf[js.Any],
@@ -2461,6 +2542,7 @@ package object resiliencehub {
       logicalStackName.foreach(__v => __obj.updateDynamic("logicalStackName")(__v.asInstanceOf[js.Any]))
       resourceGroupName.foreach(__v => __obj.updateDynamic("resourceGroupName")(__v.asInstanceOf[js.Any]))
       resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
+      terraformSourceName.foreach(__v => __obj.updateDynamic("terraformSourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceMapping]
     }
   }
@@ -2605,12 +2687,32 @@ package object resiliencehub {
     }
   }
 
+  /** The Terraform s3 state file you need to import.
+    */
+  @js.native
+  trait TerraformSource extends js.Object {
+    var s3StateFileUrl: S3Url
+  }
+
+  object TerraformSource {
+    @inline
+    def apply(
+        s3StateFileUrl: S3Url
+    ): TerraformSource = {
+      val __obj = js.Dynamic.literal(
+        "s3StateFileUrl" -> s3StateFileUrl.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TerraformSource]
+    }
+  }
+
   /** Defines a test recommendation.
     */
   @js.native
   trait TestRecommendation extends js.Object {
     var referenceId: SpecReferenceId
     var appComponentName: js.UndefOr[EntityId]
+    var dependsOnAlarms: js.UndefOr[AlarmReferenceIdList]
     var description: js.UndefOr[String500]
     var intent: js.UndefOr[EntityDescription]
     var items: js.UndefOr[RecommendationItemList]
@@ -2626,6 +2728,7 @@ package object resiliencehub {
     def apply(
         referenceId: SpecReferenceId,
         appComponentName: js.UndefOr[EntityId] = js.undefined,
+        dependsOnAlarms: js.UndefOr[AlarmReferenceIdList] = js.undefined,
         description: js.UndefOr[String500] = js.undefined,
         intent: js.UndefOr[EntityDescription] = js.undefined,
         items: js.UndefOr[RecommendationItemList] = js.undefined,
@@ -2640,6 +2743,7 @@ package object resiliencehub {
       )
 
       appComponentName.foreach(__v => __obj.updateDynamic("appComponentName")(__v.asInstanceOf[js.Any]))
+      dependsOnAlarms.foreach(__v => __obj.updateDynamic("dependsOnAlarms")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       intent.foreach(__v => __obj.updateDynamic("intent")(__v.asInstanceOf[js.Any]))
       items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
@@ -2711,6 +2815,7 @@ package object resiliencehub {
   @js.native
   trait UpdateAppRequest extends js.Object {
     var appArn: Arn
+    var assessmentSchedule: js.UndefOr[AppAssessmentScheduleType]
     var clearResiliencyPolicyArn: js.UndefOr[BooleanOptional]
     var description: js.UndefOr[EntityDescription]
     var policyArn: js.UndefOr[Arn]
@@ -2720,6 +2825,7 @@ package object resiliencehub {
     @inline
     def apply(
         appArn: Arn,
+        assessmentSchedule: js.UndefOr[AppAssessmentScheduleType] = js.undefined,
         clearResiliencyPolicyArn: js.UndefOr[BooleanOptional] = js.undefined,
         description: js.UndefOr[EntityDescription] = js.undefined,
         policyArn: js.UndefOr[Arn] = js.undefined
@@ -2728,6 +2834,7 @@ package object resiliencehub {
         "appArn" -> appArn.asInstanceOf[js.Any]
       )
 
+      assessmentSchedule.foreach(__v => __obj.updateDynamic("assessmentSchedule")(__v.asInstanceOf[js.Any]))
       clearResiliencyPolicyArn.foreach(__v => __obj.updateDynamic("clearResiliencyPolicyArn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))

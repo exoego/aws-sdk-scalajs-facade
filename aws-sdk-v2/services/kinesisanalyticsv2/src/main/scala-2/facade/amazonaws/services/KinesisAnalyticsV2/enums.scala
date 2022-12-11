@@ -117,8 +117,9 @@ object RuntimeEnvironment {
   val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
   val `FLINK-1_13` = "FLINK-1_13".asInstanceOf[RuntimeEnvironment]
   val `ZEPPELIN-FLINK-2_0` = "ZEPPELIN-FLINK-2_0".asInstanceOf[RuntimeEnvironment]
+  val `FLINK-1_15` = "FLINK-1_15".asInstanceOf[RuntimeEnvironment]
 
-  @inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `ZEPPELIN-FLINK-1_0`, `FLINK-1_11`, `FLINK-1_13`, `ZEPPELIN-FLINK-2_0`)
+  @inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `ZEPPELIN-FLINK-1_0`, `FLINK-1_11`, `FLINK-1_13`, `ZEPPELIN-FLINK-2_0`, `FLINK-1_15`)
 }
 
 @js.native

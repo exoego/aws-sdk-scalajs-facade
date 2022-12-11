@@ -46,6 +46,7 @@ package object workdocs {
   type ResourceIdType = String
   type ResourceNameType = String
   type ResourcePathComponentList = js.Array[ResourcePathComponent]
+  type SearchMarkerType = String
   type SearchQueryType = String
   type SharePrincipalList = js.Array[SharePrincipal]
   type ShareResultsList = js.Array[ShareResult]
@@ -79,6 +80,7 @@ package object workdocs {
     @inline def deleteCommentFuture(params: DeleteCommentRequest): Future[js.Object] = service.deleteComment(params).promise().toFuture
     @inline def deleteCustomMetadataFuture(params: DeleteCustomMetadataRequest): Future[DeleteCustomMetadataResponse] = service.deleteCustomMetadata(params).promise().toFuture
     @inline def deleteDocumentFuture(params: DeleteDocumentRequest): Future[js.Object] = service.deleteDocument(params).promise().toFuture
+    @inline def deleteDocumentVersionFuture(params: DeleteDocumentVersionRequest): Future[js.Object] = service.deleteDocumentVersion(params).promise().toFuture
     @inline def deleteFolderContentsFuture(params: DeleteFolderContentsRequest): Future[js.Object] = service.deleteFolderContents(params).promise().toFuture
     @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[js.Object] = service.deleteFolder(params).promise().toFuture
     @inline def deleteLabelsFuture(params: DeleteLabelsRequest): Future[DeleteLabelsResponse] = service.deleteLabels(params).promise().toFuture
@@ -103,6 +105,7 @@ package object workdocs {
     @inline def initiateDocumentVersionUploadFuture(params: InitiateDocumentVersionUploadRequest): Future[InitiateDocumentVersionUploadResponse] = service.initiateDocumentVersionUpload(params).promise().toFuture
     @inline def removeAllResourcePermissionsFuture(params: RemoveAllResourcePermissionsRequest): Future[js.Object] = service.removeAllResourcePermissions(params).promise().toFuture
     @inline def removeResourcePermissionFuture(params: RemoveResourcePermissionRequest): Future[js.Object] = service.removeResourcePermission(params).promise().toFuture
+    @inline def restoreDocumentVersionsFuture(params: RestoreDocumentVersionsRequest): Future[js.Object] = service.restoreDocumentVersions(params).promise().toFuture
     @inline def updateDocumentFuture(params: UpdateDocumentRequest): Future[js.Object] = service.updateDocument(params).promise().toFuture
     @inline def updateDocumentVersionFuture(params: UpdateDocumentVersionRequest): Future[js.Object] = service.updateDocumentVersion(params).promise().toFuture
     @inline def updateFolderFuture(params: UpdateFolderRequest): Future[js.Object] = service.updateFolder(params).promise().toFuture
@@ -128,6 +131,7 @@ package object workdocs {
     def deleteComment(params: DeleteCommentRequest): Request[js.Object] = js.native
     def deleteCustomMetadata(params: DeleteCustomMetadataRequest): Request[DeleteCustomMetadataResponse] = js.native
     def deleteDocument(params: DeleteDocumentRequest): Request[js.Object] = js.native
+    def deleteDocumentVersion(params: DeleteDocumentVersionRequest): Request[js.Object] = js.native
     def deleteFolder(params: DeleteFolderRequest): Request[js.Object] = js.native
     def deleteFolderContents(params: DeleteFolderContentsRequest): Request[js.Object] = js.native
     def deleteLabels(params: DeleteLabelsRequest): Request[DeleteLabelsResponse] = js.native
@@ -152,6 +156,7 @@ package object workdocs {
     def initiateDocumentVersionUpload(params: InitiateDocumentVersionUploadRequest): Request[InitiateDocumentVersionUploadResponse] = js.native
     def removeAllResourcePermissions(params: RemoveAllResourcePermissionsRequest): Request[js.Object] = js.native
     def removeResourcePermission(params: RemoveResourcePermissionRequest): Request[js.Object] = js.native
+    def restoreDocumentVersions(params: RestoreDocumentVersionsRequest): Request[js.Object] = js.native
     def updateDocument(params: UpdateDocumentRequest): Request[js.Object] = js.native
     def updateDocumentVersion(params: UpdateDocumentVersionRequest): Request[js.Object] = js.native
     def updateFolder(params: UpdateFolderRequest): Request[js.Object] = js.native
@@ -762,6 +767,33 @@ package object workdocs {
   }
 
   @js.native
+  trait DeleteDocumentVersionRequest extends js.Object {
+    var DeletePriorVersions: BooleanType
+    var DocumentId: ResourceIdType
+    var VersionId: DocumentVersionIdType
+    var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
+  }
+
+  object DeleteDocumentVersionRequest {
+    @inline
+    def apply(
+        DeletePriorVersions: BooleanType,
+        DocumentId: ResourceIdType,
+        VersionId: DocumentVersionIdType,
+        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
+    ): DeleteDocumentVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeletePriorVersions" -> DeletePriorVersions.asInstanceOf[js.Any],
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any],
+        "VersionId" -> VersionId.asInstanceOf[js.Any]
+      )
+
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDocumentVersionRequest]
+    }
+  }
+
+  @js.native
   trait DeleteFolderContentsRequest extends js.Object {
     var FolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
@@ -889,7 +921,7 @@ package object workdocs {
     var EndTime: js.UndefOr[TimestampType]
     var IncludeIndirectActivities: js.UndefOr[BooleanType]
     var Limit: js.UndefOr[LimitType]
-    var Marker: js.UndefOr[MarkerType]
+    var Marker: js.UndefOr[SearchMarkerType]
     var OrganizationId: js.UndefOr[IdType]
     var ResourceId: js.UndefOr[IdType]
     var StartTime: js.UndefOr[TimestampType]
@@ -904,7 +936,7 @@ package object workdocs {
         EndTime: js.UndefOr[TimestampType] = js.undefined,
         IncludeIndirectActivities: js.UndefOr[BooleanType] = js.undefined,
         Limit: js.UndefOr[LimitType] = js.undefined,
-        Marker: js.UndefOr[MarkerType] = js.undefined,
+        Marker: js.UndefOr[SearchMarkerType] = js.undefined,
         OrganizationId: js.UndefOr[IdType] = js.undefined,
         ResourceId: js.UndefOr[IdType] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined,
@@ -927,14 +959,14 @@ package object workdocs {
 
   @js.native
   trait DescribeActivitiesResponse extends js.Object {
-    var Marker: js.UndefOr[MarkerType]
+    var Marker: js.UndefOr[SearchMarkerType]
     var UserActivities: js.UndefOr[UserActivities]
   }
 
   object DescribeActivitiesResponse {
     @inline
     def apply(
-        Marker: js.UndefOr[MarkerType] = js.undefined,
+        Marker: js.UndefOr[SearchMarkerType] = js.undefined,
         UserActivities: js.UndefOr[UserActivities] = js.undefined
     ): DescribeActivitiesResponse = {
       val __obj = js.Dynamic.literal()
@@ -1829,7 +1861,6 @@ package object workdocs {
 
   @js.native
   trait InitiateDocumentVersionUploadRequest extends js.Object {
-    var ParentFolderId: ResourceIdType
     var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
     var ContentCreatedTimestamp: js.UndefOr[TimestampType]
     var ContentModifiedTimestamp: js.UndefOr[TimestampType]
@@ -1837,24 +1868,22 @@ package object workdocs {
     var DocumentSizeInBytes: js.UndefOr[SizeType]
     var Id: js.UndefOr[ResourceIdType]
     var Name: js.UndefOr[ResourceNameType]
+    var ParentFolderId: js.UndefOr[ResourceIdType]
   }
 
   object InitiateDocumentVersionUploadRequest {
     @inline
     def apply(
-        ParentFolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         ContentCreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         ContentModifiedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         ContentType: js.UndefOr[DocumentContentType] = js.undefined,
         DocumentSizeInBytes: js.UndefOr[SizeType] = js.undefined,
         Id: js.UndefOr[ResourceIdType] = js.undefined,
-        Name: js.UndefOr[ResourceNameType] = js.undefined
+        Name: js.UndefOr[ResourceNameType] = js.undefined,
+        ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined
     ): InitiateDocumentVersionUploadRequest = {
-      val __obj = js.Dynamic.literal(
-        "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       ContentCreatedTimestamp.foreach(__v => __obj.updateDynamic("ContentCreatedTimestamp")(__v.asInstanceOf[js.Any]))
       ContentModifiedTimestamp.foreach(__v => __obj.updateDynamic("ContentModifiedTimestamp")(__v.asInstanceOf[js.Any]))
@@ -1862,6 +1891,7 @@ package object workdocs {
       DocumentSizeInBytes.foreach(__v => __obj.updateDynamic("DocumentSizeInBytes")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateDocumentVersionUploadRequest]
     }
   }
@@ -2092,6 +2122,27 @@ package object workdocs {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePathComponent]
+    }
+  }
+
+  @js.native
+  trait RestoreDocumentVersionsRequest extends js.Object {
+    var DocumentId: ResourceIdType
+    var AuthenticationToken: js.UndefOr[AuthenticationHeaderType]
+  }
+
+  object RestoreDocumentVersionsRequest {
+    @inline
+    def apply(
+        DocumentId: ResourceIdType,
+        AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
+    ): RestoreDocumentVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentId" -> DocumentId.asInstanceOf[js.Any]
+      )
+
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreDocumentVersionsRequest]
     }
   }
 

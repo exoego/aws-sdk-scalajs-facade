@@ -8,10 +8,19 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object wellarchitected {
+  type AccountSummary = js.Dictionary[CheckStatusCount]
+  type AdditionalResourcesList = js.Array[AdditionalResources]
   type AnswerSummaries = js.Array[AnswerSummary]
+  type ApplicationArn = String
   type AwsAccountId = String
   type AwsRegion = String
   type Base64String = String
+  type CheckDescription = String
+  type CheckDetails = js.Array[CheckDetail]
+  type CheckId = String
+  type CheckName = String
+  type CheckStatusCount = Int
+  type CheckSummaries = js.Array[CheckSummary]
   type ChoiceAnswerSummaries = js.Array[ChoiceAnswerSummary]
   type ChoiceAnswers = js.Array[ChoiceAnswer]
   type ChoiceContentDisplayText = String
@@ -26,6 +35,7 @@ package object wellarchitected {
   type ClientRequestToken = String
   type Count = Int
   type DisplayText = String
+  type FlaggedResources = Int
   type HelpfulResourceUrl = String
   type ImprovementPlanUrl = String
   type ImprovementSummaries = js.Array[ImprovementSummary]
@@ -73,12 +83,15 @@ package object wellarchitected {
   type ShareInvitationSummaries = js.Array[ShareInvitationSummary]
   type SharedWith = String
   type SharedWithPrefix = String
+  type StatusMessage = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type Timestamp = js.Date
+  type Urls = js.Array[ChoiceContent]
   type WorkloadAccountIds = js.Array[AwsAccountId]
+  type WorkloadApplications = js.Array[ApplicationArn]
   type WorkloadArchitecturalDesign = String
   type WorkloadArn = String
   type WorkloadAwsRegions = js.Array[AwsRegion]
@@ -119,6 +132,8 @@ package object wellarchitected {
     @inline def getWorkloadFuture(params: GetWorkloadInput): Future[GetWorkloadOutput] = service.getWorkload(params).promise().toFuture
     @inline def importLensFuture(params: ImportLensInput): Future[ImportLensOutput] = service.importLens(params).promise().toFuture
     @inline def listAnswersFuture(params: ListAnswersInput): Future[ListAnswersOutput] = service.listAnswers(params).promise().toFuture
+    @inline def listCheckDetailsFuture(params: ListCheckDetailsInput): Future[ListCheckDetailsOutput] = service.listCheckDetails(params).promise().toFuture
+    @inline def listCheckSummariesFuture(params: ListCheckSummariesInput): Future[ListCheckSummariesOutput] = service.listCheckSummaries(params).promise().toFuture
     @inline def listLensReviewImprovementsFuture(params: ListLensReviewImprovementsInput): Future[ListLensReviewImprovementsOutput] = service.listLensReviewImprovements(params).promise().toFuture
     @inline def listLensReviewsFuture(params: ListLensReviewsInput): Future[ListLensReviewsOutput] = service.listLensReviews(params).promise().toFuture
     @inline def listLensSharesFuture(params: ListLensSharesInput): Future[ListLensSharesOutput] = service.listLensShares(params).promise().toFuture
@@ -132,6 +147,7 @@ package object wellarchitected {
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateAnswerFuture(params: UpdateAnswerInput): Future[UpdateAnswerOutput] = service.updateAnswer(params).promise().toFuture
+    @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsInput): Future[js.Object] = service.updateGlobalSettings(params).promise().toFuture
     @inline def updateLensReviewFuture(params: UpdateLensReviewInput): Future[UpdateLensReviewOutput] = service.updateLensReview(params).promise().toFuture
     @inline def updateShareInvitationFuture(params: UpdateShareInvitationInput): Future[UpdateShareInvitationOutput] = service.updateShareInvitation(params).promise().toFuture
     @inline def updateWorkloadFuture(params: UpdateWorkloadInput): Future[UpdateWorkloadOutput] = service.updateWorkload(params).promise().toFuture
@@ -166,6 +182,8 @@ package object wellarchitected {
     def getWorkload(params: GetWorkloadInput): Request[GetWorkloadOutput] = js.native
     def importLens(params: ImportLensInput): Request[ImportLensOutput] = js.native
     def listAnswers(params: ListAnswersInput): Request[ListAnswersOutput] = js.native
+    def listCheckDetails(params: ListCheckDetailsInput): Request[ListCheckDetailsOutput] = js.native
+    def listCheckSummaries(params: ListCheckSummariesInput): Request[ListCheckSummariesOutput] = js.native
     def listLensReviewImprovements(params: ListLensReviewImprovementsInput): Request[ListLensReviewImprovementsOutput] = js.native
     def listLensReviews(params: ListLensReviewsInput): Request[ListLensReviewsOutput] = js.native
     def listLensShares(params: ListLensSharesInput): Request[ListLensSharesOutput] = js.native
@@ -179,6 +197,7 @@ package object wellarchitected {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateAnswer(params: UpdateAnswerInput): Request[UpdateAnswerOutput] = js.native
+    def updateGlobalSettings(params: UpdateGlobalSettingsInput): Request[js.Object] = js.native
     def updateLensReview(params: UpdateLensReviewInput): Request[UpdateLensReviewOutput] = js.native
     def updateShareInvitation(params: UpdateShareInvitationInput): Request[UpdateShareInvitationOutput] = js.native
     def updateWorkload(params: UpdateWorkloadInput): Request[UpdateWorkloadOutput] = js.native
@@ -188,6 +207,27 @@ package object wellarchitected {
   object WellArchitected {
     @inline implicit def toOps(service: WellArchitected): WellArchitectedOps = {
       new WellArchitectedOps(service)
+    }
+  }
+
+  /** The choice level additional resources.
+    */
+  @js.native
+  trait AdditionalResources extends js.Object {
+    var Content: js.UndefOr[Urls]
+    var Type: js.UndefOr[AdditionalResourceType]
+  }
+
+  object AdditionalResources {
+    @inline
+    def apply(
+        Content: js.UndefOr[Urls] = js.undefined,
+        Type: js.UndefOr[AdditionalResourceType] = js.undefined
+    ): AdditionalResources = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalResources]
     }
   }
 
@@ -312,10 +352,113 @@ package object wellarchitected {
     }
   }
 
+  /** Account details for a Well-Architected best practice in relation to Trusted Advisor checks.
+    */
+  @js.native
+  trait CheckDetail extends js.Object {
+    var AccountId: js.UndefOr[AwsAccountId]
+    var ChoiceId: js.UndefOr[ChoiceId]
+    var Description: js.UndefOr[CheckDescription]
+    var FlaggedResources: js.UndefOr[FlaggedResources]
+    var Id: js.UndefOr[CheckId]
+    var LensArn: js.UndefOr[LensArn]
+    var Name: js.UndefOr[CheckName]
+    var PillarId: js.UndefOr[PillarId]
+    var Provider: js.UndefOr[CheckProvider]
+    var QuestionId: js.UndefOr[QuestionId]
+    var Reason: js.UndefOr[CheckFailureReason]
+    var Status: js.UndefOr[CheckStatus]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object CheckDetail {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
+        Description: js.UndefOr[CheckDescription] = js.undefined,
+        FlaggedResources: js.UndefOr[FlaggedResources] = js.undefined,
+        Id: js.UndefOr[CheckId] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        Name: js.UndefOr[CheckName] = js.undefined,
+        PillarId: js.UndefOr[PillarId] = js.undefined,
+        Provider: js.UndefOr[CheckProvider] = js.undefined,
+        QuestionId: js.UndefOr[QuestionId] = js.undefined,
+        Reason: js.UndefOr[CheckFailureReason] = js.undefined,
+        Status: js.UndefOr[CheckStatus] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): CheckDetail = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FlaggedResources.foreach(__v => __obj.updateDynamic("FlaggedResources")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PillarId.foreach(__v => __obj.updateDynamic("PillarId")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CheckDetail]
+    }
+  }
+
+  /** Trusted Advisor check summary.
+    */
+  @js.native
+  trait CheckSummary extends js.Object {
+    var AccountSummary: js.UndefOr[AccountSummary]
+    var ChoiceId: js.UndefOr[ChoiceId]
+    var Description: js.UndefOr[CheckDescription]
+    var Id: js.UndefOr[CheckId]
+    var LensArn: js.UndefOr[LensArn]
+    var Name: js.UndefOr[CheckName]
+    var PillarId: js.UndefOr[PillarId]
+    var Provider: js.UndefOr[CheckProvider]
+    var QuestionId: js.UndefOr[QuestionId]
+    var Status: js.UndefOr[CheckStatus]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object CheckSummary {
+    @inline
+    def apply(
+        AccountSummary: js.UndefOr[AccountSummary] = js.undefined,
+        ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
+        Description: js.UndefOr[CheckDescription] = js.undefined,
+        Id: js.UndefOr[CheckId] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        Name: js.UndefOr[CheckName] = js.undefined,
+        PillarId: js.UndefOr[PillarId] = js.undefined,
+        Provider: js.UndefOr[CheckProvider] = js.undefined,
+        QuestionId: js.UndefOr[QuestionId] = js.undefined,
+        Status: js.UndefOr[CheckStatus] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): CheckSummary = {
+      val __obj = js.Dynamic.literal()
+      AccountSummary.foreach(__v => __obj.updateDynamic("AccountSummary")(__v.asInstanceOf[js.Any]))
+      ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PillarId.foreach(__v => __obj.updateDynamic("PillarId")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CheckSummary]
+    }
+  }
+
   /** A choice available to answer question.
     */
   @js.native
   trait Choice extends js.Object {
+    var AdditionalResources: js.UndefOr[AdditionalResourcesList]
     var ChoiceId: js.UndefOr[ChoiceId]
     var Description: js.UndefOr[ChoiceDescription]
     var HelpfulResource: js.UndefOr[ChoiceContent]
@@ -326,6 +469,7 @@ package object wellarchitected {
   object Choice {
     @inline
     def apply(
+        AdditionalResources: js.UndefOr[AdditionalResourcesList] = js.undefined,
         ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
         Description: js.UndefOr[ChoiceDescription] = js.undefined,
         HelpfulResource: js.UndefOr[ChoiceContent] = js.undefined,
@@ -333,6 +477,7 @@ package object wellarchitected {
         Title: js.UndefOr[ChoiceTitle] = js.undefined
     ): Choice = {
       val __obj = js.Dynamic.literal()
+      AdditionalResources.foreach(__v => __obj.updateDynamic("AdditionalResources")(__v.asInstanceOf[js.Any]))
       ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HelpfulResource.foreach(__v => __obj.updateDynamic("HelpfulResource")(__v.asInstanceOf[js.Any]))
@@ -603,16 +748,18 @@ package object wellarchitected {
     var Description: WorkloadDescription
     var Environment: WorkloadEnvironment
     var Lenses: WorkloadLenses
-    var ReviewOwner: WorkloadReviewOwner
     var WorkloadName: WorkloadName
     var AccountIds: js.UndefOr[WorkloadAccountIds]
+    var Applications: js.UndefOr[WorkloadApplications]
     var ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign]
     var AwsRegions: js.UndefOr[WorkloadAwsRegions]
+    var DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig]
     var Industry: js.UndefOr[WorkloadIndustry]
     var IndustryType: js.UndefOr[WorkloadIndustryType]
     var NonAwsRegions: js.UndefOr[WorkloadNonAwsRegions]
     var Notes: js.UndefOr[Notes]
     var PillarPriorities: js.UndefOr[WorkloadPillarPriorities]
+    var ReviewOwner: js.UndefOr[WorkloadReviewOwner]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -623,16 +770,18 @@ package object wellarchitected {
         Description: WorkloadDescription,
         Environment: WorkloadEnvironment,
         Lenses: WorkloadLenses,
-        ReviewOwner: WorkloadReviewOwner,
         WorkloadName: WorkloadName,
         AccountIds: js.UndefOr[WorkloadAccountIds] = js.undefined,
+        Applications: js.UndefOr[WorkloadApplications] = js.undefined,
         ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign] = js.undefined,
         AwsRegions: js.UndefOr[WorkloadAwsRegions] = js.undefined,
+        DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig] = js.undefined,
         Industry: js.UndefOr[WorkloadIndustry] = js.undefined,
         IndustryType: js.UndefOr[WorkloadIndustryType] = js.undefined,
         NonAwsRegions: js.UndefOr[WorkloadNonAwsRegions] = js.undefined,
         Notes: js.UndefOr[Notes] = js.undefined,
         PillarPriorities: js.UndefOr[WorkloadPillarPriorities] = js.undefined,
+        ReviewOwner: js.UndefOr[WorkloadReviewOwner] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateWorkloadInput = {
       val __obj = js.Dynamic.literal(
@@ -640,18 +789,20 @@ package object wellarchitected {
         "Description" -> Description.asInstanceOf[js.Any],
         "Environment" -> Environment.asInstanceOf[js.Any],
         "Lenses" -> Lenses.asInstanceOf[js.Any],
-        "ReviewOwner" -> ReviewOwner.asInstanceOf[js.Any],
         "WorkloadName" -> WorkloadName.asInstanceOf[js.Any]
       )
 
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       ArchitecturalDesign.foreach(__v => __obj.updateDynamic("ArchitecturalDesign")(__v.asInstanceOf[js.Any]))
       AwsRegions.foreach(__v => __obj.updateDynamic("AwsRegions")(__v.asInstanceOf[js.Any]))
+      DiscoveryConfig.foreach(__v => __obj.updateDynamic("DiscoveryConfig")(__v.asInstanceOf[js.Any]))
       Industry.foreach(__v => __obj.updateDynamic("Industry")(__v.asInstanceOf[js.Any]))
       IndustryType.foreach(__v => __obj.updateDynamic("IndustryType")(__v.asInstanceOf[js.Any]))
       NonAwsRegions.foreach(__v => __obj.updateDynamic("NonAwsRegions")(__v.asInstanceOf[js.Any]))
       Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
       PillarPriorities.foreach(__v => __obj.updateDynamic("PillarPriorities")(__v.asInstanceOf[js.Any]))
+      ReviewOwner.foreach(__v => __obj.updateDynamic("ReviewOwner")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkloadInput]
     }
@@ -1299,6 +1450,7 @@ package object wellarchitected {
     var Name: js.UndefOr[LensName]
     var Owner: js.UndefOr[LensOwner]
     var ShareInvitationId: js.UndefOr[ShareInvitationId]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object Lens {
@@ -1309,7 +1461,8 @@ package object wellarchitected {
         LensVersion: js.UndefOr[LensVersion] = js.undefined,
         Name: js.UndefOr[LensName] = js.undefined,
         Owner: js.UndefOr[LensOwner] = js.undefined,
-        ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined
+        ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): Lens = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -1318,6 +1471,7 @@ package object wellarchitected {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       ShareInvitationId.foreach(__v => __obj.updateDynamic("ShareInvitationId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Lens]
     }
   }
@@ -1434,6 +1588,7 @@ package object wellarchitected {
     var ShareId: js.UndefOr[ShareId]
     var SharedWith: js.UndefOr[SharedWith]
     var Status: js.UndefOr[ShareStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
   }
 
   object LensShareSummary {
@@ -1441,12 +1596,14 @@ package object wellarchitected {
     def apply(
         ShareId: js.UndefOr[ShareId] = js.undefined,
         SharedWith: js.UndefOr[SharedWith] = js.undefined,
-        Status: js.UndefOr[ShareStatus] = js.undefined
+        Status: js.UndefOr[ShareStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
     ): LensShareSummary = {
       val __obj = js.Dynamic.literal()
       ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
       SharedWith.foreach(__v => __obj.updateDynamic("SharedWith")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LensShareSummary]
     }
   }
@@ -1597,6 +1754,116 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait ListCheckDetailsInput extends js.Object {
+    var ChoiceId: ChoiceId
+    var LensArn: LensArn
+    var PillarId: PillarId
+    var QuestionId: QuestionId
+    var WorkloadId: WorkloadId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCheckDetailsInput {
+    @inline
+    def apply(
+        ChoiceId: ChoiceId,
+        LensArn: LensArn,
+        PillarId: PillarId,
+        QuestionId: QuestionId,
+        WorkloadId: WorkloadId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCheckDetailsInput = {
+      val __obj = js.Dynamic.literal(
+        "ChoiceId" -> ChoiceId.asInstanceOf[js.Any],
+        "LensArn" -> LensArn.asInstanceOf[js.Any],
+        "PillarId" -> PillarId.asInstanceOf[js.Any],
+        "QuestionId" -> QuestionId.asInstanceOf[js.Any],
+        "WorkloadId" -> WorkloadId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCheckDetailsInput]
+    }
+  }
+
+  @js.native
+  trait ListCheckDetailsOutput extends js.Object {
+    var CheckDetails: js.UndefOr[CheckDetails]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCheckDetailsOutput {
+    @inline
+    def apply(
+        CheckDetails: js.UndefOr[CheckDetails] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCheckDetailsOutput = {
+      val __obj = js.Dynamic.literal()
+      CheckDetails.foreach(__v => __obj.updateDynamic("CheckDetails")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCheckDetailsOutput]
+    }
+  }
+
+  @js.native
+  trait ListCheckSummariesInput extends js.Object {
+    var ChoiceId: ChoiceId
+    var LensArn: LensArn
+    var PillarId: PillarId
+    var QuestionId: QuestionId
+    var WorkloadId: WorkloadId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCheckSummariesInput {
+    @inline
+    def apply(
+        ChoiceId: ChoiceId,
+        LensArn: LensArn,
+        PillarId: PillarId,
+        QuestionId: QuestionId,
+        WorkloadId: WorkloadId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCheckSummariesInput = {
+      val __obj = js.Dynamic.literal(
+        "ChoiceId" -> ChoiceId.asInstanceOf[js.Any],
+        "LensArn" -> LensArn.asInstanceOf[js.Any],
+        "PillarId" -> PillarId.asInstanceOf[js.Any],
+        "QuestionId" -> QuestionId.asInstanceOf[js.Any],
+        "WorkloadId" -> WorkloadId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCheckSummariesInput]
+    }
+  }
+
+  @js.native
+  trait ListCheckSummariesOutput extends js.Object {
+    var CheckSummaries: js.UndefOr[CheckSummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCheckSummariesOutput {
+    @inline
+    def apply(
+        CheckSummaries: js.UndefOr[CheckSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCheckSummariesOutput = {
+      val __obj = js.Dynamic.literal()
+      CheckSummaries.foreach(__v => __obj.updateDynamic("CheckSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCheckSummariesOutput]
+    }
+  }
+
   /** Input to list lens review improvements.
     */
   @js.native
@@ -1727,6 +1994,7 @@ package object wellarchitected {
     var MaxResults: js.UndefOr[ListWorkloadSharesMaxResults]
     var NextToken: js.UndefOr[NextToken]
     var SharedWithPrefix: js.UndefOr[SharedWithPrefix]
+    var Status: js.UndefOr[ShareStatus]
   }
 
   object ListLensSharesInput {
@@ -1735,7 +2003,8 @@ package object wellarchitected {
         LensAlias: LensAlias,
         MaxResults: js.UndefOr[ListWorkloadSharesMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
-        SharedWithPrefix: js.UndefOr[SharedWithPrefix] = js.undefined
+        SharedWithPrefix: js.UndefOr[SharedWithPrefix] = js.undefined,
+        Status: js.UndefOr[ShareStatus] = js.undefined
     ): ListLensSharesInput = {
       val __obj = js.Dynamic.literal(
         "LensAlias" -> LensAlias.asInstanceOf[js.Any]
@@ -1744,6 +2013,7 @@ package object wellarchitected {
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SharedWithPrefix.foreach(__v => __obj.updateDynamic("SharedWithPrefix")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLensSharesInput]
     }
   }
@@ -2001,6 +2271,7 @@ package object wellarchitected {
     var MaxResults: js.UndefOr[ListWorkloadSharesMaxResults]
     var NextToken: js.UndefOr[NextToken]
     var SharedWithPrefix: js.UndefOr[SharedWithPrefix]
+    var Status: js.UndefOr[ShareStatus]
   }
 
   object ListWorkloadSharesInput {
@@ -2009,7 +2280,8 @@ package object wellarchitected {
         WorkloadId: WorkloadId,
         MaxResults: js.UndefOr[ListWorkloadSharesMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
-        SharedWithPrefix: js.UndefOr[SharedWithPrefix] = js.undefined
+        SharedWithPrefix: js.UndefOr[SharedWithPrefix] = js.undefined,
+        Status: js.UndefOr[ShareStatus] = js.undefined
     ): ListWorkloadSharesInput = {
       val __obj = js.Dynamic.literal(
         "WorkloadId" -> WorkloadId.asInstanceOf[js.Any]
@@ -2018,6 +2290,7 @@ package object wellarchitected {
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SharedWithPrefix.foreach(__v => __obj.updateDynamic("SharedWithPrefix")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkloadSharesInput]
     }
   }
@@ -2446,6 +2719,22 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait UpdateGlobalSettingsInput extends js.Object {
+    var OrganizationSharingStatus: js.UndefOr[OrganizationSharingStatus]
+  }
+
+  object UpdateGlobalSettingsInput {
+    @inline
+    def apply(
+        OrganizationSharingStatus: js.UndefOr[OrganizationSharingStatus] = js.undefined
+    ): UpdateGlobalSettingsInput = {
+      val __obj = js.Dynamic.literal()
+      OrganizationSharingStatus.foreach(__v => __obj.updateDynamic("OrganizationSharingStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGlobalSettingsInput]
+    }
+  }
+
   /** Input for update lens review.
     */
   @js.native
@@ -2540,9 +2829,11 @@ package object wellarchitected {
   trait UpdateWorkloadInput extends js.Object {
     var WorkloadId: WorkloadId
     var AccountIds: js.UndefOr[WorkloadAccountIds]
+    var Applications: js.UndefOr[WorkloadApplications]
     var ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign]
     var AwsRegions: js.UndefOr[WorkloadAwsRegions]
     var Description: js.UndefOr[WorkloadDescription]
+    var DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig]
     var Environment: js.UndefOr[WorkloadEnvironment]
     var ImprovementStatus: js.UndefOr[WorkloadImprovementStatus]
     var Industry: js.UndefOr[WorkloadIndustry]
@@ -2560,9 +2851,11 @@ package object wellarchitected {
     def apply(
         WorkloadId: WorkloadId,
         AccountIds: js.UndefOr[WorkloadAccountIds] = js.undefined,
+        Applications: js.UndefOr[WorkloadApplications] = js.undefined,
         ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign] = js.undefined,
         AwsRegions: js.UndefOr[WorkloadAwsRegions] = js.undefined,
         Description: js.UndefOr[WorkloadDescription] = js.undefined,
+        DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig] = js.undefined,
         Environment: js.UndefOr[WorkloadEnvironment] = js.undefined,
         ImprovementStatus: js.UndefOr[WorkloadImprovementStatus] = js.undefined,
         Industry: js.UndefOr[WorkloadIndustry] = js.undefined,
@@ -2579,9 +2872,11 @@ package object wellarchitected {
       )
 
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       ArchitecturalDesign.foreach(__v => __obj.updateDynamic("ArchitecturalDesign")(__v.asInstanceOf[js.Any]))
       AwsRegions.foreach(__v => __obj.updateDynamic("AwsRegions")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DiscoveryConfig.foreach(__v => __obj.updateDynamic("DiscoveryConfig")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ImprovementStatus.foreach(__v => __obj.updateDynamic("ImprovementStatus")(__v.asInstanceOf[js.Any]))
       Industry.foreach(__v => __obj.updateDynamic("Industry")(__v.asInstanceOf[js.Any]))
@@ -2710,9 +3005,11 @@ package object wellarchitected {
   @js.native
   trait Workload extends js.Object {
     var AccountIds: js.UndefOr[WorkloadAccountIds]
+    var Applications: js.UndefOr[WorkloadApplications]
     var ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign]
     var AwsRegions: js.UndefOr[WorkloadAwsRegions]
     var Description: js.UndefOr[WorkloadDescription]
+    var DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig]
     var Environment: js.UndefOr[WorkloadEnvironment]
     var ImprovementStatus: js.UndefOr[WorkloadImprovementStatus]
     var Industry: js.UndefOr[WorkloadIndustry]
@@ -2738,9 +3035,11 @@ package object wellarchitected {
     @inline
     def apply(
         AccountIds: js.UndefOr[WorkloadAccountIds] = js.undefined,
+        Applications: js.UndefOr[WorkloadApplications] = js.undefined,
         ArchitecturalDesign: js.UndefOr[WorkloadArchitecturalDesign] = js.undefined,
         AwsRegions: js.UndefOr[WorkloadAwsRegions] = js.undefined,
         Description: js.UndefOr[WorkloadDescription] = js.undefined,
+        DiscoveryConfig: js.UndefOr[WorkloadDiscoveryConfig] = js.undefined,
         Environment: js.UndefOr[WorkloadEnvironment] = js.undefined,
         ImprovementStatus: js.UndefOr[WorkloadImprovementStatus] = js.undefined,
         Industry: js.UndefOr[WorkloadIndustry] = js.undefined,
@@ -2763,9 +3062,11 @@ package object wellarchitected {
     ): Workload = {
       val __obj = js.Dynamic.literal()
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       ArchitecturalDesign.foreach(__v => __obj.updateDynamic("ArchitecturalDesign")(__v.asInstanceOf[js.Any]))
       AwsRegions.foreach(__v => __obj.updateDynamic("AwsRegions")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DiscoveryConfig.foreach(__v => __obj.updateDynamic("DiscoveryConfig")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ImprovementStatus.foreach(__v => __obj.updateDynamic("ImprovementStatus")(__v.asInstanceOf[js.Any]))
       Industry.foreach(__v => __obj.updateDynamic("Industry")(__v.asInstanceOf[js.Any]))
@@ -2786,6 +3087,24 @@ package object wellarchitected {
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
       WorkloadName.foreach(__v => __obj.updateDynamic("WorkloadName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workload]
+    }
+  }
+
+  /** Discovery configuration associated to the workload.
+    */
+  @js.native
+  trait WorkloadDiscoveryConfig extends js.Object {
+    var TrustedAdvisorIntegrationStatus: js.UndefOr[TrustedAdvisorIntegrationStatus]
+  }
+
+  object WorkloadDiscoveryConfig {
+    @inline
+    def apply(
+        TrustedAdvisorIntegrationStatus: js.UndefOr[TrustedAdvisorIntegrationStatus] = js.undefined
+    ): WorkloadDiscoveryConfig = {
+      val __obj = js.Dynamic.literal()
+      TrustedAdvisorIntegrationStatus.foreach(__v => __obj.updateDynamic("TrustedAdvisorIntegrationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkloadDiscoveryConfig]
     }
   }
 
@@ -2833,6 +3152,7 @@ package object wellarchitected {
     var ShareId: js.UndefOr[ShareId]
     var SharedWith: js.UndefOr[SharedWith]
     var Status: js.UndefOr[ShareStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
   }
 
   object WorkloadShareSummary {
@@ -2841,13 +3161,15 @@ package object wellarchitected {
         PermissionType: js.UndefOr[PermissionType] = js.undefined,
         ShareId: js.UndefOr[ShareId] = js.undefined,
         SharedWith: js.UndefOr[SharedWith] = js.undefined,
-        Status: js.UndefOr[ShareStatus] = js.undefined
+        Status: js.UndefOr[ShareStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined
     ): WorkloadShareSummary = {
       val __obj = js.Dynamic.literal()
       PermissionType.foreach(__v => __obj.updateDynamic("PermissionType")(__v.asInstanceOf[js.Any]))
       ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
       SharedWith.foreach(__v => __obj.updateDynamic("SharedWith")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkloadShareSummary]
     }
   }

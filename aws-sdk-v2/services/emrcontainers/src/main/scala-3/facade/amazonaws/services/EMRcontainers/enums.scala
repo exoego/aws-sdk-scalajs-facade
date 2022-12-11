@@ -51,6 +51,14 @@ object PersistentAppUI {
   inline def values: js.Array[PersistentAppUI] = js.Array(ENABLED, DISABLED)
 }
 
+type TemplateParameterDataType = "NUMBER" | "STRING"
+object TemplateParameterDataType {
+  inline val NUMBER: "NUMBER" = "NUMBER"
+  inline val STRING: "STRING" = "STRING"
+
+  inline def values: js.Array[TemplateParameterDataType] = js.Array(NUMBER, STRING)
+}
+
 type VirtualClusterState = "RUNNING" | "TERMINATING" | "TERMINATED" | "ARRESTED"
 object VirtualClusterState {
   inline val RUNNING: "RUNNING" = "RUNNING"

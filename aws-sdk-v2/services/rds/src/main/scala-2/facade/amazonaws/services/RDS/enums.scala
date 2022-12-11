@@ -12,6 +12,17 @@ object ActivityStreamMode {
 }
 
 @js.native
+sealed trait ActivityStreamPolicyStatus extends js.Any
+object ActivityStreamPolicyStatus {
+  val locked = "locked".asInstanceOf[ActivityStreamPolicyStatus]
+  val unlocked = "unlocked".asInstanceOf[ActivityStreamPolicyStatus]
+  val `locking-policy` = "locking-policy".asInstanceOf[ActivityStreamPolicyStatus]
+  val `unlocking-policy` = "unlocking-policy".asInstanceOf[ActivityStreamPolicyStatus]
+
+  @inline def values: js.Array[ActivityStreamPolicyStatus] = js.Array(locked, unlocked, `locking-policy`, `unlocking-policy`)
+}
+
+@js.native
 sealed trait ActivityStreamStatus extends js.Any
 object ActivityStreamStatus {
   val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
@@ -29,6 +40,15 @@ object ApplyMethod {
   val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
   @inline def values: js.Array[ApplyMethod] = js.Array(immediate, `pending-reboot`)
+}
+
+@js.native
+sealed trait AuditPolicyState extends js.Any
+object AuditPolicyState {
+  val locked = "locked".asInstanceOf[AuditPolicyState]
+  val unlocked = "unlocked".asInstanceOf[AuditPolicyState]
+
+  @inline def values: js.Array[AuditPolicyState] = js.Array(locked, unlocked)
 }
 
 @js.native
@@ -101,8 +121,18 @@ sealed trait EngineFamily extends js.Any
 object EngineFamily {
   val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
   val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
+  val SQLSERVER = "SQLSERVER".asInstanceOf[EngineFamily]
 
-  @inline def values: js.Array[EngineFamily] = js.Array(MYSQL, POSTGRESQL)
+  @inline def values: js.Array[EngineFamily] = js.Array(MYSQL, POSTGRESQL, SQLSERVER)
+}
+
+@js.native
+sealed trait ExportSourceType extends js.Any
+object ExportSourceType {
+  val SNAPSHOT = "SNAPSHOT".asInstanceOf[ExportSourceType]
+  val CLUSTER = "CLUSTER".asInstanceOf[ExportSourceType]
+
+  @inline def values: js.Array[ExportSourceType] = js.Array(SNAPSHOT, CLUSTER)
 }
 
 @js.native
@@ -120,8 +150,9 @@ sealed trait IAMAuthMode extends js.Any
 object IAMAuthMode {
   val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
   val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
+  val ENABLED = "ENABLED".asInstanceOf[IAMAuthMode]
 
-  @inline def values: js.Array[IAMAuthMode] = js.Array(DISABLED, REQUIRED)
+  @inline def values: js.Array[IAMAuthMode] = js.Array(DISABLED, REQUIRED, ENABLED)
 }
 
 @js.native
@@ -143,8 +174,20 @@ object SourceType {
   val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
   val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
   val `custom-engine-version` = "custom-engine-version".asInstanceOf[SourceType]
+  val `db-proxy` = "db-proxy".asInstanceOf[SourceType]
+  val `blue-green-deployment` = "blue-green-deployment".asInstanceOf[SourceType]
 
-  @inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`, `custom-engine-version`)
+  @inline def values: js.Array[SourceType] = js.Array(
+    `db-instance`,
+    `db-parameter-group`,
+    `db-security-group`,
+    `db-snapshot`,
+    `db-cluster`,
+    `db-cluster-snapshot`,
+    `custom-engine-version`,
+    `db-proxy`,
+    `blue-green-deployment`
+  )
 }
 
 @js.native

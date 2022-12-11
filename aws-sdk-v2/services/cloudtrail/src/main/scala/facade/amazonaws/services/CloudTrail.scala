@@ -8,51 +8,106 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object cloudtrail {
+  type AccountId = String
   type AdvancedEventSelectors = js.Array[AdvancedEventSelector]
   type AdvancedFieldSelectors = js.Array[AdvancedFieldSelector]
   type ByteBuffer = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type ChannelArn = String
+  type ChannelName = String
+  type Channels = js.Array[Channel]
   type DataResourceValues = js.Array[String]
   type DataResources = js.Array[DataResource]
   type Date = js.Date
+  type DeliveryS3Uri = String
+  type Destinations = js.Array[Destination]
+  type ErrorMessage = String
+  type EventDataStoreArn = String
+  type EventDataStoreKmsKeyId = String
+  type EventDataStoreName = String
+  type EventDataStores = js.Array[EventDataStore]
   type EventSelectors = js.Array[EventSelector]
   type EventsList = js.Array[Event]
   type ExcludeManagementEventSources = js.Array[String]
+  type ImportDestinations = js.Array[EventDataStoreArn]
+  type ImportFailureList = js.Array[ImportFailureListItem]
+  type ImportsList = js.Array[ImportsListItem]
   type InsightSelectors = js.Array[InsightSelector]
+  type ListChannelsMaxResultsCount = Int
+  type ListEventDataStoresMaxResultsCount = Int
+  type ListImportFailuresMaxResultsCount = Int
+  type ListImportsMaxResultsCount = Int
+  type ListQueriesMaxResultsCount = Int
+  type Location = String
   type LookupAttributesList = js.Array[LookupAttribute]
+  type MaxQueryResults = Int
   type MaxResults = Int
   type NextToken = String
   type Operator = js.Array[OperatorValue]
   type OperatorValue = String
+  type PaginationToken = String
   type PublicKeyList = js.Array[PublicKey]
+  type Queries = js.Array[Query]
+  type QueryResultColumn = js.Dictionary[QueryResultValue]
+  type QueryResultKey = String
+  type QueryResultRow = js.Array[QueryResultColumn]
+  type QueryResultRows = js.Array[QueryResultRow]
+  type QueryResultValue = String
+  type QueryStatement = String
   type ResourceIdList = js.Array[String]
   type ResourceList = js.Array[Resource]
   type ResourceTagList = js.Array[ResourceTag]
+  type RetentionPeriod = Int
   type SelectorField = String
   type SelectorName = String
+  type Source = String
+  type TagKey = String
+  type TagValue = String
   type TagsList = js.Array[Tag]
+  type TerminationProtectionEnabled = Boolean
   type TrailList = js.Array[Trail]
   type TrailNameList = js.Array[String]
   type Trails = js.Array[TrailInfo]
+  type UUID = String
 
   final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
     @inline def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise().toFuture
+    @inline def cancelQueryFuture(params: CancelQueryRequest): Future[CancelQueryResponse] = service.cancelQuery(params).promise().toFuture
+    @inline def createEventDataStoreFuture(params: CreateEventDataStoreRequest): Future[CreateEventDataStoreResponse] = service.createEventDataStore(params).promise().toFuture
     @inline def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] = service.createTrail(params).promise().toFuture
+    @inline def deleteEventDataStoreFuture(params: DeleteEventDataStoreRequest): Future[DeleteEventDataStoreResponse] = service.deleteEventDataStore(params).promise().toFuture
     @inline def deleteTrailFuture(params: DeleteTrailRequest): Future[DeleteTrailResponse] = service.deleteTrail(params).promise().toFuture
+    @inline def deregisterOrganizationDelegatedAdminFuture(params: DeregisterOrganizationDelegatedAdminRequest): Future[DeregisterOrganizationDelegatedAdminResponse] = service.deregisterOrganizationDelegatedAdmin(params).promise().toFuture
+    @inline def describeQueryFuture(params: DescribeQueryRequest): Future[DescribeQueryResponse] = service.describeQuery(params).promise().toFuture
     @inline def describeTrailsFuture(params: DescribeTrailsRequest): Future[DescribeTrailsResponse] = service.describeTrails(params).promise().toFuture
+    @inline def getChannelFuture(params: GetChannelRequest): Future[GetChannelResponse] = service.getChannel(params).promise().toFuture
+    @inline def getEventDataStoreFuture(params: GetEventDataStoreRequest): Future[GetEventDataStoreResponse] = service.getEventDataStore(params).promise().toFuture
     @inline def getEventSelectorsFuture(params: GetEventSelectorsRequest): Future[GetEventSelectorsResponse] = service.getEventSelectors(params).promise().toFuture
+    @inline def getImportFuture(params: GetImportRequest): Future[GetImportResponse] = service.getImport(params).promise().toFuture
     @inline def getInsightSelectorsFuture(params: GetInsightSelectorsRequest): Future[GetInsightSelectorsResponse] = service.getInsightSelectors(params).promise().toFuture
+    @inline def getQueryResultsFuture(params: GetQueryResultsRequest): Future[GetQueryResultsResponse] = service.getQueryResults(params).promise().toFuture
     @inline def getTrailFuture(params: GetTrailRequest): Future[GetTrailResponse] = service.getTrail(params).promise().toFuture
     @inline def getTrailStatusFuture(params: GetTrailStatusRequest): Future[GetTrailStatusResponse] = service.getTrailStatus(params).promise().toFuture
+    @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
+    @inline def listEventDataStoresFuture(params: ListEventDataStoresRequest): Future[ListEventDataStoresResponse] = service.listEventDataStores(params).promise().toFuture
+    @inline def listImportFailuresFuture(params: ListImportFailuresRequest): Future[ListImportFailuresResponse] = service.listImportFailures(params).promise().toFuture
+    @inline def listImportsFuture(params: ListImportsRequest): Future[ListImportsResponse] = service.listImports(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResponse] = service.listPublicKeys(params).promise().toFuture
+    @inline def listQueriesFuture(params: ListQueriesRequest): Future[ListQueriesResponse] = service.listQueries(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
     @inline def listTrailsFuture(params: ListTrailsRequest): Future[ListTrailsResponse] = service.listTrails(params).promise().toFuture
     @inline def lookupEventsFuture(params: LookupEventsRequest): Future[LookupEventsResponse] = service.lookupEvents(params).promise().toFuture
     @inline def putEventSelectorsFuture(params: PutEventSelectorsRequest): Future[PutEventSelectorsResponse] = service.putEventSelectors(params).promise().toFuture
     @inline def putInsightSelectorsFuture(params: PutInsightSelectorsRequest): Future[PutInsightSelectorsResponse] = service.putInsightSelectors(params).promise().toFuture
+    @inline def registerOrganizationDelegatedAdminFuture(params: RegisterOrganizationDelegatedAdminRequest): Future[RegisterOrganizationDelegatedAdminResponse] = service.registerOrganizationDelegatedAdmin(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[RemoveTagsResponse] = service.removeTags(params).promise().toFuture
+    @inline def restoreEventDataStoreFuture(params: RestoreEventDataStoreRequest): Future[RestoreEventDataStoreResponse] = service.restoreEventDataStore(params).promise().toFuture
+    @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] = service.startImport(params).promise().toFuture
     @inline def startLoggingFuture(params: StartLoggingRequest): Future[StartLoggingResponse] = service.startLogging(params).promise().toFuture
+    @inline def startQueryFuture(params: StartQueryRequest): Future[StartQueryResponse] = service.startQuery(params).promise().toFuture
+    @inline def stopImportFuture(params: StopImportRequest): Future[StopImportResponse] = service.stopImport(params).promise().toFuture
     @inline def stopLoggingFuture(params: StopLoggingRequest): Future[StopLoggingResponse] = service.stopLogging(params).promise().toFuture
+    @inline def updateEventDataStoreFuture(params: UpdateEventDataStoreRequest): Future[UpdateEventDataStoreResponse] = service.updateEventDataStore(params).promise().toFuture
     @inline def updateTrailFuture(params: UpdateTrailRequest): Future[UpdateTrailResponse] = service.updateTrail(params).promise().toFuture
 
   }
@@ -63,22 +118,42 @@ package object cloudtrail {
     def this(config: AWSConfig) = this()
 
     def addTags(params: AddTagsRequest): Request[AddTagsResponse] = js.native
+    def cancelQuery(params: CancelQueryRequest): Request[CancelQueryResponse] = js.native
+    def createEventDataStore(params: CreateEventDataStoreRequest): Request[CreateEventDataStoreResponse] = js.native
     def createTrail(params: CreateTrailRequest): Request[CreateTrailResponse] = js.native
+    def deleteEventDataStore(params: DeleteEventDataStoreRequest): Request[DeleteEventDataStoreResponse] = js.native
     def deleteTrail(params: DeleteTrailRequest): Request[DeleteTrailResponse] = js.native
+    def deregisterOrganizationDelegatedAdmin(params: DeregisterOrganizationDelegatedAdminRequest): Request[DeregisterOrganizationDelegatedAdminResponse] = js.native
+    def describeQuery(params: DescribeQueryRequest): Request[DescribeQueryResponse] = js.native
     def describeTrails(params: DescribeTrailsRequest): Request[DescribeTrailsResponse] = js.native
+    def getChannel(params: GetChannelRequest): Request[GetChannelResponse] = js.native
+    def getEventDataStore(params: GetEventDataStoreRequest): Request[GetEventDataStoreResponse] = js.native
     def getEventSelectors(params: GetEventSelectorsRequest): Request[GetEventSelectorsResponse] = js.native
+    def getImport(params: GetImportRequest): Request[GetImportResponse] = js.native
     def getInsightSelectors(params: GetInsightSelectorsRequest): Request[GetInsightSelectorsResponse] = js.native
+    def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse] = js.native
     def getTrail(params: GetTrailRequest): Request[GetTrailResponse] = js.native
     def getTrailStatus(params: GetTrailStatusRequest): Request[GetTrailStatusResponse] = js.native
+    def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
+    def listEventDataStores(params: ListEventDataStoresRequest): Request[ListEventDataStoresResponse] = js.native
+    def listImportFailures(params: ListImportFailuresRequest): Request[ListImportFailuresResponse] = js.native
+    def listImports(params: ListImportsRequest): Request[ListImportsResponse] = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResponse] = js.native
+    def listQueries(params: ListQueriesRequest): Request[ListQueriesResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def listTrails(params: ListTrailsRequest): Request[ListTrailsResponse] = js.native
     def lookupEvents(params: LookupEventsRequest): Request[LookupEventsResponse] = js.native
     def putEventSelectors(params: PutEventSelectorsRequest): Request[PutEventSelectorsResponse] = js.native
     def putInsightSelectors(params: PutInsightSelectorsRequest): Request[PutInsightSelectorsResponse] = js.native
+    def registerOrganizationDelegatedAdmin(params: RegisterOrganizationDelegatedAdminRequest): Request[RegisterOrganizationDelegatedAdminResponse] = js.native
     def removeTags(params: RemoveTagsRequest): Request[RemoveTagsResponse] = js.native
+    def restoreEventDataStore(params: RestoreEventDataStoreRequest): Request[RestoreEventDataStoreResponse] = js.native
+    def startImport(params: StartImportRequest): Request[StartImportResponse] = js.native
     def startLogging(params: StartLoggingRequest): Request[StartLoggingResponse] = js.native
+    def startQuery(params: StartQueryRequest): Request[StartQueryResponse] = js.native
+    def stopImport(params: StopImportRequest): Request[StopImportResponse] = js.native
     def stopLogging(params: StopLoggingRequest): Request[StopLoggingResponse] = js.native
+    def updateEventDataStore(params: UpdateEventDataStoreRequest): Request[UpdateEventDataStoreResponse] = js.native
     def updateTrail(params: UpdateTrailRequest): Request[UpdateTrailResponse] = js.native
   }
   object CloudTrail {
@@ -87,25 +162,24 @@ package object cloudtrail {
     }
   }
 
-  /** Specifies the tags to add to a trail.
+  /** Specifies the tags to add to a trail or event data store.
     */
   @js.native
   trait AddTagsRequest extends js.Object {
     var ResourceId: String
-    var TagsList: js.UndefOr[TagsList]
+    var TagsList: TagsList
   }
 
   object AddTagsRequest {
     @inline
     def apply(
         ResourceId: String,
-        TagsList: js.UndefOr[TagsList] = js.undefined
+        TagsList: TagsList
     ): AddTagsRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "TagsList" -> TagsList.asInstanceOf[js.Any]
       )
-
-      TagsList.foreach(__v => __obj.updateDynamic("TagsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddTagsRequest]
     }
   }
@@ -181,6 +255,156 @@ package object cloudtrail {
       NotStartsWith.foreach(__v => __obj.updateDynamic("NotStartsWith")(__v.asInstanceOf[js.Any]))
       StartsWith.foreach(__v => __obj.updateDynamic("StartsWith")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdvancedFieldSelector]
+    }
+  }
+
+  @js.native
+  trait CancelQueryRequest extends js.Object {
+    var QueryId: UUID
+    var EventDataStore: js.UndefOr[EventDataStoreArn]
+  }
+
+  object CancelQueryRequest {
+    @inline
+    def apply(
+        QueryId: UUID,
+        EventDataStore: js.UndefOr[EventDataStoreArn] = js.undefined
+    ): CancelQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryId" -> QueryId.asInstanceOf[js.Any]
+      )
+
+      EventDataStore.foreach(__v => __obj.updateDynamic("EventDataStore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelQueryRequest]
+    }
+  }
+
+  @js.native
+  trait CancelQueryResponse extends js.Object {
+    var QueryId: UUID
+    var QueryStatus: QueryStatus
+  }
+
+  object CancelQueryResponse {
+    @inline
+    def apply(
+        QueryId: UUID,
+        QueryStatus: QueryStatus
+    ): CancelQueryResponse = {
+      val __obj = js.Dynamic.literal(
+        "QueryId" -> QueryId.asInstanceOf[js.Any],
+        "QueryStatus" -> QueryStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelQueryResponse]
+    }
+  }
+
+  /** Contains information about a returned CloudTrail channel.
+    */
+  @js.native
+  trait Channel extends js.Object {
+    var ChannelArn: js.UndefOr[ChannelArn]
+    var Name: js.UndefOr[ChannelName]
+  }
+
+  object Channel {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChannelArn] = js.undefined,
+        Name: js.UndefOr[ChannelName] = js.undefined
+    ): Channel = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Channel]
+    }
+  }
+
+  @js.native
+  trait CreateEventDataStoreRequest extends js.Object {
+    var Name: EventDataStoreName
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var TagsList: js.UndefOr[TagsList]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+  }
+
+  object CreateEventDataStoreRequest {
+    @inline
+    def apply(
+        Name: EventDataStoreName,
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        TagsList: js.UndefOr[TagsList] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined
+    ): CreateEventDataStoreRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      TagsList.foreach(__v => __obj.updateDynamic("TagsList")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventDataStoreRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEventDataStoreResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var CreatedTimestamp: js.UndefOr[Date]
+    var EventDataStoreArn: js.UndefOr[EventDataStoreArn]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[EventDataStoreStatus]
+    var TagsList: js.UndefOr[TagsList]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object CreateEventDataStoreResponse {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        EventDataStoreArn: js.UndefOr[EventDataStoreArn] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[EventDataStoreStatus] = js.undefined,
+        TagsList: js.UndefOr[TagsList] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): CreateEventDataStoreResponse = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EventDataStoreArn.foreach(__v => __obj.updateDynamic("EventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TagsList.foreach(__v => __obj.updateDynamic("TagsList")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventDataStoreResponse]
     }
   }
 
@@ -316,6 +540,34 @@ package object cloudtrail {
     }
   }
 
+  @js.native
+  trait DeleteEventDataStoreRequest extends js.Object {
+    var EventDataStore: EventDataStoreArn
+  }
+
+  object DeleteEventDataStoreRequest {
+    @inline
+    def apply(
+        EventDataStore: EventDataStoreArn
+    ): DeleteEventDataStoreRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventDataStore" -> EventDataStore.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEventDataStoreRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEventDataStoreResponse extends js.Object
+
+  object DeleteEventDataStoreResponse {
+    @inline
+    def apply(): DeleteEventDataStoreResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEventDataStoreResponse]
+    }
+  }
+
   /** The request that specifies the name of a trail to delete.
     */
   @js.native
@@ -345,6 +597,93 @@ package object cloudtrail {
     def apply(): DeleteTrailResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteTrailResponse]
+    }
+  }
+
+  /** Removes CloudTrail delegated administrator permissions from a specified member account in an organization that is currently designated as a delegated administrator.
+    */
+  @js.native
+  trait DeregisterOrganizationDelegatedAdminRequest extends js.Object {
+    var DelegatedAdminAccountId: AccountId
+  }
+
+  object DeregisterOrganizationDelegatedAdminRequest {
+    @inline
+    def apply(
+        DelegatedAdminAccountId: AccountId
+    ): DeregisterOrganizationDelegatedAdminRequest = {
+      val __obj = js.Dynamic.literal(
+        "DelegatedAdminAccountId" -> DelegatedAdminAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeregisterOrganizationDelegatedAdminRequest]
+    }
+  }
+
+  /** Returns the following response if successful. Otherwise, returns an error.
+    */
+  @js.native
+  trait DeregisterOrganizationDelegatedAdminResponse extends js.Object
+
+  object DeregisterOrganizationDelegatedAdminResponse {
+    @inline
+    def apply(): DeregisterOrganizationDelegatedAdminResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeregisterOrganizationDelegatedAdminResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeQueryRequest extends js.Object {
+    var QueryId: UUID
+    var EventDataStore: js.UndefOr[EventDataStoreArn]
+  }
+
+  object DescribeQueryRequest {
+    @inline
+    def apply(
+        QueryId: UUID,
+        EventDataStore: js.UndefOr[EventDataStoreArn] = js.undefined
+    ): DescribeQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryId" -> QueryId.asInstanceOf[js.Any]
+      )
+
+      EventDataStore.foreach(__v => __obj.updateDynamic("EventDataStore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQueryRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeQueryResponse extends js.Object {
+    var DeliveryS3Uri: js.UndefOr[DeliveryS3Uri]
+    var DeliveryStatus: js.UndefOr[DeliveryStatus]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var QueryId: js.UndefOr[UUID]
+    var QueryStatistics: js.UndefOr[QueryStatisticsForDescribeQuery]
+    var QueryStatus: js.UndefOr[QueryStatus]
+    var QueryString: js.UndefOr[QueryStatement]
+  }
+
+  object DescribeQueryResponse {
+    @inline
+    def apply(
+        DeliveryS3Uri: js.UndefOr[DeliveryS3Uri] = js.undefined,
+        DeliveryStatus: js.UndefOr[DeliveryStatus] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        QueryId: js.UndefOr[UUID] = js.undefined,
+        QueryStatistics: js.UndefOr[QueryStatisticsForDescribeQuery] = js.undefined,
+        QueryStatus: js.UndefOr[QueryStatus] = js.undefined,
+        QueryString: js.UndefOr[QueryStatement] = js.undefined
+    ): DescribeQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      DeliveryS3Uri.foreach(__v => __obj.updateDynamic("DeliveryS3Uri")(__v.asInstanceOf[js.Any]))
+      DeliveryStatus.foreach(__v => __obj.updateDynamic("DeliveryStatus")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      QueryId.foreach(__v => __obj.updateDynamic("QueryId")(__v.asInstanceOf[js.Any]))
+      QueryStatistics.foreach(__v => __obj.updateDynamic("QueryStatistics")(__v.asInstanceOf[js.Any]))
+      QueryStatus.foreach(__v => __obj.updateDynamic("QueryStatus")(__v.asInstanceOf[js.Any]))
+      QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeQueryResponse]
     }
   }
 
@@ -384,6 +723,28 @@ package object cloudtrail {
       val __obj = js.Dynamic.literal()
       trailList.foreach(__v => __obj.updateDynamic("trailList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrailsResponse]
+    }
+  }
+
+  /** Contains information about the service where CloudTrail delivers events.
+    */
+  @js.native
+  trait Destination extends js.Object {
+    var Location: Location
+    var Type: DestinationType
+  }
+
+  object Destination {
+    @inline
+    def apply(
+        Location: Location,
+        Type: DestinationType
+    ): Destination = {
+      val __obj = js.Dynamic.literal(
+        "Location" -> Location.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Destination]
     }
   }
 
@@ -429,6 +790,51 @@ package object cloudtrail {
     }
   }
 
+  /** A storage lake of event data against which you can run complex SQL-based queries. An event data store can include events that you have logged on your account from the last 90 to 2557 days (about three months to up to seven years). To select events for an event data store, use [[https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced|advanced event selectors]].
+    */
+  @js.native
+  trait EventDataStore extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var CreatedTimestamp: js.UndefOr[Date]
+    var EventDataStoreArn: js.UndefOr[EventDataStoreArn]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[EventDataStoreStatus]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object EventDataStore {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        EventDataStoreArn: js.UndefOr[EventDataStoreArn] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[EventDataStoreStatus] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): EventDataStore = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EventDataStoreArn.foreach(__v => __obj.updateDynamic("EventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventDataStore]
+    }
+  }
+
   /** Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event. You can configure up to five event selectors for a trail. You cannot apply both event selectors and advanced event selectors to a trail.
     */
   @js.native
@@ -453,6 +859,114 @@ package object cloudtrail {
       IncludeManagementEvents.foreach(__v => __obj.updateDynamic("IncludeManagementEvents")(__v.asInstanceOf[js.Any]))
       ReadWriteType.foreach(__v => __obj.updateDynamic("ReadWriteType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSelector]
+    }
+  }
+
+  @js.native
+  trait GetChannelRequest extends js.Object {
+    var Channel: ChannelArn
+  }
+
+  object GetChannelRequest {
+    @inline
+    def apply(
+        Channel: ChannelArn
+    ): GetChannelRequest = {
+      val __obj = js.Dynamic.literal(
+        "Channel" -> Channel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetChannelRequest]
+    }
+  }
+
+  @js.native
+  trait GetChannelResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChannelArn]
+    var Destinations: js.UndefOr[Destinations]
+    var Name: js.UndefOr[ChannelName]
+    var Source: js.UndefOr[Source]
+    var SourceConfig: js.UndefOr[SourceConfig]
+  }
+
+  object GetChannelResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChannelArn] = js.undefined,
+        Destinations: js.UndefOr[Destinations] = js.undefined,
+        Name: js.UndefOr[ChannelName] = js.undefined,
+        Source: js.UndefOr[Source] = js.undefined,
+        SourceConfig: js.UndefOr[SourceConfig] = js.undefined
+    ): GetChannelResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      SourceConfig.foreach(__v => __obj.updateDynamic("SourceConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetChannelResponse]
+    }
+  }
+
+  @js.native
+  trait GetEventDataStoreRequest extends js.Object {
+    var EventDataStore: EventDataStoreArn
+  }
+
+  object GetEventDataStoreRequest {
+    @inline
+    def apply(
+        EventDataStore: EventDataStoreArn
+    ): GetEventDataStoreRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventDataStore" -> EventDataStore.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetEventDataStoreRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventDataStoreResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var CreatedTimestamp: js.UndefOr[Date]
+    var EventDataStoreArn: js.UndefOr[EventDataStoreArn]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[EventDataStoreStatus]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object GetEventDataStoreResponse {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        EventDataStoreArn: js.UndefOr[EventDataStoreArn] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[EventDataStoreStatus] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): GetEventDataStoreResponse = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EventDataStoreArn.foreach(__v => __obj.updateDynamic("EventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventDataStoreResponse]
     }
   }
 
@@ -496,6 +1010,63 @@ package object cloudtrail {
   }
 
   @js.native
+  trait GetImportRequest extends js.Object {
+    var ImportId: UUID
+  }
+
+  object GetImportRequest {
+    @inline
+    def apply(
+        ImportId: UUID
+    ): GetImportRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImportId" -> ImportId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetImportRequest]
+    }
+  }
+
+  @js.native
+  trait GetImportResponse extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Date]
+    var Destinations: js.UndefOr[ImportDestinations]
+    var EndEventTime: js.UndefOr[Date]
+    var ImportId: js.UndefOr[UUID]
+    var ImportSource: js.UndefOr[ImportSource]
+    var ImportStatistics: js.UndefOr[ImportStatistics]
+    var ImportStatus: js.UndefOr[ImportStatus]
+    var StartEventTime: js.UndefOr[Date]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object GetImportResponse {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        Destinations: js.UndefOr[ImportDestinations] = js.undefined,
+        EndEventTime: js.UndefOr[Date] = js.undefined,
+        ImportId: js.UndefOr[UUID] = js.undefined,
+        ImportSource: js.UndefOr[ImportSource] = js.undefined,
+        ImportStatistics: js.UndefOr[ImportStatistics] = js.undefined,
+        ImportStatus: js.UndefOr[ImportStatus] = js.undefined,
+        StartEventTime: js.UndefOr[Date] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): GetImportResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      EndEventTime.foreach(__v => __obj.updateDynamic("EndEventTime")(__v.asInstanceOf[js.Any]))
+      ImportId.foreach(__v => __obj.updateDynamic("ImportId")(__v.asInstanceOf[js.Any]))
+      ImportSource.foreach(__v => __obj.updateDynamic("ImportSource")(__v.asInstanceOf[js.Any]))
+      ImportStatistics.foreach(__v => __obj.updateDynamic("ImportStatistics")(__v.asInstanceOf[js.Any]))
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
+      StartEventTime.foreach(__v => __obj.updateDynamic("StartEventTime")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImportResponse]
+    }
+  }
+
+  @js.native
   trait GetInsightSelectorsRequest extends js.Object {
     var TrailName: String
   }
@@ -528,6 +1099,61 @@ package object cloudtrail {
       InsightSelectors.foreach(__v => __obj.updateDynamic("InsightSelectors")(__v.asInstanceOf[js.Any]))
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInsightSelectorsResponse]
+    }
+  }
+
+  @js.native
+  trait GetQueryResultsRequest extends js.Object {
+    var QueryId: UUID
+    var EventDataStore: js.UndefOr[EventDataStoreArn]
+    var MaxQueryResults: js.UndefOr[MaxQueryResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object GetQueryResultsRequest {
+    @inline
+    def apply(
+        QueryId: UUID,
+        EventDataStore: js.UndefOr[EventDataStoreArn] = js.undefined,
+        MaxQueryResults: js.UndefOr[MaxQueryResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetQueryResultsRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryId" -> QueryId.asInstanceOf[js.Any]
+      )
+
+      EventDataStore.foreach(__v => __obj.updateDynamic("EventDataStore")(__v.asInstanceOf[js.Any]))
+      MaxQueryResults.foreach(__v => __obj.updateDynamic("MaxQueryResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQueryResultsRequest]
+    }
+  }
+
+  @js.native
+  trait GetQueryResultsResponse extends js.Object {
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var NextToken: js.UndefOr[PaginationToken]
+    var QueryResultRows: js.UndefOr[QueryResultRows]
+    var QueryStatistics: js.UndefOr[QueryStatistics]
+    var QueryStatus: js.UndefOr[QueryStatus]
+  }
+
+  object GetQueryResultsResponse {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        QueryResultRows: js.UndefOr[QueryResultRows] = js.undefined,
+        QueryStatistics: js.UndefOr[QueryStatistics] = js.undefined,
+        QueryStatus: js.UndefOr[QueryStatus] = js.undefined
+    ): GetQueryResultsResponse = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryResultRows.foreach(__v => __obj.updateDynamic("QueryResultRows")(__v.asInstanceOf[js.Any]))
+      QueryStatistics.foreach(__v => __obj.updateDynamic("QueryStatistics")(__v.asInstanceOf[js.Any]))
+      QueryStatus.foreach(__v => __obj.updateDynamic("QueryStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetQueryResultsResponse]
     }
   }
 
@@ -649,6 +1275,115 @@ package object cloudtrail {
     }
   }
 
+  /** Provides information about an import failure.
+    */
+  @js.native
+  trait ImportFailureListItem extends js.Object {
+    var ErrorMessage: js.UndefOr[String]
+    var ErrorType: js.UndefOr[String]
+    var LastUpdatedTime: js.UndefOr[Date]
+    var Location: js.UndefOr[String]
+    var Status: js.UndefOr[ImportFailureStatus]
+  }
+
+  object ImportFailureListItem {
+    @inline
+    def apply(
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        ErrorType: js.UndefOr[String] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Date] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[ImportFailureStatus] = js.undefined
+    ): ImportFailureListItem = {
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ErrorType.foreach(__v => __obj.updateDynamic("ErrorType")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportFailureListItem]
+    }
+  }
+
+  /** The import source.
+    */
+  @js.native
+  trait ImportSource extends js.Object {
+    var S3: S3ImportSource
+  }
+
+  object ImportSource {
+    @inline
+    def apply(
+        S3: S3ImportSource
+    ): ImportSource = {
+      val __obj = js.Dynamic.literal(
+        "S3" -> S3.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImportSource]
+    }
+  }
+
+  /** Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import.
+    */
+  @js.native
+  trait ImportStatistics extends js.Object {
+    var EventsCompleted: js.UndefOr[Double]
+    var FailedEntries: js.UndefOr[Double]
+    var FilesCompleted: js.UndefOr[Double]
+    var PrefixesCompleted: js.UndefOr[Double]
+    var PrefixesFound: js.UndefOr[Double]
+  }
+
+  object ImportStatistics {
+    @inline
+    def apply(
+        EventsCompleted: js.UndefOr[Double] = js.undefined,
+        FailedEntries: js.UndefOr[Double] = js.undefined,
+        FilesCompleted: js.UndefOr[Double] = js.undefined,
+        PrefixesCompleted: js.UndefOr[Double] = js.undefined,
+        PrefixesFound: js.UndefOr[Double] = js.undefined
+    ): ImportStatistics = {
+      val __obj = js.Dynamic.literal()
+      EventsCompleted.foreach(__v => __obj.updateDynamic("EventsCompleted")(__v.asInstanceOf[js.Any]))
+      FailedEntries.foreach(__v => __obj.updateDynamic("FailedEntries")(__v.asInstanceOf[js.Any]))
+      FilesCompleted.foreach(__v => __obj.updateDynamic("FilesCompleted")(__v.asInstanceOf[js.Any]))
+      PrefixesCompleted.foreach(__v => __obj.updateDynamic("PrefixesCompleted")(__v.asInstanceOf[js.Any]))
+      PrefixesFound.foreach(__v => __obj.updateDynamic("PrefixesFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportStatistics]
+    }
+  }
+
+  /** Contains information about an import that was returned by a lookup request.
+    */
+  @js.native
+  trait ImportsListItem extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Date]
+    var Destinations: js.UndefOr[ImportDestinations]
+    var ImportId: js.UndefOr[UUID]
+    var ImportStatus: js.UndefOr[ImportStatus]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object ImportsListItem {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        Destinations: js.UndefOr[ImportDestinations] = js.undefined,
+        ImportId: js.UndefOr[UUID] = js.undefined,
+        ImportStatus: js.UndefOr[ImportStatus] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): ImportsListItem = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      ImportId.foreach(__v => __obj.updateDynamic("ImportId")(__v.asInstanceOf[js.Any]))
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportsListItem]
+    }
+  }
+
   /** A JSON string that contains a list of insight types that are logged on a trail.
     */
   @js.native
@@ -664,6 +1399,169 @@ package object cloudtrail {
       val __obj = js.Dynamic.literal()
       InsightType.foreach(__v => __obj.updateDynamic("InsightType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InsightSelector]
+    }
+  }
+
+  @js.native
+  trait ListChannelsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListChannelsMaxResultsCount]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListChannelsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListChannelsMaxResultsCount] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListChannelsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsRequest]
+    }
+  }
+
+  @js.native
+  trait ListChannelsResponse extends js.Object {
+    var Channels: js.UndefOr[Channels]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListChannelsResponse {
+    @inline
+    def apply(
+        Channels: js.UndefOr[Channels] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListChannelsResponse = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListChannelsResponse]
+    }
+  }
+
+  @js.native
+  trait ListEventDataStoresRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListEventDataStoresMaxResultsCount]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListEventDataStoresRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListEventDataStoresMaxResultsCount] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListEventDataStoresRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventDataStoresRequest]
+    }
+  }
+
+  @js.native
+  trait ListEventDataStoresResponse extends js.Object {
+    var EventDataStores: js.UndefOr[EventDataStores]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListEventDataStoresResponse {
+    @inline
+    def apply(
+        EventDataStores: js.UndefOr[EventDataStores] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListEventDataStoresResponse = {
+      val __obj = js.Dynamic.literal()
+      EventDataStores.foreach(__v => __obj.updateDynamic("EventDataStores")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventDataStoresResponse]
+    }
+  }
+
+  @js.native
+  trait ListImportFailuresRequest extends js.Object {
+    var ImportId: UUID
+    var MaxResults: js.UndefOr[ListImportFailuresMaxResultsCount]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListImportFailuresRequest {
+    @inline
+    def apply(
+        ImportId: UUID,
+        MaxResults: js.UndefOr[ListImportFailuresMaxResultsCount] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListImportFailuresRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImportId" -> ImportId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportFailuresRequest]
+    }
+  }
+
+  @js.native
+  trait ListImportFailuresResponse extends js.Object {
+    var Failures: js.UndefOr[ImportFailureList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListImportFailuresResponse {
+    @inline
+    def apply(
+        Failures: js.UndefOr[ImportFailureList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListImportFailuresResponse = {
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportFailuresResponse]
+    }
+  }
+
+  @js.native
+  trait ListImportsRequest extends js.Object {
+    var Destination: js.UndefOr[EventDataStoreArn]
+    var ImportStatus: js.UndefOr[ImportStatus]
+    var MaxResults: js.UndefOr[ListImportsMaxResultsCount]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListImportsRequest {
+    @inline
+    def apply(
+        Destination: js.UndefOr[EventDataStoreArn] = js.undefined,
+        ImportStatus: js.UndefOr[ImportStatus] = js.undefined,
+        MaxResults: js.UndefOr[ListImportsMaxResultsCount] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListImportsRequest = {
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportsRequest]
+    }
+  }
+
+  @js.native
+  trait ListImportsResponse extends js.Object {
+    var Imports: js.UndefOr[ImportsList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListImportsResponse {
+    @inline
+    def apply(
+        Imports: js.UndefOr[ImportsList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListImportsResponse = {
+      val __obj = js.Dynamic.literal()
+      Imports.foreach(__v => __obj.updateDynamic("Imports")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImportsResponse]
     }
   }
 
@@ -712,7 +1610,59 @@ package object cloudtrail {
     }
   }
 
-  /** Specifies a list of trail tags to return.
+  @js.native
+  trait ListQueriesRequest extends js.Object {
+    var EventDataStore: EventDataStoreArn
+    var EndTime: js.UndefOr[Date]
+    var MaxResults: js.UndefOr[ListQueriesMaxResultsCount]
+    var NextToken: js.UndefOr[PaginationToken]
+    var QueryStatus: js.UndefOr[QueryStatus]
+    var StartTime: js.UndefOr[Date]
+  }
+
+  object ListQueriesRequest {
+    @inline
+    def apply(
+        EventDataStore: EventDataStoreArn,
+        EndTime: js.UndefOr[Date] = js.undefined,
+        MaxResults: js.UndefOr[ListQueriesMaxResultsCount] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        QueryStatus: js.UndefOr[QueryStatus] = js.undefined,
+        StartTime: js.UndefOr[Date] = js.undefined
+    ): ListQueriesRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventDataStore" -> EventDataStore.asInstanceOf[js.Any]
+      )
+
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryStatus.foreach(__v => __obj.updateDynamic("QueryStatus")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueriesRequest]
+    }
+  }
+
+  @js.native
+  trait ListQueriesResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var Queries: js.UndefOr[Queries]
+  }
+
+  object ListQueriesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Queries: js.UndefOr[Queries] = js.undefined
+    ): ListQueriesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Queries.foreach(__v => __obj.updateDynamic("Queries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListQueriesResponse]
+    }
+  }
+
+  /** Specifies a list of tags to return.
     */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -979,25 +1929,134 @@ package object cloudtrail {
     }
   }
 
-  /** Specifies the tags to remove from a trail.
+  /** A SQL string of criteria about events that you want to collect in an event data store.
+    */
+  @js.native
+  trait Query extends js.Object {
+    var CreationTime: js.UndefOr[Date]
+    var QueryId: js.UndefOr[UUID]
+    var QueryStatus: js.UndefOr[QueryStatus]
+  }
+
+  object Query {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        QueryId: js.UndefOr[UUID] = js.undefined,
+        QueryStatus: js.UndefOr[QueryStatus] = js.undefined
+    ): Query = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      QueryId.foreach(__v => __obj.updateDynamic("QueryId")(__v.asInstanceOf[js.Any]))
+      QueryStatus.foreach(__v => __obj.updateDynamic("QueryStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Query]
+    }
+  }
+
+  /** Metadata about a query, such as the number of results.
+    */
+  @js.native
+  trait QueryStatistics extends js.Object {
+    var BytesScanned: js.UndefOr[Double]
+    var ResultsCount: js.UndefOr[Int]
+    var TotalResultsCount: js.UndefOr[Int]
+  }
+
+  object QueryStatistics {
+    @inline
+    def apply(
+        BytesScanned: js.UndefOr[Double] = js.undefined,
+        ResultsCount: js.UndefOr[Int] = js.undefined,
+        TotalResultsCount: js.UndefOr[Int] = js.undefined
+    ): QueryStatistics = {
+      val __obj = js.Dynamic.literal()
+      BytesScanned.foreach(__v => __obj.updateDynamic("BytesScanned")(__v.asInstanceOf[js.Any]))
+      ResultsCount.foreach(__v => __obj.updateDynamic("ResultsCount")(__v.asInstanceOf[js.Any]))
+      TotalResultsCount.foreach(__v => __obj.updateDynamic("TotalResultsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryStatistics]
+    }
+  }
+
+  /** Gets metadata about a query, including the number of events that were matched, the total number of events scanned, the query run time in milliseconds, and the query's creation time.
+    */
+  @js.native
+  trait QueryStatisticsForDescribeQuery extends js.Object {
+    var BytesScanned: js.UndefOr[Double]
+    var CreationTime: js.UndefOr[Date]
+    var EventsMatched: js.UndefOr[Double]
+    var EventsScanned: js.UndefOr[Double]
+    var ExecutionTimeInMillis: js.UndefOr[Int]
+  }
+
+  object QueryStatisticsForDescribeQuery {
+    @inline
+    def apply(
+        BytesScanned: js.UndefOr[Double] = js.undefined,
+        CreationTime: js.UndefOr[Date] = js.undefined,
+        EventsMatched: js.UndefOr[Double] = js.undefined,
+        EventsScanned: js.UndefOr[Double] = js.undefined,
+        ExecutionTimeInMillis: js.UndefOr[Int] = js.undefined
+    ): QueryStatisticsForDescribeQuery = {
+      val __obj = js.Dynamic.literal()
+      BytesScanned.foreach(__v => __obj.updateDynamic("BytesScanned")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EventsMatched.foreach(__v => __obj.updateDynamic("EventsMatched")(__v.asInstanceOf[js.Any]))
+      EventsScanned.foreach(__v => __obj.updateDynamic("EventsScanned")(__v.asInstanceOf[js.Any]))
+      ExecutionTimeInMillis.foreach(__v => __obj.updateDynamic("ExecutionTimeInMillis")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryStatisticsForDescribeQuery]
+    }
+  }
+
+  /** Specifies an organization member account ID as a CloudTrail delegated administrator.
+    */
+  @js.native
+  trait RegisterOrganizationDelegatedAdminRequest extends js.Object {
+    var MemberAccountId: AccountId
+  }
+
+  object RegisterOrganizationDelegatedAdminRequest {
+    @inline
+    def apply(
+        MemberAccountId: AccountId
+    ): RegisterOrganizationDelegatedAdminRequest = {
+      val __obj = js.Dynamic.literal(
+        "MemberAccountId" -> MemberAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegisterOrganizationDelegatedAdminRequest]
+    }
+  }
+
+  /** Returns the following response if successful. Otherwise, returns an error.
+    */
+  @js.native
+  trait RegisterOrganizationDelegatedAdminResponse extends js.Object
+
+  object RegisterOrganizationDelegatedAdminResponse {
+    @inline
+    def apply(): RegisterOrganizationDelegatedAdminResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RegisterOrganizationDelegatedAdminResponse]
+    }
+  }
+
+  /** Specifies the tags to remove from a trail or event data store.
     */
   @js.native
   trait RemoveTagsRequest extends js.Object {
     var ResourceId: String
-    var TagsList: js.UndefOr[TagsList]
+    var TagsList: TagsList
   }
 
   object RemoveTagsRequest {
     @inline
     def apply(
         ResourceId: String,
-        TagsList: js.UndefOr[TagsList] = js.undefined
+        TagsList: TagsList
     ): RemoveTagsRequest = {
       val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "TagsList" -> TagsList.asInstanceOf[js.Any]
       )
-
-      TagsList.foreach(__v => __obj.updateDynamic("TagsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTagsRequest]
     }
   }
@@ -1057,6 +2116,180 @@ package object cloudtrail {
     }
   }
 
+  @js.native
+  trait RestoreEventDataStoreRequest extends js.Object {
+    var EventDataStore: EventDataStoreArn
+  }
+
+  object RestoreEventDataStoreRequest {
+    @inline
+    def apply(
+        EventDataStore: EventDataStoreArn
+    ): RestoreEventDataStoreRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventDataStore" -> EventDataStore.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RestoreEventDataStoreRequest]
+    }
+  }
+
+  @js.native
+  trait RestoreEventDataStoreResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var CreatedTimestamp: js.UndefOr[Date]
+    var EventDataStoreArn: js.UndefOr[EventDataStoreArn]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[EventDataStoreStatus]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object RestoreEventDataStoreResponse {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        EventDataStoreArn: js.UndefOr[EventDataStoreArn] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[EventDataStoreStatus] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): RestoreEventDataStoreResponse = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EventDataStoreArn.foreach(__v => __obj.updateDynamic("EventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RestoreEventDataStoreResponse]
+    }
+  }
+
+  /** The settings for the source S3 bucket.
+    */
+  @js.native
+  trait S3ImportSource extends js.Object {
+    var S3BucketAccessRoleArn: String
+    var S3BucketRegion: String
+    var S3LocationUri: String
+  }
+
+  object S3ImportSource {
+    @inline
+    def apply(
+        S3BucketAccessRoleArn: String,
+        S3BucketRegion: String,
+        S3LocationUri: String
+    ): S3ImportSource = {
+      val __obj = js.Dynamic.literal(
+        "S3BucketAccessRoleArn" -> S3BucketAccessRoleArn.asInstanceOf[js.Any],
+        "S3BucketRegion" -> S3BucketRegion.asInstanceOf[js.Any],
+        "S3LocationUri" -> S3LocationUri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3ImportSource]
+    }
+  }
+
+  /** Contains configuration information about the channel.
+    */
+  @js.native
+  trait SourceConfig extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var ApplyToAllRegions: js.UndefOr[Boolean]
+  }
+
+  object SourceConfig {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        ApplyToAllRegions: js.UndefOr[Boolean] = js.undefined
+    ): SourceConfig = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      ApplyToAllRegions.foreach(__v => __obj.updateDynamic("ApplyToAllRegions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConfig]
+    }
+  }
+
+  @js.native
+  trait StartImportRequest extends js.Object {
+    var Destinations: js.UndefOr[ImportDestinations]
+    var EndEventTime: js.UndefOr[Date]
+    var ImportId: js.UndefOr[UUID]
+    var ImportSource: js.UndefOr[ImportSource]
+    var StartEventTime: js.UndefOr[Date]
+  }
+
+  object StartImportRequest {
+    @inline
+    def apply(
+        Destinations: js.UndefOr[ImportDestinations] = js.undefined,
+        EndEventTime: js.UndefOr[Date] = js.undefined,
+        ImportId: js.UndefOr[UUID] = js.undefined,
+        ImportSource: js.UndefOr[ImportSource] = js.undefined,
+        StartEventTime: js.UndefOr[Date] = js.undefined
+    ): StartImportRequest = {
+      val __obj = js.Dynamic.literal()
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      EndEventTime.foreach(__v => __obj.updateDynamic("EndEventTime")(__v.asInstanceOf[js.Any]))
+      ImportId.foreach(__v => __obj.updateDynamic("ImportId")(__v.asInstanceOf[js.Any]))
+      ImportSource.foreach(__v => __obj.updateDynamic("ImportSource")(__v.asInstanceOf[js.Any]))
+      StartEventTime.foreach(__v => __obj.updateDynamic("StartEventTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImportRequest]
+    }
+  }
+
+  @js.native
+  trait StartImportResponse extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Date]
+    var Destinations: js.UndefOr[ImportDestinations]
+    var EndEventTime: js.UndefOr[Date]
+    var ImportId: js.UndefOr[UUID]
+    var ImportSource: js.UndefOr[ImportSource]
+    var ImportStatus: js.UndefOr[ImportStatus]
+    var StartEventTime: js.UndefOr[Date]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object StartImportResponse {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        Destinations: js.UndefOr[ImportDestinations] = js.undefined,
+        EndEventTime: js.UndefOr[Date] = js.undefined,
+        ImportId: js.UndefOr[UUID] = js.undefined,
+        ImportSource: js.UndefOr[ImportSource] = js.undefined,
+        ImportStatus: js.UndefOr[ImportStatus] = js.undefined,
+        StartEventTime: js.UndefOr[Date] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): StartImportResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      EndEventTime.foreach(__v => __obj.updateDynamic("EndEventTime")(__v.asInstanceOf[js.Any]))
+      ImportId.foreach(__v => __obj.updateDynamic("ImportId")(__v.asInstanceOf[js.Any]))
+      ImportSource.foreach(__v => __obj.updateDynamic("ImportSource")(__v.asInstanceOf[js.Any]))
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
+      StartEventTime.foreach(__v => __obj.updateDynamic("StartEventTime")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartImportResponse]
+    }
+  }
+
   /** The request to CloudTrail to start logging Amazon Web Services API calls for an account.
     */
   @js.native
@@ -1086,6 +2319,100 @@ package object cloudtrail {
     def apply(): StartLoggingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StartLoggingResponse]
+    }
+  }
+
+  @js.native
+  trait StartQueryRequest extends js.Object {
+    var QueryStatement: QueryStatement
+    var DeliveryS3Uri: js.UndefOr[DeliveryS3Uri]
+  }
+
+  object StartQueryRequest {
+    @inline
+    def apply(
+        QueryStatement: QueryStatement,
+        DeliveryS3Uri: js.UndefOr[DeliveryS3Uri] = js.undefined
+    ): StartQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "QueryStatement" -> QueryStatement.asInstanceOf[js.Any]
+      )
+
+      DeliveryS3Uri.foreach(__v => __obj.updateDynamic("DeliveryS3Uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartQueryRequest]
+    }
+  }
+
+  @js.native
+  trait StartQueryResponse extends js.Object {
+    var QueryId: js.UndefOr[UUID]
+  }
+
+  object StartQueryResponse {
+    @inline
+    def apply(
+        QueryId: js.UndefOr[UUID] = js.undefined
+    ): StartQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      QueryId.foreach(__v => __obj.updateDynamic("QueryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartQueryResponse]
+    }
+  }
+
+  @js.native
+  trait StopImportRequest extends js.Object {
+    var ImportId: UUID
+  }
+
+  object StopImportRequest {
+    @inline
+    def apply(
+        ImportId: UUID
+    ): StopImportRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImportId" -> ImportId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopImportRequest]
+    }
+  }
+
+  @js.native
+  trait StopImportResponse extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Date]
+    var Destinations: js.UndefOr[ImportDestinations]
+    var EndEventTime: js.UndefOr[Date]
+    var ImportId: js.UndefOr[UUID]
+    var ImportSource: js.UndefOr[ImportSource]
+    var ImportStatistics: js.UndefOr[ImportStatistics]
+    var ImportStatus: js.UndefOr[ImportStatus]
+    var StartEventTime: js.UndefOr[Date]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object StopImportResponse {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        Destinations: js.UndefOr[ImportDestinations] = js.undefined,
+        EndEventTime: js.UndefOr[Date] = js.undefined,
+        ImportId: js.UndefOr[UUID] = js.undefined,
+        ImportSource: js.UndefOr[ImportSource] = js.undefined,
+        ImportStatistics: js.UndefOr[ImportStatistics] = js.undefined,
+        ImportStatus: js.UndefOr[ImportStatus] = js.undefined,
+        StartEventTime: js.UndefOr[Date] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): StopImportResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      EndEventTime.foreach(__v => __obj.updateDynamic("EndEventTime")(__v.asInstanceOf[js.Any]))
+      ImportId.foreach(__v => __obj.updateDynamic("ImportId")(__v.asInstanceOf[js.Any]))
+      ImportSource.foreach(__v => __obj.updateDynamic("ImportSource")(__v.asInstanceOf[js.Any]))
+      ImportStatistics.foreach(__v => __obj.updateDynamic("ImportStatistics")(__v.asInstanceOf[js.Any]))
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
+      StartEventTime.foreach(__v => __obj.updateDynamic("StartEventTime")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopImportResponse]
     }
   }
 
@@ -1125,15 +2452,15 @@ package object cloudtrail {
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: String
-    var Value: js.UndefOr[String]
+    var Key: TagKey
+    var Value: js.UndefOr[TagValue]
   }
 
   object Tag {
     @inline
     def apply(
-        Key: String,
-        Value: js.UndefOr[String] = js.undefined
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
       val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
@@ -1228,6 +2555,91 @@ package object cloudtrail {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       TrailARN.foreach(__v => __obj.updateDynamic("TrailARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrailInfo]
+    }
+  }
+
+  @js.native
+  trait UpdateEventDataStoreRequest extends js.Object {
+    var EventDataStore: EventDataStoreArn
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+  }
+
+  object UpdateEventDataStoreRequest {
+    @inline
+    def apply(
+        EventDataStore: EventDataStoreArn,
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined
+    ): UpdateEventDataStoreRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventDataStore" -> EventDataStore.asInstanceOf[js.Any]
+      )
+
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEventDataStoreRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEventDataStoreResponse extends js.Object {
+    var AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors]
+    var CreatedTimestamp: js.UndefOr[Date]
+    var EventDataStoreArn: js.UndefOr[EventDataStoreArn]
+    var KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId]
+    var MultiRegionEnabled: js.UndefOr[Boolean]
+    var Name: js.UndefOr[EventDataStoreName]
+    var OrganizationEnabled: js.UndefOr[Boolean]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[EventDataStoreStatus]
+    var TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled]
+    var UpdatedTimestamp: js.UndefOr[Date]
+  }
+
+  object UpdateEventDataStoreResponse {
+    @inline
+    def apply(
+        AdvancedEventSelectors: js.UndefOr[AdvancedEventSelectors] = js.undefined,
+        CreatedTimestamp: js.UndefOr[Date] = js.undefined,
+        EventDataStoreArn: js.UndefOr[EventDataStoreArn] = js.undefined,
+        KmsKeyId: js.UndefOr[EventDataStoreKmsKeyId] = js.undefined,
+        MultiRegionEnabled: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[EventDataStoreName] = js.undefined,
+        OrganizationEnabled: js.UndefOr[Boolean] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[EventDataStoreStatus] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[TerminationProtectionEnabled] = js.undefined,
+        UpdatedTimestamp: js.UndefOr[Date] = js.undefined
+    ): UpdateEventDataStoreResponse = {
+      val __obj = js.Dynamic.literal()
+      AdvancedEventSelectors.foreach(__v => __obj.updateDynamic("AdvancedEventSelectors")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EventDataStoreArn.foreach(__v => __obj.updateDynamic("EventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MultiRegionEnabled.foreach(__v => __obj.updateDynamic("MultiRegionEnabled")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OrganizationEnabled.foreach(__v => __obj.updateDynamic("OrganizationEnabled")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEventDataStoreResponse]
     }
   }
 

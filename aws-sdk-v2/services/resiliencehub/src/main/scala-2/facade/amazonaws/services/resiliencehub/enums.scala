@@ -15,6 +15,15 @@ object AlarmType {
 }
 
 @js.native
+sealed trait AppAssessmentScheduleType extends js.Any
+object AppAssessmentScheduleType {
+  val Disabled = "Disabled".asInstanceOf[AppAssessmentScheduleType]
+  val Daily = "Daily".asInstanceOf[AppAssessmentScheduleType]
+
+  @inline def values: js.Array[AppAssessmentScheduleType] = js.Array(Disabled, Daily)
+}
+
+@js.native
 sealed trait AppComplianceStatusType extends js.Any
 object AppComplianceStatusType {
   val PolicyBreached = "PolicyBreached".asInstanceOf[AppComplianceStatusType]
@@ -71,8 +80,9 @@ object ConfigRecommendationOptimizationType {
   val BestAZRecovery = "BestAZRecovery".asInstanceOf[ConfigRecommendationOptimizationType]
   val LeastErrors = "LeastErrors".asInstanceOf[ConfigRecommendationOptimizationType]
   val BestAttainable = "BestAttainable".asInstanceOf[ConfigRecommendationOptimizationType]
+  val BestRegionRecovery = "BestRegionRecovery".asInstanceOf[ConfigRecommendationOptimizationType]
 
-  @inline def values: js.Array[ConfigRecommendationOptimizationType] = js.Array(LeastCost, LeastChange, BestAZRecovery, LeastErrors, BestAttainable)
+  @inline def values: js.Array[ConfigRecommendationOptimizationType] = js.Array(LeastCost, LeastChange, BestAZRecovery, LeastErrors, BestAttainable, BestRegionRecovery)
 }
 
 @js.native
@@ -200,8 +210,9 @@ object ResourceMappingType {
   val Resource = "Resource".asInstanceOf[ResourceMappingType]
   val AppRegistryApp = "AppRegistryApp".asInstanceOf[ResourceMappingType]
   val ResourceGroup = "ResourceGroup".asInstanceOf[ResourceMappingType]
+  val Terraform = "Terraform".asInstanceOf[ResourceMappingType]
 
-  @inline def values: js.Array[ResourceMappingType] = js.Array(CfnStack, Resource, AppRegistryApp, ResourceGroup)
+  @inline def values: js.Array[ResourceMappingType] = js.Array(CfnStack, Resource, AppRegistryApp, ResourceGroup, Terraform)
 }
 
 @js.native

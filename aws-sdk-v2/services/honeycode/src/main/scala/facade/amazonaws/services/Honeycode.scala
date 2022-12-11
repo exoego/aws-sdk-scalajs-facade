@@ -19,8 +19,10 @@ package object honeycode {
   type DelimitedTextDelimiter = String
   type Email = String
   type Fact = String
+  type FactList = js.Array[Fact]
   type FailedBatchItems = js.Array[FailedBatchItem]
   type FormattedValue = String
+  type FormattedValuesList = js.Array[FormattedValue]
   type Formula = String
   type HasHeaderRow = Boolean
   type IgnoreEmptyRows = Boolean
@@ -30,6 +32,7 @@ package object honeycode {
   type Name = String
   type PaginationToken = String
   type RawValue = String
+  type ResourceArn = String
   type ResourceId = String
   type ResourceIds = js.Array[ResourceId]
   type ResultHeader = js.Array[ColumnMetadata]
@@ -46,6 +49,10 @@ package object honeycode {
   type TableName = String
   type TableRows = js.Array[TableRow]
   type Tables = js.Array[Table]
+  type TagKey = String
+  type TagKeysList = js.Array[TagKey]
+  type TagValue = String
+  type TagsMap = js.Dictionary[TagValue]
   type TimestampInMillis = js.Date
   type UpdateRowDataList = js.Array[UpdateRowData]
   type UpsertRowDataList = js.Array[UpsertRowData]
@@ -66,8 +73,11 @@ package object honeycode {
     @inline def listTableColumnsFuture(params: ListTableColumnsRequest): Future[ListTableColumnsResult] = service.listTableColumns(params).promise().toFuture
     @inline def listTableRowsFuture(params: ListTableRowsRequest): Future[ListTableRowsResult] = service.listTableRows(params).promise().toFuture
     @inline def listTablesFuture(params: ListTablesRequest): Future[ListTablesResult] = service.listTables(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
     @inline def queryTableRowsFuture(params: QueryTableRowsRequest): Future[QueryTableRowsResult] = service.queryTableRows(params).promise().toFuture
     @inline def startTableDataImportJobFuture(params: StartTableDataImportJobRequest): Future[StartTableDataImportJobResult] = service.startTableDataImportJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
 
   }
 
@@ -86,8 +96,11 @@ package object honeycode {
     def listTableColumns(params: ListTableColumnsRequest): Request[ListTableColumnsResult] = js.native
     def listTableRows(params: ListTableRowsRequest): Request[ListTableRowsResult] = js.native
     def listTables(params: ListTablesRequest): Request[ListTablesResult] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def queryTableRows(params: QueryTableRowsRequest): Request[QueryTableRowsResult] = js.native
     def startTableDataImportJob(params: StartTableDataImportJobRequest): Request[StartTableDataImportJobResult] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
   }
   object Honeycode {
     @inline implicit def toOps(service: Honeycode): HoneycodeOps = {
@@ -299,6 +312,7 @@ package object honeycode {
   trait Cell extends js.Object {
     var format: js.UndefOr[Format]
     var formattedValue: js.UndefOr[FormattedValue]
+    var formattedValues: js.UndefOr[FormattedValuesList]
     var formula: js.UndefOr[Formula]
     var rawValue: js.UndefOr[RawValue]
   }
@@ -308,12 +322,14 @@ package object honeycode {
     def apply(
         format: js.UndefOr[Format] = js.undefined,
         formattedValue: js.UndefOr[FormattedValue] = js.undefined,
+        formattedValues: js.UndefOr[FormattedValuesList] = js.undefined,
         formula: js.UndefOr[Formula] = js.undefined,
         rawValue: js.UndefOr[RawValue] = js.undefined
     ): Cell = {
       val __obj = js.Dynamic.literal()
       format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
       formattedValue.foreach(__v => __obj.updateDynamic("formattedValue")(__v.asInstanceOf[js.Any]))
+      formattedValues.foreach(__v => __obj.updateDynamic("formattedValues")(__v.asInstanceOf[js.Any]))
       formula.foreach(__v => __obj.updateDynamic("formula")(__v.asInstanceOf[js.Any]))
       rawValue.foreach(__v => __obj.updateDynamic("rawValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cell]
@@ -321,19 +337,24 @@ package object honeycode {
   }
 
   /** CellInput object contains the data needed to create or update cells in a table.
+    *
+    * '''Note:'''CellInput object has only a facts field or a fact field, but not both. A 400 bad request will be thrown if both fact and facts field are present.
     */
   @js.native
   trait CellInput extends js.Object {
     var fact: js.UndefOr[Fact]
+    var facts: js.UndefOr[FactList]
   }
 
   object CellInput {
     @inline
     def apply(
-        fact: js.UndefOr[Fact] = js.undefined
+        fact: js.UndefOr[Fact] = js.undefined,
+        facts: js.UndefOr[FactList] = js.undefined
     ): CellInput = {
       val __obj = js.Dynamic.literal()
       fact.foreach(__v => __obj.updateDynamic("fact")(__v.asInstanceOf[js.Any]))
+      facts.foreach(__v => __obj.updateDynamic("facts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CellInput]
     }
   }
@@ -463,6 +484,7 @@ package object honeycode {
     var jobMetadata: TableDataImportJobMetadata
     var jobStatus: TableDataImportJobStatus
     var message: TableDataImportJobMessage
+    var errorCode: js.UndefOr[ErrorCode]
   }
 
   object DescribeTableDataImportJobResult {
@@ -470,13 +492,16 @@ package object honeycode {
     def apply(
         jobMetadata: TableDataImportJobMetadata,
         jobStatus: TableDataImportJobStatus,
-        message: TableDataImportJobMessage
+        message: TableDataImportJobMessage,
+        errorCode: js.UndefOr[ErrorCode] = js.undefined
     ): DescribeTableDataImportJobResult = {
       val __obj = js.Dynamic.literal(
         "jobMetadata" -> jobMetadata.asInstanceOf[js.Any],
         "jobStatus" -> jobStatus.asInstanceOf[js.Any],
         "message" -> message.asInstanceOf[js.Any]
       )
+
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTableDataImportJobResult]
     }
   }
@@ -890,6 +915,39 @@ package object honeycode {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResult extends js.Object {
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object ListTagsForResourceResult {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListTagsForResourceResult = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResult]
+    }
+  }
+
+  @js.native
   trait QueryTableRowsRequest extends js.Object {
     var filterFormula: Filter
     var tableId: ResourceId
@@ -1153,6 +1211,68 @@ package object honeycode {
         "rowId" -> rowId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TableRow]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+    var tags: TagsMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ResourceArn,
+        tags: TagsMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResult extends js.Object
+
+  object TagResourceResult {
+    @inline
+    def apply(): TagResourceResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResult]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: ResourceArn
+    var tagKeys: TagKeysList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: ResourceArn,
+        tagKeys: TagKeysList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResult extends js.Object
+
+  object UntagResourceResult {
+    @inline
+    def apply(): UntagResourceResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResult]
     }
   }
 

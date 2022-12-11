@@ -24,10 +24,15 @@ package object lexruntimev2 {
   type Interpretations = js.Array[Interpretation]
   type LocaleId = String
   type Messages = js.Array[Message]
+  type Name = String
   type NonEmptyString = String
   type ParameterName = String
+  type RuntimeHintPhrase = String
+  type RuntimeHintValuesList = js.Array[RuntimeHintValue]
   type SensitiveNonEmptyString = String
   type SessionId = String
+  type SlotHintsIntentMap = js.Dictionary[SlotHintsSlotMap]
+  type SlotHintsSlotMap = js.Dictionary[RuntimeHintDetails]
   type Slots = js.Dictionary[Slot]
   type StringList = js.Array[NonEmptyString]
   type StringMap = js.Dictionary[String]
@@ -206,6 +211,7 @@ package object lexruntimev2 {
     var `type`: DialogActionType
     var slotElicitationStyle: js.UndefOr[StyleType]
     var slotToElicit: js.UndefOr[NonEmptyString]
+    var subSlotToElicit: js.UndefOr[ElicitSubSlot]
   }
 
   object DialogAction {
@@ -213,7 +219,8 @@ package object lexruntimev2 {
     def apply(
         `type`: DialogActionType,
         slotElicitationStyle: js.UndefOr[StyleType] = js.undefined,
-        slotToElicit: js.UndefOr[NonEmptyString] = js.undefined
+        slotToElicit: js.UndefOr[NonEmptyString] = js.undefined,
+        subSlotToElicit: js.UndefOr[ElicitSubSlot] = js.undefined
     ): DialogAction = {
       val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
@@ -221,7 +228,31 @@ package object lexruntimev2 {
 
       slotElicitationStyle.foreach(__v => __obj.updateDynamic("slotElicitationStyle")(__v.asInstanceOf[js.Any]))
       slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      subSlotToElicit.foreach(__v => __obj.updateDynamic("subSlotToElicit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DialogAction]
+    }
+  }
+
+  /** The specific constituent sub slot of the composite slot to elicit in dialog action.
+    */
+  @js.native
+  trait ElicitSubSlot extends js.Object {
+    var name: NonEmptyString
+    var subSlotToElicit: js.UndefOr[ElicitSubSlot]
+  }
+
+  object ElicitSubSlot {
+    @inline
+    def apply(
+        name: NonEmptyString,
+        subSlotToElicit: js.UndefOr[ElicitSubSlot] = js.undefined
+    ): ElicitSubSlot = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      subSlotToElicit.foreach(__v => __obj.updateDynamic("subSlotToElicit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElicitSubSlot]
     }
   }
 
@@ -600,6 +631,64 @@ package object lexruntimev2 {
     }
   }
 
+  /** Provides an array of phrases that should be given preference when resolving values for a slot.
+    */
+  @js.native
+  trait RuntimeHintDetails extends js.Object {
+    var runtimeHintValues: js.UndefOr[RuntimeHintValuesList]
+    var subSlotHints: js.UndefOr[SlotHintsSlotMap]
+  }
+
+  object RuntimeHintDetails {
+    @inline
+    def apply(
+        runtimeHintValues: js.UndefOr[RuntimeHintValuesList] = js.undefined,
+        subSlotHints: js.UndefOr[SlotHintsSlotMap] = js.undefined
+    ): RuntimeHintDetails = {
+      val __obj = js.Dynamic.literal()
+      runtimeHintValues.foreach(__v => __obj.updateDynamic("runtimeHintValues")(__v.asInstanceOf[js.Any]))
+      subSlotHints.foreach(__v => __obj.updateDynamic("subSlotHints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuntimeHintDetails]
+    }
+  }
+
+  /** Provides the phrase that Amazon Lex V2 should look for in the user's input to the bot.
+    */
+  @js.native
+  trait RuntimeHintValue extends js.Object {
+    var phrase: RuntimeHintPhrase
+  }
+
+  object RuntimeHintValue {
+    @inline
+    def apply(
+        phrase: RuntimeHintPhrase
+    ): RuntimeHintValue = {
+      val __obj = js.Dynamic.literal(
+        "phrase" -> phrase.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RuntimeHintValue]
+    }
+  }
+
+  /** You can provide Amazon Lex V2 with hints to the phrases that a customer is likely to use for a slot. When a slot with hints is resolved, the phrases in the runtime hints are preferred in the resolution. You can provide hints for a maximum of 100 intents. You can provide a maximum of 100 slots. Before you can use runtime hints with an existing bot, you must first rebuild the bot. For more information, see [[https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html|Using runtime hints to improve recognition of slot values]].
+    */
+  @js.native
+  trait RuntimeHints extends js.Object {
+    var slotHints: js.UndefOr[SlotHintsIntentMap]
+  }
+
+  object RuntimeHints {
+    @inline
+    def apply(
+        slotHints: js.UndefOr[SlotHintsIntentMap] = js.undefined
+    ): RuntimeHints = {
+      val __obj = js.Dynamic.literal()
+      slotHints.foreach(__v => __obj.updateDynamic("slotHints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuntimeHints]
+    }
+  }
+
   /** Provides information about the sentiment expressed in a user's response in a conversation. Sentiments are determined using Amazon Comprehend. Sentiments are only returned if they are enabled for the bot. For more information, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-sentiment.html| Determine Sentiment]] in the <i>Amazon Comprehend developer guide</i>.
     */
   @js.native
@@ -656,6 +745,7 @@ package object lexruntimev2 {
     var dialogAction: js.UndefOr[DialogAction]
     var intent: js.UndefOr[Intent]
     var originatingRequestId: js.UndefOr[NonEmptyString]
+    var runtimeHints: js.UndefOr[RuntimeHints]
     var sessionAttributes: js.UndefOr[StringMap]
   }
 
@@ -666,6 +756,7 @@ package object lexruntimev2 {
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
         intent: js.UndefOr[Intent] = js.undefined,
         originatingRequestId: js.UndefOr[NonEmptyString] = js.undefined,
+        runtimeHints: js.UndefOr[RuntimeHints] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): SessionState = {
       val __obj = js.Dynamic.literal()
@@ -673,6 +764,7 @@ package object lexruntimev2 {
       dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
       intent.foreach(__v => __obj.updateDynamic("intent")(__v.asInstanceOf[js.Any]))
       originatingRequestId.foreach(__v => __obj.updateDynamic("originatingRequestId")(__v.asInstanceOf[js.Any]))
+      runtimeHints.foreach(__v => __obj.updateDynamic("runtimeHints")(__v.asInstanceOf[js.Any]))
       sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SessionState]
     }
@@ -683,6 +775,7 @@ package object lexruntimev2 {
   @js.native
   trait Slot extends js.Object {
     var shape: js.UndefOr[Shape]
+    var subSlots: js.UndefOr[Slots]
     var value: js.UndefOr[Value]
     var values: js.UndefOr[Values]
   }
@@ -691,11 +784,13 @@ package object lexruntimev2 {
     @inline
     def apply(
         shape: js.UndefOr[Shape] = js.undefined,
+        subSlots: js.UndefOr[Slots] = js.undefined,
         value: js.UndefOr[Value] = js.undefined,
         values: js.UndefOr[Values] = js.undefined
     ): Slot = {
       val __obj = js.Dynamic.literal()
       shape.foreach(__v => __obj.updateDynamic("shape")(__v.asInstanceOf[js.Any]))
+      subSlots.foreach(__v => __obj.updateDynamic("subSlots")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Slot]

@@ -16,16 +16,19 @@ package object transcribeservice {
   type ChannelId = Int
   type DataAccessRoleArn = String
   type DateTime = js.Date
+  type DurationInSeconds = Float
   type FailureReason = String
   type IdentifiedLanguageScore = Float
   type KMSEncryptionContextMap = js.Dictionary[NonEmptyString]
   type KMSKeyId = String
+  type LanguageCodeList = js.Array[LanguageCodeItem]
   type LanguageIdSettingsMap = js.Dictionary[LanguageIdSettings]
   type LanguageOptions = js.Array[LanguageCode]
   type MaxAlternatives = Int
   type MaxResults = Int
   type MaxSpeakers = Int
   type MediaSampleRateHertz = Int
+  type MedicalMediaSampleRateHertz = Int
   type MedicalTranscriptionJobSummaries = js.Array[MedicalTranscriptionJobSummary]
   type ModelName = String
   type Models = js.Array[LanguageModel]
@@ -36,11 +39,13 @@ package object transcribeservice {
   type Percentage = Int
   type Phrase = String
   type Phrases = js.Array[Phrase]
+  type PiiEntityTypes = js.Array[PiiEntityType]
   type RuleList = js.Array[Rule]
   type SentimentValueList = js.Array[SentimentValue]
   type StringTargetList = js.Array[NonEmptyString]
   type SubtitleFileUris = js.Array[Uri]
   type SubtitleFormats = js.Array[SubtitleFormat]
+  type SubtitleOutputStartIndex = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
@@ -152,7 +157,8 @@ package object transcribeservice {
     }
   }
 
-  /** A time range, set in seconds, between two points in the call.
+  /** A time range, in milliseconds, between two points in your media file. You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment. For example, setting <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000 only searches for your specified criteria in the audio contained between the 10,000 millisecond mark and the 50,000 millisecond mark of your media file. You must use <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include one, you must include both. You can use also <code>First</code> to search from the start of the audio until the time that you specify, or <code>Last</code> to search from the time that you specify until the end of the audio. For example, setting <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each other. If you
+    * prefer to use percentage instead of milliseconds, see .
     */
   @js.native
   trait AbsoluteTimeRange extends js.Object {
@@ -179,7 +185,7 @@ package object transcribeservice {
     }
   }
 
-  /** Describes an asynchronous analytics job that was created with the <code>StartAnalyticsJob</code> operation.
+  /** Provides detailed information about a Call Analytics job. To view the job's status, refer to <code>CallAnalyticsJobStatus</code>. If the status is <code>COMPLETED</code>, the job is finished. You can find your completed transcript at the URI specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed. If you enabled personally identifiable information (PII) redaction, the redacted transcript appears at the location specified in <code>RedactedTranscriptFileUri</code>. If you chose to redact the audio in your media file, you can find your redacted media file at the location specified in the <code>RedactedMediaFileUri</code> field of your response.
     */
   @js.native
   trait CallAnalyticsJob extends js.Object {
@@ -239,7 +245,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides optional settings for the <code>CallAnalyticsJob</code> operation.
+  /** Provides additional optional settings for your request, including content redaction, automatic language identification; allows you to apply custom language models, custom vocabulary filters, and custom vocabularies.
     */
   @js.native
   trait CallAnalyticsJobSettings extends js.Object {
@@ -275,7 +281,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides summary information about a call analytics job.
+  /** Provides detailed information about a specific Call Analytics job.
     */
   @js.native
   trait CallAnalyticsJobSummary extends js.Object {
@@ -311,12 +317,13 @@ package object transcribeservice {
     }
   }
 
-  /** An object that contains the rules and additional information about a call analytics category.
+  /** Provides you with the properties of the Call Analytics category you specified in your request. This includes the list of rules that define the specified category.
     */
   @js.native
   trait CategoryProperties extends js.Object {
     var CategoryName: js.UndefOr[CategoryName]
     var CreateTime: js.UndefOr[DateTime]
+    var InputType: js.UndefOr[InputType]
     var LastUpdateTime: js.UndefOr[DateTime]
     var Rules: js.UndefOr[RuleList]
   }
@@ -326,19 +333,21 @@ package object transcribeservice {
     def apply(
         CategoryName: js.UndefOr[CategoryName] = js.undefined,
         CreateTime: js.UndefOr[DateTime] = js.undefined,
+        InputType: js.UndefOr[InputType] = js.undefined,
         LastUpdateTime: js.UndefOr[DateTime] = js.undefined,
         Rules: js.UndefOr[RuleList] = js.undefined
     ): CategoryProperties = {
       val __obj = js.Dynamic.literal()
       CategoryName.foreach(__v => __obj.updateDynamic("CategoryName")(__v.asInstanceOf[js.Any]))
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      InputType.foreach(__v => __obj.updateDynamic("InputType")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CategoryProperties]
     }
   }
 
-  /** For a call analytics job, an object that indicates the audio channel that belongs to the agent and the audio channel that belongs to the customer.
+  /** Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
     */
   @js.native
   trait ChannelDefinition extends js.Object {
@@ -359,24 +368,28 @@ package object transcribeservice {
     }
   }
 
-  /** Settings for content redaction within a transcription job.
+  /** Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.
     */
   @js.native
   trait ContentRedaction extends js.Object {
     var RedactionOutput: RedactionOutput
     var RedactionType: RedactionType
+    var PiiEntityTypes: js.UndefOr[PiiEntityTypes]
   }
 
   object ContentRedaction {
     @inline
     def apply(
         RedactionOutput: RedactionOutput,
-        RedactionType: RedactionType
+        RedactionType: RedactionType,
+        PiiEntityTypes: js.UndefOr[PiiEntityTypes] = js.undefined
     ): ContentRedaction = {
       val __obj = js.Dynamic.literal(
         "RedactionOutput" -> RedactionOutput.asInstanceOf[js.Any],
         "RedactionType" -> RedactionType.asInstanceOf[js.Any]
       )
+
+      PiiEntityTypes.foreach(__v => __obj.updateDynamic("PiiEntityTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContentRedaction]
     }
   }
@@ -385,18 +398,22 @@ package object transcribeservice {
   trait CreateCallAnalyticsCategoryRequest extends js.Object {
     var CategoryName: CategoryName
     var Rules: RuleList
+    var InputType: js.UndefOr[InputType]
   }
 
   object CreateCallAnalyticsCategoryRequest {
     @inline
     def apply(
         CategoryName: CategoryName,
-        Rules: RuleList
+        Rules: RuleList,
+        InputType: js.UndefOr[InputType] = js.undefined
     ): CreateCallAnalyticsCategoryRequest = {
       val __obj = js.Dynamic.literal(
         "CategoryName" -> CategoryName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      InputType.foreach(__v => __obj.updateDynamic("InputType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCallAnalyticsCategoryRequest]
     }
   }
@@ -1101,7 +1118,7 @@ package object transcribeservice {
     }
   }
 
-  /** The object that contains the Amazon S3 object location and access role required to train and tune your custom language model.
+  /** Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location. When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code> and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -1127,7 +1144,7 @@ package object transcribeservice {
     }
   }
 
-  /** An object that enables you to configure your category to be applied to call analytics jobs where either the customer or agent was interrupted.
+  /** Flag the presence or absence of interruptions in your Call Analytics transcription output. Rules using <code>InterruptionFilter</code> are designed to match: * Instances where an agent interrupts a customer * Instances where a customer interrupts an agent * Either participant interrupting the other * A lack of interruptions See [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch|Rule criteria for batch categories]] for usage examples.
     */
   @js.native
   trait InterruptionFilter extends js.Object {
@@ -1157,7 +1174,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides information about when a transcription job should be executed.
+  /** Makes it possible to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter. If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
     */
   @js.native
   trait JobExecutionSettings extends js.Object {
@@ -1178,7 +1195,29 @@ package object transcribeservice {
     }
   }
 
-  /** Language-specific settings that can be specified when language identification is enabled.
+  /** Provides information on the speech contained in a discreet utterance when multi-language identification is enabled in your request. This utterance represents a block of speech consisting of one language, preceded or followed by a block of speech in a different language.
+    */
+  @js.native
+  trait LanguageCodeItem extends js.Object {
+    var DurationInSeconds: js.UndefOr[DurationInSeconds]
+    var LanguageCode: js.UndefOr[LanguageCode]
+  }
+
+  object LanguageCodeItem {
+    @inline
+    def apply(
+        DurationInSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined
+    ): LanguageCodeItem = {
+      val __obj = js.Dynamic.literal()
+      DurationInSeconds.foreach(__v => __obj.updateDynamic("DurationInSeconds")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LanguageCodeItem]
+    }
+  }
+
+  /** If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support custom language models. <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters. It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to ensure that the correct language dialect is identified. For example, if you
+    * specify a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom vocabulary <i>is</i> applied to your transcription. If you want to include a custom language model with your request but ```do not``` want to use automatic language identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but ```do not``` want to use automatic language identification, use instead the <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
     */
   @js.native
   trait LanguageIdSettings extends js.Object {
@@ -1202,7 +1241,7 @@ package object transcribeservice {
     }
   }
 
-  /** The structure used to describe a custom language model.
+  /** Provides information about a custom language model, including the base model name, when the model was created, the location of the files used to train the model, when the model was last modified, the name you chose for the model, its language, its processing state, and if there is an upgrade available for the base model.
     */
   @js.native
   trait LanguageModel extends js.Object {
@@ -1638,7 +1677,7 @@ package object transcribeservice {
     }
   }
 
-  /** Describes the input media file in a transcription request.
+  /** Describes the Amazon S3 location of the media file you want to use in your request. For information on supported media formats, refer to the [[https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat|MediaFormat]] parameter or the [[https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio|Media formats]] section in the Amazon S3 Developer Guide.
     */
   @js.native
   trait Media extends js.Object {
@@ -1659,7 +1698,7 @@ package object transcribeservice {
     }
   }
 
-  /** Identifies the location of a medical transcript.
+  /** Provides you with the Amazon S3 URI you can use to access your transcript.
     */
   @js.native
   trait MedicalTranscript extends js.Object {
@@ -1677,7 +1716,7 @@ package object transcribeservice {
     }
   }
 
-  /** The data structure that contains the information for a medical transcription job.
+  /** Provides detailed information about a medical transcription job. To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed.
     */
   @js.native
   trait MedicalTranscriptionJob extends js.Object {
@@ -1688,7 +1727,7 @@ package object transcribeservice {
     var LanguageCode: js.UndefOr[LanguageCode]
     var Media: js.UndefOr[Media]
     var MediaFormat: js.UndefOr[MediaFormat]
-    var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var MediaSampleRateHertz: js.UndefOr[MedicalMediaSampleRateHertz]
     var MedicalTranscriptionJobName: js.UndefOr[TranscriptionJobName]
     var Settings: js.UndefOr[MedicalTranscriptionSetting]
     var Specialty: js.UndefOr[Specialty]
@@ -1709,7 +1748,7 @@ package object transcribeservice {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Media: js.UndefOr[Media] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
-        MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        MediaSampleRateHertz: js.UndefOr[MedicalMediaSampleRateHertz] = js.undefined,
         MedicalTranscriptionJobName: js.UndefOr[TranscriptionJobName] = js.undefined,
         Settings: js.UndefOr[MedicalTranscriptionSetting] = js.undefined,
         Specialty: js.UndefOr[Specialty] = js.undefined,
@@ -1740,7 +1779,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides summary information about a transcription job.
+  /** Provides detailed information about a specific medical transcription job.
     */
   @js.native
   trait MedicalTranscriptionJobSummary extends js.Object {
@@ -1788,7 +1827,7 @@ package object transcribeservice {
     }
   }
 
-  /** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation.
+  /** Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your medical transcription job.
     */
   @js.native
   trait MedicalTranscriptionSetting extends js.Object {
@@ -1821,7 +1860,7 @@ package object transcribeservice {
     }
   }
 
-  /** The object used to call your custom language model to your transcription job.
+  /** Provides the name of the custom language model that was included in the specified transcription job. Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter if you're ```not``` using automatic language identification (<code/>). If using <code>LanguageIdSettings</code> in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.
     */
   @js.native
   trait ModelSettings extends js.Object {
@@ -1839,7 +1878,7 @@ package object transcribeservice {
     }
   }
 
-  /** An object that enables you to configure your category to be applied to call analytics jobs where either the customer or agent was interrupted.
+  /** Flag the presence or absence of periods of silence in your Call Analytics transcription output. Rules using <code>NonTalkTimeFilter</code> are designed to match: * The presence of silence at specified periods throughout the call * The presence of speech at specified periods throughout the call See [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch|Rule criteria for batch categories]] for usage examples.
     */
   @js.native
   trait NonTalkTimeFilter extends js.Object {
@@ -1866,7 +1905,7 @@ package object transcribeservice {
     }
   }
 
-  /** An object that allows percentages to specify the proportion of the call where you would like to apply a filter. For example, you can specify the first half of the call. You can also specify the period of time between halfway through to three-quarters of the way through the call. Because the length of conversation can vary between calls, you can apply relative time ranges across all calls.
+  /** A time range, in percentage, between two points in your media file. You can use <code>StartPercentage</code> and <code>EndPercentage</code> to search a custom segment. For example, setting <code>StartPercentage</code> to 10 and <code>EndPercentage</code> to 50 only searches for your specified criteria in the audio contained between the 10 percent mark and the 50 percent mark of your media file. You can use also <code>First</code> to search from the start of the media file until the time that you specify. Or use <code>Last</code> to search from the time that you specify until the end of the media file. For example, setting <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of the media file. If you prefer to use milliseconds instead of percentage, see .
     */
   @js.native
   trait RelativeTimeRange extends js.Object {
@@ -1893,7 +1932,7 @@ package object transcribeservice {
     }
   }
 
-  /** A condition in the call between the customer and the agent that you want to filter for.
+  /** A rule is a set of criteria that you can specify to flag an attribute in your Call Analytics output. Rules define a Call Analytics category. Rules can include these parameters: , , , and . To learn more about Call Analytics rules and categories, see [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html|Creating categories for batch transcriptions]] and [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html|Creating categories for streaming transcriptions]]. To learn more about Call Analytics, see [[https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html|Analyzing call center audio with Call Analytics]].
     */
   @js.native
   trait Rule extends js.Object {
@@ -1920,7 +1959,7 @@ package object transcribeservice {
     }
   }
 
-  /** An object that enables you to specify a particular customer or agent sentiment. If at least 50 percent of the conversation turns (the back-and-forth between two speakers) in a specified time period match the specified sentiment, Amazon Transcribe will consider the sentiment a match.
+  /** Flag the presence or absence of specific sentiments detected in your Call Analytics transcription output. Rules using <code>SentimentFilter</code> are designed to match: * The presence or absence of a positive sentiment felt by the customer, agent, or both at specified points in the call * The presence or absence of a negative sentiment felt by the customer, agent, or both at specified points in the call * The presence or absence of a neutral sentiment felt by the customer, agent, or both at specified points in the call * The presence or absence of a mixed sentiment felt by the customer, the agent, or both at specified points in the call See [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch|Rule criteria for batch categories]] for usage examples.
     */
   @js.native
   trait SentimentFilter extends js.Object {
@@ -1952,7 +1991,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides optional settings for the <code>StartTranscriptionJob</code> operation.
+  /** Allows additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.
     */
   @js.native
   trait Settings extends js.Object {
@@ -1994,9 +2033,9 @@ package object transcribeservice {
   @js.native
   trait StartCallAnalyticsJobRequest extends js.Object {
     var CallAnalyticsJobName: CallAnalyticsJobName
-    var DataAccessRoleArn: DataAccessRoleArn
     var Media: Media
     var ChannelDefinitions: js.UndefOr[ChannelDefinitions]
+    var DataAccessRoleArn: js.UndefOr[DataAccessRoleArn]
     var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
     var OutputLocation: js.UndefOr[Uri]
     var Settings: js.UndefOr[CallAnalyticsJobSettings]
@@ -2006,20 +2045,20 @@ package object transcribeservice {
     @inline
     def apply(
         CallAnalyticsJobName: CallAnalyticsJobName,
-        DataAccessRoleArn: DataAccessRoleArn,
         Media: Media,
         ChannelDefinitions: js.UndefOr[ChannelDefinitions] = js.undefined,
+        DataAccessRoleArn: js.UndefOr[DataAccessRoleArn] = js.undefined,
         OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
         OutputLocation: js.UndefOr[Uri] = js.undefined,
         Settings: js.UndefOr[CallAnalyticsJobSettings] = js.undefined
     ): StartCallAnalyticsJobRequest = {
       val __obj = js.Dynamic.literal(
         "CallAnalyticsJobName" -> CallAnalyticsJobName.asInstanceOf[js.Any],
-        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
         "Media" -> Media.asInstanceOf[js.Any]
       )
 
       ChannelDefinitions.foreach(__v => __obj.updateDynamic("ChannelDefinitions")(__v.asInstanceOf[js.Any]))
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
       OutputEncryptionKMSKeyId.foreach(__v => __obj.updateDynamic("OutputEncryptionKMSKeyId")(__v.asInstanceOf[js.Any]))
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
@@ -2054,7 +2093,7 @@ package object transcribeservice {
     var ContentIdentificationType: js.UndefOr[MedicalContentIdentificationType]
     var KMSEncryptionContext: js.UndefOr[KMSEncryptionContextMap]
     var MediaFormat: js.UndefOr[MediaFormat]
-    var MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz]
+    var MediaSampleRateHertz: js.UndefOr[MedicalMediaSampleRateHertz]
     var OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId]
     var OutputKey: js.UndefOr[OutputKey]
     var Settings: js.UndefOr[MedicalTranscriptionSetting]
@@ -2073,7 +2112,7 @@ package object transcribeservice {
         ContentIdentificationType: js.UndefOr[MedicalContentIdentificationType] = js.undefined,
         KMSEncryptionContext: js.UndefOr[KMSEncryptionContextMap] = js.undefined,
         MediaFormat: js.UndefOr[MediaFormat] = js.undefined,
-        MediaSampleRateHertz: js.UndefOr[MediaSampleRateHertz] = js.undefined,
+        MediaSampleRateHertz: js.UndefOr[MedicalMediaSampleRateHertz] = js.undefined,
         OutputEncryptionKMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
         OutputKey: js.UndefOr[OutputKey] = js.undefined,
         Settings: js.UndefOr[MedicalTranscriptionSetting] = js.undefined,
@@ -2122,6 +2161,7 @@ package object transcribeservice {
     var TranscriptionJobName: TranscriptionJobName
     var ContentRedaction: js.UndefOr[ContentRedaction]
     var IdentifyLanguage: js.UndefOr[Boolean]
+    var IdentifyMultipleLanguages: js.UndefOr[Boolean]
     var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var KMSEncryptionContext: js.UndefOr[KMSEncryptionContextMap]
     var LanguageCode: js.UndefOr[LanguageCode]
@@ -2145,6 +2185,7 @@ package object transcribeservice {
         TranscriptionJobName: TranscriptionJobName,
         ContentRedaction: js.UndefOr[ContentRedaction] = js.undefined,
         IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
+        IdentifyMultipleLanguages: js.UndefOr[Boolean] = js.undefined,
         JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         KMSEncryptionContext: js.UndefOr[KMSEncryptionContextMap] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
@@ -2167,6 +2208,7 @@ package object transcribeservice {
 
       ContentRedaction.foreach(__v => __obj.updateDynamic("ContentRedaction")(__v.asInstanceOf[js.Any]))
       IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
+      IdentifyMultipleLanguages.foreach(__v => __obj.updateDynamic("IdentifyMultipleLanguages")(__v.asInstanceOf[js.Any]))
       JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       KMSEncryptionContext.foreach(__v => __obj.updateDynamic("KMSEncryptionContext")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
@@ -2201,29 +2243,33 @@ package object transcribeservice {
     }
   }
 
-  /** Generate subtitles for your batch transcription job.
+  /** Generate subtitles for your media file with your transcription request. You can choose a start index of 0 or 1, and you can specify either WebVTT or SubRip (or both) as your output format. Note that your subtitle files are placed in the same location as your transcription output.
     */
   @js.native
   trait Subtitles extends js.Object {
     var Formats: js.UndefOr[SubtitleFormats]
+    var OutputStartIndex: js.UndefOr[SubtitleOutputStartIndex]
   }
 
   object Subtitles {
     @inline
     def apply(
-        Formats: js.UndefOr[SubtitleFormats] = js.undefined
+        Formats: js.UndefOr[SubtitleFormats] = js.undefined,
+        OutputStartIndex: js.UndefOr[SubtitleOutputStartIndex] = js.undefined
     ): Subtitles = {
       val __obj = js.Dynamic.literal()
       Formats.foreach(__v => __obj.updateDynamic("Formats")(__v.asInstanceOf[js.Any]))
+      OutputStartIndex.foreach(__v => __obj.updateDynamic("OutputStartIndex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subtitles]
     }
   }
 
-  /** Specify the output format for your subtitle file.
+  /** Provides information about your subtitle file, including format, start index, and Amazon S3 location.
     */
   @js.native
   trait SubtitlesOutput extends js.Object {
     var Formats: js.UndefOr[SubtitleFormats]
+    var OutputStartIndex: js.UndefOr[SubtitleOutputStartIndex]
     var SubtitleFileUris: js.UndefOr[SubtitleFileUris]
   }
 
@@ -2231,16 +2277,18 @@ package object transcribeservice {
     @inline
     def apply(
         Formats: js.UndefOr[SubtitleFormats] = js.undefined,
+        OutputStartIndex: js.UndefOr[SubtitleOutputStartIndex] = js.undefined,
         SubtitleFileUris: js.UndefOr[SubtitleFileUris] = js.undefined
     ): SubtitlesOutput = {
       val __obj = js.Dynamic.literal()
       Formats.foreach(__v => __obj.updateDynamic("Formats")(__v.asInstanceOf[js.Any]))
+      OutputStartIndex.foreach(__v => __obj.updateDynamic("OutputStartIndex")(__v.asInstanceOf[js.Any]))
       SubtitleFileUris.foreach(__v => __obj.updateDynamic("SubtitleFileUris")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubtitlesOutput]
     }
   }
 
-  /** A key:value pair that adds metadata to a resource used by Amazon Transcribe. For example, a tag with the key:value pair ‘Department’:’Sales’ might be added to a resource to indicate its use by your organization's sales department.
+  /** Adds metadata, in the form of a key:value pair, to the specified resource. For example, you could add the tag <code>Department:Sales</code> to a resource to indicate that it pertains to your organization's sales department. You can also use tags for tag-based access control. To learn more about tagging, see [[https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html|Tagging resources]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -2293,7 +2341,7 @@ package object transcribeservice {
     }
   }
 
-  /** Identifies the location of a transcription.
+  /** Provides you with the Amazon S3 URI you can use to access your transcript.
     */
   @js.native
   trait Transcript extends js.Object {
@@ -2314,7 +2362,7 @@ package object transcribeservice {
     }
   }
 
-  /** Matches the output of the transcription to either the specific phrases that you specify, or the intent of the phrases that you specify.
+  /** Flag the presence or absence of specific words or phrases detected in your Call Analytics transcription output. Rules using <code>TranscriptFilter</code> are designed to match: * Custom words or phrases spoken by the agent, the customer, or both * Custom words or phrases ```not``` spoken by the agent, the customer, or either * Custom words or phrases that occur at a specific time frame See [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch|Rule criteria for batch categories]] and [[https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream|Rule criteria for streaming categories]] for usage examples.
     */
   @js.native
   trait TranscriptFilter extends js.Object {
@@ -2349,7 +2397,7 @@ package object transcribeservice {
     }
   }
 
-  /** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.
+  /** Provides detailed information about a transcription job. To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription job failed. If you enabled content redaction, the redacted transcript can be found at the location specified in <code>RedactedTranscriptFileUri</code>.
     */
   @js.native
   trait TranscriptionJob extends js.Object {
@@ -2359,8 +2407,10 @@ package object transcribeservice {
     var FailureReason: js.UndefOr[FailureReason]
     var IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore]
     var IdentifyLanguage: js.UndefOr[Boolean]
+    var IdentifyMultipleLanguages: js.UndefOr[Boolean]
     var JobExecutionSettings: js.UndefOr[JobExecutionSettings]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LanguageCodes: js.UndefOr[LanguageCodeList]
     var LanguageIdSettings: js.UndefOr[LanguageIdSettingsMap]
     var LanguageOptions: js.UndefOr[LanguageOptions]
     var Media: js.UndefOr[Media]
@@ -2385,8 +2435,10 @@ package object transcribeservice {
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore] = js.undefined,
         IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
+        IdentifyMultipleLanguages: js.UndefOr[Boolean] = js.undefined,
         JobExecutionSettings: js.UndefOr[JobExecutionSettings] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageCodes: js.UndefOr[LanguageCodeList] = js.undefined,
         LanguageIdSettings: js.UndefOr[LanguageIdSettingsMap] = js.undefined,
         LanguageOptions: js.UndefOr[LanguageOptions] = js.undefined,
         Media: js.UndefOr[Media] = js.undefined,
@@ -2408,8 +2460,10 @@ package object transcribeservice {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       IdentifiedLanguageScore.foreach(__v => __obj.updateDynamic("IdentifiedLanguageScore")(__v.asInstanceOf[js.Any]))
       IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
+      IdentifyMultipleLanguages.foreach(__v => __obj.updateDynamic("IdentifyMultipleLanguages")(__v.asInstanceOf[js.Any]))
       JobExecutionSettings.foreach(__v => __obj.updateDynamic("JobExecutionSettings")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCodes.foreach(__v => __obj.updateDynamic("LanguageCodes")(__v.asInstanceOf[js.Any]))
       LanguageIdSettings.foreach(__v => __obj.updateDynamic("LanguageIdSettings")(__v.asInstanceOf[js.Any]))
       LanguageOptions.foreach(__v => __obj.updateDynamic("LanguageOptions")(__v.asInstanceOf[js.Any]))
       Media.foreach(__v => __obj.updateDynamic("Media")(__v.asInstanceOf[js.Any]))
@@ -2427,7 +2481,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides a summary of information about a transcription job.
+  /** Provides detailed information about a specific transcription job.
     */
   @js.native
   trait TranscriptionJobSummary extends js.Object {
@@ -2437,7 +2491,9 @@ package object transcribeservice {
     var FailureReason: js.UndefOr[FailureReason]
     var IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore]
     var IdentifyLanguage: js.UndefOr[Boolean]
+    var IdentifyMultipleLanguages: js.UndefOr[Boolean]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var LanguageCodes: js.UndefOr[LanguageCodeList]
     var ModelSettings: js.UndefOr[ModelSettings]
     var OutputLocationType: js.UndefOr[OutputLocationType]
     var StartTime: js.UndefOr[DateTime]
@@ -2454,7 +2510,9 @@ package object transcribeservice {
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         IdentifiedLanguageScore: js.UndefOr[IdentifiedLanguageScore] = js.undefined,
         IdentifyLanguage: js.UndefOr[Boolean] = js.undefined,
+        IdentifyMultipleLanguages: js.UndefOr[Boolean] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        LanguageCodes: js.UndefOr[LanguageCodeList] = js.undefined,
         ModelSettings: js.UndefOr[ModelSettings] = js.undefined,
         OutputLocationType: js.UndefOr[OutputLocationType] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
@@ -2468,7 +2526,9 @@ package object transcribeservice {
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       IdentifiedLanguageScore.foreach(__v => __obj.updateDynamic("IdentifiedLanguageScore")(__v.asInstanceOf[js.Any]))
       IdentifyLanguage.foreach(__v => __obj.updateDynamic("IdentifyLanguage")(__v.asInstanceOf[js.Any]))
+      IdentifyMultipleLanguages.foreach(__v => __obj.updateDynamic("IdentifyMultipleLanguages")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCodes.foreach(__v => __obj.updateDynamic("LanguageCodes")(__v.asInstanceOf[js.Any]))
       ModelSettings.foreach(__v => __obj.updateDynamic("ModelSettings")(__v.asInstanceOf[js.Any]))
       OutputLocationType.foreach(__v => __obj.updateDynamic("OutputLocationType")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -2513,18 +2573,22 @@ package object transcribeservice {
   trait UpdateCallAnalyticsCategoryRequest extends js.Object {
     var CategoryName: CategoryName
     var Rules: RuleList
+    var InputType: js.UndefOr[InputType]
   }
 
   object UpdateCallAnalyticsCategoryRequest {
     @inline
     def apply(
         CategoryName: CategoryName,
-        Rules: RuleList
+        Rules: RuleList,
+        InputType: js.UndefOr[InputType] = js.undefined
     ): UpdateCallAnalyticsCategoryRequest = {
       val __obj = js.Dynamic.literal(
         "CategoryName" -> CategoryName.asInstanceOf[js.Any],
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
+
+      InputType.foreach(__v => __obj.updateDynamic("InputType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCallAnalyticsCategoryRequest]
     }
   }
@@ -2548,23 +2612,22 @@ package object transcribeservice {
   @js.native
   trait UpdateMedicalVocabularyRequest extends js.Object {
     var LanguageCode: LanguageCode
+    var VocabularyFileUri: Uri
     var VocabularyName: VocabularyName
-    var VocabularyFileUri: js.UndefOr[Uri]
   }
 
   object UpdateMedicalVocabularyRequest {
     @inline
     def apply(
         LanguageCode: LanguageCode,
-        VocabularyName: VocabularyName,
-        VocabularyFileUri: js.UndefOr[Uri] = js.undefined
+        VocabularyFileUri: Uri,
+        VocabularyName: VocabularyName
     ): UpdateMedicalVocabularyRequest = {
       val __obj = js.Dynamic.literal(
         "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "VocabularyFileUri" -> VocabularyFileUri.asInstanceOf[js.Any],
         "VocabularyName" -> VocabularyName.asInstanceOf[js.Any]
       )
-
-      VocabularyFileUri.foreach(__v => __obj.updateDynamic("VocabularyFileUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMedicalVocabularyRequest]
     }
   }
@@ -2692,7 +2755,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides information about a vocabulary filter.
+  /** Provides information about a custom vocabulary filter, including the language of the filter, when it was last modified, and its name.
     */
   @js.native
   trait VocabularyFilterInfo extends js.Object {
@@ -2716,7 +2779,7 @@ package object transcribeservice {
     }
   }
 
-  /** Provides information about a custom vocabulary.
+  /** Provides information about a custom vocabulary, including the language of the custom vocabulary, when it was last modified, its name, and the processing state.
     */
   @js.native
   trait VocabularyInfo extends js.Object {

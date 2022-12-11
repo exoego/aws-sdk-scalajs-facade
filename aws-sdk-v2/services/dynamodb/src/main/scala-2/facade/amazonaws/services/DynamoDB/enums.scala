@@ -184,6 +184,18 @@ object GlobalTableStatus {
 }
 
 @js.native
+sealed trait ImportStatus extends js.Any
+object ImportStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[ImportStatus]
+  val CANCELLING = "CANCELLING".asInstanceOf[ImportStatus]
+  val CANCELLED = "CANCELLED".asInstanceOf[ImportStatus]
+  val FAILED = "FAILED".asInstanceOf[ImportStatus]
+
+  @inline def values: js.Array[ImportStatus] = js.Array(IN_PROGRESS, COMPLETED, CANCELLING, CANCELLED, FAILED)
+}
+
+@js.native
 sealed trait IndexStatus extends js.Any
 object IndexStatus {
   val CREATING = "CREATING".asInstanceOf[IndexStatus]
@@ -192,6 +204,26 @@ object IndexStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
   @inline def values: js.Array[IndexStatus] = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
+}
+
+@js.native
+sealed trait InputCompressionType extends js.Any
+object InputCompressionType {
+  val GZIP = "GZIP".asInstanceOf[InputCompressionType]
+  val ZSTD = "ZSTD".asInstanceOf[InputCompressionType]
+  val NONE = "NONE".asInstanceOf[InputCompressionType]
+
+  @inline def values: js.Array[InputCompressionType] = js.Array(GZIP, ZSTD, NONE)
+}
+
+@js.native
+sealed trait InputFormat extends js.Any
+object InputFormat {
+  val DYNAMODB_JSON = "DYNAMODB_JSON".asInstanceOf[InputFormat]
+  val ION = "ION".asInstanceOf[InputFormat]
+  val CSV = "CSV".asInstanceOf[InputFormat]
+
+  @inline def values: js.Array[InputFormat] = js.Array(DYNAMODB_JSON, ION, CSV)
 }
 
 @js.native

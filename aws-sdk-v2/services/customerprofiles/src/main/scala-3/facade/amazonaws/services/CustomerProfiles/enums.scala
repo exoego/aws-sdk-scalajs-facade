@@ -317,6 +317,19 @@ object StandardIdentifier {
   inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, ASSET, CASE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY, ORDER)
 }
 
+type Status = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETE" | "FAILED" | "SPLIT" | "RETRY" | "CANCELLED"
+object Status {
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SPLIT: "SPLIT" = "SPLIT"
+  inline val RETRY: "RETRY" = "RETRY"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+
+  inline def values: js.Array[Status] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETE, FAILED, SPLIT, RETRY, CANCELLED)
+}
+
 type TaskType = "Arithmetic" | "Filter" | "Map" | "Mask" | "Merge" | "Truncate" | "Validate"
 object TaskType {
   inline val Arithmetic: "Arithmetic" = "Arithmetic"
@@ -337,6 +350,13 @@ object TriggerType {
   inline val OnDemand: "OnDemand" = "OnDemand"
 
   inline def values: js.Array[TriggerType] = js.Array(Scheduled, Event, OnDemand)
+}
+
+type WorkflowType = "APPFLOW_INTEGRATION"
+object WorkflowType {
+  inline val APPFLOW_INTEGRATION: "APPFLOW_INTEGRATION" = "APPFLOW_INTEGRATION"
+
+  inline def values: js.Array[WorkflowType] = js.Array(APPFLOW_INTEGRATION)
 }
 
 type ZendeskConnectorOperator = "PROJECTION" | "GREATER_THAN" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
@@ -372,4 +392,12 @@ object ZendeskConnectorOperator {
     VALIDATE_NUMERIC,
     NO_OP
   )
+}
+
+type logicalOperator = "AND" | "OR"
+object logicalOperator {
+  inline val AND: "AND" = "AND"
+  inline val OR: "OR" = "OR"
+
+  inline def values: js.Array[logicalOperator] = js.Array(AND, OR)
 }

@@ -61,12 +61,14 @@ package object devicefarm {
   type Rules = js.Array[Rule]
   type Runs = js.Array[Run]
   type Samples = js.Array[Sample]
+  type SecurityGroupId = String
   type SecurityGroupIds = js.Array[NonEmptyString]
   type SensitiveString = String
   type SensitiveURL = String
   type ServiceDnsName = String
   type SkipAppResign = Boolean
   type SshPublicKey = String
+  type SubnetId = String
   type SubnetIds = js.Array[NonEmptyString]
   type Suites = js.Array[Suite]
   type TagKey = String
@@ -90,6 +92,8 @@ package object devicefarm {
   type VPCEConfigurations = js.Array[VPCEConfiguration]
   type VPCEServiceName = String
   type VideoCapture = Boolean
+  type VpcSecurityGroupIds = js.Array[SecurityGroupId]
+  type VpcSubnetIds = js.Array[SubnetId]
 
   final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
@@ -560,19 +564,22 @@ package object devicefarm {
   trait CreateProjectRequest extends js.Object {
     var name: Name
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
+    var vpcConfig: js.UndefOr[VpcConfig]
   }
 
   object CreateProjectRequest {
     @inline
     def apply(
         name: Name,
-        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined
+        defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateProjectRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
       defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectRequest]
     }
   }
@@ -3552,6 +3559,7 @@ package object devicefarm {
     var created: js.UndefOr[DateTime]
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
     var name: js.UndefOr[Name]
+    var vpcConfig: js.UndefOr[VpcConfig]
   }
 
   object Project {
@@ -3560,13 +3568,15 @@ package object devicefarm {
         arn: js.UndefOr[AmazonResourceName] = js.undefined,
         created: js.UndefOr[DateTime] = js.undefined,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
+        name: js.UndefOr[Name] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): Project = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
       defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Project]
     }
   }
@@ -3688,6 +3698,7 @@ package object devicefarm {
     var started: js.UndefOr[DateTime]
     var status: js.UndefOr[ExecutionStatus]
     var stopped: js.UndefOr[DateTime]
+    var vpcConfig: js.UndefOr[VpcConfig]
   }
 
   object RemoteAccessSession {
@@ -3713,7 +3724,8 @@ package object devicefarm {
         skipAppResign: js.UndefOr[SkipAppResign] = js.undefined,
         started: js.UndefOr[DateTime] = js.undefined,
         status: js.UndefOr[ExecutionStatus] = js.undefined,
-        stopped: js.UndefOr[DateTime] = js.undefined
+        stopped: js.UndefOr[DateTime] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): RemoteAccessSession = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -3737,6 +3749,7 @@ package object devicefarm {
       started.foreach(__v => __obj.updateDynamic("started")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       stopped.foreach(__v => __obj.updateDynamic("stopped")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoteAccessSession]
     }
   }
@@ -3860,6 +3873,7 @@ package object devicefarm {
     var testSpecArn: js.UndefOr[AmazonResourceName]
     var totalJobs: js.UndefOr[Int]
     var `type`: js.UndefOr[TestType]
+    var vpcConfig: js.UndefOr[VpcConfig]
     var webUrl: js.UndefOr[String]
   }
 
@@ -3896,6 +3910,7 @@ package object devicefarm {
         testSpecArn: js.UndefOr[AmazonResourceName] = js.undefined,
         totalJobs: js.UndefOr[Int] = js.undefined,
         `type`: js.UndefOr[TestType] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined,
         webUrl: js.UndefOr[String] = js.undefined
     ): Run = {
       val __obj = js.Dynamic.literal()
@@ -3929,6 +3944,7 @@ package object devicefarm {
       testSpecArn.foreach(__v => __obj.updateDynamic("testSpecArn")(__v.asInstanceOf[js.Any]))
       totalJobs.foreach(__v => __obj.updateDynamic("totalJobs")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       webUrl.foreach(__v => __obj.updateDynamic("webUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Run]
     }
@@ -4780,6 +4796,7 @@ package object devicefarm {
     var arn: AmazonResourceName
     var defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes]
     var name: js.UndefOr[Name]
+    var vpcConfig: js.UndefOr[VpcConfig]
   }
 
   object UpdateProjectRequest {
@@ -4787,7 +4804,8 @@ package object devicefarm {
     def apply(
         arn: AmazonResourceName,
         defaultJobTimeoutMinutes: js.UndefOr[JobTimeoutMinutes] = js.undefined,
-        name: js.UndefOr[Name] = js.undefined
+        name: js.UndefOr[Name] = js.undefined,
+        vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): UpdateProjectRequest = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
@@ -4795,6 +4813,7 @@ package object devicefarm {
 
       defaultJobTimeoutMinutes.foreach(__v => __obj.updateDynamic("defaultJobTimeoutMinutes")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectRequest]
     }
   }
@@ -5021,6 +5040,31 @@ package object devicefarm {
       vpceConfigurationName.foreach(__v => __obj.updateDynamic("vpceConfigurationName")(__v.asInstanceOf[js.Any]))
       vpceServiceName.foreach(__v => __obj.updateDynamic("vpceServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCEConfiguration]
+    }
+  }
+
+  /** Contains the VPC configuration data necessary to interface with AWS Device Farm's services.
+    */
+  @js.native
+  trait VpcConfig extends js.Object {
+    var securityGroupIds: VpcSecurityGroupIds
+    var subnetIds: VpcSubnetIds
+    var vpcId: NonEmptyString
+  }
+
+  object VpcConfig {
+    @inline
+    def apply(
+        securityGroupIds: VpcSecurityGroupIds,
+        subnetIds: VpcSubnetIds,
+        vpcId: NonEmptyString
+    ): VpcConfig = {
+      val __obj = js.Dynamic.literal(
+        "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any],
+        "vpcId" -> vpcId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VpcConfig]
     }
   }
 }

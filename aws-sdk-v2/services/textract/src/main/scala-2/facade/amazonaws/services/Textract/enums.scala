@@ -12,8 +12,13 @@ object BlockType {
   val TABLE = "TABLE".asInstanceOf[BlockType]
   val CELL = "CELL".asInstanceOf[BlockType]
   val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
+  val MERGED_CELL = "MERGED_CELL".asInstanceOf[BlockType]
+  val TITLE = "TITLE".asInstanceOf[BlockType]
+  val QUERY = "QUERY".asInstanceOf[BlockType]
+  val QUERY_RESULT = "QUERY_RESULT".asInstanceOf[BlockType]
+  val SIGNATURE = "SIGNATURE".asInstanceOf[BlockType]
 
-  @inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
+  @inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT, MERGED_CELL, TITLE, QUERY, QUERY_RESULT, SIGNATURE)
 }
 
 @js.native
@@ -30,8 +35,9 @@ sealed trait EntityType extends js.Any
 object EntityType {
   val KEY = "KEY".asInstanceOf[EntityType]
   val VALUE = "VALUE".asInstanceOf[EntityType]
+  val COLUMN_HEADER = "COLUMN_HEADER".asInstanceOf[EntityType]
 
-  @inline def values: js.Array[EntityType] = js.Array(KEY, VALUE)
+  @inline def values: js.Array[EntityType] = js.Array(KEY, VALUE, COLUMN_HEADER)
 }
 
 @js.native
@@ -39,8 +45,10 @@ sealed trait FeatureType extends js.Any
 object FeatureType {
   val TABLES = "TABLES".asInstanceOf[FeatureType]
   val FORMS = "FORMS".asInstanceOf[FeatureType]
+  val QUERIES = "QUERIES".asInstanceOf[FeatureType]
+  val SIGNATURES = "SIGNATURES".asInstanceOf[FeatureType]
 
-  @inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS)
+  @inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS, QUERIES, SIGNATURES)
 }
 
 @js.native
@@ -60,8 +68,11 @@ object RelationshipType {
   val VALUE = "VALUE".asInstanceOf[RelationshipType]
   val CHILD = "CHILD".asInstanceOf[RelationshipType]
   val COMPLEX_FEATURES = "COMPLEX_FEATURES".asInstanceOf[RelationshipType]
+  val MERGED_CELL = "MERGED_CELL".asInstanceOf[RelationshipType]
+  val TITLE = "TITLE".asInstanceOf[RelationshipType]
+  val ANSWER = "ANSWER".asInstanceOf[RelationshipType]
 
-  @inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
+  @inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES, MERGED_CELL, TITLE, ANSWER)
 }
 
 @js.native

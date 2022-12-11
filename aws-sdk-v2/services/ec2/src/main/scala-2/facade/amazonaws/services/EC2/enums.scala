@@ -23,8 +23,10 @@ object AcceleratorName {
   val m60 = "m60".asInstanceOf[AcceleratorName]
   val `radeon-pro-v520` = "radeon-pro-v520".asInstanceOf[AcceleratorName]
   val vu9p = "vu9p".asInstanceOf[AcceleratorName]
+  val inferentia = "inferentia".asInstanceOf[AcceleratorName]
+  val k520 = "k520".asInstanceOf[AcceleratorName]
 
-  @inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+  @inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p, inferentia, k520)
 }
 
 @js.native
@@ -75,6 +77,16 @@ object AddressFamily {
 }
 
 @js.native
+sealed trait AddressTransferStatus extends js.Any
+object AddressTransferStatus {
+  val pending = "pending".asInstanceOf[AddressTransferStatus]
+  val disabled = "disabled".asInstanceOf[AddressTransferStatus]
+  val accepted = "accepted".asInstanceOf[AddressTransferStatus]
+
+  @inline def values: js.Array[AddressTransferStatus] = js.Array(pending, disabled, accepted)
+}
+
+@js.native
 sealed trait Affinity extends js.Any
 object Affinity {
   val default = "default".asInstanceOf[Affinity]
@@ -103,8 +115,17 @@ object AllocationStrategy {
   val diversified = "diversified".asInstanceOf[AllocationStrategy]
   val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
   val capacityOptimizedPrioritized = "capacityOptimizedPrioritized".asInstanceOf[AllocationStrategy]
+  val priceCapacityOptimized = "priceCapacityOptimized".asInstanceOf[AllocationStrategy]
 
-  @inline def values: js.Array[AllocationStrategy] = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized)
+  @inline def values: js.Array[AllocationStrategy] = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized, priceCapacityOptimized)
+}
+
+@js.native
+sealed trait AllocationType extends js.Any
+object AllocationType {
+  val used = "used".asInstanceOf[AllocationType]
+
+  @inline def values: js.Array[AllocationType] = js.Array(used)
 }
 
 @js.native
@@ -142,8 +163,9 @@ object ArchitectureType {
   val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
   val arm64 = "arm64".asInstanceOf[ArchitectureType]
   val x86_64_mac = "x86_64_mac".asInstanceOf[ArchitectureType]
+  val arm64_mac = "arm64_mac".asInstanceOf[ArchitectureType]
 
-  @inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac)
+  @inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac, arm64_mac)
 }
 
 @js.native
@@ -153,8 +175,9 @@ object ArchitectureValues {
   val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
   val arm64 = "arm64".asInstanceOf[ArchitectureValues]
   val x86_64_mac = "x86_64_mac".asInstanceOf[ArchitectureValues]
+  val arm64_mac = "arm64_mac".asInstanceOf[ArchitectureValues]
 
-  @inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac)
+  @inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac, arm64_mac)
 }
 
 @js.native
@@ -388,6 +411,12 @@ object CapacityReservationInstancePlatform {
   val `Linux with SQL Server Standard` = "Linux with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
   val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
   val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with SQL Server Standard` = "RHEL with SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with SQL Server Enterprise` = "RHEL with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with SQL Server Web` = "RHEL with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with HA` = "RHEL with HA".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with HA and SQL Server Standard` = "RHEL with HA and SQL Server Standard".asInstanceOf[CapacityReservationInstancePlatform]
+  val `RHEL with HA and SQL Server Enterprise` = "RHEL with HA and SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
   @inline def values: js.Array[CapacityReservationInstancePlatform] = js.Array(
     `Linux/UNIX`,
@@ -400,7 +429,13 @@ object CapacityReservationInstancePlatform {
     `Windows with SQL Server Web`,
     `Linux with SQL Server Standard`,
     `Linux with SQL Server Web`,
-    `Linux with SQL Server Enterprise`
+    `Linux with SQL Server Enterprise`,
+    `RHEL with SQL Server Standard`,
+    `RHEL with SQL Server Enterprise`,
+    `RHEL with SQL Server Web`,
+    `RHEL with HA`,
+    `RHEL with HA and SQL Server Standard`,
+    `RHEL with HA and SQL Server Enterprise`
   )
 }
 
@@ -655,6 +690,15 @@ object DestinationFileFormat {
 }
 
 @js.native
+sealed trait DeviceTrustProviderType extends js.Any
+object DeviceTrustProviderType {
+  val jamf = "jamf".asInstanceOf[DeviceTrustProviderType]
+  val crowdstrike = "crowdstrike".asInstanceOf[DeviceTrustProviderType]
+
+  @inline def values: js.Array[DeviceTrustProviderType] = js.Array(jamf, crowdstrike)
+}
+
+@js.native
 sealed trait DeviceType extends js.Any
 object DeviceType {
   val ebs = "ebs".asInstanceOf[DeviceType]
@@ -693,6 +737,17 @@ object DnsNameState {
 }
 
 @js.native
+sealed trait DnsRecordIpType extends js.Any
+object DnsRecordIpType {
+  val ipv4 = "ipv4".asInstanceOf[DnsRecordIpType]
+  val dualstack = "dualstack".asInstanceOf[DnsRecordIpType]
+  val ipv6 = "ipv6".asInstanceOf[DnsRecordIpType]
+  val `service-defined` = "service-defined".asInstanceOf[DnsRecordIpType]
+
+  @inline def values: js.Array[DnsRecordIpType] = js.Array(ipv4, dualstack, ipv6, `service-defined`)
+}
+
+@js.native
 sealed trait DnsSupportValue extends js.Any
 object DnsSupportValue {
   val enable = "enable".asInstanceOf[DnsSupportValue]
@@ -708,6 +763,15 @@ object DomainType {
   val standard = "standard".asInstanceOf[DomainType]
 
   @inline def values: js.Array[DomainType] = js.Array(vpc, standard)
+}
+
+@js.native
+sealed trait DynamicRoutingValue extends js.Any
+object DynamicRoutingValue {
+  val enable = "enable".asInstanceOf[DynamicRoutingValue]
+  val disable = "disable".asInstanceOf[DynamicRoutingValue]
+
+  @inline def values: js.Array[DynamicRoutingValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -839,6 +903,27 @@ object ExportTaskState {
 }
 
 @js.native
+sealed trait FastLaunchResourceType extends js.Any
+object FastLaunchResourceType {
+  val snapshot = "snapshot".asInstanceOf[FastLaunchResourceType]
+
+  @inline def values: js.Array[FastLaunchResourceType] = js.Array(snapshot)
+}
+
+@js.native
+sealed trait FastLaunchStateCode extends js.Any
+object FastLaunchStateCode {
+  val enabling = "enabling".asInstanceOf[FastLaunchStateCode]
+  val `enabling-failed` = "enabling-failed".asInstanceOf[FastLaunchStateCode]
+  val enabled = "enabled".asInstanceOf[FastLaunchStateCode]
+  val `enabled-failed` = "enabled-failed".asInstanceOf[FastLaunchStateCode]
+  val disabling = "disabling".asInstanceOf[FastLaunchStateCode]
+  val `disabling-failed` = "disabling-failed".asInstanceOf[FastLaunchStateCode]
+
+  @inline def values: js.Array[FastLaunchStateCode] = js.Array(enabling, `enabling-failed`, enabled, `enabled-failed`, disabling, `disabling-failed`)
+}
+
+@js.native
 sealed trait FastSnapshotRestoreStateCode extends js.Any
 object FastSnapshotRestoreStateCode {
   val enabling = "enabling".asInstanceOf[FastSnapshotRestoreStateCode]
@@ -962,8 +1047,10 @@ object FlowLogsResourceType {
   val VPC = "VPC".asInstanceOf[FlowLogsResourceType]
   val Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
   val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
+  val TransitGateway = "TransitGateway".asInstanceOf[FlowLogsResourceType]
+  val TransitGatewayAttachment = "TransitGatewayAttachment".asInstanceOf[FlowLogsResourceType]
 
-  @inline def values: js.Array[FlowLogsResourceType] = js.Array(VPC, Subnet, NetworkInterface)
+  @inline def values: js.Array[FlowLogsResourceType] = js.Array(VPC, Subnet, NetworkInterface, TransitGateway, TransitGatewayAttachment)
 }
 
 @js.native
@@ -1083,8 +1170,12 @@ object ImageAttributeName {
   val blockDeviceMapping = "blockDeviceMapping".asInstanceOf[ImageAttributeName]
   val sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
   val bootMode = "bootMode".asInstanceOf[ImageAttributeName]
+  val tpmSupport = "tpmSupport".asInstanceOf[ImageAttributeName]
+  val uefiData = "uefiData".asInstanceOf[ImageAttributeName]
+  val lastLaunchedTime = "lastLaunchedTime".asInstanceOf[ImageAttributeName]
+  val imdsSupport = "imdsSupport".asInstanceOf[ImageAttributeName]
 
-  @inline def values: js.Array[ImageAttributeName] = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode)
+  @inline def values: js.Array[ImageAttributeName] = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode, tpmSupport, uefiData, lastLaunchedTime, imdsSupport)
 }
 
 @js.native
@@ -1112,6 +1203,14 @@ object ImageTypeValues {
 }
 
 @js.native
+sealed trait ImdsSupportValues extends js.Any
+object ImdsSupportValues {
+  val `v2.0` = "v2.0".asInstanceOf[ImdsSupportValues]
+
+  @inline def values: js.Array[ImdsSupportValues] = js.Array(`v2.0`)
+}
+
+@js.native
 sealed trait InstanceAttributeName extends js.Any
 object InstanceAttributeName {
   val instanceType = "instanceType".asInstanceOf[InstanceAttributeName]
@@ -1129,6 +1228,7 @@ object InstanceAttributeName {
   val sriovNetSupport = "sriovNetSupport".asInstanceOf[InstanceAttributeName]
   val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
   val enclaveOptions = "enclaveOptions".asInstanceOf[InstanceAttributeName]
+  val disableApiStop = "disableApiStop".asInstanceOf[InstanceAttributeName]
 
   @inline def values: js.Array[InstanceAttributeName] = js.Array(
     instanceType,
@@ -1145,8 +1245,18 @@ object InstanceAttributeName {
     ebsOptimized,
     sriovNetSupport,
     enaSupport,
-    enclaveOptions
+    enclaveOptions,
+    disableApiStop
   )
+}
+
+@js.native
+sealed trait InstanceAutoRecoveryState extends js.Any
+object InstanceAutoRecoveryState {
+  val disabled = "disabled".asInstanceOf[InstanceAutoRecoveryState]
+  val default = "default".asInstanceOf[InstanceAutoRecoveryState]
+
+  @inline def values: js.Array[InstanceAutoRecoveryState] = js.Array(disabled, default)
 }
 
 @js.native
@@ -1243,6 +1353,15 @@ object InstanceMetadataProtocolState {
 }
 
 @js.native
+sealed trait InstanceMetadataTagsState extends js.Any
+object InstanceMetadataTagsState {
+  val disabled = "disabled".asInstanceOf[InstanceMetadataTagsState]
+  val enabled = "enabled".asInstanceOf[InstanceMetadataTagsState]
+
+  @inline def values: js.Array[InstanceMetadataTagsState] = js.Array(disabled, enabled)
+}
+
+@js.native
 sealed trait InstanceStateName extends js.Any
 object InstanceStateName {
   val pending = "pending".asInstanceOf[InstanceStateName]
@@ -1267,154 +1386,12 @@ object InstanceStorageEncryptionSupport {
 @js.native
 sealed trait InstanceType extends js.Any
 object InstanceType {
-  val `t1.micro` = "t1.micro".asInstanceOf[InstanceType]
-  val `t2.nano` = "t2.nano".asInstanceOf[InstanceType]
-  val `t2.micro` = "t2.micro".asInstanceOf[InstanceType]
-  val `t2.small` = "t2.small".asInstanceOf[InstanceType]
-  val `t2.medium` = "t2.medium".asInstanceOf[InstanceType]
-  val `t2.large` = "t2.large".asInstanceOf[InstanceType]
-  val `t2.xlarge` = "t2.xlarge".asInstanceOf[InstanceType]
-  val `t2.2xlarge` = "t2.2xlarge".asInstanceOf[InstanceType]
-  val `t3.nano` = "t3.nano".asInstanceOf[InstanceType]
-  val `t3.micro` = "t3.micro".asInstanceOf[InstanceType]
-  val `t3.small` = "t3.small".asInstanceOf[InstanceType]
-  val `t3.medium` = "t3.medium".asInstanceOf[InstanceType]
-  val `t3.large` = "t3.large".asInstanceOf[InstanceType]
-  val `t3.xlarge` = "t3.xlarge".asInstanceOf[InstanceType]
-  val `t3.2xlarge` = "t3.2xlarge".asInstanceOf[InstanceType]
-  val `t3a.nano` = "t3a.nano".asInstanceOf[InstanceType]
-  val `t3a.micro` = "t3a.micro".asInstanceOf[InstanceType]
-  val `t3a.small` = "t3a.small".asInstanceOf[InstanceType]
-  val `t3a.medium` = "t3a.medium".asInstanceOf[InstanceType]
-  val `t3a.large` = "t3a.large".asInstanceOf[InstanceType]
-  val `t3a.xlarge` = "t3a.xlarge".asInstanceOf[InstanceType]
-  val `t3a.2xlarge` = "t3a.2xlarge".asInstanceOf[InstanceType]
-  val `t4g.nano` = "t4g.nano".asInstanceOf[InstanceType]
-  val `t4g.micro` = "t4g.micro".asInstanceOf[InstanceType]
-  val `t4g.small` = "t4g.small".asInstanceOf[InstanceType]
-  val `t4g.medium` = "t4g.medium".asInstanceOf[InstanceType]
-  val `t4g.large` = "t4g.large".asInstanceOf[InstanceType]
-  val `t4g.xlarge` = "t4g.xlarge".asInstanceOf[InstanceType]
-  val `t4g.2xlarge` = "t4g.2xlarge".asInstanceOf[InstanceType]
-  val `m1.small` = "m1.small".asInstanceOf[InstanceType]
-  val `m1.medium` = "m1.medium".asInstanceOf[InstanceType]
-  val `m1.large` = "m1.large".asInstanceOf[InstanceType]
-  val `m1.xlarge` = "m1.xlarge".asInstanceOf[InstanceType]
-  val `m3.medium` = "m3.medium".asInstanceOf[InstanceType]
-  val `m3.large` = "m3.large".asInstanceOf[InstanceType]
-  val `m3.xlarge` = "m3.xlarge".asInstanceOf[InstanceType]
-  val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[InstanceType]
-  val `m4.large` = "m4.large".asInstanceOf[InstanceType]
-  val `m4.xlarge` = "m4.xlarge".asInstanceOf[InstanceType]
-  val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[InstanceType]
-  val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[InstanceType]
-  val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[InstanceType]
-  val `m4.16xlarge` = "m4.16xlarge".asInstanceOf[InstanceType]
-  val `m2.xlarge` = "m2.xlarge".asInstanceOf[InstanceType]
-  val `m2.2xlarge` = "m2.2xlarge".asInstanceOf[InstanceType]
-  val `m2.4xlarge` = "m2.4xlarge".asInstanceOf[InstanceType]
-  val `cr1.8xlarge` = "cr1.8xlarge".asInstanceOf[InstanceType]
-  val `r3.large` = "r3.large".asInstanceOf[InstanceType]
-  val `r3.xlarge` = "r3.xlarge".asInstanceOf[InstanceType]
-  val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[InstanceType]
-  val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[InstanceType]
-  val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[InstanceType]
-  val `r4.large` = "r4.large".asInstanceOf[InstanceType]
-  val `r4.xlarge` = "r4.xlarge".asInstanceOf[InstanceType]
-  val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[InstanceType]
-  val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[InstanceType]
-  val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[InstanceType]
-  val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[InstanceType]
-  val `r5.large` = "r5.large".asInstanceOf[InstanceType]
-  val `r5.xlarge` = "r5.xlarge".asInstanceOf[InstanceType]
-  val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[InstanceType]
-  val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[InstanceType]
-  val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[InstanceType]
-  val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[InstanceType]
-  val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[InstanceType]
-  val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[InstanceType]
-  val `r5.metal` = "r5.metal".asInstanceOf[InstanceType]
-  val `r5a.large` = "r5a.large".asInstanceOf[InstanceType]
-  val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[InstanceType]
-  val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[InstanceType]
-  val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[InstanceType]
-  val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[InstanceType]
-  val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[InstanceType]
-  val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[InstanceType]
-  val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[InstanceType]
-  val `r5b.large` = "r5b.large".asInstanceOf[InstanceType]
-  val `r5b.xlarge` = "r5b.xlarge".asInstanceOf[InstanceType]
-  val `r5b.2xlarge` = "r5b.2xlarge".asInstanceOf[InstanceType]
-  val `r5b.4xlarge` = "r5b.4xlarge".asInstanceOf[InstanceType]
-  val `r5b.8xlarge` = "r5b.8xlarge".asInstanceOf[InstanceType]
-  val `r5b.12xlarge` = "r5b.12xlarge".asInstanceOf[InstanceType]
-  val `r5b.16xlarge` = "r5b.16xlarge".asInstanceOf[InstanceType]
-  val `r5b.24xlarge` = "r5b.24xlarge".asInstanceOf[InstanceType]
-  val `r5b.metal` = "r5b.metal".asInstanceOf[InstanceType]
-  val `r5d.large` = "r5d.large".asInstanceOf[InstanceType]
-  val `r5d.xlarge` = "r5d.xlarge".asInstanceOf[InstanceType]
-  val `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[InstanceType]
-  val `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[InstanceType]
-  val `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[InstanceType]
-  val `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[InstanceType]
-  val `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[InstanceType]
-  val `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[InstanceType]
-  val `r5d.metal` = "r5d.metal".asInstanceOf[InstanceType]
-  val `r5ad.large` = "r5ad.large".asInstanceOf[InstanceType]
-  val `r5ad.xlarge` = "r5ad.xlarge".asInstanceOf[InstanceType]
-  val `r5ad.2xlarge` = "r5ad.2xlarge".asInstanceOf[InstanceType]
-  val `r5ad.4xlarge` = "r5ad.4xlarge".asInstanceOf[InstanceType]
-  val `r5ad.8xlarge` = "r5ad.8xlarge".asInstanceOf[InstanceType]
-  val `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
-  val `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
-  val `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
-  val `r6g.metal` = "r6g.metal".asInstanceOf[InstanceType]
-  val `r6g.medium` = "r6g.medium".asInstanceOf[InstanceType]
-  val `r6g.large` = "r6g.large".asInstanceOf[InstanceType]
-  val `r6g.xlarge` = "r6g.xlarge".asInstanceOf[InstanceType]
-  val `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[InstanceType]
-  val `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[InstanceType]
-  val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
-  val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
-  val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
-  val `r6gd.metal` = "r6gd.metal".asInstanceOf[InstanceType]
-  val `r6gd.medium` = "r6gd.medium".asInstanceOf[InstanceType]
-  val `r6gd.large` = "r6gd.large".asInstanceOf[InstanceType]
-  val `r6gd.xlarge` = "r6gd.xlarge".asInstanceOf[InstanceType]
-  val `r6gd.2xlarge` = "r6gd.2xlarge".asInstanceOf[InstanceType]
-  val `r6gd.4xlarge` = "r6gd.4xlarge".asInstanceOf[InstanceType]
-  val `r6gd.8xlarge` = "r6gd.8xlarge".asInstanceOf[InstanceType]
-  val `r6gd.12xlarge` = "r6gd.12xlarge".asInstanceOf[InstanceType]
-  val `r6gd.16xlarge` = "r6gd.16xlarge".asInstanceOf[InstanceType]
-  val `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
-  val `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
-  val `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
-  val `x1e.2xlarge` = "x1e.2xlarge".asInstanceOf[InstanceType]
-  val `x1e.4xlarge` = "x1e.4xlarge".asInstanceOf[InstanceType]
-  val `x1e.8xlarge` = "x1e.8xlarge".asInstanceOf[InstanceType]
-  val `x1e.16xlarge` = "x1e.16xlarge".asInstanceOf[InstanceType]
-  val `x1e.32xlarge` = "x1e.32xlarge".asInstanceOf[InstanceType]
-  val `i2.xlarge` = "i2.xlarge".asInstanceOf[InstanceType]
-  val `i2.2xlarge` = "i2.2xlarge".asInstanceOf[InstanceType]
-  val `i2.4xlarge` = "i2.4xlarge".asInstanceOf[InstanceType]
-  val `i2.8xlarge` = "i2.8xlarge".asInstanceOf[InstanceType]
-  val `i3.large` = "i3.large".asInstanceOf[InstanceType]
-  val `i3.xlarge` = "i3.xlarge".asInstanceOf[InstanceType]
-  val `i3.2xlarge` = "i3.2xlarge".asInstanceOf[InstanceType]
-  val `i3.4xlarge` = "i3.4xlarge".asInstanceOf[InstanceType]
-  val `i3.8xlarge` = "i3.8xlarge".asInstanceOf[InstanceType]
-  val `i3.16xlarge` = "i3.16xlarge".asInstanceOf[InstanceType]
-  val `i3.metal` = "i3.metal".asInstanceOf[InstanceType]
-  val `i3en.large` = "i3en.large".asInstanceOf[InstanceType]
-  val `i3en.xlarge` = "i3en.xlarge".asInstanceOf[InstanceType]
-  val `i3en.2xlarge` = "i3en.2xlarge".asInstanceOf[InstanceType]
-  val `i3en.3xlarge` = "i3en.3xlarge".asInstanceOf[InstanceType]
-  val `i3en.6xlarge` = "i3en.6xlarge".asInstanceOf[InstanceType]
-  val `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
-  val `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
-  val `i3en.metal` = "i3en.metal".asInstanceOf[InstanceType]
-  val `hi1.4xlarge` = "hi1.4xlarge".asInstanceOf[InstanceType]
-  val `hs1.8xlarge` = "hs1.8xlarge".asInstanceOf[InstanceType]
+  val `a1.medium` = "a1.medium".asInstanceOf[InstanceType]
+  val `a1.large` = "a1.large".asInstanceOf[InstanceType]
+  val `a1.xlarge` = "a1.xlarge".asInstanceOf[InstanceType]
+  val `a1.2xlarge` = "a1.2xlarge".asInstanceOf[InstanceType]
+  val `a1.4xlarge` = "a1.4xlarge".asInstanceOf[InstanceType]
+  val `a1.metal` = "a1.metal".asInstanceOf[InstanceType]
   val `c1.medium` = "c1.medium".asInstanceOf[InstanceType]
   val `c1.xlarge` = "c1.xlarge".asInstanceOf[InstanceType]
   val `c3.large` = "c3.large".asInstanceOf[InstanceType]
@@ -1468,7 +1445,6 @@ object InstanceType {
   val `c5n.9xlarge` = "c5n.9xlarge".asInstanceOf[InstanceType]
   val `c5n.18xlarge` = "c5n.18xlarge".asInstanceOf[InstanceType]
   val `c5n.metal` = "c5n.metal".asInstanceOf[InstanceType]
-  val `c6g.metal` = "c6g.metal".asInstanceOf[InstanceType]
   val `c6g.medium` = "c6g.medium".asInstanceOf[InstanceType]
   val `c6g.large` = "c6g.large".asInstanceOf[InstanceType]
   val `c6g.xlarge` = "c6g.xlarge".asInstanceOf[InstanceType]
@@ -1477,7 +1453,7 @@ object InstanceType {
   val `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[InstanceType]
   val `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[InstanceType]
   val `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[InstanceType]
-  val `c6gd.metal` = "c6gd.metal".asInstanceOf[InstanceType]
+  val `c6g.metal` = "c6g.metal".asInstanceOf[InstanceType]
   val `c6gd.medium` = "c6gd.medium".asInstanceOf[InstanceType]
   val `c6gd.large` = "c6gd.large".asInstanceOf[InstanceType]
   val `c6gd.xlarge` = "c6gd.xlarge".asInstanceOf[InstanceType]
@@ -1486,6 +1462,7 @@ object InstanceType {
   val `c6gd.8xlarge` = "c6gd.8xlarge".asInstanceOf[InstanceType]
   val `c6gd.12xlarge` = "c6gd.12xlarge".asInstanceOf[InstanceType]
   val `c6gd.16xlarge` = "c6gd.16xlarge".asInstanceOf[InstanceType]
+  val `c6gd.metal` = "c6gd.metal".asInstanceOf[InstanceType]
   val `c6gn.medium` = "c6gn.medium".asInstanceOf[InstanceType]
   val `c6gn.large` = "c6gn.large".asInstanceOf[InstanceType]
   val `c6gn.xlarge` = "c6gn.xlarge".asInstanceOf[InstanceType]
@@ -1503,35 +1480,11 @@ object InstanceType {
   val `c6i.16xlarge` = "c6i.16xlarge".asInstanceOf[InstanceType]
   val `c6i.24xlarge` = "c6i.24xlarge".asInstanceOf[InstanceType]
   val `c6i.32xlarge` = "c6i.32xlarge".asInstanceOf[InstanceType]
+  val `c6i.metal` = "c6i.metal".asInstanceOf[InstanceType]
   val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
   val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
-  val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
-  val `g2.8xlarge` = "g2.8xlarge".asInstanceOf[InstanceType]
-  val `g3.4xlarge` = "g3.4xlarge".asInstanceOf[InstanceType]
-  val `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
-  val `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
-  val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
-  val `g4ad.xlarge` = "g4ad.xlarge".asInstanceOf[InstanceType]
-  val `g4ad.2xlarge` = "g4ad.2xlarge".asInstanceOf[InstanceType]
-  val `g4ad.4xlarge` = "g4ad.4xlarge".asInstanceOf[InstanceType]
-  val `g4ad.8xlarge` = "g4ad.8xlarge".asInstanceOf[InstanceType]
-  val `g4ad.16xlarge` = "g4ad.16xlarge".asInstanceOf[InstanceType]
-  val `g4dn.xlarge` = "g4dn.xlarge".asInstanceOf[InstanceType]
-  val `g4dn.2xlarge` = "g4dn.2xlarge".asInstanceOf[InstanceType]
-  val `g4dn.4xlarge` = "g4dn.4xlarge".asInstanceOf[InstanceType]
-  val `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[InstanceType]
-  val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
-  val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
-  val `g4dn.metal` = "g4dn.metal".asInstanceOf[InstanceType]
   val `cg1.4xlarge` = "cg1.4xlarge".asInstanceOf[InstanceType]
-  val `p2.xlarge` = "p2.xlarge".asInstanceOf[InstanceType]
-  val `p2.8xlarge` = "p2.8xlarge".asInstanceOf[InstanceType]
-  val `p2.16xlarge` = "p2.16xlarge".asInstanceOf[InstanceType]
-  val `p3.2xlarge` = "p3.2xlarge".asInstanceOf[InstanceType]
-  val `p3.8xlarge` = "p3.8xlarge".asInstanceOf[InstanceType]
-  val `p3.16xlarge` = "p3.16xlarge".asInstanceOf[InstanceType]
-  val `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
-  val `p4d.24xlarge` = "p4d.24xlarge".asInstanceOf[InstanceType]
+  val `cr1.8xlarge` = "cr1.8xlarge".asInstanceOf[InstanceType]
   val `d2.xlarge` = "d2.xlarge".asInstanceOf[InstanceType]
   val `d2.2xlarge` = "d2.2xlarge".asInstanceOf[InstanceType]
   val `d2.4xlarge` = "d2.4xlarge".asInstanceOf[InstanceType]
@@ -1550,6 +1503,97 @@ object InstanceType {
   val `f1.2xlarge` = "f1.2xlarge".asInstanceOf[InstanceType]
   val `f1.4xlarge` = "f1.4xlarge".asInstanceOf[InstanceType]
   val `f1.16xlarge` = "f1.16xlarge".asInstanceOf[InstanceType]
+  val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
+  val `g2.8xlarge` = "g2.8xlarge".asInstanceOf[InstanceType]
+  val `g3.4xlarge` = "g3.4xlarge".asInstanceOf[InstanceType]
+  val `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
+  val `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
+  val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
+  val `g4ad.xlarge` = "g4ad.xlarge".asInstanceOf[InstanceType]
+  val `g4ad.2xlarge` = "g4ad.2xlarge".asInstanceOf[InstanceType]
+  val `g4ad.4xlarge` = "g4ad.4xlarge".asInstanceOf[InstanceType]
+  val `g4ad.8xlarge` = "g4ad.8xlarge".asInstanceOf[InstanceType]
+  val `g4ad.16xlarge` = "g4ad.16xlarge".asInstanceOf[InstanceType]
+  val `g4dn.xlarge` = "g4dn.xlarge".asInstanceOf[InstanceType]
+  val `g4dn.2xlarge` = "g4dn.2xlarge".asInstanceOf[InstanceType]
+  val `g4dn.4xlarge` = "g4dn.4xlarge".asInstanceOf[InstanceType]
+  val `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[InstanceType]
+  val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[InstanceType]
+  val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[InstanceType]
+  val `g4dn.metal` = "g4dn.metal".asInstanceOf[InstanceType]
+  val `g5.xlarge` = "g5.xlarge".asInstanceOf[InstanceType]
+  val `g5.2xlarge` = "g5.2xlarge".asInstanceOf[InstanceType]
+  val `g5.4xlarge` = "g5.4xlarge".asInstanceOf[InstanceType]
+  val `g5.8xlarge` = "g5.8xlarge".asInstanceOf[InstanceType]
+  val `g5.12xlarge` = "g5.12xlarge".asInstanceOf[InstanceType]
+  val `g5.16xlarge` = "g5.16xlarge".asInstanceOf[InstanceType]
+  val `g5.24xlarge` = "g5.24xlarge".asInstanceOf[InstanceType]
+  val `g5.48xlarge` = "g5.48xlarge".asInstanceOf[InstanceType]
+  val `g5g.xlarge` = "g5g.xlarge".asInstanceOf[InstanceType]
+  val `g5g.2xlarge` = "g5g.2xlarge".asInstanceOf[InstanceType]
+  val `g5g.4xlarge` = "g5g.4xlarge".asInstanceOf[InstanceType]
+  val `g5g.8xlarge` = "g5g.8xlarge".asInstanceOf[InstanceType]
+  val `g5g.16xlarge` = "g5g.16xlarge".asInstanceOf[InstanceType]
+  val `g5g.metal` = "g5g.metal".asInstanceOf[InstanceType]
+  val `hi1.4xlarge` = "hi1.4xlarge".asInstanceOf[InstanceType]
+  val `hpc6a.48xlarge` = "hpc6a.48xlarge".asInstanceOf[InstanceType]
+  val `hs1.8xlarge` = "hs1.8xlarge".asInstanceOf[InstanceType]
+  val `h1.2xlarge` = "h1.2xlarge".asInstanceOf[InstanceType]
+  val `h1.4xlarge` = "h1.4xlarge".asInstanceOf[InstanceType]
+  val `h1.8xlarge` = "h1.8xlarge".asInstanceOf[InstanceType]
+  val `h1.16xlarge` = "h1.16xlarge".asInstanceOf[InstanceType]
+  val `i2.xlarge` = "i2.xlarge".asInstanceOf[InstanceType]
+  val `i2.2xlarge` = "i2.2xlarge".asInstanceOf[InstanceType]
+  val `i2.4xlarge` = "i2.4xlarge".asInstanceOf[InstanceType]
+  val `i2.8xlarge` = "i2.8xlarge".asInstanceOf[InstanceType]
+  val `i3.large` = "i3.large".asInstanceOf[InstanceType]
+  val `i3.xlarge` = "i3.xlarge".asInstanceOf[InstanceType]
+  val `i3.2xlarge` = "i3.2xlarge".asInstanceOf[InstanceType]
+  val `i3.4xlarge` = "i3.4xlarge".asInstanceOf[InstanceType]
+  val `i3.8xlarge` = "i3.8xlarge".asInstanceOf[InstanceType]
+  val `i3.16xlarge` = "i3.16xlarge".asInstanceOf[InstanceType]
+  val `i3.metal` = "i3.metal".asInstanceOf[InstanceType]
+  val `i3en.large` = "i3en.large".asInstanceOf[InstanceType]
+  val `i3en.xlarge` = "i3en.xlarge".asInstanceOf[InstanceType]
+  val `i3en.2xlarge` = "i3en.2xlarge".asInstanceOf[InstanceType]
+  val `i3en.3xlarge` = "i3en.3xlarge".asInstanceOf[InstanceType]
+  val `i3en.6xlarge` = "i3en.6xlarge".asInstanceOf[InstanceType]
+  val `i3en.12xlarge` = "i3en.12xlarge".asInstanceOf[InstanceType]
+  val `i3en.24xlarge` = "i3en.24xlarge".asInstanceOf[InstanceType]
+  val `i3en.metal` = "i3en.metal".asInstanceOf[InstanceType]
+  val `im4gn.large` = "im4gn.large".asInstanceOf[InstanceType]
+  val `im4gn.xlarge` = "im4gn.xlarge".asInstanceOf[InstanceType]
+  val `im4gn.2xlarge` = "im4gn.2xlarge".asInstanceOf[InstanceType]
+  val `im4gn.4xlarge` = "im4gn.4xlarge".asInstanceOf[InstanceType]
+  val `im4gn.8xlarge` = "im4gn.8xlarge".asInstanceOf[InstanceType]
+  val `im4gn.16xlarge` = "im4gn.16xlarge".asInstanceOf[InstanceType]
+  val `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
+  val `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
+  val `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
+  val `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
+  val `is4gen.medium` = "is4gen.medium".asInstanceOf[InstanceType]
+  val `is4gen.large` = "is4gen.large".asInstanceOf[InstanceType]
+  val `is4gen.xlarge` = "is4gen.xlarge".asInstanceOf[InstanceType]
+  val `is4gen.2xlarge` = "is4gen.2xlarge".asInstanceOf[InstanceType]
+  val `is4gen.4xlarge` = "is4gen.4xlarge".asInstanceOf[InstanceType]
+  val `is4gen.8xlarge` = "is4gen.8xlarge".asInstanceOf[InstanceType]
+  val `m1.small` = "m1.small".asInstanceOf[InstanceType]
+  val `m1.medium` = "m1.medium".asInstanceOf[InstanceType]
+  val `m1.large` = "m1.large".asInstanceOf[InstanceType]
+  val `m1.xlarge` = "m1.xlarge".asInstanceOf[InstanceType]
+  val `m2.xlarge` = "m2.xlarge".asInstanceOf[InstanceType]
+  val `m2.2xlarge` = "m2.2xlarge".asInstanceOf[InstanceType]
+  val `m2.4xlarge` = "m2.4xlarge".asInstanceOf[InstanceType]
+  val `m3.medium` = "m3.medium".asInstanceOf[InstanceType]
+  val `m3.large` = "m3.large".asInstanceOf[InstanceType]
+  val `m3.xlarge` = "m3.xlarge".asInstanceOf[InstanceType]
+  val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[InstanceType]
+  val `m4.large` = "m4.large".asInstanceOf[InstanceType]
+  val `m4.xlarge` = "m4.xlarge".asInstanceOf[InstanceType]
+  val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[InstanceType]
+  val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[InstanceType]
+  val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[InstanceType]
+  val `m4.16xlarge` = "m4.16xlarge".asInstanceOf[InstanceType]
   val `m5.large` = "m5.large".asInstanceOf[InstanceType]
   val `m5.xlarge` = "m5.xlarge".asInstanceOf[InstanceType]
   val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[InstanceType]
@@ -1567,6 +1611,14 @@ object InstanceType {
   val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[InstanceType]
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[InstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[InstanceType]
+  val `m5ad.large` = "m5ad.large".asInstanceOf[InstanceType]
+  val `m5ad.xlarge` = "m5ad.xlarge".asInstanceOf[InstanceType]
+  val `m5ad.2xlarge` = "m5ad.2xlarge".asInstanceOf[InstanceType]
+  val `m5ad.4xlarge` = "m5ad.4xlarge".asInstanceOf[InstanceType]
+  val `m5ad.8xlarge` = "m5ad.8xlarge".asInstanceOf[InstanceType]
+  val `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
+  val `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
+  val `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
   val `m5d.large` = "m5d.large".asInstanceOf[InstanceType]
   val `m5d.xlarge` = "m5d.xlarge".asInstanceOf[InstanceType]
   val `m5d.2xlarge` = "m5d.2xlarge".asInstanceOf[InstanceType]
@@ -1576,47 +1628,6 @@ object InstanceType {
   val `m5d.16xlarge` = "m5d.16xlarge".asInstanceOf[InstanceType]
   val `m5d.24xlarge` = "m5d.24xlarge".asInstanceOf[InstanceType]
   val `m5d.metal` = "m5d.metal".asInstanceOf[InstanceType]
-  val `m5ad.large` = "m5ad.large".asInstanceOf[InstanceType]
-  val `m5ad.xlarge` = "m5ad.xlarge".asInstanceOf[InstanceType]
-  val `m5ad.2xlarge` = "m5ad.2xlarge".asInstanceOf[InstanceType]
-  val `m5ad.4xlarge` = "m5ad.4xlarge".asInstanceOf[InstanceType]
-  val `m5ad.8xlarge` = "m5ad.8xlarge".asInstanceOf[InstanceType]
-  val `m5ad.12xlarge` = "m5ad.12xlarge".asInstanceOf[InstanceType]
-  val `m5ad.16xlarge` = "m5ad.16xlarge".asInstanceOf[InstanceType]
-  val `m5ad.24xlarge` = "m5ad.24xlarge".asInstanceOf[InstanceType]
-  val `m5zn.large` = "m5zn.large".asInstanceOf[InstanceType]
-  val `m5zn.xlarge` = "m5zn.xlarge".asInstanceOf[InstanceType]
-  val `m5zn.2xlarge` = "m5zn.2xlarge".asInstanceOf[InstanceType]
-  val `m5zn.3xlarge` = "m5zn.3xlarge".asInstanceOf[InstanceType]
-  val `m5zn.6xlarge` = "m5zn.6xlarge".asInstanceOf[InstanceType]
-  val `m5zn.12xlarge` = "m5zn.12xlarge".asInstanceOf[InstanceType]
-  val `m5zn.metal` = "m5zn.metal".asInstanceOf[InstanceType]
-  val `h1.2xlarge` = "h1.2xlarge".asInstanceOf[InstanceType]
-  val `h1.4xlarge` = "h1.4xlarge".asInstanceOf[InstanceType]
-  val `h1.8xlarge` = "h1.8xlarge".asInstanceOf[InstanceType]
-  val `h1.16xlarge` = "h1.16xlarge".asInstanceOf[InstanceType]
-  val `z1d.large` = "z1d.large".asInstanceOf[InstanceType]
-  val `z1d.xlarge` = "z1d.xlarge".asInstanceOf[InstanceType]
-  val `z1d.2xlarge` = "z1d.2xlarge".asInstanceOf[InstanceType]
-  val `z1d.3xlarge` = "z1d.3xlarge".asInstanceOf[InstanceType]
-  val `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
-  val `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
-  val `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
-  val `u-6tb1.56xlarge` = "u-6tb1.56xlarge".asInstanceOf[InstanceType]
-  val `u-6tb1.112xlarge` = "u-6tb1.112xlarge".asInstanceOf[InstanceType]
-  val `u-9tb1.112xlarge` = "u-9tb1.112xlarge".asInstanceOf[InstanceType]
-  val `u-12tb1.112xlarge` = "u-12tb1.112xlarge".asInstanceOf[InstanceType]
-  val `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
-  val `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
-  val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
-  val `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
-  val `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
-  val `a1.medium` = "a1.medium".asInstanceOf[InstanceType]
-  val `a1.large` = "a1.large".asInstanceOf[InstanceType]
-  val `a1.xlarge` = "a1.xlarge".asInstanceOf[InstanceType]
-  val `a1.2xlarge` = "a1.2xlarge".asInstanceOf[InstanceType]
-  val `a1.4xlarge` = "a1.4xlarge".asInstanceOf[InstanceType]
-  val `a1.metal` = "a1.metal".asInstanceOf[InstanceType]
   val `m5dn.large` = "m5dn.large".asInstanceOf[InstanceType]
   val `m5dn.xlarge` = "m5dn.xlarge".asInstanceOf[InstanceType]
   val `m5dn.2xlarge` = "m5dn.2xlarge".asInstanceOf[InstanceType]
@@ -1635,28 +1646,23 @@ object InstanceType {
   val `m5n.16xlarge` = "m5n.16xlarge".asInstanceOf[InstanceType]
   val `m5n.24xlarge` = "m5n.24xlarge".asInstanceOf[InstanceType]
   val `m5n.metal` = "m5n.metal".asInstanceOf[InstanceType]
-  val `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
-  val `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
-  val `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
-  val `r5dn.4xlarge` = "r5dn.4xlarge".asInstanceOf[InstanceType]
-  val `r5dn.8xlarge` = "r5dn.8xlarge".asInstanceOf[InstanceType]
-  val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
-  val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
-  val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
-  val `r5dn.metal` = "r5dn.metal".asInstanceOf[InstanceType]
-  val `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
-  val `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
-  val `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
-  val `r5n.4xlarge` = "r5n.4xlarge".asInstanceOf[InstanceType]
-  val `r5n.8xlarge` = "r5n.8xlarge".asInstanceOf[InstanceType]
-  val `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
-  val `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
-  val `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
-  val `r5n.metal` = "r5n.metal".asInstanceOf[InstanceType]
-  val `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
-  val `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
-  val `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
-  val `inf1.24xlarge` = "inf1.24xlarge".asInstanceOf[InstanceType]
+  val `m5zn.large` = "m5zn.large".asInstanceOf[InstanceType]
+  val `m5zn.xlarge` = "m5zn.xlarge".asInstanceOf[InstanceType]
+  val `m5zn.2xlarge` = "m5zn.2xlarge".asInstanceOf[InstanceType]
+  val `m5zn.3xlarge` = "m5zn.3xlarge".asInstanceOf[InstanceType]
+  val `m5zn.6xlarge` = "m5zn.6xlarge".asInstanceOf[InstanceType]
+  val `m5zn.12xlarge` = "m5zn.12xlarge".asInstanceOf[InstanceType]
+  val `m5zn.metal` = "m5zn.metal".asInstanceOf[InstanceType]
+  val `m6a.large` = "m6a.large".asInstanceOf[InstanceType]
+  val `m6a.xlarge` = "m6a.xlarge".asInstanceOf[InstanceType]
+  val `m6a.2xlarge` = "m6a.2xlarge".asInstanceOf[InstanceType]
+  val `m6a.4xlarge` = "m6a.4xlarge".asInstanceOf[InstanceType]
+  val `m6a.8xlarge` = "m6a.8xlarge".asInstanceOf[InstanceType]
+  val `m6a.12xlarge` = "m6a.12xlarge".asInstanceOf[InstanceType]
+  val `m6a.16xlarge` = "m6a.16xlarge".asInstanceOf[InstanceType]
+  val `m6a.24xlarge` = "m6a.24xlarge".asInstanceOf[InstanceType]
+  val `m6a.32xlarge` = "m6a.32xlarge".asInstanceOf[InstanceType]
+  val `m6a.48xlarge` = "m6a.48xlarge".asInstanceOf[InstanceType]
   val `m6g.metal` = "m6g.metal".asInstanceOf[InstanceType]
   val `m6g.medium` = "m6g.medium".asInstanceOf[InstanceType]
   val `m6g.large` = "m6g.large".asInstanceOf[InstanceType]
@@ -1675,16 +1681,6 @@ object InstanceType {
   val `m6gd.8xlarge` = "m6gd.8xlarge".asInstanceOf[InstanceType]
   val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
   val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
-  val `m6a.large` = "m6a.large".asInstanceOf[InstanceType]
-  val `m6a.xlarge` = "m6a.xlarge".asInstanceOf[InstanceType]
-  val `m6a.2xlarge` = "m6a.2xlarge".asInstanceOf[InstanceType]
-  val `m6a.4xlarge` = "m6a.4xlarge".asInstanceOf[InstanceType]
-  val `m6a.8xlarge` = "m6a.8xlarge".asInstanceOf[InstanceType]
-  val `m6a.12xlarge` = "m6a.12xlarge".asInstanceOf[InstanceType]
-  val `m6a.16xlarge` = "m6a.16xlarge".asInstanceOf[InstanceType]
-  val `m6a.24xlarge` = "m6a.24xlarge".asInstanceOf[InstanceType]
-  val `m6a.32xlarge` = "m6a.32xlarge".asInstanceOf[InstanceType]
-  val `m6a.48xlarge` = "m6a.48xlarge".asInstanceOf[InstanceType]
   val `m6i.large` = "m6i.large".asInstanceOf[InstanceType]
   val `m6i.xlarge` = "m6i.xlarge".asInstanceOf[InstanceType]
   val `m6i.2xlarge` = "m6i.2xlarge".asInstanceOf[InstanceType]
@@ -1694,7 +1690,171 @@ object InstanceType {
   val `m6i.16xlarge` = "m6i.16xlarge".asInstanceOf[InstanceType]
   val `m6i.24xlarge` = "m6i.24xlarge".asInstanceOf[InstanceType]
   val `m6i.32xlarge` = "m6i.32xlarge".asInstanceOf[InstanceType]
+  val `m6i.metal` = "m6i.metal".asInstanceOf[InstanceType]
   val `mac1.metal` = "mac1.metal".asInstanceOf[InstanceType]
+  val `p2.xlarge` = "p2.xlarge".asInstanceOf[InstanceType]
+  val `p2.8xlarge` = "p2.8xlarge".asInstanceOf[InstanceType]
+  val `p2.16xlarge` = "p2.16xlarge".asInstanceOf[InstanceType]
+  val `p3.2xlarge` = "p3.2xlarge".asInstanceOf[InstanceType]
+  val `p3.8xlarge` = "p3.8xlarge".asInstanceOf[InstanceType]
+  val `p3.16xlarge` = "p3.16xlarge".asInstanceOf[InstanceType]
+  val `p3dn.24xlarge` = "p3dn.24xlarge".asInstanceOf[InstanceType]
+  val `p4d.24xlarge` = "p4d.24xlarge".asInstanceOf[InstanceType]
+  val `r3.large` = "r3.large".asInstanceOf[InstanceType]
+  val `r3.xlarge` = "r3.xlarge".asInstanceOf[InstanceType]
+  val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[InstanceType]
+  val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[InstanceType]
+  val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[InstanceType]
+  val `r4.large` = "r4.large".asInstanceOf[InstanceType]
+  val `r4.xlarge` = "r4.xlarge".asInstanceOf[InstanceType]
+  val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[InstanceType]
+  val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[InstanceType]
+  val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[InstanceType]
+  val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[InstanceType]
+  val `r5.large` = "r5.large".asInstanceOf[InstanceType]
+  val `r5.xlarge` = "r5.xlarge".asInstanceOf[InstanceType]
+  val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[InstanceType]
+  val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[InstanceType]
+  val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[InstanceType]
+  val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[InstanceType]
+  val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[InstanceType]
+  val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[InstanceType]
+  val `r5.metal` = "r5.metal".asInstanceOf[InstanceType]
+  val `r5a.large` = "r5a.large".asInstanceOf[InstanceType]
+  val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[InstanceType]
+  val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[InstanceType]
+  val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[InstanceType]
+  val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[InstanceType]
+  val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[InstanceType]
+  val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[InstanceType]
+  val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[InstanceType]
+  val `r5ad.large` = "r5ad.large".asInstanceOf[InstanceType]
+  val `r5ad.xlarge` = "r5ad.xlarge".asInstanceOf[InstanceType]
+  val `r5ad.2xlarge` = "r5ad.2xlarge".asInstanceOf[InstanceType]
+  val `r5ad.4xlarge` = "r5ad.4xlarge".asInstanceOf[InstanceType]
+  val `r5ad.8xlarge` = "r5ad.8xlarge".asInstanceOf[InstanceType]
+  val `r5ad.12xlarge` = "r5ad.12xlarge".asInstanceOf[InstanceType]
+  val `r5ad.16xlarge` = "r5ad.16xlarge".asInstanceOf[InstanceType]
+  val `r5ad.24xlarge` = "r5ad.24xlarge".asInstanceOf[InstanceType]
+  val `r5b.large` = "r5b.large".asInstanceOf[InstanceType]
+  val `r5b.xlarge` = "r5b.xlarge".asInstanceOf[InstanceType]
+  val `r5b.2xlarge` = "r5b.2xlarge".asInstanceOf[InstanceType]
+  val `r5b.4xlarge` = "r5b.4xlarge".asInstanceOf[InstanceType]
+  val `r5b.8xlarge` = "r5b.8xlarge".asInstanceOf[InstanceType]
+  val `r5b.12xlarge` = "r5b.12xlarge".asInstanceOf[InstanceType]
+  val `r5b.16xlarge` = "r5b.16xlarge".asInstanceOf[InstanceType]
+  val `r5b.24xlarge` = "r5b.24xlarge".asInstanceOf[InstanceType]
+  val `r5b.metal` = "r5b.metal".asInstanceOf[InstanceType]
+  val `r5d.large` = "r5d.large".asInstanceOf[InstanceType]
+  val `r5d.xlarge` = "r5d.xlarge".asInstanceOf[InstanceType]
+  val `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[InstanceType]
+  val `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[InstanceType]
+  val `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[InstanceType]
+  val `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[InstanceType]
+  val `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[InstanceType]
+  val `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[InstanceType]
+  val `r5d.metal` = "r5d.metal".asInstanceOf[InstanceType]
+  val `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
+  val `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
+  val `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
+  val `r5dn.4xlarge` = "r5dn.4xlarge".asInstanceOf[InstanceType]
+  val `r5dn.8xlarge` = "r5dn.8xlarge".asInstanceOf[InstanceType]
+  val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
+  val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
+  val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
+  val `r5dn.metal` = "r5dn.metal".asInstanceOf[InstanceType]
+  val `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
+  val `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
+  val `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
+  val `r5n.4xlarge` = "r5n.4xlarge".asInstanceOf[InstanceType]
+  val `r5n.8xlarge` = "r5n.8xlarge".asInstanceOf[InstanceType]
+  val `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
+  val `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
+  val `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
+  val `r5n.metal` = "r5n.metal".asInstanceOf[InstanceType]
+  val `r6g.medium` = "r6g.medium".asInstanceOf[InstanceType]
+  val `r6g.large` = "r6g.large".asInstanceOf[InstanceType]
+  val `r6g.xlarge` = "r6g.xlarge".asInstanceOf[InstanceType]
+  val `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[InstanceType]
+  val `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[InstanceType]
+  val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[InstanceType]
+  val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[InstanceType]
+  val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[InstanceType]
+  val `r6g.metal` = "r6g.metal".asInstanceOf[InstanceType]
+  val `r6gd.medium` = "r6gd.medium".asInstanceOf[InstanceType]
+  val `r6gd.large` = "r6gd.large".asInstanceOf[InstanceType]
+  val `r6gd.xlarge` = "r6gd.xlarge".asInstanceOf[InstanceType]
+  val `r6gd.2xlarge` = "r6gd.2xlarge".asInstanceOf[InstanceType]
+  val `r6gd.4xlarge` = "r6gd.4xlarge".asInstanceOf[InstanceType]
+  val `r6gd.8xlarge` = "r6gd.8xlarge".asInstanceOf[InstanceType]
+  val `r6gd.12xlarge` = "r6gd.12xlarge".asInstanceOf[InstanceType]
+  val `r6gd.16xlarge` = "r6gd.16xlarge".asInstanceOf[InstanceType]
+  val `r6gd.metal` = "r6gd.metal".asInstanceOf[InstanceType]
+  val `r6i.large` = "r6i.large".asInstanceOf[InstanceType]
+  val `r6i.xlarge` = "r6i.xlarge".asInstanceOf[InstanceType]
+  val `r6i.2xlarge` = "r6i.2xlarge".asInstanceOf[InstanceType]
+  val `r6i.4xlarge` = "r6i.4xlarge".asInstanceOf[InstanceType]
+  val `r6i.8xlarge` = "r6i.8xlarge".asInstanceOf[InstanceType]
+  val `r6i.12xlarge` = "r6i.12xlarge".asInstanceOf[InstanceType]
+  val `r6i.16xlarge` = "r6i.16xlarge".asInstanceOf[InstanceType]
+  val `r6i.24xlarge` = "r6i.24xlarge".asInstanceOf[InstanceType]
+  val `r6i.32xlarge` = "r6i.32xlarge".asInstanceOf[InstanceType]
+  val `r6i.metal` = "r6i.metal".asInstanceOf[InstanceType]
+  val `t1.micro` = "t1.micro".asInstanceOf[InstanceType]
+  val `t2.nano` = "t2.nano".asInstanceOf[InstanceType]
+  val `t2.micro` = "t2.micro".asInstanceOf[InstanceType]
+  val `t2.small` = "t2.small".asInstanceOf[InstanceType]
+  val `t2.medium` = "t2.medium".asInstanceOf[InstanceType]
+  val `t2.large` = "t2.large".asInstanceOf[InstanceType]
+  val `t2.xlarge` = "t2.xlarge".asInstanceOf[InstanceType]
+  val `t2.2xlarge` = "t2.2xlarge".asInstanceOf[InstanceType]
+  val `t3.nano` = "t3.nano".asInstanceOf[InstanceType]
+  val `t3.micro` = "t3.micro".asInstanceOf[InstanceType]
+  val `t3.small` = "t3.small".asInstanceOf[InstanceType]
+  val `t3.medium` = "t3.medium".asInstanceOf[InstanceType]
+  val `t3.large` = "t3.large".asInstanceOf[InstanceType]
+  val `t3.xlarge` = "t3.xlarge".asInstanceOf[InstanceType]
+  val `t3.2xlarge` = "t3.2xlarge".asInstanceOf[InstanceType]
+  val `t3a.nano` = "t3a.nano".asInstanceOf[InstanceType]
+  val `t3a.micro` = "t3a.micro".asInstanceOf[InstanceType]
+  val `t3a.small` = "t3a.small".asInstanceOf[InstanceType]
+  val `t3a.medium` = "t3a.medium".asInstanceOf[InstanceType]
+  val `t3a.large` = "t3a.large".asInstanceOf[InstanceType]
+  val `t3a.xlarge` = "t3a.xlarge".asInstanceOf[InstanceType]
+  val `t3a.2xlarge` = "t3a.2xlarge".asInstanceOf[InstanceType]
+  val `t4g.nano` = "t4g.nano".asInstanceOf[InstanceType]
+  val `t4g.micro` = "t4g.micro".asInstanceOf[InstanceType]
+  val `t4g.small` = "t4g.small".asInstanceOf[InstanceType]
+  val `t4g.medium` = "t4g.medium".asInstanceOf[InstanceType]
+  val `t4g.large` = "t4g.large".asInstanceOf[InstanceType]
+  val `t4g.xlarge` = "t4g.xlarge".asInstanceOf[InstanceType]
+  val `t4g.2xlarge` = "t4g.2xlarge".asInstanceOf[InstanceType]
+  val `u-6tb1.56xlarge` = "u-6tb1.56xlarge".asInstanceOf[InstanceType]
+  val `u-6tb1.112xlarge` = "u-6tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-9tb1.112xlarge` = "u-9tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-12tb1.112xlarge` = "u-12tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
+  val `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
+  val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
+  val `u-18tb1.metal` = "u-18tb1.metal".asInstanceOf[InstanceType]
+  val `u-24tb1.metal` = "u-24tb1.metal".asInstanceOf[InstanceType]
+  val `vt1.3xlarge` = "vt1.3xlarge".asInstanceOf[InstanceType]
+  val `vt1.6xlarge` = "vt1.6xlarge".asInstanceOf[InstanceType]
+  val `vt1.24xlarge` = "vt1.24xlarge".asInstanceOf[InstanceType]
+  val `x1.16xlarge` = "x1.16xlarge".asInstanceOf[InstanceType]
+  val `x1.32xlarge` = "x1.32xlarge".asInstanceOf[InstanceType]
+  val `x1e.xlarge` = "x1e.xlarge".asInstanceOf[InstanceType]
+  val `x1e.2xlarge` = "x1e.2xlarge".asInstanceOf[InstanceType]
+  val `x1e.4xlarge` = "x1e.4xlarge".asInstanceOf[InstanceType]
+  val `x1e.8xlarge` = "x1e.8xlarge".asInstanceOf[InstanceType]
+  val `x1e.16xlarge` = "x1e.16xlarge".asInstanceOf[InstanceType]
+  val `x1e.32xlarge` = "x1e.32xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.2xlarge` = "x2iezn.2xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.4xlarge` = "x2iezn.4xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.6xlarge` = "x2iezn.6xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.8xlarge` = "x2iezn.8xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.12xlarge` = "x2iezn.12xlarge".asInstanceOf[InstanceType]
+  val `x2iezn.metal` = "x2iezn.metal".asInstanceOf[InstanceType]
   val `x2gd.medium` = "x2gd.medium".asInstanceOf[InstanceType]
   val `x2gd.large` = "x2gd.large".asInstanceOf[InstanceType]
   val `x2gd.xlarge` = "x2gd.xlarge".asInstanceOf[InstanceType]
@@ -1704,185 +1864,110 @@ object InstanceType {
   val `x2gd.12xlarge` = "x2gd.12xlarge".asInstanceOf[InstanceType]
   val `x2gd.16xlarge` = "x2gd.16xlarge".asInstanceOf[InstanceType]
   val `x2gd.metal` = "x2gd.metal".asInstanceOf[InstanceType]
-  val `vt1.3xlarge` = "vt1.3xlarge".asInstanceOf[InstanceType]
-  val `vt1.6xlarge` = "vt1.6xlarge".asInstanceOf[InstanceType]
-  val `vt1.24xlarge` = "vt1.24xlarge".asInstanceOf[InstanceType]
-  val `im4gn.16xlarge` = "im4gn.16xlarge".asInstanceOf[InstanceType]
-  val `im4gn.2xlarge` = "im4gn.2xlarge".asInstanceOf[InstanceType]
-  val `im4gn.4xlarge` = "im4gn.4xlarge".asInstanceOf[InstanceType]
-  val `im4gn.8xlarge` = "im4gn.8xlarge".asInstanceOf[InstanceType]
-  val `im4gn.large` = "im4gn.large".asInstanceOf[InstanceType]
-  val `im4gn.xlarge` = "im4gn.xlarge".asInstanceOf[InstanceType]
-  val `is4gen.2xlarge` = "is4gen.2xlarge".asInstanceOf[InstanceType]
-  val `is4gen.4xlarge` = "is4gen.4xlarge".asInstanceOf[InstanceType]
-  val `is4gen.8xlarge` = "is4gen.8xlarge".asInstanceOf[InstanceType]
-  val `is4gen.large` = "is4gen.large".asInstanceOf[InstanceType]
-  val `is4gen.medium` = "is4gen.medium".asInstanceOf[InstanceType]
-  val `is4gen.xlarge` = "is4gen.xlarge".asInstanceOf[InstanceType]
-  val `g5g.xlarge` = "g5g.xlarge".asInstanceOf[InstanceType]
-  val `g5g.2xlarge` = "g5g.2xlarge".asInstanceOf[InstanceType]
-  val `g5g.4xlarge` = "g5g.4xlarge".asInstanceOf[InstanceType]
-  val `g5g.8xlarge` = "g5g.8xlarge".asInstanceOf[InstanceType]
-  val `g5g.16xlarge` = "g5g.16xlarge".asInstanceOf[InstanceType]
-  val `g5g.metal` = "g5g.metal".asInstanceOf[InstanceType]
-  val `g5.xlarge` = "g5.xlarge".asInstanceOf[InstanceType]
-  val `g5.2xlarge` = "g5.2xlarge".asInstanceOf[InstanceType]
-  val `g5.4xlarge` = "g5.4xlarge".asInstanceOf[InstanceType]
-  val `g5.8xlarge` = "g5.8xlarge".asInstanceOf[InstanceType]
-  val `g5.12xlarge` = "g5.12xlarge".asInstanceOf[InstanceType]
-  val `g5.16xlarge` = "g5.16xlarge".asInstanceOf[InstanceType]
-  val `g5.24xlarge` = "g5.24xlarge".asInstanceOf[InstanceType]
-  val `g5.48xlarge` = "g5.48xlarge".asInstanceOf[InstanceType]
+  val `z1d.large` = "z1d.large".asInstanceOf[InstanceType]
+  val `z1d.xlarge` = "z1d.xlarge".asInstanceOf[InstanceType]
+  val `z1d.2xlarge` = "z1d.2xlarge".asInstanceOf[InstanceType]
+  val `z1d.3xlarge` = "z1d.3xlarge".asInstanceOf[InstanceType]
+  val `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
+  val `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
+  val `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
+  val `x2idn.16xlarge` = "x2idn.16xlarge".asInstanceOf[InstanceType]
+  val `x2idn.24xlarge` = "x2idn.24xlarge".asInstanceOf[InstanceType]
+  val `x2idn.32xlarge` = "x2idn.32xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.xlarge` = "x2iedn.xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.2xlarge` = "x2iedn.2xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.4xlarge` = "x2iedn.4xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.8xlarge` = "x2iedn.8xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.16xlarge` = "x2iedn.16xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.24xlarge` = "x2iedn.24xlarge".asInstanceOf[InstanceType]
+  val `x2iedn.32xlarge` = "x2iedn.32xlarge".asInstanceOf[InstanceType]
+  val `c6a.large` = "c6a.large".asInstanceOf[InstanceType]
+  val `c6a.xlarge` = "c6a.xlarge".asInstanceOf[InstanceType]
+  val `c6a.2xlarge` = "c6a.2xlarge".asInstanceOf[InstanceType]
+  val `c6a.4xlarge` = "c6a.4xlarge".asInstanceOf[InstanceType]
+  val `c6a.8xlarge` = "c6a.8xlarge".asInstanceOf[InstanceType]
+  val `c6a.12xlarge` = "c6a.12xlarge".asInstanceOf[InstanceType]
+  val `c6a.16xlarge` = "c6a.16xlarge".asInstanceOf[InstanceType]
+  val `c6a.24xlarge` = "c6a.24xlarge".asInstanceOf[InstanceType]
+  val `c6a.32xlarge` = "c6a.32xlarge".asInstanceOf[InstanceType]
+  val `c6a.48xlarge` = "c6a.48xlarge".asInstanceOf[InstanceType]
+  val `c6a.metal` = "c6a.metal".asInstanceOf[InstanceType]
+  val `m6a.metal` = "m6a.metal".asInstanceOf[InstanceType]
+  val `i4i.large` = "i4i.large".asInstanceOf[InstanceType]
+  val `i4i.xlarge` = "i4i.xlarge".asInstanceOf[InstanceType]
+  val `i4i.2xlarge` = "i4i.2xlarge".asInstanceOf[InstanceType]
+  val `i4i.4xlarge` = "i4i.4xlarge".asInstanceOf[InstanceType]
+  val `i4i.8xlarge` = "i4i.8xlarge".asInstanceOf[InstanceType]
+  val `i4i.16xlarge` = "i4i.16xlarge".asInstanceOf[InstanceType]
+  val `i4i.32xlarge` = "i4i.32xlarge".asInstanceOf[InstanceType]
+  val `i4i.metal` = "i4i.metal".asInstanceOf[InstanceType]
+  val `x2idn.metal` = "x2idn.metal".asInstanceOf[InstanceType]
+  val `x2iedn.metal` = "x2iedn.metal".asInstanceOf[InstanceType]
+  val `c7g.medium` = "c7g.medium".asInstanceOf[InstanceType]
+  val `c7g.large` = "c7g.large".asInstanceOf[InstanceType]
+  val `c7g.xlarge` = "c7g.xlarge".asInstanceOf[InstanceType]
+  val `c7g.2xlarge` = "c7g.2xlarge".asInstanceOf[InstanceType]
+  val `c7g.4xlarge` = "c7g.4xlarge".asInstanceOf[InstanceType]
+  val `c7g.8xlarge` = "c7g.8xlarge".asInstanceOf[InstanceType]
+  val `c7g.12xlarge` = "c7g.12xlarge".asInstanceOf[InstanceType]
+  val `c7g.16xlarge` = "c7g.16xlarge".asInstanceOf[InstanceType]
+  val `mac2.metal` = "mac2.metal".asInstanceOf[InstanceType]
+  val `c6id.large` = "c6id.large".asInstanceOf[InstanceType]
+  val `c6id.xlarge` = "c6id.xlarge".asInstanceOf[InstanceType]
+  val `c6id.2xlarge` = "c6id.2xlarge".asInstanceOf[InstanceType]
+  val `c6id.4xlarge` = "c6id.4xlarge".asInstanceOf[InstanceType]
+  val `c6id.8xlarge` = "c6id.8xlarge".asInstanceOf[InstanceType]
+  val `c6id.12xlarge` = "c6id.12xlarge".asInstanceOf[InstanceType]
+  val `c6id.16xlarge` = "c6id.16xlarge".asInstanceOf[InstanceType]
+  val `c6id.24xlarge` = "c6id.24xlarge".asInstanceOf[InstanceType]
+  val `c6id.32xlarge` = "c6id.32xlarge".asInstanceOf[InstanceType]
+  val `c6id.metal` = "c6id.metal".asInstanceOf[InstanceType]
+  val `m6id.large` = "m6id.large".asInstanceOf[InstanceType]
+  val `m6id.xlarge` = "m6id.xlarge".asInstanceOf[InstanceType]
+  val `m6id.2xlarge` = "m6id.2xlarge".asInstanceOf[InstanceType]
+  val `m6id.4xlarge` = "m6id.4xlarge".asInstanceOf[InstanceType]
+  val `m6id.8xlarge` = "m6id.8xlarge".asInstanceOf[InstanceType]
+  val `m6id.12xlarge` = "m6id.12xlarge".asInstanceOf[InstanceType]
+  val `m6id.16xlarge` = "m6id.16xlarge".asInstanceOf[InstanceType]
+  val `m6id.24xlarge` = "m6id.24xlarge".asInstanceOf[InstanceType]
+  val `m6id.32xlarge` = "m6id.32xlarge".asInstanceOf[InstanceType]
+  val `m6id.metal` = "m6id.metal".asInstanceOf[InstanceType]
+  val `r6id.large` = "r6id.large".asInstanceOf[InstanceType]
+  val `r6id.xlarge` = "r6id.xlarge".asInstanceOf[InstanceType]
+  val `r6id.2xlarge` = "r6id.2xlarge".asInstanceOf[InstanceType]
+  val `r6id.4xlarge` = "r6id.4xlarge".asInstanceOf[InstanceType]
+  val `r6id.8xlarge` = "r6id.8xlarge".asInstanceOf[InstanceType]
+  val `r6id.12xlarge` = "r6id.12xlarge".asInstanceOf[InstanceType]
+  val `r6id.16xlarge` = "r6id.16xlarge".asInstanceOf[InstanceType]
+  val `r6id.24xlarge` = "r6id.24xlarge".asInstanceOf[InstanceType]
+  val `r6id.32xlarge` = "r6id.32xlarge".asInstanceOf[InstanceType]
+  val `r6id.metal` = "r6id.metal".asInstanceOf[InstanceType]
+  val `r6a.large` = "r6a.large".asInstanceOf[InstanceType]
+  val `r6a.xlarge` = "r6a.xlarge".asInstanceOf[InstanceType]
+  val `r6a.2xlarge` = "r6a.2xlarge".asInstanceOf[InstanceType]
+  val `r6a.4xlarge` = "r6a.4xlarge".asInstanceOf[InstanceType]
+  val `r6a.8xlarge` = "r6a.8xlarge".asInstanceOf[InstanceType]
+  val `r6a.12xlarge` = "r6a.12xlarge".asInstanceOf[InstanceType]
+  val `r6a.16xlarge` = "r6a.16xlarge".asInstanceOf[InstanceType]
+  val `r6a.24xlarge` = "r6a.24xlarge".asInstanceOf[InstanceType]
+  val `r6a.32xlarge` = "r6a.32xlarge".asInstanceOf[InstanceType]
+  val `r6a.48xlarge` = "r6a.48xlarge".asInstanceOf[InstanceType]
+  val `r6a.metal` = "r6a.metal".asInstanceOf[InstanceType]
+  val `p4de.24xlarge` = "p4de.24xlarge".asInstanceOf[InstanceType]
+  val `u-3tb1.56xlarge` = "u-3tb1.56xlarge".asInstanceOf[InstanceType]
+  val `u-18tb1.112xlarge` = "u-18tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-24tb1.112xlarge` = "u-24tb1.112xlarge".asInstanceOf[InstanceType]
+  val `trn1.2xlarge` = "trn1.2xlarge".asInstanceOf[InstanceType]
+  val `trn1.32xlarge` = "trn1.32xlarge".asInstanceOf[InstanceType]
+  val `hpc6id.32xlarge` = "hpc6id.32xlarge".asInstanceOf[InstanceType]
 
   @inline def values: js.Array[InstanceType] = js.Array(
-    `t1.micro`,
-    `t2.nano`,
-    `t2.micro`,
-    `t2.small`,
-    `t2.medium`,
-    `t2.large`,
-    `t2.xlarge`,
-    `t2.2xlarge`,
-    `t3.nano`,
-    `t3.micro`,
-    `t3.small`,
-    `t3.medium`,
-    `t3.large`,
-    `t3.xlarge`,
-    `t3.2xlarge`,
-    `t3a.nano`,
-    `t3a.micro`,
-    `t3a.small`,
-    `t3a.medium`,
-    `t3a.large`,
-    `t3a.xlarge`,
-    `t3a.2xlarge`,
-    `t4g.nano`,
-    `t4g.micro`,
-    `t4g.small`,
-    `t4g.medium`,
-    `t4g.large`,
-    `t4g.xlarge`,
-    `t4g.2xlarge`,
-    `m1.small`,
-    `m1.medium`,
-    `m1.large`,
-    `m1.xlarge`,
-    `m3.medium`,
-    `m3.large`,
-    `m3.xlarge`,
-    `m3.2xlarge`,
-    `m4.large`,
-    `m4.xlarge`,
-    `m4.2xlarge`,
-    `m4.4xlarge`,
-    `m4.10xlarge`,
-    `m4.16xlarge`,
-    `m2.xlarge`,
-    `m2.2xlarge`,
-    `m2.4xlarge`,
-    `cr1.8xlarge`,
-    `r3.large`,
-    `r3.xlarge`,
-    `r3.2xlarge`,
-    `r3.4xlarge`,
-    `r3.8xlarge`,
-    `r4.large`,
-    `r4.xlarge`,
-    `r4.2xlarge`,
-    `r4.4xlarge`,
-    `r4.8xlarge`,
-    `r4.16xlarge`,
-    `r5.large`,
-    `r5.xlarge`,
-    `r5.2xlarge`,
-    `r5.4xlarge`,
-    `r5.8xlarge`,
-    `r5.12xlarge`,
-    `r5.16xlarge`,
-    `r5.24xlarge`,
-    `r5.metal`,
-    `r5a.large`,
-    `r5a.xlarge`,
-    `r5a.2xlarge`,
-    `r5a.4xlarge`,
-    `r5a.8xlarge`,
-    `r5a.12xlarge`,
-    `r5a.16xlarge`,
-    `r5a.24xlarge`,
-    `r5b.large`,
-    `r5b.xlarge`,
-    `r5b.2xlarge`,
-    `r5b.4xlarge`,
-    `r5b.8xlarge`,
-    `r5b.12xlarge`,
-    `r5b.16xlarge`,
-    `r5b.24xlarge`,
-    `r5b.metal`,
-    `r5d.large`,
-    `r5d.xlarge`,
-    `r5d.2xlarge`,
-    `r5d.4xlarge`,
-    `r5d.8xlarge`,
-    `r5d.12xlarge`,
-    `r5d.16xlarge`,
-    `r5d.24xlarge`,
-    `r5d.metal`,
-    `r5ad.large`,
-    `r5ad.xlarge`,
-    `r5ad.2xlarge`,
-    `r5ad.4xlarge`,
-    `r5ad.8xlarge`,
-    `r5ad.12xlarge`,
-    `r5ad.16xlarge`,
-    `r5ad.24xlarge`,
-    `r6g.metal`,
-    `r6g.medium`,
-    `r6g.large`,
-    `r6g.xlarge`,
-    `r6g.2xlarge`,
-    `r6g.4xlarge`,
-    `r6g.8xlarge`,
-    `r6g.12xlarge`,
-    `r6g.16xlarge`,
-    `r6gd.metal`,
-    `r6gd.medium`,
-    `r6gd.large`,
-    `r6gd.xlarge`,
-    `r6gd.2xlarge`,
-    `r6gd.4xlarge`,
-    `r6gd.8xlarge`,
-    `r6gd.12xlarge`,
-    `r6gd.16xlarge`,
-    `x1.16xlarge`,
-    `x1.32xlarge`,
-    `x1e.xlarge`,
-    `x1e.2xlarge`,
-    `x1e.4xlarge`,
-    `x1e.8xlarge`,
-    `x1e.16xlarge`,
-    `x1e.32xlarge`,
-    `i2.xlarge`,
-    `i2.2xlarge`,
-    `i2.4xlarge`,
-    `i2.8xlarge`,
-    `i3.large`,
-    `i3.xlarge`,
-    `i3.2xlarge`,
-    `i3.4xlarge`,
-    `i3.8xlarge`,
-    `i3.16xlarge`,
-    `i3.metal`,
-    `i3en.large`,
-    `i3en.xlarge`,
-    `i3en.2xlarge`,
-    `i3en.3xlarge`,
-    `i3en.6xlarge`,
-    `i3en.12xlarge`,
-    `i3en.24xlarge`,
-    `i3en.metal`,
-    `hi1.4xlarge`,
-    `hs1.8xlarge`,
+    `a1.medium`,
+    `a1.large`,
+    `a1.xlarge`,
+    `a1.2xlarge`,
+    `a1.4xlarge`,
+    `a1.metal`,
     `c1.medium`,
     `c1.xlarge`,
     `c3.large`,
@@ -1936,7 +2021,6 @@ object InstanceType {
     `c5n.9xlarge`,
     `c5n.18xlarge`,
     `c5n.metal`,
-    `c6g.metal`,
     `c6g.medium`,
     `c6g.large`,
     `c6g.xlarge`,
@@ -1945,7 +2029,7 @@ object InstanceType {
     `c6g.8xlarge`,
     `c6g.12xlarge`,
     `c6g.16xlarge`,
-    `c6gd.metal`,
+    `c6g.metal`,
     `c6gd.medium`,
     `c6gd.large`,
     `c6gd.xlarge`,
@@ -1954,6 +2038,7 @@ object InstanceType {
     `c6gd.8xlarge`,
     `c6gd.12xlarge`,
     `c6gd.16xlarge`,
+    `c6gd.metal`,
     `c6gn.medium`,
     `c6gn.large`,
     `c6gn.xlarge`,
@@ -1971,35 +2056,11 @@ object InstanceType {
     `c6i.16xlarge`,
     `c6i.24xlarge`,
     `c6i.32xlarge`,
+    `c6i.metal`,
     `cc1.4xlarge`,
     `cc2.8xlarge`,
-    `g2.2xlarge`,
-    `g2.8xlarge`,
-    `g3.4xlarge`,
-    `g3.8xlarge`,
-    `g3.16xlarge`,
-    `g3s.xlarge`,
-    `g4ad.xlarge`,
-    `g4ad.2xlarge`,
-    `g4ad.4xlarge`,
-    `g4ad.8xlarge`,
-    `g4ad.16xlarge`,
-    `g4dn.xlarge`,
-    `g4dn.2xlarge`,
-    `g4dn.4xlarge`,
-    `g4dn.8xlarge`,
-    `g4dn.12xlarge`,
-    `g4dn.16xlarge`,
-    `g4dn.metal`,
     `cg1.4xlarge`,
-    `p2.xlarge`,
-    `p2.8xlarge`,
-    `p2.16xlarge`,
-    `p3.2xlarge`,
-    `p3.8xlarge`,
-    `p3.16xlarge`,
-    `p3dn.24xlarge`,
-    `p4d.24xlarge`,
+    `cr1.8xlarge`,
     `d2.xlarge`,
     `d2.2xlarge`,
     `d2.4xlarge`,
@@ -2018,6 +2079,97 @@ object InstanceType {
     `f1.2xlarge`,
     `f1.4xlarge`,
     `f1.16xlarge`,
+    `g2.2xlarge`,
+    `g2.8xlarge`,
+    `g3.4xlarge`,
+    `g3.8xlarge`,
+    `g3.16xlarge`,
+    `g3s.xlarge`,
+    `g4ad.xlarge`,
+    `g4ad.2xlarge`,
+    `g4ad.4xlarge`,
+    `g4ad.8xlarge`,
+    `g4ad.16xlarge`,
+    `g4dn.xlarge`,
+    `g4dn.2xlarge`,
+    `g4dn.4xlarge`,
+    `g4dn.8xlarge`,
+    `g4dn.12xlarge`,
+    `g4dn.16xlarge`,
+    `g4dn.metal`,
+    `g5.xlarge`,
+    `g5.2xlarge`,
+    `g5.4xlarge`,
+    `g5.8xlarge`,
+    `g5.12xlarge`,
+    `g5.16xlarge`,
+    `g5.24xlarge`,
+    `g5.48xlarge`,
+    `g5g.xlarge`,
+    `g5g.2xlarge`,
+    `g5g.4xlarge`,
+    `g5g.8xlarge`,
+    `g5g.16xlarge`,
+    `g5g.metal`,
+    `hi1.4xlarge`,
+    `hpc6a.48xlarge`,
+    `hs1.8xlarge`,
+    `h1.2xlarge`,
+    `h1.4xlarge`,
+    `h1.8xlarge`,
+    `h1.16xlarge`,
+    `i2.xlarge`,
+    `i2.2xlarge`,
+    `i2.4xlarge`,
+    `i2.8xlarge`,
+    `i3.large`,
+    `i3.xlarge`,
+    `i3.2xlarge`,
+    `i3.4xlarge`,
+    `i3.8xlarge`,
+    `i3.16xlarge`,
+    `i3.metal`,
+    `i3en.large`,
+    `i3en.xlarge`,
+    `i3en.2xlarge`,
+    `i3en.3xlarge`,
+    `i3en.6xlarge`,
+    `i3en.12xlarge`,
+    `i3en.24xlarge`,
+    `i3en.metal`,
+    `im4gn.large`,
+    `im4gn.xlarge`,
+    `im4gn.2xlarge`,
+    `im4gn.4xlarge`,
+    `im4gn.8xlarge`,
+    `im4gn.16xlarge`,
+    `inf1.xlarge`,
+    `inf1.2xlarge`,
+    `inf1.6xlarge`,
+    `inf1.24xlarge`,
+    `is4gen.medium`,
+    `is4gen.large`,
+    `is4gen.xlarge`,
+    `is4gen.2xlarge`,
+    `is4gen.4xlarge`,
+    `is4gen.8xlarge`,
+    `m1.small`,
+    `m1.medium`,
+    `m1.large`,
+    `m1.xlarge`,
+    `m2.xlarge`,
+    `m2.2xlarge`,
+    `m2.4xlarge`,
+    `m3.medium`,
+    `m3.large`,
+    `m3.xlarge`,
+    `m3.2xlarge`,
+    `m4.large`,
+    `m4.xlarge`,
+    `m4.2xlarge`,
+    `m4.4xlarge`,
+    `m4.10xlarge`,
+    `m4.16xlarge`,
     `m5.large`,
     `m5.xlarge`,
     `m5.2xlarge`,
@@ -2035,6 +2187,14 @@ object InstanceType {
     `m5a.12xlarge`,
     `m5a.16xlarge`,
     `m5a.24xlarge`,
+    `m5ad.large`,
+    `m5ad.xlarge`,
+    `m5ad.2xlarge`,
+    `m5ad.4xlarge`,
+    `m5ad.8xlarge`,
+    `m5ad.12xlarge`,
+    `m5ad.16xlarge`,
+    `m5ad.24xlarge`,
     `m5d.large`,
     `m5d.xlarge`,
     `m5d.2xlarge`,
@@ -2044,47 +2204,6 @@ object InstanceType {
     `m5d.16xlarge`,
     `m5d.24xlarge`,
     `m5d.metal`,
-    `m5ad.large`,
-    `m5ad.xlarge`,
-    `m5ad.2xlarge`,
-    `m5ad.4xlarge`,
-    `m5ad.8xlarge`,
-    `m5ad.12xlarge`,
-    `m5ad.16xlarge`,
-    `m5ad.24xlarge`,
-    `m5zn.large`,
-    `m5zn.xlarge`,
-    `m5zn.2xlarge`,
-    `m5zn.3xlarge`,
-    `m5zn.6xlarge`,
-    `m5zn.12xlarge`,
-    `m5zn.metal`,
-    `h1.2xlarge`,
-    `h1.4xlarge`,
-    `h1.8xlarge`,
-    `h1.16xlarge`,
-    `z1d.large`,
-    `z1d.xlarge`,
-    `z1d.2xlarge`,
-    `z1d.3xlarge`,
-    `z1d.6xlarge`,
-    `z1d.12xlarge`,
-    `z1d.metal`,
-    `u-6tb1.56xlarge`,
-    `u-6tb1.112xlarge`,
-    `u-9tb1.112xlarge`,
-    `u-12tb1.112xlarge`,
-    `u-6tb1.metal`,
-    `u-9tb1.metal`,
-    `u-12tb1.metal`,
-    `u-18tb1.metal`,
-    `u-24tb1.metal`,
-    `a1.medium`,
-    `a1.large`,
-    `a1.xlarge`,
-    `a1.2xlarge`,
-    `a1.4xlarge`,
-    `a1.metal`,
     `m5dn.large`,
     `m5dn.xlarge`,
     `m5dn.2xlarge`,
@@ -2103,28 +2222,23 @@ object InstanceType {
     `m5n.16xlarge`,
     `m5n.24xlarge`,
     `m5n.metal`,
-    `r5dn.large`,
-    `r5dn.xlarge`,
-    `r5dn.2xlarge`,
-    `r5dn.4xlarge`,
-    `r5dn.8xlarge`,
-    `r5dn.12xlarge`,
-    `r5dn.16xlarge`,
-    `r5dn.24xlarge`,
-    `r5dn.metal`,
-    `r5n.large`,
-    `r5n.xlarge`,
-    `r5n.2xlarge`,
-    `r5n.4xlarge`,
-    `r5n.8xlarge`,
-    `r5n.12xlarge`,
-    `r5n.16xlarge`,
-    `r5n.24xlarge`,
-    `r5n.metal`,
-    `inf1.xlarge`,
-    `inf1.2xlarge`,
-    `inf1.6xlarge`,
-    `inf1.24xlarge`,
+    `m5zn.large`,
+    `m5zn.xlarge`,
+    `m5zn.2xlarge`,
+    `m5zn.3xlarge`,
+    `m5zn.6xlarge`,
+    `m5zn.12xlarge`,
+    `m5zn.metal`,
+    `m6a.large`,
+    `m6a.xlarge`,
+    `m6a.2xlarge`,
+    `m6a.4xlarge`,
+    `m6a.8xlarge`,
+    `m6a.12xlarge`,
+    `m6a.16xlarge`,
+    `m6a.24xlarge`,
+    `m6a.32xlarge`,
+    `m6a.48xlarge`,
     `m6g.metal`,
     `m6g.medium`,
     `m6g.large`,
@@ -2143,16 +2257,6 @@ object InstanceType {
     `m6gd.8xlarge`,
     `m6gd.12xlarge`,
     `m6gd.16xlarge`,
-    `m6a.large`,
-    `m6a.xlarge`,
-    `m6a.2xlarge`,
-    `m6a.4xlarge`,
-    `m6a.8xlarge`,
-    `m6a.12xlarge`,
-    `m6a.16xlarge`,
-    `m6a.24xlarge`,
-    `m6a.32xlarge`,
-    `m6a.48xlarge`,
     `m6i.large`,
     `m6i.xlarge`,
     `m6i.2xlarge`,
@@ -2162,7 +2266,171 @@ object InstanceType {
     `m6i.16xlarge`,
     `m6i.24xlarge`,
     `m6i.32xlarge`,
+    `m6i.metal`,
     `mac1.metal`,
+    `p2.xlarge`,
+    `p2.8xlarge`,
+    `p2.16xlarge`,
+    `p3.2xlarge`,
+    `p3.8xlarge`,
+    `p3.16xlarge`,
+    `p3dn.24xlarge`,
+    `p4d.24xlarge`,
+    `r3.large`,
+    `r3.xlarge`,
+    `r3.2xlarge`,
+    `r3.4xlarge`,
+    `r3.8xlarge`,
+    `r4.large`,
+    `r4.xlarge`,
+    `r4.2xlarge`,
+    `r4.4xlarge`,
+    `r4.8xlarge`,
+    `r4.16xlarge`,
+    `r5.large`,
+    `r5.xlarge`,
+    `r5.2xlarge`,
+    `r5.4xlarge`,
+    `r5.8xlarge`,
+    `r5.12xlarge`,
+    `r5.16xlarge`,
+    `r5.24xlarge`,
+    `r5.metal`,
+    `r5a.large`,
+    `r5a.xlarge`,
+    `r5a.2xlarge`,
+    `r5a.4xlarge`,
+    `r5a.8xlarge`,
+    `r5a.12xlarge`,
+    `r5a.16xlarge`,
+    `r5a.24xlarge`,
+    `r5ad.large`,
+    `r5ad.xlarge`,
+    `r5ad.2xlarge`,
+    `r5ad.4xlarge`,
+    `r5ad.8xlarge`,
+    `r5ad.12xlarge`,
+    `r5ad.16xlarge`,
+    `r5ad.24xlarge`,
+    `r5b.large`,
+    `r5b.xlarge`,
+    `r5b.2xlarge`,
+    `r5b.4xlarge`,
+    `r5b.8xlarge`,
+    `r5b.12xlarge`,
+    `r5b.16xlarge`,
+    `r5b.24xlarge`,
+    `r5b.metal`,
+    `r5d.large`,
+    `r5d.xlarge`,
+    `r5d.2xlarge`,
+    `r5d.4xlarge`,
+    `r5d.8xlarge`,
+    `r5d.12xlarge`,
+    `r5d.16xlarge`,
+    `r5d.24xlarge`,
+    `r5d.metal`,
+    `r5dn.large`,
+    `r5dn.xlarge`,
+    `r5dn.2xlarge`,
+    `r5dn.4xlarge`,
+    `r5dn.8xlarge`,
+    `r5dn.12xlarge`,
+    `r5dn.16xlarge`,
+    `r5dn.24xlarge`,
+    `r5dn.metal`,
+    `r5n.large`,
+    `r5n.xlarge`,
+    `r5n.2xlarge`,
+    `r5n.4xlarge`,
+    `r5n.8xlarge`,
+    `r5n.12xlarge`,
+    `r5n.16xlarge`,
+    `r5n.24xlarge`,
+    `r5n.metal`,
+    `r6g.medium`,
+    `r6g.large`,
+    `r6g.xlarge`,
+    `r6g.2xlarge`,
+    `r6g.4xlarge`,
+    `r6g.8xlarge`,
+    `r6g.12xlarge`,
+    `r6g.16xlarge`,
+    `r6g.metal`,
+    `r6gd.medium`,
+    `r6gd.large`,
+    `r6gd.xlarge`,
+    `r6gd.2xlarge`,
+    `r6gd.4xlarge`,
+    `r6gd.8xlarge`,
+    `r6gd.12xlarge`,
+    `r6gd.16xlarge`,
+    `r6gd.metal`,
+    `r6i.large`,
+    `r6i.xlarge`,
+    `r6i.2xlarge`,
+    `r6i.4xlarge`,
+    `r6i.8xlarge`,
+    `r6i.12xlarge`,
+    `r6i.16xlarge`,
+    `r6i.24xlarge`,
+    `r6i.32xlarge`,
+    `r6i.metal`,
+    `t1.micro`,
+    `t2.nano`,
+    `t2.micro`,
+    `t2.small`,
+    `t2.medium`,
+    `t2.large`,
+    `t2.xlarge`,
+    `t2.2xlarge`,
+    `t3.nano`,
+    `t3.micro`,
+    `t3.small`,
+    `t3.medium`,
+    `t3.large`,
+    `t3.xlarge`,
+    `t3.2xlarge`,
+    `t3a.nano`,
+    `t3a.micro`,
+    `t3a.small`,
+    `t3a.medium`,
+    `t3a.large`,
+    `t3a.xlarge`,
+    `t3a.2xlarge`,
+    `t4g.nano`,
+    `t4g.micro`,
+    `t4g.small`,
+    `t4g.medium`,
+    `t4g.large`,
+    `t4g.xlarge`,
+    `t4g.2xlarge`,
+    `u-6tb1.56xlarge`,
+    `u-6tb1.112xlarge`,
+    `u-9tb1.112xlarge`,
+    `u-12tb1.112xlarge`,
+    `u-6tb1.metal`,
+    `u-9tb1.metal`,
+    `u-12tb1.metal`,
+    `u-18tb1.metal`,
+    `u-24tb1.metal`,
+    `vt1.3xlarge`,
+    `vt1.6xlarge`,
+    `vt1.24xlarge`,
+    `x1.16xlarge`,
+    `x1.32xlarge`,
+    `x1e.xlarge`,
+    `x1e.2xlarge`,
+    `x1e.4xlarge`,
+    `x1e.8xlarge`,
+    `x1e.16xlarge`,
+    `x1e.32xlarge`,
+    `x2iezn.2xlarge`,
+    `x2iezn.4xlarge`,
+    `x2iezn.6xlarge`,
+    `x2iezn.8xlarge`,
+    `x2iezn.12xlarge`,
+    `x2iezn.metal`,
     `x2gd.medium`,
     `x2gd.large`,
     `x2gd.xlarge`,
@@ -2172,35 +2440,102 @@ object InstanceType {
     `x2gd.12xlarge`,
     `x2gd.16xlarge`,
     `x2gd.metal`,
-    `vt1.3xlarge`,
-    `vt1.6xlarge`,
-    `vt1.24xlarge`,
-    `im4gn.16xlarge`,
-    `im4gn.2xlarge`,
-    `im4gn.4xlarge`,
-    `im4gn.8xlarge`,
-    `im4gn.large`,
-    `im4gn.xlarge`,
-    `is4gen.2xlarge`,
-    `is4gen.4xlarge`,
-    `is4gen.8xlarge`,
-    `is4gen.large`,
-    `is4gen.medium`,
-    `is4gen.xlarge`,
-    `g5g.xlarge`,
-    `g5g.2xlarge`,
-    `g5g.4xlarge`,
-    `g5g.8xlarge`,
-    `g5g.16xlarge`,
-    `g5g.metal`,
-    `g5.xlarge`,
-    `g5.2xlarge`,
-    `g5.4xlarge`,
-    `g5.8xlarge`,
-    `g5.12xlarge`,
-    `g5.16xlarge`,
-    `g5.24xlarge`,
-    `g5.48xlarge`
+    `z1d.large`,
+    `z1d.xlarge`,
+    `z1d.2xlarge`,
+    `z1d.3xlarge`,
+    `z1d.6xlarge`,
+    `z1d.12xlarge`,
+    `z1d.metal`,
+    `x2idn.16xlarge`,
+    `x2idn.24xlarge`,
+    `x2idn.32xlarge`,
+    `x2iedn.xlarge`,
+    `x2iedn.2xlarge`,
+    `x2iedn.4xlarge`,
+    `x2iedn.8xlarge`,
+    `x2iedn.16xlarge`,
+    `x2iedn.24xlarge`,
+    `x2iedn.32xlarge`,
+    `c6a.large`,
+    `c6a.xlarge`,
+    `c6a.2xlarge`,
+    `c6a.4xlarge`,
+    `c6a.8xlarge`,
+    `c6a.12xlarge`,
+    `c6a.16xlarge`,
+    `c6a.24xlarge`,
+    `c6a.32xlarge`,
+    `c6a.48xlarge`,
+    `c6a.metal`,
+    `m6a.metal`,
+    `i4i.large`,
+    `i4i.xlarge`,
+    `i4i.2xlarge`,
+    `i4i.4xlarge`,
+    `i4i.8xlarge`,
+    `i4i.16xlarge`,
+    `i4i.32xlarge`,
+    `i4i.metal`,
+    `x2idn.metal`,
+    `x2iedn.metal`,
+    `c7g.medium`,
+    `c7g.large`,
+    `c7g.xlarge`,
+    `c7g.2xlarge`,
+    `c7g.4xlarge`,
+    `c7g.8xlarge`,
+    `c7g.12xlarge`,
+    `c7g.16xlarge`,
+    `mac2.metal`,
+    `c6id.large`,
+    `c6id.xlarge`,
+    `c6id.2xlarge`,
+    `c6id.4xlarge`,
+    `c6id.8xlarge`,
+    `c6id.12xlarge`,
+    `c6id.16xlarge`,
+    `c6id.24xlarge`,
+    `c6id.32xlarge`,
+    `c6id.metal`,
+    `m6id.large`,
+    `m6id.xlarge`,
+    `m6id.2xlarge`,
+    `m6id.4xlarge`,
+    `m6id.8xlarge`,
+    `m6id.12xlarge`,
+    `m6id.16xlarge`,
+    `m6id.24xlarge`,
+    `m6id.32xlarge`,
+    `m6id.metal`,
+    `r6id.large`,
+    `r6id.xlarge`,
+    `r6id.2xlarge`,
+    `r6id.4xlarge`,
+    `r6id.8xlarge`,
+    `r6id.12xlarge`,
+    `r6id.16xlarge`,
+    `r6id.24xlarge`,
+    `r6id.32xlarge`,
+    `r6id.metal`,
+    `r6a.large`,
+    `r6a.xlarge`,
+    `r6a.2xlarge`,
+    `r6a.4xlarge`,
+    `r6a.8xlarge`,
+    `r6a.12xlarge`,
+    `r6a.16xlarge`,
+    `r6a.24xlarge`,
+    `r6a.32xlarge`,
+    `r6a.48xlarge`,
+    `r6a.metal`,
+    `p4de.24xlarge`,
+    `u-3tb1.56xlarge`,
+    `u-18tb1.112xlarge`,
+    `u-24tb1.112xlarge`,
+    `trn1.2xlarge`,
+    `trn1.32xlarge`,
+    `hpc6id.32xlarge`
   )
 }
 
@@ -2229,6 +2564,16 @@ object InterfaceProtocolType {
   val GRE = "GRE".asInstanceOf[InterfaceProtocolType]
 
   @inline def values: js.Array[InterfaceProtocolType] = js.Array(VLAN, GRE)
+}
+
+@js.native
+sealed trait IpAddressType extends js.Any
+object IpAddressType {
+  val ipv4 = "ipv4".asInstanceOf[IpAddressType]
+  val dualstack = "dualstack".asInstanceOf[IpAddressType]
+  val ipv6 = "ipv6".asInstanceOf[IpAddressType]
+
+  @inline def values: js.Array[IpAddressType] = js.Array(ipv4, dualstack, ipv6)
 }
 
 @js.native
@@ -2328,6 +2673,9 @@ object IpamPoolState {
   val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamPoolState]
   val `delete-complete` = "delete-complete".asInstanceOf[IpamPoolState]
   val `delete-failed` = "delete-failed".asInstanceOf[IpamPoolState]
+  val `isolate-in-progress` = "isolate-in-progress".asInstanceOf[IpamPoolState]
+  val `isolate-complete` = "isolate-complete".asInstanceOf[IpamPoolState]
+  val `restore-in-progress` = "restore-in-progress".asInstanceOf[IpamPoolState]
 
   @inline def values: js.Array[IpamPoolState] = js.Array(
     `create-in-progress`,
@@ -2338,7 +2686,10 @@ object IpamPoolState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2366,6 +2717,9 @@ object IpamScopeState {
   val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamScopeState]
   val `delete-complete` = "delete-complete".asInstanceOf[IpamScopeState]
   val `delete-failed` = "delete-failed".asInstanceOf[IpamScopeState]
+  val `isolate-in-progress` = "isolate-in-progress".asInstanceOf[IpamScopeState]
+  val `isolate-complete` = "isolate-complete".asInstanceOf[IpamScopeState]
+  val `restore-in-progress` = "restore-in-progress".asInstanceOf[IpamScopeState]
 
   @inline def values: js.Array[IpamScopeState] = js.Array(
     `create-in-progress`,
@@ -2376,7 +2730,10 @@ object IpamScopeState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2401,6 +2758,9 @@ object IpamState {
   val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamState]
   val `delete-complete` = "delete-complete".asInstanceOf[IpamState]
   val `delete-failed` = "delete-failed".asInstanceOf[IpamState]
+  val `isolate-in-progress` = "isolate-in-progress".asInstanceOf[IpamState]
+  val `isolate-complete` = "isolate-complete".asInstanceOf[IpamState]
+  val `restore-in-progress` = "restore-in-progress".asInstanceOf[IpamState]
 
   @inline def values: js.Array[IpamState] = js.Array(
     `create-in-progress`,
@@ -2411,7 +2771,10 @@ object IpamState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2425,12 +2788,30 @@ object Ipv6SupportValue {
 }
 
 @js.native
+sealed trait KeyFormat extends js.Any
+object KeyFormat {
+  val pem = "pem".asInstanceOf[KeyFormat]
+  val ppk = "ppk".asInstanceOf[KeyFormat]
+
+  @inline def values: js.Array[KeyFormat] = js.Array(pem, ppk)
+}
+
+@js.native
 sealed trait KeyType extends js.Any
 object KeyType {
   val rsa = "rsa".asInstanceOf[KeyType]
   val ed25519 = "ed25519".asInstanceOf[KeyType]
 
   @inline def values: js.Array[KeyType] = js.Array(rsa, ed25519)
+}
+
+@js.native
+sealed trait LaunchTemplateAutoRecoveryState extends js.Any
+object LaunchTemplateAutoRecoveryState {
+  val default = "default".asInstanceOf[LaunchTemplateAutoRecoveryState]
+  val disabled = "disabled".asInstanceOf[LaunchTemplateAutoRecoveryState]
+
+  @inline def values: js.Array[LaunchTemplateAutoRecoveryState] = js.Array(default, disabled)
 }
 
 @js.native
@@ -2490,6 +2871,15 @@ object LaunchTemplateInstanceMetadataProtocolIpv6 {
 }
 
 @js.native
+sealed trait LaunchTemplateInstanceMetadataTagsState extends js.Any
+object LaunchTemplateInstanceMetadataTagsState {
+  val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataTagsState]
+  val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataTagsState]
+
+  @inline def values: js.Array[LaunchTemplateInstanceMetadataTagsState] = js.Array(disabled, enabled)
+}
+
+@js.native
 sealed trait ListingState extends js.Any
 object ListingState {
   val available = "available".asInstanceOf[ListingState]
@@ -2521,6 +2911,15 @@ object LocalGatewayRouteState {
   val deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
 
   @inline def values: js.Array[LocalGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
+}
+
+@js.native
+sealed trait LocalGatewayRouteTableMode extends js.Any
+object LocalGatewayRouteTableMode {
+  val `direct-vpc-routing` = "direct-vpc-routing".asInstanceOf[LocalGatewayRouteTableMode]
+  val coip = "coip".asInstanceOf[LocalGatewayRouteTableMode]
+
+  @inline def values: js.Array[LocalGatewayRouteTableMode] = js.Array(`direct-vpc-routing`, coip)
 }
 
 @js.native
@@ -2566,8 +2965,9 @@ sealed trait LogDestinationType extends js.Any
 object LogDestinationType {
   val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
   val s3 = "s3".asInstanceOf[LogDestinationType]
+  val `kinesis-data-firehose` = "kinesis-data-firehose".asInstanceOf[LogDestinationType]
 
-  @inline def values: js.Array[LogDestinationType] = js.Array(`cloud-watch-logs`, s3)
+  @inline def values: js.Array[LogDestinationType] = js.Array(`cloud-watch-logs`, s3, `kinesis-data-firehose`)
 }
 
 @js.native
@@ -2585,6 +2985,14 @@ object MembershipType {
   val igmp = "igmp".asInstanceOf[MembershipType]
 
   @inline def values: js.Array[MembershipType] = js.Array(static, igmp)
+}
+
+@js.native
+sealed trait MetricType extends js.Any
+object MetricType {
+  val `aggregate-latency` = "aggregate-latency".asInstanceOf[MetricType]
+
+  @inline def values: js.Array[MetricType] = js.Array(`aggregate-latency`)
 }
 
 @js.native
@@ -2688,8 +3096,39 @@ object NetworkInterfaceType {
   val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
   val efa = "efa".asInstanceOf[NetworkInterfaceType]
   val trunk = "trunk".asInstanceOf[NetworkInterfaceType]
+  val load_balancer = "load_balancer".asInstanceOf[NetworkInterfaceType]
+  val network_load_balancer = "network_load_balancer".asInstanceOf[NetworkInterfaceType]
+  val vpc_endpoint = "vpc_endpoint".asInstanceOf[NetworkInterfaceType]
+  val branch = "branch".asInstanceOf[NetworkInterfaceType]
+  val transit_gateway = "transit_gateway".asInstanceOf[NetworkInterfaceType]
+  val lambda = "lambda".asInstanceOf[NetworkInterfaceType]
+  val quicksight = "quicksight".asInstanceOf[NetworkInterfaceType]
+  val global_accelerator_managed = "global_accelerator_managed".asInstanceOf[NetworkInterfaceType]
+  val api_gateway_managed = "api_gateway_managed".asInstanceOf[NetworkInterfaceType]
+  val gateway_load_balancer = "gateway_load_balancer".asInstanceOf[NetworkInterfaceType]
+  val gateway_load_balancer_endpoint = "gateway_load_balancer_endpoint".asInstanceOf[NetworkInterfaceType]
+  val iot_rules_managed = "iot_rules_managed".asInstanceOf[NetworkInterfaceType]
+  val aws_codestar_connections_managed = "aws_codestar_connections_managed".asInstanceOf[NetworkInterfaceType]
 
-  @inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa, trunk)
+  @inline def values: js.Array[NetworkInterfaceType] = js.Array(
+    interface,
+    natGateway,
+    efa,
+    trunk,
+    load_balancer,
+    network_load_balancer,
+    vpc_endpoint,
+    branch,
+    transit_gateway,
+    lambda,
+    quicksight,
+    global_accelerator_managed,
+    api_gateway_managed,
+    gateway_load_balancer,
+    gateway_load_balancer_endpoint,
+    iot_rules_managed,
+    aws_codestar_connections_managed
+  )
 }
 
 @js.native
@@ -2744,6 +3183,14 @@ object PartitionLoadFrequency {
 }
 
 @js.native
+sealed trait PayerResponsibility extends js.Any
+object PayerResponsibility {
+  val ServiceOwner = "ServiceOwner".asInstanceOf[PayerResponsibility]
+
+  @inline def values: js.Array[PayerResponsibility] = js.Array(ServiceOwner)
+}
+
+@js.native
 sealed trait PaymentOption extends js.Any
 object PaymentOption {
   val AllUpfront = "AllUpfront".asInstanceOf[PaymentOption]
@@ -2751,6 +3198,19 @@ object PaymentOption {
   val NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
 
   @inline def values: js.Array[PaymentOption] = js.Array(AllUpfront, PartialUpfront, NoUpfront)
+}
+
+@js.native
+sealed trait PeriodType extends js.Any
+object PeriodType {
+  val `five-minutes` = "five-minutes".asInstanceOf[PeriodType]
+  val `fifteen-minutes` = "fifteen-minutes".asInstanceOf[PeriodType]
+  val `one-hour` = "one-hour".asInstanceOf[PeriodType]
+  val `three-hours` = "three-hours".asInstanceOf[PeriodType]
+  val `one-day` = "one-day".asInstanceOf[PeriodType]
+  val `one-week` = "one-week".asInstanceOf[PeriodType]
+
+  @inline def values: js.Array[PeriodType] = js.Array(`five-minutes`, `fifteen-minutes`, `one-hour`, `three-hours`, `one-day`, `one-week`)
 }
 
 @js.native
@@ -2994,6 +3454,7 @@ object ResourceType {
   val `client-vpn-endpoint` = "client-vpn-endpoint".asInstanceOf[ResourceType]
   val `customer-gateway` = "customer-gateway".asInstanceOf[ResourceType]
   val `carrier-gateway` = "carrier-gateway".asInstanceOf[ResourceType]
+  val `coip-pool` = "coip-pool".asInstanceOf[ResourceType]
   val `dedicated-host` = "dedicated-host".asInstanceOf[ResourceType]
   val `dhcp-options` = "dhcp-options".asInstanceOf[ResourceType]
   val `egress-only-internet-gateway` = "egress-only-internet-gateway".asInstanceOf[ResourceType]
@@ -3041,6 +3502,7 @@ object ResourceType {
   val `spot-fleet-request` = "spot-fleet-request".asInstanceOf[ResourceType]
   val `spot-instances-request` = "spot-instances-request".asInstanceOf[ResourceType]
   val subnet = "subnet".asInstanceOf[ResourceType]
+  val `subnet-cidr-reservation` = "subnet-cidr-reservation".asInstanceOf[ResourceType]
   val `traffic-mirror-filter` = "traffic-mirror-filter".asInstanceOf[ResourceType]
   val `traffic-mirror-session` = "traffic-mirror-session".asInstanceOf[ResourceType]
   val `traffic-mirror-target` = "traffic-mirror-target".asInstanceOf[ResourceType]
@@ -3048,21 +3510,35 @@ object ResourceType {
   val `transit-gateway-attachment` = "transit-gateway-attachment".asInstanceOf[ResourceType]
   val `transit-gateway-connect-peer` = "transit-gateway-connect-peer".asInstanceOf[ResourceType]
   val `transit-gateway-multicast-domain` = "transit-gateway-multicast-domain".asInstanceOf[ResourceType]
+  val `transit-gateway-policy-table` = "transit-gateway-policy-table".asInstanceOf[ResourceType]
   val `transit-gateway-route-table` = "transit-gateway-route-table".asInstanceOf[ResourceType]
+  val `transit-gateway-route-table-announcement` = "transit-gateway-route-table-announcement".asInstanceOf[ResourceType]
   val volume = "volume".asInstanceOf[ResourceType]
   val vpc = "vpc".asInstanceOf[ResourceType]
   val `vpc-endpoint` = "vpc-endpoint".asInstanceOf[ResourceType]
+  val `vpc-endpoint-connection` = "vpc-endpoint-connection".asInstanceOf[ResourceType]
   val `vpc-endpoint-service` = "vpc-endpoint-service".asInstanceOf[ResourceType]
+  val `vpc-endpoint-service-permission` = "vpc-endpoint-service-permission".asInstanceOf[ResourceType]
   val `vpc-peering-connection` = "vpc-peering-connection".asInstanceOf[ResourceType]
   val `vpn-connection` = "vpn-connection".asInstanceOf[ResourceType]
   val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
   val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
+  val `capacity-reservation-fleet` = "capacity-reservation-fleet".asInstanceOf[ResourceType]
+  val `traffic-mirror-filter-rule` = "traffic-mirror-filter-rule".asInstanceOf[ResourceType]
+  val `vpc-endpoint-connection-device-type` = "vpc-endpoint-connection-device-type".asInstanceOf[ResourceType]
+  val `verified-access-instance` = "verified-access-instance".asInstanceOf[ResourceType]
+  val `verified-access-group` = "verified-access-group".asInstanceOf[ResourceType]
+  val `verified-access-endpoint` = "verified-access-endpoint".asInstanceOf[ResourceType]
+  val `verified-access-policy` = "verified-access-policy".asInstanceOf[ResourceType]
+  val `verified-access-trust-provider` = "verified-access-trust-provider".asInstanceOf[ResourceType]
+  val `vpn-connection-device-type` = "vpn-connection-device-type".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
     `capacity-reservation`,
     `client-vpn-endpoint`,
     `customer-gateway`,
     `carrier-gateway`,
+    `coip-pool`,
     `dedicated-host`,
     `dhcp-options`,
     `egress-only-internet-gateway`,
@@ -3110,6 +3586,7 @@ object ResourceType {
     `spot-fleet-request`,
     `spot-instances-request`,
     subnet,
+    `subnet-cidr-reservation`,
     `traffic-mirror-filter`,
     `traffic-mirror-session`,
     `traffic-mirror-target`,
@@ -3117,15 +3594,28 @@ object ResourceType {
     `transit-gateway-attachment`,
     `transit-gateway-connect-peer`,
     `transit-gateway-multicast-domain`,
+    `transit-gateway-policy-table`,
     `transit-gateway-route-table`,
+    `transit-gateway-route-table-announcement`,
     volume,
     vpc,
     `vpc-endpoint`,
+    `vpc-endpoint-connection`,
     `vpc-endpoint-service`,
+    `vpc-endpoint-service-permission`,
     `vpc-peering-connection`,
     `vpn-connection`,
     `vpn-gateway`,
-    `vpc-flow-log`
+    `vpc-flow-log`,
+    `capacity-reservation-fleet`,
+    `traffic-mirror-filter-rule`,
+    `vpc-endpoint-connection-device-type`,
+    `verified-access-instance`,
+    `verified-access-group`,
+    `verified-access-endpoint`,
+    `verified-access-policy`,
+    `verified-access-trust-provider`,
+    `vpn-connection-device-type`
   )
 }
 
@@ -3188,6 +3678,15 @@ object SelfServicePortal {
 }
 
 @js.native
+sealed trait ServiceConnectivityType extends js.Any
+object ServiceConnectivityType {
+  val ipv4 = "ipv4".asInstanceOf[ServiceConnectivityType]
+  val ipv6 = "ipv6".asInstanceOf[ServiceConnectivityType]
+
+  @inline def values: js.Array[ServiceConnectivityType] = js.Array(ipv4, ipv6)
+}
+
+@js.native
 sealed trait ServiceState extends js.Any
 object ServiceState {
   val Pending = "Pending".asInstanceOf[ServiceState]
@@ -3246,8 +3745,9 @@ object SpotAllocationStrategy {
   val diversified = "diversified".asInstanceOf[SpotAllocationStrategy]
   val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
   val `capacity-optimized-prioritized` = "capacity-optimized-prioritized".asInstanceOf[SpotAllocationStrategy]
+  val `price-capacity-optimized` = "price-capacity-optimized".asInstanceOf[SpotAllocationStrategy]
 
-  @inline def values: js.Array[SpotAllocationStrategy] = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`)
+  @inline def values: js.Array[SpotAllocationStrategy] = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`, `price-capacity-optimized`)
 }
 
 @js.native
@@ -3282,6 +3782,15 @@ object SpotInstanceType {
 }
 
 @js.native
+sealed trait SpreadLevel extends js.Any
+object SpreadLevel {
+  val host = "host".asInstanceOf[SpreadLevel]
+  val rack = "rack".asInstanceOf[SpreadLevel]
+
+  @inline def values: js.Array[SpreadLevel] = js.Array(host, rack)
+}
+
+@js.native
 sealed trait State extends js.Any
 object State {
   val PendingAcceptance = "PendingAcceptance".asInstanceOf[State]
@@ -3303,6 +3812,14 @@ object StaticSourcesSupportValue {
   val disable = "disable".asInstanceOf[StaticSourcesSupportValue]
 
   @inline def values: js.Array[StaticSourcesSupportValue] = js.Array(enable, disable)
+}
+
+@js.native
+sealed trait StatisticType extends js.Any
+object StatisticType {
+  val p50 = "p50".asInstanceOf[StatisticType]
+
+  @inline def values: js.Array[StatisticType] = js.Array(p50)
 }
 
 @js.native
@@ -3450,6 +3967,14 @@ object TieringOperationStatus {
 }
 
 @js.native
+sealed trait TpmSupportValues extends js.Any
+object TpmSupportValues {
+  val `v2.0` = "v2.0".asInstanceOf[TpmSupportValues]
+
+  @inline def values: js.Array[TpmSupportValues] = js.Array(`v2.0`)
+}
+
+@js.native
 sealed trait TrafficDirection extends js.Any
 object TrafficDirection {
   val ingress = "ingress".asInstanceOf[TrafficDirection]
@@ -3501,8 +4026,9 @@ sealed trait TrafficMirrorTargetType extends js.Any
 object TrafficMirrorTargetType {
   val `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
   val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
+  val `gateway-load-balancer-endpoint` = "gateway-load-balancer-endpoint".asInstanceOf[TrafficMirrorTargetType]
 
-  @inline def values: js.Array[TrafficMirrorTargetType] = js.Array(`network-interface`, `network-load-balancer`)
+  @inline def values: js.Array[TrafficMirrorTargetType] = js.Array(`network-interface`, `network-load-balancer`, `gateway-load-balancer-endpoint`)
 }
 
 @js.native
@@ -3596,6 +4122,17 @@ object TransitGatewayMulticastDomainState {
 }
 
 @js.native
+sealed trait TransitGatewayPolicyTableState extends js.Any
+object TransitGatewayPolicyTableState {
+  val pending = "pending".asInstanceOf[TransitGatewayPolicyTableState]
+  val available = "available".asInstanceOf[TransitGatewayPolicyTableState]
+  val deleting = "deleting".asInstanceOf[TransitGatewayPolicyTableState]
+  val deleted = "deleted".asInstanceOf[TransitGatewayPolicyTableState]
+
+  @inline def values: js.Array[TransitGatewayPolicyTableState] = js.Array(pending, available, deleting, deleted)
+}
+
+@js.native
 sealed trait TransitGatewayPrefixListReferenceState extends js.Any
 object TransitGatewayPrefixListReferenceState {
   val pending = "pending".asInstanceOf[TransitGatewayPrefixListReferenceState]
@@ -3627,6 +4164,28 @@ object TransitGatewayRouteState {
   val deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
 
   @inline def values: js.Array[TransitGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
+}
+
+@js.native
+sealed trait TransitGatewayRouteTableAnnouncementDirection extends js.Any
+object TransitGatewayRouteTableAnnouncementDirection {
+  val outgoing = "outgoing".asInstanceOf[TransitGatewayRouteTableAnnouncementDirection]
+  val incoming = "incoming".asInstanceOf[TransitGatewayRouteTableAnnouncementDirection]
+
+  @inline def values: js.Array[TransitGatewayRouteTableAnnouncementDirection] = js.Array(outgoing, incoming)
+}
+
+@js.native
+sealed trait TransitGatewayRouteTableAnnouncementState extends js.Any
+object TransitGatewayRouteTableAnnouncementState {
+  val available = "available".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+  val pending = "pending".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+  val failing = "failing".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+  val failed = "failed".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+  val deleting = "deleting".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+  val deleted = "deleted".asInstanceOf[TransitGatewayRouteTableAnnouncementState]
+
+  @inline def values: js.Array[TransitGatewayRouteTableAnnouncementState] = js.Array(available, pending, failing, failed, deleting, deleted)
 }
 
 @js.native
@@ -3671,6 +4230,15 @@ object TransportProtocol {
 }
 
 @js.native
+sealed trait TrustProviderType extends js.Any
+object TrustProviderType {
+  val user = "user".asInstanceOf[TrustProviderType]
+  val device = "device".asInstanceOf[TrustProviderType]
+
+  @inline def values: js.Array[TrustProviderType] = js.Array(user, device)
+}
+
+@js.native
 sealed trait TunnelInsideIpVersion extends js.Any
 object TunnelInsideIpVersion {
   val ipv4 = "ipv4".asInstanceOf[TunnelInsideIpVersion]
@@ -3708,6 +4276,62 @@ object UsageClassType {
   val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
   @inline def values: js.Array[UsageClassType] = js.Array(spot, `on-demand`)
+}
+
+@js.native
+sealed trait UserTrustProviderType extends js.Any
+object UserTrustProviderType {
+  val `iam-identity-center` = "iam-identity-center".asInstanceOf[UserTrustProviderType]
+  val oidc = "oidc".asInstanceOf[UserTrustProviderType]
+
+  @inline def values: js.Array[UserTrustProviderType] = js.Array(`iam-identity-center`, oidc)
+}
+
+@js.native
+sealed trait VerifiedAccessEndpointAttachmentType extends js.Any
+object VerifiedAccessEndpointAttachmentType {
+  val vpc = "vpc".asInstanceOf[VerifiedAccessEndpointAttachmentType]
+
+  @inline def values: js.Array[VerifiedAccessEndpointAttachmentType] = js.Array(vpc)
+}
+
+@js.native
+sealed trait VerifiedAccessEndpointProtocol extends js.Any
+object VerifiedAccessEndpointProtocol {
+  val http = "http".asInstanceOf[VerifiedAccessEndpointProtocol]
+  val https = "https".asInstanceOf[VerifiedAccessEndpointProtocol]
+
+  @inline def values: js.Array[VerifiedAccessEndpointProtocol] = js.Array(http, https)
+}
+
+@js.native
+sealed trait VerifiedAccessEndpointStatusCode extends js.Any
+object VerifiedAccessEndpointStatusCode {
+  val pending = "pending".asInstanceOf[VerifiedAccessEndpointStatusCode]
+  val active = "active".asInstanceOf[VerifiedAccessEndpointStatusCode]
+  val updating = "updating".asInstanceOf[VerifiedAccessEndpointStatusCode]
+  val deleting = "deleting".asInstanceOf[VerifiedAccessEndpointStatusCode]
+  val deleted = "deleted".asInstanceOf[VerifiedAccessEndpointStatusCode]
+
+  @inline def values: js.Array[VerifiedAccessEndpointStatusCode] = js.Array(pending, active, updating, deleting, deleted)
+}
+
+@js.native
+sealed trait VerifiedAccessEndpointType extends js.Any
+object VerifiedAccessEndpointType {
+  val `load-balancer` = "load-balancer".asInstanceOf[VerifiedAccessEndpointType]
+  val `network-interface` = "network-interface".asInstanceOf[VerifiedAccessEndpointType]
+
+  @inline def values: js.Array[VerifiedAccessEndpointType] = js.Array(`load-balancer`, `network-interface`)
+}
+
+@js.native
+sealed trait VerifiedAccessLogDeliveryStatusCode extends js.Any
+object VerifiedAccessLogDeliveryStatusCode {
+  val success = "success".asInstanceOf[VerifiedAccessLogDeliveryStatusCode]
+  val failed = "failed".asInstanceOf[VerifiedAccessLogDeliveryStatusCode]
+
+  @inline def values: js.Array[VerifiedAccessLogDeliveryStatusCode] = js.Array(success, failed)
 }
 
 @js.native
@@ -3802,8 +4426,9 @@ sealed trait VpcAttributeName extends js.Any
 object VpcAttributeName {
   val enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
   val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
+  val enableNetworkAddressUsageMetrics = "enableNetworkAddressUsageMetrics".asInstanceOf[VpcAttributeName]
 
-  @inline def values: js.Array[VpcAttributeName] = js.Array(enableDnsSupport, enableDnsHostnames)
+  @inline def values: js.Array[VpcAttributeName] = js.Array(enableDnsSupport, enableDnsHostnames, enableNetworkAddressUsageMetrics)
 }
 
 @js.native

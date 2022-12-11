@@ -22,6 +22,8 @@ package object rekognition {
   type CompareFacesMatchList = js.Array[CompareFacesMatch]
   type CompareFacesUnmatchList = js.Array[ComparedFace]
   type ComparedFaceList = js.Array[ComparedFace]
+  type ConnectedHomeLabel = String
+  type ConnectedHomeLabels = js.Array[ConnectedHomeLabel]
   type ContentClassifiers = js.Array[ContentClassifier]
   type ContentModerationDetections = js.Array[ContentModerationDetection]
   type CustomLabels = js.Array[CustomLabel]
@@ -34,7 +36,10 @@ package object rekognition {
   type DatasetMetadataList = js.Array[DatasetMetadata]
   type DateTime = js.Date
   type Degree = Float
+  type DetectLabelsFeatureList = js.Array[DetectLabelsFeatureName]
+  type DetectLabelsMaxDominantColors = Int
   type DistributeDatasetMetadataList = js.Array[DistributeDataset]
+  type DominantColors = js.Array[DominantColor]
   type Emotions = js.Array[Emotion]
   type EquipmentDetections = js.Array[EquipmentDetection]
   type ExtendedPaginationToken = String
@@ -48,6 +53,8 @@ package object rekognition {
   type FaceModelVersionList = js.Array[String]
   type FaceRecordList = js.Array[FaceRecord]
   type FlowDefinitionArn = String
+  type GeneralLabelsFilterList = js.Array[GeneralLabelsFilterValue]
+  type GeneralLabelsFilterValue = String
   type GroundTruthBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type HasErrors = Boolean
   type HumanLoopActivationConditionsEvaluationResults = String
@@ -57,6 +64,7 @@ package object rekognition {
   type HumanLoopName = String
   type ImageBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ImageId = String
+  type IndexFacesModelVersion = String
   type InferenceUnits = Int
   type Instances = js.Array[Instance]
   type IsLabeled = Boolean
@@ -64,12 +72,17 @@ package object rekognition {
   type JobTag = String
   type KinesisDataArn = String
   type KinesisVideoArn = String
+  type KinesisVideoStreamFragmentNumber = String
   type KmsKeyId = String
+  type LabelAliases = js.Array[LabelAlias]
+  type LabelCategories = js.Array[LabelCategory]
   type LabelDetections = js.Array[LabelDetection]
   type Labels = js.Array[Label]
   type Landmarks = js.Array[Landmark]
   type ListDatasetEntriesPageSize = Int
   type ListDatasetLabelsPageSize = Int
+  type ListProjectPoliciesPageSize = Int
+  type MaxDurationInSecondsULong = Double
   type MaxFaces = Int
   type MaxFacesToIndex = Int
   type MaxPixelThreshold = Float
@@ -88,6 +101,10 @@ package object rekognition {
   type ProjectDescriptions = js.Array[ProjectDescription]
   type ProjectName = String
   type ProjectNames = js.Array[ProjectName]
+  type ProjectPolicies = js.Array[ProjectPolicy]
+  type ProjectPolicyDocument = String
+  type ProjectPolicyName = String
+  type ProjectPolicyRevisionId = String
   type ProjectVersionArn = String
   type ProjectVersionDescriptions = js.Array[ProjectVersionDescription]
   type ProjectVersionsPageSize = Int
@@ -110,10 +127,12 @@ package object rekognition {
   type SegmentDetections = js.Array[SegmentDetection]
   type SegmentTypes = js.Array[SegmentType]
   type SegmentTypesInfo = js.Array[SegmentTypeInfo]
+  type StartStreamProcessorSessionId = String
   type StatusMessage = String
   type StreamProcessorArn = String
   type StreamProcessorList = js.Array[StreamProcessor]
   type StreamProcessorName = String
+  type StreamProcessorParametersToDelete = js.Array[StreamProcessorParameterToDelete]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
@@ -134,6 +153,7 @@ package object rekognition {
   final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] = service.compareFaces(params).promise().toFuture
+    @inline def copyProjectVersionFuture(params: CopyProjectVersionRequest): Future[CopyProjectVersionResponse] = service.copyProjectVersion(params).promise().toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] = service.createCollection(params).promise().toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
@@ -143,6 +163,7 @@ package object rekognition {
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
     @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] = service.deleteFaces(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def deleteProjectPolicyFuture(params: DeleteProjectPolicyRequest): Future[DeleteProjectPolicyResponse] = service.deleteProjectPolicy(params).promise().toFuture
     @inline def deleteProjectVersionFuture(params: DeleteProjectVersionRequest): Future[DeleteProjectVersionResponse] = service.deleteProjectVersion(params).promise().toFuture
     @inline def deleteStreamProcessorFuture(params: DeleteStreamProcessorRequest): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
     @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] = service.describeCollection(params).promise().toFuture
@@ -171,8 +192,10 @@ package object rekognition {
     @inline def listDatasetEntriesFuture(params: ListDatasetEntriesRequest): Future[ListDatasetEntriesResponse] = service.listDatasetEntries(params).promise().toFuture
     @inline def listDatasetLabelsFuture(params: ListDatasetLabelsRequest): Future[ListDatasetLabelsResponse] = service.listDatasetLabels(params).promise().toFuture
     @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] = service.listFaces(params).promise().toFuture
+    @inline def listProjectPoliciesFuture(params: ListProjectPoliciesRequest): Future[ListProjectPoliciesResponse] = service.listProjectPolicies(params).promise().toFuture
     @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] = service.listStreamProcessors(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putProjectPolicyFuture(params: PutProjectPolicyRequest): Future[PutProjectPolicyResponse] = service.putProjectPolicy(params).promise().toFuture
     @inline def recognizeCelebritiesFuture(params: RecognizeCelebritiesRequest): Future[RecognizeCelebritiesResponse] = service.recognizeCelebrities(params).promise().toFuture
     @inline def searchFacesByImageFuture(params: SearchFacesByImageRequest): Future[SearchFacesByImageResponse] = service.searchFacesByImage(params).promise().toFuture
     @inline def searchFacesFuture(params: SearchFacesRequest): Future[SearchFacesResponse] = service.searchFaces(params).promise().toFuture
@@ -191,6 +214,7 @@ package object rekognition {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDatasetEntriesFuture(params: UpdateDatasetEntriesRequest): Future[UpdateDatasetEntriesResponse] = service.updateDatasetEntries(params).promise().toFuture
+    @inline def updateStreamProcessorFuture(params: UpdateStreamProcessorRequest): Future[UpdateStreamProcessorResponse] = service.updateStreamProcessor(params).promise().toFuture
 
   }
 
@@ -200,6 +224,7 @@ package object rekognition {
     def this(config: AWSConfig) = this()
 
     def compareFaces(params: CompareFacesRequest): Request[CompareFacesResponse] = js.native
+    def copyProjectVersion(params: CopyProjectVersionRequest): Request[CopyProjectVersionResponse] = js.native
     def createCollection(params: CreateCollectionRequest): Request[CreateCollectionResponse] = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
@@ -209,6 +234,7 @@ package object rekognition {
     def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def deleteFaces(params: DeleteFacesRequest): Request[DeleteFacesResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
+    def deleteProjectPolicy(params: DeleteProjectPolicyRequest): Request[DeleteProjectPolicyResponse] = js.native
     def deleteProjectVersion(params: DeleteProjectVersionRequest): Request[DeleteProjectVersionResponse] = js.native
     def deleteStreamProcessor(params: DeleteStreamProcessorRequest): Request[DeleteStreamProcessorResponse] = js.native
     def describeCollection(params: DescribeCollectionRequest): Request[DescribeCollectionResponse] = js.native
@@ -237,8 +263,10 @@ package object rekognition {
     def listDatasetEntries(params: ListDatasetEntriesRequest): Request[ListDatasetEntriesResponse] = js.native
     def listDatasetLabels(params: ListDatasetLabelsRequest): Request[ListDatasetLabelsResponse] = js.native
     def listFaces(params: ListFacesRequest): Request[ListFacesResponse] = js.native
+    def listProjectPolicies(params: ListProjectPoliciesRequest): Request[ListProjectPoliciesResponse] = js.native
     def listStreamProcessors(params: ListStreamProcessorsRequest): Request[ListStreamProcessorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putProjectPolicy(params: PutProjectPolicyRequest): Request[PutProjectPolicyResponse] = js.native
     def recognizeCelebrities(params: RecognizeCelebritiesRequest): Request[RecognizeCelebritiesResponse] = js.native
     def searchFaces(params: SearchFacesRequest): Request[SearchFacesResponse] = js.native
     def searchFacesByImage(params: SearchFacesByImageRequest): Request[SearchFacesByImageResponse] = js.native
@@ -257,6 +285,7 @@ package object rekognition {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatasetEntries(params: UpdateDatasetEntriesRequest): Request[UpdateDatasetEntriesResponse] = js.native
+    def updateStreamProcessor(params: UpdateStreamProcessorRequest): Request[UpdateStreamProcessorResponse] = js.native
   }
   object Rekognition {
     @inline implicit def toOps(service: Rekognition): RekognitionOps = {
@@ -372,7 +401,7 @@ package object rekognition {
     }
   }
 
-  /** Identifies the bounding box around the label, face, text or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200). The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
+  /** Identifies the bounding box around the label, face, text, object of interest, or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200). The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     *
     * '''Note:'''The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values.
     */
@@ -624,6 +653,50 @@ package object rekognition {
     }
   }
 
+  /** Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <a>CreateStreamProcessor</a>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary.
+    */
+  @js.native
+  trait ConnectedHomeSettings extends js.Object {
+    var Labels: ConnectedHomeLabels
+    var MinConfidence: js.UndefOr[Percent]
+  }
+
+  object ConnectedHomeSettings {
+    @inline
+    def apply(
+        Labels: ConnectedHomeLabels,
+        MinConfidence: js.UndefOr[Percent] = js.undefined
+    ): ConnectedHomeSettings = {
+      val __obj = js.Dynamic.literal(
+        "Labels" -> Labels.asInstanceOf[js.Any]
+      )
+
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectedHomeSettings]
+    }
+  }
+
+  /** The label detection settings you want to use in your stream processor. This includes the labels you want the stream processor to detect and the minimum confidence level allowed to label objects.
+    */
+  @js.native
+  trait ConnectedHomeSettingsForUpdate extends js.Object {
+    var Labels: js.UndefOr[ConnectedHomeLabels]
+    var MinConfidence: js.UndefOr[Percent]
+  }
+
+  object ConnectedHomeSettingsForUpdate {
+    @inline
+    def apply(
+        Labels: js.UndefOr[ConnectedHomeLabels] = js.undefined,
+        MinConfidence: js.UndefOr[Percent] = js.undefined
+    ): ConnectedHomeSettingsForUpdate = {
+      val __obj = js.Dynamic.literal()
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectedHomeSettingsForUpdate]
+    }
+  }
+
   /** Information about an inappropriate, unwanted, or offensive content label detection in a stored video.
     */
   @js.native
@@ -642,6 +715,58 @@ package object rekognition {
       ModerationLabel.foreach(__v => __obj.updateDynamic("ModerationLabel")(__v.asInstanceOf[js.Any]))
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContentModerationDetection]
+    }
+  }
+
+  @js.native
+  trait CopyProjectVersionRequest extends js.Object {
+    var DestinationProjectArn: ProjectArn
+    var OutputConfig: OutputConfig
+    var SourceProjectArn: ProjectArn
+    var SourceProjectVersionArn: ProjectVersionArn
+    var VersionName: VersionName
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CopyProjectVersionRequest {
+    @inline
+    def apply(
+        DestinationProjectArn: ProjectArn,
+        OutputConfig: OutputConfig,
+        SourceProjectArn: ProjectArn,
+        SourceProjectVersionArn: ProjectVersionArn,
+        VersionName: VersionName,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CopyProjectVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationProjectArn" -> DestinationProjectArn.asInstanceOf[js.Any],
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
+        "SourceProjectArn" -> SourceProjectArn.asInstanceOf[js.Any],
+        "SourceProjectVersionArn" -> SourceProjectVersionArn.asInstanceOf[js.Any],
+        "VersionName" -> VersionName.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyProjectVersionRequest]
+    }
+  }
+
+  @js.native
+  trait CopyProjectVersionResponse extends js.Object {
+    var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
+  }
+
+  object CopyProjectVersionResponse {
+    @inline
+    def apply(
+        ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined
+    ): CopyProjectVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyProjectVersionResponse]
     }
   }
 
@@ -841,6 +966,10 @@ package object rekognition {
     var Output: StreamProcessorOutput
     var RoleArn: RoleArn
     var Settings: StreamProcessorSettings
+    var DataSharingPreference: js.UndefOr[StreamProcessorDataSharingPreference]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var NotificationChannel: js.UndefOr[StreamProcessorNotificationChannel]
+    var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -852,6 +981,10 @@ package object rekognition {
         Output: StreamProcessorOutput,
         RoleArn: RoleArn,
         Settings: StreamProcessorSettings,
+        DataSharingPreference: js.UndefOr[StreamProcessorDataSharingPreference] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        NotificationChannel: js.UndefOr[StreamProcessorNotificationChannel] = js.undefined,
+        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateStreamProcessorRequest = {
       val __obj = js.Dynamic.literal(
@@ -862,6 +995,10 @@ package object rekognition {
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
+      DataSharingPreference.foreach(__v => __obj.updateDynamic("DataSharingPreference")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamProcessorRequest]
     }
@@ -1180,6 +1317,41 @@ package object rekognition {
   }
 
   @js.native
+  trait DeleteProjectPolicyRequest extends js.Object {
+    var PolicyName: ProjectPolicyName
+    var ProjectArn: ProjectArn
+    var PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId]
+  }
+
+  object DeleteProjectPolicyRequest {
+    @inline
+    def apply(
+        PolicyName: ProjectPolicyName,
+        ProjectArn: ProjectArn,
+        PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId] = js.undefined
+    ): DeleteProjectPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteProjectPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteProjectPolicyResponse extends js.Object
+
+  object DeleteProjectPolicyResponse {
+    @inline
+    def apply(): DeleteProjectPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteProjectPolicyResponse]
+    }
+  }
+
+  @js.native
   trait DeleteProjectRequest extends js.Object {
     var ProjectArn: ProjectArn
   }
@@ -1455,10 +1627,14 @@ package object rekognition {
   @js.native
   trait DescribeStreamProcessorResponse extends js.Object {
     var CreationTimestamp: js.UndefOr[DateTime]
+    var DataSharingPreference: js.UndefOr[StreamProcessorDataSharingPreference]
     var Input: js.UndefOr[StreamProcessorInput]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var LastUpdateTimestamp: js.UndefOr[DateTime]
     var Name: js.UndefOr[StreamProcessorName]
+    var NotificationChannel: js.UndefOr[StreamProcessorNotificationChannel]
     var Output: js.UndefOr[StreamProcessorOutput]
+    var RegionsOfInterest: js.UndefOr[RegionsOfInterest]
     var RoleArn: js.UndefOr[RoleArn]
     var Settings: js.UndefOr[StreamProcessorSettings]
     var Status: js.UndefOr[StreamProcessorStatus]
@@ -1470,10 +1646,14 @@ package object rekognition {
     @inline
     def apply(
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        DataSharingPreference: js.UndefOr[StreamProcessorDataSharingPreference] = js.undefined,
         Input: js.UndefOr[StreamProcessorInput] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LastUpdateTimestamp: js.UndefOr[DateTime] = js.undefined,
         Name: js.UndefOr[StreamProcessorName] = js.undefined,
+        NotificationChannel: js.UndefOr[StreamProcessorNotificationChannel] = js.undefined,
         Output: js.UndefOr[StreamProcessorOutput] = js.undefined,
+        RegionsOfInterest: js.UndefOr[RegionsOfInterest] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         Settings: js.UndefOr[StreamProcessorSettings] = js.undefined,
         Status: js.UndefOr[StreamProcessorStatus] = js.undefined,
@@ -1482,10 +1662,14 @@ package object rekognition {
     ): DescribeStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      DataSharingPreference.foreach(__v => __obj.updateDynamic("DataSharingPreference")(__v.asInstanceOf[js.Any]))
       Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      RegionsOfInterest.foreach(__v => __obj.updateDynamic("RegionsOfInterest")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1578,32 +1762,150 @@ package object rekognition {
     }
   }
 
+  /** The background of the image with regard to image quality and dominant colors.
+    */
+  @js.native
+  trait DetectLabelsImageBackground extends js.Object {
+    var DominantColors: js.UndefOr[DominantColors]
+    var Quality: js.UndefOr[DetectLabelsImageQuality]
+  }
+
+  object DetectLabelsImageBackground {
+    @inline
+    def apply(
+        DominantColors: js.UndefOr[DominantColors] = js.undefined,
+        Quality: js.UndefOr[DetectLabelsImageQuality] = js.undefined
+    ): DetectLabelsImageBackground = {
+      val __obj = js.Dynamic.literal()
+      DominantColors.foreach(__v => __obj.updateDynamic("DominantColors")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsImageBackground]
+    }
+  }
+
+  /** The foreground of the image with regard to image quality and dominant colors.
+    */
+  @js.native
+  trait DetectLabelsImageForeground extends js.Object {
+    var DominantColors: js.UndefOr[DominantColors]
+    var Quality: js.UndefOr[DetectLabelsImageQuality]
+  }
+
+  object DetectLabelsImageForeground {
+    @inline
+    def apply(
+        DominantColors: js.UndefOr[DominantColors] = js.undefined,
+        Quality: js.UndefOr[DetectLabelsImageQuality] = js.undefined
+    ): DetectLabelsImageForeground = {
+      val __obj = js.Dynamic.literal()
+      DominantColors.foreach(__v => __obj.updateDynamic("DominantColors")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsImageForeground]
+    }
+  }
+
+  /** Information about the quality and dominant colors of an input image. Quality and color information is returned for the entire image, foreground, and background.
+    */
+  @js.native
+  trait DetectLabelsImageProperties extends js.Object {
+    var Background: js.UndefOr[DetectLabelsImageBackground]
+    var DominantColors: js.UndefOr[DominantColors]
+    var Foreground: js.UndefOr[DetectLabelsImageForeground]
+    var Quality: js.UndefOr[DetectLabelsImageQuality]
+  }
+
+  object DetectLabelsImageProperties {
+    @inline
+    def apply(
+        Background: js.UndefOr[DetectLabelsImageBackground] = js.undefined,
+        DominantColors: js.UndefOr[DominantColors] = js.undefined,
+        Foreground: js.UndefOr[DetectLabelsImageForeground] = js.undefined,
+        Quality: js.UndefOr[DetectLabelsImageQuality] = js.undefined
+    ): DetectLabelsImageProperties = {
+      val __obj = js.Dynamic.literal()
+      Background.foreach(__v => __obj.updateDynamic("Background")(__v.asInstanceOf[js.Any]))
+      DominantColors.foreach(__v => __obj.updateDynamic("DominantColors")(__v.asInstanceOf[js.Any]))
+      Foreground.foreach(__v => __obj.updateDynamic("Foreground")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsImageProperties]
+    }
+  }
+
+  /** Settings for the IMAGE_PROPERTIES feature type.
+    */
+  @js.native
+  trait DetectLabelsImagePropertiesSettings extends js.Object {
+    var MaxDominantColors: js.UndefOr[DetectLabelsMaxDominantColors]
+  }
+
+  object DetectLabelsImagePropertiesSettings {
+    @inline
+    def apply(
+        MaxDominantColors: js.UndefOr[DetectLabelsMaxDominantColors] = js.undefined
+    ): DetectLabelsImagePropertiesSettings = {
+      val __obj = js.Dynamic.literal()
+      MaxDominantColors.foreach(__v => __obj.updateDynamic("MaxDominantColors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsImagePropertiesSettings]
+    }
+  }
+
+  /** The quality of an image provided for label detection, with regard to brightness, sharpness, and contrast.
+    */
+  @js.native
+  trait DetectLabelsImageQuality extends js.Object {
+    var Brightness: js.UndefOr[Float]
+    var Contrast: js.UndefOr[Float]
+    var Sharpness: js.UndefOr[Float]
+  }
+
+  object DetectLabelsImageQuality {
+    @inline
+    def apply(
+        Brightness: js.UndefOr[Float] = js.undefined,
+        Contrast: js.UndefOr[Float] = js.undefined,
+        Sharpness: js.UndefOr[Float] = js.undefined
+    ): DetectLabelsImageQuality = {
+      val __obj = js.Dynamic.literal()
+      Brightness.foreach(__v => __obj.updateDynamic("Brightness")(__v.asInstanceOf[js.Any]))
+      Contrast.foreach(__v => __obj.updateDynamic("Contrast")(__v.asInstanceOf[js.Any]))
+      Sharpness.foreach(__v => __obj.updateDynamic("Sharpness")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsImageQuality]
+    }
+  }
+
   @js.native
   trait DetectLabelsRequest extends js.Object {
     var Image: Image
+    var Features: js.UndefOr[DetectLabelsFeatureList]
     var MaxLabels: js.UndefOr[UInteger]
     var MinConfidence: js.UndefOr[Percent]
+    var Settings: js.UndefOr[DetectLabelsSettings]
   }
 
   object DetectLabelsRequest {
     @inline
     def apply(
         Image: Image,
+        Features: js.UndefOr[DetectLabelsFeatureList] = js.undefined,
         MaxLabels: js.UndefOr[UInteger] = js.undefined,
-        MinConfidence: js.UndefOr[Percent] = js.undefined
+        MinConfidence: js.UndefOr[Percent] = js.undefined,
+        Settings: js.UndefOr[DetectLabelsSettings] = js.undefined
     ): DetectLabelsRequest = {
       val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
+      Features.foreach(__v => __obj.updateDynamic("Features")(__v.asInstanceOf[js.Any]))
       MaxLabels.foreach(__v => __obj.updateDynamic("MaxLabels")(__v.asInstanceOf[js.Any]))
       MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectLabelsRequest]
     }
   }
 
   @js.native
   trait DetectLabelsResponse extends js.Object {
+    var ImageProperties: js.UndefOr[DetectLabelsImageProperties]
     var LabelModelVersion: js.UndefOr[String]
     var Labels: js.UndefOr[Labels]
     var OrientationCorrection: js.UndefOr[OrientationCorrection]
@@ -1612,15 +1914,38 @@ package object rekognition {
   object DetectLabelsResponse {
     @inline
     def apply(
+        ImageProperties: js.UndefOr[DetectLabelsImageProperties] = js.undefined,
         LabelModelVersion: js.UndefOr[String] = js.undefined,
         Labels: js.UndefOr[Labels] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
     ): DetectLabelsResponse = {
       val __obj = js.Dynamic.literal()
+      ImageProperties.foreach(__v => __obj.updateDynamic("ImageProperties")(__v.asInstanceOf[js.Any]))
       LabelModelVersion.foreach(__v => __obj.updateDynamic("LabelModelVersion")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectLabelsResponse]
+    }
+  }
+
+  /** Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors.
+    */
+  @js.native
+  trait DetectLabelsSettings extends js.Object {
+    var GeneralLabels: js.UndefOr[GeneralLabelsSettings]
+    var ImageProperties: js.UndefOr[DetectLabelsImagePropertiesSettings]
+  }
+
+  object DetectLabelsSettings {
+    @inline
+    def apply(
+        GeneralLabels: js.UndefOr[GeneralLabelsSettings] = js.undefined,
+        ImageProperties: js.UndefOr[DetectLabelsImagePropertiesSettings] = js.undefined
+    ): DetectLabelsSettings = {
+      val __obj = js.Dynamic.literal()
+      GeneralLabels.foreach(__v => __obj.updateDynamic("GeneralLabels")(__v.asInstanceOf[js.Any]))
+      ImageProperties.foreach(__v => __obj.updateDynamic("ImageProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectLabelsSettings]
     }
   }
 
@@ -1845,6 +2170,42 @@ package object rekognition {
     }
   }
 
+  /** A description of the dominant colors in an image.
+    */
+  @js.native
+  trait DominantColor extends js.Object {
+    var Blue: js.UndefOr[UInteger]
+    var CSSColor: js.UndefOr[String]
+    var Green: js.UndefOr[UInteger]
+    var HexCode: js.UndefOr[String]
+    var PixelPercent: js.UndefOr[Percent]
+    var Red: js.UndefOr[UInteger]
+    var SimplifiedColor: js.UndefOr[String]
+  }
+
+  object DominantColor {
+    @inline
+    def apply(
+        Blue: js.UndefOr[UInteger] = js.undefined,
+        CSSColor: js.UndefOr[String] = js.undefined,
+        Green: js.UndefOr[UInteger] = js.undefined,
+        HexCode: js.UndefOr[String] = js.undefined,
+        PixelPercent: js.UndefOr[Percent] = js.undefined,
+        Red: js.UndefOr[UInteger] = js.undefined,
+        SimplifiedColor: js.UndefOr[String] = js.undefined
+    ): DominantColor = {
+      val __obj = js.Dynamic.literal()
+      Blue.foreach(__v => __obj.updateDynamic("Blue")(__v.asInstanceOf[js.Any]))
+      CSSColor.foreach(__v => __obj.updateDynamic("CSSColor")(__v.asInstanceOf[js.Any]))
+      Green.foreach(__v => __obj.updateDynamic("Green")(__v.asInstanceOf[js.Any]))
+      HexCode.foreach(__v => __obj.updateDynamic("HexCode")(__v.asInstanceOf[js.Any]))
+      PixelPercent.foreach(__v => __obj.updateDynamic("PixelPercent")(__v.asInstanceOf[js.Any]))
+      Red.foreach(__v => __obj.updateDynamic("Red")(__v.asInstanceOf[js.Any]))
+      SimplifiedColor.foreach(__v => __obj.updateDynamic("SimplifiedColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DominantColor]
+    }
+  }
+
   /** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
     */
   @js.native
@@ -1965,6 +2326,7 @@ package object rekognition {
     var ExternalImageId: js.UndefOr[ExternalImageId]
     var FaceId: js.UndefOr[FaceId]
     var ImageId: js.UndefOr[ImageId]
+    var IndexFacesModelVersion: js.UndefOr[IndexFacesModelVersion]
   }
 
   object Face {
@@ -1974,7 +2336,8 @@ package object rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         ExternalImageId: js.UndefOr[ExternalImageId] = js.undefined,
         FaceId: js.UndefOr[FaceId] = js.undefined,
-        ImageId: js.UndefOr[ImageId] = js.undefined
+        ImageId: js.UndefOr[ImageId] = js.undefined,
+        IndexFacesModelVersion: js.UndefOr[IndexFacesModelVersion] = js.undefined
     ): Face = {
       val __obj = js.Dynamic.literal()
       BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
@@ -1982,6 +2345,7 @@ package object rekognition {
       ExternalImageId.foreach(__v => __obj.updateDynamic("ExternalImageId")(__v.asInstanceOf[js.Any]))
       FaceId.foreach(__v => __obj.updateDynamic("FaceId")(__v.asInstanceOf[js.Any]))
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      IndexFacesModelVersion.foreach(__v => __obj.updateDynamic("IndexFacesModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Face]
     }
   }
@@ -2110,7 +2474,7 @@ package object rekognition {
     }
   }
 
-  /** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>.
+  /** Input face recognition parameters for an Amazon Rekognition stream processor. Includes the collection to use for face recognition and the face attributes to detect. Defining the settings is required in the request parameter for <a>CreateStreamProcessor</a>.
     */
   @js.native
   trait FaceSearchSettings extends js.Object {
@@ -2131,7 +2495,7 @@ package object rekognition {
     }
   }
 
-  /** The predicted gender of a detected face. Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female. Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
+  /** The predicted gender of a detected face. Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female. Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. We don't recommend using gender binary predictions to make decisions that impact an individual's rights, privacy, or access to services.
     */
   @js.native
   trait Gender extends js.Object {
@@ -2149,6 +2513,33 @@ package object rekognition {
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Gender]
+    }
+  }
+
+  /** Contains filters for the object labels returned by DetectLabels. Filters can be inclusive, exclusive, or a combination of both and can be applied to individual l abels or entire label categories.
+    */
+  @js.native
+  trait GeneralLabelsSettings extends js.Object {
+    var LabelCategoryExclusionFilters: js.UndefOr[GeneralLabelsFilterList]
+    var LabelCategoryInclusionFilters: js.UndefOr[GeneralLabelsFilterList]
+    var LabelExclusionFilters: js.UndefOr[GeneralLabelsFilterList]
+    var LabelInclusionFilters: js.UndefOr[GeneralLabelsFilterList]
+  }
+
+  object GeneralLabelsSettings {
+    @inline
+    def apply(
+        LabelCategoryExclusionFilters: js.UndefOr[GeneralLabelsFilterList] = js.undefined,
+        LabelCategoryInclusionFilters: js.UndefOr[GeneralLabelsFilterList] = js.undefined,
+        LabelExclusionFilters: js.UndefOr[GeneralLabelsFilterList] = js.undefined,
+        LabelInclusionFilters: js.UndefOr[GeneralLabelsFilterList] = js.undefined
+    ): GeneralLabelsSettings = {
+      val __obj = js.Dynamic.literal()
+      LabelCategoryExclusionFilters.foreach(__v => __obj.updateDynamic("LabelCategoryExclusionFilters")(__v.asInstanceOf[js.Any]))
+      LabelCategoryInclusionFilters.foreach(__v => __obj.updateDynamic("LabelCategoryInclusionFilters")(__v.asInstanceOf[js.Any]))
+      LabelExclusionFilters.foreach(__v => __obj.updateDynamic("LabelExclusionFilters")(__v.asInstanceOf[js.Any]))
+      LabelInclusionFilters.foreach(__v => __obj.updateDynamic("LabelInclusionFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeneralLabelsSettings]
     }
   }
 
@@ -2745,7 +3136,7 @@ package object rekognition {
   }
 
   /** Provides the input image either as bytes or an S3 object. You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide. You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded. The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes
-    * property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property. For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide.
+    * property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property. For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait Image extends js.Object {
@@ -2851,17 +3242,20 @@ package object rekognition {
   trait Instance extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
+    var DominantColors: js.UndefOr[DominantColors]
   }
 
   object Instance {
     @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
-        Confidence: js.UndefOr[Percent] = js.undefined
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        DominantColors: js.UndefOr[DominantColors] = js.undefined
     ): Instance = {
       val __obj = js.Dynamic.literal()
       BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      DominantColors.foreach(__v => __obj.updateDynamic("DominantColors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -2902,6 +3296,27 @@ package object rekognition {
     }
   }
 
+  /** Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see [[https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html|Fragment]].
+    */
+  @js.native
+  trait KinesisVideoStreamStartSelector extends js.Object {
+    var FragmentNumber: js.UndefOr[KinesisVideoStreamFragmentNumber]
+    var ProducerTimestamp: js.UndefOr[ULong]
+  }
+
+  object KinesisVideoStreamStartSelector {
+    @inline
+    def apply(
+        FragmentNumber: js.UndefOr[KinesisVideoStreamFragmentNumber] = js.undefined,
+        ProducerTimestamp: js.UndefOr[ULong] = js.undefined
+    ): KinesisVideoStreamStartSelector = {
+      val __obj = js.Dynamic.literal()
+      FragmentNumber.foreach(__v => __obj.updateDynamic("FragmentNumber")(__v.asInstanceOf[js.Any]))
+      ProducerTimestamp.foreach(__v => __obj.updateDynamic("ProducerTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisVideoStreamStartSelector]
+    }
+  }
+
   /** The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.
     */
   @js.native
@@ -2924,6 +3339,8 @@ package object rekognition {
     */
   @js.native
   trait Label extends js.Object {
+    var Aliases: js.UndefOr[LabelAliases]
+    var Categories: js.UndefOr[LabelCategories]
     var Confidence: js.UndefOr[Percent]
     var Instances: js.UndefOr[Instances]
     var Name: js.UndefOr[String]
@@ -2933,17 +3350,57 @@ package object rekognition {
   object Label {
     @inline
     def apply(
+        Aliases: js.UndefOr[LabelAliases] = js.undefined,
+        Categories: js.UndefOr[LabelCategories] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined,
         Instances: js.UndefOr[Instances] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Parents: js.UndefOr[Parents] = js.undefined
     ): Label = {
       val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      Categories.foreach(__v => __obj.updateDynamic("Categories")(__v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Label]
+    }
+  }
+
+  /** A potential alias of for a given label.
+    */
+  @js.native
+  trait LabelAlias extends js.Object {
+    var Name: js.UndefOr[String]
+  }
+
+  object LabelAlias {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined
+    ): LabelAlias = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelAlias]
+    }
+  }
+
+  /** The category that applies to a given label.
+    */
+  @js.native
+  trait LabelCategory extends js.Object {
+    var Name: js.UndefOr[String]
+  }
+
+  object LabelCategory {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined
+    ): LabelCategory = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelCategory]
     }
   }
 
@@ -3178,6 +3635,49 @@ package object rekognition {
   }
 
   @js.native
+  trait ListProjectPoliciesRequest extends js.Object {
+    var ProjectArn: ProjectArn
+    var MaxResults: js.UndefOr[ListProjectPoliciesPageSize]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+  }
+
+  object ListProjectPoliciesRequest {
+    @inline
+    def apply(
+        ProjectArn: ProjectArn,
+        MaxResults: js.UndefOr[ListProjectPoliciesPageSize] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+    ): ListProjectPoliciesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProjectPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListProjectPoliciesResponse extends js.Object {
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var ProjectPolicies: js.UndefOr[ProjectPolicies]
+  }
+
+  object ListProjectPoliciesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        ProjectPolicies: js.UndefOr[ProjectPolicies] = js.undefined
+    ): ListProjectPoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProjectPolicies.foreach(__v => __obj.updateDynamic("ProjectPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListProjectPoliciesResponse]
+    }
+  }
+
+  @js.native
   trait ListStreamProcessorsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[PaginationToken]
@@ -3314,7 +3814,7 @@ package object rekognition {
     }
   }
 
-  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see [[https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics|Giving access to multiple Amazon SNS topics]].
+  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see [[https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html|Calling Amazon Rekognition Video operations]]. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see [[https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics|Giving access to multiple Amazon SNS topics]].
     */
   @js.native
   trait NotificationChannel extends js.Object {
@@ -3444,7 +3944,7 @@ package object rekognition {
     }
   }
 
-  /** The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image. An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
+  /** The X and Y coordinates of a point on an image or video frame. The X and Y values are ratios of the overall image size or video resolution. For example, if an input image is 700x200 and the values are X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image. An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code> is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a> <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait Point extends js.Object {
@@ -3516,6 +4016,39 @@ package object rekognition {
     }
   }
 
+  /** Describes a project policy in the response from <a>ListProjectPolicies</a>.
+    */
+  @js.native
+  trait ProjectPolicy extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var LastUpdatedTimestamp: js.UndefOr[DateTime]
+    var PolicyDocument: js.UndefOr[ProjectPolicyDocument]
+    var PolicyName: js.UndefOr[ProjectPolicyName]
+    var PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId]
+    var ProjectArn: js.UndefOr[ProjectArn]
+  }
+
+  object ProjectPolicy {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[DateTime] = js.undefined,
+        PolicyDocument: js.UndefOr[ProjectPolicyDocument] = js.undefined,
+        PolicyName: js.UndefOr[ProjectPolicyName] = js.undefined,
+        PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId] = js.undefined,
+        ProjectArn: js.UndefOr[ProjectArn] = js.undefined
+    ): ProjectPolicy = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      PolicyDocument.foreach(__v => __obj.updateDynamic("PolicyDocument")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectPolicy]
+    }
+  }
+
   /** A description of a version of an Amazon Rekognition Custom Labels model.
     */
   @js.native
@@ -3525,9 +4058,11 @@ package object rekognition {
     var EvaluationResult: js.UndefOr[EvaluationResult]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var ManifestSummary: js.UndefOr[GroundTruthManifest]
+    var MaxInferenceUnits: js.UndefOr[InferenceUnits]
     var MinInferenceUnits: js.UndefOr[InferenceUnits]
     var OutputConfig: js.UndefOr[OutputConfig]
     var ProjectVersionArn: js.UndefOr[ProjectVersionArn]
+    var SourceProjectVersionArn: js.UndefOr[ProjectVersionArn]
     var Status: js.UndefOr[ProjectVersionStatus]
     var StatusMessage: js.UndefOr[StatusMessage]
     var TestingDataResult: js.UndefOr[TestingDataResult]
@@ -3543,9 +4078,11 @@ package object rekognition {
         EvaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         ManifestSummary: js.UndefOr[GroundTruthManifest] = js.undefined,
+        MaxInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
         MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
         OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
         ProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined,
+        SourceProjectVersionArn: js.UndefOr[ProjectVersionArn] = js.undefined,
         Status: js.UndefOr[ProjectVersionStatus] = js.undefined,
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         TestingDataResult: js.UndefOr[TestingDataResult] = js.undefined,
@@ -3558,9 +4095,11 @@ package object rekognition {
       EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       ManifestSummary.foreach(__v => __obj.updateDynamic("ManifestSummary")(__v.asInstanceOf[js.Any]))
+      MaxInferenceUnits.foreach(__v => __obj.updateDynamic("MaxInferenceUnits")(__v.asInstanceOf[js.Any]))
       MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
       ProjectVersionArn.foreach(__v => __obj.updateDynamic("ProjectVersionArn")(__v.asInstanceOf[js.Any]))
+      SourceProjectVersionArn.foreach(__v => __obj.updateDynamic("SourceProjectVersionArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       TestingDataResult.foreach(__v => __obj.updateDynamic("TestingDataResult")(__v.asInstanceOf[js.Any]))
@@ -3669,6 +4208,49 @@ package object rekognition {
   }
 
   @js.native
+  trait PutProjectPolicyRequest extends js.Object {
+    var PolicyDocument: ProjectPolicyDocument
+    var PolicyName: ProjectPolicyName
+    var ProjectArn: ProjectArn
+    var PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId]
+  }
+
+  object PutProjectPolicyRequest {
+    @inline
+    def apply(
+        PolicyDocument: ProjectPolicyDocument,
+        PolicyName: ProjectPolicyName,
+        ProjectArn: ProjectArn,
+        PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId] = js.undefined
+    ): PutProjectPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutProjectPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutProjectPolicyResponse extends js.Object {
+    var PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId]
+  }
+
+  object PutProjectPolicyResponse {
+    @inline
+    def apply(
+        PolicyRevisionId: js.UndefOr[ProjectPolicyRevisionId] = js.undefined
+    ): PutProjectPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutProjectPolicyResponse]
+    }
+  }
+
+  @js.native
   trait RecognizeCelebritiesRequest extends js.Object {
     var Image: Image
   }
@@ -3707,25 +4289,49 @@ package object rekognition {
     }
   }
 
-  /** Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen. A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.
+  /** Specifies a location within the frame that Rekognition checks for objects of interest such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code> to set a region of the screen. A word, face, or label is included in the region if it is more than half in that region. If there is more than one region, the word, face, or label is compared with all regions of the screen. Any object of interest that is more than half in a region is kept in the results.
     */
   @js.native
   trait RegionOfInterest extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
+    var Polygon: js.UndefOr[Polygon]
   }
 
   object RegionOfInterest {
     @inline
     def apply(
-        BoundingBox: js.UndefOr[BoundingBox] = js.undefined
+        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
+        Polygon: js.UndefOr[Polygon] = js.undefined
     ): RegionOfInterest = {
       val __obj = js.Dynamic.literal()
       BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegionOfInterest]
     }
   }
 
-  /** Provides the S3 bucket name and object name. The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations. For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide.
+  /** The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. These results include the name of the stream processor resource, the session ID of the stream processing session, and labeled timestamps and bounding boxes for detected labels.
+    */
+  @js.native
+  trait S3Destination extends js.Object {
+    var Bucket: js.UndefOr[S3Bucket]
+    var KeyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object S3Destination {
+    @inline
+    def apply(
+        Bucket: js.UndefOr[S3Bucket] = js.undefined,
+        KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): S3Destination = {
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      KeyPrefix.foreach(__v => __obj.updateDynamic("KeyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Destination]
+    }
+  }
+
+  /** Provides the S3 bucket name and object name. The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations. For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait S3Object extends js.Object {
@@ -4244,18 +4850,22 @@ package object rekognition {
   trait StartProjectVersionRequest extends js.Object {
     var MinInferenceUnits: InferenceUnits
     var ProjectVersionArn: ProjectVersionArn
+    var MaxInferenceUnits: js.UndefOr[InferenceUnits]
   }
 
   object StartProjectVersionRequest {
     @inline
     def apply(
         MinInferenceUnits: InferenceUnits,
-        ProjectVersionArn: ProjectVersionArn
+        ProjectVersionArn: ProjectVersionArn,
+        MaxInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined
     ): StartProjectVersionRequest = {
       val __obj = js.Dynamic.literal(
         "MinInferenceUnits" -> MinInferenceUnits.asInstanceOf[js.Any],
         "ProjectVersionArn" -> ProjectVersionArn.asInstanceOf[js.Any]
       )
+
+      MaxInferenceUnits.foreach(__v => __obj.updateDynamic("MaxInferenceUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartProjectVersionRequest]
     }
   }
@@ -4367,27 +4977,39 @@ package object rekognition {
   @js.native
   trait StartStreamProcessorRequest extends js.Object {
     var Name: StreamProcessorName
+    var StartSelector: js.UndefOr[StreamProcessingStartSelector]
+    var StopSelector: js.UndefOr[StreamProcessingStopSelector]
   }
 
   object StartStreamProcessorRequest {
     @inline
     def apply(
-        Name: StreamProcessorName
+        Name: StreamProcessorName,
+        StartSelector: js.UndefOr[StreamProcessingStartSelector] = js.undefined,
+        StopSelector: js.UndefOr[StreamProcessingStopSelector] = js.undefined
     ): StartStreamProcessorRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
+
+      StartSelector.foreach(__v => __obj.updateDynamic("StartSelector")(__v.asInstanceOf[js.Any]))
+      StopSelector.foreach(__v => __obj.updateDynamic("StopSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartStreamProcessorRequest]
     }
   }
 
   @js.native
-  trait StartStreamProcessorResponse extends js.Object
+  trait StartStreamProcessorResponse extends js.Object {
+    var SessionId: js.UndefOr[StartStreamProcessorSessionId]
+  }
 
   object StartStreamProcessorResponse {
     @inline
-    def apply(): StartStreamProcessorResponse = {
+    def apply(
+        SessionId: js.UndefOr[StartStreamProcessorSessionId] = js.undefined
+    ): StartStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
+      SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartStreamProcessorResponse]
     }
   }
@@ -4541,7 +5163,43 @@ package object rekognition {
     }
   }
 
-  /** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.
+  /** This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.
+    */
+  @js.native
+  trait StreamProcessingStartSelector extends js.Object {
+    var KVSStreamStartSelector: js.UndefOr[KinesisVideoStreamStartSelector]
+  }
+
+  object StreamProcessingStartSelector {
+    @inline
+    def apply(
+        KVSStreamStartSelector: js.UndefOr[KinesisVideoStreamStartSelector] = js.undefined
+    ): StreamProcessingStartSelector = {
+      val __obj = js.Dynamic.literal()
+      KVSStreamStartSelector.foreach(__v => __obj.updateDynamic("KVSStreamStartSelector")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessingStartSelector]
+    }
+  }
+
+  /** Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.
+    */
+  @js.native
+  trait StreamProcessingStopSelector extends js.Object {
+    var MaxDurationInSeconds: js.UndefOr[MaxDurationInSecondsULong]
+  }
+
+  object StreamProcessingStopSelector {
+    @inline
+    def apply(
+        MaxDurationInSeconds: js.UndefOr[MaxDurationInSecondsULong] = js.undefined
+    ): StreamProcessingStopSelector = {
+      val __obj = js.Dynamic.literal()
+      MaxDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessingStopSelector]
+    }
+  }
+
+  /** An object that recognizes faces or labels in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.
     */
   @js.native
   trait StreamProcessor extends js.Object {
@@ -4559,6 +5217,25 @@ package object rekognition {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessor]
+    }
+  }
+
+  /** Allows you to opt in or opt out to share data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.
+    */
+  @js.native
+  trait StreamProcessorDataSharingPreference extends js.Object {
+    var OptIn: Boolean
+  }
+
+  object StreamProcessorDataSharingPreference {
+    @inline
+    def apply(
+        OptIn: Boolean
+    ): StreamProcessorDataSharingPreference = {
+      val __obj = js.Dynamic.literal(
+        "OptIn" -> OptIn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StreamProcessorDataSharingPreference]
     }
   }
 
@@ -4580,39 +5257,82 @@ package object rekognition {
     }
   }
 
+  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the object detection results and completion status of a video analysis operation. Amazon Rekognition publishes a notification the first time an object of interest or a person is detected in the video stream. For example, if Amazon Rekognition detects a person at second 2, a pet at second 4, and a person again at second 5, Amazon Rekognition sends 2 object class detected notifications, one for a person at second 2 and one for a pet at second 4. Amazon Rekognition also publishes an an end-of-session notification with a summary when the stream processing session is complete.
+    */
+  @js.native
+  trait StreamProcessorNotificationChannel extends js.Object {
+    var SNSTopicArn: SNSTopicArn
+  }
+
+  object StreamProcessorNotificationChannel {
+    @inline
+    def apply(
+        SNSTopicArn: SNSTopicArn
+    ): StreamProcessorNotificationChannel = {
+      val __obj = js.Dynamic.literal(
+        "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StreamProcessorNotificationChannel]
+    }
+  }
+
   /** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait StreamProcessorOutput extends js.Object {
     var KinesisDataStream: js.UndefOr[KinesisDataStream]
+    var S3Destination: js.UndefOr[S3Destination]
   }
 
   object StreamProcessorOutput {
     @inline
     def apply(
-        KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined
+        KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined,
+        S3Destination: js.UndefOr[S3Destination] = js.undefined
     ): StreamProcessorOutput = {
       val __obj = js.Dynamic.literal()
       KinesisDataStream.foreach(__v => __obj.updateDynamic("KinesisDataStream")(__v.asInstanceOf[js.Any]))
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessorOutput]
     }
   }
 
-  /** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor.
+  /** Input parameters used in a streaming video analyzed by a Amazon Rekognition stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels.
     */
   @js.native
   trait StreamProcessorSettings extends js.Object {
+    var ConnectedHome: js.UndefOr[ConnectedHomeSettings]
     var FaceSearch: js.UndefOr[FaceSearchSettings]
   }
 
   object StreamProcessorSettings {
     @inline
     def apply(
+        ConnectedHome: js.UndefOr[ConnectedHomeSettings] = js.undefined,
         FaceSearch: js.UndefOr[FaceSearchSettings] = js.undefined
     ): StreamProcessorSettings = {
       val __obj = js.Dynamic.literal()
+      ConnectedHome.foreach(__v => __obj.updateDynamic("ConnectedHome")(__v.asInstanceOf[js.Any]))
       FaceSearch.foreach(__v => __obj.updateDynamic("FaceSearch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessorSettings]
+    }
+  }
+
+  /** The stream processor settings that you want to update. <code>ConnectedHome</code> settings can be updated to detect different labels with a different minimum confidence.
+    */
+  @js.native
+  trait StreamProcessorSettingsForUpdate extends js.Object {
+    var ConnectedHomeForUpdate: js.UndefOr[ConnectedHomeSettingsForUpdate]
+  }
+
+  object StreamProcessorSettingsForUpdate {
+    @inline
+    def apply(
+        ConnectedHomeForUpdate: js.UndefOr[ConnectedHomeSettingsForUpdate] = js.undefined
+    ): StreamProcessorSettingsForUpdate = {
+      val __obj = js.Dynamic.literal()
+      ConnectedHomeForUpdate.foreach(__v => __obj.updateDynamic("ConnectedHomeForUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamProcessorSettingsForUpdate]
     }
   }
 
@@ -4752,7 +5472,7 @@ package object rekognition {
     }
   }
 
-  /** Information about a word or line of text detected by <a>DetectText</a>. The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. For more information, see Detecting Text in the Amazon Rekognition Developer Guide.
+  /** Information about a word or line of text detected by <a>DetectText</a>. The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. For more information, see Detecting text in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait TextDetection extends js.Object {
@@ -4928,6 +5648,47 @@ package object rekognition {
     def apply(): UpdateDatasetEntriesResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDatasetEntriesResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateStreamProcessorRequest extends js.Object {
+    var Name: StreamProcessorName
+    var DataSharingPreferenceForUpdate: js.UndefOr[StreamProcessorDataSharingPreference]
+    var ParametersToDelete: js.UndefOr[StreamProcessorParametersToDelete]
+    var RegionsOfInterestForUpdate: js.UndefOr[RegionsOfInterest]
+    var SettingsForUpdate: js.UndefOr[StreamProcessorSettingsForUpdate]
+  }
+
+  object UpdateStreamProcessorRequest {
+    @inline
+    def apply(
+        Name: StreamProcessorName,
+        DataSharingPreferenceForUpdate: js.UndefOr[StreamProcessorDataSharingPreference] = js.undefined,
+        ParametersToDelete: js.UndefOr[StreamProcessorParametersToDelete] = js.undefined,
+        RegionsOfInterestForUpdate: js.UndefOr[RegionsOfInterest] = js.undefined,
+        SettingsForUpdate: js.UndefOr[StreamProcessorSettingsForUpdate] = js.undefined
+    ): UpdateStreamProcessorRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DataSharingPreferenceForUpdate.foreach(__v => __obj.updateDynamic("DataSharingPreferenceForUpdate")(__v.asInstanceOf[js.Any]))
+      ParametersToDelete.foreach(__v => __obj.updateDynamic("ParametersToDelete")(__v.asInstanceOf[js.Any]))
+      RegionsOfInterestForUpdate.foreach(__v => __obj.updateDynamic("RegionsOfInterestForUpdate")(__v.asInstanceOf[js.Any]))
+      SettingsForUpdate.foreach(__v => __obj.updateDynamic("SettingsForUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStreamProcessorRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateStreamProcessorResponse extends js.Object
+
+  object UpdateStreamProcessorResponse {
+    @inline
+    def apply(): UpdateStreamProcessorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateStreamProcessorResponse]
     }
   }
 

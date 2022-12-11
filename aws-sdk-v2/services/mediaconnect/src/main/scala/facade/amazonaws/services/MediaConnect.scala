@@ -278,6 +278,28 @@ package object mediaconnect {
     }
   }
 
+  /** Create maintenance setting for a flow
+    */
+  @js.native
+  trait AddMaintenance extends js.Object {
+    var MaintenanceDay: MaintenanceDay
+    var MaintenanceStartHour: __string
+  }
+
+  object AddMaintenance {
+    @inline
+    def apply(
+        MaintenanceDay: MaintenanceDay,
+        MaintenanceStartHour: __string
+    ): AddMaintenance = {
+      val __obj = js.Dynamic.literal(
+        "MaintenanceDay" -> MaintenanceDay.asInstanceOf[js.Any],
+        "MaintenanceStartHour" -> MaintenanceStartHour.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AddMaintenance]
+    }
+  }
+
   /** The media stream that you want to add to the flow.
     */
   @js.native
@@ -385,6 +407,7 @@ package object mediaconnect {
     var Name: __string
     var AvailabilityZone: js.UndefOr[__string]
     var Entitlements: js.UndefOr[__listOfGrantEntitlementRequest]
+    var Maintenance: js.UndefOr[AddMaintenance]
     var MediaStreams: js.UndefOr[__listOfAddMediaStreamRequest]
     var Outputs: js.UndefOr[__listOfAddOutputRequest]
     var Source: js.UndefOr[SetSourceRequest]
@@ -399,6 +422,7 @@ package object mediaconnect {
         Name: __string,
         AvailabilityZone: js.UndefOr[__string] = js.undefined,
         Entitlements: js.UndefOr[__listOfGrantEntitlementRequest] = js.undefined,
+        Maintenance: js.UndefOr[AddMaintenance] = js.undefined,
         MediaStreams: js.UndefOr[__listOfAddMediaStreamRequest] = js.undefined,
         Outputs: js.UndefOr[__listOfAddOutputRequest] = js.undefined,
         Source: js.UndefOr[SetSourceRequest] = js.undefined,
@@ -412,6 +436,7 @@ package object mediaconnect {
 
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       Entitlements.foreach(__v => __obj.updateDynamic("Entitlements")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       MediaStreams.foreach(__v => __obj.updateDynamic("MediaStreams")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
@@ -795,6 +820,7 @@ package object mediaconnect {
     var Status: Status
     var Description: js.UndefOr[__string]
     var EgressIp: js.UndefOr[__string]
+    var Maintenance: js.UndefOr[Maintenance]
     var MediaStreams: js.UndefOr[__listOfMediaStream]
     var SourceFailoverConfig: js.UndefOr[FailoverConfig]
     var Sources: js.UndefOr[__listOfSource]
@@ -813,6 +839,7 @@ package object mediaconnect {
         Status: Status,
         Description: js.UndefOr[__string] = js.undefined,
         EgressIp: js.UndefOr[__string] = js.undefined,
+        Maintenance: js.UndefOr[Maintenance] = js.undefined,
         MediaStreams: js.UndefOr[__listOfMediaStream] = js.undefined,
         SourceFailoverConfig: js.UndefOr[FailoverConfig] = js.undefined,
         Sources: js.UndefOr[__listOfSource] = js.undefined,
@@ -830,6 +857,7 @@ package object mediaconnect {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EgressIp.foreach(__v => __obj.updateDynamic("EgressIp")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       MediaStreams.foreach(__v => __obj.updateDynamic("MediaStreams")(__v.asInstanceOf[js.Any]))
       SourceFailoverConfig.foreach(__v => __obj.updateDynamic("SourceFailoverConfig")(__v.asInstanceOf[js.Any]))
       Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
@@ -1292,6 +1320,7 @@ package object mediaconnect {
     var Name: __string
     var SourceType: SourceType
     var Status: Status
+    var Maintenance: js.UndefOr[Maintenance]
   }
 
   object ListedFlow {
@@ -1302,7 +1331,8 @@ package object mediaconnect {
         FlowArn: __string,
         Name: __string,
         SourceType: SourceType,
-        Status: Status
+        Status: Status,
+        Maintenance: js.UndefOr[Maintenance] = js.undefined
     ): ListedFlow = {
       val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
@@ -1312,7 +1342,36 @@ package object mediaconnect {
         "SourceType" -> SourceType.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
+
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListedFlow]
+    }
+  }
+
+  /** The maintenance setting of a flow
+    */
+  @js.native
+  trait Maintenance extends js.Object {
+    var MaintenanceDay: js.UndefOr[MaintenanceDay]
+    var MaintenanceDeadline: js.UndefOr[__string]
+    var MaintenanceScheduledDate: js.UndefOr[__string]
+    var MaintenanceStartHour: js.UndefOr[__string]
+  }
+
+  object Maintenance {
+    @inline
+    def apply(
+        MaintenanceDay: js.UndefOr[MaintenanceDay] = js.undefined,
+        MaintenanceDeadline: js.UndefOr[__string] = js.undefined,
+        MaintenanceScheduledDate: js.UndefOr[__string] = js.undefined,
+        MaintenanceStartHour: js.UndefOr[__string] = js.undefined
+    ): Maintenance = {
+      val __obj = js.Dynamic.literal()
+      MaintenanceDay.foreach(__v => __obj.updateDynamic("MaintenanceDay")(__v.asInstanceOf[js.Any]))
+      MaintenanceDeadline.foreach(__v => __obj.updateDynamic("MaintenanceDeadline")(__v.asInstanceOf[js.Any]))
+      MaintenanceScheduledDate.foreach(__v => __obj.updateDynamic("MaintenanceScheduledDate")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartHour.foreach(__v => __obj.updateDynamic("MaintenanceStartHour")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Maintenance]
     }
   }
 
@@ -1960,6 +2019,8 @@ package object mediaconnect {
     var Protocol: js.UndefOr[Protocol]
     var SenderControlPort: js.UndefOr[__integer]
     var SenderIpAddress: js.UndefOr[__string]
+    var SourceListenerAddress: js.UndefOr[__string]
+    var SourceListenerPort: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceName: js.UndefOr[__string]
     var WhitelistCidr: js.UndefOr[__string]
@@ -1981,6 +2042,8 @@ package object mediaconnect {
         Protocol: js.UndefOr[Protocol] = js.undefined,
         SenderControlPort: js.UndefOr[__integer] = js.undefined,
         SenderIpAddress: js.UndefOr[__string] = js.undefined,
+        SourceListenerAddress: js.UndefOr[__string] = js.undefined,
+        SourceListenerPort: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
@@ -1999,6 +2062,8 @@ package object mediaconnect {
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
       SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
+      SourceListenerAddress.foreach(__v => __obj.updateDynamic("SourceListenerAddress")(__v.asInstanceOf[js.Any]))
+      SourceListenerPort.foreach(__v => __obj.updateDynamic("SourceListenerPort")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       WhitelistCidr.foreach(__v => __obj.updateDynamic("WhitelistCidr")(__v.asInstanceOf[js.Any]))
@@ -2191,6 +2256,8 @@ package object mediaconnect {
     var SenderControlPort: js.UndefOr[__integer]
     var SenderIpAddress: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
+    var SourceListenerAddress: js.UndefOr[__string]
+    var SourceListenerPort: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
   }
 
@@ -2207,6 +2274,8 @@ package object mediaconnect {
         SenderControlPort: js.UndefOr[__integer] = js.undefined,
         SenderIpAddress: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
+        SourceListenerAddress: js.UndefOr[__string] = js.undefined,
+        SourceListenerPort: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): Transport = {
       val __obj = js.Dynamic.literal(
@@ -2222,6 +2291,8 @@ package object mediaconnect {
       SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
       SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.updateDynamic("SmoothingLatency")(__v.asInstanceOf[js.Any]))
+      SourceListenerAddress.foreach(__v => __obj.updateDynamic("SourceListenerAddress")(__v.asInstanceOf[js.Any]))
+      SourceListenerPort.foreach(__v => __obj.updateDynamic("SourceListenerPort")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transport]
     }
@@ -2519,6 +2590,7 @@ package object mediaconnect {
   @js.native
   trait UpdateFlowRequest extends js.Object {
     var FlowArn: __string
+    var Maintenance: js.UndefOr[UpdateMaintenance]
     var SourceFailoverConfig: js.UndefOr[UpdateFailoverConfig]
   }
 
@@ -2526,12 +2598,14 @@ package object mediaconnect {
     @inline
     def apply(
         FlowArn: __string,
+        Maintenance: js.UndefOr[UpdateMaintenance] = js.undefined,
         SourceFailoverConfig: js.UndefOr[UpdateFailoverConfig] = js.undefined
     ): UpdateFlowRequest = {
       val __obj = js.Dynamic.literal(
         "FlowArn" -> FlowArn.asInstanceOf[js.Any]
       )
 
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       SourceFailoverConfig.foreach(__v => __obj.updateDynamic("SourceFailoverConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowRequest]
     }
@@ -2571,6 +2645,8 @@ package object mediaconnect {
     var Protocol: js.UndefOr[Protocol]
     var SenderControlPort: js.UndefOr[__integer]
     var SenderIpAddress: js.UndefOr[__string]
+    var SourceListenerAddress: js.UndefOr[__string]
+    var SourceListenerPort: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceName: js.UndefOr[__string]
     var WhitelistCidr: js.UndefOr[__string]
@@ -2593,6 +2669,8 @@ package object mediaconnect {
         Protocol: js.UndefOr[Protocol] = js.undefined,
         SenderControlPort: js.UndefOr[__integer] = js.undefined,
         SenderIpAddress: js.UndefOr[__string] = js.undefined,
+        SourceListenerAddress: js.UndefOr[__string] = js.undefined,
+        SourceListenerPort: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
@@ -2614,6 +2692,8 @@ package object mediaconnect {
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
       SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
+      SourceListenerAddress.foreach(__v => __obj.updateDynamic("SourceListenerAddress")(__v.asInstanceOf[js.Any]))
+      SourceListenerPort.foreach(__v => __obj.updateDynamic("SourceListenerPort")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       WhitelistCidr.foreach(__v => __obj.updateDynamic("WhitelistCidr")(__v.asInstanceOf[js.Any]))
@@ -2637,6 +2717,30 @@ package object mediaconnect {
       FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowSourceResponse]
+    }
+  }
+
+  /** Update maintenance setting for a flow
+    */
+  @js.native
+  trait UpdateMaintenance extends js.Object {
+    var MaintenanceDay: js.UndefOr[MaintenanceDay]
+    var MaintenanceScheduledDate: js.UndefOr[__string]
+    var MaintenanceStartHour: js.UndefOr[__string]
+  }
+
+  object UpdateMaintenance {
+    @inline
+    def apply(
+        MaintenanceDay: js.UndefOr[MaintenanceDay] = js.undefined,
+        MaintenanceScheduledDate: js.UndefOr[__string] = js.undefined,
+        MaintenanceStartHour: js.UndefOr[__string] = js.undefined
+    ): UpdateMaintenance = {
+      val __obj = js.Dynamic.literal()
+      MaintenanceDay.foreach(__v => __obj.updateDynamic("MaintenanceDay")(__v.asInstanceOf[js.Any]))
+      MaintenanceScheduledDate.foreach(__v => __obj.updateDynamic("MaintenanceScheduledDate")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartHour.foreach(__v => __obj.updateDynamic("MaintenanceStartHour")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMaintenance]
     }
   }
 

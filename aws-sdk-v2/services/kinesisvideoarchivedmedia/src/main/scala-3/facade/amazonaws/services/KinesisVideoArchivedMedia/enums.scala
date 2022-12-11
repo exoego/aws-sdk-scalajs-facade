@@ -51,6 +51,21 @@ object DASHPlaybackMode {
   inline def values: js.Array[DASHPlaybackMode] = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
 }
 
+type Format = "JPEG" | "PNG"
+object Format {
+  inline val JPEG: "JPEG" = "JPEG"
+  inline val PNG: "PNG" = "PNG"
+
+  inline def values: js.Array[Format] = js.Array(JPEG, PNG)
+}
+
+type FormatConfigKey = "JPEGQuality"
+object FormatConfigKey {
+  inline val JPEGQuality: "JPEGQuality" = "JPEGQuality"
+
+  inline def values: js.Array[FormatConfigKey] = js.Array(JPEGQuality)
+}
+
 type FragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object FragmentSelectorType {
   inline val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
@@ -91,4 +106,20 @@ object HLSPlaybackMode {
   inline val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
 
   inline def values: js.Array[HLSPlaybackMode] = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+}
+
+type ImageError = "NO_MEDIA" | "MEDIA_ERROR"
+object ImageError {
+  inline val NO_MEDIA: "NO_MEDIA" = "NO_MEDIA"
+  inline val MEDIA_ERROR: "MEDIA_ERROR" = "MEDIA_ERROR"
+
+  inline def values: js.Array[ImageError] = js.Array(NO_MEDIA, MEDIA_ERROR)
+}
+
+type ImageSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
+object ImageSelectorType {
+  inline val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
+  inline val SERVER_TIMESTAMP: "SERVER_TIMESTAMP" = "SERVER_TIMESTAMP"
+
+  inline def values: js.Array[ImageSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }

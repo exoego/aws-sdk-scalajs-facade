@@ -232,6 +232,7 @@ package object amplify {
     var enableBranchAutoDeletion: js.UndefOr[EnableBranchAutoDeletion]
     var iamServiceRoleArn: js.UndefOr[ServiceRoleArn]
     var productionBranch: js.UndefOr[ProductionBranch]
+    var repositoryCloneMethod: js.UndefOr[RepositoryCloneMethod]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -260,6 +261,7 @@ package object amplify {
         enableBranchAutoDeletion: js.UndefOr[EnableBranchAutoDeletion] = js.undefined,
         iamServiceRoleArn: js.UndefOr[ServiceRoleArn] = js.undefined,
         productionBranch: js.UndefOr[ProductionBranch] = js.undefined,
+        repositoryCloneMethod: js.UndefOr[RepositoryCloneMethod] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): App = {
       val __obj = js.Dynamic.literal(
@@ -287,6 +289,7 @@ package object amplify {
       enableBranchAutoDeletion.foreach(__v => __obj.updateDynamic("enableBranchAutoDeletion")(__v.asInstanceOf[js.Any]))
       iamServiceRoleArn.foreach(__v => __obj.updateDynamic("iamServiceRoleArn")(__v.asInstanceOf[js.Any]))
       productionBranch.foreach(__v => __obj.updateDynamic("productionBranch")(__v.asInstanceOf[js.Any]))
+      repositoryCloneMethod.foreach(__v => __obj.updateDynamic("repositoryCloneMethod")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[App]
     }
@@ -2496,10 +2499,10 @@ package object amplify {
   trait UpdateDomainAssociationRequest extends js.Object {
     var appId: AppId
     var domainName: DomainName
-    var subDomainSettings: SubDomainSettings
     var autoSubDomainCreationPatterns: js.UndefOr[AutoSubDomainCreationPatterns]
     var autoSubDomainIAMRole: js.UndefOr[AutoSubDomainIAMRole]
     var enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain]
+    var subDomainSettings: js.UndefOr[SubDomainSettings]
   }
 
   object UpdateDomainAssociationRequest {
@@ -2507,20 +2510,20 @@ package object amplify {
     def apply(
         appId: AppId,
         domainName: DomainName,
-        subDomainSettings: SubDomainSettings,
         autoSubDomainCreationPatterns: js.UndefOr[AutoSubDomainCreationPatterns] = js.undefined,
         autoSubDomainIAMRole: js.UndefOr[AutoSubDomainIAMRole] = js.undefined,
-        enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined
+        enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined,
+        subDomainSettings: js.UndefOr[SubDomainSettings] = js.undefined
     ): UpdateDomainAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any],
-        "domainName" -> domainName.asInstanceOf[js.Any],
-        "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any]
+        "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
       autoSubDomainCreationPatterns.foreach(__v => __obj.updateDynamic("autoSubDomainCreationPatterns")(__v.asInstanceOf[js.Any]))
       autoSubDomainIAMRole.foreach(__v => __obj.updateDynamic("autoSubDomainIAMRole")(__v.asInstanceOf[js.Any]))
       enableAutoSubDomain.foreach(__v => __obj.updateDynamic("enableAutoSubDomain")(__v.asInstanceOf[js.Any]))
+      subDomainSettings.foreach(__v => __obj.updateDynamic("subDomainSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainAssociationRequest]
     }
   }

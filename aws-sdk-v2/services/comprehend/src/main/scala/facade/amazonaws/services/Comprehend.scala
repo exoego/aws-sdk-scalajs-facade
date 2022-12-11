@@ -46,29 +46,45 @@ package object comprehend {
   type KeyPhrasesDetectionJobPropertiesList = js.Array[KeyPhrasesDetectionJobProperties]
   type KmsKeyId = String
   type LabelDelimiter = String
+  type ListOfBlockReferences = js.Array[BlockReference]
+  type ListOfBlocks = js.Array[Block]
+  type ListOfChildBlocks = js.Array[ChildBlock]
   type ListOfClasses = js.Array[DocumentClass]
+  type ListOfDescriptiveMentionIndices = js.Array[Int]
   type ListOfDetectDominantLanguageResult = js.Array[BatchDetectDominantLanguageItemResult]
   type ListOfDetectEntitiesResult = js.Array[BatchDetectEntitiesItemResult]
   type ListOfDetectKeyPhrasesResult = js.Array[BatchDetectKeyPhrasesItemResult]
   type ListOfDetectSentimentResult = js.Array[BatchDetectSentimentItemResult]
   type ListOfDetectSyntaxResult = js.Array[BatchDetectSyntaxItemResult]
+  type ListOfDetectTargetedSentimentResult = js.Array[BatchDetectTargetedSentimentItemResult]
   type ListOfDocumentReadFeatureTypes = js.Array[DocumentReadFeatureTypes]
+  type ListOfDocumentType = js.Array[DocumentTypeListItem]
   type ListOfDominantLanguages = js.Array[DominantLanguage]
   type ListOfEntities = js.Array[Entity]
   type ListOfEntityLabels = js.Array[EntityLabel]
+  type ListOfErrors = js.Array[ErrorsListItem]
+  type ListOfExtractedCharacters = js.Array[ExtractedCharactersListItem]
   type ListOfKeyPhrases = js.Array[KeyPhrase]
   type ListOfLabels = js.Array[DocumentLabel]
+  type ListOfMentions = js.Array[TargetedSentimentMention]
   type ListOfPiiEntities = js.Array[PiiEntity]
   type ListOfPiiEntityTypes = js.Array[PiiEntityType]
+  type ListOfRelationships = js.Array[RelationshipsListItem]
   type ListOfSyntaxTokens = js.Array[SyntaxToken]
+  type ListOfTargetedSentimentEntities = js.Array[TargetedSentimentEntity]
   type MaskCharacter = String
   type MaxResultsInteger = Int
   type NumberOfTopicsInteger = Int
   type PiiEntitiesDetectionJobPropertiesList = js.Array[PiiEntitiesDetectionJobProperties]
+  type Policy = String
+  type PolicyRevisionId = String
+  type Polygon = js.Array[Point]
   type S3Uri = String
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
+  type SemiStructuredDocumentBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type SentimentDetectionJobPropertiesList = js.Array[SentimentDetectionJobProperties]
+  type StringList = js.Array[String]
   type SubnetId = String
   type Subnets = js.Array[SubnetId]
   type TagKey = String
@@ -76,6 +92,7 @@ package object comprehend {
   type TagList = js.Array[Tag]
   type TagValue = String
   type TargetEventTypes = js.Array[EventTypeString]
+  type TargetedSentimentDetectionJobPropertiesList = js.Array[TargetedSentimentDetectionJobProperties]
   type Timestamp = js.Date
   type TopicsDetectionJobPropertiesList = js.Array[TopicsDetectionJobProperties]
   type VersionName = String
@@ -87,6 +104,7 @@ package object comprehend {
     @inline def batchDetectKeyPhrasesFuture(params: BatchDetectKeyPhrasesRequest): Future[BatchDetectKeyPhrasesResponse] = service.batchDetectKeyPhrases(params).promise().toFuture
     @inline def batchDetectSentimentFuture(params: BatchDetectSentimentRequest): Future[BatchDetectSentimentResponse] = service.batchDetectSentiment(params).promise().toFuture
     @inline def batchDetectSyntaxFuture(params: BatchDetectSyntaxRequest): Future[BatchDetectSyntaxResponse] = service.batchDetectSyntax(params).promise().toFuture
+    @inline def batchDetectTargetedSentimentFuture(params: BatchDetectTargetedSentimentRequest): Future[BatchDetectTargetedSentimentResponse] = service.batchDetectTargetedSentiment(params).promise().toFuture
     @inline def classifyDocumentFuture(params: ClassifyDocumentRequest): Future[ClassifyDocumentResponse] = service.classifyDocument(params).promise().toFuture
     @inline def containsPiiEntitiesFuture(params: ContainsPiiEntitiesRequest): Future[ContainsPiiEntitiesResponse] = service.containsPiiEntities(params).promise().toFuture
     @inline def createDocumentClassifierFuture(params: CreateDocumentClassifierRequest): Future[CreateDocumentClassifierResponse] = service.createDocumentClassifier(params).promise().toFuture
@@ -95,6 +113,7 @@ package object comprehend {
     @inline def deleteDocumentClassifierFuture(params: DeleteDocumentClassifierRequest): Future[DeleteDocumentClassifierResponse] = service.deleteDocumentClassifier(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
     @inline def deleteEntityRecognizerFuture(params: DeleteEntityRecognizerRequest): Future[DeleteEntityRecognizerResponse] = service.deleteEntityRecognizer(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def describeDocumentClassificationJobFuture(params: DescribeDocumentClassificationJobRequest): Future[DescribeDocumentClassificationJobResponse] = service.describeDocumentClassificationJob(params).promise().toFuture
     @inline def describeDocumentClassifierFuture(params: DescribeDocumentClassifierRequest): Future[DescribeDocumentClassifierResponse] = service.describeDocumentClassifier(params).promise().toFuture
     @inline def describeDominantLanguageDetectionJobFuture(params: DescribeDominantLanguageDetectionJobRequest): Future[DescribeDominantLanguageDetectionJobResponse] = service.describeDominantLanguageDetectionJob(params).promise().toFuture
@@ -104,7 +123,9 @@ package object comprehend {
     @inline def describeEventsDetectionJobFuture(params: DescribeEventsDetectionJobRequest): Future[DescribeEventsDetectionJobResponse] = service.describeEventsDetectionJob(params).promise().toFuture
     @inline def describeKeyPhrasesDetectionJobFuture(params: DescribeKeyPhrasesDetectionJobRequest): Future[DescribeKeyPhrasesDetectionJobResponse] = service.describeKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def describePiiEntitiesDetectionJobFuture(params: DescribePiiEntitiesDetectionJobRequest): Future[DescribePiiEntitiesDetectionJobResponse] = service.describePiiEntitiesDetectionJob(params).promise().toFuture
+    @inline def describeResourcePolicyFuture(params: DescribeResourcePolicyRequest): Future[DescribeResourcePolicyResponse] = service.describeResourcePolicy(params).promise().toFuture
     @inline def describeSentimentDetectionJobFuture(params: DescribeSentimentDetectionJobRequest): Future[DescribeSentimentDetectionJobResponse] = service.describeSentimentDetectionJob(params).promise().toFuture
+    @inline def describeTargetedSentimentDetectionJobFuture(params: DescribeTargetedSentimentDetectionJobRequest): Future[DescribeTargetedSentimentDetectionJobResponse] = service.describeTargetedSentimentDetectionJob(params).promise().toFuture
     @inline def describeTopicsDetectionJobFuture(params: DescribeTopicsDetectionJobRequest): Future[DescribeTopicsDetectionJobResponse] = service.describeTopicsDetectionJob(params).promise().toFuture
     @inline def detectDominantLanguageFuture(params: DetectDominantLanguageRequest): Future[DetectDominantLanguageResponse] = service.detectDominantLanguage(params).promise().toFuture
     @inline def detectEntitiesFuture(params: DetectEntitiesRequest): Future[DetectEntitiesResponse] = service.detectEntities(params).promise().toFuture
@@ -112,6 +133,8 @@ package object comprehend {
     @inline def detectPiiEntitiesFuture(params: DetectPiiEntitiesRequest): Future[DetectPiiEntitiesResponse] = service.detectPiiEntities(params).promise().toFuture
     @inline def detectSentimentFuture(params: DetectSentimentRequest): Future[DetectSentimentResponse] = service.detectSentiment(params).promise().toFuture
     @inline def detectSyntaxFuture(params: DetectSyntaxRequest): Future[DetectSyntaxResponse] = service.detectSyntax(params).promise().toFuture
+    @inline def detectTargetedSentimentFuture(params: DetectTargetedSentimentRequest): Future[DetectTargetedSentimentResponse] = service.detectTargetedSentiment(params).promise().toFuture
+    @inline def importModelFuture(params: ImportModelRequest): Future[ImportModelResponse] = service.importModel(params).promise().toFuture
     @inline def listDocumentClassificationJobsFuture(params: ListDocumentClassificationJobsRequest): Future[ListDocumentClassificationJobsResponse] = service.listDocumentClassificationJobs(params).promise().toFuture
     @inline def listDocumentClassifierSummariesFuture(params: ListDocumentClassifierSummariesRequest): Future[ListDocumentClassifierSummariesResponse] = service.listDocumentClassifierSummaries(params).promise().toFuture
     @inline def listDocumentClassifiersFuture(params: ListDocumentClassifiersRequest): Future[ListDocumentClassifiersResponse] = service.listDocumentClassifiers(params).promise().toFuture
@@ -125,7 +148,9 @@ package object comprehend {
     @inline def listPiiEntitiesDetectionJobsFuture(params: ListPiiEntitiesDetectionJobsRequest): Future[ListPiiEntitiesDetectionJobsResponse] = service.listPiiEntitiesDetectionJobs(params).promise().toFuture
     @inline def listSentimentDetectionJobsFuture(params: ListSentimentDetectionJobsRequest): Future[ListSentimentDetectionJobsResponse] = service.listSentimentDetectionJobs(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTargetedSentimentDetectionJobsFuture(params: ListTargetedSentimentDetectionJobsRequest): Future[ListTargetedSentimentDetectionJobsResponse] = service.listTargetedSentimentDetectionJobs(params).promise().toFuture
     @inline def listTopicsDetectionJobsFuture(params: ListTopicsDetectionJobsRequest): Future[ListTopicsDetectionJobsResponse] = service.listTopicsDetectionJobs(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def startDocumentClassificationJobFuture(params: StartDocumentClassificationJobRequest): Future[StartDocumentClassificationJobResponse] = service.startDocumentClassificationJob(params).promise().toFuture
     @inline def startDominantLanguageDetectionJobFuture(params: StartDominantLanguageDetectionJobRequest): Future[StartDominantLanguageDetectionJobResponse] = service.startDominantLanguageDetectionJob(params).promise().toFuture
     @inline def startEntitiesDetectionJobFuture(params: StartEntitiesDetectionJobRequest): Future[StartEntitiesDetectionJobResponse] = service.startEntitiesDetectionJob(params).promise().toFuture
@@ -133,6 +158,7 @@ package object comprehend {
     @inline def startKeyPhrasesDetectionJobFuture(params: StartKeyPhrasesDetectionJobRequest): Future[StartKeyPhrasesDetectionJobResponse] = service.startKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def startPiiEntitiesDetectionJobFuture(params: StartPiiEntitiesDetectionJobRequest): Future[StartPiiEntitiesDetectionJobResponse] = service.startPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def startSentimentDetectionJobFuture(params: StartSentimentDetectionJobRequest): Future[StartSentimentDetectionJobResponse] = service.startSentimentDetectionJob(params).promise().toFuture
+    @inline def startTargetedSentimentDetectionJobFuture(params: StartTargetedSentimentDetectionJobRequest): Future[StartTargetedSentimentDetectionJobResponse] = service.startTargetedSentimentDetectionJob(params).promise().toFuture
     @inline def startTopicsDetectionJobFuture(params: StartTopicsDetectionJobRequest): Future[StartTopicsDetectionJobResponse] = service.startTopicsDetectionJob(params).promise().toFuture
     @inline def stopDominantLanguageDetectionJobFuture(params: StopDominantLanguageDetectionJobRequest): Future[StopDominantLanguageDetectionJobResponse] = service.stopDominantLanguageDetectionJob(params).promise().toFuture
     @inline def stopEntitiesDetectionJobFuture(params: StopEntitiesDetectionJobRequest): Future[StopEntitiesDetectionJobResponse] = service.stopEntitiesDetectionJob(params).promise().toFuture
@@ -140,6 +166,7 @@ package object comprehend {
     @inline def stopKeyPhrasesDetectionJobFuture(params: StopKeyPhrasesDetectionJobRequest): Future[StopKeyPhrasesDetectionJobResponse] = service.stopKeyPhrasesDetectionJob(params).promise().toFuture
     @inline def stopPiiEntitiesDetectionJobFuture(params: StopPiiEntitiesDetectionJobRequest): Future[StopPiiEntitiesDetectionJobResponse] = service.stopPiiEntitiesDetectionJob(params).promise().toFuture
     @inline def stopSentimentDetectionJobFuture(params: StopSentimentDetectionJobRequest): Future[StopSentimentDetectionJobResponse] = service.stopSentimentDetectionJob(params).promise().toFuture
+    @inline def stopTargetedSentimentDetectionJobFuture(params: StopTargetedSentimentDetectionJobRequest): Future[StopTargetedSentimentDetectionJobResponse] = service.stopTargetedSentimentDetectionJob(params).promise().toFuture
     @inline def stopTrainingDocumentClassifierFuture(params: StopTrainingDocumentClassifierRequest): Future[StopTrainingDocumentClassifierResponse] = service.stopTrainingDocumentClassifier(params).promise().toFuture
     @inline def stopTrainingEntityRecognizerFuture(params: StopTrainingEntityRecognizerRequest): Future[StopTrainingEntityRecognizerResponse] = service.stopTrainingEntityRecognizer(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
@@ -158,6 +185,7 @@ package object comprehend {
     def batchDetectKeyPhrases(params: BatchDetectKeyPhrasesRequest): Request[BatchDetectKeyPhrasesResponse] = js.native
     def batchDetectSentiment(params: BatchDetectSentimentRequest): Request[BatchDetectSentimentResponse] = js.native
     def batchDetectSyntax(params: BatchDetectSyntaxRequest): Request[BatchDetectSyntaxResponse] = js.native
+    def batchDetectTargetedSentiment(params: BatchDetectTargetedSentimentRequest): Request[BatchDetectTargetedSentimentResponse] = js.native
     def classifyDocument(params: ClassifyDocumentRequest): Request[ClassifyDocumentResponse] = js.native
     def containsPiiEntities(params: ContainsPiiEntitiesRequest): Request[ContainsPiiEntitiesResponse] = js.native
     def createDocumentClassifier(params: CreateDocumentClassifierRequest): Request[CreateDocumentClassifierResponse] = js.native
@@ -166,6 +194,7 @@ package object comprehend {
     def deleteDocumentClassifier(params: DeleteDocumentClassifierRequest): Request[DeleteDocumentClassifierResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
     def deleteEntityRecognizer(params: DeleteEntityRecognizerRequest): Request[DeleteEntityRecognizerResponse] = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
     def describeDocumentClassificationJob(params: DescribeDocumentClassificationJobRequest): Request[DescribeDocumentClassificationJobResponse] = js.native
     def describeDocumentClassifier(params: DescribeDocumentClassifierRequest): Request[DescribeDocumentClassifierResponse] = js.native
     def describeDominantLanguageDetectionJob(params: DescribeDominantLanguageDetectionJobRequest): Request[DescribeDominantLanguageDetectionJobResponse] = js.native
@@ -175,7 +204,9 @@ package object comprehend {
     def describeEventsDetectionJob(params: DescribeEventsDetectionJobRequest): Request[DescribeEventsDetectionJobResponse] = js.native
     def describeKeyPhrasesDetectionJob(params: DescribeKeyPhrasesDetectionJobRequest): Request[DescribeKeyPhrasesDetectionJobResponse] = js.native
     def describePiiEntitiesDetectionJob(params: DescribePiiEntitiesDetectionJobRequest): Request[DescribePiiEntitiesDetectionJobResponse] = js.native
+    def describeResourcePolicy(params: DescribeResourcePolicyRequest): Request[DescribeResourcePolicyResponse] = js.native
     def describeSentimentDetectionJob(params: DescribeSentimentDetectionJobRequest): Request[DescribeSentimentDetectionJobResponse] = js.native
+    def describeTargetedSentimentDetectionJob(params: DescribeTargetedSentimentDetectionJobRequest): Request[DescribeTargetedSentimentDetectionJobResponse] = js.native
     def describeTopicsDetectionJob(params: DescribeTopicsDetectionJobRequest): Request[DescribeTopicsDetectionJobResponse] = js.native
     def detectDominantLanguage(params: DetectDominantLanguageRequest): Request[DetectDominantLanguageResponse] = js.native
     def detectEntities(params: DetectEntitiesRequest): Request[DetectEntitiesResponse] = js.native
@@ -183,6 +214,8 @@ package object comprehend {
     def detectPiiEntities(params: DetectPiiEntitiesRequest): Request[DetectPiiEntitiesResponse] = js.native
     def detectSentiment(params: DetectSentimentRequest): Request[DetectSentimentResponse] = js.native
     def detectSyntax(params: DetectSyntaxRequest): Request[DetectSyntaxResponse] = js.native
+    def detectTargetedSentiment(params: DetectTargetedSentimentRequest): Request[DetectTargetedSentimentResponse] = js.native
+    def importModel(params: ImportModelRequest): Request[ImportModelResponse] = js.native
     def listDocumentClassificationJobs(params: ListDocumentClassificationJobsRequest): Request[ListDocumentClassificationJobsResponse] = js.native
     def listDocumentClassifierSummaries(params: ListDocumentClassifierSummariesRequest): Request[ListDocumentClassifierSummariesResponse] = js.native
     def listDocumentClassifiers(params: ListDocumentClassifiersRequest): Request[ListDocumentClassifiersResponse] = js.native
@@ -196,7 +229,9 @@ package object comprehend {
     def listPiiEntitiesDetectionJobs(params: ListPiiEntitiesDetectionJobsRequest): Request[ListPiiEntitiesDetectionJobsResponse] = js.native
     def listSentimentDetectionJobs(params: ListSentimentDetectionJobsRequest): Request[ListSentimentDetectionJobsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTargetedSentimentDetectionJobs(params: ListTargetedSentimentDetectionJobsRequest): Request[ListTargetedSentimentDetectionJobsResponse] = js.native
     def listTopicsDetectionJobs(params: ListTopicsDetectionJobsRequest): Request[ListTopicsDetectionJobsResponse] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def startDocumentClassificationJob(params: StartDocumentClassificationJobRequest): Request[StartDocumentClassificationJobResponse] = js.native
     def startDominantLanguageDetectionJob(params: StartDominantLanguageDetectionJobRequest): Request[StartDominantLanguageDetectionJobResponse] = js.native
     def startEntitiesDetectionJob(params: StartEntitiesDetectionJobRequest): Request[StartEntitiesDetectionJobResponse] = js.native
@@ -204,6 +239,7 @@ package object comprehend {
     def startKeyPhrasesDetectionJob(params: StartKeyPhrasesDetectionJobRequest): Request[StartKeyPhrasesDetectionJobResponse] = js.native
     def startPiiEntitiesDetectionJob(params: StartPiiEntitiesDetectionJobRequest): Request[StartPiiEntitiesDetectionJobResponse] = js.native
     def startSentimentDetectionJob(params: StartSentimentDetectionJobRequest): Request[StartSentimentDetectionJobResponse] = js.native
+    def startTargetedSentimentDetectionJob(params: StartTargetedSentimentDetectionJobRequest): Request[StartTargetedSentimentDetectionJobResponse] = js.native
     def startTopicsDetectionJob(params: StartTopicsDetectionJobRequest): Request[StartTopicsDetectionJobResponse] = js.native
     def stopDominantLanguageDetectionJob(params: StopDominantLanguageDetectionJobRequest): Request[StopDominantLanguageDetectionJobResponse] = js.native
     def stopEntitiesDetectionJob(params: StopEntitiesDetectionJobRequest): Request[StopEntitiesDetectionJobResponse] = js.native
@@ -211,6 +247,7 @@ package object comprehend {
     def stopKeyPhrasesDetectionJob(params: StopKeyPhrasesDetectionJobRequest): Request[StopKeyPhrasesDetectionJobResponse] = js.native
     def stopPiiEntitiesDetectionJob(params: StopPiiEntitiesDetectionJobRequest): Request[StopPiiEntitiesDetectionJobResponse] = js.native
     def stopSentimentDetectionJob(params: StopSentimentDetectionJobRequest): Request[StopSentimentDetectionJobResponse] = js.native
+    def stopTargetedSentimentDetectionJob(params: StopTargetedSentimentDetectionJobRequest): Request[StopTargetedSentimentDetectionJobResponse] = js.native
     def stopTrainingDocumentClassifier(params: StopTrainingDocumentClassifierRequest): Request[StopTrainingDocumentClassifierResponse] = js.native
     def stopTrainingEntityRecognizer(params: StopTrainingEntityRecognizerRequest): Request[StopTrainingEntityRecognizerResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -563,6 +600,67 @@ package object comprehend {
     }
   }
 
+  /** Analysis results for one of the documents in the batch.
+    */
+  @js.native
+  trait BatchDetectTargetedSentimentItemResult extends js.Object {
+    var Entities: js.UndefOr[ListOfTargetedSentimentEntities]
+    var Index: js.UndefOr[Int]
+  }
+
+  object BatchDetectTargetedSentimentItemResult {
+    @inline
+    def apply(
+        Entities: js.UndefOr[ListOfTargetedSentimentEntities] = js.undefined,
+        Index: js.UndefOr[Int] = js.undefined
+    ): BatchDetectTargetedSentimentItemResult = {
+      val __obj = js.Dynamic.literal()
+      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDetectTargetedSentimentItemResult]
+    }
+  }
+
+  @js.native
+  trait BatchDetectTargetedSentimentRequest extends js.Object {
+    var LanguageCode: LanguageCode
+    var TextList: CustomerInputStringList
+  }
+
+  object BatchDetectTargetedSentimentRequest {
+    @inline
+    def apply(
+        LanguageCode: LanguageCode,
+        TextList: CustomerInputStringList
+    ): BatchDetectTargetedSentimentRequest = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "TextList" -> TextList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDetectTargetedSentimentRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDetectTargetedSentimentResponse extends js.Object {
+    var ErrorList: BatchItemErrorList
+    var ResultList: ListOfDetectTargetedSentimentResult
+  }
+
+  object BatchDetectTargetedSentimentResponse {
+    @inline
+    def apply(
+        ErrorList: BatchItemErrorList,
+        ResultList: ListOfDetectTargetedSentimentResult
+    ): BatchDetectTargetedSentimentResponse = {
+      val __obj = js.Dynamic.literal(
+        "ErrorList" -> ErrorList.asInstanceOf[js.Any],
+        "ResultList" -> ResultList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDetectTargetedSentimentResponse]
+    }
+  }
+
   /** Describes an error that occurred while processing a document in a batch. The operation returns on <code>BatchItemError</code> object for each document that contained an error.
     */
   @js.native
@@ -584,6 +682,117 @@ package object comprehend {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchItemError]
+    }
+  }
+
+  /** Information about each word or line of text in the input document. For additional information, see [[https://docs.aws.amazon.com/textract/latest/dg/API_Block.html|Block]] in the Amazon Textract API reference.
+    */
+  @js.native
+  trait Block extends js.Object {
+    var BlockType: js.UndefOr[BlockType]
+    var Geometry: js.UndefOr[Geometry]
+    var Id: js.UndefOr[String]
+    var Page: js.UndefOr[Int]
+    var Relationships: js.UndefOr[ListOfRelationships]
+    var Text: js.UndefOr[String]
+  }
+
+  object Block {
+    @inline
+    def apply(
+        BlockType: js.UndefOr[BlockType] = js.undefined,
+        Geometry: js.UndefOr[Geometry] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        Page: js.UndefOr[Int] = js.undefined,
+        Relationships: js.UndefOr[ListOfRelationships] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined
+    ): Block = {
+      val __obj = js.Dynamic.literal()
+      BlockType.foreach(__v => __obj.updateDynamic("BlockType")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      Relationships.foreach(__v => __obj.updateDynamic("Relationships")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Block]
+    }
+  }
+
+  /** A reference to a block.
+    */
+  @js.native
+  trait BlockReference extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var BlockId: js.UndefOr[String]
+    var ChildBlocks: js.UndefOr[ListOfChildBlocks]
+    var EndOffset: js.UndefOr[Int]
+  }
+
+  object BlockReference {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        BlockId: js.UndefOr[String] = js.undefined,
+        ChildBlocks: js.UndefOr[ListOfChildBlocks] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined
+    ): BlockReference = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      BlockId.foreach(__v => __obj.updateDynamic("BlockId")(__v.asInstanceOf[js.Any]))
+      ChildBlocks.foreach(__v => __obj.updateDynamic("ChildBlocks")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlockReference]
+    }
+  }
+
+  /** The bounding box around the detected page or around an element on a document page. The left (x-coordinate) and top (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). For additional information, see [[https://docs.aws.amazon.com/textract/latest/dg/API_BoundingBox.html|BoundingBox]] in the Amazon Textract API reference.
+    */
+  @js.native
+  trait BoundingBox extends js.Object {
+    var Height: js.UndefOr[Float]
+    var Left: js.UndefOr[Float]
+    var Top: js.UndefOr[Float]
+    var Width: js.UndefOr[Float]
+  }
+
+  object BoundingBox {
+    @inline
+    def apply(
+        Height: js.UndefOr[Float] = js.undefined,
+        Left: js.UndefOr[Float] = js.undefined,
+        Top: js.UndefOr[Float] = js.undefined,
+        Width: js.UndefOr[Float] = js.undefined
+    ): BoundingBox = {
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoundingBox]
+    }
+  }
+
+  /** Nested block contained within a block.
+    */
+  @js.native
+  trait ChildBlock extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var ChildBlockId: js.UndefOr[String]
+    var EndOffset: js.UndefOr[Int]
+  }
+
+  object ChildBlock {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        ChildBlockId: js.UndefOr[String] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined
+    ): ChildBlock = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      ChildBlockId.foreach(__v => __obj.updateDynamic("ChildBlockId")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChildBlock]
     }
   }
 
@@ -656,19 +865,26 @@ package object comprehend {
   @js.native
   trait ClassifyDocumentRequest extends js.Object {
     var EndpointArn: DocumentClassifierEndpointArn
-    var Text: CustomerInputString
+    var Bytes: js.UndefOr[SemiStructuredDocumentBlob]
+    var DocumentReaderConfig: js.UndefOr[DocumentReaderConfig]
+    var Text: js.UndefOr[CustomerInputString]
   }
 
   object ClassifyDocumentRequest {
     @inline
     def apply(
         EndpointArn: DocumentClassifierEndpointArn,
-        Text: CustomerInputString
+        Bytes: js.UndefOr[SemiStructuredDocumentBlob] = js.undefined,
+        DocumentReaderConfig: js.UndefOr[DocumentReaderConfig] = js.undefined,
+        Text: js.UndefOr[CustomerInputString] = js.undefined
     ): ClassifyDocumentRequest = {
       val __obj = js.Dynamic.literal(
-        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any],
-        "Text" -> Text.asInstanceOf[js.Any]
+        "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
+
+      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
+      DocumentReaderConfig.foreach(__v => __obj.updateDynamic("DocumentReaderConfig")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassifyDocumentRequest]
     }
   }
@@ -676,6 +892,9 @@ package object comprehend {
   @js.native
   trait ClassifyDocumentResponse extends js.Object {
     var Classes: js.UndefOr[ListOfClasses]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var DocumentType: js.UndefOr[ListOfDocumentType]
+    var Errors: js.UndefOr[ListOfErrors]
     var Labels: js.UndefOr[ListOfLabels]
   }
 
@@ -683,10 +902,16 @@ package object comprehend {
     @inline
     def apply(
         Classes: js.UndefOr[ListOfClasses] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        DocumentType: js.UndefOr[ListOfDocumentType] = js.undefined,
+        Errors: js.UndefOr[ListOfErrors] = js.undefined,
         Labels: js.UndefOr[ListOfLabels] = js.undefined
     ): ClassifyDocumentResponse = {
       val __obj = js.Dynamic.literal()
       Classes.foreach(__v => __obj.updateDynamic("Classes")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassifyDocumentResponse]
     }
@@ -737,6 +962,7 @@ package object comprehend {
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var Mode: js.UndefOr[DocumentClassifierMode]
     var ModelKmsKeyId: js.UndefOr[KmsKeyId]
+    var ModelPolicy: js.UndefOr[Policy]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
     var Tags: js.UndefOr[TagList]
     var VersionName: js.UndefOr[VersionName]
@@ -754,6 +980,7 @@ package object comprehend {
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
         ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        ModelPolicy: js.UndefOr[Policy] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VersionName: js.UndefOr[VersionName] = js.undefined,
@@ -770,6 +997,7 @@ package object comprehend {
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
+      ModelPolicy.foreach(__v => __obj.updateDynamic("ModelPolicy")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
@@ -852,6 +1080,7 @@ package object comprehend {
     var RecognizerName: ComprehendArnName
     var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
     var ModelKmsKeyId: js.UndefOr[KmsKeyId]
+    var ModelPolicy: js.UndefOr[Policy]
     var Tags: js.UndefOr[TagList]
     var VersionName: js.UndefOr[VersionName]
     var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
@@ -867,6 +1096,7 @@ package object comprehend {
         RecognizerName: ComprehendArnName,
         ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
         ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        ModelPolicy: js.UndefOr[Policy] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VersionName: js.UndefOr[VersionName] = js.undefined,
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
@@ -881,6 +1111,7 @@ package object comprehend {
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
+      ModelPolicy.foreach(__v => __obj.updateDynamic("ModelPolicy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -986,6 +1217,38 @@ package object comprehend {
     def apply(): DeleteEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEntityRecognizerResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyRequest extends js.Object {
+    var ResourceArn: ComprehendModelArn
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object DeleteResourcePolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: ComprehendModelArn,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): DeleteResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyResponse extends js.Object
+
+  object DeleteResourcePolicyResponse {
+    @inline
+    def apply(): DeleteResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
   }
 
@@ -1287,6 +1550,48 @@ package object comprehend {
   }
 
   @js.native
+  trait DescribeResourcePolicyRequest extends js.Object {
+    var ResourceArn: ComprehendModelArn
+  }
+
+  object DescribeResourcePolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: ComprehendModelArn
+    ): DescribeResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeResourcePolicyResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+    var ResourcePolicy: js.UndefOr[Policy]
+  }
+
+  object DescribeResourcePolicyResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined,
+        ResourcePolicy: js.UndefOr[Policy] = js.undefined
+    ): DescribeResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeResourcePolicyResponse]
+    }
+  }
+
+  @js.native
   trait DescribeSentimentDetectionJobRequest extends js.Object {
     var JobId: JobId
   }
@@ -1316,6 +1621,39 @@ package object comprehend {
       val __obj = js.Dynamic.literal()
       SentimentDetectionJobProperties.foreach(__v => __obj.updateDynamic("SentimentDetectionJobProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSentimentDetectionJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeTargetedSentimentDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object DescribeTargetedSentimentDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): DescribeTargetedSentimentDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeTargetedSentimentDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTargetedSentimentDetectionJobResponse extends js.Object {
+    var TargetedSentimentDetectionJobProperties: js.UndefOr[TargetedSentimentDetectionJobProperties]
+  }
+
+  object DescribeTargetedSentimentDetectionJobResponse {
+    @inline
+    def apply(
+        TargetedSentimentDetectionJobProperties: js.UndefOr[TargetedSentimentDetectionJobProperties] = js.undefined
+    ): DescribeTargetedSentimentDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      TargetedSentimentDetectionJobProperties.foreach(__v => __obj.updateDynamic("TargetedSentimentDetectionJobProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTargetedSentimentDetectionJobResponse]
     }
   }
 
@@ -1387,40 +1725,56 @@ package object comprehend {
 
   @js.native
   trait DetectEntitiesRequest extends js.Object {
-    var Text: CustomerInputString
+    var Bytes: js.UndefOr[SemiStructuredDocumentBlob]
+    var DocumentReaderConfig: js.UndefOr[DocumentReaderConfig]
     var EndpointArn: js.UndefOr[EntityRecognizerEndpointArn]
     var LanguageCode: js.UndefOr[LanguageCode]
+    var Text: js.UndefOr[CustomerInputString]
   }
 
   object DetectEntitiesRequest {
     @inline
     def apply(
-        Text: CustomerInputString,
+        Bytes: js.UndefOr[SemiStructuredDocumentBlob] = js.undefined,
+        DocumentReaderConfig: js.UndefOr[DocumentReaderConfig] = js.undefined,
         EndpointArn: js.UndefOr[EntityRecognizerEndpointArn] = js.undefined,
-        LanguageCode: js.UndefOr[LanguageCode] = js.undefined
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        Text: js.UndefOr[CustomerInputString] = js.undefined
     ): DetectEntitiesRequest = {
-      val __obj = js.Dynamic.literal(
-        "Text" -> Text.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
+      DocumentReaderConfig.foreach(__v => __obj.updateDynamic("DocumentReaderConfig")(__v.asInstanceOf[js.Any]))
       EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectEntitiesRequest]
     }
   }
 
   @js.native
   trait DetectEntitiesResponse extends js.Object {
+    var Blocks: js.UndefOr[ListOfBlocks]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var DocumentType: js.UndefOr[ListOfDocumentType]
     var Entities: js.UndefOr[ListOfEntities]
+    var Errors: js.UndefOr[ListOfErrors]
   }
 
   object DetectEntitiesResponse {
     @inline
     def apply(
-        Entities: js.UndefOr[ListOfEntities] = js.undefined
+        Blocks: js.UndefOr[ListOfBlocks] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        DocumentType: js.UndefOr[ListOfDocumentType] = js.undefined,
+        Entities: js.UndefOr[ListOfEntities] = js.undefined,
+        Errors: js.UndefOr[ListOfErrors] = js.undefined
     ): DetectEntitiesResponse = {
       val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectEntitiesResponse]
     }
   }
@@ -1572,11 +1926,48 @@ package object comprehend {
     }
   }
 
+  @js.native
+  trait DetectTargetedSentimentRequest extends js.Object {
+    var LanguageCode: LanguageCode
+    var Text: CustomerInputString
+  }
+
+  object DetectTargetedSentimentRequest {
+    @inline
+    def apply(
+        LanguageCode: LanguageCode,
+        Text: CustomerInputString
+    ): DetectTargetedSentimentRequest = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetectTargetedSentimentRequest]
+    }
+  }
+
+  @js.native
+  trait DetectTargetedSentimentResponse extends js.Object {
+    var Entities: js.UndefOr[ListOfTargetedSentimentEntities]
+  }
+
+  object DetectTargetedSentimentResponse {
+    @inline
+    def apply(
+        Entities: js.UndefOr[ListOfTargetedSentimentEntities] = js.undefined
+    ): DetectTargetedSentimentResponse = {
+      val __obj = js.Dynamic.literal()
+      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectTargetedSentimentResponse]
+    }
+  }
+
   /** Specifies the class that categorizes the document being analyzed
     */
   @js.native
   trait DocumentClass extends js.Object {
     var Name: js.UndefOr[String]
+    var Page: js.UndefOr[Int]
     var Score: js.UndefOr[Float]
   }
 
@@ -1584,10 +1975,12 @@ package object comprehend {
     @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
+        Page: js.UndefOr[Int] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
     ): DocumentClass = {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
       Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentClass]
     }
@@ -1701,7 +2094,7 @@ package object comprehend {
     }
   }
 
-  /** The input properties for training a document classifier. For more information on how the input file is formatted, see <a>how-document-classification-training-data</a>.
+  /** The input properties for training a document classifier. For more information on how the input file is formatted, see [[https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html|Preparing training data]] in the Comprehend Developer Guide.
     */
   @js.native
   trait DocumentClassifierInputDataConfig extends js.Object {
@@ -1766,6 +2159,7 @@ package object comprehend {
     var Mode: js.UndefOr[DocumentClassifierMode]
     var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig]
+    var SourceModelArn: js.UndefOr[DocumentClassifierArn]
     var Status: js.UndefOr[ModelStatus]
     var SubmitTime: js.UndefOr[Timestamp]
     var TrainingEndTime: js.UndefOr[Timestamp]
@@ -1788,6 +2182,7 @@ package object comprehend {
         Mode: js.UndefOr[DocumentClassifierMode] = js.undefined,
         ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         OutputDataConfig: js.UndefOr[DocumentClassifierOutputDataConfig] = js.undefined,
+        SourceModelArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1807,6 +2202,7 @@ package object comprehend {
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
+      SourceModelArn.foreach(__v => __obj.updateDynamic("SourceModelArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
@@ -1853,6 +2249,7 @@ package object comprehend {
   @js.native
   trait DocumentLabel extends js.Object {
     var Name: js.UndefOr[String]
+    var Page: js.UndefOr[Int]
     var Score: js.UndefOr[Float]
   }
 
@@ -1860,16 +2257,39 @@ package object comprehend {
     @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
+        Page: js.UndefOr[Int] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
     ): DocumentLabel = {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
       Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentLabel]
     }
   }
 
-  /** The input properties for a topic detection job.
+  /** Information about the document, discovered during text extraction.
+    */
+  @js.native
+  trait DocumentMetadata extends js.Object {
+    var ExtractedCharacters: js.UndefOr[ListOfExtractedCharacters]
+    var Pages: js.UndefOr[Int]
+  }
+
+  object DocumentMetadata {
+    @inline
+    def apply(
+        ExtractedCharacters: js.UndefOr[ListOfExtractedCharacters] = js.undefined,
+        Pages: js.UndefOr[Int] = js.undefined
+    ): DocumentMetadata = {
+      val __obj = js.Dynamic.literal()
+      ExtractedCharacters.foreach(__v => __obj.updateDynamic("ExtractedCharacters")(__v.asInstanceOf[js.Any]))
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentMetadata]
+    }
+  }
+
+  /** Provides configuration parameters to override the default actions for extracting text from PDF documents and image files. By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type: * ```Word files``` - Amazon Comprehend parser extracts the text. * ```Digital PDF files``` - Amazon Comprehend parser extracts the text. * ```Image files and scanned PDF files``` - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text. <code>DocumentReaderConfig</code> does not apply to plain text files or Word files. For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see [[https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html#detecting-cer-pdf| Setting text extraction options]].
     */
   @js.native
   trait DocumentReaderConfig extends js.Object {
@@ -1892,6 +2312,27 @@ package object comprehend {
       DocumentReadMode.foreach(__v => __obj.updateDynamic("DocumentReadMode")(__v.asInstanceOf[js.Any]))
       FeatureTypes.foreach(__v => __obj.updateDynamic("FeatureTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentReaderConfig]
+    }
+  }
+
+  /** Document type for each page in the document.
+    */
+  @js.native
+  trait DocumentTypeListItem extends js.Object {
+    var Page: js.UndefOr[Int]
+    var Type: js.UndefOr[DocumentType]
+  }
+
+  object DocumentTypeListItem {
+    @inline
+    def apply(
+        Page: js.UndefOr[Int] = js.undefined,
+        Type: js.UndefOr[DocumentType] = js.undefined
+    ): DocumentTypeListItem = {
+      val __obj = js.Dynamic.literal()
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentTypeListItem]
     }
   }
 
@@ -2021,7 +2462,7 @@ package object comprehend {
     }
   }
 
-  /** Specifies information about the specified endpoint.
+  /** Specifies information about the specified endpoint. For information about endpoints, see [[https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html|Managing endpoints]].
     */
   @js.native
   trait EndpointProperties extends js.Object {
@@ -2158,6 +2599,7 @@ package object comprehend {
   @js.native
   trait Entity extends js.Object {
     var BeginOffset: js.UndefOr[Int]
+    var BlockReferences: js.UndefOr[ListOfBlockReferences]
     var EndOffset: js.UndefOr[Int]
     var Score: js.UndefOr[Float]
     var Text: js.UndefOr[String]
@@ -2168,6 +2610,7 @@ package object comprehend {
     @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
+        BlockReferences: js.UndefOr[ListOfBlockReferences] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined,
         Text: js.UndefOr[String] = js.undefined,
@@ -2175,6 +2618,7 @@ package object comprehend {
     ): Entity = {
       val __obj = js.Dynamic.literal()
       BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      BlockReferences.foreach(__v => __obj.updateDynamic("BlockReferences")(__v.asInstanceOf[js.Any]))
       EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
       Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
@@ -2421,6 +2865,7 @@ package object comprehend {
     var Message: js.UndefOr[AnyLengthString]
     var ModelKmsKeyId: js.UndefOr[KmsKeyId]
     var RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata]
+    var SourceModelArn: js.UndefOr[EntityRecognizerArn]
     var Status: js.UndefOr[ModelStatus]
     var SubmitTime: js.UndefOr[Timestamp]
     var TrainingEndTime: js.UndefOr[Timestamp]
@@ -2441,6 +2886,7 @@ package object comprehend {
         Message: js.UndefOr[AnyLengthString] = js.undefined,
         ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         RecognizerMetadata: js.UndefOr[EntityRecognizerMetadata] = js.undefined,
+        SourceModelArn: js.UndefOr[EntityRecognizerArn] = js.undefined,
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         TrainingEndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2458,6 +2904,7 @@ package object comprehend {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
       RecognizerMetadata.foreach(__v => __obj.updateDynamic("RecognizerMetadata")(__v.asInstanceOf[js.Any]))
+      SourceModelArn.foreach(__v => __obj.updateDynamic("SourceModelArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
       TrainingEndTime.foreach(__v => __obj.updateDynamic("TrainingEndTime")(__v.asInstanceOf[js.Any]))
@@ -2542,6 +2989,30 @@ package object comprehend {
     }
   }
 
+  /** Text extraction encountered one or more page-level errors in the input document. The <code>ErrorCode</code> contains one of the following values: * TEXTRACT_BAD_PAGE - Amazon Textract cannot read the page. For more information about page limits in Amazon Textract, see [[https://docs.aws.amazon.com/textract/latest/dg/limits-document.html| Page Quotas in Amazon Textract]]. * TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED - The number of requests exceeded your throughput limit. For more information about throughput quotas in Amazon Textract, see [[https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html| Default quotas in Amazon Textract]]. * PAGE_CHARACTERS_EXCEEDED - Too many text characters on the page (10,000 characters maximum). * PAGE_SIZE_EXCEEDED - The maximum page size is 10 MB. * INTERNAL_SERVER_ERROR - The request encountered a service issue. Try the API request again.
+    */
+  @js.native
+  trait ErrorsListItem extends js.Object {
+    var ErrorCode: js.UndefOr[PageBasedErrorCode]
+    var ErrorMessage: js.UndefOr[String]
+    var Page: js.UndefOr[Int]
+  }
+
+  object ErrorsListItem {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[PageBasedErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        Page: js.UndefOr[Int] = js.undefined
+    ): ErrorsListItem = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorsListItem]
+    }
+  }
+
   /** Provides information for filtering a list of event detection jobs.
     */
   @js.native
@@ -2620,7 +3091,98 @@ package object comprehend {
     }
   }
 
-  /** The input properties for an inference job.
+  /** Array of the number of characters extracted from each page.
+    */
+  @js.native
+  trait ExtractedCharactersListItem extends js.Object {
+    var Count: js.UndefOr[Int]
+    var Page: js.UndefOr[Int]
+  }
+
+  object ExtractedCharactersListItem {
+    @inline
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        Page: js.UndefOr[Int] = js.undefined
+    ): ExtractedCharactersListItem = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExtractedCharactersListItem]
+    }
+  }
+
+  /** Information about the location of items on a document page. For additional information, see [[https://docs.aws.amazon.com/textract/latest/dg/API_Geometry.html|Geometry]] in the Amazon Textract API reference.
+    */
+  @js.native
+  trait Geometry extends js.Object {
+    var BoundingBox: js.UndefOr[BoundingBox]
+    var Polygon: js.UndefOr[Polygon]
+  }
+
+  object Geometry {
+    @inline
+    def apply(
+        BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
+        Polygon: js.UndefOr[Polygon] = js.undefined
+    ): Geometry = {
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Geometry]
+    }
+  }
+
+  @js.native
+  trait ImportModelRequest extends js.Object {
+    var SourceModelArn: ComprehendModelArn
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
+    var ModelKmsKeyId: js.UndefOr[KmsKeyId]
+    var ModelName: js.UndefOr[ComprehendArnName]
+    var Tags: js.UndefOr[TagList]
+    var VersionName: js.UndefOr[VersionName]
+  }
+
+  object ImportModelRequest {
+    @inline
+    def apply(
+        SourceModelArn: ComprehendModelArn,
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        ModelKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        ModelName: js.UndefOr[ComprehendArnName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VersionName: js.UndefOr[VersionName] = js.undefined
+    ): ImportModelRequest = {
+      val __obj = js.Dynamic.literal(
+        "SourceModelArn" -> SourceModelArn.asInstanceOf[js.Any]
+      )
+
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      ModelKmsKeyId.foreach(__v => __obj.updateDynamic("ModelKmsKeyId")(__v.asInstanceOf[js.Any]))
+      ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportModelRequest]
+    }
+  }
+
+  @js.native
+  trait ImportModelResponse extends js.Object {
+    var ModelArn: js.UndefOr[ComprehendModelArn]
+  }
+
+  object ImportModelResponse {
+    @inline
+    def apply(
+        ModelArn: js.UndefOr[ComprehendModelArn] = js.undefined
+    ): ImportModelResponse = {
+      val __obj = js.Dynamic.literal()
+      ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportModelResponse]
+    }
+  }
+
+  /** The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -3277,6 +3839,47 @@ package object comprehend {
   }
 
   @js.native
+  trait ListTargetedSentimentDetectionJobsRequest extends js.Object {
+    var Filter: js.UndefOr[TargetedSentimentDetectionJobFilter]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListTargetedSentimentDetectionJobsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[TargetedSentimentDetectionJobFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListTargetedSentimentDetectionJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTargetedSentimentDetectionJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListTargetedSentimentDetectionJobsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var TargetedSentimentDetectionJobPropertiesList: js.UndefOr[TargetedSentimentDetectionJobPropertiesList]
+  }
+
+  object ListTargetedSentimentDetectionJobsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        TargetedSentimentDetectionJobPropertiesList: js.UndefOr[TargetedSentimentDetectionJobPropertiesList] = js.undefined
+    ): ListTargetedSentimentDetectionJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TargetedSentimentDetectionJobPropertiesList.foreach(__v => __obj.updateDynamic("TargetedSentimentDetectionJobPropertiesList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTargetedSentimentDetectionJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListTopicsDetectionJobsRequest extends js.Object {
     var Filter: js.UndefOr[TopicsDetectionJobFilter]
     var MaxResults: js.UndefOr[MaxResultsInteger]
@@ -3317,7 +3920,28 @@ package object comprehend {
     }
   }
 
-  /** Provides configuration parameters for the output of topic detection jobs. <p/>
+  /** Contains the sentiment and sentiment score for one mention of an entity. For more information about targeted sentiment, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html|Targeted sentiment]].
+    */
+  @js.native
+  trait MentionSentiment extends js.Object {
+    var Sentiment: js.UndefOr[SentimentType]
+    var SentimentScore: js.UndefOr[SentimentScore]
+  }
+
+  object MentionSentiment {
+    @inline
+    def apply(
+        Sentiment: js.UndefOr[SentimentType] = js.undefined,
+        SentimentScore: js.UndefOr[SentimentScore] = js.undefined
+    ): MentionSentiment = {
+      val __obj = js.Dynamic.literal()
+      Sentiment.foreach(__v => __obj.updateDynamic("Sentiment")(__v.asInstanceOf[js.Any]))
+      SentimentScore.foreach(__v => __obj.updateDynamic("SentimentScore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MentionSentiment]
+    }
+  }
+
+  /** Provides configuration parameters for the output of inference jobs. <p/>
     */
   @js.native
   trait OutputDataConfig extends js.Object {
@@ -3340,7 +3964,7 @@ package object comprehend {
     }
   }
 
-  /** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see <a>how-syntax</a>.
+  /** Identifies the part of speech represented by the token and gives the confidence that Amazon Comprehend has that the part of speech was correctly identified. For more information about the parts of speech that Amazon Comprehend can identify, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html|Syntax]] in the Comprehend Developer Guide.
     */
   @js.native
   trait PartOfSpeechTag extends js.Object {
@@ -3492,6 +4116,67 @@ package object comprehend {
     }
   }
 
+  /** The X and Y coordinates of a point on a document page. For additional information, see [[https://docs.aws.amazon.com/textract/latest/dg/API_Point.html|Point]] in the Amazon Textract API reference.
+    */
+  @js.native
+  trait Point extends js.Object {
+    var X: js.UndefOr[Float]
+    var Y: js.UndefOr[Float]
+  }
+
+  object Point {
+    @inline
+    def apply(
+        X: js.UndefOr[Float] = js.undefined,
+        Y: js.UndefOr[Float] = js.undefined
+    ): Point = {
+      val __obj = js.Dynamic.literal()
+      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Point]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyRequest extends js.Object {
+    var ResourceArn: ComprehendModelArn
+    var ResourcePolicy: Policy
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object PutResourcePolicyRequest {
+    @inline
+    def apply(
+        ResourceArn: ComprehendModelArn,
+        ResourcePolicy: Policy,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): PutResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "ResourcePolicy" -> ResourcePolicy.asInstanceOf[js.Any]
+      )
+
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyResponse extends js.Object {
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object PutResourcePolicyResponse {
+    @inline
+    def apply(
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): PutResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
+    }
+  }
+
   /** Provides configuration parameters for PII entity redaction.
     */
   @js.native
@@ -3513,6 +4198,27 @@ package object comprehend {
       MaskMode.foreach(__v => __obj.updateDynamic("MaskMode")(__v.asInstanceOf[js.Any]))
       PiiEntityTypes.foreach(__v => __obj.updateDynamic("PiiEntityTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedactionConfig]
+    }
+  }
+
+  /** List of child blocks for the current block.
+    */
+  @js.native
+  trait RelationshipsListItem extends js.Object {
+    var Ids: js.UndefOr[StringList]
+    var Type: js.UndefOr[RelationshipType]
+  }
+
+  object RelationshipsListItem {
+    @inline
+    def apply(
+        Ids: js.UndefOr[StringList] = js.undefined,
+        Type: js.UndefOr[RelationshipType] = js.undefined
+    ): RelationshipsListItem = {
+      val __obj = js.Dynamic.literal()
+      Ids.foreach(__v => __obj.updateDynamic("Ids")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RelationshipsListItem]
     }
   }
 
@@ -4070,6 +4776,70 @@ package object comprehend {
   }
 
   @js.native
+  trait StartTargetedSentimentDetectionJobRequest extends js.Object {
+    var DataAccessRoleArn: IamRoleArn
+    var InputDataConfig: InputDataConfig
+    var LanguageCode: LanguageCode
+    var OutputDataConfig: OutputDataConfig
+    var ClientRequestToken: js.UndefOr[ClientRequestTokenString]
+    var JobName: js.UndefOr[JobName]
+    var Tags: js.UndefOr[TagList]
+    var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
+  }
+
+  object StartTargetedSentimentDetectionJobRequest {
+    @inline
+    def apply(
+        DataAccessRoleArn: IamRoleArn,
+        InputDataConfig: InputDataConfig,
+        LanguageCode: LanguageCode,
+        OutputDataConfig: OutputDataConfig,
+        ClientRequestToken: js.UndefOr[ClientRequestTokenString] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
+    ): StartTargetedSentimentDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "OutputDataConfig" -> OutputDataConfig.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTargetedSentimentDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartTargetedSentimentDetectionJobResponse extends js.Object {
+    var JobArn: js.UndefOr[ComprehendArn]
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StartTargetedSentimentDetectionJobResponse {
+    @inline
+    def apply(
+        JobArn: js.UndefOr[ComprehendArn] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StartTargetedSentimentDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobArn.foreach(__v => __obj.updateDynamic("JobArn")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartTargetedSentimentDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait StartTopicsDetectionJobRequest extends js.Object {
     var DataAccessRoleArn: IamRoleArn
     var InputDataConfig: InputDataConfig
@@ -4350,6 +5120,42 @@ package object comprehend {
   }
 
   @js.native
+  trait StopTargetedSentimentDetectionJobRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object StopTargetedSentimentDetectionJobRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): StopTargetedSentimentDetectionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopTargetedSentimentDetectionJobRequest]
+    }
+  }
+
+  @js.native
+  trait StopTargetedSentimentDetectionJobResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+    var JobStatus: js.UndefOr[JobStatus]
+  }
+
+  object StopTargetedSentimentDetectionJobResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined
+    ): StopTargetedSentimentDetectionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopTargetedSentimentDetectionJobResponse]
+    }
+  }
+
+  @js.native
   trait StopTrainingDocumentClassifierRequest extends js.Object {
     var DocumentClassifierArn: DocumentClassifierArn
   }
@@ -4486,6 +5292,144 @@ package object comprehend {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Provides information for filtering a list of dominant language detection jobs. For more information, see the operation.
+    */
+  @js.native
+  trait TargetedSentimentDetectionJobFilter extends js.Object {
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var SubmitTimeAfter: js.UndefOr[Timestamp]
+    var SubmitTimeBefore: js.UndefOr[Timestamp]
+  }
+
+  object TargetedSentimentDetectionJobFilter {
+    @inline
+    def apply(
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        SubmitTimeBefore: js.UndefOr[Timestamp] = js.undefined
+    ): TargetedSentimentDetectionJobFilter = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      SubmitTimeAfter.foreach(__v => __obj.updateDynamic("SubmitTimeAfter")(__v.asInstanceOf[js.Any]))
+      SubmitTimeBefore.foreach(__v => __obj.updateDynamic("SubmitTimeBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetedSentimentDetectionJobFilter]
+    }
+  }
+
+  /** Provides information about a targeted sentiment detection job.
+    */
+  @js.native
+  trait TargetedSentimentDetectionJobProperties extends js.Object {
+    var DataAccessRoleArn: js.UndefOr[IamRoleArn]
+    var EndTime: js.UndefOr[Timestamp]
+    var InputDataConfig: js.UndefOr[InputDataConfig]
+    var JobArn: js.UndefOr[ComprehendArn]
+    var JobId: js.UndefOr[JobId]
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var LanguageCode: js.UndefOr[LanguageCode]
+    var Message: js.UndefOr[AnyLengthString]
+    var OutputDataConfig: js.UndefOr[OutputDataConfig]
+    var SubmitTime: js.UndefOr[Timestamp]
+    var VolumeKmsKeyId: js.UndefOr[KmsKeyId]
+    var VpcConfig: js.UndefOr[VpcConfig]
+  }
+
+  object TargetedSentimentDetectionJobProperties {
+    @inline
+    def apply(
+        DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        JobArn: js.UndefOr[ComprehendArn] = js.undefined,
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
+        Message: js.UndefOr[AnyLengthString] = js.undefined,
+        OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
+        SubmitTime: js.UndefOr[Timestamp] = js.undefined,
+        VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        VpcConfig: js.UndefOr[VpcConfig] = js.undefined
+    ): TargetedSentimentDetectionJobProperties = {
+      val __obj = js.Dynamic.literal()
+      DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      JobArn.foreach(__v => __obj.updateDynamic("JobArn")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
+      VolumeKmsKeyId.foreach(__v => __obj.updateDynamic("VolumeKmsKeyId")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetedSentimentDetectionJobProperties]
+    }
+  }
+
+  /** Information about one of the entities found by targeted sentiment analysis. For more information about targeted sentiment, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html|Targeted sentiment]].
+    */
+  @js.native
+  trait TargetedSentimentEntity extends js.Object {
+    var DescriptiveMentionIndex: js.UndefOr[ListOfDescriptiveMentionIndices]
+    var Mentions: js.UndefOr[ListOfMentions]
+  }
+
+  object TargetedSentimentEntity {
+    @inline
+    def apply(
+        DescriptiveMentionIndex: js.UndefOr[ListOfDescriptiveMentionIndices] = js.undefined,
+        Mentions: js.UndefOr[ListOfMentions] = js.undefined
+    ): TargetedSentimentEntity = {
+      val __obj = js.Dynamic.literal()
+      DescriptiveMentionIndex.foreach(__v => __obj.updateDynamic("DescriptiveMentionIndex")(__v.asInstanceOf[js.Any]))
+      Mentions.foreach(__v => __obj.updateDynamic("Mentions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetedSentimentEntity]
+    }
+  }
+
+  /** Information about one mention of an entity. The mention information includes the location of the mention in the text and the sentiment of the mention. For more information about targeted sentiment, see [[https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html|Targeted sentiment]].
+    */
+  @js.native
+  trait TargetedSentimentMention extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var EndOffset: js.UndefOr[Int]
+    var GroupScore: js.UndefOr[Float]
+    var MentionSentiment: js.UndefOr[MentionSentiment]
+    var Score: js.UndefOr[Float]
+    var Text: js.UndefOr[String]
+    var Type: js.UndefOr[TargetedSentimentEntityType]
+  }
+
+  object TargetedSentimentMention {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        GroupScore: js.UndefOr[Float] = js.undefined,
+        MentionSentiment: js.UndefOr[MentionSentiment] = js.undefined,
+        Score: js.UndefOr[Float] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[TargetedSentimentEntityType] = js.undefined
+    ): TargetedSentimentMention = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      GroupScore.foreach(__v => __obj.updateDynamic("GroupScore")(__v.asInstanceOf[js.Any]))
+      MentionSentiment.foreach(__v => __obj.updateDynamic("MentionSentiment")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetedSentimentMention]
     }
   }
 

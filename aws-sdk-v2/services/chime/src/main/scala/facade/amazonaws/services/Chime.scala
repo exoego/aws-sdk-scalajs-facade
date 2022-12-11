@@ -27,6 +27,7 @@ package object chime {
   type CallingName = String
   type CallingRegion = String
   type CallingRegionList = js.Array[CallingRegion]
+  type CandidateAddressList = js.Array[CandidateAddress]
   type CapabilityList = js.Array[Capability]
   type ChannelBanSummaryList = js.Array[ChannelBanSummary]
   type ChannelMembershipForAppInstanceUserSummaryList = js.Array[ChannelMembershipForAppInstanceUserSummary]
@@ -102,6 +103,7 @@ package object chime {
   type RoomList = js.Array[Room]
   type RoomMembershipList = js.Array[RoomMembership]
   type SMAUpdateCallArgumentsMap = js.Dictionary[SensitiveString]
+  type SensitiveNonEmptyString = String
   type SensitiveString = String
   type SensitiveStringList = js.Array[SensitiveString]
   type SigninDelegateGroupList = js.Array[SigninDelegateGroup]
@@ -134,6 +136,7 @@ package object chime {
   type UserIdList = js.Array[NonEmptyString]
   type UserList = js.Array[User]
   type UserName = String
+  type ValidationResult = Int
   type VoiceConnectorGroupList = js.Array[VoiceConnectorGroup]
   type VoiceConnectorGroupName = String
   type VoiceConnectorItemList = js.Array[VoiceConnectorItem]
@@ -333,6 +336,7 @@ package object chime {
     @inline def updateUserSettingsFuture(params: UpdateUserSettingsRequest): Future[js.Object] = service.updateUserSettings(params).promise().toFuture
     @inline def updateVoiceConnectorFuture(params: UpdateVoiceConnectorRequest): Future[UpdateVoiceConnectorResponse] = service.updateVoiceConnector(params).promise().toFuture
     @inline def updateVoiceConnectorGroupFuture(params: UpdateVoiceConnectorGroupRequest): Future[UpdateVoiceConnectorGroupResponse] = service.updateVoiceConnectorGroup(params).promise().toFuture
+    @inline def validateE911AddressFuture(params: ValidateE911AddressRequest): Future[ValidateE911AddressResponse] = service.validateE911Address(params).promise().toFuture
 
   }
 
@@ -531,6 +535,7 @@ package object chime {
     def updateUserSettings(params: UpdateUserSettingsRequest): Request[js.Object] = js.native
     def updateVoiceConnector(params: UpdateVoiceConnectorRequest): Request[UpdateVoiceConnectorResponse] = js.native
     def updateVoiceConnectorGroup(params: UpdateVoiceConnectorGroupRequest): Request[UpdateVoiceConnectorGroupResponse] = js.native
+    def validateE911Address(params: ValidateE911AddressRequest): Request[ValidateE911AddressResponse] = js.native
   }
   object Chime {
     @inline implicit def toOps(service: Chime): ChimeOps = {
@@ -600,6 +605,51 @@ package object chime {
       DisableRemoteControl.foreach(__v => __obj.updateDynamic("DisableRemoteControl")(__v.asInstanceOf[js.Any]))
       EnableDialOut.foreach(__v => __obj.updateDynamic("EnableDialOut")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountSettings]
+    }
+  }
+
+  /** A validated address.
+    */
+  @js.native
+  trait Address extends js.Object {
+    var city: js.UndefOr[SensitiveNonEmptyString]
+    var country: js.UndefOr[SensitiveNonEmptyString]
+    var postDirectional: js.UndefOr[SensitiveNonEmptyString]
+    var postalCode: js.UndefOr[SensitiveNonEmptyString]
+    var postalCodePlus4: js.UndefOr[SensitiveNonEmptyString]
+    var preDirectional: js.UndefOr[SensitiveNonEmptyString]
+    var state: js.UndefOr[SensitiveNonEmptyString]
+    var streetName: js.UndefOr[SensitiveNonEmptyString]
+    var streetNumber: js.UndefOr[SensitiveNonEmptyString]
+    var streetSuffix: js.UndefOr[SensitiveNonEmptyString]
+  }
+
+  object Address {
+    @inline
+    def apply(
+        city: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        country: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        postDirectional: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        postalCode: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        postalCodePlus4: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        preDirectional: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        state: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        streetName: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        streetNumber: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        streetSuffix: js.UndefOr[SensitiveNonEmptyString] = js.undefined
+    ): Address = {
+      val __obj = js.Dynamic.literal()
+      city.foreach(__v => __obj.updateDynamic("city")(__v.asInstanceOf[js.Any]))
+      country.foreach(__v => __obj.updateDynamic("country")(__v.asInstanceOf[js.Any]))
+      postDirectional.foreach(__v => __obj.updateDynamic("postDirectional")(__v.asInstanceOf[js.Any]))
+      postalCode.foreach(__v => __obj.updateDynamic("postalCode")(__v.asInstanceOf[js.Any]))
+      postalCodePlus4.foreach(__v => __obj.updateDynamic("postalCodePlus4")(__v.asInstanceOf[js.Any]))
+      preDirectional.foreach(__v => __obj.updateDynamic("preDirectional")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      streetName.foreach(__v => __obj.updateDynamic("streetName")(__v.asInstanceOf[js.Any]))
+      streetNumber.foreach(__v => __obj.updateDynamic("streetNumber")(__v.asInstanceOf[js.Any]))
+      streetSuffix.foreach(__v => __obj.updateDynamic("streetSuffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Address]
     }
   }
 
@@ -1454,6 +1504,42 @@ package object chime {
       val __obj = js.Dynamic.literal()
       CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BusinessCallingSettings]
+    }
+  }
+
+  /** A suggested address.
+    */
+  @js.native
+  trait CandidateAddress extends js.Object {
+    var city: js.UndefOr[SensitiveNonEmptyString]
+    var country: js.UndefOr[SensitiveNonEmptyString]
+    var postalCode: js.UndefOr[SensitiveNonEmptyString]
+    var postalCodePlus4: js.UndefOr[SensitiveNonEmptyString]
+    var state: js.UndefOr[SensitiveNonEmptyString]
+    var streetInfo: js.UndefOr[SensitiveNonEmptyString]
+    var streetNumber: js.UndefOr[SensitiveNonEmptyString]
+  }
+
+  object CandidateAddress {
+    @inline
+    def apply(
+        city: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        country: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        postalCode: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        postalCodePlus4: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        state: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        streetInfo: js.UndefOr[SensitiveNonEmptyString] = js.undefined,
+        streetNumber: js.UndefOr[SensitiveNonEmptyString] = js.undefined
+    ): CandidateAddress = {
+      val __obj = js.Dynamic.literal()
+      city.foreach(__v => __obj.updateDynamic("city")(__v.asInstanceOf[js.Any]))
+      country.foreach(__v => __obj.updateDynamic("country")(__v.asInstanceOf[js.Any]))
+      postalCode.foreach(__v => __obj.updateDynamic("postalCode")(__v.asInstanceOf[js.Any]))
+      postalCodePlus4.foreach(__v => __obj.updateDynamic("postalCodePlus4")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      streetInfo.foreach(__v => __obj.updateDynamic("streetInfo")(__v.asInstanceOf[js.Any]))
+      streetNumber.foreach(__v => __obj.updateDynamic("streetNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CandidateAddress]
     }
   }
 
@@ -6619,15 +6705,18 @@ package object chime {
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
+    var EnableMediaMetricLogs: js.UndefOr[Boolean]
     var EnableSIPLogs: js.UndefOr[Boolean]
   }
 
   object LoggingConfiguration {
     @inline
     def apply(
+        EnableMediaMetricLogs: js.UndefOr[Boolean] = js.undefined,
         EnableSIPLogs: js.UndefOr[Boolean] = js.undefined
     ): LoggingConfiguration = {
       val __obj = js.Dynamic.literal()
+      EnableMediaMetricLogs.foreach(__v => __obj.updateDynamic("EnableMediaMetricLogs")(__v.asInstanceOf[js.Any]))
       EnableSIPLogs.foreach(__v => __obj.updateDynamic("EnableSIPLogs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingConfiguration]
     }
@@ -9624,6 +9713,66 @@ package object chime {
         "Telephony" -> Telephony.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UserSettings]
+    }
+  }
+
+  @js.native
+  trait ValidateE911AddressRequest extends js.Object {
+    var AwsAccountId: NonEmptyString
+    var City: SensitiveNonEmptyString
+    var Country: SensitiveNonEmptyString
+    var PostalCode: SensitiveNonEmptyString
+    var State: SensitiveNonEmptyString
+    var StreetInfo: SensitiveNonEmptyString
+    var StreetNumber: SensitiveNonEmptyString
+  }
+
+  object ValidateE911AddressRequest {
+    @inline
+    def apply(
+        AwsAccountId: NonEmptyString,
+        City: SensitiveNonEmptyString,
+        Country: SensitiveNonEmptyString,
+        PostalCode: SensitiveNonEmptyString,
+        State: SensitiveNonEmptyString,
+        StreetInfo: SensitiveNonEmptyString,
+        StreetNumber: SensitiveNonEmptyString
+    ): ValidateE911AddressRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "City" -> City.asInstanceOf[js.Any],
+        "Country" -> Country.asInstanceOf[js.Any],
+        "PostalCode" -> PostalCode.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any],
+        "StreetInfo" -> StreetInfo.asInstanceOf[js.Any],
+        "StreetNumber" -> StreetNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ValidateE911AddressRequest]
+    }
+  }
+
+  @js.native
+  trait ValidateE911AddressResponse extends js.Object {
+    var Address: js.UndefOr[Address]
+    var AddressExternalId: js.UndefOr[String]
+    var CandidateAddressList: js.UndefOr[CandidateAddressList]
+    var ValidationResult: js.UndefOr[ValidationResult]
+  }
+
+  object ValidateE911AddressResponse {
+    @inline
+    def apply(
+        Address: js.UndefOr[Address] = js.undefined,
+        AddressExternalId: js.UndefOr[String] = js.undefined,
+        CandidateAddressList: js.UndefOr[CandidateAddressList] = js.undefined,
+        ValidationResult: js.UndefOr[ValidationResult] = js.undefined
+    ): ValidateE911AddressResponse = {
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      AddressExternalId.foreach(__v => __obj.updateDynamic("AddressExternalId")(__v.asInstanceOf[js.Any]))
+      CandidateAddressList.foreach(__v => __obj.updateDynamic("CandidateAddressList")(__v.asInstanceOf[js.Any]))
+      ValidationResult.foreach(__v => __obj.updateDynamic("ValidationResult")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidateE911AddressResponse]
     }
   }
 

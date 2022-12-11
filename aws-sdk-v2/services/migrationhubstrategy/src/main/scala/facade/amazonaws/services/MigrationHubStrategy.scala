@@ -11,6 +11,9 @@ package object migrationhubstrategy {
   type ApplicationComponentDetails = js.Array[ApplicationComponentDetail]
   type ApplicationComponentId = String
   type ApplicationComponentStrategies = js.Array[ApplicationComponentStrategy]
+  type AssessmentStatusMessage = String
+  type AssessmentTargetValues = js.Array[String]
+  type AssessmentTargets = js.Array[AssessmentTarget]
   type AssociatedApplications = js.Array[AssociatedApplication]
   type AssociatedServerIDs = js.Array[String]
   type AsyncTaskId = String
@@ -21,11 +24,14 @@ package object migrationhubstrategy {
   type HeterogeneousTargetDatabaseEngines = js.Array[HeterogeneousTargetDatabaseEngine]
   type HomogeneousTargetDatabaseEngines = js.Array[HomogeneousTargetDatabaseEngine]
   type IPAddress = String
+  type IPAddressBasedRemoteInfoList = js.Array[IPAddressBasedRemoteInfo]
   type InterfaceName = String
   type ListAntipatternSeveritySummary = js.Array[AntipatternSeveritySummary]
+  type ListApplicationComponentStatusSummary = js.Array[ApplicationComponentStatusSummary]
   type ListApplicationComponentSummary = js.Array[ApplicationComponentSummary]
   type ListApplicationComponentsRequestFilterValueString = String
   type ListImportFileTaskInformation = js.Array[ImportFileTaskInformation]
+  type ListServerStatusSummary = js.Array[ServerStatusSummary]
   type ListServerSummary = js.Array[ServerSummary]
   type ListStrategySummary = js.Array[StrategySummary]
   type Location = String
@@ -36,6 +42,8 @@ package object migrationhubstrategy {
   type NextToken = String
   type NoPreferenceTargetDestinations = js.Array[NoPreferenceTargetDestination]
   type OSVersion = String
+  type PipelineInfoList = js.Array[PipelineInfo]
+  type ProjectName = String
   type RecommendationReportStatusMessage = String
   type RecommendationReportTimeStamp = js.Date
   type RecommendationTaskId = String
@@ -61,6 +69,8 @@ package object migrationhubstrategy {
   type TimeStamp = js.Date
   type TranformationToolDescription = String
   type TranformationToolInstallationLink = String
+  type VcenterBasedRemoteInfoList = js.Array[VcenterBasedRemoteInfo]
+  type VersionControlInfoList = js.Array[VersionControlInfo]
   type importS3Bucket = String
   type importS3Key = String
 
@@ -70,6 +80,7 @@ package object migrationhubstrategy {
     @inline def getApplicationComponentStrategiesFuture(params: GetApplicationComponentStrategiesRequest): Future[GetApplicationComponentStrategiesResponse] = service.getApplicationComponentStrategies(params).promise().toFuture
     @inline def getAssessmentFuture(params: GetAssessmentRequest): Future[GetAssessmentResponse] = service.getAssessment(params).promise().toFuture
     @inline def getImportFileTaskFuture(params: GetImportFileTaskRequest): Future[GetImportFileTaskResponse] = service.getImportFileTask(params).promise().toFuture
+    @inline def getLatestAssessmentIdFuture(params: GetLatestAssessmentIdRequest): Future[GetLatestAssessmentIdResponse] = service.getLatestAssessmentId(params).promise().toFuture
     @inline def getPortfolioPreferencesFuture(params: GetPortfolioPreferencesRequest): Future[GetPortfolioPreferencesResponse] = service.getPortfolioPreferences(params).promise().toFuture
     @inline def getPortfolioSummaryFuture(params: GetPortfolioSummaryRequest): Future[GetPortfolioSummaryResponse] = service.getPortfolioSummary(params).promise().toFuture
     @inline def getRecommendationReportDetailsFuture(params: GetRecommendationReportDetailsRequest): Future[GetRecommendationReportDetailsResponse] = service.getRecommendationReportDetails(params).promise().toFuture
@@ -98,6 +109,7 @@ package object migrationhubstrategy {
     def getApplicationComponentStrategies(params: GetApplicationComponentStrategiesRequest): Request[GetApplicationComponentStrategiesResponse] = js.native
     def getAssessment(params: GetAssessmentRequest): Request[GetAssessmentResponse] = js.native
     def getImportFileTask(params: GetImportFileTaskRequest): Request[GetImportFileTaskResponse] = js.native
+    def getLatestAssessmentId(params: GetLatestAssessmentIdRequest): Request[GetLatestAssessmentIdResponse] = js.native
     def getPortfolioPreferences(params: GetPortfolioPreferencesRequest): Request[GetPortfolioPreferencesResponse] = js.native
     def getPortfolioSummary(params: GetPortfolioSummaryRequest): Request[GetPortfolioSummaryResponse] = js.native
     def getRecommendationReportDetails(params: GetRecommendationReportDetailsRequest): Request[GetRecommendationReportDetailsResponse] = js.native
@@ -142,6 +154,24 @@ package object migrationhubstrategy {
     }
   }
 
+  /** Error in the analysis of the application unit.
+    */
+  @js.native
+  trait AppUnitError extends js.Object {
+    var appUnitErrorCategory: js.UndefOr[AppUnitErrorCategory]
+  }
+
+  object AppUnitError {
+    @inline
+    def apply(
+        appUnitErrorCategory: js.UndefOr[AppUnitErrorCategory] = js.undefined
+    ): AppUnitError = {
+      val __obj = js.Dynamic.literal()
+      appUnitErrorCategory.foreach(__v => __obj.updateDynamic("appUnitErrorCategory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppUnitError]
+    }
+  }
+
   /** Contains detailed information about an application component.
     */
   @js.native
@@ -151,6 +181,7 @@ package object migrationhubstrategy {
     var antipatternReportStatus: js.UndefOr[AntipatternReportStatus]
     var antipatternReportStatusMessage: js.UndefOr[StatusMessage]
     var appType: js.UndefOr[AppType]
+    var appUnitError: js.UndefOr[AppUnitError]
     var associatedServerId: js.UndefOr[ServerId]
     var databaseConfigDetail: js.UndefOr[DatabaseConfigDetail]
     var id: js.UndefOr[ResourceId]
@@ -163,6 +194,8 @@ package object migrationhubstrategy {
     var osVersion: js.UndefOr[String]
     var recommendationSet: js.UndefOr[RecommendationSet]
     var resourceSubType: js.UndefOr[ResourceSubType]
+    var runtimeStatus: js.UndefOr[RuntimeAnalysisStatus]
+    var runtimeStatusMessage: js.UndefOr[StatusMessage]
     var sourceCodeRepositories: js.UndefOr[SourceCodeRepositories]
     var statusMessage: js.UndefOr[StatusMessage]
   }
@@ -175,6 +208,7 @@ package object migrationhubstrategy {
         antipatternReportStatus: js.UndefOr[AntipatternReportStatus] = js.undefined,
         antipatternReportStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         appType: js.UndefOr[AppType] = js.undefined,
+        appUnitError: js.UndefOr[AppUnitError] = js.undefined,
         associatedServerId: js.UndefOr[ServerId] = js.undefined,
         databaseConfigDetail: js.UndefOr[DatabaseConfigDetail] = js.undefined,
         id: js.UndefOr[ResourceId] = js.undefined,
@@ -187,6 +221,8 @@ package object migrationhubstrategy {
         osVersion: js.UndefOr[String] = js.undefined,
         recommendationSet: js.UndefOr[RecommendationSet] = js.undefined,
         resourceSubType: js.UndefOr[ResourceSubType] = js.undefined,
+        runtimeStatus: js.UndefOr[RuntimeAnalysisStatus] = js.undefined,
+        runtimeStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         sourceCodeRepositories: js.UndefOr[SourceCodeRepositories] = js.undefined,
         statusMessage: js.UndefOr[StatusMessage] = js.undefined
     ): ApplicationComponentDetail = {
@@ -196,6 +232,7 @@ package object migrationhubstrategy {
       antipatternReportStatus.foreach(__v => __obj.updateDynamic("antipatternReportStatus")(__v.asInstanceOf[js.Any]))
       antipatternReportStatusMessage.foreach(__v => __obj.updateDynamic("antipatternReportStatusMessage")(__v.asInstanceOf[js.Any]))
       appType.foreach(__v => __obj.updateDynamic("appType")(__v.asInstanceOf[js.Any]))
+      appUnitError.foreach(__v => __obj.updateDynamic("appUnitError")(__v.asInstanceOf[js.Any]))
       associatedServerId.foreach(__v => __obj.updateDynamic("associatedServerId")(__v.asInstanceOf[js.Any]))
       databaseConfigDetail.foreach(__v => __obj.updateDynamic("databaseConfigDetail")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
@@ -208,9 +245,32 @@ package object migrationhubstrategy {
       osVersion.foreach(__v => __obj.updateDynamic("osVersion")(__v.asInstanceOf[js.Any]))
       recommendationSet.foreach(__v => __obj.updateDynamic("recommendationSet")(__v.asInstanceOf[js.Any]))
       resourceSubType.foreach(__v => __obj.updateDynamic("resourceSubType")(__v.asInstanceOf[js.Any]))
+      runtimeStatus.foreach(__v => __obj.updateDynamic("runtimeStatus")(__v.asInstanceOf[js.Any]))
+      runtimeStatusMessage.foreach(__v => __obj.updateDynamic("runtimeStatusMessage")(__v.asInstanceOf[js.Any]))
       sourceCodeRepositories.foreach(__v => __obj.updateDynamic("sourceCodeRepositories")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationComponentDetail]
+    }
+  }
+
+  /** Summary of the analysis status of the application component.
+    */
+  @js.native
+  trait ApplicationComponentStatusSummary extends js.Object {
+    var count: js.UndefOr[Int]
+    var srcCodeOrDbAnalysisStatus: js.UndefOr[SrcCodeOrDbAnalysisStatus]
+  }
+
+  object ApplicationComponentStatusSummary {
+    @inline
+    def apply(
+        count: js.UndefOr[Int] = js.undefined,
+        srcCodeOrDbAnalysisStatus: js.UndefOr[SrcCodeOrDbAnalysisStatus] = js.undefined
+    ): ApplicationComponentStatusSummary = {
+      val __obj = js.Dynamic.literal()
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      srcCodeOrDbAnalysisStatus.foreach(__v => __obj.updateDynamic("srcCodeOrDbAnalysisStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApplicationComponentStatusSummary]
     }
   }
 
@@ -286,8 +346,10 @@ package object migrationhubstrategy {
     var antipatternReportStatusMessage: js.UndefOr[StatusMessage]
     var lastAnalyzedTimestamp: js.UndefOr[TimeStamp]
     var listAntipatternSeveritySummary: js.UndefOr[ListAntipatternSeveritySummary]
+    var listApplicationComponentStatusSummary: js.UndefOr[ListApplicationComponentStatusSummary]
     var listApplicationComponentStrategySummary: js.UndefOr[ListStrategySummary]
     var listApplicationComponentSummary: js.UndefOr[ListApplicationComponentSummary]
+    var listServerStatusSummary: js.UndefOr[ListServerStatusSummary]
     var listServerStrategySummary: js.UndefOr[ListStrategySummary]
     var listServerSummary: js.UndefOr[ListServerSummary]
   }
@@ -300,8 +362,10 @@ package object migrationhubstrategy {
         antipatternReportStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         lastAnalyzedTimestamp: js.UndefOr[TimeStamp] = js.undefined,
         listAntipatternSeveritySummary: js.UndefOr[ListAntipatternSeveritySummary] = js.undefined,
+        listApplicationComponentStatusSummary: js.UndefOr[ListApplicationComponentStatusSummary] = js.undefined,
         listApplicationComponentStrategySummary: js.UndefOr[ListStrategySummary] = js.undefined,
         listApplicationComponentSummary: js.UndefOr[ListApplicationComponentSummary] = js.undefined,
+        listServerStatusSummary: js.UndefOr[ListServerStatusSummary] = js.undefined,
         listServerStrategySummary: js.UndefOr[ListStrategySummary] = js.undefined,
         listServerSummary: js.UndefOr[ListServerSummary] = js.undefined
     ): AssessmentSummary = {
@@ -311,11 +375,38 @@ package object migrationhubstrategy {
       antipatternReportStatusMessage.foreach(__v => __obj.updateDynamic("antipatternReportStatusMessage")(__v.asInstanceOf[js.Any]))
       lastAnalyzedTimestamp.foreach(__v => __obj.updateDynamic("lastAnalyzedTimestamp")(__v.asInstanceOf[js.Any]))
       listAntipatternSeveritySummary.foreach(__v => __obj.updateDynamic("listAntipatternSeveritySummary")(__v.asInstanceOf[js.Any]))
+      listApplicationComponentStatusSummary.foreach(__v => __obj.updateDynamic("listApplicationComponentStatusSummary")(__v.asInstanceOf[js.Any]))
       listApplicationComponentStrategySummary.foreach(__v => __obj.updateDynamic("listApplicationComponentStrategySummary")(__v.asInstanceOf[js.Any]))
       listApplicationComponentSummary.foreach(__v => __obj.updateDynamic("listApplicationComponentSummary")(__v.asInstanceOf[js.Any]))
+      listServerStatusSummary.foreach(__v => __obj.updateDynamic("listServerStatusSummary")(__v.asInstanceOf[js.Any]))
       listServerStrategySummary.foreach(__v => __obj.updateDynamic("listServerStrategySummary")(__v.asInstanceOf[js.Any]))
       listServerSummary.foreach(__v => __obj.updateDynamic("listServerSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentSummary]
+    }
+  }
+
+  /** Defines the criteria of assessment.
+    */
+  @js.native
+  trait AssessmentTarget extends js.Object {
+    var condition: Condition
+    var name: String
+    var values: AssessmentTargetValues
+  }
+
+  object AssessmentTarget {
+    @inline
+    def apply(
+        condition: Condition,
+        name: String,
+        values: AssessmentTargetValues
+    ): AssessmentTarget = {
+      val __obj = js.Dynamic.literal(
+        "condition" -> condition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssessmentTarget]
     }
   }
 
@@ -393,6 +484,7 @@ package object migrationhubstrategy {
     var collectorHealth: js.UndefOr[CollectorHealth]
     var collectorId: js.UndefOr[String]
     var collectorVersion: js.UndefOr[String]
+    var configurationSummary: js.UndefOr[ConfigurationSummary]
     var hostName: js.UndefOr[String]
     var ipAddress: js.UndefOr[String]
     var lastActivityTimeStamp: js.UndefOr[String]
@@ -405,6 +497,7 @@ package object migrationhubstrategy {
         collectorHealth: js.UndefOr[CollectorHealth] = js.undefined,
         collectorId: js.UndefOr[String] = js.undefined,
         collectorVersion: js.UndefOr[String] = js.undefined,
+        configurationSummary: js.UndefOr[ConfigurationSummary] = js.undefined,
         hostName: js.UndefOr[String] = js.undefined,
         ipAddress: js.UndefOr[String] = js.undefined,
         lastActivityTimeStamp: js.UndefOr[String] = js.undefined,
@@ -414,11 +507,42 @@ package object migrationhubstrategy {
       collectorHealth.foreach(__v => __obj.updateDynamic("collectorHealth")(__v.asInstanceOf[js.Any]))
       collectorId.foreach(__v => __obj.updateDynamic("collectorId")(__v.asInstanceOf[js.Any]))
       collectorVersion.foreach(__v => __obj.updateDynamic("collectorVersion")(__v.asInstanceOf[js.Any]))
+      configurationSummary.foreach(__v => __obj.updateDynamic("configurationSummary")(__v.asInstanceOf[js.Any]))
       hostName.foreach(__v => __obj.updateDynamic("hostName")(__v.asInstanceOf[js.Any]))
       ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
       lastActivityTimeStamp.foreach(__v => __obj.updateDynamic("lastActivityTimeStamp")(__v.asInstanceOf[js.Any]))
       registeredTimeStamp.foreach(__v => __obj.updateDynamic("registeredTimeStamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Collector]
+    }
+  }
+
+  /** Summary of the collector configuration.
+    */
+  @js.native
+  trait ConfigurationSummary extends js.Object {
+    var ipAddressBasedRemoteInfoList: js.UndefOr[IPAddressBasedRemoteInfoList]
+    var pipelineInfoList: js.UndefOr[PipelineInfoList]
+    var remoteSourceCodeAnalysisServerInfo: js.UndefOr[RemoteSourceCodeAnalysisServerInfo]
+    var vcenterBasedRemoteInfoList: js.UndefOr[VcenterBasedRemoteInfoList]
+    var versionControlInfoList: js.UndefOr[VersionControlInfoList]
+  }
+
+  object ConfigurationSummary {
+    @inline
+    def apply(
+        ipAddressBasedRemoteInfoList: js.UndefOr[IPAddressBasedRemoteInfoList] = js.undefined,
+        pipelineInfoList: js.UndefOr[PipelineInfoList] = js.undefined,
+        remoteSourceCodeAnalysisServerInfo: js.UndefOr[RemoteSourceCodeAnalysisServerInfo] = js.undefined,
+        vcenterBasedRemoteInfoList: js.UndefOr[VcenterBasedRemoteInfoList] = js.undefined,
+        versionControlInfoList: js.UndefOr[VersionControlInfoList] = js.undefined
+    ): ConfigurationSummary = {
+      val __obj = js.Dynamic.literal()
+      ipAddressBasedRemoteInfoList.foreach(__v => __obj.updateDynamic("ipAddressBasedRemoteInfoList")(__v.asInstanceOf[js.Any]))
+      pipelineInfoList.foreach(__v => __obj.updateDynamic("pipelineInfoList")(__v.asInstanceOf[js.Any]))
+      remoteSourceCodeAnalysisServerInfo.foreach(__v => __obj.updateDynamic("remoteSourceCodeAnalysisServerInfo")(__v.asInstanceOf[js.Any]))
+      vcenterBasedRemoteInfoList.foreach(__v => __obj.updateDynamic("vcenterBasedRemoteInfoList")(__v.asInstanceOf[js.Any]))
+      versionControlInfoList.foreach(__v => __obj.updateDynamic("versionControlInfoList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigurationSummary]
     }
   }
 
@@ -432,6 +556,7 @@ package object migrationhubstrategy {
     var servers: js.UndefOr[Int]
     var startTime: js.UndefOr[TimeStamp]
     var status: js.UndefOr[AssessmentStatus]
+    var statusMessage: js.UndefOr[AssessmentStatusMessage]
     var success: js.UndefOr[Int]
   }
 
@@ -444,6 +569,7 @@ package object migrationhubstrategy {
         servers: js.UndefOr[Int] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined,
         status: js.UndefOr[AssessmentStatus] = js.undefined,
+        statusMessage: js.UndefOr[AssessmentStatusMessage] = js.undefined,
         success: js.UndefOr[Int] = js.undefined
     ): DataCollectionDetails = {
       val __obj = js.Dynamic.literal()
@@ -453,6 +579,7 @@ package object migrationhubstrategy {
       servers.foreach(__v => __obj.updateDynamic("servers")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       success.foreach(__v => __obj.updateDynamic("success")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataCollectionDetails]
     }
@@ -615,6 +742,7 @@ package object migrationhubstrategy {
 
   @js.native
   trait GetAssessmentResponse extends js.Object {
+    var assessmentTargets: js.UndefOr[AssessmentTargets]
     var dataCollectionDetails: js.UndefOr[DataCollectionDetails]
     var id: js.UndefOr[AsyncTaskId]
   }
@@ -622,10 +750,12 @@ package object migrationhubstrategy {
   object GetAssessmentResponse {
     @inline
     def apply(
+        assessmentTargets: js.UndefOr[AssessmentTargets] = js.undefined,
         dataCollectionDetails: js.UndefOr[DataCollectionDetails] = js.undefined,
         id: js.UndefOr[AsyncTaskId] = js.undefined
     ): GetAssessmentResponse = {
       val __obj = js.Dynamic.literal()
+      assessmentTargets.foreach(__v => __obj.updateDynamic("assessmentTargets")(__v.asInstanceOf[js.Any]))
       dataCollectionDetails.foreach(__v => __obj.updateDynamic("dataCollectionDetails")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssessmentResponse]
@@ -696,6 +826,33 @@ package object migrationhubstrategy {
   }
 
   @js.native
+  trait GetLatestAssessmentIdRequest extends js.Object
+
+  object GetLatestAssessmentIdRequest {
+    @inline
+    def apply(): GetLatestAssessmentIdRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetLatestAssessmentIdRequest]
+    }
+  }
+
+  @js.native
+  trait GetLatestAssessmentIdResponse extends js.Object {
+    var id: js.UndefOr[AsyncTaskId]
+  }
+
+  object GetLatestAssessmentIdResponse {
+    @inline
+    def apply(
+        id: js.UndefOr[AsyncTaskId] = js.undefined
+    ): GetLatestAssessmentIdResponse = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLatestAssessmentIdResponse]
+    }
+  }
+
+  @js.native
   trait GetPortfolioPreferencesRequest extends js.Object
 
   object GetPortfolioPreferencesRequest {
@@ -708,6 +865,7 @@ package object migrationhubstrategy {
 
   @js.native
   trait GetPortfolioPreferencesResponse extends js.Object {
+    var applicationMode: js.UndefOr[ApplicationMode]
     var applicationPreferences: js.UndefOr[ApplicationPreferences]
     var databasePreferences: js.UndefOr[DatabasePreferences]
     var prioritizeBusinessGoals: js.UndefOr[PrioritizeBusinessGoals]
@@ -716,11 +874,13 @@ package object migrationhubstrategy {
   object GetPortfolioPreferencesResponse {
     @inline
     def apply(
+        applicationMode: js.UndefOr[ApplicationMode] = js.undefined,
         applicationPreferences: js.UndefOr[ApplicationPreferences] = js.undefined,
         databasePreferences: js.UndefOr[DatabasePreferences] = js.undefined,
         prioritizeBusinessGoals: js.UndefOr[PrioritizeBusinessGoals] = js.undefined
     ): GetPortfolioPreferencesResponse = {
       val __obj = js.Dynamic.literal()
+      applicationMode.foreach(__v => __obj.updateDynamic("applicationMode")(__v.asInstanceOf[js.Any]))
       applicationPreferences.foreach(__v => __obj.updateDynamic("applicationPreferences")(__v.asInstanceOf[js.Any]))
       databasePreferences.foreach(__v => __obj.updateDynamic("databasePreferences")(__v.asInstanceOf[js.Any]))
       prioritizeBusinessGoals.foreach(__v => __obj.updateDynamic("prioritizeBusinessGoals")(__v.asInstanceOf[js.Any]))
@@ -925,6 +1085,30 @@ package object migrationhubstrategy {
       val __obj = js.Dynamic.literal()
       targetDatabaseEngine.foreach(__v => __obj.updateDynamic("targetDatabaseEngine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Homogeneous]
+    }
+  }
+
+  /** IP address based configurations.
+    */
+  @js.native
+  trait IPAddressBasedRemoteInfo extends js.Object {
+    var authType: js.UndefOr[AuthType]
+    var ipAddressConfigurationTimeStamp: js.UndefOr[String]
+    var osType: js.UndefOr[OSType]
+  }
+
+  object IPAddressBasedRemoteInfo {
+    @inline
+    def apply(
+        authType: js.UndefOr[AuthType] = js.undefined,
+        ipAddressConfigurationTimeStamp: js.UndefOr[String] = js.undefined,
+        osType: js.UndefOr[OSType] = js.undefined
+    ): IPAddressBasedRemoteInfo = {
+      val __obj = js.Dynamic.literal()
+      authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
+      ipAddressConfigurationTimeStamp.foreach(__v => __obj.updateDynamic("ipAddressConfigurationTimeStamp")(__v.asInstanceOf[js.Any]))
+      osType.foreach(__v => __obj.updateDynamic("osType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPAddressBasedRemoteInfo]
     }
   }
 
@@ -1263,6 +1447,27 @@ package object migrationhubstrategy {
     }
   }
 
+  /** Detailed information of the pipeline.
+    */
+  @js.native
+  trait PipelineInfo extends js.Object {
+    var pipelineConfigurationTimeStamp: js.UndefOr[String]
+    var pipelineType: js.UndefOr[PipelineType]
+  }
+
+  object PipelineInfo {
+    @inline
+    def apply(
+        pipelineConfigurationTimeStamp: js.UndefOr[String] = js.undefined,
+        pipelineType: js.UndefOr[PipelineType] = js.undefined
+    ): PipelineInfo = {
+      val __obj = js.Dynamic.literal()
+      pipelineConfigurationTimeStamp.foreach(__v => __obj.updateDynamic("pipelineConfigurationTimeStamp")(__v.asInstanceOf[js.Any]))
+      pipelineType.foreach(__v => __obj.updateDynamic("pipelineType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineInfo]
+    }
+  }
+
   /** Rank of business goals based on priority.
     */
   @js.native
@@ -1283,6 +1488,7 @@ package object migrationhubstrategy {
 
   @js.native
   trait PutPortfolioPreferencesRequest extends js.Object {
+    var applicationMode: js.UndefOr[ApplicationMode]
     var applicationPreferences: js.UndefOr[ApplicationPreferences]
     var databasePreferences: js.UndefOr[DatabasePreferences]
     var prioritizeBusinessGoals: js.UndefOr[PrioritizeBusinessGoals]
@@ -1291,11 +1497,13 @@ package object migrationhubstrategy {
   object PutPortfolioPreferencesRequest {
     @inline
     def apply(
+        applicationMode: js.UndefOr[ApplicationMode] = js.undefined,
         applicationPreferences: js.UndefOr[ApplicationPreferences] = js.undefined,
         databasePreferences: js.UndefOr[DatabasePreferences] = js.undefined,
         prioritizeBusinessGoals: js.UndefOr[PrioritizeBusinessGoals] = js.undefined
     ): PutPortfolioPreferencesRequest = {
       val __obj = js.Dynamic.literal()
+      applicationMode.foreach(__v => __obj.updateDynamic("applicationMode")(__v.asInstanceOf[js.Any]))
       applicationPreferences.foreach(__v => __obj.updateDynamic("applicationPreferences")(__v.asInstanceOf[js.Any]))
       databasePreferences.foreach(__v => __obj.updateDynamic("databasePreferences")(__v.asInstanceOf[js.Any]))
       prioritizeBusinessGoals.foreach(__v => __obj.updateDynamic("prioritizeBusinessGoals")(__v.asInstanceOf[js.Any]))
@@ -1371,6 +1579,24 @@ package object migrationhubstrategy {
     }
   }
 
+  /** Information about the server configured for source code analysis.
+    */
+  @js.native
+  trait RemoteSourceCodeAnalysisServerInfo extends js.Object {
+    var remoteSourceCodeAnalysisServerConfigurationTimestamp: js.UndefOr[String]
+  }
+
+  object RemoteSourceCodeAnalysisServerInfo {
+    @inline
+    def apply(
+        remoteSourceCodeAnalysisServerConfigurationTimestamp: js.UndefOr[String] = js.undefined
+    ): RemoteSourceCodeAnalysisServerInfo = {
+      val __obj = js.Dynamic.literal()
+      remoteSourceCodeAnalysisServerConfigurationTimestamp.foreach(__v => __obj.updateDynamic("remoteSourceCodeAnalysisServerConfigurationTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoteSourceCodeAnalysisServerInfo]
+    }
+  }
+
   /** Contains the S3 bucket name and the Amazon S3 key name.
     */
   @js.native
@@ -1425,6 +1651,7 @@ package object migrationhubstrategy {
     var listAntipatternSeveritySummary: js.UndefOr[ListAntipatternSeveritySummary]
     var name: js.UndefOr[ResourceName]
     var recommendationSet: js.UndefOr[RecommendationSet]
+    var serverError: js.UndefOr[ServerError]
     var serverType: js.UndefOr[String]
     var statusMessage: js.UndefOr[StatusMessage]
     var systemInfo: js.UndefOr[SystemInfo]
@@ -1443,6 +1670,7 @@ package object migrationhubstrategy {
         listAntipatternSeveritySummary: js.UndefOr[ListAntipatternSeveritySummary] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         recommendationSet: js.UndefOr[RecommendationSet] = js.undefined,
+        serverError: js.UndefOr[ServerError] = js.undefined,
         serverType: js.UndefOr[String] = js.undefined,
         statusMessage: js.UndefOr[StatusMessage] = js.undefined,
         systemInfo: js.UndefOr[SystemInfo] = js.undefined
@@ -1458,10 +1686,50 @@ package object migrationhubstrategy {
       listAntipatternSeveritySummary.foreach(__v => __obj.updateDynamic("listAntipatternSeveritySummary")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       recommendationSet.foreach(__v => __obj.updateDynamic("recommendationSet")(__v.asInstanceOf[js.Any]))
+      serverError.foreach(__v => __obj.updateDynamic("serverError")(__v.asInstanceOf[js.Any]))
       serverType.foreach(__v => __obj.updateDynamic("serverType")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       systemInfo.foreach(__v => __obj.updateDynamic("systemInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerDetail]
+    }
+  }
+
+  /** The error in server analysis.
+    */
+  @js.native
+  trait ServerError extends js.Object {
+    var serverErrorCategory: js.UndefOr[ServerErrorCategory]
+  }
+
+  object ServerError {
+    @inline
+    def apply(
+        serverErrorCategory: js.UndefOr[ServerErrorCategory] = js.undefined
+    ): ServerError = {
+      val __obj = js.Dynamic.literal()
+      serverErrorCategory.foreach(__v => __obj.updateDynamic("serverErrorCategory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerError]
+    }
+  }
+
+  /** The status summary of the server analysis.
+    */
+  @js.native
+  trait ServerStatusSummary extends js.Object {
+    var count: js.UndefOr[Int]
+    var runTimeAssessmentStatus: js.UndefOr[RunTimeAssessmentStatus]
+  }
+
+  object ServerStatusSummary {
+    @inline
+    def apply(
+        count: js.UndefOr[Int] = js.undefined,
+        runTimeAssessmentStatus: js.UndefOr[RunTimeAssessmentStatus] = js.undefined
+    ): ServerStatusSummary = {
+      val __obj = js.Dynamic.literal()
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      runTimeAssessmentStatus.foreach(__v => __obj.updateDynamic("runTimeAssessmentStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerStatusSummary]
     }
   }
 
@@ -1518,6 +1786,7 @@ package object migrationhubstrategy {
   @js.native
   trait SourceCode extends js.Object {
     var location: js.UndefOr[Location]
+    var projectName: js.UndefOr[ProjectName]
     var sourceVersion: js.UndefOr[SourceVersion]
     var versionControl: js.UndefOr[VersionControl]
   }
@@ -1526,11 +1795,13 @@ package object migrationhubstrategy {
     @inline
     def apply(
         location: js.UndefOr[Location] = js.undefined,
+        projectName: js.UndefOr[ProjectName] = js.undefined,
         sourceVersion: js.UndefOr[SourceVersion] = js.undefined,
         versionControl: js.UndefOr[VersionControl] = js.undefined
     ): SourceCode = {
       val __obj = js.Dynamic.literal()
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
       sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
       versionControl.foreach(__v => __obj.updateDynamic("versionControl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceCode]
@@ -1542,6 +1813,7 @@ package object migrationhubstrategy {
   @js.native
   trait SourceCodeRepository extends js.Object {
     var branch: js.UndefOr[String]
+    var projectName: js.UndefOr[String]
     var repository: js.UndefOr[String]
     var versionControlType: js.UndefOr[String]
   }
@@ -1550,11 +1822,13 @@ package object migrationhubstrategy {
     @inline
     def apply(
         branch: js.UndefOr[String] = js.undefined,
+        projectName: js.UndefOr[String] = js.undefined,
         repository: js.UndefOr[String] = js.undefined,
         versionControlType: js.UndefOr[String] = js.undefined
     ): SourceCodeRepository = {
       val __obj = js.Dynamic.literal()
       branch.foreach(__v => __obj.updateDynamic("branch")(__v.asInstanceOf[js.Any]))
+      projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
       repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
       versionControlType.foreach(__v => __obj.updateDynamic("versionControlType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceCodeRepository]
@@ -1563,6 +1837,7 @@ package object migrationhubstrategy {
 
   @js.native
   trait StartAssessmentRequest extends js.Object {
+    var assessmentTargets: js.UndefOr[AssessmentTargets]
     var s3bucketForAnalysisData: js.UndefOr[StartAssessmentRequestS3bucketForAnalysisDataString]
     var s3bucketForReportData: js.UndefOr[StartAssessmentRequestS3bucketForReportDataString]
   }
@@ -1570,10 +1845,12 @@ package object migrationhubstrategy {
   object StartAssessmentRequest {
     @inline
     def apply(
+        assessmentTargets: js.UndefOr[AssessmentTargets] = js.undefined,
         s3bucketForAnalysisData: js.UndefOr[StartAssessmentRequestS3bucketForAnalysisDataString] = js.undefined,
         s3bucketForReportData: js.UndefOr[StartAssessmentRequestS3bucketForReportDataString] = js.undefined
     ): StartAssessmentRequest = {
       val __obj = js.Dynamic.literal()
+      assessmentTargets.foreach(__v => __obj.updateDynamic("assessmentTargets")(__v.asInstanceOf[js.Any]))
       s3bucketForAnalysisData.foreach(__v => __obj.updateDynamic("s3bucketForAnalysisData")(__v.asInstanceOf[js.Any]))
       s3bucketForReportData.foreach(__v => __obj.updateDynamic("s3bucketForReportData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAssessmentRequest]
@@ -1810,6 +2087,8 @@ package object migrationhubstrategy {
   @js.native
   trait UpdateApplicationComponentConfigRequest extends js.Object {
     var applicationComponentId: ApplicationComponentId
+    var appType: js.UndefOr[AppType]
+    var configureOnly: js.UndefOr[Boolean]
     var inclusionStatus: js.UndefOr[InclusionStatus]
     var secretsManagerKey: js.UndefOr[SecretsManagerKey]
     var sourceCodeList: js.UndefOr[SourceCodeList]
@@ -1820,6 +2099,8 @@ package object migrationhubstrategy {
     @inline
     def apply(
         applicationComponentId: ApplicationComponentId,
+        appType: js.UndefOr[AppType] = js.undefined,
+        configureOnly: js.UndefOr[Boolean] = js.undefined,
         inclusionStatus: js.UndefOr[InclusionStatus] = js.undefined,
         secretsManagerKey: js.UndefOr[SecretsManagerKey] = js.undefined,
         sourceCodeList: js.UndefOr[SourceCodeList] = js.undefined,
@@ -1829,6 +2110,8 @@ package object migrationhubstrategy {
         "applicationComponentId" -> applicationComponentId.asInstanceOf[js.Any]
       )
 
+      appType.foreach(__v => __obj.updateDynamic("appType")(__v.asInstanceOf[js.Any]))
+      configureOnly.foreach(__v => __obj.updateDynamic("configureOnly")(__v.asInstanceOf[js.Any]))
       inclusionStatus.foreach(__v => __obj.updateDynamic("inclusionStatus")(__v.asInstanceOf[js.Any]))
       secretsManagerKey.foreach(__v => __obj.updateDynamic("secretsManagerKey")(__v.asInstanceOf[js.Any]))
       sourceCodeList.foreach(__v => __obj.updateDynamic("sourceCodeList")(__v.asInstanceOf[js.Any]))
@@ -1877,6 +2160,48 @@ package object migrationhubstrategy {
     def apply(): UpdateServerConfigResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateServerConfigResponse]
+    }
+  }
+
+  /** Details about the server in vCenter.
+    */
+  @js.native
+  trait VcenterBasedRemoteInfo extends js.Object {
+    var osType: js.UndefOr[OSType]
+    var vcenterConfigurationTimeStamp: js.UndefOr[String]
+  }
+
+  object VcenterBasedRemoteInfo {
+    @inline
+    def apply(
+        osType: js.UndefOr[OSType] = js.undefined,
+        vcenterConfigurationTimeStamp: js.UndefOr[String] = js.undefined
+    ): VcenterBasedRemoteInfo = {
+      val __obj = js.Dynamic.literal()
+      osType.foreach(__v => __obj.updateDynamic("osType")(__v.asInstanceOf[js.Any]))
+      vcenterConfigurationTimeStamp.foreach(__v => __obj.updateDynamic("vcenterConfigurationTimeStamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VcenterBasedRemoteInfo]
+    }
+  }
+
+  /** Details about the version control configuration.
+    */
+  @js.native
+  trait VersionControlInfo extends js.Object {
+    var versionControlConfigurationTimeStamp: js.UndefOr[String]
+    var versionControlType: js.UndefOr[VersionControlType]
+  }
+
+  object VersionControlInfo {
+    @inline
+    def apply(
+        versionControlConfigurationTimeStamp: js.UndefOr[String] = js.undefined,
+        versionControlType: js.UndefOr[VersionControlType] = js.undefined
+    ): VersionControlInfo = {
+      val __obj = js.Dynamic.literal()
+      versionControlConfigurationTimeStamp.foreach(__v => __obj.updateDynamic("versionControlConfigurationTimeStamp")(__v.asInstanceOf[js.Any]))
+      versionControlType.foreach(__v => __obj.updateDynamic("versionControlType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersionControlInfo]
     }
   }
 }

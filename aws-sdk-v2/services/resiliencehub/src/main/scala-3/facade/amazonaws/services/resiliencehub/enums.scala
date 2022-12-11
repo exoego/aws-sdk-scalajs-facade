@@ -13,6 +13,14 @@ object AlarmType {
   inline def values: js.Array[AlarmType] = js.Array(Metric, Composite, Canary, Logs, Event)
 }
 
+type AppAssessmentScheduleType = "Disabled" | "Daily"
+object AppAssessmentScheduleType {
+  inline val Disabled: "Disabled" = "Disabled"
+  inline val Daily: "Daily" = "Daily"
+
+  inline def values: js.Array[AppAssessmentScheduleType] = js.Array(Disabled, Daily)
+}
+
 type AppComplianceStatusType = "PolicyBreached" | "PolicyMet" | "NotAssessed" | "ChangesDetected"
 object AppComplianceStatusType {
   inline val PolicyBreached: "PolicyBreached" = "PolicyBreached"
@@ -57,15 +65,16 @@ object ComplianceStatus {
   inline def values: js.Array[ComplianceStatus] = js.Array(PolicyBreached, PolicyMet)
 }
 
-type ConfigRecommendationOptimizationType = "LeastCost" | "LeastChange" | "BestAZRecovery" | "LeastErrors" | "BestAttainable"
+type ConfigRecommendationOptimizationType = "LeastCost" | "LeastChange" | "BestAZRecovery" | "LeastErrors" | "BestAttainable" | "BestRegionRecovery"
 object ConfigRecommendationOptimizationType {
   inline val LeastCost: "LeastCost" = "LeastCost"
   inline val LeastChange: "LeastChange" = "LeastChange"
   inline val BestAZRecovery: "BestAZRecovery" = "BestAZRecovery"
   inline val LeastErrors: "LeastErrors" = "LeastErrors"
   inline val BestAttainable: "BestAttainable" = "BestAttainable"
+  inline val BestRegionRecovery: "BestRegionRecovery" = "BestRegionRecovery"
 
-  inline def values: js.Array[ConfigRecommendationOptimizationType] = js.Array(LeastCost, LeastChange, BestAZRecovery, LeastErrors, BestAttainable)
+  inline def values: js.Array[ConfigRecommendationOptimizationType] = js.Array(LeastCost, LeastChange, BestAZRecovery, LeastErrors, BestAttainable, BestRegionRecovery)
 }
 
 type CostFrequency = "Hourly" | "Daily" | "Monthly" | "Yearly"
@@ -175,14 +184,15 @@ object ResourceImportStatusType {
   inline def values: js.Array[ResourceImportStatusType] = js.Array(Pending, InProgress, Failed, Success)
 }
 
-type ResourceMappingType = "CfnStack" | "Resource" | "AppRegistryApp" | "ResourceGroup"
+type ResourceMappingType = "CfnStack" | "Resource" | "AppRegistryApp" | "ResourceGroup" | "Terraform"
 object ResourceMappingType {
   inline val CfnStack: "CfnStack" = "CfnStack"
   inline val Resource: "Resource" = "Resource"
   inline val AppRegistryApp: "AppRegistryApp" = "AppRegistryApp"
   inline val ResourceGroup: "ResourceGroup" = "ResourceGroup"
+  inline val Terraform: "Terraform" = "Terraform"
 
-  inline def values: js.Array[ResourceMappingType] = js.Array(CfnStack, Resource, AppRegistryApp, ResourceGroup)
+  inline def values: js.Array[ResourceMappingType] = js.Array(CfnStack, Resource, AppRegistryApp, ResourceGroup, Terraform)
 }
 
 type ResourceResolutionStatusType = "Pending" | "InProgress" | "Failed" | "Success"

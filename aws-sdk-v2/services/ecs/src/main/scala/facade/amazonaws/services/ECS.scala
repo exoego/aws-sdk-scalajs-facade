@@ -57,12 +57,17 @@ package object ecs {
   type PlacementStrategies = js.Array[PlacementStrategy]
   type PlatformDevices = js.Array[PlatformDevice]
   type PortMappingList = js.Array[PortMapping]
+  type PortNumber = Int
+  type ProtectedTasks = js.Array[ProtectedTask]
   type ProxyConfigurationProperties = js.Array[KeyValuePair]
   type RequiresAttributes = js.Array[Attribute]
   type ResourceRequirements = js.Array[ResourceRequirement]
   type Resources = js.Array[Resource]
   type SecretList = js.Array[Secret]
   type SensitiveString = String
+  type ServiceConnectClientAliasList = js.Array[ServiceConnectClientAlias]
+  type ServiceConnectServiceList = js.Array[ServiceConnectService]
+  type ServiceConnectServiceResourceList = js.Array[ServiceConnectServiceResource]
   type ServiceEvents = js.Array[ServiceEvent]
   type ServiceFieldList = js.Array[ServiceField]
   type ServiceRegistries = js.Array[ServiceRegistry]
@@ -111,10 +116,12 @@ package object ecs {
     @inline def describeTasksFuture(params: DescribeTasksRequest): Future[DescribeTasksResponse] = service.describeTasks(params).promise().toFuture
     @inline def discoverPollEndpointFuture(params: DiscoverPollEndpointRequest): Future[DiscoverPollEndpointResponse] = service.discoverPollEndpoint(params).promise().toFuture
     @inline def executeCommandFuture(params: ExecuteCommandRequest): Future[ExecuteCommandResponse] = service.executeCommand(params).promise().toFuture
+    @inline def getTaskProtectionFuture(params: GetTaskProtectionRequest): Future[GetTaskProtectionResponse] = service.getTaskProtection(params).promise().toFuture
     @inline def listAccountSettingsFuture(params: ListAccountSettingsRequest): Future[ListAccountSettingsResponse] = service.listAccountSettings(params).promise().toFuture
     @inline def listAttributesFuture(params: ListAttributesRequest): Future[ListAttributesResponse] = service.listAttributes(params).promise().toFuture
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResponse] = service.listClusters(params).promise().toFuture
     @inline def listContainerInstancesFuture(params: ListContainerInstancesRequest): Future[ListContainerInstancesResponse] = service.listContainerInstances(params).promise().toFuture
+    @inline def listServicesByNamespaceFuture(params: ListServicesByNamespaceRequest): Future[ListServicesByNamespaceResponse] = service.listServicesByNamespace(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTaskDefinitionFamiliesFuture(params: ListTaskDefinitionFamiliesRequest): Future[ListTaskDefinitionFamiliesResponse] = service.listTaskDefinitionFamilies(params).promise().toFuture
@@ -141,6 +148,7 @@ package object ecs {
     @inline def updateContainerInstancesStateFuture(params: UpdateContainerInstancesStateRequest): Future[UpdateContainerInstancesStateResponse] = service.updateContainerInstancesState(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
     @inline def updateServicePrimaryTaskSetFuture(params: UpdateServicePrimaryTaskSetRequest): Future[UpdateServicePrimaryTaskSetResponse] = service.updateServicePrimaryTaskSet(params).promise().toFuture
+    @inline def updateTaskProtectionFuture(params: UpdateTaskProtectionRequest): Future[UpdateTaskProtectionResponse] = service.updateTaskProtection(params).promise().toFuture
     @inline def updateTaskSetFuture(params: UpdateTaskSetRequest): Future[UpdateTaskSetResponse] = service.updateTaskSet(params).promise().toFuture
 
   }
@@ -171,11 +179,13 @@ package object ecs {
     def describeTasks(params: DescribeTasksRequest): Request[DescribeTasksResponse] = js.native
     def discoverPollEndpoint(params: DiscoverPollEndpointRequest): Request[DiscoverPollEndpointResponse] = js.native
     def executeCommand(params: ExecuteCommandRequest): Request[ExecuteCommandResponse] = js.native
+    def getTaskProtection(params: GetTaskProtectionRequest): Request[GetTaskProtectionResponse] = js.native
     def listAccountSettings(params: ListAccountSettingsRequest): Request[ListAccountSettingsResponse] = js.native
     def listAttributes(params: ListAttributesRequest): Request[ListAttributesResponse] = js.native
     def listClusters(params: ListClustersRequest): Request[ListClustersResponse] = js.native
     def listContainerInstances(params: ListContainerInstancesRequest): Request[ListContainerInstancesResponse] = js.native
     def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
+    def listServicesByNamespace(params: ListServicesByNamespaceRequest): Request[ListServicesByNamespaceResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTaskDefinitionFamilies(params: ListTaskDefinitionFamiliesRequest): Request[ListTaskDefinitionFamiliesResponse] = js.native
     def listTaskDefinitions(params: ListTaskDefinitionsRequest): Request[ListTaskDefinitionsResponse] = js.native
@@ -201,6 +211,7 @@ package object ecs {
     def updateContainerInstancesState(params: UpdateContainerInstancesStateRequest): Request[UpdateContainerInstancesStateResponse] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
     def updateServicePrimaryTaskSet(params: UpdateServicePrimaryTaskSetRequest): Request[UpdateServicePrimaryTaskSetResponse] = js.native
+    def updateTaskProtection(params: UpdateTaskProtectionRequest): Request[UpdateTaskProtectionResponse] = js.native
     def updateTaskSet(params: UpdateTaskSetRequest): Request[UpdateTaskSetResponse] = js.native
   }
   object ECS {
@@ -258,7 +269,7 @@ package object ecs {
     }
   }
 
-  /** An attribute is a name-value pair that's associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes|Attributes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** An attribute is a name-value pair that's associated with an Amazon ECS object. Use attributes to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes|Attributes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -438,6 +449,7 @@ package object ecs {
     var pendingTasksCount: js.UndefOr[Int]
     var registeredContainerInstancesCount: js.UndefOr[Int]
     var runningTasksCount: js.UndefOr[Int]
+    var serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaults]
     var settings: js.UndefOr[ClusterSettings]
     var statistics: js.UndefOr[Statistics]
     var status: js.UndefOr[String]
@@ -458,6 +470,7 @@ package object ecs {
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
         registeredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
         runningTasksCount: js.UndefOr[Int] = js.undefined,
+        serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaults] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined,
         statistics: js.UndefOr[Statistics] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
@@ -475,6 +488,7 @@ package object ecs {
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
       registeredContainerInstancesCount.foreach(__v => __obj.updateDynamic("registeredContainerInstancesCount")(__v.asInstanceOf[js.Any]))
       runningTasksCount.foreach(__v => __obj.updateDynamic("runningTasksCount")(__v.asInstanceOf[js.Any]))
+      serviceConnectDefaults.foreach(__v => __obj.updateDynamic("serviceConnectDefaults")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -501,7 +515,46 @@ package object ecs {
     }
   }
 
-  /** The settings to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster.
+  /** Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see
+    * [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html|Service Connect]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait ClusterServiceConnectDefaults extends js.Object {
+    var namespace: js.UndefOr[String]
+  }
+
+  object ClusterServiceConnectDefaults {
+    @inline
+    def apply(
+        namespace: js.UndefOr[String] = js.undefined
+    ): ClusterServiceConnectDefaults = {
+      val __obj = js.Dynamic.literal()
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterServiceConnectDefaults]
+    }
+  }
+
+  /** Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any new services with Service Connect turned on that are created in the cluster are added as client services in the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to override this default parameter. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see
+    * [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html|Service Connect]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait ClusterServiceConnectDefaultsRequest extends js.Object {
+    var namespace: String
+  }
+
+  object ClusterServiceConnectDefaultsRequest {
+    @inline
+    def apply(
+        namespace: String
+    ): ClusterServiceConnectDefaultsRequest = {
+      val __obj = js.Dynamic.literal(
+        "namespace" -> namespace.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ClusterServiceConnectDefaultsRequest]
+    }
+  }
+
+  /** The settings to use when creating a cluster. This parameter is used to turn on CloudWatch Container Insights for a cluster.
     */
   @js.native
   trait ClusterSetting extends js.Object {
@@ -720,7 +773,7 @@ package object ecs {
     }
   }
 
-  /** The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed. Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more
+  /** The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed. Your Amazon ECS container instances require at least version 1.26.0 of the container agent to use container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more
     * information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''For tasks that use the Fargate launch type, the task or service requires the following platforms: * Linux platform version <code>1.3.0</code> or later. * Windows platform version <code>1.0.0</code> or later.
@@ -745,7 +798,7 @@ package object ecs {
     }
   }
 
-  /** An EC2 instance that's running the Amazon ECS agent and has been registered with a cluster.
+  /** An Amazon EC2 or External instance that's running the Amazon ECS agent and has been registered with a cluster.
     */
   @js.native
   trait ContainerInstance extends js.Object {
@@ -956,6 +1009,7 @@ package object ecs {
     var clusterName: js.UndefOr[String]
     var configuration: js.UndefOr[ClusterConfiguration]
     var defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
+    var serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaultsRequest]
     var settings: js.UndefOr[ClusterSettings]
     var tags: js.UndefOr[Tags]
   }
@@ -967,6 +1021,7 @@ package object ecs {
         clusterName: js.UndefOr[String] = js.undefined,
         configuration: js.UndefOr[ClusterConfiguration] = js.undefined,
         defaultCapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
+        serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaultsRequest] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateClusterRequest = {
@@ -975,6 +1030,7 @@ package object ecs {
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       defaultCapacityProviderStrategy.foreach(__v => __obj.updateDynamic("defaultCapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
+      serviceConnectDefaults.foreach(__v => __obj.updateDynamic("serviceConnectDefaults")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
@@ -1018,6 +1074,7 @@ package object ecs {
     var propagateTags: js.UndefOr[PropagateTags]
     var role: js.UndefOr[String]
     var schedulingStrategy: js.UndefOr[SchedulingStrategy]
+    var serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration]
     var serviceRegistries: js.UndefOr[ServiceRegistries]
     var tags: js.UndefOr[Tags]
     var taskDefinition: js.UndefOr[String]
@@ -1045,6 +1102,7 @@ package object ecs {
         propagateTags: js.UndefOr[PropagateTags] = js.undefined,
         role: js.UndefOr[String] = js.undefined,
         schedulingStrategy: js.UndefOr[SchedulingStrategy] = js.undefined,
+        serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration] = js.undefined,
         serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined
@@ -1071,6 +1129,7 @@ package object ecs {
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       role.foreach(__v => __obj.updateDynamic("role")(__v.asInstanceOf[js.Any]))
       schedulingStrategy.foreach(__v => __obj.updateDynamic("schedulingStrategy")(__v.asInstanceOf[js.Any]))
+      serviceConnectConfiguration.foreach(__v => __obj.updateDynamic("serviceConnectConfiguration")(__v.asInstanceOf[js.Any]))
       serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
@@ -1404,6 +1463,8 @@ package object ecs {
     var rolloutState: js.UndefOr[DeploymentRolloutState]
     var rolloutStateReason: js.UndefOr[String]
     var runningCount: js.UndefOr[Int]
+    var serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration]
+    var serviceConnectResources: js.UndefOr[ServiceConnectServiceResourceList]
     var status: js.UndefOr[String]
     var taskDefinition: js.UndefOr[String]
     var updatedAt: js.UndefOr[Timestamp]
@@ -1425,6 +1486,8 @@ package object ecs {
         rolloutState: js.UndefOr[DeploymentRolloutState] = js.undefined,
         rolloutStateReason: js.UndefOr[String] = js.undefined,
         runningCount: js.UndefOr[Int] = js.undefined,
+        serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration] = js.undefined,
+        serviceConnectResources: js.UndefOr[ServiceConnectServiceResourceList] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
@@ -1443,6 +1506,8 @@ package object ecs {
       rolloutState.foreach(__v => __obj.updateDynamic("rolloutState")(__v.asInstanceOf[js.Any]))
       rolloutStateReason.foreach(__v => __obj.updateDynamic("rolloutStateReason")(__v.asInstanceOf[js.Any]))
       runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
+      serviceConnectConfiguration.foreach(__v => __obj.updateDynamic("serviceConnectConfiguration")(__v.asInstanceOf[js.Any]))
+      serviceConnectResources.foreach(__v => __obj.updateDynamic("serviceConnectResources")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
@@ -1450,7 +1515,7 @@ package object ecs {
     }
   }
 
-  /** '''Note:'''The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer. The ```deployment circuit breaker``` determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also enable Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html|Rolling update]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** '''Note:'''The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer. The ```deployment circuit breaker``` determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also configure Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html|Rolling update]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait DeploymentCircuitBreaker extends js.Object {
@@ -1496,7 +1561,7 @@ package object ecs {
     }
   }
 
-  /** The deployment controller to use for the service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html|Amazon ECS Deployment Types]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** The deployment controller to use for the service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html|Amazon ECS deployment types]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait DeploymentController extends js.Object {
@@ -1936,6 +2001,7 @@ package object ecs {
   @js.native
   trait DiscoverPollEndpointResponse extends js.Object {
     var endpoint: js.UndefOr[String]
+    var serviceConnectEndpoint: js.UndefOr[String]
     var telemetryEndpoint: js.UndefOr[String]
   }
 
@@ -1943,10 +2009,12 @@ package object ecs {
     @inline
     def apply(
         endpoint: js.UndefOr[String] = js.undefined,
+        serviceConnectEndpoint: js.UndefOr[String] = js.undefined,
         telemetryEndpoint: js.UndefOr[String] = js.undefined
     ): DiscoverPollEndpointResponse = {
       val __obj = js.Dynamic.literal()
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
+      serviceConnectEndpoint.foreach(__v => __obj.updateDynamic("serviceConnectEndpoint")(__v.asInstanceOf[js.Any]))
       telemetryEndpoint.foreach(__v => __obj.updateDynamic("telemetryEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverPollEndpointResponse]
     }
@@ -2003,7 +2071,7 @@ package object ecs {
     }
   }
 
-  /** This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait EFSVolumeConfiguration extends js.Object {
@@ -2060,7 +2128,7 @@ package object ecs {
 
   /** The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html|Fargate task storage]] in the <i>Amazon ECS User Guide for Fargate</i>.
     *
-    * '''Note:'''This parameter is only supported for tasks hosted on Fargate using the following platform versions: * Linux platform version <code>1.4.0</code> or later. * Windows platform version <code>1.0.0</code> or later.
+    * '''Note:'''This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.
     */
   @js.native
   trait EphemeralStorage extends js.Object {
@@ -2194,7 +2262,7 @@ package object ecs {
     }
   }
 
-  /** The authorization configuration details for Amazon FSx for Windows File Server file system. See [[https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html|FSxWindowsFileServerVolumeConfiguration]] in the <i>Amazon Elastic Container Service API Reference</i>. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** The authorization configuration details for Amazon FSx for Windows File Server file system. See [[https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html|FSxWindowsFileServerVolumeConfiguration]] in the <i>Amazon ECS API Reference</i>. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait FSxWindowsFileServerAuthorizationConfig extends js.Object {
@@ -2216,7 +2284,7 @@ package object ecs {
     }
   }
 
-  /** This parameter is specified when you're using [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html|Amazon FSx for Windows File Server]] file system for task storage. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** This parameter is specified when you're using [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html|Amazon FSx for Windows File Server]] file system for task storage. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait FSxWindowsFileServerVolumeConfiguration extends js.Object {
@@ -2265,7 +2333,7 @@ package object ecs {
     }
   }
 
-  /** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html|Custom Log Routing]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html|Custom log routing]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait FirelensConfiguration extends js.Object {
@@ -2288,9 +2356,51 @@ package object ecs {
     }
   }
 
-  /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile). You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console. The following describes the possible <code>healthStatus</code> values for a container: * <code>HEALTHY</code>-The container health check has passed successfully. * <code>UNHEALTHY</code>-The container health check has failed. * <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined. The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task. * <code>HEALTHY</code>-All essential
-    * containers within the task have passed their health checks. * <code>UNHEALTHY</code>-One or more essential containers have failed their health check. * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined. If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it. The following are notes about container health check support: * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]]. * Container health checks are supported for Fargate tasks if you're using platform version 1.1.0 or
-    * greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|Fargate Platform Versions]]. * Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.
+  @js.native
+  trait GetTaskProtectionRequest extends js.Object {
+    var cluster: String
+    var tasks: js.UndefOr[StringList]
+  }
+
+  object GetTaskProtectionRequest {
+    @inline
+    def apply(
+        cluster: String,
+        tasks: js.UndefOr[StringList] = js.undefined
+    ): GetTaskProtectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "cluster" -> cluster.asInstanceOf[js.Any]
+      )
+
+      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTaskProtectionRequest]
+    }
+  }
+
+  @js.native
+  trait GetTaskProtectionResponse extends js.Object {
+    var failures: js.UndefOr[Failures]
+    var protectedTasks: js.UndefOr[ProtectedTasks]
+  }
+
+  object GetTaskProtectionResponse {
+    @inline
+    def apply(
+        failures: js.UndefOr[Failures] = js.undefined,
+        protectedTasks: js.UndefOr[ProtectedTasks] = js.undefined
+    ): GetTaskProtectionResponse = {
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      protectedTasks.foreach(__v => __obj.updateDynamic("protectedTasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTaskProtectionResponse]
+    }
+  }
+
+  /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile).
+    *
+    * '''Note:'''The Amazon ECS container agent only monitors and reports on the health checks specified in the task definition. Amazon ECS does not monitor Docker health checks that are embedded in a container image and not specified in the container definition. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image. You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console. The following describes the possible <code>healthStatus</code> values for a container: * <code>HEALTHY</code>-The container health check has passed successfully. * <code>UNHEALTHY</code>-The container health check has failed. * <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined. The following describes the possible <code>healthStatus</code> values for a task. The container
+    * health check status of nonessential containers only affects the health status of a task if no essential containers have health checks defined. * <code>HEALTHY</code>-All essential containers within the task have passed their health checks. * <code>UNHEALTHY</code>-One or more essential containers have failed their health check. * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are only nonessential containers with health checks defined. If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it. <important> For tasks that are a part of a service and the service uses the <code>ECS</code> rolling deployment type, the deployment is paused while the new tasks have the <code>UNKNOWN</code> task health check
+    * status. For example, tasks that define health checks for nonessential containers when no essential containers have health checks will have the <code>UNKNOWN</code> health check status indefinitely which prevents the deployment from completing. </important> The following are notes about container health check support: * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS container agent]]. * Container health checks are supported for Fargate tasks if you're using platform version <code>1.1.0</code> or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|Fargate platform versions]]. * Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -2698,6 +2808,49 @@ package object ecs {
   }
 
   @js.native
+  trait ListServicesByNamespaceRequest extends js.Object {
+    var namespace: String
+    var maxResults: js.UndefOr[BoxedInteger]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListServicesByNamespaceRequest {
+    @inline
+    def apply(
+        namespace: String,
+        maxResults: js.UndefOr[BoxedInteger] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListServicesByNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "namespace" -> namespace.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServicesByNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait ListServicesByNamespaceResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var serviceArns: js.UndefOr[StringList]
+  }
+
+  object ListServicesByNamespaceResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        serviceArns: js.UndefOr[StringList] = js.undefined
+    ): ListServicesByNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      serviceArns.foreach(__v => __obj.updateDynamic("serviceArns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServicesByNamespaceResponse]
+    }
+  }
+
+  @js.native
   trait ListServicesRequest extends js.Object {
     var cluster: js.UndefOr[String]
     var launchType: js.UndefOr[LaunchType]
@@ -2927,7 +3080,7 @@ package object ecs {
     }
   }
 
-  /** The load balancer configuration to use with a service or task set. For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions.
+  /** The load balancer configuration to use with a service or task set. For specific notes and restrictions regarding the use of load balancers with services and task sets, see the CreateService and CreateTaskSet actions. When you add, update, or remove a load balancer configuration, Amazon ECS starts a new deployment with the updated Elastic Load Balancing configuration. This causes tasks to register to and deregister from load balancers. We recommend that you verify this on a test environment before you update the Elastic Load Balancing configuration. A service-linked role is required for services that use multiple target groups. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html|Using service-linked roles]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -3038,7 +3191,7 @@ package object ecs {
     }
   }
 
-  /** The managed scaling settings for the Auto Scaling group capacity provider. When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+  /** The managed scaling settings for the Auto Scaling group capacity provider. When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using managed scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
     */
   @js.native
   trait ManagedScaling extends js.Object {
@@ -3161,7 +3314,7 @@ package object ecs {
     }
   }
 
-  /** An object representing a constraint on task placement. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** An object representing a constraint on task placement. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task placement constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
     * '''Note:'''If you're using the Fargate launch type, task placement constraints aren't supported.
     */
@@ -3184,7 +3337,7 @@ package object ecs {
     }
   }
 
-  /** The task placement strategy for a task or service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html|Task Placement Strategies]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** The task placement strategy for a task or service. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html|Task placement strategies]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait PlacementStrategy extends js.Object {
@@ -3233,27 +3386,57 @@ package object ecs {
     */
   @js.native
   trait PortMapping extends js.Object {
+    var appProtocol: js.UndefOr[ApplicationProtocol]
     var containerPort: js.UndefOr[BoxedInteger]
     var hostPort: js.UndefOr[BoxedInteger]
+    var name: js.UndefOr[String]
     var protocol: js.UndefOr[TransportProtocol]
   }
 
   object PortMapping {
     @inline
     def apply(
+        appProtocol: js.UndefOr[ApplicationProtocol] = js.undefined,
         containerPort: js.UndefOr[BoxedInteger] = js.undefined,
         hostPort: js.UndefOr[BoxedInteger] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
         protocol: js.UndefOr[TransportProtocol] = js.undefined
     ): PortMapping = {
       val __obj = js.Dynamic.literal()
+      appProtocol.foreach(__v => __obj.updateDynamic("appProtocol")(__v.asInstanceOf[js.Any]))
       containerPort.foreach(__v => __obj.updateDynamic("containerPort")(__v.asInstanceOf[js.Any]))
       hostPort.foreach(__v => __obj.updateDynamic("hostPort")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortMapping]
     }
   }
 
-  /** The configuration details for the App Mesh proxy. For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
+  /** An object representing the protection status details for a task. You can set the protection status with the <a>UpdateTaskProtection</a> API and get the status of tasks with the <a>GetTaskProtection</a> API.
+    */
+  @js.native
+  trait ProtectedTask extends js.Object {
+    var expirationDate: js.UndefOr[Timestamp]
+    var protectionEnabled: js.UndefOr[Boolean]
+    var taskArn: js.UndefOr[String]
+  }
+
+  object ProtectedTask {
+    @inline
+    def apply(
+        expirationDate: js.UndefOr[Timestamp] = js.undefined,
+        protectionEnabled: js.UndefOr[Boolean] = js.undefined,
+        taskArn: js.UndefOr[String] = js.undefined
+    ): ProtectedTask = {
+      val __obj = js.Dynamic.literal()
+      expirationDate.foreach(__v => __obj.updateDynamic("expirationDate")(__v.asInstanceOf[js.Any]))
+      protectionEnabled.foreach(__v => __obj.updateDynamic("protectionEnabled")(__v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProtectedTask]
+    }
+  }
+
+  /** The configuration details for the App Mesh proxy. For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
     */
   @js.native
   trait ProxyConfiguration extends js.Object {
@@ -3731,7 +3914,7 @@ package object ecs {
     }
   }
 
-  /** Information about the platform for the Amazon ECS service or task. For more informataion about <code>RuntimePlatform</code>, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform|RuntimePlatform]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** Information about the platform for the Amazon ECS service or task. For more information about <code>RuntimePlatform</code>, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform|RuntimePlatform]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait RuntimePlatform extends js.Object {
@@ -3773,7 +3956,7 @@ package object ecs {
     }
   }
 
-  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying Sensitive Data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {
@@ -3903,6 +4086,108 @@ package object ecs {
     }
   }
 
+  /** Each alias ("endpoint") is a fully-qualified name and port number that other tasks ("clients") can use to connect to this service. Each name and port mapping must be unique within the namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html|Service Connect]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait ServiceConnectClientAlias extends js.Object {
+    var port: PortNumber
+    var dnsName: js.UndefOr[String]
+  }
+
+  object ServiceConnectClientAlias {
+    @inline
+    def apply(
+        port: PortNumber,
+        dnsName: js.UndefOr[String] = js.undefined
+    ): ServiceConnectClientAlias = {
+      val __obj = js.Dynamic.literal(
+        "port" -> port.asInstanceOf[js.Any]
+      )
+
+      dnsName.foreach(__v => __obj.updateDynamic("dnsName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceConnectClientAlias]
+    }
+  }
+
+  /** The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html|Service Connect]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait ServiceConnectConfiguration extends js.Object {
+    var enabled: Boolean
+    var logConfiguration: js.UndefOr[LogConfiguration]
+    var namespace: js.UndefOr[String]
+    var services: js.UndefOr[ServiceConnectServiceList]
+  }
+
+  object ServiceConnectConfiguration {
+    @inline
+    def apply(
+        enabled: Boolean,
+        logConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
+        namespace: js.UndefOr[String] = js.undefined,
+        services: js.UndefOr[ServiceConnectServiceList] = js.undefined
+    ): ServiceConnectConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "enabled" -> enabled.asInstanceOf[js.Any]
+      )
+
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceConnectConfiguration]
+    }
+  }
+
+  /** The Service Connect service object configuration. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html|Service Connect]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait ServiceConnectService extends js.Object {
+    var portName: String
+    var clientAliases: js.UndefOr[ServiceConnectClientAliasList]
+    var discoveryName: js.UndefOr[String]
+    var ingressPortOverride: js.UndefOr[PortNumber]
+  }
+
+  object ServiceConnectService {
+    @inline
+    def apply(
+        portName: String,
+        clientAliases: js.UndefOr[ServiceConnectClientAliasList] = js.undefined,
+        discoveryName: js.UndefOr[String] = js.undefined,
+        ingressPortOverride: js.UndefOr[PortNumber] = js.undefined
+    ): ServiceConnectService = {
+      val __obj = js.Dynamic.literal(
+        "portName" -> portName.asInstanceOf[js.Any]
+      )
+
+      clientAliases.foreach(__v => __obj.updateDynamic("clientAliases")(__v.asInstanceOf[js.Any]))
+      discoveryName.foreach(__v => __obj.updateDynamic("discoveryName")(__v.asInstanceOf[js.Any]))
+      ingressPortOverride.foreach(__v => __obj.updateDynamic("ingressPortOverride")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceConnectService]
+    }
+  }
+
+  /** The Service Connect resource. Each configuration maps a discovery name to a Cloud Map service name. The data is stored in Cloud Map as part of the Service Connect configuration for each discovery name of this Amazon ECS service. A task can resolve the <code>dnsName</code> for each of the <code>clientAliases</code> of a service. However a task can't resolve the discovery names. If you want to connect to a service, refer to the <code>ServiceConnectConfiguration</code> of that service for the list of <code>clientAliases</code> that you can use.
+    */
+  @js.native
+  trait ServiceConnectServiceResource extends js.Object {
+    var discoveryArn: js.UndefOr[String]
+    var discoveryName: js.UndefOr[String]
+  }
+
+  object ServiceConnectServiceResource {
+    @inline
+    def apply(
+        discoveryArn: js.UndefOr[String] = js.undefined,
+        discoveryName: js.UndefOr[String] = js.undefined
+    ): ServiceConnectServiceResource = {
+      val __obj = js.Dynamic.literal()
+      discoveryArn.foreach(__v => __obj.updateDynamic("discoveryArn")(__v.asInstanceOf[js.Any]))
+      discoveryName.foreach(__v => __obj.updateDynamic("discoveryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceConnectServiceResource]
+    }
+  }
+
   /** The details for an event that's associated with a service.
     */
   @js.native
@@ -3927,7 +4212,7 @@ package object ecs {
     }
   }
 
-  /** The details for the service registry.
+  /** The details for the service registry. Each service may be associated with one service registry. Multiple service registries for each service are not supported. When you add, update, or remove the service registries configuration, Amazon ECS starts a new deployment. New tasks are registered and deregistered to the updated service registry configuration.
     */
   @js.native
   trait ServiceRegistry extends js.Object {
@@ -4814,6 +5099,7 @@ package object ecs {
   trait UpdateClusterRequest extends js.Object {
     var cluster: String
     var configuration: js.UndefOr[ClusterConfiguration]
+    var serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaultsRequest]
     var settings: js.UndefOr[ClusterSettings]
   }
 
@@ -4822,6 +5108,7 @@ package object ecs {
     def apply(
         cluster: String,
         configuration: js.UndefOr[ClusterConfiguration] = js.undefined,
+        serviceConnectDefaults: js.UndefOr[ClusterServiceConnectDefaultsRequest] = js.undefined,
         settings: js.UndefOr[ClusterSettings] = js.undefined
     ): UpdateClusterRequest = {
       val __obj = js.Dynamic.literal(
@@ -4829,6 +5116,7 @@ package object ecs {
       )
 
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      serviceConnectDefaults.foreach(__v => __obj.updateDynamic("serviceConnectDefaults")(__v.asInstanceOf[js.Any]))
       settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterRequest]
     }
@@ -5012,13 +5300,18 @@ package object ecs {
     var cluster: js.UndefOr[String]
     var deploymentConfiguration: js.UndefOr[DeploymentConfiguration]
     var desiredCount: js.UndefOr[BoxedInteger]
+    var enableECSManagedTags: js.UndefOr[BoxedBoolean]
     var enableExecuteCommand: js.UndefOr[BoxedBoolean]
     var forceNewDeployment: js.UndefOr[Boolean]
     var healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger]
+    var loadBalancers: js.UndefOr[LoadBalancers]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var placementConstraints: js.UndefOr[PlacementConstraints]
     var placementStrategy: js.UndefOr[PlacementStrategies]
     var platformVersion: js.UndefOr[String]
+    var propagateTags: js.UndefOr[PropagateTags]
+    var serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration]
+    var serviceRegistries: js.UndefOr[ServiceRegistries]
     var taskDefinition: js.UndefOr[String]
   }
 
@@ -5030,13 +5323,18 @@ package object ecs {
         cluster: js.UndefOr[String] = js.undefined,
         deploymentConfiguration: js.UndefOr[DeploymentConfiguration] = js.undefined,
         desiredCount: js.UndefOr[BoxedInteger] = js.undefined,
+        enableECSManagedTags: js.UndefOr[BoxedBoolean] = js.undefined,
         enableExecuteCommand: js.UndefOr[BoxedBoolean] = js.undefined,
         forceNewDeployment: js.UndefOr[Boolean] = js.undefined,
         healthCheckGracePeriodSeconds: js.UndefOr[BoxedInteger] = js.undefined,
+        loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
         placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
+        propagateTags: js.UndefOr[PropagateTags] = js.undefined,
+        serviceConnectConfiguration: js.UndefOr[ServiceConnectConfiguration] = js.undefined,
+        serviceRegistries: js.UndefOr[ServiceRegistries] = js.undefined,
         taskDefinition: js.UndefOr[String] = js.undefined
     ): UpdateServiceRequest = {
       val __obj = js.Dynamic.literal(
@@ -5047,13 +5345,18 @@ package object ecs {
       cluster.foreach(__v => __obj.updateDynamic("cluster")(__v.asInstanceOf[js.Any]))
       deploymentConfiguration.foreach(__v => __obj.updateDynamic("deploymentConfiguration")(__v.asInstanceOf[js.Any]))
       desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
+      enableECSManagedTags.foreach(__v => __obj.updateDynamic("enableECSManagedTags")(__v.asInstanceOf[js.Any]))
       enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
       forceNewDeployment.foreach(__v => __obj.updateDynamic("forceNewDeployment")(__v.asInstanceOf[js.Any]))
       healthCheckGracePeriodSeconds.foreach(__v => __obj.updateDynamic("healthCheckGracePeriodSeconds")(__v.asInstanceOf[js.Any]))
+      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
       placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
+      propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
+      serviceConnectConfiguration.foreach(__v => __obj.updateDynamic("serviceConnectConfiguration")(__v.asInstanceOf[js.Any]))
+      serviceRegistries.foreach(__v => __obj.updateDynamic("serviceRegistries")(__v.asInstanceOf[js.Any]))
       taskDefinition.foreach(__v => __obj.updateDynamic("taskDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceRequest]
     }
@@ -5072,6 +5375,52 @@ package object ecs {
       val __obj = js.Dynamic.literal()
       service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateTaskProtectionRequest extends js.Object {
+    var cluster: String
+    var protectionEnabled: Boolean
+    var tasks: StringList
+    var expiresInMinutes: js.UndefOr[BoxedInteger]
+  }
+
+  object UpdateTaskProtectionRequest {
+    @inline
+    def apply(
+        cluster: String,
+        protectionEnabled: Boolean,
+        tasks: StringList,
+        expiresInMinutes: js.UndefOr[BoxedInteger] = js.undefined
+    ): UpdateTaskProtectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "cluster" -> cluster.asInstanceOf[js.Any],
+        "protectionEnabled" -> protectionEnabled.asInstanceOf[js.Any],
+        "tasks" -> tasks.asInstanceOf[js.Any]
+      )
+
+      expiresInMinutes.foreach(__v => __obj.updateDynamic("expiresInMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTaskProtectionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateTaskProtectionResponse extends js.Object {
+    var failures: js.UndefOr[Failures]
+    var protectedTasks: js.UndefOr[ProtectedTasks]
+  }
+
+  object UpdateTaskProtectionResponse {
+    @inline
+    def apply(
+        failures: js.UndefOr[Failures] = js.undefined,
+        protectedTasks: js.UndefOr[ProtectedTasks] = js.undefined
+    ): UpdateTaskProtectionResponse = {
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      protectedTasks.foreach(__v => __obj.updateDynamic("protectedTasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTaskProtectionResponse]
     }
   }
 

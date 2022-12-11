@@ -76,6 +76,15 @@ object DataShareStatusForProducer {
 }
 
 @js.native
+sealed trait LogDestinationType extends js.Any
+object LogDestinationType {
+  val s3 = "s3".asInstanceOf[LogDestinationType]
+  val cloudwatch = "cloudwatch".asInstanceOf[LogDestinationType]
+
+  @inline def values: js.Array[LogDestinationType] = js.Array(s3, cloudwatch)
+}
+
+@js.native
 sealed trait Mode extends js.Any
 object Mode {
   val standard = "standard".asInstanceOf[Mode]
@@ -256,8 +265,9 @@ sealed trait UsageLimitFeatureType extends js.Any
 object UsageLimitFeatureType {
   val spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
   val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
+  val `cross-region-datasharing` = "cross-region-datasharing".asInstanceOf[UsageLimitFeatureType]
 
-  @inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`)
+  @inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`, `cross-region-datasharing`)
 }
 
 @js.native

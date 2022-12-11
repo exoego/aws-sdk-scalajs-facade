@@ -462,7 +462,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about the Amazon Route 53 DNS records that you want Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Amazon Route 53 DNS records that you want Cloud Map to create when you register an instance. <important> The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>. </important>
     */
   @js.native
   trait DnsConfig extends js.Object {
@@ -488,7 +488,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you register an instance.
+  /** A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you register an instance.
     */
   @js.native
   trait DnsConfigChange extends js.Object {
@@ -507,7 +507,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
+  /** A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
     */
   @js.native
   trait DnsProperties extends js.Object {
@@ -528,7 +528,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
     */
   @js.native
   trait DnsRecord extends js.Object {
@@ -731,10 +731,10 @@ package object servicediscovery {
     }
   }
 
-  /** <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. Note the following about configuring health checks. <dl> <dt>A and AAAA records</dt> <dd> If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address
-    * is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </dd> <dt>CNAME records</dt> <dd> You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error. </dd> <dt>Request interval</dt> <dd> A Route 53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all. </dd> <dt>Health checking regions</dt> <dd> Health checkers perform checks from all Route 53 health-checking Regions. For a list of the current
-    * Regions, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]]. </dd> <dt>Alias records</dt> <dd> When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route 53 alias record. Note the following: * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]]. * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check. </dd> <dt>Charges for health checks</dt> <dd> Health
-    * checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. </dd> </dl>
+  /** <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. Note the following about configuring health checks. <dl> <dt>A and AAAA records</dt> <dd> If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address
+    * is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </dd> <dt>CNAME records</dt> <dd> You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error. </dd> <dt>Request interval</dt> <dd> A Route 53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all. </dd> <dt>Health checking regions</dt> <dd> Health checkers perform checks from all Route 53 health-checking Regions. For a list of the current
+    * Regions, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]]. </dd> <dt>Alias records</dt> <dd> When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route 53 alias record. Note the following: * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]]. * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check. </dd> <dt>Charges for health checks</dt> <dd> Health
+    * checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. </dd> </dl>
     */
   @js.native
   trait HealthCheckConfig extends js.Object {

@@ -11,6 +11,7 @@ package object cloudwatch {
   type AccountId = String
   type ActionPrefix = String
   type ActionsEnabled = Boolean
+  type ActionsSuppressedReason = String
   type AlarmArn = String
   type AlarmDescription = String
   type AlarmHistoryItems = js.Array[AlarmHistoryItem]
@@ -57,6 +58,7 @@ package object cloudwatch {
   type GetMetricDataMaxDatapoints = Int
   type HistoryData = String
   type HistorySummary = String
+  type IncludeLinkedAccounts = Boolean
   type InsightRuleAggregationStatistic = String
   type InsightRuleContributorDatapoints = js.Array[InsightRuleContributorDatapoint]
   type InsightRuleContributorKey = String
@@ -65,6 +67,7 @@ package object cloudwatch {
   type InsightRuleContributorKeys = js.Array[InsightRuleContributorKey]
   type InsightRuleContributors = js.Array[InsightRuleContributor]
   type InsightRuleDefinition = String
+  type InsightRuleIsManaged = Boolean
   type InsightRuleMaxResults = Int
   type InsightRuleMetricDatapoints = js.Array[InsightRuleMetricDatapoint]
   type InsightRuleMetricList = js.Array[InsightRuleMetricName]
@@ -80,6 +83,8 @@ package object cloudwatch {
   type InsightRules = js.Array[InsightRule]
   type LastModified = js.Date
   type ListMetricStreamsMaxResults = Int
+  type ManagedRuleDescriptions = js.Array[ManagedRuleDescription]
+  type ManagedRules = js.Array[ManagedRule]
   type MaxRecords = Int
   type MaxReturnedResultsCount = Int
   type Message = String
@@ -99,12 +104,17 @@ package object cloudwatch {
   type MetricStreamName = String
   type MetricStreamNames = js.Array[MetricStreamName]
   type MetricStreamState = String
+  type MetricStreamStatistic = String
+  type MetricStreamStatisticsAdditionalStatistics = js.Array[MetricStreamStatistic]
+  type MetricStreamStatisticsConfigurations = js.Array[MetricStreamStatisticsConfiguration]
+  type MetricStreamStatisticsIncludeMetrics = js.Array[MetricStreamStatisticsMetric]
   type MetricWidget = String
   type MetricWidgetImage = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Metrics = js.Array[Metric]
   type Namespace = String
   type NextToken = String
   type OutputFormat = String
+  type OwningAccounts = js.Array[AccountId]
   type Period = Int
   type ResourceList = js.Array[ResourceName]
   type ResourceName = String
@@ -115,10 +125,12 @@ package object cloudwatch {
   type StateReasonData = String
   type Statistics = js.Array[Statistic]
   type StorageResolution = Int
+  type SuppressorPeriod = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TemplateName = String
   type Threshold = Double
   type Timestamp = js.Date
   type Timestamps = js.Array[Timestamp]
@@ -148,6 +160,7 @@ package object cloudwatch {
     @inline def getMetricStreamFuture(params: GetMetricStreamInput): Future[GetMetricStreamOutput] = service.getMetricStream(params).promise().toFuture
     @inline def getMetricWidgetImageFuture(params: GetMetricWidgetImageInput): Future[GetMetricWidgetImageOutput] = service.getMetricWidgetImage(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsInput): Future[ListDashboardsOutput] = service.listDashboards(params).promise().toFuture
+    @inline def listManagedInsightRulesFuture(params: ListManagedInsightRulesInput): Future[ListManagedInsightRulesOutput] = service.listManagedInsightRules(params).promise().toFuture
     @inline def listMetricStreamsFuture(params: ListMetricStreamsInput): Future[ListMetricStreamsOutput] = service.listMetricStreams(params).promise().toFuture
     @inline def listMetricsFuture(params: ListMetricsInput): Future[ListMetricsOutput] = service.listMetrics(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceInput): Future[ListTagsForResourceOutput] = service.listTagsForResource(params).promise().toFuture
@@ -155,6 +168,7 @@ package object cloudwatch {
     @inline def putCompositeAlarmFuture(params: PutCompositeAlarmInput): Future[js.Object] = service.putCompositeAlarm(params).promise().toFuture
     @inline def putDashboardFuture(params: PutDashboardInput): Future[PutDashboardOutput] = service.putDashboard(params).promise().toFuture
     @inline def putInsightRuleFuture(params: PutInsightRuleInput): Future[PutInsightRuleOutput] = service.putInsightRule(params).promise().toFuture
+    @inline def putManagedInsightRulesFuture(params: PutManagedInsightRulesInput): Future[PutManagedInsightRulesOutput] = service.putManagedInsightRules(params).promise().toFuture
     @inline def putMetricAlarmFuture(params: PutMetricAlarmInput): Future[js.Object] = service.putMetricAlarm(params).promise().toFuture
     @inline def putMetricDataFuture(params: PutMetricDataInput): Future[js.Object] = service.putMetricData(params).promise().toFuture
     @inline def putMetricStreamFuture(params: PutMetricStreamInput): Future[PutMetricStreamOutput] = service.putMetricStream(params).promise().toFuture
@@ -192,6 +206,7 @@ package object cloudwatch {
     def getMetricStream(params: GetMetricStreamInput): Request[GetMetricStreamOutput] = js.native
     def getMetricWidgetImage(params: GetMetricWidgetImageInput): Request[GetMetricWidgetImageOutput] = js.native
     def listDashboards(params: ListDashboardsInput): Request[ListDashboardsOutput] = js.native
+    def listManagedInsightRules(params: ListManagedInsightRulesInput): Request[ListManagedInsightRulesOutput] = js.native
     def listMetricStreams(params: ListMetricStreamsInput): Request[ListMetricStreamsOutput] = js.native
     def listMetrics(params: ListMetricsInput): Request[ListMetricsOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceInput): Request[ListTagsForResourceOutput] = js.native
@@ -199,6 +214,7 @@ package object cloudwatch {
     def putCompositeAlarm(params: PutCompositeAlarmInput): Request[js.Object] = js.native
     def putDashboard(params: PutDashboardInput): Request[PutDashboardOutput] = js.native
     def putInsightRule(params: PutInsightRuleInput): Request[PutInsightRuleOutput] = js.native
+    def putManagedInsightRules(params: PutManagedInsightRulesInput): Request[PutManagedInsightRulesOutput] = js.native
     def putMetricAlarm(params: PutMetricAlarmInput): Request[js.Object] = js.native
     def putMetricData(params: PutMetricDataInput): Request[js.Object] = js.native
     def putMetricStream(params: PutMetricStreamInput): Request[PutMetricStreamOutput] = js.native
@@ -312,6 +328,11 @@ package object cloudwatch {
   @js.native
   trait CompositeAlarm extends js.Object {
     var ActionsEnabled: js.UndefOr[ActionsEnabled]
+    var ActionsSuppressedBy: js.UndefOr[ActionsSuppressedBy]
+    var ActionsSuppressedReason: js.UndefOr[ActionsSuppressedReason]
+    var ActionsSuppressor: js.UndefOr[AlarmArn]
+    var ActionsSuppressorExtensionPeriod: js.UndefOr[SuppressorPeriod]
+    var ActionsSuppressorWaitPeriod: js.UndefOr[SuppressorPeriod]
     var AlarmActions: js.UndefOr[ResourceList]
     var AlarmArn: js.UndefOr[AlarmArn]
     var AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp]
@@ -322,6 +343,7 @@ package object cloudwatch {
     var OKActions: js.UndefOr[ResourceList]
     var StateReason: js.UndefOr[StateReason]
     var StateReasonData: js.UndefOr[StateReasonData]
+    var StateTransitionedTimestamp: js.UndefOr[Timestamp]
     var StateUpdatedTimestamp: js.UndefOr[Timestamp]
     var StateValue: js.UndefOr[StateValue]
   }
@@ -330,6 +352,11 @@ package object cloudwatch {
     @inline
     def apply(
         ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        ActionsSuppressedBy: js.UndefOr[ActionsSuppressedBy] = js.undefined,
+        ActionsSuppressedReason: js.UndefOr[ActionsSuppressedReason] = js.undefined,
+        ActionsSuppressor: js.UndefOr[AlarmArn] = js.undefined,
+        ActionsSuppressorExtensionPeriod: js.UndefOr[SuppressorPeriod] = js.undefined,
+        ActionsSuppressorWaitPeriod: js.UndefOr[SuppressorPeriod] = js.undefined,
         AlarmActions: js.UndefOr[ResourceList] = js.undefined,
         AlarmArn: js.UndefOr[AlarmArn] = js.undefined,
         AlarmConfigurationUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -340,11 +367,17 @@ package object cloudwatch {
         OKActions: js.UndefOr[ResourceList] = js.undefined,
         StateReason: js.UndefOr[StateReason] = js.undefined,
         StateReasonData: js.UndefOr[StateReasonData] = js.undefined,
+        StateTransitionedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StateUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         StateValue: js.UndefOr[StateValue] = js.undefined
     ): CompositeAlarm = {
       val __obj = js.Dynamic.literal()
       ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressedBy.foreach(__v => __obj.updateDynamic("ActionsSuppressedBy")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressedReason.foreach(__v => __obj.updateDynamic("ActionsSuppressedReason")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressor.foreach(__v => __obj.updateDynamic("ActionsSuppressor")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressorExtensionPeriod.foreach(__v => __obj.updateDynamic("ActionsSuppressorExtensionPeriod")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressorWaitPeriod.foreach(__v => __obj.updateDynamic("ActionsSuppressorWaitPeriod")(__v.asInstanceOf[js.Any]))
       AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
       AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
       AlarmConfigurationUpdatedTimestamp.foreach(__v => __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
@@ -355,6 +388,7 @@ package object cloudwatch {
       OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
+      StateTransitionedTimestamp.foreach(__v => __obj.updateDynamic("StateTransitionedTimestamp")(__v.asInstanceOf[js.Any]))
       StateUpdatedTimestamp.foreach(__v => __obj.updateDynamic("StateUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompositeAlarm]
@@ -854,7 +888,7 @@ package object cloudwatch {
     }
   }
 
-  /** A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric.
+  /** A dimension is a name/value pair that is part of the identity of a metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair to one of your metrics, you are creating a new variation of that metric. For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension name, and the actual instance ID as the value for that dimension. You can assign up to 30 dimensions to a metric.
     */
   @js.native
   trait Dimension extends js.Object {
@@ -1253,6 +1287,7 @@ package object cloudwatch {
     var OutputFormat: js.UndefOr[MetricStreamOutputFormat]
     var RoleArn: js.UndefOr[AmazonResourceName]
     var State: js.UndefOr[MetricStreamState]
+    var StatisticsConfigurations: js.UndefOr[MetricStreamStatisticsConfigurations]
   }
 
   object GetMetricStreamOutput {
@@ -1267,7 +1302,8 @@ package object cloudwatch {
         Name: js.UndefOr[MetricStreamName] = js.undefined,
         OutputFormat: js.UndefOr[MetricStreamOutputFormat] = js.undefined,
         RoleArn: js.UndefOr[AmazonResourceName] = js.undefined,
-        State: js.UndefOr[MetricStreamState] = js.undefined
+        State: js.UndefOr[MetricStreamState] = js.undefined,
+        StatisticsConfigurations: js.UndefOr[MetricStreamStatisticsConfigurations] = js.undefined
     ): GetMetricStreamOutput = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -1280,6 +1316,7 @@ package object cloudwatch {
       OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StatisticsConfigurations.foreach(__v => __obj.updateDynamic("StatisticsConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricStreamOutput]
     }
   }
@@ -1329,6 +1366,7 @@ package object cloudwatch {
     var Name: InsightRuleName
     var Schema: InsightRuleSchema
     var State: InsightRuleState
+    var ManagedRule: js.UndefOr[InsightRuleIsManaged]
   }
 
   object InsightRule {
@@ -1337,7 +1375,8 @@ package object cloudwatch {
         Definition: InsightRuleDefinition,
         Name: InsightRuleName,
         Schema: InsightRuleSchema,
-        State: InsightRuleState
+        State: InsightRuleState,
+        ManagedRule: js.UndefOr[InsightRuleIsManaged] = js.undefined
     ): InsightRule = {
       val __obj = js.Dynamic.literal(
         "Definition" -> Definition.asInstanceOf[js.Any],
@@ -1345,6 +1384,8 @@ package object cloudwatch {
         "Schema" -> Schema.asInstanceOf[js.Any],
         "State" -> State.asInstanceOf[js.Any]
       )
+
+      ManagedRule.foreach(__v => __obj.updateDynamic("ManagedRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InsightRule]
     }
   }
@@ -1494,6 +1535,49 @@ package object cloudwatch {
   }
 
   @js.native
+  trait ListManagedInsightRulesInput extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var MaxResults: js.UndefOr[InsightRuleMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListManagedInsightRulesInput {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        MaxResults: js.UndefOr[InsightRuleMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListManagedInsightRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListManagedInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait ListManagedInsightRulesOutput extends js.Object {
+    var ManagedRules: js.UndefOr[ManagedRuleDescriptions]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListManagedInsightRulesOutput {
+    @inline
+    def apply(
+        ManagedRules: js.UndefOr[ManagedRuleDescriptions] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListManagedInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      ManagedRules.foreach(__v => __obj.updateDynamic("ManagedRules")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListManagedInsightRulesOutput]
+    }
+  }
+
+  @js.native
   trait ListMetricStreamsInput extends js.Object {
     var MaxResults: js.UndefOr[ListMetricStreamsMaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -1534,9 +1618,11 @@ package object cloudwatch {
   @js.native
   trait ListMetricsInput extends js.Object {
     var Dimensions: js.UndefOr[DimensionFilters]
+    var IncludeLinkedAccounts: js.UndefOr[IncludeLinkedAccounts]
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
     var NextToken: js.UndefOr[NextToken]
+    var OwningAccount: js.UndefOr[AccountId]
     var RecentlyActive: js.UndefOr[RecentlyActive]
   }
 
@@ -1544,16 +1630,20 @@ package object cloudwatch {
     @inline
     def apply(
         Dimensions: js.UndefOr[DimensionFilters] = js.undefined,
+        IncludeLinkedAccounts: js.UndefOr[IncludeLinkedAccounts] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        OwningAccount: js.UndefOr[AccountId] = js.undefined,
         RecentlyActive: js.UndefOr[RecentlyActive] = js.undefined
     ): ListMetricsInput = {
       val __obj = js.Dynamic.literal()
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      IncludeLinkedAccounts.foreach(__v => __obj.updateDynamic("IncludeLinkedAccounts")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OwningAccount.foreach(__v => __obj.updateDynamic("OwningAccount")(__v.asInstanceOf[js.Any]))
       RecentlyActive.foreach(__v => __obj.updateDynamic("RecentlyActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMetricsInput]
     }
@@ -1563,17 +1653,20 @@ package object cloudwatch {
   trait ListMetricsOutput extends js.Object {
     var Metrics: js.UndefOr[Metrics]
     var NextToken: js.UndefOr[NextToken]
+    var OwningAccounts: js.UndefOr[OwningAccounts]
   }
 
   object ListMetricsOutput {
     @inline
     def apply(
         Metrics: js.UndefOr[Metrics] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        OwningAccounts: js.UndefOr[OwningAccounts] = js.undefined
     ): ListMetricsOutput = {
       val __obj = js.Dynamic.literal()
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OwningAccounts.foreach(__v => __obj.updateDynamic("OwningAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMetricsOutput]
     }
   }
@@ -1608,6 +1701,78 @@ package object cloudwatch {
       val __obj = js.Dynamic.literal()
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
+    }
+  }
+
+  /** Contains the information that's required to enable a managed Contributor Insights rule for an Amazon Web Services resource.
+    */
+  @js.native
+  trait ManagedRule extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TemplateName: TemplateName
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ManagedRule {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TemplateName: TemplateName,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ManagedRule = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRule]
+    }
+  }
+
+  /** Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>.
+    */
+  @js.native
+  trait ManagedRuleDescription extends js.Object {
+    var ResourceARN: js.UndefOr[AmazonResourceName]
+    var RuleState: js.UndefOr[ManagedRuleState]
+    var TemplateName: js.UndefOr[TemplateName]
+  }
+
+  object ManagedRuleDescription {
+    @inline
+    def apply(
+        ResourceARN: js.UndefOr[AmazonResourceName] = js.undefined,
+        RuleState: js.UndefOr[ManagedRuleState] = js.undefined,
+        TemplateName: js.UndefOr[TemplateName] = js.undefined
+    ): ManagedRuleDescription = {
+      val __obj = js.Dynamic.literal()
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      RuleState.foreach(__v => __obj.updateDynamic("RuleState")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRuleDescription]
+    }
+  }
+
+  /** The status of a managed Contributor Insights rule.
+    */
+  @js.native
+  trait ManagedRuleState extends js.Object {
+    var RuleName: InsightRuleName
+    var State: InsightRuleState
+  }
+
+  object ManagedRuleState {
+    @inline
+    def apply(
+        RuleName: InsightRuleName,
+        State: InsightRuleState
+    ): ManagedRuleState = {
+      val __obj = js.Dynamic.literal(
+        "RuleName" -> RuleName.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ManagedRuleState]
     }
   }
 
@@ -1752,8 +1917,8 @@ package object cloudwatch {
     }
   }
 
-  /** This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations. When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures. When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as
-    * 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches. Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>. Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
+  /** This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations. When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a Metrics Insights query or a math expression. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures. When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and
+    * as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>true</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches. Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax|Metric Math Syntax and Functions]] in the <i>Amazon CloudWatch User Guide</i>. Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.
     */
   @js.native
   trait MetricDataQuery extends js.Object {
@@ -1969,6 +2134,50 @@ package object cloudwatch {
     }
   }
 
+  /** By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure contains information for one metric that includes additional statistics in the stream. For more information about statistics, see CloudWatch, listed in [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html| CloudWatch statistics definitions]].
+    */
+  @js.native
+  trait MetricStreamStatisticsConfiguration extends js.Object {
+    var AdditionalStatistics: MetricStreamStatisticsAdditionalStatistics
+    var IncludeMetrics: MetricStreamStatisticsIncludeMetrics
+  }
+
+  object MetricStreamStatisticsConfiguration {
+    @inline
+    def apply(
+        AdditionalStatistics: MetricStreamStatisticsAdditionalStatistics,
+        IncludeMetrics: MetricStreamStatisticsIncludeMetrics
+    ): MetricStreamStatisticsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AdditionalStatistics" -> AdditionalStatistics.asInstanceOf[js.Any],
+        "IncludeMetrics" -> IncludeMetrics.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MetricStreamStatisticsConfiguration]
+    }
+  }
+
+  /** This object contains the information for one metric that is to be streamed with additional statistics.
+    */
+  @js.native
+  trait MetricStreamStatisticsMetric extends js.Object {
+    var MetricName: MetricName
+    var Namespace: Namespace
+  }
+
+  object MetricStreamStatisticsMetric {
+    @inline
+    def apply(
+        MetricName: MetricName,
+        Namespace: Namespace
+    ): MetricStreamStatisticsMetric = {
+      val __obj = js.Dynamic.literal(
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MetricStreamStatisticsMetric]
+    }
+  }
+
   /** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.
     */
   @js.native
@@ -2046,6 +2255,9 @@ package object cloudwatch {
     var AlarmName: AlarmName
     var AlarmRule: AlarmRule
     var ActionsEnabled: js.UndefOr[ActionsEnabled]
+    var ActionsSuppressor: js.UndefOr[AlarmArn]
+    var ActionsSuppressorExtensionPeriod: js.UndefOr[SuppressorPeriod]
+    var ActionsSuppressorWaitPeriod: js.UndefOr[SuppressorPeriod]
     var AlarmActions: js.UndefOr[ResourceList]
     var AlarmDescription: js.UndefOr[AlarmDescription]
     var InsufficientDataActions: js.UndefOr[ResourceList]
@@ -2059,6 +2271,9 @@ package object cloudwatch {
         AlarmName: AlarmName,
         AlarmRule: AlarmRule,
         ActionsEnabled: js.UndefOr[ActionsEnabled] = js.undefined,
+        ActionsSuppressor: js.UndefOr[AlarmArn] = js.undefined,
+        ActionsSuppressorExtensionPeriod: js.UndefOr[SuppressorPeriod] = js.undefined,
+        ActionsSuppressorWaitPeriod: js.UndefOr[SuppressorPeriod] = js.undefined,
         AlarmActions: js.UndefOr[ResourceList] = js.undefined,
         AlarmDescription: js.UndefOr[AlarmDescription] = js.undefined,
         InsufficientDataActions: js.UndefOr[ResourceList] = js.undefined,
@@ -2071,6 +2286,9 @@ package object cloudwatch {
       )
 
       ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressor.foreach(__v => __obj.updateDynamic("ActionsSuppressor")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressorExtensionPeriod.foreach(__v => __obj.updateDynamic("ActionsSuppressorExtensionPeriod")(__v.asInstanceOf[js.Any]))
+      ActionsSuppressorWaitPeriod.foreach(__v => __obj.updateDynamic("ActionsSuppressorWaitPeriod")(__v.asInstanceOf[js.Any]))
       AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
       AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
       InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
@@ -2151,6 +2369,39 @@ package object cloudwatch {
     def apply(): PutInsightRuleOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutInsightRuleOutput]
+    }
+  }
+
+  @js.native
+  trait PutManagedInsightRulesInput extends js.Object {
+    var ManagedRules: ManagedRules
+  }
+
+  object PutManagedInsightRulesInput {
+    @inline
+    def apply(
+        ManagedRules: ManagedRules
+    ): PutManagedInsightRulesInput = {
+      val __obj = js.Dynamic.literal(
+        "ManagedRules" -> ManagedRules.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutManagedInsightRulesInput]
+    }
+  }
+
+  @js.native
+  trait PutManagedInsightRulesOutput extends js.Object {
+    var Failures: js.UndefOr[BatchFailures]
+  }
+
+  object PutManagedInsightRulesOutput {
+    @inline
+    def apply(
+        Failures: js.UndefOr[BatchFailures] = js.undefined
+    ): PutManagedInsightRulesOutput = {
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutManagedInsightRulesOutput]
     }
   }
 
@@ -2263,6 +2514,7 @@ package object cloudwatch {
     var RoleArn: AmazonResourceName
     var ExcludeFilters: js.UndefOr[MetricStreamFilters]
     var IncludeFilters: js.UndefOr[MetricStreamFilters]
+    var StatisticsConfigurations: js.UndefOr[MetricStreamStatisticsConfigurations]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -2275,6 +2527,7 @@ package object cloudwatch {
         RoleArn: AmazonResourceName,
         ExcludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
         IncludeFilters: js.UndefOr[MetricStreamFilters] = js.undefined,
+        StatisticsConfigurations: js.UndefOr[MetricStreamStatisticsConfigurations] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): PutMetricStreamInput = {
       val __obj = js.Dynamic.literal(
@@ -2286,6 +2539,7 @@ package object cloudwatch {
 
       ExcludeFilters.foreach(__v => __obj.updateDynamic("ExcludeFilters")(__v.asInstanceOf[js.Any]))
       IncludeFilters.foreach(__v => __obj.updateDynamic("IncludeFilters")(__v.asInstanceOf[js.Any]))
+      StatisticsConfigurations.foreach(__v => __obj.updateDynamic("StatisticsConfigurations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutMetricStreamInput]
     }

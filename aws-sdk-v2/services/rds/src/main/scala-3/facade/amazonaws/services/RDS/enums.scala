@@ -10,6 +10,16 @@ object ActivityStreamMode {
   inline def values: js.Array[ActivityStreamMode] = js.Array(sync, async)
 }
 
+type ActivityStreamPolicyStatus = "locked" | "unlocked" | "locking-policy" | "unlocking-policy"
+object ActivityStreamPolicyStatus {
+  inline val locked: "locked" = "locked"
+  inline val unlocked: "unlocked" = "unlocked"
+  inline val `locking-policy`: "locking-policy" = "locking-policy"
+  inline val `unlocking-policy`: "unlocking-policy" = "unlocking-policy"
+
+  inline def values: js.Array[ActivityStreamPolicyStatus] = js.Array(locked, unlocked, `locking-policy`, `unlocking-policy`)
+}
+
 type ActivityStreamStatus = "stopped" | "starting" | "started" | "stopping"
 object ActivityStreamStatus {
   inline val stopped: "stopped" = "stopped"
@@ -26,6 +36,14 @@ object ApplyMethod {
   inline val `pending-reboot`: "pending-reboot" = "pending-reboot"
 
   inline def values: js.Array[ApplyMethod] = js.Array(immediate, `pending-reboot`)
+}
+
+type AuditPolicyState = "locked" | "unlocked"
+object AuditPolicyState {
+  inline val locked: "locked" = "locked"
+  inline val unlocked: "unlocked" = "unlocked"
+
+  inline def values: js.Array[AuditPolicyState] = js.Array(locked, unlocked)
 }
 
 type AuthScheme = "SECRETS"
@@ -87,12 +105,21 @@ object DBProxyStatus {
   inline def values: js.Array[DBProxyStatus] = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
 }
 
-type EngineFamily = "MYSQL" | "POSTGRESQL"
+type EngineFamily = "MYSQL" | "POSTGRESQL" | "SQLSERVER"
 object EngineFamily {
   inline val MYSQL: "MYSQL" = "MYSQL"
   inline val POSTGRESQL: "POSTGRESQL" = "POSTGRESQL"
+  inline val SQLSERVER: "SQLSERVER" = "SQLSERVER"
 
-  inline def values: js.Array[EngineFamily] = js.Array(MYSQL, POSTGRESQL)
+  inline def values: js.Array[EngineFamily] = js.Array(MYSQL, POSTGRESQL, SQLSERVER)
+}
+
+type ExportSourceType = "SNAPSHOT" | "CLUSTER"
+object ExportSourceType {
+  inline val SNAPSHOT: "SNAPSHOT" = "SNAPSHOT"
+  inline val CLUSTER: "CLUSTER" = "CLUSTER"
+
+  inline def values: js.Array[ExportSourceType] = js.Array(SNAPSHOT, CLUSTER)
 }
 
 type FailoverStatus = "pending" | "failing-over" | "cancelling"
@@ -104,12 +131,13 @@ object FailoverStatus {
   inline def values: js.Array[FailoverStatus] = js.Array(pending, `failing-over`, cancelling)
 }
 
-type IAMAuthMode = "DISABLED" | "REQUIRED"
+type IAMAuthMode = "DISABLED" | "REQUIRED" | "ENABLED"
 object IAMAuthMode {
   inline val DISABLED: "DISABLED" = "DISABLED"
   inline val REQUIRED: "REQUIRED" = "REQUIRED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
 
-  inline def values: js.Array[IAMAuthMode] = js.Array(DISABLED, REQUIRED)
+  inline def values: js.Array[IAMAuthMode] = js.Array(DISABLED, REQUIRED, ENABLED)
 }
 
 type ReplicaMode = "open-read-only" | "mounted"
@@ -120,7 +148,7 @@ object ReplicaMode {
   inline def values: js.Array[ReplicaMode] = js.Array(`open-read-only`, mounted)
 }
 
-type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot" | "custom-engine-version"
+type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot" | "custom-engine-version" | "db-proxy" | "blue-green-deployment"
 object SourceType {
   inline val `db-instance`: "db-instance" = "db-instance"
   inline val `db-parameter-group`: "db-parameter-group" = "db-parameter-group"
@@ -129,8 +157,20 @@ object SourceType {
   inline val `db-cluster`: "db-cluster" = "db-cluster"
   inline val `db-cluster-snapshot`: "db-cluster-snapshot" = "db-cluster-snapshot"
   inline val `custom-engine-version`: "custom-engine-version" = "custom-engine-version"
+  inline val `db-proxy`: "db-proxy" = "db-proxy"
+  inline val `blue-green-deployment`: "blue-green-deployment" = "blue-green-deployment"
 
-  inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`, `custom-engine-version`)
+  inline def values: js.Array[SourceType] = js.Array(
+    `db-instance`,
+    `db-parameter-group`,
+    `db-security-group`,
+    `db-snapshot`,
+    `db-cluster`,
+    `db-cluster-snapshot`,
+    `custom-engine-version`,
+    `db-proxy`,
+    `blue-green-deployment`
+  )
 }
 
 type TargetHealthReason = "UNREACHABLE" | "CONNECTION_FAILED" | "AUTH_FAILURE" | "PENDING_PROXY_CAPACITY" | "INVALID_REPLICATION_STATE"

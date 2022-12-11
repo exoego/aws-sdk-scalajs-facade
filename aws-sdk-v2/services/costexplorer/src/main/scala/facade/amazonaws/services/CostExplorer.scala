@@ -17,6 +17,10 @@ package object costexplorer {
   type AttributeType = String
   type AttributeValue = String
   type Attributes = js.Dictionary[AttributeValue]
+  type CostAllocationTagKeyList = js.Array[TagKey]
+  type CostAllocationTagList = js.Array[CostAllocationTag]
+  type CostAllocationTagStatusList = js.Array[CostAllocationTagStatusEntry]
+  type CostAllocationTagsMaxResults = Int
   type CostCategoryMaxResults = Int
   type CostCategoryName = String
   type CostCategoryNamesList = js.Array[CostCategoryName]
@@ -34,10 +38,12 @@ package object costexplorer {
   type CoveragesByTime = js.Array[CoverageByTime]
   type DimensionValuesWithAttributesList = js.Array[DimensionValuesWithAttributes]
   type Entity = String
+  type ErrorMessage = String
   type Estimated = Boolean
   type Expressions = js.Array[Expression]
   type FindingReasonCodes = js.Array[FindingReasonCode]
   type ForecastResultsByTime = js.Array[ForecastResult]
+  type GenerationSummaryList = js.Array[GenerationSummary]
   type GenericBoolean = Boolean
   type GenericDouble = Double
   type GenericString = String
@@ -69,6 +75,8 @@ package object costexplorer {
   type PurchasedUnits = String
   type RICostForUnusedHours = String
   type RealizedSavings = String
+  type RecommendationId = String
+  type RecommendationIdList = js.Array[RecommendationId]
   type ReservationCoverageGroups = js.Array[ReservationCoverageGroup]
   type ReservationGroupKey = String
   type ReservationGroupValue = String
@@ -77,6 +85,10 @@ package object costexplorer {
   type ReservationUtilizationGroups = js.Array[ReservationUtilizationGroup]
   type ReservedHours = String
   type ReservedNormalizedUnits = String
+  type ResourceTagKey = String
+  type ResourceTagKeyList = js.Array[ResourceTagKey]
+  type ResourceTagList = js.Array[ResourceTag]
+  type ResourceTagValue = String
   type ResultsByTime = js.Array[ResultByTime]
   type RightsizingRecommendationList = js.Array[RightsizingRecommendation]
   type RootCauses = js.Array[RootCause]
@@ -104,6 +116,7 @@ package object costexplorer {
   type UnrealizedSavings = String
   type UnusedHours = String
   type UnusedUnits = String
+  type UpdateCostAllocationTagsStatusErrors = js.Array[UpdateCostAllocationTagsStatusError]
   type UtilizationPercentage = String
   type UtilizationPercentageInUnits = String
   type UtilizationsByTime = js.Array[UtilizationByTime]
@@ -139,10 +152,17 @@ package object costexplorer {
     @inline def getSavingsPlansUtilizationFuture(params: GetSavingsPlansUtilizationRequest): Future[GetSavingsPlansUtilizationResponse] = service.getSavingsPlansUtilization(params).promise().toFuture
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise().toFuture
     @inline def getUsageForecastFuture(params: GetUsageForecastRequest): Future[GetUsageForecastResponse] = service.getUsageForecast(params).promise().toFuture
+    @inline def listCostAllocationTagsFuture(params: ListCostAllocationTagsRequest): Future[ListCostAllocationTagsResponse] = service.listCostAllocationTags(params).promise().toFuture
     @inline def listCostCategoryDefinitionsFuture(params: ListCostCategoryDefinitionsRequest): Future[ListCostCategoryDefinitionsResponse] = service.listCostCategoryDefinitions(params).promise().toFuture
+    @inline def listSavingsPlansPurchaseRecommendationGenerationFuture(params: ListSavingsPlansPurchaseRecommendationGenerationRequest): Future[ListSavingsPlansPurchaseRecommendationGenerationResponse] = service.listSavingsPlansPurchaseRecommendationGeneration(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def provideAnomalyFeedbackFuture(params: ProvideAnomalyFeedbackRequest): Future[ProvideAnomalyFeedbackResponse] = service.provideAnomalyFeedback(params).promise().toFuture
+    @inline def startSavingsPlansPurchaseRecommendationGenerationFuture(params: StartSavingsPlansPurchaseRecommendationGenerationRequest): Future[StartSavingsPlansPurchaseRecommendationGenerationResponse] = service.startSavingsPlansPurchaseRecommendationGeneration(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAnomalyMonitorFuture(params: UpdateAnomalyMonitorRequest): Future[UpdateAnomalyMonitorResponse] = service.updateAnomalyMonitor(params).promise().toFuture
     @inline def updateAnomalySubscriptionFuture(params: UpdateAnomalySubscriptionRequest): Future[UpdateAnomalySubscriptionResponse] = service.updateAnomalySubscription(params).promise().toFuture
+    @inline def updateCostAllocationTagsStatusFuture(params: UpdateCostAllocationTagsStatusRequest): Future[UpdateCostAllocationTagsStatusResponse] = service.updateCostAllocationTagsStatus(params).promise().toFuture
     @inline def updateCostCategoryDefinitionFuture(params: UpdateCostCategoryDefinitionRequest): Future[UpdateCostCategoryDefinitionResponse] = service.updateCostCategoryDefinition(params).promise().toFuture
 
   }
@@ -177,10 +197,17 @@ package object costexplorer {
     def getSavingsPlansUtilizationDetails(params: GetSavingsPlansUtilizationDetailsRequest): Request[GetSavingsPlansUtilizationDetailsResponse] = js.native
     def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
     def getUsageForecast(params: GetUsageForecastRequest): Request[GetUsageForecastResponse] = js.native
+    def listCostAllocationTags(params: ListCostAllocationTagsRequest): Request[ListCostAllocationTagsResponse] = js.native
     def listCostCategoryDefinitions(params: ListCostCategoryDefinitionsRequest): Request[ListCostCategoryDefinitionsResponse] = js.native
+    def listSavingsPlansPurchaseRecommendationGeneration(params: ListSavingsPlansPurchaseRecommendationGenerationRequest): Request[ListSavingsPlansPurchaseRecommendationGenerationResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def provideAnomalyFeedback(params: ProvideAnomalyFeedbackRequest): Request[ProvideAnomalyFeedbackResponse] = js.native
+    def startSavingsPlansPurchaseRecommendationGeneration(params: StartSavingsPlansPurchaseRecommendationGenerationRequest): Request[StartSavingsPlansPurchaseRecommendationGenerationResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAnomalyMonitor(params: UpdateAnomalyMonitorRequest): Request[UpdateAnomalyMonitorResponse] = js.native
     def updateAnomalySubscription(params: UpdateAnomalySubscriptionRequest): Request[UpdateAnomalySubscriptionResponse] = js.native
+    def updateCostAllocationTagsStatus(params: UpdateCostAllocationTagsStatusRequest): Request[UpdateCostAllocationTagsStatusResponse] = js.native
     def updateCostCategoryDefinition(params: UpdateCostCategoryDefinitionRequest): Request[UpdateCostCategoryDefinitionResponse] = js.native
   }
   object CostExplorer {
@@ -360,6 +387,53 @@ package object costexplorer {
     }
   }
 
+  /** The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object.
+    */
+  @js.native
+  trait CostAllocationTag extends js.Object {
+    var Status: CostAllocationTagStatus
+    var TagKey: TagKey
+    var Type: CostAllocationTagType
+  }
+
+  object CostAllocationTag {
+    @inline
+    def apply(
+        Status: CostAllocationTagStatus,
+        TagKey: TagKey,
+        Type: CostAllocationTagType
+    ): CostAllocationTag = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any],
+        "TagKey" -> TagKey.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CostAllocationTag]
+    }
+  }
+
+  /** The cost allocation tag status. The status of a key can either be active or inactive.
+    */
+  @js.native
+  trait CostAllocationTagStatusEntry extends js.Object {
+    var Status: CostAllocationTagStatus
+    var TagKey: TagKey
+  }
+
+  object CostAllocationTagStatusEntry {
+    @inline
+    def apply(
+        Status: CostAllocationTagStatus,
+        TagKey: TagKey
+    ): CostAllocationTagStatusEntry = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any],
+        "TagKey" -> TagKey.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CostAllocationTagStatusEntry]
+    }
+  }
+
   /** The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.
     */
   @js.native
@@ -404,7 +478,7 @@ package object costexplorer {
     }
   }
 
-  /** When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs that are based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.
+  /** When you create or update a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to define a rule that dynamically inherits the cost category value from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example, suppose that you want to dynamically group costs that are based on the value of a specific tag key. First, choose an inherited value rule type, and then choose the tag dimension and specify the tag key to use.
     */
   @js.native
   trait CostCategoryInheritedValueDimension extends js.Object {
@@ -710,16 +784,20 @@ package object costexplorer {
   @js.native
   trait CreateAnomalyMonitorRequest extends js.Object {
     var AnomalyMonitor: AnomalyMonitor
+    var ResourceTags: js.UndefOr[ResourceTagList]
   }
 
   object CreateAnomalyMonitorRequest {
     @inline
     def apply(
-        AnomalyMonitor: AnomalyMonitor
+        AnomalyMonitor: AnomalyMonitor,
+        ResourceTags: js.UndefOr[ResourceTagList] = js.undefined
     ): CreateAnomalyMonitorRequest = {
       val __obj = js.Dynamic.literal(
         "AnomalyMonitor" -> AnomalyMonitor.asInstanceOf[js.Any]
       )
+
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAnomalyMonitorRequest]
     }
   }
@@ -744,16 +822,20 @@ package object costexplorer {
   @js.native
   trait CreateAnomalySubscriptionRequest extends js.Object {
     var AnomalySubscription: AnomalySubscription
+    var ResourceTags: js.UndefOr[ResourceTagList]
   }
 
   object CreateAnomalySubscriptionRequest {
     @inline
     def apply(
-        AnomalySubscription: AnomalySubscription
+        AnomalySubscription: AnomalySubscription,
+        ResourceTags: js.UndefOr[ResourceTagList] = js.undefined
     ): CreateAnomalySubscriptionRequest = {
       val __obj = js.Dynamic.literal(
         "AnomalySubscription" -> AnomalySubscription.asInstanceOf[js.Any]
       )
+
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAnomalySubscriptionRequest]
     }
   }
@@ -781,6 +863,8 @@ package object costexplorer {
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
     var DefaultValue: js.UndefOr[CostCategoryValue]
+    var EffectiveStart: js.UndefOr[ZonedDateTime]
+    var ResourceTags: js.UndefOr[ResourceTagList]
     var SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList]
   }
 
@@ -791,6 +875,8 @@ package object costexplorer {
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
         DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
+        EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
+        ResourceTags: js.UndefOr[ResourceTagList] = js.undefined,
         SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList] = js.undefined
     ): CreateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
@@ -800,6 +886,8 @@ package object costexplorer {
       )
 
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       SplitChargeRules.foreach(__v => __obj.updateDynamic("SplitChargeRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
     }
@@ -1203,7 +1291,7 @@ package object costexplorer {
     }
   }
 
-  /** Utilization metrics of the instance.
+  /** Utilization metrics for the instance.
     */
   @js.native
   trait EC2ResourceUtilization extends js.Object {
@@ -1254,7 +1342,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon ES instances that Amazon Web Services recommends that you purchase.
+  /** Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait ESInstanceDetails extends js.Object {
@@ -1377,6 +1465,36 @@ package object costexplorer {
       PredictionIntervalUpperBound.foreach(__v => __obj.updateDynamic("PredictionIntervalUpperBound")(__v.asInstanceOf[js.Any]))
       TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForecastResult]
+    }
+  }
+
+  /** The summary of the Savings Plans recommendation generation.
+    */
+  @js.native
+  trait GenerationSummary extends js.Object {
+    var EstimatedCompletionTime: js.UndefOr[ZonedDateTime]
+    var GenerationCompletionTime: js.UndefOr[ZonedDateTime]
+    var GenerationStartedTime: js.UndefOr[ZonedDateTime]
+    var GenerationStatus: js.UndefOr[GenerationStatus]
+    var RecommendationId: js.UndefOr[RecommendationId]
+  }
+
+  object GenerationSummary {
+    @inline
+    def apply(
+        EstimatedCompletionTime: js.UndefOr[ZonedDateTime] = js.undefined,
+        GenerationCompletionTime: js.UndefOr[ZonedDateTime] = js.undefined,
+        GenerationStartedTime: js.UndefOr[ZonedDateTime] = js.undefined,
+        GenerationStatus: js.UndefOr[GenerationStatus] = js.undefined,
+        RecommendationId: js.UndefOr[RecommendationId] = js.undefined
+    ): GenerationSummary = {
+      val __obj = js.Dynamic.literal()
+      EstimatedCompletionTime.foreach(__v => __obj.updateDynamic("EstimatedCompletionTime")(__v.asInstanceOf[js.Any]))
+      GenerationCompletionTime.foreach(__v => __obj.updateDynamic("GenerationCompletionTime")(__v.asInstanceOf[js.Any]))
+      GenerationStartedTime.foreach(__v => __obj.updateDynamic("GenerationStartedTime")(__v.asInstanceOf[js.Any]))
+      GenerationStatus.foreach(__v => __obj.updateDynamic("GenerationStatus")(__v.asInstanceOf[js.Any]))
+      RecommendationId.foreach(__v => __obj.updateDynamic("RecommendationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerationSummary]
     }
   }
 
@@ -2507,6 +2625,53 @@ package object costexplorer {
   }
 
   @js.native
+  trait ListCostAllocationTagsRequest extends js.Object {
+    var MaxResults: js.UndefOr[CostAllocationTagsMaxResults]
+    var NextToken: js.UndefOr[NextPageToken]
+    var Status: js.UndefOr[CostAllocationTagStatus]
+    var TagKeys: js.UndefOr[CostAllocationTagKeyList]
+    var Type: js.UndefOr[CostAllocationTagType]
+  }
+
+  object ListCostAllocationTagsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[CostAllocationTagsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined,
+        Status: js.UndefOr[CostAllocationTagStatus] = js.undefined,
+        TagKeys: js.UndefOr[CostAllocationTagKeyList] = js.undefined,
+        Type: js.UndefOr[CostAllocationTagType] = js.undefined
+    ): ListCostAllocationTagsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCostAllocationTagsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCostAllocationTagsResponse extends js.Object {
+    var CostAllocationTags: js.UndefOr[CostAllocationTagList]
+    var NextToken: js.UndefOr[NextPageToken]
+  }
+
+  object ListCostAllocationTagsResponse {
+    @inline
+    def apply(
+        CostAllocationTags: js.UndefOr[CostAllocationTagList] = js.undefined,
+        NextToken: js.UndefOr[NextPageToken] = js.undefined
+    ): ListCostAllocationTagsResponse = {
+      val __obj = js.Dynamic.literal()
+      CostAllocationTags.foreach(__v => __obj.updateDynamic("CostAllocationTags")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCostAllocationTagsResponse]
+    }
+  }
+
+  @js.native
   trait ListCostCategoryDefinitionsRequest extends js.Object {
     var EffectiveOn: js.UndefOr[ZonedDateTime]
     var MaxResults: js.UndefOr[CostCategoryMaxResults]
@@ -2547,6 +2712,83 @@ package object costexplorer {
     }
   }
 
+  @js.native
+  trait ListSavingsPlansPurchaseRecommendationGenerationRequest extends js.Object {
+    var GenerationStatus: js.UndefOr[GenerationStatus]
+    var NextPageToken: js.UndefOr[NextPageToken]
+    var PageSize: js.UndefOr[NonNegativeInteger]
+    var RecommendationIds: js.UndefOr[RecommendationIdList]
+  }
+
+  object ListSavingsPlansPurchaseRecommendationGenerationRequest {
+    @inline
+    def apply(
+        GenerationStatus: js.UndefOr[GenerationStatus] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined,
+        PageSize: js.UndefOr[NonNegativeInteger] = js.undefined,
+        RecommendationIds: js.UndefOr[RecommendationIdList] = js.undefined
+    ): ListSavingsPlansPurchaseRecommendationGenerationRequest = {
+      val __obj = js.Dynamic.literal()
+      GenerationStatus.foreach(__v => __obj.updateDynamic("GenerationStatus")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      RecommendationIds.foreach(__v => __obj.updateDynamic("RecommendationIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSavingsPlansPurchaseRecommendationGenerationRequest]
+    }
+  }
+
+  @js.native
+  trait ListSavingsPlansPurchaseRecommendationGenerationResponse extends js.Object {
+    var GenerationSummaryList: js.UndefOr[GenerationSummaryList]
+    var NextPageToken: js.UndefOr[NextPageToken]
+  }
+
+  object ListSavingsPlansPurchaseRecommendationGenerationResponse {
+    @inline
+    def apply(
+        GenerationSummaryList: js.UndefOr[GenerationSummaryList] = js.undefined,
+        NextPageToken: js.UndefOr[NextPageToken] = js.undefined
+    ): ListSavingsPlansPurchaseRecommendationGenerationResponse = {
+      val __obj = js.Dynamic.literal()
+      GenerationSummaryList.foreach(__v => __obj.updateDynamic("GenerationSummaryList")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSavingsPlansPurchaseRecommendationGenerationResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var ResourceTags: js.UndefOr[ResourceTagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        ResourceTags: js.UndefOr[ResourceTagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** The aggregated value for a metric.
     */
   @js.native
@@ -2568,7 +2810,7 @@ package object costexplorer {
     }
   }
 
-  /** Details on the modification recommendation.
+  /** Details for the modification recommendation.
     */
   @js.native
   trait ModifyRecommendationDetail extends js.Object {
@@ -2989,7 +3231,7 @@ package object costexplorer {
     }
   }
 
-  /** Details on the resource.
+  /** Details for the resource.
     */
   @js.native
   trait ResourceDetails extends js.Object {
@@ -3004,6 +3246,30 @@ package object costexplorer {
       val __obj = js.Dynamic.literal()
       EC2ResourceDetails.foreach(__v => __obj.updateDynamic("EC2ResourceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDetails]
+    }
+  }
+
+  /** The tag structure that contains a tag key and value.
+    *
+    * '''Note:'''Tagging is supported only for the following Cost Explorer resource types: <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"> <code>AnomalyMonitor</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"> <code>AnomalySubscription</code> </a>, <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>.
+    */
+  @js.native
+  trait ResourceTag extends js.Object {
+    var Key: ResourceTagKey
+    var Value: ResourceTagValue
+  }
+
+  object ResourceTag {
+    @inline
+    def apply(
+        Key: ResourceTagKey,
+        Value: ResourceTagValue
+    ): ResourceTag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResourceTag]
     }
   }
 
@@ -3085,7 +3351,7 @@ package object costexplorer {
     }
   }
 
-  /** You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
+  /** You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or Reserved Instance (RI) benefits, or neither.
     */
   @js.native
   trait RightsizingRecommendationConfiguration extends js.Object {
@@ -3161,11 +3427,12 @@ package object costexplorer {
     }
   }
 
-  /** The combination of Amazon Web Services service, linked account, Region, and usage type where a cost anomaly is observed.
+  /** The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost anomaly is observed. The linked account name will only be available when the account name can be identified.
     */
   @js.native
   trait RootCause extends js.Object {
     var LinkedAccount: js.UndefOr[GenericString]
+    var LinkedAccountName: js.UndefOr[GenericString]
     var Region: js.UndefOr[GenericString]
     var Service: js.UndefOr[GenericString]
     var UsageType: js.UndefOr[GenericString]
@@ -3175,12 +3442,14 @@ package object costexplorer {
     @inline
     def apply(
         LinkedAccount: js.UndefOr[GenericString] = js.undefined,
+        LinkedAccountName: js.UndefOr[GenericString] = js.undefined,
         Region: js.UndefOr[GenericString] = js.undefined,
         Service: js.UndefOr[GenericString] = js.undefined,
         UsageType: js.UndefOr[GenericString] = js.undefined
     ): RootCause = {
       val __obj = js.Dynamic.literal()
       LinkedAccount.foreach(__v => __obj.updateDynamic("LinkedAccount")(__v.asInstanceOf[js.Any]))
+      LinkedAccountName.foreach(__v => __obj.updateDynamic("LinkedAccountName")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
       UsageType.foreach(__v => __obj.updateDynamic("UsageType")(__v.asInstanceOf[js.Any]))
@@ -3212,7 +3481,7 @@ package object costexplorer {
     }
   }
 
-  /** The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.
+  /** The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage.
     */
   @js.native
   trait SavingsPlansCoverage extends js.Object {
@@ -3532,7 +3801,7 @@ package object costexplorer {
     }
   }
 
-  /** The amount of Savings Plans utilization, in hours.
+  /** The amount of Savings Plans utilization (in hours).
     */
   @js.native
   trait SavingsPlansUtilizationByTime extends js.Object {
@@ -3561,7 +3830,7 @@ package object costexplorer {
     }
   }
 
-  /** A single daily or monthly Savings Plans utilization rate, and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+  /** A single daily or monthly Savings Plans utilization rate and details for your account. A management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.
     */
   @js.native
   trait SavingsPlansUtilizationDetail extends js.Object {
@@ -3609,7 +3878,7 @@ package object costexplorer {
     }
   }
 
-  /** The details of how to sort the data.
+  /** The details for how to sort the data.
     */
   @js.native
   trait SortDefinition extends js.Object {
@@ -3629,6 +3898,39 @@ package object costexplorer {
 
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortDefinition]
+    }
+  }
+
+  @js.native
+  trait StartSavingsPlansPurchaseRecommendationGenerationRequest extends js.Object
+
+  object StartSavingsPlansPurchaseRecommendationGenerationRequest {
+    @inline
+    def apply(): StartSavingsPlansPurchaseRecommendationGenerationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartSavingsPlansPurchaseRecommendationGenerationRequest]
+    }
+  }
+
+  @js.native
+  trait StartSavingsPlansPurchaseRecommendationGenerationResponse extends js.Object {
+    var EstimatedCompletionTime: js.UndefOr[ZonedDateTime]
+    var GenerationStartedTime: js.UndefOr[ZonedDateTime]
+    var RecommendationId: js.UndefOr[RecommendationId]
+  }
+
+  object StartSavingsPlansPurchaseRecommendationGenerationResponse {
+    @inline
+    def apply(
+        EstimatedCompletionTime: js.UndefOr[ZonedDateTime] = js.undefined,
+        GenerationStartedTime: js.UndefOr[ZonedDateTime] = js.undefined,
+        RecommendationId: js.UndefOr[RecommendationId] = js.undefined
+    ): StartSavingsPlansPurchaseRecommendationGenerationResponse = {
+      val __obj = js.Dynamic.literal()
+      EstimatedCompletionTime.foreach(__v => __obj.updateDynamic("EstimatedCompletionTime")(__v.asInstanceOf[js.Any]))
+      GenerationStartedTime.foreach(__v => __obj.updateDynamic("GenerationStartedTime")(__v.asInstanceOf[js.Any]))
+      RecommendationId.foreach(__v => __obj.updateDynamic("RecommendationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartSavingsPlansPurchaseRecommendationGenerationResponse]
     }
   }
 
@@ -3656,7 +3958,38 @@ package object costexplorer {
     }
   }
 
-  /** The values that are available for a tag. If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags. If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var ResourceTags: ResourceTagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        ResourceTags: ResourceTagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "ResourceTags" -> ResourceTags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** The values that are available for a tag. If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags. If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.
     */
   @js.native
   trait TagValues extends js.Object {
@@ -3764,6 +4097,37 @@ package object costexplorer {
   }
 
   @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var ResourceTagKeys: ResourceTagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        ResourceTagKeys: ResourceTagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "ResourceTagKeys" -> ResourceTagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
   trait UpdateAnomalyMonitorRequest extends js.Object {
     var MonitorArn: GenericString
     var MonitorName: js.UndefOr[GenericString]
@@ -3851,12 +4215,70 @@ package object costexplorer {
     }
   }
 
+  /** Gives a detailed description of the result of an action. It's on each cost allocation tag entry in the request.
+    */
+  @js.native
+  trait UpdateCostAllocationTagsStatusError extends js.Object {
+    var Code: js.UndefOr[GenericString]
+    var Message: js.UndefOr[ErrorMessage]
+    var TagKey: js.UndefOr[TagKey]
+  }
+
+  object UpdateCostAllocationTagsStatusError {
+    @inline
+    def apply(
+        Code: js.UndefOr[GenericString] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        TagKey: js.UndefOr[TagKey] = js.undefined
+    ): UpdateCostAllocationTagsStatusError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      TagKey.foreach(__v => __obj.updateDynamic("TagKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCostAllocationTagsStatusError]
+    }
+  }
+
+  @js.native
+  trait UpdateCostAllocationTagsStatusRequest extends js.Object {
+    var CostAllocationTagsStatus: CostAllocationTagStatusList
+  }
+
+  object UpdateCostAllocationTagsStatusRequest {
+    @inline
+    def apply(
+        CostAllocationTagsStatus: CostAllocationTagStatusList
+    ): UpdateCostAllocationTagsStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "CostAllocationTagsStatus" -> CostAllocationTagsStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateCostAllocationTagsStatusRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateCostAllocationTagsStatusResponse extends js.Object {
+    var Errors: js.UndefOr[UpdateCostAllocationTagsStatusErrors]
+  }
+
+  object UpdateCostAllocationTagsStatusResponse {
+    @inline
+    def apply(
+        Errors: js.UndefOr[UpdateCostAllocationTagsStatusErrors] = js.undefined
+    ): UpdateCostAllocationTagsStatusResponse = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateCostAllocationTagsStatusResponse]
+    }
+  }
+
   @js.native
   trait UpdateCostCategoryDefinitionRequest extends js.Object {
     var CostCategoryArn: Arn
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
     var DefaultValue: js.UndefOr[CostCategoryValue]
+    var EffectiveStart: js.UndefOr[ZonedDateTime]
     var SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList]
   }
 
@@ -3867,6 +4289,7 @@ package object costexplorer {
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
         DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
+        EffectiveStart: js.UndefOr[ZonedDateTime] = js.undefined,
         SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList] = js.undefined
     ): UpdateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
@@ -3876,6 +4299,7 @@ package object costexplorer {
       )
 
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      EffectiveStart.foreach(__v => __obj.updateDynamic("EffectiveStart")(__v.asInstanceOf[js.Any]))
       SplitChargeRules.foreach(__v => __obj.updateDynamic("SplitChargeRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]
     }

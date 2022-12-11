@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object customerprofiles {
   type AttributeSourceIdMap = js.Dictionary[uuid]
   type Attributes = js.Dictionary[string1To255]
+  type Batches = js.Array[Batch]
   type BucketName = String
   type BucketPrefix = String
   type ConnectorProfileName = String
@@ -17,6 +18,7 @@ package object customerprofiles {
   type DatetimeTypeFieldName = String
   type DestinationField = String
   type DomainList = js.Array[ListDomainItem]
+  type Double0To1 = Double
   type FieldMap = js.Dictionary[ObjectTypeField]
   type FieldNameList = js.Array[name]
   type FlowDescription = String
@@ -39,6 +41,7 @@ package object customerprofiles {
   type ProfileObjectTypeList = js.Array[ListProfileObjectTypeItem]
   type ProfileObjectTypeTemplateList = js.Array[ListProfileObjectTypeTemplateItem]
   type Property = String
+  type RoleArn = String
   type ScheduleExpression = String
   type ScheduleOffset = Double
   type SourceFields = js.Array[stringTo2048]
@@ -52,8 +55,12 @@ package object customerprofiles {
   type Tasks = js.Array[Task]
   type Timezone = String
   type UpdateAttributes = js.Dictionary[string0To255]
+  type WorkflowList = js.Array[ListWorkflowsItem]
+  type WorkflowStepsList = js.Array[WorkflowStepItem]
+  type additionalSearchKeysList = js.Array[AdditionalSearchKey]
   type encryptionKey = String
   type expirationDaysInteger = Int
+  type foundByList = js.Array[FoundByKeyValue]
   type matchesNumber = Int
   type maxSize100 = Int
   type message = String
@@ -80,6 +87,7 @@ package object customerprofiles {
 
     @inline def addProfileKeyFuture(params: AddProfileKeyRequest): Future[AddProfileKeyResponse] = service.addProfileKey(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
+    @inline def createIntegrationWorkflowFuture(params: CreateIntegrationWorkflowRequest): Future[CreateIntegrationWorkflowResponse] = service.createIntegrationWorkflow(params).promise().toFuture
     @inline def createProfileFuture(params: CreateProfileRequest): Future[CreateProfileResponse] = service.createProfile(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] = service.deleteDomain(params).promise().toFuture
     @inline def deleteIntegrationFuture(params: DeleteIntegrationRequest): Future[DeleteIntegrationResponse] = service.deleteIntegration(params).promise().toFuture
@@ -87,6 +95,7 @@ package object customerprofiles {
     @inline def deleteProfileKeyFuture(params: DeleteProfileKeyRequest): Future[DeleteProfileKeyResponse] = service.deleteProfileKey(params).promise().toFuture
     @inline def deleteProfileObjectFuture(params: DeleteProfileObjectRequest): Future[DeleteProfileObjectResponse] = service.deleteProfileObject(params).promise().toFuture
     @inline def deleteProfileObjectTypeFuture(params: DeleteProfileObjectTypeRequest): Future[DeleteProfileObjectTypeResponse] = service.deleteProfileObjectType(params).promise().toFuture
+    @inline def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] = service.deleteWorkflow(params).promise().toFuture
     @inline def getAutoMergingPreviewFuture(params: GetAutoMergingPreviewRequest): Future[GetAutoMergingPreviewResponse] = service.getAutoMergingPreview(params).promise().toFuture
     @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResponse] = service.getDomain(params).promise().toFuture
     @inline def getIdentityResolutionJobFuture(params: GetIdentityResolutionJobRequest): Future[GetIdentityResolutionJobResponse] = service.getIdentityResolutionJob(params).promise().toFuture
@@ -94,6 +103,8 @@ package object customerprofiles {
     @inline def getMatchesFuture(params: GetMatchesRequest): Future[GetMatchesResponse] = service.getMatches(params).promise().toFuture
     @inline def getProfileObjectTypeFuture(params: GetProfileObjectTypeRequest): Future[GetProfileObjectTypeResponse] = service.getProfileObjectType(params).promise().toFuture
     @inline def getProfileObjectTypeTemplateFuture(params: GetProfileObjectTypeTemplateRequest): Future[GetProfileObjectTypeTemplateResponse] = service.getProfileObjectTypeTemplate(params).promise().toFuture
+    @inline def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] = service.getWorkflow(params).promise().toFuture
+    @inline def getWorkflowStepsFuture(params: GetWorkflowStepsRequest): Future[GetWorkflowStepsResponse] = service.getWorkflowSteps(params).promise().toFuture
     @inline def listAccountIntegrationsFuture(params: ListAccountIntegrationsRequest): Future[ListAccountIntegrationsResponse] = service.listAccountIntegrations(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
     @inline def listIdentityResolutionJobsFuture(params: ListIdentityResolutionJobsRequest): Future[ListIdentityResolutionJobsResponse] = service.listIdentityResolutionJobs(params).promise().toFuture
@@ -102,6 +113,7 @@ package object customerprofiles {
     @inline def listProfileObjectTypesFuture(params: ListProfileObjectTypesRequest): Future[ListProfileObjectTypesResponse] = service.listProfileObjectTypes(params).promise().toFuture
     @inline def listProfileObjectsFuture(params: ListProfileObjectsRequest): Future[ListProfileObjectsResponse] = service.listProfileObjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] = service.listWorkflows(params).promise().toFuture
     @inline def mergeProfilesFuture(params: MergeProfilesRequest): Future[MergeProfilesResponse] = service.mergeProfiles(params).promise().toFuture
     @inline def putIntegrationFuture(params: PutIntegrationRequest): Future[PutIntegrationResponse] = service.putIntegration(params).promise().toFuture
     @inline def putProfileObjectFuture(params: PutProfileObjectRequest): Future[PutProfileObjectResponse] = service.putProfileObject(params).promise().toFuture
@@ -121,6 +133,7 @@ package object customerprofiles {
 
     def addProfileKey(params: AddProfileKeyRequest): Request[AddProfileKeyResponse] = js.native
     def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse] = js.native
+    def createIntegrationWorkflow(params: CreateIntegrationWorkflowRequest): Request[CreateIntegrationWorkflowResponse] = js.native
     def createProfile(params: CreateProfileRequest): Request[CreateProfileResponse] = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResponse] = js.native
     def deleteIntegration(params: DeleteIntegrationRequest): Request[DeleteIntegrationResponse] = js.native
@@ -128,6 +141,7 @@ package object customerprofiles {
     def deleteProfileKey(params: DeleteProfileKeyRequest): Request[DeleteProfileKeyResponse] = js.native
     def deleteProfileObject(params: DeleteProfileObjectRequest): Request[DeleteProfileObjectResponse] = js.native
     def deleteProfileObjectType(params: DeleteProfileObjectTypeRequest): Request[DeleteProfileObjectTypeResponse] = js.native
+    def deleteWorkflow(params: DeleteWorkflowRequest): Request[DeleteWorkflowResponse] = js.native
     def getAutoMergingPreview(params: GetAutoMergingPreviewRequest): Request[GetAutoMergingPreviewResponse] = js.native
     def getDomain(params: GetDomainRequest): Request[GetDomainResponse] = js.native
     def getIdentityResolutionJob(params: GetIdentityResolutionJobRequest): Request[GetIdentityResolutionJobResponse] = js.native
@@ -135,6 +149,8 @@ package object customerprofiles {
     def getMatches(params: GetMatchesRequest): Request[GetMatchesResponse] = js.native
     def getProfileObjectType(params: GetProfileObjectTypeRequest): Request[GetProfileObjectTypeResponse] = js.native
     def getProfileObjectTypeTemplate(params: GetProfileObjectTypeTemplateRequest): Request[GetProfileObjectTypeTemplateResponse] = js.native
+    def getWorkflow(params: GetWorkflowRequest): Request[GetWorkflowResponse] = js.native
+    def getWorkflowSteps(params: GetWorkflowStepsRequest): Request[GetWorkflowStepsResponse] = js.native
     def listAccountIntegrations(params: ListAccountIntegrationsRequest): Request[ListAccountIntegrationsResponse] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
     def listIdentityResolutionJobs(params: ListIdentityResolutionJobsRequest): Request[ListIdentityResolutionJobsResponse] = js.native
@@ -143,6 +159,7 @@ package object customerprofiles {
     def listProfileObjectTypes(params: ListProfileObjectTypesRequest): Request[ListProfileObjectTypesResponse] = js.native
     def listProfileObjects(params: ListProfileObjectsRequest): Request[ListProfileObjectsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listWorkflows(params: ListWorkflowsRequest): Request[ListWorkflowsResponse] = js.native
     def mergeProfiles(params: MergeProfilesRequest): Request[MergeProfilesResponse] = js.native
     def putIntegration(params: PutIntegrationRequest): Request[PutIntegrationResponse] = js.native
     def putProfileObject(params: PutProfileObjectRequest): Request[PutProfileObjectResponse] = js.native
@@ -204,6 +221,28 @@ package object customerprofiles {
     }
   }
 
+  /** A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that is used in conjunction with the [[https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-KeyName|KeyName]] and [[https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html#customerprofiles-SearchProfiles-request-Values|Values]] parameters to search for profiles using the [[https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html|SearchProfiles]] API.
+    */
+  @js.native
+  trait AdditionalSearchKey extends js.Object {
+    var KeyName: name
+    var Values: requestValueList
+  }
+
+  object AdditionalSearchKey {
+    @inline
+    def apply(
+        KeyName: name,
+        Values: requestValueList
+    ): AdditionalSearchKey = {
+      val __obj = js.Dynamic.literal(
+        "KeyName" -> KeyName.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AdditionalSearchKey]
+    }
+  }
+
   /** A generic address associated with the customer that is not mailing, shipping, or billing.
     */
   @js.native
@@ -249,6 +288,120 @@ package object customerprofiles {
     }
   }
 
+  /** Details for workflow of type <code>APPFLOW_INTEGRATION</code>.
+    */
+  @js.native
+  trait AppflowIntegration extends js.Object {
+    var FlowDefinition: FlowDefinition
+    var Batches: js.UndefOr[Batches]
+  }
+
+  object AppflowIntegration {
+    @inline
+    def apply(
+        FlowDefinition: FlowDefinition,
+        Batches: js.UndefOr[Batches] = js.undefined
+    ): AppflowIntegration = {
+      val __obj = js.Dynamic.literal(
+        "FlowDefinition" -> FlowDefinition.asInstanceOf[js.Any]
+      )
+
+      Batches.foreach(__v => __obj.updateDynamic("Batches")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppflowIntegration]
+    }
+  }
+
+  /** Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.
+    */
+  @js.native
+  trait AppflowIntegrationWorkflowAttributes extends js.Object {
+    var ConnectorProfileName: ConnectorProfileName
+    var SourceConnectorType: SourceConnectorType
+    var RoleArn: js.UndefOr[string1To255]
+  }
+
+  object AppflowIntegrationWorkflowAttributes {
+    @inline
+    def apply(
+        ConnectorProfileName: ConnectorProfileName,
+        SourceConnectorType: SourceConnectorType,
+        RoleArn: js.UndefOr[string1To255] = js.undefined
+    ): AppflowIntegrationWorkflowAttributes = {
+      val __obj = js.Dynamic.literal(
+        "ConnectorProfileName" -> ConnectorProfileName.asInstanceOf[js.Any],
+        "SourceConnectorType" -> SourceConnectorType.asInstanceOf[js.Any]
+      )
+
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppflowIntegrationWorkflowAttributes]
+    }
+  }
+
+  /** Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.
+    */
+  @js.native
+  trait AppflowIntegrationWorkflowMetrics extends js.Object {
+    var RecordsProcessed: Double
+    var StepsCompleted: Double
+    var TotalSteps: Double
+  }
+
+  object AppflowIntegrationWorkflowMetrics {
+    @inline
+    def apply(
+        RecordsProcessed: Double,
+        StepsCompleted: Double,
+        TotalSteps: Double
+    ): AppflowIntegrationWorkflowMetrics = {
+      val __obj = js.Dynamic.literal(
+        "RecordsProcessed" -> RecordsProcessed.asInstanceOf[js.Any],
+        "StepsCompleted" -> StepsCompleted.asInstanceOf[js.Any],
+        "TotalSteps" -> TotalSteps.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AppflowIntegrationWorkflowMetrics]
+    }
+  }
+
+  /** Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.
+    */
+  @js.native
+  trait AppflowIntegrationWorkflowStep extends js.Object {
+    var BatchRecordsEndTime: string1To255
+    var BatchRecordsStartTime: string1To255
+    var CreatedAt: timestamp
+    var ExecutionMessage: string1To255
+    var FlowName: FlowName
+    var LastUpdatedAt: timestamp
+    var RecordsProcessed: Double
+    var Status: Status
+  }
+
+  object AppflowIntegrationWorkflowStep {
+    @inline
+    def apply(
+        BatchRecordsEndTime: string1To255,
+        BatchRecordsStartTime: string1To255,
+        CreatedAt: timestamp,
+        ExecutionMessage: string1To255,
+        FlowName: FlowName,
+        LastUpdatedAt: timestamp,
+        RecordsProcessed: Double,
+        Status: Status
+    ): AppflowIntegrationWorkflowStep = {
+      val __obj = js.Dynamic.literal(
+        "BatchRecordsEndTime" -> BatchRecordsEndTime.asInstanceOf[js.Any],
+        "BatchRecordsStartTime" -> BatchRecordsStartTime.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "ExecutionMessage" -> ExecutionMessage.asInstanceOf[js.Any],
+        "FlowName" -> FlowName.asInstanceOf[js.Any],
+        "LastUpdatedAt" -> LastUpdatedAt.asInstanceOf[js.Any],
+        "RecordsProcessed" -> RecordsProcessed.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AppflowIntegrationWorkflowStep]
+    }
+  }
+
   /** Configuration settings for how to perform the auto-merging of profiles.
     */
   @js.native
@@ -256,6 +409,7 @@ package object customerprofiles {
     var Enabled: optionalBoolean
     var ConflictResolution: js.UndefOr[ConflictResolution]
     var Consolidation: js.UndefOr[Consolidation]
+    var MinAllowedConfidenceScoreForMerging: js.UndefOr[Double0To1]
   }
 
   object AutoMerging {
@@ -263,7 +417,8 @@ package object customerprofiles {
     def apply(
         Enabled: optionalBoolean,
         ConflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
-        Consolidation: js.UndefOr[Consolidation] = js.undefined
+        Consolidation: js.UndefOr[Consolidation] = js.undefined,
+        MinAllowedConfidenceScoreForMerging: js.UndefOr[Double0To1] = js.undefined
     ): AutoMerging = {
       val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
@@ -271,7 +426,30 @@ package object customerprofiles {
 
       ConflictResolution.foreach(__v => __obj.updateDynamic("ConflictResolution")(__v.asInstanceOf[js.Any]))
       Consolidation.foreach(__v => __obj.updateDynamic("Consolidation")(__v.asInstanceOf[js.Any]))
+      MinAllowedConfidenceScoreForMerging.foreach(__v => __obj.updateDynamic("MinAllowedConfidenceScoreForMerging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMerging]
+    }
+  }
+
+  /** Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.
+    */
+  @js.native
+  trait Batch extends js.Object {
+    var EndTime: timestamp
+    var StartTime: timestamp
+  }
+
+  object Batch {
+    @inline
+    def apply(
+        EndTime: timestamp,
+        StartTime: timestamp
+    ): Batch = {
+      val __obj = js.Dynamic.literal(
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Batch]
     }
   }
 
@@ -416,6 +594,59 @@ package object customerprofiles {
       Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainResponse]
+    }
+  }
+
+  @js.native
+  trait CreateIntegrationWorkflowRequest extends js.Object {
+    var DomainName: name
+    var IntegrationConfig: IntegrationConfig
+    var ObjectTypeName: typeName
+    var RoleArn: RoleArn
+    var WorkflowType: WorkflowType
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateIntegrationWorkflowRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        IntegrationConfig: IntegrationConfig,
+        ObjectTypeName: typeName,
+        RoleArn: RoleArn,
+        WorkflowType: WorkflowType,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateIntegrationWorkflowRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "IntegrationConfig" -> IntegrationConfig.asInstanceOf[js.Any],
+        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "WorkflowType" -> WorkflowType.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateIntegrationWorkflowRequest]
+    }
+  }
+
+  @js.native
+  trait CreateIntegrationWorkflowResponse extends js.Object {
+    var Message: string1To255
+    var WorkflowId: uuid
+  }
+
+  object CreateIntegrationWorkflowResponse {
+    @inline
+    def apply(
+        Message: string1To255,
+        WorkflowId: uuid
+    ): CreateIntegrationWorkflowResponse = {
+      val __obj = js.Dynamic.literal(
+        "Message" -> Message.asInstanceOf[js.Any],
+        "WorkflowId" -> WorkflowId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateIntegrationWorkflowResponse]
     }
   }
 
@@ -745,6 +976,37 @@ package object customerprofiles {
     }
   }
 
+  @js.native
+  trait DeleteWorkflowRequest extends js.Object {
+    var DomainName: name
+    var WorkflowId: string1To255
+  }
+
+  object DeleteWorkflowRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        WorkflowId: string1To255
+    ): DeleteWorkflowRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "WorkflowId" -> WorkflowId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWorkflowRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkflowResponse extends js.Object
+
+  object DeleteWorkflowResponse {
+    @inline
+    def apply(): DeleteWorkflowResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteWorkflowResponse]
+    }
+  }
+
   /** Usage-specific statistics about the domain.
     */
   @js.native
@@ -923,11 +1185,33 @@ package object customerprofiles {
     }
   }
 
+  /** A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list that were used to find a profile returned in response to a [[https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html|SearchProfiles]] request.
+    */
+  @js.native
+  trait FoundByKeyValue extends js.Object {
+    var KeyName: js.UndefOr[name]
+    var Values: js.UndefOr[requestValueList]
+  }
+
+  object FoundByKeyValue {
+    @inline
+    def apply(
+        KeyName: js.UndefOr[name] = js.undefined,
+        Values: js.UndefOr[requestValueList] = js.undefined
+    ): FoundByKeyValue = {
+      val __obj = js.Dynamic.literal()
+      KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FoundByKeyValue]
+    }
+  }
+
   @js.native
   trait GetAutoMergingPreviewRequest extends js.Object {
     var ConflictResolution: ConflictResolution
     var Consolidation: Consolidation
     var DomainName: name
+    var MinAllowedConfidenceScoreForMerging: js.UndefOr[Double0To1]
   }
 
   object GetAutoMergingPreviewRequest {
@@ -935,13 +1219,16 @@ package object customerprofiles {
     def apply(
         ConflictResolution: ConflictResolution,
         Consolidation: Consolidation,
-        DomainName: name
+        DomainName: name,
+        MinAllowedConfidenceScoreForMerging: js.UndefOr[Double0To1] = js.undefined
     ): GetAutoMergingPreviewRequest = {
       val __obj = js.Dynamic.literal(
         "ConflictResolution" -> ConflictResolution.asInstanceOf[js.Any],
         "Consolidation" -> Consolidation.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
+
+      MinAllowedConfidenceScoreForMerging.foreach(__v => __obj.updateDynamic("MinAllowedConfidenceScoreForMerging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutoMergingPreviewRequest]
     }
   }
@@ -1124,9 +1411,11 @@ package object customerprofiles {
     var DomainName: name
     var LastUpdatedAt: timestamp
     var Uri: string1To255
+    var IsUnstructured: js.UndefOr[optionalBoolean]
     var ObjectTypeName: js.UndefOr[typeName]
     var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
+    var WorkflowId: js.UndefOr[string1To255]
   }
 
   object GetIntegrationResponse {
@@ -1136,9 +1425,11 @@ package object customerprofiles {
         DomainName: name,
         LastUpdatedAt: timestamp,
         Uri: string1To255,
+        IsUnstructured: js.UndefOr[optionalBoolean] = js.undefined,
         ObjectTypeName: js.UndefOr[typeName] = js.undefined,
         ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        WorkflowId: js.UndefOr[string1To255] = js.undefined
     ): GetIntegrationResponse = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
@@ -1147,9 +1438,11 @@ package object customerprofiles {
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      IsUnstructured.foreach(__v => __obj.updateDynamic("IsUnstructured")(__v.asInstanceOf[js.Any]))
       ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
       ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkflowId.foreach(__v => __obj.updateDynamic("WorkflowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponse]
     }
   }
@@ -1325,6 +1618,115 @@ package object customerprofiles {
     }
   }
 
+  @js.native
+  trait GetWorkflowRequest extends js.Object {
+    var DomainName: name
+    var WorkflowId: uuid
+  }
+
+  object GetWorkflowRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        WorkflowId: uuid
+    ): GetWorkflowRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "WorkflowId" -> WorkflowId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetWorkflowRequest]
+    }
+  }
+
+  @js.native
+  trait GetWorkflowResponse extends js.Object {
+    var Attributes: js.UndefOr[WorkflowAttributes]
+    var ErrorDescription: js.UndefOr[string1To255]
+    var LastUpdatedAt: js.UndefOr[timestamp]
+    var Metrics: js.UndefOr[WorkflowMetrics]
+    var StartDate: js.UndefOr[timestamp]
+    var Status: js.UndefOr[Status]
+    var WorkflowId: js.UndefOr[uuid]
+    var WorkflowType: js.UndefOr[WorkflowType]
+  }
+
+  object GetWorkflowResponse {
+    @inline
+    def apply(
+        Attributes: js.UndefOr[WorkflowAttributes] = js.undefined,
+        ErrorDescription: js.UndefOr[string1To255] = js.undefined,
+        LastUpdatedAt: js.UndefOr[timestamp] = js.undefined,
+        Metrics: js.UndefOr[WorkflowMetrics] = js.undefined,
+        StartDate: js.UndefOr[timestamp] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WorkflowId: js.UndefOr[uuid] = js.undefined,
+        WorkflowType: js.UndefOr[WorkflowType] = js.undefined
+    ): GetWorkflowResponse = {
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ErrorDescription.foreach(__v => __obj.updateDynamic("ErrorDescription")(__v.asInstanceOf[js.Any]))
+      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WorkflowId.foreach(__v => __obj.updateDynamic("WorkflowId")(__v.asInstanceOf[js.Any]))
+      WorkflowType.foreach(__v => __obj.updateDynamic("WorkflowType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorkflowResponse]
+    }
+  }
+
+  @js.native
+  trait GetWorkflowStepsRequest extends js.Object {
+    var DomainName: name
+    var WorkflowId: uuid
+    var MaxResults: js.UndefOr[maxSize100]
+    var NextToken: js.UndefOr[token]
+  }
+
+  object GetWorkflowStepsRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        WorkflowId: uuid,
+        MaxResults: js.UndefOr[maxSize100] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined
+    ): GetWorkflowStepsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "WorkflowId" -> WorkflowId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorkflowStepsRequest]
+    }
+  }
+
+  @js.native
+  trait GetWorkflowStepsResponse extends js.Object {
+    var Items: js.UndefOr[WorkflowStepsList]
+    var NextToken: js.UndefOr[token]
+    var WorkflowId: js.UndefOr[uuid]
+    var WorkflowType: js.UndefOr[WorkflowType]
+  }
+
+  object GetWorkflowStepsResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[WorkflowStepsList] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined,
+        WorkflowId: js.UndefOr[uuid] = js.undefined,
+        WorkflowType: js.UndefOr[WorkflowType] = js.undefined
+    ): GetWorkflowStepsResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WorkflowId.foreach(__v => __obj.updateDynamic("WorkflowId")(__v.asInstanceOf[js.Any]))
+      WorkflowType.foreach(__v => __obj.updateDynamic("WorkflowType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetWorkflowStepsResponse]
+    }
+  }
+
   /** Information about the Identity Resolution Job.
     */
   @js.native
@@ -1382,6 +1784,24 @@ package object customerprofiles {
     }
   }
 
+  /** Configuration data for integration workflow.
+    */
+  @js.native
+  trait IntegrationConfig extends js.Object {
+    var AppflowIntegration: js.UndefOr[AppflowIntegration]
+  }
+
+  object IntegrationConfig {
+    @inline
+    def apply(
+        AppflowIntegration: js.UndefOr[AppflowIntegration] = js.undefined
+    ): IntegrationConfig = {
+      val __obj = js.Dynamic.literal()
+      AppflowIntegration.foreach(__v => __obj.updateDynamic("AppflowIntegration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegrationConfig]
+    }
+  }
+
   /** The day and time when do you want to start the Identity Resolution Job every week.
     */
   @js.native
@@ -1431,6 +1851,7 @@ package object customerprofiles {
   @js.native
   trait ListAccountIntegrationsRequest extends js.Object {
     var Uri: string1To255
+    var IncludeHidden: js.UndefOr[optionalBoolean]
     var MaxResults: js.UndefOr[maxSize100]
     var NextToken: js.UndefOr[token]
   }
@@ -1439,6 +1860,7 @@ package object customerprofiles {
     @inline
     def apply(
         Uri: string1To255,
+        IncludeHidden: js.UndefOr[optionalBoolean] = js.undefined,
         MaxResults: js.UndefOr[maxSize100] = js.undefined,
         NextToken: js.UndefOr[token] = js.undefined
     ): ListAccountIntegrationsRequest = {
@@ -1446,6 +1868,7 @@ package object customerprofiles {
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      IncludeHidden.foreach(__v => __obj.updateDynamic("IncludeHidden")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountIntegrationsRequest]
@@ -1589,9 +2012,11 @@ package object customerprofiles {
     var DomainName: name
     var LastUpdatedAt: timestamp
     var Uri: string1To255
+    var IsUnstructured: js.UndefOr[optionalBoolean]
     var ObjectTypeName: js.UndefOr[typeName]
     var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
+    var WorkflowId: js.UndefOr[string1To255]
   }
 
   object ListIntegrationItem {
@@ -1601,9 +2026,11 @@ package object customerprofiles {
         DomainName: name,
         LastUpdatedAt: timestamp,
         Uri: string1To255,
+        IsUnstructured: js.UndefOr[optionalBoolean] = js.undefined,
         ObjectTypeName: js.UndefOr[typeName] = js.undefined,
         ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        WorkflowId: js.UndefOr[string1To255] = js.undefined
     ): ListIntegrationItem = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
@@ -1612,9 +2039,11 @@ package object customerprofiles {
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      IsUnstructured.foreach(__v => __obj.updateDynamic("IsUnstructured")(__v.asInstanceOf[js.Any]))
       ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
       ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkflowId.foreach(__v => __obj.updateDynamic("WorkflowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIntegrationItem]
     }
   }
@@ -1622,6 +2051,7 @@ package object customerprofiles {
   @js.native
   trait ListIntegrationsRequest extends js.Object {
     var DomainName: name
+    var IncludeHidden: js.UndefOr[optionalBoolean]
     var MaxResults: js.UndefOr[maxSize100]
     var NextToken: js.UndefOr[token]
   }
@@ -1630,6 +2060,7 @@ package object customerprofiles {
     @inline
     def apply(
         DomainName: name,
+        IncludeHidden: js.UndefOr[optionalBoolean] = js.undefined,
         MaxResults: js.UndefOr[maxSize100] = js.undefined,
         NextToken: js.UndefOr[token] = js.undefined
     ): ListIntegrationsRequest = {
@@ -1637,6 +2068,7 @@ package object customerprofiles {
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
+      IncludeHidden.foreach(__v => __obj.updateDynamic("IncludeHidden")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIntegrationsRequest]
@@ -1908,6 +2340,95 @@ package object customerprofiles {
     }
   }
 
+  /** A workflow in list of workflows.
+    */
+  @js.native
+  trait ListWorkflowsItem extends js.Object {
+    var CreatedAt: timestamp
+    var LastUpdatedAt: timestamp
+    var Status: Status
+    var StatusDescription: string1To255
+    var WorkflowId: string1To255
+    var WorkflowType: WorkflowType
+  }
+
+  object ListWorkflowsItem {
+    @inline
+    def apply(
+        CreatedAt: timestamp,
+        LastUpdatedAt: timestamp,
+        Status: Status,
+        StatusDescription: string1To255,
+        WorkflowId: string1To255,
+        WorkflowType: WorkflowType
+    ): ListWorkflowsItem = {
+      val __obj = js.Dynamic.literal(
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "LastUpdatedAt" -> LastUpdatedAt.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any],
+        "StatusDescription" -> StatusDescription.asInstanceOf[js.Any],
+        "WorkflowId" -> WorkflowId.asInstanceOf[js.Any],
+        "WorkflowType" -> WorkflowType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListWorkflowsItem]
+    }
+  }
+
+  @js.native
+  trait ListWorkflowsRequest extends js.Object {
+    var DomainName: name
+    var MaxResults: js.UndefOr[maxSize100]
+    var NextToken: js.UndefOr[token]
+    var QueryEndDate: js.UndefOr[timestamp]
+    var QueryStartDate: js.UndefOr[timestamp]
+    var Status: js.UndefOr[Status]
+    var WorkflowType: js.UndefOr[WorkflowType]
+  }
+
+  object ListWorkflowsRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        MaxResults: js.UndefOr[maxSize100] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined,
+        QueryEndDate: js.UndefOr[timestamp] = js.undefined,
+        QueryStartDate: js.UndefOr[timestamp] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WorkflowType: js.UndefOr[WorkflowType] = js.undefined
+    ): ListWorkflowsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryEndDate.foreach(__v => __obj.updateDynamic("QueryEndDate")(__v.asInstanceOf[js.Any]))
+      QueryStartDate.foreach(__v => __obj.updateDynamic("QueryStartDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WorkflowType.foreach(__v => __obj.updateDynamic("WorkflowType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkflowsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWorkflowsResponse extends js.Object {
+    var Items: js.UndefOr[WorkflowList]
+    var NextToken: js.UndefOr[token]
+  }
+
+  object ListWorkflowsResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[WorkflowList] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined
+    ): ListWorkflowsResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWorkflowsResponse]
+    }
+  }
+
   /** The properties that are applied when Marketo is being used as a source.
     */
   @js.native
@@ -2132,6 +2653,7 @@ package object customerprofiles {
     var BusinessPhoneNumber: js.UndefOr[string1To255]
     var EmailAddress: js.UndefOr[string1To255]
     var FirstName: js.UndefOr[string1To255]
+    var FoundByItems: js.UndefOr[foundByList]
     var Gender: js.UndefOr[Gender]
     var HomePhoneNumber: js.UndefOr[string1To255]
     var LastName: js.UndefOr[string1To255]
@@ -2159,6 +2681,7 @@ package object customerprofiles {
         BusinessPhoneNumber: js.UndefOr[string1To255] = js.undefined,
         EmailAddress: js.UndefOr[string1To255] = js.undefined,
         FirstName: js.UndefOr[string1To255] = js.undefined,
+        FoundByItems: js.UndefOr[foundByList] = js.undefined,
         Gender: js.UndefOr[Gender] = js.undefined,
         HomePhoneNumber: js.UndefOr[string1To255] = js.undefined,
         LastName: js.UndefOr[string1To255] = js.undefined,
@@ -2183,6 +2706,7 @@ package object customerprofiles {
       BusinessPhoneNumber.foreach(__v => __obj.updateDynamic("BusinessPhoneNumber")(__v.asInstanceOf[js.Any]))
       EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
       FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
+      FoundByItems.foreach(__v => __obj.updateDynamic("FoundByItems")(__v.asInstanceOf[js.Any]))
       Gender.foreach(__v => __obj.updateDynamic("Gender")(__v.asInstanceOf[js.Any]))
       HomePhoneNumber.foreach(__v => __obj.updateDynamic("HomePhoneNumber")(__v.asInstanceOf[js.Any]))
       LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
@@ -2237,9 +2761,11 @@ package object customerprofiles {
     var DomainName: name
     var LastUpdatedAt: timestamp
     var Uri: string1To255
+    var IsUnstructured: js.UndefOr[optionalBoolean]
     var ObjectTypeName: js.UndefOr[typeName]
     var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
+    var WorkflowId: js.UndefOr[string1To255]
   }
 
   object PutIntegrationResponse {
@@ -2249,9 +2775,11 @@ package object customerprofiles {
         DomainName: name,
         LastUpdatedAt: timestamp,
         Uri: string1To255,
+        IsUnstructured: js.UndefOr[optionalBoolean] = js.undefined,
         ObjectTypeName: js.UndefOr[typeName] = js.undefined,
         ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
-        Tags: js.UndefOr[TagMap] = js.undefined
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        WorkflowId: js.UndefOr[string1To255] = js.undefined
     ): PutIntegrationResponse = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
@@ -2260,9 +2788,11 @@ package object customerprofiles {
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      IsUnstructured.foreach(__v => __obj.updateDynamic("IsUnstructured")(__v.asInstanceOf[js.Any]))
       ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
       ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkflowId.foreach(__v => __obj.updateDynamic("WorkflowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutIntegrationResponse]
     }
   }
@@ -2541,6 +3071,8 @@ package object customerprofiles {
     var DomainName: name
     var KeyName: name
     var Values: requestValueList
+    var AdditionalSearchKeys: js.UndefOr[additionalSearchKeysList]
+    var LogicalOperator: js.UndefOr[logicalOperator]
     var MaxResults: js.UndefOr[maxSize100]
     var NextToken: js.UndefOr[token]
   }
@@ -2551,6 +3083,8 @@ package object customerprofiles {
         DomainName: name,
         KeyName: name,
         Values: requestValueList,
+        AdditionalSearchKeys: js.UndefOr[additionalSearchKeysList] = js.undefined,
+        LogicalOperator: js.UndefOr[logicalOperator] = js.undefined,
         MaxResults: js.UndefOr[maxSize100] = js.undefined,
         NextToken: js.UndefOr[token] = js.undefined
     ): SearchProfilesRequest = {
@@ -2560,6 +3094,8 @@ package object customerprofiles {
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
+      AdditionalSearchKeys.foreach(__v => __obj.updateDynamic("AdditionalSearchKeys")(__v.asInstanceOf[js.Any]))
+      LogicalOperator.foreach(__v => __obj.updateDynamic("LogicalOperator")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProfilesRequest]
@@ -3013,6 +3549,60 @@ package object customerprofiles {
         "ProfileId" -> ProfileId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateProfileResponse]
+    }
+  }
+
+  /** Structure to hold workflow attributes.
+    */
+  @js.native
+  trait WorkflowAttributes extends js.Object {
+    var AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowAttributes]
+  }
+
+  object WorkflowAttributes {
+    @inline
+    def apply(
+        AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowAttributes] = js.undefined
+    ): WorkflowAttributes = {
+      val __obj = js.Dynamic.literal()
+      AppflowIntegration.foreach(__v => __obj.updateDynamic("AppflowIntegration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkflowAttributes]
+    }
+  }
+
+  /** Generic object containing workflow execution metrics.
+    */
+  @js.native
+  trait WorkflowMetrics extends js.Object {
+    var AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowMetrics]
+  }
+
+  object WorkflowMetrics {
+    @inline
+    def apply(
+        AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowMetrics] = js.undefined
+    ): WorkflowMetrics = {
+      val __obj = js.Dynamic.literal()
+      AppflowIntegration.foreach(__v => __obj.updateDynamic("AppflowIntegration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkflowMetrics]
+    }
+  }
+
+  /** List containing steps in workflow.
+    */
+  @js.native
+  trait WorkflowStepItem extends js.Object {
+    var AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowStep]
+  }
+
+  object WorkflowStepItem {
+    @inline
+    def apply(
+        AppflowIntegration: js.UndefOr[AppflowIntegrationWorkflowStep] = js.undefined
+    ): WorkflowStepItem = {
+      val __obj = js.Dynamic.literal()
+      AppflowIntegration.foreach(__v => __obj.updateDynamic("AppflowIntegration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WorkflowStepItem]
     }
   }
 

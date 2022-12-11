@@ -11,6 +11,16 @@ object AdditionalResultAttributeValueType {
 }
 
 @js.native
+sealed trait AlfrescoEntity extends js.Any
+object AlfrescoEntity {
+  val wiki = "wiki".asInstanceOf[AlfrescoEntity]
+  val blog = "blog".asInstanceOf[AlfrescoEntity]
+  val documentLibrary = "documentLibrary".asInstanceOf[AlfrescoEntity]
+
+  @inline def values: js.Array[AlfrescoEntity] = js.Array(wiki, blog, documentLibrary)
+}
+
+@js.native
 sealed trait ConditionOperator extends js.Any
 object ConditionOperator {
   val GreaterThan = "GreaterThan".asInstanceOf[ConditionOperator]
@@ -44,6 +54,15 @@ object ConfluenceAttachmentFieldName {
   val VERSION = "VERSION".asInstanceOf[ConfluenceAttachmentFieldName]
 
   @inline def values: js.Array[ConfluenceAttachmentFieldName] = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+}
+
+@js.native
+sealed trait ConfluenceAuthenticationType extends js.Any
+object ConfluenceAuthenticationType {
+  val HTTP_BASIC = "HTTP_BASIC".asInstanceOf[ConfluenceAuthenticationType]
+  val PAT = "PAT".asInstanceOf[ConfluenceAuthenticationType]
+
+  @inline def values: js.Array[ConfluenceAuthenticationType] = js.Array(HTTP_BASIC, PAT)
 }
 
 @js.native
@@ -153,8 +172,36 @@ object DataSourceType {
   val GOOGLEDRIVE = "GOOGLEDRIVE".asInstanceOf[DataSourceType]
   val WEBCRAWLER = "WEBCRAWLER".asInstanceOf[DataSourceType]
   val WORKDOCS = "WORKDOCS".asInstanceOf[DataSourceType]
+  val FSX = "FSX".asInstanceOf[DataSourceType]
+  val SLACK = "SLACK".asInstanceOf[DataSourceType]
+  val BOX = "BOX".asInstanceOf[DataSourceType]
+  val QUIP = "QUIP".asInstanceOf[DataSourceType]
+  val JIRA = "JIRA".asInstanceOf[DataSourceType]
+  val GITHUB = "GITHUB".asInstanceOf[DataSourceType]
+  val ALFRESCO = "ALFRESCO".asInstanceOf[DataSourceType]
+  val TEMPLATE = "TEMPLATE".asInstanceOf[DataSourceType]
 
-  @inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE, WEBCRAWLER, WORKDOCS)
+  @inline def values: js.Array[DataSourceType] = js.Array(
+    S3,
+    SHAREPOINT,
+    DATABASE,
+    SALESFORCE,
+    ONEDRIVE,
+    SERVICENOW,
+    CUSTOM,
+    CONFLUENCE,
+    GOOGLEDRIVE,
+    WEBCRAWLER,
+    WORKDOCS,
+    FSX,
+    SLACK,
+    BOX,
+    QUIP,
+    JIRA,
+    GITHUB,
+    ALFRESCO,
+    TEMPLATE
+  )
 }
 
 @js.native
@@ -252,6 +299,14 @@ object FaqStatus {
 }
 
 @js.native
+sealed trait FsxFileSystemType extends js.Any
+object FsxFileSystemType {
+  val WINDOWS = "WINDOWS".asInstanceOf[FsxFileSystemType]
+
+  @inline def values: js.Array[FsxFileSystemType] = js.Array(WINDOWS)
+}
+
+@js.native
 sealed trait HighlightType extends js.Any
 object HighlightType {
   val STANDARD = "STANDARD".asInstanceOf[HighlightType]
@@ -293,6 +348,16 @@ object Interval {
   val TWO_MONTHS_AGO = "TWO_MONTHS_AGO".asInstanceOf[Interval]
 
   @inline def values: js.Array[Interval] = js.Array(THIS_MONTH, THIS_WEEK, ONE_WEEK_AGO, TWO_WEEKS_AGO, ONE_MONTH_AGO, TWO_MONTHS_AGO)
+}
+
+@js.native
+sealed trait IssueSubEntity extends js.Any
+object IssueSubEntity {
+  val COMMENTS = "COMMENTS".asInstanceOf[IssueSubEntity]
+  val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[IssueSubEntity]
+  val WORKLOGS = "WORKLOGS".asInstanceOf[IssueSubEntity]
+
+  @inline def values: js.Array[IssueSubEntity] = js.Array(COMMENTS, ATTACHMENTS, WORKLOGS)
 }
 
 @js.native
@@ -372,6 +437,15 @@ object QueryIdentifiersEnclosingOption {
   val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
 
   @inline def values: js.Array[QueryIdentifiersEnclosingOption] = js.Array(DOUBLE_QUOTES, NONE)
+}
+
+@js.native
+sealed trait QueryResultFormat extends js.Any
+object QueryResultFormat {
+  val TABLE = "TABLE".asInstanceOf[QueryResultFormat]
+  val TEXT = "TEXT".asInstanceOf[QueryResultFormat]
+
+  @inline def values: js.Array[QueryResultFormat] = js.Array(TABLE, TEXT)
 }
 
 @js.native
@@ -500,13 +574,34 @@ object ServiceNowBuildVersionType {
 }
 
 @js.native
+sealed trait SharePointOnlineAuthenticationType extends js.Any
+object SharePointOnlineAuthenticationType {
+  val HTTP_BASIC = "HTTP_BASIC".asInstanceOf[SharePointOnlineAuthenticationType]
+  val OAUTH2 = "OAUTH2".asInstanceOf[SharePointOnlineAuthenticationType]
+
+  @inline def values: js.Array[SharePointOnlineAuthenticationType] = js.Array(HTTP_BASIC, OAUTH2)
+}
+
+@js.native
 sealed trait SharePointVersion extends js.Any
 object SharePointVersion {
   val SHAREPOINT_2013 = "SHAREPOINT_2013".asInstanceOf[SharePointVersion]
   val SHAREPOINT_2016 = "SHAREPOINT_2016".asInstanceOf[SharePointVersion]
   val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
+  val SHAREPOINT_2019 = "SHAREPOINT_2019".asInstanceOf[SharePointVersion]
 
-  @inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE)
+  @inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE, SHAREPOINT_2019)
+}
+
+@js.native
+sealed trait SlackEntity extends js.Any
+object SlackEntity {
+  val PUBLIC_CHANNEL = "PUBLIC_CHANNEL".asInstanceOf[SlackEntity]
+  val PRIVATE_CHANNEL = "PRIVATE_CHANNEL".asInstanceOf[SlackEntity]
+  val GROUP_MESSAGE = "GROUP_MESSAGE".asInstanceOf[SlackEntity]
+  val DIRECT_MESSAGE = "DIRECT_MESSAGE".asInstanceOf[SlackEntity]
+
+  @inline def values: js.Array[SlackEntity] = js.Array(PUBLIC_CHANNEL, PRIVATE_CHANNEL, GROUP_MESSAGE, DIRECT_MESSAGE)
 }
 
 @js.native
@@ -532,6 +627,15 @@ object ThesaurusStatus {
 }
 
 @js.native
+sealed trait Type extends js.Any
+object Type {
+  val SAAS = "SAAS".asInstanceOf[Type]
+  val ON_PREMISE = "ON_PREMISE".asInstanceOf[Type]
+
+  @inline def values: js.Array[Type] = js.Array(SAAS, ON_PREMISE)
+}
+
+@js.native
 sealed trait UserContextPolicy extends js.Any
 object UserContextPolicy {
   val ATTRIBUTE_FILTER = "ATTRIBUTE_FILTER".asInstanceOf[UserContextPolicy]
@@ -547,6 +651,14 @@ object UserGroupResolutionMode {
   val NONE = "NONE".asInstanceOf[UserGroupResolutionMode]
 
   @inline def values: js.Array[UserGroupResolutionMode] = js.Array(AWS_SSO, NONE)
+}
+
+@js.native
+sealed trait WarningCode extends js.Any
+object WarningCode {
+  val QUERY_LANGUAGE_INVALID_SYNTAX = "QUERY_LANGUAGE_INVALID_SYNTAX".asInstanceOf[WarningCode]
+
+  @inline def values: js.Array[WarningCode] = js.Array(QUERY_LANGUAGE_INVALID_SYNTAX)
 }
 
 @js.native

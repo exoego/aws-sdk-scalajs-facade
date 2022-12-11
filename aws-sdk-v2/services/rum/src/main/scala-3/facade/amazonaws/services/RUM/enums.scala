@@ -2,6 +2,22 @@ package facade.amazonaws.services.rum
 
 import scalajs.js
 
+type CustomEventsStatus = "ENABLED" | "DISABLED"
+object CustomEventsStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[CustomEventsStatus] = js.Array(ENABLED, DISABLED)
+}
+
+type MetricDestination = "CloudWatch" | "Evidently"
+object MetricDestination {
+  inline val CloudWatch: "CloudWatch" = "CloudWatch"
+  inline val Evidently: "Evidently" = "Evidently"
+
+  inline def values: js.Array[MetricDestination] = js.Array(CloudWatch, Evidently)
+}
+
 type StateEnum = "CREATED" | "DELETING" | "ACTIVE"
 object StateEnum {
   inline val CREATED: "CREATED" = "CREATED"

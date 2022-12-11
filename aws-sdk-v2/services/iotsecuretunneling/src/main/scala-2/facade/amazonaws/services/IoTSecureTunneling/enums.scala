@@ -3,6 +3,16 @@ package facade.amazonaws.services.iotsecuretunneling
 import scalajs.js
 
 @js.native
+sealed trait ClientMode extends js.Any
+object ClientMode {
+  val SOURCE = "SOURCE".asInstanceOf[ClientMode]
+  val DESTINATION = "DESTINATION".asInstanceOf[ClientMode]
+  val ALL = "ALL".asInstanceOf[ClientMode]
+
+  @inline def values: js.Array[ClientMode] = js.Array(SOURCE, DESTINATION, ALL)
+}
+
+@js.native
 sealed trait ConnectionStatus extends js.Any
 object ConnectionStatus {
   val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]

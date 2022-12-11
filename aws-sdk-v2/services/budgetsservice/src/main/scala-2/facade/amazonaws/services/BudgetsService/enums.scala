@@ -58,6 +58,15 @@ object ApprovalModel {
   @inline def values: js.Array[ApprovalModel] = js.Array(AUTOMATIC, MANUAL)
 }
 
+@js.native
+sealed trait AutoAdjustType extends js.Any
+object AutoAdjustType {
+  val HISTORICAL = "HISTORICAL".asInstanceOf[AutoAdjustType]
+  val FORECAST = "FORECAST".asInstanceOf[AutoAdjustType]
+
+  @inline def values: js.Array[AutoAdjustType] = js.Array(HISTORICAL, FORECAST)
+}
+
 /** The type of a budget. It must be one of the following types: <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
   */
 @js.native
@@ -73,7 +82,7 @@ object BudgetType {
   @inline def values: js.Array[BudgetType] = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
 }
 
-/** The comparison operator of a notification. Currently the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
+/** The comparison operator of a notification. Currently, the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
   */
 @js.native
 sealed trait ComparisonOperator extends js.Any

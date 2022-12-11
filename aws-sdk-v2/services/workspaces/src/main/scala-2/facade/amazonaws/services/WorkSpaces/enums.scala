@@ -33,6 +33,37 @@ object AssociationStatus {
 }
 
 @js.native
+sealed trait BundleType extends js.Any
+object BundleType {
+  val REGULAR = "REGULAR".asInstanceOf[BundleType]
+  val STANDBY = "STANDBY".asInstanceOf[BundleType]
+
+  @inline def values: js.Array[BundleType] = js.Array(REGULAR, STANDBY)
+}
+
+@js.native
+sealed trait CertificateBasedAuthStatusEnum extends js.Any
+object CertificateBasedAuthStatusEnum {
+  val DISABLED = "DISABLED".asInstanceOf[CertificateBasedAuthStatusEnum]
+  val ENABLED = "ENABLED".asInstanceOf[CertificateBasedAuthStatusEnum]
+
+  @inline def values: js.Array[CertificateBasedAuthStatusEnum] = js.Array(DISABLED, ENABLED)
+}
+
+@js.native
+sealed trait ClientDeviceType extends js.Any
+object ClientDeviceType {
+  val DeviceTypeWindows = "DeviceTypeWindows".asInstanceOf[ClientDeviceType]
+  val DeviceTypeOsx = "DeviceTypeOsx".asInstanceOf[ClientDeviceType]
+  val DeviceTypeAndroid = "DeviceTypeAndroid".asInstanceOf[ClientDeviceType]
+  val DeviceTypeIos = "DeviceTypeIos".asInstanceOf[ClientDeviceType]
+  val DeviceTypeLinux = "DeviceTypeLinux".asInstanceOf[ClientDeviceType]
+  val DeviceTypeWeb = "DeviceTypeWeb".asInstanceOf[ClientDeviceType]
+
+  @inline def values: js.Array[ClientDeviceType] = js.Array(DeviceTypeWindows, DeviceTypeOsx, DeviceTypeAndroid, DeviceTypeIos, DeviceTypeLinux, DeviceTypeWeb)
+}
+
+@js.native
 sealed trait Compute extends js.Any
 object Compute {
   val VALUE = "VALUE".asInstanceOf[Compute]
@@ -42,8 +73,10 @@ object Compute {
   val GRAPHICS = "GRAPHICS".asInstanceOf[Compute]
   val POWERPRO = "POWERPRO".asInstanceOf[Compute]
   val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
+  val GRAPHICS_G4DN = "GRAPHICS_G4DN".asInstanceOf[Compute]
+  val GRAPHICSPRO_G4DN = "GRAPHICSPRO_G4DN".asInstanceOf[Compute]
 
-  @inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
+  @inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO, GRAPHICS_G4DN, GRAPHICSPRO_G4DN)
 }
 
 @js.native
@@ -94,12 +127,38 @@ object DedicatedTenancySupportResultEnum {
 }
 
 @js.native
+sealed trait DeletableCertificateBasedAuthProperty extends js.Any
+object DeletableCertificateBasedAuthProperty {
+  val CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN = "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN".asInstanceOf[DeletableCertificateBasedAuthProperty]
+
+  @inline def values: js.Array[DeletableCertificateBasedAuthProperty] = js.Array(CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN)
+}
+
+@js.native
+sealed trait DeletableSamlProperty extends js.Any
+object DeletableSamlProperty {
+  val SAML_PROPERTIES_USER_ACCESS_URL = "SAML_PROPERTIES_USER_ACCESS_URL".asInstanceOf[DeletableSamlProperty]
+  val SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME = "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME".asInstanceOf[DeletableSamlProperty]
+
+  @inline def values: js.Array[DeletableSamlProperty] = js.Array(SAML_PROPERTIES_USER_ACCESS_URL, SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME)
+}
+
+@js.native
 sealed trait ImageType extends js.Any
 object ImageType {
   val OWNED = "OWNED".asInstanceOf[ImageType]
   val SHARED = "SHARED".asInstanceOf[ImageType]
 
   @inline def values: js.Array[ImageType] = js.Array(OWNED, SHARED)
+}
+
+@js.native
+sealed trait LogUploadEnum extends js.Any
+object LogUploadEnum {
+  val ENABLED = "ENABLED".asInstanceOf[LogUploadEnum]
+  val DISABLED = "DISABLED".asInstanceOf[LogUploadEnum]
+
+  @inline def values: js.Array[LogUploadEnum] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -131,6 +190,15 @@ object OperatingSystemType {
 }
 
 @js.native
+sealed trait Protocol extends js.Any
+object Protocol {
+  val PCOIP = "PCOIP".asInstanceOf[Protocol]
+  val WSP = "WSP".asInstanceOf[Protocol]
+
+  @inline def values: js.Array[Protocol] = js.Array(PCOIP, WSP)
+}
+
+@js.native
 sealed trait ReconnectEnum extends js.Any
 object ReconnectEnum {
   val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
@@ -144,8 +212,28 @@ sealed trait RunningMode extends js.Any
 object RunningMode {
   val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
   val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
+  val MANUAL = "MANUAL".asInstanceOf[RunningMode]
 
-  @inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON)
+  @inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON, MANUAL)
+}
+
+@js.native
+sealed trait SamlStatusEnum extends js.Any
+object SamlStatusEnum {
+  val DISABLED = "DISABLED".asInstanceOf[SamlStatusEnum]
+  val ENABLED = "ENABLED".asInstanceOf[SamlStatusEnum]
+  val ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK = "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK".asInstanceOf[SamlStatusEnum]
+
+  @inline def values: js.Array[SamlStatusEnum] = js.Array(DISABLED, ENABLED, ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK)
+}
+
+@js.native
+sealed trait StandbyWorkspaceRelationshipType extends js.Any
+object StandbyWorkspaceRelationshipType {
+  val PRIMARY = "PRIMARY".asInstanceOf[StandbyWorkspaceRelationshipType]
+  val STANDBY = "STANDBY".asInstanceOf[StandbyWorkspaceRelationshipType]
+
+  @inline def values: js.Array[StandbyWorkspaceRelationshipType] = js.Array(PRIMARY, STANDBY)
 }
 
 @js.native
@@ -164,6 +252,16 @@ object Tenancy {
   val SHARED = "SHARED".asInstanceOf[Tenancy]
 
   @inline def values: js.Array[Tenancy] = js.Array(DEDICATED, SHARED)
+}
+
+@js.native
+sealed trait WorkspaceBundleState extends js.Any
+object WorkspaceBundleState {
+  val AVAILABLE = "AVAILABLE".asInstanceOf[WorkspaceBundleState]
+  val PENDING = "PENDING".asInstanceOf[WorkspaceBundleState]
+  val ERROR = "ERROR".asInstanceOf[WorkspaceBundleState]
+
+  @inline def values: js.Array[WorkspaceBundleState] = js.Array(AVAILABLE, PENDING, ERROR)
 }
 
 @js.native
@@ -193,9 +291,12 @@ object WorkspaceImageIngestionProcess {
   val BYOL_REGULAR = "BYOL_REGULAR".asInstanceOf[WorkspaceImageIngestionProcess]
   val BYOL_GRAPHICS = "BYOL_GRAPHICS".asInstanceOf[WorkspaceImageIngestionProcess]
   val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
+  val BYOL_GRAPHICS_G4DN = "BYOL_GRAPHICS_G4DN".asInstanceOf[WorkspaceImageIngestionProcess]
   val BYOL_REGULAR_WSP = "BYOL_REGULAR_WSP".asInstanceOf[WorkspaceImageIngestionProcess]
+  val BYOL_REGULAR_BYOP = "BYOL_REGULAR_BYOP".asInstanceOf[WorkspaceImageIngestionProcess]
+  val BYOL_GRAPHICS_G4DN_BYOP = "BYOL_GRAPHICS_G4DN_BYOP".asInstanceOf[WorkspaceImageIngestionProcess]
 
-  @inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
+  @inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_GRAPHICS_G4DN, BYOL_REGULAR_WSP, BYOL_REGULAR_BYOP, BYOL_GRAPHICS_G4DN_BYOP)
 }
 
 @js.native

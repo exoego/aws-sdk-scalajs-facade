@@ -14,6 +14,15 @@ object AgentUpdateStatus {
   inline def values: js.Array[AgentUpdateStatus] = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
 }
 
+type ApplicationProtocol = "http" | "http2" | "grpc"
+object ApplicationProtocol {
+  inline val http: "http" = "http"
+  inline val http2: "http2" = "http2"
+  inline val grpc: "grpc" = "grpc"
+
+  inline def values: js.Array[ApplicationProtocol] = js.Array(http, http2, grpc)
+}
+
 type AssignPublicIp = "ENABLED" | "DISABLED"
 object AssignPublicIp {
   inline val ENABLED: "ENABLED" = "ENABLED"
@@ -343,12 +352,13 @@ object PlatformDeviceType {
   inline def values: js.Array[PlatformDeviceType] = js.Array(GPU)
 }
 
-type PropagateTags = "TASK_DEFINITION" | "SERVICE"
+type PropagateTags = "TASK_DEFINITION" | "SERVICE" | "NONE"
 object PropagateTags {
   inline val TASK_DEFINITION: "TASK_DEFINITION" = "TASK_DEFINITION"
   inline val SERVICE: "SERVICE" = "SERVICE"
+  inline val NONE: "NONE" = "NONE"
 
-  inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE)
+  inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE, NONE)
 }
 
 type ProxyConfigurationType = "APPMESH"
@@ -475,13 +485,16 @@ object TaskSetField {
   inline def values: js.Array[TaskSetField] = js.Array(TAGS)
 }
 
-type TaskStopCode = "TaskFailedToStart" | "EssentialContainerExited" | "UserInitiated"
+type TaskStopCode = "TaskFailedToStart" | "EssentialContainerExited" | "UserInitiated" | "ServiceSchedulerInitiated" | "SpotInterruption" | "TerminationNotice"
 object TaskStopCode {
   inline val TaskFailedToStart: "TaskFailedToStart" = "TaskFailedToStart"
   inline val EssentialContainerExited: "EssentialContainerExited" = "EssentialContainerExited"
   inline val UserInitiated: "UserInitiated" = "UserInitiated"
+  inline val ServiceSchedulerInitiated: "ServiceSchedulerInitiated" = "ServiceSchedulerInitiated"
+  inline val SpotInterruption: "SpotInterruption" = "SpotInterruption"
+  inline val TerminationNotice: "TerminationNotice" = "TerminationNotice"
 
-  inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
+  inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated, ServiceSchedulerInitiated, SpotInterruption, TerminationNotice)
 }
 
 type TransportProtocol = "tcp" | "udp"

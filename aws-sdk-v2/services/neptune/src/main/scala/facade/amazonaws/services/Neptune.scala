@@ -37,6 +37,9 @@ package object neptune {
   type EventSubscriptionsList = js.Array[EventSubscription]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
+  type GlobalClusterIdentifier = String
+  type GlobalClusterList = js.Array[GlobalCluster]
+  type GlobalClusterMemberList = js.Array[GlobalClusterMember]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
   type LogTypeList = js.Array[String]
@@ -49,6 +52,7 @@ package object neptune {
   type ReadReplicaDBClusterIdentifierList = js.Array[String]
   type ReadReplicaDBInstanceIdentifierList = js.Array[String]
   type ReadReplicaIdentifierList = js.Array[String]
+  type ReadersArnList = js.Array[String]
   type SourceIdsList = js.Array[String]
   type StringList = js.Array[String]
   type SubnetIdentifierList = js.Array[String]
@@ -79,6 +83,7 @@ package object neptune {
     @inline def createDBParameterGroupFuture(params: CreateDBParameterGroupMessage): Future[CreateDBParameterGroupResult] = service.createDBParameterGroup(params).promise().toFuture
     @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] = service.createDBSubnetGroup(params).promise().toFuture
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
+    @inline def createGlobalClusterFuture(params: CreateGlobalClusterMessage): Future[CreateGlobalClusterResult] = service.createGlobalCluster(params).promise().toFuture
     @inline def deleteDBClusterEndpointFuture(params: DeleteDBClusterEndpointMessage): Future[DeleteDBClusterEndpointOutput] = service.deleteDBClusterEndpoint(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
     @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] = service.deleteDBClusterParameterGroup(params).promise().toFuture
@@ -87,6 +92,7 @@ package object neptune {
     @inline def deleteDBParameterGroupFuture(params: DeleteDBParameterGroupMessage): Future[js.Object] = service.deleteDBParameterGroup(params).promise().toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteGlobalClusterFuture(params: DeleteGlobalClusterMessage): Future[DeleteGlobalClusterResult] = service.deleteGlobalCluster(params).promise().toFuture
     @inline def describeDBClusterEndpointsFuture(params: DescribeDBClusterEndpointsMessage): Future[DBClusterEndpointMessage] = service.describeDBClusterEndpoints(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
     @inline def describeDBClusterParametersFuture(params: DescribeDBClusterParametersMessage): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
@@ -103,10 +109,12 @@ package object neptune {
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
     @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] = service.describeGlobalClusters(params).promise().toFuture
     @inline def describeOrderableDBInstanceOptionsFuture(params: DescribeOrderableDBInstanceOptionsMessage): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
     @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
     @inline def describeValidDBInstanceModificationsFuture(params: DescribeValidDBInstanceModificationsMessage): Future[DescribeValidDBInstanceModificationsResult] = service.describeValidDBInstanceModifications(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
+    @inline def failoverGlobalClusterFuture(params: FailoverGlobalClusterMessage): Future[FailoverGlobalClusterResult] = service.failoverGlobalCluster(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
     @inline def modifyDBClusterEndpointFuture(params: ModifyDBClusterEndpointMessage): Future[ModifyDBClusterEndpointOutput] = service.modifyDBClusterEndpoint(params).promise().toFuture
     @inline def modifyDBClusterFuture(params: ModifyDBClusterMessage): Future[ModifyDBClusterResult] = service.modifyDBCluster(params).promise().toFuture
@@ -116,8 +124,10 @@ package object neptune {
     @inline def modifyDBParameterGroupFuture(params: ModifyDBParameterGroupMessage): Future[DBParameterGroupNameMessage] = service.modifyDBParameterGroup(params).promise().toFuture
     @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] = service.modifyDBSubnetGroup(params).promise().toFuture
     @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
+    @inline def modifyGlobalClusterFuture(params: ModifyGlobalClusterMessage): Future[ModifyGlobalClusterResult] = service.modifyGlobalCluster(params).promise().toFuture
     @inline def promoteReadReplicaDBClusterFuture(params: PromoteReadReplicaDBClusterMessage): Future[PromoteReadReplicaDBClusterResult] = service.promoteReadReplicaDBCluster(params).promise().toFuture
     @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] = service.rebootDBInstance(params).promise().toFuture
+    @inline def removeFromGlobalClusterFuture(params: RemoveFromGlobalClusterMessage): Future[RemoveFromGlobalClusterResult] = service.removeFromGlobalCluster(params).promise().toFuture
     @inline def removeRoleFromDBClusterFuture(params: RemoveRoleFromDBClusterMessage): Future[js.Object] = service.removeRoleFromDBCluster(params).promise().toFuture
     @inline def removeSourceIdentifierFromSubscriptionFuture(params: RemoveSourceIdentifierFromSubscriptionMessage): Future[RemoveSourceIdentifierFromSubscriptionResult] = service.removeSourceIdentifierFromSubscription(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] = service.removeTagsFromResource(params).promise().toFuture
@@ -150,6 +160,7 @@ package object neptune {
     def createDBParameterGroup(params: CreateDBParameterGroupMessage): Request[CreateDBParameterGroupResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
+    def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DeleteDBClusterEndpointOutput] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
@@ -158,6 +169,7 @@ package object neptune {
     def deleteDBParameterGroup(params: DeleteDBParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
+    def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
     def describeDBClusterEndpoints(params: DescribeDBClusterEndpointsMessage): Request[DBClusterEndpointMessage] = js.native
     def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
     def describeDBClusterParameters(params: DescribeDBClusterParametersMessage): Request[DBClusterParameterGroupDetails] = js.native
@@ -174,10 +186,12 @@ package object neptune {
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
+    def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
     def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
     def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[PendingMaintenanceActionsMessage] = js.native
     def describeValidDBInstanceModifications(params: DescribeValidDBInstanceModificationsMessage): Request[DescribeValidDBInstanceModificationsResult] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
+    def failoverGlobalCluster(params: FailoverGlobalClusterMessage): Request[FailoverGlobalClusterResult] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
     def modifyDBCluster(params: ModifyDBClusterMessage): Request[ModifyDBClusterResult] = js.native
     def modifyDBClusterEndpoint(params: ModifyDBClusterEndpointMessage): Request[ModifyDBClusterEndpointOutput] = js.native
@@ -187,8 +201,10 @@ package object neptune {
     def modifyDBParameterGroup(params: ModifyDBParameterGroupMessage): Request[DBParameterGroupNameMessage] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
+    def modifyGlobalCluster(params: ModifyGlobalClusterMessage): Request[ModifyGlobalClusterResult] = js.native
     def promoteReadReplicaDBCluster(params: PromoteReadReplicaDBClusterMessage): Request[PromoteReadReplicaDBClusterResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
+    def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] = js.native
     def removeRoleFromDBCluster(params: RemoveRoleFromDBClusterMessage): Request[js.Object] = js.native
     def removeSourceIdentifierFromSubscription(params: RemoveSourceIdentifierFromSubscriptionMessage): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
@@ -612,6 +628,7 @@ package object neptune {
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
     var KmsKeyId: js.UndefOr[String]
     var MasterUserPassword: js.UndefOr[String]
     var MasterUsername: js.UndefOr[String]
@@ -621,6 +638,7 @@ package object neptune {
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var ReplicationSourceIdentifier: js.UndefOr[String]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
     var Tags: js.UndefOr[TagList]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -642,6 +660,7 @@ package object neptune {
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
         MasterUsername: js.UndefOr[String] = js.undefined,
@@ -651,6 +670,7 @@ package object neptune {
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -671,6 +691,7 @@ package object neptune {
       EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
@@ -680,6 +701,7 @@ package object neptune {
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -1084,6 +1106,55 @@ package object neptune {
     }
   }
 
+  @js.native
+  trait CreateGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var SourceDBClusterIdentifier: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+  }
+
+  object CreateGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): CreateGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      SourceDBClusterIdentifier.foreach(__v => __obj.updateDynamic("SourceDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait CreateGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object CreateGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): CreateGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterResult]
+    }
+  }
+
   /** Contains the details of an Amazon Neptune DB cluster. This data type is used as a response element in the <a>DescribeDBClusters</a> action.
     */
   @js.native
@@ -1125,6 +1196,7 @@ package object neptune {
     var ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList]
     var ReaderEndpoint: js.UndefOr[String]
     var ReplicationSourceIdentifier: js.UndefOr[String]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfigurationInfo]
     var Status: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[Boolean]
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
@@ -1170,6 +1242,7 @@ package object neptune {
         ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
         ReaderEndpoint: js.UndefOr[String] = js.undefined,
         ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfigurationInfo] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
@@ -1212,6 +1285,7 @@ package object neptune {
       ReadReplicaIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaIdentifiers")(__v.asInstanceOf[js.Any]))
       ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
       ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -1604,6 +1678,7 @@ package object neptune {
     var ExportableLogTypes: js.UndefOr[LogTypeList]
     var SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
+    var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
     var SupportsReadReplica: js.UndefOr[Boolean]
     var ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList]
@@ -1621,6 +1696,7 @@ package object neptune {
         ExportableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         SupportedCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
         SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
         SupportsReadReplica: js.UndefOr[Boolean] = js.undefined,
         ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
@@ -1635,6 +1711,7 @@ package object neptune {
       ExportableLogTypes.foreach(__v => __obj.updateDynamic("ExportableLogTypes")(__v.asInstanceOf[js.Any]))
       SupportedCharacterSets.foreach(__v => __obj.updateDynamic("SupportedCharacterSets")(__v.asInstanceOf[js.Any]))
       SupportedTimezones.foreach(__v => __obj.updateDynamic("SupportedTimezones")(__v.asInstanceOf[js.Any]))
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsLogExportsToCloudwatchLogs.foreach(__v => __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any]))
       SupportsReadReplica.foreach(__v => __obj.updateDynamic("SupportsReadReplica")(__v.asInstanceOf[js.Any]))
       ValidUpgradeTarget.foreach(__v => __obj.updateDynamic("ValidUpgradeTarget")(__v.asInstanceOf[js.Any]))
@@ -2316,6 +2393,39 @@ package object neptune {
   }
 
   @js.native
+  trait DeleteGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+  }
+
+  object DeleteGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier
+    ): DeleteGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object DeleteGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): DeleteGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGlobalClusterResult]
+    }
+  }
+
+  @js.native
   trait DescribeDBClusterEndpointsMessage extends js.Object {
     var DBClusterEndpointIdentifier: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
@@ -2809,6 +2919,28 @@ package object neptune {
   }
 
   @js.native
+  trait DescribeGlobalClustersMessage extends js.Object {
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeGlobalClustersMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeGlobalClustersMessage = {
+      val __obj = js.Dynamic.literal()
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGlobalClustersMessage]
+    }
+  }
+
+  @js.native
   trait DescribeOrderableDBInstanceOptionsMessage extends js.Object {
     var Engine: String
     var DBInstanceClass: js.UndefOr[String]
@@ -3189,6 +3321,42 @@ package object neptune {
     }
   }
 
+  @js.native
+  trait FailoverGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var TargetDbClusterIdentifier: String
+  }
+
+  object FailoverGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        TargetDbClusterIdentifier: String
+    ): FailoverGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any],
+        "TargetDbClusterIdentifier" -> TargetDbClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FailoverGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait FailoverGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object FailoverGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): FailoverGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailoverGlobalClusterResult]
+    }
+  }
+
   /** This type is not currently supported.
     */
   @js.native
@@ -3208,6 +3376,91 @@ package object neptune {
         "Values" -> Values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /** Contains the details of an Amazon Neptune global database. This data type is used as a response element for the <a>CreateGlobalCluster</a>, <a>DescribeGlobalClusters</a>, <a>ModifyGlobalCluster</a>, <a>DeleteGlobalCluster</a>, <a>FailoverGlobalCluster</a>, and <a>RemoveFromGlobalCluster</a> actions.
+    */
+  @js.native
+  trait GlobalCluster extends js.Object {
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var GlobalClusterArn: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+    var GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList]
+    var GlobalClusterResourceId: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+  }
+
+  object GlobalCluster {
+    @inline
+    def apply(
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterArn: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
+        GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
+        GlobalClusterResourceId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): GlobalCluster = {
+      val __obj = js.Dynamic.literal()
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      GlobalClusterArn.foreach(__v => __obj.updateDynamic("GlobalClusterArn")(__v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      GlobalClusterMembers.foreach(__v => __obj.updateDynamic("GlobalClusterMembers")(__v.asInstanceOf[js.Any]))
+      GlobalClusterResourceId.foreach(__v => __obj.updateDynamic("GlobalClusterResourceId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalCluster]
+    }
+  }
+
+  /** A data structure with information about any primary and secondary clusters associated with an Neptune global database.
+    */
+  @js.native
+  trait GlobalClusterMember extends js.Object {
+    var DBClusterArn: js.UndefOr[String]
+    var IsWriter: js.UndefOr[Boolean]
+    var Readers: js.UndefOr[ReadersArnList]
+  }
+
+  object GlobalClusterMember {
+    @inline
+    def apply(
+        DBClusterArn: js.UndefOr[String] = js.undefined,
+        IsWriter: js.UndefOr[Boolean] = js.undefined,
+        Readers: js.UndefOr[ReadersArnList] = js.undefined
+    ): GlobalClusterMember = {
+      val __obj = js.Dynamic.literal()
+      DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
+      IsWriter.foreach(__v => __obj.updateDynamic("IsWriter")(__v.asInstanceOf[js.Any]))
+      Readers.foreach(__v => __obj.updateDynamic("Readers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClusterMember]
+    }
+  }
+
+  @js.native
+  trait GlobalClustersMessage extends js.Object {
+    var GlobalClusters: js.UndefOr[GlobalClusterList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object GlobalClustersMessage {
+    @inline
+    def apply(
+        GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): GlobalClustersMessage = {
+      val __obj = js.Dynamic.literal()
+      GlobalClusters.foreach(__v => __obj.updateDynamic("GlobalClusters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClustersMessage]
     }
   }
 
@@ -3259,7 +3512,7 @@ package object neptune {
     }
   }
 
-  /** This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
+  /** This data type represents the information you need to connect to an Amazon Neptune DB cluster. This data type is used as a response element in the following actions: * <code>CreateDBClusterEndpoint</code> * <code>DescribeDBClusterEndpoints</code> * <code>ModifyDBClusterEndpoint</code> * <code>DeleteDBClusterEndpoint</code> For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.
     */
   @js.native
   trait ModifyDBClusterEndpointOutput extends js.Object {
@@ -3323,6 +3576,7 @@ package object neptune {
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
@@ -3346,6 +3600,7 @@ package object neptune {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBClusterMessage = {
       val __obj = js.Dynamic.literal(
@@ -3368,6 +3623,7 @@ package object neptune {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterMessage]
     }
@@ -3700,6 +3956,52 @@ package object neptune {
     }
   }
 
+  @js.native
+  trait ModifyGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var AllowMajorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var EngineVersion: js.UndefOr[String]
+    var NewGlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+  }
+
+  object ModifyGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        AllowMajorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        NewGlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined
+    ): ModifyGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      AllowMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      NewGlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("NewGlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object ModifyGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): ModifyGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterResult]
+    }
+  }
+
   /** Not supported by Neptune.
     */
   @js.native
@@ -3740,6 +4042,7 @@ package object neptune {
     var ReadReplicaCapable: js.UndefOr[Boolean]
     var StorageType: js.UndefOr[String]
     var SupportsEnhancedMonitoring: js.UndefOr[Boolean]
+    var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean]
     var SupportsIops: js.UndefOr[Boolean]
     var SupportsPerformanceInsights: js.UndefOr[Boolean]
@@ -3765,6 +4068,7 @@ package object neptune {
         ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsIAMDatabaseAuthentication: js.UndefOr[Boolean] = js.undefined,
         SupportsIops: js.UndefOr[Boolean] = js.undefined,
         SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
@@ -3787,6 +4091,7 @@ package object neptune {
       ReadReplicaCapable.foreach(__v => __obj.updateDynamic("ReadReplicaCapable")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SupportsEnhancedMonitoring.foreach(__v => __obj.updateDynamic("SupportsEnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("SupportsIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       SupportsIops.foreach(__v => __obj.updateDynamic("SupportsIops")(__v.asInstanceOf[js.Any]))
       SupportsPerformanceInsights.foreach(__v => __obj.updateDynamic("SupportsPerformanceInsights")(__v.asInstanceOf[js.Any]))
@@ -4085,6 +4390,42 @@ package object neptune {
   }
 
   @js.native
+  trait RemoveFromGlobalClusterMessage extends js.Object {
+    var DbClusterIdentifier: String
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+  }
+
+  object RemoveFromGlobalClusterMessage {
+    @inline
+    def apply(
+        DbClusterIdentifier: String,
+        GlobalClusterIdentifier: GlobalClusterIdentifier
+    ): RemoveFromGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "DbClusterIdentifier" -> DbClusterIdentifier.asInstanceOf[js.Any],
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveFromGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait RemoveFromGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object RemoveFromGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): RemoveFromGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFromGlobalClusterResult]
+    }
+  }
+
+  @js.native
   trait RemoveRoleFromDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
@@ -4250,6 +4591,7 @@ package object neptune {
     var KmsKeyId: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var Tags: js.UndefOr[TagList]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
@@ -4272,6 +4614,7 @@ package object neptune {
         KmsKeyId: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterFromSnapshotMessage = {
@@ -4293,6 +4636,7 @@ package object neptune {
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterFromSnapshotMessage]
@@ -4329,6 +4673,7 @@ package object neptune {
     var Port: js.UndefOr[IntegerOptional]
     var RestoreToTime: js.UndefOr[TStamp]
     var RestoreType: js.UndefOr[String]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var Tags: js.UndefOr[TagList]
     var UseLatestRestorableTime: js.UndefOr[Boolean]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -4349,6 +4694,7 @@ package object neptune {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         RestoreToTime: js.UndefOr[TStamp] = js.undefined,
         RestoreType: js.UndefOr[String] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -4368,6 +4714,7 @@ package object neptune {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RestoreToTime.foreach(__v => __obj.updateDynamic("RestoreToTime")(__v.asInstanceOf[js.Any]))
       RestoreType.foreach(__v => __obj.updateDynamic("RestoreType")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -4388,6 +4735,48 @@ package object neptune {
       val __obj = js.Dynamic.literal()
       DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
+    }
+  }
+
+  /** Contains the scaling configuration of a Neptune Serverless DB cluster. For more information, see [[https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html|Using Amazon Neptune Serverless]] in the <i>Amazon Neptune User Guide</i>.
+    */
+  @js.native
+  trait ServerlessV2ScalingConfiguration extends js.Object {
+    var MaxCapacity: js.UndefOr[DoubleOptional]
+    var MinCapacity: js.UndefOr[DoubleOptional]
+  }
+
+  object ServerlessV2ScalingConfiguration {
+    @inline
+    def apply(
+        MaxCapacity: js.UndefOr[DoubleOptional] = js.undefined,
+        MinCapacity: js.UndefOr[DoubleOptional] = js.undefined
+    ): ServerlessV2ScalingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerlessV2ScalingConfiguration]
+    }
+  }
+
+  /** Shows the scaling configuration for a Neptune Serverless DB cluster. For more information, see [[https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html|Using Amazon Neptune Serverless]] in the <i>Amazon Neptune User Guide</i>.
+    */
+  @js.native
+  trait ServerlessV2ScalingConfigurationInfo extends js.Object {
+    var MaxCapacity: js.UndefOr[DoubleOptional]
+    var MinCapacity: js.UndefOr[DoubleOptional]
+  }
+
+  object ServerlessV2ScalingConfigurationInfo {
+    @inline
+    def apply(
+        MaxCapacity: js.UndefOr[DoubleOptional] = js.undefined,
+        MinCapacity: js.UndefOr[DoubleOptional] = js.undefined
+    ): ServerlessV2ScalingConfigurationInfo = {
+      val __obj = js.Dynamic.literal()
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerlessV2ScalingConfigurationInfo]
     }
   }
 
@@ -4545,6 +4934,7 @@ package object neptune {
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IsMajorVersionUpgrade: js.UndefOr[Boolean]
+    var SupportsGlobalDatabases: js.UndefOr[BooleanOptional]
   }
 
   object UpgradeTarget {
@@ -4554,7 +4944,8 @@ package object neptune {
         Description: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
-        IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
+        IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
+        SupportsGlobalDatabases: js.UndefOr[BooleanOptional] = js.undefined
     ): UpgradeTarget = {
       val __obj = js.Dynamic.literal()
       AutoUpgrade.foreach(__v => __obj.updateDynamic("AutoUpgrade")(__v.asInstanceOf[js.Any]))
@@ -4562,6 +4953,7 @@ package object neptune {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       IsMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("IsMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeTarget]
     }
   }

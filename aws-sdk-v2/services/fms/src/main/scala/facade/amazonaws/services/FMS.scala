@@ -9,27 +9,38 @@ import facade.amazonaws._
 
 package object fms {
   type AWSAccountId = String
+  type AWSAccountIdList = js.Array[AWSAccountId]
   type AppsList = js.Array[App]
   type AppsListsData = js.Array[AppsListDataSummary]
   type AwsEc2NetworkInterfaceViolations = js.Array[AwsEc2NetworkInterfaceViolation]
+  type Base62Id = String
   type BasicInteger = Int
   type CIDR = String
+  type ComplianceViolatorMetadata = js.Dictionary[LengthBoundedString]
   type ComplianceViolators = js.Array[ComplianceViolator]
   type CustomerPolicyScopeId = String
   type CustomerPolicyScopeIdList = js.Array[CustomerPolicyScopeId]
   type CustomerPolicyScopeMap = js.Dictionary[CustomerPolicyScopeIdList]
+  type Description = String
   type DetailedInfo = String
+  type DiscoveredResourceList = js.Array[DiscoveredResource]
   type DnsRuleGroupPriorities = js.Array[DnsRuleGroupPriority]
   type DnsRuleGroupPriority = Int
   type EvaluationResults = js.Array[EvaluationResult]
   type ExpectedRoutes = js.Array[ExpectedRoute]
+  type FailedItemList = js.Array[FailedItem]
+  type FirewallPolicyId = String
+  type FirewallPolicyName = String
   type IPPortNumber = Double
+  type Identifier = String
+  type IdentifierList = js.Array[Identifier]
   type IssueInfoMap = js.Dictionary[DetailedInfo]
   type LengthBoundedString = String
   type LengthBoundedStringList = js.Array[LengthBoundedString]
   type ListId = String
   type ManagedServiceData = String
   type MemberAccounts = js.Array[AWSAccountId]
+  type Name = String
   type NetworkFirewallAction = String
   type NetworkFirewallActionList = js.Array[NetworkFirewallAction]
   type NetworkFirewallResourceName = String
@@ -45,6 +56,7 @@ package object fms {
   type PreviousAppsList = js.Dictionary[AppsList]
   type PreviousListVersion = String
   type PreviousProtocolsList = js.Dictionary[ProtocolsList]
+  type PriorityNumber = Int
   type ProtectionData = String
   type Protocol = String
   type ProtocolsList = js.Array[Protocol]
@@ -53,9 +65,13 @@ package object fms {
   type RemediationActionDescription = String
   type ResourceArn = String
   type ResourceCount = Double
+  type ResourceDescription = String
   type ResourceId = String
   type ResourceIdList = js.Array[ResourceId]
+  type ResourceList = js.Array[Resource]
   type ResourceName = String
+  type ResourceSetIds = js.Array[Base62Id]
+  type ResourceSetSummaryList = js.Array[ResourceSetSummary]
   type ResourceTagKey = String
   type ResourceTagValue = String
   type ResourceTags = js.Array[ResourceTag]
@@ -73,6 +89,7 @@ package object fms {
   type TagValue = String
   type TargetViolationReason = String
   type TargetViolationReasons = js.Array[TargetViolationReason]
+  type ThirdPartyFirewallFirewallPolicies = js.Array[ThirdPartyFirewallFirewallPolicy]
   type TimeStamp = js.Date
   type UpdateToken = String
   type ViolationTarget = String
@@ -80,11 +97,16 @@ package object fms {
   final class FMSOps(private val service: FMS) extends AnyVal {
 
     @inline def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] = service.associateAdminAccount(params).promise().toFuture
+    @inline def associateThirdPartyFirewallFuture(params: AssociateThirdPartyFirewallRequest): Future[AssociateThirdPartyFirewallResponse] = service.associateThirdPartyFirewall(params).promise().toFuture
+    @inline def batchAssociateResourceFuture(params: BatchAssociateResourceRequest): Future[BatchAssociateResourceResponse] = service.batchAssociateResource(params).promise().toFuture
+    @inline def batchDisassociateResourceFuture(params: BatchDisassociateResourceRequest): Future[BatchDisassociateResourceResponse] = service.batchDisassociateResource(params).promise().toFuture
     @inline def deleteAppsListFuture(params: DeleteAppsListRequest): Future[js.Object] = service.deleteAppsList(params).promise().toFuture
     @inline def deleteNotificationChannelFuture(params: DeleteNotificationChannelRequest): Future[js.Object] = service.deleteNotificationChannel(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
     @inline def deleteProtocolsListFuture(params: DeleteProtocolsListRequest): Future[js.Object] = service.deleteProtocolsList(params).promise().toFuture
+    @inline def deleteResourceSetFuture(params: DeleteResourceSetRequest): Future[js.Object] = service.deleteResourceSet(params).promise().toFuture
     @inline def disassociateAdminAccountFuture(params: DisassociateAdminAccountRequest): Future[js.Object] = service.disassociateAdminAccount(params).promise().toFuture
+    @inline def disassociateThirdPartyFirewallFuture(params: DisassociateThirdPartyFirewallRequest): Future[DisassociateThirdPartyFirewallResponse] = service.disassociateThirdPartyFirewall(params).promise().toFuture
     @inline def getAdminAccountFuture(params: GetAdminAccountRequest): Future[GetAdminAccountResponse] = service.getAdminAccount(params).promise().toFuture
     @inline def getAppsListFuture(params: GetAppsListRequest): Future[GetAppsListResponse] = service.getAppsList(params).promise().toFuture
     @inline def getComplianceDetailFuture(params: GetComplianceDetailRequest): Future[GetComplianceDetailResponse] = service.getComplianceDetail(params).promise().toFuture
@@ -92,17 +114,24 @@ package object fms {
     @inline def getPolicyFuture(params: GetPolicyRequest): Future[GetPolicyResponse] = service.getPolicy(params).promise().toFuture
     @inline def getProtectionStatusFuture(params: GetProtectionStatusRequest): Future[GetProtectionStatusResponse] = service.getProtectionStatus(params).promise().toFuture
     @inline def getProtocolsListFuture(params: GetProtocolsListRequest): Future[GetProtocolsListResponse] = service.getProtocolsList(params).promise().toFuture
+    @inline def getResourceSetFuture(params: GetResourceSetRequest): Future[GetResourceSetResponse] = service.getResourceSet(params).promise().toFuture
+    @inline def getThirdPartyFirewallAssociationStatusFuture(params: GetThirdPartyFirewallAssociationStatusRequest): Future[GetThirdPartyFirewallAssociationStatusResponse] = service.getThirdPartyFirewallAssociationStatus(params).promise().toFuture
     @inline def getViolationDetailsFuture(params: GetViolationDetailsRequest): Future[GetViolationDetailsResponse] = service.getViolationDetails(params).promise().toFuture
     @inline def listAppsListsFuture(params: ListAppsListsRequest): Future[ListAppsListsResponse] = service.listAppsLists(params).promise().toFuture
     @inline def listComplianceStatusFuture(params: ListComplianceStatusRequest): Future[ListComplianceStatusResponse] = service.listComplianceStatus(params).promise().toFuture
+    @inline def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise().toFuture
     @inline def listMemberAccountsFuture(params: ListMemberAccountsRequest): Future[ListMemberAccountsResponse] = service.listMemberAccounts(params).promise().toFuture
     @inline def listPoliciesFuture(params: ListPoliciesRequest): Future[ListPoliciesResponse] = service.listPolicies(params).promise().toFuture
     @inline def listProtocolsListsFuture(params: ListProtocolsListsRequest): Future[ListProtocolsListsResponse] = service.listProtocolsLists(params).promise().toFuture
+    @inline def listResourceSetResourcesFuture(params: ListResourceSetResourcesRequest): Future[ListResourceSetResourcesResponse] = service.listResourceSetResources(params).promise().toFuture
+    @inline def listResourceSetsFuture(params: ListResourceSetsRequest): Future[ListResourceSetsResponse] = service.listResourceSets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listThirdPartyFirewallFirewallPoliciesFuture(params: ListThirdPartyFirewallFirewallPoliciesRequest): Future[ListThirdPartyFirewallFirewallPoliciesResponse] = service.listThirdPartyFirewallFirewallPolicies(params).promise().toFuture
     @inline def putAppsListFuture(params: PutAppsListRequest): Future[PutAppsListResponse] = service.putAppsList(params).promise().toFuture
     @inline def putNotificationChannelFuture(params: PutNotificationChannelRequest): Future[js.Object] = service.putNotificationChannel(params).promise().toFuture
     @inline def putPolicyFuture(params: PutPolicyRequest): Future[PutPolicyResponse] = service.putPolicy(params).promise().toFuture
     @inline def putProtocolsListFuture(params: PutProtocolsListRequest): Future[PutProtocolsListResponse] = service.putProtocolsList(params).promise().toFuture
+    @inline def putResourceSetFuture(params: PutResourceSetRequest): Future[PutResourceSetResponse] = service.putResourceSet(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
@@ -114,11 +143,16 @@ package object fms {
     def this(config: AWSConfig) = this()
 
     def associateAdminAccount(params: AssociateAdminAccountRequest): Request[js.Object] = js.native
+    def associateThirdPartyFirewall(params: AssociateThirdPartyFirewallRequest): Request[AssociateThirdPartyFirewallResponse] = js.native
+    def batchAssociateResource(params: BatchAssociateResourceRequest): Request[BatchAssociateResourceResponse] = js.native
+    def batchDisassociateResource(params: BatchDisassociateResourceRequest): Request[BatchDisassociateResourceResponse] = js.native
     def deleteAppsList(params: DeleteAppsListRequest): Request[js.Object] = js.native
     def deleteNotificationChannel(params: DeleteNotificationChannelRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
     def deleteProtocolsList(params: DeleteProtocolsListRequest): Request[js.Object] = js.native
+    def deleteResourceSet(params: DeleteResourceSetRequest): Request[js.Object] = js.native
     def disassociateAdminAccount(params: DisassociateAdminAccountRequest): Request[js.Object] = js.native
+    def disassociateThirdPartyFirewall(params: DisassociateThirdPartyFirewallRequest): Request[DisassociateThirdPartyFirewallResponse] = js.native
     def getAdminAccount(params: GetAdminAccountRequest): Request[GetAdminAccountResponse] = js.native
     def getAppsList(params: GetAppsListRequest): Request[GetAppsListResponse] = js.native
     def getComplianceDetail(params: GetComplianceDetailRequest): Request[GetComplianceDetailResponse] = js.native
@@ -126,17 +160,24 @@ package object fms {
     def getPolicy(params: GetPolicyRequest): Request[GetPolicyResponse] = js.native
     def getProtectionStatus(params: GetProtectionStatusRequest): Request[GetProtectionStatusResponse] = js.native
     def getProtocolsList(params: GetProtocolsListRequest): Request[GetProtocolsListResponse] = js.native
+    def getResourceSet(params: GetResourceSetRequest): Request[GetResourceSetResponse] = js.native
+    def getThirdPartyFirewallAssociationStatus(params: GetThirdPartyFirewallAssociationStatusRequest): Request[GetThirdPartyFirewallAssociationStatusResponse] = js.native
     def getViolationDetails(params: GetViolationDetailsRequest): Request[GetViolationDetailsResponse] = js.native
     def listAppsLists(params: ListAppsListsRequest): Request[ListAppsListsResponse] = js.native
     def listComplianceStatus(params: ListComplianceStatusRequest): Request[ListComplianceStatusResponse] = js.native
+    def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] = js.native
     def listMemberAccounts(params: ListMemberAccountsRequest): Request[ListMemberAccountsResponse] = js.native
     def listPolicies(params: ListPoliciesRequest): Request[ListPoliciesResponse] = js.native
     def listProtocolsLists(params: ListProtocolsListsRequest): Request[ListProtocolsListsResponse] = js.native
+    def listResourceSetResources(params: ListResourceSetResourcesRequest): Request[ListResourceSetResourcesResponse] = js.native
+    def listResourceSets(params: ListResourceSetsRequest): Request[ListResourceSetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listThirdPartyFirewallFirewallPolicies(params: ListThirdPartyFirewallFirewallPoliciesRequest): Request[ListThirdPartyFirewallFirewallPoliciesResponse] = js.native
     def putAppsList(params: PutAppsListRequest): Request[PutAppsListResponse] = js.native
     def putNotificationChannel(params: PutNotificationChannelRequest): Request[js.Object] = js.native
     def putPolicy(params: PutPolicyRequest): Request[PutPolicyResponse] = js.native
     def putProtocolsList(params: PutProtocolsListRequest): Request[PutProtocolsListResponse] = js.native
+    def putResourceSet(params: PutResourceSetRequest): Request[PutResourceSetResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
@@ -274,6 +315,39 @@ package object fms {
     }
   }
 
+  @js.native
+  trait AssociateThirdPartyFirewallRequest extends js.Object {
+    var ThirdPartyFirewall: ThirdPartyFirewall
+  }
+
+  object AssociateThirdPartyFirewallRequest {
+    @inline
+    def apply(
+        ThirdPartyFirewall: ThirdPartyFirewall
+    ): AssociateThirdPartyFirewallRequest = {
+      val __obj = js.Dynamic.literal(
+        "ThirdPartyFirewall" -> ThirdPartyFirewall.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateThirdPartyFirewallRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateThirdPartyFirewallResponse extends js.Object {
+    var ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus]
+  }
+
+  object AssociateThirdPartyFirewallResponse {
+    @inline
+    def apply(
+        ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus] = js.undefined
+    ): AssociateThirdPartyFirewallResponse = {
+      val __obj = js.Dynamic.literal()
+      ThirdPartyFirewallStatus.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateThirdPartyFirewallResponse]
+    }
+  }
+
   /** Violation detail for an EC2 instance resource.
     */
   @js.native
@@ -343,10 +417,91 @@ package object fms {
     }
   }
 
+  @js.native
+  trait BatchAssociateResourceRequest extends js.Object {
+    var Items: IdentifierList
+    var ResourceSetIdentifier: Identifier
+  }
+
+  object BatchAssociateResourceRequest {
+    @inline
+    def apply(
+        Items: IdentifierList,
+        ResourceSetIdentifier: Identifier
+    ): BatchAssociateResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "ResourceSetIdentifier" -> ResourceSetIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchAssociateResourceRequest]
+    }
+  }
+
+  @js.native
+  trait BatchAssociateResourceResponse extends js.Object {
+    var FailedItems: FailedItemList
+    var ResourceSetIdentifier: Identifier
+  }
+
+  object BatchAssociateResourceResponse {
+    @inline
+    def apply(
+        FailedItems: FailedItemList,
+        ResourceSetIdentifier: Identifier
+    ): BatchAssociateResourceResponse = {
+      val __obj = js.Dynamic.literal(
+        "FailedItems" -> FailedItems.asInstanceOf[js.Any],
+        "ResourceSetIdentifier" -> ResourceSetIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchAssociateResourceResponse]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateResourceRequest extends js.Object {
+    var Items: IdentifierList
+    var ResourceSetIdentifier: Identifier
+  }
+
+  object BatchDisassociateResourceRequest {
+    @inline
+    def apply(
+        Items: IdentifierList,
+        ResourceSetIdentifier: Identifier
+    ): BatchDisassociateResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "ResourceSetIdentifier" -> ResourceSetIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDisassociateResourceRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateResourceResponse extends js.Object {
+    var FailedItems: FailedItemList
+    var ResourceSetIdentifier: Identifier
+  }
+
+  object BatchDisassociateResourceResponse {
+    @inline
+    def apply(
+        FailedItems: FailedItemList,
+        ResourceSetIdentifier: Identifier
+    ): BatchDisassociateResourceResponse = {
+      val __obj = js.Dynamic.literal(
+        "FailedItems" -> FailedItems.asInstanceOf[js.Any],
+        "ResourceSetIdentifier" -> ResourceSetIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDisassociateResourceResponse]
+    }
+  }
+
   /** Details of the resource that is not protected by the policy.
     */
   @js.native
   trait ComplianceViolator extends js.Object {
+    var Metadata: js.UndefOr[ComplianceViolatorMetadata]
     var ResourceId: js.UndefOr[ResourceId]
     var ResourceType: js.UndefOr[ResourceType]
     var ViolationReason: js.UndefOr[ViolationReason]
@@ -355,11 +510,13 @@ package object fms {
   object ComplianceViolator {
     @inline
     def apply(
+        Metadata: js.UndefOr[ComplianceViolatorMetadata] = js.undefined,
         ResourceId: js.UndefOr[ResourceId] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         ViolationReason: js.UndefOr[ViolationReason] = js.undefined
     ): ComplianceViolator = {
       val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       ViolationReason.foreach(__v => __obj.updateDynamic("ViolationReason")(__v.asInstanceOf[js.Any]))
@@ -434,6 +591,23 @@ package object fms {
   }
 
   @js.native
+  trait DeleteResourceSetRequest extends js.Object {
+    var Identifier: Base62Id
+  }
+
+  object DeleteResourceSetRequest {
+    @inline
+    def apply(
+        Identifier: Base62Id
+    ): DeleteResourceSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteResourceSetRequest]
+    }
+  }
+
+  @js.native
   trait DisassociateAdminAccountRequest extends js.Object
 
   object DisassociateAdminAccountRequest {
@@ -441,6 +615,66 @@ package object fms {
     def apply(): DisassociateAdminAccountRequest = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateThirdPartyFirewallRequest extends js.Object {
+    var ThirdPartyFirewall: ThirdPartyFirewall
+  }
+
+  object DisassociateThirdPartyFirewallRequest {
+    @inline
+    def apply(
+        ThirdPartyFirewall: ThirdPartyFirewall
+    ): DisassociateThirdPartyFirewallRequest = {
+      val __obj = js.Dynamic.literal(
+        "ThirdPartyFirewall" -> ThirdPartyFirewall.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateThirdPartyFirewallRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateThirdPartyFirewallResponse extends js.Object {
+    var ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus]
+  }
+
+  object DisassociateThirdPartyFirewallResponse {
+    @inline
+    def apply(
+        ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus] = js.undefined
+    ): DisassociateThirdPartyFirewallResponse = {
+      val __obj = js.Dynamic.literal()
+      ThirdPartyFirewallStatus.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateThirdPartyFirewallResponse]
+    }
+  }
+
+  /** A resource in the organization that's available to be associated with a Firewall Manager resource set.
+    */
+  @js.native
+  trait DiscoveredResource extends js.Object {
+    var AccountId: js.UndefOr[AWSAccountId]
+    var Name: js.UndefOr[ResourceName]
+    var Type: js.UndefOr[ResourceType]
+    var URI: js.UndefOr[Identifier]
+  }
+
+  object DiscoveredResource {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AWSAccountId] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Type: js.UndefOr[ResourceType] = js.undefined,
+        URI: js.UndefOr[Identifier] = js.undefined
+    ): DiscoveredResource = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DiscoveredResource]
     }
   }
 
@@ -785,6 +1019,105 @@ package object fms {
     }
   }
 
+  /** Contains information about the actions that you can take to remediate scope violations caused by your policy's <code>FirewallCreationConfig</code>. <code>FirewallCreationConfig</code> is an optional configuration that you can use to choose which Availability Zones Firewall Manager creates Network Firewall endpoints in.
+    */
+  @js.native
+  trait FMSPolicyUpdateFirewallCreationConfigAction extends js.Object {
+    var Description: js.UndefOr[LengthBoundedString]
+    var FirewallCreationConfig: js.UndefOr[ManagedServiceData]
+  }
+
+  object FMSPolicyUpdateFirewallCreationConfigAction {
+    @inline
+    def apply(
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        FirewallCreationConfig: js.UndefOr[ManagedServiceData] = js.undefined
+    ): FMSPolicyUpdateFirewallCreationConfigAction = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FirewallCreationConfig.foreach(__v => __obj.updateDynamic("FirewallCreationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FMSPolicyUpdateFirewallCreationConfigAction]
+    }
+  }
+
+  /** Details of a resource that failed when trying to update it's association to a resource set.
+    */
+  @js.native
+  trait FailedItem extends js.Object {
+    var Reason: js.UndefOr[FailedItemReason]
+    var URI: js.UndefOr[Identifier]
+  }
+
+  object FailedItem {
+    @inline
+    def apply(
+        Reason: js.UndefOr[FailedItemReason] = js.undefined,
+        URI: js.UndefOr[Identifier] = js.undefined
+    ): FailedItem = {
+      val __obj = js.Dynamic.literal()
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedItem]
+    }
+  }
+
+  /** Contains details about the firewall subnet that violates the policy scope.
+    */
+  @js.native
+  trait FirewallSubnetIsOutOfScopeViolation extends js.Object {
+    var FirewallSubnetId: js.UndefOr[ResourceId]
+    var SubnetAvailabilityZone: js.UndefOr[LengthBoundedString]
+    var SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString]
+    var VpcEndpointId: js.UndefOr[ResourceId]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object FirewallSubnetIsOutOfScopeViolation {
+    @inline
+    def apply(
+        FirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        SubnetAvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString] = js.undefined,
+        VpcEndpointId: js.UndefOr[ResourceId] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): FirewallSubnetIsOutOfScopeViolation = {
+      val __obj = js.Dynamic.literal()
+      FirewallSubnetId.foreach(__v => __obj.updateDynamic("FirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZoneId.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallSubnetIsOutOfScopeViolation]
+    }
+  }
+
+  /** The violation details for a firewall subnet's VPC endpoint that's deleted or missing.
+    */
+  @js.native
+  trait FirewallSubnetMissingVPCEndpointViolation extends js.Object {
+    var FirewallSubnetId: js.UndefOr[ResourceId]
+    var SubnetAvailabilityZone: js.UndefOr[LengthBoundedString]
+    var SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object FirewallSubnetMissingVPCEndpointViolation {
+    @inline
+    def apply(
+        FirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        SubnetAvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): FirewallSubnetMissingVPCEndpointViolation = {
+      val __obj = js.Dynamic.literal()
+      FirewallSubnetId.foreach(__v => __obj.updateDynamic("FirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZoneId.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FirewallSubnetMissingVPCEndpointViolation]
+    }
+  }
+
   @js.native
   trait GetAdminAccountRequest extends js.Object
 
@@ -1056,6 +1389,79 @@ package object fms {
   }
 
   @js.native
+  trait GetResourceSetRequest extends js.Object {
+    var Identifier: Base62Id
+  }
+
+  object GetResourceSetRequest {
+    @inline
+    def apply(
+        Identifier: Base62Id
+    ): GetResourceSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResourceSetRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourceSetResponse extends js.Object {
+    var ResourceSet: ResourceSet
+    var ResourceSetArn: ResourceArn
+  }
+
+  object GetResourceSetResponse {
+    @inline
+    def apply(
+        ResourceSet: ResourceSet,
+        ResourceSetArn: ResourceArn
+    ): GetResourceSetResponse = {
+      val __obj = js.Dynamic.literal(
+        "ResourceSet" -> ResourceSet.asInstanceOf[js.Any],
+        "ResourceSetArn" -> ResourceSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResourceSetResponse]
+    }
+  }
+
+  @js.native
+  trait GetThirdPartyFirewallAssociationStatusRequest extends js.Object {
+    var ThirdPartyFirewall: ThirdPartyFirewall
+  }
+
+  object GetThirdPartyFirewallAssociationStatusRequest {
+    @inline
+    def apply(
+        ThirdPartyFirewall: ThirdPartyFirewall
+    ): GetThirdPartyFirewallAssociationStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "ThirdPartyFirewall" -> ThirdPartyFirewall.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetThirdPartyFirewallAssociationStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetThirdPartyFirewallAssociationStatusResponse extends js.Object {
+    var MarketplaceOnboardingStatus: js.UndefOr[MarketplaceSubscriptionOnboardingStatus]
+    var ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus]
+  }
+
+  object GetThirdPartyFirewallAssociationStatusResponse {
+    @inline
+    def apply(
+        MarketplaceOnboardingStatus: js.UndefOr[MarketplaceSubscriptionOnboardingStatus] = js.undefined,
+        ThirdPartyFirewallStatus: js.UndefOr[ThirdPartyFirewallAssociationStatus] = js.undefined
+    ): GetThirdPartyFirewallAssociationStatusResponse = {
+      val __obj = js.Dynamic.literal()
+      MarketplaceOnboardingStatus.foreach(__v => __obj.updateDynamic("MarketplaceOnboardingStatus")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallStatus.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetThirdPartyFirewallAssociationStatusResponse]
+    }
+  }
+
+  @js.native
   trait GetViolationDetailsRequest extends js.Object {
     var MemberAccount: AWSAccountId
     var PolicyId: PolicyId
@@ -1184,6 +1590,52 @@ package object fms {
   }
 
   @js.native
+  trait ListDiscoveredResourcesRequest extends js.Object {
+    var MemberAccountIds: AWSAccountIdList
+    var ResourceType: ResourceType
+    var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDiscoveredResourcesRequest {
+    @inline
+    def apply(
+        MemberAccountIds: AWSAccountIdList,
+        ResourceType: ResourceType,
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDiscoveredResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "MemberAccountIds" -> MemberAccountIds.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDiscoveredResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListDiscoveredResourcesResponse extends js.Object {
+    var Items: js.UndefOr[DiscoveredResourceList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDiscoveredResourcesResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[DiscoveredResourceList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDiscoveredResourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDiscoveredResourcesResponse]
+    }
+  }
+
+  @js.native
   trait ListMemberAccountsRequest extends js.Object {
     var MaxResults: js.UndefOr[PaginationMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
@@ -1303,6 +1755,89 @@ package object fms {
   }
 
   @js.native
+  trait ListResourceSetResourcesRequest extends js.Object {
+    var Identifier: ResourceId
+    var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListResourceSetResourcesRequest {
+    @inline
+    def apply(
+        Identifier: ResourceId,
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListResourceSetResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSetResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceSetResourcesResponse extends js.Object {
+    var Items: ResourceList
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListResourceSetResourcesResponse {
+    @inline
+    def apply(
+        Items: ResourceList,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListResourceSetResourcesResponse = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSetResourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListResourceSetsRequest extends js.Object {
+    var MaxResults: js.UndefOr[PaginationMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListResourceSetsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListResourceSetsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSetsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceSetsResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var ResourceSets: js.UndefOr[ResourceSetSummaryList]
+  }
+
+  object ListResourceSetsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        ResourceSets: js.UndefOr[ResourceSetSummaryList] = js.undefined
+    ): ListResourceSetsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceSets.foreach(__v => __obj.updateDynamic("ResourceSets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceSetsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
@@ -1332,6 +1867,49 @@ package object fms {
       val __obj = js.Dynamic.literal()
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
+  trait ListThirdPartyFirewallFirewallPoliciesRequest extends js.Object {
+    var MaxResults: PaginationMaxResults
+    var ThirdPartyFirewall: ThirdPartyFirewall
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListThirdPartyFirewallFirewallPoliciesRequest {
+    @inline
+    def apply(
+        MaxResults: PaginationMaxResults,
+        ThirdPartyFirewall: ThirdPartyFirewall,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListThirdPartyFirewallFirewallPoliciesRequest = {
+      val __obj = js.Dynamic.literal(
+        "MaxResults" -> MaxResults.asInstanceOf[js.Any],
+        "ThirdPartyFirewall" -> ThirdPartyFirewall.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThirdPartyFirewallFirewallPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListThirdPartyFirewallFirewallPoliciesResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var ThirdPartyFirewallFirewallPolicies: js.UndefOr[ThirdPartyFirewallFirewallPolicies]
+  }
+
+  object ListThirdPartyFirewallFirewallPoliciesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        ThirdPartyFirewallFirewallPolicies: js.UndefOr[ThirdPartyFirewallFirewallPolicies] = js.undefined
+    ): ListThirdPartyFirewallFirewallPoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallFirewallPolicies.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallFirewallPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListThirdPartyFirewallFirewallPoliciesResponse]
     }
   }
 
@@ -1593,10 +2171,30 @@ package object fms {
     }
   }
 
+  /** Configures the firewall policy deployment model of Network Firewall. For information about Network Firewall deployment models, see [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/architectures.html|Network Firewall example architectures with routing]] in the <i>Network Firewall Developer Guide</i>.
+    */
+  @js.native
+  trait NetworkFirewallPolicy extends js.Object {
+    var FirewallDeploymentModel: js.UndefOr[FirewallDeploymentModel]
+  }
+
+  object NetworkFirewallPolicy {
+    @inline
+    def apply(
+        FirewallDeploymentModel: js.UndefOr[FirewallDeploymentModel] = js.undefined
+    ): NetworkFirewallPolicy = {
+      val __obj = js.Dynamic.literal()
+      FirewallDeploymentModel.foreach(__v => __obj.updateDynamic("FirewallDeploymentModel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallPolicy]
+    }
+  }
+
   /** The definition of the Network Firewall firewall policy.
     */
   @js.native
   trait NetworkFirewallPolicyDescription extends js.Object {
+    var StatefulDefaultActions: js.UndefOr[NetworkFirewallActionList]
+    var StatefulEngineOptions: js.UndefOr[StatefulEngineOptions]
     var StatefulRuleGroups: js.UndefOr[StatefulRuleGroupList]
     var StatelessCustomActions: js.UndefOr[NetworkFirewallActionList]
     var StatelessDefaultActions: js.UndefOr[NetworkFirewallActionList]
@@ -1607,6 +2205,8 @@ package object fms {
   object NetworkFirewallPolicyDescription {
     @inline
     def apply(
+        StatefulDefaultActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
+        StatefulEngineOptions: js.UndefOr[StatefulEngineOptions] = js.undefined,
         StatefulRuleGroups: js.UndefOr[StatefulRuleGroupList] = js.undefined,
         StatelessCustomActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
         StatelessDefaultActions: js.UndefOr[NetworkFirewallActionList] = js.undefined,
@@ -1614,6 +2214,8 @@ package object fms {
         StatelessRuleGroups: js.UndefOr[StatelessRuleGroupList] = js.undefined
     ): NetworkFirewallPolicyDescription = {
       val __obj = js.Dynamic.literal()
+      StatefulDefaultActions.foreach(__v => __obj.updateDynamic("StatefulDefaultActions")(__v.asInstanceOf[js.Any]))
+      StatefulEngineOptions.foreach(__v => __obj.updateDynamic("StatefulEngineOptions")(__v.asInstanceOf[js.Any]))
       StatefulRuleGroups.foreach(__v => __obj.updateDynamic("StatefulRuleGroups")(__v.asInstanceOf[js.Any]))
       StatelessCustomActions.foreach(__v => __obj.updateDynamic("StatelessCustomActions")(__v.asInstanceOf[js.Any]))
       StatelessDefaultActions.foreach(__v => __obj.updateDynamic("StatelessDefaultActions")(__v.asInstanceOf[js.Any]))
@@ -1644,6 +2246,24 @@ package object fms {
       ExpectedPolicyDescription.foreach(__v => __obj.updateDynamic("ExpectedPolicyDescription")(__v.asInstanceOf[js.Any]))
       ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkFirewallPolicyModifiedViolation]
+    }
+  }
+
+  /** The setting that allows the policy owner to change the behavior of the rule group within a policy.
+    */
+  @js.native
+  trait NetworkFirewallStatefulRuleGroupOverride extends js.Object {
+    var Action: js.UndefOr[NetworkFirewallOverrideAction]
+  }
+
+  object NetworkFirewallStatefulRuleGroupOverride {
+    @inline
+    def apply(
+        Action: js.UndefOr[NetworkFirewallOverrideAction] = js.undefined
+    ): NetworkFirewallStatefulRuleGroupOverride = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallStatefulRuleGroupOverride]
     }
   }
 
@@ -1737,8 +2357,10 @@ package object fms {
     var DeleteUnusedFMManagedResources: js.UndefOr[Boolean]
     var ExcludeMap: js.UndefOr[CustomerPolicyScopeMap]
     var IncludeMap: js.UndefOr[CustomerPolicyScopeMap]
+    var PolicyDescription: js.UndefOr[ResourceDescription]
     var PolicyId: js.UndefOr[PolicyId]
     var PolicyUpdateToken: js.UndefOr[PolicyUpdateToken]
+    var ResourceSetIds: js.UndefOr[ResourceSetIds]
     var ResourceTags: js.UndefOr[ResourceTags]
     var ResourceTypeList: js.UndefOr[ResourceTypeList]
   }
@@ -1754,8 +2376,10 @@ package object fms {
         DeleteUnusedFMManagedResources: js.UndefOr[Boolean] = js.undefined,
         ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
         IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
+        PolicyDescription: js.UndefOr[ResourceDescription] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
         PolicyUpdateToken: js.UndefOr[PolicyUpdateToken] = js.undefined,
+        ResourceSetIds: js.UndefOr[ResourceSetIds] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
     ): Policy = {
@@ -1770,8 +2394,10 @@ package object fms {
       DeleteUnusedFMManagedResources.foreach(__v => __obj.updateDynamic("DeleteUnusedFMManagedResources")(__v.asInstanceOf[js.Any]))
       ExcludeMap.foreach(__v => __obj.updateDynamic("ExcludeMap")(__v.asInstanceOf[js.Any]))
       IncludeMap.foreach(__v => __obj.updateDynamic("IncludeMap")(__v.asInstanceOf[js.Any]))
+      PolicyDescription.foreach(__v => __obj.updateDynamic("PolicyDescription")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       PolicyUpdateToken.foreach(__v => __obj.updateDynamic("PolicyUpdateToken")(__v.asInstanceOf[js.Any]))
+      ResourceSetIds.foreach(__v => __obj.updateDynamic("ResourceSetIds")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       ResourceTypeList.foreach(__v => __obj.updateDynamic("ResourceTypeList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policy]
@@ -1847,6 +2473,27 @@ package object fms {
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       PolicyOwner.foreach(__v => __obj.updateDynamic("PolicyOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyComplianceStatus]
+    }
+  }
+
+  /** Contains the Network Firewall firewall policy options to configure the policy's deployment model and third-party firewall policy settings.
+    */
+  @js.native
+  trait PolicyOption extends js.Object {
+    var NetworkFirewallPolicy: js.UndefOr[NetworkFirewallPolicy]
+    var ThirdPartyFirewallPolicy: js.UndefOr[ThirdPartyFirewallPolicy]
+  }
+
+  object PolicyOption {
+    @inline
+    def apply(
+        NetworkFirewallPolicy: js.UndefOr[NetworkFirewallPolicy] = js.undefined,
+        ThirdPartyFirewallPolicy: js.UndefOr[ThirdPartyFirewallPolicy] = js.undefined
+    ): PolicyOption = {
+      val __obj = js.Dynamic.literal()
+      NetworkFirewallPolicy.foreach(__v => __obj.updateDynamic("NetworkFirewallPolicy")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallPolicy.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PolicyOption]
     }
   }
 
@@ -2138,6 +2785,47 @@ package object fms {
     }
   }
 
+  @js.native
+  trait PutResourceSetRequest extends js.Object {
+    var ResourceSet: ResourceSet
+    var TagList: js.UndefOr[TagList]
+  }
+
+  object PutResourceSetRequest {
+    @inline
+    def apply(
+        ResourceSet: ResourceSet,
+        TagList: js.UndefOr[TagList] = js.undefined
+    ): PutResourceSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceSet" -> ResourceSet.asInstanceOf[js.Any]
+      )
+
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourceSetRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourceSetResponse extends js.Object {
+    var ResourceSet: ResourceSet
+    var ResourceSetArn: ResourceArn
+  }
+
+  object PutResourceSetResponse {
+    @inline
+    def apply(
+        ResourceSet: ResourceSet,
+        ResourceSetArn: ResourceArn
+    ): PutResourceSetResponse = {
+      val __obj = js.Dynamic.literal(
+        "ResourceSet" -> ResourceSet.asInstanceOf[js.Any],
+        "ResourceSetArn" -> ResourceSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutResourceSetResponse]
+    }
+  }
+
   /** Information about an individual action you can take to remediate a violation.
     */
   @js.native
@@ -2150,6 +2838,7 @@ package object fms {
     var EC2DeleteRouteAction: js.UndefOr[EC2DeleteRouteAction]
     var EC2ReplaceRouteAction: js.UndefOr[EC2ReplaceRouteAction]
     var EC2ReplaceRouteTableAssociationAction: js.UndefOr[EC2ReplaceRouteTableAssociationAction]
+    var FMSPolicyUpdateFirewallCreationConfigAction: js.UndefOr[FMSPolicyUpdateFirewallCreationConfigAction]
   }
 
   object RemediationAction {
@@ -2162,7 +2851,8 @@ package object fms {
         EC2CreateRouteTableAction: js.UndefOr[EC2CreateRouteTableAction] = js.undefined,
         EC2DeleteRouteAction: js.UndefOr[EC2DeleteRouteAction] = js.undefined,
         EC2ReplaceRouteAction: js.UndefOr[EC2ReplaceRouteAction] = js.undefined,
-        EC2ReplaceRouteTableAssociationAction: js.UndefOr[EC2ReplaceRouteTableAssociationAction] = js.undefined
+        EC2ReplaceRouteTableAssociationAction: js.UndefOr[EC2ReplaceRouteTableAssociationAction] = js.undefined,
+        FMSPolicyUpdateFirewallCreationConfigAction: js.UndefOr[FMSPolicyUpdateFirewallCreationConfigAction] = js.undefined
     ): RemediationAction = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2173,6 +2863,7 @@ package object fms {
       EC2DeleteRouteAction.foreach(__v => __obj.updateDynamic("EC2DeleteRouteAction")(__v.asInstanceOf[js.Any]))
       EC2ReplaceRouteAction.foreach(__v => __obj.updateDynamic("EC2ReplaceRouteAction")(__v.asInstanceOf[js.Any]))
       EC2ReplaceRouteTableAssociationAction.foreach(__v => __obj.updateDynamic("EC2ReplaceRouteTableAssociationAction")(__v.asInstanceOf[js.Any]))
+      FMSPolicyUpdateFirewallCreationConfigAction.foreach(__v => __obj.updateDynamic("FMSPolicyUpdateFirewallCreationConfigAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemediationAction]
     }
   }
@@ -2195,6 +2886,91 @@ package object fms {
       Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
       RemediationAction.foreach(__v => __obj.updateDynamic("RemediationAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemediationActionWithOrder]
+    }
+  }
+
+  /** Details of a resource that is associated to an Firewall Manager resource set.
+    */
+  @js.native
+  trait Resource extends js.Object {
+    var URI: Identifier
+    var AccountId: js.UndefOr[AWSAccountId]
+  }
+
+  object Resource {
+    @inline
+    def apply(
+        URI: Identifier,
+        AccountId: js.UndefOr[AWSAccountId] = js.undefined
+    ): Resource = {
+      val __obj = js.Dynamic.literal(
+        "URI" -> URI.asInstanceOf[js.Any]
+      )
+
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Resource]
+    }
+  }
+
+  /** A set of resources to include in a policy.
+    */
+  @js.native
+  trait ResourceSet extends js.Object {
+    var Name: Name
+    var ResourceTypeList: ResourceTypeList
+    var Description: js.UndefOr[Description]
+    var Id: js.UndefOr[Base62Id]
+    var LastUpdateTime: js.UndefOr[TimeStamp]
+    var UpdateToken: js.UndefOr[UpdateToken]
+  }
+
+  object ResourceSet {
+    @inline
+    def apply(
+        Name: Name,
+        ResourceTypeList: ResourceTypeList,
+        Description: js.UndefOr[Description] = js.undefined,
+        Id: js.UndefOr[Base62Id] = js.undefined,
+        LastUpdateTime: js.UndefOr[TimeStamp] = js.undefined,
+        UpdateToken: js.UndefOr[UpdateToken] = js.undefined
+    ): ResourceSet = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ResourceTypeList" -> ResourceTypeList.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      UpdateToken.foreach(__v => __obj.updateDynamic("UpdateToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceSet]
+    }
+  }
+
+  /** Summarizes the resource sets used in a policy.
+    */
+  @js.native
+  trait ResourceSetSummary extends js.Object {
+    var Description: js.UndefOr[Description]
+    var Id: js.UndefOr[Base62Id]
+    var LastUpdateTime: js.UndefOr[TimeStamp]
+    var Name: js.UndefOr[Name]
+  }
+
+  object ResourceSetSummary {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        Id: js.UndefOr[Base62Id] = js.undefined,
+        LastUpdateTime: js.UndefOr[TimeStamp] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined
+    ): ResourceSetSummary = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceSetSummary]
     }
   }
 
@@ -2231,6 +3007,8 @@ package object fms {
     var DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation]
     var DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation]
     var DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation]
+    var FirewallSubnetIsOutOfScopeViolation: js.UndefOr[FirewallSubnetIsOutOfScopeViolation]
+    var FirewallSubnetMissingVPCEndpointViolation: js.UndefOr[FirewallSubnetMissingVPCEndpointViolation]
     var NetworkFirewallBlackHoleRouteDetectedViolation: js.UndefOr[NetworkFirewallBlackHoleRouteDetectedViolation]
     var NetworkFirewallInternetTrafficNotInspectedViolation: js.UndefOr[NetworkFirewallInternetTrafficNotInspectedViolation]
     var NetworkFirewallInvalidRouteConfigurationViolation: js.UndefOr[NetworkFirewallInvalidRouteConfigurationViolation]
@@ -2242,6 +3020,10 @@ package object fms {
     var NetworkFirewallUnexpectedFirewallRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedFirewallRoutesViolation]
     var NetworkFirewallUnexpectedGatewayRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedGatewayRoutesViolation]
     var PossibleRemediationActions: js.UndefOr[PossibleRemediationActions]
+    var RouteHasOutOfScopeEndpointViolation: js.UndefOr[RouteHasOutOfScopeEndpointViolation]
+    var ThirdPartyFirewallMissingExpectedRouteTableViolation: js.UndefOr[ThirdPartyFirewallMissingExpectedRouteTableViolation]
+    var ThirdPartyFirewallMissingFirewallViolation: js.UndefOr[ThirdPartyFirewallMissingFirewallViolation]
+    var ThirdPartyFirewallMissingSubnetViolation: js.UndefOr[ThirdPartyFirewallMissingSubnetViolation]
   }
 
   object ResourceViolation {
@@ -2253,6 +3035,8 @@ package object fms {
         DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation] = js.undefined,
         DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation] = js.undefined,
         DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation] = js.undefined,
+        FirewallSubnetIsOutOfScopeViolation: js.UndefOr[FirewallSubnetIsOutOfScopeViolation] = js.undefined,
+        FirewallSubnetMissingVPCEndpointViolation: js.UndefOr[FirewallSubnetMissingVPCEndpointViolation] = js.undefined,
         NetworkFirewallBlackHoleRouteDetectedViolation: js.UndefOr[NetworkFirewallBlackHoleRouteDetectedViolation] = js.undefined,
         NetworkFirewallInternetTrafficNotInspectedViolation: js.UndefOr[NetworkFirewallInternetTrafficNotInspectedViolation] = js.undefined,
         NetworkFirewallInvalidRouteConfigurationViolation: js.UndefOr[NetworkFirewallInvalidRouteConfigurationViolation] = js.undefined,
@@ -2263,7 +3047,11 @@ package object fms {
         NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation] = js.undefined,
         NetworkFirewallUnexpectedFirewallRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedFirewallRoutesViolation] = js.undefined,
         NetworkFirewallUnexpectedGatewayRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedGatewayRoutesViolation] = js.undefined,
-        PossibleRemediationActions: js.UndefOr[PossibleRemediationActions] = js.undefined
+        PossibleRemediationActions: js.UndefOr[PossibleRemediationActions] = js.undefined,
+        RouteHasOutOfScopeEndpointViolation: js.UndefOr[RouteHasOutOfScopeEndpointViolation] = js.undefined,
+        ThirdPartyFirewallMissingExpectedRouteTableViolation: js.UndefOr[ThirdPartyFirewallMissingExpectedRouteTableViolation] = js.undefined,
+        ThirdPartyFirewallMissingFirewallViolation: js.UndefOr[ThirdPartyFirewallMissingFirewallViolation] = js.undefined,
+        ThirdPartyFirewallMissingSubnetViolation: js.UndefOr[ThirdPartyFirewallMissingSubnetViolation] = js.undefined
     ): ResourceViolation = {
       val __obj = js.Dynamic.literal()
       AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
@@ -2272,6 +3060,8 @@ package object fms {
       DnsDuplicateRuleGroupViolation.foreach(__v => __obj.updateDynamic("DnsDuplicateRuleGroupViolation")(__v.asInstanceOf[js.Any]))
       DnsRuleGroupLimitExceededViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupLimitExceededViolation")(__v.asInstanceOf[js.Any]))
       DnsRuleGroupPriorityConflictViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupPriorityConflictViolation")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetIsOutOfScopeViolation.foreach(__v => __obj.updateDynamic("FirewallSubnetIsOutOfScopeViolation")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetMissingVPCEndpointViolation.foreach(__v => __obj.updateDynamic("FirewallSubnetMissingVPCEndpointViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallBlackHoleRouteDetectedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallBlackHoleRouteDetectedViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallInternetTrafficNotInspectedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallInternetTrafficNotInspectedViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallInvalidRouteConfigurationViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallInvalidRouteConfigurationViolation")(__v.asInstanceOf[js.Any]))
@@ -2283,6 +3073,10 @@ package object fms {
       NetworkFirewallUnexpectedFirewallRoutesViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallUnexpectedFirewallRoutesViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallUnexpectedGatewayRoutesViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallUnexpectedGatewayRoutesViolation")(__v.asInstanceOf[js.Any]))
       PossibleRemediationActions.foreach(__v => __obj.updateDynamic("PossibleRemediationActions")(__v.asInstanceOf[js.Any]))
+      RouteHasOutOfScopeEndpointViolation.foreach(__v => __obj.updateDynamic("RouteHasOutOfScopeEndpointViolation")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallMissingExpectedRouteTableViolation.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallMissingExpectedRouteTableViolation")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallMissingFirewallViolation.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallMissingFirewallViolation")(__v.asInstanceOf[js.Any]))
+      ThirdPartyFirewallMissingSubnetViolation.foreach(__v => __obj.updateDynamic("ThirdPartyFirewallMissingSubnetViolation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceViolation]
     }
   }
@@ -2311,6 +3105,57 @@ package object fms {
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Route]
+    }
+  }
+
+  /** Contains details about the route endpoint that violates the policy scope.
+    */
+  @js.native
+  trait RouteHasOutOfScopeEndpointViolation extends js.Object {
+    var CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId]
+    var CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId]
+    var FirewallSubnetId: js.UndefOr[ResourceId]
+    var FirewallSubnetRoutes: js.UndefOr[Routes]
+    var InternetGatewayId: js.UndefOr[ResourceId]
+    var InternetGatewayRoutes: js.UndefOr[Routes]
+    var RouteTableId: js.UndefOr[ResourceId]
+    var SubnetAvailabilityZone: js.UndefOr[LengthBoundedString]
+    var SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString]
+    var SubnetId: js.UndefOr[ResourceId]
+    var ViolatingRoutes: js.UndefOr[Routes]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object RouteHasOutOfScopeEndpointViolation {
+    @inline
+    def apply(
+        CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        FirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        FirewallSubnetRoutes: js.UndefOr[Routes] = js.undefined,
+        InternetGatewayId: js.UndefOr[ResourceId] = js.undefined,
+        InternetGatewayRoutes: js.UndefOr[Routes] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        SubnetAvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        SubnetAvailabilityZoneId: js.UndefOr[LengthBoundedString] = js.undefined,
+        SubnetId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoutes: js.UndefOr[Routes] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): RouteHasOutOfScopeEndpointViolation = {
+      val __obj = js.Dynamic.literal()
+      CurrentFirewallSubnetRouteTable.foreach(__v => __obj.updateDynamic("CurrentFirewallSubnetRouteTable")(__v.asInstanceOf[js.Any]))
+      CurrentInternetGatewayRouteTable.foreach(__v => __obj.updateDynamic("CurrentInternetGatewayRouteTable")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetId.foreach(__v => __obj.updateDynamic("FirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetRoutes.foreach(__v => __obj.updateDynamic("FirewallSubnetRoutes")(__v.asInstanceOf[js.Any]))
+      InternetGatewayId.foreach(__v => __obj.updateDynamic("InternetGatewayId")(__v.asInstanceOf[js.Any]))
+      InternetGatewayRoutes.foreach(__v => __obj.updateDynamic("InternetGatewayRoutes")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZoneId.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoutes.foreach(__v => __obj.updateDynamic("ViolatingRoutes")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RouteHasOutOfScopeEndpointViolation]
     }
   }
 
@@ -2380,20 +3225,41 @@ package object fms {
   trait SecurityServicePolicyData extends js.Object {
     var Type: SecurityServiceType
     var ManagedServiceData: js.UndefOr[ManagedServiceData]
+    var PolicyOption: js.UndefOr[PolicyOption]
   }
 
   object SecurityServicePolicyData {
     @inline
     def apply(
         Type: SecurityServiceType,
-        ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined
+        ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined,
+        PolicyOption: js.UndefOr[PolicyOption] = js.undefined
     ): SecurityServicePolicyData = {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
       ManagedServiceData.foreach(__v => __obj.updateDynamic("ManagedServiceData")(__v.asInstanceOf[js.Any]))
+      PolicyOption.foreach(__v => __obj.updateDynamic("PolicyOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityServicePolicyData]
+    }
+  }
+
+  /** Configuration settings for the handling of the stateful rule groups in a Network Firewall firewall policy.
+    */
+  @js.native
+  trait StatefulEngineOptions extends js.Object {
+    var RuleOrder: js.UndefOr[RuleOrder]
+  }
+
+  object StatefulEngineOptions {
+    @inline
+    def apply(
+        RuleOrder: js.UndefOr[RuleOrder] = js.undefined
+    ): StatefulEngineOptions = {
+      val __obj = js.Dynamic.literal()
+      RuleOrder.foreach(__v => __obj.updateDynamic("RuleOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatefulEngineOptions]
     }
   }
 
@@ -2401,6 +3267,8 @@ package object fms {
     */
   @js.native
   trait StatefulRuleGroup extends js.Object {
+    var Override: js.UndefOr[NetworkFirewallStatefulRuleGroupOverride]
+    var Priority: js.UndefOr[PriorityNumber]
     var ResourceId: js.UndefOr[ResourceId]
     var RuleGroupName: js.UndefOr[NetworkFirewallResourceName]
   }
@@ -2408,10 +3276,14 @@ package object fms {
   object StatefulRuleGroup {
     @inline
     def apply(
+        Override: js.UndefOr[NetworkFirewallStatefulRuleGroupOverride] = js.undefined,
+        Priority: js.UndefOr[PriorityNumber] = js.undefined,
         ResourceId: js.UndefOr[ResourceId] = js.undefined,
         RuleGroupName: js.UndefOr[NetworkFirewallResourceName] = js.undefined
     ): StatefulRuleGroup = {
       val __obj = js.Dynamic.literal()
+      Override.foreach(__v => __obj.updateDynamic("Override")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       RuleGroupName.foreach(__v => __obj.updateDynamic("RuleGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StatefulRuleGroup]
@@ -2492,6 +3364,129 @@ package object fms {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Configures the third-party firewall's firewall policy.
+    */
+  @js.native
+  trait ThirdPartyFirewallFirewallPolicy extends js.Object {
+    var FirewallPolicyId: js.UndefOr[FirewallPolicyId]
+    var FirewallPolicyName: js.UndefOr[FirewallPolicyName]
+  }
+
+  object ThirdPartyFirewallFirewallPolicy {
+    @inline
+    def apply(
+        FirewallPolicyId: js.UndefOr[FirewallPolicyId] = js.undefined,
+        FirewallPolicyName: js.UndefOr[FirewallPolicyName] = js.undefined
+    ): ThirdPartyFirewallFirewallPolicy = {
+      val __obj = js.Dynamic.literal()
+      FirewallPolicyId.foreach(__v => __obj.updateDynamic("FirewallPolicyId")(__v.asInstanceOf[js.Any]))
+      FirewallPolicyName.foreach(__v => __obj.updateDynamic("FirewallPolicyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThirdPartyFirewallFirewallPolicy]
+    }
+  }
+
+  /** The violation details for a third-party firewall that's not associated with an Firewall Manager managed route table.
+    */
+  @js.native
+  trait ThirdPartyFirewallMissingExpectedRouteTableViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var CurrentRouteTable: js.UndefOr[ResourceId]
+    var ExpectedRouteTable: js.UndefOr[ResourceId]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object ThirdPartyFirewallMissingExpectedRouteTableViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        CurrentRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): ThirdPartyFirewallMissingExpectedRouteTableViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CurrentRouteTable.foreach(__v => __obj.updateDynamic("CurrentRouteTable")(__v.asInstanceOf[js.Any]))
+      ExpectedRouteTable.foreach(__v => __obj.updateDynamic("ExpectedRouteTable")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThirdPartyFirewallMissingExpectedRouteTableViolation]
+    }
+  }
+
+  /** The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.
+    */
+  @js.native
+  trait ThirdPartyFirewallMissingFirewallViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var TargetViolationReason: js.UndefOr[TargetViolationReason]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object ThirdPartyFirewallMissingFirewallViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        TargetViolationReason: js.UndefOr[TargetViolationReason] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): ThirdPartyFirewallMissingFirewallViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      TargetViolationReason.foreach(__v => __obj.updateDynamic("TargetViolationReason")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThirdPartyFirewallMissingFirewallViolation]
+    }
+  }
+
+  /** The violation details for a third-party firewall for an Availability Zone that's missing the Firewall Manager managed subnet.
+    */
+  @js.native
+  trait ThirdPartyFirewallMissingSubnetViolation extends js.Object {
+    var AvailabilityZone: js.UndefOr[LengthBoundedString]
+    var TargetViolationReason: js.UndefOr[TargetViolationReason]
+    var VPC: js.UndefOr[ResourceId]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+  }
+
+  object ThirdPartyFirewallMissingSubnetViolation {
+    @inline
+    def apply(
+        AvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        TargetViolationReason: js.UndefOr[TargetViolationReason] = js.undefined,
+        VPC: js.UndefOr[ResourceId] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined
+    ): ThirdPartyFirewallMissingSubnetViolation = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      TargetViolationReason.foreach(__v => __obj.updateDynamic("TargetViolationReason")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThirdPartyFirewallMissingSubnetViolation]
+    }
+  }
+
+  /** Configures the deployment model for the third-party firewall.
+    */
+  @js.native
+  trait ThirdPartyFirewallPolicy extends js.Object {
+    var FirewallDeploymentModel: js.UndefOr[FirewallDeploymentModel]
+  }
+
+  object ThirdPartyFirewallPolicy {
+    @inline
+    def apply(
+        FirewallDeploymentModel: js.UndefOr[FirewallDeploymentModel] = js.undefined
+    ): ThirdPartyFirewallPolicy = {
+      val __obj = js.Dynamic.literal()
+      FirewallDeploymentModel.foreach(__v => __obj.updateDynamic("FirewallDeploymentModel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThirdPartyFirewallPolicy]
     }
   }
 

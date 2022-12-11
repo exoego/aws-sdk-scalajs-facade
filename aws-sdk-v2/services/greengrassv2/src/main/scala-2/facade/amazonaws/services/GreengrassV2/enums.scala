@@ -110,6 +110,15 @@ object InstalledComponentLifecycleState {
 }
 
 @js.native
+sealed trait InstalledComponentTopologyFilter extends js.Any
+object InstalledComponentTopologyFilter {
+  val ALL = "ALL".asInstanceOf[InstalledComponentTopologyFilter]
+  val ROOT = "ROOT".asInstanceOf[InstalledComponentTopologyFilter]
+
+  @inline def values: js.Array[InstalledComponentTopologyFilter] = js.Array(ALL, ROOT)
+}
+
+@js.native
 sealed trait IoTJobAbortAction extends js.Any
 object IoTJobAbortAction {
   val CANCEL = "CANCEL".asInstanceOf[IoTJobAbortAction]
@@ -171,4 +180,14 @@ object RecipeOutputFormat {
   val YAML = "YAML".asInstanceOf[RecipeOutputFormat]
 
   @inline def values: js.Array[RecipeOutputFormat] = js.Array(JSON, YAML)
+}
+
+@js.native
+sealed trait VendorGuidance extends js.Any
+object VendorGuidance {
+  val ACTIVE = "ACTIVE".asInstanceOf[VendorGuidance]
+  val DISCONTINUED = "DISCONTINUED".asInstanceOf[VendorGuidance]
+  val DELETED = "DELETED".asInstanceOf[VendorGuidance]
+
+  @inline def values: js.Array[VendorGuidance] = js.Array(ACTIVE, DISCONTINUED, DELETED)
 }

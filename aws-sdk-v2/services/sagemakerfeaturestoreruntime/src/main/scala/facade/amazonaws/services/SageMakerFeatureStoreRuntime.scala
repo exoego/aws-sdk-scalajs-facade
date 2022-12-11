@@ -17,6 +17,7 @@ package object sagemakerfeaturestoreruntime {
   type Message = String
   type Record = js.Array[FeatureValue]
   type RecordIdentifiers = js.Array[ValueAsString]
+  type TargetStores = js.Array[TargetStore]
   type UnprocessedIdentifiers = js.Array[BatchGetRecordIdentifier]
   type ValueAsString = String
 
@@ -169,6 +170,7 @@ package object sagemakerfeaturestoreruntime {
     var EventTime: ValueAsString
     var FeatureGroupName: FeatureGroupName
     var RecordIdentifierValueAsString: ValueAsString
+    var TargetStores: js.UndefOr[TargetStores]
   }
 
   object DeleteRecordRequest {
@@ -176,13 +178,16 @@ package object sagemakerfeaturestoreruntime {
     def apply(
         EventTime: ValueAsString,
         FeatureGroupName: FeatureGroupName,
-        RecordIdentifierValueAsString: ValueAsString
+        RecordIdentifierValueAsString: ValueAsString,
+        TargetStores: js.UndefOr[TargetStores] = js.undefined
     ): DeleteRecordRequest = {
       val __obj = js.Dynamic.literal(
         "EventTime" -> EventTime.asInstanceOf[js.Any],
         "FeatureGroupName" -> FeatureGroupName.asInstanceOf[js.Any],
         "RecordIdentifierValueAsString" -> RecordIdentifierValueAsString.asInstanceOf[js.Any]
       )
+
+      TargetStores.foreach(__v => __obj.updateDynamic("TargetStores")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRecordRequest]
     }
   }
@@ -253,18 +258,22 @@ package object sagemakerfeaturestoreruntime {
   trait PutRecordRequest extends js.Object {
     var FeatureGroupName: FeatureGroupName
     var Record: Record
+    var TargetStores: js.UndefOr[TargetStores]
   }
 
   object PutRecordRequest {
     @inline
     def apply(
         FeatureGroupName: FeatureGroupName,
-        Record: Record
+        Record: Record,
+        TargetStores: js.UndefOr[TargetStores] = js.undefined
     ): PutRecordRequest = {
       val __obj = js.Dynamic.literal(
         "FeatureGroupName" -> FeatureGroupName.asInstanceOf[js.Any],
         "Record" -> Record.asInstanceOf[js.Any]
       )
+
+      TargetStores.foreach(__v => __obj.updateDynamic("TargetStores")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRecordRequest]
     }
   }

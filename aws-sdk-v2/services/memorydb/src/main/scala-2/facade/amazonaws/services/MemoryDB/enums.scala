@@ -21,6 +21,15 @@ object AuthenticationType {
 }
 
 @js.native
+sealed trait DataTieringStatus extends js.Any
+object DataTieringStatus {
+  val `true` = "true".asInstanceOf[DataTieringStatus]
+  val `false` = "false".asInstanceOf[DataTieringStatus]
+
+  @inline def values: js.Array[DataTieringStatus] = js.Array(`true`, `false`)
+}
+
+@js.native
 sealed trait InputAuthenticationType extends js.Any
 object InputAuthenticationType {
   val password = "password".asInstanceOf[InputAuthenticationType]

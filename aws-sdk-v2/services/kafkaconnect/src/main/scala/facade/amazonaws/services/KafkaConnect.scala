@@ -9,6 +9,10 @@ import facade.amazonaws._
 
 package object kafkaconnect {
   type MaxResults = Int
+  type SyntheticCreateConnectorRequest__mapOf__string = js.Dictionary[__string]
+  type SyntheticCreateWorkerConfigurationRequest__string = String
+  type SyntheticDescribeConnectorResponse__mapOf__string = js.Dictionary[__string]
+  type SyntheticWorkerConfigurationRevisionDescription__string = String
   type __boolean = Boolean
   type __integer = Int
   type __integerMin1Max10 = Int
@@ -22,7 +26,6 @@ package object kafkaconnect {
   type __listOf__string = js.Array[__string]
   type __long = Double
   type __longMin1 = Double
-  type __mapOf__string = js.Dictionary[__string]
   type __string = String
   type __stringMax1024 = String
   type __stringMin1Max128 = String
@@ -34,6 +37,7 @@ package object kafkaconnect {
     @inline def createCustomPluginFuture(params: CreateCustomPluginRequest): Future[CreateCustomPluginResponse] = service.createCustomPlugin(params).promise().toFuture
     @inline def createWorkerConfigurationFuture(params: CreateWorkerConfigurationRequest): Future[CreateWorkerConfigurationResponse] = service.createWorkerConfiguration(params).promise().toFuture
     @inline def deleteConnectorFuture(params: DeleteConnectorRequest): Future[DeleteConnectorResponse] = service.deleteConnector(params).promise().toFuture
+    @inline def deleteCustomPluginFuture(params: DeleteCustomPluginRequest): Future[DeleteCustomPluginResponse] = service.deleteCustomPlugin(params).promise().toFuture
     @inline def describeConnectorFuture(params: DescribeConnectorRequest): Future[DescribeConnectorResponse] = service.describeConnector(params).promise().toFuture
     @inline def describeCustomPluginFuture(params: DescribeCustomPluginRequest): Future[DescribeCustomPluginResponse] = service.describeCustomPlugin(params).promise().toFuture
     @inline def describeWorkerConfigurationFuture(params: DescribeWorkerConfigurationRequest): Future[DescribeWorkerConfigurationResponse] = service.describeWorkerConfiguration(params).promise().toFuture
@@ -53,6 +57,7 @@ package object kafkaconnect {
     def createCustomPlugin(params: CreateCustomPluginRequest): Request[CreateCustomPluginResponse] = js.native
     def createWorkerConfiguration(params: CreateWorkerConfigurationRequest): Request[CreateWorkerConfigurationResponse] = js.native
     def deleteConnector(params: DeleteConnectorRequest): Request[DeleteConnectorResponse] = js.native
+    def deleteCustomPlugin(params: DeleteCustomPluginRequest): Request[DeleteCustomPluginResponse] = js.native
     def describeConnector(params: DescribeConnectorRequest): Request[DescribeConnectorResponse] = js.native
     def describeCustomPlugin(params: DescribeCustomPluginRequest): Request[DescribeCustomPluginResponse] = js.native
     def describeWorkerConfiguration(params: DescribeWorkerConfigurationRequest): Request[DescribeWorkerConfigurationResponse] = js.native
@@ -373,7 +378,7 @@ package object kafkaconnect {
   @js.native
   trait CreateConnectorRequest extends js.Object {
     var capacity: Capacity
-    var connectorConfiguration: __mapOf__string
+    var connectorConfiguration: SyntheticCreateConnectorRequest__mapOf__string
     var connectorName: __stringMin1Max128
     var kafkaCluster: KafkaCluster
     var kafkaClusterClientAuthentication: KafkaClusterClientAuthentication
@@ -390,7 +395,7 @@ package object kafkaconnect {
     @inline
     def apply(
         capacity: Capacity,
-        connectorConfiguration: __mapOf__string,
+        connectorConfiguration: SyntheticCreateConnectorRequest__mapOf__string,
         connectorName: __stringMin1Max128,
         kafkaCluster: KafkaCluster,
         kafkaClusterClientAuthentication: KafkaClusterClientAuthentication,
@@ -498,7 +503,7 @@ package object kafkaconnect {
   @js.native
   trait CreateWorkerConfigurationRequest extends js.Object {
     var name: __stringMin1Max128
-    var propertiesFileContent: __string
+    var propertiesFileContent: SyntheticCreateWorkerConfigurationRequest__string
     var description: js.UndefOr[__stringMax1024]
   }
 
@@ -506,7 +511,7 @@ package object kafkaconnect {
     @inline
     def apply(
         name: __stringMin1Max128,
-        propertiesFileContent: __string,
+        propertiesFileContent: SyntheticCreateWorkerConfigurationRequest__string,
         description: js.UndefOr[__stringMax1024] = js.undefined
     ): CreateWorkerConfigurationRequest = {
       val __obj = js.Dynamic.literal(
@@ -752,6 +757,42 @@ package object kafkaconnect {
   }
 
   @js.native
+  trait DeleteCustomPluginRequest extends js.Object {
+    var customPluginArn: __string
+  }
+
+  object DeleteCustomPluginRequest {
+    @inline
+    def apply(
+        customPluginArn: __string
+    ): DeleteCustomPluginRequest = {
+      val __obj = js.Dynamic.literal(
+        "customPluginArn" -> customPluginArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCustomPluginRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomPluginResponse extends js.Object {
+    var customPluginArn: js.UndefOr[__string]
+    var customPluginState: js.UndefOr[CustomPluginState]
+  }
+
+  object DeleteCustomPluginResponse {
+    @inline
+    def apply(
+        customPluginArn: js.UndefOr[__string] = js.undefined,
+        customPluginState: js.UndefOr[CustomPluginState] = js.undefined
+    ): DeleteCustomPluginResponse = {
+      val __obj = js.Dynamic.literal()
+      customPluginArn.foreach(__v => __obj.updateDynamic("customPluginArn")(__v.asInstanceOf[js.Any]))
+      customPluginState.foreach(__v => __obj.updateDynamic("customPluginState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCustomPluginResponse]
+    }
+  }
+
+  @js.native
   trait DescribeConnectorRequest extends js.Object {
     var connectorArn: __string
   }
@@ -772,7 +813,7 @@ package object kafkaconnect {
   trait DescribeConnectorResponse extends js.Object {
     var capacity: js.UndefOr[CapacityDescription]
     var connectorArn: js.UndefOr[__string]
-    var connectorConfiguration: js.UndefOr[__mapOf__string]
+    var connectorConfiguration: js.UndefOr[SyntheticDescribeConnectorResponse__mapOf__string]
     var connectorDescription: js.UndefOr[__string]
     var connectorName: js.UndefOr[__string]
     var connectorState: js.UndefOr[ConnectorState]
@@ -785,6 +826,7 @@ package object kafkaconnect {
     var logDelivery: js.UndefOr[LogDeliveryDescription]
     var plugins: js.UndefOr[__listOfPluginDescription]
     var serviceExecutionRoleArn: js.UndefOr[__string]
+    var stateDescription: js.UndefOr[StateDescription]
     var workerConfiguration: js.UndefOr[WorkerConfigurationDescription]
   }
 
@@ -793,7 +835,7 @@ package object kafkaconnect {
     def apply(
         capacity: js.UndefOr[CapacityDescription] = js.undefined,
         connectorArn: js.UndefOr[__string] = js.undefined,
-        connectorConfiguration: js.UndefOr[__mapOf__string] = js.undefined,
+        connectorConfiguration: js.UndefOr[SyntheticDescribeConnectorResponse__mapOf__string] = js.undefined,
         connectorDescription: js.UndefOr[__string] = js.undefined,
         connectorName: js.UndefOr[__string] = js.undefined,
         connectorState: js.UndefOr[ConnectorState] = js.undefined,
@@ -806,6 +848,7 @@ package object kafkaconnect {
         logDelivery: js.UndefOr[LogDeliveryDescription] = js.undefined,
         plugins: js.UndefOr[__listOfPluginDescription] = js.undefined,
         serviceExecutionRoleArn: js.UndefOr[__string] = js.undefined,
+        stateDescription: js.UndefOr[StateDescription] = js.undefined,
         workerConfiguration: js.UndefOr[WorkerConfigurationDescription] = js.undefined
     ): DescribeConnectorResponse = {
       val __obj = js.Dynamic.literal()
@@ -824,6 +867,7 @@ package object kafkaconnect {
       logDelivery.foreach(__v => __obj.updateDynamic("logDelivery")(__v.asInstanceOf[js.Any]))
       plugins.foreach(__v => __obj.updateDynamic("plugins")(__v.asInstanceOf[js.Any]))
       serviceExecutionRoleArn.foreach(__v => __obj.updateDynamic("serviceExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      stateDescription.foreach(__v => __obj.updateDynamic("stateDescription")(__v.asInstanceOf[js.Any]))
       workerConfiguration.foreach(__v => __obj.updateDynamic("workerConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConnectorResponse]
     }
@@ -854,6 +898,7 @@ package object kafkaconnect {
     var description: js.UndefOr[__string]
     var latestRevision: js.UndefOr[CustomPluginRevisionSummary]
     var name: js.UndefOr[__string]
+    var stateDescription: js.UndefOr[StateDescription]
   }
 
   object DescribeCustomPluginResponse {
@@ -864,7 +909,8 @@ package object kafkaconnect {
         customPluginState: js.UndefOr[CustomPluginState] = js.undefined,
         description: js.UndefOr[__string] = js.undefined,
         latestRevision: js.UndefOr[CustomPluginRevisionSummary] = js.undefined,
-        name: js.UndefOr[__string] = js.undefined
+        name: js.UndefOr[__string] = js.undefined,
+        stateDescription: js.UndefOr[StateDescription] = js.undefined
     ): DescribeCustomPluginResponse = {
       val __obj = js.Dynamic.literal()
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
@@ -873,6 +919,7 @@ package object kafkaconnect {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       latestRevision.foreach(__v => __obj.updateDynamic("latestRevision")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      stateDescription.foreach(__v => __obj.updateDynamic("stateDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCustomPluginResponse]
     }
   }
@@ -1545,6 +1592,27 @@ package object kafkaconnect {
     }
   }
 
+  /** Details about the state of a resource.
+    */
+  @js.native
+  trait StateDescription extends js.Object {
+    var code: js.UndefOr[__string]
+    var message: js.UndefOr[__string]
+  }
+
+  object StateDescription {
+    @inline
+    def apply(
+        code: js.UndefOr[__string] = js.undefined,
+        message: js.UndefOr[__string] = js.undefined
+    ): StateDescription = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StateDescription]
+    }
+  }
+
   @js.native
   trait UpdateConnectorRequest extends js.Object {
     var capacity: CapacityUpdate
@@ -1680,7 +1748,7 @@ package object kafkaconnect {
   trait WorkerConfigurationRevisionDescription extends js.Object {
     var creationTime: js.UndefOr[__timestampIso8601]
     var description: js.UndefOr[__string]
-    var propertiesFileContent: js.UndefOr[__string]
+    var propertiesFileContent: js.UndefOr[SyntheticWorkerConfigurationRevisionDescription__string]
     var revision: js.UndefOr[__long]
   }
 
@@ -1689,7 +1757,7 @@ package object kafkaconnect {
     def apply(
         creationTime: js.UndefOr[__timestampIso8601] = js.undefined,
         description: js.UndefOr[__string] = js.undefined,
-        propertiesFileContent: js.UndefOr[__string] = js.undefined,
+        propertiesFileContent: js.UndefOr[SyntheticWorkerConfigurationRevisionDescription__string] = js.undefined,
         revision: js.UndefOr[__long] = js.undefined
     ): WorkerConfigurationRevisionDescription = {
       val __obj = js.Dynamic.literal()

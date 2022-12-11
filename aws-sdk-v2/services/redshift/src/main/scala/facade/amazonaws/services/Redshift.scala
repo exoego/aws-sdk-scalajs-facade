@@ -53,6 +53,7 @@ package object redshift {
   type ImportTablesInProgress = js.Array[String]
   type ImportTablesNotStarted = js.Array[String]
   type IntegerOptional = Int
+  type LogTypeList = js.Array[String]
   type LongOptional = Double
   type NetworkInterfaceList = js.Array[NetworkInterface]
   type NodeConfigurationOptionList = js.Array[NodeConfigurationOption]
@@ -192,6 +193,7 @@ package object redshift {
     @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] = service.enableLogging(params).promise().toFuture
     @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] = service.enableSnapshotCopy(params).promise().toFuture
     @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] = service.getClusterCredentials(params).promise().toFuture
+    @inline def getClusterCredentialsWithIAMFuture(params: GetClusterCredentialsWithIAMMessage): Future[ClusterExtendedCredentials] = service.getClusterCredentialsWithIAM(params).promise().toFuture
     @inline def getReservedNodeExchangeConfigurationOptionsFuture(params: GetReservedNodeExchangeConfigurationOptionsInputMessage): Future[GetReservedNodeExchangeConfigurationOptionsOutputMessage] = service.getReservedNodeExchangeConfigurationOptions(params).promise().toFuture
     @inline def getReservedNodeExchangeOfferingsFuture(params: GetReservedNodeExchangeOfferingsInputMessage): Future[GetReservedNodeExchangeOfferingsOutputMessage] = service.getReservedNodeExchangeOfferings(params).promise().toFuture
     @inline def modifyAquaConfigurationFuture(params: ModifyAquaInputMessage): Future[ModifyAquaOutputMessage] = service.modifyAquaConfiguration(params).promise().toFuture
@@ -318,6 +320,7 @@ package object redshift {
     def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus] = js.native
     def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
     def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials] = js.native
+    def getClusterCredentialsWithIAM(params: GetClusterCredentialsWithIAMMessage): Request[ClusterExtendedCredentials] = js.native
     def getReservedNodeExchangeConfigurationOptions(params: GetReservedNodeExchangeConfigurationOptionsInputMessage): Request[GetReservedNodeExchangeConfigurationOptionsOutputMessage] = js.native
     def getReservedNodeExchangeOfferings(params: GetReservedNodeExchangeOfferingsInputMessage): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
     def modifyAquaConfiguration(params: ModifyAquaInputMessage): Request[ModifyAquaOutputMessage] = js.native
@@ -451,7 +454,7 @@ package object redshift {
     }
   }
 
-  /** The AQUA (Advanced Query Accelerator) configuration of the cluster.
+  /** The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
     */
   @js.native
   trait AquaConfiguration extends js.Object {
@@ -477,6 +480,7 @@ package object redshift {
     var DataShareArn: String
     var AssociateEntireAccount: js.UndefOr[BooleanOptional]
     var ConsumerArn: js.UndefOr[String]
+    var ConsumerRegion: js.UndefOr[String]
   }
 
   object AssociateDataShareConsumerMessage {
@@ -484,7 +488,8 @@ package object redshift {
     def apply(
         DataShareArn: String,
         AssociateEntireAccount: js.UndefOr[BooleanOptional] = js.undefined,
-        ConsumerArn: js.UndefOr[String] = js.undefined
+        ConsumerArn: js.UndefOr[String] = js.undefined,
+        ConsumerRegion: js.UndefOr[String] = js.undefined
     ): AssociateDataShareConsumerMessage = {
       val __obj = js.Dynamic.literal(
         "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
@@ -492,6 +497,7 @@ package object redshift {
 
       AssociateEntireAccount.foreach(__v => __obj.updateDynamic("AssociateEntireAccount")(__v.asInstanceOf[js.Any]))
       ConsumerArn.foreach(__v => __obj.updateDynamic("ConsumerArn")(__v.asInstanceOf[js.Any]))
+      ConsumerRegion.foreach(__v => __obj.updateDynamic("ConsumerRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateDataShareConsumerMessage]
     }
   }
@@ -629,23 +635,26 @@ package object redshift {
   @js.native
   trait AuthorizeSnapshotAccessMessage extends js.Object {
     var AccountWithRestoreAccess: String
-    var SnapshotIdentifier: String
+    var SnapshotArn: js.UndefOr[String]
     var SnapshotClusterIdentifier: js.UndefOr[String]
+    var SnapshotIdentifier: js.UndefOr[String]
   }
 
   object AuthorizeSnapshotAccessMessage {
     @inline
     def apply(
         AccountWithRestoreAccess: String,
-        SnapshotIdentifier: String,
-        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+        SnapshotArn: js.UndefOr[String] = js.undefined,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): AuthorizeSnapshotAccessMessage = {
       val __obj = js.Dynamic.literal(
-        "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any]
       )
 
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
       SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeSnapshotAccessMessage]
     }
   }
@@ -1042,6 +1051,31 @@ package object redshift {
       ClusterDbRevisions.foreach(__v => __obj.updateDynamic("ClusterDbRevisions")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterDbRevisionsMessage]
+    }
+  }
+
+  @js.native
+  trait ClusterExtendedCredentials extends js.Object {
+    var DbPassword: js.UndefOr[SensitiveString]
+    var DbUser: js.UndefOr[String]
+    var Expiration: js.UndefOr[TStamp]
+    var NextRefreshTime: js.UndefOr[TStamp]
+  }
+
+  object ClusterExtendedCredentials {
+    @inline
+    def apply(
+        DbPassword: js.UndefOr[SensitiveString] = js.undefined,
+        DbUser: js.UndefOr[String] = js.undefined,
+        Expiration: js.UndefOr[TStamp] = js.undefined,
+        NextRefreshTime: js.UndefOr[TStamp] = js.undefined
+    ): ClusterExtendedCredentials = {
+      val __obj = js.Dynamic.literal()
+      DbPassword.foreach(__v => __obj.updateDynamic("DbPassword")(__v.asInstanceOf[js.Any]))
+      DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      NextRefreshTime.foreach(__v => __obj.updateDynamic("NextRefreshTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterExtendedCredentials]
     }
   }
 
@@ -1559,6 +1593,7 @@ package object redshift {
     var HsmConfigurationIdentifier: js.UndefOr[String]
     var IamRoles: js.UndefOr[IamRoleArnList]
     var KmsKeyId: js.UndefOr[String]
+    var LoadSampleData: js.UndefOr[String]
     var MaintenanceTrackName: js.UndefOr[String]
     var ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional]
     var NumberOfNodes: js.UndefOr[IntegerOptional]
@@ -1597,6 +1632,7 @@ package object redshift {
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
         IamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        LoadSampleData: js.UndefOr[String] = js.undefined,
         MaintenanceTrackName: js.UndefOr[String] = js.undefined,
         ManualSnapshotRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1634,6 +1670,7 @@ package object redshift {
       HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
       IamRoles.foreach(__v => __obj.updateDynamic("IamRoles")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LoadSampleData.foreach(__v => __obj.updateDynamic("LoadSampleData")(__v.asInstanceOf[js.Any]))
       MaintenanceTrackName.foreach(__v => __obj.updateDynamic("MaintenanceTrackName")(__v.asInstanceOf[js.Any]))
       ManualSnapshotRetentionPeriod.foreach(__v => __obj.updateDynamic("ManualSnapshotRetentionPeriod")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
@@ -2242,6 +2279,7 @@ package object redshift {
   @js.native
   trait DataShareAssociation extends js.Object {
     var ConsumerIdentifier: js.UndefOr[String]
+    var ConsumerRegion: js.UndefOr[String]
     var CreatedDate: js.UndefOr[TStamp]
     var Status: js.UndefOr[DataShareStatus]
     var StatusChangeDate: js.UndefOr[TStamp]
@@ -2251,12 +2289,14 @@ package object redshift {
     @inline
     def apply(
         ConsumerIdentifier: js.UndefOr[String] = js.undefined,
+        ConsumerRegion: js.UndefOr[String] = js.undefined,
         CreatedDate: js.UndefOr[TStamp] = js.undefined,
         Status: js.UndefOr[DataShareStatus] = js.undefined,
         StatusChangeDate: js.UndefOr[TStamp] = js.undefined
     ): DataShareAssociation = {
       val __obj = js.Dynamic.literal()
       ConsumerIdentifier.foreach(__v => __obj.updateDynamic("ConsumerIdentifier")(__v.asInstanceOf[js.Any]))
+      ConsumerRegion.foreach(__v => __obj.updateDynamic("ConsumerRegion")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusChangeDate.foreach(__v => __obj.updateDynamic("StatusChangeDate")(__v.asInstanceOf[js.Any]))
@@ -2874,6 +2914,7 @@ package object redshift {
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
     var OwnerAccount: js.UndefOr[String]
+    var SnapshotArn: js.UndefOr[String]
     var SnapshotIdentifier: js.UndefOr[String]
     var SnapshotType: js.UndefOr[String]
     var SortingEntities: js.UndefOr[SnapshotSortingEntityList]
@@ -2891,6 +2932,7 @@ package object redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         OwnerAccount: js.UndefOr[String] = js.undefined,
+        SnapshotArn: js.UndefOr[String] = js.undefined,
         SnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined,
         SortingEntities: js.UndefOr[SnapshotSortingEntityList] = js.undefined,
@@ -2905,6 +2947,7 @@ package object redshift {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
       SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
       SortingEntities.foreach(__v => __obj.updateDynamic("SortingEntities")(__v.asInstanceOf[js.Any]))
@@ -3425,6 +3468,7 @@ package object redshift {
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[IntegerOptional]
     var OwnerAccount: js.UndefOr[String]
+    var SnapshotArn: js.UndefOr[String]
     var SnapshotIdentifier: js.UndefOr[String]
   }
 
@@ -3437,6 +3481,7 @@ package object redshift {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         OwnerAccount: js.UndefOr[String] = js.undefined,
+        SnapshotArn: js.UndefOr[String] = js.undefined,
         SnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DescribeNodeConfigurationOptionsMessage = {
       val __obj = js.Dynamic.literal(
@@ -3448,6 +3493,7 @@ package object redshift {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       OwnerAccount.foreach(__v => __obj.updateDynamic("OwnerAccount")(__v.asInstanceOf[js.Any]))
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
       SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNodeConfigurationOptionsMessage]
     }
@@ -3903,6 +3949,7 @@ package object redshift {
   trait DisassociateDataShareConsumerMessage extends js.Object {
     var DataShareArn: String
     var ConsumerArn: js.UndefOr[String]
+    var ConsumerRegion: js.UndefOr[String]
     var DisassociateEntireAccount: js.UndefOr[BooleanOptional]
   }
 
@@ -3911,6 +3958,7 @@ package object redshift {
     def apply(
         DataShareArn: String,
         ConsumerArn: js.UndefOr[String] = js.undefined,
+        ConsumerRegion: js.UndefOr[String] = js.undefined,
         DisassociateEntireAccount: js.UndefOr[BooleanOptional] = js.undefined
     ): DisassociateDataShareConsumerMessage = {
       val __obj = js.Dynamic.literal(
@@ -3918,6 +3966,7 @@ package object redshift {
       )
 
       ConsumerArn.foreach(__v => __obj.updateDynamic("ConsumerArn")(__v.asInstanceOf[js.Any]))
+      ConsumerRegion.foreach(__v => __obj.updateDynamic("ConsumerRegion")(__v.asInstanceOf[js.Any]))
       DisassociateEntireAccount.foreach(__v => __obj.updateDynamic("DisassociateEntireAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateDataShareConsumerMessage]
     }
@@ -3975,23 +4024,29 @@ package object redshift {
     */
   @js.native
   trait EnableLoggingMessage extends js.Object {
-    var BucketName: String
     var ClusterIdentifier: String
+    var BucketName: js.UndefOr[String]
+    var LogDestinationType: js.UndefOr[LogDestinationType]
+    var LogExports: js.UndefOr[LogTypeList]
     var S3KeyPrefix: js.UndefOr[String]
   }
 
   object EnableLoggingMessage {
     @inline
     def apply(
-        BucketName: String,
         ClusterIdentifier: String,
+        BucketName: js.UndefOr[String] = js.undefined,
+        LogDestinationType: js.UndefOr[LogDestinationType] = js.undefined,
+        LogExports: js.UndefOr[LogTypeList] = js.undefined,
         S3KeyPrefix: js.UndefOr[String] = js.undefined
     ): EnableLoggingMessage = {
       val __obj = js.Dynamic.literal(
-        "BucketName" -> BucketName.asInstanceOf[js.Any],
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
 
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      LogDestinationType.foreach(__v => __obj.updateDynamic("LogDestinationType")(__v.asInstanceOf[js.Any]))
+      LogExports.foreach(__v => __obj.updateDynamic("LogExports")(__v.asInstanceOf[js.Any]))
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableLoggingMessage]
     }
@@ -4422,6 +4477,30 @@ package object redshift {
   }
 
   @js.native
+  trait GetClusterCredentialsWithIAMMessage extends js.Object {
+    var ClusterIdentifier: String
+    var DbName: js.UndefOr[String]
+    var DurationSeconds: js.UndefOr[IntegerOptional]
+  }
+
+  object GetClusterCredentialsWithIAMMessage {
+    @inline
+    def apply(
+        ClusterIdentifier: String,
+        DbName: js.UndefOr[String] = js.undefined,
+        DurationSeconds: js.UndefOr[IntegerOptional] = js.undefined
+    ): GetClusterCredentialsWithIAMMessage = {
+      val __obj = js.Dynamic.literal(
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      DbName.foreach(__v => __obj.updateDynamic("DbName")(__v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClusterCredentialsWithIAMMessage]
+    }
+  }
+
+  @js.native
   trait GetReservedNodeExchangeConfigurationOptionsInputMessage extends js.Object {
     var ActionType: ReservedNodeExchangeActionType
     var ClusterIdentifier: js.UndefOr[String]
@@ -4667,6 +4746,8 @@ package object redshift {
     var LastFailureMessage: js.UndefOr[String]
     var LastFailureTime: js.UndefOr[TStamp]
     var LastSuccessfulDeliveryTime: js.UndefOr[TStamp]
+    var LogDestinationType: js.UndefOr[LogDestinationType]
+    var LogExports: js.UndefOr[LogTypeList]
     var LoggingEnabled: js.UndefOr[Boolean]
     var S3KeyPrefix: js.UndefOr[String]
   }
@@ -4678,6 +4759,8 @@ package object redshift {
         LastFailureMessage: js.UndefOr[String] = js.undefined,
         LastFailureTime: js.UndefOr[TStamp] = js.undefined,
         LastSuccessfulDeliveryTime: js.UndefOr[TStamp] = js.undefined,
+        LogDestinationType: js.UndefOr[LogDestinationType] = js.undefined,
+        LogExports: js.UndefOr[LogTypeList] = js.undefined,
         LoggingEnabled: js.UndefOr[Boolean] = js.undefined,
         S3KeyPrefix: js.UndefOr[String] = js.undefined
     ): LoggingStatus = {
@@ -4686,6 +4769,8 @@ package object redshift {
       LastFailureMessage.foreach(__v => __obj.updateDynamic("LastFailureMessage")(__v.asInstanceOf[js.Any]))
       LastFailureTime.foreach(__v => __obj.updateDynamic("LastFailureTime")(__v.asInstanceOf[js.Any]))
       LastSuccessfulDeliveryTime.foreach(__v => __obj.updateDynamic("LastSuccessfulDeliveryTime")(__v.asInstanceOf[js.Any]))
+      LogDestinationType.foreach(__v => __obj.updateDynamic("LogDestinationType")(__v.asInstanceOf[js.Any]))
+      LogExports.foreach(__v => __obj.updateDynamic("LogExports")(__v.asInstanceOf[js.Any]))
       LoggingEnabled.foreach(__v => __obj.updateDynamic("LoggingEnabled")(__v.asInstanceOf[js.Any]))
       S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingStatus]
@@ -6191,7 +6276,6 @@ package object redshift {
   @js.native
   trait RestoreFromClusterSnapshotMessage extends js.Object {
     var ClusterIdentifier: String
-    var SnapshotIdentifier: String
     var AdditionalInfo: js.UndefOr[String]
     var AllowVersionUpgrade: js.UndefOr[BooleanOptional]
     var AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus]
@@ -6203,6 +6287,7 @@ package object redshift {
     var ClusterSubnetGroupName: js.UndefOr[String]
     var DefaultIamRoleArn: js.UndefOr[String]
     var ElasticIp: js.UndefOr[String]
+    var Encrypted: js.UndefOr[BooleanOptional]
     var EnhancedVpcRouting: js.UndefOr[BooleanOptional]
     var HsmClientCertificateIdentifier: js.UndefOr[String]
     var HsmConfigurationIdentifier: js.UndefOr[String]
@@ -6217,7 +6302,9 @@ package object redshift {
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ReservedNodeId: js.UndefOr[String]
+    var SnapshotArn: js.UndefOr[String]
     var SnapshotClusterIdentifier: js.UndefOr[String]
+    var SnapshotIdentifier: js.UndefOr[String]
     var SnapshotScheduleIdentifier: js.UndefOr[String]
     var TargetReservedNodeOfferingId: js.UndefOr[String]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -6227,7 +6314,6 @@ package object redshift {
     @inline
     def apply(
         ClusterIdentifier: String,
-        SnapshotIdentifier: String,
         AdditionalInfo: js.UndefOr[String] = js.undefined,
         AllowVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AquaConfigurationStatus: js.UndefOr[AquaConfigurationStatus] = js.undefined,
@@ -6239,6 +6325,7 @@ package object redshift {
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
         DefaultIamRoleArn: js.UndefOr[String] = js.undefined,
         ElasticIp: js.UndefOr[String] = js.undefined,
+        Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
         EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
         HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
         HsmConfigurationIdentifier: js.UndefOr[String] = js.undefined,
@@ -6253,14 +6340,15 @@ package object redshift {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ReservedNodeId: js.UndefOr[String] = js.undefined,
+        SnapshotArn: js.UndefOr[String] = js.undefined,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
         TargetReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreFromClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
       )
 
       AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
@@ -6274,6 +6362,7 @@ package object redshift {
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DefaultIamRoleArn.foreach(__v => __obj.updateDynamic("DefaultIamRoleArn")(__v.asInstanceOf[js.Any]))
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
       HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
       HsmConfigurationIdentifier.foreach(__v => __obj.updateDynamic("HsmConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
@@ -6288,7 +6377,9 @@ package object redshift {
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReservedNodeId.foreach(__v => __obj.updateDynamic("ReservedNodeId")(__v.asInstanceOf[js.Any]))
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
       SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
       TargetReservedNodeOfferingId.foreach(__v => __obj.updateDynamic("TargetReservedNodeOfferingId")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -6539,23 +6630,26 @@ package object redshift {
   @js.native
   trait RevokeSnapshotAccessMessage extends js.Object {
     var AccountWithRestoreAccess: String
-    var SnapshotIdentifier: String
+    var SnapshotArn: js.UndefOr[String]
     var SnapshotClusterIdentifier: js.UndefOr[String]
+    var SnapshotIdentifier: js.UndefOr[String]
   }
 
   object RevokeSnapshotAccessMessage {
     @inline
     def apply(
         AccountWithRestoreAccess: String,
-        SnapshotIdentifier: String,
-        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined
+        SnapshotArn: js.UndefOr[String] = js.undefined,
+        SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): RevokeSnapshotAccessMessage = {
       val __obj = js.Dynamic.literal(
-        "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any],
-        "SnapshotIdentifier" -> SnapshotIdentifier.asInstanceOf[js.Any]
+        "AccountWithRestoreAccess" -> AccountWithRestoreAccess.asInstanceOf[js.Any]
       )
 
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
       SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevokeSnapshotAccessMessage]
     }
   }
@@ -6835,7 +6929,7 @@ package object redshift {
     }
   }
 
-  /** The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region. For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
+  /** The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified encrypted symmetric key from Amazon Web Services KMS in the destination region. For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
     */
   @js.native
   trait SnapshotCopyGrant extends js.Object {

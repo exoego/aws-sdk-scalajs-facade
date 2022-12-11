@@ -497,6 +497,16 @@ object IndexStatus {
 }
 
 @js.native
+sealed trait JobEndBehavior extends js.Any
+object JobEndBehavior {
+  val STOP_ROLLOUT = "STOP_ROLLOUT".asInstanceOf[JobEndBehavior]
+  val CANCEL = "CANCEL".asInstanceOf[JobEndBehavior]
+  val FORCE_CANCEL = "FORCE_CANCEL".asInstanceOf[JobEndBehavior]
+
+  @inline def values: js.Array[JobEndBehavior] = js.Array(STOP_ROLLOUT, CANCEL, FORCE_CANCEL)
+}
+
+@js.native
 sealed trait JobExecutionFailureType extends js.Any
 object JobExecutionFailureType {
   val FAILED = "FAILED".asInstanceOf[JobExecutionFailureType]
@@ -529,8 +539,9 @@ object JobStatus {
   val CANCELED = "CANCELED".asInstanceOf[JobStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
   val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
+  val SCHEDULED = "SCHEDULED".asInstanceOf[JobStatus]
 
-  @inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
+  @inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS, SCHEDULED)
 }
 
 @js.native
@@ -550,8 +561,11 @@ sealed trait LogTargetType extends js.Any
 object LogTargetType {
   val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
   val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
+  val CLIENT_ID = "CLIENT_ID".asInstanceOf[LogTargetType]
+  val SOURCE_IP = "SOURCE_IP".asInstanceOf[LogTargetType]
+  val PRINCIPAL_ID = "PRINCIPAL_ID".asInstanceOf[LogTargetType]
 
-  @inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP)
+  @inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP, CLIENT_ID, SOURCE_IP, PRINCIPAL_ID)
 }
 
 @js.native
@@ -643,8 +657,19 @@ object ResourceType {
   val ACCOUNT_SETTINGS = "ACCOUNT_SETTINGS".asInstanceOf[ResourceType]
   val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
   val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
+  val ISSUER_CERTIFICATE = "ISSUER_CERTIFICATE".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
+  @inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE, ISSUER_CERTIFICATE)
+}
+
+@js.native
+sealed trait RetryableFailureType extends js.Any
+object RetryableFailureType {
+  val FAILED = "FAILED".asInstanceOf[RetryableFailureType]
+  val TIMED_OUT = "TIMED_OUT".asInstanceOf[RetryableFailureType]
+  val ALL = "ALL".asInstanceOf[RetryableFailureType]
+
+  @inline def values: js.Array[RetryableFailureType] = js.Array(FAILED, TIMED_OUT, ALL)
 }
 
 @js.native
@@ -685,6 +710,15 @@ object TargetSelection {
   val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
 
   @inline def values: js.Array[TargetSelection] = js.Array(CONTINUOUS, SNAPSHOT)
+}
+
+@js.native
+sealed trait TemplateType extends js.Any
+object TemplateType {
+  val FLEET_PROVISIONING = "FLEET_PROVISIONING".asInstanceOf[TemplateType]
+  val JITP = "JITP".asInstanceOf[TemplateType]
+
+  @inline def values: js.Array[TemplateType] = js.Array(FLEET_PROVISIONING, JITP)
 }
 
 @js.native

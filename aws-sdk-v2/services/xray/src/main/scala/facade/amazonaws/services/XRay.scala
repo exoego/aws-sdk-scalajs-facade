@@ -54,10 +54,15 @@ package object xray {
   type NullableDouble = Double
   type NullableInteger = Int
   type NullableLong = Double
+  type PolicyDocument = String
+  type PolicyName = String
+  type PolicyRevisionId = String
   type Priority = Int
   type RequestCount = Int
   type ReservoirSize = Int
   type ResourceARN = String
+  type ResourcePolicyList = js.Array[ResourcePolicy]
+  type ResourcePolicyNextToken = String
   type ResponseTimeRootCauseEntityPath = js.Array[ResponseTimeRootCauseEntity]
   type ResponseTimeRootCauseServices = js.Array[ResponseTimeRootCauseService]
   type ResponseTimeRootCauses = js.Array[ResponseTimeRootCause]
@@ -107,6 +112,7 @@ package object xray {
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResult] = service.createGroup(params).promise().toFuture
     @inline def createSamplingRuleFuture(params: CreateSamplingRuleRequest): Future[CreateSamplingRuleResult] = service.createSamplingRule(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResult] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResult] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSamplingRuleFuture(params: DeleteSamplingRuleRequest): Future[DeleteSamplingRuleResult] = service.deleteSamplingRule(params).promise().toFuture
     @inline def getEncryptionConfigFuture(params: GetEncryptionConfigRequest): Future[GetEncryptionConfigResult] = service.getEncryptionConfig(params).promise().toFuture
     @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResult] = service.getGroup(params).promise().toFuture
@@ -122,8 +128,10 @@ package object xray {
     @inline def getTimeSeriesServiceStatisticsFuture(params: GetTimeSeriesServiceStatisticsRequest): Future[GetTimeSeriesServiceStatisticsResult] = service.getTimeSeriesServiceStatistics(params).promise().toFuture
     @inline def getTraceGraphFuture(params: GetTraceGraphRequest): Future[GetTraceGraphResult] = service.getTraceGraph(params).promise().toFuture
     @inline def getTraceSummariesFuture(params: GetTraceSummariesRequest): Future[GetTraceSummariesResult] = service.getTraceSummaries(params).promise().toFuture
+    @inline def listResourcePoliciesFuture(params: ListResourcePoliciesRequest): Future[ListResourcePoliciesResult] = service.listResourcePolicies(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putEncryptionConfigFuture(params: PutEncryptionConfigRequest): Future[PutEncryptionConfigResult] = service.putEncryptionConfig(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResult] = service.putResourcePolicy(params).promise().toFuture
     @inline def putTelemetryRecordsFuture(params: PutTelemetryRecordsRequest): Future[PutTelemetryRecordsResult] = service.putTelemetryRecords(params).promise().toFuture
     @inline def putTraceSegmentsFuture(params: PutTraceSegmentsRequest): Future[PutTraceSegmentsResult] = service.putTraceSegments(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
@@ -142,6 +150,7 @@ package object xray {
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResult] = js.native
     def createSamplingRule(params: CreateSamplingRuleRequest): Request[CreateSamplingRuleResult] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResult] = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResult] = js.native
     def deleteSamplingRule(params: DeleteSamplingRuleRequest): Request[DeleteSamplingRuleResult] = js.native
     def getEncryptionConfig(params: GetEncryptionConfigRequest): Request[GetEncryptionConfigResult] = js.native
     def getGroup(params: GetGroupRequest): Request[GetGroupResult] = js.native
@@ -157,8 +166,10 @@ package object xray {
     def getTimeSeriesServiceStatistics(params: GetTimeSeriesServiceStatisticsRequest): Request[GetTimeSeriesServiceStatisticsResult] = js.native
     def getTraceGraph(params: GetTraceGraphRequest): Request[GetTraceGraphResult] = js.native
     def getTraceSummaries(params: GetTraceSummariesRequest): Request[GetTraceSummariesResult] = js.native
+    def listResourcePolicies(params: ListResourcePoliciesRequest): Request[ListResourcePoliciesResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putEncryptionConfig(params: PutEncryptionConfigRequest): Request[PutEncryptionConfigResult] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResult] = js.native
     def putTelemetryRecords(params: PutTelemetryRecordsRequest): Request[PutTelemetryRecordsResult] = js.native
     def putTraceSegments(params: PutTraceSegmentsRequest): Request[PutTraceSegmentsResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -443,6 +454,38 @@ package object xray {
   }
 
   @js.native
+  trait DeleteResourcePolicyRequest extends js.Object {
+    var PolicyName: PolicyName
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object DeleteResourcePolicyRequest {
+    @inline
+    def apply(
+        PolicyName: PolicyName,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): DeleteResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
+
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyResult extends js.Object
+
+  object DeleteResourcePolicyResult {
+    @inline
+    def apply(): DeleteResourcePolicyResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteResourcePolicyResult]
+    }
+  }
+
+  @js.native
   trait DeleteSamplingRuleRequest extends js.Object {
     var RuleARN: js.UndefOr[String]
     var RuleName: js.UndefOr[String]
@@ -477,12 +520,14 @@ package object xray {
     }
   }
 
-  /** Information about a connection between two services.
+  /** Information about a connection between two services. An edge can be a synchronous connection, such as typical call between client and service, or an asynchronous link, such as a Lambda function which retrieves an event from an SNS queue.
     */
   @js.native
   trait Edge extends js.Object {
     var Aliases: js.UndefOr[AliasList]
+    var EdgeType: js.UndefOr[String]
     var EndTime: js.UndefOr[Timestamp]
+    var ReceivedEventAgeHistogram: js.UndefOr[Histogram]
     var ReferenceId: js.UndefOr[NullableInteger]
     var ResponseTimeHistogram: js.UndefOr[Histogram]
     var StartTime: js.UndefOr[Timestamp]
@@ -493,7 +538,9 @@ package object xray {
     @inline
     def apply(
         Aliases: js.UndefOr[AliasList] = js.undefined,
+        EdgeType: js.UndefOr[String] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
+        ReceivedEventAgeHistogram: js.UndefOr[Histogram] = js.undefined,
         ReferenceId: js.UndefOr[NullableInteger] = js.undefined,
         ResponseTimeHistogram: js.UndefOr[Histogram] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined,
@@ -501,7 +548,9 @@ package object xray {
     ): Edge = {
       val __obj = js.Dynamic.literal()
       Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      EdgeType.foreach(__v => __obj.updateDynamic("EdgeType")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ReceivedEventAgeHistogram.foreach(__v => __obj.updateDynamic("ReceivedEventAgeHistogram")(__v.asInstanceOf[js.Any]))
       ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
       ResponseTimeHistogram.foreach(__v => __obj.updateDynamic("ResponseTimeHistogram")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -1735,6 +1784,41 @@ package object xray {
   }
 
   @js.native
+  trait ListResourcePoliciesRequest extends js.Object {
+    var NextToken: js.UndefOr[ResourcePolicyNextToken]
+  }
+
+  object ListResourcePoliciesRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ResourcePolicyNextToken] = js.undefined
+    ): ListResourcePoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourcePoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourcePoliciesResult extends js.Object {
+    var NextToken: js.UndefOr[ResourcePolicyNextToken]
+    var ResourcePolicies: js.UndefOr[ResourcePolicyList]
+  }
+
+  object ListResourcePoliciesResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[ResourcePolicyNextToken] = js.undefined,
+        ResourcePolicies: js.UndefOr[ResourcePolicyList] = js.undefined
+    ): ListResourcePoliciesResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourcePolicies.foreach(__v => __obj.updateDynamic("ResourcePolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourcePoliciesResult]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var NextToken: js.UndefOr[String]
@@ -1808,6 +1892,49 @@ package object xray {
       val __obj = js.Dynamic.literal()
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEncryptionConfigResult]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyRequest extends js.Object {
+    var PolicyDocument: PolicyDocument
+    var PolicyName: PolicyName
+    var BypassPolicyLockoutCheck: js.UndefOr[Boolean]
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object PutResourcePolicyRequest {
+    @inline
+    def apply(
+        PolicyDocument: PolicyDocument,
+        PolicyName: PolicyName,
+        BypassPolicyLockoutCheck: js.UndefOr[Boolean] = js.undefined,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): PutResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any]
+      )
+
+      BypassPolicyLockoutCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutCheck")(__v.asInstanceOf[js.Any]))
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyResult extends js.Object {
+    var ResourcePolicy: js.UndefOr[ResourcePolicy]
+  }
+
+  object PutResourcePolicyResult {
+    @inline
+    def apply(
+        ResourcePolicy: js.UndefOr[ResourcePolicy] = js.undefined
+    ): PutResourcePolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResult]
     }
   }
 
@@ -1921,6 +2048,33 @@ package object xray {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceARNDetail]
+    }
+  }
+
+  /** A resource policy grants one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy is associated with a specific Amazon Web Services account.
+    */
+  @js.native
+  trait ResourcePolicy extends js.Object {
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var PolicyDocument: js.UndefOr[PolicyDocument]
+    var PolicyName: js.UndefOr[PolicyName]
+    var PolicyRevisionId: js.UndefOr[PolicyRevisionId]
+  }
+
+  object ResourcePolicy {
+    @inline
+    def apply(
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        PolicyDocument: js.UndefOr[PolicyDocument] = js.undefined,
+        PolicyName: js.UndefOr[PolicyName] = js.undefined,
+        PolicyRevisionId: js.UndefOr[PolicyRevisionId] = js.undefined
+    ): ResourcePolicy = {
+      val __obj = js.Dynamic.literal()
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      PolicyDocument.foreach(__v => __obj.updateDynamic("PolicyDocument")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyRevisionId.foreach(__v => __obj.updateDynamic("PolicyRevisionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePolicy]
     }
   }
 

@@ -77,6 +77,16 @@ object HttpScheme {
   inline def values: js.Array[HttpScheme] = js.Array(http, https)
 }
 
+type IpPreference = "IPv6_PREFERRED" | "IPv4_PREFERRED" | "IPv4_ONLY" | "IPv6_ONLY"
+object IpPreference {
+  inline val IPv6_PREFERRED: "IPv6_PREFERRED" = "IPv6_PREFERRED"
+  inline val IPv4_PREFERRED: "IPv4_PREFERRED" = "IPv4_PREFERRED"
+  inline val IPv4_ONLY: "IPv4_ONLY" = "IPv4_ONLY"
+  inline val IPv6_ONLY: "IPv6_ONLY" = "IPv6_ONLY"
+
+  inline def values: js.Array[IpPreference] = js.Array(IPv6_PREFERRED, IPv4_PREFERRED, IPv4_ONLY, IPv6_ONLY)
+}
+
 type ListenerTlsMode = "STRICT" | "PERMISSIVE" | "DISABLED"
 object ListenerTlsMode {
   inline val STRICT: "STRICT" = "STRICT"

@@ -9,12 +9,18 @@ import facade.amazonaws._
 
 package object opensearch {
   type ARN = String
+  type AWSAccount = String
   type AdditionalLimitList = js.Array[AdditionalLimit]
   type AdvancedOptions = js.Dictionary[String]
+  type AuthorizedPrincipalList = js.Array[AuthorizedPrincipal]
   type AutoTuneDate = js.Date
   type AutoTuneList = js.Array[AutoTune]
   type AutoTuneMaintenanceScheduleList = js.Array[AutoTuneMaintenanceSchedule]
   type BackendRole = String
+  type ChangeProgressStageList = js.Array[ChangeProgressStage]
+  type ChangeProgressStageName = String
+  type ChangeProgressStageStatus = String
+  type ClientToken = String
   type CloudWatchLogsLogGroupArn = String
   type CommitMessage = String
   type CompatibleVersionsList = js.Array[CompatibleVersionsMap]
@@ -27,6 +33,9 @@ package object opensearch {
   type DescribePackagesFilterList = js.Array[DescribePackagesFilter]
   type DescribePackagesFilterValue = String
   type DescribePackagesFilterValues = js.Array[DescribePackagesFilterValue]
+  type Description = String
+  type DisableTimestamp = js.Date
+  type DomainArn = String
   type DomainId = String
   type DomainInfoList = js.Array[DomainInfo]
   type DomainName = String
@@ -36,6 +45,7 @@ package object opensearch {
   type DomainStatusList = js.Array[DomainStatus]
   type DryRun = Boolean
   type DurationValue = Double
+  type Endpoint = String
   type EndpointsMap = js.Dictionary[ServiceUrl]
   type ErrorMessage = String
   type ErrorType = String
@@ -96,6 +106,7 @@ package object opensearch {
   type TagKey = String
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TotalNumberOfStages = Int
   type UIntValue = Int
   type UpdateTimestamp = js.Date
   type UpgradeHistoryList = js.Array[UpgradeHistory]
@@ -106,21 +117,30 @@ package object opensearch {
   type ValueStringList = js.Array[NonEmptyString]
   type VersionList = js.Array[VersionString]
   type VersionString = String
+  type VpcEndpointErrorList = js.Array[VpcEndpointError]
+  type VpcEndpointId = String
+  type VpcEndpointIdList = js.Array[VpcEndpointId]
+  type VpcEndpointSummaryList = js.Array[VpcEndpointSummary]
+  type VpcEndpoints = js.Array[VpcEndpoint]
 
   final class OpenSearchOps(private val service: OpenSearch) extends AnyVal {
 
     @inline def acceptInboundConnectionFuture(params: AcceptInboundConnectionRequest): Future[AcceptInboundConnectionResponse] = service.acceptInboundConnection(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
     @inline def associatePackageFuture(params: AssociatePackageRequest): Future[AssociatePackageResponse] = service.associatePackage(params).promise().toFuture
+    @inline def authorizeVpcEndpointAccessFuture(params: AuthorizeVpcEndpointAccessRequest): Future[AuthorizeVpcEndpointAccessResponse] = service.authorizeVpcEndpointAccess(params).promise().toFuture
     @inline def cancelServiceSoftwareUpdateFuture(params: CancelServiceSoftwareUpdateRequest): Future[CancelServiceSoftwareUpdateResponse] = service.cancelServiceSoftwareUpdate(params).promise().toFuture
     @inline def createDomainFuture(params: CreateDomainRequest): Future[CreateDomainResponse] = service.createDomain(params).promise().toFuture
     @inline def createOutboundConnectionFuture(params: CreateOutboundConnectionRequest): Future[CreateOutboundConnectionResponse] = service.createOutboundConnection(params).promise().toFuture
     @inline def createPackageFuture(params: CreatePackageRequest): Future[CreatePackageResponse] = service.createPackage(params).promise().toFuture
+    @inline def createVpcEndpointFuture(params: CreateVpcEndpointRequest): Future[CreateVpcEndpointResponse] = service.createVpcEndpoint(params).promise().toFuture
     @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] = service.deleteDomain(params).promise().toFuture
     @inline def deleteInboundConnectionFuture(params: DeleteInboundConnectionRequest): Future[DeleteInboundConnectionResponse] = service.deleteInboundConnection(params).promise().toFuture
     @inline def deleteOutboundConnectionFuture(params: DeleteOutboundConnectionRequest): Future[DeleteOutboundConnectionResponse] = service.deleteOutboundConnection(params).promise().toFuture
     @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] = service.deletePackage(params).promise().toFuture
+    @inline def deleteVpcEndpointFuture(params: DeleteVpcEndpointRequest): Future[DeleteVpcEndpointResponse] = service.deleteVpcEndpoint(params).promise().toFuture
     @inline def describeDomainAutoTunesFuture(params: DescribeDomainAutoTunesRequest): Future[DescribeDomainAutoTunesResponse] = service.describeDomainAutoTunes(params).promise().toFuture
+    @inline def describeDomainChangeProgressFuture(params: DescribeDomainChangeProgressRequest): Future[DescribeDomainChangeProgressResponse] = service.describeDomainChangeProgress(params).promise().toFuture
     @inline def describeDomainConfigFuture(params: DescribeDomainConfigRequest): Future[DescribeDomainConfigResponse] = service.describeDomainConfig(params).promise().toFuture
     @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] = service.describeDomain(params).promise().toFuture
     @inline def describeDomainsFuture(params: DescribeDomainsRequest): Future[DescribeDomainsResponse] = service.describeDomains(params).promise().toFuture
@@ -130,6 +150,7 @@ package object opensearch {
     @inline def describePackagesFuture(params: DescribePackagesRequest): Future[DescribePackagesResponse] = service.describePackages(params).promise().toFuture
     @inline def describeReservedInstanceOfferingsFuture(params: DescribeReservedInstanceOfferingsRequest): Future[DescribeReservedInstanceOfferingsResponse] = service.describeReservedInstanceOfferings(params).promise().toFuture
     @inline def describeReservedInstancesFuture(params: DescribeReservedInstancesRequest): Future[DescribeReservedInstancesResponse] = service.describeReservedInstances(params).promise().toFuture
+    @inline def describeVpcEndpointsFuture(params: DescribeVpcEndpointsRequest): Future[DescribeVpcEndpointsResponse] = service.describeVpcEndpoints(params).promise().toFuture
     @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] = service.dissociatePackage(params).promise().toFuture
     @inline def getCompatibleVersionsFuture(params: GetCompatibleVersionsRequest): Future[GetCompatibleVersionsResponse] = service.getCompatibleVersions(params).promise().toFuture
     @inline def getPackageVersionHistoryFuture(params: GetPackageVersionHistoryRequest): Future[GetPackageVersionHistoryResponse] = service.getPackageVersionHistory(params).promise().toFuture
@@ -141,12 +162,17 @@ package object opensearch {
     @inline def listPackagesForDomainFuture(params: ListPackagesForDomainRequest): Future[ListPackagesForDomainResponse] = service.listPackagesForDomain(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
     @inline def listVersionsFuture(params: ListVersionsRequest): Future[ListVersionsResponse] = service.listVersions(params).promise().toFuture
+    @inline def listVpcEndpointAccessFuture(params: ListVpcEndpointAccessRequest): Future[ListVpcEndpointAccessResponse] = service.listVpcEndpointAccess(params).promise().toFuture
+    @inline def listVpcEndpointsForDomainFuture(params: ListVpcEndpointsForDomainRequest): Future[ListVpcEndpointsForDomainResponse] = service.listVpcEndpointsForDomain(params).promise().toFuture
+    @inline def listVpcEndpointsFuture(params: ListVpcEndpointsRequest): Future[ListVpcEndpointsResponse] = service.listVpcEndpoints(params).promise().toFuture
     @inline def purchaseReservedInstanceOfferingFuture(params: PurchaseReservedInstanceOfferingRequest): Future[PurchaseReservedInstanceOfferingResponse] = service.purchaseReservedInstanceOffering(params).promise().toFuture
     @inline def rejectInboundConnectionFuture(params: RejectInboundConnectionRequest): Future[RejectInboundConnectionResponse] = service.rejectInboundConnection(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] = service.removeTags(params).promise().toFuture
+    @inline def revokeVpcEndpointAccessFuture(params: RevokeVpcEndpointAccessRequest): Future[RevokeVpcEndpointAccessResponse] = service.revokeVpcEndpointAccess(params).promise().toFuture
     @inline def startServiceSoftwareUpdateFuture(params: StartServiceSoftwareUpdateRequest): Future[StartServiceSoftwareUpdateResponse] = service.startServiceSoftwareUpdate(params).promise().toFuture
     @inline def updateDomainConfigFuture(params: UpdateDomainConfigRequest): Future[UpdateDomainConfigResponse] = service.updateDomainConfig(params).promise().toFuture
     @inline def updatePackageFuture(params: UpdatePackageRequest): Future[UpdatePackageResponse] = service.updatePackage(params).promise().toFuture
+    @inline def updateVpcEndpointFuture(params: UpdateVpcEndpointRequest): Future[UpdateVpcEndpointResponse] = service.updateVpcEndpoint(params).promise().toFuture
     @inline def upgradeDomainFuture(params: UpgradeDomainRequest): Future[UpgradeDomainResponse] = service.upgradeDomain(params).promise().toFuture
 
   }
@@ -159,16 +185,20 @@ package object opensearch {
     def acceptInboundConnection(params: AcceptInboundConnectionRequest): Request[AcceptInboundConnectionResponse] = js.native
     def addTags(params: AddTagsRequest): Request[js.Object] = js.native
     def associatePackage(params: AssociatePackageRequest): Request[AssociatePackageResponse] = js.native
+    def authorizeVpcEndpointAccess(params: AuthorizeVpcEndpointAccessRequest): Request[AuthorizeVpcEndpointAccessResponse] = js.native
     def cancelServiceSoftwareUpdate(params: CancelServiceSoftwareUpdateRequest): Request[CancelServiceSoftwareUpdateResponse] = js.native
     def createDomain(params: CreateDomainRequest): Request[CreateDomainResponse] = js.native
     def createOutboundConnection(params: CreateOutboundConnectionRequest): Request[CreateOutboundConnectionResponse] = js.native
     def createPackage(params: CreatePackageRequest): Request[CreatePackageResponse] = js.native
+    def createVpcEndpoint(params: CreateVpcEndpointRequest): Request[CreateVpcEndpointResponse] = js.native
     def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResponse] = js.native
     def deleteInboundConnection(params: DeleteInboundConnectionRequest): Request[DeleteInboundConnectionResponse] = js.native
     def deleteOutboundConnection(params: DeleteOutboundConnectionRequest): Request[DeleteOutboundConnectionResponse] = js.native
     def deletePackage(params: DeletePackageRequest): Request[DeletePackageResponse] = js.native
+    def deleteVpcEndpoint(params: DeleteVpcEndpointRequest): Request[DeleteVpcEndpointResponse] = js.native
     def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
     def describeDomainAutoTunes(params: DescribeDomainAutoTunesRequest): Request[DescribeDomainAutoTunesResponse] = js.native
+    def describeDomainChangeProgress(params: DescribeDomainChangeProgressRequest): Request[DescribeDomainChangeProgressResponse] = js.native
     def describeDomainConfig(params: DescribeDomainConfigRequest): Request[DescribeDomainConfigResponse] = js.native
     def describeDomains(params: DescribeDomainsRequest): Request[DescribeDomainsResponse] = js.native
     def describeInboundConnections(params: DescribeInboundConnectionsRequest): Request[DescribeInboundConnectionsResponse] = js.native
@@ -177,6 +207,7 @@ package object opensearch {
     def describePackages(params: DescribePackagesRequest): Request[DescribePackagesResponse] = js.native
     def describeReservedInstanceOfferings(params: DescribeReservedInstanceOfferingsRequest): Request[DescribeReservedInstanceOfferingsResponse] = js.native
     def describeReservedInstances(params: DescribeReservedInstancesRequest): Request[DescribeReservedInstancesResponse] = js.native
+    def describeVpcEndpoints(params: DescribeVpcEndpointsRequest): Request[DescribeVpcEndpointsResponse] = js.native
     def dissociatePackage(params: DissociatePackageRequest): Request[DissociatePackageResponse] = js.native
     def getCompatibleVersions(params: GetCompatibleVersionsRequest): Request[GetCompatibleVersionsResponse] = js.native
     def getPackageVersionHistory(params: GetPackageVersionHistoryRequest): Request[GetPackageVersionHistoryResponse] = js.native
@@ -188,12 +219,17 @@ package object opensearch {
     def listPackagesForDomain(params: ListPackagesForDomainRequest): Request[ListPackagesForDomainResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
     def listVersions(params: ListVersionsRequest): Request[ListVersionsResponse] = js.native
+    def listVpcEndpointAccess(params: ListVpcEndpointAccessRequest): Request[ListVpcEndpointAccessResponse] = js.native
+    def listVpcEndpoints(params: ListVpcEndpointsRequest): Request[ListVpcEndpointsResponse] = js.native
+    def listVpcEndpointsForDomain(params: ListVpcEndpointsForDomainRequest): Request[ListVpcEndpointsForDomainResponse] = js.native
     def purchaseReservedInstanceOffering(params: PurchaseReservedInstanceOfferingRequest): Request[PurchaseReservedInstanceOfferingResponse] = js.native
     def rejectInboundConnection(params: RejectInboundConnectionRequest): Request[RejectInboundConnectionResponse] = js.native
     def removeTags(params: RemoveTagsRequest): Request[js.Object] = js.native
+    def revokeVpcEndpointAccess(params: RevokeVpcEndpointAccessRequest): Request[RevokeVpcEndpointAccessResponse] = js.native
     def startServiceSoftwareUpdate(params: StartServiceSoftwareUpdateRequest): Request[StartServiceSoftwareUpdateResponse] = js.native
     def updateDomainConfig(params: UpdateDomainConfigRequest): Request[UpdateDomainConfigResponse] = js.native
     def updatePackage(params: UpdatePackageRequest): Request[UpdatePackageResponse] = js.native
+    def updateVpcEndpoint(params: UpdateVpcEndpointRequest): Request[UpdateVpcEndpointResponse] = js.native
     def upgradeDomain(params: UpgradeDomainRequest): Request[UpgradeDomainResponse] = js.native
   }
   object OpenSearch {
@@ -202,6 +238,8 @@ package object opensearch {
     }
   }
 
+  /** Information about an Amazon OpenSearch Service domain.
+    */
   @js.native
   trait AWSDomainInformation extends js.Object {
     var DomainName: DomainName
@@ -226,7 +264,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>AcceptInboundConnection</a> </code> operation.
+  /** Container for the parameters to the <code>AcceptInboundConnection</code> operation.
     */
   @js.native
   trait AcceptInboundConnectionRequest extends js.Object {
@@ -245,7 +283,7 @@ package object opensearch {
     }
   }
 
-  /** The result of an <code> <a>AcceptInboundConnection</a> </code> operation. Contains details about the accepted inbound connection.
+  /** Contains details about the accepted inbound connection.
     */
   @js.native
   trait AcceptInboundConnectionResponse extends js.Object {
@@ -263,7 +301,7 @@ package object opensearch {
     }
   }
 
-  /** The configured access rules for the domain's document and search endpoints, and the current status of those rules.
+  /** The configured access rules for the domain's search endpoint, and the current status of those rules.
     */
   @js.native
   trait AccessPoliciesStatus extends js.Object {
@@ -285,7 +323,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>AddTags</a> </code> operation. Specifies the tags to attach to the domain.
+  /** Container for the parameters to the <code>AddTags</code> operation. Specifies the tags to attach to the domain.
     */
   @js.native
   trait AddTagsRequest extends js.Object {
@@ -307,7 +345,7 @@ package object opensearch {
     }
   }
 
-  /** List of limits that are specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> .
+  /** List of limits that are specific to a given instance type.
     */
   @js.native
   trait AdditionalLimit extends js.Object {
@@ -328,7 +366,8 @@ package object opensearch {
     }
   }
 
-  /** Status of the advanced options for the specified domain. Currently, the following advanced options are available: * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters </a> for more information. * Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded. For more information, see [[http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options| Advanced cluster parameters]].
+  /** Status of the advanced options for the specified domain. The following options are available: * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true. * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded. * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error. *
+    * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options|Advanced cluster parameters]].
     */
   @js.native
   trait AdvancedOptionsStatus extends js.Object {
@@ -350,10 +389,12 @@ package object opensearch {
     }
   }
 
-  /** The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.
+  /** Container for fine-grained access control settings.
     */
   @js.native
   trait AdvancedSecurityOptions extends js.Object {
+    var AnonymousAuthDisableDate: js.UndefOr[DisableTimestamp]
+    var AnonymousAuthEnabled: js.UndefOr[Boolean]
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
     var SAMLOptions: js.UndefOr[SAMLOptionsOutput]
@@ -362,11 +403,15 @@ package object opensearch {
   object AdvancedSecurityOptions {
     @inline
     def apply(
+        AnonymousAuthDisableDate: js.UndefOr[DisableTimestamp] = js.undefined,
+        AnonymousAuthEnabled: js.UndefOr[Boolean] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
         InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
         SAMLOptions: js.UndefOr[SAMLOptionsOutput] = js.undefined
     ): AdvancedSecurityOptions = {
       val __obj = js.Dynamic.literal()
+      AnonymousAuthDisableDate.foreach(__v => __obj.updateDynamic("AnonymousAuthDisableDate")(__v.asInstanceOf[js.Any]))
+      AnonymousAuthEnabled.foreach(__v => __obj.updateDynamic("AnonymousAuthEnabled")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       SAMLOptions.foreach(__v => __obj.updateDynamic("SAMLOptions")(__v.asInstanceOf[js.Any]))
@@ -374,10 +419,11 @@ package object opensearch {
     }
   }
 
-  /** The advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).
+  /** Options for enabling and configuring fine-grained access control. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html|Fine-grained access control in Amazon OpenSearch Service]].
     */
   @js.native
   trait AdvancedSecurityOptionsInput extends js.Object {
+    var AnonymousAuthEnabled: js.UndefOr[Boolean]
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
     var MasterUserOptions: js.UndefOr[MasterUserOptions]
@@ -387,12 +433,14 @@ package object opensearch {
   object AdvancedSecurityOptionsInput {
     @inline
     def apply(
+        AnonymousAuthEnabled: js.UndefOr[Boolean] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
         InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
         MasterUserOptions: js.UndefOr[MasterUserOptions] = js.undefined,
         SAMLOptions: js.UndefOr[SAMLOptionsInput] = js.undefined
     ): AdvancedSecurityOptionsInput = {
       val __obj = js.Dynamic.literal()
+      AnonymousAuthEnabled.foreach(__v => __obj.updateDynamic("AnonymousAuthEnabled")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       MasterUserOptions.foreach(__v => __obj.updateDynamic("MasterUserOptions")(__v.asInstanceOf[js.Any]))
@@ -401,7 +449,7 @@ package object opensearch {
     }
   }
 
-  /** The status of advanced security options for the specified domain.
+  /** The status of fine-grained access control settings for a domain.
     */
   @js.native
   trait AdvancedSecurityOptionsStatus extends js.Object {
@@ -423,7 +471,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>AssociatePackage</a> </code> operation.
+  /** Container for the request parameters to the <code>AssociatePackage</code> operation.
     */
   @js.native
   trait AssociatePackageRequest extends js.Object {
@@ -445,7 +493,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by <code> <a>AssociatePackage</a> </code> operation.
+  /** Container for the response returned by the <code>AssociatePackage</code> operation.
     */
   @js.native
   trait AssociatePackageResponse extends js.Object {
@@ -463,7 +511,65 @@ package object opensearch {
     }
   }
 
-  /** Specifies the Auto-Tune type and Auto-Tune action details.
+  @js.native
+  trait AuthorizeVpcEndpointAccessRequest extends js.Object {
+    var Account: AWSAccount
+    var DomainName: DomainName
+  }
+
+  object AuthorizeVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        Account: AWSAccount,
+        DomainName: DomainName
+    ): AuthorizeVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "Account" -> Account.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AuthorizeVpcEndpointAccessRequest]
+    }
+  }
+
+  @js.native
+  trait AuthorizeVpcEndpointAccessResponse extends js.Object {
+    var AuthorizedPrincipal: AuthorizedPrincipal
+  }
+
+  object AuthorizeVpcEndpointAccessResponse {
+    @inline
+    def apply(
+        AuthorizedPrincipal: AuthorizedPrincipal
+    ): AuthorizeVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizedPrincipal" -> AuthorizedPrincipal.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AuthorizeVpcEndpointAccessResponse]
+    }
+  }
+
+  /** Information about an Amazon Web Services account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
+    */
+  @js.native
+  trait AuthorizedPrincipal extends js.Object {
+    var Principal: js.UndefOr[String]
+    var PrincipalType: js.UndefOr[PrincipalType]
+  }
+
+  object AuthorizedPrincipal {
+    @inline
+    def apply(
+        Principal: js.UndefOr[String] = js.undefined,
+        PrincipalType: js.UndefOr[PrincipalType] = js.undefined
+    ): AuthorizedPrincipal = {
+      val __obj = js.Dynamic.literal()
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizedPrincipal]
+    }
+  }
+
+  /** Information about an Auto-Tune action. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTune extends js.Object {
@@ -484,7 +590,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+  /** Specifies details about a scheduled Auto-Tune action. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTuneDetails extends js.Object {
@@ -502,7 +608,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies the Auto-Tune maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+  /** The Auto-Tune maintenance schedule. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTuneMaintenanceSchedule extends js.Object {
@@ -526,7 +632,7 @@ package object opensearch {
     }
   }
 
-  /** The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules.
+  /** Auto-Tune settings when updating a domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTuneOptions extends js.Object {
@@ -550,7 +656,7 @@ package object opensearch {
     }
   }
 
-  /** The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+  /** Options for configuring Auto-Tune. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTuneOptionsInput extends js.Object {
@@ -571,7 +677,7 @@ package object opensearch {
     }
   }
 
-  /** The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+  /** The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.
     */
   @js.native
   trait AutoTuneOptionsOutput extends js.Object {
@@ -613,7 +719,7 @@ package object opensearch {
     }
   }
 
-  /** Provides the current Auto-Tune status for the domain.
+  /** The current status of Auto-Tune for the domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait AutoTuneStatus extends js.Object {
@@ -648,7 +754,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>CancelServiceSoftwareUpdate</a> </code> operation. Specifies the name of the domain that you wish to cancel a service software update on.
+  /** Container for the request parameters to cancel a service software update.
     */
   @js.native
   trait CancelServiceSoftwareUpdateRequest extends js.Object {
@@ -667,7 +773,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update.
+  /** Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update.
     */
   @js.native
   trait CancelServiceSoftwareUpdateResponse extends js.Object {
@@ -685,7 +791,91 @@ package object opensearch {
     }
   }
 
-  /** The configuration for the domain cluster, such as the type and number of instances.
+  /** Container for information about a configuration change happening on a domain.
+    */
+  @js.native
+  trait ChangeProgressDetails extends js.Object {
+    var ChangeId: js.UndefOr[GUID]
+    var Message: js.UndefOr[Message]
+  }
+
+  object ChangeProgressDetails {
+    @inline
+    def apply(
+        ChangeId: js.UndefOr[GUID] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): ChangeProgressDetails = {
+      val __obj = js.Dynamic.literal()
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressDetails]
+    }
+  }
+
+  /** Progress details for each stage of a domain update.
+    */
+  @js.native
+  trait ChangeProgressStage extends js.Object {
+    var Description: js.UndefOr[Description]
+    var LastUpdated: js.UndefOr[LastUpdated]
+    var Name: js.UndefOr[ChangeProgressStageName]
+    var Status: js.UndefOr[ChangeProgressStageStatus]
+  }
+
+  object ChangeProgressStage {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        LastUpdated: js.UndefOr[LastUpdated] = js.undefined,
+        Name: js.UndefOr[ChangeProgressStageName] = js.undefined,
+        Status: js.UndefOr[ChangeProgressStageStatus] = js.undefined
+    ): ChangeProgressStage = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressStage]
+    }
+  }
+
+  /** The progress details of a specific domain configuration change.
+    */
+  @js.native
+  trait ChangeProgressStatusDetails extends js.Object {
+    var ChangeId: js.UndefOr[GUID]
+    var ChangeProgressStages: js.UndefOr[ChangeProgressStageList]
+    var CompletedProperties: js.UndefOr[StringList]
+    var PendingProperties: js.UndefOr[StringList]
+    var StartTime: js.UndefOr[UpdateTimestamp]
+    var Status: js.UndefOr[OverallChangeStatus]
+    var TotalNumberOfStages: js.UndefOr[TotalNumberOfStages]
+  }
+
+  object ChangeProgressStatusDetails {
+    @inline
+    def apply(
+        ChangeId: js.UndefOr[GUID] = js.undefined,
+        ChangeProgressStages: js.UndefOr[ChangeProgressStageList] = js.undefined,
+        CompletedProperties: js.UndefOr[StringList] = js.undefined,
+        PendingProperties: js.UndefOr[StringList] = js.undefined,
+        StartTime: js.UndefOr[UpdateTimestamp] = js.undefined,
+        Status: js.UndefOr[OverallChangeStatus] = js.undefined,
+        TotalNumberOfStages: js.UndefOr[TotalNumberOfStages] = js.undefined
+    ): ChangeProgressStatusDetails = {
+      val __obj = js.Dynamic.literal()
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      ChangeProgressStages.foreach(__v => __obj.updateDynamic("ChangeProgressStages")(__v.asInstanceOf[js.Any]))
+      CompletedProperties.foreach(__v => __obj.updateDynamic("CompletedProperties")(__v.asInstanceOf[js.Any]))
+      PendingProperties.foreach(__v => __obj.updateDynamic("PendingProperties")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TotalNumberOfStages.foreach(__v => __obj.updateDynamic("TotalNumberOfStages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressStatusDetails]
+    }
+  }
+
+  /** Container for the cluster configuration of an OpenSearch Service domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html|Creating and managing Amazon OpenSearch Service domains]].
     */
   @js.native
   trait ClusterConfig extends js.Object {
@@ -733,7 +923,7 @@ package object opensearch {
     }
   }
 
-  /** The configuration status for the specified domain.
+  /** The cluster configuration status for a domain.
     */
   @js.native
   trait ClusterConfigStatus extends js.Object {
@@ -755,7 +945,7 @@ package object opensearch {
     }
   }
 
-  /** Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+  /** Container for the parameters required to enable Cognito authentication for an OpenSearch Service domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html|Configuring Amazon Cognito authentication for OpenSearch Dashboards]].
     */
   @js.native
   trait CognitoOptions extends js.Object {
@@ -804,7 +994,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies the configuration for cold storage options such as enabled
+  /** Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html|Cold storage for Amazon OpenSearch Service]].
     */
   @js.native
   trait ColdStorageOptions extends js.Object {
@@ -823,7 +1013,7 @@ package object opensearch {
     }
   }
 
-  /** A map from an <code> <a>EngineVersion</a> </code> to a list of compatible <code> <a>EngineVersion</a> </code> s to which the domain can be upgraded.
+  /** A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
     */
   @js.native
   trait CompatibleVersionsMap extends js.Object {
@@ -907,7 +1097,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>CreateDomain</code> operation. Contains the status of the newly created Amazon OpenSearch Service domain.
+  /** The result of a <code>CreateDomain</code> operation. Contains the status of the newly created domain.
     */
   @js.native
   trait CreateDomainResponse extends js.Object {
@@ -925,7 +1115,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>CreateOutboundConnection</a> </code> operation.
+  /** Container for the parameters to the <code>CreateOutboundConnection</code> operation.
     */
   @js.native
   trait CreateOutboundConnectionRequest extends js.Object {
@@ -950,7 +1140,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>CreateOutboundConnection</a> </code> request. Contains the details about the newly created cross-cluster connection.
+  /** The result of a <code>CreateOutboundConnection</code> request. Contains details about the newly created cross-cluster connection.
     */
   @js.native
   trait CreateOutboundConnectionResponse extends js.Object {
@@ -980,7 +1170,7 @@ package object opensearch {
     }
   }
 
-  /** Container for request parameters to the <code> <a>CreatePackage</a> </code> operation.
+  /** Container for request parameters to the <code>CreatePackage</code> operation.
     */
   @js.native
   trait CreatePackageRequest extends js.Object {
@@ -1009,7 +1199,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>CreatePackage</a> </code> operation.
+  /** Container for the response returned by the <code>CreatePackage</code> operation.
     */
   @js.native
   trait CreatePackageResponse extends js.Object {
@@ -1027,7 +1217,48 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DeleteDomain</a> </code> operation. Specifies the name of the domain you want to delete.
+  @js.native
+  trait CreateVpcEndpointRequest extends js.Object {
+    var DomainArn: DomainArn
+    var VpcOptions: VPCOptions
+    var ClientToken: js.UndefOr[ClientToken]
+  }
+
+  object CreateVpcEndpointRequest {
+    @inline
+    def apply(
+        DomainArn: DomainArn,
+        VpcOptions: VPCOptions,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined
+    ): CreateVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainArn" -> DomainArn.asInstanceOf[js.Any],
+        "VpcOptions" -> VpcOptions.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVpcEndpointResponse extends js.Object {
+    var VpcEndpoint: VpcEndpoint
+  }
+
+  object CreateVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpoint: VpcEndpoint
+    ): CreateVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpoint" -> VpcEndpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateVpcEndpointResponse]
+    }
+  }
+
+  /** Container for the parameters to the <code>DeleteDomain</code> operation.
     */
   @js.native
   trait DeleteDomainRequest extends js.Object {
@@ -1046,7 +1277,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>DeleteDomain</code> request. Contains the status of the pending deletion, or a "domain not found" error if the domain and all of its resources have been deleted.
+  /** The results of a <code>DeleteDomain</code> request. Contains the status of the pending deletion, or a "domain not found" error if the domain and all of its resources have been deleted.
     */
   @js.native
   trait DeleteDomainResponse extends js.Object {
@@ -1064,7 +1295,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DeleteInboundConnection</a> </code> operation.
+  /** Container for the parameters to the <code>DeleteInboundConnection</code> operation.
     */
   @js.native
   trait DeleteInboundConnectionRequest extends js.Object {
@@ -1083,7 +1314,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>DeleteInboundConnection</a> </code> operation. Contains details about the deleted inbound connection.
+  /** The results of a <code>DeleteInboundConnection</code> operation. Contains details about the deleted inbound connection.
     */
   @js.native
   trait DeleteInboundConnectionResponse extends js.Object {
@@ -1101,7 +1332,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DeleteOutboundConnection</a> </code> operation.
+  /** Container for the parameters to the <code>DeleteOutboundConnection</code> operation.
     */
   @js.native
   trait DeleteOutboundConnectionRequest extends js.Object {
@@ -1120,7 +1351,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>DeleteOutboundConnection</a> </code> operation. Contains details about the deleted outbound connection.
+  /** Details about the deleted outbound connection.
     */
   @js.native
   trait DeleteOutboundConnectionResponse extends js.Object {
@@ -1138,7 +1369,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>DeletePackage</a> </code> operation.
+  /** Deletes a package from OpenSearch Service. The package can't be associated with any OpenSearch Service domain.
     */
   @js.native
   trait DeletePackageRequest extends js.Object {
@@ -1157,7 +1388,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response parameters to the <code> <a>DeletePackage</a> </code> operation.
+  /** Container for the response parameters to the <code>DeletePackage</code> operation.
     */
   @js.native
   trait DeletePackageResponse extends js.Object {
@@ -1172,6 +1403,40 @@ package object opensearch {
       val __obj = js.Dynamic.literal()
       PackageDetails.foreach(__v => __obj.updateDynamic("PackageDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePackageResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcEndpointRequest extends js.Object {
+    var VpcEndpointId: VpcEndpointId
+  }
+
+  object DeleteVpcEndpointRequest {
+    @inline
+    def apply(
+        VpcEndpointId: VpcEndpointId
+    ): DeleteVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointId" -> VpcEndpointId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcEndpointResponse extends js.Object {
+    var VpcEndpointSummary: VpcEndpointSummary
+  }
+
+  object DeleteVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpointSummary: VpcEndpointSummary
+    ): DeleteVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointSummary" -> VpcEndpointSummary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcEndpointResponse]
     }
   }
 
@@ -1201,7 +1466,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>DescribeDomainAutoTunes</code> request. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+  /** The result of a <code>DescribeDomainAutoTunes</code> request.
     */
   @js.native
   trait DescribeDomainAutoTunesResponse extends js.Object {
@@ -1222,7 +1487,48 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code>DescribeDomainConfig</code> operation. Specifies the domain name for which you want configuration information.
+  /** Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation.
+    */
+  @js.native
+  trait DescribeDomainChangeProgressRequest extends js.Object {
+    var DomainName: DomainName
+    var ChangeId: js.UndefOr[GUID]
+  }
+
+  object DescribeDomainChangeProgressRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        ChangeId: js.UndefOr[GUID] = js.undefined
+    ): DescribeDomainChangeProgressRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainChangeProgressRequest]
+    }
+  }
+
+  /** The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested domain change.
+    */
+  @js.native
+  trait DescribeDomainChangeProgressResponse extends js.Object {
+    var ChangeProgressStatus: js.UndefOr[ChangeProgressStatusDetails]
+  }
+
+  object DescribeDomainChangeProgressResponse {
+    @inline
+    def apply(
+        ChangeProgressStatus: js.UndefOr[ChangeProgressStatusDetails] = js.undefined
+    ): DescribeDomainChangeProgressResponse = {
+      val __obj = js.Dynamic.literal()
+      ChangeProgressStatus.foreach(__v => __obj.updateDynamic("ChangeProgressStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainChangeProgressResponse]
+    }
+  }
+
+  /** Container for the parameters to the <code>DescribeDomainConfig</code> operation.
     */
   @js.native
   trait DescribeDomainConfigRequest extends js.Object {
@@ -1241,7 +1547,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>DescribeDomainConfig</code> request. Contains the configuration information of the requested domain.
+  /** Contains the configuration information of the requested domain.
     */
   @js.native
   trait DescribeDomainConfigResponse extends js.Object {
@@ -1260,7 +1566,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DescribeDomain</a> </code> operation.
+  /** Container for the parameters to the <code>DescribeDomain</code> operation.
     */
   @js.native
   trait DescribeDomainRequest extends js.Object {
@@ -1279,7 +1585,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>DescribeDomain</code> request. Contains the status of the domain specified in the request.
+  /** Contains the status of the domain specified in the request.
     */
   @js.native
   trait DescribeDomainResponse extends js.Object {
@@ -1298,7 +1604,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DescribeDomains</a> </code> operation. By default, the API returns the status of all domains.
+  /** Container for the parameters to the <code>DescribeDomains</code> operation.
     */
   @js.native
   trait DescribeDomainsRequest extends js.Object {
@@ -1317,7 +1623,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>DescribeDomains</code> request. Contains the status of the specified domains or all domains owned by the account.
+  /** Contains the status of the specified domains or all domains owned by the account.
     */
   @js.native
   trait DescribeDomainsResponse extends js.Object {
@@ -1336,7 +1642,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DescribeInboundConnections</a> </code> operation.
+  /** Container for the parameters to the <code>DescribeInboundConnections</code> operation.
     */
   @js.native
   trait DescribeInboundConnectionsRequest extends js.Object {
@@ -1360,7 +1666,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>DescribeInboundConnections</a> </code> request. Contains a list of connections matching the filter criteria.
+  /** Contains a list of connections matching the filter criteria.
     */
   @js.native
   trait DescribeInboundConnectionsResponse extends js.Object {
@@ -1381,7 +1687,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DescribeInstanceTypeLimits</a> </code> operation.
+  /** Container for the parameters to the <code>DescribeInstanceTypeLimits</code> operation.
     */
   @js.native
   trait DescribeInstanceTypeLimitsRequest extends js.Object {
@@ -1407,7 +1713,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters received from the <code> <a>DescribeInstanceTypeLimits</a> </code> operation.
+  /** Container for the parameters received from the <code>DescribeInstanceTypeLimits</code> operation.
     */
   @js.native
   trait DescribeInstanceTypeLimitsResponse extends js.Object {
@@ -1425,7 +1731,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>DescribeOutboundConnections</a> </code> operation.
+  /** Container for the parameters to the <code>DescribeOutboundConnections</code> operation.
     */
   @js.native
   trait DescribeOutboundConnectionsRequest extends js.Object {
@@ -1449,7 +1755,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>DescribeOutboundConnections</a> </code> request. Contains the list of connections matching the filter criteria.
+  /** Contains a list of connections matching the filter criteria.
     */
   @js.native
   trait DescribeOutboundConnectionsResponse extends js.Object {
@@ -1491,7 +1797,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>DescribePackage</a> </code> operation.
+  /** Container for the request parameters to the <code>DescribePackage</code> operation.
     */
   @js.native
   trait DescribePackagesRequest extends js.Object {
@@ -1515,7 +1821,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>DescribePackages</a> </code> operation.
+  /** Container for the response returned by the <code>DescribePackages</code> operation.
     */
   @js.native
   trait DescribePackagesResponse extends js.Object {
@@ -1536,7 +1842,7 @@ package object opensearch {
     }
   }
 
-  /** Container for parameters to <code>DescribeReservedInstanceOfferings</code>
+  /** Container for the request parameters to a <code>DescribeReservedInstanceOfferings</code> operation.
     */
   @js.native
   trait DescribeReservedInstanceOfferingsRequest extends js.Object {
@@ -1560,7 +1866,7 @@ package object opensearch {
     }
   }
 
-  /** Container for results from <code>DescribeReservedInstanceOfferings</code>
+  /** Container for results of a <code>DescribeReservedInstanceOfferings</code> request.
     */
   @js.native
   trait DescribeReservedInstanceOfferingsResponse extends js.Object {
@@ -1581,7 +1887,7 @@ package object opensearch {
     }
   }
 
-  /** Container for parameters to <code>DescribeReservedInstances</code>
+  /** Container for the request parameters to the <code>DescribeReservedInstances</code> operation.
     */
   @js.native
   trait DescribeReservedInstancesRequest extends js.Object {
@@ -1626,7 +1932,44 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>DissociatePackage</a> </code> operation.
+  @js.native
+  trait DescribeVpcEndpointsRequest extends js.Object {
+    var VpcEndpointIds: VpcEndpointIdList
+  }
+
+  object DescribeVpcEndpointsRequest {
+    @inline
+    def apply(
+        VpcEndpointIds: VpcEndpointIdList
+    ): DescribeVpcEndpointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointIds" -> VpcEndpointIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeVpcEndpointsResponse extends js.Object {
+    var VpcEndpointErrors: VpcEndpointErrorList
+    var VpcEndpoints: VpcEndpoints
+  }
+
+  object DescribeVpcEndpointsResponse {
+    @inline
+    def apply(
+        VpcEndpointErrors: VpcEndpointErrorList,
+        VpcEndpoints: VpcEndpoints
+    ): DescribeVpcEndpointsResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointErrors" -> VpcEndpointErrors.asInstanceOf[js.Any],
+        "VpcEndpoints" -> VpcEndpoints.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcEndpointsResponse]
+    }
+  }
+
+  /** Container for the request parameters to the <code>DissociatePackage</code> operation.
     */
   @js.native
   trait DissociatePackageRequest extends js.Object {
@@ -1648,7 +1991,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by <code> <a>DissociatePackage</a> </code> operation.
+  /** Container for the response returned by an <code>DissociatePackage</code> operation.
     */
   @js.native
   trait DissociatePackageResponse extends js.Object {
@@ -1666,7 +2009,7 @@ package object opensearch {
     }
   }
 
-  /** The configuration of a domain.
+  /** Container for the configuration of an OpenSearch Service domain.
     */
   @js.native
   trait DomainConfig extends js.Object {
@@ -1674,6 +2017,7 @@ package object opensearch {
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus]
     var AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus]
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var ClusterConfig: js.UndefOr[ClusterConfigStatus]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
@@ -1693,6 +2037,7 @@ package object opensearch {
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus] = js.undefined,
         AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus] = js.undefined,
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         ClusterConfig: js.UndefOr[ClusterConfigStatus] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined,
@@ -1709,6 +2054,7 @@ package object opensearch {
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       ClusterConfig.foreach(__v => __obj.updateDynamic("ClusterConfig")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
@@ -1723,7 +2069,7 @@ package object opensearch {
     }
   }
 
-  /** Options to configure the endpoint for the domain.
+  /** Options to configure a custom endpoint for an OpenSearch Service domain.
     */
   @js.native
   trait DomainEndpointOptions extends js.Object {
@@ -1753,7 +2099,7 @@ package object opensearch {
     }
   }
 
-  /** The configured endpoint options for the domain and their current status.
+  /** The configured endpoint options for a domain and their current status.
     */
   @js.native
   trait DomainEndpointOptionsStatus extends js.Object {
@@ -1775,6 +2121,8 @@ package object opensearch {
     }
   }
 
+  /** Information about an OpenSearch Service domain.
+    */
   @js.native
   trait DomainInfo extends js.Object {
     var DomainName: js.UndefOr[DomainName]
@@ -1794,6 +2142,8 @@ package object opensearch {
     }
   }
 
+  /** Container for information about an OpenSearch Service domain.
+    */
   @js.native
   trait DomainInformationContainer extends js.Object {
     var AWSDomainInformation: js.UndefOr[AWSDomainInformation]
@@ -1810,7 +2160,7 @@ package object opensearch {
     }
   }
 
-  /** Information on a package associated with a domain.
+  /** Information about a package that is associated with a domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html|Custom packages for Amazon OpenSearch Service]].
     */
   @js.native
   trait DomainPackageDetails extends js.Object {
@@ -1852,7 +2202,7 @@ package object opensearch {
     }
   }
 
-  /** The current status of a domain.
+  /** The current status of an OpenSearch Service domain.
     */
   @js.native
   trait DomainStatus extends js.Object {
@@ -1864,6 +2214,7 @@ package object opensearch {
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions]
     var AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput]
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
@@ -1893,6 +2244,7 @@ package object opensearch {
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions] = js.undefined,
         AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput] = js.undefined,
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         Created: js.UndefOr[Boolean] = js.undefined,
         Deleted: js.UndefOr[Boolean] = js.undefined,
@@ -1921,6 +2273,7 @@ package object opensearch {
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
@@ -1941,6 +2294,8 @@ package object opensearch {
     }
   }
 
+  /** Results of a dry run performed in an update domain request.
+    */
   @js.native
   trait DryRunResults extends js.Object {
     var DeploymentType: js.UndefOr[DeploymentType]
@@ -1960,7 +2315,7 @@ package object opensearch {
     }
   }
 
-  /** The maintenance schedule duration: duration value and duration unit. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+  /** The duration of a maintenance schedule. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait Duration extends js.Object {
@@ -1981,12 +2336,13 @@ package object opensearch {
     }
   }
 
-  /** Options to enable, disable, and specify the properties of EBS storage volumes.
+  /** Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.
     */
   @js.native
   trait EBSOptions extends js.Object {
     var EBSEnabled: js.UndefOr[Boolean]
     var Iops: js.UndefOr[IntegerClass]
+    var Throughput: js.UndefOr[IntegerClass]
     var VolumeSize: js.UndefOr[IntegerClass]
     var VolumeType: js.UndefOr[VolumeType]
   }
@@ -1996,19 +2352,21 @@ package object opensearch {
     def apply(
         EBSEnabled: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[IntegerClass] = js.undefined,
+        Throughput: js.UndefOr[IntegerClass] = js.undefined,
         VolumeSize: js.UndefOr[IntegerClass] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): EBSOptions = {
       val __obj = js.Dynamic.literal()
       EBSEnabled.foreach(__v => __obj.updateDynamic("EBSEnabled")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      Throughput.foreach(__v => __obj.updateDynamic("Throughput")(__v.asInstanceOf[js.Any]))
       VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
       VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EBSOptions]
     }
   }
 
-  /** Status of the EBS options for the specified domain.
+  /** The status of the EBS options for the specified OpenSearch Service domain.
     */
   @js.native
   trait EBSOptionsStatus extends js.Object {
@@ -2030,7 +2388,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies encryption at rest options.
+  /** Specifies whether the domain should encrypt data at rest, and if so, the Key Management Service (KMS) key to use. Can be used only to create a new domain, not update an existing one.
     */
   @js.native
   trait EncryptionAtRestOptions extends js.Object {
@@ -2051,7 +2409,7 @@ package object opensearch {
     }
   }
 
-  /** Status of the encryption At Rest options for the specified domain.
+  /** Status of the encryption at rest options for the specified OpenSearch Service domain.
     */
   @js.native
   trait EncryptionAtRestOptionsStatus extends js.Object {
@@ -2073,6 +2431,8 @@ package object opensearch {
     }
   }
 
+  /** Additional information if the package is in an error state. Null otherwise.
+    */
   @js.native
   trait ErrorDetails extends js.Object {
     var ErrorMessage: js.UndefOr[ErrorMessage]
@@ -2092,7 +2452,7 @@ package object opensearch {
     }
   }
 
-  /** A filter used to limit results when describing inbound or outbound cross-cluster connections. Multiple values can be specified per filter. A cross-cluster connection must match at least one of the specified values for it to be returned from an operation.
+  /** A filter used to limit results when describing inbound or outbound cross-cluster connections. You can specify multiple values per filter. A cross-cluster connection must match at least one of the specified values for it to be returned from an operation.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2113,7 +2473,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to <code> <a>GetCompatibleVersions</a> </code> operation.
+  /** Container for the request parameters to <code>GetCompatibleVersions</code> operation.
     */
   @js.native
   trait GetCompatibleVersionsRequest extends js.Object {
@@ -2131,7 +2491,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>GetCompatibleVersions</a> </code> operation.
+  /** Container for the response returned by the <code>GetCompatibleVersions</code> operation.
     */
   @js.native
   trait GetCompatibleVersionsResponse extends js.Object {
@@ -2149,7 +2509,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>GetPackageVersionHistory</a> </code> operation.
+  /** Container for the request parameters to the <code>GetPackageVersionHistory</code> operation.
     */
   @js.native
   trait GetPackageVersionHistoryRequest extends js.Object {
@@ -2175,7 +2535,7 @@ package object opensearch {
     }
   }
 
-  /** Container for response returned by <code> <a>GetPackageVersionHistory</a> </code> operation.
+  /** Container for response returned by <code>GetPackageVersionHistory</code> operation.
     */
   @js.native
   trait GetPackageVersionHistoryResponse extends js.Object {
@@ -2199,7 +2559,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>GetUpgradeHistory</a> </code> operation.
+  /** Container for the request parameters to the <code>GetUpgradeHistory</code> operation.
     */
   @js.native
   trait GetUpgradeHistoryRequest extends js.Object {
@@ -2225,7 +2585,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>GetUpgradeHistory</a> </code> operation.
+  /** Container for the response returned by the <code>GetUpgradeHistory</code> operation.
     */
   @js.native
   trait GetUpgradeHistoryResponse extends js.Object {
@@ -2246,7 +2606,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>GetUpgradeStatus</a> </code> operation.
+  /** Container for the request parameters to the <code>GetUpgradeStatus</code> operation.
     */
   @js.native
   trait GetUpgradeStatusRequest extends js.Object {
@@ -2265,7 +2625,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>GetUpgradeStatus</a> </code> operation.
+  /** Container for the response returned by the <code>GetUpgradeStatus</code> operation.
     */
   @js.native
   trait GetUpgradeStatusResponse extends js.Object {
@@ -2289,7 +2649,7 @@ package object opensearch {
     }
   }
 
-  /** Details of an inbound connection.
+  /** Describes an inbound cross-cluster connection for Amazon OpenSearch Service. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html|Cross-cluster search for Amazon OpenSearch Service]].
     */
   @js.native
   trait InboundConnection extends js.Object {
@@ -2316,7 +2676,7 @@ package object opensearch {
     }
   }
 
-  /** The connection status of an inbound cross-cluster connection.
+  /** The status of an inbound cross-cluster connection for OpenSearch Service.
     */
   @js.native
   trait InboundConnectionStatus extends js.Object {
@@ -2337,7 +2697,7 @@ package object opensearch {
     }
   }
 
-  /** InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service for a given InstanceType.
+  /** Limits on the number of instances that can be created in OpenSearch Service for a given instance type.
     */
   @js.native
   trait InstanceCountLimits extends js.Object {
@@ -2358,7 +2718,7 @@ package object opensearch {
     }
   }
 
-  /** InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
+  /** Instance-related attributes that are available for a given instance type.
     */
   @js.native
   trait InstanceLimits extends js.Object {
@@ -2376,6 +2736,8 @@ package object opensearch {
     }
   }
 
+  /** Lists all instance types and available features for a given OpenSearch or Elasticsearch version.
+    */
   @js.native
   trait InstanceTypeDetails extends js.Object {
     var AdvancedSecurityEnabled: js.UndefOr[Boolean]
@@ -2410,7 +2772,7 @@ package object opensearch {
     }
   }
 
-  /** Limits for a given InstanceType and for each of its roles. <br/> Limits contains the following: <code> <a>StorageTypes</a> </code>, <code> <a>InstanceLimits</a> </code>, and <code> <a>AdditionalLimits</a> </code>
+  /** Limits for a given instance type and for each of its roles.
     */
   @js.native
   trait Limits extends js.Object {
@@ -2434,7 +2796,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
+  /** Container for the parameters to the <code>ListDomainNames</code> operation.
     */
   @js.native
   trait ListDomainNamesRequest extends js.Object {
@@ -2452,7 +2814,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.
+  /** The results of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.
     */
   @js.native
   trait ListDomainNamesResponse extends js.Object {
@@ -2470,7 +2832,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>ListDomainsForPackage</a> </code> operation.
+  /** Container for the request parameters to the <code>ListDomainsForPackage</code> operation.
     */
   @js.native
   trait ListDomainsForPackageRequest extends js.Object {
@@ -2496,7 +2858,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response parameters to the <code> <a>ListDomainsForPackage</a> </code> operation.
+  /** Container for the response parameters to the <code>ListDomainsForPackage</code> operation.
     */
   @js.native
   trait ListDomainsForPackageResponse extends js.Object {
@@ -2563,7 +2925,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to the <code> <a>ListPackagesForDomain</a> </code> operation.
+  /** Container for the request parameters to the <code>ListPackagesForDomain</code> operation.
     */
   @js.native
   trait ListPackagesForDomainRequest extends js.Object {
@@ -2589,7 +2951,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response parameters to the <code> <a>ListPackagesForDomain</a> </code> operation.
+  /** Container for the response parameters to the <code>ListPackagesForDomain</code> operation.
     */
   @js.native
   trait ListPackagesForDomainResponse extends js.Object {
@@ -2610,7 +2972,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>ListTags</a> </code> operation. Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+  /** Container for the parameters to the <code>ListTags</code> operation.
     */
   @js.native
   trait ListTagsRequest extends js.Object {
@@ -2629,7 +2991,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>ListTags</code> operation. Contains tags for all requested domains.
+  /** The results of a <code>ListTags</code> operation.
     */
   @js.native
   trait ListTagsResponse extends js.Object {
@@ -2647,7 +3009,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>ListVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, there are no more results to retrieve. </p>
+  /** Container for the request parameters to the <code>ListVersions</code> operation.
     */
   @js.native
   trait ListVersionsRequest extends js.Object {
@@ -2668,7 +3030,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters for response received from the <code> <a>ListVersions</a> </code> operation.
+  /** Container for the parameters for response received from the <code>ListVersions</code> operation.
     */
   @js.native
   trait ListVersionsResponse extends js.Object {
@@ -2689,7 +3051,127 @@ package object opensearch {
     }
   }
 
-  /** <p>Log Publishing option that is set for a given domain. <br/>Attributes and their details:* CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to publish logs to. * Enabled: Whether the log publishing for a given log type is enabled or not. </p>
+  @js.native
+  trait ListVpcEndpointAccessRequest extends js.Object {
+    var DomainName: DomainName
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointAccessRequest]
+    }
+  }
+
+  @js.native
+  trait ListVpcEndpointAccessResponse extends js.Object {
+    var AuthorizedPrincipalList: AuthorizedPrincipalList
+    var NextToken: NextToken
+  }
+
+  object ListVpcEndpointAccessResponse {
+    @inline
+    def apply(
+        AuthorizedPrincipalList: AuthorizedPrincipalList,
+        NextToken: NextToken
+    ): ListVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizedPrincipalList" -> AuthorizedPrincipalList.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointAccessResponse]
+    }
+  }
+
+  @js.native
+  trait ListVpcEndpointsForDomainRequest extends js.Object {
+    var DomainName: DomainName
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointsForDomainRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointsForDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointsForDomainRequest]
+    }
+  }
+
+  @js.native
+  trait ListVpcEndpointsForDomainResponse extends js.Object {
+    var NextToken: NextToken
+    var VpcEndpointSummaryList: VpcEndpointSummaryList
+  }
+
+  object ListVpcEndpointsForDomainResponse {
+    @inline
+    def apply(
+        NextToken: NextToken,
+        VpcEndpointSummaryList: VpcEndpointSummaryList
+    ): ListVpcEndpointsForDomainResponse = {
+      val __obj = js.Dynamic.literal(
+        "NextToken" -> NextToken.asInstanceOf[js.Any],
+        "VpcEndpointSummaryList" -> VpcEndpointSummaryList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointsForDomainResponse]
+    }
+  }
+
+  @js.native
+  trait ListVpcEndpointsRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointsRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointsRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListVpcEndpointsResponse extends js.Object {
+    var NextToken: NextToken
+    var VpcEndpointSummaryList: VpcEndpointSummaryList
+  }
+
+  object ListVpcEndpointsResponse {
+    @inline
+    def apply(
+        NextToken: NextToken,
+        VpcEndpointSummaryList: VpcEndpointSummaryList
+    ): ListVpcEndpointsResponse = {
+      val __obj = js.Dynamic.literal(
+        "NextToken" -> NextToken.asInstanceOf[js.Any],
+        "VpcEndpointSummaryList" -> VpcEndpointSummaryList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointsResponse]
+    }
+  }
+
+  /** Specifies whether the Amazon OpenSearch Service domain publishes the OpenSearch application and slow logs to Amazon CloudWatch. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html|Monitoring OpenSearch logs with Amazon CloudWatch Logs]].
+    *
+    * '''Note:'''After you enable log publishing, you still have to enable the collection of slow logs using the OpenSearch REST API.
     */
   @js.native
   trait LogPublishingOption extends js.Object {
@@ -2731,7 +3213,7 @@ package object opensearch {
     }
   }
 
-  /** Credentials for the master user: username and password, ARN, or both.
+  /** Credentials for the master user for a domain.
     */
   @js.native
   trait MasterUserOptions extends js.Object {
@@ -2755,7 +3237,7 @@ package object opensearch {
     }
   }
 
-  /** The node-to-node encryption options.
+  /** Enables or disables node-to-node encryption. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ntn.html|Node-to-node encryption for Amazon OpenSearch Service]].
     */
   @js.native
   trait NodeToNodeEncryptionOptions extends js.Object {
@@ -2795,7 +3277,7 @@ package object opensearch {
     }
   }
 
-  /** Provides the current status of the entity.
+  /** Provides the current status of an entity.
     */
   @js.native
   trait OptionStatus extends js.Object {
@@ -2827,7 +3309,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies details about an outbound connection.
+  /** Specifies details about an outbound cross-cluster connection.
     */
   @js.native
   trait OutboundConnection extends js.Object {
@@ -2857,7 +3339,7 @@ package object opensearch {
     }
   }
 
-  /** The connection status of an outbound cross-cluster connection.
+  /** The status of an outbound cross-cluster connection.
     */
   @js.native
   trait OutboundConnectionStatus extends js.Object {
@@ -2920,7 +3402,7 @@ package object opensearch {
     }
   }
 
-  /** The Amazon S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code>
+  /** The Amazon S3 location to import the package from.
     */
   @js.native
   trait PackageSource extends js.Object {
@@ -2941,7 +3423,7 @@ package object opensearch {
     }
   }
 
-  /** Details of a package version.
+  /** Details about a package version.
     */
   @js.native
   trait PackageVersionHistory extends js.Object {
@@ -2965,7 +3447,7 @@ package object opensearch {
     }
   }
 
-  /** Container for parameters to <code>PurchaseReservedInstanceOffering</code>
+  /** Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.
     */
   @js.native
   trait PurchaseReservedInstanceOfferingRequest extends js.Object {
@@ -3012,7 +3494,7 @@ package object opensearch {
     }
   }
 
-  /** Contains the specific price and frequency of a recurring charges for a reserved OpenSearch instance, or for a reserved OpenSearch instance offering.
+  /** Contains the specific price and frequency of a recurring charges for an OpenSearch Reserved Instance, or for a Reserved Instance offering.
     */
   @js.native
   trait RecurringCharge extends js.Object {
@@ -3033,7 +3515,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>RejectInboundConnection</a> </code> operation.
+  /** Container for the request parameters to the <code>RejectInboundConnection</code> operation.
     */
   @js.native
   trait RejectInboundConnectionRequest extends js.Object {
@@ -3052,7 +3534,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code> <a>RejectInboundConnection</a> </code> operation. Contains details about the rejected inbound connection.
+  /** Represents the output of a <code>RejectInboundConnection</code> operation.
     */
   @js.native
   trait RejectInboundConnectionResponse extends js.Object {
@@ -3070,7 +3552,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>RemoveTags</a> </code> operation. Specify the <code>ARN</code> for the domain from which you want to remove the specified <code>TagKey</code>.
+  /** Container for the request parameters to the <code>RemoveTags</code> operation.
     */
   @js.native
   trait RemoveTagsRequest extends js.Object {
@@ -3092,7 +3574,7 @@ package object opensearch {
     }
   }
 
-  /** Details of a reserved OpenSearch instance.
+  /** Details of an OpenSearch Reserved Instance.
     */
   @js.native
   trait ReservedInstance extends js.Object {
@@ -3149,7 +3631,7 @@ package object opensearch {
     }
   }
 
-  /** Details of a reserved OpenSearch instance offering.
+  /** Details of an OpenSearch Reserved Instance offering.
     */
   @js.native
   trait ReservedInstanceOffering extends js.Object {
@@ -3188,7 +3670,38 @@ package object opensearch {
     }
   }
 
-  /** The SAML identity povider's information.
+  @js.native
+  trait RevokeVpcEndpointAccessRequest extends js.Object {
+    var Account: AWSAccount
+    var DomainName: DomainName
+  }
+
+  object RevokeVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        Account: AWSAccount,
+        DomainName: DomainName
+    ): RevokeVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "Account" -> Account.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RevokeVpcEndpointAccessRequest]
+    }
+  }
+
+  @js.native
+  trait RevokeVpcEndpointAccessResponse extends js.Object
+
+  object RevokeVpcEndpointAccessResponse {
+    @inline
+    def apply(): RevokeVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RevokeVpcEndpointAccessResponse]
+    }
+  }
+
+  /** The SAML identity povider information.
     */
   @js.native
   trait SAMLIdp extends js.Object {
@@ -3210,7 +3723,7 @@ package object opensearch {
     }
   }
 
-  /** The SAML application configuration for the domain.
+  /** The SAML authentication configuration for an Amazon OpenSearch Service domain.
     */
   @js.native
   trait SAMLOptionsInput extends js.Object {
@@ -3276,7 +3789,7 @@ package object opensearch {
     }
   }
 
-  /** Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+  /** Specifies details about a scheduled Auto-Tune action. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html|Auto-Tune for Amazon OpenSearch Service]].
     */
   @js.native
   trait ScheduledAutoTuneDetails extends js.Object {
@@ -3303,7 +3816,7 @@ package object opensearch {
     }
   }
 
-  /** The current options of an domain service software options.
+  /** The current status of the service software for an Amazon OpenSearch Service domain. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html|Service software updates in Amazon OpenSearch Service]].
     */
   @js.native
   trait ServiceSoftwareOptions extends js.Object {
@@ -3342,7 +3855,7 @@ package object opensearch {
     }
   }
 
-  /** The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.
+  /** The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is <code>0</code> hours.
     */
   @js.native
   trait SnapshotOptions extends js.Object {
@@ -3360,7 +3873,7 @@ package object opensearch {
     }
   }
 
-  /** Status of a daily automated snapshot.
+  /** Container for information about a daily automated snapshot for an OpenSearch Service domain.
     */
   @js.native
   trait SnapshotOptionsStatus extends js.Object {
@@ -3382,7 +3895,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>StartServiceSoftwareUpdate</a> </code> operation. Specifies the name of the domain to schedule a service software update for.
+  /** Container for the request parameters to the <code>StartServiceSoftwareUpdate</code> operation.
     */
   @js.native
   trait StartServiceSoftwareUpdateRequest extends js.Object {
@@ -3401,7 +3914,7 @@ package object opensearch {
     }
   }
 
-  /** The result of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.
+  /** Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.
     */
   @js.native
   trait StartServiceSoftwareUpdateResponse extends js.Object {
@@ -3419,7 +3932,7 @@ package object opensearch {
     }
   }
 
-  /** StorageTypes represents the list of storage-related types and their attributes that are available for a given InstanceType.
+  /** A list of storage types for an Amazon OpenSearch Service domain that are available for a given intance type.
     */
   @js.native
   trait StorageType extends js.Object {
@@ -3443,7 +3956,7 @@ package object opensearch {
     }
   }
 
-  /** Limits that are applicable for the given storage type.
+  /** Limits that are applicable for the given Amazon OpenSearch Service storage type.
     */
   @js.native
   trait StorageTypeLimit extends js.Object {
@@ -3464,7 +3977,7 @@ package object opensearch {
     }
   }
 
-  /** A key value pair for a resource tag.
+  /** A tag (key-value pair) for an Amazon OpenSearch Service resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3486,7 +3999,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the parameters to the <code> <a>UpdateDomain</a> </code> operation. Specifies the type and number of instances in the domain cluster.
+  /** Container for the request parameters to the <code>UpdateDomain</code> operation.
     */
   @js.native
   trait UpdateDomainConfigRequest extends js.Object {
@@ -3548,7 +4061,7 @@ package object opensearch {
     }
   }
 
-  /** The result of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.
+  /** The results of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.
     */
   @js.native
   trait UpdateDomainConfigResponse extends js.Object {
@@ -3571,7 +4084,7 @@ package object opensearch {
     }
   }
 
-  /** Container for request parameters to the <code> <a>UpdatePackage</a> </code> operation.
+  /** Container for request parameters to the <code>UpdatePackage</code> operation.
     */
   @js.native
   trait UpdatePackageRequest extends js.Object {
@@ -3600,7 +4113,7 @@ package object opensearch {
     }
   }
 
-  /** Container for the response returned by the <code> <a>UpdatePackage</a> </code> operation.
+  /** Container for the response returned by the <code>UpdatePackage</code> operation.
     */
   @js.native
   trait UpdatePackageResponse extends js.Object {
@@ -3618,7 +4131,44 @@ package object opensearch {
     }
   }
 
-  /** Container for the request parameters to <code> <a>UpgradeDomain</a> </code> operation.
+  @js.native
+  trait UpdateVpcEndpointRequest extends js.Object {
+    var VpcEndpointId: VpcEndpointId
+    var VpcOptions: VPCOptions
+  }
+
+  object UpdateVpcEndpointRequest {
+    @inline
+    def apply(
+        VpcEndpointId: VpcEndpointId,
+        VpcOptions: VPCOptions
+    ): UpdateVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointId" -> VpcEndpointId.asInstanceOf[js.Any],
+        "VpcOptions" -> VpcOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateVpcEndpointResponse extends js.Object {
+    var VpcEndpoint: VpcEndpoint
+  }
+
+  object UpdateVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpoint: VpcEndpoint
+    ): UpdateVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpoint" -> VpcEndpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcEndpointResponse]
+    }
+  }
+
+  /** Container for the request parameters to the <code>UpgradeDomain</code> operation.
     */
   @js.native
   trait UpgradeDomainRequest extends js.Object {
@@ -3647,11 +4197,12 @@ package object opensearch {
     }
   }
 
-  /** Container for response returned by <code> <a>UpgradeDomain</a> </code> operation.
+  /** Container for the response returned by <code>UpgradeDomain</code> operation.
     */
   @js.native
   trait UpgradeDomainResponse extends js.Object {
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var DomainName: js.UndefOr[DomainName]
     var PerformCheckOnly: js.UndefOr[Boolean]
     var TargetVersion: js.UndefOr[VersionString]
@@ -3662,6 +4213,7 @@ package object opensearch {
     @inline
     def apply(
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
         PerformCheckOnly: js.UndefOr[Boolean] = js.undefined,
         TargetVersion: js.UndefOr[VersionString] = js.undefined,
@@ -3669,6 +4221,7 @@ package object opensearch {
     ): UpgradeDomainResponse = {
       val __obj = js.Dynamic.literal()
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       PerformCheckOnly.foreach(__v => __obj.updateDynamic("PerformCheckOnly")(__v.asInstanceOf[js.Any]))
       TargetVersion.foreach(__v => __obj.updateDynamic("TargetVersion")(__v.asInstanceOf[js.Any]))
@@ -3677,7 +4230,7 @@ package object opensearch {
     }
   }
 
-  /** History of the last 10 upgrades and upgrade eligibility checks.
+  /** History of the last 10 upgrades and upgrade eligibility checks for an Amazon OpenSearch Service domain.
     */
   @js.native
   trait UpgradeHistory extends js.Object {
@@ -3704,7 +4257,7 @@ package object opensearch {
     }
   }
 
-  /** Represents a single step of the upgrade or upgrade eligibility check workflow.
+  /** Represents a single step of an upgrade or upgrade eligibility check workflow.
     */
   @js.native
   trait UpgradeStepItem extends js.Object {
@@ -3731,7 +4284,7 @@ package object opensearch {
     }
   }
 
-  /** Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>.
+  /** Information about the subnets and security groups for an Amazon OpenSearch Service domain provisioned within a virtual private cloud (VPC). For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html|Launching your Amazon OpenSearch Service domains using a VPC]]. This information only exists if the domain was created with <code>VPCOptions</code>.
     */
   @js.native
   trait VPCDerivedInfo extends js.Object {
@@ -3758,7 +4311,7 @@ package object opensearch {
     }
   }
 
-  /** Status of the VPC options for the specified domain.
+  /** Status of the VPC options for a specified domain.
     */
   @js.native
   trait VPCDerivedInfoStatus extends js.Object {
@@ -3780,7 +4333,7 @@ package object opensearch {
     }
   }
 
-  /** Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>.
+  /** Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html|Launching your Amazon OpenSearch Service domains using a VPC]].
     */
   @js.native
   trait VPCOptions extends js.Object {
@@ -3801,7 +4354,7 @@ package object opensearch {
     }
   }
 
-  /** The status of the OpenSearch version options for the specified OpenSearch domain.
+  /** The status of the the OpenSearch or Elasticsearch version options for the specified Amazon OpenSearch Service domain.
     */
   @js.native
   trait VersionStatus extends js.Object {
@@ -3823,7 +4376,91 @@ package object opensearch {
     }
   }
 
-  /** The zone awareness configuration for the domain cluster, such as the number of availability zones.
+  /** The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.
+    */
+  @js.native
+  trait VpcEndpoint extends js.Object {
+    var DomainArn: js.UndefOr[DomainArn]
+    var Endpoint: js.UndefOr[Endpoint]
+    var Status: js.UndefOr[VpcEndpointStatus]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+    var VpcEndpointOwner: js.UndefOr[AWSAccount]
+    var VpcOptions: js.UndefOr[VPCDerivedInfo]
+  }
+
+  object VpcEndpoint {
+    @inline
+    def apply(
+        DomainArn: js.UndefOr[DomainArn] = js.undefined,
+        Endpoint: js.UndefOr[Endpoint] = js.undefined,
+        Status: js.UndefOr[VpcEndpointStatus] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
+        VpcEndpointOwner: js.UndefOr[AWSAccount] = js.undefined,
+        VpcOptions: js.UndefOr[VPCDerivedInfo] = js.undefined
+    ): VpcEndpoint = {
+      val __obj = js.Dynamic.literal()
+      DomainArn.foreach(__v => __obj.updateDynamic("DomainArn")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointOwner.foreach(__v => __obj.updateDynamic("VpcEndpointOwner")(__v.asInstanceOf[js.Any]))
+      VpcOptions.foreach(__v => __obj.updateDynamic("VpcOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpoint]
+    }
+  }
+
+  /** Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.
+    */
+  @js.native
+  trait VpcEndpointError extends js.Object {
+    var ErrorCode: js.UndefOr[VpcEndpointErrorCode]
+    var ErrorMessage: js.UndefOr[String]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+  }
+
+  object VpcEndpointError {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[VpcEndpointErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
+    ): VpcEndpointError = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpointError]
+    }
+  }
+
+  /** Summary information for an Amazon OpenSearch Service-managed VPC endpoint.
+    */
+  @js.native
+  trait VpcEndpointSummary extends js.Object {
+    var DomainArn: js.UndefOr[DomainArn]
+    var Status: js.UndefOr[VpcEndpointStatus]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+    var VpcEndpointOwner: js.UndefOr[String]
+  }
+
+  object VpcEndpointSummary {
+    @inline
+    def apply(
+        DomainArn: js.UndefOr[DomainArn] = js.undefined,
+        Status: js.UndefOr[VpcEndpointStatus] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
+        VpcEndpointOwner: js.UndefOr[String] = js.undefined
+    ): VpcEndpointSummary = {
+      val __obj = js.Dynamic.literal()
+      DomainArn.foreach(__v => __obj.updateDynamic("DomainArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointOwner.foreach(__v => __obj.updateDynamic("VpcEndpointOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpointSummary]
+    }
+  }
+
+  /** The zone awareness configuration for an Amazon OpenSearch Service domain.
     */
   @js.native
   trait ZoneAwarenessConfig extends js.Object {

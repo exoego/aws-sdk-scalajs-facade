@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object sagemakerruntime {
   type BodyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type CustomAttributesHeader = String
+  type EnableExplanationsHeader = String
   type EndpointName = String
   type Header = String
   type InferenceId = String
@@ -102,6 +103,7 @@ package object sagemakerruntime {
     var Accept: js.UndefOr[Header]
     var ContentType: js.UndefOr[Header]
     var CustomAttributes: js.UndefOr[CustomAttributesHeader]
+    var EnableExplanations: js.UndefOr[EnableExplanationsHeader]
     var InferenceId: js.UndefOr[InferenceId]
     var TargetContainerHostname: js.UndefOr[TargetContainerHostnameHeader]
     var TargetModel: js.UndefOr[TargetModelHeader]
@@ -116,6 +118,7 @@ package object sagemakerruntime {
         Accept: js.UndefOr[Header] = js.undefined,
         ContentType: js.UndefOr[Header] = js.undefined,
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
+        EnableExplanations: js.UndefOr[EnableExplanationsHeader] = js.undefined,
         InferenceId: js.UndefOr[InferenceId] = js.undefined,
         TargetContainerHostname: js.UndefOr[TargetContainerHostnameHeader] = js.undefined,
         TargetModel: js.UndefOr[TargetModelHeader] = js.undefined,
@@ -129,6 +132,7 @@ package object sagemakerruntime {
       Accept.foreach(__v => __obj.updateDynamic("Accept")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
+      EnableExplanations.foreach(__v => __obj.updateDynamic("EnableExplanations")(__v.asInstanceOf[js.Any]))
       InferenceId.foreach(__v => __obj.updateDynamic("InferenceId")(__v.asInstanceOf[js.Any]))
       TargetContainerHostname.foreach(__v => __obj.updateDynamic("TargetContainerHostname")(__v.asInstanceOf[js.Any]))
       TargetModel.foreach(__v => __obj.updateDynamic("TargetModel")(__v.asInstanceOf[js.Any]))

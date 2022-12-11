@@ -39,26 +39,27 @@ package object ec2instanceconnect {
 
   @js.native
   trait SendSSHPublicKeyRequest extends js.Object {
-    var AvailabilityZone: AvailabilityZone
     var InstanceId: InstanceId
     var InstanceOSUser: InstanceOSUser
     var SSHPublicKey: SSHPublicKey
+    var AvailabilityZone: js.UndefOr[AvailabilityZone]
   }
 
   object SendSSHPublicKeyRequest {
     @inline
     def apply(
-        AvailabilityZone: AvailabilityZone,
         InstanceId: InstanceId,
         InstanceOSUser: InstanceOSUser,
-        SSHPublicKey: SSHPublicKey
+        SSHPublicKey: SSHPublicKey,
+        AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined
     ): SendSSHPublicKeyRequest = {
       val __obj = js.Dynamic.literal(
-        "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "InstanceOSUser" -> InstanceOSUser.asInstanceOf[js.Any],
         "SSHPublicKey" -> SSHPublicKey.asInstanceOf[js.Any]
       )
+
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendSSHPublicKeyRequest]
     }
   }

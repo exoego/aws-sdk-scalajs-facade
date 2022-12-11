@@ -18,11 +18,13 @@ package object fis {
   type ActionTargetMap = js.Dictionary[ActionTarget]
   type ActionTargetName = String
   type ClientToken = String
+  type CloudWatchLogGroupArn = String
   type CreateExperimentTemplateActionInputMap = js.Dictionary[CreateExperimentTemplateActionInput]
   type CreateExperimentTemplateStopConditionInputList = js.Array[CreateExperimentTemplateStopConditionInput]
   type CreateExperimentTemplateTargetInputMap = js.Dictionary[CreateExperimentTemplateTargetInput]
   type CreationTime = js.Date
   type ExperimentActionDescription = String
+  type ExperimentActionEndTime = js.Date
   type ExperimentActionMap = js.Dictionary[ExperimentAction]
   type ExperimentActionName = String
   type ExperimentActionParameter = String
@@ -30,6 +32,7 @@ package object fis {
   type ExperimentActionParameterName = String
   type ExperimentActionStartAfter = String
   type ExperimentActionStartAfterList = js.Array[ExperimentActionStartAfter]
+  type ExperimentActionStartTime = js.Date
   type ExperimentActionStatusReason = String
   type ExperimentActionTargetMap = js.Dictionary[ExperimentTargetName]
   type ExperimentActionTargetName = String
@@ -45,6 +48,9 @@ package object fis {
   type ExperimentTargetFilterValues = js.Array[ExperimentTargetFilterValue]
   type ExperimentTargetMap = js.Dictionary[ExperimentTarget]
   type ExperimentTargetName = String
+  type ExperimentTargetParameterMap = js.Dictionary[ExperimentTargetParameterValue]
+  type ExperimentTargetParameterName = String
+  type ExperimentTargetParameterValue = String
   type ExperimentTargetSelectionMode = String
   type ExperimentTemplateActionDescription = String
   type ExperimentTemplateActionMap = js.Dictionary[ExperimentTemplateAction]
@@ -67,23 +73,35 @@ package object fis {
   type ExperimentTemplateTargetFilterValues = js.Array[ExperimentTemplateTargetFilterValue]
   type ExperimentTemplateTargetMap = js.Dictionary[ExperimentTemplateTarget]
   type ExperimentTemplateTargetName = String
+  type ExperimentTemplateTargetParameterMap = js.Dictionary[ExperimentTemplateTargetParameterValue]
+  type ExperimentTemplateTargetParameterName = String
+  type ExperimentTemplateTargetParameterValue = String
   type ExperimentTemplateTargetSelectionMode = String
   type LastUpdateTime = js.Date
   type ListActionsMaxResults = Int
   type ListExperimentTemplatesMaxResults = Int
   type ListExperimentsMaxResults = Int
+  type ListTargetResourceTypesMaxResults = Int
+  type LogSchemaVersion = Int
   type NextToken = String
   type ResourceArn = String
   type ResourceArnList = js.Array[ResourceArn]
-  type ResourceType = String
   type RoleArn = String
+  type S3BucketName = String
+  type S3ObjectKey = String
   type StopConditionSource = String
   type StopConditionValue = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
-  type TargetResourceType = String
+  type TargetResourceTypeDescription = String
+  type TargetResourceTypeId = String
+  type TargetResourceTypeParameterDescription = String
+  type TargetResourceTypeParameterMap = js.Dictionary[TargetResourceTypeParameter]
+  type TargetResourceTypeParameterName = String
+  type TargetResourceTypeParameterRequired = Boolean
+  type TargetResourceTypeSummaryList = js.Array[TargetResourceTypeSummary]
   type UpdateExperimentTemplateActionInputMap = js.Dictionary[UpdateExperimentTemplateActionInputItem]
   type UpdateExperimentTemplateStopConditionInputList = js.Array[UpdateExperimentTemplateStopConditionInput]
   type UpdateExperimentTemplateTargetInputMap = js.Dictionary[UpdateExperimentTemplateTargetInput]
@@ -95,10 +113,12 @@ package object fis {
     @inline def getActionFuture(params: GetActionRequest): Future[GetActionResponse] = service.getAction(params).promise().toFuture
     @inline def getExperimentFuture(params: GetExperimentRequest): Future[GetExperimentResponse] = service.getExperiment(params).promise().toFuture
     @inline def getExperimentTemplateFuture(params: GetExperimentTemplateRequest): Future[GetExperimentTemplateResponse] = service.getExperimentTemplate(params).promise().toFuture
+    @inline def getTargetResourceTypeFuture(params: GetTargetResourceTypeRequest): Future[GetTargetResourceTypeResponse] = service.getTargetResourceType(params).promise().toFuture
     @inline def listActionsFuture(params: ListActionsRequest): Future[ListActionsResponse] = service.listActions(params).promise().toFuture
     @inline def listExperimentTemplatesFuture(params: ListExperimentTemplatesRequest): Future[ListExperimentTemplatesResponse] = service.listExperimentTemplates(params).promise().toFuture
     @inline def listExperimentsFuture(params: ListExperimentsRequest): Future[ListExperimentsResponse] = service.listExperiments(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTargetResourceTypesFuture(params: ListTargetResourceTypesRequest): Future[ListTargetResourceTypesResponse] = service.listTargetResourceTypes(params).promise().toFuture
     @inline def startExperimentFuture(params: StartExperimentRequest): Future[StartExperimentResponse] = service.startExperiment(params).promise().toFuture
     @inline def stopExperimentFuture(params: StopExperimentRequest): Future[StopExperimentResponse] = service.stopExperiment(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
@@ -117,10 +137,12 @@ package object fis {
     def getAction(params: GetActionRequest): Request[GetActionResponse] = js.native
     def getExperiment(params: GetExperimentRequest): Request[GetExperimentResponse] = js.native
     def getExperimentTemplate(params: GetExperimentTemplateRequest): Request[GetExperimentTemplateResponse] = js.native
+    def getTargetResourceType(params: GetTargetResourceTypeRequest): Request[GetTargetResourceTypeResponse] = js.native
     def listActions(params: ListActionsRequest): Request[ListActionsResponse] = js.native
     def listExperimentTemplates(params: ListExperimentTemplatesRequest): Request[ListExperimentTemplatesResponse] = js.native
     def listExperiments(params: ListExperimentsRequest): Request[ListExperimentsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTargetResourceTypes(params: ListTargetResourceTypesRequest): Request[ListTargetResourceTypesResponse] = js.native
     def startExperiment(params: StartExperimentRequest): Request[StartExperimentResponse] = js.native
     def stopExperiment(params: StopExperimentRequest): Request[StopExperimentResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -133,7 +155,7 @@ package object fis {
     }
   }
 
-  /** Describes an action. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html|AWS FIS actions]] in the <i>AWS Fault Injection Simulator User Guide</i>.
+  /** Describes an action. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html|FIS actions]] in the <i>Fault Injection Simulator User Guide</i>.
     */
   @js.native
   trait Action extends js.Object {
@@ -215,13 +237,13 @@ package object fis {
     */
   @js.native
   trait ActionTarget extends js.Object {
-    var resourceType: js.UndefOr[TargetResourceType]
+    var resourceType: js.UndefOr[TargetResourceTypeId]
   }
 
   object ActionTarget {
     @inline
     def apply(
-        resourceType: js.UndefOr[TargetResourceType] = js.undefined
+        resourceType: js.UndefOr[TargetResourceTypeId] = js.undefined
     ): ActionTarget = {
       val __obj = js.Dynamic.literal()
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
@@ -229,7 +251,7 @@ package object fis {
     }
   }
 
-  /** Specifies an action for an experiment template.
+  /** Specifies an action for an experiment template. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/actions.html|Actions]] in the <i>Fault Injection Simulator User Guide</i>.
     */
   @js.native
   trait CreateExperimentTemplateActionInput extends js.Object {
@@ -261,6 +283,32 @@ package object fis {
     }
   }
 
+  /** Specifies the configuration for experiment logging.
+    */
+  @js.native
+  trait CreateExperimentTemplateLogConfigurationInput extends js.Object {
+    var logSchemaVersion: LogSchemaVersion
+    var cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfigurationInput]
+    var s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfigurationInput]
+  }
+
+  object CreateExperimentTemplateLogConfigurationInput {
+    @inline
+    def apply(
+        logSchemaVersion: LogSchemaVersion,
+        cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfigurationInput] = js.undefined,
+        s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfigurationInput] = js.undefined
+    ): CreateExperimentTemplateLogConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "logSchemaVersion" -> logSchemaVersion.asInstanceOf[js.Any]
+      )
+
+      cloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("cloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
+      s3Configuration.foreach(__v => __obj.updateDynamic("s3Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExperimentTemplateLogConfigurationInput]
+    }
+  }
+
   @js.native
   trait CreateExperimentTemplateRequest extends js.Object {
     var actions: CreateExperimentTemplateActionInputMap
@@ -268,6 +316,7 @@ package object fis {
     var description: ExperimentTemplateDescription
     var roleArn: RoleArn
     var stopConditions: CreateExperimentTemplateStopConditionInputList
+    var logConfiguration: js.UndefOr[CreateExperimentTemplateLogConfigurationInput]
     var tags: js.UndefOr[TagMap]
     var targets: js.UndefOr[CreateExperimentTemplateTargetInputMap]
   }
@@ -280,6 +329,7 @@ package object fis {
         description: ExperimentTemplateDescription,
         roleArn: RoleArn,
         stopConditions: CreateExperimentTemplateStopConditionInputList,
+        logConfiguration: js.UndefOr[CreateExperimentTemplateLogConfigurationInput] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         targets: js.UndefOr[CreateExperimentTemplateTargetInputMap] = js.undefined
     ): CreateExperimentTemplateRequest = {
@@ -291,6 +341,7 @@ package object fis {
         "stopConditions" -> stopConditions.asInstanceOf[js.Any]
       )
 
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExperimentTemplateRequest]
@@ -336,13 +387,14 @@ package object fis {
     }
   }
 
-  /** Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags.
+  /** Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs and tags. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/targets.html|Targets]] in the <i>Fault Injection Simulator User Guide</i>.
     */
   @js.native
   trait CreateExperimentTemplateTargetInput extends js.Object {
-    var resourceType: ResourceType
+    var resourceType: TargetResourceTypeId
     var selectionMode: ExperimentTemplateTargetSelectionMode
     var filters: js.UndefOr[ExperimentTemplateTargetFilterInputList]
+    var parameters: js.UndefOr[ExperimentTemplateTargetParameterMap]
     var resourceArns: js.UndefOr[ResourceArnList]
     var resourceTags: js.UndefOr[TagMap]
   }
@@ -350,9 +402,10 @@ package object fis {
   object CreateExperimentTemplateTargetInput {
     @inline
     def apply(
-        resourceType: ResourceType,
+        resourceType: TargetResourceTypeId,
         selectionMode: ExperimentTemplateTargetSelectionMode,
         filters: js.UndefOr[ExperimentTemplateTargetFilterInputList] = js.undefined,
+        parameters: js.UndefOr[ExperimentTemplateTargetParameterMap] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         resourceTags: js.UndefOr[TagMap] = js.undefined
     ): CreateExperimentTemplateTargetInput = {
@@ -362,6 +415,7 @@ package object fis {
       )
 
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExperimentTemplateTargetInput]
@@ -410,6 +464,7 @@ package object fis {
     var endTime: js.UndefOr[ExperimentEndTime]
     var experimentTemplateId: js.UndefOr[ExperimentTemplateId]
     var id: js.UndefOr[ExperimentId]
+    var logConfiguration: js.UndefOr[ExperimentLogConfiguration]
     var roleArn: js.UndefOr[RoleArn]
     var startTime: js.UndefOr[ExperimentStartTime]
     var state: js.UndefOr[ExperimentState]
@@ -426,6 +481,7 @@ package object fis {
         endTime: js.UndefOr[ExperimentEndTime] = js.undefined,
         experimentTemplateId: js.UndefOr[ExperimentTemplateId] = js.undefined,
         id: js.UndefOr[ExperimentId] = js.undefined,
+        logConfiguration: js.UndefOr[ExperimentLogConfiguration] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         startTime: js.UndefOr[ExperimentStartTime] = js.undefined,
         state: js.UndefOr[ExperimentState] = js.undefined,
@@ -439,6 +495,7 @@ package object fis {
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       experimentTemplateId.foreach(__v => __obj.updateDynamic("experimentTemplateId")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
@@ -455,8 +512,10 @@ package object fis {
   trait ExperimentAction extends js.Object {
     var actionId: js.UndefOr[ActionId]
     var description: js.UndefOr[ExperimentActionDescription]
+    var endTime: js.UndefOr[ExperimentActionEndTime]
     var parameters: js.UndefOr[ExperimentActionParameterMap]
     var startAfter: js.UndefOr[ExperimentActionStartAfterList]
+    var startTime: js.UndefOr[ExperimentActionStartTime]
     var state: js.UndefOr[ExperimentActionState]
     var targets: js.UndefOr[ExperimentActionTargetMap]
   }
@@ -466,16 +525,20 @@ package object fis {
     def apply(
         actionId: js.UndefOr[ActionId] = js.undefined,
         description: js.UndefOr[ExperimentActionDescription] = js.undefined,
+        endTime: js.UndefOr[ExperimentActionEndTime] = js.undefined,
         parameters: js.UndefOr[ExperimentActionParameterMap] = js.undefined,
         startAfter: js.UndefOr[ExperimentActionStartAfterList] = js.undefined,
+        startTime: js.UndefOr[ExperimentActionStartTime] = js.undefined,
         state: js.UndefOr[ExperimentActionState] = js.undefined,
         targets: js.UndefOr[ExperimentActionTargetMap] = js.undefined
     ): ExperimentAction = {
       val __obj = js.Dynamic.literal()
       actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       startAfter.foreach(__v => __obj.updateDynamic("startAfter")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExperimentAction]
@@ -500,6 +563,69 @@ package object fis {
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExperimentActionState]
+    }
+  }
+
+  /** Describes the configuration for experiment logging to Amazon CloudWatch Logs.
+    */
+  @js.native
+  trait ExperimentCloudWatchLogsLogConfiguration extends js.Object {
+    var logGroupArn: js.UndefOr[CloudWatchLogGroupArn]
+  }
+
+  object ExperimentCloudWatchLogsLogConfiguration {
+    @inline
+    def apply(
+        logGroupArn: js.UndefOr[CloudWatchLogGroupArn] = js.undefined
+    ): ExperimentCloudWatchLogsLogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      logGroupArn.foreach(__v => __obj.updateDynamic("logGroupArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentCloudWatchLogsLogConfiguration]
+    }
+  }
+
+  /** Describes the configuration for experiment logging.
+    */
+  @js.native
+  trait ExperimentLogConfiguration extends js.Object {
+    var cloudWatchLogsConfiguration: js.UndefOr[ExperimentCloudWatchLogsLogConfiguration]
+    var logSchemaVersion: js.UndefOr[LogSchemaVersion]
+    var s3Configuration: js.UndefOr[ExperimentS3LogConfiguration]
+  }
+
+  object ExperimentLogConfiguration {
+    @inline
+    def apply(
+        cloudWatchLogsConfiguration: js.UndefOr[ExperimentCloudWatchLogsLogConfiguration] = js.undefined,
+        logSchemaVersion: js.UndefOr[LogSchemaVersion] = js.undefined,
+        s3Configuration: js.UndefOr[ExperimentS3LogConfiguration] = js.undefined
+    ): ExperimentLogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("cloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
+      logSchemaVersion.foreach(__v => __obj.updateDynamic("logSchemaVersion")(__v.asInstanceOf[js.Any]))
+      s3Configuration.foreach(__v => __obj.updateDynamic("s3Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentLogConfiguration]
+    }
+  }
+
+  /** Describes the configuration for experiment logging to Amazon S3.
+    */
+  @js.native
+  trait ExperimentS3LogConfiguration extends js.Object {
+    var bucketName: js.UndefOr[S3BucketName]
+    var prefix: js.UndefOr[S3ObjectKey]
+  }
+
+  object ExperimentS3LogConfiguration {
+    @inline
+    def apply(
+        bucketName: js.UndefOr[S3BucketName] = js.undefined,
+        prefix: js.UndefOr[S3ObjectKey] = js.undefined
+    ): ExperimentS3LogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentS3LogConfiguration]
     }
   }
 
@@ -580,9 +706,10 @@ package object fis {
   @js.native
   trait ExperimentTarget extends js.Object {
     var filters: js.UndefOr[ExperimentTargetFilterList]
+    var parameters: js.UndefOr[ExperimentTargetParameterMap]
     var resourceArns: js.UndefOr[ResourceArnList]
     var resourceTags: js.UndefOr[TagMap]
-    var resourceType: js.UndefOr[ResourceType]
+    var resourceType: js.UndefOr[TargetResourceTypeId]
     var selectionMode: js.UndefOr[ExperimentTargetSelectionMode]
   }
 
@@ -590,13 +717,15 @@ package object fis {
     @inline
     def apply(
         filters: js.UndefOr[ExperimentTargetFilterList] = js.undefined,
+        parameters: js.UndefOr[ExperimentTargetParameterMap] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         resourceTags: js.UndefOr[TagMap] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        resourceType: js.UndefOr[TargetResourceTypeId] = js.undefined,
         selectionMode: js.UndefOr[ExperimentTargetSelectionMode] = js.undefined
     ): ExperimentTarget = {
       val __obj = js.Dynamic.literal()
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
@@ -635,6 +764,7 @@ package object fis {
     var description: js.UndefOr[ExperimentTemplateDescription]
     var id: js.UndefOr[ExperimentTemplateId]
     var lastUpdateTime: js.UndefOr[LastUpdateTime]
+    var logConfiguration: js.UndefOr[ExperimentTemplateLogConfiguration]
     var roleArn: js.UndefOr[RoleArn]
     var stopConditions: js.UndefOr[ExperimentTemplateStopConditionList]
     var tags: js.UndefOr[TagMap]
@@ -649,6 +779,7 @@ package object fis {
         description: js.UndefOr[ExperimentTemplateDescription] = js.undefined,
         id: js.UndefOr[ExperimentTemplateId] = js.undefined,
         lastUpdateTime: js.UndefOr[LastUpdateTime] = js.undefined,
+        logConfiguration: js.UndefOr[ExperimentTemplateLogConfiguration] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         stopConditions: js.UndefOr[ExperimentTemplateStopConditionList] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
@@ -660,6 +791,7 @@ package object fis {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       stopConditions.foreach(__v => __obj.updateDynamic("stopConditions")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -695,6 +827,111 @@ package object fis {
       startAfter.foreach(__v => __obj.updateDynamic("startAfter")(__v.asInstanceOf[js.Any]))
       targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExperimentTemplateAction]
+    }
+  }
+
+  /** Describes the configuration for experiment logging to Amazon CloudWatch Logs.
+    */
+  @js.native
+  trait ExperimentTemplateCloudWatchLogsLogConfiguration extends js.Object {
+    var logGroupArn: js.UndefOr[CloudWatchLogGroupArn]
+  }
+
+  object ExperimentTemplateCloudWatchLogsLogConfiguration {
+    @inline
+    def apply(
+        logGroupArn: js.UndefOr[CloudWatchLogGroupArn] = js.undefined
+    ): ExperimentTemplateCloudWatchLogsLogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      logGroupArn.foreach(__v => __obj.updateDynamic("logGroupArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentTemplateCloudWatchLogsLogConfiguration]
+    }
+  }
+
+  /** Specifies the configuration for experiment logging to Amazon CloudWatch Logs.
+    */
+  @js.native
+  trait ExperimentTemplateCloudWatchLogsLogConfigurationInput extends js.Object {
+    var logGroupArn: CloudWatchLogGroupArn
+  }
+
+  object ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+    @inline
+    def apply(
+        logGroupArn: CloudWatchLogGroupArn
+    ): ExperimentTemplateCloudWatchLogsLogConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "logGroupArn" -> logGroupArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ExperimentTemplateCloudWatchLogsLogConfigurationInput]
+    }
+  }
+
+  /** Describes the configuration for experiment logging.
+    */
+  @js.native
+  trait ExperimentTemplateLogConfiguration extends js.Object {
+    var cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfiguration]
+    var logSchemaVersion: js.UndefOr[LogSchemaVersion]
+    var s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfiguration]
+  }
+
+  object ExperimentTemplateLogConfiguration {
+    @inline
+    def apply(
+        cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfiguration] = js.undefined,
+        logSchemaVersion: js.UndefOr[LogSchemaVersion] = js.undefined,
+        s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfiguration] = js.undefined
+    ): ExperimentTemplateLogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("cloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
+      logSchemaVersion.foreach(__v => __obj.updateDynamic("logSchemaVersion")(__v.asInstanceOf[js.Any]))
+      s3Configuration.foreach(__v => __obj.updateDynamic("s3Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentTemplateLogConfiguration]
+    }
+  }
+
+  /** Describes the configuration for experiment logging to Amazon S3.
+    */
+  @js.native
+  trait ExperimentTemplateS3LogConfiguration extends js.Object {
+    var bucketName: js.UndefOr[S3BucketName]
+    var prefix: js.UndefOr[S3ObjectKey]
+  }
+
+  object ExperimentTemplateS3LogConfiguration {
+    @inline
+    def apply(
+        bucketName: js.UndefOr[S3BucketName] = js.undefined,
+        prefix: js.UndefOr[S3ObjectKey] = js.undefined
+    ): ExperimentTemplateS3LogConfiguration = {
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentTemplateS3LogConfiguration]
+    }
+  }
+
+  /** Specifies the configuration for experiment logging to Amazon S3.
+    */
+  @js.native
+  trait ExperimentTemplateS3LogConfigurationInput extends js.Object {
+    var bucketName: S3BucketName
+    var prefix: js.UndefOr[S3ObjectKey]
+  }
+
+  object ExperimentTemplateS3LogConfigurationInput {
+    @inline
+    def apply(
+        bucketName: S3BucketName,
+        prefix: js.UndefOr[S3ObjectKey] = js.undefined
+    ): ExperimentTemplateS3LogConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExperimentTemplateS3LogConfigurationInput]
     }
   }
 
@@ -754,9 +991,10 @@ package object fis {
   @js.native
   trait ExperimentTemplateTarget extends js.Object {
     var filters: js.UndefOr[ExperimentTemplateTargetFilterList]
+    var parameters: js.UndefOr[ExperimentTemplateTargetParameterMap]
     var resourceArns: js.UndefOr[ResourceArnList]
     var resourceTags: js.UndefOr[TagMap]
-    var resourceType: js.UndefOr[ResourceType]
+    var resourceType: js.UndefOr[TargetResourceTypeId]
     var selectionMode: js.UndefOr[ExperimentTemplateTargetSelectionMode]
   }
 
@@ -764,13 +1002,15 @@ package object fis {
     @inline
     def apply(
         filters: js.UndefOr[ExperimentTemplateTargetFilterList] = js.undefined,
+        parameters: js.UndefOr[ExperimentTemplateTargetParameterMap] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         resourceTags: js.UndefOr[TagMap] = js.undefined,
-        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        resourceType: js.UndefOr[TargetResourceTypeId] = js.undefined,
         selectionMode: js.UndefOr[ExperimentTemplateTargetSelectionMode] = js.undefined
     ): ExperimentTemplateTarget = {
       val __obj = js.Dynamic.literal()
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
@@ -800,7 +1040,7 @@ package object fis {
     }
   }
 
-  /** Describes a filter used for the target resource input in an experiment template.
+  /** Specifies a filter used for the target resource input in an experiment template. For more information, see [[https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters|Resource filters]] in the <i>Fault Injection Simulator User Guide</i>.
     */
   @js.native
   trait ExperimentTemplateTargetInputFilter extends js.Object {
@@ -918,6 +1158,39 @@ package object fis {
       val __obj = js.Dynamic.literal()
       experimentTemplate.foreach(__v => __obj.updateDynamic("experimentTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExperimentTemplateResponse]
+    }
+  }
+
+  @js.native
+  trait GetTargetResourceTypeRequest extends js.Object {
+    var resourceType: TargetResourceTypeId
+  }
+
+  object GetTargetResourceTypeRequest {
+    @inline
+    def apply(
+        resourceType: TargetResourceTypeId
+    ): GetTargetResourceTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetTargetResourceTypeRequest]
+    }
+  }
+
+  @js.native
+  trait GetTargetResourceTypeResponse extends js.Object {
+    var targetResourceType: js.UndefOr[TargetResourceType]
+  }
+
+  object GetTargetResourceTypeResponse {
+    @inline
+    def apply(
+        targetResourceType: js.UndefOr[TargetResourceType] = js.undefined
+    ): GetTargetResourceTypeResponse = {
+      val __obj = js.Dynamic.literal()
+      targetResourceType.foreach(__v => __obj.updateDynamic("targetResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTargetResourceTypeResponse]
     }
   }
 
@@ -1069,6 +1342,44 @@ package object fis {
   }
 
   @js.native
+  trait ListTargetResourceTypesRequest extends js.Object {
+    var maxResults: js.UndefOr[ListTargetResourceTypesMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTargetResourceTypesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[ListTargetResourceTypesMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTargetResourceTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTargetResourceTypesRequest]
+    }
+  }
+
+  @js.native
+  trait ListTargetResourceTypesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var targetResourceTypes: js.UndefOr[TargetResourceTypeSummaryList]
+  }
+
+  object ListTargetResourceTypesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        targetResourceTypes: js.UndefOr[TargetResourceTypeSummaryList] = js.undefined
+    ): ListTargetResourceTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      targetResourceTypes.foreach(__v => __obj.updateDynamic("targetResourceTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTargetResourceTypesResponse]
+    }
+  }
+
+  @js.native
   trait StartExperimentRequest extends js.Object {
     var clientToken: ClientToken
     var experimentTemplateId: ExperimentTemplateId
@@ -1172,6 +1483,72 @@ package object fis {
     }
   }
 
+  /** Describes a resource type.
+    */
+  @js.native
+  trait TargetResourceType extends js.Object {
+    var description: js.UndefOr[TargetResourceTypeDescription]
+    var parameters: js.UndefOr[TargetResourceTypeParameterMap]
+    var resourceType: js.UndefOr[TargetResourceTypeId]
+  }
+
+  object TargetResourceType {
+    @inline
+    def apply(
+        description: js.UndefOr[TargetResourceTypeDescription] = js.undefined,
+        parameters: js.UndefOr[TargetResourceTypeParameterMap] = js.undefined,
+        resourceType: js.UndefOr[TargetResourceTypeId] = js.undefined
+    ): TargetResourceType = {
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetResourceType]
+    }
+  }
+
+  /** Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.
+    */
+  @js.native
+  trait TargetResourceTypeParameter extends js.Object {
+    var description: js.UndefOr[TargetResourceTypeParameterDescription]
+    var required: js.UndefOr[TargetResourceTypeParameterRequired]
+  }
+
+  object TargetResourceTypeParameter {
+    @inline
+    def apply(
+        description: js.UndefOr[TargetResourceTypeParameterDescription] = js.undefined,
+        required: js.UndefOr[TargetResourceTypeParameterRequired] = js.undefined
+    ): TargetResourceTypeParameter = {
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      required.foreach(__v => __obj.updateDynamic("required")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetResourceTypeParameter]
+    }
+  }
+
+  /** Describes a resource type.
+    */
+  @js.native
+  trait TargetResourceTypeSummary extends js.Object {
+    var description: js.UndefOr[TargetResourceTypeDescription]
+    var resourceType: js.UndefOr[TargetResourceTypeId]
+  }
+
+  object TargetResourceTypeSummary {
+    @inline
+    def apply(
+        description: js.UndefOr[TargetResourceTypeDescription] = js.undefined,
+        resourceType: js.UndefOr[TargetResourceTypeId] = js.undefined
+    ): TargetResourceTypeSummary = {
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetResourceTypeSummary]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ResourceArn
@@ -1234,11 +1611,36 @@ package object fis {
     }
   }
 
+  /** Specifies the configuration for experiment logging.
+    */
+  @js.native
+  trait UpdateExperimentTemplateLogConfigurationInput extends js.Object {
+    var cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfigurationInput]
+    var logSchemaVersion: js.UndefOr[LogSchemaVersion]
+    var s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfigurationInput]
+  }
+
+  object UpdateExperimentTemplateLogConfigurationInput {
+    @inline
+    def apply(
+        cloudWatchLogsConfiguration: js.UndefOr[ExperimentTemplateCloudWatchLogsLogConfigurationInput] = js.undefined,
+        logSchemaVersion: js.UndefOr[LogSchemaVersion] = js.undefined,
+        s3Configuration: js.UndefOr[ExperimentTemplateS3LogConfigurationInput] = js.undefined
+    ): UpdateExperimentTemplateLogConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogsConfiguration.foreach(__v => __obj.updateDynamic("cloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any]))
+      logSchemaVersion.foreach(__v => __obj.updateDynamic("logSchemaVersion")(__v.asInstanceOf[js.Any]))
+      s3Configuration.foreach(__v => __obj.updateDynamic("s3Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateExperimentTemplateLogConfigurationInput]
+    }
+  }
+
   @js.native
   trait UpdateExperimentTemplateRequest extends js.Object {
     var id: ExperimentTemplateId
     var actions: js.UndefOr[UpdateExperimentTemplateActionInputMap]
     var description: js.UndefOr[ExperimentTemplateDescription]
+    var logConfiguration: js.UndefOr[UpdateExperimentTemplateLogConfigurationInput]
     var roleArn: js.UndefOr[RoleArn]
     var stopConditions: js.UndefOr[UpdateExperimentTemplateStopConditionInputList]
     var targets: js.UndefOr[UpdateExperimentTemplateTargetInputMap]
@@ -1250,6 +1652,7 @@ package object fis {
         id: ExperimentTemplateId,
         actions: js.UndefOr[UpdateExperimentTemplateActionInputMap] = js.undefined,
         description: js.UndefOr[ExperimentTemplateDescription] = js.undefined,
+        logConfiguration: js.UndefOr[UpdateExperimentTemplateLogConfigurationInput] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         stopConditions: js.UndefOr[UpdateExperimentTemplateStopConditionInputList] = js.undefined,
         targets: js.UndefOr[UpdateExperimentTemplateTargetInputMap] = js.undefined
@@ -1260,6 +1663,7 @@ package object fis {
 
       actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      logConfiguration.foreach(__v => __obj.updateDynamic("logConfiguration")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       stopConditions.foreach(__v => __obj.updateDynamic("stopConditions")(__v.asInstanceOf[js.Any]))
       targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
@@ -1310,9 +1714,10 @@ package object fis {
     */
   @js.native
   trait UpdateExperimentTemplateTargetInput extends js.Object {
-    var resourceType: ResourceType
+    var resourceType: TargetResourceTypeId
     var selectionMode: ExperimentTemplateTargetSelectionMode
     var filters: js.UndefOr[ExperimentTemplateTargetFilterInputList]
+    var parameters: js.UndefOr[ExperimentTemplateTargetParameterMap]
     var resourceArns: js.UndefOr[ResourceArnList]
     var resourceTags: js.UndefOr[TagMap]
   }
@@ -1320,9 +1725,10 @@ package object fis {
   object UpdateExperimentTemplateTargetInput {
     @inline
     def apply(
-        resourceType: ResourceType,
+        resourceType: TargetResourceTypeId,
         selectionMode: ExperimentTemplateTargetSelectionMode,
         filters: js.UndefOr[ExperimentTemplateTargetFilterInputList] = js.undefined,
+        parameters: js.UndefOr[ExperimentTemplateTargetParameterMap] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         resourceTags: js.UndefOr[TagMap] = js.undefined
     ): UpdateExperimentTemplateTargetInput = {
@@ -1332,6 +1738,7 @@ package object fis {
       )
 
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       resourceTags.foreach(__v => __obj.updateDynamic("resourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateExperimentTemplateTargetInput]

@@ -41,6 +41,7 @@ package object imagebuilder {
   type EbsVolumeSizeInteger = Int
   type EbsVolumeThroughput = Int
   type EmptyString = String
+  type FastLaunchConfigurationList = js.Array[FastLaunchConfiguration]
   type FilterList = js.Array[Filter]
   type FilterName = String
   type FilterValue = String
@@ -71,6 +72,7 @@ package object imagebuilder {
   type LaunchTemplateId = String
   type LicenseConfigurationArn = String
   type LicenseConfigurationArnList = js.Array[LicenseConfigurationArn]
+  type MaxParallelLaunches = Int
   type NonEmptyString = String
   type NullableBoolean = Boolean
   type OrganizationArn = String
@@ -92,6 +94,7 @@ package object imagebuilder {
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type TargetResourceCount = Int
   type Timezone = String
   type Uri = String
   type UserDataOverride = String
@@ -1492,6 +1495,7 @@ package object imagebuilder {
     var region: NonEmptyString
     var amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration]
     var containerDistributionConfiguration: js.UndefOr[ContainerDistributionConfiguration]
+    var fastLaunchConfigurations: js.UndefOr[FastLaunchConfigurationList]
     var launchTemplateConfigurations: js.UndefOr[LaunchTemplateConfigurationList]
     var licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList]
     var s3ExportConfiguration: js.UndefOr[S3ExportConfiguration]
@@ -1503,6 +1507,7 @@ package object imagebuilder {
         region: NonEmptyString,
         amiDistributionConfiguration: js.UndefOr[AmiDistributionConfiguration] = js.undefined,
         containerDistributionConfiguration: js.UndefOr[ContainerDistributionConfiguration] = js.undefined,
+        fastLaunchConfigurations: js.UndefOr[FastLaunchConfigurationList] = js.undefined,
         launchTemplateConfigurations: js.UndefOr[LaunchTemplateConfigurationList] = js.undefined,
         licenseConfigurationArns: js.UndefOr[LicenseConfigurationArnList] = js.undefined,
         s3ExportConfiguration: js.UndefOr[S3ExportConfiguration] = js.undefined
@@ -1513,6 +1518,7 @@ package object imagebuilder {
 
       amiDistributionConfiguration.foreach(__v => __obj.updateDynamic("amiDistributionConfiguration")(__v.asInstanceOf[js.Any]))
       containerDistributionConfiguration.foreach(__v => __obj.updateDynamic("containerDistributionConfiguration")(__v.asInstanceOf[js.Any]))
+      fastLaunchConfigurations.foreach(__v => __obj.updateDynamic("fastLaunchConfigurations")(__v.asInstanceOf[js.Any]))
       launchTemplateConfigurations.foreach(__v => __obj.updateDynamic("launchTemplateConfigurations")(__v.asInstanceOf[js.Any]))
       licenseConfigurationArns.foreach(__v => __obj.updateDynamic("licenseConfigurationArns")(__v.asInstanceOf[js.Any]))
       s3ExportConfiguration.foreach(__v => __obj.updateDynamic("s3ExportConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1633,6 +1639,82 @@ package object imagebuilder {
       volumeSize.foreach(__v => __obj.updateDynamic("volumeSize")(__v.asInstanceOf[js.Any]))
       volumeType.foreach(__v => __obj.updateDynamic("volumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsInstanceBlockDeviceSpecification]
+    }
+  }
+
+  /** Define and configure faster launching for output Windows AMIs.
+    */
+  @js.native
+  trait FastLaunchConfiguration extends js.Object {
+    var enabled: Boolean
+    var accountId: js.UndefOr[AccountId]
+    var launchTemplate: js.UndefOr[FastLaunchLaunchTemplateSpecification]
+    var maxParallelLaunches: js.UndefOr[MaxParallelLaunches]
+    var snapshotConfiguration: js.UndefOr[FastLaunchSnapshotConfiguration]
+  }
+
+  object FastLaunchConfiguration {
+    @inline
+    def apply(
+        enabled: Boolean,
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        launchTemplate: js.UndefOr[FastLaunchLaunchTemplateSpecification] = js.undefined,
+        maxParallelLaunches: js.UndefOr[MaxParallelLaunches] = js.undefined,
+        snapshotConfiguration: js.UndefOr[FastLaunchSnapshotConfiguration] = js.undefined
+    ): FastLaunchConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "enabled" -> enabled.asInstanceOf[js.Any]
+      )
+
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
+      maxParallelLaunches.foreach(__v => __obj.updateDynamic("maxParallelLaunches")(__v.asInstanceOf[js.Any]))
+      snapshotConfiguration.foreach(__v => __obj.updateDynamic("snapshotConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FastLaunchConfiguration]
+    }
+  }
+
+  /** Identifies the launch template that the associated Windows AMI uses for launching an instance when faster launching is enabled.
+    *
+    * '''Note:'''You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>, but not both.
+    */
+  @js.native
+  trait FastLaunchLaunchTemplateSpecification extends js.Object {
+    var launchTemplateId: js.UndefOr[LaunchTemplateId]
+    var launchTemplateName: js.UndefOr[NonEmptyString]
+    var launchTemplateVersion: js.UndefOr[NonEmptyString]
+  }
+
+  object FastLaunchLaunchTemplateSpecification {
+    @inline
+    def apply(
+        launchTemplateId: js.UndefOr[LaunchTemplateId] = js.undefined,
+        launchTemplateName: js.UndefOr[NonEmptyString] = js.undefined,
+        launchTemplateVersion: js.UndefOr[NonEmptyString] = js.undefined
+    ): FastLaunchLaunchTemplateSpecification = {
+      val __obj = js.Dynamic.literal()
+      launchTemplateId.foreach(__v => __obj.updateDynamic("launchTemplateId")(__v.asInstanceOf[js.Any]))
+      launchTemplateName.foreach(__v => __obj.updateDynamic("launchTemplateName")(__v.asInstanceOf[js.Any]))
+      launchTemplateVersion.foreach(__v => __obj.updateDynamic("launchTemplateVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FastLaunchLaunchTemplateSpecification]
+    }
+  }
+
+  /** Configuration settings for creating and managing pre-provisioned snapshots for a fast-launch enabled Windows AMI.
+    */
+  @js.native
+  trait FastLaunchSnapshotConfiguration extends js.Object {
+    var targetResourceCount: js.UndefOr[TargetResourceCount]
+  }
+
+  object FastLaunchSnapshotConfiguration {
+    @inline
+    def apply(
+        targetResourceCount: js.UndefOr[TargetResourceCount] = js.undefined
+    ): FastLaunchSnapshotConfiguration = {
+      val __obj = js.Dynamic.literal()
+      targetResourceCount.foreach(__v => __obj.updateDynamic("targetResourceCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FastLaunchSnapshotConfiguration]
     }
   }
 

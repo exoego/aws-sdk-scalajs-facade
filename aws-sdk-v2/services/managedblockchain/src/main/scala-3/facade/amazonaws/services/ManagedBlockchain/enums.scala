@@ -2,6 +2,22 @@ package facade.amazonaws.services.managedblockchain
 
 import scalajs.js
 
+type AccessorStatus = "AVAILABLE" | "PENDING_DELETION" | "DELETED"
+object AccessorStatus {
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING_DELETION: "PENDING_DELETION" = "PENDING_DELETION"
+  inline val DELETED: "DELETED" = "DELETED"
+
+  inline def values: js.Array[AccessorStatus] = js.Array(AVAILABLE, PENDING_DELETION, DELETED)
+}
+
+type AccessorType = "BILLING_TOKEN"
+object AccessorType {
+  inline val BILLING_TOKEN: "BILLING_TOKEN" = "BILLING_TOKEN"
+
+  inline def values: js.Array[AccessorType] = js.Array(BILLING_TOKEN)
+}
+
 type Edition = "STARTER" | "STANDARD"
 object Edition {
   inline val STARTER: "STARTER" = "STARTER"

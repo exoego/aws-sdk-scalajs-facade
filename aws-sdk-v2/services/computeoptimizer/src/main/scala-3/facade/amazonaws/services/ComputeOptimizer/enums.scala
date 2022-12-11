@@ -68,9 +68,8 @@ object EnrollmentFilterName {
   inline def values: js.Array[EnrollmentFilterName] = js.Array(Status)
 }
 
-type ExportableAutoScalingGroupField = "AccountId" | "AutoScalingGroupArn" | "AutoScalingGroupName" | "Finding" | "UtilizationMetricsCpuMaximum" | "UtilizationMetricsMemoryMaximum" | "UtilizationMetricsEbsReadOpsPerSecondMaximum" | "UtilizationMetricsEbsWriteOpsPerSecondMaximum" | "UtilizationMetricsEbsReadBytesPerSecondMaximum" | "UtilizationMetricsEbsWriteBytesPerSecondMaximum" | "UtilizationMetricsDiskReadOpsPerSecondMaximum" | "UtilizationMetricsDiskWriteOpsPerSecondMaximum" | "UtilizationMetricsDiskReadBytesPerSecondMaximum" | "UtilizationMetricsDiskWriteBytesPerSecondMaximum" | "UtilizationMetricsNetworkInBytesPerSecondMaximum" | "UtilizationMetricsNetworkOutBytesPerSecondMaximum" | "UtilizationMetricsNetworkPacketsInPerSecondMaximum" | "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" | "LookbackPeriodInDays" | "CurrentConfigurationInstanceType" | "CurrentConfigurationDesiredCapacity" | "CurrentConfigurationMinSize" | "CurrentConfigurationMaxSize" | "CurrentOnDemandPrice" |
-  "CurrentStandardOneYearNoUpfrontReservedPrice" | "CurrentStandardThreeYearNoUpfrontReservedPrice" | "CurrentVCpus" | "CurrentMemory" | "CurrentStorage" | "CurrentNetwork" | "RecommendationOptionsConfigurationInstanceType" | "RecommendationOptionsConfigurationDesiredCapacity" | "RecommendationOptionsConfigurationMinSize" | "RecommendationOptionsConfigurationMaxSize" | "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" | "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" | "RecommendationOptionsPerformanceRisk" | "RecommendationOptionsOnDemandPrice" | "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" | "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" | "RecommendationOptionsVcpus" | "RecommendationOptionsMemory" | "RecommendationOptionsStorage" | "RecommendationOptionsNetwork" | "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" |
-  "RecommendationOptionsEstimatedMonthlySavingsValue" | "EffectiveRecommendationPreferencesCpuVendorArchitectures" | "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"
+type ExportableAutoScalingGroupField =
+  "AccountId" | "AutoScalingGroupArn" | "AutoScalingGroupName" | "Finding" | "UtilizationMetricsCpuMaximum" | "UtilizationMetricsMemoryMaximum" | "UtilizationMetricsEbsReadOpsPerSecondMaximum" | "UtilizationMetricsEbsWriteOpsPerSecondMaximum" | "UtilizationMetricsEbsReadBytesPerSecondMaximum" | "UtilizationMetricsEbsWriteBytesPerSecondMaximum" | "UtilizationMetricsDiskReadOpsPerSecondMaximum" | "UtilizationMetricsDiskWriteOpsPerSecondMaximum" | "UtilizationMetricsDiskReadBytesPerSecondMaximum" | "UtilizationMetricsDiskWriteBytesPerSecondMaximum" | "UtilizationMetricsNetworkInBytesPerSecondMaximum" | "UtilizationMetricsNetworkOutBytesPerSecondMaximum" | "UtilizationMetricsNetworkPacketsInPerSecondMaximum" | "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" | "LookbackPeriodInDays" | "CurrentConfigurationInstanceType" | "CurrentConfigurationDesiredCapacity" | "CurrentConfigurationMinSize" | "CurrentConfigurationMaxSize" | "CurrentOnDemandPrice" | "CurrentStandardOneYearNoUpfrontReservedPrice" | "CurrentStandardThreeYearNoUpfrontReservedPrice" | "CurrentVCpus" | "CurrentMemory" | "CurrentStorage" | "CurrentNetwork" | "RecommendationOptionsConfigurationInstanceType" | "RecommendationOptionsConfigurationDesiredCapacity" | "RecommendationOptionsConfigurationMinSize" | "RecommendationOptionsConfigurationMaxSize" | "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" | "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" | "RecommendationOptionsPerformanceRisk" | "RecommendationOptionsOnDemandPrice" | "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" | "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" | "RecommendationOptionsVcpus" | "RecommendationOptionsMemory" | "RecommendationOptionsStorage" | "RecommendationOptionsNetwork" | "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" | "RecommendationOptionsEstimatedMonthlySavingsValue" | "EffectiveRecommendationPreferencesCpuVendorArchitectures" | "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" | "EffectiveRecommendationPreferencesInferredWorkloadTypes" | "InferredWorkloadTypes" | "RecommendationOptionsMigrationEffort"
 object ExportableAutoScalingGroupField {
   inline val AccountId: "AccountId" = "AccountId"
   inline val AutoScalingGroupArn: "AutoScalingGroupArn" = "AutoScalingGroupArn"
@@ -123,6 +122,9 @@ object ExportableAutoScalingGroupField {
   inline val RecommendationOptionsEstimatedMonthlySavingsValue: "RecommendationOptionsEstimatedMonthlySavingsValue" = "RecommendationOptionsEstimatedMonthlySavingsValue"
   inline val EffectiveRecommendationPreferencesCpuVendorArchitectures: "EffectiveRecommendationPreferencesCpuVendorArchitectures" = "EffectiveRecommendationPreferencesCpuVendorArchitectures"
   inline val EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics: "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" = "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"
+  inline val EffectiveRecommendationPreferencesInferredWorkloadTypes: "EffectiveRecommendationPreferencesInferredWorkloadTypes" = "EffectiveRecommendationPreferencesInferredWorkloadTypes"
+  inline val InferredWorkloadTypes: "InferredWorkloadTypes" = "InferredWorkloadTypes"
+  inline val RecommendationOptionsMigrationEffort: "RecommendationOptionsMigrationEffort" = "RecommendationOptionsMigrationEffort"
 
   inline def values: js.Array[ExportableAutoScalingGroupField] = js.Array(
     AccountId,
@@ -175,13 +177,15 @@ object ExportableAutoScalingGroupField {
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
-    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort
   )
 }
 
-type ExportableInstanceField = "AccountId" | "InstanceArn" | "InstanceName" | "Finding" | "FindingReasonCodes" | "LookbackPeriodInDays" | "CurrentInstanceType" | "UtilizationMetricsCpuMaximum" | "UtilizationMetricsMemoryMaximum" | "UtilizationMetricsEbsReadOpsPerSecondMaximum" | "UtilizationMetricsEbsWriteOpsPerSecondMaximum" | "UtilizationMetricsEbsReadBytesPerSecondMaximum" | "UtilizationMetricsEbsWriteBytesPerSecondMaximum" | "UtilizationMetricsDiskReadOpsPerSecondMaximum" | "UtilizationMetricsDiskWriteOpsPerSecondMaximum" | "UtilizationMetricsDiskReadBytesPerSecondMaximum" | "UtilizationMetricsDiskWriteBytesPerSecondMaximum" | "UtilizationMetricsNetworkInBytesPerSecondMaximum" | "UtilizationMetricsNetworkOutBytesPerSecondMaximum" | "UtilizationMetricsNetworkPacketsInPerSecondMaximum" | "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" | "CurrentOnDemandPrice" | "CurrentStandardOneYearNoUpfrontReservedPrice" | "CurrentStandardThreeYearNoUpfrontReservedPrice" | "CurrentVCpus" |
-  "CurrentMemory" | "CurrentStorage" | "CurrentNetwork" | "RecommendationOptionsInstanceType" | "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" | "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" | "RecommendationOptionsPlatformDifferences" | "RecommendationOptionsPerformanceRisk" | "RecommendationOptionsVcpus" | "RecommendationOptionsMemory" | "RecommendationOptionsStorage" | "RecommendationOptionsNetwork" | "RecommendationOptionsOnDemandPrice" | "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" | "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" | "RecommendationsSourcesRecommendationSourceArn" | "RecommendationsSourcesRecommendationSourceType" | "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" | "RecommendationOptionsEstimatedMonthlySavingsValue" | "EffectiveRecommendationPreferencesCpuVendorArchitectures" |
-  "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"
+type ExportableInstanceField =
+  "AccountId" | "InstanceArn" | "InstanceName" | "Finding" | "FindingReasonCodes" | "LookbackPeriodInDays" | "CurrentInstanceType" | "UtilizationMetricsCpuMaximum" | "UtilizationMetricsMemoryMaximum" | "UtilizationMetricsEbsReadOpsPerSecondMaximum" | "UtilizationMetricsEbsWriteOpsPerSecondMaximum" | "UtilizationMetricsEbsReadBytesPerSecondMaximum" | "UtilizationMetricsEbsWriteBytesPerSecondMaximum" | "UtilizationMetricsDiskReadOpsPerSecondMaximum" | "UtilizationMetricsDiskWriteOpsPerSecondMaximum" | "UtilizationMetricsDiskReadBytesPerSecondMaximum" | "UtilizationMetricsDiskWriteBytesPerSecondMaximum" | "UtilizationMetricsNetworkInBytesPerSecondMaximum" | "UtilizationMetricsNetworkOutBytesPerSecondMaximum" | "UtilizationMetricsNetworkPacketsInPerSecondMaximum" | "UtilizationMetricsNetworkPacketsOutPerSecondMaximum" | "CurrentOnDemandPrice" | "CurrentStandardOneYearNoUpfrontReservedPrice" | "CurrentStandardThreeYearNoUpfrontReservedPrice" | "CurrentVCpus" | "CurrentMemory" | "CurrentStorage" | "CurrentNetwork" | "RecommendationOptionsInstanceType" | "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" | "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" | "RecommendationOptionsPlatformDifferences" | "RecommendationOptionsPerformanceRisk" | "RecommendationOptionsVcpus" | "RecommendationOptionsMemory" | "RecommendationOptionsStorage" | "RecommendationOptionsNetwork" | "RecommendationOptionsOnDemandPrice" | "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" | "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice" | "RecommendationsSourcesRecommendationSourceArn" | "RecommendationsSourcesRecommendationSourceType" | "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" | "RecommendationOptionsEstimatedMonthlySavingsValue" | "EffectiveRecommendationPreferencesCpuVendorArchitectures" | "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" | "EffectiveRecommendationPreferencesInferredWorkloadTypes" | "InferredWorkloadTypes" | "RecommendationOptionsMigrationEffort" | "EffectiveRecommendationPreferencesExternalMetricsSource"
 object ExportableInstanceField {
   inline val AccountId: "AccountId" = "AccountId"
   inline val InstanceArn: "InstanceArn" = "InstanceArn"
@@ -232,6 +236,10 @@ object ExportableInstanceField {
   inline val RecommendationOptionsEstimatedMonthlySavingsValue: "RecommendationOptionsEstimatedMonthlySavingsValue" = "RecommendationOptionsEstimatedMonthlySavingsValue"
   inline val EffectiveRecommendationPreferencesCpuVendorArchitectures: "EffectiveRecommendationPreferencesCpuVendorArchitectures" = "EffectiveRecommendationPreferencesCpuVendorArchitectures"
   inline val EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics: "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" = "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"
+  inline val EffectiveRecommendationPreferencesInferredWorkloadTypes: "EffectiveRecommendationPreferencesInferredWorkloadTypes" = "EffectiveRecommendationPreferencesInferredWorkloadTypes"
+  inline val InferredWorkloadTypes: "InferredWorkloadTypes" = "InferredWorkloadTypes"
+  inline val RecommendationOptionsMigrationEffort: "RecommendationOptionsMigrationEffort" = "RecommendationOptionsMigrationEffort"
+  inline val EffectiveRecommendationPreferencesExternalMetricsSource: "EffectiveRecommendationPreferencesExternalMetricsSource" = "EffectiveRecommendationPreferencesExternalMetricsSource"
 
   inline def values: js.Array[ExportableInstanceField] = js.Array(
     AccountId,
@@ -282,7 +290,11 @@ object ExportableInstanceField {
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
-    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort,
+    EffectiveRecommendationPreferencesExternalMetricsSource
   )
 }
 
@@ -345,8 +357,8 @@ object ExportableLambdaFunctionField {
   )
 }
 
-type ExportableVolumeField = "AccountId" | "VolumeArn" | "Finding" | "UtilizationMetricsVolumeReadOpsPerSecondMaximum" | "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" | "UtilizationMetricsVolumeReadBytesPerSecondMaximum" | "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" | "LookbackPeriodInDays" | "CurrentConfigurationVolumeType" | "CurrentConfigurationVolumeBaselineIOPS" | "CurrentConfigurationVolumeBaselineThroughput" | "CurrentConfigurationVolumeBurstIOPS" | "CurrentConfigurationVolumeBurstThroughput" | "CurrentConfigurationVolumeSize" | "CurrentMonthlyPrice" | "RecommendationOptionsConfigurationVolumeType" | "RecommendationOptionsConfigurationVolumeBaselineIOPS" | "RecommendationOptionsConfigurationVolumeBaselineThroughput" | "RecommendationOptionsConfigurationVolumeBurstIOPS" | "RecommendationOptionsConfigurationVolumeBurstThroughput" | "RecommendationOptionsConfigurationVolumeSize" | "RecommendationOptionsMonthlyPrice" | "RecommendationOptionsPerformanceRisk" |
-  "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" | "RecommendationOptionsEstimatedMonthlySavingsValue"
+type ExportableVolumeField =
+  "AccountId" | "VolumeArn" | "Finding" | "UtilizationMetricsVolumeReadOpsPerSecondMaximum" | "UtilizationMetricsVolumeWriteOpsPerSecondMaximum" | "UtilizationMetricsVolumeReadBytesPerSecondMaximum" | "UtilizationMetricsVolumeWriteBytesPerSecondMaximum" | "LookbackPeriodInDays" | "CurrentConfigurationVolumeType" | "CurrentConfigurationVolumeBaselineIOPS" | "CurrentConfigurationVolumeBaselineThroughput" | "CurrentConfigurationVolumeBurstIOPS" | "CurrentConfigurationVolumeBurstThroughput" | "CurrentConfigurationVolumeSize" | "CurrentMonthlyPrice" | "RecommendationOptionsConfigurationVolumeType" | "RecommendationOptionsConfigurationVolumeBaselineIOPS" | "RecommendationOptionsConfigurationVolumeBaselineThroughput" | "RecommendationOptionsConfigurationVolumeBurstIOPS" | "RecommendationOptionsConfigurationVolumeBurstThroughput" | "RecommendationOptionsConfigurationVolumeSize" | "RecommendationOptionsMonthlyPrice" | "RecommendationOptionsPerformanceRisk" | "LastRefreshTimestamp" | "CurrentPerformanceRisk" | "RecommendationOptionsSavingsOpportunityPercentage" | "RecommendationOptionsEstimatedMonthlySavingsCurrency" | "RecommendationOptionsEstimatedMonthlySavingsValue"
 object ExportableVolumeField {
   inline val AccountId: "AccountId" = "AccountId"
   inline val VolumeArn: "VolumeArn" = "VolumeArn"
@@ -409,6 +421,16 @@ object ExportableVolumeField {
   )
 }
 
+type ExternalMetricsSource = "Datadog" | "Dynatrace" | "NewRelic" | "Instana"
+object ExternalMetricsSource {
+  inline val Datadog: "Datadog" = "Datadog"
+  inline val Dynatrace: "Dynatrace" = "Dynatrace"
+  inline val NewRelic: "NewRelic" = "NewRelic"
+  inline val Instana: "Instana" = "Instana"
+
+  inline def values: js.Array[ExternalMetricsSource] = js.Array(Datadog, Dynatrace, NewRelic, Instana)
+}
+
 type FileFormat = "Csv"
 object FileFormat {
   inline val Csv: "Csv" = "Csv"
@@ -441,6 +463,27 @@ object FindingReasonCode {
   inline val MemoryUnderprovisioned: "MemoryUnderprovisioned" = "MemoryUnderprovisioned"
 
   inline def values: js.Array[FindingReasonCode] = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned)
+}
+
+type InferredWorkloadType = "AmazonEmr" | "ApacheCassandra" | "ApacheHadoop" | "Memcached" | "Nginx" | "PostgreSql" | "Redis"
+object InferredWorkloadType {
+  inline val AmazonEmr: "AmazonEmr" = "AmazonEmr"
+  inline val ApacheCassandra: "ApacheCassandra" = "ApacheCassandra"
+  inline val ApacheHadoop: "ApacheHadoop" = "ApacheHadoop"
+  inline val Memcached: "Memcached" = "Memcached"
+  inline val Nginx: "Nginx" = "Nginx"
+  inline val PostgreSql: "PostgreSql" = "PostgreSql"
+  inline val Redis: "Redis" = "Redis"
+
+  inline def values: js.Array[InferredWorkloadType] = js.Array(AmazonEmr, ApacheCassandra, ApacheHadoop, Memcached, Nginx, PostgreSql, Redis)
+}
+
+type InferredWorkloadTypesPreference = "Active" | "Inactive"
+object InferredWorkloadTypesPreference {
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
+
+  inline def values: js.Array[InferredWorkloadTypesPreference] = js.Array(Active, Inactive)
 }
 
 type InstanceRecommendationFindingReasonCode = "CPUOverprovisioned" | "CPUUnderprovisioned" | "MemoryOverprovisioned" | "MemoryUnderprovisioned" | "EBSThroughputOverprovisioned" | "EBSThroughputUnderprovisioned" | "EBSIOPSOverprovisioned" | "EBSIOPSUnderprovisioned" | "NetworkBandwidthOverprovisioned" | "NetworkBandwidthUnderprovisioned" | "NetworkPPSOverprovisioned" | "NetworkPPSUnderprovisioned" | "DiskIOPSOverprovisioned" | "DiskIOPSUnderprovisioned" | "DiskThroughputOverprovisioned" | "DiskThroughputUnderprovisioned"
@@ -602,6 +645,16 @@ object MetricStatistic {
   inline def values: js.Array[MetricStatistic] = js.Array(Maximum, Average)
 }
 
+type MigrationEffort = "VeryLow" | "Low" | "Medium" | "High"
+object MigrationEffort {
+  inline val VeryLow: "VeryLow" = "VeryLow"
+  inline val Low: "Low" = "Low"
+  inline val Medium: "Medium" = "Medium"
+  inline val High: "High" = "High"
+
+  inline def values: js.Array[MigrationEffort] = js.Array(VeryLow, Low, Medium, High)
+}
+
 type PlatformDifference = "Hypervisor" | "NetworkInterface" | "StorageInterface" | "InstanceStoreAvailability" | "VirtualizationType" | "Architecture"
 object PlatformDifference {
   inline val Hypervisor: "Hypervisor" = "Hypervisor"
@@ -614,11 +667,13 @@ object PlatformDifference {
   inline def values: js.Array[PlatformDifference] = js.Array(Hypervisor, NetworkInterface, StorageInterface, InstanceStoreAvailability, VirtualizationType, Architecture)
 }
 
-type RecommendationPreferenceName = "EnhancedInfrastructureMetrics"
+type RecommendationPreferenceName = "EnhancedInfrastructureMetrics" | "InferredWorkloadTypes" | "ExternalMetricsPreference"
 object RecommendationPreferenceName {
   inline val EnhancedInfrastructureMetrics: "EnhancedInfrastructureMetrics" = "EnhancedInfrastructureMetrics"
+  inline val InferredWorkloadTypes: "InferredWorkloadTypes" = "InferredWorkloadTypes"
+  inline val ExternalMetricsPreference: "ExternalMetricsPreference" = "ExternalMetricsPreference"
 
-  inline def values: js.Array[RecommendationPreferenceName] = js.Array(EnhancedInfrastructureMetrics)
+  inline def values: js.Array[RecommendationPreferenceName] = js.Array(EnhancedInfrastructureMetrics, InferredWorkloadTypes, ExternalMetricsPreference)
 }
 
 type RecommendationSourceType = "Ec2Instance" | "AutoScalingGroup" | "EbsVolume" | "LambdaFunction"
@@ -631,14 +686,15 @@ object RecommendationSourceType {
   inline def values: js.Array[RecommendationSourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
 }
 
-type ResourceType = "Ec2Instance" | "AutoScalingGroup" | "EbsVolume" | "LambdaFunction"
+type ResourceType = "Ec2Instance" | "AutoScalingGroup" | "EbsVolume" | "LambdaFunction" | "NotApplicable"
 object ResourceType {
   inline val Ec2Instance: "Ec2Instance" = "Ec2Instance"
   inline val AutoScalingGroup: "AutoScalingGroup" = "AutoScalingGroup"
   inline val EbsVolume: "EbsVolume" = "EbsVolume"
   inline val LambdaFunction: "LambdaFunction" = "LambdaFunction"
+  inline val NotApplicable: "NotApplicable" = "NotApplicable"
 
-  inline def values: js.Array[ResourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
+  inline def values: js.Array[ResourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction, NotApplicable)
 }
 
 type ScopeName = "Organization" | "AccountId" | "ResourceArn"

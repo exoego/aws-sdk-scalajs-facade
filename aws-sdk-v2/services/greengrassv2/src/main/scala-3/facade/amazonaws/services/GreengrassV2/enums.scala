@@ -99,6 +99,14 @@ object InstalledComponentLifecycleState {
   inline def values: js.Array[InstalledComponentLifecycleState] = js.Array(NEW, INSTALLED, STARTING, RUNNING, STOPPING, ERRORED, BROKEN, FINISHED)
 }
 
+type InstalledComponentTopologyFilter = "ALL" | "ROOT"
+object InstalledComponentTopologyFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val ROOT: "ROOT" = "ROOT"
+
+  inline def values: js.Array[InstalledComponentTopologyFilter] = js.Array(ALL, ROOT)
+}
+
 type IoTJobAbortAction = "CANCEL"
 object IoTJobAbortAction {
   inline val CANCEL: "CANCEL" = "CANCEL"
@@ -154,4 +162,13 @@ object RecipeOutputFormat {
   inline val YAML: "YAML" = "YAML"
 
   inline def values: js.Array[RecipeOutputFormat] = js.Array(JSON, YAML)
+}
+
+type VendorGuidance = "ACTIVE" | "DISCONTINUED" | "DELETED"
+object VendorGuidance {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DISCONTINUED: "DISCONTINUED" = "DISCONTINUED"
+  inline val DELETED: "DELETED" = "DELETED"
+
+  inline def values: js.Array[VendorGuidance] = js.Array(ACTIVE, DISCONTINUED, DELETED)
 }

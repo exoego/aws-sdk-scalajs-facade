@@ -54,9 +54,9 @@ package object ssooidc {
   trait CreateTokenRequest extends js.Object {
     var clientId: ClientId
     var clientSecret: ClientSecret
-    var deviceCode: DeviceCode
     var grantType: GrantType
     var code: js.UndefOr[AuthCode]
+    var deviceCode: js.UndefOr[DeviceCode]
     var redirectUri: js.UndefOr[URI]
     var refreshToken: js.UndefOr[RefreshToken]
     var scope: js.UndefOr[Scopes]
@@ -67,9 +67,9 @@ package object ssooidc {
     def apply(
         clientId: ClientId,
         clientSecret: ClientSecret,
-        deviceCode: DeviceCode,
         grantType: GrantType,
         code: js.UndefOr[AuthCode] = js.undefined,
+        deviceCode: js.UndefOr[DeviceCode] = js.undefined,
         redirectUri: js.UndefOr[URI] = js.undefined,
         refreshToken: js.UndefOr[RefreshToken] = js.undefined,
         scope: js.UndefOr[Scopes] = js.undefined
@@ -77,11 +77,11 @@ package object ssooidc {
       val __obj = js.Dynamic.literal(
         "clientId" -> clientId.asInstanceOf[js.Any],
         "clientSecret" -> clientSecret.asInstanceOf[js.Any],
-        "deviceCode" -> deviceCode.asInstanceOf[js.Any],
         "grantType" -> grantType.asInstanceOf[js.Any]
       )
 
       code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      deviceCode.foreach(__v => __obj.updateDynamic("deviceCode")(__v.asInstanceOf[js.Any]))
       redirectUri.foreach(__v => __obj.updateDynamic("redirectUri")(__v.asInstanceOf[js.Any]))
       refreshToken.foreach(__v => __obj.updateDynamic("refreshToken")(__v.asInstanceOf[js.Any]))
       scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))

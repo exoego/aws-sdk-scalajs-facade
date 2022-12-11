@@ -24,6 +24,16 @@ object AdsOnDeliveryRestrictions {
   inline def values: js.Array[AdsOnDeliveryRestrictions] = js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH)
 }
 
+/** The encryption method to use.
+  */
+type CmafEncryptionMethod = "SAMPLE_AES" | "AES_CTR"
+object CmafEncryptionMethod {
+  inline val SAMPLE_AES: "SAMPLE_AES" = "SAMPLE_AES"
+  inline val AES_CTR: "AES_CTR" = "AES_CTR"
+
+  inline def values: js.Array[CmafEncryptionMethod] = js.Array(SAMPLE_AES, AES_CTR)
+}
+
 type EncryptionMethod = "AES_128" | "SAMPLE_AES"
 object EncryptionMethod {
   inline val AES_128: "AES_128" = "AES_128"
@@ -57,26 +67,52 @@ object PlaylistType {
   inline def values: js.Array[PlaylistType] = js.Array(NONE, EVENT, VOD)
 }
 
-type PresetSpeke20Audio = "PRESET-AUDIO-1"
+type PresetSpeke20Audio = "PRESET-AUDIO-1" | "PRESET-AUDIO-2" | "PRESET-AUDIO-3" | "SHARED" | "UNENCRYPTED"
 object PresetSpeke20Audio {
   inline val `PRESET-AUDIO-1`: "PRESET-AUDIO-1" = "PRESET-AUDIO-1"
+  inline val `PRESET-AUDIO-2`: "PRESET-AUDIO-2" = "PRESET-AUDIO-2"
+  inline val `PRESET-AUDIO-3`: "PRESET-AUDIO-3" = "PRESET-AUDIO-3"
+  inline val SHARED: "SHARED" = "SHARED"
+  inline val UNENCRYPTED: "UNENCRYPTED" = "UNENCRYPTED"
 
-  inline def values: js.Array[PresetSpeke20Audio] = js.Array(`PRESET-AUDIO-1`)
+  inline def values: js.Array[PresetSpeke20Audio] = js.Array(`PRESET-AUDIO-1`, `PRESET-AUDIO-2`, `PRESET-AUDIO-3`, SHARED, UNENCRYPTED)
 }
 
-type PresetSpeke20Video = "PRESET-VIDEO-1"
+type PresetSpeke20Video = "PRESET-VIDEO-1" | "PRESET-VIDEO-2" | "PRESET-VIDEO-3" | "PRESET-VIDEO-4" | "PRESET-VIDEO-5" | "PRESET-VIDEO-6" | "PRESET-VIDEO-7" | "PRESET-VIDEO-8" | "SHARED" | "UNENCRYPTED"
 object PresetSpeke20Video {
   inline val `PRESET-VIDEO-1`: "PRESET-VIDEO-1" = "PRESET-VIDEO-1"
+  inline val `PRESET-VIDEO-2`: "PRESET-VIDEO-2" = "PRESET-VIDEO-2"
+  inline val `PRESET-VIDEO-3`: "PRESET-VIDEO-3" = "PRESET-VIDEO-3"
+  inline val `PRESET-VIDEO-4`: "PRESET-VIDEO-4" = "PRESET-VIDEO-4"
+  inline val `PRESET-VIDEO-5`: "PRESET-VIDEO-5" = "PRESET-VIDEO-5"
+  inline val `PRESET-VIDEO-6`: "PRESET-VIDEO-6" = "PRESET-VIDEO-6"
+  inline val `PRESET-VIDEO-7`: "PRESET-VIDEO-7" = "PRESET-VIDEO-7"
+  inline val `PRESET-VIDEO-8`: "PRESET-VIDEO-8" = "PRESET-VIDEO-8"
+  inline val SHARED: "SHARED" = "SHARED"
+  inline val UNENCRYPTED: "UNENCRYPTED" = "UNENCRYPTED"
 
-  inline def values: js.Array[PresetSpeke20Video] = js.Array(`PRESET-VIDEO-1`)
+  inline def values: js.Array[PresetSpeke20Video] = js.Array(
+    `PRESET-VIDEO-1`,
+    `PRESET-VIDEO-2`,
+    `PRESET-VIDEO-3`,
+    `PRESET-VIDEO-4`,
+    `PRESET-VIDEO-5`,
+    `PRESET-VIDEO-6`,
+    `PRESET-VIDEO-7`,
+    `PRESET-VIDEO-8`,
+    SHARED,
+    UNENCRYPTED
+  )
 }
 
-type Profile = "NONE" | "HBBTV_1_5"
+type Profile = "NONE" | "HBBTV_1_5" | "HYBRIDCAST" | "DVB_DASH_2014"
 object Profile {
   inline val NONE: "NONE" = "NONE"
   inline val HBBTV_1_5: "HBBTV_1_5" = "HBBTV_1_5"
+  inline val HYBRIDCAST: "HYBRIDCAST" = "HYBRIDCAST"
+  inline val DVB_DASH_2014: "DVB_DASH_2014" = "DVB_DASH_2014"
 
-  inline def values: js.Array[Profile] = js.Array(NONE, HBBTV_1_5)
+  inline def values: js.Array[Profile] = js.Array(NONE, HBBTV_1_5, HYBRIDCAST, DVB_DASH_2014)
 }
 
 type SegmentTemplateFormat = "NUMBER_WITH_TIMELINE" | "TIME_WITH_TIMELINE" | "NUMBER_WITH_DURATION"
@@ -106,13 +142,14 @@ object StreamOrder {
   inline def values: js.Array[StreamOrder] = js.Array(ORIGINAL, VIDEO_BITRATE_ASCENDING, VIDEO_BITRATE_DESCENDING)
 }
 
-type UtcTiming = "NONE" | "HTTP-HEAD" | "HTTP-ISO"
+type UtcTiming = "NONE" | "HTTP-HEAD" | "HTTP-ISO" | "HTTP-XSDATE"
 object UtcTiming {
   inline val NONE: "NONE" = "NONE"
   inline val `HTTP-HEAD`: "HTTP-HEAD" = "HTTP-HEAD"
   inline val `HTTP-ISO`: "HTTP-ISO" = "HTTP-ISO"
+  inline val `HTTP-XSDATE`: "HTTP-XSDATE" = "HTTP-XSDATE"
 
-  inline def values: js.Array[UtcTiming] = js.Array(NONE, `HTTP-HEAD`, `HTTP-ISO`)
+  inline def values: js.Array[UtcTiming] = js.Array(NONE, `HTTP-HEAD`, `HTTP-ISO`, `HTTP-XSDATE`)
 }
 
 type __AdTriggersElement = "SPLICE_INSERT" | "BREAK" | "PROVIDER_ADVERTISEMENT" | "DISTRIBUTOR_ADVERTISEMENT" | "PROVIDER_PLACEMENT_OPPORTUNITY" | "DISTRIBUTOR_PLACEMENT_OPPORTUNITY" | "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY" | "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"

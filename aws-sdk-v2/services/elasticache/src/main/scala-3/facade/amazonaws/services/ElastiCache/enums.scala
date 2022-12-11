@@ -27,12 +27,13 @@ object AuthTokenUpdateStrategyType {
   inline def values: js.Array[AuthTokenUpdateStrategyType] = js.Array(SET, ROTATE, DELETE)
 }
 
-type AuthenticationType = "password" | "no-password"
+type AuthenticationType = "password" | "no-password" | "iam"
 object AuthenticationType {
   inline val password: "password" = "password"
   inline val `no-password`: "no-password" = "no-password"
+  inline val iam: "iam" = "iam"
 
-  inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`)
+  inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`, iam)
 }
 
 type AutomaticFailoverStatus = "enabled" | "disabled" | "enabling" | "disabling"
@@ -69,6 +70,23 @@ object DestinationType {
   inline def values: js.Array[DestinationType] = js.Array(`cloudwatch-logs`, `kinesis-firehose`)
 }
 
+type InputAuthenticationType = "password" | "no-password-required" | "iam"
+object InputAuthenticationType {
+  inline val password: "password" = "password"
+  inline val `no-password-required`: "no-password-required" = "no-password-required"
+  inline val iam: "iam" = "iam"
+
+  inline def values: js.Array[InputAuthenticationType] = js.Array(password, `no-password-required`, iam)
+}
+
+type IpDiscovery = "ipv4" | "ipv6"
+object IpDiscovery {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[IpDiscovery] = js.Array(ipv4, ipv6)
+}
+
 type LogDeliveryConfigurationStatus = "active" | "enabling" | "modifying" | "disabling" | "error"
 object LogDeliveryConfigurationStatus {
   inline val active: "active" = "active"
@@ -88,11 +106,12 @@ object LogFormat {
   inline def values: js.Array[LogFormat] = js.Array(text, json)
 }
 
-type LogType = "slow-log"
+type LogType = "slow-log" | "engine-log"
 object LogType {
   inline val `slow-log`: "slow-log" = "slow-log"
+  inline val `engine-log`: "engine-log" = "engine-log"
 
-  inline def values: js.Array[LogType] = js.Array(`slow-log`)
+  inline def values: js.Array[LogType] = js.Array(`slow-log`, `engine-log`)
 }
 
 type MultiAZStatus = "enabled" | "disabled"
@@ -101,6 +120,15 @@ object MultiAZStatus {
   inline val disabled: "disabled" = "disabled"
 
   inline def values: js.Array[MultiAZStatus] = js.Array(enabled, disabled)
+}
+
+type NetworkType = "ipv4" | "ipv6" | "dual_stack"
+object NetworkType {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+  inline val dual_stack: "dual_stack" = "dual_stack"
+
+  inline def values: js.Array[NetworkType] = js.Array(ipv4, ipv6, dual_stack)
 }
 
 type NodeUpdateInitiatedBy = "system" | "customer"

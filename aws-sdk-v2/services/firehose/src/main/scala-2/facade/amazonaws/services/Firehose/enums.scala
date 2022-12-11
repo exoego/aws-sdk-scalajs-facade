@@ -3,6 +3,15 @@ package facade.amazonaws.services.firehose
 import scalajs.js
 
 @js.native
+sealed trait AmazonOpenSearchServerlessS3BackupMode extends js.Any
+object AmazonOpenSearchServerlessS3BackupMode {
+  val FailedDocumentsOnly = "FailedDocumentsOnly".asInstanceOf[AmazonOpenSearchServerlessS3BackupMode]
+  val AllDocuments = "AllDocuments".asInstanceOf[AmazonOpenSearchServerlessS3BackupMode]
+
+  @inline def values: js.Array[AmazonOpenSearchServerlessS3BackupMode] = js.Array(FailedDocumentsOnly, AllDocuments)
+}
+
+@js.native
 sealed trait AmazonopensearchserviceIndexRotationPeriod extends js.Any
 object AmazonopensearchserviceIndexRotationPeriod {
   val NoRotation = "NoRotation".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]

@@ -10,6 +10,21 @@ object AddressType {
   inline def values: js.Array[AddressType] = js.Array(SHIPPING_ADDRESS, OPERATING_ADDRESS)
 }
 
+type AssetState = "ACTIVE" | "RETIRING"
+object AssetState {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val RETIRING: "RETIRING" = "RETIRING"
+
+  inline def values: js.Array[AssetState] = js.Array(ACTIVE, RETIRING)
+}
+
+type AssetType = "COMPUTE"
+object AssetType {
+  inline val COMPUTE: "COMPUTE" = "COMPUTE"
+
+  inline def values: js.Array[AssetType] = js.Array(COMPUTE)
+}
+
 type CatalogItemClass = "RACK" | "SERVER"
 object CatalogItemClass {
   inline val RACK: "RACK" = "RACK"
@@ -24,6 +39,15 @@ object CatalogItemStatus {
   inline val DISCONTINUED: "DISCONTINUED" = "DISCONTINUED"
 
   inline def values: js.Array[CatalogItemStatus] = js.Array(AVAILABLE, DISCONTINUED)
+}
+
+type ComputeAssetState = "ACTIVE" | "ISOLATED" | "RETIRING"
+object ComputeAssetState {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ISOLATED: "ISOLATED" = "ISOLATED"
+  inline val RETIRING: "RETIRING" = "RETIRING"
+
+  inline def values: js.Array[ComputeAssetState] = js.Array(ACTIVE, ISOLATED, RETIRING)
 }
 
 type FiberOpticCableType = "SINGLE_MODE" | "MULTI_MODE"
@@ -125,11 +149,12 @@ object PaymentOption {
   inline def values: js.Array[PaymentOption] = js.Array(ALL_UPFRONT, NO_UPFRONT, PARTIAL_UPFRONT)
 }
 
-type PaymentTerm = "THREE_YEARS"
+type PaymentTerm = "THREE_YEARS" | "ONE_YEAR"
 object PaymentTerm {
   inline val THREE_YEARS: "THREE_YEARS" = "THREE_YEARS"
+  inline val ONE_YEAR: "ONE_YEAR" = "ONE_YEAR"
 
-  inline def values: js.Array[PaymentTerm] = js.Array(THREE_YEARS)
+  inline def values: js.Array[PaymentTerm] = js.Array(THREE_YEARS, ONE_YEAR)
 }
 
 type PowerConnector = "L6_30P" | "IEC309" | "AH530P7W" | "AH532P6W"
@@ -165,6 +190,16 @@ object PowerPhase {
   inline val THREE_PHASE: "THREE_PHASE" = "THREE_PHASE"
 
   inline def values: js.Array[PowerPhase] = js.Array(SINGLE_PHASE, THREE_PHASE)
+}
+
+type ShipmentCarrier = "DHL" | "DBS" | "FEDEX" | "UPS"
+object ShipmentCarrier {
+  inline val DHL: "DHL" = "DHL"
+  inline val DBS: "DBS" = "DBS"
+  inline val FEDEX: "FEDEX" = "FEDEX"
+  inline val UPS: "UPS" = "UPS"
+
+  inline def values: js.Array[ShipmentCarrier] = js.Array(DHL, DBS, FEDEX, UPS)
 }
 
 type SupportedHardwareType = "RACK" | "SERVER"

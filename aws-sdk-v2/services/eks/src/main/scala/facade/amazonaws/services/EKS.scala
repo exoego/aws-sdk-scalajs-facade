@@ -15,6 +15,7 @@ package object eks {
   type BoxedBoolean = Boolean
   type BoxedInteger = Int
   type Capacity = Int
+  type ClusterIssueList = js.Array[ClusterIssue]
   type ClusterName = String
   type Compatibilities = js.Array[Compatibility]
   type DescribeAddonVersionsRequestMaxResults = Int
@@ -68,6 +69,7 @@ package object eks {
     @inline def deleteFargateProfileFuture(params: DeleteFargateProfileRequest): Future[DeleteFargateProfileResponse] = service.deleteFargateProfile(params).promise().toFuture
     @inline def deleteNodegroupFuture(params: DeleteNodegroupRequest): Future[DeleteNodegroupResponse] = service.deleteNodegroup(params).promise().toFuture
     @inline def deregisterClusterFuture(params: DeregisterClusterRequest): Future[DeregisterClusterResponse] = service.deregisterCluster(params).promise().toFuture
+    @inline def describeAddonConfigurationFuture(params: DescribeAddonConfigurationRequest): Future[DescribeAddonConfigurationResponse] = service.describeAddonConfiguration(params).promise().toFuture
     @inline def describeAddonFuture(params: DescribeAddonRequest): Future[DescribeAddonResponse] = service.describeAddon(params).promise().toFuture
     @inline def describeAddonVersionsFuture(params: DescribeAddonVersionsRequest): Future[DescribeAddonVersionsResponse] = service.describeAddonVersions(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterRequest): Future[DescribeClusterResponse] = service.describeCluster(params).promise().toFuture
@@ -111,6 +113,7 @@ package object eks {
     def deleteNodegroup(params: DeleteNodegroupRequest): Request[DeleteNodegroupResponse] = js.native
     def deregisterCluster(params: DeregisterClusterRequest): Request[DeregisterClusterResponse] = js.native
     def describeAddon(params: DescribeAddonRequest): Request[DescribeAddonResponse] = js.native
+    def describeAddonConfiguration(params: DescribeAddonConfigurationRequest): Request[DescribeAddonConfigurationResponse] = js.native
     def describeAddonVersions(params: DescribeAddonVersionsRequest): Request[DescribeAddonVersionsResponse] = js.native
     def describeCluster(params: DescribeClusterRequest): Request[DescribeClusterResponse] = js.native
     def describeFargateProfile(params: DescribeFargateProfileRequest): Request[DescribeFargateProfileResponse] = js.native
@@ -148,9 +151,13 @@ package object eks {
     var addonName: js.UndefOr[String]
     var addonVersion: js.UndefOr[String]
     var clusterName: js.UndefOr[ClusterName]
+    var configurationValues: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
     var health: js.UndefOr[AddonHealth]
+    var marketplaceInformation: js.UndefOr[MarketplaceInformation]
     var modifiedAt: js.UndefOr[Timestamp]
+    var owner: js.UndefOr[String]
+    var publisher: js.UndefOr[String]
     var serviceAccountRoleArn: js.UndefOr[String]
     var status: js.UndefOr[AddonStatus]
     var tags: js.UndefOr[TagMap]
@@ -163,9 +170,13 @@ package object eks {
         addonName: js.UndefOr[String] = js.undefined,
         addonVersion: js.UndefOr[String] = js.undefined,
         clusterName: js.UndefOr[ClusterName] = js.undefined,
+        configurationValues: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         health: js.UndefOr[AddonHealth] = js.undefined,
+        marketplaceInformation: js.UndefOr[MarketplaceInformation] = js.undefined,
         modifiedAt: js.UndefOr[Timestamp] = js.undefined,
+        owner: js.UndefOr[String] = js.undefined,
+        publisher: js.UndefOr[String] = js.undefined,
         serviceAccountRoleArn: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[AddonStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -175,9 +186,13 @@ package object eks {
       addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
       addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
       clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      configurationValues.foreach(__v => __obj.updateDynamic("configurationValues")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
+      marketplaceInformation.foreach(__v => __obj.updateDynamic("marketplaceInformation")(__v.asInstanceOf[js.Any]))
       modifiedAt.foreach(__v => __obj.updateDynamic("modifiedAt")(__v.asInstanceOf[js.Any]))
+      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
+      publisher.foreach(__v => __obj.updateDynamic("publisher")(__v.asInstanceOf[js.Any]))
       serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -209,6 +224,9 @@ package object eks {
   trait AddonInfo extends js.Object {
     var addonName: js.UndefOr[String]
     var addonVersions: js.UndefOr[AddonVersionInfoList]
+    var marketplaceInformation: js.UndefOr[MarketplaceInformation]
+    var owner: js.UndefOr[String]
+    var publisher: js.UndefOr[String]
     var `type`: js.UndefOr[String]
   }
 
@@ -217,11 +235,17 @@ package object eks {
     def apply(
         addonName: js.UndefOr[String] = js.undefined,
         addonVersions: js.UndefOr[AddonVersionInfoList] = js.undefined,
+        marketplaceInformation: js.UndefOr[MarketplaceInformation] = js.undefined,
+        owner: js.UndefOr[String] = js.undefined,
+        publisher: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[String] = js.undefined
     ): AddonInfo = {
       val __obj = js.Dynamic.literal()
       addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
       addonVersions.foreach(__v => __obj.updateDynamic("addonVersions")(__v.asInstanceOf[js.Any]))
+      marketplaceInformation.foreach(__v => __obj.updateDynamic("marketplaceInformation")(__v.asInstanceOf[js.Any]))
+      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
+      publisher.foreach(__v => __obj.updateDynamic("publisher")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddonInfo]
     }
@@ -258,6 +282,7 @@ package object eks {
     var addonVersion: js.UndefOr[String]
     var architecture: js.UndefOr[StringList]
     var compatibilities: js.UndefOr[Compatibilities]
+    var requiresConfiguration: js.UndefOr[Boolean]
   }
 
   object AddonVersionInfo {
@@ -265,12 +290,14 @@ package object eks {
     def apply(
         addonVersion: js.UndefOr[String] = js.undefined,
         architecture: js.UndefOr[StringList] = js.undefined,
-        compatibilities: js.UndefOr[Compatibilities] = js.undefined
+        compatibilities: js.UndefOr[Compatibilities] = js.undefined,
+        requiresConfiguration: js.UndefOr[Boolean] = js.undefined
     ): AddonVersionInfo = {
       val __obj = js.Dynamic.literal()
       addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
       architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
       compatibilities.foreach(__v => __obj.updateDynamic("compatibilities")(__v.asInstanceOf[js.Any]))
+      requiresConfiguration.foreach(__v => __obj.updateDynamic("requiresConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddonVersionInfo]
     }
   }
@@ -408,10 +435,13 @@ package object eks {
     var createdAt: js.UndefOr[Timestamp]
     var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var endpoint: js.UndefOr[String]
+    var health: js.UndefOr[ClusterHealth]
+    var id: js.UndefOr[String]
     var identity: js.UndefOr[Identity]
     var kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigResponse]
     var logging: js.UndefOr[Logging]
     var name: js.UndefOr[String]
+    var outpostConfig: js.UndefOr[OutpostConfigResponse]
     var platformVersion: js.UndefOr[String]
     var resourcesVpcConfig: js.UndefOr[VpcConfigResponse]
     var roleArn: js.UndefOr[String]
@@ -430,10 +460,13 @@ package object eks {
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         endpoint: js.UndefOr[String] = js.undefined,
+        health: js.UndefOr[ClusterHealth] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
         identity: js.UndefOr[Identity] = js.undefined,
         kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigResponse] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
+        outpostConfig: js.UndefOr[OutpostConfigResponse] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         resourcesVpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined,
         roleArn: js.UndefOr[String] = js.undefined,
@@ -449,10 +482,13 @@ package object eks {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
+      health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       kubernetesNetworkConfig.foreach(__v => __obj.updateDynamic("kubernetesNetworkConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outpostConfig.foreach(__v => __obj.updateDynamic("outpostConfig")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       resourcesVpcConfig.foreach(__v => __obj.updateDynamic("resourcesVpcConfig")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
@@ -460,6 +496,48 @@ package object eks {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
+    }
+  }
+
+  /** An object representing the health of your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.
+    */
+  @js.native
+  trait ClusterHealth extends js.Object {
+    var issues: js.UndefOr[ClusterIssueList]
+  }
+
+  object ClusterHealth {
+    @inline
+    def apply(
+        issues: js.UndefOr[ClusterIssueList] = js.undefined
+    ): ClusterHealth = {
+      val __obj = js.Dynamic.literal()
+      issues.foreach(__v => __obj.updateDynamic("issues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterHealth]
+    }
+  }
+
+  /** An issue with your local Amazon EKS cluster on an Amazon Web Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon Web Services cloud.
+    */
+  @js.native
+  trait ClusterIssue extends js.Object {
+    var code: js.UndefOr[ClusterIssueCode]
+    var message: js.UndefOr[String]
+    var resourceIds: js.UndefOr[StringList]
+  }
+
+  object ClusterIssue {
+    @inline
+    def apply(
+        code: js.UndefOr[ClusterIssueCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined,
+        resourceIds: js.UndefOr[StringList] = js.undefined
+    ): ClusterIssue = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.updateDynamic("resourceIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterIssue]
     }
   }
 
@@ -539,12 +617,49 @@ package object eks {
     }
   }
 
+  /** The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see [[https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html|Capacity considerations]] in the <i>Amazon EKS User Guide</i>
+    */
+  @js.native
+  trait ControlPlanePlacementRequest extends js.Object {
+    var groupName: js.UndefOr[String]
+  }
+
+  object ControlPlanePlacementRequest {
+    @inline
+    def apply(
+        groupName: js.UndefOr[String] = js.undefined
+    ): ControlPlanePlacementRequest = {
+      val __obj = js.Dynamic.literal()
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlPlanePlacementRequest]
+    }
+  }
+
+  /** The placement configuration for all the control plane instances of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see [[https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html|Capacity considerations]] in the <i>Amazon EKS User Guide</i>.
+    */
+  @js.native
+  trait ControlPlanePlacementResponse extends js.Object {
+    var groupName: js.UndefOr[String]
+  }
+
+  object ControlPlanePlacementResponse {
+    @inline
+    def apply(
+        groupName: js.UndefOr[String] = js.undefined
+    ): ControlPlanePlacementResponse = {
+      val __obj = js.Dynamic.literal()
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlPlanePlacementResponse]
+    }
+  }
+
   @js.native
   trait CreateAddonRequest extends js.Object {
     var addonName: String
     var clusterName: ClusterName
     var addonVersion: js.UndefOr[String]
     var clientRequestToken: js.UndefOr[String]
+    var configurationValues: js.UndefOr[String]
     var resolveConflicts: js.UndefOr[ResolveConflicts]
     var serviceAccountRoleArn: js.UndefOr[RoleArn]
     var tags: js.UndefOr[TagMap]
@@ -557,6 +672,7 @@ package object eks {
         clusterName: ClusterName,
         addonVersion: js.UndefOr[String] = js.undefined,
         clientRequestToken: js.UndefOr[String] = js.undefined,
+        configurationValues: js.UndefOr[String] = js.undefined,
         resolveConflicts: js.UndefOr[ResolveConflicts] = js.undefined,
         serviceAccountRoleArn: js.UndefOr[RoleArn] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -568,6 +684,7 @@ package object eks {
 
       addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      configurationValues.foreach(__v => __obj.updateDynamic("configurationValues")(__v.asInstanceOf[js.Any]))
       resolveConflicts.foreach(__v => __obj.updateDynamic("resolveConflicts")(__v.asInstanceOf[js.Any]))
       serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -600,6 +717,7 @@ package object eks {
     var encryptionConfig: js.UndefOr[EncryptionConfigList]
     var kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigRequest]
     var logging: js.UndefOr[Logging]
+    var outpostConfig: js.UndefOr[OutpostConfigRequest]
     var tags: js.UndefOr[TagMap]
     var version: js.UndefOr[String]
   }
@@ -614,6 +732,7 @@ package object eks {
         encryptionConfig: js.UndefOr[EncryptionConfigList] = js.undefined,
         kubernetesNetworkConfig: js.UndefOr[KubernetesNetworkConfigRequest] = js.undefined,
         logging: js.UndefOr[Logging] = js.undefined,
+        outpostConfig: js.UndefOr[OutpostConfigRequest] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): CreateClusterRequest = {
@@ -627,6 +746,7 @@ package object eks {
       encryptionConfig.foreach(__v => __obj.updateDynamic("encryptionConfig")(__v.asInstanceOf[js.Any]))
       kubernetesNetworkConfig.foreach(__v => __obj.updateDynamic("kubernetesNetworkConfig")(__v.asInstanceOf[js.Any]))
       logging.foreach(__v => __obj.updateDynamic("logging")(__v.asInstanceOf[js.Any]))
+      outpostConfig.foreach(__v => __obj.updateDynamic("outpostConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
@@ -965,6 +1085,48 @@ package object eks {
   }
 
   @js.native
+  trait DescribeAddonConfigurationRequest extends js.Object {
+    var addonName: String
+    var addonVersion: String
+  }
+
+  object DescribeAddonConfigurationRequest {
+    @inline
+    def apply(
+        addonName: String,
+        addonVersion: String
+    ): DescribeAddonConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "addonName" -> addonName.asInstanceOf[js.Any],
+        "addonVersion" -> addonVersion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAddonConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAddonConfigurationResponse extends js.Object {
+    var addonName: js.UndefOr[String]
+    var addonVersion: js.UndefOr[String]
+    var configurationSchema: js.UndefOr[String]
+  }
+
+  object DescribeAddonConfigurationResponse {
+    @inline
+    def apply(
+        addonName: js.UndefOr[String] = js.undefined,
+        addonVersion: js.UndefOr[String] = js.undefined,
+        configurationSchema: js.UndefOr[String] = js.undefined
+    ): DescribeAddonConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
+      addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
+      configurationSchema.foreach(__v => __obj.updateDynamic("configurationSchema")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAddonConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeAddonRequest extends js.Object {
     var addonName: String
     var clusterName: ClusterName
@@ -1006,6 +1168,9 @@ package object eks {
     var kubernetesVersion: js.UndefOr[String]
     var maxResults: js.UndefOr[DescribeAddonVersionsRequestMaxResults]
     var nextToken: js.UndefOr[String]
+    var owners: js.UndefOr[StringList]
+    var publishers: js.UndefOr[StringList]
+    var types: js.UndefOr[StringList]
   }
 
   object DescribeAddonVersionsRequest {
@@ -1014,13 +1179,19 @@ package object eks {
         addonName: js.UndefOr[String] = js.undefined,
         kubernetesVersion: js.UndefOr[String] = js.undefined,
         maxResults: js.UndefOr[DescribeAddonVersionsRequestMaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[String] = js.undefined,
+        owners: js.UndefOr[StringList] = js.undefined,
+        publishers: js.UndefOr[StringList] = js.undefined,
+        types: js.UndefOr[StringList] = js.undefined
     ): DescribeAddonVersionsRequest = {
       val __obj = js.Dynamic.literal()
       addonName.foreach(__v => __obj.updateDynamic("addonName")(__v.asInstanceOf[js.Any]))
       kubernetesVersion.foreach(__v => __obj.updateDynamic("kubernetesVersion")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      owners.foreach(__v => __obj.updateDynamic("owners")(__v.asInstanceOf[js.Any]))
+      publishers.foreach(__v => __obj.updateDynamic("publishers")(__v.asInstanceOf[js.Any]))
+      types.foreach(__v => __obj.updateDynamic("types")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAddonVersionsRequest]
     }
   }
@@ -1462,40 +1633,49 @@ package object eks {
     */
   @js.native
   trait KubernetesNetworkConfigRequest extends js.Object {
+    var ipFamily: js.UndefOr[IpFamily]
     var serviceIpv4Cidr: js.UndefOr[String]
   }
 
   object KubernetesNetworkConfigRequest {
     @inline
     def apply(
+        ipFamily: js.UndefOr[IpFamily] = js.undefined,
         serviceIpv4Cidr: js.UndefOr[String] = js.undefined
     ): KubernetesNetworkConfigRequest = {
       val __obj = js.Dynamic.literal()
+      ipFamily.foreach(__v => __obj.updateDynamic("ipFamily")(__v.asInstanceOf[js.Any]))
       serviceIpv4Cidr.foreach(__v => __obj.updateDynamic("serviceIpv4Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KubernetesNetworkConfigRequest]
     }
   }
 
-  /** The Kubernetes network configuration for the cluster.
+  /** The Kubernetes network configuration for the cluster. The response contains a value for ```serviceIpv6Cidr``` or ```serviceIpv4Cidr```, but not both.
     */
   @js.native
   trait KubernetesNetworkConfigResponse extends js.Object {
+    var ipFamily: js.UndefOr[IpFamily]
     var serviceIpv4Cidr: js.UndefOr[String]
+    var serviceIpv6Cidr: js.UndefOr[String]
   }
 
   object KubernetesNetworkConfigResponse {
     @inline
     def apply(
-        serviceIpv4Cidr: js.UndefOr[String] = js.undefined
+        ipFamily: js.UndefOr[IpFamily] = js.undefined,
+        serviceIpv4Cidr: js.UndefOr[String] = js.undefined,
+        serviceIpv6Cidr: js.UndefOr[String] = js.undefined
     ): KubernetesNetworkConfigResponse = {
       val __obj = js.Dynamic.literal()
+      ipFamily.foreach(__v => __obj.updateDynamic("ipFamily")(__v.asInstanceOf[js.Any]))
       serviceIpv4Cidr.foreach(__v => __obj.updateDynamic("serviceIpv4Cidr")(__v.asInstanceOf[js.Any]))
+      serviceIpv6Cidr.foreach(__v => __obj.updateDynamic("serviceIpv6Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KubernetesNetworkConfigResponse]
     }
   }
 
-  /** An object representing a node group launch template specification. The launch template cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">
-    * <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see [[https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html|Launch template support]] in the Amazon EKS User Guide. Specify either <code>name</code> or <code>id</code>, but not both.
+  /** An object representing a node group launch template specification. The launch template can't include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html"> <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html"> <code>HibernationOptions</code> </a>, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TerminateInstances.html"> <code>TerminateInstances</code> </a>, or the node group deployment or update will fail. For more information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">
+    * <code>CreateLaunchTemplate</code> </a> in the Amazon EC2 API Reference. For more information about using launch templates with Amazon EKS, see [[https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html|Launch template support]] in the <i>Amazon EKS User Guide</i>. You must specify either the launch template ID or the launch template name in the request, but not both.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1853,6 +2033,27 @@ package object eks {
     }
   }
 
+  /** Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+    */
+  @js.native
+  trait MarketplaceInformation extends js.Object {
+    var productId: js.UndefOr[String]
+    var productUrl: js.UndefOr[String]
+  }
+
+  object MarketplaceInformation {
+    @inline
+    def apply(
+        productId: js.UndefOr[String] = js.undefined,
+        productUrl: js.UndefOr[String] = js.undefined
+    ): MarketplaceInformation = {
+      val __obj = js.Dynamic.literal()
+      productId.foreach(__v => __obj.updateDynamic("productId")(__v.asInstanceOf[js.Any]))
+      productUrl.foreach(__v => __obj.updateDynamic("productUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MarketplaceInformation]
+    }
+  }
+
   /** An object representing an Amazon EKS managed node group.
     */
   @js.native
@@ -2039,7 +2240,7 @@ package object eks {
     }
   }
 
-  /** An object that represents the configuration for an OpenID Connect (OIDC) identity provider.
+  /** An object representing the configuration for an OpenID Connect (OIDC) identity provider.
     */
   @js.native
   trait OidcIdentityProviderConfig extends js.Object {
@@ -2128,6 +2329,58 @@ package object eks {
       usernameClaim.foreach(__v => __obj.updateDynamic("usernameClaim")(__v.asInstanceOf[js.Any]))
       usernamePrefix.foreach(__v => __obj.updateDynamic("usernamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OidcIdentityProviderConfigRequest]
+    }
+  }
+
+  /** The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an Outpost, review [[https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html|Creating a local cluster on an Outpost]] in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.
+    */
+  @js.native
+  trait OutpostConfigRequest extends js.Object {
+    var controlPlaneInstanceType: String
+    var outpostArns: StringList
+    var controlPlanePlacement: js.UndefOr[ControlPlanePlacementRequest]
+  }
+
+  object OutpostConfigRequest {
+    @inline
+    def apply(
+        controlPlaneInstanceType: String,
+        outpostArns: StringList,
+        controlPlanePlacement: js.UndefOr[ControlPlanePlacementRequest] = js.undefined
+    ): OutpostConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "controlPlaneInstanceType" -> controlPlaneInstanceType.asInstanceOf[js.Any],
+        "outpostArns" -> outpostArns.asInstanceOf[js.Any]
+      )
+
+      controlPlanePlacement.foreach(__v => __obj.updateDynamic("controlPlanePlacement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutpostConfigRequest]
+    }
+  }
+
+  /** An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. This API isn't available for Amazon EKS clusters on the Amazon Web Services cloud.
+    */
+  @js.native
+  trait OutpostConfigResponse extends js.Object {
+    var controlPlaneInstanceType: String
+    var outpostArns: StringList
+    var controlPlanePlacement: js.UndefOr[ControlPlanePlacementResponse]
+  }
+
+  object OutpostConfigResponse {
+    @inline
+    def apply(
+        controlPlaneInstanceType: String,
+        outpostArns: StringList,
+        controlPlanePlacement: js.UndefOr[ControlPlanePlacementResponse] = js.undefined
+    ): OutpostConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "controlPlaneInstanceType" -> controlPlaneInstanceType.asInstanceOf[js.Any],
+        "outpostArns" -> outpostArns.asInstanceOf[js.Any]
+      )
+
+      controlPlanePlacement.foreach(__v => __obj.updateDynamic("controlPlanePlacement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OutpostConfigResponse]
     }
   }
 
@@ -2244,7 +2497,7 @@ package object eks {
     }
   }
 
-  /** A property that allows a node to repel a set of pods.
+  /** A property that allows a node to repel a set of pods. For more information, see [[https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html|Node taints on managed node groups]].
     */
   @js.native
   trait Taint extends js.Object {
@@ -2338,6 +2591,7 @@ package object eks {
     var clusterName: ClusterName
     var addonVersion: js.UndefOr[String]
     var clientRequestToken: js.UndefOr[String]
+    var configurationValues: js.UndefOr[String]
     var resolveConflicts: js.UndefOr[ResolveConflicts]
     var serviceAccountRoleArn: js.UndefOr[RoleArn]
   }
@@ -2349,6 +2603,7 @@ package object eks {
         clusterName: ClusterName,
         addonVersion: js.UndefOr[String] = js.undefined,
         clientRequestToken: js.UndefOr[String] = js.undefined,
+        configurationValues: js.UndefOr[String] = js.undefined,
         resolveConflicts: js.UndefOr[ResolveConflicts] = js.undefined,
         serviceAccountRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateAddonRequest = {
@@ -2359,6 +2614,7 @@ package object eks {
 
       addonVersion.foreach(__v => __obj.updateDynamic("addonVersion")(__v.asInstanceOf[js.Any]))
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      configurationValues.foreach(__v => __obj.updateDynamic("configurationValues")(__v.asInstanceOf[js.Any]))
       resolveConflicts.foreach(__v => __obj.updateDynamic("resolveConflicts")(__v.asInstanceOf[js.Any]))
       serviceAccountRoleArn.foreach(__v => __obj.updateDynamic("serviceAccountRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAddonRequest]
@@ -2610,7 +2866,7 @@ package object eks {
     }
   }
 
-  /** An object representing the details of an update to a taints payload.
+  /** An object representing the details of an update to a taints payload. For more information, see [[https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html|Node taints on managed node groups]].
     */
   @js.native
   trait UpdateTaintsPayload extends js.Object {

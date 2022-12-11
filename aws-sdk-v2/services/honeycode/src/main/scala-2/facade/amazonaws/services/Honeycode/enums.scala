@@ -3,6 +3,42 @@ package facade.amazonaws.services.honeycode
 import scalajs.js
 
 @js.native
+sealed trait ErrorCode extends js.Any
+object ErrorCode {
+  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ErrorCode]
+  val INVALID_URL_ERROR = "INVALID_URL_ERROR".asInstanceOf[ErrorCode]
+  val INVALID_IMPORT_OPTIONS_ERROR = "INVALID_IMPORT_OPTIONS_ERROR".asInstanceOf[ErrorCode]
+  val INVALID_TABLE_ID_ERROR = "INVALID_TABLE_ID_ERROR".asInstanceOf[ErrorCode]
+  val INVALID_TABLE_COLUMN_ID_ERROR = "INVALID_TABLE_COLUMN_ID_ERROR".asInstanceOf[ErrorCode]
+  val TABLE_NOT_FOUND_ERROR = "TABLE_NOT_FOUND_ERROR".asInstanceOf[ErrorCode]
+  val FILE_EMPTY_ERROR = "FILE_EMPTY_ERROR".asInstanceOf[ErrorCode]
+  val INVALID_FILE_TYPE_ERROR = "INVALID_FILE_TYPE_ERROR".asInstanceOf[ErrorCode]
+  val FILE_PARSING_ERROR = "FILE_PARSING_ERROR".asInstanceOf[ErrorCode]
+  val FILE_SIZE_LIMIT_ERROR = "FILE_SIZE_LIMIT_ERROR".asInstanceOf[ErrorCode]
+  val FILE_NOT_FOUND_ERROR = "FILE_NOT_FOUND_ERROR".asInstanceOf[ErrorCode]
+  val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ErrorCode]
+  val RESOURCE_NOT_FOUND_ERROR = "RESOURCE_NOT_FOUND_ERROR".asInstanceOf[ErrorCode]
+  val SYSTEM_LIMIT_ERROR = "SYSTEM_LIMIT_ERROR".asInstanceOf[ErrorCode]
+
+  @inline def values: js.Array[ErrorCode] = js.Array(
+    ACCESS_DENIED,
+    INVALID_URL_ERROR,
+    INVALID_IMPORT_OPTIONS_ERROR,
+    INVALID_TABLE_ID_ERROR,
+    INVALID_TABLE_COLUMN_ID_ERROR,
+    TABLE_NOT_FOUND_ERROR,
+    FILE_EMPTY_ERROR,
+    INVALID_FILE_TYPE_ERROR,
+    FILE_PARSING_ERROR,
+    FILE_SIZE_LIMIT_ERROR,
+    FILE_NOT_FOUND_ERROR,
+    UNKNOWN_ERROR,
+    RESOURCE_NOT_FOUND_ERROR,
+    SYSTEM_LIMIT_ERROR
+  )
+}
+
+@js.native
 sealed trait Format extends js.Any
 object Format {
   val AUTO = "AUTO".asInstanceOf[Format]
@@ -16,8 +52,9 @@ object Format {
   val ACCOUNTING = "ACCOUNTING".asInstanceOf[Format]
   val CONTACT = "CONTACT".asInstanceOf[Format]
   val ROWLINK = "ROWLINK".asInstanceOf[Format]
+  val ROWSET = "ROWSET".asInstanceOf[Format]
 
-  @inline def values: js.Array[Format] = js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK)
+  @inline def values: js.Array[Format] = js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK, ROWSET)
 }
 
 @js.native

@@ -34,8 +34,6 @@ package object appconfigdata {
     }
   }
 
-  /** Request parameters for the GetLatestConfiguration API
-    */
   @js.native
   trait GetLatestConfigurationRequest extends js.Object {
     var ConfigurationToken: Token
@@ -53,8 +51,6 @@ package object appconfigdata {
     }
   }
 
-  /** Response parameters for the GetLatestConfiguration API
-    */
   @js.native
   trait GetLatestConfigurationResponse extends js.Object {
     var Configuration: js.UndefOr[SyntheticGetLatestConfigurationResponseBlob]
@@ -80,8 +76,6 @@ package object appconfigdata {
     }
   }
 
-  /** Request parameters for the StartConfigurationSession API.
-    */
   @js.native
   trait StartConfigurationSessionRequest extends js.Object {
     var ApplicationIdentifier: Identifier
@@ -109,8 +103,6 @@ package object appconfigdata {
     }
   }
 
-  /** Response parameters for the StartConfigurationSession API.
-    */
   @js.native
   trait StartConfigurationSessionResponse extends js.Object {
     var InitialConfigurationToken: js.UndefOr[Token]

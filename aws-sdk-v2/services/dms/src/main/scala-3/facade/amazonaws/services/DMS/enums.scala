@@ -42,6 +42,14 @@ object CharLengthSemantics {
   inline def values: js.Array[CharLengthSemantics] = js.Array(default, char, byte)
 }
 
+type CollectorStatus = "UNREGISTERED" | "ACTIVE"
+object CollectorStatus {
+  inline val UNREGISTERED: "UNREGISTERED" = "UNREGISTERED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+
+  inline def values: js.Array[CollectorStatus] = js.Array(UNREGISTERED, ACTIVE)
+}
+
 type CompressionTypeValue = "none" | "gzip"
 object CompressionTypeValue {
   inline val none: "none" = "none"
@@ -248,4 +256,13 @@ object TargetDbType {
   inline val `multiple-databases`: "multiple-databases" = "multiple-databases"
 
   inline def values: js.Array[TargetDbType] = js.Array(`specific-database`, `multiple-databases`)
+}
+
+type VersionStatus = "UP_TO_DATE" | "OUTDATED" | "UNSUPPORTED"
+object VersionStatus {
+  inline val UP_TO_DATE: "UP_TO_DATE" = "UP_TO_DATE"
+  inline val OUTDATED: "OUTDATED" = "OUTDATED"
+  inline val UNSUPPORTED: "UNSUPPORTED" = "UNSUPPORTED"
+
+  inline def values: js.Array[VersionStatus] = js.Array(UP_TO_DATE, OUTDATED, UNSUPPORTED)
 }

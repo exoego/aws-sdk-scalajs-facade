@@ -12,11 +12,14 @@ package object budgetsservice {
   type ActionHistories = js.Array[ActionHistory]
   type ActionId = String
   type Actions = js.Array[Action]
+  type AdjustmentPeriod = Int
   type BudgetName = String
+  type BudgetNotificationsForAccountList = js.Array[BudgetNotificationsForAccount]
   type BudgetedAndActualAmountsList = js.Array[BudgetedAndActualAmounts]
   type Budgets = js.Array[Budget]
   type CostFilters = js.Dictionary[DimensionValues]
-  type DimensionValues = js.Array[GenericString]
+  type DimensionValue = String
+  type DimensionValues = js.Array[DimensionValue]
   type GenericString = String
   type GenericTimestamp = js.Date
   type Group = String
@@ -24,6 +27,7 @@ package object budgetsservice {
   type InstanceId = String
   type InstanceIds = js.Array[InstanceId]
   type MaxResults = Int
+  type MaxResultsBudgetNotifications = Int
   type NotificationThreshold = Double
   type NotificationWithSubscribersList = js.Array[NotificationWithSubscribers]
   type Notifications = js.Array[Notification]
@@ -59,6 +63,7 @@ package object budgetsservice {
     @inline def describeBudgetActionsForAccountFuture(params: DescribeBudgetActionsForAccountRequest): Future[DescribeBudgetActionsForAccountResponse] = service.describeBudgetActionsForAccount(params).promise().toFuture
     @inline def describeBudgetActionsForBudgetFuture(params: DescribeBudgetActionsForBudgetRequest): Future[DescribeBudgetActionsForBudgetResponse] = service.describeBudgetActionsForBudget(params).promise().toFuture
     @inline def describeBudgetFuture(params: DescribeBudgetRequest): Future[DescribeBudgetResponse] = service.describeBudget(params).promise().toFuture
+    @inline def describeBudgetNotificationsForAccountFuture(params: DescribeBudgetNotificationsForAccountRequest): Future[DescribeBudgetNotificationsForAccountResponse] = service.describeBudgetNotificationsForAccount(params).promise().toFuture
     @inline def describeBudgetPerformanceHistoryFuture(params: DescribeBudgetPerformanceHistoryRequest): Future[DescribeBudgetPerformanceHistoryResponse] = service.describeBudgetPerformanceHistory(params).promise().toFuture
     @inline def describeBudgetsFuture(params: DescribeBudgetsRequest): Future[DescribeBudgetsResponse] = service.describeBudgets(params).promise().toFuture
     @inline def describeNotificationsForBudgetFuture(params: DescribeNotificationsForBudgetRequest): Future[DescribeNotificationsForBudgetResponse] = service.describeNotificationsForBudget(params).promise().toFuture
@@ -89,6 +94,7 @@ package object budgetsservice {
     def describeBudgetActionHistories(params: DescribeBudgetActionHistoriesRequest): Request[DescribeBudgetActionHistoriesResponse] = js.native
     def describeBudgetActionsForAccount(params: DescribeBudgetActionsForAccountRequest): Request[DescribeBudgetActionsForAccountResponse] = js.native
     def describeBudgetActionsForBudget(params: DescribeBudgetActionsForBudgetRequest): Request[DescribeBudgetActionsForBudgetResponse] = js.native
+    def describeBudgetNotificationsForAccount(params: DescribeBudgetNotificationsForAccountRequest): Request[DescribeBudgetNotificationsForAccountResponse] = js.native
     def describeBudgetPerformanceHistory(params: DescribeBudgetPerformanceHistoryRequest): Request[DescribeBudgetPerformanceHistoryResponse] = js.native
     def describeBudgets(params: DescribeBudgetsRequest): Request[DescribeBudgetsResponse] = js.native
     def describeNotificationsForBudget(params: DescribeNotificationsForBudgetRequest): Request[DescribeNotificationsForBudgetResponse] = js.native
@@ -179,7 +185,7 @@ package object budgetsservice {
     }
   }
 
-  /** The description of details of the event.
+  /** The description of the details for the event.
     */
   @js.native
   trait ActionHistoryDetails extends js.Object {
@@ -223,13 +229,40 @@ package object budgetsservice {
     }
   }
 
-  /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object. This is the ARN pattern for a budget: <code>arn:aws:budgets::AccountId:budget/budgetName</code>
+  /** The parameters that determine the budget amount for an auto-adjusting budget.
+    */
+  @js.native
+  trait AutoAdjustData extends js.Object {
+    var AutoAdjustType: AutoAdjustType
+    var HistoricalOptions: js.UndefOr[HistoricalOptions]
+    var LastAutoAdjustTime: js.UndefOr[GenericTimestamp]
+  }
+
+  object AutoAdjustData {
+    @inline
+    def apply(
+        AutoAdjustType: AutoAdjustType,
+        HistoricalOptions: js.UndefOr[HistoricalOptions] = js.undefined,
+        LastAutoAdjustTime: js.UndefOr[GenericTimestamp] = js.undefined
+    ): AutoAdjustData = {
+      val __obj = js.Dynamic.literal(
+        "AutoAdjustType" -> AutoAdjustType.asInstanceOf[js.Any]
+      )
+
+      HistoricalOptions.foreach(__v => __obj.updateDynamic("HistoricalOptions")(__v.asInstanceOf[js.Any]))
+      LastAutoAdjustTime.foreach(__v => __obj.updateDynamic("LastAutoAdjustTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoAdjustData]
+    }
+  }
+
+  /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object. This is the Amazon Resource Name (ARN) pattern for a budget: <code>arn:aws:budgets::AccountId:budget/budgetName</code>
     */
   @js.native
   trait Budget extends js.Object {
     var BudgetName: BudgetName
     var BudgetType: BudgetType
     var TimeUnit: TimeUnit
+    var AutoAdjustData: js.UndefOr[AutoAdjustData]
     var BudgetLimit: js.UndefOr[Spend]
     var CalculatedSpend: js.UndefOr[CalculatedSpend]
     var CostFilters: js.UndefOr[CostFilters]
@@ -245,6 +278,7 @@ package object budgetsservice {
         BudgetName: BudgetName,
         BudgetType: BudgetType,
         TimeUnit: TimeUnit,
+        AutoAdjustData: js.UndefOr[AutoAdjustData] = js.undefined,
         BudgetLimit: js.UndefOr[Spend] = js.undefined,
         CalculatedSpend: js.UndefOr[CalculatedSpend] = js.undefined,
         CostFilters: js.UndefOr[CostFilters] = js.undefined,
@@ -259,6 +293,7 @@ package object budgetsservice {
         "TimeUnit" -> TimeUnit.asInstanceOf[js.Any]
       )
 
+      AutoAdjustData.foreach(__v => __obj.updateDynamic("AutoAdjustData")(__v.asInstanceOf[js.Any]))
       BudgetLimit.foreach(__v => __obj.updateDynamic("BudgetLimit")(__v.asInstanceOf[js.Any]))
       CalculatedSpend.foreach(__v => __obj.updateDynamic("CalculatedSpend")(__v.asInstanceOf[js.Any]))
       CostFilters.foreach(__v => __obj.updateDynamic("CostFilters")(__v.asInstanceOf[js.Any]))
@@ -267,6 +302,27 @@ package object budgetsservice {
       PlannedBudgetLimits.foreach(__v => __obj.updateDynamic("PlannedBudgetLimits")(__v.asInstanceOf[js.Any]))
       TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Budget]
+    }
+  }
+
+  /** The budget name and associated notifications for an account.
+    */
+  @js.native
+  trait BudgetNotificationsForAccount extends js.Object {
+    var BudgetName: js.UndefOr[BudgetName]
+    var Notifications: js.UndefOr[Notifications]
+  }
+
+  object BudgetNotificationsForAccount {
+    @inline
+    def apply(
+        BudgetName: js.UndefOr[BudgetName] = js.undefined,
+        Notifications: js.UndefOr[Notifications] = js.undefined
+    ): BudgetNotificationsForAccount = {
+      val __obj = js.Dynamic.literal()
+      BudgetName.foreach(__v => __obj.updateDynamic("BudgetName")(__v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BudgetNotificationsForAccount]
     }
   }
 
@@ -327,7 +383,7 @@ package object budgetsservice {
     }
   }
 
-  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much you are predicted to spend based on your historical usage profile. For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
+  /** The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage, RI units, or Savings Plans units and the <code>forecastedSpend</code> tracks how much that you're predicted to spend based on your historical usage profile. For example, if it's the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your <code>actualSpend</code> is <code>50 USD</code>, and your <code>forecastedSpend</code> is <code>75 USD</code>.
     */
   @js.native
   trait CalculatedSpend extends js.Object {
@@ -350,7 +406,7 @@ package object budgetsservice {
     }
   }
 
-  /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions. <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
+  /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions. <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets don't have <code>CostTypes</code>.
     */
   @js.native
   trait CostTypes extends js.Object {
@@ -961,6 +1017,49 @@ package object budgetsservice {
   }
 
   @js.native
+  trait DescribeBudgetNotificationsForAccountRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResultsBudgetNotifications]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetNotificationsForAccountRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResultsBudgetNotifications] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetNotificationsForAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetNotificationsForAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBudgetNotificationsForAccountResponse extends js.Object {
+    var BudgetNotificationsForAccount: js.UndefOr[BudgetNotificationsForAccountList]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object DescribeBudgetNotificationsForAccountResponse {
+    @inline
+    def apply(
+        BudgetNotificationsForAccount: js.UndefOr[BudgetNotificationsForAccountList] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): DescribeBudgetNotificationsForAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      BudgetNotificationsForAccount.foreach(__v => __obj.updateDynamic("BudgetNotificationsForAccount")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBudgetNotificationsForAccountResponse]
+    }
+  }
+
+  @js.native
   trait DescribeBudgetPerformanceHistoryRequest extends js.Object {
     var AccountId: AccountId
     var BudgetName: BudgetName
@@ -1251,7 +1350,30 @@ package object budgetsservice {
     }
   }
 
-  /** The AWS Identity and Access Management (IAM) action definition details.
+  /** The parameters that define or describe the historical data that your auto-adjusting budget is based on.
+    */
+  @js.native
+  trait HistoricalOptions extends js.Object {
+    var BudgetAdjustmentPeriod: AdjustmentPeriod
+    var LookBackAvailablePeriods: js.UndefOr[AdjustmentPeriod]
+  }
+
+  object HistoricalOptions {
+    @inline
+    def apply(
+        BudgetAdjustmentPeriod: AdjustmentPeriod,
+        LookBackAvailablePeriods: js.UndefOr[AdjustmentPeriod] = js.undefined
+    ): HistoricalOptions = {
+      val __obj = js.Dynamic.literal(
+        "BudgetAdjustmentPeriod" -> BudgetAdjustmentPeriod.asInstanceOf[js.Any]
+      )
+
+      LookBackAvailablePeriods.foreach(__v => __obj.updateDynamic("LookBackAvailablePeriods")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistoricalOptions]
+    }
+  }
+
+  /** The Identity and Access Management (IAM) action definition details.
     */
   @js.native
   trait IamActionDefinition extends js.Object {
@@ -1280,7 +1402,7 @@ package object budgetsservice {
     }
   }
 
-  /** A notification that is associated with a budget. A budget can have up to ten notifications. Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers. For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters: * A notificationType of <code>ACTUAL</code> * A <code>thresholdType</code> of <code>PERCENTAGE</code> * A <code>comparisonOperator</code> of <code>GREATER_THAN</code> * A notification <code>threshold</code> of <code>80</code>
+  /** A notification that's associated with a budget. A budget can have up to ten notifications. Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers. For example, if you have a budget for 200 dollars and you want to be notified when you go over 160 dollars, create a notification with the following parameters: * A notificationType of <code>ACTUAL</code> * A <code>thresholdType</code> of <code>PERCENTAGE</code> * A <code>comparisonOperator</code> of <code>GREATER_THAN</code> * A notification <code>threshold</code> of <code>80</code>
     */
   @js.native
   trait Notification extends js.Object {
@@ -1356,7 +1478,7 @@ package object budgetsservice {
     }
   }
 
-  /** The amount of cost or usage that is measured for a budget. For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage would have the following parameters: * An <code>Amount</code> of <code>3</code> * A <code>unit</code> of <code>GB</code>
+  /** The amount of cost or usage that's measured for a budget. For example, a <code>Spend</code> for <code>3 GB</code> of S3 usage has the following parameters: * An <code>Amount</code> of <code>3</code> * A <code>unit</code> of <code>GB</code>
     */
   @js.native
   trait Spend extends js.Object {
@@ -1378,7 +1500,7 @@ package object budgetsservice {
     }
   }
 
-  /** The AWS Systems Manager (SSM) action definition details.
+  /** The Amazon Web Services Systems Manager (SSM) action definition details.
     */
   @js.native
   trait SsmActionDefinition extends js.Object {
@@ -1403,7 +1525,7 @@ package object budgetsservice {
     }
   }
 
-  /** The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address. For example, an email subscriber would have the following parameters: * A <code>subscriptionType</code> of <code>EMAIL</code> * An <code>address</code> of <code>example@example.com</code>
+  /** The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS topic or an email address. For example, an email subscriber has the following parameters: * A <code>subscriptionType</code> of <code>EMAIL</code> * An <code>address</code> of <code>example@example.com</code>
     */
   @js.native
   trait Subscriber extends js.Object {
@@ -1425,7 +1547,7 @@ package object budgetsservice {
     }
   }
 
-  /** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
+  /** The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
     */
   @js.native
   trait TimePeriod extends js.Object {

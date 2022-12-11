@@ -31,6 +31,15 @@ object RecordingConfigurationState {
 }
 
 @js.native
+sealed trait RecordingMode extends js.Any
+object RecordingMode {
+  val DISABLED = "DISABLED".asInstanceOf[RecordingMode]
+  val INTERVAL = "INTERVAL".asInstanceOf[RecordingMode]
+
+  @inline def values: js.Array[RecordingMode] = js.Array(DISABLED, INTERVAL)
+}
+
+@js.native
 sealed trait StreamHealth extends js.Any
 object StreamHealth {
   val HEALTHY = "HEALTHY".asInstanceOf[StreamHealth]

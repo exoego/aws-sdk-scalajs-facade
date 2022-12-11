@@ -134,11 +134,12 @@ object ProxyType {
   inline def values: js.Array[ProxyType] = js.Array(API_GATEWAY)
 }
 
-type RouteActivationState = "ACTIVE"
+type RouteActivationState = "ACTIVE" | "INACTIVE"
 object RouteActivationState {
   inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  inline def values: js.Array[RouteActivationState] = js.Array(ACTIVE)
+  inline def values: js.Array[RouteActivationState] = js.Array(ACTIVE, INACTIVE)
 }
 
 type RouteState = "CREATING" | "ACTIVE" | "DELETING" | "FAILED" | "UPDATING" | "INACTIVE"

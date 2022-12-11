@@ -54,6 +54,11 @@ object LanguageCode {
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
   val `en-NZ` = "en-NZ".asInstanceOf[LanguageCode]
   val `en-ZA` = "en-ZA".asInstanceOf[LanguageCode]
+  val `ca-ES` = "ca-ES".asInstanceOf[LanguageCode]
+  val `de-AT` = "de-AT".asInstanceOf[LanguageCode]
+  val `yue-CN` = "yue-CN".asInstanceOf[LanguageCode]
+  val `ar-AE` = "ar-AE".asInstanceOf[LanguageCode]
+  val `fi-FI` = "fi-FI".asInstanceOf[LanguageCode]
 
   @inline def values: js.Array[LanguageCode] = js.Array(
     arb,
@@ -86,7 +91,12 @@ object LanguageCode {
     `sv-SE`,
     `tr-TR`,
     `en-NZ`,
-    `en-ZA`
+    `en-ZA`,
+    `ca-ES`,
+    `de-AT`,
+    `yue-CN`,
+    `ar-AE`,
+    `fi-FI`
   )
 }
 
@@ -200,6 +210,20 @@ object VoiceId {
   val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
   val Aria = "Aria".asInstanceOf[VoiceId]
   val Ayanda = "Ayanda".asInstanceOf[VoiceId]
+  val Arlet = "Arlet".asInstanceOf[VoiceId]
+  val Hannah = "Hannah".asInstanceOf[VoiceId]
+  val Arthur = "Arthur".asInstanceOf[VoiceId]
+  val Daniel = "Daniel".asInstanceOf[VoiceId]
+  val Liam = "Liam".asInstanceOf[VoiceId]
+  val Pedro = "Pedro".asInstanceOf[VoiceId]
+  val Kajal = "Kajal".asInstanceOf[VoiceId]
+  val Hiujin = "Hiujin".asInstanceOf[VoiceId]
+  val Laura = "Laura".asInstanceOf[VoiceId]
+  val Elin = "Elin".asInstanceOf[VoiceId]
+  val Ida = "Ida".asInstanceOf[VoiceId]
+  val Suvi = "Suvi".asInstanceOf[VoiceId]
+  val Ola = "Ola".asInstanceOf[VoiceId]
+  val Hala = "Hala".asInstanceOf[VoiceId]
 
   @inline def values: js.Array[VoiceId] = js.Array(
     Aditi,
@@ -266,6 +290,20 @@ object VoiceId {
     Zeina,
     Zhiyu,
     Aria,
-    Ayanda
+    Ayanda,
+    Arlet,
+    Hannah,
+    Arthur,
+    Daniel,
+    Liam,
+    Pedro,
+    Kajal,
+    Hiujin,
+    Laura,
+    Elin,
+    Ida,
+    Suvi,
+    Ola,
+    Hala
   )
 }

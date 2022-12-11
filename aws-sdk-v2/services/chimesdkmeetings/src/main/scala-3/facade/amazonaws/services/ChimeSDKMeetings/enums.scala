@@ -2,6 +2,16 @@ package facade.amazonaws.services.chimesdkmeetings
 
 import scalajs.js
 
+type MediaCapabilities = "SendReceive" | "Send" | "Receive" | "None"
+object MediaCapabilities {
+  inline val SendReceive: "SendReceive" = "SendReceive"
+  inline val Send: "Send" = "Send"
+  inline val Receive: "Receive" = "Receive"
+  inline val None: "None" = "None"
+
+  inline def values: js.Array[MediaCapabilities] = js.Array(SendReceive, Send, Receive, None)
+}
+
 type MeetingFeatureStatus = "AVAILABLE" | "UNAVAILABLE"
 object MeetingFeatureStatus {
   inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
@@ -98,7 +108,7 @@ object TranscribePartialResultsStability {
   inline def values: js.Array[TranscribePartialResultsStability] = js.Array(low, medium, high)
 }
 
-type TranscribeRegion = "us-east-2" | "us-east-1" | "us-west-2" | "ap-northeast-2" | "ap-southeast-2" | "ap-northeast-1" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "sa-east-1" | "auto"
+type TranscribeRegion = "us-east-2" | "us-east-1" | "us-west-2" | "ap-northeast-2" | "ap-southeast-2" | "ap-northeast-1" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "sa-east-1" | "auto" | "us-gov-west-1"
 object TranscribeRegion {
   inline val `us-east-2`: "us-east-2" = "us-east-2"
   inline val `us-east-1`: "us-east-1" = "us-east-1"
@@ -112,6 +122,7 @@ object TranscribeRegion {
   inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
   inline val `sa-east-1`: "sa-east-1" = "sa-east-1"
   inline val auto: "auto" = "auto"
+  inline val `us-gov-west-1`: "us-gov-west-1" = "us-gov-west-1"
 
   inline def values: js.Array[TranscribeRegion] = js.Array(
     `us-east-2`,
@@ -125,7 +136,8 @@ object TranscribeRegion {
     `eu-west-1`,
     `eu-west-2`,
     `sa-east-1`,
-    auto
+    auto,
+    `us-gov-west-1`
   )
 }
 

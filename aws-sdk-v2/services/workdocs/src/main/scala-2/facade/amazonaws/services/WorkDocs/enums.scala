@@ -268,8 +268,9 @@ object StorageType {
 sealed trait SubscriptionProtocolType extends js.Any
 object SubscriptionProtocolType {
   val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
+  val SQS = "SQS".asInstanceOf[SubscriptionProtocolType]
 
-  @inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS)
+  @inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS, SQS)
 }
 
 @js.native

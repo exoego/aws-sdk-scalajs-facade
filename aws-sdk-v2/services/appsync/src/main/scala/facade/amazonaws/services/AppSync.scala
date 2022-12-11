@@ -14,15 +14,25 @@ package object appsync {
   type BooleanValue = Boolean
   type CachingKeys = js.Array[String]
   type CertificateArn = String
+  type Code = String
+  type CodeErrorColumn = Int
+  type CodeErrorLine = Int
+  type CodeErrorSpan = Int
+  type CodeErrors = js.Array[CodeError]
+  type Context = String
   type DataSources = js.Array[DataSource]
   type Description = String
   type DomainName = String
   type DomainNameConfigs = js.Array[DomainNameConfig]
+  type ErrorMessage = String
+  type EvaluationResult = String
   type Functions = js.Array[FunctionConfiguration]
   type FunctionsIds = js.Array[String]
   type GraphqlApis = js.Array[GraphqlApi]
+  type Logs = js.Array[String]
   type MapOfStringToString = js.Dictionary[String]
   type MappingTemplate = String
+  type MaxBatchSize = Int
   type MaxResults = Int
   type PaginationToken = String
   type Resolvers = js.Array[Resolver]
@@ -33,6 +43,7 @@ package object appsync {
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type Template = String
   type TypeList = js.Array[Type]
 
   final class AppSyncOps(private val service: AppSync) extends AnyVal {
@@ -55,6 +66,8 @@ package object appsync {
     @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] = service.deleteResolver(params).promise().toFuture
     @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] = service.deleteType(params).promise().toFuture
     @inline def disassociateApiFuture(params: DisassociateApiRequest): Future[DisassociateApiResponse] = service.disassociateApi(params).promise().toFuture
+    @inline def evaluateCodeFuture(params: EvaluateCodeRequest): Future[EvaluateCodeResponse] = service.evaluateCode(params).promise().toFuture
+    @inline def evaluateMappingTemplateFuture(params: EvaluateMappingTemplateRequest): Future[EvaluateMappingTemplateResponse] = service.evaluateMappingTemplate(params).promise().toFuture
     @inline def flushApiCacheFuture(params: FlushApiCacheRequest): Future[FlushApiCacheResponse] = service.flushApiCache(params).promise().toFuture
     @inline def getApiAssociationFuture(params: GetApiAssociationRequest): Future[GetApiAssociationResponse] = service.getApiAssociation(params).promise().toFuture
     @inline def getApiCacheFuture(params: GetApiCacheRequest): Future[GetApiCacheResponse] = service.getApiCache(params).promise().toFuture
@@ -112,6 +125,8 @@ package object appsync {
     def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse] = js.native
     def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse] = js.native
     def disassociateApi(params: DisassociateApiRequest): Request[DisassociateApiResponse] = js.native
+    def evaluateCode(params: EvaluateCodeRequest): Request[EvaluateCodeResponse] = js.native
+    def evaluateMappingTemplate(params: EvaluateMappingTemplateRequest): Request[EvaluateMappingTemplateResponse] = js.native
     def flushApiCache(params: FlushApiCacheRequest): Request[FlushApiCacheResponse] = js.native
     def getApiAssociation(params: GetApiAssociationRequest): Request[GetApiAssociationResponse] = js.native
     def getApiCache(params: GetApiCacheRequest): Request[GetApiCacheResponse] = js.native
@@ -237,8 +252,9 @@ package object appsync {
     }
   }
 
-  /** Describes an API key. Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions: \```da1```: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used. * <code>ListApiKeys</code> returns the expiration time in milliseconds. * <code>CreateApiKey</code> returns the expiration time in milliseconds. * <code>UpdateApiKey</code> is not available for this key version. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018. \```da2```: We introduced this version in February 2018 when AppSync added support to
-    * extend key expiration. * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds. * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds. * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion. * Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.
+  /** Describes an API key. Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
+    * \```da1```: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used. * <code>ListApiKeys</code> returns the expiration time in milliseconds. * <code>CreateApiKey</code> returns the expiration time in milliseconds. * <code>UpdateApiKey</code> is not available for this key version. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.
+    * \```da2```: We introduced this version in February 2018 when AppSync added support to extend key expiration. * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds. * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds. * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion. * Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.
     */
   @js.native
   trait ApiKey extends js.Object {
@@ -262,6 +278,28 @@ package object appsync {
       expires.foreach(__v => __obj.updateDynamic("expires")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApiKey]
+    }
+  }
+
+  /** Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.
+    */
+  @js.native
+  trait AppSyncRuntime extends js.Object {
+    var name: RuntimeName
+    var runtimeVersion: String
+  }
+
+  object AppSyncRuntime {
+    @inline
+    def apply(
+        name: RuntimeName,
+        runtimeVersion: String
+    ): AppSyncRuntime = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "runtimeVersion" -> runtimeVersion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AppSyncRuntime]
     }
   }
 
@@ -349,20 +387,70 @@ package object appsync {
     */
   @js.native
   trait CachingConfig extends js.Object {
+    var ttl: Double
     var cachingKeys: js.UndefOr[CachingKeys]
-    var ttl: js.UndefOr[Double]
   }
 
   object CachingConfig {
     @inline
     def apply(
-        cachingKeys: js.UndefOr[CachingKeys] = js.undefined,
-        ttl: js.UndefOr[Double] = js.undefined
+        ttl: Double,
+        cachingKeys: js.UndefOr[CachingKeys] = js.undefined
     ): CachingConfig = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "ttl" -> ttl.asInstanceOf[js.Any]
+      )
+
       cachingKeys.foreach(__v => __obj.updateDynamic("cachingKeys")(__v.asInstanceOf[js.Any]))
-      ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CachingConfig]
+    }
+  }
+
+  /** Describes an AppSync error.
+    */
+  @js.native
+  trait CodeError extends js.Object {
+    var errorType: js.UndefOr[String]
+    var location: js.UndefOr[CodeErrorLocation]
+    var value: js.UndefOr[String]
+  }
+
+  object CodeError {
+    @inline
+    def apply(
+        errorType: js.UndefOr[String] = js.undefined,
+        location: js.UndefOr[CodeErrorLocation] = js.undefined,
+        value: js.UndefOr[String] = js.undefined
+    ): CodeError = {
+      val __obj = js.Dynamic.literal()
+      errorType.foreach(__v => __obj.updateDynamic("errorType")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeError]
+    }
+  }
+
+  /** Describes the location of the error in a code sample.
+    */
+  @js.native
+  trait CodeErrorLocation extends js.Object {
+    var column: js.UndefOr[CodeErrorColumn]
+    var line: js.UndefOr[CodeErrorLine]
+    var span: js.UndefOr[CodeErrorSpan]
+  }
+
+  object CodeErrorLocation {
+    @inline
+    def apply(
+        column: js.UndefOr[CodeErrorColumn] = js.undefined,
+        line: js.UndefOr[CodeErrorLine] = js.undefined,
+        span: js.UndefOr[CodeErrorSpan] = js.undefined
+    ): CodeErrorLocation = {
+      val __obj = js.Dynamic.literal()
+      column.foreach(__v => __obj.updateDynamic("column")(__v.asInstanceOf[js.Any]))
+      line.foreach(__v => __obj.updateDynamic("line")(__v.asInstanceOf[js.Any]))
+      span.foreach(__v => __obj.updateDynamic("span")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeErrorLocation]
     }
   }
 
@@ -593,11 +681,14 @@ package object appsync {
   trait CreateFunctionRequest extends js.Object {
     var apiId: String
     var dataSourceName: ResourceName
-    var functionVersion: String
     var name: ResourceName
+    var code: js.UndefOr[Code]
     var description: js.UndefOr[String]
+    var functionVersion: js.UndefOr[String]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
   }
 
@@ -606,23 +697,29 @@ package object appsync {
     def apply(
         apiId: String,
         dataSourceName: ResourceName,
-        functionVersion: String,
         name: ResourceName,
+        code: js.UndefOr[Code] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
+        functionVersion: js.UndefOr[String] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateFunctionRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
         "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
-        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      functionVersion.foreach(__v => __obj.updateDynamic("functionVersion")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionRequest]
     }
@@ -708,11 +805,14 @@ package object appsync {
     var fieldName: ResourceName
     var typeName: ResourceName
     var cachingConfig: js.UndefOr[CachingConfig]
+    var code: js.UndefOr[Code]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var pipelineConfig: js.UndefOr[PipelineConfig]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
   }
 
@@ -723,11 +823,14 @@ package object appsync {
         fieldName: ResourceName,
         typeName: ResourceName,
         cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
+        code: js.UndefOr[Code] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): CreateResolverRequest = {
       val __obj = js.Dynamic.literal(
@@ -737,11 +840,14 @@ package object appsync {
       )
 
       cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverRequest]
     }
@@ -1232,6 +1338,136 @@ package object appsync {
     }
   }
 
+  /** Contains the list of errors generated. When using JavaScript, this will apply to the request or response function evaluation.
+    */
+  @js.native
+  trait ErrorDetail extends js.Object {
+    var message: js.UndefOr[ErrorMessage]
+  }
+
+  object ErrorDetail {
+    @inline
+    def apply(
+        message: js.UndefOr[ErrorMessage] = js.undefined
+    ): ErrorDetail = {
+      val __obj = js.Dynamic.literal()
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ErrorDetail]
+    }
+  }
+
+  /** Contains the list of errors from a code evaluation response.
+    */
+  @js.native
+  trait EvaluateCodeErrorDetail extends js.Object {
+    var codeErrors: js.UndefOr[CodeErrors]
+    var message: js.UndefOr[ErrorMessage]
+  }
+
+  object EvaluateCodeErrorDetail {
+    @inline
+    def apply(
+        codeErrors: js.UndefOr[CodeErrors] = js.undefined,
+        message: js.UndefOr[ErrorMessage] = js.undefined
+    ): EvaluateCodeErrorDetail = {
+      val __obj = js.Dynamic.literal()
+      codeErrors.foreach(__v => __obj.updateDynamic("codeErrors")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateCodeErrorDetail]
+    }
+  }
+
+  @js.native
+  trait EvaluateCodeRequest extends js.Object {
+    var code: Code
+    var context: Context
+    var runtime: AppSyncRuntime
+    var function: js.UndefOr[String]
+  }
+
+  object EvaluateCodeRequest {
+    @inline
+    def apply(
+        code: Code,
+        context: Context,
+        runtime: AppSyncRuntime,
+        function: js.UndefOr[String] = js.undefined
+    ): EvaluateCodeRequest = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any],
+        "context" -> context.asInstanceOf[js.Any],
+        "runtime" -> runtime.asInstanceOf[js.Any]
+      )
+
+      function.foreach(__v => __obj.updateDynamic("function")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateCodeRequest]
+    }
+  }
+
+  @js.native
+  trait EvaluateCodeResponse extends js.Object {
+    var error: js.UndefOr[EvaluateCodeErrorDetail]
+    var evaluationResult: js.UndefOr[EvaluationResult]
+    var logs: js.UndefOr[Logs]
+  }
+
+  object EvaluateCodeResponse {
+    @inline
+    def apply(
+        error: js.UndefOr[EvaluateCodeErrorDetail] = js.undefined,
+        evaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
+        logs: js.UndefOr[Logs] = js.undefined
+    ): EvaluateCodeResponse = {
+      val __obj = js.Dynamic.literal()
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      evaluationResult.foreach(__v => __obj.updateDynamic("evaluationResult")(__v.asInstanceOf[js.Any]))
+      logs.foreach(__v => __obj.updateDynamic("logs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateCodeResponse]
+    }
+  }
+
+  @js.native
+  trait EvaluateMappingTemplateRequest extends js.Object {
+    var context: Context
+    var template: Template
+  }
+
+  object EvaluateMappingTemplateRequest {
+    @inline
+    def apply(
+        context: Context,
+        template: Template
+    ): EvaluateMappingTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "context" -> context.asInstanceOf[js.Any],
+        "template" -> template.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EvaluateMappingTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait EvaluateMappingTemplateResponse extends js.Object {
+    var error: js.UndefOr[ErrorDetail]
+    var evaluationResult: js.UndefOr[EvaluationResult]
+    var logs: js.UndefOr[Logs]
+  }
+
+  object EvaluateMappingTemplateResponse {
+    @inline
+    def apply(
+        error: js.UndefOr[ErrorDetail] = js.undefined,
+        evaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
+        logs: js.UndefOr[Logs] = js.undefined
+    ): EvaluateMappingTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      evaluationResult.foreach(__v => __obj.updateDynamic("evaluationResult")(__v.asInstanceOf[js.Any]))
+      logs.foreach(__v => __obj.updateDynamic("logs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateMappingTemplateResponse]
+    }
+  }
+
   /** Represents the input of a <code>FlushApiCache</code> operation.
     */
   @js.native
@@ -1268,39 +1504,48 @@ package object appsync {
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
+    var code: js.UndefOr[Code]
     var dataSourceName: js.UndefOr[ResourceName]
     var description: js.UndefOr[String]
     var functionArn: js.UndefOr[String]
     var functionId: js.UndefOr[String]
     var functionVersion: js.UndefOr[String]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var name: js.UndefOr[ResourceName]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
   }
 
   object FunctionConfiguration {
     @inline
     def apply(
+        code: js.UndefOr[Code] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
         functionArn: js.UndefOr[String] = js.undefined,
         functionId: js.UndefOr[String] = js.undefined,
         functionVersion: js.UndefOr[String] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): FunctionConfiguration = {
       val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       functionArn.foreach(__v => __obj.updateDynamic("functionArn")(__v.asInstanceOf[js.Any]))
       functionId.foreach(__v => __obj.updateDynamic("functionId")(__v.asInstanceOf[js.Any]))
       functionVersion.foreach(__v => __obj.updateDynamic("functionVersion")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
     }
@@ -2333,13 +2578,16 @@ package object appsync {
   @js.native
   trait Resolver extends js.Object {
     var cachingConfig: js.UndefOr[CachingConfig]
+    var code: js.UndefOr[Code]
     var dataSourceName: js.UndefOr[ResourceName]
     var fieldName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var pipelineConfig: js.UndefOr[PipelineConfig]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var resolverArn: js.UndefOr[String]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
     var typeName: js.UndefOr[ResourceName]
   }
@@ -2348,25 +2596,31 @@ package object appsync {
     @inline
     def apply(
         cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
+        code: js.UndefOr[Code] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         fieldName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         resolverArn: js.UndefOr[String] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined,
         typeName: js.UndefOr[ResourceName] = js.undefined
     ): Resolver = {
       val __obj = js.Dynamic.literal()
       cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       fieldName.foreach(__v => __obj.updateDynamic("fieldName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       resolverArn.foreach(__v => __obj.updateDynamic("resolverArn")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       typeName.foreach(__v => __obj.updateDynamic("typeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resolver]
@@ -2720,11 +2974,14 @@ package object appsync {
     var apiId: String
     var dataSourceName: ResourceName
     var functionId: ResourceName
-    var functionVersion: String
     var name: ResourceName
+    var code: js.UndefOr[Code]
     var description: js.UndefOr[String]
+    var functionVersion: js.UndefOr[String]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
   }
 
@@ -2734,24 +2991,30 @@ package object appsync {
         apiId: String,
         dataSourceName: ResourceName,
         functionId: ResourceName,
-        functionVersion: String,
         name: ResourceName,
+        code: js.UndefOr[Code] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
+        functionVersion: js.UndefOr[String] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateFunctionRequest = {
       val __obj = js.Dynamic.literal(
         "apiId" -> apiId.asInstanceOf[js.Any],
         "dataSourceName" -> dataSourceName.asInstanceOf[js.Any],
         "functionId" -> functionId.asInstanceOf[js.Any],
-        "functionVersion" -> functionVersion.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      functionVersion.foreach(__v => __obj.updateDynamic("functionVersion")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionRequest]
     }
@@ -2837,11 +3100,14 @@ package object appsync {
     var fieldName: ResourceName
     var typeName: ResourceName
     var cachingConfig: js.UndefOr[CachingConfig]
+    var code: js.UndefOr[Code]
     var dataSourceName: js.UndefOr[ResourceName]
     var kind: js.UndefOr[ResolverKind]
+    var maxBatchSize: js.UndefOr[MaxBatchSize]
     var pipelineConfig: js.UndefOr[PipelineConfig]
     var requestMappingTemplate: js.UndefOr[MappingTemplate]
     var responseMappingTemplate: js.UndefOr[MappingTemplate]
+    var runtime: js.UndefOr[AppSyncRuntime]
     var syncConfig: js.UndefOr[SyncConfig]
   }
 
@@ -2852,11 +3118,14 @@ package object appsync {
         fieldName: ResourceName,
         typeName: ResourceName,
         cachingConfig: js.UndefOr[CachingConfig] = js.undefined,
+        code: js.UndefOr[Code] = js.undefined,
         dataSourceName: js.UndefOr[ResourceName] = js.undefined,
         kind: js.UndefOr[ResolverKind] = js.undefined,
+        maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         pipelineConfig: js.UndefOr[PipelineConfig] = js.undefined,
         requestMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
         responseMappingTemplate: js.UndefOr[MappingTemplate] = js.undefined,
+        runtime: js.UndefOr[AppSyncRuntime] = js.undefined,
         syncConfig: js.UndefOr[SyncConfig] = js.undefined
     ): UpdateResolverRequest = {
       val __obj = js.Dynamic.literal(
@@ -2866,11 +3135,14 @@ package object appsync {
       )
 
       cachingConfig.foreach(__v => __obj.updateDynamic("cachingConfig")(__v.asInstanceOf[js.Any]))
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
       dataSourceName.foreach(__v => __obj.updateDynamic("dataSourceName")(__v.asInstanceOf[js.Any]))
       kind.foreach(__v => __obj.updateDynamic("kind")(__v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       pipelineConfig.foreach(__v => __obj.updateDynamic("pipelineConfig")(__v.asInstanceOf[js.Any]))
       requestMappingTemplate.foreach(__v => __obj.updateDynamic("requestMappingTemplate")(__v.asInstanceOf[js.Any]))
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverRequest]
     }

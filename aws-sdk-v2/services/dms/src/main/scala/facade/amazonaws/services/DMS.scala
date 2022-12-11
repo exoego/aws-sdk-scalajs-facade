@@ -14,7 +14,11 @@ package object dms {
   type BooleanOptional = Boolean
   type CertificateList = js.Array[Certificate]
   type CertificateWallet = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type CollectorResponses = js.Array[CollectorResponse]
+  type CollectorsList = js.Array[CollectorShortInfoResponse]
   type ConnectionList = js.Array[Connection]
+  type DatabaseList = js.Array[DatabaseResponse]
+  type DoubleOptional = Double
   type EndpointList = js.Array[Endpoint]
   type EndpointSettingEnumValues = js.Array[String]
   type EndpointSettingsList = js.Array[EndpointSetting]
@@ -25,14 +29,19 @@ package object dms {
   type ExcludeTestList = js.Array[String]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
+  type FleetAdvisorLsaAnalysisResponseList = js.Array[FleetAdvisorLsaAnalysisResponse]
+  type FleetAdvisorSchemaList = js.Array[SchemaResponse]
+  type FleetAdvisorSchemaObjectList = js.Array[FleetAdvisorSchemaObjectResponse]
   type IncludeTestList = js.Array[String]
   type IndividualAssessmentNameList = js.Array[String]
   type IntegerList = js.Array[Int]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
+  type LongOptional = Double
   type OrderableReplicationInstanceList = js.Array[OrderableReplicationInstance]
   type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
   type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type ReplicationInstanceIpv6AddressList = js.Array[String]
   type ReplicationInstanceList = js.Array[ReplicationInstance]
   type ReplicationInstancePrivateIpAddressList = js.Array[String]
   type ReplicationInstancePublicIpAddressList = js.Array[String]
@@ -45,6 +54,7 @@ package object dms {
   type SchemaList = js.Array[String]
   type SecretString = String
   type SourceIdsList = js.Array[String]
+  type StringList = js.Array[String]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type SupportedEndpointTypeList = js.Array[SupportedEndpointType]
@@ -62,6 +72,7 @@ package object dms {
     @inline def cancelReplicationTaskAssessmentRunFuture(params: CancelReplicationTaskAssessmentRunMessage): Future[CancelReplicationTaskAssessmentRunResponse] = service.cancelReplicationTaskAssessmentRun(params).promise().toFuture
     @inline def createEndpointFuture(params: CreateEndpointMessage): Future[CreateEndpointResponse] = service.createEndpoint(params).promise().toFuture
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResponse] = service.createEventSubscription(params).promise().toFuture
+    @inline def createFleetAdvisorCollectorFuture(params: CreateFleetAdvisorCollectorRequest): Future[CreateFleetAdvisorCollectorResponse] = service.createFleetAdvisorCollector(params).promise().toFuture
     @inline def createReplicationInstanceFuture(params: CreateReplicationInstanceMessage): Future[CreateReplicationInstanceResponse] = service.createReplicationInstance(params).promise().toFuture
     @inline def createReplicationSubnetGroupFuture(params: CreateReplicationSubnetGroupMessage): Future[CreateReplicationSubnetGroupResponse] = service.createReplicationSubnetGroup(params).promise().toFuture
     @inline def createReplicationTaskFuture(params: CreateReplicationTaskMessage): Future[CreateReplicationTaskResponse] = service.createReplicationTask(params).promise().toFuture
@@ -69,6 +80,8 @@ package object dms {
     @inline def deleteConnectionFuture(params: DeleteConnectionMessage): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointMessage): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResponse] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteFleetAdvisorCollectorFuture(params: DeleteCollectorRequest): Future[js.Object] = service.deleteFleetAdvisorCollector(params).promise().toFuture
+    @inline def deleteFleetAdvisorDatabasesFuture(params: DeleteFleetAdvisorDatabasesRequest): Future[DeleteFleetAdvisorDatabasesResponse] = service.deleteFleetAdvisorDatabases(params).promise().toFuture
     @inline def deleteReplicationInstanceFuture(params: DeleteReplicationInstanceMessage): Future[DeleteReplicationInstanceResponse] = service.deleteReplicationInstance(params).promise().toFuture
     @inline def deleteReplicationSubnetGroupFuture(params: DeleteReplicationSubnetGroupMessage): Future[DeleteReplicationSubnetGroupResponse] = service.deleteReplicationSubnetGroup(params).promise().toFuture
     @inline def deleteReplicationTaskAssessmentRunFuture(params: DeleteReplicationTaskAssessmentRunMessage): Future[DeleteReplicationTaskAssessmentRunResponse] = service.deleteReplicationTaskAssessmentRun(params).promise().toFuture
@@ -83,6 +96,11 @@ package object dms {
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[DescribeEventCategoriesResponse] = service.describeEventCategories(params).promise().toFuture
     @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[DescribeEventSubscriptionsResponse] = service.describeEventSubscriptions(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[DescribeEventsResponse] = service.describeEvents(params).promise().toFuture
+    @inline def describeFleetAdvisorCollectorsFuture(params: DescribeFleetAdvisorCollectorsRequest): Future[DescribeFleetAdvisorCollectorsResponse] = service.describeFleetAdvisorCollectors(params).promise().toFuture
+    @inline def describeFleetAdvisorDatabasesFuture(params: DescribeFleetAdvisorDatabasesRequest): Future[DescribeFleetAdvisorDatabasesResponse] = service.describeFleetAdvisorDatabases(params).promise().toFuture
+    @inline def describeFleetAdvisorLsaAnalysisFuture(params: DescribeFleetAdvisorLsaAnalysisRequest): Future[DescribeFleetAdvisorLsaAnalysisResponse] = service.describeFleetAdvisorLsaAnalysis(params).promise().toFuture
+    @inline def describeFleetAdvisorSchemaObjectSummaryFuture(params: DescribeFleetAdvisorSchemaObjectSummaryRequest): Future[DescribeFleetAdvisorSchemaObjectSummaryResponse] = service.describeFleetAdvisorSchemaObjectSummary(params).promise().toFuture
+    @inline def describeFleetAdvisorSchemasFuture(params: DescribeFleetAdvisorSchemasRequest): Future[DescribeFleetAdvisorSchemasResponse] = service.describeFleetAdvisorSchemas(params).promise().toFuture
     @inline def describeOrderableReplicationInstancesFuture(params: DescribeOrderableReplicationInstancesMessage): Future[DescribeOrderableReplicationInstancesResponse] = service.describeOrderableReplicationInstances(params).promise().toFuture
     @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[DescribePendingMaintenanceActionsResponse] = service.describePendingMaintenanceActions(params).promise().toFuture
     @inline def describeRefreshSchemasStatusFuture(params: DescribeRefreshSchemasStatusMessage): Future[DescribeRefreshSchemasStatusResponse] = service.describeRefreshSchemasStatus(params).promise().toFuture
@@ -107,11 +125,13 @@ package object dms {
     @inline def refreshSchemasFuture(params: RefreshSchemasMessage): Future[RefreshSchemasResponse] = service.refreshSchemas(params).promise().toFuture
     @inline def reloadTablesFuture(params: ReloadTablesMessage): Future[ReloadTablesResponse] = service.reloadTables(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[RemoveTagsFromResourceResponse] = service.removeTagsFromResource(params).promise().toFuture
+    @inline def runFleetAdvisorLsaAnalysisFuture(): Future[RunFleetAdvisorLsaAnalysisResponse] = service.runFleetAdvisorLsaAnalysis().promise().toFuture
     @inline def startReplicationTaskAssessmentFuture(params: StartReplicationTaskAssessmentMessage): Future[StartReplicationTaskAssessmentResponse] = service.startReplicationTaskAssessment(params).promise().toFuture
     @inline def startReplicationTaskAssessmentRunFuture(params: StartReplicationTaskAssessmentRunMessage): Future[StartReplicationTaskAssessmentRunResponse] = service.startReplicationTaskAssessmentRun(params).promise().toFuture
     @inline def startReplicationTaskFuture(params: StartReplicationTaskMessage): Future[StartReplicationTaskResponse] = service.startReplicationTask(params).promise().toFuture
     @inline def stopReplicationTaskFuture(params: StopReplicationTaskMessage): Future[StopReplicationTaskResponse] = service.stopReplicationTask(params).promise().toFuture
     @inline def testConnectionFuture(params: TestConnectionMessage): Future[TestConnectionResponse] = service.testConnection(params).promise().toFuture
+    @inline def updateSubscriptionsToEventBridgeFuture(params: UpdateSubscriptionsToEventBridgeMessage): Future[UpdateSubscriptionsToEventBridgeResponse] = service.updateSubscriptionsToEventBridge(params).promise().toFuture
 
   }
 
@@ -125,6 +145,7 @@ package object dms {
     def cancelReplicationTaskAssessmentRun(params: CancelReplicationTaskAssessmentRunMessage): Request[CancelReplicationTaskAssessmentRunResponse] = js.native
     def createEndpoint(params: CreateEndpointMessage): Request[CreateEndpointResponse] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResponse] = js.native
+    def createFleetAdvisorCollector(params: CreateFleetAdvisorCollectorRequest): Request[CreateFleetAdvisorCollectorResponse] = js.native
     def createReplicationInstance(params: CreateReplicationInstanceMessage): Request[CreateReplicationInstanceResponse] = js.native
     def createReplicationSubnetGroup(params: CreateReplicationSubnetGroupMessage): Request[CreateReplicationSubnetGroupResponse] = js.native
     def createReplicationTask(params: CreateReplicationTaskMessage): Request[CreateReplicationTaskResponse] = js.native
@@ -132,6 +153,8 @@ package object dms {
     def deleteConnection(params: DeleteConnectionMessage): Request[DeleteConnectionResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointMessage): Request[DeleteEndpointResponse] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResponse] = js.native
+    def deleteFleetAdvisorCollector(params: DeleteCollectorRequest): Request[js.Object] = js.native
+    def deleteFleetAdvisorDatabases(params: DeleteFleetAdvisorDatabasesRequest): Request[DeleteFleetAdvisorDatabasesResponse] = js.native
     def deleteReplicationInstance(params: DeleteReplicationInstanceMessage): Request[DeleteReplicationInstanceResponse] = js.native
     def deleteReplicationSubnetGroup(params: DeleteReplicationSubnetGroupMessage): Request[DeleteReplicationSubnetGroupResponse] = js.native
     def deleteReplicationTask(params: DeleteReplicationTaskMessage): Request[DeleteReplicationTaskResponse] = js.native
@@ -146,6 +169,11 @@ package object dms {
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[DescribeEventCategoriesResponse] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[DescribeEventSubscriptionsResponse] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[DescribeEventsResponse] = js.native
+    def describeFleetAdvisorCollectors(params: DescribeFleetAdvisorCollectorsRequest): Request[DescribeFleetAdvisorCollectorsResponse] = js.native
+    def describeFleetAdvisorDatabases(params: DescribeFleetAdvisorDatabasesRequest): Request[DescribeFleetAdvisorDatabasesResponse] = js.native
+    def describeFleetAdvisorLsaAnalysis(params: DescribeFleetAdvisorLsaAnalysisRequest): Request[DescribeFleetAdvisorLsaAnalysisResponse] = js.native
+    def describeFleetAdvisorSchemaObjectSummary(params: DescribeFleetAdvisorSchemaObjectSummaryRequest): Request[DescribeFleetAdvisorSchemaObjectSummaryResponse] = js.native
+    def describeFleetAdvisorSchemas(params: DescribeFleetAdvisorSchemasRequest): Request[DescribeFleetAdvisorSchemasResponse] = js.native
     def describeOrderableReplicationInstances(params: DescribeOrderableReplicationInstancesMessage): Request[DescribeOrderableReplicationInstancesResponse] = js.native
     def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[DescribePendingMaintenanceActionsResponse] = js.native
     def describeRefreshSchemasStatus(params: DescribeRefreshSchemasStatusMessage): Request[DescribeRefreshSchemasStatusResponse] = js.native
@@ -170,11 +198,13 @@ package object dms {
     def refreshSchemas(params: RefreshSchemasMessage): Request[RefreshSchemasResponse] = js.native
     def reloadTables(params: ReloadTablesMessage): Request[ReloadTablesResponse] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[RemoveTagsFromResourceResponse] = js.native
+    def runFleetAdvisorLsaAnalysis(): Request[RunFleetAdvisorLsaAnalysisResponse] = js.native
     def startReplicationTask(params: StartReplicationTaskMessage): Request[StartReplicationTaskResponse] = js.native
     def startReplicationTaskAssessment(params: StartReplicationTaskAssessmentMessage): Request[StartReplicationTaskAssessmentResponse] = js.native
     def startReplicationTaskAssessmentRun(params: StartReplicationTaskAssessmentRunMessage): Request[StartReplicationTaskAssessmentRunResponse] = js.native
     def stopReplicationTask(params: StopReplicationTaskMessage): Request[StopReplicationTaskResponse] = js.native
     def testConnection(params: TestConnectionMessage): Request[TestConnectionResponse] = js.native
+    def updateSubscriptionsToEventBridge(params: UpdateSubscriptionsToEventBridgeMessage): Request[UpdateSubscriptionsToEventBridgeResponse] = js.native
   }
   object DMS {
     @inline implicit def toOps(service: DMS): DMSOps = {
@@ -381,6 +411,108 @@ package object dms {
       ValidFromDate.foreach(__v => __obj.updateDynamic("ValidFromDate")(__v.asInstanceOf[js.Any]))
       ValidToDate.foreach(__v => __obj.updateDynamic("ValidToDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Certificate]
+    }
+  }
+
+  /** Describes the last Fleet Advisor collector health check.
+    */
+  @js.native
+  trait CollectorHealthCheck extends js.Object {
+    var CollectorStatus: js.UndefOr[CollectorStatus]
+    var LocalCollectorS3Access: js.UndefOr[BooleanOptional]
+    var WebCollectorGrantedRoleBasedAccess: js.UndefOr[BooleanOptional]
+    var WebCollectorS3Access: js.UndefOr[BooleanOptional]
+  }
+
+  object CollectorHealthCheck {
+    @inline
+    def apply(
+        CollectorStatus: js.UndefOr[CollectorStatus] = js.undefined,
+        LocalCollectorS3Access: js.UndefOr[BooleanOptional] = js.undefined,
+        WebCollectorGrantedRoleBasedAccess: js.UndefOr[BooleanOptional] = js.undefined,
+        WebCollectorS3Access: js.UndefOr[BooleanOptional] = js.undefined
+    ): CollectorHealthCheck = {
+      val __obj = js.Dynamic.literal()
+      CollectorStatus.foreach(__v => __obj.updateDynamic("CollectorStatus")(__v.asInstanceOf[js.Any]))
+      LocalCollectorS3Access.foreach(__v => __obj.updateDynamic("LocalCollectorS3Access")(__v.asInstanceOf[js.Any]))
+      WebCollectorGrantedRoleBasedAccess.foreach(__v => __obj.updateDynamic("WebCollectorGrantedRoleBasedAccess")(__v.asInstanceOf[js.Any]))
+      WebCollectorS3Access.foreach(__v => __obj.updateDynamic("WebCollectorS3Access")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CollectorHealthCheck]
+    }
+  }
+
+  /** Describes a Fleet Advisor collector.
+    */
+  @js.native
+  trait CollectorResponse extends js.Object {
+    var CollectorHealthCheck: js.UndefOr[CollectorHealthCheck]
+    var CollectorName: js.UndefOr[String]
+    var CollectorReferencedId: js.UndefOr[String]
+    var CollectorVersion: js.UndefOr[String]
+    var CreatedDate: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var InventoryData: js.UndefOr[InventoryData]
+    var LastDataReceived: js.UndefOr[String]
+    var ModifiedDate: js.UndefOr[String]
+    var RegisteredDate: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
+    var ServiceAccessRoleArn: js.UndefOr[String]
+    var VersionStatus: js.UndefOr[VersionStatus]
+  }
+
+  object CollectorResponse {
+    @inline
+    def apply(
+        CollectorHealthCheck: js.UndefOr[CollectorHealthCheck] = js.undefined,
+        CollectorName: js.UndefOr[String] = js.undefined,
+        CollectorReferencedId: js.UndefOr[String] = js.undefined,
+        CollectorVersion: js.UndefOr[String] = js.undefined,
+        CreatedDate: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        InventoryData: js.UndefOr[InventoryData] = js.undefined,
+        LastDataReceived: js.UndefOr[String] = js.undefined,
+        ModifiedDate: js.UndefOr[String] = js.undefined,
+        RegisteredDate: js.UndefOr[String] = js.undefined,
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
+        VersionStatus: js.UndefOr[VersionStatus] = js.undefined
+    ): CollectorResponse = {
+      val __obj = js.Dynamic.literal()
+      CollectorHealthCheck.foreach(__v => __obj.updateDynamic("CollectorHealthCheck")(__v.asInstanceOf[js.Any]))
+      CollectorName.foreach(__v => __obj.updateDynamic("CollectorName")(__v.asInstanceOf[js.Any]))
+      CollectorReferencedId.foreach(__v => __obj.updateDynamic("CollectorReferencedId")(__v.asInstanceOf[js.Any]))
+      CollectorVersion.foreach(__v => __obj.updateDynamic("CollectorVersion")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InventoryData.foreach(__v => __obj.updateDynamic("InventoryData")(__v.asInstanceOf[js.Any]))
+      LastDataReceived.foreach(__v => __obj.updateDynamic("LastDataReceived")(__v.asInstanceOf[js.Any]))
+      ModifiedDate.foreach(__v => __obj.updateDynamic("ModifiedDate")(__v.asInstanceOf[js.Any]))
+      RegisteredDate.foreach(__v => __obj.updateDynamic("RegisteredDate")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      VersionStatus.foreach(__v => __obj.updateDynamic("VersionStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CollectorResponse]
+    }
+  }
+
+  /** Briefly describes a Fleet Advisor collector.
+    */
+  @js.native
+  trait CollectorShortInfoResponse extends js.Object {
+    var CollectorName: js.UndefOr[String]
+    var CollectorReferencedId: js.UndefOr[String]
+  }
+
+  object CollectorShortInfoResponse {
+    @inline
+    def apply(
+        CollectorName: js.UndefOr[String] = js.undefined,
+        CollectorReferencedId: js.UndefOr[String] = js.undefined
+    ): CollectorShortInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      CollectorName.foreach(__v => __obj.updateDynamic("CollectorName")(__v.asInstanceOf[js.Any]))
+      CollectorReferencedId.foreach(__v => __obj.updateDynamic("CollectorReferencedId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CollectorShortInfoResponse]
     }
   }
 
@@ -610,6 +742,61 @@ package object dms {
     }
   }
 
+  @js.native
+  trait CreateFleetAdvisorCollectorRequest extends js.Object {
+    var CollectorName: String
+    var S3BucketName: String
+    var ServiceAccessRoleArn: String
+    var Description: js.UndefOr[String]
+  }
+
+  object CreateFleetAdvisorCollectorRequest {
+    @inline
+    def apply(
+        CollectorName: String,
+        S3BucketName: String,
+        ServiceAccessRoleArn: String,
+        Description: js.UndefOr[String] = js.undefined
+    ): CreateFleetAdvisorCollectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CollectorName" -> CollectorName.asInstanceOf[js.Any],
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
+        "ServiceAccessRoleArn" -> ServiceAccessRoleArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFleetAdvisorCollectorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFleetAdvisorCollectorResponse extends js.Object {
+    var CollectorName: js.UndefOr[String]
+    var CollectorReferencedId: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var S3BucketName: js.UndefOr[String]
+    var ServiceAccessRoleArn: js.UndefOr[String]
+  }
+
+  object CreateFleetAdvisorCollectorResponse {
+    @inline
+    def apply(
+        CollectorName: js.UndefOr[String] = js.undefined,
+        CollectorReferencedId: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        ServiceAccessRoleArn: js.UndefOr[String] = js.undefined
+    ): CreateFleetAdvisorCollectorResponse = {
+      val __obj = js.Dynamic.literal()
+      CollectorName.foreach(__v => __obj.updateDynamic("CollectorName")(__v.asInstanceOf[js.Any]))
+      CollectorReferencedId.foreach(__v => __obj.updateDynamic("CollectorReferencedId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      ServiceAccessRoleArn.foreach(__v => __obj.updateDynamic("ServiceAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFleetAdvisorCollectorResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -623,6 +810,7 @@ package object dms {
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
@@ -643,6 +831,7 @@ package object dms {
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
@@ -662,6 +851,7 @@ package object dms {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicationSubnetGroupIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any]))
@@ -811,6 +1001,105 @@ package object dms {
     }
   }
 
+  /** Describes an inventory database instance for a Fleet Advisor collector.
+    */
+  @js.native
+  trait DatabaseInstanceSoftwareDetailsResponse extends js.Object {
+    var Engine: js.UndefOr[String]
+    var EngineEdition: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var OsArchitecture: js.UndefOr[IntegerOptional]
+    var ServicePack: js.UndefOr[String]
+    var SupportLevel: js.UndefOr[String]
+    var Tooltip: js.UndefOr[String]
+  }
+
+  object DatabaseInstanceSoftwareDetailsResponse {
+    @inline
+    def apply(
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineEdition: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        OsArchitecture: js.UndefOr[IntegerOptional] = js.undefined,
+        ServicePack: js.UndefOr[String] = js.undefined,
+        SupportLevel: js.UndefOr[String] = js.undefined,
+        Tooltip: js.UndefOr[String] = js.undefined
+    ): DatabaseInstanceSoftwareDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineEdition.foreach(__v => __obj.updateDynamic("EngineEdition")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      OsArchitecture.foreach(__v => __obj.updateDynamic("OsArchitecture")(__v.asInstanceOf[js.Any]))
+      ServicePack.foreach(__v => __obj.updateDynamic("ServicePack")(__v.asInstanceOf[js.Any]))
+      SupportLevel.foreach(__v => __obj.updateDynamic("SupportLevel")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseInstanceSoftwareDetailsResponse]
+    }
+  }
+
+  /** Describes a database in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait DatabaseResponse extends js.Object {
+    var Collectors: js.UndefOr[CollectorsList]
+    var DatabaseId: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var IpAddress: js.UndefOr[String]
+    var NumberOfSchemas: js.UndefOr[LongOptional]
+    var Server: js.UndefOr[ServerShortInfoResponse]
+    var SoftwareDetails: js.UndefOr[DatabaseInstanceSoftwareDetailsResponse]
+  }
+
+  object DatabaseResponse {
+    @inline
+    def apply(
+        Collectors: js.UndefOr[CollectorsList] = js.undefined,
+        DatabaseId: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        IpAddress: js.UndefOr[String] = js.undefined,
+        NumberOfSchemas: js.UndefOr[LongOptional] = js.undefined,
+        Server: js.UndefOr[ServerShortInfoResponse] = js.undefined,
+        SoftwareDetails: js.UndefOr[DatabaseInstanceSoftwareDetailsResponse] = js.undefined
+    ): DatabaseResponse = {
+      val __obj = js.Dynamic.literal()
+      Collectors.foreach(__v => __obj.updateDynamic("Collectors")(__v.asInstanceOf[js.Any]))
+      DatabaseId.foreach(__v => __obj.updateDynamic("DatabaseId")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      NumberOfSchemas.foreach(__v => __obj.updateDynamic("NumberOfSchemas")(__v.asInstanceOf[js.Any]))
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
+      SoftwareDetails.foreach(__v => __obj.updateDynamic("SoftwareDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseResponse]
+    }
+  }
+
+  /** Describes a database in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait DatabaseShortInfoResponse extends js.Object {
+    var DatabaseEngine: js.UndefOr[String]
+    var DatabaseId: js.UndefOr[String]
+    var DatabaseIpAddress: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+  }
+
+  object DatabaseShortInfoResponse {
+    @inline
+    def apply(
+        DatabaseEngine: js.UndefOr[String] = js.undefined,
+        DatabaseId: js.UndefOr[String] = js.undefined,
+        DatabaseIpAddress: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined
+    ): DatabaseShortInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      DatabaseEngine.foreach(__v => __obj.updateDynamic("DatabaseEngine")(__v.asInstanceOf[js.Any]))
+      DatabaseId.foreach(__v => __obj.updateDynamic("DatabaseId")(__v.asInstanceOf[js.Any]))
+      DatabaseIpAddress.foreach(__v => __obj.updateDynamic("DatabaseIpAddress")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseShortInfoResponse]
+    }
+  }
+
   @js.native
   trait DeleteCertificateMessage extends js.Object {
     var CertificateArn: String
@@ -841,6 +1130,23 @@ package object dms {
       val __obj = js.Dynamic.literal()
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCertificateResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteCollectorRequest extends js.Object {
+    var CollectorReferencedId: String
+  }
+
+  object DeleteCollectorRequest {
+    @inline
+    def apply(
+        CollectorReferencedId: String
+    ): DeleteCollectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CollectorReferencedId" -> CollectorReferencedId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCollectorRequest]
     }
   }
 
@@ -955,6 +1261,39 @@ package object dms {
       val __obj = js.Dynamic.literal()
       EventSubscription.foreach(__v => __obj.updateDynamic("EventSubscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteEventSubscriptionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFleetAdvisorDatabasesRequest extends js.Object {
+    var DatabaseIds: StringList
+  }
+
+  object DeleteFleetAdvisorDatabasesRequest {
+    @inline
+    def apply(
+        DatabaseIds: StringList
+    ): DeleteFleetAdvisorDatabasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseIds" -> DatabaseIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFleetAdvisorDatabasesRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFleetAdvisorDatabasesResponse extends js.Object {
+    var DatabaseIds: js.UndefOr[StringList]
+  }
+
+  object DeleteFleetAdvisorDatabasesResponse {
+    @inline
+    def apply(
+        DatabaseIds: js.UndefOr[StringList] = js.undefined
+    ): DeleteFleetAdvisorDatabasesResponse = {
+      val __obj = js.Dynamic.literal()
+      DatabaseIds.foreach(__v => __obj.updateDynamic("DatabaseIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFleetAdvisorDatabasesResponse]
     }
   }
 
@@ -1558,6 +1897,208 @@ package object dms {
       Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorCollectorsRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorCollectorsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorCollectorsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorCollectorsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorCollectorsResponse extends js.Object {
+    var Collectors: js.UndefOr[CollectorResponses]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorCollectorsResponse {
+    @inline
+    def apply(
+        Collectors: js.UndefOr[CollectorResponses] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorCollectorsResponse = {
+      val __obj = js.Dynamic.literal()
+      Collectors.foreach(__v => __obj.updateDynamic("Collectors")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorCollectorsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorDatabasesRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorDatabasesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorDatabasesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorDatabasesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorDatabasesResponse extends js.Object {
+    var Databases: js.UndefOr[DatabaseList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorDatabasesResponse {
+    @inline
+    def apply(
+        Databases: js.UndefOr[DatabaseList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorDatabasesResponse = {
+      val __obj = js.Dynamic.literal()
+      Databases.foreach(__v => __obj.updateDynamic("Databases")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorDatabasesResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorLsaAnalysisRequest extends js.Object {
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorLsaAnalysisRequest {
+    @inline
+    def apply(
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorLsaAnalysisRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorLsaAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorLsaAnalysisResponse extends js.Object {
+    var Analysis: js.UndefOr[FleetAdvisorLsaAnalysisResponseList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorLsaAnalysisResponse {
+    @inline
+    def apply(
+        Analysis: js.UndefOr[FleetAdvisorLsaAnalysisResponseList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorLsaAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      Analysis.foreach(__v => __obj.updateDynamic("Analysis")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorLsaAnalysisResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorSchemaObjectSummaryRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorSchemaObjectSummaryRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorSchemaObjectSummaryRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorSchemaObjectSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorSchemaObjectSummaryResponse extends js.Object {
+    var FleetAdvisorSchemaObjects: js.UndefOr[FleetAdvisorSchemaObjectList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorSchemaObjectSummaryResponse {
+    @inline
+    def apply(
+        FleetAdvisorSchemaObjects: js.UndefOr[FleetAdvisorSchemaObjectList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorSchemaObjectSummaryResponse = {
+      val __obj = js.Dynamic.literal()
+      FleetAdvisorSchemaObjects.foreach(__v => __obj.updateDynamic("FleetAdvisorSchemaObjects")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorSchemaObjectSummaryResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorSchemasRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorSchemasRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorSchemasRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorSchemasRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFleetAdvisorSchemasResponse extends js.Object {
+    var FleetAdvisorSchemas: js.UndefOr[FleetAdvisorSchemaList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeFleetAdvisorSchemasResponse {
+    @inline
+    def apply(
+        FleetAdvisorSchemas: js.UndefOr[FleetAdvisorSchemaList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeFleetAdvisorSchemasResponse = {
+      val __obj = js.Dynamic.literal()
+      FleetAdvisorSchemas.foreach(__v => __obj.updateDynamic("FleetAdvisorSchemas")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFleetAdvisorSchemasResponse]
     }
   }
 
@@ -2206,6 +2747,7 @@ package object dms {
     var ServiceAccessRoleArn: String
     var ErrorRetryDuration: js.UndefOr[IntegerOptional]
     var FullLoadErrorPercentage: js.UndefOr[IntegerOptional]
+    var UseNewMappingType: js.UndefOr[BooleanOptional]
   }
 
   object ElasticsearchSettings {
@@ -2214,7 +2756,8 @@ package object dms {
         EndpointUri: String,
         ServiceAccessRoleArn: String,
         ErrorRetryDuration: js.UndefOr[IntegerOptional] = js.undefined,
-        FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined
+        FullLoadErrorPercentage: js.UndefOr[IntegerOptional] = js.undefined,
+        UseNewMappingType: js.UndefOr[BooleanOptional] = js.undefined
     ): ElasticsearchSettings = {
       val __obj = js.Dynamic.literal(
         "EndpointUri" -> EndpointUri.asInstanceOf[js.Any],
@@ -2223,6 +2766,7 @@ package object dms {
 
       ErrorRetryDuration.foreach(__v => __obj.updateDynamic("ErrorRetryDuration")(__v.asInstanceOf[js.Any]))
       FullLoadErrorPercentage.foreach(__v => __obj.updateDynamic("FullLoadErrorPercentage")(__v.asInstanceOf[js.Any]))
+      UseNewMappingType.foreach(__v => __obj.updateDynamic("UseNewMappingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticsearchSettings]
     }
   }
@@ -2504,6 +3048,57 @@ package object dms {
     }
   }
 
+  /** Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.
+    */
+  @js.native
+  trait FleetAdvisorLsaAnalysisResponse extends js.Object {
+    var LsaAnalysisId: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+  }
+
+  object FleetAdvisorLsaAnalysisResponse {
+    @inline
+    def apply(
+        LsaAnalysisId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): FleetAdvisorLsaAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      LsaAnalysisId.foreach(__v => __obj.updateDynamic("LsaAnalysisId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FleetAdvisorLsaAnalysisResponse]
+    }
+  }
+
+  /** Describes a schema object in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait FleetAdvisorSchemaObjectResponse extends js.Object {
+    var CodeLineCount: js.UndefOr[LongOptional]
+    var CodeSize: js.UndefOr[LongOptional]
+    var NumberOfObjects: js.UndefOr[LongOptional]
+    var ObjectType: js.UndefOr[String]
+    var SchemaId: js.UndefOr[String]
+  }
+
+  object FleetAdvisorSchemaObjectResponse {
+    @inline
+    def apply(
+        CodeLineCount: js.UndefOr[LongOptional] = js.undefined,
+        CodeSize: js.UndefOr[LongOptional] = js.undefined,
+        NumberOfObjects: js.UndefOr[LongOptional] = js.undefined,
+        ObjectType: js.UndefOr[String] = js.undefined,
+        SchemaId: js.UndefOr[String] = js.undefined
+    ): FleetAdvisorSchemaObjectResponse = {
+      val __obj = js.Dynamic.literal()
+      CodeLineCount.foreach(__v => __obj.updateDynamic("CodeLineCount")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
+      NumberOfObjects.foreach(__v => __obj.updateDynamic("NumberOfObjects")(__v.asInstanceOf[js.Any]))
+      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FleetAdvisorSchemaObjectResponse]
+    }
+  }
+
   /** Settings in JSON format for the source GCP MySQL endpoint.
     */
   @js.native
@@ -2646,6 +3241,27 @@ package object dms {
       val __obj = js.Dynamic.literal()
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportCertificateResponse]
+    }
+  }
+
+  /** Describes a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait InventoryData extends js.Object {
+    var NumberOfDatabases: js.UndefOr[IntegerOptional]
+    var NumberOfSchemas: js.UndefOr[IntegerOptional]
+  }
+
+  object InventoryData {
+    @inline
+    def apply(
+        NumberOfDatabases: js.UndefOr[IntegerOptional] = js.undefined,
+        NumberOfSchemas: js.UndefOr[IntegerOptional] = js.undefined
+    ): InventoryData = {
+      val __obj = js.Dynamic.literal()
+      NumberOfDatabases.foreach(__v => __obj.updateDynamic("NumberOfDatabases")(__v.asInstanceOf[js.Any]))
+      NumberOfSchemas.foreach(__v => __obj.updateDynamic("NumberOfSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InventoryData]
     }
   }
 
@@ -2817,6 +3433,7 @@ package object dms {
     var SecretsManagerAccessRoleArn: js.UndefOr[String]
     var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
+    var TrimSpaceInChar: js.UndefOr[BooleanOptional]
     var UseBcpFullLoad: js.UndefOr[BooleanOptional]
     var UseThirdPartyBackupDevice: js.UndefOr[BooleanOptional]
     var Username: js.UndefOr[String]
@@ -2836,6 +3453,7 @@ package object dms {
         SecretsManagerAccessRoleArn: js.UndefOr[String] = js.undefined,
         SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
+        TrimSpaceInChar: js.UndefOr[BooleanOptional] = js.undefined,
         UseBcpFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
         UseThirdPartyBackupDevice: js.UndefOr[BooleanOptional] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
@@ -2852,6 +3470,7 @@ package object dms {
       SecretsManagerAccessRoleArn.foreach(__v => __obj.updateDynamic("SecretsManagerAccessRoleArn")(__v.asInstanceOf[js.Any]))
       SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
+      TrimSpaceInChar.foreach(__v => __obj.updateDynamic("TrimSpaceInChar")(__v.asInstanceOf[js.Any]))
       UseBcpFullLoad.foreach(__v => __obj.updateDynamic("UseBcpFullLoad")(__v.asInstanceOf[js.Any]))
       UseThirdPartyBackupDevice.foreach(__v => __obj.updateDynamic("UseThirdPartyBackupDevice")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
@@ -3054,6 +3673,7 @@ package object dms {
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var ReplicationInstanceClass: js.UndefOr[String]
     var ReplicationInstanceIdentifier: js.UndefOr[String]
@@ -3070,6 +3690,7 @@ package object dms {
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
         ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -3085,6 +3706,7 @@ package object dms {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any]))
@@ -3447,6 +4069,7 @@ package object dms {
     var ServerName: js.UndefOr[String]
     var SpatialDataOptionToGeoJsonFunctionName: js.UndefOr[String]
     var StandbyDelayTime: js.UndefOr[IntegerOptional]
+    var TrimSpaceInChar: js.UndefOr[BooleanOptional]
     var UseAlternateFolderForOnline: js.UndefOr[BooleanOptional]
     var UseBFile: js.UndefOr[BooleanOptional]
     var UseDirectPathFullLoad: js.UndefOr[BooleanOptional]
@@ -3492,6 +4115,7 @@ package object dms {
         ServerName: js.UndefOr[String] = js.undefined,
         SpatialDataOptionToGeoJsonFunctionName: js.UndefOr[String] = js.undefined,
         StandbyDelayTime: js.UndefOr[IntegerOptional] = js.undefined,
+        TrimSpaceInChar: js.UndefOr[BooleanOptional] = js.undefined,
         UseAlternateFolderForOnline: js.UndefOr[BooleanOptional] = js.undefined,
         UseBFile: js.UndefOr[BooleanOptional] = js.undefined,
         UseDirectPathFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3534,6 +4158,7 @@ package object dms {
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       SpatialDataOptionToGeoJsonFunctionName.foreach(__v => __obj.updateDynamic("SpatialDataOptionToGeoJsonFunctionName")(__v.asInstanceOf[js.Any]))
       StandbyDelayTime.foreach(__v => __obj.updateDynamic("StandbyDelayTime")(__v.asInstanceOf[js.Any]))
+      TrimSpaceInChar.foreach(__v => __obj.updateDynamic("TrimSpaceInChar")(__v.asInstanceOf[js.Any]))
       UseAlternateFolderForOnline.foreach(__v => __obj.updateDynamic("UseAlternateFolderForOnline")(__v.asInstanceOf[js.Any]))
       UseBFile.foreach(__v => __obj.updateDynamic("UseBFile")(__v.asInstanceOf[js.Any]))
       UseDirectPathFullLoad.foreach(__v => __obj.updateDynamic("UseDirectPathFullLoad")(__v.asInstanceOf[js.Any]))
@@ -3640,6 +4265,7 @@ package object dms {
     var SecretsManagerSecretId: js.UndefOr[String]
     var ServerName: js.UndefOr[String]
     var SlotName: js.UndefOr[String]
+    var TrimSpaceInChar: js.UndefOr[BooleanOptional]
     var Username: js.UndefOr[String]
   }
 
@@ -3663,6 +4289,7 @@ package object dms {
         SecretsManagerSecretId: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined,
         SlotName: js.UndefOr[String] = js.undefined,
+        TrimSpaceInChar: js.UndefOr[BooleanOptional] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): PostgreSQLSettings = {
       val __obj = js.Dynamic.literal()
@@ -3683,6 +4310,7 @@ package object dms {
       SecretsManagerSecretId.foreach(__v => __obj.updateDynamic("SecretsManagerSecretId")(__v.asInstanceOf[js.Any]))
       ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       SlotName.foreach(__v => __obj.updateDynamic("SlotName")(__v.asInstanceOf[js.Any]))
+      TrimSpaceInChar.foreach(__v => __obj.updateDynamic("TrimSpaceInChar")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostgreSQLSettings]
     }
@@ -4029,12 +4657,14 @@ package object dms {
     var InstanceCreateTime: js.UndefOr[TStamp]
     var KmsKeyId: js.UndefOr[String]
     var MultiAZ: js.UndefOr[Boolean]
+    var NetworkType: js.UndefOr[String]
     var PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[Boolean]
     var ReplicationInstanceArn: js.UndefOr[String]
     var ReplicationInstanceClass: js.UndefOr[String]
     var ReplicationInstanceIdentifier: js.UndefOr[String]
+    var ReplicationInstanceIpv6Addresses: js.UndefOr[ReplicationInstanceIpv6AddressList]
     var ReplicationInstancePrivateIpAddress: js.UndefOr[String]
     var ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList]
     var ReplicationInstancePublicIpAddress: js.UndefOr[String]
@@ -4057,12 +4687,14 @@ package object dms {
         InstanceCreateTime: js.UndefOr[TStamp] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[Boolean] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         PendingModifiedValues: js.UndefOr[ReplicationPendingModifiedValues] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
         ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
         ReplicationInstanceClass: js.UndefOr[String] = js.undefined,
         ReplicationInstanceIdentifier: js.UndefOr[String] = js.undefined,
+        ReplicationInstanceIpv6Addresses: js.UndefOr[ReplicationInstanceIpv6AddressList] = js.undefined,
         ReplicationInstancePrivateIpAddress: js.UndefOr[String] = js.undefined,
         ReplicationInstancePrivateIpAddresses: js.UndefOr[ReplicationInstancePrivateIpAddressList] = js.undefined,
         ReplicationInstancePublicIpAddress: js.UndefOr[String] = js.undefined,
@@ -4082,12 +4714,14 @@ package object dms {
       InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceArn.foreach(__v => __obj.updateDynamic("ReplicationInstanceArn")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      ReplicationInstanceIpv6Addresses.foreach(__v => __obj.updateDynamic("ReplicationInstanceIpv6Addresses")(__v.asInstanceOf[js.Any]))
       ReplicationInstancePrivateIpAddress.foreach(__v => __obj.updateDynamic("ReplicationInstancePrivateIpAddress")(__v.asInstanceOf[js.Any]))
       ReplicationInstancePrivateIpAddresses.foreach(__v => __obj.updateDynamic("ReplicationInstancePrivateIpAddresses")(__v.asInstanceOf[js.Any]))
       ReplicationInstancePublicIpAddress.foreach(__v => __obj.updateDynamic("ReplicationInstancePublicIpAddress")(__v.asInstanceOf[js.Any]))
@@ -4131,6 +4765,7 @@ package object dms {
     var AllocatedStorage: js.UndefOr[IntegerOptional]
     var EngineVersion: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var ReplicationInstanceClass: js.UndefOr[String]
   }
 
@@ -4140,12 +4775,14 @@ package object dms {
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         ReplicationInstanceClass: js.UndefOr[String] = js.undefined
     ): ReplicationPendingModifiedValues = {
       val __obj = js.Dynamic.literal()
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       ReplicationInstanceClass.foreach(__v => __obj.updateDynamic("ReplicationInstanceClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationPendingModifiedValues]
     }
@@ -4159,6 +4796,7 @@ package object dms {
     var ReplicationSubnetGroupIdentifier: js.UndefOr[String]
     var SubnetGroupStatus: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
+    var SupportedNetworkTypes: js.UndefOr[StringList]
     var VpcId: js.UndefOr[String]
   }
 
@@ -4169,6 +4807,7 @@ package object dms {
         ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
         SubnetGroupStatus: js.UndefOr[String] = js.undefined,
         Subnets: js.UndefOr[SubnetList] = js.undefined,
+        SupportedNetworkTypes: js.UndefOr[StringList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): ReplicationSubnetGroup = {
       val __obj = js.Dynamic.literal()
@@ -4176,6 +4815,7 @@ package object dms {
       ReplicationSubnetGroupIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSubnetGroupIdentifier")(__v.asInstanceOf[js.Any]))
       SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      SupportedNetworkTypes.foreach(__v => __obj.updateDynamic("SupportedNetworkTypes")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationSubnetGroup]
     }
@@ -4460,11 +5100,31 @@ package object dms {
     }
   }
 
+  @js.native
+  trait RunFleetAdvisorLsaAnalysisResponse extends js.Object {
+    var LsaAnalysisId: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+  }
+
+  object RunFleetAdvisorLsaAnalysisResponse {
+    @inline
+    def apply(
+        LsaAnalysisId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): RunFleetAdvisorLsaAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      LsaAnalysisId.foreach(__v => __obj.updateDynamic("LsaAnalysisId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunFleetAdvisorLsaAnalysisResponse]
+    }
+  }
+
   /** Settings for exporting data to Amazon S3.
     */
   @js.native
   trait S3Settings extends js.Object {
     var AddColumnName: js.UndefOr[BooleanOptional]
+    var AddTrailingPaddingCharacter: js.UndefOr[BooleanOptional]
     var BucketFolder: js.UndefOr[String]
     var BucketName: js.UndefOr[String]
     var CannedAclForObjects: js.UndefOr[CannedAclForObjectsValue]
@@ -4488,6 +5148,7 @@ package object dms {
     var EnableStatistics: js.UndefOr[BooleanOptional]
     var EncodingType: js.UndefOr[EncodingTypeValue]
     var EncryptionMode: js.UndefOr[EncryptionModeValue]
+    var ExpectedBucketOwner: js.UndefOr[String]
     var ExternalTableDefinition: js.UndefOr[String]
     var IgnoreHeaderRows: js.UndefOr[IntegerOptional]
     var IncludeOpForFullLoad: js.UndefOr[BooleanOptional]
@@ -4508,6 +5169,7 @@ package object dms {
     @inline
     def apply(
         AddColumnName: js.UndefOr[BooleanOptional] = js.undefined,
+        AddTrailingPaddingCharacter: js.UndefOr[BooleanOptional] = js.undefined,
         BucketFolder: js.UndefOr[String] = js.undefined,
         BucketName: js.UndefOr[String] = js.undefined,
         CannedAclForObjects: js.UndefOr[CannedAclForObjectsValue] = js.undefined,
@@ -4531,6 +5193,7 @@ package object dms {
         EnableStatistics: js.UndefOr[BooleanOptional] = js.undefined,
         EncodingType: js.UndefOr[EncodingTypeValue] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionModeValue] = js.undefined,
+        ExpectedBucketOwner: js.UndefOr[String] = js.undefined,
         ExternalTableDefinition: js.UndefOr[String] = js.undefined,
         IgnoreHeaderRows: js.UndefOr[IntegerOptional] = js.undefined,
         IncludeOpForFullLoad: js.UndefOr[BooleanOptional] = js.undefined,
@@ -4548,6 +5211,7 @@ package object dms {
     ): S3Settings = {
       val __obj = js.Dynamic.literal()
       AddColumnName.foreach(__v => __obj.updateDynamic("AddColumnName")(__v.asInstanceOf[js.Any]))
+      AddTrailingPaddingCharacter.foreach(__v => __obj.updateDynamic("AddTrailingPaddingCharacter")(__v.asInstanceOf[js.Any]))
       BucketFolder.foreach(__v => __obj.updateDynamic("BucketFolder")(__v.asInstanceOf[js.Any]))
       BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
       CannedAclForObjects.foreach(__v => __obj.updateDynamic("CannedAclForObjects")(__v.asInstanceOf[js.Any]))
@@ -4571,6 +5235,7 @@ package object dms {
       EnableStatistics.foreach(__v => __obj.updateDynamic("EnableStatistics")(__v.asInstanceOf[js.Any]))
       EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       ExternalTableDefinition.foreach(__v => __obj.updateDynamic("ExternalTableDefinition")(__v.asInstanceOf[js.Any]))
       IgnoreHeaderRows.foreach(__v => __obj.updateDynamic("IgnoreHeaderRows")(__v.asInstanceOf[js.Any]))
       IncludeOpForFullLoad.foreach(__v => __obj.updateDynamic("IncludeOpForFullLoad")(__v.asInstanceOf[js.Any]))
@@ -4586,6 +5251,102 @@ package object dms {
       UseCsvNoSupValue.foreach(__v => __obj.updateDynamic("UseCsvNoSupValue")(__v.asInstanceOf[js.Any]))
       UseTaskStartTimeForFullLoadTimestamp.foreach(__v => __obj.updateDynamic("UseTaskStartTimeForFullLoadTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Settings]
+    }
+  }
+
+  /** Describes a schema in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait SchemaResponse extends js.Object {
+    var CodeLineCount: js.UndefOr[LongOptional]
+    var CodeSize: js.UndefOr[LongOptional]
+    var Complexity: js.UndefOr[String]
+    var DatabaseInstance: js.UndefOr[DatabaseShortInfoResponse]
+    var OriginalSchema: js.UndefOr[SchemaShortInfoResponse]
+    var SchemaId: js.UndefOr[String]
+    var SchemaName: js.UndefOr[String]
+    var Server: js.UndefOr[ServerShortInfoResponse]
+    var Similarity: js.UndefOr[DoubleOptional]
+  }
+
+  object SchemaResponse {
+    @inline
+    def apply(
+        CodeLineCount: js.UndefOr[LongOptional] = js.undefined,
+        CodeSize: js.UndefOr[LongOptional] = js.undefined,
+        Complexity: js.UndefOr[String] = js.undefined,
+        DatabaseInstance: js.UndefOr[DatabaseShortInfoResponse] = js.undefined,
+        OriginalSchema: js.UndefOr[SchemaShortInfoResponse] = js.undefined,
+        SchemaId: js.UndefOr[String] = js.undefined,
+        SchemaName: js.UndefOr[String] = js.undefined,
+        Server: js.UndefOr[ServerShortInfoResponse] = js.undefined,
+        Similarity: js.UndefOr[DoubleOptional] = js.undefined
+    ): SchemaResponse = {
+      val __obj = js.Dynamic.literal()
+      CodeLineCount.foreach(__v => __obj.updateDynamic("CodeLineCount")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
+      Complexity.foreach(__v => __obj.updateDynamic("Complexity")(__v.asInstanceOf[js.Any]))
+      DatabaseInstance.foreach(__v => __obj.updateDynamic("DatabaseInstance")(__v.asInstanceOf[js.Any]))
+      OriginalSchema.foreach(__v => __obj.updateDynamic("OriginalSchema")(__v.asInstanceOf[js.Any]))
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
+      Similarity.foreach(__v => __obj.updateDynamic("Similarity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaResponse]
+    }
+  }
+
+  /** Describes a schema in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait SchemaShortInfoResponse extends js.Object {
+    var DatabaseId: js.UndefOr[String]
+    var DatabaseIpAddress: js.UndefOr[String]
+    var DatabaseName: js.UndefOr[String]
+    var SchemaId: js.UndefOr[String]
+    var SchemaName: js.UndefOr[String]
+  }
+
+  object SchemaShortInfoResponse {
+    @inline
+    def apply(
+        DatabaseId: js.UndefOr[String] = js.undefined,
+        DatabaseIpAddress: js.UndefOr[String] = js.undefined,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        SchemaId: js.UndefOr[String] = js.undefined,
+        SchemaName: js.UndefOr[String] = js.undefined
+    ): SchemaShortInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      DatabaseId.foreach(__v => __obj.updateDynamic("DatabaseId")(__v.asInstanceOf[js.Any]))
+      DatabaseIpAddress.foreach(__v => __obj.updateDynamic("DatabaseIpAddress")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      SchemaId.foreach(__v => __obj.updateDynamic("SchemaId")(__v.asInstanceOf[js.Any]))
+      SchemaName.foreach(__v => __obj.updateDynamic("SchemaName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchemaShortInfoResponse]
+    }
+  }
+
+  /** Describes a server in a Fleet Advisor collector inventory.
+    */
+  @js.native
+  trait ServerShortInfoResponse extends js.Object {
+    var IpAddress: js.UndefOr[String]
+    var ServerId: js.UndefOr[String]
+    var ServerName: js.UndefOr[String]
+  }
+
+  object ServerShortInfoResponse {
+    @inline
+    def apply(
+        IpAddress: js.UndefOr[String] = js.undefined,
+        ServerId: js.UndefOr[String] = js.undefined,
+        ServerName: js.UndefOr[String] = js.undefined
+    ): ServerShortInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      ServerId.foreach(__v => __obj.updateDynamic("ServerId")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerShortInfoResponse]
     }
   }
 
@@ -4869,6 +5630,10 @@ package object dms {
     */
   @js.native
   trait TableStatistics extends js.Object {
+    var AppliedDdls: js.UndefOr[LongOptional]
+    var AppliedDeletes: js.UndefOr[LongOptional]
+    var AppliedInserts: js.UndefOr[LongOptional]
+    var AppliedUpdates: js.UndefOr[LongOptional]
     var Ddls: js.UndefOr[Double]
     var Deletes: js.UndefOr[Double]
     var FullLoadCondtnlChkFailedRows: js.UndefOr[Double]
@@ -4893,6 +5658,10 @@ package object dms {
   object TableStatistics {
     @inline
     def apply(
+        AppliedDdls: js.UndefOr[LongOptional] = js.undefined,
+        AppliedDeletes: js.UndefOr[LongOptional] = js.undefined,
+        AppliedInserts: js.UndefOr[LongOptional] = js.undefined,
+        AppliedUpdates: js.UndefOr[LongOptional] = js.undefined,
         Ddls: js.UndefOr[Double] = js.undefined,
         Deletes: js.UndefOr[Double] = js.undefined,
         FullLoadCondtnlChkFailedRows: js.UndefOr[Double] = js.undefined,
@@ -4914,6 +5683,10 @@ package object dms {
         ValidationSuspendedRecords: js.UndefOr[Double] = js.undefined
     ): TableStatistics = {
       val __obj = js.Dynamic.literal()
+      AppliedDdls.foreach(__v => __obj.updateDynamic("AppliedDdls")(__v.asInstanceOf[js.Any]))
+      AppliedDeletes.foreach(__v => __obj.updateDynamic("AppliedDeletes")(__v.asInstanceOf[js.Any]))
+      AppliedInserts.foreach(__v => __obj.updateDynamic("AppliedInserts")(__v.asInstanceOf[js.Any]))
+      AppliedUpdates.foreach(__v => __obj.updateDynamic("AppliedUpdates")(__v.asInstanceOf[js.Any]))
       Ddls.foreach(__v => __obj.updateDynamic("Ddls")(__v.asInstanceOf[js.Any]))
       Deletes.foreach(__v => __obj.updateDynamic("Deletes")(__v.asInstanceOf[js.Any]))
       FullLoadCondtnlChkFailedRows.foreach(__v => __obj.updateDynamic("FullLoadCondtnlChkFailedRows")(__v.asInstanceOf[js.Any]))
@@ -5020,6 +5793,42 @@ package object dms {
       val __obj = js.Dynamic.literal()
       Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestConnectionResponse]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait UpdateSubscriptionsToEventBridgeMessage extends js.Object {
+    var ForceMove: js.UndefOr[BooleanOptional]
+  }
+
+  object UpdateSubscriptionsToEventBridgeMessage {
+    @inline
+    def apply(
+        ForceMove: js.UndefOr[BooleanOptional] = js.undefined
+    ): UpdateSubscriptionsToEventBridgeMessage = {
+      val __obj = js.Dynamic.literal()
+      ForceMove.foreach(__v => __obj.updateDynamic("ForceMove")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSubscriptionsToEventBridgeMessage]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait UpdateSubscriptionsToEventBridgeResponse extends js.Object {
+    var Result: js.UndefOr[String]
+  }
+
+  object UpdateSubscriptionsToEventBridgeResponse {
+    @inline
+    def apply(
+        Result: js.UndefOr[String] = js.undefined
+    ): UpdateSubscriptionsToEventBridgeResponse = {
+      val __obj = js.Dynamic.literal()
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSubscriptionsToEventBridgeResponse]
     }
   }
 

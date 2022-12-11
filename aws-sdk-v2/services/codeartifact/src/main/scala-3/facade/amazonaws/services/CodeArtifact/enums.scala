@@ -2,6 +2,22 @@ package facade.amazonaws.services.codeartifact
 
 import scalajs.js
 
+type AllowPublish = "ALLOW" | "BLOCK"
+object AllowPublish {
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val BLOCK: "BLOCK" = "BLOCK"
+
+  inline def values: js.Array[AllowPublish] = js.Array(ALLOW, BLOCK)
+}
+
+type AllowUpstream = "ALLOW" | "BLOCK"
+object AllowUpstream {
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val BLOCK: "BLOCK" = "BLOCK"
+
+  inline def values: js.Array[AllowUpstream] = js.Array(ALLOW, BLOCK)
+}
+
 type DomainStatus = "Active" | "Deleted"
 object DomainStatus {
   inline val Active: "Active" = "Active"
@@ -47,6 +63,15 @@ object PackageVersionErrorCode {
   inline val SKIPPED: "SKIPPED" = "SKIPPED"
 
   inline def values: js.Array[PackageVersionErrorCode] = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
+}
+
+type PackageVersionOriginType = "INTERNAL" | "EXTERNAL" | "UNKNOWN"
+object PackageVersionOriginType {
+  inline val INTERNAL: "INTERNAL" = "INTERNAL"
+  inline val EXTERNAL: "EXTERNAL" = "EXTERNAL"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+
+  inline def values: js.Array[PackageVersionOriginType] = js.Array(INTERNAL, EXTERNAL, UNKNOWN)
 }
 
 type PackageVersionSortType = "PUBLISHED_TIME"

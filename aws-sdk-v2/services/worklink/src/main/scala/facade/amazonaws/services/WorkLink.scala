@@ -43,82 +43,46 @@ package object worklink {
   type WebsiteAuthorizationProvidersSummaryList = js.Array[WebsiteAuthorizationProviderSummary]
   type WebsiteCaSummaryList = js.Array[WebsiteCaSummary]
 
-  final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
-
-    @inline def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] = service.associateDomain(params).promise().toFuture
-    @inline def associateWebsiteAuthorizationProviderFuture(params: AssociateWebsiteAuthorizationProviderRequest): Future[AssociateWebsiteAuthorizationProviderResponse] = service.associateWebsiteAuthorizationProvider(params).promise().toFuture
-    @inline def associateWebsiteCertificateAuthorityFuture(params: AssociateWebsiteCertificateAuthorityRequest): Future[AssociateWebsiteCertificateAuthorityResponse] = service.associateWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] = service.createFleet(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] = service.deleteFleet(params).promise().toFuture
-    @inline def describeAuditStreamConfigurationFuture(params: DescribeAuditStreamConfigurationRequest): Future[DescribeAuditStreamConfigurationResponse] = service.describeAuditStreamConfiguration(params).promise().toFuture
-    @inline def describeCompanyNetworkConfigurationFuture(params: DescribeCompanyNetworkConfigurationRequest): Future[DescribeCompanyNetworkConfigurationResponse] = service.describeCompanyNetworkConfiguration(params).promise().toFuture
-    @inline def describeDeviceFuture(params: DescribeDeviceRequest): Future[DescribeDeviceResponse] = service.describeDevice(params).promise().toFuture
-    @inline def describeDevicePolicyConfigurationFuture(params: DescribeDevicePolicyConfigurationRequest): Future[DescribeDevicePolicyConfigurationResponse] = service.describeDevicePolicyConfiguration(params).promise().toFuture
-    @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResponse] = service.describeDomain(params).promise().toFuture
-    @inline def describeFleetMetadataFuture(params: DescribeFleetMetadataRequest): Future[DescribeFleetMetadataResponse] = service.describeFleetMetadata(params).promise().toFuture
-    @inline def describeIdentityProviderConfigurationFuture(params: DescribeIdentityProviderConfigurationRequest): Future[DescribeIdentityProviderConfigurationResponse] = service.describeIdentityProviderConfiguration(params).promise().toFuture
-    @inline def describeWebsiteCertificateAuthorityFuture(params: DescribeWebsiteCertificateAuthorityRequest): Future[DescribeWebsiteCertificateAuthorityResponse] = service.describeWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def disassociateDomainFuture(params: DisassociateDomainRequest): Future[DisassociateDomainResponse] = service.disassociateDomain(params).promise().toFuture
-    @inline def disassociateWebsiteAuthorizationProviderFuture(params: DisassociateWebsiteAuthorizationProviderRequest): Future[DisassociateWebsiteAuthorizationProviderResponse] = service.disassociateWebsiteAuthorizationProvider(params).promise().toFuture
-    @inline def disassociateWebsiteCertificateAuthorityFuture(params: DisassociateWebsiteCertificateAuthorityRequest): Future[DisassociateWebsiteCertificateAuthorityResponse] = service.disassociateWebsiteCertificateAuthority(params).promise().toFuture
-    @inline def listDevicesFuture(params: ListDevicesRequest): Future[ListDevicesResponse] = service.listDevices(params).promise().toFuture
-    @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
-    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] = service.listFleets(params).promise().toFuture
-    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
-    @inline def listWebsiteAuthorizationProvidersFuture(params: ListWebsiteAuthorizationProvidersRequest): Future[ListWebsiteAuthorizationProvidersResponse] = service.listWebsiteAuthorizationProviders(params).promise().toFuture
-    @inline def listWebsiteCertificateAuthoritiesFuture(params: ListWebsiteCertificateAuthoritiesRequest): Future[ListWebsiteCertificateAuthoritiesResponse] = service.listWebsiteCertificateAuthorities(params).promise().toFuture
-    @inline def restoreDomainAccessFuture(params: RestoreDomainAccessRequest): Future[RestoreDomainAccessResponse] = service.restoreDomainAccess(params).promise().toFuture
-    @inline def revokeDomainAccessFuture(params: RevokeDomainAccessRequest): Future[RevokeDomainAccessResponse] = service.revokeDomainAccess(params).promise().toFuture
-    @inline def signOutUserFuture(params: SignOutUserRequest): Future[SignOutUserResponse] = service.signOutUser(params).promise().toFuture
-    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
-    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
-    @inline def updateAuditStreamConfigurationFuture(params: UpdateAuditStreamConfigurationRequest): Future[UpdateAuditStreamConfigurationResponse] = service.updateAuditStreamConfiguration(params).promise().toFuture
-    @inline def updateCompanyNetworkConfigurationFuture(params: UpdateCompanyNetworkConfigurationRequest): Future[UpdateCompanyNetworkConfigurationResponse] = service.updateCompanyNetworkConfiguration(params).promise().toFuture
-    @inline def updateDevicePolicyConfigurationFuture(params: UpdateDevicePolicyConfigurationRequest): Future[UpdateDevicePolicyConfigurationResponse] = service.updateDevicePolicyConfiguration(params).promise().toFuture
-    @inline def updateDomainMetadataFuture(params: UpdateDomainMetadataRequest): Future[UpdateDomainMetadataResponse] = service.updateDomainMetadata(params).promise().toFuture
-    @inline def updateFleetMetadataFuture(params: UpdateFleetMetadataRequest): Future[UpdateFleetMetadataResponse] = service.updateFleetMetadata(params).promise().toFuture
-    @inline def updateIdentityProviderConfigurationFuture(params: UpdateIdentityProviderConfigurationRequest): Future[UpdateIdentityProviderConfigurationResponse] = service.updateIdentityProviderConfiguration(params).promise().toFuture
-
-  }
+  final class WorkLinkOps(private val service: WorkLink) extends AnyVal {}
 
   @js.native
   @JSImport("aws-sdk/clients/worklink", JSImport.Namespace, "AWS.WorkLink")
   class WorkLink() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def associateDomain(params: AssociateDomainRequest): Request[AssociateDomainResponse] = js.native
-    def associateWebsiteAuthorizationProvider(params: AssociateWebsiteAuthorizationProviderRequest): Request[AssociateWebsiteAuthorizationProviderResponse] = js.native
-    def associateWebsiteCertificateAuthority(params: AssociateWebsiteCertificateAuthorityRequest): Request[AssociateWebsiteCertificateAuthorityResponse] = js.native
-    def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
-    def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
-    def describeAuditStreamConfiguration(params: DescribeAuditStreamConfigurationRequest): Request[DescribeAuditStreamConfigurationResponse] = js.native
-    def describeCompanyNetworkConfiguration(params: DescribeCompanyNetworkConfigurationRequest): Request[DescribeCompanyNetworkConfigurationResponse] = js.native
-    def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
-    def describeDevicePolicyConfiguration(params: DescribeDevicePolicyConfigurationRequest): Request[DescribeDevicePolicyConfigurationResponse] = js.native
-    def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
-    def describeFleetMetadata(params: DescribeFleetMetadataRequest): Request[DescribeFleetMetadataResponse] = js.native
-    def describeIdentityProviderConfiguration(params: DescribeIdentityProviderConfigurationRequest): Request[DescribeIdentityProviderConfigurationResponse] = js.native
-    def describeWebsiteCertificateAuthority(params: DescribeWebsiteCertificateAuthorityRequest): Request[DescribeWebsiteCertificateAuthorityResponse] = js.native
-    def disassociateDomain(params: DisassociateDomainRequest): Request[DisassociateDomainResponse] = js.native
-    def disassociateWebsiteAuthorizationProvider(params: DisassociateWebsiteAuthorizationProviderRequest): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
-    def disassociateWebsiteCertificateAuthority(params: DisassociateWebsiteCertificateAuthorityRequest): Request[DisassociateWebsiteCertificateAuthorityResponse] = js.native
-    def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
-    def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
-    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
-    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listWebsiteAuthorizationProviders(params: ListWebsiteAuthorizationProvidersRequest): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
-    def listWebsiteCertificateAuthorities(params: ListWebsiteCertificateAuthoritiesRequest): Request[ListWebsiteCertificateAuthoritiesResponse] = js.native
-    def restoreDomainAccess(params: RestoreDomainAccessRequest): Request[RestoreDomainAccessResponse] = js.native
-    def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse] = js.native
-    def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse] = js.native
-    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
-    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
-    def updateAuditStreamConfiguration(params: UpdateAuditStreamConfigurationRequest): Request[UpdateAuditStreamConfigurationResponse] = js.native
-    def updateCompanyNetworkConfiguration(params: UpdateCompanyNetworkConfigurationRequest): Request[UpdateCompanyNetworkConfigurationResponse] = js.native
-    def updateDevicePolicyConfiguration(params: UpdateDevicePolicyConfigurationRequest): Request[UpdateDevicePolicyConfigurationResponse] = js.native
-    def updateDomainMetadata(params: UpdateDomainMetadataRequest): Request[UpdateDomainMetadataResponse] = js.native
-    def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse] = js.native
-    def updateIdentityProviderConfiguration(params: UpdateIdentityProviderConfigurationRequest): Request[UpdateIdentityProviderConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def associateDomain(params: AssociateDomainRequest): Request[AssociateDomainResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def associateWebsiteAuthorizationProvider(params: AssociateWebsiteAuthorizationProviderRequest): Request[AssociateWebsiteAuthorizationProviderResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def associateWebsiteCertificateAuthority(params: AssociateWebsiteCertificateAuthorityRequest): Request[AssociateWebsiteCertificateAuthorityResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeAuditStreamConfiguration(params: DescribeAuditStreamConfigurationRequest): Request[DescribeAuditStreamConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeCompanyNetworkConfiguration(params: DescribeCompanyNetworkConfigurationRequest): Request[DescribeCompanyNetworkConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeDevice(params: DescribeDeviceRequest): Request[DescribeDeviceResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeDevicePolicyConfiguration(params: DescribeDevicePolicyConfigurationRequest): Request[DescribeDevicePolicyConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeFleetMetadata(params: DescribeFleetMetadataRequest): Request[DescribeFleetMetadataResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeIdentityProviderConfiguration(params: DescribeIdentityProviderConfigurationRequest): Request[DescribeIdentityProviderConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def describeWebsiteCertificateAuthority(params: DescribeWebsiteCertificateAuthorityRequest): Request[DescribeWebsiteCertificateAuthorityResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def disassociateDomain(params: DisassociateDomainRequest): Request[DisassociateDomainResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def disassociateWebsiteAuthorizationProvider(params: DisassociateWebsiteAuthorizationProviderRequest): Request[DisassociateWebsiteAuthorizationProviderResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def disassociateWebsiteCertificateAuthority(params: DisassociateWebsiteCertificateAuthorityRequest): Request[DisassociateWebsiteCertificateAuthorityResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listDevices(params: ListDevicesRequest): Request[ListDevicesResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listWebsiteAuthorizationProviders(params: ListWebsiteAuthorizationProvidersRequest): Request[ListWebsiteAuthorizationProvidersResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def listWebsiteCertificateAuthorities(params: ListWebsiteCertificateAuthoritiesRequest): Request[ListWebsiteCertificateAuthoritiesResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def restoreDomainAccess(params: RestoreDomainAccessRequest): Request[RestoreDomainAccessResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def revokeDomainAccess(params: RevokeDomainAccessRequest): Request[RevokeDomainAccessResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def signOutUser(params: SignOutUserRequest): Request[SignOutUserResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateAuditStreamConfiguration(params: UpdateAuditStreamConfigurationRequest): Request[UpdateAuditStreamConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateCompanyNetworkConfiguration(params: UpdateCompanyNetworkConfigurationRequest): Request[UpdateCompanyNetworkConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateDevicePolicyConfiguration(params: UpdateDevicePolicyConfigurationRequest): Request[UpdateDevicePolicyConfigurationResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateDomainMetadata(params: UpdateDomainMetadataRequest): Request[UpdateDomainMetadataResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateFleetMetadata(params: UpdateFleetMetadataRequest): Request[UpdateFleetMetadataResponse] = js.native
+    @deprecated("Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.", "forever") def updateIdentityProviderConfiguration(params: UpdateIdentityProviderConfigurationRequest): Request[UpdateIdentityProviderConfigurationResponse] = js.native
   }
   object WorkLink {
     @inline implicit def toOps(service: WorkLink): WorkLinkOps = {

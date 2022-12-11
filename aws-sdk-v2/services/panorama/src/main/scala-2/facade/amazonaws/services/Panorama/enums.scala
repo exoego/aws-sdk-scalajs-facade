@@ -25,6 +25,7 @@ object ApplicationInstanceStatus {
   val REMOVAL_IN_PROGRESS = "REMOVAL_IN_PROGRESS".asInstanceOf[ApplicationInstanceStatus]
   val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[ApplicationInstanceStatus]
   val REMOVAL_SUCCEEDED = "REMOVAL_SUCCEEDED".asInstanceOf[ApplicationInstanceStatus]
+  val DEPLOYMENT_FAILED = "DEPLOYMENT_FAILED".asInstanceOf[ApplicationInstanceStatus]
 
   @inline def values: js.Array[ApplicationInstanceStatus] = js.Array(
     DEPLOYMENT_PENDING,
@@ -36,7 +37,8 @@ object ApplicationInstanceStatus {
     REMOVAL_REQUESTED,
     REMOVAL_IN_PROGRESS,
     REMOVAL_FAILED,
-    REMOVAL_SUCCEEDED
+    REMOVAL_SUCCEEDED,
+    DEPLOYMENT_FAILED
   )
 }
 
@@ -50,6 +52,42 @@ object ConnectionType {
 }
 
 @js.native
+sealed trait DesiredState extends js.Any
+object DesiredState {
+  val RUNNING = "RUNNING".asInstanceOf[DesiredState]
+  val STOPPED = "STOPPED".asInstanceOf[DesiredState]
+  val REMOVED = "REMOVED".asInstanceOf[DesiredState]
+
+  @inline def values: js.Array[DesiredState] = js.Array(RUNNING, STOPPED, REMOVED)
+}
+
+@js.native
+sealed trait DeviceAggregatedStatus extends js.Any
+object DeviceAggregatedStatus {
+  val ERROR = "ERROR".asInstanceOf[DeviceAggregatedStatus]
+  val AWAITING_PROVISIONING = "AWAITING_PROVISIONING".asInstanceOf[DeviceAggregatedStatus]
+  val PENDING = "PENDING".asInstanceOf[DeviceAggregatedStatus]
+  val FAILED = "FAILED".asInstanceOf[DeviceAggregatedStatus]
+  val DELETING = "DELETING".asInstanceOf[DeviceAggregatedStatus]
+  val ONLINE = "ONLINE".asInstanceOf[DeviceAggregatedStatus]
+  val OFFLINE = "OFFLINE".asInstanceOf[DeviceAggregatedStatus]
+  val LEASE_EXPIRED = "LEASE_EXPIRED".asInstanceOf[DeviceAggregatedStatus]
+  val UPDATE_NEEDED = "UPDATE_NEEDED".asInstanceOf[DeviceAggregatedStatus]
+  val REBOOTING = "REBOOTING".asInstanceOf[DeviceAggregatedStatus]
+
+  @inline def values: js.Array[DeviceAggregatedStatus] = js.Array(ERROR, AWAITING_PROVISIONING, PENDING, FAILED, DELETING, ONLINE, OFFLINE, LEASE_EXPIRED, UPDATE_NEEDED, REBOOTING)
+}
+
+@js.native
+sealed trait DeviceBrand extends js.Any
+object DeviceBrand {
+  val AWS_PANORAMA = "AWS_PANORAMA".asInstanceOf[DeviceBrand]
+  val LENOVO = "LENOVO".asInstanceOf[DeviceBrand]
+
+  @inline def values: js.Array[DeviceBrand] = js.Array(AWS_PANORAMA, LENOVO)
+}
+
+@js.native
 sealed trait DeviceConnectionStatus extends js.Any
 object DeviceConnectionStatus {
   val ONLINE = "ONLINE".asInstanceOf[DeviceConnectionStatus]
@@ -59,6 +97,24 @@ object DeviceConnectionStatus {
   val ERROR = "ERROR".asInstanceOf[DeviceConnectionStatus]
 
   @inline def values: js.Array[DeviceConnectionStatus] = js.Array(ONLINE, OFFLINE, AWAITING_CREDENTIALS, NOT_AVAILABLE, ERROR)
+}
+
+@js.native
+sealed trait DeviceReportedStatus extends js.Any
+object DeviceReportedStatus {
+  val STOPPING = "STOPPING".asInstanceOf[DeviceReportedStatus]
+  val STOPPED = "STOPPED".asInstanceOf[DeviceReportedStatus]
+  val STOP_ERROR = "STOP_ERROR".asInstanceOf[DeviceReportedStatus]
+  val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[DeviceReportedStatus]
+  val REMOVAL_IN_PROGRESS = "REMOVAL_IN_PROGRESS".asInstanceOf[DeviceReportedStatus]
+  val STARTING = "STARTING".asInstanceOf[DeviceReportedStatus]
+  val RUNNING = "RUNNING".asInstanceOf[DeviceReportedStatus]
+  val INSTALL_ERROR = "INSTALL_ERROR".asInstanceOf[DeviceReportedStatus]
+  val LAUNCHED = "LAUNCHED".asInstanceOf[DeviceReportedStatus]
+  val LAUNCH_ERROR = "LAUNCH_ERROR".asInstanceOf[DeviceReportedStatus]
+  val INSTALL_IN_PROGRESS = "INSTALL_IN_PROGRESS".asInstanceOf[DeviceReportedStatus]
+
+  @inline def values: js.Array[DeviceReportedStatus] = js.Array(STOPPING, STOPPED, STOP_ERROR, REMOVAL_FAILED, REMOVAL_IN_PROGRESS, STARTING, RUNNING, INSTALL_ERROR, LAUNCHED, LAUNCH_ERROR, INSTALL_IN_PROGRESS)
 }
 
 @js.native
@@ -95,8 +151,20 @@ object JobResourceType {
 sealed trait JobType extends js.Any
 object JobType {
   val OTA = "OTA".asInstanceOf[JobType]
+  val REBOOT = "REBOOT".asInstanceOf[JobType]
 
-  @inline def values: js.Array[JobType] = js.Array(OTA)
+  @inline def values: js.Array[JobType] = js.Array(OTA, REBOOT)
+}
+
+@js.native
+sealed trait ListDevicesSortBy extends js.Any
+object ListDevicesSortBy {
+  val DEVICE_ID = "DEVICE_ID".asInstanceOf[ListDevicesSortBy]
+  val CREATED_TIME = "CREATED_TIME".asInstanceOf[ListDevicesSortBy]
+  val NAME = "NAME".asInstanceOf[ListDevicesSortBy]
+  val DEVICE_AGGREGATED_STATUS = "DEVICE_AGGREGATED_STATUS".asInstanceOf[ListDevicesSortBy]
+
+  @inline def values: js.Array[ListDevicesSortBy] = js.Array(DEVICE_ID, CREATED_TIME, NAME, DEVICE_AGGREGATED_STATUS)
 }
 
 @js.native
@@ -104,8 +172,9 @@ sealed trait NetworkConnectionStatus extends js.Any
 object NetworkConnectionStatus {
   val CONNECTED = "CONNECTED".asInstanceOf[NetworkConnectionStatus]
   val NOT_CONNECTED = "NOT_CONNECTED".asInstanceOf[NetworkConnectionStatus]
+  val CONNECTING = "CONNECTING".asInstanceOf[NetworkConnectionStatus]
 
-  @inline def values: js.Array[NetworkConnectionStatus] = js.Array(CONNECTED, NOT_CONNECTED)
+  @inline def values: js.Array[NetworkConnectionStatus] = js.Array(CONNECTED, NOT_CONNECTED, CONNECTING)
 }
 
 @js.native
@@ -135,8 +204,18 @@ object NodeInstanceStatus {
   val RUNNING = "RUNNING".asInstanceOf[NodeInstanceStatus]
   val ERROR = "ERROR".asInstanceOf[NodeInstanceStatus]
   val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[NodeInstanceStatus]
+  val PAUSED = "PAUSED".asInstanceOf[NodeInstanceStatus]
 
-  @inline def values: js.Array[NodeInstanceStatus] = js.Array(RUNNING, ERROR, NOT_AVAILABLE)
+  @inline def values: js.Array[NodeInstanceStatus] = js.Array(RUNNING, ERROR, NOT_AVAILABLE, PAUSED)
+}
+
+@js.native
+sealed trait NodeSignalValue extends js.Any
+object NodeSignalValue {
+  val PAUSE = "PAUSE".asInstanceOf[NodeSignalValue]
+  val RESUME = "RESUME".asInstanceOf[NodeSignalValue]
+
+  @inline def values: js.Array[NodeSignalValue] = js.Array(PAUSE, RESUME)
 }
 
 @js.native
@@ -153,8 +232,9 @@ object PackageImportJobStatus {
 sealed trait PackageImportJobType extends js.Any
 object PackageImportJobType {
   val NODE_PACKAGE_VERSION = "NODE_PACKAGE_VERSION".asInstanceOf[PackageImportJobType]
+  val MARKETPLACE_NODE_PACKAGE_VERSION = "MARKETPLACE_NODE_PACKAGE_VERSION".asInstanceOf[PackageImportJobType]
 
-  @inline def values: js.Array[PackageImportJobType] = js.Array(NODE_PACKAGE_VERSION)
+  @inline def values: js.Array[PackageImportJobType] = js.Array(NODE_PACKAGE_VERSION, MARKETPLACE_NODE_PACKAGE_VERSION)
 }
 
 @js.native
@@ -181,6 +261,15 @@ object PortType {
 }
 
 @js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
+}
+
+@js.native
 sealed trait StatusFilter extends js.Any
 object StatusFilter {
   val DEPLOYMENT_SUCCEEDED = "DEPLOYMENT_SUCCEEDED".asInstanceOf[StatusFilter]
@@ -189,8 +278,9 @@ object StatusFilter {
   val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[StatusFilter]
   val PROCESSING_DEPLOYMENT = "PROCESSING_DEPLOYMENT".asInstanceOf[StatusFilter]
   val PROCESSING_REMOVAL = "PROCESSING_REMOVAL".asInstanceOf[StatusFilter]
+  val DEPLOYMENT_FAILED = "DEPLOYMENT_FAILED".asInstanceOf[StatusFilter]
 
-  @inline def values: js.Array[StatusFilter] = js.Array(DEPLOYMENT_SUCCEEDED, DEPLOYMENT_ERROR, REMOVAL_SUCCEEDED, REMOVAL_FAILED, PROCESSING_DEPLOYMENT, PROCESSING_REMOVAL)
+  @inline def values: js.Array[StatusFilter] = js.Array(DEPLOYMENT_SUCCEEDED, DEPLOYMENT_ERROR, REMOVAL_SUCCEEDED, REMOVAL_FAILED, PROCESSING_DEPLOYMENT, PROCESSING_REMOVAL, DEPLOYMENT_FAILED)
 }
 
 @js.native

@@ -2,6 +2,14 @@ package facade.amazonaws.services.proton
 
 import scalajs.js
 
+type ComponentDeploymentUpdateType = "NONE" | "CURRENT_VERSION"
+object ComponentDeploymentUpdateType {
+  inline val NONE: "NONE" = "NONE"
+  inline val CURRENT_VERSION: "CURRENT_VERSION" = "CURRENT_VERSION"
+
+  inline def values: js.Array[ComponentDeploymentUpdateType] = js.Array(NONE, CURRENT_VERSION)
+}
+
 type DeploymentStatus = "IN_PROGRESS" | "FAILED" | "SUCCEEDED" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "CANCELLING" | "CANCELLED"
 object DeploymentStatus {
   inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
@@ -41,6 +49,46 @@ object EnvironmentAccountConnectionStatus {
   inline val REJECTED: "REJECTED" = "REJECTED"
 
   inline def values: js.Array[EnvironmentAccountConnectionStatus] = js.Array(PENDING, CONNECTED, REJECTED)
+}
+
+type ListServiceInstancesFilterBy = "name" | "deploymentStatus" | "templateName" | "serviceName" | "deployedTemplateVersionStatus" | "environmentName" | "lastDeploymentAttemptedAtBefore" | "lastDeploymentAttemptedAtAfter" | "createdAtBefore" | "createdAtAfter"
+object ListServiceInstancesFilterBy {
+  inline val name: "name" = "name"
+  inline val deploymentStatus: "deploymentStatus" = "deploymentStatus"
+  inline val templateName: "templateName" = "templateName"
+  inline val serviceName: "serviceName" = "serviceName"
+  inline val deployedTemplateVersionStatus: "deployedTemplateVersionStatus" = "deployedTemplateVersionStatus"
+  inline val environmentName: "environmentName" = "environmentName"
+  inline val lastDeploymentAttemptedAtBefore: "lastDeploymentAttemptedAtBefore" = "lastDeploymentAttemptedAtBefore"
+  inline val lastDeploymentAttemptedAtAfter: "lastDeploymentAttemptedAtAfter" = "lastDeploymentAttemptedAtAfter"
+  inline val createdAtBefore: "createdAtBefore" = "createdAtBefore"
+  inline val createdAtAfter: "createdAtAfter" = "createdAtAfter"
+
+  inline def values: js.Array[ListServiceInstancesFilterBy] = js.Array(
+    name,
+    deploymentStatus,
+    templateName,
+    serviceName,
+    deployedTemplateVersionStatus,
+    environmentName,
+    lastDeploymentAttemptedAtBefore,
+    lastDeploymentAttemptedAtAfter,
+    createdAtBefore,
+    createdAtAfter
+  )
+}
+
+type ListServiceInstancesSortBy = "name" | "deploymentStatus" | "templateName" | "serviceName" | "environmentName" | "lastDeploymentAttemptedAt" | "createdAt"
+object ListServiceInstancesSortBy {
+  inline val name: "name" = "name"
+  inline val deploymentStatus: "deploymentStatus" = "deploymentStatus"
+  inline val templateName: "templateName" = "templateName"
+  inline val serviceName: "serviceName" = "serviceName"
+  inline val environmentName: "environmentName" = "environmentName"
+  inline val lastDeploymentAttemptedAt: "lastDeploymentAttemptedAt" = "lastDeploymentAttemptedAt"
+  inline val createdAt: "createdAt" = "createdAt"
+
+  inline def values: js.Array[ListServiceInstancesSortBy] = js.Array(name, deploymentStatus, templateName, serviceName, environmentName, lastDeploymentAttemptedAt, createdAt)
 }
 
 /** List of provisioning engines
@@ -134,6 +182,21 @@ object ServiceStatus {
     UPDATE_FAILED,
     UPDATE_COMPLETE_CLEANUP_FAILED
   )
+}
+
+type ServiceTemplateSupportedComponentSourceType = "DIRECTLY_DEFINED"
+object ServiceTemplateSupportedComponentSourceType {
+  inline val DIRECTLY_DEFINED: "DIRECTLY_DEFINED" = "DIRECTLY_DEFINED"
+
+  inline def values: js.Array[ServiceTemplateSupportedComponentSourceType] = js.Array(DIRECTLY_DEFINED)
+}
+
+type SortOrder = "ASCENDING" | "DESCENDING"
+object SortOrder {
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
+
+  inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 type SyncType = "TEMPLATE_SYNC"

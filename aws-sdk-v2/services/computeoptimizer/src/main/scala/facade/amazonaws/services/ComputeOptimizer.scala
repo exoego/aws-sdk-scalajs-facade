@@ -42,6 +42,7 @@ package object computeoptimizer {
   type High = Double
   type Identifier = String
   type IncludeMemberAccounts = Boolean
+  type InferredWorkloadTypes = js.Array[InferredWorkloadType]
   type InstanceArn = String
   type InstanceArns = js.Array[InstanceArn]
   type InstanceName = String
@@ -230,6 +231,7 @@ package object computeoptimizer {
     var currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk]
     var effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences]
     var finding: js.UndefOr[Finding]
+    var inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypes]
     var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
     var lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays]
     var recommendationOptions: js.UndefOr[AutoScalingGroupRecommendationOptions]
@@ -246,6 +248,7 @@ package object computeoptimizer {
         currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk] = js.undefined,
         effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences] = js.undefined,
         finding: js.UndefOr[Finding] = js.undefined,
+        inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypes] = js.undefined,
         lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
         lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays] = js.undefined,
         recommendationOptions: js.UndefOr[AutoScalingGroupRecommendationOptions] = js.undefined,
@@ -259,6 +262,7 @@ package object computeoptimizer {
       currentPerformanceRisk.foreach(__v => __obj.updateDynamic("currentPerformanceRisk")(__v.asInstanceOf[js.Any]))
       effectiveRecommendationPreferences.foreach(__v => __obj.updateDynamic("effectiveRecommendationPreferences")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
+      inferredWorkloadTypes.foreach(__v => __obj.updateDynamic("inferredWorkloadTypes")(__v.asInstanceOf[js.Any]))
       lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
       lookBackPeriodInDays.foreach(__v => __obj.updateDynamic("lookBackPeriodInDays")(__v.asInstanceOf[js.Any]))
       recommendationOptions.foreach(__v => __obj.updateDynamic("recommendationOptions")(__v.asInstanceOf[js.Any]))
@@ -272,6 +276,7 @@ package object computeoptimizer {
   @js.native
   trait AutoScalingGroupRecommendationOption extends js.Object {
     var configuration: js.UndefOr[AutoScalingGroupConfiguration]
+    var migrationEffort: js.UndefOr[MigrationEffort]
     var performanceRisk: js.UndefOr[PerformanceRisk]
     var projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics]
     var rank: js.UndefOr[Rank]
@@ -282,6 +287,7 @@ package object computeoptimizer {
     @inline
     def apply(
         configuration: js.UndefOr[AutoScalingGroupConfiguration] = js.undefined,
+        migrationEffort: js.UndefOr[MigrationEffort] = js.undefined,
         performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
         projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics] = js.undefined,
         rank: js.UndefOr[Rank] = js.undefined,
@@ -289,6 +295,7 @@ package object computeoptimizer {
     ): AutoScalingGroupRecommendationOption = {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      migrationEffort.foreach(__v => __obj.updateDynamic("migrationEffort")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
       projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
@@ -454,17 +461,23 @@ package object computeoptimizer {
   trait EffectiveRecommendationPreferences extends js.Object {
     var cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures]
     var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var externalMetricsPreference: js.UndefOr[ExternalMetricsPreference]
+    var inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference]
   }
 
   object EffectiveRecommendationPreferences {
     @inline
     def apply(
         cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures] = js.undefined,
-        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        externalMetricsPreference: js.UndefOr[ExternalMetricsPreference] = js.undefined,
+        inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference] = js.undefined
     ): EffectiveRecommendationPreferences = {
       val __obj = js.Dynamic.literal()
       cpuVendorArchitectures.foreach(__v => __obj.updateDynamic("cpuVendorArchitectures")(__v.asInstanceOf[js.Any]))
       enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      externalMetricsPreference.foreach(__v => __obj.updateDynamic("externalMetricsPreference")(__v.asInstanceOf[js.Any]))
+      inferredWorkloadTypes.foreach(__v => __obj.updateDynamic("inferredWorkloadTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EffectiveRecommendationPreferences]
     }
   }
@@ -490,7 +503,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes the estimated monthly savings amount possible for a given resource based on On-Demand instance pricing For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation|Estimated monthly savings and savings opportunities]] in the <i>Compute Optimizer User Guide</i>.
+  /** Describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation|Estimated monthly savings and savings opportunities]] in the <i>Compute Optimizer User Guide</i>.
     */
   @js.native
   trait EstimatedMonthlySavings extends js.Object {
@@ -743,6 +756,24 @@ package object computeoptimizer {
     }
   }
 
+  /** Describes the external metrics preferences for EC2 rightsizing recommendations.
+    */
+  @js.native
+  trait ExternalMetricsPreference extends js.Object {
+    var source: js.UndefOr[ExternalMetricsSource]
+  }
+
+  object ExternalMetricsPreference {
+    @inline
+    def apply(
+        source: js.UndefOr[ExternalMetricsSource] = js.undefined
+    ): ExternalMetricsPreference = {
+      val __obj = js.Dynamic.literal()
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExternalMetricsPreference]
+    }
+  }
+
   /** Describes a filter that returns a more specific list of recommendations. Use this filter with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions. You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action.
     */
   @js.native
@@ -989,15 +1020,18 @@ package object computeoptimizer {
   @js.native
   trait GetEffectiveRecommendationPreferencesResponse extends js.Object {
     var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var externalMetricsPreference: js.UndefOr[ExternalMetricsPreference]
   }
 
   object GetEffectiveRecommendationPreferencesResponse {
     @inline
     def apply(
-        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        externalMetricsPreference: js.UndefOr[ExternalMetricsPreference] = js.undefined
     ): GetEffectiveRecommendationPreferencesResponse = {
       val __obj = js.Dynamic.literal()
       enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      externalMetricsPreference.foreach(__v => __obj.updateDynamic("externalMetricsPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEffectiveRecommendationPreferencesResponse]
     }
   }
@@ -1250,6 +1284,7 @@ package object computeoptimizer {
     var effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences]
     var finding: js.UndefOr[Finding]
     var findingReasonCodes: js.UndefOr[InstanceRecommendationFindingReasonCodes]
+    var inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypes]
     var instanceArn: js.UndefOr[InstanceArn]
     var instanceName: js.UndefOr[InstanceName]
     var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
@@ -1268,6 +1303,7 @@ package object computeoptimizer {
         effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences] = js.undefined,
         finding: js.UndefOr[Finding] = js.undefined,
         findingReasonCodes: js.UndefOr[InstanceRecommendationFindingReasonCodes] = js.undefined,
+        inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypes] = js.undefined,
         instanceArn: js.UndefOr[InstanceArn] = js.undefined,
         instanceName: js.UndefOr[InstanceName] = js.undefined,
         lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
@@ -1283,6 +1319,7 @@ package object computeoptimizer {
       effectiveRecommendationPreferences.foreach(__v => __obj.updateDynamic("effectiveRecommendationPreferences")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
       findingReasonCodes.foreach(__v => __obj.updateDynamic("findingReasonCodes")(__v.asInstanceOf[js.Any]))
+      inferredWorkloadTypes.foreach(__v => __obj.updateDynamic("inferredWorkloadTypes")(__v.asInstanceOf[js.Any]))
       instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
       instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
       lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
@@ -1299,6 +1336,7 @@ package object computeoptimizer {
   @js.native
   trait InstanceRecommendationOption extends js.Object {
     var instanceType: js.UndefOr[InstanceType]
+    var migrationEffort: js.UndefOr[MigrationEffort]
     var performanceRisk: js.UndefOr[PerformanceRisk]
     var platformDifferences: js.UndefOr[PlatformDifferences]
     var projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics]
@@ -1310,6 +1348,7 @@ package object computeoptimizer {
     @inline
     def apply(
         instanceType: js.UndefOr[InstanceType] = js.undefined,
+        migrationEffort: js.UndefOr[MigrationEffort] = js.undefined,
         performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
         platformDifferences: js.UndefOr[PlatformDifferences] = js.undefined,
         projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics] = js.undefined,
@@ -1318,6 +1357,7 @@ package object computeoptimizer {
     ): InstanceRecommendationOption = {
       val __obj = js.Dynamic.literal()
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      migrationEffort.foreach(__v => __obj.updateDynamic("migrationEffort")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
       platformDifferences.foreach(__v => __obj.updateDynamic("platformDifferences")(__v.asInstanceOf[js.Any]))
       projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
@@ -1525,6 +1565,8 @@ package object computeoptimizer {
   trait PutRecommendationPreferencesRequest extends js.Object {
     var resourceType: ResourceType
     var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var externalMetricsPreference: js.UndefOr[ExternalMetricsPreference]
+    var inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference]
     var scope: js.UndefOr[Scope]
   }
 
@@ -1533,6 +1575,8 @@ package object computeoptimizer {
     def apply(
         resourceType: ResourceType,
         enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        externalMetricsPreference: js.UndefOr[ExternalMetricsPreference] = js.undefined,
+        inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference] = js.undefined,
         scope: js.UndefOr[Scope] = js.undefined
     ): PutRecommendationPreferencesRequest = {
       val __obj = js.Dynamic.literal(
@@ -1540,6 +1584,8 @@ package object computeoptimizer {
       )
 
       enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      externalMetricsPreference.foreach(__v => __obj.updateDynamic("externalMetricsPreference")(__v.asInstanceOf[js.Any]))
+      inferredWorkloadTypes.foreach(__v => __obj.updateDynamic("inferredWorkloadTypes")(__v.asInstanceOf[js.Any]))
       scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRecommendationPreferencesRequest]
     }
@@ -1636,6 +1682,8 @@ package object computeoptimizer {
   @js.native
   trait RecommendationPreferencesDetail extends js.Object {
     var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var externalMetricsPreference: js.UndefOr[ExternalMetricsPreference]
+    var inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference]
     var resourceType: js.UndefOr[ResourceType]
     var scope: js.UndefOr[Scope]
   }
@@ -1644,11 +1692,15 @@ package object computeoptimizer {
     @inline
     def apply(
         enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        externalMetricsPreference: js.UndefOr[ExternalMetricsPreference] = js.undefined,
+        inferredWorkloadTypes: js.UndefOr[InferredWorkloadTypesPreference] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined,
         scope: js.UndefOr[Scope] = js.undefined
     ): RecommendationPreferencesDetail = {
       val __obj = js.Dynamic.literal()
       enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      externalMetricsPreference.foreach(__v => __obj.updateDynamic("externalMetricsPreference")(__v.asInstanceOf[js.Any]))
+      inferredWorkloadTypes.foreach(__v => __obj.updateDynamic("inferredWorkloadTypes")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendationPreferencesDetail]
@@ -1801,7 +1853,7 @@ package object computeoptimizer {
 
   /** Describes the scope of a recommendation preference. Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html|Activating enhanced infrastructure metrics]] in the <i>Compute Optimizer User Guide</i>.
     *
-    * '''Note:'''You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.
+    * '''Note:'''You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.
     */
   @js.native
   trait Scope extends js.Object {

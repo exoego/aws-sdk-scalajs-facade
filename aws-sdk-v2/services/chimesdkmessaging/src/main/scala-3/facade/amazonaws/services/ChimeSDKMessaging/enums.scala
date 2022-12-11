@@ -121,6 +121,21 @@ object PushNotificationType {
   inline def values: js.Array[PushNotificationType] = js.Array(DEFAULT, VOIP)
 }
 
+type SearchFieldKey = "MEMBERS"
+object SearchFieldKey {
+  inline val MEMBERS: "MEMBERS" = "MEMBERS"
+
+  inline def values: js.Array[SearchFieldKey] = js.Array(MEMBERS)
+}
+
+type SearchFieldOperator = "EQUALS" | "INCLUDES"
+object SearchFieldOperator {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val INCLUDES: "INCLUDES" = "INCLUDES"
+
+  inline def values: js.Array[SearchFieldOperator] = js.Array(EQUALS, INCLUDES)
+}
+
 type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
   inline val ASCENDING: "ASCENDING" = "ASCENDING"

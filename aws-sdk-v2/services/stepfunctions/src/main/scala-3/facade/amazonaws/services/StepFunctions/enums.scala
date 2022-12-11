@@ -13,8 +13,8 @@ object ExecutionStatus {
   inline def values: js.Array[ExecutionStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
 }
 
-type HistoryEventType = "ActivityFailed" | "ActivityScheduled" | "ActivityScheduleFailed" | "ActivityStarted" | "ActivitySucceeded" | "ActivityTimedOut" | "ChoiceStateEntered" | "ChoiceStateExited" | "ExecutionAborted" | "ExecutionFailed" | "ExecutionStarted" | "ExecutionSucceeded" | "ExecutionTimedOut" | "FailStateEntered" | "LambdaFunctionFailed" | "LambdaFunctionScheduled" | "LambdaFunctionScheduleFailed" | "LambdaFunctionStarted" | "LambdaFunctionStartFailed" | "LambdaFunctionSucceeded" | "LambdaFunctionTimedOut" | "MapIterationAborted" | "MapIterationFailed" | "MapIterationStarted" | "MapIterationSucceeded" | "MapStateAborted" | "MapStateEntered" | "MapStateExited" | "MapStateFailed" | "MapStateStarted" | "MapStateSucceeded" | "ParallelStateAborted" | "ParallelStateEntered" | "ParallelStateExited" | "ParallelStateFailed" | "ParallelStateStarted" | "ParallelStateSucceeded" | "PassStateEntered" | "PassStateExited" | "SucceedStateEntered" | "SucceedStateExited" | "TaskFailed" |
-  "TaskScheduled" | "TaskStarted" | "TaskStartFailed" | "TaskStateAborted" | "TaskStateEntered" | "TaskStateExited" | "TaskSubmitFailed" | "TaskSubmitted" | "TaskSucceeded" | "TaskTimedOut" | "WaitStateAborted" | "WaitStateEntered" | "WaitStateExited"
+type HistoryEventType =
+  "ActivityFailed" | "ActivityScheduled" | "ActivityScheduleFailed" | "ActivityStarted" | "ActivitySucceeded" | "ActivityTimedOut" | "ChoiceStateEntered" | "ChoiceStateExited" | "ExecutionAborted" | "ExecutionFailed" | "ExecutionStarted" | "ExecutionSucceeded" | "ExecutionTimedOut" | "FailStateEntered" | "LambdaFunctionFailed" | "LambdaFunctionScheduled" | "LambdaFunctionScheduleFailed" | "LambdaFunctionStarted" | "LambdaFunctionStartFailed" | "LambdaFunctionSucceeded" | "LambdaFunctionTimedOut" | "MapIterationAborted" | "MapIterationFailed" | "MapIterationStarted" | "MapIterationSucceeded" | "MapStateAborted" | "MapStateEntered" | "MapStateExited" | "MapStateFailed" | "MapStateStarted" | "MapStateSucceeded" | "ParallelStateAborted" | "ParallelStateEntered" | "ParallelStateExited" | "ParallelStateFailed" | "ParallelStateStarted" | "ParallelStateSucceeded" | "PassStateEntered" | "PassStateExited" | "SucceedStateEntered" | "SucceedStateExited" | "TaskFailed" | "TaskScheduled" | "TaskStarted" | "TaskStartFailed" | "TaskStateAborted" | "TaskStateEntered" | "TaskStateExited" | "TaskSubmitFailed" | "TaskSubmitted" | "TaskSucceeded" | "TaskTimedOut" | "WaitStateAborted" | "WaitStateEntered" | "WaitStateExited" | "MapRunAborted" | "MapRunFailed" | "MapRunStarted" | "MapRunSucceeded"
 object HistoryEventType {
   inline val ActivityFailed: "ActivityFailed" = "ActivityFailed"
   inline val ActivityScheduled: "ActivityScheduled" = "ActivityScheduled"
@@ -71,6 +71,10 @@ object HistoryEventType {
   inline val WaitStateAborted: "WaitStateAborted" = "WaitStateAborted"
   inline val WaitStateEntered: "WaitStateEntered" = "WaitStateEntered"
   inline val WaitStateExited: "WaitStateExited" = "WaitStateExited"
+  inline val MapRunAborted: "MapRunAborted" = "MapRunAborted"
+  inline val MapRunFailed: "MapRunFailed" = "MapRunFailed"
+  inline val MapRunStarted: "MapRunStarted" = "MapRunStarted"
+  inline val MapRunSucceeded: "MapRunSucceeded" = "MapRunSucceeded"
 
   inline def values: js.Array[HistoryEventType] = js.Array(
     ActivityFailed,
@@ -127,7 +131,11 @@ object HistoryEventType {
     TaskTimedOut,
     WaitStateAborted,
     WaitStateEntered,
-    WaitStateExited
+    WaitStateExited,
+    MapRunAborted,
+    MapRunFailed,
+    MapRunStarted,
+    MapRunSucceeded
   )
 }
 
@@ -139,6 +147,16 @@ object LogLevel {
   inline val OFF: "OFF" = "OFF"
 
   inline def values: js.Array[LogLevel] = js.Array(ALL, ERROR, FATAL, OFF)
+}
+
+type MapRunStatus = "RUNNING" | "SUCCEEDED" | "FAILED" | "ABORTED"
+object MapRunStatus {
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val ABORTED: "ABORTED" = "ABORTED"
+
+  inline def values: js.Array[MapRunStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, ABORTED)
 }
 
 type StateMachineStatus = "ACTIVE" | "DELETING"

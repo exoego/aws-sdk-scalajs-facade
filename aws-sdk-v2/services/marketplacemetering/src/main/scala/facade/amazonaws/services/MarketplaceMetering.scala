@@ -9,6 +9,7 @@ import facade.amazonaws._
 
 package object marketplacemetering {
   type AllocatedUsageQuantity = Int
+  type CustomerAWSAccountId = String
   type CustomerIdentifier = String
   type NonEmptyString = String
   type Nonce = String
@@ -49,7 +50,7 @@ package object marketplacemetering {
     }
   }
 
-  /** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application.
+  /** A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application.
     */
   @js.native
   trait BatchMeterUsageRequest extends js.Object {
@@ -71,7 +72,7 @@ package object marketplacemetering {
     }
   }
 
-  /** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error.
+  /** Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and any records that have failed due to transient error.
     */
   @js.native
   trait BatchMeterUsageResult extends js.Object {
@@ -184,7 +185,7 @@ package object marketplacemetering {
     }
   }
 
-  /** Contains input to the ResolveCustomer operation.
+  /** Contains input to the <code>ResolveCustomer</code> operation.
     */
   @js.native
   trait ResolveCustomerRequest extends js.Object {
@@ -203,10 +204,11 @@ package object marketplacemetering {
     }
   }
 
-  /** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code.
+  /** The result of the <code>ResolveCustomer</code> operation. Contains the <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.
     */
   @js.native
   trait ResolveCustomerResult extends js.Object {
+    var CustomerAWSAccountId: js.UndefOr[CustomerAWSAccountId]
     var CustomerIdentifier: js.UndefOr[CustomerIdentifier]
     var ProductCode: js.UndefOr[ProductCode]
   }
@@ -214,17 +216,19 @@ package object marketplacemetering {
   object ResolveCustomerResult {
     @inline
     def apply(
+        CustomerAWSAccountId: js.UndefOr[CustomerAWSAccountId] = js.undefined,
         CustomerIdentifier: js.UndefOr[CustomerIdentifier] = js.undefined,
         ProductCode: js.UndefOr[ProductCode] = js.undefined
     ): ResolveCustomerResult = {
       val __obj = js.Dynamic.literal()
+      CustomerAWSAccountId.foreach(__v => __obj.updateDynamic("CustomerAWSAccountId")(__v.asInstanceOf[js.Any]))
       CustomerIdentifier.foreach(__v => __obj.updateDynamic("CustomerIdentifier")(__v.asInstanceOf[js.Any]))
       ProductCode.foreach(__v => __obj.updateDynamic("ProductCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolveCustomerResult]
     }
   }
 
-  /** Metadata assigned to an allocation. Each tag is made up of a key and a value.
+  /** Metadata assigned to an allocation. Each tag is made up of a <code>key</code> and a <code>value</code>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -246,7 +250,7 @@ package object marketplacemetering {
     }
   }
 
-  /** Usage allocations allow you to split usage into buckets by tags. Each UsageAllocation indicates the usage quantity for a specific set of tags.
+  /** Usage allocations allow you to split usage into buckets by tags. Each <code>UsageAllocation</code> indicates the usage quantity for a specific set of tags.
     */
   @js.native
   trait UsageAllocation extends js.Object {
@@ -269,7 +273,7 @@ package object marketplacemetering {
     }
   }
 
-  /** A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time. Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.
+  /** A <code>UsageRecord</code> indicates a quantity of usage for a given product, customer, dimension and time. Multiple requests with the same <code>UsageRecords</code> as input will be de-duplicated to prevent double charges.
     */
   @js.native
   trait UsageRecord extends js.Object {
@@ -301,7 +305,7 @@ package object marketplacemetering {
     }
   }
 
-  /** A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage.
+  /** A <code>UsageRecordResult</code> indicates the status of a given <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.
     */
   @js.native
   trait UsageRecordResult extends js.Object {

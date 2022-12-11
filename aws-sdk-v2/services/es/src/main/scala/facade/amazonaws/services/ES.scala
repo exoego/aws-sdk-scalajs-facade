@@ -9,12 +9,18 @@ import facade.amazonaws._
 
 package object es {
   type ARN = String
+  type AWSAccount = String
   type AdditionalLimitList = js.Array[AdditionalLimit]
   type AdvancedOptions = js.Dictionary[String]
+  type AuthorizedPrincipalList = js.Array[AuthorizedPrincipal]
   type AutoTuneDate = js.Date
   type AutoTuneList = js.Array[AutoTune]
   type AutoTuneMaintenanceScheduleList = js.Array[AutoTuneMaintenanceSchedule]
   type BackendRole = String
+  type ChangeProgressStageList = js.Array[ChangeProgressStage]
+  type ChangeProgressStageName = String
+  type ChangeProgressStageStatus = String
+  type ClientToken = String
   type CloudWatchLogsLogGroupArn = String
   type CommitMessage = String
   type CompatibleElasticsearchVersionsList = js.Array[CompatibleVersionsMap]
@@ -27,6 +33,9 @@ package object es {
   type DescribePackagesFilterList = js.Array[DescribePackagesFilter]
   type DescribePackagesFilterValue = String
   type DescribePackagesFilterValues = js.Array[DescribePackagesFilterValue]
+  type Description = String
+  type DisableTimestamp = js.Date
+  type DomainArn = String
   type DomainId = String
   type DomainInfoList = js.Array[DomainInfo]
   type DomainName = String
@@ -39,6 +48,7 @@ package object es {
   type ElasticsearchInstanceTypeList = js.Array[ESPartitionInstanceType]
   type ElasticsearchVersionList = js.Array[ElasticsearchVersionString]
   type ElasticsearchVersionString = String
+  type Endpoint = String
   type EndpointsMap = js.Dictionary[ServiceUrl]
   type ErrorMessage = String
   type ErrorType = String
@@ -97,6 +107,7 @@ package object es {
   type TagKey = String
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TotalNumberOfStages = Int
   type UIntValue = Int
   type UpdateTimestamp = js.Date
   type UpgradeHistoryList = js.Array[UpgradeHistory]
@@ -105,22 +116,31 @@ package object es {
   type UserPoolId = String
   type Username = String
   type ValueStringList = js.Array[NonEmptyString]
+  type VpcEndpointErrorList = js.Array[VpcEndpointError]
+  type VpcEndpointId = String
+  type VpcEndpointIdList = js.Array[VpcEndpointId]
+  type VpcEndpointSummaryList = js.Array[VpcEndpointSummary]
+  type VpcEndpoints = js.Array[VpcEndpoint]
 
   final class ESOps(private val service: ES) extends AnyVal {
 
     @inline def acceptInboundCrossClusterSearchConnectionFuture(params: AcceptInboundCrossClusterSearchConnectionRequest): Future[AcceptInboundCrossClusterSearchConnectionResponse] = service.acceptInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise().toFuture
     @inline def associatePackageFuture(params: AssociatePackageRequest): Future[AssociatePackageResponse] = service.associatePackage(params).promise().toFuture
+    @inline def authorizeVpcEndpointAccessFuture(params: AuthorizeVpcEndpointAccessRequest): Future[AuthorizeVpcEndpointAccessResponse] = service.authorizeVpcEndpointAccess(params).promise().toFuture
     @inline def cancelElasticsearchServiceSoftwareUpdateFuture(params: CancelElasticsearchServiceSoftwareUpdateRequest): Future[CancelElasticsearchServiceSoftwareUpdateResponse] = service.cancelElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def createElasticsearchDomainFuture(params: CreateElasticsearchDomainRequest): Future[CreateElasticsearchDomainResponse] = service.createElasticsearchDomain(params).promise().toFuture
     @inline def createOutboundCrossClusterSearchConnectionFuture(params: CreateOutboundCrossClusterSearchConnectionRequest): Future[CreateOutboundCrossClusterSearchConnectionResponse] = service.createOutboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def createPackageFuture(params: CreatePackageRequest): Future[CreatePackageResponse] = service.createPackage(params).promise().toFuture
+    @inline def createVpcEndpointFuture(params: CreateVpcEndpointRequest): Future[CreateVpcEndpointResponse] = service.createVpcEndpoint(params).promise().toFuture
     @inline def deleteElasticsearchDomainFuture(params: DeleteElasticsearchDomainRequest): Future[DeleteElasticsearchDomainResponse] = service.deleteElasticsearchDomain(params).promise().toFuture
     @inline def deleteElasticsearchServiceRoleFuture(): Future[js.Object] = service.deleteElasticsearchServiceRole().promise().toFuture
     @inline def deleteInboundCrossClusterSearchConnectionFuture(params: DeleteInboundCrossClusterSearchConnectionRequest): Future[DeleteInboundCrossClusterSearchConnectionResponse] = service.deleteInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def deleteOutboundCrossClusterSearchConnectionFuture(params: DeleteOutboundCrossClusterSearchConnectionRequest): Future[DeleteOutboundCrossClusterSearchConnectionResponse] = service.deleteOutboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def deletePackageFuture(params: DeletePackageRequest): Future[DeletePackageResponse] = service.deletePackage(params).promise().toFuture
+    @inline def deleteVpcEndpointFuture(params: DeleteVpcEndpointRequest): Future[DeleteVpcEndpointResponse] = service.deleteVpcEndpoint(params).promise().toFuture
     @inline def describeDomainAutoTunesFuture(params: DescribeDomainAutoTunesRequest): Future[DescribeDomainAutoTunesResponse] = service.describeDomainAutoTunes(params).promise().toFuture
+    @inline def describeDomainChangeProgressFuture(params: DescribeDomainChangeProgressRequest): Future[DescribeDomainChangeProgressResponse] = service.describeDomainChangeProgress(params).promise().toFuture
     @inline def describeElasticsearchDomainConfigFuture(params: DescribeElasticsearchDomainConfigRequest): Future[DescribeElasticsearchDomainConfigResponse] = service.describeElasticsearchDomainConfig(params).promise().toFuture
     @inline def describeElasticsearchDomainFuture(params: DescribeElasticsearchDomainRequest): Future[DescribeElasticsearchDomainResponse] = service.describeElasticsearchDomain(params).promise().toFuture
     @inline def describeElasticsearchDomainsFuture(params: DescribeElasticsearchDomainsRequest): Future[DescribeElasticsearchDomainsResponse] = service.describeElasticsearchDomains(params).promise().toFuture
@@ -130,6 +150,7 @@ package object es {
     @inline def describePackagesFuture(params: DescribePackagesRequest): Future[DescribePackagesResponse] = service.describePackages(params).promise().toFuture
     @inline def describeReservedElasticsearchInstanceOfferingsFuture(params: DescribeReservedElasticsearchInstanceOfferingsRequest): Future[DescribeReservedElasticsearchInstanceOfferingsResponse] = service.describeReservedElasticsearchInstanceOfferings(params).promise().toFuture
     @inline def describeReservedElasticsearchInstancesFuture(params: DescribeReservedElasticsearchInstancesRequest): Future[DescribeReservedElasticsearchInstancesResponse] = service.describeReservedElasticsearchInstances(params).promise().toFuture
+    @inline def describeVpcEndpointsFuture(params: DescribeVpcEndpointsRequest): Future[DescribeVpcEndpointsResponse] = service.describeVpcEndpoints(params).promise().toFuture
     @inline def dissociatePackageFuture(params: DissociatePackageRequest): Future[DissociatePackageResponse] = service.dissociatePackage(params).promise().toFuture
     @inline def getCompatibleElasticsearchVersionsFuture(params: GetCompatibleElasticsearchVersionsRequest): Future[GetCompatibleElasticsearchVersionsResponse] = service.getCompatibleElasticsearchVersions(params).promise().toFuture
     @inline def getPackageVersionHistoryFuture(params: GetPackageVersionHistoryRequest): Future[GetPackageVersionHistoryResponse] = service.getPackageVersionHistory(params).promise().toFuture
@@ -141,12 +162,17 @@ package object es {
     @inline def listElasticsearchVersionsFuture(params: ListElasticsearchVersionsRequest): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
     @inline def listPackagesForDomainFuture(params: ListPackagesForDomainRequest): Future[ListPackagesForDomainResponse] = service.listPackagesForDomain(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsRequest): Future[ListTagsResponse] = service.listTags(params).promise().toFuture
+    @inline def listVpcEndpointAccessFuture(params: ListVpcEndpointAccessRequest): Future[ListVpcEndpointAccessResponse] = service.listVpcEndpointAccess(params).promise().toFuture
+    @inline def listVpcEndpointsForDomainFuture(params: ListVpcEndpointsForDomainRequest): Future[ListVpcEndpointsForDomainResponse] = service.listVpcEndpointsForDomain(params).promise().toFuture
+    @inline def listVpcEndpointsFuture(params: ListVpcEndpointsRequest): Future[ListVpcEndpointsResponse] = service.listVpcEndpoints(params).promise().toFuture
     @inline def purchaseReservedElasticsearchInstanceOfferingFuture(params: PurchaseReservedElasticsearchInstanceOfferingRequest): Future[PurchaseReservedElasticsearchInstanceOfferingResponse] = service.purchaseReservedElasticsearchInstanceOffering(params).promise().toFuture
     @inline def rejectInboundCrossClusterSearchConnectionFuture(params: RejectInboundCrossClusterSearchConnectionRequest): Future[RejectInboundCrossClusterSearchConnectionResponse] = service.rejectInboundCrossClusterSearchConnection(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsRequest): Future[js.Object] = service.removeTags(params).promise().toFuture
+    @inline def revokeVpcEndpointAccessFuture(params: RevokeVpcEndpointAccessRequest): Future[RevokeVpcEndpointAccessResponse] = service.revokeVpcEndpointAccess(params).promise().toFuture
     @inline def startElasticsearchServiceSoftwareUpdateFuture(params: StartElasticsearchServiceSoftwareUpdateRequest): Future[StartElasticsearchServiceSoftwareUpdateResponse] = service.startElasticsearchServiceSoftwareUpdate(params).promise().toFuture
     @inline def updateElasticsearchDomainConfigFuture(params: UpdateElasticsearchDomainConfigRequest): Future[UpdateElasticsearchDomainConfigResponse] = service.updateElasticsearchDomainConfig(params).promise().toFuture
     @inline def updatePackageFuture(params: UpdatePackageRequest): Future[UpdatePackageResponse] = service.updatePackage(params).promise().toFuture
+    @inline def updateVpcEndpointFuture(params: UpdateVpcEndpointRequest): Future[UpdateVpcEndpointResponse] = service.updateVpcEndpoint(params).promise().toFuture
     @inline def upgradeElasticsearchDomainFuture(params: UpgradeElasticsearchDomainRequest): Future[UpgradeElasticsearchDomainResponse] = service.upgradeElasticsearchDomain(params).promise().toFuture
 
   }
@@ -159,16 +185,20 @@ package object es {
     def acceptInboundCrossClusterSearchConnection(params: AcceptInboundCrossClusterSearchConnectionRequest): Request[AcceptInboundCrossClusterSearchConnectionResponse] = js.native
     def addTags(params: AddTagsRequest): Request[js.Object] = js.native
     def associatePackage(params: AssociatePackageRequest): Request[AssociatePackageResponse] = js.native
+    def authorizeVpcEndpointAccess(params: AuthorizeVpcEndpointAccessRequest): Request[AuthorizeVpcEndpointAccessResponse] = js.native
     def cancelElasticsearchServiceSoftwareUpdate(params: CancelElasticsearchServiceSoftwareUpdateRequest): Request[CancelElasticsearchServiceSoftwareUpdateResponse] = js.native
     def createElasticsearchDomain(params: CreateElasticsearchDomainRequest): Request[CreateElasticsearchDomainResponse] = js.native
     def createOutboundCrossClusterSearchConnection(params: CreateOutboundCrossClusterSearchConnectionRequest): Request[CreateOutboundCrossClusterSearchConnectionResponse] = js.native
     def createPackage(params: CreatePackageRequest): Request[CreatePackageResponse] = js.native
+    def createVpcEndpoint(params: CreateVpcEndpointRequest): Request[CreateVpcEndpointResponse] = js.native
     def deleteElasticsearchDomain(params: DeleteElasticsearchDomainRequest): Request[DeleteElasticsearchDomainResponse] = js.native
     def deleteElasticsearchServiceRole(): Request[js.Object] = js.native
     def deleteInboundCrossClusterSearchConnection(params: DeleteInboundCrossClusterSearchConnectionRequest): Request[DeleteInboundCrossClusterSearchConnectionResponse] = js.native
     def deleteOutboundCrossClusterSearchConnection(params: DeleteOutboundCrossClusterSearchConnectionRequest): Request[DeleteOutboundCrossClusterSearchConnectionResponse] = js.native
     def deletePackage(params: DeletePackageRequest): Request[DeletePackageResponse] = js.native
+    def deleteVpcEndpoint(params: DeleteVpcEndpointRequest): Request[DeleteVpcEndpointResponse] = js.native
     def describeDomainAutoTunes(params: DescribeDomainAutoTunesRequest): Request[DescribeDomainAutoTunesResponse] = js.native
+    def describeDomainChangeProgress(params: DescribeDomainChangeProgressRequest): Request[DescribeDomainChangeProgressResponse] = js.native
     def describeElasticsearchDomain(params: DescribeElasticsearchDomainRequest): Request[DescribeElasticsearchDomainResponse] = js.native
     def describeElasticsearchDomainConfig(params: DescribeElasticsearchDomainConfigRequest): Request[DescribeElasticsearchDomainConfigResponse] = js.native
     def describeElasticsearchDomains(params: DescribeElasticsearchDomainsRequest): Request[DescribeElasticsearchDomainsResponse] = js.native
@@ -178,6 +208,7 @@ package object es {
     def describePackages(params: DescribePackagesRequest): Request[DescribePackagesResponse] = js.native
     def describeReservedElasticsearchInstanceOfferings(params: DescribeReservedElasticsearchInstanceOfferingsRequest): Request[DescribeReservedElasticsearchInstanceOfferingsResponse] = js.native
     def describeReservedElasticsearchInstances(params: DescribeReservedElasticsearchInstancesRequest): Request[DescribeReservedElasticsearchInstancesResponse] = js.native
+    def describeVpcEndpoints(params: DescribeVpcEndpointsRequest): Request[DescribeVpcEndpointsResponse] = js.native
     def dissociatePackage(params: DissociatePackageRequest): Request[DissociatePackageResponse] = js.native
     def getCompatibleElasticsearchVersions(params: GetCompatibleElasticsearchVersionsRequest): Request[GetCompatibleElasticsearchVersionsResponse] = js.native
     def getPackageVersionHistory(params: GetPackageVersionHistoryRequest): Request[GetPackageVersionHistoryResponse] = js.native
@@ -189,12 +220,17 @@ package object es {
     def listElasticsearchVersions(params: ListElasticsearchVersionsRequest): Request[ListElasticsearchVersionsResponse] = js.native
     def listPackagesForDomain(params: ListPackagesForDomainRequest): Request[ListPackagesForDomainResponse] = js.native
     def listTags(params: ListTagsRequest): Request[ListTagsResponse] = js.native
+    def listVpcEndpointAccess(params: ListVpcEndpointAccessRequest): Request[ListVpcEndpointAccessResponse] = js.native
+    def listVpcEndpoints(params: ListVpcEndpointsRequest): Request[ListVpcEndpointsResponse] = js.native
+    def listVpcEndpointsForDomain(params: ListVpcEndpointsForDomainRequest): Request[ListVpcEndpointsForDomainResponse] = js.native
     def purchaseReservedElasticsearchInstanceOffering(params: PurchaseReservedElasticsearchInstanceOfferingRequest): Request[PurchaseReservedElasticsearchInstanceOfferingResponse] = js.native
     def rejectInboundCrossClusterSearchConnection(params: RejectInboundCrossClusterSearchConnectionRequest): Request[RejectInboundCrossClusterSearchConnectionResponse] = js.native
     def removeTags(params: RemoveTagsRequest): Request[js.Object] = js.native
+    def revokeVpcEndpointAccess(params: RevokeVpcEndpointAccessRequest): Request[RevokeVpcEndpointAccessResponse] = js.native
     def startElasticsearchServiceSoftwareUpdate(params: StartElasticsearchServiceSoftwareUpdateRequest): Request[StartElasticsearchServiceSoftwareUpdateResponse] = js.native
     def updateElasticsearchDomainConfig(params: UpdateElasticsearchDomainConfigRequest): Request[UpdateElasticsearchDomainConfigResponse] = js.native
     def updatePackage(params: UpdatePackageRequest): Request[UpdatePackageResponse] = js.native
+    def updateVpcEndpoint(params: UpdateVpcEndpointRequest): Request[UpdateVpcEndpointResponse] = js.native
     def upgradeElasticsearchDomain(params: UpgradeElasticsearchDomainRequest): Request[UpgradeElasticsearchDomainResponse] = js.native
   }
   object ES {
@@ -331,6 +367,8 @@ package object es {
     */
   @js.native
   trait AdvancedSecurityOptions extends js.Object {
+    var AnonymousAuthDisableDate: js.UndefOr[DisableTimestamp]
+    var AnonymousAuthEnabled: js.UndefOr[Boolean]
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
     var SAMLOptions: js.UndefOr[SAMLOptionsOutput]
@@ -339,11 +377,15 @@ package object es {
   object AdvancedSecurityOptions {
     @inline
     def apply(
+        AnonymousAuthDisableDate: js.UndefOr[DisableTimestamp] = js.undefined,
+        AnonymousAuthEnabled: js.UndefOr[Boolean] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
         InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
         SAMLOptions: js.UndefOr[SAMLOptionsOutput] = js.undefined
     ): AdvancedSecurityOptions = {
       val __obj = js.Dynamic.literal()
+      AnonymousAuthDisableDate.foreach(__v => __obj.updateDynamic("AnonymousAuthDisableDate")(__v.asInstanceOf[js.Any]))
+      AnonymousAuthEnabled.foreach(__v => __obj.updateDynamic("AnonymousAuthEnabled")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       SAMLOptions.foreach(__v => __obj.updateDynamic("SAMLOptions")(__v.asInstanceOf[js.Any]))
@@ -355,6 +397,7 @@ package object es {
     */
   @js.native
   trait AdvancedSecurityOptionsInput extends js.Object {
+    var AnonymousAuthEnabled: js.UndefOr[Boolean]
     var Enabled: js.UndefOr[Boolean]
     var InternalUserDatabaseEnabled: js.UndefOr[Boolean]
     var MasterUserOptions: js.UndefOr[MasterUserOptions]
@@ -364,12 +407,14 @@ package object es {
   object AdvancedSecurityOptionsInput {
     @inline
     def apply(
+        AnonymousAuthEnabled: js.UndefOr[Boolean] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined,
         InternalUserDatabaseEnabled: js.UndefOr[Boolean] = js.undefined,
         MasterUserOptions: js.UndefOr[MasterUserOptions] = js.undefined,
         SAMLOptions: js.UndefOr[SAMLOptionsInput] = js.undefined
     ): AdvancedSecurityOptionsInput = {
       val __obj = js.Dynamic.literal()
+      AnonymousAuthEnabled.foreach(__v => __obj.updateDynamic("AnonymousAuthEnabled")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       InternalUserDatabaseEnabled.foreach(__v => __obj.updateDynamic("InternalUserDatabaseEnabled")(__v.asInstanceOf[js.Any]))
       MasterUserOptions.foreach(__v => __obj.updateDynamic("MasterUserOptions")(__v.asInstanceOf[js.Any]))
@@ -437,6 +482,68 @@ package object es {
       val __obj = js.Dynamic.literal()
       DomainPackageDetails.foreach(__v => __obj.updateDynamic("DomainPackageDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePackageResponse]
+    }
+  }
+
+  /** Container for request parameters to the <code><a>AuthorizeVpcEndpointAccess</a></code> operation. Specifies the account to be permitted to manage VPC endpoints against the domain.
+    */
+  @js.native
+  trait AuthorizeVpcEndpointAccessRequest extends js.Object {
+    var Account: AWSAccount
+    var DomainName: DomainName
+  }
+
+  object AuthorizeVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        Account: AWSAccount,
+        DomainName: DomainName
+    ): AuthorizeVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "Account" -> Account.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AuthorizeVpcEndpointAccessRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>AuthorizeVpcEndpointAccess</a></code> operation. Contains the account ID and the type of the account being authorized to access the VPC endpoint.
+    */
+  @js.native
+  trait AuthorizeVpcEndpointAccessResponse extends js.Object {
+    var AuthorizedPrincipal: AuthorizedPrincipal
+  }
+
+  object AuthorizeVpcEndpointAccessResponse {
+    @inline
+    def apply(
+        AuthorizedPrincipal: AuthorizedPrincipal
+    ): AuthorizeVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizedPrincipal" -> AuthorizedPrincipal.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AuthorizeVpcEndpointAccessResponse]
+    }
+  }
+
+  /** Information about an account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
+    */
+  @js.native
+  trait AuthorizedPrincipal extends js.Object {
+    var Principal: js.UndefOr[String]
+    var PrincipalType: js.UndefOr[PrincipalType]
+  }
+
+  object AuthorizedPrincipal {
+    @inline
+    def apply(
+        Principal: js.UndefOr[String] = js.undefined,
+        PrincipalType: js.UndefOr[PrincipalType] = js.undefined
+    ): AuthorizedPrincipal = {
+      val __obj = js.Dynamic.literal()
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthorizedPrincipal]
     }
   }
 
@@ -659,6 +766,90 @@ package object es {
       val __obj = js.Dynamic.literal()
       ServiceSoftwareOptions.foreach(__v => __obj.updateDynamic("ServiceSoftwareOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelElasticsearchServiceSoftwareUpdateResponse]
+    }
+  }
+
+  /** Specifies change details of the domain configuration change.
+    */
+  @js.native
+  trait ChangeProgressDetails extends js.Object {
+    var ChangeId: js.UndefOr[GUID]
+    var Message: js.UndefOr[Message]
+  }
+
+  object ChangeProgressDetails {
+    @inline
+    def apply(
+        ChangeId: js.UndefOr[GUID] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): ChangeProgressDetails = {
+      val __obj = js.Dynamic.literal()
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressDetails]
+    }
+  }
+
+  /** A progress stage details of a specific domain configuration change.
+    */
+  @js.native
+  trait ChangeProgressStage extends js.Object {
+    var Description: js.UndefOr[Description]
+    var LastUpdated: js.UndefOr[LastUpdated]
+    var Name: js.UndefOr[ChangeProgressStageName]
+    var Status: js.UndefOr[ChangeProgressStageStatus]
+  }
+
+  object ChangeProgressStage {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        LastUpdated: js.UndefOr[LastUpdated] = js.undefined,
+        Name: js.UndefOr[ChangeProgressStageName] = js.undefined,
+        Status: js.UndefOr[ChangeProgressStageStatus] = js.undefined
+    ): ChangeProgressStage = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressStage]
+    }
+  }
+
+  /** The progress details of a specific domain configuration change.
+    */
+  @js.native
+  trait ChangeProgressStatusDetails extends js.Object {
+    var ChangeId: js.UndefOr[GUID]
+    var ChangeProgressStages: js.UndefOr[ChangeProgressStageList]
+    var CompletedProperties: js.UndefOr[StringList]
+    var PendingProperties: js.UndefOr[StringList]
+    var StartTime: js.UndefOr[UpdateTimestamp]
+    var Status: js.UndefOr[OverallChangeStatus]
+    var TotalNumberOfStages: js.UndefOr[TotalNumberOfStages]
+  }
+
+  object ChangeProgressStatusDetails {
+    @inline
+    def apply(
+        ChangeId: js.UndefOr[GUID] = js.undefined,
+        ChangeProgressStages: js.UndefOr[ChangeProgressStageList] = js.undefined,
+        CompletedProperties: js.UndefOr[StringList] = js.undefined,
+        PendingProperties: js.UndefOr[StringList] = js.undefined,
+        StartTime: js.UndefOr[UpdateTimestamp] = js.undefined,
+        Status: js.UndefOr[OverallChangeStatus] = js.undefined,
+        TotalNumberOfStages: js.UndefOr[TotalNumberOfStages] = js.undefined
+    ): ChangeProgressStatusDetails = {
+      val __obj = js.Dynamic.literal()
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      ChangeProgressStages.foreach(__v => __obj.updateDynamic("ChangeProgressStages")(__v.asInstanceOf[js.Any]))
+      CompletedProperties.foreach(__v => __obj.updateDynamic("CompletedProperties")(__v.asInstanceOf[js.Any]))
+      PendingProperties.foreach(__v => __obj.updateDynamic("PendingProperties")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TotalNumberOfStages.foreach(__v => __obj.updateDynamic("TotalNumberOfStages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeProgressStatusDetails]
     }
   }
 
@@ -934,6 +1125,51 @@ package object es {
     }
   }
 
+  /** Container for the parameters to the <code><a>CreateVpcEndpointRequest</a></code> operation.
+    */
+  @js.native
+  trait CreateVpcEndpointRequest extends js.Object {
+    var DomainArn: DomainArn
+    var VpcOptions: VPCOptions
+    var ClientToken: js.UndefOr[ClientToken]
+  }
+
+  object CreateVpcEndpointRequest {
+    @inline
+    def apply(
+        DomainArn: DomainArn,
+        VpcOptions: VPCOptions,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined
+    ): CreateVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainArn" -> DomainArn.asInstanceOf[js.Any],
+        "VpcOptions" -> VpcOptions.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcEndpointRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>CreateVpcEndpoint</a></code> operation. Contains the configuration and status of the VPC Endpoint being created.
+    */
+  @js.native
+  trait CreateVpcEndpointResponse extends js.Object {
+    var VpcEndpoint: VpcEndpoint
+  }
+
+  object CreateVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpoint: VpcEndpoint
+    ): CreateVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpoint" -> VpcEndpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateVpcEndpointResponse]
+    }
+  }
+
   /** Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.
     */
   @js.native
@@ -1082,6 +1318,44 @@ package object es {
     }
   }
 
+  /** Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+    */
+  @js.native
+  trait DeleteVpcEndpointRequest extends js.Object {
+    var VpcEndpointId: VpcEndpointId
+  }
+
+  object DeleteVpcEndpointRequest {
+    @inline
+    def apply(
+        VpcEndpointId: VpcEndpointId
+    ): DeleteVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointId" -> VpcEndpointId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcEndpointRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>DeleteVpcEndpoint</a></code> operation. Contains the summarized detail of the VPC Endpoint being deleted.
+    */
+  @js.native
+  trait DeleteVpcEndpointResponse extends js.Object {
+    var VpcEndpointSummary: VpcEndpointSummary
+  }
+
+  object DeleteVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpointSummary: VpcEndpointSummary
+    ): DeleteVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointSummary" -> VpcEndpointSummary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcEndpointResponse]
+    }
+  }
+
   /** Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.
     */
   @js.native
@@ -1126,6 +1400,47 @@ package object es {
       AutoTunes.foreach(__v => __obj.updateDynamic("AutoTunes")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDomainAutoTunesResponse]
+    }
+  }
+
+  /** Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name and optional change specific identity for which you want progress information.
+    */
+  @js.native
+  trait DescribeDomainChangeProgressRequest extends js.Object {
+    var DomainName: DomainName
+    var ChangeId: js.UndefOr[GUID]
+  }
+
+  object DescribeDomainChangeProgressRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        ChangeId: js.UndefOr[GUID] = js.undefined
+    ): DescribeDomainChangeProgressRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      ChangeId.foreach(__v => __obj.updateDynamic("ChangeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainChangeProgressRequest]
+    }
+  }
+
+  /** The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change.
+    */
+  @js.native
+  trait DescribeDomainChangeProgressResponse extends js.Object {
+    var ChangeProgressStatus: js.UndefOr[ChangeProgressStatusDetails]
+  }
+
+  object DescribeDomainChangeProgressResponse {
+    @inline
+    def apply(
+        ChangeProgressStatus: js.UndefOr[ChangeProgressStatusDetails] = js.undefined
+    ): DescribeDomainChangeProgressResponse = {
+      val __obj = js.Dynamic.literal()
+      ChangeProgressStatus.foreach(__v => __obj.updateDynamic("ChangeProgressStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDomainChangeProgressResponse]
     }
   }
 
@@ -1533,6 +1848,47 @@ package object es {
     }
   }
 
+  /** Container for request parameters to the <code><a>DescribeVpcEndpoints</a></code> operation. Specifies the list of VPC endpoints to be described.
+    */
+  @js.native
+  trait DescribeVpcEndpointsRequest extends js.Object {
+    var VpcEndpointIds: VpcEndpointIdList
+  }
+
+  object DescribeVpcEndpointsRequest {
+    @inline
+    def apply(
+        VpcEndpointIds: VpcEndpointIdList
+    ): DescribeVpcEndpointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointIds" -> VpcEndpointIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcEndpointsRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>DescribeVpcEndpoints</a></code> operation. Returns a list containing configuration details and status of the VPC Endpoints as well as a list containing error responses of the endpoints that could not be described
+    */
+  @js.native
+  trait DescribeVpcEndpointsResponse extends js.Object {
+    var VpcEndpointErrors: VpcEndpointErrorList
+    var VpcEndpoints: VpcEndpoints
+  }
+
+  object DescribeVpcEndpointsResponse {
+    @inline
+    def apply(
+        VpcEndpointErrors: VpcEndpointErrorList,
+        VpcEndpoints: VpcEndpoints
+    ): DescribeVpcEndpointsResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointErrors" -> VpcEndpointErrors.asInstanceOf[js.Any],
+        "VpcEndpoints" -> VpcEndpoints.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcEndpointsResponse]
+    }
+  }
+
   /** Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
     */
   @js.native
@@ -1756,6 +2112,7 @@ package object es {
   trait EBSOptions extends js.Object {
     var EBSEnabled: js.UndefOr[Boolean]
     var Iops: js.UndefOr[IntegerClass]
+    var Throughput: js.UndefOr[IntegerClass]
     var VolumeSize: js.UndefOr[IntegerClass]
     var VolumeType: js.UndefOr[VolumeType]
   }
@@ -1765,12 +2122,14 @@ package object es {
     def apply(
         EBSEnabled: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[IntegerClass] = js.undefined,
+        Throughput: js.UndefOr[IntegerClass] = js.undefined,
         VolumeSize: js.UndefOr[IntegerClass] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): EBSOptions = {
       val __obj = js.Dynamic.literal()
       EBSEnabled.foreach(__v => __obj.updateDynamic("EBSEnabled")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      Throughput.foreach(__v => __obj.updateDynamic("Throughput")(__v.asInstanceOf[js.Any]))
       VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
       VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EBSOptions]
@@ -1877,6 +2236,7 @@ package object es {
     var AdvancedOptions: js.UndefOr[AdvancedOptionsStatus]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus]
     var AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus]
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var CognitoOptions: js.UndefOr[CognitoOptionsStatus]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus]
     var EBSOptions: js.UndefOr[EBSOptionsStatus]
@@ -1896,6 +2256,7 @@ package object es {
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptionsStatus] = js.undefined,
         AutoTuneOptions: js.UndefOr[AutoTuneOptionsStatus] = js.undefined,
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptionsStatus] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptionsStatus] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptionsStatus] = js.undefined,
@@ -1912,6 +2273,7 @@ package object es {
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
@@ -1938,6 +2300,7 @@ package object es {
     var AdvancedOptions: js.UndefOr[AdvancedOptions]
     var AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions]
     var AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput]
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var Created: js.UndefOr[Boolean]
     var Deleted: js.UndefOr[Boolean]
@@ -1967,6 +2330,7 @@ package object es {
         AdvancedOptions: js.UndefOr[AdvancedOptions] = js.undefined,
         AdvancedSecurityOptions: js.UndefOr[AdvancedSecurityOptions] = js.undefined,
         AutoTuneOptions: js.UndefOr[AutoTuneOptionsOutput] = js.undefined,
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         Created: js.UndefOr[Boolean] = js.undefined,
         Deleted: js.UndefOr[Boolean] = js.undefined,
@@ -1995,6 +2359,7 @@ package object es {
       AdvancedOptions.foreach(__v => __obj.updateDynamic("AdvancedOptions")(__v.asInstanceOf[js.Any]))
       AdvancedSecurityOptions.foreach(__v => __obj.updateDynamic("AdvancedSecurityOptions")(__v.asInstanceOf[js.Any]))
       AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
       Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
@@ -2666,6 +3031,136 @@ package object es {
     }
   }
 
+  /** Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint
+    */
+  @js.native
+  trait ListVpcEndpointAccessRequest extends js.Object {
+    var DomainName: DomainName
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointAccessRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>ListVpcEndpointAccess</a></code> operation. Returns a list of accounts id and account type authorized to manage VPC endpoints.
+    */
+  @js.native
+  trait ListVpcEndpointAccessResponse extends js.Object {
+    var AuthorizedPrincipalList: AuthorizedPrincipalList
+    var NextToken: NextToken
+  }
+
+  object ListVpcEndpointAccessResponse {
+    @inline
+    def apply(
+        AuthorizedPrincipalList: AuthorizedPrincipalList,
+        NextToken: NextToken
+    ): ListVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizedPrincipalList" -> AuthorizedPrincipalList.asInstanceOf[js.Any],
+        "NextToken" -> NextToken.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointAccessResponse]
+    }
+  }
+
+  /** Container for request parameters to the <code><a>ListVpcEndpointsForDomain</a></code> operation. Specifies the domain whose VPC endpoints will be listed.
+    */
+  @js.native
+  trait ListVpcEndpointsForDomainRequest extends js.Object {
+    var DomainName: DomainName
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointsForDomainRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointsForDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointsForDomainRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>ListVpcEndpointsForDomain</a></code> operation. Returns a list containing summarized details of the VPC endpoints.
+    */
+  @js.native
+  trait ListVpcEndpointsForDomainResponse extends js.Object {
+    var NextToken: NextToken
+    var VpcEndpointSummaryList: VpcEndpointSummaryList
+  }
+
+  object ListVpcEndpointsForDomainResponse {
+    @inline
+    def apply(
+        NextToken: NextToken,
+        VpcEndpointSummaryList: VpcEndpointSummaryList
+    ): ListVpcEndpointsForDomainResponse = {
+      val __obj = js.Dynamic.literal(
+        "NextToken" -> NextToken.asInstanceOf[js.Any],
+        "VpcEndpointSummaryList" -> VpcEndpointSummaryList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointsForDomainResponse]
+    }
+  }
+
+  /** Container for request parameters to the <code><a>ListVpcEndpoints</a></code> operation.
+    */
+  @js.native
+  trait ListVpcEndpointsRequest extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcEndpointsRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcEndpointsRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcEndpointsRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>ListVpcEndpoints</a></code> operation. Returns a list containing summarized details of the VPC endpoints.
+    */
+  @js.native
+  trait ListVpcEndpointsResponse extends js.Object {
+    var NextToken: NextToken
+    var VpcEndpointSummaryList: VpcEndpointSummaryList
+  }
+
+  object ListVpcEndpointsResponse {
+    @inline
+    def apply(
+        NextToken: NextToken,
+        VpcEndpointSummaryList: VpcEndpointSummaryList
+    ): ListVpcEndpointsResponse = {
+      val __obj = js.Dynamic.literal(
+        "NextToken" -> NextToken.asInstanceOf[js.Any],
+        "VpcEndpointSummaryList" -> VpcEndpointSummaryList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListVpcEndpointsResponse]
+    }
+  }
+
   /** <p>Log Publishing option that is set for given domain. <br/>Attributes and their details:* CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published. * Enabled: Whether the log publishing for given log type is enabled or not </p>
     */
   @js.native
@@ -3162,6 +3657,41 @@ package object es {
     }
   }
 
+  /** Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
+    */
+  @js.native
+  trait RevokeVpcEndpointAccessRequest extends js.Object {
+    var Account: AWSAccount
+    var DomainName: DomainName
+  }
+
+  object RevokeVpcEndpointAccessRequest {
+    @inline
+    def apply(
+        Account: AWSAccount,
+        DomainName: DomainName
+    ): RevokeVpcEndpointAccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "Account" -> Account.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RevokeVpcEndpointAccessRequest]
+    }
+  }
+
+  /** Container for response parameters to the <code><a>RevokeVpcEndpointAccess</a></code> operation. The response body for this operation is empty.
+    */
+  @js.native
+  trait RevokeVpcEndpointAccessResponse extends js.Object
+
+  object RevokeVpcEndpointAccessResponse {
+    @inline
+    def apply(): RevokeVpcEndpointAccessResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RevokeVpcEndpointAccessResponse]
+    }
+  }
+
   /** Specifies the SAML Identity Provider's information.
     */
   @js.native
@@ -3592,6 +4122,47 @@ package object es {
     }
   }
 
+  /** Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+    */
+  @js.native
+  trait UpdateVpcEndpointRequest extends js.Object {
+    var VpcEndpointId: VpcEndpointId
+    var VpcOptions: VPCOptions
+  }
+
+  object UpdateVpcEndpointRequest {
+    @inline
+    def apply(
+        VpcEndpointId: VpcEndpointId,
+        VpcOptions: VPCOptions
+    ): UpdateVpcEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpointId" -> VpcEndpointId.asInstanceOf[js.Any],
+        "VpcOptions" -> VpcOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcEndpointRequest]
+    }
+  }
+
+  /** Contains the configuration and status of the VPC endpoint being updated.
+    */
+  @js.native
+  trait UpdateVpcEndpointResponse extends js.Object {
+    var VpcEndpoint: VpcEndpoint
+  }
+
+  object UpdateVpcEndpointResponse {
+    @inline
+    def apply(
+        VpcEndpoint: VpcEndpoint
+    ): UpdateVpcEndpointResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcEndpoint" -> VpcEndpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcEndpointResponse]
+    }
+  }
+
   /** Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
     */
   @js.native
@@ -3622,6 +4193,7 @@ package object es {
     */
   @js.native
   trait UpgradeElasticsearchDomainResponse extends js.Object {
+    var ChangeProgressDetails: js.UndefOr[ChangeProgressDetails]
     var DomainName: js.UndefOr[DomainName]
     var PerformCheckOnly: js.UndefOr[Boolean]
     var TargetVersion: js.UndefOr[ElasticsearchVersionString]
@@ -3630,11 +4202,13 @@ package object es {
   object UpgradeElasticsearchDomainResponse {
     @inline
     def apply(
+        ChangeProgressDetails: js.UndefOr[ChangeProgressDetails] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
         PerformCheckOnly: js.UndefOr[Boolean] = js.undefined,
         TargetVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined
     ): UpgradeElasticsearchDomainResponse = {
       val __obj = js.Dynamic.literal()
+      ChangeProgressDetails.foreach(__v => __obj.updateDynamic("ChangeProgressDetails")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       PerformCheckOnly.foreach(__v => __obj.updateDynamic("PerformCheckOnly")(__v.asInstanceOf[js.Any]))
       TargetVersion.foreach(__v => __obj.updateDynamic("TargetVersion")(__v.asInstanceOf[js.Any]))
@@ -3763,6 +4337,90 @@ package object es {
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCOptions]
+    }
+  }
+
+  /** The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.
+    */
+  @js.native
+  trait VpcEndpoint extends js.Object {
+    var DomainArn: js.UndefOr[DomainArn]
+    var Endpoint: js.UndefOr[Endpoint]
+    var Status: js.UndefOr[VpcEndpointStatus]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+    var VpcEndpointOwner: js.UndefOr[AWSAccount]
+    var VpcOptions: js.UndefOr[VPCDerivedInfo]
+  }
+
+  object VpcEndpoint {
+    @inline
+    def apply(
+        DomainArn: js.UndefOr[DomainArn] = js.undefined,
+        Endpoint: js.UndefOr[Endpoint] = js.undefined,
+        Status: js.UndefOr[VpcEndpointStatus] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
+        VpcEndpointOwner: js.UndefOr[AWSAccount] = js.undefined,
+        VpcOptions: js.UndefOr[VPCDerivedInfo] = js.undefined
+    ): VpcEndpoint = {
+      val __obj = js.Dynamic.literal()
+      DomainArn.foreach(__v => __obj.updateDynamic("DomainArn")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointOwner.foreach(__v => __obj.updateDynamic("VpcEndpointOwner")(__v.asInstanceOf[js.Any]))
+      VpcOptions.foreach(__v => __obj.updateDynamic("VpcOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpoint]
+    }
+  }
+
+  /** Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.
+    */
+  @js.native
+  trait VpcEndpointError extends js.Object {
+    var ErrorCode: js.UndefOr[VpcEndpointErrorCode]
+    var ErrorMessage: js.UndefOr[String]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+  }
+
+  object VpcEndpointError {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[VpcEndpointErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[String] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
+    ): VpcEndpointError = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpointError]
+    }
+  }
+
+  /** Summary information for an Amazon OpenSearch Service-managed VPC endpoint.
+    */
+  @js.native
+  trait VpcEndpointSummary extends js.Object {
+    var DomainArn: js.UndefOr[DomainArn]
+    var Status: js.UndefOr[VpcEndpointStatus]
+    var VpcEndpointId: js.UndefOr[VpcEndpointId]
+    var VpcEndpointOwner: js.UndefOr[String]
+  }
+
+  object VpcEndpointSummary {
+    @inline
+    def apply(
+        DomainArn: js.UndefOr[DomainArn] = js.undefined,
+        Status: js.UndefOr[VpcEndpointStatus] = js.undefined,
+        VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined,
+        VpcEndpointOwner: js.UndefOr[String] = js.undefined
+    ): VpcEndpointSummary = {
+      val __obj = js.Dynamic.literal()
+      DomainArn.foreach(__v => __obj.updateDynamic("DomainArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointOwner.foreach(__v => __obj.updateDynamic("VpcEndpointOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcEndpointSummary]
     }
   }
 

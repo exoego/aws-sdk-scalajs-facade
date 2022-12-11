@@ -29,7 +29,35 @@ object AssociationStatus {
   inline def values: js.Array[AssociationStatus] = js.Array(NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
 }
 
-type Compute = "VALUE" | "STANDARD" | "PERFORMANCE" | "POWER" | "GRAPHICS" | "POWERPRO" | "GRAPHICSPRO"
+type BundleType = "REGULAR" | "STANDBY"
+object BundleType {
+  inline val REGULAR: "REGULAR" = "REGULAR"
+  inline val STANDBY: "STANDBY" = "STANDBY"
+
+  inline def values: js.Array[BundleType] = js.Array(REGULAR, STANDBY)
+}
+
+type CertificateBasedAuthStatusEnum = "DISABLED" | "ENABLED"
+object CertificateBasedAuthStatusEnum {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[CertificateBasedAuthStatusEnum] = js.Array(DISABLED, ENABLED)
+}
+
+type ClientDeviceType = "DeviceTypeWindows" | "DeviceTypeOsx" | "DeviceTypeAndroid" | "DeviceTypeIos" | "DeviceTypeLinux" | "DeviceTypeWeb"
+object ClientDeviceType {
+  inline val DeviceTypeWindows: "DeviceTypeWindows" = "DeviceTypeWindows"
+  inline val DeviceTypeOsx: "DeviceTypeOsx" = "DeviceTypeOsx"
+  inline val DeviceTypeAndroid: "DeviceTypeAndroid" = "DeviceTypeAndroid"
+  inline val DeviceTypeIos: "DeviceTypeIos" = "DeviceTypeIos"
+  inline val DeviceTypeLinux: "DeviceTypeLinux" = "DeviceTypeLinux"
+  inline val DeviceTypeWeb: "DeviceTypeWeb" = "DeviceTypeWeb"
+
+  inline def values: js.Array[ClientDeviceType] = js.Array(DeviceTypeWindows, DeviceTypeOsx, DeviceTypeAndroid, DeviceTypeIos, DeviceTypeLinux, DeviceTypeWeb)
+}
+
+type Compute = "VALUE" | "STANDARD" | "PERFORMANCE" | "POWER" | "GRAPHICS" | "POWERPRO" | "GRAPHICSPRO" | "GRAPHICS_G4DN" | "GRAPHICSPRO_G4DN"
 object Compute {
   inline val VALUE: "VALUE" = "VALUE"
   inline val STANDARD: "STANDARD" = "STANDARD"
@@ -38,8 +66,10 @@ object Compute {
   inline val GRAPHICS: "GRAPHICS" = "GRAPHICS"
   inline val POWERPRO: "POWERPRO" = "POWERPRO"
   inline val GRAPHICSPRO: "GRAPHICSPRO" = "GRAPHICSPRO"
+  inline val GRAPHICS_G4DN: "GRAPHICS_G4DN" = "GRAPHICS_G4DN"
+  inline val GRAPHICSPRO_G4DN: "GRAPHICSPRO_G4DN" = "GRAPHICSPRO_G4DN"
 
-  inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
+  inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO, GRAPHICS_G4DN, GRAPHICSPRO_G4DN)
 }
 
 type ConnectionAliasState = "CREATING" | "CREATED" | "DELETING"
@@ -84,12 +114,35 @@ object DedicatedTenancySupportResultEnum {
   inline def values: js.Array[DedicatedTenancySupportResultEnum] = js.Array(ENABLED, DISABLED)
 }
 
+type DeletableCertificateBasedAuthProperty = "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN"
+object DeletableCertificateBasedAuthProperty {
+  inline val CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN: "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN" = "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN"
+
+  inline def values: js.Array[DeletableCertificateBasedAuthProperty] = js.Array(CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN)
+}
+
+type DeletableSamlProperty = "SAML_PROPERTIES_USER_ACCESS_URL" | "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"
+object DeletableSamlProperty {
+  inline val SAML_PROPERTIES_USER_ACCESS_URL: "SAML_PROPERTIES_USER_ACCESS_URL" = "SAML_PROPERTIES_USER_ACCESS_URL"
+  inline val SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME: "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME" = "SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME"
+
+  inline def values: js.Array[DeletableSamlProperty] = js.Array(SAML_PROPERTIES_USER_ACCESS_URL, SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME)
+}
+
 type ImageType = "OWNED" | "SHARED"
 object ImageType {
   inline val OWNED: "OWNED" = "OWNED"
   inline val SHARED: "SHARED" = "SHARED"
 
   inline def values: js.Array[ImageType] = js.Array(OWNED, SHARED)
+}
+
+type LogUploadEnum = "ENABLED" | "DISABLED"
+object LogUploadEnum {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[LogUploadEnum] = js.Array(ENABLED, DISABLED)
 }
 
 type ModificationResourceEnum = "ROOT_VOLUME" | "USER_VOLUME" | "COMPUTE_TYPE"
@@ -117,6 +170,14 @@ object OperatingSystemType {
   inline def values: js.Array[OperatingSystemType] = js.Array(WINDOWS, LINUX)
 }
 
+type Protocol = "PCOIP" | "WSP"
+object Protocol {
+  inline val PCOIP: "PCOIP" = "PCOIP"
+  inline val WSP: "WSP" = "WSP"
+
+  inline def values: js.Array[Protocol] = js.Array(PCOIP, WSP)
+}
+
 type ReconnectEnum = "ENABLED" | "DISABLED"
 object ReconnectEnum {
   inline val ENABLED: "ENABLED" = "ENABLED"
@@ -125,12 +186,30 @@ object ReconnectEnum {
   inline def values: js.Array[ReconnectEnum] = js.Array(ENABLED, DISABLED)
 }
 
-type RunningMode = "AUTO_STOP" | "ALWAYS_ON"
+type RunningMode = "AUTO_STOP" | "ALWAYS_ON" | "MANUAL"
 object RunningMode {
   inline val AUTO_STOP: "AUTO_STOP" = "AUTO_STOP"
   inline val ALWAYS_ON: "ALWAYS_ON" = "ALWAYS_ON"
+  inline val MANUAL: "MANUAL" = "MANUAL"
 
-  inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON)
+  inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON, MANUAL)
+}
+
+type SamlStatusEnum = "DISABLED" | "ENABLED" | "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"
+object SamlStatusEnum {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK: "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK" = "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"
+
+  inline def values: js.Array[SamlStatusEnum] = js.Array(DISABLED, ENABLED, ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK)
+}
+
+type StandbyWorkspaceRelationshipType = "PRIMARY" | "STANDBY"
+object StandbyWorkspaceRelationshipType {
+  inline val PRIMARY: "PRIMARY" = "PRIMARY"
+  inline val STANDBY: "STANDBY" = "STANDBY"
+
+  inline def values: js.Array[StandbyWorkspaceRelationshipType] = js.Array(PRIMARY, STANDBY)
 }
 
 type TargetWorkspaceState = "AVAILABLE" | "ADMIN_MAINTENANCE"
@@ -147,6 +226,15 @@ object Tenancy {
   inline val SHARED: "SHARED" = "SHARED"
 
   inline def values: js.Array[Tenancy] = js.Array(DEDICATED, SHARED)
+}
+
+type WorkspaceBundleState = "AVAILABLE" | "PENDING" | "ERROR"
+object WorkspaceBundleState {
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[WorkspaceBundleState] = js.Array(AVAILABLE, PENDING, ERROR)
 }
 
 type WorkspaceDirectoryState = "REGISTERING" | "REGISTERED" | "DEREGISTERING" | "DEREGISTERED" | "ERROR"
@@ -168,14 +256,17 @@ object WorkspaceDirectoryType {
   inline def values: js.Array[WorkspaceDirectoryType] = js.Array(SIMPLE_AD, AD_CONNECTOR)
 }
 
-type WorkspaceImageIngestionProcess = "BYOL_REGULAR" | "BYOL_GRAPHICS" | "BYOL_GRAPHICSPRO" | "BYOL_REGULAR_WSP"
+type WorkspaceImageIngestionProcess = "BYOL_REGULAR" | "BYOL_GRAPHICS" | "BYOL_GRAPHICSPRO" | "BYOL_GRAPHICS_G4DN" | "BYOL_REGULAR_WSP" | "BYOL_REGULAR_BYOP" | "BYOL_GRAPHICS_G4DN_BYOP"
 object WorkspaceImageIngestionProcess {
   inline val BYOL_REGULAR: "BYOL_REGULAR" = "BYOL_REGULAR"
   inline val BYOL_GRAPHICS: "BYOL_GRAPHICS" = "BYOL_GRAPHICS"
   inline val BYOL_GRAPHICSPRO: "BYOL_GRAPHICSPRO" = "BYOL_GRAPHICSPRO"
+  inline val BYOL_GRAPHICS_G4DN: "BYOL_GRAPHICS_G4DN" = "BYOL_GRAPHICS_G4DN"
   inline val BYOL_REGULAR_WSP: "BYOL_REGULAR_WSP" = "BYOL_REGULAR_WSP"
+  inline val BYOL_REGULAR_BYOP: "BYOL_REGULAR_BYOP" = "BYOL_REGULAR_BYOP"
+  inline val BYOL_GRAPHICS_G4DN_BYOP: "BYOL_GRAPHICS_G4DN_BYOP" = "BYOL_GRAPHICS_G4DN_BYOP"
 
-  inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
+  inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_GRAPHICS_G4DN, BYOL_REGULAR_WSP, BYOL_REGULAR_BYOP, BYOL_GRAPHICS_G4DN_BYOP)
 }
 
 type WorkspaceImageRequiredTenancy = "DEFAULT" | "DEDICATED"

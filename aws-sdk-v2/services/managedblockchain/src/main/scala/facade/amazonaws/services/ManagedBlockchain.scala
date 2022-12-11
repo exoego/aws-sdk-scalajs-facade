@@ -8,6 +8,9 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object managedblockchain {
+  type AccessorBillingTokenString = String
+  type AccessorListMaxResults = Int
+  type AccessorSummaryList = js.Array[AccessorSummary]
   type ArnString = String
   type AvailabilityZoneString = String
   type ClientRequestTokenString = String
@@ -47,16 +50,20 @@ package object managedblockchain {
 
   final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
+    @inline def createAccessorFuture(params: CreateAccessorInput): Future[CreateAccessorOutput] = service.createAccessor(params).promise().toFuture
     @inline def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] = service.createMember(params).promise().toFuture
     @inline def createNetworkFuture(params: CreateNetworkInput): Future[CreateNetworkOutput] = service.createNetwork(params).promise().toFuture
     @inline def createNodeFuture(params: CreateNodeInput): Future[CreateNodeOutput] = service.createNode(params).promise().toFuture
     @inline def createProposalFuture(params: CreateProposalInput): Future[CreateProposalOutput] = service.createProposal(params).promise().toFuture
+    @inline def deleteAccessorFuture(params: DeleteAccessorInput): Future[DeleteAccessorOutput] = service.deleteAccessor(params).promise().toFuture
     @inline def deleteMemberFuture(params: DeleteMemberInput): Future[DeleteMemberOutput] = service.deleteMember(params).promise().toFuture
     @inline def deleteNodeFuture(params: DeleteNodeInput): Future[DeleteNodeOutput] = service.deleteNode(params).promise().toFuture
+    @inline def getAccessorFuture(params: GetAccessorInput): Future[GetAccessorOutput] = service.getAccessor(params).promise().toFuture
     @inline def getMemberFuture(params: GetMemberInput): Future[GetMemberOutput] = service.getMember(params).promise().toFuture
     @inline def getNetworkFuture(params: GetNetworkInput): Future[GetNetworkOutput] = service.getNetwork(params).promise().toFuture
     @inline def getNodeFuture(params: GetNodeInput): Future[GetNodeOutput] = service.getNode(params).promise().toFuture
     @inline def getProposalFuture(params: GetProposalInput): Future[GetProposalOutput] = service.getProposal(params).promise().toFuture
+    @inline def listAccessorsFuture(params: ListAccessorsInput): Future[ListAccessorsOutput] = service.listAccessors(params).promise().toFuture
     @inline def listInvitationsFuture(params: ListInvitationsInput): Future[ListInvitationsOutput] = service.listInvitations(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersInput): Future[ListMembersOutput] = service.listMembers(params).promise().toFuture
     @inline def listNetworksFuture(params: ListNetworksInput): Future[ListNetworksOutput] = service.listNetworks(params).promise().toFuture
@@ -78,16 +85,20 @@ package object managedblockchain {
   class ManagedBlockchain() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createAccessor(params: CreateAccessorInput): Request[CreateAccessorOutput] = js.native
     def createMember(params: CreateMemberInput): Request[CreateMemberOutput] = js.native
     def createNetwork(params: CreateNetworkInput): Request[CreateNetworkOutput] = js.native
     def createNode(params: CreateNodeInput): Request[CreateNodeOutput] = js.native
     def createProposal(params: CreateProposalInput): Request[CreateProposalOutput] = js.native
+    def deleteAccessor(params: DeleteAccessorInput): Request[DeleteAccessorOutput] = js.native
     def deleteMember(params: DeleteMemberInput): Request[DeleteMemberOutput] = js.native
     def deleteNode(params: DeleteNodeInput): Request[DeleteNodeOutput] = js.native
+    def getAccessor(params: GetAccessorInput): Request[GetAccessorOutput] = js.native
     def getMember(params: GetMemberInput): Request[GetMemberOutput] = js.native
     def getNetwork(params: GetNetworkInput): Request[GetNetworkOutput] = js.native
     def getNode(params: GetNodeInput): Request[GetNodeOutput] = js.native
     def getProposal(params: GetProposalInput): Request[GetProposalOutput] = js.native
+    def listAccessors(params: ListAccessorsInput): Request[ListAccessorsOutput] = js.native
     def listInvitations(params: ListInvitationsInput): Request[ListInvitationsOutput] = js.native
     def listMembers(params: ListMembersInput): Request[ListMembersOutput] = js.native
     def listNetworks(params: ListNetworksInput): Request[ListNetworksOutput] = js.native
@@ -105,6 +116,69 @@ package object managedblockchain {
   object ManagedBlockchain {
     @inline implicit def toOps(service: ManagedBlockchain): ManagedBlockchainOps = {
       new ManagedBlockchainOps(service)
+    }
+  }
+
+  /** <important> The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments. </important> The properties of the Accessor.
+    */
+  @js.native
+  trait Accessor extends js.Object {
+    var Arn: js.UndefOr[ArnString]
+    var BillingToken: js.UndefOr[AccessorBillingTokenString]
+    var CreationDate: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[ResourceIdString]
+    var Status: js.UndefOr[AccessorStatus]
+    var Type: js.UndefOr[AccessorType]
+  }
+
+  object Accessor {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ArnString] = js.undefined,
+        BillingToken: js.UndefOr[AccessorBillingTokenString] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[ResourceIdString] = js.undefined,
+        Status: js.UndefOr[AccessorStatus] = js.undefined,
+        Type: js.UndefOr[AccessorType] = js.undefined
+    ): Accessor = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      BillingToken.foreach(__v => __obj.updateDynamic("BillingToken")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Accessor]
+    }
+  }
+
+  /** <important> The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to change. We recommend that you use this feature only with test scenarios, and not in production environments. </important> A summary of accessor properties.
+    */
+  @js.native
+  trait AccessorSummary extends js.Object {
+    var Arn: js.UndefOr[ArnString]
+    var CreationDate: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[ResourceIdString]
+    var Status: js.UndefOr[AccessorStatus]
+    var Type: js.UndefOr[AccessorType]
+  }
+
+  object AccessorSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ArnString] = js.undefined,
+        CreationDate: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[ResourceIdString] = js.undefined,
+        Status: js.UndefOr[AccessorStatus] = js.undefined,
+        Type: js.UndefOr[AccessorType] = js.undefined
+    ): AccessorSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessorSummary]
     }
   }
 
@@ -129,6 +203,45 @@ package object managedblockchain {
       ThresholdComparator.foreach(__v => __obj.updateDynamic("ThresholdComparator")(__v.asInstanceOf[js.Any]))
       ThresholdPercentage.foreach(__v => __obj.updateDynamic("ThresholdPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApprovalThresholdPolicy]
+    }
+  }
+
+  @js.native
+  trait CreateAccessorInput extends js.Object {
+    var AccessorType: AccessorType
+    var ClientRequestToken: ClientRequestTokenString
+  }
+
+  object CreateAccessorInput {
+    @inline
+    def apply(
+        AccessorType: AccessorType,
+        ClientRequestToken: ClientRequestTokenString
+    ): CreateAccessorInput = {
+      val __obj = js.Dynamic.literal(
+        "AccessorType" -> AccessorType.asInstanceOf[js.Any],
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAccessorInput]
+    }
+  }
+
+  @js.native
+  trait CreateAccessorOutput extends js.Object {
+    var AccessorId: js.UndefOr[ResourceIdString]
+    var BillingToken: js.UndefOr[AccessorBillingTokenString]
+  }
+
+  object CreateAccessorOutput {
+    @inline
+    def apply(
+        AccessorId: js.UndefOr[ResourceIdString] = js.undefined,
+        BillingToken: js.UndefOr[AccessorBillingTokenString] = js.undefined
+    ): CreateAccessorOutput = {
+      val __obj = js.Dynamic.literal()
+      AccessorId.foreach(__v => __obj.updateDynamic("AccessorId")(__v.asInstanceOf[js.Any]))
+      BillingToken.foreach(__v => __obj.updateDynamic("BillingToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessorOutput]
     }
   }
 
@@ -331,6 +444,34 @@ package object managedblockchain {
   }
 
   @js.native
+  trait DeleteAccessorInput extends js.Object {
+    var AccessorId: ResourceIdString
+  }
+
+  object DeleteAccessorInput {
+    @inline
+    def apply(
+        AccessorId: ResourceIdString
+    ): DeleteAccessorInput = {
+      val __obj = js.Dynamic.literal(
+        "AccessorId" -> AccessorId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAccessorInput]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessorOutput extends js.Object
+
+  object DeleteAccessorOutput {
+    @inline
+    def apply(): DeleteAccessorOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAccessorOutput]
+    }
+  }
+
+  @js.native
   trait DeleteMemberInput extends js.Object {
     var MemberId: ResourceIdString
     var NetworkId: ResourceIdString
@@ -393,6 +534,39 @@ package object managedblockchain {
     def apply(): DeleteNodeOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteNodeOutput]
+    }
+  }
+
+  @js.native
+  trait GetAccessorInput extends js.Object {
+    var AccessorId: ResourceIdString
+  }
+
+  object GetAccessorInput {
+    @inline
+    def apply(
+        AccessorId: ResourceIdString
+    ): GetAccessorInput = {
+      val __obj = js.Dynamic.literal(
+        "AccessorId" -> AccessorId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAccessorInput]
+    }
+  }
+
+  @js.native
+  trait GetAccessorOutput extends js.Object {
+    var Accessor: js.UndefOr[Accessor]
+  }
+
+  object GetAccessorOutput {
+    @inline
+    def apply(
+        Accessor: js.UndefOr[Accessor] = js.undefined
+    ): GetAccessorOutput = {
+      val __obj = js.Dynamic.literal()
+      Accessor.foreach(__v => __obj.updateDynamic("Accessor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAccessorOutput]
     }
   }
 
@@ -541,7 +715,7 @@ package object managedblockchain {
     }
   }
 
-  /** An invitation to an AWS account to create a member and join the network. Applies only to Hyperledger Fabric.
+  /** An invitation to an Amazon Web Services account to create a member and join the network. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait Invitation extends js.Object {
@@ -574,7 +748,7 @@ package object managedblockchain {
     }
   }
 
-  /** An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>. Applies only to Hyperledger Fabric.
+  /** An action to invite a specific Amazon Web Services account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>. Applies only to Hyperledger Fabric.
     */
   @js.native
   trait InviteAction extends js.Object {
@@ -590,6 +764,44 @@ package object managedblockchain {
         "Principal" -> Principal.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[InviteAction]
+    }
+  }
+
+  @js.native
+  trait ListAccessorsInput extends js.Object {
+    var MaxResults: js.UndefOr[AccessorListMaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAccessorsInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[AccessorListMaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAccessorsInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessorsInput]
+    }
+  }
+
+  @js.native
+  trait ListAccessorsOutput extends js.Object {
+    var Accessors: js.UndefOr[AccessorSummaryList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAccessorsOutput {
+    @inline
+    def apply(
+        Accessors: js.UndefOr[AccessorSummaryList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAccessorsOutput = {
+      val __obj = js.Dynamic.literal()
+      Accessors.foreach(__v => __obj.updateDynamic("Accessors")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessorsOutput]
     }
   }
 

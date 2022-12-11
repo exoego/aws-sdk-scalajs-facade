@@ -34,6 +34,7 @@ package object iotsecuretunneling {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTunnelsFuture(params: ListTunnelsRequest): Future[ListTunnelsResponse] = service.listTunnels(params).promise().toFuture
     @inline def openTunnelFuture(params: OpenTunnelRequest): Future[OpenTunnelResponse] = service.openTunnel(params).promise().toFuture
+    @inline def rotateTunnelAccessTokenFuture(params: RotateTunnelAccessTokenRequest): Future[RotateTunnelAccessTokenResponse] = service.rotateTunnelAccessToken(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
@@ -49,6 +50,7 @@ package object iotsecuretunneling {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTunnels(params: ListTunnelsRequest): Request[ListTunnelsResponse] = js.native
     def openTunnel(params: OpenTunnelRequest): Request[OpenTunnelResponse] = js.native
+    def rotateTunnelAccessToken(params: RotateTunnelAccessTokenRequest): Request[RotateTunnelAccessTokenResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
@@ -288,6 +290,52 @@ package object iotsecuretunneling {
       tunnelArn.foreach(__v => __obj.updateDynamic("tunnelArn")(__v.asInstanceOf[js.Any]))
       tunnelId.foreach(__v => __obj.updateDynamic("tunnelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpenTunnelResponse]
+    }
+  }
+
+  @js.native
+  trait RotateTunnelAccessTokenRequest extends js.Object {
+    var clientMode: ClientMode
+    var tunnelId: TunnelId
+    var destinationConfig: js.UndefOr[DestinationConfig]
+  }
+
+  object RotateTunnelAccessTokenRequest {
+    @inline
+    def apply(
+        clientMode: ClientMode,
+        tunnelId: TunnelId,
+        destinationConfig: js.UndefOr[DestinationConfig] = js.undefined
+    ): RotateTunnelAccessTokenRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientMode" -> clientMode.asInstanceOf[js.Any],
+        "tunnelId" -> tunnelId.asInstanceOf[js.Any]
+      )
+
+      destinationConfig.foreach(__v => __obj.updateDynamic("destinationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotateTunnelAccessTokenRequest]
+    }
+  }
+
+  @js.native
+  trait RotateTunnelAccessTokenResponse extends js.Object {
+    var destinationAccessToken: js.UndefOr[ClientAccessToken]
+    var sourceAccessToken: js.UndefOr[ClientAccessToken]
+    var tunnelArn: js.UndefOr[TunnelArn]
+  }
+
+  object RotateTunnelAccessTokenResponse {
+    @inline
+    def apply(
+        destinationAccessToken: js.UndefOr[ClientAccessToken] = js.undefined,
+        sourceAccessToken: js.UndefOr[ClientAccessToken] = js.undefined,
+        tunnelArn: js.UndefOr[TunnelArn] = js.undefined
+    ): RotateTunnelAccessTokenResponse = {
+      val __obj = js.Dynamic.literal()
+      destinationAccessToken.foreach(__v => __obj.updateDynamic("destinationAccessToken")(__v.asInstanceOf[js.Any]))
+      sourceAccessToken.foreach(__v => __obj.updateDynamic("sourceAccessToken")(__v.asInstanceOf[js.Any]))
+      tunnelArn.foreach(__v => __obj.updateDynamic("tunnelArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RotateTunnelAccessTokenResponse]
     }
   }
 

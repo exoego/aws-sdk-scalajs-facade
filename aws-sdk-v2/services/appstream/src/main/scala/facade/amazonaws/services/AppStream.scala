@@ -31,6 +31,9 @@ package object appstream {
   type DomainList = js.Array[Domain]
   type EmbedHostDomain = String
   type EmbedHostDomains = js.Array[EmbedHostDomain]
+  type EntitledApplicationList = js.Array[EntitledApplication]
+  type EntitlementAttributeList = js.Array[EntitlementAttribute]
+  type EntitlementList = js.Array[Entitlement]
   type FeedbackURL = String
   type FleetAttributes = js.Array[FleetAttribute]
   type FleetErrors = js.Array[FleetError]
@@ -80,6 +83,7 @@ package object appstream {
   final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
     @inline def associateApplicationFleetFuture(params: AssociateApplicationFleetRequest): Future[AssociateApplicationFleetResult] = service.associateApplicationFleet(params).promise().toFuture
+    @inline def associateApplicationToEntitlementFuture(params: AssociateApplicationToEntitlementRequest): Future[AssociateApplicationToEntitlementResult] = service.associateApplicationToEntitlement(params).promise().toFuture
     @inline def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] = service.associateFleet(params).promise().toFuture
     @inline def batchAssociateUserStackFuture(params: BatchAssociateUserStackRequest): Future[BatchAssociateUserStackResult] = service.batchAssociateUserStack(params).promise().toFuture
     @inline def batchDisassociateUserStackFuture(params: BatchDisassociateUserStackRequest): Future[BatchDisassociateUserStackResult] = service.batchDisassociateUserStack(params).promise().toFuture
@@ -87,6 +91,7 @@ package object appstream {
     @inline def createAppBlockFuture(params: CreateAppBlockRequest): Future[CreateAppBlockResult] = service.createAppBlock(params).promise().toFuture
     @inline def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResult] = service.createApplication(params).promise().toFuture
     @inline def createDirectoryConfigFuture(params: CreateDirectoryConfigRequest): Future[CreateDirectoryConfigResult] = service.createDirectoryConfig(params).promise().toFuture
+    @inline def createEntitlementFuture(params: CreateEntitlementRequest): Future[CreateEntitlementResult] = service.createEntitlement(params).promise().toFuture
     @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResult] = service.createFleet(params).promise().toFuture
     @inline def createImageBuilderFuture(params: CreateImageBuilderRequest): Future[CreateImageBuilderResult] = service.createImageBuilder(params).promise().toFuture
     @inline def createImageBuilderStreamingURLFuture(params: CreateImageBuilderStreamingURLRequest): Future[CreateImageBuilderStreamingURLResult] = service.createImageBuilderStreamingURL(params).promise().toFuture
@@ -98,6 +103,7 @@ package object appstream {
     @inline def deleteAppBlockFuture(params: DeleteAppBlockRequest): Future[DeleteAppBlockResult] = service.deleteAppBlock(params).promise().toFuture
     @inline def deleteApplicationFuture(params: DeleteApplicationRequest): Future[DeleteApplicationResult] = service.deleteApplication(params).promise().toFuture
     @inline def deleteDirectoryConfigFuture(params: DeleteDirectoryConfigRequest): Future[DeleteDirectoryConfigResult] = service.deleteDirectoryConfig(params).promise().toFuture
+    @inline def deleteEntitlementFuture(params: DeleteEntitlementRequest): Future[DeleteEntitlementResult] = service.deleteEntitlement(params).promise().toFuture
     @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResult] = service.deleteFleet(params).promise().toFuture
     @inline def deleteImageBuilderFuture(params: DeleteImageBuilderRequest): Future[DeleteImageBuilderResult] = service.deleteImageBuilder(params).promise().toFuture
     @inline def deleteImageFuture(params: DeleteImageRequest): Future[DeleteImageResult] = service.deleteImage(params).promise().toFuture
@@ -109,6 +115,7 @@ package object appstream {
     @inline def describeApplicationFleetAssociationsFuture(params: DescribeApplicationFleetAssociationsRequest): Future[DescribeApplicationFleetAssociationsResult] = service.describeApplicationFleetAssociations(params).promise().toFuture
     @inline def describeApplicationsFuture(params: DescribeApplicationsRequest): Future[DescribeApplicationsResult] = service.describeApplications(params).promise().toFuture
     @inline def describeDirectoryConfigsFuture(params: DescribeDirectoryConfigsRequest): Future[DescribeDirectoryConfigsResult] = service.describeDirectoryConfigs(params).promise().toFuture
+    @inline def describeEntitlementsFuture(params: DescribeEntitlementsRequest): Future[DescribeEntitlementsResult] = service.describeEntitlements(params).promise().toFuture
     @inline def describeFleetsFuture(params: DescribeFleetsRequest): Future[DescribeFleetsResult] = service.describeFleets(params).promise().toFuture
     @inline def describeImageBuildersFuture(params: DescribeImageBuildersRequest): Future[DescribeImageBuildersResult] = service.describeImageBuilders(params).promise().toFuture
     @inline def describeImagePermissionsFuture(params: DescribeImagePermissionsRequest): Future[DescribeImagePermissionsResult] = service.describeImagePermissions(params).promise().toFuture
@@ -120,11 +127,13 @@ package object appstream {
     @inline def describeUsersFuture(params: DescribeUsersRequest): Future[DescribeUsersResult] = service.describeUsers(params).promise().toFuture
     @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResult] = service.disableUser(params).promise().toFuture
     @inline def disassociateApplicationFleetFuture(params: DisassociateApplicationFleetRequest): Future[DisassociateApplicationFleetResult] = service.disassociateApplicationFleet(params).promise().toFuture
+    @inline def disassociateApplicationFromEntitlementFuture(params: DisassociateApplicationFromEntitlementRequest): Future[DisassociateApplicationFromEntitlementResult] = service.disassociateApplicationFromEntitlement(params).promise().toFuture
     @inline def disassociateFleetFuture(params: DisassociateFleetRequest): Future[DisassociateFleetResult] = service.disassociateFleet(params).promise().toFuture
     @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResult] = service.enableUser(params).promise().toFuture
     @inline def expireSessionFuture(params: ExpireSessionRequest): Future[ExpireSessionResult] = service.expireSession(params).promise().toFuture
     @inline def listAssociatedFleetsFuture(params: ListAssociatedFleetsRequest): Future[ListAssociatedFleetsResult] = service.listAssociatedFleets(params).promise().toFuture
     @inline def listAssociatedStacksFuture(params: ListAssociatedStacksRequest): Future[ListAssociatedStacksResult] = service.listAssociatedStacks(params).promise().toFuture
+    @inline def listEntitledApplicationsFuture(params: ListEntitledApplicationsRequest): Future[ListEntitledApplicationsResult] = service.listEntitledApplications(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startFleetFuture(params: StartFleetRequest): Future[StartFleetResult] = service.startFleet(params).promise().toFuture
     @inline def startImageBuilderFuture(params: StartImageBuilderRequest): Future[StartImageBuilderResult] = service.startImageBuilder(params).promise().toFuture
@@ -134,6 +143,7 @@ package object appstream {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResult] = service.updateApplication(params).promise().toFuture
     @inline def updateDirectoryConfigFuture(params: UpdateDirectoryConfigRequest): Future[UpdateDirectoryConfigResult] = service.updateDirectoryConfig(params).promise().toFuture
+    @inline def updateEntitlementFuture(params: UpdateEntitlementRequest): Future[UpdateEntitlementResult] = service.updateEntitlement(params).promise().toFuture
     @inline def updateFleetFuture(params: UpdateFleetRequest): Future[UpdateFleetResult] = service.updateFleet(params).promise().toFuture
     @inline def updateImagePermissionsFuture(params: UpdateImagePermissionsRequest): Future[UpdateImagePermissionsResult] = service.updateImagePermissions(params).promise().toFuture
     @inline def updateStackFuture(params: UpdateStackRequest): Future[UpdateStackResult] = service.updateStack(params).promise().toFuture
@@ -146,6 +156,7 @@ package object appstream {
     def this(config: AWSConfig) = this()
 
     def associateApplicationFleet(params: AssociateApplicationFleetRequest): Request[AssociateApplicationFleetResult] = js.native
+    def associateApplicationToEntitlement(params: AssociateApplicationToEntitlementRequest): Request[AssociateApplicationToEntitlementResult] = js.native
     def associateFleet(params: AssociateFleetRequest): Request[AssociateFleetResult] = js.native
     def batchAssociateUserStack(params: BatchAssociateUserStackRequest): Request[BatchAssociateUserStackResult] = js.native
     def batchDisassociateUserStack(params: BatchDisassociateUserStackRequest): Request[BatchDisassociateUserStackResult] = js.native
@@ -153,6 +164,7 @@ package object appstream {
     def createAppBlock(params: CreateAppBlockRequest): Request[CreateAppBlockResult] = js.native
     def createApplication(params: CreateApplicationRequest): Request[CreateApplicationResult] = js.native
     def createDirectoryConfig(params: CreateDirectoryConfigRequest): Request[CreateDirectoryConfigResult] = js.native
+    def createEntitlement(params: CreateEntitlementRequest): Request[CreateEntitlementResult] = js.native
     def createFleet(params: CreateFleetRequest): Request[CreateFleetResult] = js.native
     def createImageBuilder(params: CreateImageBuilderRequest): Request[CreateImageBuilderResult] = js.native
     def createImageBuilderStreamingURL(params: CreateImageBuilderStreamingURLRequest): Request[CreateImageBuilderStreamingURLResult] = js.native
@@ -164,6 +176,7 @@ package object appstream {
     def deleteAppBlock(params: DeleteAppBlockRequest): Request[DeleteAppBlockResult] = js.native
     def deleteApplication(params: DeleteApplicationRequest): Request[DeleteApplicationResult] = js.native
     def deleteDirectoryConfig(params: DeleteDirectoryConfigRequest): Request[DeleteDirectoryConfigResult] = js.native
+    def deleteEntitlement(params: DeleteEntitlementRequest): Request[DeleteEntitlementResult] = js.native
     def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResult] = js.native
     def deleteImage(params: DeleteImageRequest): Request[DeleteImageResult] = js.native
     def deleteImageBuilder(params: DeleteImageBuilderRequest): Request[DeleteImageBuilderResult] = js.native
@@ -175,6 +188,7 @@ package object appstream {
     def describeApplicationFleetAssociations(params: DescribeApplicationFleetAssociationsRequest): Request[DescribeApplicationFleetAssociationsResult] = js.native
     def describeApplications(params: DescribeApplicationsRequest): Request[DescribeApplicationsResult] = js.native
     def describeDirectoryConfigs(params: DescribeDirectoryConfigsRequest): Request[DescribeDirectoryConfigsResult] = js.native
+    def describeEntitlements(params: DescribeEntitlementsRequest): Request[DescribeEntitlementsResult] = js.native
     def describeFleets(params: DescribeFleetsRequest): Request[DescribeFleetsResult] = js.native
     def describeImageBuilders(params: DescribeImageBuildersRequest): Request[DescribeImageBuildersResult] = js.native
     def describeImagePermissions(params: DescribeImagePermissionsRequest): Request[DescribeImagePermissionsResult] = js.native
@@ -186,11 +200,13 @@ package object appstream {
     def describeUsers(params: DescribeUsersRequest): Request[DescribeUsersResult] = js.native
     def disableUser(params: DisableUserRequest): Request[DisableUserResult] = js.native
     def disassociateApplicationFleet(params: DisassociateApplicationFleetRequest): Request[DisassociateApplicationFleetResult] = js.native
+    def disassociateApplicationFromEntitlement(params: DisassociateApplicationFromEntitlementRequest): Request[DisassociateApplicationFromEntitlementResult] = js.native
     def disassociateFleet(params: DisassociateFleetRequest): Request[DisassociateFleetResult] = js.native
     def enableUser(params: EnableUserRequest): Request[EnableUserResult] = js.native
     def expireSession(params: ExpireSessionRequest): Request[ExpireSessionResult] = js.native
     def listAssociatedFleets(params: ListAssociatedFleetsRequest): Request[ListAssociatedFleetsResult] = js.native
     def listAssociatedStacks(params: ListAssociatedStacksRequest): Request[ListAssociatedStacksResult] = js.native
+    def listEntitledApplications(params: ListEntitledApplicationsRequest): Request[ListEntitledApplicationsResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startFleet(params: StartFleetRequest): Request[StartFleetResult] = js.native
     def startImageBuilder(params: StartImageBuilderRequest): Request[StartImageBuilderResult] = js.native
@@ -200,6 +216,7 @@ package object appstream {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResult] = js.native
     def updateDirectoryConfig(params: UpdateDirectoryConfigRequest): Request[UpdateDirectoryConfigResult] = js.native
+    def updateEntitlement(params: UpdateEntitlementRequest): Request[UpdateEntitlementResult] = js.native
     def updateFleet(params: UpdateFleetRequest): Request[UpdateFleetResult] = js.native
     def updateImagePermissions(params: UpdateImagePermissionsRequest): Request[UpdateImagePermissionsResult] = js.native
     def updateStack(params: UpdateStackRequest): Request[UpdateStackResult] = js.native
@@ -437,6 +454,40 @@ package object appstream {
   }
 
   @js.native
+  trait AssociateApplicationToEntitlementRequest extends js.Object {
+    var ApplicationIdentifier: String
+    var EntitlementName: Name
+    var StackName: Name
+  }
+
+  object AssociateApplicationToEntitlementRequest {
+    @inline
+    def apply(
+        ApplicationIdentifier: String,
+        EntitlementName: Name,
+        StackName: Name
+    ): AssociateApplicationToEntitlementRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationIdentifier" -> ApplicationIdentifier.asInstanceOf[js.Any],
+        "EntitlementName" -> EntitlementName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateApplicationToEntitlementRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateApplicationToEntitlementResult extends js.Object
+
+  object AssociateApplicationToEntitlementResult {
+    @inline
+    def apply(): AssociateApplicationToEntitlementResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AssociateApplicationToEntitlementResult]
+    }
+  }
+
+  @js.native
   trait AssociateFleetRequest extends js.Object {
     var FleetName: String
     var StackName: String
@@ -530,6 +581,27 @@ package object appstream {
       val __obj = js.Dynamic.literal()
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDisassociateUserStackResult]
+    }
+  }
+
+  /** The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is ```Enabled``` . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. ```Enabled_no_directory_login_fallback``` enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
+    */
+  @js.native
+  trait CertificateBasedAuthProperties extends js.Object {
+    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[CertificateBasedAuthStatus]
+  }
+
+  object CertificateBasedAuthProperties {
+    @inline
+    def apply(
+        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[CertificateBasedAuthStatus] = js.undefined
+    ): CertificateBasedAuthProperties = {
+      val __obj = js.Dynamic.literal()
+      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CertificateBasedAuthProperties]
     }
   }
 
@@ -741,6 +813,7 @@ package object appstream {
   trait CreateDirectoryConfigRequest extends js.Object {
     var DirectoryName: DirectoryName
     var OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList
+    var CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties]
     var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
   }
 
@@ -749,6 +822,7 @@ package object appstream {
     def apply(
         DirectoryName: DirectoryName,
         OrganizationalUnitDistinguishedNames: OrganizationalUnitDistinguishedNamesList,
+        CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties] = js.undefined,
         ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
     ): CreateDirectoryConfigRequest = {
       val __obj = js.Dynamic.literal(
@@ -756,6 +830,7 @@ package object appstream {
         "OrganizationalUnitDistinguishedNames" -> OrganizationalUnitDistinguishedNames.asInstanceOf[js.Any]
       )
 
+      CertificateBasedAuthProperties.foreach(__v => __obj.updateDynamic("CertificateBasedAuthProperties")(__v.asInstanceOf[js.Any]))
       ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDirectoryConfigRequest]
     }
@@ -778,6 +853,52 @@ package object appstream {
   }
 
   @js.native
+  trait CreateEntitlementRequest extends js.Object {
+    var AppVisibility: AppVisibility
+    var Attributes: EntitlementAttributeList
+    var Name: Name
+    var StackName: Name
+    var Description: js.UndefOr[Description]
+  }
+
+  object CreateEntitlementRequest {
+    @inline
+    def apply(
+        AppVisibility: AppVisibility,
+        Attributes: EntitlementAttributeList,
+        Name: Name,
+        StackName: Name,
+        Description: js.UndefOr[Description] = js.undefined
+    ): CreateEntitlementRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppVisibility" -> AppVisibility.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEntitlementRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEntitlementResult extends js.Object {
+    var Entitlement: js.UndefOr[Entitlement]
+  }
+
+  object CreateEntitlementResult {
+    @inline
+    def apply(
+        Entitlement: js.UndefOr[Entitlement] = js.undefined
+    ): CreateEntitlementResult = {
+      val __obj = js.Dynamic.literal()
+      Entitlement.foreach(__v => __obj.updateDynamic("Entitlement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEntitlementResult]
+    }
+  }
+
+  @js.native
   trait CreateFleetRequest extends js.Object {
     var InstanceType: String
     var Name: Name
@@ -795,6 +916,7 @@ package object appstream {
     var MaxConcurrentSessions: js.UndefOr[Int]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
     var Platform: js.UndefOr[PlatformType]
+    var SessionScriptS3Location: js.UndefOr[S3Location]
     var StreamView: js.UndefOr[StreamView]
     var Tags: js.UndefOr[Tags]
     var UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings]
@@ -820,6 +942,7 @@ package object appstream {
         MaxConcurrentSessions: js.UndefOr[Int] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
+        SessionScriptS3Location: js.UndefOr[S3Location] = js.undefined,
         StreamView: js.UndefOr[StreamView] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings] = js.undefined,
@@ -844,6 +967,7 @@ package object appstream {
       MaxConcurrentSessions.foreach(__v => __obj.updateDynamic("MaxConcurrentSessions")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      SessionScriptS3Location.foreach(__v => __obj.updateDynamic("SessionScriptS3Location")(__v.asInstanceOf[js.Any]))
       StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UsbDeviceFilterStrings.foreach(__v => __obj.updateDynamic("UsbDeviceFilterStrings")(__v.asInstanceOf[js.Any]))
@@ -989,6 +1113,7 @@ package object appstream {
     var FeedbackURL: js.UndefOr[FeedbackURL]
     var RedirectURL: js.UndefOr[RedirectURL]
     var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings]
     var Tags: js.UndefOr[Tags]
     var UserSettings: js.UndefOr[UserSettingList]
   }
@@ -1005,6 +1130,7 @@ package object appstream {
         FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+        StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): CreateStackRequest = {
@@ -1020,6 +1146,7 @@ package object appstream {
       FeedbackURL.foreach(__v => __obj.updateDynamic("FeedbackURL")(__v.asInstanceOf[js.Any]))
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StorageConnectors.foreach(__v => __obj.updateDynamic("StorageConnectors")(__v.asInstanceOf[js.Any]))
+      StreamingExperienceSettings.foreach(__v => __obj.updateDynamic("StreamingExperienceSettings")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackRequest]
@@ -1298,6 +1425,37 @@ package object appstream {
     def apply(): DeleteDirectoryConfigResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDirectoryConfigResult]
+    }
+  }
+
+  @js.native
+  trait DeleteEntitlementRequest extends js.Object {
+    var Name: Name
+    var StackName: Name
+  }
+
+  object DeleteEntitlementRequest {
+    @inline
+    def apply(
+        Name: Name,
+        StackName: Name
+    ): DeleteEntitlementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEntitlementRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEntitlementResult extends js.Object
+
+  object DeleteEntitlementResult {
+    @inline
+    def apply(): DeleteEntitlementResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEntitlementResult]
     }
   }
 
@@ -1671,6 +1829,52 @@ package object appstream {
       DirectoryConfigs.foreach(__v => __obj.updateDynamic("DirectoryConfigs")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDirectoryConfigsResult]
+    }
+  }
+
+  @js.native
+  trait DescribeEntitlementsRequest extends js.Object {
+    var StackName: Name
+    var MaxResults: js.UndefOr[Int]
+    var Name: js.UndefOr[Name]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeEntitlementsRequest {
+    @inline
+    def apply(
+        StackName: Name,
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEntitlementsRequest = {
+      val __obj = js.Dynamic.literal(
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEntitlementsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEntitlementsResult extends js.Object {
+    var Entitlements: js.UndefOr[EntitlementList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeEntitlementsResult {
+    @inline
+    def apply(
+        Entitlements: js.UndefOr[EntitlementList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeEntitlementsResult = {
+      val __obj = js.Dynamic.literal()
+      Entitlements.foreach(__v => __obj.updateDynamic("Entitlements")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEntitlementsResult]
     }
   }
 
@@ -2072,6 +2276,7 @@ package object appstream {
   @js.native
   trait DirectoryConfig extends js.Object {
     var DirectoryName: DirectoryName
+    var CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties]
     var CreatedTime: js.UndefOr[Timestamp]
     var OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList]
     var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
@@ -2081,6 +2286,7 @@ package object appstream {
     @inline
     def apply(
         DirectoryName: DirectoryName,
+        CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
         ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
@@ -2089,6 +2295,7 @@ package object appstream {
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
       )
 
+      CertificateBasedAuthProperties.foreach(__v => __obj.updateDynamic("CertificateBasedAuthProperties")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       OrganizationalUnitDistinguishedNames.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any]))
       ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
@@ -2155,6 +2362,40 @@ package object appstream {
     def apply(): DisassociateApplicationFleetResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateApplicationFleetResult]
+    }
+  }
+
+  @js.native
+  trait DisassociateApplicationFromEntitlementRequest extends js.Object {
+    var ApplicationIdentifier: String
+    var EntitlementName: Name
+    var StackName: Name
+  }
+
+  object DisassociateApplicationFromEntitlementRequest {
+    @inline
+    def apply(
+        ApplicationIdentifier: String,
+        EntitlementName: Name,
+        StackName: Name
+    ): DisassociateApplicationFromEntitlementRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationIdentifier" -> ApplicationIdentifier.asInstanceOf[js.Any],
+        "EntitlementName" -> EntitlementName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateApplicationFromEntitlementRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateApplicationFromEntitlementResult extends js.Object
+
+  object DisassociateApplicationFromEntitlementResult {
+    @inline
+    def apply(): DisassociateApplicationFromEntitlementResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateApplicationFromEntitlementResult]
     }
   }
 
@@ -2241,6 +2482,85 @@ package object appstream {
     }
   }
 
+  /** The application associated to an entitlement. Access is controlled based on user attributes.
+    */
+  @js.native
+  trait EntitledApplication extends js.Object {
+    var ApplicationIdentifier: String
+  }
+
+  object EntitledApplication {
+    @inline
+    def apply(
+        ApplicationIdentifier: String
+    ): EntitledApplication = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationIdentifier" -> ApplicationIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EntitledApplication]
+    }
+  }
+
+  /** Specifies an entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.
+    */
+  @js.native
+  trait Entitlement extends js.Object {
+    var AppVisibility: AppVisibility
+    var Attributes: EntitlementAttributeList
+    var Name: Name
+    var StackName: Name
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[Description]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+  }
+
+  object Entitlement {
+    @inline
+    def apply(
+        AppVisibility: AppVisibility,
+        Attributes: EntitlementAttributeList,
+        Name: Name,
+        StackName: Name,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined
+    ): Entitlement = {
+      val __obj = js.Dynamic.literal(
+        "AppVisibility" -> AppVisibility.asInstanceOf[js.Any],
+        "Attributes" -> Attributes.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Entitlement]
+    }
+  }
+
+  /** An attribute associated with an entitlement. Application entitlements work by matching a supported SAML 2.0 attribute name to a value when a user identity federates to an Amazon AppStream 2.0 SAML application.
+    */
+  @js.native
+  trait EntitlementAttribute extends js.Object {
+    var Name: String
+    var Value: String
+  }
+
+  object EntitlementAttribute {
+    @inline
+    def apply(
+        Name: String,
+        Value: String
+    ): EntitlementAttribute = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EntitlementAttribute]
+    }
+  }
+
   @js.native
   trait ExpireSessionRequest extends js.Object {
     var SessionId: String
@@ -2293,6 +2613,7 @@ package object appstream {
     var MaxConcurrentSessions: js.UndefOr[Int]
     var MaxUserDurationInSeconds: js.UndefOr[Int]
     var Platform: js.UndefOr[PlatformType]
+    var SessionScriptS3Location: js.UndefOr[S3Location]
     var StreamView: js.UndefOr[StreamView]
     var UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -2321,6 +2642,7 @@ package object appstream {
         MaxConcurrentSessions: js.UndefOr[Int] = js.undefined,
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
+        SessionScriptS3Location: js.UndefOr[S3Location] = js.undefined,
         StreamView: js.UndefOr[StreamView] = js.undefined,
         UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -2348,6 +2670,7 @@ package object appstream {
       MaxConcurrentSessions.foreach(__v => __obj.updateDynamic("MaxConcurrentSessions")(__v.asInstanceOf[js.Any]))
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      SessionScriptS3Location.foreach(__v => __obj.updateDynamic("SessionScriptS3Location")(__v.asInstanceOf[js.Any]))
       StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       UsbDeviceFilterStrings.foreach(__v => __obj.updateDynamic("UsbDeviceFilterStrings")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -2680,6 +3003,52 @@ package object appstream {
   }
 
   @js.native
+  trait ListEntitledApplicationsRequest extends js.Object {
+    var EntitlementName: Name
+    var StackName: Name
+    var MaxResults: js.UndefOr[Int]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEntitledApplicationsRequest {
+    @inline
+    def apply(
+        EntitlementName: Name,
+        StackName: Name,
+        MaxResults: js.UndefOr[Int] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEntitledApplicationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "EntitlementName" -> EntitlementName.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEntitledApplicationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEntitledApplicationsResult extends js.Object {
+    var EntitledApplications: js.UndefOr[EntitledApplicationList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListEntitledApplicationsResult {
+    @inline
+    def apply(
+        EntitledApplications: js.UndefOr[EntitledApplicationList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListEntitledApplicationsResult = {
+      val __obj = js.Dynamic.literal()
+      EntitledApplications.foreach(__v => __obj.updateDynamic("EntitledApplications")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEntitledApplicationsResult]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: Arn
   }
@@ -2915,6 +3284,7 @@ package object appstream {
     var RedirectURL: js.UndefOr[RedirectURL]
     var StackErrors: js.UndefOr[StackErrors]
     var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings]
     var UserSettings: js.UndefOr[UserSettingList]
   }
 
@@ -2933,6 +3303,7 @@ package object appstream {
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StackErrors: js.UndefOr[StackErrors] = js.undefined,
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+        StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): Stack = {
       val __obj = js.Dynamic.literal(
@@ -2950,6 +3321,7 @@ package object appstream {
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StackErrors.foreach(__v => __obj.updateDynamic("StackErrors")(__v.asInstanceOf[js.Any]))
       StorageConnectors.foreach(__v => __obj.updateDynamic("StorageConnectors")(__v.asInstanceOf[js.Any]))
+      StreamingExperienceSettings.foreach(__v => __obj.updateDynamic("StreamingExperienceSettings")(__v.asInstanceOf[js.Any]))
       UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stack]
     }
@@ -3128,6 +3500,24 @@ package object appstream {
     }
   }
 
+  /** The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
+    */
+  @js.native
+  trait StreamingExperienceSettings extends js.Object {
+    var PreferredProtocol: js.UndefOr[PreferredProtocol]
+  }
+
+  object StreamingExperienceSettings {
+    @inline
+    def apply(
+        PreferredProtocol: js.UndefOr[PreferredProtocol] = js.undefined
+    ): StreamingExperienceSettings = {
+      val __obj = js.Dynamic.literal()
+      PreferredProtocol.foreach(__v => __obj.updateDynamic("PreferredProtocol")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamingExperienceSettings]
+    }
+  }
+
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: Arn
@@ -3251,6 +3641,7 @@ package object appstream {
   @js.native
   trait UpdateDirectoryConfigRequest extends js.Object {
     var DirectoryName: DirectoryName
+    var CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties]
     var OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList]
     var ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials]
   }
@@ -3259,6 +3650,7 @@ package object appstream {
     @inline
     def apply(
         DirectoryName: DirectoryName,
+        CertificateBasedAuthProperties: js.UndefOr[CertificateBasedAuthProperties] = js.undefined,
         OrganizationalUnitDistinguishedNames: js.UndefOr[OrganizationalUnitDistinguishedNamesList] = js.undefined,
         ServiceAccountCredentials: js.UndefOr[ServiceAccountCredentials] = js.undefined
     ): UpdateDirectoryConfigRequest = {
@@ -3266,6 +3658,7 @@ package object appstream {
         "DirectoryName" -> DirectoryName.asInstanceOf[js.Any]
       )
 
+      CertificateBasedAuthProperties.foreach(__v => __obj.updateDynamic("CertificateBasedAuthProperties")(__v.asInstanceOf[js.Any]))
       OrganizationalUnitDistinguishedNames.foreach(__v => __obj.updateDynamic("OrganizationalUnitDistinguishedNames")(__v.asInstanceOf[js.Any]))
       ServiceAccountCredentials.foreach(__v => __obj.updateDynamic("ServiceAccountCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDirectoryConfigRequest]
@@ -3289,6 +3682,52 @@ package object appstream {
   }
 
   @js.native
+  trait UpdateEntitlementRequest extends js.Object {
+    var Name: Name
+    var StackName: Name
+    var AppVisibility: js.UndefOr[AppVisibility]
+    var Attributes: js.UndefOr[EntitlementAttributeList]
+    var Description: js.UndefOr[Description]
+  }
+
+  object UpdateEntitlementRequest {
+    @inline
+    def apply(
+        Name: Name,
+        StackName: Name,
+        AppVisibility: js.UndefOr[AppVisibility] = js.undefined,
+        Attributes: js.UndefOr[EntitlementAttributeList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined
+    ): UpdateEntitlementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      AppVisibility.foreach(__v => __obj.updateDynamic("AppVisibility")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEntitlementRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEntitlementResult extends js.Object {
+    var Entitlement: js.UndefOr[Entitlement]
+  }
+
+  object UpdateEntitlementResult {
+    @inline
+    def apply(
+        Entitlement: js.UndefOr[Entitlement] = js.undefined
+    ): UpdateEntitlementResult = {
+      val __obj = js.Dynamic.literal()
+      Entitlement.foreach(__v => __obj.updateDynamic("Entitlement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEntitlementResult]
+    }
+  }
+
+  @js.native
   trait UpdateFleetRequest extends js.Object {
     var AttributesToDelete: js.UndefOr[FleetAttributes]
     var ComputeCapacity: js.UndefOr[ComputeCapacity]
@@ -3307,6 +3746,7 @@ package object appstream {
     var MaxUserDurationInSeconds: js.UndefOr[Int]
     var Name: js.UndefOr[String]
     var Platform: js.UndefOr[PlatformType]
+    var SessionScriptS3Location: js.UndefOr[S3Location]
     var StreamView: js.UndefOr[StreamView]
     var UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -3332,6 +3772,7 @@ package object appstream {
         MaxUserDurationInSeconds: js.UndefOr[Int] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Platform: js.UndefOr[PlatformType] = js.undefined,
+        SessionScriptS3Location: js.UndefOr[S3Location] = js.undefined,
         StreamView: js.UndefOr[StreamView] = js.undefined,
         UsbDeviceFilterStrings: js.UndefOr[UsbDeviceFilterStrings] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -3354,6 +3795,7 @@ package object appstream {
       MaxUserDurationInSeconds.foreach(__v => __obj.updateDynamic("MaxUserDurationInSeconds")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      SessionScriptS3Location.foreach(__v => __obj.updateDynamic("SessionScriptS3Location")(__v.asInstanceOf[js.Any]))
       StreamView.foreach(__v => __obj.updateDynamic("StreamView")(__v.asInstanceOf[js.Any]))
       UsbDeviceFilterStrings.foreach(__v => __obj.updateDynamic("UsbDeviceFilterStrings")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -3424,6 +3866,7 @@ package object appstream {
     var FeedbackURL: js.UndefOr[FeedbackURL]
     var RedirectURL: js.UndefOr[RedirectURL]
     var StorageConnectors: js.UndefOr[StorageConnectorList]
+    var StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings]
     var UserSettings: js.UndefOr[UserSettingList]
   }
 
@@ -3441,6 +3884,7 @@ package object appstream {
         FeedbackURL: js.UndefOr[FeedbackURL] = js.undefined,
         RedirectURL: js.UndefOr[RedirectURL] = js.undefined,
         StorageConnectors: js.UndefOr[StorageConnectorList] = js.undefined,
+        StreamingExperienceSettings: js.UndefOr[StreamingExperienceSettings] = js.undefined,
         UserSettings: js.UndefOr[UserSettingList] = js.undefined
     ): UpdateStackRequest = {
       val __obj = js.Dynamic.literal(
@@ -3457,6 +3901,7 @@ package object appstream {
       FeedbackURL.foreach(__v => __obj.updateDynamic("FeedbackURL")(__v.asInstanceOf[js.Any]))
       RedirectURL.foreach(__v => __obj.updateDynamic("RedirectURL")(__v.asInstanceOf[js.Any]))
       StorageConnectors.foreach(__v => __obj.updateDynamic("StorageConnectors")(__v.asInstanceOf[js.Any]))
+      StreamingExperienceSettings.foreach(__v => __obj.updateDynamic("StreamingExperienceSettings")(__v.asInstanceOf[js.Any]))
       UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStackRequest]
     }

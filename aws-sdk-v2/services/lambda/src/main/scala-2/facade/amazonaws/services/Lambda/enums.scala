@@ -47,6 +47,15 @@ object FunctionResponseType {
 }
 
 @js.native
+sealed trait FunctionUrlAuthType extends js.Any
+object FunctionUrlAuthType {
+  val NONE = "NONE".asInstanceOf[FunctionUrlAuthType]
+  val AWS_IAM = "AWS_IAM".asInstanceOf[FunctionUrlAuthType]
+
+  @inline def values: js.Array[FunctionUrlAuthType] = js.Array(NONE, AWS_IAM)
+}
+
+@js.native
 sealed trait FunctionVersion extends js.Any
 object FunctionVersion {
   val ALL = "ALL".asInstanceOf[FunctionVersion]
@@ -87,6 +96,17 @@ object LastUpdateStatusReasonCode {
   val ImageDeleted = "ImageDeleted".asInstanceOf[LastUpdateStatusReasonCode]
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[LastUpdateStatusReasonCode]
+  val KMSKeyAccessDenied = "KMSKeyAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
+  val KMSKeyNotFound = "KMSKeyNotFound".asInstanceOf[LastUpdateStatusReasonCode]
+  val InvalidStateKMSKey = "InvalidStateKMSKey".asInstanceOf[LastUpdateStatusReasonCode]
+  val DisabledKMSKey = "DisabledKMSKey".asInstanceOf[LastUpdateStatusReasonCode]
+  val EFSIOError = "EFSIOError".asInstanceOf[LastUpdateStatusReasonCode]
+  val EFSMountConnectivityError = "EFSMountConnectivityError".asInstanceOf[LastUpdateStatusReasonCode]
+  val EFSMountFailure = "EFSMountFailure".asInstanceOf[LastUpdateStatusReasonCode]
+  val EFSMountTimeout = "EFSMountTimeout".asInstanceOf[LastUpdateStatusReasonCode]
+  val InvalidRuntime = "InvalidRuntime".asInstanceOf[LastUpdateStatusReasonCode]
+  val InvalidZipFileException = "InvalidZipFileException".asInstanceOf[LastUpdateStatusReasonCode]
+  val FunctionError = "FunctionError".asInstanceOf[LastUpdateStatusReasonCode]
 
   @inline def values: js.Array[LastUpdateStatusReasonCode] = js.Array(
     EniLimitExceeded,
@@ -98,7 +118,18 @@ object LastUpdateStatusReasonCode {
     InvalidSecurityGroup,
     ImageDeleted,
     ImageAccessDenied,
-    InvalidImage
+    InvalidImage,
+    KMSKeyAccessDenied,
+    KMSKeyNotFound,
+    InvalidStateKMSKey,
+    DisabledKMSKey,
+    EFSIOError,
+    EFSMountConnectivityError,
+    EFSMountFailure,
+    EFSMountTimeout,
+    InvalidRuntime,
+    InvalidZipFileException,
+    FunctionError
   )
 }
 
@@ -140,6 +171,7 @@ object Runtime {
   val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
   val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
   val `nodejs14.x` = "nodejs14.x".asInstanceOf[Runtime]
+  val `nodejs16.x` = "nodejs16.x".asInstanceOf[Runtime]
   val java8 = "java8".asInstanceOf[Runtime]
   val `java8.al2` = "java8.al2".asInstanceOf[Runtime]
   val java11 = "java11".asInstanceOf[Runtime]
@@ -152,12 +184,14 @@ object Runtime {
   val `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
   val `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
   val `dotnetcore3.1` = "dotnetcore3.1".asInstanceOf[Runtime]
+  val dotnet6 = "dotnet6".asInstanceOf[Runtime]
   val `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
   val `go1.x` = "go1.x".asInstanceOf[Runtime]
   val `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
   val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
   val provided = "provided".asInstanceOf[Runtime]
   val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
+  val `nodejs18.x` = "nodejs18.x".asInstanceOf[Runtime]
 
   @inline def values: js.Array[Runtime] = js.Array(
     nodejs,
@@ -167,6 +201,7 @@ object Runtime {
     `nodejs10.x`,
     `nodejs12.x`,
     `nodejs14.x`,
+    `nodejs16.x`,
     java8,
     `java8.al2`,
     java11,
@@ -179,13 +214,33 @@ object Runtime {
     `dotnetcore2.0`,
     `dotnetcore2.1`,
     `dotnetcore3.1`,
+    dotnet6,
     `nodejs4.3-edge`,
     `go1.x`,
     `ruby2.5`,
     `ruby2.7`,
     provided,
-    `provided.al2`
+    `provided.al2`,
+    `nodejs18.x`
   )
+}
+
+@js.native
+sealed trait SnapStartApplyOn extends js.Any
+object SnapStartApplyOn {
+  val PublishedVersions = "PublishedVersions".asInstanceOf[SnapStartApplyOn]
+  val None = "None".asInstanceOf[SnapStartApplyOn]
+
+  @inline def values: js.Array[SnapStartApplyOn] = js.Array(PublishedVersions, None)
+}
+
+@js.native
+sealed trait SnapStartOptimizationStatus extends js.Any
+object SnapStartOptimizationStatus {
+  val On = "On".asInstanceOf[SnapStartOptimizationStatus]
+  val Off = "Off".asInstanceOf[SnapStartOptimizationStatus]
+
+  @inline def values: js.Array[SnapStartOptimizationStatus] = js.Array(On, Off)
 }
 
 @js.native
@@ -230,6 +285,17 @@ object StateReasonCode {
   val ImageDeleted = "ImageDeleted".asInstanceOf[StateReasonCode]
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[StateReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[StateReasonCode]
+  val KMSKeyAccessDenied = "KMSKeyAccessDenied".asInstanceOf[StateReasonCode]
+  val KMSKeyNotFound = "KMSKeyNotFound".asInstanceOf[StateReasonCode]
+  val InvalidStateKMSKey = "InvalidStateKMSKey".asInstanceOf[StateReasonCode]
+  val DisabledKMSKey = "DisabledKMSKey".asInstanceOf[StateReasonCode]
+  val EFSIOError = "EFSIOError".asInstanceOf[StateReasonCode]
+  val EFSMountConnectivityError = "EFSMountConnectivityError".asInstanceOf[StateReasonCode]
+  val EFSMountFailure = "EFSMountFailure".asInstanceOf[StateReasonCode]
+  val EFSMountTimeout = "EFSMountTimeout".asInstanceOf[StateReasonCode]
+  val InvalidRuntime = "InvalidRuntime".asInstanceOf[StateReasonCode]
+  val InvalidZipFileException = "InvalidZipFileException".asInstanceOf[StateReasonCode]
+  val FunctionError = "FunctionError".asInstanceOf[StateReasonCode]
 
   @inline def values: js.Array[StateReasonCode] = js.Array(
     Idle,
@@ -244,7 +310,18 @@ object StateReasonCode {
     InvalidSecurityGroup,
     ImageDeleted,
     ImageAccessDenied,
-    InvalidImage
+    InvalidImage,
+    KMSKeyAccessDenied,
+    KMSKeyNotFound,
+    InvalidStateKMSKey,
+    DisabledKMSKey,
+    EFSIOError,
+    EFSMountConnectivityError,
+    EFSMountFailure,
+    EFSMountTimeout,
+    InvalidRuntime,
+    InvalidZipFileException,
+    FunctionError
   )
 }
 

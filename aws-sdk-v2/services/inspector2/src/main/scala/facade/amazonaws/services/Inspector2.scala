@@ -15,6 +15,7 @@ package object inspector2 {
   type AggCounts = Double
   type AggregationResponseList = js.Array[AggregationResponse]
   type AmiId = String
+  type ArchitectureList = js.Array[Architecture]
   type Arn = String
   type BatchGetFreeTrialInfoRequestAccountIdsList = js.Array[MeteringAccountId]
   type ClientToken = String
@@ -33,6 +34,7 @@ package object inspector2 {
   type DisableResourceTypeList = js.Array[ResourceScanType]
   type EnableResourceTypeList = js.Array[ResourceScanType]
   type ErrorMessage = String
+  type ExecutionRoleArn = String
   type FailedAccountList = js.Array[FailedAccount]
   type FilePath = String
   type FilterArn = String
@@ -48,12 +50,16 @@ package object inspector2 {
   type FreeTrialAccountInfoList = js.Array[FreeTrialAccountInfo]
   type FreeTrialInfoErrorList = js.Array[FreeTrialInfoError]
   type FreeTrialInfoList = js.Array[FreeTrialInfo]
+  type FunctionName = String
   type ImageHash = String
   type ImageTagList = js.Array[NonEmptyString]
   type IpV4Address = String
   type IpV4AddressList = js.Array[IpV4Address]
   type IpV6Address = String
   type IpV6AddressList = js.Array[IpV6Address]
+  type LambdaLayerArn = String
+  type LambdaLayerList = js.Array[String]
+  type LayerList = js.Array[LambdaLayerArn]
   type ListAccountPermissionsMaxResults = Int
   type ListCoverageMaxResults = Int
   type ListDelegatedAdminMaxResults = Int
@@ -87,11 +93,15 @@ package object inspector2 {
   type ReportId = String
   type ResourceId = String
   type ResourceList = js.Array[Resource]
+  type SecurityGroupId = String
+  type SecurityGroupIdList = js.Array[SecurityGroupId]
   type SourceLayerHash = String
   type StepList = js.Array[Step]
   type StringFilterList = js.Array[StringFilter]
   type StringInput = String
   type StringList = js.Array[NonEmptyString]
+  type SubnetId = String
+  type SubnetIdList = js.Array[SubnetId]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[String]
@@ -102,9 +112,12 @@ package object inspector2 {
   type UsageList = js.Array[Usage]
   type UsageTotalList = js.Array[UsageTotal]
   type UsageValue = Double
+  type Version = String
+  type VpcId = String
   type VulnerabilityId = String
   type VulnerabilityIdList = js.Array[VulnerabilityId]
   type VulnerablePackageList = js.Array[VulnerablePackage]
+  type VulnerablePackageRemediation = String
 
   final class Inspector2Ops(private val service: Inspector2) extends AnyVal {
 
@@ -121,6 +134,7 @@ package object inspector2 {
     @inline def disassociateMemberFuture(params: DisassociateMemberRequest): Future[DisassociateMemberResponse] = service.disassociateMember(params).promise().toFuture
     @inline def enableDelegatedAdminAccountFuture(params: EnableDelegatedAdminAccountRequest): Future[EnableDelegatedAdminAccountResponse] = service.enableDelegatedAdminAccount(params).promise().toFuture
     @inline def enableFuture(params: EnableRequest): Future[EnableResponse] = service.enable(params).promise().toFuture
+    @inline def getConfigurationFuture(params: GetConfigurationRequest): Future[GetConfigurationResponse] = service.getConfiguration(params).promise().toFuture
     @inline def getDelegatedAdminAccountFuture(params: GetDelegatedAdminAccountRequest): Future[GetDelegatedAdminAccountResponse] = service.getDelegatedAdminAccount(params).promise().toFuture
     @inline def getFindingsReportStatusFuture(params: GetFindingsReportStatusRequest): Future[GetFindingsReportStatusResponse] = service.getFindingsReportStatus(params).promise().toFuture
     @inline def getMemberFuture(params: GetMemberRequest): Future[GetMemberResponse] = service.getMember(params).promise().toFuture
@@ -136,6 +150,7 @@ package object inspector2 {
     @inline def listUsageTotalsFuture(params: ListUsageTotalsRequest): Future[ListUsageTotalsResponse] = service.listUsageTotals(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConfigurationFuture(params: UpdateConfigurationRequest): Future[UpdateConfigurationResponse] = service.updateConfiguration(params).promise().toFuture
     @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] = service.updateFilter(params).promise().toFuture
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
 
@@ -159,6 +174,7 @@ package object inspector2 {
     def disassociateMember(params: DisassociateMemberRequest): Request[DisassociateMemberResponse] = js.native
     def enable(params: EnableRequest): Request[EnableResponse] = js.native
     def enableDelegatedAdminAccount(params: EnableDelegatedAdminAccountRequest): Request[EnableDelegatedAdminAccountResponse] = js.native
+    def getConfiguration(params: GetConfigurationRequest): Request[GetConfigurationResponse] = js.native
     def getDelegatedAdminAccount(params: GetDelegatedAdminAccountRequest): Request[GetDelegatedAdminAccountResponse] = js.native
     def getFindingsReportStatus(params: GetFindingsReportStatusRequest): Request[GetFindingsReportStatusResponse] = js.native
     def getMember(params: GetMemberRequest): Request[GetMemberResponse] = js.native
@@ -174,6 +190,7 @@ package object inspector2 {
     def listUsageTotals(params: ListUsageTotalsRequest): Request[ListUsageTotalsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateConfiguration(params: UpdateConfigurationRequest): Request[UpdateConfigurationResponse] = js.native
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse] = js.native
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
   }
@@ -256,7 +273,7 @@ package object inspector2 {
     }
   }
 
-  /** An object with details the status of an Amazon Web Services account within your Amazon Inspector environment
+  /** An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.
     */
   @js.native
   trait AccountState extends js.Object {
@@ -291,6 +308,8 @@ package object inspector2 {
     var ec2InstanceAggregation: js.UndefOr[Ec2InstanceAggregation]
     var findingTypeAggregation: js.UndefOr[FindingTypeAggregation]
     var imageLayerAggregation: js.UndefOr[ImageLayerAggregation]
+    var lambdaFunctionAggregation: js.UndefOr[LambdaFunctionAggregation]
+    var lambdaLayerAggregation: js.UndefOr[LambdaLayerAggregation]
     var packageAggregation: js.UndefOr[PackageAggregation]
     var repositoryAggregation: js.UndefOr[RepositoryAggregation]
     var titleAggregation: js.UndefOr[TitleAggregation]
@@ -305,6 +324,8 @@ package object inspector2 {
         ec2InstanceAggregation: js.UndefOr[Ec2InstanceAggregation] = js.undefined,
         findingTypeAggregation: js.UndefOr[FindingTypeAggregation] = js.undefined,
         imageLayerAggregation: js.UndefOr[ImageLayerAggregation] = js.undefined,
+        lambdaFunctionAggregation: js.UndefOr[LambdaFunctionAggregation] = js.undefined,
+        lambdaLayerAggregation: js.UndefOr[LambdaLayerAggregation] = js.undefined,
         packageAggregation: js.UndefOr[PackageAggregation] = js.undefined,
         repositoryAggregation: js.UndefOr[RepositoryAggregation] = js.undefined,
         titleAggregation: js.UndefOr[TitleAggregation] = js.undefined
@@ -316,6 +337,8 @@ package object inspector2 {
       ec2InstanceAggregation.foreach(__v => __obj.updateDynamic("ec2InstanceAggregation")(__v.asInstanceOf[js.Any]))
       findingTypeAggregation.foreach(__v => __obj.updateDynamic("findingTypeAggregation")(__v.asInstanceOf[js.Any]))
       imageLayerAggregation.foreach(__v => __obj.updateDynamic("imageLayerAggregation")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionAggregation.foreach(__v => __obj.updateDynamic("lambdaFunctionAggregation")(__v.asInstanceOf[js.Any]))
+      lambdaLayerAggregation.foreach(__v => __obj.updateDynamic("lambdaLayerAggregation")(__v.asInstanceOf[js.Any]))
       packageAggregation.foreach(__v => __obj.updateDynamic("packageAggregation")(__v.asInstanceOf[js.Any]))
       repositoryAggregation.foreach(__v => __obj.updateDynamic("repositoryAggregation")(__v.asInstanceOf[js.Any]))
       titleAggregation.foreach(__v => __obj.updateDynamic("titleAggregation")(__v.asInstanceOf[js.Any]))
@@ -333,6 +356,8 @@ package object inspector2 {
     var ec2InstanceAggregation: js.UndefOr[Ec2InstanceAggregationResponse]
     var findingTypeAggregation: js.UndefOr[FindingTypeAggregationResponse]
     var imageLayerAggregation: js.UndefOr[ImageLayerAggregationResponse]
+    var lambdaFunctionAggregation: js.UndefOr[LambdaFunctionAggregationResponse]
+    var lambdaLayerAggregation: js.UndefOr[LambdaLayerAggregationResponse]
     var packageAggregation: js.UndefOr[PackageAggregationResponse]
     var repositoryAggregation: js.UndefOr[RepositoryAggregationResponse]
     var titleAggregation: js.UndefOr[TitleAggregationResponse]
@@ -347,6 +372,8 @@ package object inspector2 {
         ec2InstanceAggregation: js.UndefOr[Ec2InstanceAggregationResponse] = js.undefined,
         findingTypeAggregation: js.UndefOr[FindingTypeAggregationResponse] = js.undefined,
         imageLayerAggregation: js.UndefOr[ImageLayerAggregationResponse] = js.undefined,
+        lambdaFunctionAggregation: js.UndefOr[LambdaFunctionAggregationResponse] = js.undefined,
+        lambdaLayerAggregation: js.UndefOr[LambdaLayerAggregationResponse] = js.undefined,
         packageAggregation: js.UndefOr[PackageAggregationResponse] = js.undefined,
         repositoryAggregation: js.UndefOr[RepositoryAggregationResponse] = js.undefined,
         titleAggregation: js.UndefOr[TitleAggregationResponse] = js.undefined
@@ -358,6 +385,8 @@ package object inspector2 {
       ec2InstanceAggregation.foreach(__v => __obj.updateDynamic("ec2InstanceAggregation")(__v.asInstanceOf[js.Any]))
       findingTypeAggregation.foreach(__v => __obj.updateDynamic("findingTypeAggregation")(__v.asInstanceOf[js.Any]))
       imageLayerAggregation.foreach(__v => __obj.updateDynamic("imageLayerAggregation")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionAggregation.foreach(__v => __obj.updateDynamic("lambdaFunctionAggregation")(__v.asInstanceOf[js.Any]))
+      lambdaLayerAggregation.foreach(__v => __obj.updateDynamic("lambdaLayerAggregation")(__v.asInstanceOf[js.Any]))
       packageAggregation.foreach(__v => __obj.updateDynamic("packageAggregation")(__v.asInstanceOf[js.Any]))
       repositoryAggregation.foreach(__v => __obj.updateDynamic("repositoryAggregation")(__v.asInstanceOf[js.Any]))
       titleAggregation.foreach(__v => __obj.updateDynamic("titleAggregation")(__v.asInstanceOf[js.Any]))
@@ -458,18 +487,22 @@ package object inspector2 {
   trait AutoEnable extends js.Object {
     var ec2: Boolean
     var ecr: Boolean
+    var lambda: js.UndefOr[Boolean]
   }
 
   object AutoEnable {
     @inline
     def apply(
         ec2: Boolean,
-        ecr: Boolean
+        ecr: Boolean,
+        lambda: js.UndefOr[Boolean] = js.undefined
     ): AutoEnable = {
       val __obj = js.Dynamic.literal(
         "ec2" -> ec2.asInstanceOf[js.Any],
         "ecr" -> ecr.asInstanceOf[js.Any]
       )
+
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoEnable]
     }
   }
@@ -634,6 +667,53 @@ package object inspector2 {
     }
   }
 
+  /** A summary of information about the AWS Lambda function.
+    */
+  @js.native
+  trait AwsLambdaFunctionDetails extends js.Object {
+    var codeSha256: NonEmptyString
+    var executionRoleArn: ExecutionRoleArn
+    var functionName: FunctionName
+    var runtime: Runtime
+    var version: Version
+    var architectures: js.UndefOr[ArchitectureList]
+    var lastModifiedAt: js.UndefOr[Timestamp]
+    var layers: js.UndefOr[LayerList]
+    var packageType: js.UndefOr[PackageType]
+    var vpcConfig: js.UndefOr[LambdaVpcConfig]
+  }
+
+  object AwsLambdaFunctionDetails {
+    @inline
+    def apply(
+        codeSha256: NonEmptyString,
+        executionRoleArn: ExecutionRoleArn,
+        functionName: FunctionName,
+        runtime: Runtime,
+        version: Version,
+        architectures: js.UndefOr[ArchitectureList] = js.undefined,
+        lastModifiedAt: js.UndefOr[Timestamp] = js.undefined,
+        layers: js.UndefOr[LayerList] = js.undefined,
+        packageType: js.UndefOr[PackageType] = js.undefined,
+        vpcConfig: js.UndefOr[LambdaVpcConfig] = js.undefined
+    ): AwsLambdaFunctionDetails = {
+      val __obj = js.Dynamic.literal(
+        "codeSha256" -> codeSha256.asInstanceOf[js.Any],
+        "executionRoleArn" -> executionRoleArn.asInstanceOf[js.Any],
+        "functionName" -> functionName.asInstanceOf[js.Any],
+        "runtime" -> runtime.asInstanceOf[js.Any],
+        "version" -> version.asInstanceOf[js.Any]
+      )
+
+      architectures.foreach(__v => __obj.updateDynamic("architectures")(__v.asInstanceOf[js.Any]))
+      lastModifiedAt.foreach(__v => __obj.updateDynamic("lastModifiedAt")(__v.asInstanceOf[js.Any]))
+      layers.foreach(__v => __obj.updateDynamic("layers")(__v.asInstanceOf[js.Any]))
+      packageType.foreach(__v => __obj.updateDynamic("packageType")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsLambdaFunctionDetails]
+    }
+  }
+
   @js.native
   trait BatchGetAccountStatusRequest extends js.Object {
     var accountIds: js.UndefOr[AccountIdSet]
@@ -771,6 +851,9 @@ package object inspector2 {
     var ec2InstanceTags: js.UndefOr[CoverageMapFilterList]
     var ecrImageTags: js.UndefOr[CoverageStringFilterList]
     var ecrRepositoryName: js.UndefOr[CoverageStringFilterList]
+    var lambdaFunctionName: js.UndefOr[CoverageStringFilterList]
+    var lambdaFunctionRuntime: js.UndefOr[CoverageStringFilterList]
+    var lambdaFunctionTags: js.UndefOr[CoverageMapFilterList]
     var resourceId: js.UndefOr[CoverageStringFilterList]
     var resourceType: js.UndefOr[CoverageStringFilterList]
     var scanStatusCode: js.UndefOr[CoverageStringFilterList]
@@ -785,6 +868,9 @@ package object inspector2 {
         ec2InstanceTags: js.UndefOr[CoverageMapFilterList] = js.undefined,
         ecrImageTags: js.UndefOr[CoverageStringFilterList] = js.undefined,
         ecrRepositoryName: js.UndefOr[CoverageStringFilterList] = js.undefined,
+        lambdaFunctionName: js.UndefOr[CoverageStringFilterList] = js.undefined,
+        lambdaFunctionRuntime: js.UndefOr[CoverageStringFilterList] = js.undefined,
+        lambdaFunctionTags: js.UndefOr[CoverageMapFilterList] = js.undefined,
         resourceId: js.UndefOr[CoverageStringFilterList] = js.undefined,
         resourceType: js.UndefOr[CoverageStringFilterList] = js.undefined,
         scanStatusCode: js.UndefOr[CoverageStringFilterList] = js.undefined,
@@ -796,6 +882,9 @@ package object inspector2 {
       ec2InstanceTags.foreach(__v => __obj.updateDynamic("ec2InstanceTags")(__v.asInstanceOf[js.Any]))
       ecrImageTags.foreach(__v => __obj.updateDynamic("ecrImageTags")(__v.asInstanceOf[js.Any]))
       ecrRepositoryName.foreach(__v => __obj.updateDynamic("ecrRepositoryName")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionName.foreach(__v => __obj.updateDynamic("lambdaFunctionName")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionRuntime.foreach(__v => __obj.updateDynamic("lambdaFunctionRuntime")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionTags.foreach(__v => __obj.updateDynamic("lambdaFunctionTags")(__v.asInstanceOf[js.Any]))
       resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       scanStatusCode.foreach(__v => __obj.updateDynamic("scanStatusCode")(__v.asInstanceOf[js.Any]))
@@ -894,6 +983,7 @@ package object inspector2 {
     var filterCriteria: FilterCriteria
     var name: FilterName
     var description: js.UndefOr[FilterDescription]
+    var reason: js.UndefOr[FilterReason]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -904,6 +994,7 @@ package object inspector2 {
         filterCriteria: FilterCriteria,
         name: FilterName,
         description: js.UndefOr[FilterDescription] = js.undefined,
+        reason: js.UndefOr[FilterReason] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFilterRequest = {
       val __obj = js.Dynamic.literal(
@@ -913,6 +1004,7 @@ package object inspector2 {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFilterRequest]
     }
@@ -1416,6 +1508,43 @@ package object inspector2 {
     }
   }
 
+  /** Details about the ECR automated re-scan duration setting for your environment.
+    */
+  @js.native
+  trait EcrConfiguration extends js.Object {
+    var rescanDuration: EcrRescanDuration
+  }
+
+  object EcrConfiguration {
+    @inline
+    def apply(
+        rescanDuration: EcrRescanDuration
+    ): EcrConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "rescanDuration" -> rescanDuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EcrConfiguration]
+    }
+  }
+
+  /** Details about the state of the ECR scans for your environment.
+    */
+  @js.native
+  trait EcrConfigurationState extends js.Object {
+    var rescanDurationState: js.UndefOr[EcrRescanDurationState]
+  }
+
+  object EcrConfigurationState {
+    @inline
+    def apply(
+        rescanDurationState: js.UndefOr[EcrRescanDurationState] = js.undefined
+    ): EcrConfigurationState = {
+      val __obj = js.Dynamic.literal()
+      rescanDurationState.foreach(__v => __obj.updateDynamic("rescanDurationState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EcrConfigurationState]
+    }
+  }
+
   /** Information on the Amazon ECR image metadata associated with a finding.
     */
   @js.native
@@ -1452,6 +1581,30 @@ package object inspector2 {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       scanFrequency.foreach(__v => __obj.updateDynamic("scanFrequency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EcrRepositoryMetadata]
+    }
+  }
+
+  /** Details about the state of any changes to the ECR automated re-scan duration setting.
+    */
+  @js.native
+  trait EcrRescanDurationState extends js.Object {
+    var rescanDuration: js.UndefOr[EcrRescanDuration]
+    var status: js.UndefOr[EcrRescanDurationStatus]
+    var updatedAt: js.UndefOr[DateTimeTimestamp]
+  }
+
+  object EcrRescanDurationState {
+    @inline
+    def apply(
+        rescanDuration: js.UndefOr[EcrRescanDuration] = js.undefined,
+        status: js.UndefOr[EcrRescanDurationStatus] = js.undefined,
+        updatedAt: js.UndefOr[DateTimeTimestamp] = js.undefined
+    ): EcrRescanDurationState = {
+      val __obj = js.Dynamic.literal()
+      rescanDuration.foreach(__v => __obj.updateDynamic("rescanDuration")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EcrRescanDurationState]
     }
   }
 
@@ -1535,6 +1688,24 @@ package object inspector2 {
 
       failedAccounts.foreach(__v => __obj.updateDynamic("failedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableResponse]
+    }
+  }
+
+  /** The details of an exploit available for a finding discovered in your environment.
+    */
+  @js.native
+  trait ExploitabilityDetails extends js.Object {
+    var lastKnownExploitAt: js.UndefOr[DateTimeTimestamp]
+  }
+
+  object ExploitabilityDetails {
+    @inline
+    def apply(
+        lastKnownExploitAt: js.UndefOr[DateTimeTimestamp] = js.undefined
+    ): ExploitabilityDetails = {
+      val __obj = js.Dynamic.literal()
+      lastKnownExploitAt.foreach(__v => __obj.updateDynamic("lastKnownExploitAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExploitabilityDetails]
     }
   }
 
@@ -1633,11 +1804,18 @@ package object inspector2 {
     var ecrImageRegistry: js.UndefOr[StringFilterList]
     var ecrImageRepositoryName: js.UndefOr[StringFilterList]
     var ecrImageTags: js.UndefOr[StringFilterList]
+    var exploitAvailable: js.UndefOr[StringFilterList]
     var findingArn: js.UndefOr[StringFilterList]
     var findingStatus: js.UndefOr[StringFilterList]
     var findingType: js.UndefOr[StringFilterList]
     var firstObservedAt: js.UndefOr[DateFilterList]
+    var fixAvailable: js.UndefOr[StringFilterList]
     var inspectorScore: js.UndefOr[NumberFilterList]
+    var lambdaFunctionExecutionRoleArn: js.UndefOr[StringFilterList]
+    var lambdaFunctionLastModifiedAt: js.UndefOr[DateFilterList]
+    var lambdaFunctionLayers: js.UndefOr[StringFilterList]
+    var lambdaFunctionName: js.UndefOr[StringFilterList]
+    var lambdaFunctionRuntime: js.UndefOr[StringFilterList]
     var lastObservedAt: js.UndefOr[DateFilterList]
     var networkProtocol: js.UndefOr[StringFilterList]
     var portRange: js.UndefOr[PortRangeFilterList]
@@ -1669,11 +1847,18 @@ package object inspector2 {
         ecrImageRegistry: js.UndefOr[StringFilterList] = js.undefined,
         ecrImageRepositoryName: js.UndefOr[StringFilterList] = js.undefined,
         ecrImageTags: js.UndefOr[StringFilterList] = js.undefined,
+        exploitAvailable: js.UndefOr[StringFilterList] = js.undefined,
         findingArn: js.UndefOr[StringFilterList] = js.undefined,
         findingStatus: js.UndefOr[StringFilterList] = js.undefined,
         findingType: js.UndefOr[StringFilterList] = js.undefined,
         firstObservedAt: js.UndefOr[DateFilterList] = js.undefined,
+        fixAvailable: js.UndefOr[StringFilterList] = js.undefined,
         inspectorScore: js.UndefOr[NumberFilterList] = js.undefined,
+        lambdaFunctionExecutionRoleArn: js.UndefOr[StringFilterList] = js.undefined,
+        lambdaFunctionLastModifiedAt: js.UndefOr[DateFilterList] = js.undefined,
+        lambdaFunctionLayers: js.UndefOr[StringFilterList] = js.undefined,
+        lambdaFunctionName: js.UndefOr[StringFilterList] = js.undefined,
+        lambdaFunctionRuntime: js.UndefOr[StringFilterList] = js.undefined,
         lastObservedAt: js.UndefOr[DateFilterList] = js.undefined,
         networkProtocol: js.UndefOr[StringFilterList] = js.undefined,
         portRange: js.UndefOr[PortRangeFilterList] = js.undefined,
@@ -1702,11 +1887,18 @@ package object inspector2 {
       ecrImageRegistry.foreach(__v => __obj.updateDynamic("ecrImageRegistry")(__v.asInstanceOf[js.Any]))
       ecrImageRepositoryName.foreach(__v => __obj.updateDynamic("ecrImageRepositoryName")(__v.asInstanceOf[js.Any]))
       ecrImageTags.foreach(__v => __obj.updateDynamic("ecrImageTags")(__v.asInstanceOf[js.Any]))
+      exploitAvailable.foreach(__v => __obj.updateDynamic("exploitAvailable")(__v.asInstanceOf[js.Any]))
       findingArn.foreach(__v => __obj.updateDynamic("findingArn")(__v.asInstanceOf[js.Any]))
       findingStatus.foreach(__v => __obj.updateDynamic("findingStatus")(__v.asInstanceOf[js.Any]))
       findingType.foreach(__v => __obj.updateDynamic("findingType")(__v.asInstanceOf[js.Any]))
       firstObservedAt.foreach(__v => __obj.updateDynamic("firstObservedAt")(__v.asInstanceOf[js.Any]))
+      fixAvailable.foreach(__v => __obj.updateDynamic("fixAvailable")(__v.asInstanceOf[js.Any]))
       inspectorScore.foreach(__v => __obj.updateDynamic("inspectorScore")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionExecutionRoleArn.foreach(__v => __obj.updateDynamic("lambdaFunctionExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionLastModifiedAt.foreach(__v => __obj.updateDynamic("lambdaFunctionLastModifiedAt")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionLayers.foreach(__v => __obj.updateDynamic("lambdaFunctionLayers")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionName.foreach(__v => __obj.updateDynamic("lambdaFunctionName")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionRuntime.foreach(__v => __obj.updateDynamic("lambdaFunctionRuntime")(__v.asInstanceOf[js.Any]))
       lastObservedAt.foreach(__v => __obj.updateDynamic("lastObservedAt")(__v.asInstanceOf[js.Any]))
       networkProtocol.foreach(__v => __obj.updateDynamic("networkProtocol")(__v.asInstanceOf[js.Any]))
       portRange.foreach(__v => __obj.updateDynamic("portRange")(__v.asInstanceOf[js.Any]))
@@ -1739,6 +1931,9 @@ package object inspector2 {
     var severity: Severity
     var status: FindingStatus
     var `type`: FindingType
+    var exploitAvailable: js.UndefOr[ExploitAvailable]
+    var exploitabilityDetails: js.UndefOr[ExploitabilityDetails]
+    var fixAvailable: js.UndefOr[FixAvailable]
     var inspectorScore: js.UndefOr[Double]
     var inspectorScoreDetails: js.UndefOr[InspectorScoreDetails]
     var networkReachabilityDetails: js.UndefOr[NetworkReachabilityDetails]
@@ -1760,6 +1955,9 @@ package object inspector2 {
         severity: Severity,
         status: FindingStatus,
         `type`: FindingType,
+        exploitAvailable: js.UndefOr[ExploitAvailable] = js.undefined,
+        exploitabilityDetails: js.UndefOr[ExploitabilityDetails] = js.undefined,
+        fixAvailable: js.UndefOr[FixAvailable] = js.undefined,
         inspectorScore: js.UndefOr[Double] = js.undefined,
         inspectorScoreDetails: js.UndefOr[InspectorScoreDetails] = js.undefined,
         networkReachabilityDetails: js.UndefOr[NetworkReachabilityDetails] = js.undefined,
@@ -1780,6 +1978,9 @@ package object inspector2 {
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      exploitAvailable.foreach(__v => __obj.updateDynamic("exploitAvailable")(__v.asInstanceOf[js.Any]))
+      exploitabilityDetails.foreach(__v => __obj.updateDynamic("exploitabilityDetails")(__v.asInstanceOf[js.Any]))
+      fixAvailable.foreach(__v => __obj.updateDynamic("fixAvailable")(__v.asInstanceOf[js.Any]))
       inspectorScore.foreach(__v => __obj.updateDynamic("inspectorScore")(__v.asInstanceOf[js.Any]))
       inspectorScoreDetails.foreach(__v => __obj.updateDynamic("inspectorScoreDetails")(__v.asInstanceOf[js.Any]))
       networkReachabilityDetails.foreach(__v => __obj.updateDynamic("networkReachabilityDetails")(__v.asInstanceOf[js.Any]))
@@ -1910,6 +2111,33 @@ package object inspector2 {
         "message" -> message.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[FreeTrialInfoError]
+    }
+  }
+
+  @js.native
+  trait GetConfigurationRequest extends js.Object
+
+  object GetConfigurationRequest {
+    @inline
+    def apply(): GetConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetConfigurationResponse extends js.Object {
+    var ecrConfiguration: js.UndefOr[EcrConfigurationState]
+  }
+
+  object GetConfigurationResponse {
+    @inline
+    def apply(
+        ecrConfiguration: js.UndefOr[EcrConfigurationState] = js.undefined
+    ): GetConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      ecrConfiguration.foreach(__v => __obj.updateDynamic("ecrConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConfigurationResponse]
     }
   }
 
@@ -2097,6 +2325,190 @@ package object inspector2 {
       val __obj = js.Dynamic.literal()
       adjustedCvss.foreach(__v => __obj.updateDynamic("adjustedCvss")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InspectorScoreDetails]
+    }
+  }
+
+  /** The details that define a findings aggregation based on AWS Lambda functions.
+    */
+  @js.native
+  trait LambdaFunctionAggregation extends js.Object {
+    var functionNames: js.UndefOr[StringFilterList]
+    var functionTags: js.UndefOr[MapFilterList]
+    var resourceIds: js.UndefOr[StringFilterList]
+    var runtimes: js.UndefOr[StringFilterList]
+    var sortBy: js.UndefOr[LambdaFunctionSortBy]
+    var sortOrder: js.UndefOr[SortOrder]
+  }
+
+  object LambdaFunctionAggregation {
+    @inline
+    def apply(
+        functionNames: js.UndefOr[StringFilterList] = js.undefined,
+        functionTags: js.UndefOr[MapFilterList] = js.undefined,
+        resourceIds: js.UndefOr[StringFilterList] = js.undefined,
+        runtimes: js.UndefOr[StringFilterList] = js.undefined,
+        sortBy: js.UndefOr[LambdaFunctionSortBy] = js.undefined,
+        sortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): LambdaFunctionAggregation = {
+      val __obj = js.Dynamic.literal()
+      functionNames.foreach(__v => __obj.updateDynamic("functionNames")(__v.asInstanceOf[js.Any]))
+      functionTags.foreach(__v => __obj.updateDynamic("functionTags")(__v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.updateDynamic("resourceIds")(__v.asInstanceOf[js.Any]))
+      runtimes.foreach(__v => __obj.updateDynamic("runtimes")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionAggregation]
+    }
+  }
+
+  /** A response that contains the results of an AWS Lambda function finding aggregation.
+    */
+  @js.native
+  trait LambdaFunctionAggregationResponse extends js.Object {
+    var resourceId: NonEmptyString
+    var accountId: js.UndefOr[AccountId]
+    var functionName: js.UndefOr[String]
+    var lambdaTags: js.UndefOr[TagMap]
+    var lastModifiedAt: js.UndefOr[DateTimeTimestamp]
+    var runtime: js.UndefOr[String]
+    var severityCounts: js.UndefOr[SeverityCounts]
+  }
+
+  object LambdaFunctionAggregationResponse {
+    @inline
+    def apply(
+        resourceId: NonEmptyString,
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        functionName: js.UndefOr[String] = js.undefined,
+        lambdaTags: js.UndefOr[TagMap] = js.undefined,
+        lastModifiedAt: js.UndefOr[DateTimeTimestamp] = js.undefined,
+        runtime: js.UndefOr[String] = js.undefined,
+        severityCounts: js.UndefOr[SeverityCounts] = js.undefined
+    ): LambdaFunctionAggregationResponse = {
+      val __obj = js.Dynamic.literal(
+        "resourceId" -> resourceId.asInstanceOf[js.Any]
+      )
+
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      functionName.foreach(__v => __obj.updateDynamic("functionName")(__v.asInstanceOf[js.Any]))
+      lambdaTags.foreach(__v => __obj.updateDynamic("lambdaTags")(__v.asInstanceOf[js.Any]))
+      lastModifiedAt.foreach(__v => __obj.updateDynamic("lastModifiedAt")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
+      severityCounts.foreach(__v => __obj.updateDynamic("severityCounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionAggregationResponse]
+    }
+  }
+
+  /** The AWS Lambda function metadata.
+    */
+  @js.native
+  trait LambdaFunctionMetadata extends js.Object {
+    var functionName: js.UndefOr[String]
+    var functionTags: js.UndefOr[TagMap]
+    var layers: js.UndefOr[LambdaLayerList]
+    var runtime: js.UndefOr[Runtime]
+  }
+
+  object LambdaFunctionMetadata {
+    @inline
+    def apply(
+        functionName: js.UndefOr[String] = js.undefined,
+        functionTags: js.UndefOr[TagMap] = js.undefined,
+        layers: js.UndefOr[LambdaLayerList] = js.undefined,
+        runtime: js.UndefOr[Runtime] = js.undefined
+    ): LambdaFunctionMetadata = {
+      val __obj = js.Dynamic.literal()
+      functionName.foreach(__v => __obj.updateDynamic("functionName")(__v.asInstanceOf[js.Any]))
+      functionTags.foreach(__v => __obj.updateDynamic("functionTags")(__v.asInstanceOf[js.Any]))
+      layers.foreach(__v => __obj.updateDynamic("layers")(__v.asInstanceOf[js.Any]))
+      runtime.foreach(__v => __obj.updateDynamic("runtime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaFunctionMetadata]
+    }
+  }
+
+  /** The details that define a findings aggregation based on an AWS Lambda function's layers.
+    */
+  @js.native
+  trait LambdaLayerAggregation extends js.Object {
+    var functionNames: js.UndefOr[StringFilterList]
+    var layerArns: js.UndefOr[StringFilterList]
+    var resourceIds: js.UndefOr[StringFilterList]
+    var sortBy: js.UndefOr[LambdaLayerSortBy]
+    var sortOrder: js.UndefOr[SortOrder]
+  }
+
+  object LambdaLayerAggregation {
+    @inline
+    def apply(
+        functionNames: js.UndefOr[StringFilterList] = js.undefined,
+        layerArns: js.UndefOr[StringFilterList] = js.undefined,
+        resourceIds: js.UndefOr[StringFilterList] = js.undefined,
+        sortBy: js.UndefOr[LambdaLayerSortBy] = js.undefined,
+        sortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): LambdaLayerAggregation = {
+      val __obj = js.Dynamic.literal()
+      functionNames.foreach(__v => __obj.updateDynamic("functionNames")(__v.asInstanceOf[js.Any]))
+      layerArns.foreach(__v => __obj.updateDynamic("layerArns")(__v.asInstanceOf[js.Any]))
+      resourceIds.foreach(__v => __obj.updateDynamic("resourceIds")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaLayerAggregation]
+    }
+  }
+
+  /** A response that contains the results of an AWS Lambda function layer finding aggregation.
+    */
+  @js.native
+  trait LambdaLayerAggregationResponse extends js.Object {
+    var accountId: AccountId
+    var functionName: NonEmptyString
+    var layerArn: NonEmptyString
+    var resourceId: NonEmptyString
+    var severityCounts: js.UndefOr[SeverityCounts]
+  }
+
+  object LambdaLayerAggregationResponse {
+    @inline
+    def apply(
+        accountId: AccountId,
+        functionName: NonEmptyString,
+        layerArn: NonEmptyString,
+        resourceId: NonEmptyString,
+        severityCounts: js.UndefOr[SeverityCounts] = js.undefined
+    ): LambdaLayerAggregationResponse = {
+      val __obj = js.Dynamic.literal(
+        "accountId" -> accountId.asInstanceOf[js.Any],
+        "functionName" -> functionName.asInstanceOf[js.Any],
+        "layerArn" -> layerArn.asInstanceOf[js.Any],
+        "resourceId" -> resourceId.asInstanceOf[js.Any]
+      )
+
+      severityCounts.foreach(__v => __obj.updateDynamic("severityCounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaLayerAggregationResponse]
+    }
+  }
+
+  /** The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
+    */
+  @js.native
+  trait LambdaVpcConfig extends js.Object {
+    var securityGroupIds: js.UndefOr[SecurityGroupIdList]
+    var subnetIds: js.UndefOr[SubnetIdList]
+    var vpcId: js.UndefOr[VpcId]
+  }
+
+  object LambdaVpcConfig {
+    @inline
+    def apply(
+        securityGroupIds: js.UndefOr[SecurityGroupIdList] = js.undefined,
+        subnetIds: js.UndefOr[SubnetIdList] = js.undefined,
+        vpcId: js.UndefOr[VpcId] = js.undefined
+    ): LambdaVpcConfig = {
+      val __obj = js.Dynamic.literal()
+      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
+      subnetIds.foreach(__v => __obj.updateDynamic("subnetIds")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaVpcConfig]
     }
   }
 
@@ -2702,6 +3114,7 @@ package object inspector2 {
     var epoch: js.UndefOr[NumberFilter]
     var name: js.UndefOr[StringFilter]
     var release: js.UndefOr[StringFilter]
+    var sourceLambdaLayerArn: js.UndefOr[StringFilter]
     var sourceLayerHash: js.UndefOr[StringFilter]
     var version: js.UndefOr[StringFilter]
   }
@@ -2713,6 +3126,7 @@ package object inspector2 {
         epoch: js.UndefOr[NumberFilter] = js.undefined,
         name: js.UndefOr[StringFilter] = js.undefined,
         release: js.UndefOr[StringFilter] = js.undefined,
+        sourceLambdaLayerArn: js.UndefOr[StringFilter] = js.undefined,
         sourceLayerHash: js.UndefOr[StringFilter] = js.undefined,
         version: js.UndefOr[StringFilter] = js.undefined
     ): PackageFilter = {
@@ -2721,6 +3135,7 @@ package object inspector2 {
       epoch.foreach(__v => __obj.updateDynamic("epoch")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       release.foreach(__v => __obj.updateDynamic("release")(__v.asInstanceOf[js.Any]))
+      sourceLambdaLayerArn.foreach(__v => __obj.updateDynamic("sourceLambdaLayerArn")(__v.asInstanceOf[js.Any]))
       sourceLayerHash.foreach(__v => __obj.updateDynamic("sourceLayerHash")(__v.asInstanceOf[js.Any]))
       version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackageFilter]
@@ -2733,7 +3148,6 @@ package object inspector2 {
   trait PackageVulnerabilityDetails extends js.Object {
     var source: NonEmptyString
     var vulnerabilityId: VulnerabilityId
-    var vulnerablePackages: VulnerablePackageList
     var cvss: js.UndefOr[CvssScoreList]
     var referenceUrls: js.UndefOr[NonEmptyStringList]
     var relatedVulnerabilities: js.UndefOr[VulnerabilityIdList]
@@ -2741,6 +3155,7 @@ package object inspector2 {
     var vendorCreatedAt: js.UndefOr[DateTimeTimestamp]
     var vendorSeverity: js.UndefOr[NonEmptyString]
     var vendorUpdatedAt: js.UndefOr[DateTimeTimestamp]
+    var vulnerablePackages: js.UndefOr[VulnerablePackageList]
   }
 
   object PackageVulnerabilityDetails {
@@ -2748,19 +3163,18 @@ package object inspector2 {
     def apply(
         source: NonEmptyString,
         vulnerabilityId: VulnerabilityId,
-        vulnerablePackages: VulnerablePackageList,
         cvss: js.UndefOr[CvssScoreList] = js.undefined,
         referenceUrls: js.UndefOr[NonEmptyStringList] = js.undefined,
         relatedVulnerabilities: js.UndefOr[VulnerabilityIdList] = js.undefined,
         sourceUrl: js.UndefOr[NonEmptyString] = js.undefined,
         vendorCreatedAt: js.UndefOr[DateTimeTimestamp] = js.undefined,
         vendorSeverity: js.UndefOr[NonEmptyString] = js.undefined,
-        vendorUpdatedAt: js.UndefOr[DateTimeTimestamp] = js.undefined
+        vendorUpdatedAt: js.UndefOr[DateTimeTimestamp] = js.undefined,
+        vulnerablePackages: js.UndefOr[VulnerablePackageList] = js.undefined
     ): PackageVulnerabilityDetails = {
       val __obj = js.Dynamic.literal(
         "source" -> source.asInstanceOf[js.Any],
-        "vulnerabilityId" -> vulnerabilityId.asInstanceOf[js.Any],
-        "vulnerablePackages" -> vulnerablePackages.asInstanceOf[js.Any]
+        "vulnerabilityId" -> vulnerabilityId.asInstanceOf[js.Any]
       )
 
       cvss.foreach(__v => __obj.updateDynamic("cvss")(__v.asInstanceOf[js.Any]))
@@ -2770,6 +3184,7 @@ package object inspector2 {
       vendorCreatedAt.foreach(__v => __obj.updateDynamic("vendorCreatedAt")(__v.asInstanceOf[js.Any]))
       vendorSeverity.foreach(__v => __obj.updateDynamic("vendorSeverity")(__v.asInstanceOf[js.Any]))
       vendorUpdatedAt.foreach(__v => __obj.updateDynamic("vendorUpdatedAt")(__v.asInstanceOf[js.Any]))
+      vulnerablePackages.foreach(__v => __obj.updateDynamic("vulnerablePackages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackageVulnerabilityDetails]
     }
   }
@@ -2972,17 +3387,20 @@ package object inspector2 {
   trait ResourceDetails extends js.Object {
     var awsEc2Instance: js.UndefOr[AwsEc2InstanceDetails]
     var awsEcrContainerImage: js.UndefOr[AwsEcrContainerImageDetails]
+    var awsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails]
   }
 
   object ResourceDetails {
     @inline
     def apply(
         awsEc2Instance: js.UndefOr[AwsEc2InstanceDetails] = js.undefined,
-        awsEcrContainerImage: js.UndefOr[AwsEcrContainerImageDetails] = js.undefined
+        awsEcrContainerImage: js.UndefOr[AwsEcrContainerImageDetails] = js.undefined,
+        awsLambdaFunction: js.UndefOr[AwsLambdaFunctionDetails] = js.undefined
     ): ResourceDetails = {
       val __obj = js.Dynamic.literal()
       awsEc2Instance.foreach(__v => __obj.updateDynamic("awsEc2Instance")(__v.asInstanceOf[js.Any]))
       awsEcrContainerImage.foreach(__v => __obj.updateDynamic("awsEcrContainerImage")(__v.asInstanceOf[js.Any]))
+      awsLambdaFunction.foreach(__v => __obj.updateDynamic("awsLambdaFunction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDetails]
     }
   }
@@ -2994,6 +3412,7 @@ package object inspector2 {
     var ec2: js.UndefOr[Ec2Metadata]
     var ecrImage: js.UndefOr[EcrContainerImageMetadata]
     var ecrRepository: js.UndefOr[EcrRepositoryMetadata]
+    var lambdaFunction: js.UndefOr[LambdaFunctionMetadata]
   }
 
   object ResourceScanMetadata {
@@ -3001,12 +3420,14 @@ package object inspector2 {
     def apply(
         ec2: js.UndefOr[Ec2Metadata] = js.undefined,
         ecrImage: js.UndefOr[EcrContainerImageMetadata] = js.undefined,
-        ecrRepository: js.UndefOr[EcrRepositoryMetadata] = js.undefined
+        ecrRepository: js.UndefOr[EcrRepositoryMetadata] = js.undefined,
+        lambdaFunction: js.UndefOr[LambdaFunctionMetadata] = js.undefined
     ): ResourceScanMetadata = {
       val __obj = js.Dynamic.literal()
       ec2.foreach(__v => __obj.updateDynamic("ec2")(__v.asInstanceOf[js.Any]))
       ecrImage.foreach(__v => __obj.updateDynamic("ecrImage")(__v.asInstanceOf[js.Any]))
       ecrRepository.foreach(__v => __obj.updateDynamic("ecrRepository")(__v.asInstanceOf[js.Any]))
+      lambdaFunction.foreach(__v => __obj.updateDynamic("lambdaFunction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceScanMetadata]
     }
   }
@@ -3017,18 +3438,22 @@ package object inspector2 {
   trait ResourceState extends js.Object {
     var ec2: State
     var ecr: State
+    var lambda: js.UndefOr[State]
   }
 
   object ResourceState {
     @inline
     def apply(
         ec2: State,
-        ecr: State
+        ecr: State,
+        lambda: js.UndefOr[State] = js.undefined
     ): ResourceState = {
       val __obj = js.Dynamic.literal(
         "ec2" -> ec2.asInstanceOf[js.Any],
         "ecr" -> ecr.asInstanceOf[js.Any]
       )
+
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceState]
     }
   }
@@ -3039,18 +3464,22 @@ package object inspector2 {
   trait ResourceStatus extends js.Object {
     var ec2: Status
     var ecr: Status
+    var lambda: js.UndefOr[Status]
   }
 
   object ResourceStatus {
     @inline
     def apply(
         ec2: Status,
-        ecr: Status
+        ecr: Status,
+        lambda: js.UndefOr[Status] = js.undefined
     ): ResourceStatus = {
       val __obj = js.Dynamic.literal(
         "ec2" -> ec2.asInstanceOf[js.Any],
         "ecr" -> ecr.asInstanceOf[js.Any]
       )
+
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceStatus]
     }
   }
@@ -3317,12 +3746,41 @@ package object inspector2 {
   }
 
   @js.native
+  trait UpdateConfigurationRequest extends js.Object {
+    var ecrConfiguration: EcrConfiguration
+  }
+
+  object UpdateConfigurationRequest {
+    @inline
+    def apply(
+        ecrConfiguration: EcrConfiguration
+    ): UpdateConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ecrConfiguration" -> ecrConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConfigurationResponse extends js.Object
+
+  object UpdateConfigurationResponse {
+    @inline
+    def apply(): UpdateConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateFilterRequest extends js.Object {
     var filterArn: FilterArn
     var action: js.UndefOr[FilterAction]
     var description: js.UndefOr[FilterDescription]
     var filterCriteria: js.UndefOr[FilterCriteria]
     var name: js.UndefOr[FilterName]
+    var reason: js.UndefOr[FilterReason]
   }
 
   object UpdateFilterRequest {
@@ -3332,7 +3790,8 @@ package object inspector2 {
         action: js.UndefOr[FilterAction] = js.undefined,
         description: js.UndefOr[FilterDescription] = js.undefined,
         filterCriteria: js.UndefOr[FilterCriteria] = js.undefined,
-        name: js.UndefOr[FilterName] = js.undefined
+        name: js.UndefOr[FilterName] = js.undefined,
+        reason: js.UndefOr[FilterReason] = js.undefined
     ): UpdateFilterRequest = {
       val __obj = js.Dynamic.literal(
         "filterArn" -> filterArn.asInstanceOf[js.Any]
@@ -3342,6 +3801,7 @@ package object inspector2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       filterCriteria.foreach(__v => __obj.updateDynamic("filterCriteria")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFilterRequest]
     }
   }
@@ -3457,6 +3917,8 @@ package object inspector2 {
     var fixedInVersion: js.UndefOr[PackageVersion]
     var packageManager: js.UndefOr[PackageManager]
     var release: js.UndefOr[PackageRelease]
+    var remediation: js.UndefOr[VulnerablePackageRemediation]
+    var sourceLambdaLayerArn: js.UndefOr[LambdaLayerArn]
     var sourceLayerHash: js.UndefOr[SourceLayerHash]
   }
 
@@ -3471,6 +3933,8 @@ package object inspector2 {
         fixedInVersion: js.UndefOr[PackageVersion] = js.undefined,
         packageManager: js.UndefOr[PackageManager] = js.undefined,
         release: js.UndefOr[PackageRelease] = js.undefined,
+        remediation: js.UndefOr[VulnerablePackageRemediation] = js.undefined,
+        sourceLambdaLayerArn: js.UndefOr[LambdaLayerArn] = js.undefined,
         sourceLayerHash: js.UndefOr[SourceLayerHash] = js.undefined
     ): VulnerablePackage = {
       val __obj = js.Dynamic.literal(
@@ -3484,6 +3948,8 @@ package object inspector2 {
       fixedInVersion.foreach(__v => __obj.updateDynamic("fixedInVersion")(__v.asInstanceOf[js.Any]))
       packageManager.foreach(__v => __obj.updateDynamic("packageManager")(__v.asInstanceOf[js.Any]))
       release.foreach(__v => __obj.updateDynamic("release")(__v.asInstanceOf[js.Any]))
+      remediation.foreach(__v => __obj.updateDynamic("remediation")(__v.asInstanceOf[js.Any]))
+      sourceLambdaLayerArn.foreach(__v => __obj.updateDynamic("sourceLambdaLayerArn")(__v.asInstanceOf[js.Any]))
       sourceLayerHash.foreach(__v => __obj.updateDynamic("sourceLayerHash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VulnerablePackage]
     }

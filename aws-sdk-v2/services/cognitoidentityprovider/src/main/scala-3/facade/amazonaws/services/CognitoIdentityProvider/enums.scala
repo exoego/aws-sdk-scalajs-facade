@@ -126,6 +126,14 @@ object DefaultEmailOptionType {
   inline def values: js.Array[DefaultEmailOptionType] = js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE)
 }
 
+type DeletionProtectionType = "ACTIVE" | "INACTIVE"
+object DeletionProtectionType {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+
+  inline def values: js.Array[DeletionProtectionType] = js.Array(ACTIVE, INACTIVE)
+}
+
 type DeliveryMediumType = "SMS" | "EMAIL"
 object DeliveryMediumType {
   inline val SMS: "SMS" = "SMS"
@@ -170,21 +178,24 @@ object EventFilterType {
   inline def values: js.Array[EventFilterType] = js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP)
 }
 
-type EventResponseType = "Success" | "Failure"
+type EventResponseType = "Pass" | "Fail" | "InProgress"
 object EventResponseType {
-  inline val Success: "Success" = "Success"
-  inline val Failure: "Failure" = "Failure"
+  inline val Pass: "Pass" = "Pass"
+  inline val Fail: "Fail" = "Fail"
+  inline val InProgress: "InProgress" = "InProgress"
 
-  inline def values: js.Array[EventResponseType] = js.Array(Success, Failure)
+  inline def values: js.Array[EventResponseType] = js.Array(Pass, Fail, InProgress)
 }
 
-type EventType = "SignIn" | "SignUp" | "ForgotPassword"
+type EventType = "SignIn" | "SignUp" | "ForgotPassword" | "PasswordChange" | "ResendCode"
 object EventType {
   inline val SignIn: "SignIn" = "SignIn"
   inline val SignUp: "SignUp" = "SignUp"
   inline val ForgotPassword: "ForgotPassword" = "ForgotPassword"
+  inline val PasswordChange: "PasswordChange" = "PasswordChange"
+  inline val ResendCode: "ResendCode" = "ResendCode"
 
-  inline def values: js.Array[EventType] = js.Array(SignIn, SignUp, ForgotPassword)
+  inline def values: js.Array[EventType] = js.Array(SignIn, SignUp, ForgotPassword, PasswordChange, ResendCode)
 }
 
 type ExplicitAuthFlowsType = "ADMIN_NO_SRP_AUTH" | "CUSTOM_AUTH_FLOW_ONLY" | "USER_PASSWORD_AUTH" | "ALLOW_ADMIN_USER_PASSWORD_AUTH" | "ALLOW_CUSTOM_AUTH" | "ALLOW_USER_PASSWORD_AUTH" | "ALLOW_USER_SRP_AUTH" | "ALLOW_REFRESH_TOKEN_AUTH"

@@ -73,6 +73,7 @@ package object kafka {
     @inline def updateConnectivityFuture(params: UpdateConnectivityRequest): Future[UpdateConnectivityResponse] = service.updateConnectivity(params).promise().toFuture
     @inline def updateMonitoringFuture(params: UpdateMonitoringRequest): Future[UpdateMonitoringResponse] = service.updateMonitoring(params).promise().toFuture
     @inline def updateSecurityFuture(params: UpdateSecurityRequest): Future[UpdateSecurityResponse] = service.updateSecurity(params).promise().toFuture
+    @inline def updateStorageFuture(params: UpdateStorageRequest): Future[UpdateStorageResponse] = service.updateStorage(params).promise().toFuture
 
   }
 
@@ -116,6 +117,7 @@ package object kafka {
     def updateConnectivity(params: UpdateConnectivityRequest): Request[UpdateConnectivityResponse] = js.native
     def updateMonitoring(params: UpdateMonitoringRequest): Request[UpdateMonitoringResponse] = js.native
     def updateSecurity(params: UpdateSecurityRequest): Request[UpdateSecurityResponse] = js.native
+    def updateStorage(params: UpdateStorageRequest): Request[UpdateStorageResponse] = js.native
   }
   object Kafka {
     @inline implicit def toOps(service: Kafka): KafkaOps = {
@@ -210,19 +212,23 @@ package object kafka {
   @js.native
   trait BrokerEBSVolumeInfo extends js.Object {
     var KafkaBrokerNodeId: __string
-    var VolumeSizeGB: __integer
+    var ProvisionedThroughput: js.UndefOr[ProvisionedThroughput]
+    var VolumeSizeGB: js.UndefOr[__integer]
   }
 
   object BrokerEBSVolumeInfo {
     @inline
     def apply(
         KafkaBrokerNodeId: __string,
-        VolumeSizeGB: __integer
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        VolumeSizeGB: js.UndefOr[__integer] = js.undefined
     ): BrokerEBSVolumeInfo = {
       val __obj = js.Dynamic.literal(
-        "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any],
-        "VolumeSizeGB" -> VolumeSizeGB.asInstanceOf[js.Any]
+        "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any]
       )
+
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      VolumeSizeGB.foreach(__v => __obj.updateDynamic("VolumeSizeGB")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerEBSVolumeInfo]
     }
   }
@@ -453,6 +459,7 @@ package object kafka {
     var OpenMonitoring: js.UndefOr[OpenMonitoring]
     var State: js.UndefOr[ClusterState]
     var StateInfo: js.UndefOr[StateInfo]
+    var StorageMode: js.UndefOr[StorageMode]
     var Tags: js.UndefOr[__mapOf__string]
     var ZookeeperConnectString: js.UndefOr[__string]
     var ZookeeperConnectStringTls: js.UndefOr[__string]
@@ -476,6 +483,7 @@ package object kafka {
         OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined,
         StateInfo: js.UndefOr[StateInfo] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         ZookeeperConnectString: js.UndefOr[__string] = js.undefined,
         ZookeeperConnectStringTls: js.UndefOr[__string] = js.undefined
@@ -496,6 +504,7 @@ package object kafka {
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateInfo.foreach(__v => __obj.updateDynamic("StateInfo")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectStringTls.foreach(__v => __obj.updateDynamic("ZookeeperConnectStringTls")(__v.asInstanceOf[js.Any]))
@@ -726,6 +735,7 @@ package object kafka {
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
+    var StorageMode: js.UndefOr[StorageMode]
     var Tags: js.UndefOr[__mapOf__string]
   }
 
@@ -742,6 +752,7 @@ package object kafka {
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
@@ -757,6 +768,7 @@ package object kafka {
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
@@ -1169,15 +1181,18 @@ package object kafka {
     */
   @js.native
   trait EBSStorageInfo extends js.Object {
+    var ProvisionedThroughput: js.UndefOr[ProvisionedThroughput]
     var VolumeSize: js.UndefOr[__integerMin1Max16384]
   }
 
   object EBSStorageInfo {
     @inline
     def apply(
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
         VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined
     ): EBSStorageInfo = {
       val __obj = js.Dynamic.literal()
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EBSStorageInfo]
     }
@@ -1842,6 +1857,7 @@ package object kafka {
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var NumberOfBrokerNodes: js.UndefOr[__integer]
     var OpenMonitoring: js.UndefOr[OpenMonitoring]
+    var StorageMode: js.UndefOr[StorageMode]
   }
 
   object MutableClusterInfo {
@@ -1857,7 +1873,8 @@ package object kafka {
         KafkaVersion: js.UndefOr[__string] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined
+        OpenMonitoring: js.UndefOr[OpenMonitoring] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined
     ): MutableClusterInfo = {
       val __obj = js.Dynamic.literal()
       BrokerEBSVolumeInfo.foreach(__v => __obj.updateDynamic("BrokerEBSVolumeInfo")(__v.asInstanceOf[js.Any]))
@@ -1871,6 +1888,7 @@ package object kafka {
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MutableClusterInfo]
     }
   }
@@ -2038,6 +2056,7 @@ package object kafka {
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
+    var StorageMode: js.UndefOr[StorageMode]
     var ZookeeperConnectString: js.UndefOr[__string]
     var ZookeeperConnectStringTls: js.UndefOr[__string]
   }
@@ -2053,6 +2072,7 @@ package object kafka {
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined,
         ZookeeperConnectString: js.UndefOr[__string] = js.undefined,
         ZookeeperConnectStringTls: js.UndefOr[__string] = js.undefined
     ): Provisioned = {
@@ -2067,6 +2087,7 @@ package object kafka {
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
       ZookeeperConnectStringTls.foreach(__v => __obj.updateDynamic("ZookeeperConnectStringTls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Provisioned]
@@ -2086,6 +2107,7 @@ package object kafka {
     var EnhancedMonitoring: js.UndefOr[EnhancedMonitoring]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var OpenMonitoring: js.UndefOr[OpenMonitoringInfo]
+    var StorageMode: js.UndefOr[StorageMode]
   }
 
   object ProvisionedRequest {
@@ -2099,7 +2121,8 @@ package object kafka {
         EncryptionInfo: js.UndefOr[EncryptionInfo] = js.undefined,
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
-        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined
+        OpenMonitoring: js.UndefOr[OpenMonitoringInfo] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined
     ): ProvisionedRequest = {
       val __obj = js.Dynamic.literal(
         "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.asInstanceOf[js.Any],
@@ -2113,7 +2136,29 @@ package object kafka {
       EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       OpenMonitoring.foreach(__v => __obj.updateDynamic("OpenMonitoring")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedRequest]
+    }
+  }
+
+  /** Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.
+    */
+  @js.native
+  trait ProvisionedThroughput extends js.Object {
+    var Enabled: js.UndefOr[__boolean]
+    var VolumeThroughput: js.UndefOr[__integer]
+  }
+
+  object ProvisionedThroughput {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[__boolean] = js.undefined,
+        VolumeThroughput: js.UndefOr[__integer] = js.undefined
+    ): ProvisionedThroughput = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      VolumeThroughput.foreach(__v => __obj.updateDynamic("VolumeThroughput")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProvisionedThroughput]
     }
   }
 
@@ -2854,6 +2899,57 @@ package object kafka {
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSecurityResponse]
+    }
+  }
+
+  /** Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.
+    */
+  @js.native
+  trait UpdateStorageRequest extends js.Object {
+    var ClusterArn: __string
+    var CurrentVersion: __string
+    var ProvisionedThroughput: js.UndefOr[ProvisionedThroughput]
+    var StorageMode: js.UndefOr[StorageMode]
+    var VolumeSizeGB: js.UndefOr[__integer]
+  }
+
+  object UpdateStorageRequest {
+    @inline
+    def apply(
+        ClusterArn: __string,
+        CurrentVersion: __string,
+        ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined,
+        StorageMode: js.UndefOr[StorageMode] = js.undefined,
+        VolumeSizeGB: js.UndefOr[__integer] = js.undefined
+    ): UpdateStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClusterArn" -> ClusterArn.asInstanceOf[js.Any],
+        "CurrentVersion" -> CurrentVersion.asInstanceOf[js.Any]
+      )
+
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      StorageMode.foreach(__v => __obj.updateDynamic("StorageMode")(__v.asInstanceOf[js.Any]))
+      VolumeSizeGB.foreach(__v => __obj.updateDynamic("VolumeSizeGB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStorageRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateStorageResponse extends js.Object {
+    var ClusterArn: js.UndefOr[__string]
+    var ClusterOperationArn: js.UndefOr[__string]
+  }
+
+  object UpdateStorageResponse {
+    @inline
+    def apply(
+        ClusterArn: js.UndefOr[__string] = js.undefined,
+        ClusterOperationArn: js.UndefOr[__string] = js.undefined
+    ): UpdateStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateStorageResponse]
     }
   }
 

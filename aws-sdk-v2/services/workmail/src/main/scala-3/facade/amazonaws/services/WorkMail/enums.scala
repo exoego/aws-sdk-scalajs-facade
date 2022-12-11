@@ -10,6 +10,22 @@ object AccessControlRuleEffect {
   inline def values: js.Array[AccessControlRuleEffect] = js.Array(ALLOW, DENY)
 }
 
+type AccessEffect = "ALLOW" | "DENY"
+object AccessEffect {
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
+
+  inline def values: js.Array[AccessEffect] = js.Array(ALLOW, DENY)
+}
+
+type AvailabilityProviderType = "EWS" | "LAMBDA"
+object AvailabilityProviderType {
+  inline val EWS: "EWS" = "EWS"
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
+
+  inline def values: js.Array[AvailabilityProviderType] = js.Array(EWS, LAMBDA)
+}
+
 type DnsRecordVerificationStatus = "PENDING" | "VERIFIED" | "FAILED"
 object DnsRecordVerificationStatus {
   inline val PENDING: "PENDING" = "PENDING"
@@ -37,6 +53,14 @@ object FolderName {
   inline val JUNK_EMAIL: "JUNK_EMAIL" = "JUNK_EMAIL"
 
   inline def values: js.Array[FolderName] = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
+}
+
+type ImpersonationRoleType = "FULL_ACCESS" | "READ_ONLY"
+object ImpersonationRoleType {
+  inline val FULL_ACCESS: "FULL_ACCESS" = "FULL_ACCESS"
+  inline val READ_ONLY: "READ_ONLY" = "READ_ONLY"
+
+  inline def values: js.Array[ImpersonationRoleType] = js.Array(FULL_ACCESS, READ_ONLY)
 }
 
 type MailboxExportJobState = "RUNNING" | "COMPLETED" | "FAILED" | "CANCELLED"

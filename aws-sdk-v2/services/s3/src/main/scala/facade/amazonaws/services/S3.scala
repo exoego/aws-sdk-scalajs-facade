@@ -32,6 +32,11 @@ package object s3 {
   type BytesScanned = Double
   type CORSRules = js.Array[CORSRule]
   type CacheControl = String
+  type ChecksumAlgorithmList = js.Array[ChecksumAlgorithm]
+  type ChecksumCRC32 = String
+  type ChecksumCRC32C = String
+  type ChecksumSHA1 = String
+  type ChecksumSHA256 = String
   type CloudFunction = String
   type CloudFunctionInvocationRole = String
   type Code = String
@@ -145,12 +150,14 @@ package object s3 {
   type NextVersionIdMarker = String
   type NoncurrentVersionTransitionList = js.Array[NoncurrentVersionTransition]
   type NotificationId = String
+  type ObjectAttributesList = js.Array[ObjectAttributes]
   type ObjectIdentifierList = js.Array[ObjectIdentifier]
   type ObjectKey = String
   type ObjectList = js.Array[Object]
   type ObjectLockEnabledForBucket = Boolean
   type ObjectLockRetainUntilDate = js.Date
   type ObjectLockToken = String
+  type ObjectSize = Double
   type ObjectSizeGreaterThanBytes = Double
   type ObjectSizeLessThanBytes = Double
   type ObjectVersionId = String
@@ -160,6 +167,7 @@ package object s3 {
   type PartNumberMarker = Int
   type Parts = js.Array[Part]
   type PartsCount = Int
+  type PartsList = js.Array[ObjectPart]
   type Policy = String
   type Prefix = String
   type Priority = Int
@@ -264,6 +272,7 @@ package object s3 {
     @inline def getBucketVersioningFuture(params: GetBucketVersioningRequest): Future[GetBucketVersioningOutput] = service.getBucketVersioning(params).promise().toFuture
     @inline def getBucketWebsiteFuture(params: GetBucketWebsiteRequest): Future[GetBucketWebsiteOutput] = service.getBucketWebsite(params).promise().toFuture
     @inline def getObjectAclFuture(params: GetObjectAclRequest): Future[GetObjectAclOutput] = service.getObjectAcl(params).promise().toFuture
+    @inline def getObjectAttributesFuture(params: GetObjectAttributesRequest): Future[GetObjectAttributesOutput] = service.getObjectAttributes(params).promise().toFuture
     @inline def getObjectFuture(params: GetObjectRequest): Future[GetObjectOutput] = service.getObject(params).promise().toFuture
     @inline def getObjectLegalHoldFuture(params: GetObjectLegalHoldRequest): Future[GetObjectLegalHoldOutput] = service.getObjectLegalHold(params).promise().toFuture
     @inline def getObjectLockConfigurationFuture(params: GetObjectLockConfigurationRequest): Future[GetObjectLockConfigurationOutput] = service.getObjectLockConfiguration(params).promise().toFuture
@@ -328,15 +337,15 @@ package object s3 {
       *   Future of the signed URL
       */
     def getSignedUrlFuture(operation: Operation, params: js.Object, expires: Int = 900): Future[String] = {
-      val paramsWithExpires =
-        if (params.hasOwnProperty("Expires") || expires == 900) {
-          params
-        } else {
-          val deepCloned = js.JSON.parse(js.JSON.stringify(params))
-          deepCloned.Expires = expires
-          deepCloned.asInstanceOf[js.Object]
-        }
-      service.asInstanceOf[js.Dynamic]
+      val paramsWithExpires = if (params.hasOwnProperty("Expires") || expires == 900) {
+        params
+      } else {
+        val deepCloned = js.JSON.parse(js.JSON.stringify(params))
+        deepCloned.Expires = expires
+        deepCloned.asInstanceOf[js.Object]
+      }
+      service
+        .asInstanceOf[js.Dynamic]
         .getSignedUrlPromise(operation, paramsWithExpires)
         .asInstanceOf[js.Promise[String]]
         .toFuture
@@ -355,15 +364,19 @@ package object s3 {
       * @return
       *   Future of unit (no value)
       */
-    def deleteObjectsByPrefixFuture(bucket: String, prefix: String)(implicit executor: scala.concurrent.ExecutionContext): Future[Unit] = {
+    def deleteObjectsByPrefixFuture(bucket: String, prefix: String)(implicit
+        executor: scala.concurrent.ExecutionContext
+    ): Future[Unit] = {
       def deleteObjects(objects: ObjectIdentifierList): Future[Unit] = {
         if (objects.nonEmpty) {
-          service.deleteObjectsFuture(
-            DeleteObjectsRequest(
-              Bucket = bucket,
-              Delete = Delete(Objects = objects)
+          service
+            .deleteObjectsFuture(
+              DeleteObjectsRequest(
+                Bucket = bucket,
+                Delete = Delete(Objects = objects)
+              )
             )
-          ).map(_ => ())
+            .map(_ => ())
         } else {
           Future.unit
         }
@@ -392,13 +405,15 @@ package object s3 {
       * @return
       *   The managed upload object that can call send() or track progress.
       */
-    def upload(params: PutObjectRequest): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params).asInstanceOf[managedupload.ManagedUpload]
+    def upload(params: PutObjectRequest): managedupload.ManagedUpload =
+      service.asInstanceOf[js.Dynamic].upload(params).asInstanceOf[managedupload.ManagedUpload]
 
     /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. You can configure the concurrent queue size by setting options. Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return
       *   The managed upload object that can call send() or track progress.
       */
-    def upload(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): managedupload.ManagedUpload = service.asInstanceOf[js.Dynamic].upload(params, options).asInstanceOf[managedupload.ManagedUpload]
+    def upload(params: PutObjectRequest, options: managedupload.ManagedUploadOptions): managedupload.ManagedUpload =
+      service.asInstanceOf[js.Dynamic].upload(params, options).asInstanceOf[managedupload.ManagedUpload]
 
     /** Uploads an arbitrarily sized buffer, blob, or stream, using intelligent concurrent handling of parts if the payload is large enough. Note that this is the only operation for which the SDK can retry requests with stream bodies.
       * @return
@@ -572,6 +587,7 @@ package object s3 {
     def getBucketWebsite(params: GetBucketWebsiteRequest): Request[GetBucketWebsiteOutput] = js.native
     def getObject(params: GetObjectRequest): Request[GetObjectOutput] = js.native
     def getObjectAcl(params: GetObjectAclRequest): Request[GetObjectAclOutput] = js.native
+    def getObjectAttributes(params: GetObjectAttributesRequest): Request[GetObjectAttributesOutput] = js.native
     def getObjectLegalHold(params: GetObjectLegalHoldRequest): Request[GetObjectLegalHoldOutput] = js.native
     def getObjectLockConfiguration(params: GetObjectLockConfigurationRequest): Request[GetObjectLockConfigurationOutput] = js.native
     def getObjectRetention(params: GetObjectRetentionRequest): Request[GetObjectRetentionOutput] = js.native
@@ -1046,6 +1062,33 @@ package object s3 {
     }
   }
 
+  /** Contains all the possible checksum or digest values for an object.
+    */
+  @js.native
+  trait Checksum extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
+  }
+
+  object Checksum {
+    @inline
+    def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined
+    ): Checksum = {
+      val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Checksum]
+    }
+  }
+
   /** Container for specifying the Lambda notification configuration.
     */
   @js.native
@@ -1098,6 +1141,10 @@ package object s3 {
   trait CompleteMultipartUploadOutput extends js.Object {
     var Bucket: js.UndefOr[BucketName]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var Expiration: js.UndefOr[Expiration]
     var Key: js.UndefOr[ObjectKey]
@@ -1113,6 +1160,10 @@ package object s3 {
     def apply(
         Bucket: js.UndefOr[BucketName] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -1125,6 +1176,10 @@ package object s3 {
       val __obj = js.Dynamic.literal()
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -1142,9 +1197,16 @@ package object s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var UploadId: MultipartUploadId
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MultipartUpload: js.UndefOr[CompletedMultipartUpload]
     var RequestPayer: js.UndefOr[RequestPayer]
+    var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
+    var SSECustomerKey: js.UndefOr[SSECustomerKey]
+    var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
   }
 
   object CompleteMultipartUploadRequest {
@@ -1153,9 +1215,16 @@ package object s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         UploadId: MultipartUploadId,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MultipartUpload: js.UndefOr[CompletedMultipartUpload] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
+        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
+        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
+        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): CompleteMultipartUploadRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -1163,9 +1232,16 @@ package object s3 {
         "UploadId" -> UploadId.asInstanceOf[js.Any]
       )
 
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MultipartUpload.foreach(__v => __obj.updateDynamic("MultipartUpload")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteMultipartUploadRequest]
     }
   }
@@ -1192,6 +1268,10 @@ package object s3 {
     */
   @js.native
   trait CompletedPart extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var PartNumber: js.UndefOr[PartNumber]
   }
@@ -1199,10 +1279,18 @@ package object s3 {
   object CompletedPart {
     @inline
     def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         PartNumber: js.UndefOr[PartNumber] = js.undefined
     ): CompletedPart = {
       val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompletedPart]
@@ -1297,6 +1385,7 @@ package object s3 {
     var ACL: js.UndefOr[ObjectCannedACL]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -1342,6 +1431,7 @@ package object s3 {
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -1386,6 +1476,7 @@ package object s3 {
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -1428,6 +1519,10 @@ package object s3 {
     */
   @js.native
   trait CopyObjectResult extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
   }
@@ -1435,10 +1530,18 @@ package object s3 {
   object CopyObjectResult {
     @inline
     def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
     ): CopyObjectResult = {
       val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyObjectResult]
@@ -1449,6 +1552,10 @@ package object s3 {
     */
   @js.native
   trait CopyPartResult extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
   }
@@ -1456,10 +1563,18 @@ package object s3 {
   object CopyPartResult {
     @inline
     def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined
     ): CopyPartResult = {
       val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyPartResult]
@@ -1551,6 +1666,7 @@ package object s3 {
     var AbortRuleId: js.UndefOr[AbortRuleId]
     var Bucket: js.UndefOr[BucketName]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var Key: js.UndefOr[ObjectKey]
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
@@ -1568,6 +1684,7 @@ package object s3 {
         AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
         Bucket: js.UndefOr[BucketName] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
@@ -1582,6 +1699,7 @@ package object s3 {
       AbortRuleId.foreach(__v => __obj.updateDynamic("AbortRuleId")(__v.asInstanceOf[js.Any]))
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -1601,6 +1719,7 @@ package object s3 {
     var ACL: js.UndefOr[ObjectCannedACL]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -1635,6 +1754,7 @@ package object s3 {
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -1668,6 +1788,7 @@ package object s3 {
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -2204,6 +2325,7 @@ package object s3 {
     var Bucket: BucketName
     var Delete: Delete
     var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MFA: js.UndefOr[MFA]
     var RequestPayer: js.UndefOr[RequestPayer]
@@ -2215,6 +2337,7 @@ package object s3 {
         Bucket: BucketName,
         Delete: Delete,
         BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined
@@ -2225,6 +2348,7 @@ package object s3 {
       )
 
       BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -3312,6 +3436,127 @@ package object s3 {
   }
 
   @js.native
+  trait GetObjectAttributesOutput extends js.Object {
+    var Checksum: js.UndefOr[Checksum]
+    var DeleteMarker: js.UndefOr[DeleteMarker]
+    var ETag: js.UndefOr[ETag]
+    var LastModified: js.UndefOr[LastModified]
+    var ObjectParts: js.UndefOr[GetObjectAttributesParts]
+    var ObjectSize: js.UndefOr[ObjectSize]
+    var RequestCharged: js.UndefOr[RequestCharged]
+    var StorageClass: js.UndefOr[StorageClass]
+    var VersionId: js.UndefOr[ObjectVersionId]
+  }
+
+  object GetObjectAttributesOutput {
+    @inline
+    def apply(
+        Checksum: js.UndefOr[Checksum] = js.undefined,
+        DeleteMarker: js.UndefOr[DeleteMarker] = js.undefined,
+        ETag: js.UndefOr[ETag] = js.undefined,
+        LastModified: js.UndefOr[LastModified] = js.undefined,
+        ObjectParts: js.UndefOr[GetObjectAttributesParts] = js.undefined,
+        ObjectSize: js.UndefOr[ObjectSize] = js.undefined,
+        RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
+        StorageClass: js.UndefOr[StorageClass] = js.undefined,
+        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
+    ): GetObjectAttributesOutput = {
+      val __obj = js.Dynamic.literal()
+      Checksum.foreach(__v => __obj.updateDynamic("Checksum")(__v.asInstanceOf[js.Any]))
+      DeleteMarker.foreach(__v => __obj.updateDynamic("DeleteMarker")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      ObjectParts.foreach(__v => __obj.updateDynamic("ObjectParts")(__v.asInstanceOf[js.Any]))
+      ObjectSize.foreach(__v => __obj.updateDynamic("ObjectSize")(__v.asInstanceOf[js.Any]))
+      RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectAttributesOutput]
+    }
+  }
+
+  /** A collection of parts associated with a multipart upload.
+    */
+  @js.native
+  trait GetObjectAttributesParts extends js.Object {
+    var IsTruncated: js.UndefOr[IsTruncated]
+    var MaxParts: js.UndefOr[MaxParts]
+    var NextPartNumberMarker: js.UndefOr[NextPartNumberMarker]
+    var PartNumberMarker: js.UndefOr[PartNumberMarker]
+    var Parts: js.UndefOr[PartsList]
+    var TotalPartsCount: js.UndefOr[PartsCount]
+  }
+
+  object GetObjectAttributesParts {
+    @inline
+    def apply(
+        IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
+        MaxParts: js.UndefOr[MaxParts] = js.undefined,
+        NextPartNumberMarker: js.UndefOr[NextPartNumberMarker] = js.undefined,
+        PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
+        Parts: js.UndefOr[PartsList] = js.undefined,
+        TotalPartsCount: js.UndefOr[PartsCount] = js.undefined
+    ): GetObjectAttributesParts = {
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
+      NextPartNumberMarker.foreach(__v => __obj.updateDynamic("NextPartNumberMarker")(__v.asInstanceOf[js.Any]))
+      PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
+      Parts.foreach(__v => __obj.updateDynamic("Parts")(__v.asInstanceOf[js.Any]))
+      TotalPartsCount.foreach(__v => __obj.updateDynamic("TotalPartsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectAttributesParts]
+    }
+  }
+
+  @js.native
+  trait GetObjectAttributesRequest extends js.Object {
+    var Bucket: BucketName
+    var Key: ObjectKey
+    var ObjectAttributes: ObjectAttributesList
+    var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var MaxParts: js.UndefOr[MaxParts]
+    var PartNumberMarker: js.UndefOr[PartNumberMarker]
+    var RequestPayer: js.UndefOr[RequestPayer]
+    var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
+    var SSECustomerKey: js.UndefOr[SSECustomerKey]
+    var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
+    var VersionId: js.UndefOr[ObjectVersionId]
+  }
+
+  object GetObjectAttributesRequest {
+    @inline
+    def apply(
+        Bucket: BucketName,
+        Key: ObjectKey,
+        ObjectAttributes: ObjectAttributesList,
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        MaxParts: js.UndefOr[MaxParts] = js.undefined,
+        PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
+        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
+        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
+        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined,
+        VersionId: js.UndefOr[ObjectVersionId] = js.undefined
+    ): GetObjectAttributesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any],
+        "Key" -> Key.asInstanceOf[js.Any],
+        "ObjectAttributes" -> ObjectAttributes.asInstanceOf[js.Any]
+      )
+
+      ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
+      PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
+      RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetObjectAttributesRequest]
+    }
+  }
+
+  @js.native
   trait GetObjectLegalHoldOutput extends js.Object {
     var LegalHold: js.UndefOr[ObjectLockLegalHold]
   }
@@ -3400,6 +3645,10 @@ package object s3 {
     var Body: js.UndefOr[Body]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -3437,6 +3686,10 @@ package object s3 {
         Body: js.UndefOr[Body] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -3471,6 +3724,10 @@ package object s3 {
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -3507,6 +3764,7 @@ package object s3 {
   trait GetObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ChecksumMode: js.UndefOr[ChecksumMode]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var IfMatch: js.UndefOr[IfMatch]
     var IfModifiedSince: js.UndefOr[IfModifiedSince]
@@ -3532,6 +3790,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ChecksumMode: js.UndefOr[ChecksumMode] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         IfMatch: js.UndefOr[IfMatch] = js.undefined,
         IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
@@ -3556,6 +3815,7 @@ package object s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ChecksumMode.foreach(__v => __obj.updateDynamic("ChecksumMode")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
       IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
@@ -3857,6 +4117,10 @@ package object s3 {
     var ArchiveStatus: js.UndefOr[ArchiveStatus]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -3892,6 +4156,10 @@ package object s3 {
         ArchiveStatus: js.UndefOr[ArchiveStatus] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -3924,6 +4192,10 @@ package object s3 {
       ArchiveStatus.foreach(__v => __obj.updateDynamic("ArchiveStatus")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -3958,6 +4230,7 @@ package object s3 {
   trait HeadObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ChecksumMode: js.UndefOr[ChecksumMode]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var IfMatch: js.UndefOr[IfMatch]
     var IfModifiedSince: js.UndefOr[IfModifiedSince]
@@ -3977,6 +4250,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ChecksumMode: js.UndefOr[ChecksumMode] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         IfMatch: js.UndefOr[IfMatch] = js.undefined,
         IfModifiedSince: js.UndefOr[IfModifiedSince] = js.undefined,
@@ -3995,6 +4269,7 @@ package object s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ChecksumMode.foreach(__v => __obj.updateDynamic("ChecksumMode")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
       IfModifiedSince.foreach(__v => __obj.updateDynamic("IfModifiedSince")(__v.asInstanceOf[js.Any]))
@@ -5081,6 +5356,7 @@ package object s3 {
     var AbortDate: js.UndefOr[AbortDate]
     var AbortRuleId: js.UndefOr[AbortRuleId]
     var Bucket: js.UndefOr[BucketName]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var Initiator: js.UndefOr[Initiator]
     var IsTruncated: js.UndefOr[IsTruncated]
     var Key: js.UndefOr[ObjectKey]
@@ -5100,6 +5376,7 @@ package object s3 {
         AbortDate: js.UndefOr[AbortDate] = js.undefined,
         AbortRuleId: js.UndefOr[AbortRuleId] = js.undefined,
         Bucket: js.UndefOr[BucketName] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         Initiator: js.UndefOr[Initiator] = js.undefined,
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -5116,6 +5393,7 @@ package object s3 {
       AbortDate.foreach(__v => __obj.updateDynamic("AbortDate")(__v.asInstanceOf[js.Any]))
       AbortRuleId.foreach(__v => __obj.updateDynamic("AbortRuleId")(__v.asInstanceOf[js.Any]))
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
       IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -5140,6 +5418,9 @@ package object s3 {
     var MaxParts: js.UndefOr[MaxParts]
     var PartNumberMarker: js.UndefOr[PartNumberMarker]
     var RequestPayer: js.UndefOr[RequestPayer]
+    var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
+    var SSECustomerKey: js.UndefOr[SSECustomerKey]
+    var SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5]
   }
 
   object ListPartsRequest {
@@ -5151,7 +5432,10 @@ package object s3 {
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MaxParts: js.UndefOr[MaxParts] = js.undefined,
         PartNumberMarker: js.UndefOr[PartNumberMarker] = js.undefined,
-        RequestPayer: js.UndefOr[RequestPayer] = js.undefined
+        RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
+        SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
+        SSECustomerKey: js.UndefOr[SSECustomerKey] = js.undefined,
+        SSECustomerKeyMD5: js.UndefOr[SSECustomerKeyMD5] = js.undefined
     ): ListPartsRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -5163,6 +5447,9 @@ package object s3 {
       MaxParts.foreach(__v => __obj.updateDynamic("MaxParts")(__v.asInstanceOf[js.Any]))
       PartNumberMarker.foreach(__v => __obj.updateDynamic("PartNumberMarker")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
+      SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
+      SSECustomerKey.foreach(__v => __obj.updateDynamic("SSECustomerKey")(__v.asInstanceOf[js.Any]))
+      SSECustomerKeyMD5.foreach(__v => __obj.updateDynamic("SSECustomerKeyMD5")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartsRequest]
     }
   }
@@ -5315,6 +5602,7 @@ package object s3 {
     */
   @js.native
   trait MultipartUpload extends js.Object {
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var Initiated: js.UndefOr[Initiated]
     var Initiator: js.UndefOr[Initiator]
     var Key: js.UndefOr[ObjectKey]
@@ -5326,6 +5614,7 @@ package object s3 {
   object MultipartUpload {
     @inline
     def apply(
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         Initiated: js.UndefOr[Initiated] = js.undefined,
         Initiator: js.UndefOr[Initiator] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -5334,6 +5623,7 @@ package object s3 {
         UploadId: js.UndefOr[MultipartUploadId] = js.undefined
     ): MultipartUpload = {
       val __obj = js.Dynamic.literal()
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       Initiated.foreach(__v => __obj.updateDynamic("Initiated")(__v.asInstanceOf[js.Any]))
       Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -5460,6 +5750,7 @@ package object s3 {
     */
   @js.native
   trait Object extends js.Object {
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithmList]
     var ETag: js.UndefOr[ETag]
     var Key: js.UndefOr[ObjectKey]
     var LastModified: js.UndefOr[LastModified]
@@ -5471,6 +5762,7 @@ package object s3 {
   object Object {
     @inline
     def apply(
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithmList] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined,
@@ -5479,6 +5771,7 @@ package object s3 {
         StorageClass: js.UndefOr[ObjectStorageClass] = js.undefined
     ): Object = {
       val __obj = js.Dynamic.literal()
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
@@ -5533,7 +5826,7 @@ package object s3 {
     }
   }
 
-  /** A Legal Hold configuration for an object.
+  /** A legal hold configuration for an object.
     */
   @js.native
   trait ObjectLockLegalHold extends js.Object {
@@ -5590,10 +5883,44 @@ package object s3 {
     }
   }
 
+  /** A container for elements related to an individual part.
+    */
+  @js.native
+  trait ObjectPart extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
+    var PartNumber: js.UndefOr[PartNumber]
+    var Size: js.UndefOr[Size]
+  }
+
+  object ObjectPart {
+    @inline
+    def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
+        PartNumber: js.UndefOr[PartNumber] = js.undefined,
+        Size: js.UndefOr[Size] = js.undefined
+    ): ObjectPart = {
+      val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
+      PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObjectPart]
+    }
+  }
+
   /** The version of an object.
     */
   @js.native
   trait ObjectVersion extends js.Object {
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithmList]
     var ETag: js.UndefOr[ETag]
     var IsLatest: js.UndefOr[IsLatest]
     var Key: js.UndefOr[ObjectKey]
@@ -5607,6 +5934,7 @@ package object s3 {
   object ObjectVersion {
     @inline
     def apply(
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithmList] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         IsLatest: js.UndefOr[IsLatest] = js.undefined,
         Key: js.UndefOr[ObjectKey] = js.undefined,
@@ -5617,6 +5945,7 @@ package object s3 {
         VersionId: js.UndefOr[ObjectVersionId] = js.undefined
     ): ObjectVersion = {
       val __obj = js.Dynamic.literal()
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       IsLatest.foreach(__v => __obj.updateDynamic("IsLatest")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
@@ -5744,6 +6073,10 @@ package object s3 {
     */
   @js.native
   trait Part extends js.Object {
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var LastModified: js.UndefOr[LastModified]
     var PartNumber: js.UndefOr[PartNumber]
@@ -5753,12 +6086,20 @@ package object s3 {
   object Part {
     @inline
     def apply(
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[LastModified] = js.undefined,
         PartNumber: js.UndefOr[PartNumber] = js.undefined,
         Size: js.UndefOr[Size] = js.undefined
     ): Part = {
       val __obj = js.Dynamic.literal()
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       PartNumber.foreach(__v => __obj.updateDynamic("PartNumber")(__v.asInstanceOf[js.Any]))
@@ -5858,6 +6199,7 @@ package object s3 {
   trait PutBucketAccelerateConfigurationRequest extends js.Object {
     var AccelerateConfiguration: AccelerateConfiguration
     var Bucket: BucketName
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
 
@@ -5866,6 +6208,7 @@ package object s3 {
     def apply(
         AccelerateConfiguration: AccelerateConfiguration,
         Bucket: BucketName,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketAccelerateConfigurationRequest = {
       val __obj = js.Dynamic.literal(
@@ -5873,6 +6216,7 @@ package object s3 {
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketAccelerateConfigurationRequest]
     }
@@ -5883,6 +6227,7 @@ package object s3 {
     var Bucket: BucketName
     var ACL: js.UndefOr[BucketCannedACL]
     var AccessControlPolicy: js.UndefOr[AccessControlPolicy]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
@@ -5898,6 +6243,7 @@ package object s3 {
         Bucket: BucketName,
         ACL: js.UndefOr[BucketCannedACL] = js.undefined,
         AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
@@ -5912,6 +6258,7 @@ package object s3 {
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
@@ -5954,6 +6301,7 @@ package object s3 {
   trait PutBucketCorsRequest extends js.Object {
     var Bucket: BucketName
     var CORSConfiguration: CORSConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -5963,6 +6311,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         CORSConfiguration: CORSConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketCorsRequest = {
@@ -5971,6 +6320,7 @@ package object s3 {
         "CORSConfiguration" -> CORSConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketCorsRequest]
@@ -5981,6 +6331,7 @@ package object s3 {
   trait PutBucketEncryptionRequest extends js.Object {
     var Bucket: BucketName
     var ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -5990,6 +6341,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         ServerSideEncryptionConfiguration: ServerSideEncryptionConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketEncryptionRequest = {
@@ -5998,6 +6350,7 @@ package object s3 {
         "ServerSideEncryptionConfiguration" -> ServerSideEncryptionConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketEncryptionRequest]
@@ -6057,6 +6410,7 @@ package object s3 {
   @js.native
   trait PutBucketLifecycleConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration]
   }
@@ -6065,6 +6419,7 @@ package object s3 {
     @inline
     def apply(
         Bucket: BucketName,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LifecycleConfiguration: js.UndefOr[BucketLifecycleConfiguration] = js.undefined
     ): PutBucketLifecycleConfigurationRequest = {
@@ -6072,6 +6427,7 @@ package object s3 {
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketLifecycleConfigurationRequest]
@@ -6081,6 +6437,7 @@ package object s3 {
   @js.native
   trait PutBucketLifecycleRequest extends js.Object {
     var Bucket: BucketName
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LifecycleConfiguration: js.UndefOr[LifecycleConfiguration]
@@ -6090,6 +6447,7 @@ package object s3 {
     @inline
     def apply(
         Bucket: BucketName,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LifecycleConfiguration: js.UndefOr[LifecycleConfiguration] = js.undefined
@@ -6098,6 +6456,7 @@ package object s3 {
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LifecycleConfiguration.foreach(__v => __obj.updateDynamic("LifecycleConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6109,6 +6468,7 @@ package object s3 {
   trait PutBucketLoggingRequest extends js.Object {
     var Bucket: BucketName
     var BucketLoggingStatus: BucketLoggingStatus
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6118,6 +6478,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         BucketLoggingStatus: BucketLoggingStatus,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketLoggingRequest = {
@@ -6126,6 +6487,7 @@ package object s3 {
         "BucketLoggingStatus" -> BucketLoggingStatus.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketLoggingRequest]
@@ -6190,6 +6552,7 @@ package object s3 {
   trait PutBucketNotificationRequest extends js.Object {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfigurationDeprecated
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6199,6 +6562,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfigurationDeprecated,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketNotificationRequest = {
@@ -6207,6 +6571,7 @@ package object s3 {
         "NotificationConfiguration" -> NotificationConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketNotificationRequest]
@@ -6244,6 +6609,7 @@ package object s3 {
   trait PutBucketPolicyRequest extends js.Object {
     var Bucket: BucketName
     var Policy: Policy
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
@@ -6254,6 +6620,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Policy: Policy,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ConfirmRemoveSelfBucketAccess: js.UndefOr[ConfirmRemoveSelfBucketAccess] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
@@ -6263,6 +6630,7 @@ package object s3 {
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ConfirmRemoveSelfBucketAccess.foreach(__v => __obj.updateDynamic("ConfirmRemoveSelfBucketAccess")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
@@ -6274,6 +6642,7 @@ package object s3 {
   trait PutBucketReplicationRequest extends js.Object {
     var Bucket: BucketName
     var ReplicationConfiguration: ReplicationConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var Token: js.UndefOr[ObjectLockToken]
@@ -6284,6 +6653,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         ReplicationConfiguration: ReplicationConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         Token: js.UndefOr[ObjectLockToken] = js.undefined
@@ -6293,6 +6663,7 @@ package object s3 {
         "ReplicationConfiguration" -> ReplicationConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
@@ -6304,6 +6675,7 @@ package object s3 {
   trait PutBucketRequestPaymentRequest extends js.Object {
     var Bucket: BucketName
     var RequestPaymentConfiguration: RequestPaymentConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6313,6 +6685,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         RequestPaymentConfiguration: RequestPaymentConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketRequestPaymentRequest = {
@@ -6321,6 +6694,7 @@ package object s3 {
         "RequestPaymentConfiguration" -> RequestPaymentConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketRequestPaymentRequest]
@@ -6331,6 +6705,7 @@ package object s3 {
   trait PutBucketTaggingRequest extends js.Object {
     var Bucket: BucketName
     var Tagging: Tagging
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6340,6 +6715,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Tagging: Tagging,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketTaggingRequest = {
@@ -6348,6 +6724,7 @@ package object s3 {
         "Tagging" -> Tagging.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketTaggingRequest]
@@ -6358,6 +6735,7 @@ package object s3 {
   trait PutBucketVersioningRequest extends js.Object {
     var Bucket: BucketName
     var VersioningConfiguration: VersioningConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var MFA: js.UndefOr[MFA]
@@ -6368,6 +6746,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         VersioningConfiguration: VersioningConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         MFA: js.UndefOr[MFA] = js.undefined
@@ -6377,6 +6756,7 @@ package object s3 {
         "VersioningConfiguration" -> VersioningConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       MFA.foreach(__v => __obj.updateDynamic("MFA")(__v.asInstanceOf[js.Any]))
@@ -6388,6 +6768,7 @@ package object s3 {
   trait PutBucketWebsiteRequest extends js.Object {
     var Bucket: BucketName
     var WebsiteConfiguration: WebsiteConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6397,6 +6778,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         WebsiteConfiguration: WebsiteConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutBucketWebsiteRequest = {
@@ -6405,6 +6787,7 @@ package object s3 {
         "WebsiteConfiguration" -> WebsiteConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketWebsiteRequest]
@@ -6433,6 +6816,7 @@ package object s3 {
     var Key: ObjectKey
     var ACL: js.UndefOr[ObjectCannedACL]
     var AccessControlPolicy: js.UndefOr[AccessControlPolicy]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var GrantFullControl: js.UndefOr[GrantFullControl]
@@ -6451,6 +6835,7 @@ package object s3 {
         Key: ObjectKey,
         ACL: js.UndefOr[ObjectCannedACL] = js.undefined,
         AccessControlPolicy: js.UndefOr[AccessControlPolicy] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         GrantFullControl: js.UndefOr[GrantFullControl] = js.undefined,
@@ -6468,6 +6853,7 @@ package object s3 {
 
       ACL.foreach(__v => __obj.updateDynamic("ACL")(__v.asInstanceOf[js.Any]))
       AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       GrantFullControl.foreach(__v => __obj.updateDynamic("GrantFullControl")(__v.asInstanceOf[js.Any]))
@@ -6501,6 +6887,7 @@ package object s3 {
   trait PutObjectLegalHoldRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var LegalHold: js.UndefOr[ObjectLockLegalHold]
@@ -6513,6 +6900,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         LegalHold: js.UndefOr[ObjectLockLegalHold] = js.undefined,
@@ -6524,6 +6912,7 @@ package object s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       LegalHold.foreach(__v => __obj.updateDynamic("LegalHold")(__v.asInstanceOf[js.Any]))
@@ -6552,6 +6941,7 @@ package object s3 {
   @js.native
   trait PutObjectLockConfigurationRequest extends js.Object {
     var Bucket: BucketName
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration]
@@ -6563,6 +6953,7 @@ package object s3 {
     @inline
     def apply(
         Bucket: BucketName,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         ObjectLockConfiguration: js.UndefOr[ObjectLockConfiguration] = js.undefined,
@@ -6573,6 +6964,7 @@ package object s3 {
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       ObjectLockConfiguration.foreach(__v => __obj.updateDynamic("ObjectLockConfiguration")(__v.asInstanceOf[js.Any]))
@@ -6585,6 +6977,10 @@ package object s3 {
   @js.native
   trait PutObjectOutput extends js.Object {
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var Expiration: js.UndefOr[Expiration]
     var RequestCharged: js.UndefOr[RequestCharged]
@@ -6600,6 +6996,10 @@ package object s3 {
     @inline
     def apply(
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         Expiration: js.UndefOr[Expiration] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
@@ -6612,6 +7012,10 @@ package object s3 {
     ): PutObjectOutput = {
       val __obj = js.Dynamic.literal()
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
@@ -6633,6 +7037,11 @@ package object s3 {
     var Body: js.UndefOr[Body]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -6670,6 +7079,11 @@ package object s3 {
         Body: js.UndefOr[Body] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -6706,6 +7120,11 @@ package object s3 {
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
@@ -6757,6 +7176,7 @@ package object s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
@@ -6770,6 +7190,7 @@ package object s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         BypassGovernanceRetention: js.UndefOr[BypassGovernanceRetention] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
@@ -6782,6 +7203,7 @@ package object s3 {
       )
 
       BypassGovernanceRetention.foreach(__v => __obj.updateDynamic("BypassGovernanceRetention")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -6812,6 +7234,7 @@ package object s3 {
     var Bucket: BucketName
     var Key: ObjectKey
     var Tagging: Tagging
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
@@ -6824,6 +7247,7 @@ package object s3 {
         Bucket: BucketName,
         Key: ObjectKey,
         Tagging: Tagging,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
@@ -6835,6 +7259,7 @@ package object s3 {
         "Tagging" -> Tagging.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
@@ -6847,6 +7272,7 @@ package object s3 {
   trait PutPublicAccessBlockRequest extends js.Object {
     var Bucket: BucketName
     var PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
   }
@@ -6856,6 +7282,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
     ): PutPublicAccessBlockRequest = {
@@ -6864,6 +7291,7 @@ package object s3 {
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPublicAccessBlockRequest]
@@ -7229,6 +7657,7 @@ package object s3 {
   trait RestoreObjectRequest extends js.Object {
     var Bucket: BucketName
     var Key: ObjectKey
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
     var RequestPayer: js.UndefOr[RequestPayer]
     var RestoreRequest: js.UndefOr[RestoreRequest]
@@ -7240,6 +7669,7 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         Key: ObjectKey,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
         RequestPayer: js.UndefOr[RequestPayer] = js.undefined,
         RestoreRequest: js.UndefOr[RestoreRequest] = js.undefined,
@@ -7250,6 +7680,7 @@ package object s3 {
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
       RequestPayer.foreach(__v => __obj.updateDynamic("RequestPayer")(__v.asInstanceOf[js.Any]))
       RestoreRequest.foreach(__v => __obj.updateDynamic("RestoreRequest")(__v.asInstanceOf[js.Any]))
@@ -7597,7 +8028,7 @@ package object s3 {
     }
   }
 
-  /** Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon S3 API Reference</i>.
+  /** Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. If you don't specify a customer managed key at configuration, Amazon S3 automatically creates an Amazon Web Services KMS key in your Amazon Web Services account the first time that you add an object encrypted with SSE-KMS to a bucket. By default, Amazon S3 uses this KMS key for SSE-KMS. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon S3 API Reference</i>.
     */
   @js.native
   trait ServerSideEncryptionByDefault extends js.Object {
@@ -8058,6 +8489,10 @@ package object s3 {
   @js.native
   trait UploadPartOutput extends js.Object {
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ETag: js.UndefOr[ETag]
     var RequestCharged: js.UndefOr[RequestCharged]
     var SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm]
@@ -8070,6 +8505,10 @@ package object s3 {
     @inline
     def apply(
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,
         RequestCharged: js.UndefOr[RequestCharged] = js.undefined,
         SSECustomerAlgorithm: js.UndefOr[SSECustomerAlgorithm] = js.undefined,
@@ -8079,6 +8518,10 @@ package object s3 {
     ): UploadPartOutput = {
       val __obj = js.Dynamic.literal()
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       RequestCharged.foreach(__v => __obj.updateDynamic("RequestCharged")(__v.asInstanceOf[js.Any]))
       SSECustomerAlgorithm.foreach(__v => __obj.updateDynamic("SSECustomerAlgorithm")(__v.asInstanceOf[js.Any]))
@@ -8096,6 +8539,11 @@ package object s3 {
     var PartNumber: PartNumber
     var UploadId: MultipartUploadId
     var Body: js.UndefOr[Body]
+    var ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ContentLength: js.UndefOr[ContentLength]
     var ContentMD5: js.UndefOr[ContentMD5]
     var ExpectedBucketOwner: js.UndefOr[AccountId]
@@ -8113,6 +8561,11 @@ package object s3 {
         PartNumber: PartNumber,
         UploadId: MultipartUploadId,
         Body: js.UndefOr[Body] = js.undefined,
+        ChecksumAlgorithm: js.UndefOr[ChecksumAlgorithm] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ContentLength: js.UndefOr[ContentLength] = js.undefined,
         ContentMD5: js.UndefOr[ContentMD5] = js.undefined,
         ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
@@ -8129,6 +8582,11 @@ package object s3 {
       )
 
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      ChecksumAlgorithm.foreach(__v => __obj.updateDynamic("ChecksumAlgorithm")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
       ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
@@ -8196,6 +8654,10 @@ package object s3 {
     var Body: js.UndefOr[Body]
     var BucketKeyEnabled: js.UndefOr[BucketKeyEnabled]
     var CacheControl: js.UndefOr[CacheControl]
+    var ChecksumCRC32: js.UndefOr[ChecksumCRC32]
+    var ChecksumCRC32C: js.UndefOr[ChecksumCRC32C]
+    var ChecksumSHA1: js.UndefOr[ChecksumSHA1]
+    var ChecksumSHA256: js.UndefOr[ChecksumSHA256]
     var ContentDisposition: js.UndefOr[ContentDisposition]
     var ContentEncoding: js.UndefOr[ContentEncoding]
     var ContentLanguage: js.UndefOr[ContentLanguage]
@@ -8237,6 +8699,10 @@ package object s3 {
         Body: js.UndefOr[Body] = js.undefined,
         BucketKeyEnabled: js.UndefOr[BucketKeyEnabled] = js.undefined,
         CacheControl: js.UndefOr[CacheControl] = js.undefined,
+        ChecksumCRC32: js.UndefOr[ChecksumCRC32] = js.undefined,
+        ChecksumCRC32C: js.UndefOr[ChecksumCRC32C] = js.undefined,
+        ChecksumSHA1: js.UndefOr[ChecksumSHA1] = js.undefined,
+        ChecksumSHA256: js.UndefOr[ChecksumSHA256] = js.undefined,
         ContentDisposition: js.UndefOr[ContentDisposition] = js.undefined,
         ContentEncoding: js.UndefOr[ContentEncoding] = js.undefined,
         ContentLanguage: js.UndefOr[ContentLanguage] = js.undefined,
@@ -8277,6 +8743,10 @@ package object s3 {
       Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
       BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32.foreach(__v => __obj.updateDynamic("ChecksumCRC32")(__v.asInstanceOf[js.Any]))
+      ChecksumCRC32C.foreach(__v => __obj.updateDynamic("ChecksumCRC32C")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA1.foreach(__v => __obj.updateDynamic("ChecksumSHA1")(__v.asInstanceOf[js.Any]))
+      ChecksumSHA256.foreach(__v => __obj.updateDynamic("ChecksumSHA256")(__v.asInstanceOf[js.Any]))
       ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
       ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
       ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))

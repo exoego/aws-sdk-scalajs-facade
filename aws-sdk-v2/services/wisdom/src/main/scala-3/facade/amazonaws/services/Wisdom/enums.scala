@@ -75,6 +75,29 @@ object KnowledgeBaseType {
   inline def values: js.Array[KnowledgeBaseType] = js.Array(EXTERNAL, CUSTOM)
 }
 
+type RecommendationSourceType = "ISSUE_DETECTION" | "RULE_EVALUATION" | "OTHER"
+object RecommendationSourceType {
+  inline val ISSUE_DETECTION: "ISSUE_DETECTION" = "ISSUE_DETECTION"
+  inline val RULE_EVALUATION: "RULE_EVALUATION" = "RULE_EVALUATION"
+  inline val OTHER: "OTHER" = "OTHER"
+
+  inline def values: js.Array[RecommendationSourceType] = js.Array(ISSUE_DETECTION, RULE_EVALUATION, OTHER)
+}
+
+type RecommendationTriggerType = "QUERY"
+object RecommendationTriggerType {
+  inline val QUERY: "QUERY" = "QUERY"
+
+  inline def values: js.Array[RecommendationTriggerType] = js.Array(QUERY)
+}
+
+type RecommendationType = "KNOWLEDGE_CONTENT"
+object RecommendationType {
+  inline val KNOWLEDGE_CONTENT: "KNOWLEDGE_CONTENT" = "KNOWLEDGE_CONTENT"
+
+  inline def values: js.Array[RecommendationType] = js.Array(KNOWLEDGE_CONTENT)
+}
+
 type RelevanceLevel = "HIGH" | "MEDIUM" | "LOW"
 object RelevanceLevel {
   inline val HIGH: "HIGH" = "HIGH"

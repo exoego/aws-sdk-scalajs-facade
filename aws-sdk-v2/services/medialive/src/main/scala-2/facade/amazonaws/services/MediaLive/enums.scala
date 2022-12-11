@@ -158,6 +158,17 @@ object AcceptHeader {
   @inline def values: js.Array[AcceptHeader] = js.Array(`image/jpeg`)
 }
 
+/** Accessibility Type
+  */
+@js.native
+sealed trait AccessibilityType extends js.Any
+object AccessibilityType {
+  val DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES = "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES".asInstanceOf[AccessibilityType]
+  val IMPLEMENTS_ACCESSIBILITY_FEATURES = "IMPLEMENTS_ACCESSIBILITY_FEATURES".asInstanceOf[AccessibilityType]
+
+  @inline def values: js.Array[AccessibilityType] = js.Array(DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES, IMPLEMENTS_ACCESSIBILITY_FEATURES)
+}
+
 /** Afd Signaling
   */
 @js.native
@@ -454,8 +465,9 @@ sealed trait DeviceUpdateStatus extends js.Any
 object DeviceUpdateStatus {
   val UP_TO_DATE = "UP_TO_DATE".asInstanceOf[DeviceUpdateStatus]
   val NOT_UP_TO_DATE = "NOT_UP_TO_DATE".asInstanceOf[DeviceUpdateStatus]
+  val UPDATING = "UPDATING".asInstanceOf[DeviceUpdateStatus]
 
-  @inline def values: js.Array[DeviceUpdateStatus] = js.Array(UP_TO_DATE, NOT_UP_TO_DATE)
+  @inline def values: js.Array[DeviceUpdateStatus] = js.Array(UP_TO_DATE, NOT_UP_TO_DATE, UPDATING)
 }
 
 /** Dvb Sdt Output Sdt
@@ -561,6 +573,48 @@ object DvbSubOcrLanguage {
   val SPA = "SPA".asInstanceOf[DvbSubOcrLanguage]
 
   @inline def values: js.Array[DvbSubOcrLanguage] = js.Array(DEU, ENG, FRA, NLD, POR, SPA)
+}
+
+/** Eac3 Atmos Coding Mode
+  */
+@js.native
+sealed trait Eac3AtmosCodingMode extends js.Any
+object Eac3AtmosCodingMode {
+  val CODING_MODE_5_1_4 = "CODING_MODE_5_1_4".asInstanceOf[Eac3AtmosCodingMode]
+  val CODING_MODE_7_1_4 = "CODING_MODE_7_1_4".asInstanceOf[Eac3AtmosCodingMode]
+  val CODING_MODE_9_1_6 = "CODING_MODE_9_1_6".asInstanceOf[Eac3AtmosCodingMode]
+
+  @inline def values: js.Array[Eac3AtmosCodingMode] = js.Array(CODING_MODE_5_1_4, CODING_MODE_7_1_4, CODING_MODE_9_1_6)
+}
+
+/** Eac3 Atmos Drc Line
+  */
+@js.native
+sealed trait Eac3AtmosDrcLine extends js.Any
+object Eac3AtmosDrcLine {
+  val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDrcLine]
+  val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDrcLine]
+  val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDrcLine]
+  val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDrcLine]
+  val NONE = "NONE".asInstanceOf[Eac3AtmosDrcLine]
+  val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDrcLine]
+
+  @inline def values: js.Array[Eac3AtmosDrcLine] = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
+}
+
+/** Eac3 Atmos Drc Rf
+  */
+@js.native
+sealed trait Eac3AtmosDrcRf extends js.Any
+object Eac3AtmosDrcRf {
+  val FILM_LIGHT = "FILM_LIGHT".asInstanceOf[Eac3AtmosDrcRf]
+  val FILM_STANDARD = "FILM_STANDARD".asInstanceOf[Eac3AtmosDrcRf]
+  val MUSIC_LIGHT = "MUSIC_LIGHT".asInstanceOf[Eac3AtmosDrcRf]
+  val MUSIC_STANDARD = "MUSIC_STANDARD".asInstanceOf[Eac3AtmosDrcRf]
+  val NONE = "NONE".asInstanceOf[Eac3AtmosDrcRf]
+  val SPEECH = "SPEECH".asInstanceOf[Eac3AtmosDrcRf]
+
+  @inline def values: js.Array[Eac3AtmosDrcRf] = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
 }
 
 /** Eac3 Attenuation Control
@@ -1571,6 +1625,17 @@ object HlsProgramDateTime {
   @inline def values: js.Array[HlsProgramDateTime] = js.Array(EXCLUDE, INCLUDE)
 }
 
+/** Hls Program Date Time Clock
+  */
+@js.native
+sealed trait HlsProgramDateTimeClock extends js.Any
+object HlsProgramDateTimeClock {
+  val INITIALIZE_FROM_OUTPUT_TIMECODE = "INITIALIZE_FROM_OUTPUT_TIMECODE".asInstanceOf[HlsProgramDateTimeClock]
+  val SYSTEM_CLOCK = "SYSTEM_CLOCK".asInstanceOf[HlsProgramDateTimeClock]
+
+  @inline def values: js.Array[HlsProgramDateTimeClock] = js.Array(INITIALIZE_FROM_OUTPUT_TIMECODE, SYSTEM_CLOCK)
+}
+
 /** Hls Redundant Manifest
   */
 @js.native
@@ -1789,8 +1854,9 @@ object InputDeviceTransferType {
 sealed trait InputDeviceType extends js.Any
 object InputDeviceType {
   val HD = "HD".asInstanceOf[InputDeviceType]
+  val UHD = "UHD".asInstanceOf[InputDeviceType]
 
-  @inline def values: js.Array[InputDeviceType] = js.Array(HD)
+  @inline def values: js.Array[InputDeviceType] = js.Array(HD, UHD)
 }
 
 /** Input Filter
@@ -2257,6 +2323,22 @@ object M3u8TimedMetadataBehavior {
   @inline def values: js.Array[M3u8TimedMetadataBehavior] = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
 }
 
+/** The currently selected maintenance day.
+  */
+@js.native
+sealed trait MaintenanceDay extends js.Any
+object MaintenanceDay {
+  val MONDAY = "MONDAY".asInstanceOf[MaintenanceDay]
+  val TUESDAY = "TUESDAY".asInstanceOf[MaintenanceDay]
+  val WEDNESDAY = "WEDNESDAY".asInstanceOf[MaintenanceDay]
+  val THURSDAY = "THURSDAY".asInstanceOf[MaintenanceDay]
+  val FRIDAY = "FRIDAY".asInstanceOf[MaintenanceDay]
+  val SATURDAY = "SATURDAY".asInstanceOf[MaintenanceDay]
+  val SUNDAY = "SUNDAY".asInstanceOf[MaintenanceDay]
+
+  @inline def values: js.Array[MaintenanceDay] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+}
+
 /** Motion Graphics Insertion
   */
 @js.native
@@ -2484,6 +2566,29 @@ object PreferredChannelPipeline {
   val PIPELINE_1 = "PIPELINE_1".asInstanceOf[PreferredChannelPipeline]
 
   @inline def values: js.Array[PreferredChannelPipeline] = js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1)
+}
+
+/** Whether or not to force reboot the input device.
+  */
+@js.native
+sealed trait RebootInputDeviceForce extends js.Any
+object RebootInputDeviceForce {
+  val NO = "NO".asInstanceOf[RebootInputDeviceForce]
+  val YES = "YES".asInstanceOf[RebootInputDeviceForce]
+
+  @inline def values: js.Array[RebootInputDeviceForce] = js.Array(NO, YES)
+}
+
+/** Automatic Renewal Status for Reservation
+  */
+@js.native
+sealed trait ReservationAutomaticRenewal extends js.Any
+object ReservationAutomaticRenewal {
+  val DISABLED = "DISABLED".asInstanceOf[ReservationAutomaticRenewal]
+  val ENABLED = "ENABLED".asInstanceOf[ReservationAutomaticRenewal]
+  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ReservationAutomaticRenewal]
+
+  @inline def values: js.Array[ReservationAutomaticRenewal] = js.Array(DISABLED, ENABLED, UNAVAILABLE)
 }
 
 /** Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
@@ -2714,6 +2819,17 @@ object Scte35DeviceRestrictions {
   val RESTRICT_GROUP2 = "RESTRICT_GROUP2".asInstanceOf[Scte35DeviceRestrictions]
 
   @inline def values: js.Array[Scte35DeviceRestrictions] = js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2)
+}
+
+/** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+  */
+@js.native
+sealed trait Scte35InputMode extends js.Any
+object Scte35InputMode {
+  val FIXED = "FIXED".asInstanceOf[Scte35InputMode]
+  val FOLLOW_ACTIVE = "FOLLOW_ACTIVE".asInstanceOf[Scte35InputMode]
+
+  @inline def values: js.Array[Scte35InputMode] = js.Array(FIXED, FOLLOW_ACTIVE)
 }
 
 /** Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.

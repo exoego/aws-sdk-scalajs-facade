@@ -53,6 +53,15 @@ object CertificateSource {
 }
 
 @js.native
+sealed trait ContinuousDeploymentPolicyType extends js.Any
+object ContinuousDeploymentPolicyType {
+  val SingleWeight = "SingleWeight".asInstanceOf[ContinuousDeploymentPolicyType]
+  val SingleHeader = "SingleHeader".asInstanceOf[ContinuousDeploymentPolicyType]
+
+  @inline def values: js.Array[ContinuousDeploymentPolicyType] = js.Array(SingleWeight, SingleHeader)
+}
+
+@js.native
 sealed trait EventType extends js.Any
 object EventType {
   val `viewer-request` = "viewer-request".asInstanceOf[EventType]
@@ -112,8 +121,10 @@ sealed trait HttpVersion extends js.Any
 object HttpVersion {
   val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
   val http2 = "http2".asInstanceOf[HttpVersion]
+  val http3 = "http3".asInstanceOf[HttpVersion]
+  val http2and3 = "http2and3".asInstanceOf[HttpVersion]
 
-  @inline def values: js.Array[HttpVersion] = js.Array(`http1.1`, http2)
+  @inline def values: js.Array[HttpVersion] = js.Array(`http1.1`, http2, http3, http2and3)
 }
 
 @js.native
@@ -162,6 +173,32 @@ object MinimumProtocolVersion {
   val `TLSv1.2_2021` = "TLSv1.2_2021".asInstanceOf[MinimumProtocolVersion]
 
   @inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`, `TLSv1.2_2021`)
+}
+
+@js.native
+sealed trait OriginAccessControlOriginTypes extends js.Any
+object OriginAccessControlOriginTypes {
+  val s3 = "s3".asInstanceOf[OriginAccessControlOriginTypes]
+
+  @inline def values: js.Array[OriginAccessControlOriginTypes] = js.Array(s3)
+}
+
+@js.native
+sealed trait OriginAccessControlSigningBehaviors extends js.Any
+object OriginAccessControlSigningBehaviors {
+  val never = "never".asInstanceOf[OriginAccessControlSigningBehaviors]
+  val always = "always".asInstanceOf[OriginAccessControlSigningBehaviors]
+  val `no-override` = "no-override".asInstanceOf[OriginAccessControlSigningBehaviors]
+
+  @inline def values: js.Array[OriginAccessControlSigningBehaviors] = js.Array(never, always, `no-override`)
+}
+
+@js.native
+sealed trait OriginAccessControlSigningProtocols extends js.Any
+object OriginAccessControlSigningProtocols {
+  val sigv4 = "sigv4".asInstanceOf[OriginAccessControlSigningProtocols]
+
+  @inline def values: js.Array[OriginAccessControlSigningProtocols] = js.Array(sigv4)
 }
 
 @js.native

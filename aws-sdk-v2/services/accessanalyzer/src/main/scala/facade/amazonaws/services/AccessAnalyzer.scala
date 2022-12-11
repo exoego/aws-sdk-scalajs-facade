@@ -25,6 +25,13 @@ package object accessanalyzer {
   type ConditionKeyMap = js.Dictionary[String]
   type ConfigurationsMap = js.Dictionary[Configuration]
   type ConfigurationsMapKey = String
+  type EbsGroup = String
+  type EbsGroupList = js.Array[EbsGroup]
+  type EbsSnapshotDataEncryptionKeyId = String
+  type EbsUserId = String
+  type EbsUserIdList = js.Array[EbsUserId]
+  type EcrRepositoryPolicy = String
+  type EfsFileSystemPolicy = String
   type FilterCriteriaMap = js.Dictionary[Criterion]
   type FindingId = String
   type FindingIdList = js.Array[FindingId]
@@ -54,6 +61,16 @@ package object accessanalyzer {
   type PolicyName = String
   type PrincipalArn = String
   type PrincipalMap = js.Dictionary[String]
+  type RdsDbClusterSnapshotAccountId = String
+  type RdsDbClusterSnapshotAccountIdsList = js.Array[RdsDbClusterSnapshotAccountId]
+  type RdsDbClusterSnapshotAttributeName = String
+  type RdsDbClusterSnapshotAttributesMap = js.Dictionary[RdsDbClusterSnapshotAttributeValue]
+  type RdsDbClusterSnapshotKmsKeyId = String
+  type RdsDbSnapshotAccountId = String
+  type RdsDbSnapshotAccountIdsList = js.Array[RdsDbSnapshotAccountId]
+  type RdsDbSnapshotAttributeName = String
+  type RdsDbSnapshotAttributesMap = js.Dictionary[RdsDbSnapshotAttributeValue]
+  type RdsDbSnapshotKmsKeyId = String
   type RegionList = js.Array[String]
   type ResourceArn = String
   type RetiringPrincipal = String
@@ -64,6 +81,7 @@ package object accessanalyzer {
   type SecretsManagerSecretKmsId = String
   type SecretsManagerSecretPolicy = String
   type SharedViaList = js.Array[String]
+  type SnsTopicPolicy = String
   type SqsQueuePolicy = String
   type TagKeys = js.Array[String]
   type TagsMap = js.Dictionary[String]
@@ -576,27 +594,45 @@ package object accessanalyzer {
     */
   @js.native
   trait Configuration extends js.Object {
+    var ebsSnapshot: js.UndefOr[EbsSnapshotConfiguration]
+    var ecrRepository: js.UndefOr[EcrRepositoryConfiguration]
+    var efsFileSystem: js.UndefOr[EfsFileSystemConfiguration]
     var iamRole: js.UndefOr[IamRoleConfiguration]
     var kmsKey: js.UndefOr[KmsKeyConfiguration]
+    var rdsDbClusterSnapshot: js.UndefOr[RdsDbClusterSnapshotConfiguration]
+    var rdsDbSnapshot: js.UndefOr[RdsDbSnapshotConfiguration]
     var s3Bucket: js.UndefOr[S3BucketConfiguration]
     var secretsManagerSecret: js.UndefOr[SecretsManagerSecretConfiguration]
+    var snsTopic: js.UndefOr[SnsTopicConfiguration]
     var sqsQueue: js.UndefOr[SqsQueueConfiguration]
   }
 
   object Configuration {
     @inline
     def apply(
+        ebsSnapshot: js.UndefOr[EbsSnapshotConfiguration] = js.undefined,
+        ecrRepository: js.UndefOr[EcrRepositoryConfiguration] = js.undefined,
+        efsFileSystem: js.UndefOr[EfsFileSystemConfiguration] = js.undefined,
         iamRole: js.UndefOr[IamRoleConfiguration] = js.undefined,
         kmsKey: js.UndefOr[KmsKeyConfiguration] = js.undefined,
+        rdsDbClusterSnapshot: js.UndefOr[RdsDbClusterSnapshotConfiguration] = js.undefined,
+        rdsDbSnapshot: js.UndefOr[RdsDbSnapshotConfiguration] = js.undefined,
         s3Bucket: js.UndefOr[S3BucketConfiguration] = js.undefined,
         secretsManagerSecret: js.UndefOr[SecretsManagerSecretConfiguration] = js.undefined,
+        snsTopic: js.UndefOr[SnsTopicConfiguration] = js.undefined,
         sqsQueue: js.UndefOr[SqsQueueConfiguration] = js.undefined
     ): Configuration = {
       val __obj = js.Dynamic.literal()
+      ebsSnapshot.foreach(__v => __obj.updateDynamic("ebsSnapshot")(__v.asInstanceOf[js.Any]))
+      ecrRepository.foreach(__v => __obj.updateDynamic("ecrRepository")(__v.asInstanceOf[js.Any]))
+      efsFileSystem.foreach(__v => __obj.updateDynamic("efsFileSystem")(__v.asInstanceOf[js.Any]))
       iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
       kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
+      rdsDbClusterSnapshot.foreach(__v => __obj.updateDynamic("rdsDbClusterSnapshot")(__v.asInstanceOf[js.Any]))
+      rdsDbSnapshot.foreach(__v => __obj.updateDynamic("rdsDbSnapshot")(__v.asInstanceOf[js.Any]))
       s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
       secretsManagerSecret.foreach(__v => __obj.updateDynamic("secretsManagerSecret")(__v.asInstanceOf[js.Any]))
+      snsTopic.foreach(__v => __obj.updateDynamic("snsTopic")(__v.asInstanceOf[js.Any]))
       sqsQueue.foreach(__v => __obj.updateDynamic("sqsQueue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Configuration]
     }
@@ -722,7 +758,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The criteria to use in the filter that defines the archive rule.
+  /** The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html|IAM Access Analyzer filter keys]].
     */
   @js.native
   trait Criterion extends js.Object {
@@ -795,6 +831,66 @@ package object accessanalyzer {
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteArchiveRuleRequest]
+    }
+  }
+
+  /** The proposed access control configuration for an Amazon EBS volume snapshot. You can propose a configuration for a new Amazon EBS volume snapshot or an Amazon EBS volume snapshot that you own by specifying the user IDs, groups, and optional KMS encryption key. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html|ModifySnapshotAttribute]].
+    */
+  @js.native
+  trait EbsSnapshotConfiguration extends js.Object {
+    var groups: js.UndefOr[EbsGroupList]
+    var kmsKeyId: js.UndefOr[EbsSnapshotDataEncryptionKeyId]
+    var userIds: js.UndefOr[EbsUserIdList]
+  }
+
+  object EbsSnapshotConfiguration {
+    @inline
+    def apply(
+        groups: js.UndefOr[EbsGroupList] = js.undefined,
+        kmsKeyId: js.UndefOr[EbsSnapshotDataEncryptionKeyId] = js.undefined,
+        userIds: js.UndefOr[EbsUserIdList] = js.undefined
+    ): EbsSnapshotConfiguration = {
+      val __obj = js.Dynamic.literal()
+      groups.foreach(__v => __obj.updateDynamic("groups")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      userIds.foreach(__v => __obj.updateDynamic("userIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbsSnapshotConfiguration]
+    }
+  }
+
+  /** The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see [[https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html|Repository]]. * If the configuration is for an existing Amazon ECR repository and you do not specify the Amazon ECR policy, then the access preview uses the existing Amazon ECR policy for the repository. * If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon ECR repository without a policy. * To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.
+    */
+  @js.native
+  trait EcrRepositoryConfiguration extends js.Object {
+    var repositoryPolicy: js.UndefOr[EcrRepositoryPolicy]
+  }
+
+  object EcrRepositoryConfiguration {
+    @inline
+    def apply(
+        repositoryPolicy: js.UndefOr[EcrRepositoryPolicy] = js.undefined
+    ): EcrRepositoryConfiguration = {
+      val __obj = js.Dynamic.literal()
+      repositoryPolicy.foreach(__v => __obj.updateDynamic("repositoryPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EcrRepositoryConfiguration]
+    }
+  }
+
+  /** The proposed access control configuration for an Amazon EFS file system. You can propose a configuration for a new Amazon EFS file system or an existing Amazon EFS file system that you own by specifying the Amazon EFS policy. For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/using-fs.html|Using file systems in Amazon EFS]]. * If the configuration is for an existing Amazon EFS file system and you do not specify the Amazon EFS policy, then the access preview uses the existing Amazon EFS policy for the file system. * If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon EFS file system without a policy. * To propose deletion of an existing Amazon EFS file system policy, you can specify an empty string for the Amazon EFS policy.
+    */
+  @js.native
+  trait EfsFileSystemConfiguration extends js.Object {
+    var fileSystemPolicy: js.UndefOr[EfsFileSystemPolicy]
+  }
+
+  object EfsFileSystemConfiguration {
+    @inline
+    def apply(
+        fileSystemPolicy: js.UndefOr[EfsFileSystemPolicy] = js.undefined
+    ): EfsFileSystemConfiguration = {
+      val __obj = js.Dynamic.literal()
+      fileSystemPolicy.foreach(__v => __obj.updateDynamic("fileSystemPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EfsFileSystemConfiguration]
     }
   }
 
@@ -884,15 +980,18 @@ package object accessanalyzer {
     */
   @js.native
   trait FindingSourceDetail extends js.Object {
+    var accessPointAccount: js.UndefOr[String]
     var accessPointArn: js.UndefOr[String]
   }
 
   object FindingSourceDetail {
     @inline
     def apply(
+        accessPointAccount: js.UndefOr[String] = js.undefined,
         accessPointArn: js.UndefOr[String] = js.undefined
     ): FindingSourceDetail = {
       val __obj = js.Dynamic.literal()
+      accessPointAccount.foreach(__v => __obj.updateDynamic("accessPointAccount")(__v.asInstanceOf[js.Any]))
       accessPointArn.foreach(__v => __obj.updateDynamic("accessPointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingSourceDetail]
     }
@@ -1971,7 +2070,85 @@ package object accessanalyzer {
     }
   }
 
-  /** The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see [[https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]]. For more information about access point policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html|Access points restrictions and limitations]].
+  /** The values for a manual Amazon RDS DB cluster snapshot attribute.
+    */
+  @js.native
+  trait RdsDbClusterSnapshotAttributeValue extends js.Object {
+    var accountIds: js.UndefOr[RdsDbClusterSnapshotAccountIdsList]
+  }
+
+  object RdsDbClusterSnapshotAttributeValue {
+    @inline
+    def apply(
+        accountIds: js.UndefOr[RdsDbClusterSnapshotAccountIdsList] = js.undefined
+    ): RdsDbClusterSnapshotAttributeValue = {
+      val __obj = js.Dynamic.literal()
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RdsDbClusterSnapshotAttributeValue]
+    }
+  }
+
+  /** The proposed access control configuration for an Amazon RDS DB cluster snapshot. You can propose a configuration for a new Amazon RDS DB cluster snapshot or an Amazon RDS DB cluster snapshot that you own by specifying the <code>RdsDbClusterSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html|ModifyDBClusterSnapshotAttribute]].
+    */
+  @js.native
+  trait RdsDbClusterSnapshotConfiguration extends js.Object {
+    var attributes: js.UndefOr[RdsDbClusterSnapshotAttributesMap]
+    var kmsKeyId: js.UndefOr[RdsDbClusterSnapshotKmsKeyId]
+  }
+
+  object RdsDbClusterSnapshotConfiguration {
+    @inline
+    def apply(
+        attributes: js.UndefOr[RdsDbClusterSnapshotAttributesMap] = js.undefined,
+        kmsKeyId: js.UndefOr[RdsDbClusterSnapshotKmsKeyId] = js.undefined
+    ): RdsDbClusterSnapshotConfiguration = {
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RdsDbClusterSnapshotConfiguration]
+    }
+  }
+
+  /** The name and values of a manual Amazon RDS DB snapshot attribute. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot.
+    */
+  @js.native
+  trait RdsDbSnapshotAttributeValue extends js.Object {
+    var accountIds: js.UndefOr[RdsDbSnapshotAccountIdsList]
+  }
+
+  object RdsDbSnapshotAttributeValue {
+    @inline
+    def apply(
+        accountIds: js.UndefOr[RdsDbSnapshotAccountIdsList] = js.undefined
+    ): RdsDbSnapshotAttributeValue = {
+      val __obj = js.Dynamic.literal()
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RdsDbSnapshotAttributeValue]
+    }
+  }
+
+  /** The proposed access control configuration for an Amazon RDS DB snapshot. You can propose a configuration for a new Amazon RDS DB snapshot or an Amazon RDS DB snapshot that you own by specifying the <code>RdsDbSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html|ModifyDBSnapshotAttribute]].
+    */
+  @js.native
+  trait RdsDbSnapshotConfiguration extends js.Object {
+    var attributes: js.UndefOr[RdsDbSnapshotAttributesMap]
+    var kmsKeyId: js.UndefOr[RdsDbSnapshotKmsKeyId]
+  }
+
+  object RdsDbSnapshotConfiguration {
+    @inline
+    def apply(
+        attributes: js.UndefOr[RdsDbSnapshotAttributesMap] = js.undefined,
+        kmsKeyId: js.UndefOr[RdsDbSnapshotKmsKeyId] = js.undefined
+    ): RdsDbSnapshotConfiguration = {
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RdsDbSnapshotConfiguration]
+    }
+  }
+
+  /** The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]]. For more information about access point policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html|Access points restrictions and limitations]].
     */
   @js.native
   trait S3AccessPointConfiguration extends js.Object {
@@ -2088,6 +2265,24 @@ package object accessanalyzer {
     }
   }
 
+  /** The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see [[https://docs.aws.amazon.com/sns/latest/api/API_Topic.html|Topic]].
+    */
+  @js.native
+  trait SnsTopicConfiguration extends js.Object {
+    var topicPolicy: js.UndefOr[SnsTopicPolicy]
+  }
+
+  object SnsTopicConfiguration {
+    @inline
+    def apply(
+        topicPolicy: js.UndefOr[SnsTopicPolicy] = js.undefined
+    ): SnsTopicConfiguration = {
+      val __obj = js.Dynamic.literal()
+      topicPolicy.foreach(__v => __obj.updateDynamic("topicPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnsTopicConfiguration]
+    }
+  }
+
   /** The criteria used to sort.
     */
   @js.native
@@ -2196,18 +2391,22 @@ package object accessanalyzer {
   trait StartResourceScanRequest extends js.Object {
     var analyzerArn: AnalyzerArn
     var resourceArn: ResourceArn
+    var resourceOwnerAccount: js.UndefOr[String]
   }
 
   object StartResourceScanRequest {
     @inline
     def apply(
         analyzerArn: AnalyzerArn,
-        resourceArn: ResourceArn
+        resourceArn: ResourceArn,
+        resourceOwnerAccount: js.UndefOr[String] = js.undefined
     ): StartResourceScanRequest = {
       val __obj = js.Dynamic.literal(
         "analyzerArn" -> analyzerArn.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
+
+      resourceOwnerAccount.foreach(__v => __obj.updateDynamic("resourceOwnerAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartResourceScanRequest]
     }
   }

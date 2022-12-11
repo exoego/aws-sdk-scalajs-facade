@@ -42,6 +42,15 @@ object BucketLocationConstraint {
 }
 
 @js.native
+sealed trait BucketVersioningStatus extends js.Any
+object BucketVersioningStatus {
+  val Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
+  val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
+
+  @inline def values: js.Array[BucketVersioningStatus] = js.Array(Enabled, Suspended)
+}
+
+@js.native
 sealed trait ExpirationStatus extends js.Any
 object ExpirationStatus {
   val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
@@ -57,6 +66,14 @@ object Format {
   val Parquet = "Parquet".asInstanceOf[Format]
 
   @inline def values: js.Array[Format] = js.Array(CSV, Parquet)
+}
+
+@js.native
+sealed trait GeneratedManifestFormat extends js.Any
+object GeneratedManifestFormat {
+  val S3InventoryReport_CSV_20211130 = "S3InventoryReport_CSV_20211130".asInstanceOf[GeneratedManifestFormat]
+
+  @inline def values: js.Array[GeneratedManifestFormat] = js.Array(S3InventoryReport_CSV_20211130)
 }
 
 @js.native
@@ -117,6 +134,24 @@ object JobStatus {
 }
 
 @js.native
+sealed trait MFADelete extends js.Any
+object MFADelete {
+  val Enabled = "Enabled".asInstanceOf[MFADelete]
+  val Disabled = "Disabled".asInstanceOf[MFADelete]
+
+  @inline def values: js.Array[MFADelete] = js.Array(Enabled, Disabled)
+}
+
+@js.native
+sealed trait MFADeleteStatus extends js.Any
+object MFADeleteStatus {
+  val Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
+  val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
+
+  @inline def values: js.Array[MFADeleteStatus] = js.Array(Enabled, Disabled)
+}
+
+@js.native
 sealed trait MultiRegionAccessPointStatus extends js.Any
 object MultiRegionAccessPointStatus {
   val READY = "READY".asInstanceOf[MultiRegionAccessPointStatus]
@@ -143,16 +178,21 @@ sealed trait ObjectLambdaAllowedFeature extends js.Any
 object ObjectLambdaAllowedFeature {
   val `GetObject-Range` = "GetObject-Range".asInstanceOf[ObjectLambdaAllowedFeature]
   val `GetObject-PartNumber` = "GetObject-PartNumber".asInstanceOf[ObjectLambdaAllowedFeature]
+  val `HeadObject-Range` = "HeadObject-Range".asInstanceOf[ObjectLambdaAllowedFeature]
+  val `HeadObject-PartNumber` = "HeadObject-PartNumber".asInstanceOf[ObjectLambdaAllowedFeature]
 
-  @inline def values: js.Array[ObjectLambdaAllowedFeature] = js.Array(`GetObject-Range`, `GetObject-PartNumber`)
+  @inline def values: js.Array[ObjectLambdaAllowedFeature] = js.Array(`GetObject-Range`, `GetObject-PartNumber`, `HeadObject-Range`, `HeadObject-PartNumber`)
 }
 
 @js.native
 sealed trait ObjectLambdaTransformationConfigurationAction extends js.Any
 object ObjectLambdaTransformationConfigurationAction {
   val GetObject = "GetObject".asInstanceOf[ObjectLambdaTransformationConfigurationAction]
+  val HeadObject = "HeadObject".asInstanceOf[ObjectLambdaTransformationConfigurationAction]
+  val ListObjects = "ListObjects".asInstanceOf[ObjectLambdaTransformationConfigurationAction]
+  val ListObjectsV2 = "ListObjectsV2".asInstanceOf[ObjectLambdaTransformationConfigurationAction]
 
-  @inline def values: js.Array[ObjectLambdaTransformationConfigurationAction] = js.Array(GetObject)
+  @inline def values: js.Array[ObjectLambdaTransformationConfigurationAction] = js.Array(GetObject, HeadObject, ListObjects, ListObjectsV2)
 }
 
 @js.native
@@ -166,6 +206,7 @@ object OperationName {
   val S3InitiateRestoreObject = "S3InitiateRestoreObject".asInstanceOf[OperationName]
   val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
   val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
+  val S3ReplicateObject = "S3ReplicateObject".asInstanceOf[OperationName]
 
   @inline def values: js.Array[OperationName] = js.Array(
     LambdaInvoke,
@@ -175,7 +216,8 @@ object OperationName {
     S3DeleteObjectTagging,
     S3InitiateRestoreObject,
     S3PutObjectLegalHold,
-    S3PutObjectRetention
+    S3PutObjectRetention,
+    S3ReplicateObject
   )
 }
 
@@ -185,6 +227,17 @@ object OutputSchemaVersion {
   val V_1 = "V_1".asInstanceOf[OutputSchemaVersion]
 
   @inline def values: js.Array[OutputSchemaVersion] = js.Array(V_1)
+}
+
+@js.native
+sealed trait ReplicationStatus extends js.Any
+object ReplicationStatus {
+  val COMPLETED = "COMPLETED".asInstanceOf[ReplicationStatus]
+  val FAILED = "FAILED".asInstanceOf[ReplicationStatus]
+  val REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
+  val NONE = "NONE".asInstanceOf[ReplicationStatus]
+
+  @inline def values: js.Array[ReplicationStatus] = js.Array(COMPLETED, FAILED, REPLICA, NONE)
 }
 
 @js.native
@@ -208,6 +261,17 @@ object S3CannedAccessControlList {
   val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[S3CannedAccessControlList]
 
   @inline def values: js.Array[S3CannedAccessControlList] = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
+}
+
+@js.native
+sealed trait S3ChecksumAlgorithm extends js.Any
+object S3ChecksumAlgorithm {
+  val CRC32 = "CRC32".asInstanceOf[S3ChecksumAlgorithm]
+  val CRC32C = "CRC32C".asInstanceOf[S3ChecksumAlgorithm]
+  val SHA1 = "SHA1".asInstanceOf[S3ChecksumAlgorithm]
+  val SHA256 = "SHA256".asInstanceOf[S3ChecksumAlgorithm]
+
+  @inline def values: js.Array[S3ChecksumAlgorithm] = js.Array(CRC32, CRC32C, SHA1, SHA256)
 }
 
 @js.native
@@ -295,8 +359,9 @@ object S3StorageClass {
   val GLACIER = "GLACIER".asInstanceOf[S3StorageClass]
   val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[S3StorageClass]
   val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[S3StorageClass]
+  val GLACIER_IR = "GLACIER_IR".asInstanceOf[S3StorageClass]
 
-  @inline def values: js.Array[S3StorageClass] = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+  @inline def values: js.Array[S3StorageClass] = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, GLACIER, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR)
 }
 
 @js.native

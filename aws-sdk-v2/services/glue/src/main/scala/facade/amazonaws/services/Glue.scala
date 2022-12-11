@@ -8,9 +8,15 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object glue {
+  type AccountId = String
   type ActionList = js.Array[Action]
+  type AdditionalOptions = js.Dictionary[EnclosedInStringProperty]
   type AdditionalPlanOptionsMap = js.Dictionary[GenericString]
+  type AggregateOperations = js.Array[AggregateOperation]
   type AttemptCount = Int
+  type AuditColumnNamesList = js.Array[ColumnNameString]
+  type AuditContextString = String
+  type AuthTokenString = String
   type BackfillErroredPartitionsList = js.Array[PartitionValueList]
   type BackfillErrors = js.Array[BackfillError]
   type BatchDeletePartitionValueList = js.Array[PartitionValueList]
@@ -34,6 +40,12 @@ package object glue {
   type BooleanNullable = Boolean
   type BooleanValue = Boolean
   type BoundedPartitionValueList = js.Array[ValueString]
+  type BoxedBoolean = Boolean
+  type BoxedDoubleFraction = Double
+  type BoxedLong = Double
+  type BoxedNonNegativeInt = Int
+  type BoxedNonNegativeLong = Double
+  type BoxedPositiveInt = Int
   type CatalogEntries = js.Array[CatalogEntry]
   type CatalogGetterPageSize = Int
   type CatalogIdString = String
@@ -44,6 +56,7 @@ package object glue {
   type ClassifierNameList = js.Array[NameString]
   type CodeGenArgName = String
   type CodeGenArgValue = String
+  type CodeGenConfigurationNodes = js.Dictionary[CodeGenConfigurationNode]
   type CodeGenIdentifier = String
   type CodeGenNodeArgs = js.Array[CodeGenNodeArg]
   type CodeGenNodeType = String
@@ -51,58 +64,93 @@ package object glue {
   type ColumnImportanceList = js.Array[ColumnImportance]
   type ColumnList = js.Array[Column]
   type ColumnNameString = String
+  type ColumnRowFilterList = js.Array[ColumnRowFilter]
   type ColumnStatisticsErrors = js.Array[ColumnStatisticsError]
   type ColumnStatisticsList = js.Array[ColumnStatistics]
   type ColumnTypeString = String
   type ColumnValueStringList = js.Array[ColumnValuesString]
   type ColumnValuesString = String
   type CommentString = String
+  type CommitIdString = String
   type ConditionList = js.Array[Condition]
   type ConnectionList = js.Array[Connection]
   type ConnectionName = String
   type ConnectionProperties = js.Dictionary[ValueString]
+  type ContextWords = js.Array[NameString]
+  type CrawlId = String
   type CrawlList = js.Array[Crawl]
   type CrawlerConfiguration = String
+  type CrawlerHistoryList = js.Array[CrawlerHistory]
   type CrawlerList = js.Array[Crawler]
   type CrawlerMetricsList = js.Array[CrawlerMetrics]
   type CrawlerNameList = js.Array[NameString]
   type CrawlerSecurityConfiguration = String
+  type CrawlsFilterList = js.Array[CrawlsFilter]
   type CreatedTimestamp = String
   type CronExpression = String
   type CsvColumnDelimiter = String
   type CsvHeader = js.Array[NameString]
   type CsvQuoteSymbol = String
+  type CustomDatatypes = js.Array[NameString]
+  type CustomEntityTypeNames = js.Array[NameString]
+  type CustomEntityTypes = js.Array[CustomEntityType]
   type CustomPatterns = String
+  type DQDLString = String
   type DagEdges = js.Array[CodeGenEdge]
   type DagNodes = js.Array[CodeGenNode]
   type DataLakePrincipalString = String
+  type DataQualityResultDescriptionList = js.Array[DataQualityResultDescription]
+  type DataQualityResultIdList = js.Array[HashString]
+  type DataQualityResultIds = js.Array[HashString]
+  type DataQualityResultsList = js.Array[DataQualityResult]
+  type DataQualityRuleRecommendationRunList = js.Array[DataQualityRuleRecommendationRunDescription]
+  type DataQualityRuleResults = js.Array[DataQualityRuleResult]
+  type DataQualityRulesetEvaluationRunList = js.Array[DataQualityRulesetEvaluationRunDescription]
+  type DataQualityRulesetList = js.Array[DataQualityRulesetListDetails]
+  type DataQualityRulesetString = String
   type DatabaseList = js.Array[Database]
   type DatabaseName = String
   type DeleteConnectionNameList = js.Array[NameString]
+  type DeltaTargetList = js.Array[DeltaTarget]
   type DescriptionString = String
   type DescriptionStringRemovable = String
   type DevEndpointList = js.Array[DevEndpoint]
   type DevEndpointNameList = js.Array[NameString]
   type DevEndpointNames = js.Array[GenericString]
+  type DoubleValue = Double
   type DynamoDBTargetList = js.Array[DynamoDBTarget]
   type EdgeList = js.Array[Edge]
+  type EnableAdditionalMetadata = js.Array[JdbcMetadataEntry]
+  type EnclosedInStringProperties = js.Array[EnclosedInStringProperty]
+  type EnclosedInStringPropertiesMinOne = js.Array[EnclosedInStringProperty]
+  type EnclosedInStringProperty = String
+  type EnclosedInStringPropertyWithQuote = String
   type ErrorByName = js.Dictionary[ErrorDetail]
   type ErrorCodeString = String
   type ErrorMessageString = String
   type ErrorString = String
   type EventQueueArn = String
   type ExecutionTime = Int
+  type ExtendedString = String
   type FieldType = String
+  type FilterExpressions = js.Array[FilterExpression]
   type FilterString = String
+  type FilterValues = js.Array[FilterValue]
   type FormatString = String
   type Generic512CharString = String
   type GenericBoundedDouble = Double
+  type GenericLimitedString = String
   type GenericMap = js.Dictionary[GenericString]
   type GenericString = String
   type GetColumnNamesList = js.Array[NameString]
   type GetResourcePoliciesResponseList = js.Array[GluePolicy]
   type GetTableVersionsList = js.Array[TableVersion]
   type GlueResourceArn = String
+  type GlueSchemas = js.Array[GlueSchema]
+  type GlueStudioColumnNameString = String
+  type GlueStudioPathList = js.Array[EnclosedInStringProperties]
+  type GlueStudioSchemaColumnList = js.Array[GlueStudioSchemaColumn]
+  type GlueTableAdditionalOptions = js.Dictionary[DescriptionString]
   type GlueTables = js.Array[GlueTable]
   type GlueVersionString = String
   type GrokPattern = String
@@ -111,11 +159,13 @@ package object glue {
   type IntegerFlag = Int
   type IntegerValue = Int
   type IsVersionValid = Boolean
+  type JDBCDataTypeMapping = js.Dictionary[GlueRecordType]
   type JdbcTargetList = js.Array[JdbcTarget]
   type JobList = js.Array[Job]
   type JobName = String
   type JobNameList = js.Array[NameString]
   type JobRunList = js.Array[JobRun]
+  type JoinColumns = js.Array[JoinColumn]
   type JsonPath = String
   type JsonValue = String
   type KeyList = js.Array[NameString]
@@ -124,12 +174,19 @@ package object glue {
   type KmsKeyArn = String
   type LabelCount = Int
   type LatestSchemaVersionBoolean = Boolean
+  type LimitedPathList = js.Array[LimitedStringList]
+  type LimitedStringList = js.Array[GenericLimitedString]
   type LocationMap = js.Dictionary[ColumnValuesString]
   type LocationString = String
+  type LocationStringList = js.Array[LocationString]
   type LogGroup = String
   type LogStream = String
+  type LongValue = Double
+  type ManyInputs = js.Array[NodeId]
   type MapValue = js.Dictionary[GenericString]
   type MappingList = js.Array[MappingEntry]
+  type Mappings = js.Array[Mapping]
+  type MaskValue = String
   type MatchCriteria = js.Array[NameString]
   type MaxConcurrentRuns = Int
   type MaxResultsNumber = Int
@@ -144,19 +201,29 @@ package object glue {
   type MongoDBTargetList = js.Array[MongoDBTarget]
   type NameString = String
   type NameStringList = js.Array[NameString]
+  type NodeId = String
   type NodeIdList = js.Array[NameString]
   type NodeList = js.Array[Node]
+  type NodeName = String
   type NonNegativeDouble = Double
+  type NonNegativeInt = Int
   type NonNegativeInteger = Int
   type NonNegativeLong = Double
   type NotifyDelayAfter = Int
+  type NullValueFields = js.Array[NullValueField]
   type NullableBoolean = Boolean
   type NullableDouble = Double
   type NullableInteger = Int
+  type OneInput = js.Array[NodeId]
+  type OrchestrationArgumentsMap = js.Dictionary[OrchestrationArgumentsValue]
+  type OrchestrationArgumentsValue = String
   type OrchestrationIAMRoleArn = String
   type OrchestrationNameString = String
+  type OrchestrationRoleArn = String
   type OrchestrationS3Location = String
+  type OrchestrationStatementCodeString = String
   type OrchestrationStringList = js.Array[GenericString]
+  type OrchestrationToken = String
   type OrderList = js.Array[Order]
   type OtherMetadataValueList = js.Array[OtherMetadataValueListItem]
   type PageSize = Int
@@ -171,10 +238,14 @@ package object glue {
   type Path = String
   type PathList = js.Array[Path]
   type PermissionList = js.Array[Permission]
+  type PermissionTypeList = js.Array[PermissionType]
   type PolicyJsonString = String
+  type PollingTime = Double
+  type PositiveLong = Double
   type PredecessorList = js.Array[Predecessor]
   type PredicateString = String
   type PrincipalPermissionsList = js.Array[PrincipalPermissions]
+  type Prob = Double
   type PublicKeysList = js.Array[GenericString]
   type PythonScript = String
   type PythonVersionString = String
@@ -187,6 +258,7 @@ package object glue {
   type RoleArn = String
   type RoleString = String
   type RowTag = String
+  type RulesetNames = js.Array[NameString]
   type RunId = String
   type S3EncryptionList = js.Array[S3Encryption]
   type S3TargetList = js.Array[S3Target]
@@ -206,7 +278,12 @@ package object glue {
   type SearchPropertyPredicates = js.Array[PropertyPredicate]
   type SecurityConfigurationList = js.Array[SecurityConfiguration]
   type SecurityGroupIdList = js.Array[NameString]
+  type SessionIdList = js.Array[NameString]
+  type SessionList = js.Array[Session]
   type SortCriteria = js.Array[SortCriterion]
+  type SqlAliases = js.Array[SqlAlias]
+  type SqlQuery = String
+  type StatementList = js.Array[Statement]
   type StringList = js.Array[GenericString]
   type TableErrors = js.Array[TableError]
   type TableList = js.Array[Table]
@@ -223,15 +300,19 @@ package object glue {
   type Timestamp = js.Date
   type TimestampValue = js.Date
   type Token = String
+  type Topk = Int
   type TotalSegmentsInteger = Int
   type TransactionIdString = String
+  type TransformConfigParameterList = js.Array[TransformConfigParameter]
   type TransformIdList = js.Array[HashString]
   type TransformList = js.Array[MLTransform]
   type TransformSchema = js.Array[SchemaColumn]
   type TriggerList = js.Array[Trigger]
   type TriggerNameList = js.Array[NameString]
+  type TwoInputs = js.Array[NodeId]
   type TypeString = String
   type URI = String
+  type UnfilteredPartitionList = js.Array[UnfilteredPartition]
   type UpdateColumnStatisticsList = js.Array[ColumnStatistics]
   type UpdatedTimestamp = String
   type UriString = String
@@ -257,6 +338,8 @@ package object glue {
     @inline def batchDeleteTableVersionFuture(params: BatchDeleteTableVersionRequest): Future[BatchDeleteTableVersionResponse] = service.batchDeleteTableVersion(params).promise().toFuture
     @inline def batchGetBlueprintsFuture(params: BatchGetBlueprintsRequest): Future[BatchGetBlueprintsResponse] = service.batchGetBlueprints(params).promise().toFuture
     @inline def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] = service.batchGetCrawlers(params).promise().toFuture
+    @inline def batchGetCustomEntityTypesFuture(params: BatchGetCustomEntityTypesRequest): Future[BatchGetCustomEntityTypesResponse] = service.batchGetCustomEntityTypes(params).promise().toFuture
+    @inline def batchGetDataQualityResultFuture(params: BatchGetDataQualityResultRequest): Future[BatchGetDataQualityResultResponse] = service.batchGetDataQualityResult(params).promise().toFuture
     @inline def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] = service.batchGetDevEndpoints(params).promise().toFuture
     @inline def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] = service.batchGetJobs(params).promise().toFuture
     @inline def batchGetPartitionFuture(params: BatchGetPartitionRequest): Future[BatchGetPartitionResponse] = service.batchGetPartition(params).promise().toFuture
@@ -264,12 +347,17 @@ package object glue {
     @inline def batchGetWorkflowsFuture(params: BatchGetWorkflowsRequest): Future[BatchGetWorkflowsResponse] = service.batchGetWorkflows(params).promise().toFuture
     @inline def batchStopJobRunFuture(params: BatchStopJobRunRequest): Future[BatchStopJobRunResponse] = service.batchStopJobRun(params).promise().toFuture
     @inline def batchUpdatePartitionFuture(params: BatchUpdatePartitionRequest): Future[BatchUpdatePartitionResponse] = service.batchUpdatePartition(params).promise().toFuture
+    @inline def cancelDataQualityRuleRecommendationRunFuture(params: CancelDataQualityRuleRecommendationRunRequest): Future[CancelDataQualityRuleRecommendationRunResponse] = service.cancelDataQualityRuleRecommendationRun(params).promise().toFuture
+    @inline def cancelDataQualityRulesetEvaluationRunFuture(params: CancelDataQualityRulesetEvaluationRunRequest): Future[CancelDataQualityRulesetEvaluationRunResponse] = service.cancelDataQualityRulesetEvaluationRun(params).promise().toFuture
     @inline def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] = service.cancelMLTaskRun(params).promise().toFuture
+    @inline def cancelStatementFuture(params: CancelStatementRequest): Future[CancelStatementResponse] = service.cancelStatement(params).promise().toFuture
     @inline def checkSchemaVersionValidityFuture(params: CheckSchemaVersionValidityInput): Future[CheckSchemaVersionValidityResponse] = service.checkSchemaVersionValidity(params).promise().toFuture
     @inline def createBlueprintFuture(params: CreateBlueprintRequest): Future[CreateBlueprintResponse] = service.createBlueprint(params).promise().toFuture
     @inline def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] = service.createClassifier(params).promise().toFuture
     @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
     @inline def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] = service.createCrawler(params).promise().toFuture
+    @inline def createCustomEntityTypeFuture(params: CreateCustomEntityTypeRequest): Future[CreateCustomEntityTypeResponse] = service.createCustomEntityType(params).promise().toFuture
+    @inline def createDataQualityRulesetFuture(params: CreateDataQualityRulesetRequest): Future[CreateDataQualityRulesetResponse] = service.createDataQualityRuleset(params).promise().toFuture
     @inline def createDatabaseFuture(params: CreateDatabaseRequest): Future[CreateDatabaseResponse] = service.createDatabase(params).promise().toFuture
     @inline def createDevEndpointFuture(params: CreateDevEndpointRequest): Future[CreateDevEndpointResponse] = service.createDevEndpoint(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
@@ -280,6 +368,7 @@ package object glue {
     @inline def createSchemaFuture(params: CreateSchemaInput): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
     @inline def createScriptFuture(params: CreateScriptRequest): Future[CreateScriptResponse] = service.createScript(params).promise().toFuture
     @inline def createSecurityConfigurationFuture(params: CreateSecurityConfigurationRequest): Future[CreateSecurityConfigurationResponse] = service.createSecurityConfiguration(params).promise().toFuture
+    @inline def createSessionFuture(params: CreateSessionRequest): Future[CreateSessionResponse] = service.createSession(params).promise().toFuture
     @inline def createTableFuture(params: CreateTableRequest): Future[CreateTableResponse] = service.createTable(params).promise().toFuture
     @inline def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] = service.createTrigger(params).promise().toFuture
     @inline def createUserDefinedFunctionFuture(params: CreateUserDefinedFunctionRequest): Future[CreateUserDefinedFunctionResponse] = service.createUserDefinedFunction(params).promise().toFuture
@@ -290,6 +379,8 @@ package object glue {
     @inline def deleteColumnStatisticsForTableFuture(params: DeleteColumnStatisticsForTableRequest): Future[DeleteColumnStatisticsForTableResponse] = service.deleteColumnStatisticsForTable(params).promise().toFuture
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
     @inline def deleteCrawlerFuture(params: DeleteCrawlerRequest): Future[DeleteCrawlerResponse] = service.deleteCrawler(params).promise().toFuture
+    @inline def deleteCustomEntityTypeFuture(params: DeleteCustomEntityTypeRequest): Future[DeleteCustomEntityTypeResponse] = service.deleteCustomEntityType(params).promise().toFuture
+    @inline def deleteDataQualityRulesetFuture(params: DeleteDataQualityRulesetRequest): Future[DeleteDataQualityRulesetResponse] = service.deleteDataQualityRuleset(params).promise().toFuture
     @inline def deleteDatabaseFuture(params: DeleteDatabaseRequest): Future[DeleteDatabaseResponse] = service.deleteDatabase(params).promise().toFuture
     @inline def deleteDevEndpointFuture(params: DeleteDevEndpointRequest): Future[DeleteDevEndpointResponse] = service.deleteDevEndpoint(params).promise().toFuture
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
@@ -301,6 +392,7 @@ package object glue {
     @inline def deleteSchemaFuture(params: DeleteSchemaInput): Future[DeleteSchemaResponse] = service.deleteSchema(params).promise().toFuture
     @inline def deleteSchemaVersionsFuture(params: DeleteSchemaVersionsInput): Future[DeleteSchemaVersionsResponse] = service.deleteSchemaVersions(params).promise().toFuture
     @inline def deleteSecurityConfigurationFuture(params: DeleteSecurityConfigurationRequest): Future[DeleteSecurityConfigurationResponse] = service.deleteSecurityConfiguration(params).promise().toFuture
+    @inline def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] = service.deleteSession(params).promise().toFuture
     @inline def deleteTableFuture(params: DeleteTableRequest): Future[DeleteTableResponse] = service.deleteTable(params).promise().toFuture
     @inline def deleteTableVersionFuture(params: DeleteTableVersionRequest): Future[DeleteTableVersionResponse] = service.deleteTableVersion(params).promise().toFuture
     @inline def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] = service.deleteTrigger(params).promise().toFuture
@@ -319,7 +411,12 @@ package object glue {
     @inline def getCrawlerFuture(params: GetCrawlerRequest): Future[GetCrawlerResponse] = service.getCrawler(params).promise().toFuture
     @inline def getCrawlerMetricsFuture(params: GetCrawlerMetricsRequest): Future[GetCrawlerMetricsResponse] = service.getCrawlerMetrics(params).promise().toFuture
     @inline def getCrawlersFuture(params: GetCrawlersRequest): Future[GetCrawlersResponse] = service.getCrawlers(params).promise().toFuture
+    @inline def getCustomEntityTypeFuture(params: GetCustomEntityTypeRequest): Future[GetCustomEntityTypeResponse] = service.getCustomEntityType(params).promise().toFuture
     @inline def getDataCatalogEncryptionSettingsFuture(params: GetDataCatalogEncryptionSettingsRequest): Future[GetDataCatalogEncryptionSettingsResponse] = service.getDataCatalogEncryptionSettings(params).promise().toFuture
+    @inline def getDataQualityResultFuture(params: GetDataQualityResultRequest): Future[GetDataQualityResultResponse] = service.getDataQualityResult(params).promise().toFuture
+    @inline def getDataQualityRuleRecommendationRunFuture(params: GetDataQualityRuleRecommendationRunRequest): Future[GetDataQualityRuleRecommendationRunResponse] = service.getDataQualityRuleRecommendationRun(params).promise().toFuture
+    @inline def getDataQualityRulesetEvaluationRunFuture(params: GetDataQualityRulesetEvaluationRunRequest): Future[GetDataQualityRulesetEvaluationRunResponse] = service.getDataQualityRulesetEvaluationRun(params).promise().toFuture
+    @inline def getDataQualityRulesetFuture(params: GetDataQualityRulesetRequest): Future[GetDataQualityRulesetResponse] = service.getDataQualityRuleset(params).promise().toFuture
     @inline def getDatabaseFuture(params: GetDatabaseRequest): Future[GetDatabaseResponse] = service.getDatabase(params).promise().toFuture
     @inline def getDatabasesFuture(params: GetDatabasesRequest): Future[GetDatabasesResponse] = service.getDatabases(params).promise().toFuture
     @inline def getDataflowGraphFuture(params: GetDataflowGraphRequest): Future[GetDataflowGraphResponse] = service.getDataflowGraph(params).promise().toFuture
@@ -348,6 +445,8 @@ package object glue {
     @inline def getSchemaVersionsDiffFuture(params: GetSchemaVersionsDiffInput): Future[GetSchemaVersionsDiffResponse] = service.getSchemaVersionsDiff(params).promise().toFuture
     @inline def getSecurityConfigurationFuture(params: GetSecurityConfigurationRequest): Future[GetSecurityConfigurationResponse] = service.getSecurityConfiguration(params).promise().toFuture
     @inline def getSecurityConfigurationsFuture(params: GetSecurityConfigurationsRequest): Future[GetSecurityConfigurationsResponse] = service.getSecurityConfigurations(params).promise().toFuture
+    @inline def getSessionFuture(params: GetSessionRequest): Future[GetSessionResponse] = service.getSession(params).promise().toFuture
+    @inline def getStatementFuture(params: GetStatementRequest): Future[GetStatementResponse] = service.getStatement(params).promise().toFuture
     @inline def getTableFuture(params: GetTableRequest): Future[GetTableResponse] = service.getTable(params).promise().toFuture
     @inline def getTableVersionFuture(params: GetTableVersionRequest): Future[GetTableVersionResponse] = service.getTableVersion(params).promise().toFuture
     @inline def getTableVersionsFuture(params: GetTableVersionsRequest): Future[GetTableVersionsResponse] = service.getTableVersions(params).promise().toFuture
@@ -355,6 +454,9 @@ package object glue {
     @inline def getTagsFuture(params: GetTagsRequest): Future[GetTagsResponse] = service.getTags(params).promise().toFuture
     @inline def getTriggerFuture(params: GetTriggerRequest): Future[GetTriggerResponse] = service.getTrigger(params).promise().toFuture
     @inline def getTriggersFuture(params: GetTriggersRequest): Future[GetTriggersResponse] = service.getTriggers(params).promise().toFuture
+    @inline def getUnfilteredPartitionMetadataFuture(params: GetUnfilteredPartitionMetadataRequest): Future[GetUnfilteredPartitionMetadataResponse] = service.getUnfilteredPartitionMetadata(params).promise().toFuture
+    @inline def getUnfilteredPartitionsMetadataFuture(params: GetUnfilteredPartitionsMetadataRequest): Future[GetUnfilteredPartitionsMetadataResponse] = service.getUnfilteredPartitionsMetadata(params).promise().toFuture
+    @inline def getUnfilteredTableMetadataFuture(params: GetUnfilteredTableMetadataRequest): Future[GetUnfilteredTableMetadataResponse] = service.getUnfilteredTableMetadata(params).promise().toFuture
     @inline def getUserDefinedFunctionFuture(params: GetUserDefinedFunctionRequest): Future[GetUserDefinedFunctionResponse] = service.getUserDefinedFunction(params).promise().toFuture
     @inline def getUserDefinedFunctionsFuture(params: GetUserDefinedFunctionsRequest): Future[GetUserDefinedFunctionsResponse] = service.getUserDefinedFunctions(params).promise().toFuture
     @inline def getWorkflowFuture(params: GetWorkflowRequest): Future[GetWorkflowResponse] = service.getWorkflow(params).promise().toFuture
@@ -364,12 +466,20 @@ package object glue {
     @inline def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] = service.importCatalogToGlue(params).promise().toFuture
     @inline def listBlueprintsFuture(params: ListBlueprintsRequest): Future[ListBlueprintsResponse] = service.listBlueprints(params).promise().toFuture
     @inline def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] = service.listCrawlers(params).promise().toFuture
+    @inline def listCrawlsFuture(params: ListCrawlsRequest): Future[ListCrawlsResponse] = service.listCrawls(params).promise().toFuture
+    @inline def listCustomEntityTypesFuture(params: ListCustomEntityTypesRequest): Future[ListCustomEntityTypesResponse] = service.listCustomEntityTypes(params).promise().toFuture
+    @inline def listDataQualityResultsFuture(params: ListDataQualityResultsRequest): Future[ListDataQualityResultsResponse] = service.listDataQualityResults(params).promise().toFuture
+    @inline def listDataQualityRuleRecommendationRunsFuture(params: ListDataQualityRuleRecommendationRunsRequest): Future[ListDataQualityRuleRecommendationRunsResponse] = service.listDataQualityRuleRecommendationRuns(params).promise().toFuture
+    @inline def listDataQualityRulesetEvaluationRunsFuture(params: ListDataQualityRulesetEvaluationRunsRequest): Future[ListDataQualityRulesetEvaluationRunsResponse] = service.listDataQualityRulesetEvaluationRuns(params).promise().toFuture
+    @inline def listDataQualityRulesetsFuture(params: ListDataQualityRulesetsRequest): Future[ListDataQualityRulesetsResponse] = service.listDataQualityRulesets(params).promise().toFuture
     @inline def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] = service.listDevEndpoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
     @inline def listMLTransformsFuture(params: ListMLTransformsRequest): Future[ListMLTransformsResponse] = service.listMLTransforms(params).promise().toFuture
     @inline def listRegistriesFuture(params: ListRegistriesInput): Future[ListRegistriesResponse] = service.listRegistries(params).promise().toFuture
     @inline def listSchemaVersionsFuture(params: ListSchemaVersionsInput): Future[ListSchemaVersionsResponse] = service.listSchemaVersions(params).promise().toFuture
     @inline def listSchemasFuture(params: ListSchemasInput): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
+    @inline def listSessionsFuture(params: ListSessionsRequest): Future[ListSessionsResponse] = service.listSessions(params).promise().toFuture
+    @inline def listStatementsFuture(params: ListStatementsRequest): Future[ListStatementsResponse] = service.listStatements(params).promise().toFuture
     @inline def listTriggersFuture(params: ListTriggersRequest): Future[ListTriggersResponse] = service.listTriggers(params).promise().toFuture
     @inline def listWorkflowsFuture(params: ListWorkflowsRequest): Future[ListWorkflowsResponse] = service.listWorkflows(params).promise().toFuture
     @inline def putDataCatalogEncryptionSettingsFuture(params: PutDataCatalogEncryptionSettingsRequest): Future[PutDataCatalogEncryptionSettingsResponse] = service.putDataCatalogEncryptionSettings(params).promise().toFuture
@@ -381,10 +491,13 @@ package object glue {
     @inline def removeSchemaVersionMetadataFuture(params: RemoveSchemaVersionMetadataInput): Future[RemoveSchemaVersionMetadataResponse] = service.removeSchemaVersionMetadata(params).promise().toFuture
     @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] = service.resetJobBookmark(params).promise().toFuture
     @inline def resumeWorkflowRunFuture(params: ResumeWorkflowRunRequest): Future[ResumeWorkflowRunResponse] = service.resumeWorkflowRun(params).promise().toFuture
+    @inline def runStatementFuture(params: RunStatementRequest): Future[RunStatementResponse] = service.runStatement(params).promise().toFuture
     @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] = service.searchTables(params).promise().toFuture
     @inline def startBlueprintRunFuture(params: StartBlueprintRunRequest): Future[StartBlueprintRunResponse] = service.startBlueprintRun(params).promise().toFuture
     @inline def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] = service.startCrawler(params).promise().toFuture
     @inline def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] = service.startCrawlerSchedule(params).promise().toFuture
+    @inline def startDataQualityRuleRecommendationRunFuture(params: StartDataQualityRuleRecommendationRunRequest): Future[StartDataQualityRuleRecommendationRunResponse] = service.startDataQualityRuleRecommendationRun(params).promise().toFuture
+    @inline def startDataQualityRulesetEvaluationRunFuture(params: StartDataQualityRulesetEvaluationRunRequest): Future[StartDataQualityRulesetEvaluationRunResponse] = service.startDataQualityRulesetEvaluationRun(params).promise().toFuture
     @inline def startExportLabelsTaskRunFuture(params: StartExportLabelsTaskRunRequest): Future[StartExportLabelsTaskRunResponse] = service.startExportLabelsTaskRun(params).promise().toFuture
     @inline def startImportLabelsTaskRunFuture(params: StartImportLabelsTaskRunRequest): Future[StartImportLabelsTaskRunResponse] = service.startImportLabelsTaskRun(params).promise().toFuture
     @inline def startJobRunFuture(params: StartJobRunRequest): Future[StartJobRunResponse] = service.startJobRun(params).promise().toFuture
@@ -394,6 +507,7 @@ package object glue {
     @inline def startWorkflowRunFuture(params: StartWorkflowRunRequest): Future[StartWorkflowRunResponse] = service.startWorkflowRun(params).promise().toFuture
     @inline def stopCrawlerFuture(params: StopCrawlerRequest): Future[StopCrawlerResponse] = service.stopCrawler(params).promise().toFuture
     @inline def stopCrawlerScheduleFuture(params: StopCrawlerScheduleRequest): Future[StopCrawlerScheduleResponse] = service.stopCrawlerSchedule(params).promise().toFuture
+    @inline def stopSessionFuture(params: StopSessionRequest): Future[StopSessionResponse] = service.stopSession(params).promise().toFuture
     @inline def stopTriggerFuture(params: StopTriggerRequest): Future[StopTriggerResponse] = service.stopTrigger(params).promise().toFuture
     @inline def stopWorkflowRunFuture(params: StopWorkflowRunRequest): Future[StopWorkflowRunResponse] = service.stopWorkflowRun(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
@@ -405,13 +519,16 @@ package object glue {
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
     @inline def updateCrawlerFuture(params: UpdateCrawlerRequest): Future[UpdateCrawlerResponse] = service.updateCrawler(params).promise().toFuture
     @inline def updateCrawlerScheduleFuture(params: UpdateCrawlerScheduleRequest): Future[UpdateCrawlerScheduleResponse] = service.updateCrawlerSchedule(params).promise().toFuture
+    @inline def updateDataQualityRulesetFuture(params: UpdateDataQualityRulesetRequest): Future[UpdateDataQualityRulesetResponse] = service.updateDataQualityRuleset(params).promise().toFuture
     @inline def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] = service.updateDatabase(params).promise().toFuture
     @inline def updateDevEndpointFuture(params: UpdateDevEndpointRequest): Future[UpdateDevEndpointResponse] = service.updateDevEndpoint(params).promise().toFuture
+    @inline def updateJobFromSourceControlFuture(params: UpdateJobFromSourceControlRequest): Future[UpdateJobFromSourceControlResponse] = service.updateJobFromSourceControl(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResponse] = service.updateJob(params).promise().toFuture
     @inline def updateMLTransformFuture(params: UpdateMLTransformRequest): Future[UpdateMLTransformResponse] = service.updateMLTransform(params).promise().toFuture
     @inline def updatePartitionFuture(params: UpdatePartitionRequest): Future[UpdatePartitionResponse] = service.updatePartition(params).promise().toFuture
     @inline def updateRegistryFuture(params: UpdateRegistryInput): Future[UpdateRegistryResponse] = service.updateRegistry(params).promise().toFuture
     @inline def updateSchemaFuture(params: UpdateSchemaInput): Future[UpdateSchemaResponse] = service.updateSchema(params).promise().toFuture
+    @inline def updateSourceControlFromJobFuture(params: UpdateSourceControlFromJobRequest): Future[UpdateSourceControlFromJobResponse] = service.updateSourceControlFromJob(params).promise().toFuture
     @inline def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] = service.updateTable(params).promise().toFuture
     @inline def updateTriggerFuture(params: UpdateTriggerRequest): Future[UpdateTriggerResponse] = service.updateTrigger(params).promise().toFuture
     @inline def updateUserDefinedFunctionFuture(params: UpdateUserDefinedFunctionRequest): Future[UpdateUserDefinedFunctionResponse] = service.updateUserDefinedFunction(params).promise().toFuture
@@ -431,6 +548,8 @@ package object glue {
     def batchDeleteTableVersion(params: BatchDeleteTableVersionRequest): Request[BatchDeleteTableVersionResponse] = js.native
     def batchGetBlueprints(params: BatchGetBlueprintsRequest): Request[BatchGetBlueprintsResponse] = js.native
     def batchGetCrawlers(params: BatchGetCrawlersRequest): Request[BatchGetCrawlersResponse] = js.native
+    def batchGetCustomEntityTypes(params: BatchGetCustomEntityTypesRequest): Request[BatchGetCustomEntityTypesResponse] = js.native
+    def batchGetDataQualityResult(params: BatchGetDataQualityResultRequest): Request[BatchGetDataQualityResultResponse] = js.native
     def batchGetDevEndpoints(params: BatchGetDevEndpointsRequest): Request[BatchGetDevEndpointsResponse] = js.native
     def batchGetJobs(params: BatchGetJobsRequest): Request[BatchGetJobsResponse] = js.native
     def batchGetPartition(params: BatchGetPartitionRequest): Request[BatchGetPartitionResponse] = js.native
@@ -438,12 +557,17 @@ package object glue {
     def batchGetWorkflows(params: BatchGetWorkflowsRequest): Request[BatchGetWorkflowsResponse] = js.native
     def batchStopJobRun(params: BatchStopJobRunRequest): Request[BatchStopJobRunResponse] = js.native
     def batchUpdatePartition(params: BatchUpdatePartitionRequest): Request[BatchUpdatePartitionResponse] = js.native
+    def cancelDataQualityRuleRecommendationRun(params: CancelDataQualityRuleRecommendationRunRequest): Request[CancelDataQualityRuleRecommendationRunResponse] = js.native
+    def cancelDataQualityRulesetEvaluationRun(params: CancelDataQualityRulesetEvaluationRunRequest): Request[CancelDataQualityRulesetEvaluationRunResponse] = js.native
     def cancelMLTaskRun(params: CancelMLTaskRunRequest): Request[CancelMLTaskRunResponse] = js.native
+    def cancelStatement(params: CancelStatementRequest): Request[CancelStatementResponse] = js.native
     def checkSchemaVersionValidity(params: CheckSchemaVersionValidityInput): Request[CheckSchemaVersionValidityResponse] = js.native
     def createBlueprint(params: CreateBlueprintRequest): Request[CreateBlueprintResponse] = js.native
     def createClassifier(params: CreateClassifierRequest): Request[CreateClassifierResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
     def createCrawler(params: CreateCrawlerRequest): Request[CreateCrawlerResponse] = js.native
+    def createCustomEntityType(params: CreateCustomEntityTypeRequest): Request[CreateCustomEntityTypeResponse] = js.native
+    def createDataQualityRuleset(params: CreateDataQualityRulesetRequest): Request[CreateDataQualityRulesetResponse] = js.native
     def createDatabase(params: CreateDatabaseRequest): Request[CreateDatabaseResponse] = js.native
     def createDevEndpoint(params: CreateDevEndpointRequest): Request[CreateDevEndpointResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
@@ -454,6 +578,7 @@ package object glue {
     def createSchema(params: CreateSchemaInput): Request[CreateSchemaResponse] = js.native
     def createScript(params: CreateScriptRequest): Request[CreateScriptResponse] = js.native
     def createSecurityConfiguration(params: CreateSecurityConfigurationRequest): Request[CreateSecurityConfigurationResponse] = js.native
+    def createSession(params: CreateSessionRequest): Request[CreateSessionResponse] = js.native
     def createTable(params: CreateTableRequest): Request[CreateTableResponse] = js.native
     def createTrigger(params: CreateTriggerRequest): Request[CreateTriggerResponse] = js.native
     def createUserDefinedFunction(params: CreateUserDefinedFunctionRequest): Request[CreateUserDefinedFunctionResponse] = js.native
@@ -464,6 +589,8 @@ package object glue {
     def deleteColumnStatisticsForTable(params: DeleteColumnStatisticsForTableRequest): Request[DeleteColumnStatisticsForTableResponse] = js.native
     def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse] = js.native
     def deleteCrawler(params: DeleteCrawlerRequest): Request[DeleteCrawlerResponse] = js.native
+    def deleteCustomEntityType(params: DeleteCustomEntityTypeRequest): Request[DeleteCustomEntityTypeResponse] = js.native
+    def deleteDataQualityRuleset(params: DeleteDataQualityRulesetRequest): Request[DeleteDataQualityRulesetResponse] = js.native
     def deleteDatabase(params: DeleteDatabaseRequest): Request[DeleteDatabaseResponse] = js.native
     def deleteDevEndpoint(params: DeleteDevEndpointRequest): Request[DeleteDevEndpointResponse] = js.native
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
@@ -475,6 +602,7 @@ package object glue {
     def deleteSchema(params: DeleteSchemaInput): Request[DeleteSchemaResponse] = js.native
     def deleteSchemaVersions(params: DeleteSchemaVersionsInput): Request[DeleteSchemaVersionsResponse] = js.native
     def deleteSecurityConfiguration(params: DeleteSecurityConfigurationRequest): Request[DeleteSecurityConfigurationResponse] = js.native
+    def deleteSession(params: DeleteSessionRequest): Request[DeleteSessionResponse] = js.native
     def deleteTable(params: DeleteTableRequest): Request[DeleteTableResponse] = js.native
     def deleteTableVersion(params: DeleteTableVersionRequest): Request[DeleteTableVersionResponse] = js.native
     def deleteTrigger(params: DeleteTriggerRequest): Request[DeleteTriggerResponse] = js.native
@@ -493,7 +621,12 @@ package object glue {
     def getCrawler(params: GetCrawlerRequest): Request[GetCrawlerResponse] = js.native
     def getCrawlerMetrics(params: GetCrawlerMetricsRequest): Request[GetCrawlerMetricsResponse] = js.native
     def getCrawlers(params: GetCrawlersRequest): Request[GetCrawlersResponse] = js.native
+    def getCustomEntityType(params: GetCustomEntityTypeRequest): Request[GetCustomEntityTypeResponse] = js.native
     def getDataCatalogEncryptionSettings(params: GetDataCatalogEncryptionSettingsRequest): Request[GetDataCatalogEncryptionSettingsResponse] = js.native
+    def getDataQualityResult(params: GetDataQualityResultRequest): Request[GetDataQualityResultResponse] = js.native
+    def getDataQualityRuleRecommendationRun(params: GetDataQualityRuleRecommendationRunRequest): Request[GetDataQualityRuleRecommendationRunResponse] = js.native
+    def getDataQualityRuleset(params: GetDataQualityRulesetRequest): Request[GetDataQualityRulesetResponse] = js.native
+    def getDataQualityRulesetEvaluationRun(params: GetDataQualityRulesetEvaluationRunRequest): Request[GetDataQualityRulesetEvaluationRunResponse] = js.native
     def getDatabase(params: GetDatabaseRequest): Request[GetDatabaseResponse] = js.native
     def getDatabases(params: GetDatabasesRequest): Request[GetDatabasesResponse] = js.native
     def getDataflowGraph(params: GetDataflowGraphRequest): Request[GetDataflowGraphResponse] = js.native
@@ -522,6 +655,8 @@ package object glue {
     def getSchemaVersionsDiff(params: GetSchemaVersionsDiffInput): Request[GetSchemaVersionsDiffResponse] = js.native
     def getSecurityConfiguration(params: GetSecurityConfigurationRequest): Request[GetSecurityConfigurationResponse] = js.native
     def getSecurityConfigurations(params: GetSecurityConfigurationsRequest): Request[GetSecurityConfigurationsResponse] = js.native
+    def getSession(params: GetSessionRequest): Request[GetSessionResponse] = js.native
+    def getStatement(params: GetStatementRequest): Request[GetStatementResponse] = js.native
     def getTable(params: GetTableRequest): Request[GetTableResponse] = js.native
     def getTableVersion(params: GetTableVersionRequest): Request[GetTableVersionResponse] = js.native
     def getTableVersions(params: GetTableVersionsRequest): Request[GetTableVersionsResponse] = js.native
@@ -529,6 +664,9 @@ package object glue {
     def getTags(params: GetTagsRequest): Request[GetTagsResponse] = js.native
     def getTrigger(params: GetTriggerRequest): Request[GetTriggerResponse] = js.native
     def getTriggers(params: GetTriggersRequest): Request[GetTriggersResponse] = js.native
+    def getUnfilteredPartitionMetadata(params: GetUnfilteredPartitionMetadataRequest): Request[GetUnfilteredPartitionMetadataResponse] = js.native
+    def getUnfilteredPartitionsMetadata(params: GetUnfilteredPartitionsMetadataRequest): Request[GetUnfilteredPartitionsMetadataResponse] = js.native
+    def getUnfilteredTableMetadata(params: GetUnfilteredTableMetadataRequest): Request[GetUnfilteredTableMetadataResponse] = js.native
     def getUserDefinedFunction(params: GetUserDefinedFunctionRequest): Request[GetUserDefinedFunctionResponse] = js.native
     def getUserDefinedFunctions(params: GetUserDefinedFunctionsRequest): Request[GetUserDefinedFunctionsResponse] = js.native
     def getWorkflow(params: GetWorkflowRequest): Request[GetWorkflowResponse] = js.native
@@ -538,12 +676,20 @@ package object glue {
     def importCatalogToGlue(params: ImportCatalogToGlueRequest): Request[ImportCatalogToGlueResponse] = js.native
     def listBlueprints(params: ListBlueprintsRequest): Request[ListBlueprintsResponse] = js.native
     def listCrawlers(params: ListCrawlersRequest): Request[ListCrawlersResponse] = js.native
+    def listCrawls(params: ListCrawlsRequest): Request[ListCrawlsResponse] = js.native
+    def listCustomEntityTypes(params: ListCustomEntityTypesRequest): Request[ListCustomEntityTypesResponse] = js.native
+    def listDataQualityResults(params: ListDataQualityResultsRequest): Request[ListDataQualityResultsResponse] = js.native
+    def listDataQualityRuleRecommendationRuns(params: ListDataQualityRuleRecommendationRunsRequest): Request[ListDataQualityRuleRecommendationRunsResponse] = js.native
+    def listDataQualityRulesetEvaluationRuns(params: ListDataQualityRulesetEvaluationRunsRequest): Request[ListDataQualityRulesetEvaluationRunsResponse] = js.native
+    def listDataQualityRulesets(params: ListDataQualityRulesetsRequest): Request[ListDataQualityRulesetsResponse] = js.native
     def listDevEndpoints(params: ListDevEndpointsRequest): Request[ListDevEndpointsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listMLTransforms(params: ListMLTransformsRequest): Request[ListMLTransformsResponse] = js.native
     def listRegistries(params: ListRegistriesInput): Request[ListRegistriesResponse] = js.native
     def listSchemaVersions(params: ListSchemaVersionsInput): Request[ListSchemaVersionsResponse] = js.native
     def listSchemas(params: ListSchemasInput): Request[ListSchemasResponse] = js.native
+    def listSessions(params: ListSessionsRequest): Request[ListSessionsResponse] = js.native
+    def listStatements(params: ListStatementsRequest): Request[ListStatementsResponse] = js.native
     def listTriggers(params: ListTriggersRequest): Request[ListTriggersResponse] = js.native
     def listWorkflows(params: ListWorkflowsRequest): Request[ListWorkflowsResponse] = js.native
     def putDataCatalogEncryptionSettings(params: PutDataCatalogEncryptionSettingsRequest): Request[PutDataCatalogEncryptionSettingsResponse] = js.native
@@ -555,10 +701,13 @@ package object glue {
     def removeSchemaVersionMetadata(params: RemoveSchemaVersionMetadataInput): Request[RemoveSchemaVersionMetadataResponse] = js.native
     def resetJobBookmark(params: ResetJobBookmarkRequest): Request[ResetJobBookmarkResponse] = js.native
     def resumeWorkflowRun(params: ResumeWorkflowRunRequest): Request[ResumeWorkflowRunResponse] = js.native
+    def runStatement(params: RunStatementRequest): Request[RunStatementResponse] = js.native
     def searchTables(params: SearchTablesRequest): Request[SearchTablesResponse] = js.native
     def startBlueprintRun(params: StartBlueprintRunRequest): Request[StartBlueprintRunResponse] = js.native
     def startCrawler(params: StartCrawlerRequest): Request[StartCrawlerResponse] = js.native
     def startCrawlerSchedule(params: StartCrawlerScheduleRequest): Request[StartCrawlerScheduleResponse] = js.native
+    def startDataQualityRuleRecommendationRun(params: StartDataQualityRuleRecommendationRunRequest): Request[StartDataQualityRuleRecommendationRunResponse] = js.native
+    def startDataQualityRulesetEvaluationRun(params: StartDataQualityRulesetEvaluationRunRequest): Request[StartDataQualityRulesetEvaluationRunResponse] = js.native
     def startExportLabelsTaskRun(params: StartExportLabelsTaskRunRequest): Request[StartExportLabelsTaskRunResponse] = js.native
     def startImportLabelsTaskRun(params: StartImportLabelsTaskRunRequest): Request[StartImportLabelsTaskRunResponse] = js.native
     def startJobRun(params: StartJobRunRequest): Request[StartJobRunResponse] = js.native
@@ -568,6 +717,7 @@ package object glue {
     def startWorkflowRun(params: StartWorkflowRunRequest): Request[StartWorkflowRunResponse] = js.native
     def stopCrawler(params: StopCrawlerRequest): Request[StopCrawlerResponse] = js.native
     def stopCrawlerSchedule(params: StopCrawlerScheduleRequest): Request[StopCrawlerScheduleResponse] = js.native
+    def stopSession(params: StopSessionRequest): Request[StopSessionResponse] = js.native
     def stopTrigger(params: StopTriggerRequest): Request[StopTriggerResponse] = js.native
     def stopWorkflowRun(params: StopWorkflowRunRequest): Request[StopWorkflowRunResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
@@ -579,13 +729,16 @@ package object glue {
     def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
     def updateCrawler(params: UpdateCrawlerRequest): Request[UpdateCrawlerResponse] = js.native
     def updateCrawlerSchedule(params: UpdateCrawlerScheduleRequest): Request[UpdateCrawlerScheduleResponse] = js.native
+    def updateDataQualityRuleset(params: UpdateDataQualityRulesetRequest): Request[UpdateDataQualityRulesetResponse] = js.native
     def updateDatabase(params: UpdateDatabaseRequest): Request[UpdateDatabaseResponse] = js.native
     def updateDevEndpoint(params: UpdateDevEndpointRequest): Request[UpdateDevEndpointResponse] = js.native
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResponse] = js.native
+    def updateJobFromSourceControl(params: UpdateJobFromSourceControlRequest): Request[UpdateJobFromSourceControlResponse] = js.native
     def updateMLTransform(params: UpdateMLTransformRequest): Request[UpdateMLTransformResponse] = js.native
     def updatePartition(params: UpdatePartitionRequest): Request[UpdatePartitionResponse] = js.native
     def updateRegistry(params: UpdateRegistryInput): Request[UpdateRegistryResponse] = js.native
     def updateSchema(params: UpdateSchemaInput): Request[UpdateSchemaResponse] = js.native
+    def updateSourceControlFromJob(params: UpdateSourceControlFromJobRequest): Request[UpdateSourceControlFromJobResponse] = js.native
     def updateTable(params: UpdateTableRequest): Request[UpdateTableResponse] = js.native
     def updateTrigger(params: UpdateTriggerRequest): Request[UpdateTriggerResponse] = js.native
     def updateUserDefinedFunction(params: UpdateUserDefinedFunctionRequest): Request[UpdateUserDefinedFunctionResponse] = js.native
@@ -630,6 +783,143 @@ package object glue {
     }
   }
 
+  /** Specifies a transform that groups rows by chosen fields and computes the aggregated value by specified function.
+    */
+  @js.native
+  trait Aggregate extends js.Object {
+    var Aggs: AggregateOperations
+    var Groups: GlueStudioPathList
+    var Inputs: OneInput
+    var Name: NodeName
+  }
+
+  object Aggregate {
+    @inline
+    def apply(
+        Aggs: AggregateOperations,
+        Groups: GlueStudioPathList,
+        Inputs: OneInput,
+        Name: NodeName
+    ): Aggregate = {
+      val __obj = js.Dynamic.literal(
+        "Aggs" -> Aggs.asInstanceOf[js.Any],
+        "Groups" -> Groups.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Aggregate]
+    }
+  }
+
+  /** Specifies the set of parameters needed to perform aggregation in the aggregate transform.
+    */
+  @js.native
+  trait AggregateOperation extends js.Object {
+    var AggFunc: AggFunction
+    var Column: EnclosedInStringProperties
+  }
+
+  object AggregateOperation {
+    @inline
+    def apply(
+        AggFunc: AggFunction,
+        Column: EnclosedInStringProperties
+    ): AggregateOperation = {
+      val __obj = js.Dynamic.literal(
+        "AggFunc" -> AggFunc.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AggregateOperation]
+    }
+  }
+
+  /** Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.
+    */
+  @js.native
+  trait ApplyMapping extends js.Object {
+    var Inputs: OneInput
+    var Mapping: Mappings
+    var Name: NodeName
+  }
+
+  object ApplyMapping {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Mapping: Mappings,
+        Name: NodeName
+    ): ApplyMapping = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Mapping" -> Mapping.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ApplyMapping]
+    }
+  }
+
+  /** Specifies a connector to an Amazon Athena data source.
+    */
+  @js.native
+  trait AthenaConnectorSource extends js.Object {
+    var ConnectionName: EnclosedInStringProperty
+    var ConnectionType: EnclosedInStringProperty
+    var ConnectorName: EnclosedInStringProperty
+    var Name: NodeName
+    var SchemaName: EnclosedInStringProperty
+    var ConnectionTable: js.UndefOr[EnclosedInStringPropertyWithQuote]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object AthenaConnectorSource {
+    @inline
+    def apply(
+        ConnectionName: EnclosedInStringProperty,
+        ConnectionType: EnclosedInStringProperty,
+        ConnectorName: EnclosedInStringProperty,
+        Name: NodeName,
+        SchemaName: EnclosedInStringProperty,
+        ConnectionTable: js.UndefOr[EnclosedInStringPropertyWithQuote] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): AthenaConnectorSource = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "ConnectorName" -> ConnectorName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SchemaName" -> SchemaName.asInstanceOf[js.Any]
+      )
+
+      ConnectionTable.foreach(__v => __obj.updateDynamic("ConnectionTable")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AthenaConnectorSource]
+    }
+  }
+
+  /** A structure containing information for audit.
+    */
+  @js.native
+  trait AuditContext extends js.Object {
+    var AdditionalAuditContext: js.UndefOr[AuditContextString]
+    var AllColumnsRequested: js.UndefOr[NullableBoolean]
+    var RequestedColumns: js.UndefOr[AuditColumnNamesList]
+  }
+
+  object AuditContext {
+    @inline
+    def apply(
+        AdditionalAuditContext: js.UndefOr[AuditContextString] = js.undefined,
+        AllColumnsRequested: js.UndefOr[NullableBoolean] = js.undefined,
+        RequestedColumns: js.UndefOr[AuditColumnNamesList] = js.undefined
+    ): AuditContext = {
+      val __obj = js.Dynamic.literal()
+      AdditionalAuditContext.foreach(__v => __obj.updateDynamic("AdditionalAuditContext")(__v.asInstanceOf[js.Any]))
+      AllColumnsRequested.foreach(__v => __obj.updateDynamic("AllColumnsRequested")(__v.asInstanceOf[js.Any]))
+      RequestedColumns.foreach(__v => __obj.updateDynamic("RequestedColumns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuditContext]
+    }
+  }
+
   /** A list of errors that can occur when registering partition indexes for an existing table. These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows: * EncryptedPartitionError: The partitions are encrypted. * InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column. * MissingPartitionValueError: The partitions are encrypted. * UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002. * InternalError: Any error which does not belong to other error codes.
     */
   @js.native
@@ -648,6 +938,34 @@ package object glue {
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackfillError]
+    }
+  }
+
+  /** Specifies a target that uses a Glue Data Catalog table.
+    */
+  @js.native
+  trait BasicCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object BasicCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): BasicCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BasicCatalogTarget]
     }
   }
 
@@ -939,6 +1257,80 @@ package object glue {
       Crawlers.foreach(__v => __obj.updateDynamic("Crawlers")(__v.asInstanceOf[js.Any]))
       CrawlersNotFound.foreach(__v => __obj.updateDynamic("CrawlersNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetCrawlersResponse]
+    }
+  }
+
+  @js.native
+  trait BatchGetCustomEntityTypesRequest extends js.Object {
+    var Names: CustomEntityTypeNames
+  }
+
+  object BatchGetCustomEntityTypesRequest {
+    @inline
+    def apply(
+        Names: CustomEntityTypeNames
+    ): BatchGetCustomEntityTypesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Names" -> Names.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetCustomEntityTypesRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetCustomEntityTypesResponse extends js.Object {
+    var CustomEntityTypes: js.UndefOr[CustomEntityTypes]
+    var CustomEntityTypesNotFound: js.UndefOr[CustomEntityTypeNames]
+  }
+
+  object BatchGetCustomEntityTypesResponse {
+    @inline
+    def apply(
+        CustomEntityTypes: js.UndefOr[CustomEntityTypes] = js.undefined,
+        CustomEntityTypesNotFound: js.UndefOr[CustomEntityTypeNames] = js.undefined
+    ): BatchGetCustomEntityTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomEntityTypes.foreach(__v => __obj.updateDynamic("CustomEntityTypes")(__v.asInstanceOf[js.Any]))
+      CustomEntityTypesNotFound.foreach(__v => __obj.updateDynamic("CustomEntityTypesNotFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetCustomEntityTypesResponse]
+    }
+  }
+
+  @js.native
+  trait BatchGetDataQualityResultRequest extends js.Object {
+    var ResultIds: DataQualityResultIds
+  }
+
+  object BatchGetDataQualityResultRequest {
+    @inline
+    def apply(
+        ResultIds: DataQualityResultIds
+    ): BatchGetDataQualityResultRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResultIds" -> ResultIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetDataQualityResultRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetDataQualityResultResponse extends js.Object {
+    var Results: DataQualityResultsList
+    var ResultsNotFound: js.UndefOr[DataQualityResultIds]
+  }
+
+  object BatchGetDataQualityResultResponse {
+    @inline
+    def apply(
+        Results: DataQualityResultsList,
+        ResultsNotFound: js.UndefOr[DataQualityResultIds] = js.undefined
+    ): BatchGetDataQualityResultResponse = {
+      val __obj = js.Dynamic.literal(
+        "Results" -> Results.asInstanceOf[js.Any]
+      )
+
+      ResultsNotFound.foreach(__v => __obj.updateDynamic("ResultsNotFound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetDataQualityResultResponse]
     }
   }
 
@@ -1468,6 +1860,62 @@ package object glue {
   }
 
   @js.native
+  trait CancelDataQualityRuleRecommendationRunRequest extends js.Object {
+    var RunId: HashString
+  }
+
+  object CancelDataQualityRuleRecommendationRunRequest {
+    @inline
+    def apply(
+        RunId: HashString
+    ): CancelDataQualityRuleRecommendationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelDataQualityRuleRecommendationRunRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDataQualityRuleRecommendationRunResponse extends js.Object
+
+  object CancelDataQualityRuleRecommendationRunResponse {
+    @inline
+    def apply(): CancelDataQualityRuleRecommendationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelDataQualityRuleRecommendationRunResponse]
+    }
+  }
+
+  @js.native
+  trait CancelDataQualityRulesetEvaluationRunRequest extends js.Object {
+    var RunId: HashString
+  }
+
+  object CancelDataQualityRulesetEvaluationRunRequest {
+    @inline
+    def apply(
+        RunId: HashString
+    ): CancelDataQualityRulesetEvaluationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelDataQualityRulesetEvaluationRunRequest]
+    }
+  }
+
+  @js.native
+  trait CancelDataQualityRulesetEvaluationRunResponse extends js.Object
+
+  object CancelDataQualityRulesetEvaluationRunResponse {
+    @inline
+    def apply(): CancelDataQualityRulesetEvaluationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelDataQualityRulesetEvaluationRunResponse]
+    }
+  }
+
+  @js.native
   trait CancelMLTaskRunRequest extends js.Object {
     var TaskRunId: HashString
     var TransformId: HashString
@@ -1506,6 +1954,41 @@ package object glue {
       TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
       TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelMLTaskRunResponse]
+    }
+  }
+
+  @js.native
+  trait CancelStatementRequest extends js.Object {
+    var Id: IntegerValue
+    var SessionId: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object CancelStatementRequest {
+    @inline
+    def apply(
+        Id: IntegerValue,
+        SessionId: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): CancelStatementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CancelStatementRequest]
+    }
+  }
+
+  @js.native
+  trait CancelStatementResponse extends js.Object
+
+  object CancelStatementResponse {
+    @inline
+    def apply(): CancelStatementResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelStatementResponse]
     }
   }
 
@@ -1555,24 +2038,156 @@ package object glue {
     }
   }
 
+  /** Specifies an Apache Kafka data store in the Data Catalog.
+    */
+  @js.native
+  trait CatalogKafkaSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions]
+    var DetectSchema: js.UndefOr[BoxedBoolean]
+    var StreamingOptions: js.UndefOr[KafkaStreamingSourceOptions]
+    var WindowSize: js.UndefOr[BoxedPositiveInt]
+  }
+
+  object CatalogKafkaSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions] = js.undefined,
+        DetectSchema: js.UndefOr[BoxedBoolean] = js.undefined,
+        StreamingOptions: js.UndefOr[KafkaStreamingSourceOptions] = js.undefined,
+        WindowSize: js.UndefOr[BoxedPositiveInt] = js.undefined
+    ): CatalogKafkaSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      DataPreviewOptions.foreach(__v => __obj.updateDynamic("DataPreviewOptions")(__v.asInstanceOf[js.Any]))
+      DetectSchema.foreach(__v => __obj.updateDynamic("DetectSchema")(__v.asInstanceOf[js.Any]))
+      StreamingOptions.foreach(__v => __obj.updateDynamic("StreamingOptions")(__v.asInstanceOf[js.Any]))
+      WindowSize.foreach(__v => __obj.updateDynamic("WindowSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CatalogKafkaSource]
+    }
+  }
+
+  /** Specifies a Kinesis data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait CatalogKinesisSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions]
+    var DetectSchema: js.UndefOr[BoxedBoolean]
+    var StreamingOptions: js.UndefOr[KinesisStreamingSourceOptions]
+    var WindowSize: js.UndefOr[BoxedPositiveInt]
+  }
+
+  object CatalogKinesisSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions] = js.undefined,
+        DetectSchema: js.UndefOr[BoxedBoolean] = js.undefined,
+        StreamingOptions: js.UndefOr[KinesisStreamingSourceOptions] = js.undefined,
+        WindowSize: js.UndefOr[BoxedPositiveInt] = js.undefined
+    ): CatalogKinesisSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      DataPreviewOptions.foreach(__v => __obj.updateDynamic("DataPreviewOptions")(__v.asInstanceOf[js.Any]))
+      DetectSchema.foreach(__v => __obj.updateDynamic("DetectSchema")(__v.asInstanceOf[js.Any]))
+      StreamingOptions.foreach(__v => __obj.updateDynamic("StreamingOptions")(__v.asInstanceOf[js.Any]))
+      WindowSize.foreach(__v => __obj.updateDynamic("WindowSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CatalogKinesisSource]
+    }
+  }
+
+  /** A policy that specifies update behavior for the crawler.
+    */
+  @js.native
+  trait CatalogSchemaChangePolicy extends js.Object {
+    var EnableUpdateCatalog: js.UndefOr[BoxedBoolean]
+    var UpdateBehavior: js.UndefOr[UpdateCatalogBehavior]
+  }
+
+  object CatalogSchemaChangePolicy {
+    @inline
+    def apply(
+        EnableUpdateCatalog: js.UndefOr[BoxedBoolean] = js.undefined,
+        UpdateBehavior: js.UndefOr[UpdateCatalogBehavior] = js.undefined
+    ): CatalogSchemaChangePolicy = {
+      val __obj = js.Dynamic.literal()
+      EnableUpdateCatalog.foreach(__v => __obj.updateDynamic("EnableUpdateCatalog")(__v.asInstanceOf[js.Any]))
+      UpdateBehavior.foreach(__v => __obj.updateDynamic("UpdateBehavior")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CatalogSchemaChangePolicy]
+    }
+  }
+
+  /** Specifies a data store in the Glue Data Catalog.
+    */
+  @js.native
+  trait CatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object CatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): CatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CatalogSource]
+    }
+  }
+
   /** Specifies an Glue Data Catalog target.
     */
   @js.native
   trait CatalogTarget extends js.Object {
     var DatabaseName: NameString
     var Tables: CatalogTablesList
+    var ConnectionName: js.UndefOr[ConnectionName]
+    var DlqEventQueueArn: js.UndefOr[EventQueueArn]
+    var EventQueueArn: js.UndefOr[EventQueueArn]
   }
 
   object CatalogTarget {
     @inline
     def apply(
         DatabaseName: NameString,
-        Tables: CatalogTablesList
+        Tables: CatalogTablesList,
+        ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
+        DlqEventQueueArn: js.UndefOr[EventQueueArn] = js.undefined,
+        EventQueueArn: js.UndefOr[EventQueueArn] = js.undefined
     ): CatalogTarget = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Tables" -> Tables.asInstanceOf[js.Any]
       )
+
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      DlqEventQueueArn.foreach(__v => __obj.updateDynamic("DlqEventQueueArn")(__v.asInstanceOf[js.Any]))
+      EventQueueArn.foreach(__v => __obj.updateDynamic("EventQueueArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CatalogTarget]
     }
   }
@@ -1661,6 +2276,177 @@ package object glue {
       CloudWatchEncryptionMode.foreach(__v => __obj.updateDynamic("CloudWatchEncryptionMode")(__v.asInstanceOf[js.Any]))
       KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchEncryption]
+    }
+  }
+
+  /** <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only one of its member variables can be populated.
+    */
+  @js.native
+  trait CodeGenConfigurationNode extends js.Object {
+    var Aggregate: js.UndefOr[Aggregate]
+    var ApplyMapping: js.UndefOr[ApplyMapping]
+    var AthenaConnectorSource: js.UndefOr[AthenaConnectorSource]
+    var CatalogKafkaSource: js.UndefOr[CatalogKafkaSource]
+    var CatalogKinesisSource: js.UndefOr[CatalogKinesisSource]
+    var CatalogSource: js.UndefOr[CatalogSource]
+    var CatalogTarget: js.UndefOr[BasicCatalogTarget]
+    var CustomCode: js.UndefOr[CustomCode]
+    var DirectKafkaSource: js.UndefOr[DirectKafkaSource]
+    var DirectKinesisSource: js.UndefOr[DirectKinesisSource]
+    var DropDuplicates: js.UndefOr[DropDuplicates]
+    var DropFields: js.UndefOr[DropFields]
+    var DropNullFields: js.UndefOr[DropNullFields]
+    var DynamicTransform: js.UndefOr[DynamicTransform]
+    var DynamoDBCatalogSource: js.UndefOr[DynamoDBCatalogSource]
+    var EvaluateDataQuality: js.UndefOr[EvaluateDataQuality]
+    var FillMissingValues: js.UndefOr[FillMissingValues]
+    var Filter: js.UndefOr[Filter]
+    var GovernedCatalogSource: js.UndefOr[GovernedCatalogSource]
+    var GovernedCatalogTarget: js.UndefOr[GovernedCatalogTarget]
+    var JDBCConnectorSource: js.UndefOr[JDBCConnectorSource]
+    var JDBCConnectorTarget: js.UndefOr[JDBCConnectorTarget]
+    var Join: js.UndefOr[Join]
+    var Merge: js.UndefOr[Merge]
+    var MicrosoftSQLServerCatalogSource: js.UndefOr[MicrosoftSQLServerCatalogSource]
+    var MicrosoftSQLServerCatalogTarget: js.UndefOr[MicrosoftSQLServerCatalogTarget]
+    var MySQLCatalogSource: js.UndefOr[MySQLCatalogSource]
+    var MySQLCatalogTarget: js.UndefOr[MySQLCatalogTarget]
+    var OracleSQLCatalogSource: js.UndefOr[OracleSQLCatalogSource]
+    var OracleSQLCatalogTarget: js.UndefOr[OracleSQLCatalogTarget]
+    var PIIDetection: js.UndefOr[PIIDetection]
+    var PostgreSQLCatalogSource: js.UndefOr[PostgreSQLCatalogSource]
+    var PostgreSQLCatalogTarget: js.UndefOr[PostgreSQLCatalogTarget]
+    var RedshiftSource: js.UndefOr[RedshiftSource]
+    var RedshiftTarget: js.UndefOr[RedshiftTarget]
+    var RelationalCatalogSource: js.UndefOr[RelationalCatalogSource]
+    var RenameField: js.UndefOr[RenameField]
+    var S3CatalogSource: js.UndefOr[S3CatalogSource]
+    var S3CatalogTarget: js.UndefOr[S3CatalogTarget]
+    var S3CsvSource: js.UndefOr[S3CsvSource]
+    var S3DirectTarget: js.UndefOr[S3DirectTarget]
+    var S3GlueParquetTarget: js.UndefOr[S3GlueParquetTarget]
+    var S3JsonSource: js.UndefOr[S3JsonSource]
+    var S3ParquetSource: js.UndefOr[S3ParquetSource]
+    var SelectFields: js.UndefOr[SelectFields]
+    var SelectFromCollection: js.UndefOr[SelectFromCollection]
+    var SparkConnectorSource: js.UndefOr[SparkConnectorSource]
+    var SparkConnectorTarget: js.UndefOr[SparkConnectorTarget]
+    var SparkSQL: js.UndefOr[SparkSQL]
+    var Spigot: js.UndefOr[Spigot]
+    var SplitFields: js.UndefOr[SplitFields]
+    var Union: js.UndefOr[Union]
+  }
+
+  object CodeGenConfigurationNode {
+    @inline
+    def apply(
+        Aggregate: js.UndefOr[Aggregate] = js.undefined,
+        ApplyMapping: js.UndefOr[ApplyMapping] = js.undefined,
+        AthenaConnectorSource: js.UndefOr[AthenaConnectorSource] = js.undefined,
+        CatalogKafkaSource: js.UndefOr[CatalogKafkaSource] = js.undefined,
+        CatalogKinesisSource: js.UndefOr[CatalogKinesisSource] = js.undefined,
+        CatalogSource: js.UndefOr[CatalogSource] = js.undefined,
+        CatalogTarget: js.UndefOr[BasicCatalogTarget] = js.undefined,
+        CustomCode: js.UndefOr[CustomCode] = js.undefined,
+        DirectKafkaSource: js.UndefOr[DirectKafkaSource] = js.undefined,
+        DirectKinesisSource: js.UndefOr[DirectKinesisSource] = js.undefined,
+        DropDuplicates: js.UndefOr[DropDuplicates] = js.undefined,
+        DropFields: js.UndefOr[DropFields] = js.undefined,
+        DropNullFields: js.UndefOr[DropNullFields] = js.undefined,
+        DynamicTransform: js.UndefOr[DynamicTransform] = js.undefined,
+        DynamoDBCatalogSource: js.UndefOr[DynamoDBCatalogSource] = js.undefined,
+        EvaluateDataQuality: js.UndefOr[EvaluateDataQuality] = js.undefined,
+        FillMissingValues: js.UndefOr[FillMissingValues] = js.undefined,
+        Filter: js.UndefOr[Filter] = js.undefined,
+        GovernedCatalogSource: js.UndefOr[GovernedCatalogSource] = js.undefined,
+        GovernedCatalogTarget: js.UndefOr[GovernedCatalogTarget] = js.undefined,
+        JDBCConnectorSource: js.UndefOr[JDBCConnectorSource] = js.undefined,
+        JDBCConnectorTarget: js.UndefOr[JDBCConnectorTarget] = js.undefined,
+        Join: js.UndefOr[Join] = js.undefined,
+        Merge: js.UndefOr[Merge] = js.undefined,
+        MicrosoftSQLServerCatalogSource: js.UndefOr[MicrosoftSQLServerCatalogSource] = js.undefined,
+        MicrosoftSQLServerCatalogTarget: js.UndefOr[MicrosoftSQLServerCatalogTarget] = js.undefined,
+        MySQLCatalogSource: js.UndefOr[MySQLCatalogSource] = js.undefined,
+        MySQLCatalogTarget: js.UndefOr[MySQLCatalogTarget] = js.undefined,
+        OracleSQLCatalogSource: js.UndefOr[OracleSQLCatalogSource] = js.undefined,
+        OracleSQLCatalogTarget: js.UndefOr[OracleSQLCatalogTarget] = js.undefined,
+        PIIDetection: js.UndefOr[PIIDetection] = js.undefined,
+        PostgreSQLCatalogSource: js.UndefOr[PostgreSQLCatalogSource] = js.undefined,
+        PostgreSQLCatalogTarget: js.UndefOr[PostgreSQLCatalogTarget] = js.undefined,
+        RedshiftSource: js.UndefOr[RedshiftSource] = js.undefined,
+        RedshiftTarget: js.UndefOr[RedshiftTarget] = js.undefined,
+        RelationalCatalogSource: js.UndefOr[RelationalCatalogSource] = js.undefined,
+        RenameField: js.UndefOr[RenameField] = js.undefined,
+        S3CatalogSource: js.UndefOr[S3CatalogSource] = js.undefined,
+        S3CatalogTarget: js.UndefOr[S3CatalogTarget] = js.undefined,
+        S3CsvSource: js.UndefOr[S3CsvSource] = js.undefined,
+        S3DirectTarget: js.UndefOr[S3DirectTarget] = js.undefined,
+        S3GlueParquetTarget: js.UndefOr[S3GlueParquetTarget] = js.undefined,
+        S3JsonSource: js.UndefOr[S3JsonSource] = js.undefined,
+        S3ParquetSource: js.UndefOr[S3ParquetSource] = js.undefined,
+        SelectFields: js.UndefOr[SelectFields] = js.undefined,
+        SelectFromCollection: js.UndefOr[SelectFromCollection] = js.undefined,
+        SparkConnectorSource: js.UndefOr[SparkConnectorSource] = js.undefined,
+        SparkConnectorTarget: js.UndefOr[SparkConnectorTarget] = js.undefined,
+        SparkSQL: js.UndefOr[SparkSQL] = js.undefined,
+        Spigot: js.UndefOr[Spigot] = js.undefined,
+        SplitFields: js.UndefOr[SplitFields] = js.undefined,
+        Union: js.UndefOr[Union] = js.undefined
+    ): CodeGenConfigurationNode = {
+      val __obj = js.Dynamic.literal()
+      Aggregate.foreach(__v => __obj.updateDynamic("Aggregate")(__v.asInstanceOf[js.Any]))
+      ApplyMapping.foreach(__v => __obj.updateDynamic("ApplyMapping")(__v.asInstanceOf[js.Any]))
+      AthenaConnectorSource.foreach(__v => __obj.updateDynamic("AthenaConnectorSource")(__v.asInstanceOf[js.Any]))
+      CatalogKafkaSource.foreach(__v => __obj.updateDynamic("CatalogKafkaSource")(__v.asInstanceOf[js.Any]))
+      CatalogKinesisSource.foreach(__v => __obj.updateDynamic("CatalogKinesisSource")(__v.asInstanceOf[js.Any]))
+      CatalogSource.foreach(__v => __obj.updateDynamic("CatalogSource")(__v.asInstanceOf[js.Any]))
+      CatalogTarget.foreach(__v => __obj.updateDynamic("CatalogTarget")(__v.asInstanceOf[js.Any]))
+      CustomCode.foreach(__v => __obj.updateDynamic("CustomCode")(__v.asInstanceOf[js.Any]))
+      DirectKafkaSource.foreach(__v => __obj.updateDynamic("DirectKafkaSource")(__v.asInstanceOf[js.Any]))
+      DirectKinesisSource.foreach(__v => __obj.updateDynamic("DirectKinesisSource")(__v.asInstanceOf[js.Any]))
+      DropDuplicates.foreach(__v => __obj.updateDynamic("DropDuplicates")(__v.asInstanceOf[js.Any]))
+      DropFields.foreach(__v => __obj.updateDynamic("DropFields")(__v.asInstanceOf[js.Any]))
+      DropNullFields.foreach(__v => __obj.updateDynamic("DropNullFields")(__v.asInstanceOf[js.Any]))
+      DynamicTransform.foreach(__v => __obj.updateDynamic("DynamicTransform")(__v.asInstanceOf[js.Any]))
+      DynamoDBCatalogSource.foreach(__v => __obj.updateDynamic("DynamoDBCatalogSource")(__v.asInstanceOf[js.Any]))
+      EvaluateDataQuality.foreach(__v => __obj.updateDynamic("EvaluateDataQuality")(__v.asInstanceOf[js.Any]))
+      FillMissingValues.foreach(__v => __obj.updateDynamic("FillMissingValues")(__v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      GovernedCatalogSource.foreach(__v => __obj.updateDynamic("GovernedCatalogSource")(__v.asInstanceOf[js.Any]))
+      GovernedCatalogTarget.foreach(__v => __obj.updateDynamic("GovernedCatalogTarget")(__v.asInstanceOf[js.Any]))
+      JDBCConnectorSource.foreach(__v => __obj.updateDynamic("JDBCConnectorSource")(__v.asInstanceOf[js.Any]))
+      JDBCConnectorTarget.foreach(__v => __obj.updateDynamic("JDBCConnectorTarget")(__v.asInstanceOf[js.Any]))
+      Join.foreach(__v => __obj.updateDynamic("Join")(__v.asInstanceOf[js.Any]))
+      Merge.foreach(__v => __obj.updateDynamic("Merge")(__v.asInstanceOf[js.Any]))
+      MicrosoftSQLServerCatalogSource.foreach(__v => __obj.updateDynamic("MicrosoftSQLServerCatalogSource")(__v.asInstanceOf[js.Any]))
+      MicrosoftSQLServerCatalogTarget.foreach(__v => __obj.updateDynamic("MicrosoftSQLServerCatalogTarget")(__v.asInstanceOf[js.Any]))
+      MySQLCatalogSource.foreach(__v => __obj.updateDynamic("MySQLCatalogSource")(__v.asInstanceOf[js.Any]))
+      MySQLCatalogTarget.foreach(__v => __obj.updateDynamic("MySQLCatalogTarget")(__v.asInstanceOf[js.Any]))
+      OracleSQLCatalogSource.foreach(__v => __obj.updateDynamic("OracleSQLCatalogSource")(__v.asInstanceOf[js.Any]))
+      OracleSQLCatalogTarget.foreach(__v => __obj.updateDynamic("OracleSQLCatalogTarget")(__v.asInstanceOf[js.Any]))
+      PIIDetection.foreach(__v => __obj.updateDynamic("PIIDetection")(__v.asInstanceOf[js.Any]))
+      PostgreSQLCatalogSource.foreach(__v => __obj.updateDynamic("PostgreSQLCatalogSource")(__v.asInstanceOf[js.Any]))
+      PostgreSQLCatalogTarget.foreach(__v => __obj.updateDynamic("PostgreSQLCatalogTarget")(__v.asInstanceOf[js.Any]))
+      RedshiftSource.foreach(__v => __obj.updateDynamic("RedshiftSource")(__v.asInstanceOf[js.Any]))
+      RedshiftTarget.foreach(__v => __obj.updateDynamic("RedshiftTarget")(__v.asInstanceOf[js.Any]))
+      RelationalCatalogSource.foreach(__v => __obj.updateDynamic("RelationalCatalogSource")(__v.asInstanceOf[js.Any]))
+      RenameField.foreach(__v => __obj.updateDynamic("RenameField")(__v.asInstanceOf[js.Any]))
+      S3CatalogSource.foreach(__v => __obj.updateDynamic("S3CatalogSource")(__v.asInstanceOf[js.Any]))
+      S3CatalogTarget.foreach(__v => __obj.updateDynamic("S3CatalogTarget")(__v.asInstanceOf[js.Any]))
+      S3CsvSource.foreach(__v => __obj.updateDynamic("S3CsvSource")(__v.asInstanceOf[js.Any]))
+      S3DirectTarget.foreach(__v => __obj.updateDynamic("S3DirectTarget")(__v.asInstanceOf[js.Any]))
+      S3GlueParquetTarget.foreach(__v => __obj.updateDynamic("S3GlueParquetTarget")(__v.asInstanceOf[js.Any]))
+      S3JsonSource.foreach(__v => __obj.updateDynamic("S3JsonSource")(__v.asInstanceOf[js.Any]))
+      S3ParquetSource.foreach(__v => __obj.updateDynamic("S3ParquetSource")(__v.asInstanceOf[js.Any]))
+      SelectFields.foreach(__v => __obj.updateDynamic("SelectFields")(__v.asInstanceOf[js.Any]))
+      SelectFromCollection.foreach(__v => __obj.updateDynamic("SelectFromCollection")(__v.asInstanceOf[js.Any]))
+      SparkConnectorSource.foreach(__v => __obj.updateDynamic("SparkConnectorSource")(__v.asInstanceOf[js.Any]))
+      SparkConnectorTarget.foreach(__v => __obj.updateDynamic("SparkConnectorTarget")(__v.asInstanceOf[js.Any]))
+      SparkSQL.foreach(__v => __obj.updateDynamic("SparkSQL")(__v.asInstanceOf[js.Any]))
+      Spigot.foreach(__v => __obj.updateDynamic("Spigot")(__v.asInstanceOf[js.Any]))
+      SplitFields.foreach(__v => __obj.updateDynamic("SplitFields")(__v.asInstanceOf[js.Any]))
+      Union.foreach(__v => __obj.updateDynamic("Union")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeGenConfigurationNode]
     }
   }
 
@@ -1813,6 +2599,25 @@ package object glue {
       ColumnName.foreach(__v => __obj.updateDynamic("ColumnName")(__v.asInstanceOf[js.Any]))
       Importance.foreach(__v => __obj.updateDynamic("Importance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnImportance]
+    }
+  }
+
+  @js.native
+  trait ColumnRowFilter extends js.Object {
+    var ColumnName: js.UndefOr[NameString]
+    var RowFilterExpression: js.UndefOr[PredicateString]
+  }
+
+  object ColumnRowFilter {
+    @inline
+    def apply(
+        ColumnName: js.UndefOr[NameString] = js.undefined,
+        RowFilterExpression: js.UndefOr[PredicateString] = js.undefined
+    ): ColumnRowFilter = {
+      val __obj = js.Dynamic.literal()
+      ColumnName.foreach(__v => __obj.updateDynamic("ColumnName")(__v.asInstanceOf[js.Any]))
+      RowFilterExpression.foreach(__v => __obj.updateDynamic("RowFilterExpression")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnRowFilter]
     }
   }
 
@@ -2125,6 +2930,7 @@ package object glue {
     var CreationTime: js.UndefOr[Timestamp]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionString]
+    var LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration]
     var LastCrawl: js.UndefOr[LastCrawlInfo]
     var LastUpdated: js.UndefOr[Timestamp]
     var LineageConfiguration: js.UndefOr[LineageConfiguration]
@@ -2149,6 +2955,7 @@ package object glue {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration] = js.undefined,
         LastCrawl: js.UndefOr[LastCrawlInfo] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
@@ -2170,6 +2977,7 @@ package object glue {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LakeFormationConfiguration.foreach(__v => __obj.updateDynamic("LakeFormationConfiguration")(__v.asInstanceOf[js.Any]))
       LastCrawl.foreach(__v => __obj.updateDynamic("LastCrawl")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
       LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
@@ -2183,6 +2991,51 @@ package object glue {
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Crawler]
+    }
+  }
+
+  /** Contains the information for a run of a crawler.
+    */
+  @js.native
+  trait CrawlerHistory extends js.Object {
+    var CrawlId: js.UndefOr[CrawlId]
+    var DPUHour: js.UndefOr[NonNegativeDouble]
+    var EndTime: js.UndefOr[Timestamp]
+    var ErrorMessage: js.UndefOr[DescriptionString]
+    var LogGroup: js.UndefOr[LogGroup]
+    var LogStream: js.UndefOr[LogStream]
+    var MessagePrefix: js.UndefOr[MessagePrefix]
+    var StartTime: js.UndefOr[Timestamp]
+    var State: js.UndefOr[CrawlerHistoryState]
+    var Summary: js.UndefOr[NameString]
+  }
+
+  object CrawlerHistory {
+    @inline
+    def apply(
+        CrawlId: js.UndefOr[CrawlId] = js.undefined,
+        DPUHour: js.UndefOr[NonNegativeDouble] = js.undefined,
+        EndTime: js.UndefOr[Timestamp] = js.undefined,
+        ErrorMessage: js.UndefOr[DescriptionString] = js.undefined,
+        LogGroup: js.UndefOr[LogGroup] = js.undefined,
+        LogStream: js.UndefOr[LogStream] = js.undefined,
+        MessagePrefix: js.UndefOr[MessagePrefix] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        State: js.UndefOr[CrawlerHistoryState] = js.undefined,
+        Summary: js.UndefOr[NameString] = js.undefined
+    ): CrawlerHistory = {
+      val __obj = js.Dynamic.literal()
+      CrawlId.foreach(__v => __obj.updateDynamic("CrawlId")(__v.asInstanceOf[js.Any]))
+      DPUHour.foreach(__v => __obj.updateDynamic("DPUHour")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LogGroup.foreach(__v => __obj.updateDynamic("LogGroup")(__v.asInstanceOf[js.Any]))
+      LogStream.foreach(__v => __obj.updateDynamic("LogStream")(__v.asInstanceOf[js.Any]))
+      MessagePrefix.foreach(__v => __obj.updateDynamic("MessagePrefix")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrawlerHistory]
     }
   }
 
@@ -2248,6 +3101,7 @@ package object glue {
   @js.native
   trait CrawlerTargets extends js.Object {
     var CatalogTargets: js.UndefOr[CatalogTargetList]
+    var DeltaTargets: js.UndefOr[DeltaTargetList]
     var DynamoDBTargets: js.UndefOr[DynamoDBTargetList]
     var JdbcTargets: js.UndefOr[JdbcTargetList]
     var MongoDBTargets: js.UndefOr[MongoDBTargetList]
@@ -2258,6 +3112,7 @@ package object glue {
     @inline
     def apply(
         CatalogTargets: js.UndefOr[CatalogTargetList] = js.undefined,
+        DeltaTargets: js.UndefOr[DeltaTargetList] = js.undefined,
         DynamoDBTargets: js.UndefOr[DynamoDBTargetList] = js.undefined,
         JdbcTargets: js.UndefOr[JdbcTargetList] = js.undefined,
         MongoDBTargets: js.UndefOr[MongoDBTargetList] = js.undefined,
@@ -2265,11 +3120,36 @@ package object glue {
     ): CrawlerTargets = {
       val __obj = js.Dynamic.literal()
       CatalogTargets.foreach(__v => __obj.updateDynamic("CatalogTargets")(__v.asInstanceOf[js.Any]))
+      DeltaTargets.foreach(__v => __obj.updateDynamic("DeltaTargets")(__v.asInstanceOf[js.Any]))
       DynamoDBTargets.foreach(__v => __obj.updateDynamic("DynamoDBTargets")(__v.asInstanceOf[js.Any]))
       JdbcTargets.foreach(__v => __obj.updateDynamic("JdbcTargets")(__v.asInstanceOf[js.Any]))
       MongoDBTargets.foreach(__v => __obj.updateDynamic("MongoDBTargets")(__v.asInstanceOf[js.Any]))
       S3Targets.foreach(__v => __obj.updateDynamic("S3Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrawlerTargets]
+    }
+  }
+
+  /** A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.
+    */
+  @js.native
+  trait CrawlsFilter extends js.Object {
+    var FieldName: js.UndefOr[FieldName]
+    var FieldValue: js.UndefOr[GenericString]
+    var FilterOperator: js.UndefOr[FilterOperator]
+  }
+
+  object CrawlsFilter {
+    @inline
+    def apply(
+        FieldName: js.UndefOr[FieldName] = js.undefined,
+        FieldValue: js.UndefOr[GenericString] = js.undefined,
+        FilterOperator: js.UndefOr[FilterOperator] = js.undefined
+    ): CrawlsFilter = {
+      val __obj = js.Dynamic.literal()
+      FieldName.foreach(__v => __obj.updateDynamic("FieldName")(__v.asInstanceOf[js.Any]))
+      FieldValue.foreach(__v => __obj.updateDynamic("FieldValue")(__v.asInstanceOf[js.Any]))
+      FilterOperator.foreach(__v => __obj.updateDynamic("FilterOperator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrawlsFilter]
     }
   }
 
@@ -2397,6 +3277,7 @@ package object glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionString]
+    var LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration]
     var LineageConfiguration: js.UndefOr[LineageConfiguration]
     var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Schedule: js.UndefOr[CronExpression]
@@ -2416,6 +3297,7 @@ package object glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration] = js.undefined,
         LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
         RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Schedule: js.UndefOr[CronExpression] = js.undefined,
@@ -2434,6 +3316,7 @@ package object glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LakeFormationConfiguration.foreach(__v => __obj.updateDynamic("LakeFormationConfiguration")(__v.asInstanceOf[js.Any]))
       LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
       RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
@@ -2462,6 +3345,8 @@ package object glue {
     var Name: NameString
     var AllowSingleColumn: js.UndefOr[NullableBoolean]
     var ContainsHeader: js.UndefOr[CsvHeaderOption]
+    var CustomDatatypeConfigured: js.UndefOr[NullableBoolean]
+    var CustomDatatypes: js.UndefOr[CustomDatatypes]
     var Delimiter: js.UndefOr[CsvColumnDelimiter]
     var DisableValueTrimming: js.UndefOr[NullableBoolean]
     var Header: js.UndefOr[CsvHeader]
@@ -2474,6 +3359,8 @@ package object glue {
         Name: NameString,
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
         ContainsHeader: js.UndefOr[CsvHeaderOption] = js.undefined,
+        CustomDatatypeConfigured: js.UndefOr[NullableBoolean] = js.undefined,
+        CustomDatatypes: js.UndefOr[CustomDatatypes] = js.undefined,
         Delimiter: js.UndefOr[CsvColumnDelimiter] = js.undefined,
         DisableValueTrimming: js.UndefOr[NullableBoolean] = js.undefined,
         Header: js.UndefOr[CsvHeader] = js.undefined,
@@ -2485,6 +3372,8 @@ package object glue {
 
       AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
       ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      CustomDatatypeConfigured.foreach(__v => __obj.updateDynamic("CustomDatatypeConfigured")(__v.asInstanceOf[js.Any]))
+      CustomDatatypes.foreach(__v => __obj.updateDynamic("CustomDatatypes")(__v.asInstanceOf[js.Any]))
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
       Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
@@ -2494,22 +3383,114 @@ package object glue {
   }
 
   @js.native
+  trait CreateCustomEntityTypeRequest extends js.Object {
+    var Name: NameString
+    var RegexString: NameString
+    var ContextWords: js.UndefOr[ContextWords]
+  }
+
+  object CreateCustomEntityTypeRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        RegexString: NameString,
+        ContextWords: js.UndefOr[ContextWords] = js.undefined
+    ): CreateCustomEntityTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RegexString" -> RegexString.asInstanceOf[js.Any]
+      )
+
+      ContextWords.foreach(__v => __obj.updateDynamic("ContextWords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomEntityTypeRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCustomEntityTypeResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object CreateCustomEntityTypeResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): CreateCustomEntityTypeResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCustomEntityTypeResponse]
+    }
+  }
+
+  @js.native
+  trait CreateDataQualityRulesetRequest extends js.Object {
+    var Name: NameString
+    var Ruleset: DataQualityRulesetString
+    var ClientToken: js.UndefOr[HashString]
+    var Description: js.UndefOr[DescriptionString]
+    var Tags: js.UndefOr[TagsMap]
+    var TargetTable: js.UndefOr[DataQualityTargetTable]
+  }
+
+  object CreateDataQualityRulesetRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        Ruleset: DataQualityRulesetString,
+        ClientToken: js.UndefOr[HashString] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined,
+        TargetTable: js.UndefOr[DataQualityTargetTable] = js.undefined
+    ): CreateDataQualityRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Ruleset" -> Ruleset.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDataQualityRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDataQualityRulesetResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object CreateDataQualityRulesetResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): CreateDataQualityRulesetResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDataQualityRulesetResponse]
+    }
+  }
+
+  @js.native
   trait CreateDatabaseRequest extends js.Object {
     var DatabaseInput: DatabaseInput
     var CatalogId: js.UndefOr[CatalogIdString]
+    var Tags: js.UndefOr[TagsMap]
   }
 
   object CreateDatabaseRequest {
     @inline
     def apply(
         DatabaseInput: DatabaseInput,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateDatabaseRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatabaseRequest]
     }
   }
@@ -2690,9 +3671,11 @@ package object glue {
     var Name: NameString
     var Role: RoleString
     var AllocatedCapacity: js.UndefOr[IntegerValue]
+    var CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes]
     var Connections: js.UndefOr[ConnectionsList]
     var DefaultArguments: js.UndefOr[GenericMap]
     var Description: js.UndefOr[DescriptionString]
+    var ExecutionClass: js.UndefOr[ExecutionClass]
     var ExecutionProperty: js.UndefOr[ExecutionProperty]
     var GlueVersion: js.UndefOr[GlueVersionString]
     var LogUri: js.UndefOr[UriString]
@@ -2702,6 +3685,7 @@ package object glue {
     var NotificationProperty: js.UndefOr[NotificationProperty]
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var SecurityConfiguration: js.UndefOr[NameString]
+    var SourceControlDetails: js.UndefOr[SourceControlDetails]
     var Tags: js.UndefOr[TagsMap]
     var Timeout: js.UndefOr[Timeout]
     var WorkerType: js.UndefOr[WorkerType]
@@ -2714,9 +3698,11 @@ package object glue {
         Name: NameString,
         Role: RoleString,
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
+        CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes] = js.undefined,
         Connections: js.UndefOr[ConnectionsList] = js.undefined,
         DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        ExecutionClass: js.UndefOr[ExecutionClass] = js.undefined,
         ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
         GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         LogUri: js.UndefOr[UriString] = js.undefined,
@@ -2726,6 +3712,7 @@ package object glue {
         NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+        SourceControlDetails: js.UndefOr[SourceControlDetails] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
@@ -2737,9 +3724,11 @@ package object glue {
       )
 
       AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      CodeGenConfigurationNodes.foreach(__v => __obj.updateDynamic("CodeGenConfigurationNodes")(__v.asInstanceOf[js.Any]))
       Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionClass.foreach(__v => __obj.updateDynamic("ExecutionClass")(__v.asInstanceOf[js.Any]))
       ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
       GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
@@ -2749,6 +3738,7 @@ package object glue {
       NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SourceControlDetails.foreach(__v => __obj.updateDynamic("SourceControlDetails")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
@@ -3160,6 +4150,84 @@ package object glue {
     }
   }
 
+  /** Request to create a new session.
+    */
+  @js.native
+  trait CreateSessionRequest extends js.Object {
+    var Command: SessionCommand
+    var Id: NameString
+    var Role: OrchestrationRoleArn
+    var Connections: js.UndefOr[ConnectionsList]
+    var DefaultArguments: js.UndefOr[OrchestrationArgumentsMap]
+    var Description: js.UndefOr[DescriptionString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
+    var IdleTimeout: js.UndefOr[Timeout]
+    var MaxCapacity: js.UndefOr[NullableDouble]
+    var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+    var SecurityConfiguration: js.UndefOr[NameString]
+    var Tags: js.UndefOr[TagsMap]
+    var Timeout: js.UndefOr[Timeout]
+    var WorkerType: js.UndefOr[WorkerType]
+  }
+
+  object CreateSessionRequest {
+    @inline
+    def apply(
+        Command: SessionCommand,
+        Id: NameString,
+        Role: OrchestrationRoleArn,
+        Connections: js.UndefOr[ConnectionsList] = js.undefined,
+        DefaultArguments: js.UndefOr[OrchestrationArgumentsMap] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
+        IdleTimeout: js.UndefOr[Timeout] = js.undefined,
+        MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
+        NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined,
+        SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined,
+        Timeout: js.UndefOr[Timeout] = js.undefined,
+        WorkerType: js.UndefOr[WorkerType] = js.undefined
+    ): CreateSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Command" -> Command.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any]
+      )
+
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      IdleTimeout.foreach(__v => __obj.updateDynamic("IdleTimeout")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSessionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSessionResponse extends js.Object {
+    var Session: js.UndefOr[Session]
+  }
+
+  object CreateSessionResponse {
+    @inline
+    def apply(
+        Session: js.UndefOr[Session] = js.undefined
+    ): CreateSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSessionResponse]
+    }
+  }
+
   @js.native
   trait CreateTableRequest extends js.Object {
     var DatabaseName: NameString
@@ -3377,6 +4445,8 @@ package object glue {
     var AllowSingleColumn: js.UndefOr[NullableBoolean]
     var ContainsHeader: js.UndefOr[CsvHeaderOption]
     var CreationTime: js.UndefOr[Timestamp]
+    var CustomDatatypeConfigured: js.UndefOr[NullableBoolean]
+    var CustomDatatypes: js.UndefOr[CustomDatatypes]
     var Delimiter: js.UndefOr[CsvColumnDelimiter]
     var DisableValueTrimming: js.UndefOr[NullableBoolean]
     var Header: js.UndefOr[CsvHeader]
@@ -3392,6 +4462,8 @@ package object glue {
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
         ContainsHeader: js.UndefOr[CsvHeaderOption] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        CustomDatatypeConfigured: js.UndefOr[NullableBoolean] = js.undefined,
+        CustomDatatypes: js.UndefOr[CustomDatatypes] = js.undefined,
         Delimiter: js.UndefOr[CsvColumnDelimiter] = js.undefined,
         DisableValueTrimming: js.UndefOr[NullableBoolean] = js.undefined,
         Header: js.UndefOr[CsvHeader] = js.undefined,
@@ -3406,6 +4478,8 @@ package object glue {
       AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
       ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CustomDatatypeConfigured.foreach(__v => __obj.updateDynamic("CustomDatatypeConfigured")(__v.asInstanceOf[js.Any]))
+      CustomDatatypes.foreach(__v => __obj.updateDynamic("CustomDatatypes")(__v.asInstanceOf[js.Any]))
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
       Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
@@ -3413,6 +4487,109 @@ package object glue {
       QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CsvClassifier]
+    }
+  }
+
+  /** Specifies a transform that uses custom code you provide to perform the data transformation. The output is a collection of DynamicFrames.
+    */
+  @js.native
+  trait CustomCode extends js.Object {
+    var ClassName: EnclosedInStringProperty
+    var Code: ExtendedString
+    var Inputs: ManyInputs
+    var Name: NodeName
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object CustomCode {
+    @inline
+    def apply(
+        ClassName: EnclosedInStringProperty,
+        Code: ExtendedString,
+        Inputs: ManyInputs,
+        Name: NodeName,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): CustomCode = {
+      val __obj = js.Dynamic.literal(
+        "ClassName" -> ClassName.asInstanceOf[js.Any],
+        "Code" -> Code.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomCode]
+    }
+  }
+
+  /** An object representing a custom pattern for detecting sensitive data across the columns and rows of your structured data.
+    */
+  @js.native
+  trait CustomEntityType extends js.Object {
+    var Name: NameString
+    var RegexString: NameString
+    var ContextWords: js.UndefOr[ContextWords]
+  }
+
+  object CustomEntityType {
+    @inline
+    def apply(
+        Name: NameString,
+        RegexString: NameString,
+        ContextWords: js.UndefOr[ContextWords] = js.undefined
+    ): CustomEntityType = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RegexString" -> RegexString.asInstanceOf[js.Any]
+      )
+
+      ContextWords.foreach(__v => __obj.updateDynamic("ContextWords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomEntityType]
+    }
+  }
+
+  /** Options to configure how your data quality evaluation results are published.
+    */
+  @js.native
+  trait DQResultsPublishingOptions extends js.Object {
+    var CloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean]
+    var EvaluationContext: js.UndefOr[GenericLimitedString]
+    var ResultsPublishingEnabled: js.UndefOr[BoxedBoolean]
+    var ResultsS3Prefix: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object DQResultsPublishingOptions {
+    @inline
+    def apply(
+        CloudWatchMetricsEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        EvaluationContext: js.UndefOr[GenericLimitedString] = js.undefined,
+        ResultsPublishingEnabled: js.UndefOr[BoxedBoolean] = js.undefined,
+        ResultsS3Prefix: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): DQResultsPublishingOptions = {
+      val __obj = js.Dynamic.literal()
+      CloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("CloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      EvaluationContext.foreach(__v => __obj.updateDynamic("EvaluationContext")(__v.asInstanceOf[js.Any]))
+      ResultsPublishingEnabled.foreach(__v => __obj.updateDynamic("ResultsPublishingEnabled")(__v.asInstanceOf[js.Any]))
+      ResultsS3Prefix.foreach(__v => __obj.updateDynamic("ResultsS3Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DQResultsPublishingOptions]
+    }
+  }
+
+  /** Options to configure how your job will stop if your data quality evaluation fails.
+    */
+  @js.native
+  trait DQStopJobOnFailureOptions extends js.Object {
+    var StopJobOnFailureTiming: js.UndefOr[DQStopJobOnFailureTiming]
+  }
+
+  object DQStopJobOnFailureOptions {
+    @inline
+    def apply(
+        StopJobOnFailureTiming: js.UndefOr[DQStopJobOnFailureTiming] = js.undefined
+    ): DQStopJobOnFailureOptions = {
+      val __obj = js.Dynamic.literal()
+      StopJobOnFailureTiming.foreach(__v => __obj.updateDynamic("StopJobOnFailureTiming")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DQStopJobOnFailureOptions]
     }
   }
 
@@ -3452,6 +4629,381 @@ package object glue {
       val __obj = js.Dynamic.literal()
       DataLakePrincipalIdentifier.foreach(__v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakePrincipal]
+    }
+  }
+
+  /** Additional run options you can specify for an evaluation run.
+    */
+  @js.native
+  trait DataQualityEvaluationRunAdditionalRunOptions extends js.Object {
+    var CloudWatchMetricsEnabled: js.UndefOr[NullableBoolean]
+    var ResultsS3Prefix: js.UndefOr[UriString]
+  }
+
+  object DataQualityEvaluationRunAdditionalRunOptions {
+    @inline
+    def apply(
+        CloudWatchMetricsEnabled: js.UndefOr[NullableBoolean] = js.undefined,
+        ResultsS3Prefix: js.UndefOr[UriString] = js.undefined
+    ): DataQualityEvaluationRunAdditionalRunOptions = {
+      val __obj = js.Dynamic.literal()
+      CloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("CloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      ResultsS3Prefix.foreach(__v => __obj.updateDynamic("ResultsS3Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityEvaluationRunAdditionalRunOptions]
+    }
+  }
+
+  /** Describes a data quality result.
+    */
+  @js.native
+  trait DataQualityResult extends js.Object {
+    var CompletedOn: js.UndefOr[Timestamp]
+    var DataSource: js.UndefOr[DataSource]
+    var EvaluationContext: js.UndefOr[GenericString]
+    var JobName: js.UndefOr[NameString]
+    var JobRunId: js.UndefOr[HashString]
+    var ResultId: js.UndefOr[HashString]
+    var RuleResults: js.UndefOr[DataQualityRuleResults]
+    var RulesetEvaluationRunId: js.UndefOr[HashString]
+    var RulesetName: js.UndefOr[NameString]
+    var Score: js.UndefOr[GenericBoundedDouble]
+    var StartedOn: js.UndefOr[Timestamp]
+  }
+
+  object DataQualityResult {
+    @inline
+    def apply(
+        CompletedOn: js.UndefOr[Timestamp] = js.undefined,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        EvaluationContext: js.UndefOr[GenericString] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        JobRunId: js.UndefOr[HashString] = js.undefined,
+        ResultId: js.UndefOr[HashString] = js.undefined,
+        RuleResults: js.UndefOr[DataQualityRuleResults] = js.undefined,
+        RulesetEvaluationRunId: js.UndefOr[HashString] = js.undefined,
+        RulesetName: js.UndefOr[NameString] = js.undefined,
+        Score: js.UndefOr[GenericBoundedDouble] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined
+    ): DataQualityResult = {
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      EvaluationContext.foreach(__v => __obj.updateDynamic("EvaluationContext")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
+      ResultId.foreach(__v => __obj.updateDynamic("ResultId")(__v.asInstanceOf[js.Any]))
+      RuleResults.foreach(__v => __obj.updateDynamic("RuleResults")(__v.asInstanceOf[js.Any]))
+      RulesetEvaluationRunId.foreach(__v => __obj.updateDynamic("RulesetEvaluationRunId")(__v.asInstanceOf[js.Any]))
+      RulesetName.foreach(__v => __obj.updateDynamic("RulesetName")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityResult]
+    }
+  }
+
+  /** Describes a data quality result.
+    */
+  @js.native
+  trait DataQualityResultDescription extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var JobName: js.UndefOr[NameString]
+    var JobRunId: js.UndefOr[HashString]
+    var ResultId: js.UndefOr[HashString]
+    var StartedOn: js.UndefOr[Timestamp]
+  }
+
+  object DataQualityResultDescription {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        JobRunId: js.UndefOr[HashString] = js.undefined,
+        ResultId: js.UndefOr[HashString] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined
+    ): DataQualityResultDescription = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
+      ResultId.foreach(__v => __obj.updateDynamic("ResultId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityResultDescription]
+    }
+  }
+
+  /** Criteria used to return data quality results.
+    */
+  @js.native
+  trait DataQualityResultFilterCriteria extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var JobName: js.UndefOr[NameString]
+    var JobRunId: js.UndefOr[HashString]
+    var StartedAfter: js.UndefOr[Timestamp]
+    var StartedBefore: js.UndefOr[Timestamp]
+  }
+
+  object DataQualityResultFilterCriteria {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        JobRunId: js.UndefOr[HashString] = js.undefined,
+        StartedAfter: js.UndefOr[Timestamp] = js.undefined,
+        StartedBefore: js.UndefOr[Timestamp] = js.undefined
+    ): DataQualityResultFilterCriteria = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
+      StartedAfter.foreach(__v => __obj.updateDynamic("StartedAfter")(__v.asInstanceOf[js.Any]))
+      StartedBefore.foreach(__v => __obj.updateDynamic("StartedBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityResultFilterCriteria]
+    }
+  }
+
+  /** Describes the result of a data quality rule recommendation run.
+    */
+  @js.native
+  trait DataQualityRuleRecommendationRunDescription extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var RunId: js.UndefOr[HashString]
+    var StartedOn: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[TaskStatusType]
+  }
+
+  object DataQualityRuleRecommendationRunDescription {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        RunId: js.UndefOr[HashString] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[TaskStatusType] = js.undefined
+    ): DataQualityRuleRecommendationRunDescription = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRuleRecommendationRunDescription]
+    }
+  }
+
+  /** A filter for listing data quality recommendation runs.
+    */
+  @js.native
+  trait DataQualityRuleRecommendationRunFilter extends js.Object {
+    var DataSource: DataSource
+    var StartedAfter: js.UndefOr[Timestamp]
+    var StartedBefore: js.UndefOr[Timestamp]
+  }
+
+  object DataQualityRuleRecommendationRunFilter {
+    @inline
+    def apply(
+        DataSource: DataSource,
+        StartedAfter: js.UndefOr[Timestamp] = js.undefined,
+        StartedBefore: js.UndefOr[Timestamp] = js.undefined
+    ): DataQualityRuleRecommendationRunFilter = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any]
+      )
+
+      StartedAfter.foreach(__v => __obj.updateDynamic("StartedAfter")(__v.asInstanceOf[js.Any]))
+      StartedBefore.foreach(__v => __obj.updateDynamic("StartedBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRuleRecommendationRunFilter]
+    }
+  }
+
+  /** Describes the result of the evaluation of a data quality rule.
+    */
+  @js.native
+  trait DataQualityRuleResult extends js.Object {
+    var Description: js.UndefOr[DescriptionString]
+    var EvaluationMessage: js.UndefOr[DescriptionString]
+    var Name: js.UndefOr[NameString]
+    var Result: js.UndefOr[DataQualityRuleResultStatus]
+  }
+
+  object DataQualityRuleResult {
+    @inline
+    def apply(
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        EvaluationMessage: js.UndefOr[DescriptionString] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        Result: js.UndefOr[DataQualityRuleResultStatus] = js.undefined
+    ): DataQualityRuleResult = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EvaluationMessage.foreach(__v => __obj.updateDynamic("EvaluationMessage")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRuleResult]
+    }
+  }
+
+  /** Describes the result of a data quality ruleset evaluation run.
+    */
+  @js.native
+  trait DataQualityRulesetEvaluationRunDescription extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var RunId: js.UndefOr[HashString]
+    var StartedOn: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[TaskStatusType]
+  }
+
+  object DataQualityRulesetEvaluationRunDescription {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        RunId: js.UndefOr[HashString] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[TaskStatusType] = js.undefined
+    ): DataQualityRulesetEvaluationRunDescription = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRulesetEvaluationRunDescription]
+    }
+  }
+
+  /** The filter criteria.
+    */
+  @js.native
+  trait DataQualityRulesetEvaluationRunFilter extends js.Object {
+    var DataSource: DataSource
+    var StartedAfter: js.UndefOr[Timestamp]
+    var StartedBefore: js.UndefOr[Timestamp]
+  }
+
+  object DataQualityRulesetEvaluationRunFilter {
+    @inline
+    def apply(
+        DataSource: DataSource,
+        StartedAfter: js.UndefOr[Timestamp] = js.undefined,
+        StartedBefore: js.UndefOr[Timestamp] = js.undefined
+    ): DataQualityRulesetEvaluationRunFilter = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any]
+      )
+
+      StartedAfter.foreach(__v => __obj.updateDynamic("StartedAfter")(__v.asInstanceOf[js.Any]))
+      StartedBefore.foreach(__v => __obj.updateDynamic("StartedBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRulesetEvaluationRunFilter]
+    }
+  }
+
+  /** The criteria used to filter data quality rulesets.
+    */
+  @js.native
+  trait DataQualityRulesetFilterCriteria extends js.Object {
+    var CreatedAfter: js.UndefOr[Timestamp]
+    var CreatedBefore: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var LastModifiedAfter: js.UndefOr[Timestamp]
+    var LastModifiedBefore: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NameString]
+    var TargetTable: js.UndefOr[DataQualityTargetTable]
+  }
+
+  object DataQualityRulesetFilterCriteria {
+    @inline
+    def apply(
+        CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LastModifiedAfter: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedBefore: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        TargetTable: js.UndefOr[DataQualityTargetTable] = js.undefined
+    ): DataQualityRulesetFilterCriteria = {
+      val __obj = js.Dynamic.literal()
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedAfter.foreach(__v => __obj.updateDynamic("LastModifiedAfter")(__v.asInstanceOf[js.Any]))
+      LastModifiedBefore.foreach(__v => __obj.updateDynamic("LastModifiedBefore")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRulesetFilterCriteria]
+    }
+  }
+
+  /** Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.
+    */
+  @js.native
+  trait DataQualityRulesetListDetails extends js.Object {
+    var CreatedOn: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var LastModifiedOn: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NameString]
+    var RecommendationRunId: js.UndefOr[HashString]
+    var RuleCount: js.UndefOr[NullableInteger]
+    var TargetTable: js.UndefOr[DataQualityTargetTable]
+  }
+
+  object DataQualityRulesetListDetails {
+    @inline
+    def apply(
+        CreatedOn: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        RecommendationRunId: js.UndefOr[HashString] = js.undefined,
+        RuleCount: js.UndefOr[NullableInteger] = js.undefined,
+        TargetTable: js.UndefOr[DataQualityTargetTable] = js.undefined
+    ): DataQualityRulesetListDetails = {
+      val __obj = js.Dynamic.literal()
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecommendationRunId.foreach(__v => __obj.updateDynamic("RecommendationRunId")(__v.asInstanceOf[js.Any]))
+      RuleCount.foreach(__v => __obj.updateDynamic("RuleCount")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityRulesetListDetails]
+    }
+  }
+
+  /** An object representing an Glue table.
+    */
+  @js.native
+  trait DataQualityTargetTable extends js.Object {
+    var DatabaseName: NameString
+    var TableName: NameString
+  }
+
+  object DataQualityTargetTable {
+    @inline
+    def apply(
+        DatabaseName: NameString,
+        TableName: NameString
+    ): DataQualityTargetTable = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataQualityTargetTable]
+    }
+  }
+
+  /** A data source (an Glue table) for which you want data quality results.
+    */
+  @js.native
+  trait DataSource extends js.Object {
+    var GlueTable: GlueTable
+  }
+
+  object DataSource {
+    @inline
+    def apply(
+        GlueTable: GlueTable
+    ): DataSource = {
+      val __obj = js.Dynamic.literal(
+        "GlueTable" -> GlueTable.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataSource]
     }
   }
 
@@ -3549,6 +5101,28 @@ package object glue {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       TargetDatabase.foreach(__v => __obj.updateDynamic("TargetDatabase")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseInput]
+    }
+  }
+
+  /** A structure representing the datatype of the value.
+    */
+  @js.native
+  trait Datatype extends js.Object {
+    var Id: GenericLimitedString
+    var Label: GenericLimitedString
+  }
+
+  object Datatype {
+    @inline
+    def apply(
+        Id: GenericLimitedString,
+        Label: GenericLimitedString
+    ): Datatype = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Label" -> Label.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Datatype]
     }
   }
 
@@ -3829,6 +5403,67 @@ package object glue {
     def apply(): DeleteCrawlerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteCrawlerResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomEntityTypeRequest extends js.Object {
+    var Name: NameString
+  }
+
+  object DeleteCustomEntityTypeRequest {
+    @inline
+    def apply(
+        Name: NameString
+    ): DeleteCustomEntityTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCustomEntityTypeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomEntityTypeResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object DeleteCustomEntityTypeResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): DeleteCustomEntityTypeResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCustomEntityTypeResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteDataQualityRulesetRequest extends js.Object {
+    var Name: NameString
+  }
+
+  object DeleteDataQualityRulesetRequest {
+    @inline
+    def apply(
+        Name: NameString
+    ): DeleteDataQualityRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDataQualityRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDataQualityRulesetResponse extends js.Object
+
+  object DeleteDataQualityRulesetResponse {
+    @inline
+    def apply(): DeleteDataQualityRulesetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteDataQualityRulesetResponse]
     }
   }
 
@@ -4207,6 +5842,43 @@ package object glue {
   }
 
   @js.native
+  trait DeleteSessionRequest extends js.Object {
+    var Id: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object DeleteSessionRequest {
+    @inline
+    def apply(
+        Id: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): DeleteSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSessionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSessionResponse extends js.Object {
+    var Id: js.UndefOr[NameString]
+  }
+
+  object DeleteSessionResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[NameString] = js.undefined
+    ): DeleteSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteSessionResponse]
+    }
+  }
+
+  @js.native
   trait DeleteTableRequest extends js.Object {
     var DatabaseName: NameString
     var Name: NameString
@@ -4383,6 +6055,30 @@ package object glue {
     }
   }
 
+  /** Specifies a Delta data store to crawl one or more Delta tables.
+    */
+  @js.native
+  trait DeltaTarget extends js.Object {
+    var ConnectionName: js.UndefOr[ConnectionName]
+    var DeltaTables: js.UndefOr[PathList]
+    var WriteManifest: js.UndefOr[NullableBoolean]
+  }
+
+  object DeltaTarget {
+    @inline
+    def apply(
+        ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
+        DeltaTables: js.UndefOr[PathList] = js.undefined,
+        WriteManifest: js.UndefOr[NullableBoolean] = js.undefined
+    ): DeltaTarget = {
+      val __obj = js.Dynamic.literal()
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      DeltaTables.foreach(__v => __obj.updateDynamic("DeltaTables")(__v.asInstanceOf[js.Any]))
+      WriteManifest.foreach(__v => __obj.updateDynamic("WriteManifest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeltaTarget]
+    }
+  }
+
   /** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.
     */
   @js.native
@@ -4494,6 +6190,97 @@ package object glue {
     }
   }
 
+  /** Specifies an Apache Kafka data store.
+    */
+  @js.native
+  trait DirectKafkaSource extends js.Object {
+    var Name: NodeName
+    var DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions]
+    var DetectSchema: js.UndefOr[BoxedBoolean]
+    var StreamingOptions: js.UndefOr[KafkaStreamingSourceOptions]
+    var WindowSize: js.UndefOr[BoxedPositiveInt]
+  }
+
+  object DirectKafkaSource {
+    @inline
+    def apply(
+        Name: NodeName,
+        DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions] = js.undefined,
+        DetectSchema: js.UndefOr[BoxedBoolean] = js.undefined,
+        StreamingOptions: js.UndefOr[KafkaStreamingSourceOptions] = js.undefined,
+        WindowSize: js.UndefOr[BoxedPositiveInt] = js.undefined
+    ): DirectKafkaSource = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DataPreviewOptions.foreach(__v => __obj.updateDynamic("DataPreviewOptions")(__v.asInstanceOf[js.Any]))
+      DetectSchema.foreach(__v => __obj.updateDynamic("DetectSchema")(__v.asInstanceOf[js.Any]))
+      StreamingOptions.foreach(__v => __obj.updateDynamic("StreamingOptions")(__v.asInstanceOf[js.Any]))
+      WindowSize.foreach(__v => __obj.updateDynamic("WindowSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DirectKafkaSource]
+    }
+  }
+
+  /** Specifies a direct Amazon Kinesis data source.
+    */
+  @js.native
+  trait DirectKinesisSource extends js.Object {
+    var Name: NodeName
+    var DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions]
+    var DetectSchema: js.UndefOr[BoxedBoolean]
+    var StreamingOptions: js.UndefOr[KinesisStreamingSourceOptions]
+    var WindowSize: js.UndefOr[BoxedPositiveInt]
+  }
+
+  object DirectKinesisSource {
+    @inline
+    def apply(
+        Name: NodeName,
+        DataPreviewOptions: js.UndefOr[StreamingDataPreviewOptions] = js.undefined,
+        DetectSchema: js.UndefOr[BoxedBoolean] = js.undefined,
+        StreamingOptions: js.UndefOr[KinesisStreamingSourceOptions] = js.undefined,
+        WindowSize: js.UndefOr[BoxedPositiveInt] = js.undefined
+    ): DirectKinesisSource = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DataPreviewOptions.foreach(__v => __obj.updateDynamic("DataPreviewOptions")(__v.asInstanceOf[js.Any]))
+      DetectSchema.foreach(__v => __obj.updateDynamic("DetectSchema")(__v.asInstanceOf[js.Any]))
+      StreamingOptions.foreach(__v => __obj.updateDynamic("StreamingOptions")(__v.asInstanceOf[js.Any]))
+      WindowSize.foreach(__v => __obj.updateDynamic("WindowSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DirectKinesisSource]
+    }
+  }
+
+  /** A policy that specifies update behavior for the crawler.
+    */
+  @js.native
+  trait DirectSchemaChangePolicy extends js.Object {
+    var Database: js.UndefOr[EnclosedInStringProperty]
+    var EnableUpdateCatalog: js.UndefOr[BoxedBoolean]
+    var Table: js.UndefOr[EnclosedInStringProperty]
+    var UpdateBehavior: js.UndefOr[UpdateCatalogBehavior]
+  }
+
+  object DirectSchemaChangePolicy {
+    @inline
+    def apply(
+        Database: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        EnableUpdateCatalog: js.UndefOr[BoxedBoolean] = js.undefined,
+        Table: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        UpdateBehavior: js.UndefOr[UpdateCatalogBehavior] = js.undefined
+    ): DirectSchemaChangePolicy = {
+      val __obj = js.Dynamic.literal()
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      EnableUpdateCatalog.foreach(__v => __obj.updateDynamic("EnableUpdateCatalog")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      UpdateBehavior.foreach(__v => __obj.updateDynamic("UpdateBehavior")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DirectSchemaChangePolicy]
+    }
+  }
+
   /** Defines column statistics supported for floating-point number data columns.
     */
   @js.native
@@ -4523,6 +6310,149 @@ package object glue {
     }
   }
 
+  /** Specifies a transform that removes rows of repeating data from a data set.
+    */
+  @js.native
+  trait DropDuplicates extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Columns: js.UndefOr[LimitedPathList]
+  }
+
+  object DropDuplicates {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Columns: js.UndefOr[LimitedPathList] = js.undefined
+    ): DropDuplicates = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DropDuplicates]
+    }
+  }
+
+  /** Specifies a transform that chooses the data property keys that you want to drop.
+    */
+  @js.native
+  trait DropFields extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Paths: GlueStudioPathList
+  }
+
+  object DropFields {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Paths: GlueStudioPathList
+    ): DropFields = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DropFields]
+    }
+  }
+
+  /** Specifies a transform that removes columns from the dataset if all values in the column are 'null'. By default, Glue Studio will recognize null objects, but some values such as empty strings, strings that are "null", -1 integers or other placeholders such as zeros, are not automatically recognized as nulls.
+    */
+  @js.native
+  trait DropNullFields extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var NullCheckBoxList: js.UndefOr[NullCheckBoxList]
+    var NullTextList: js.UndefOr[NullValueFields]
+  }
+
+  object DropNullFields {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        NullCheckBoxList: js.UndefOr[NullCheckBoxList] = js.undefined,
+        NullTextList: js.UndefOr[NullValueFields] = js.undefined
+    ): DropNullFields = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      NullCheckBoxList.foreach(__v => __obj.updateDynamic("NullCheckBoxList")(__v.asInstanceOf[js.Any]))
+      NullTextList.foreach(__v => __obj.updateDynamic("NullTextList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DropNullFields]
+    }
+  }
+
+  /** Specifies the set of parameters needed to perform the dynamic transform.
+    */
+  @js.native
+  trait DynamicTransform extends js.Object {
+    var FunctionName: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: EnclosedInStringProperty
+    var Path: EnclosedInStringProperty
+    var TransformName: EnclosedInStringProperty
+    var Parameters: js.UndefOr[TransformConfigParameterList]
+    var Version: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object DynamicTransform {
+    @inline
+    def apply(
+        FunctionName: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: EnclosedInStringProperty,
+        Path: EnclosedInStringProperty,
+        TransformName: EnclosedInStringProperty,
+        Parameters: js.UndefOr[TransformConfigParameterList] = js.undefined,
+        Version: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): DynamicTransform = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any],
+        "TransformName" -> TransformName.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamicTransform]
+    }
+  }
+
+  /** Specifies a DynamoDB data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait DynamoDBCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object DynamoDBCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): DynamoDBCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DynamoDBCatalogSource]
+    }
+  }
+
   /** Specifies an Amazon DynamoDB table to crawl.
     */
   @js.native
@@ -4547,7 +6477,7 @@ package object glue {
     }
   }
 
-  /** An edge represents a directed connection between two components on a workflow graph.
+  /** An edge represents a directed connection between two Glue components that are part of the workflow the edge belongs to.
     */
   @js.native
   trait Edge extends js.Object {
@@ -4657,6 +6587,41 @@ package object glue {
     }
   }
 
+  /** Specifies your data quality evaluation criteria.
+    */
+  @js.native
+  trait EvaluateDataQuality extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Ruleset: DQDLString
+    var Output: js.UndefOr[DQTransformOutput]
+    var PublishingOptions: js.UndefOr[DQResultsPublishingOptions]
+    var StopJobOnFailureOptions: js.UndefOr[DQStopJobOnFailureOptions]
+  }
+
+  object EvaluateDataQuality {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Ruleset: DQDLString,
+        Output: js.UndefOr[DQTransformOutput] = js.undefined,
+        PublishingOptions: js.UndefOr[DQResultsPublishingOptions] = js.undefined,
+        StopJobOnFailureOptions: js.UndefOr[DQStopJobOnFailureOptions] = js.undefined
+    ): EvaluateDataQuality = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Ruleset" -> Ruleset.asInstanceOf[js.Any]
+      )
+
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      PublishingOptions.foreach(__v => __obj.updateDynamic("PublishingOptions")(__v.asInstanceOf[js.Any]))
+      StopJobOnFailureOptions.foreach(__v => __obj.updateDynamic("StopJobOnFailureOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluateDataQuality]
+    }
+  }
+
   /** Evaluation metrics provide an estimate of the quality of your machine learning transform.
     */
   @js.native
@@ -4736,6 +6701,111 @@ package object glue {
       val __obj = js.Dynamic.literal()
       OutputS3Path.foreach(__v => __obj.updateDynamic("OutputS3Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportLabelsTaskRunProperties]
+    }
+  }
+
+  /** Specifies a transform that locates records in the dataset that have missing values and adds a new field with a value determined by imputation. The input data set is used to train the machine learning model that determines what the missing value should be.
+    */
+  @js.native
+  trait FillMissingValues extends js.Object {
+    var ImputedPath: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var FilledPath: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object FillMissingValues {
+    @inline
+    def apply(
+        ImputedPath: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        FilledPath: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): FillMissingValues = {
+      val __obj = js.Dynamic.literal(
+        "ImputedPath" -> ImputedPath.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      FilledPath.foreach(__v => __obj.updateDynamic("FilledPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FillMissingValues]
+    }
+  }
+
+  /** Specifies a transform that splits a dataset into two, based on a filter condition.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Filters: FilterExpressions
+    var Inputs: OneInput
+    var LogicalOperator: FilterLogicalOperator
+    var Name: NodeName
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Filters: FilterExpressions,
+        Inputs: OneInput,
+        LogicalOperator: FilterLogicalOperator,
+        Name: NodeName
+    ): Filter = {
+      val __obj = js.Dynamic.literal(
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "LogicalOperator" -> LogicalOperator.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /** Specifies a filter expression.
+    */
+  @js.native
+  trait FilterExpression extends js.Object {
+    var Operation: FilterOperation
+    var Values: FilterValues
+    var Negated: js.UndefOr[BoxedBoolean]
+  }
+
+  object FilterExpression {
+    @inline
+    def apply(
+        Operation: FilterOperation,
+        Values: FilterValues,
+        Negated: js.UndefOr[BoxedBoolean] = js.undefined
+    ): FilterExpression = {
+      val __obj = js.Dynamic.literal(
+        "Operation" -> Operation.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+
+      Negated.foreach(__v => __obj.updateDynamic("Negated")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterExpression]
+    }
+  }
+
+  /** Represents a single entry in the list of values for a <code>FilterExpression</code>.
+    */
+  @js.native
+  trait FilterValue extends js.Object {
+    var Type: FilterValueType
+    var Value: EnclosedInStringProperties
+  }
+
+  object FilterValue {
+    @inline
+    def apply(
+        Type: FilterValueType,
+        Value: EnclosedInStringProperties
+    ): FilterValue = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FilterValue]
     }
   }
 
@@ -5361,6 +7431,45 @@ package object glue {
   }
 
   @js.native
+  trait GetCustomEntityTypeRequest extends js.Object {
+    var Name: NameString
+  }
+
+  object GetCustomEntityTypeRequest {
+    @inline
+    def apply(
+        Name: NameString
+    ): GetCustomEntityTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetCustomEntityTypeRequest]
+    }
+  }
+
+  @js.native
+  trait GetCustomEntityTypeResponse extends js.Object {
+    var ContextWords: js.UndefOr[ContextWords]
+    var Name: js.UndefOr[NameString]
+    var RegexString: js.UndefOr[NameString]
+  }
+
+  object GetCustomEntityTypeResponse {
+    @inline
+    def apply(
+        ContextWords: js.UndefOr[ContextWords] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        RegexString: js.UndefOr[NameString] = js.undefined
+    ): GetCustomEntityTypeResponse = {
+      val __obj = js.Dynamic.literal()
+      ContextWords.foreach(__v => __obj.updateDynamic("ContextWords")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RegexString.foreach(__v => __obj.updateDynamic("RegexString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCustomEntityTypeResponse]
+    }
+  }
+
+  @js.native
   trait GetDataCatalogEncryptionSettingsRequest extends js.Object {
     var CatalogId: js.UndefOr[CatalogIdString]
   }
@@ -5389,6 +7498,261 @@ package object glue {
       val __obj = js.Dynamic.literal()
       DataCatalogEncryptionSettings.foreach(__v => __obj.updateDynamic("DataCatalogEncryptionSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataCatalogEncryptionSettingsResponse]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityResultRequest extends js.Object {
+    var ResultId: HashString
+  }
+
+  object GetDataQualityResultRequest {
+    @inline
+    def apply(
+        ResultId: HashString
+    ): GetDataQualityResultRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResultId" -> ResultId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataQualityResultRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityResultResponse extends js.Object {
+    var CompletedOn: js.UndefOr[Timestamp]
+    var DataSource: js.UndefOr[DataSource]
+    var EvaluationContext: js.UndefOr[GenericString]
+    var JobName: js.UndefOr[NameString]
+    var JobRunId: js.UndefOr[HashString]
+    var ResultId: js.UndefOr[HashString]
+    var RuleResults: js.UndefOr[DataQualityRuleResults]
+    var RulesetEvaluationRunId: js.UndefOr[HashString]
+    var RulesetName: js.UndefOr[NameString]
+    var Score: js.UndefOr[GenericBoundedDouble]
+    var StartedOn: js.UndefOr[Timestamp]
+  }
+
+  object GetDataQualityResultResponse {
+    @inline
+    def apply(
+        CompletedOn: js.UndefOr[Timestamp] = js.undefined,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        EvaluationContext: js.UndefOr[GenericString] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        JobRunId: js.UndefOr[HashString] = js.undefined,
+        ResultId: js.UndefOr[HashString] = js.undefined,
+        RuleResults: js.UndefOr[DataQualityRuleResults] = js.undefined,
+        RulesetEvaluationRunId: js.UndefOr[HashString] = js.undefined,
+        RulesetName: js.UndefOr[NameString] = js.undefined,
+        Score: js.UndefOr[GenericBoundedDouble] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined
+    ): GetDataQualityResultResponse = {
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      EvaluationContext.foreach(__v => __obj.updateDynamic("EvaluationContext")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
+      ResultId.foreach(__v => __obj.updateDynamic("ResultId")(__v.asInstanceOf[js.Any]))
+      RuleResults.foreach(__v => __obj.updateDynamic("RuleResults")(__v.asInstanceOf[js.Any]))
+      RulesetEvaluationRunId.foreach(__v => __obj.updateDynamic("RulesetEvaluationRunId")(__v.asInstanceOf[js.Any]))
+      RulesetName.foreach(__v => __obj.updateDynamic("RulesetName")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityResultResponse]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRuleRecommendationRunRequest extends js.Object {
+    var RunId: HashString
+  }
+
+  object GetDataQualityRuleRecommendationRunRequest {
+    @inline
+    def apply(
+        RunId: HashString
+    ): GetDataQualityRuleRecommendationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataQualityRuleRecommendationRunRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRuleRecommendationRunResponse extends js.Object {
+    var CompletedOn: js.UndefOr[Timestamp]
+    var CreatedRulesetName: js.UndefOr[NameString]
+    var DataSource: js.UndefOr[DataSource]
+    var ErrorString: js.UndefOr[GenericString]
+    var ExecutionTime: js.UndefOr[ExecutionTime]
+    var LastModifiedOn: js.UndefOr[Timestamp]
+    var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var RecommendedRuleset: js.UndefOr[DataQualityRulesetString]
+    var Role: js.UndefOr[RoleString]
+    var RunId: js.UndefOr[HashString]
+    var StartedOn: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[TaskStatusType]
+    var Timeout: js.UndefOr[Timeout]
+  }
+
+  object GetDataQualityRuleRecommendationRunResponse {
+    @inline
+    def apply(
+        CompletedOn: js.UndefOr[Timestamp] = js.undefined,
+        CreatedRulesetName: js.UndefOr[NameString] = js.undefined,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        ErrorString: js.UndefOr[GenericString] = js.undefined,
+        ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
+        LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
+        NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        RecommendedRuleset: js.UndefOr[DataQualityRulesetString] = js.undefined,
+        Role: js.UndefOr[RoleString] = js.undefined,
+        RunId: js.UndefOr[HashString] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[TaskStatusType] = js.undefined,
+        Timeout: js.UndefOr[Timeout] = js.undefined
+    ): GetDataQualityRuleRecommendationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      CreatedRulesetName.foreach(__v => __obj.updateDynamic("CreatedRulesetName")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      RecommendedRuleset.foreach(__v => __obj.updateDynamic("RecommendedRuleset")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityRuleRecommendationRunResponse]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRulesetEvaluationRunRequest extends js.Object {
+    var RunId: HashString
+  }
+
+  object GetDataQualityRulesetEvaluationRunRequest {
+    @inline
+    def apply(
+        RunId: HashString
+    ): GetDataQualityRulesetEvaluationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataQualityRulesetEvaluationRunRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRulesetEvaluationRunResponse extends js.Object {
+    var AdditionalRunOptions: js.UndefOr[DataQualityEvaluationRunAdditionalRunOptions]
+    var CompletedOn: js.UndefOr[Timestamp]
+    var DataSource: js.UndefOr[DataSource]
+    var ErrorString: js.UndefOr[GenericString]
+    var ExecutionTime: js.UndefOr[ExecutionTime]
+    var LastModifiedOn: js.UndefOr[Timestamp]
+    var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var ResultIds: js.UndefOr[DataQualityResultIdList]
+    var Role: js.UndefOr[RoleString]
+    var RulesetNames: js.UndefOr[RulesetNames]
+    var RunId: js.UndefOr[HashString]
+    var StartedOn: js.UndefOr[Timestamp]
+    var Status: js.UndefOr[TaskStatusType]
+    var Timeout: js.UndefOr[Timeout]
+  }
+
+  object GetDataQualityRulesetEvaluationRunResponse {
+    @inline
+    def apply(
+        AdditionalRunOptions: js.UndefOr[DataQualityEvaluationRunAdditionalRunOptions] = js.undefined,
+        CompletedOn: js.UndefOr[Timestamp] = js.undefined,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        ErrorString: js.UndefOr[GenericString] = js.undefined,
+        ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
+        LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
+        NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        ResultIds: js.UndefOr[DataQualityResultIdList] = js.undefined,
+        Role: js.UndefOr[RoleString] = js.undefined,
+        RulesetNames: js.UndefOr[RulesetNames] = js.undefined,
+        RunId: js.UndefOr[HashString] = js.undefined,
+        StartedOn: js.UndefOr[Timestamp] = js.undefined,
+        Status: js.UndefOr[TaskStatusType] = js.undefined,
+        Timeout: js.UndefOr[Timeout] = js.undefined
+    ): GetDataQualityRulesetEvaluationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      AdditionalRunOptions.foreach(__v => __obj.updateDynamic("AdditionalRunOptions")(__v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      ResultIds.foreach(__v => __obj.updateDynamic("ResultIds")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      RulesetNames.foreach(__v => __obj.updateDynamic("RulesetNames")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityRulesetEvaluationRunResponse]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRulesetRequest extends js.Object {
+    var Name: NameString
+  }
+
+  object GetDataQualityRulesetRequest {
+    @inline
+    def apply(
+        Name: NameString
+    ): GetDataQualityRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataQualityRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityRulesetResponse extends js.Object {
+    var CreatedOn: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[DescriptionString]
+    var LastModifiedOn: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[NameString]
+    var RecommendationRunId: js.UndefOr[HashString]
+    var Ruleset: js.UndefOr[DataQualityRulesetString]
+    var TargetTable: js.UndefOr[DataQualityTargetTable]
+  }
+
+  object GetDataQualityRulesetResponse {
+    @inline
+    def apply(
+        CreatedOn: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        LastModifiedOn: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        RecommendationRunId: js.UndefOr[HashString] = js.undefined,
+        Ruleset: js.UndefOr[DataQualityRulesetString] = js.undefined,
+        TargetTable: js.UndefOr[DataQualityTargetTable] = js.undefined
+    ): GetDataQualityRulesetResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RecommendationRunId.foreach(__v => __obj.updateDynamic("RecommendationRunId")(__v.asInstanceOf[js.Any]))
+      Ruleset.foreach(__v => __obj.updateDynamic("Ruleset")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityRulesetResponse]
     }
   }
 
@@ -6677,6 +9041,83 @@ package object glue {
   }
 
   @js.native
+  trait GetSessionRequest extends js.Object {
+    var Id: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object GetSessionRequest {
+    @inline
+    def apply(
+        Id: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): GetSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetSessionResponse extends js.Object {
+    var Session: js.UndefOr[Session]
+  }
+
+  object GetSessionResponse {
+    @inline
+    def apply(
+        Session: js.UndefOr[Session] = js.undefined
+    ): GetSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSessionResponse]
+    }
+  }
+
+  @js.native
+  trait GetStatementRequest extends js.Object {
+    var Id: IntegerValue
+    var SessionId: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object GetStatementRequest {
+    @inline
+    def apply(
+        Id: IntegerValue,
+        SessionId: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): GetStatementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStatementRequest]
+    }
+  }
+
+  @js.native
+  trait GetStatementResponse extends js.Object {
+    var Statement: js.UndefOr[Statement]
+  }
+
+  object GetStatementResponse {
+    @inline
+    def apply(
+        Statement: js.UndefOr[Statement] = js.undefined
+    ): GetStatementResponse = {
+      val __obj = js.Dynamic.literal()
+      Statement.foreach(__v => __obj.updateDynamic("Statement")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStatementResponse]
+    }
+  }
+
+  @js.native
   trait GetTableRequest extends js.Object {
     var DatabaseName: NameString
     var Name: NameString
@@ -6977,6 +9418,177 @@ package object glue {
   }
 
   @js.native
+  trait GetUnfilteredPartitionMetadataRequest extends js.Object {
+    var CatalogId: CatalogIdString
+    var DatabaseName: NameString
+    var PartitionValues: ValueStringList
+    var SupportedPermissionTypes: PermissionTypeList
+    var TableName: NameString
+    var AuditContext: js.UndefOr[AuditContext]
+  }
+
+  object GetUnfilteredPartitionMetadataRequest {
+    @inline
+    def apply(
+        CatalogId: CatalogIdString,
+        DatabaseName: NameString,
+        PartitionValues: ValueStringList,
+        SupportedPermissionTypes: PermissionTypeList,
+        TableName: NameString,
+        AuditContext: js.UndefOr[AuditContext] = js.undefined
+    ): GetUnfilteredPartitionMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
+        "SupportedPermissionTypes" -> SupportedPermissionTypes.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      AuditContext.foreach(__v => __obj.updateDynamic("AuditContext")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredPartitionMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetUnfilteredPartitionMetadataResponse extends js.Object {
+    var AuthorizedColumns: js.UndefOr[NameStringList]
+    var IsRegisteredWithLakeFormation: js.UndefOr[Boolean]
+    var Partition: js.UndefOr[Partition]
+  }
+
+  object GetUnfilteredPartitionMetadataResponse {
+    @inline
+    def apply(
+        AuthorizedColumns: js.UndefOr[NameStringList] = js.undefined,
+        IsRegisteredWithLakeFormation: js.UndefOr[Boolean] = js.undefined,
+        Partition: js.UndefOr[Partition] = js.undefined
+    ): GetUnfilteredPartitionMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      AuthorizedColumns.foreach(__v => __obj.updateDynamic("AuthorizedColumns")(__v.asInstanceOf[js.Any]))
+      IsRegisteredWithLakeFormation.foreach(__v => __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any]))
+      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredPartitionMetadataResponse]
+    }
+  }
+
+  @js.native
+  trait GetUnfilteredPartitionsMetadataRequest extends js.Object {
+    var CatalogId: CatalogIdString
+    var DatabaseName: NameString
+    var SupportedPermissionTypes: PermissionTypeList
+    var TableName: NameString
+    var AuditContext: js.UndefOr[AuditContext]
+    var Expression: js.UndefOr[PredicateString]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
+    var Segment: js.UndefOr[Segment]
+  }
+
+  object GetUnfilteredPartitionsMetadataRequest {
+    @inline
+    def apply(
+        CatalogId: CatalogIdString,
+        DatabaseName: NameString,
+        SupportedPermissionTypes: PermissionTypeList,
+        TableName: NameString,
+        AuditContext: js.UndefOr[AuditContext] = js.undefined,
+        Expression: js.UndefOr[PredicateString] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        Segment: js.UndefOr[Segment] = js.undefined
+    ): GetUnfilteredPartitionsMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "SupportedPermissionTypes" -> SupportedPermissionTypes.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      AuditContext.foreach(__v => __obj.updateDynamic("AuditContext")(__v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Segment.foreach(__v => __obj.updateDynamic("Segment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredPartitionsMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetUnfilteredPartitionsMetadataResponse extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var UnfilteredPartitions: js.UndefOr[UnfilteredPartitionList]
+  }
+
+  object GetUnfilteredPartitionsMetadataResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        UnfilteredPartitions: js.UndefOr[UnfilteredPartitionList] = js.undefined
+    ): GetUnfilteredPartitionsMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UnfilteredPartitions.foreach(__v => __obj.updateDynamic("UnfilteredPartitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredPartitionsMetadataResponse]
+    }
+  }
+
+  @js.native
+  trait GetUnfilteredTableMetadataRequest extends js.Object {
+    var CatalogId: CatalogIdString
+    var DatabaseName: NameString
+    var Name: NameString
+    var SupportedPermissionTypes: PermissionTypeList
+    var AuditContext: js.UndefOr[AuditContext]
+  }
+
+  object GetUnfilteredTableMetadataRequest {
+    @inline
+    def apply(
+        CatalogId: CatalogIdString,
+        DatabaseName: NameString,
+        Name: NameString,
+        SupportedPermissionTypes: PermissionTypeList,
+        AuditContext: js.UndefOr[AuditContext] = js.undefined
+    ): GetUnfilteredTableMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SupportedPermissionTypes" -> SupportedPermissionTypes.asInstanceOf[js.Any]
+      )
+
+      AuditContext.foreach(__v => __obj.updateDynamic("AuditContext")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredTableMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetUnfilteredTableMetadataResponse extends js.Object {
+    var AuthorizedColumns: js.UndefOr[NameStringList]
+    var CellFilters: js.UndefOr[ColumnRowFilterList]
+    var IsRegisteredWithLakeFormation: js.UndefOr[Boolean]
+    var Table: js.UndefOr[Table]
+  }
+
+  object GetUnfilteredTableMetadataResponse {
+    @inline
+    def apply(
+        AuthorizedColumns: js.UndefOr[NameStringList] = js.undefined,
+        CellFilters: js.UndefOr[ColumnRowFilterList] = js.undefined,
+        IsRegisteredWithLakeFormation: js.UndefOr[Boolean] = js.undefined,
+        Table: js.UndefOr[Table] = js.undefined
+    ): GetUnfilteredTableMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      AuthorizedColumns.foreach(__v => __obj.updateDynamic("AuthorizedColumns")(__v.asInstanceOf[js.Any]))
+      CellFilters.foreach(__v => __obj.updateDynamic("CellFilters")(__v.asInstanceOf[js.Any]))
+      IsRegisteredWithLakeFormation.foreach(__v => __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUnfilteredTableMetadataResponse]
+    }
+  }
+
+  @js.native
   trait GetUserDefinedFunctionRequest extends js.Object {
     var DatabaseName: NameString
     var FunctionName: NameString
@@ -7251,12 +9863,54 @@ package object glue {
     }
   }
 
+  /** Specifies a user-defined schema when a schema cannot be determined by Glue.
+    */
+  @js.native
+  trait GlueSchema extends js.Object {
+    var Columns: js.UndefOr[GlueStudioSchemaColumnList]
+  }
+
+  object GlueSchema {
+    @inline
+    def apply(
+        Columns: js.UndefOr[GlueStudioSchemaColumnList] = js.undefined
+    ): GlueSchema = {
+      val __obj = js.Dynamic.literal()
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlueSchema]
+    }
+  }
+
+  /** Specifies a single column in a Glue schema definition.
+    */
+  @js.native
+  trait GlueStudioSchemaColumn extends js.Object {
+    var Name: GlueStudioColumnNameString
+    var Type: js.UndefOr[ColumnTypeString]
+  }
+
+  object GlueStudioSchemaColumn {
+    @inline
+    def apply(
+        Name: GlueStudioColumnNameString,
+        Type: js.UndefOr[ColumnTypeString] = js.undefined
+    ): GlueStudioSchemaColumn = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlueStudioSchemaColumn]
+    }
+  }
+
   /** The database and table in the Glue Data Catalog that is used for input or output data.
     */
   @js.native
   trait GlueTable extends js.Object {
     var DatabaseName: NameString
     var TableName: NameString
+    var AdditionalOptions: js.UndefOr[GlueTableAdditionalOptions]
     var CatalogId: js.UndefOr[NameString]
     var ConnectionName: js.UndefOr[NameString]
   }
@@ -7266,6 +9920,7 @@ package object glue {
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
+        AdditionalOptions: js.UndefOr[GlueTableAdditionalOptions] = js.undefined,
         CatalogId: js.UndefOr[NameString] = js.undefined,
         ConnectionName: js.UndefOr[NameString] = js.undefined
     ): GlueTable = {
@@ -7274,9 +9929,77 @@ package object glue {
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlueTable]
+    }
+  }
+
+  /** Specifies the data store in the governed Glue Data Catalog.
+    */
+  @js.native
+  trait GovernedCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var AdditionalOptions: js.UndefOr[S3SourceAdditionalOptions]
+    var PartitionPredicate: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object GovernedCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        AdditionalOptions: js.UndefOr[S3SourceAdditionalOptions] = js.undefined,
+        PartitionPredicate: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): GovernedCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      PartitionPredicate.foreach(__v => __obj.updateDynamic("PartitionPredicate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GovernedCatalogSource]
+    }
+  }
+
+  /** Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.
+    */
+  @js.native
+  trait GovernedCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var PartitionKeys: js.UndefOr[GlueStudioPathList]
+    var SchemaChangePolicy: js.UndefOr[CatalogSchemaChangePolicy]
+  }
+
+  object GovernedCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        PartitionKeys: js.UndefOr[GlueStudioPathList] = js.undefined,
+        SchemaChangePolicy: js.UndefOr[CatalogSchemaChangePolicy] = js.undefined
+    ): GovernedCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GovernedCatalogTarget]
     }
   }
 
@@ -7366,11 +10089,133 @@ package object glue {
     }
   }
 
+  /** Additional connection options for the connector.
+    */
+  @js.native
+  trait JDBCConnectorOptions extends js.Object {
+    var DataTypeMapping: js.UndefOr[JDBCDataTypeMapping]
+    var FilterPredicate: js.UndefOr[EnclosedInStringProperty]
+    var JobBookmarkKeys: js.UndefOr[EnclosedInStringProperties]
+    var JobBookmarkKeysSortOrder: js.UndefOr[EnclosedInStringProperty]
+    var LowerBound: js.UndefOr[BoxedNonNegativeLong]
+    var NumPartitions: js.UndefOr[BoxedNonNegativeLong]
+    var PartitionColumn: js.UndefOr[EnclosedInStringProperty]
+    var UpperBound: js.UndefOr[BoxedNonNegativeLong]
+  }
+
+  object JDBCConnectorOptions {
+    @inline
+    def apply(
+        DataTypeMapping: js.UndefOr[JDBCDataTypeMapping] = js.undefined,
+        FilterPredicate: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        JobBookmarkKeys: js.UndefOr[EnclosedInStringProperties] = js.undefined,
+        JobBookmarkKeysSortOrder: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        LowerBound: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        NumPartitions: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        PartitionColumn: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        UpperBound: js.UndefOr[BoxedNonNegativeLong] = js.undefined
+    ): JDBCConnectorOptions = {
+      val __obj = js.Dynamic.literal()
+      DataTypeMapping.foreach(__v => __obj.updateDynamic("DataTypeMapping")(__v.asInstanceOf[js.Any]))
+      FilterPredicate.foreach(__v => __obj.updateDynamic("FilterPredicate")(__v.asInstanceOf[js.Any]))
+      JobBookmarkKeys.foreach(__v => __obj.updateDynamic("JobBookmarkKeys")(__v.asInstanceOf[js.Any]))
+      JobBookmarkKeysSortOrder.foreach(__v => __obj.updateDynamic("JobBookmarkKeysSortOrder")(__v.asInstanceOf[js.Any]))
+      LowerBound.foreach(__v => __obj.updateDynamic("LowerBound")(__v.asInstanceOf[js.Any]))
+      NumPartitions.foreach(__v => __obj.updateDynamic("NumPartitions")(__v.asInstanceOf[js.Any]))
+      PartitionColumn.foreach(__v => __obj.updateDynamic("PartitionColumn")(__v.asInstanceOf[js.Any]))
+      UpperBound.foreach(__v => __obj.updateDynamic("UpperBound")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JDBCConnectorOptions]
+    }
+  }
+
+  /** Specifies a connector to a JDBC data source.
+    */
+  @js.native
+  trait JDBCConnectorSource extends js.Object {
+    var ConnectionName: EnclosedInStringProperty
+    var ConnectionType: EnclosedInStringProperty
+    var ConnectorName: EnclosedInStringProperty
+    var Name: NodeName
+    var AdditionalOptions: js.UndefOr[JDBCConnectorOptions]
+    var ConnectionTable: js.UndefOr[EnclosedInStringPropertyWithQuote]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+    var Query: js.UndefOr[SqlQuery]
+  }
+
+  object JDBCConnectorSource {
+    @inline
+    def apply(
+        ConnectionName: EnclosedInStringProperty,
+        ConnectionType: EnclosedInStringProperty,
+        ConnectorName: EnclosedInStringProperty,
+        Name: NodeName,
+        AdditionalOptions: js.UndefOr[JDBCConnectorOptions] = js.undefined,
+        ConnectionTable: js.UndefOr[EnclosedInStringPropertyWithQuote] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined,
+        Query: js.UndefOr[SqlQuery] = js.undefined
+    ): JDBCConnectorSource = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "ConnectorName" -> ConnectorName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      ConnectionTable.foreach(__v => __obj.updateDynamic("ConnectionTable")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JDBCConnectorSource]
+    }
+  }
+
+  /** Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+    */
+  @js.native
+  trait JDBCConnectorTarget extends js.Object {
+    var ConnectionName: EnclosedInStringProperty
+    var ConnectionTable: EnclosedInStringPropertyWithQuote
+    var ConnectionType: EnclosedInStringProperty
+    var ConnectorName: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var AdditionalOptions: js.UndefOr[AdditionalOptions]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object JDBCConnectorTarget {
+    @inline
+    def apply(
+        ConnectionName: EnclosedInStringProperty,
+        ConnectionTable: EnclosedInStringPropertyWithQuote,
+        ConnectionType: EnclosedInStringProperty,
+        ConnectorName: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        AdditionalOptions: js.UndefOr[AdditionalOptions] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): JDBCConnectorTarget = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "ConnectionTable" -> ConnectionTable.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "ConnectorName" -> ConnectorName.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JDBCConnectorTarget]
+    }
+  }
+
   /** Specifies a JDBC data store to crawl.
     */
   @js.native
   trait JdbcTarget extends js.Object {
     var ConnectionName: js.UndefOr[ConnectionName]
+    var EnableAdditionalMetadata: js.UndefOr[EnableAdditionalMetadata]
     var Exclusions: js.UndefOr[PathList]
     var Path: js.UndefOr[Path]
   }
@@ -7379,11 +10224,13 @@ package object glue {
     @inline
     def apply(
         ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
+        EnableAdditionalMetadata: js.UndefOr[EnableAdditionalMetadata] = js.undefined,
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): JdbcTarget = {
       val __obj = js.Dynamic.literal()
       ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      EnableAdditionalMetadata.foreach(__v => __obj.updateDynamic("EnableAdditionalMetadata")(__v.asInstanceOf[js.Any]))
       Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JdbcTarget]
@@ -7395,11 +10242,13 @@ package object glue {
   @js.native
   trait Job extends js.Object {
     var AllocatedCapacity: js.UndefOr[IntegerValue]
+    var CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes]
     var Command: js.UndefOr[JobCommand]
     var Connections: js.UndefOr[ConnectionsList]
     var CreatedOn: js.UndefOr[TimestampValue]
     var DefaultArguments: js.UndefOr[GenericMap]
     var Description: js.UndefOr[DescriptionString]
+    var ExecutionClass: js.UndefOr[ExecutionClass]
     var ExecutionProperty: js.UndefOr[ExecutionProperty]
     var GlueVersion: js.UndefOr[GlueVersionString]
     var LastModifiedOn: js.UndefOr[TimestampValue]
@@ -7412,6 +10261,7 @@ package object glue {
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var Role: js.UndefOr[RoleString]
     var SecurityConfiguration: js.UndefOr[NameString]
+    var SourceControlDetails: js.UndefOr[SourceControlDetails]
     var Timeout: js.UndefOr[Timeout]
     var WorkerType: js.UndefOr[WorkerType]
   }
@@ -7420,11 +10270,13 @@ package object glue {
     @inline
     def apply(
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
+        CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes] = js.undefined,
         Command: js.UndefOr[JobCommand] = js.undefined,
         Connections: js.UndefOr[ConnectionsList] = js.undefined,
         CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
         DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        ExecutionClass: js.UndefOr[ExecutionClass] = js.undefined,
         ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
         GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
@@ -7437,16 +10289,19 @@ package object glue {
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         Role: js.UndefOr[RoleString] = js.undefined,
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+        SourceControlDetails: js.UndefOr[SourceControlDetails] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): Job = {
       val __obj = js.Dynamic.literal()
       AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      CodeGenConfigurationNodes.foreach(__v => __obj.updateDynamic("CodeGenConfigurationNodes")(__v.asInstanceOf[js.Any]))
       Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
       Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
       DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionClass.foreach(__v => __obj.updateDynamic("ExecutionClass")(__v.asInstanceOf[js.Any]))
       ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
       GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
@@ -7459,6 +10314,7 @@ package object glue {
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SourceControlDetails.foreach(__v => __obj.updateDynamic("SourceControlDetails")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
@@ -7572,7 +10428,9 @@ package object glue {
     var Arguments: js.UndefOr[GenericMap]
     var Attempt: js.UndefOr[AttemptCount]
     var CompletedOn: js.UndefOr[TimestampValue]
+    var DPUSeconds: js.UndefOr[NullableDouble]
     var ErrorMessage: js.UndefOr[ErrorString]
+    var ExecutionClass: js.UndefOr[ExecutionClass]
     var ExecutionTime: js.UndefOr[ExecutionTime]
     var GlueVersion: js.UndefOr[GlueVersionString]
     var Id: js.UndefOr[IdString]
@@ -7599,7 +10457,9 @@ package object glue {
         Arguments: js.UndefOr[GenericMap] = js.undefined,
         Attempt: js.UndefOr[AttemptCount] = js.undefined,
         CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
+        DPUSeconds: js.UndefOr[NullableDouble] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorString] = js.undefined,
+        ExecutionClass: js.UndefOr[ExecutionClass] = js.undefined,
         ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
         GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         Id: js.UndefOr[IdString] = js.undefined,
@@ -7623,7 +10483,9 @@ package object glue {
       Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
       Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
       CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DPUSeconds.foreach(__v => __obj.updateDynamic("DPUSeconds")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ExecutionClass.foreach(__v => __obj.updateDynamic("ExecutionClass")(__v.asInstanceOf[js.Any]))
       ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
       GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
@@ -7650,10 +10512,12 @@ package object glue {
   @js.native
   trait JobUpdate extends js.Object {
     var AllocatedCapacity: js.UndefOr[IntegerValue]
+    var CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes]
     var Command: js.UndefOr[JobCommand]
     var Connections: js.UndefOr[ConnectionsList]
     var DefaultArguments: js.UndefOr[GenericMap]
     var Description: js.UndefOr[DescriptionString]
+    var ExecutionClass: js.UndefOr[ExecutionClass]
     var ExecutionProperty: js.UndefOr[ExecutionProperty]
     var GlueVersion: js.UndefOr[GlueVersionString]
     var LogUri: js.UndefOr[UriString]
@@ -7664,6 +10528,7 @@ package object glue {
     var NumberOfWorkers: js.UndefOr[NullableInteger]
     var Role: js.UndefOr[RoleString]
     var SecurityConfiguration: js.UndefOr[NameString]
+    var SourceControlDetails: js.UndefOr[SourceControlDetails]
     var Timeout: js.UndefOr[Timeout]
     var WorkerType: js.UndefOr[WorkerType]
   }
@@ -7672,10 +10537,12 @@ package object glue {
     @inline
     def apply(
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
+        CodeGenConfigurationNodes: js.UndefOr[CodeGenConfigurationNodes] = js.undefined,
         Command: js.UndefOr[JobCommand] = js.undefined,
         Connections: js.UndefOr[ConnectionsList] = js.undefined,
         DefaultArguments: js.UndefOr[GenericMap] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        ExecutionClass: js.UndefOr[ExecutionClass] = js.undefined,
         ExecutionProperty: js.UndefOr[ExecutionProperty] = js.undefined,
         GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
         LogUri: js.UndefOr[UriString] = js.undefined,
@@ -7686,15 +10553,18 @@ package object glue {
         NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
         Role: js.UndefOr[RoleString] = js.undefined,
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+        SourceControlDetails: js.UndefOr[SourceControlDetails] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): JobUpdate = {
       val __obj = js.Dynamic.literal()
       AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      CodeGenConfigurationNodes.foreach(__v => __obj.updateDynamic("CodeGenConfigurationNodes")(__v.asInstanceOf[js.Any]))
       Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
       Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionClass.foreach(__v => __obj.updateDynamic("ExecutionClass")(__v.asInstanceOf[js.Any]))
       ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
       GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
@@ -7705,9 +10575,60 @@ package object glue {
       NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SourceControlDetails.foreach(__v => __obj.updateDynamic("SourceControlDetails")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobUpdate]
+    }
+  }
+
+  /** Specifies a transform that joins two datasets into one dataset using a comparison phrase on the specified data property keys. You can use inner, outer, left, right, left semi, and left anti joins.
+    */
+  @js.native
+  trait Join extends js.Object {
+    var Columns: JoinColumns
+    var Inputs: TwoInputs
+    var JoinType: JoinType
+    var Name: NodeName
+  }
+
+  object Join {
+    @inline
+    def apply(
+        Columns: JoinColumns,
+        Inputs: TwoInputs,
+        JoinType: JoinType,
+        Name: NodeName
+    ): Join = {
+      val __obj = js.Dynamic.literal(
+        "Columns" -> Columns.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "JoinType" -> JoinType.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Join]
+    }
+  }
+
+  /** Specifies a column to be joined.
+    */
+  @js.native
+  trait JoinColumn extends js.Object {
+    var From: EnclosedInStringProperty
+    var Keys: GlueStudioPathList
+  }
+
+  object JoinColumn {
+    @inline
+    def apply(
+        From: EnclosedInStringProperty,
+        Keys: GlueStudioPathList
+    ): JoinColumn = {
+      val __obj = js.Dynamic.literal(
+        "From" -> From.asInstanceOf[js.Any],
+        "Keys" -> Keys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JoinColumn]
     }
   }
 
@@ -7743,6 +10664,66 @@ package object glue {
     }
   }
 
+  /** Additional options for streaming.
+    */
+  @js.native
+  trait KafkaStreamingSourceOptions extends js.Object {
+    var Assign: js.UndefOr[EnclosedInStringProperty]
+    var BootstrapServers: js.UndefOr[EnclosedInStringProperty]
+    var Classification: js.UndefOr[EnclosedInStringProperty]
+    var ConnectionName: js.UndefOr[EnclosedInStringProperty]
+    var Delimiter: js.UndefOr[EnclosedInStringProperty]
+    var EndingOffsets: js.UndefOr[EnclosedInStringProperty]
+    var MaxOffsetsPerTrigger: js.UndefOr[BoxedNonNegativeLong]
+    var MinPartitions: js.UndefOr[BoxedNonNegativeInt]
+    var NumRetries: js.UndefOr[BoxedNonNegativeInt]
+    var PollTimeoutMs: js.UndefOr[BoxedNonNegativeLong]
+    var RetryIntervalMs: js.UndefOr[BoxedNonNegativeLong]
+    var SecurityProtocol: js.UndefOr[EnclosedInStringProperty]
+    var StartingOffsets: js.UndefOr[EnclosedInStringProperty]
+    var SubscribePattern: js.UndefOr[EnclosedInStringProperty]
+    var TopicName: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object KafkaStreamingSourceOptions {
+    @inline
+    def apply(
+        Assign: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        BootstrapServers: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        Classification: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        ConnectionName: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        Delimiter: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        EndingOffsets: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        MaxOffsetsPerTrigger: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        MinPartitions: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        NumRetries: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        PollTimeoutMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        RetryIntervalMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        SecurityProtocol: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        StartingOffsets: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        SubscribePattern: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        TopicName: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): KafkaStreamingSourceOptions = {
+      val __obj = js.Dynamic.literal()
+      Assign.foreach(__v => __obj.updateDynamic("Assign")(__v.asInstanceOf[js.Any]))
+      BootstrapServers.foreach(__v => __obj.updateDynamic("BootstrapServers")(__v.asInstanceOf[js.Any]))
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      EndingOffsets.foreach(__v => __obj.updateDynamic("EndingOffsets")(__v.asInstanceOf[js.Any]))
+      MaxOffsetsPerTrigger.foreach(__v => __obj.updateDynamic("MaxOffsetsPerTrigger")(__v.asInstanceOf[js.Any]))
+      MinPartitions.foreach(__v => __obj.updateDynamic("MinPartitions")(__v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.updateDynamic("NumRetries")(__v.asInstanceOf[js.Any]))
+      PollTimeoutMs.foreach(__v => __obj.updateDynamic("PollTimeoutMs")(__v.asInstanceOf[js.Any]))
+      RetryIntervalMs.foreach(__v => __obj.updateDynamic("RetryIntervalMs")(__v.asInstanceOf[js.Any]))
+      SecurityProtocol.foreach(__v => __obj.updateDynamic("SecurityProtocol")(__v.asInstanceOf[js.Any]))
+      StartingOffsets.foreach(__v => __obj.updateDynamic("StartingOffsets")(__v.asInstanceOf[js.Any]))
+      SubscribePattern.foreach(__v => __obj.updateDynamic("SubscribePattern")(__v.asInstanceOf[js.Any]))
+      TopicName.foreach(__v => __obj.updateDynamic("TopicName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KafkaStreamingSourceOptions]
+    }
+  }
+
   /** A partition key pair consisting of a name and a type.
     */
   @js.native
@@ -7765,6 +10746,75 @@ package object glue {
     }
   }
 
+  /** Additional options for the Amazon Kinesis streaming data source.
+    */
+  @js.native
+  trait KinesisStreamingSourceOptions extends js.Object {
+    var AddIdleTimeBetweenReads: js.UndefOr[BoxedBoolean]
+    var AvoidEmptyBatches: js.UndefOr[BoxedBoolean]
+    var Classification: js.UndefOr[EnclosedInStringProperty]
+    var Delimiter: js.UndefOr[EnclosedInStringProperty]
+    var DescribeShardInterval: js.UndefOr[BoxedNonNegativeLong]
+    var EndpointUrl: js.UndefOr[EnclosedInStringProperty]
+    var IdleTimeBetweenReadsInMs: js.UndefOr[BoxedNonNegativeLong]
+    var MaxFetchRecordsPerShard: js.UndefOr[BoxedNonNegativeLong]
+    var MaxFetchTimeInMs: js.UndefOr[BoxedNonNegativeLong]
+    var MaxRecordPerRead: js.UndefOr[BoxedNonNegativeLong]
+    var MaxRetryIntervalMs: js.UndefOr[BoxedNonNegativeLong]
+    var NumRetries: js.UndefOr[BoxedNonNegativeInt]
+    var RetryIntervalMs: js.UndefOr[BoxedNonNegativeLong]
+    var RoleArn: js.UndefOr[EnclosedInStringProperty]
+    var RoleSessionName: js.UndefOr[EnclosedInStringProperty]
+    var StartingPosition: js.UndefOr[StartingPosition]
+    var StreamArn: js.UndefOr[EnclosedInStringProperty]
+    var StreamName: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object KinesisStreamingSourceOptions {
+    @inline
+    def apply(
+        AddIdleTimeBetweenReads: js.UndefOr[BoxedBoolean] = js.undefined,
+        AvoidEmptyBatches: js.UndefOr[BoxedBoolean] = js.undefined,
+        Classification: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        Delimiter: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        DescribeShardInterval: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        EndpointUrl: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        IdleTimeBetweenReadsInMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        MaxFetchRecordsPerShard: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        MaxFetchTimeInMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        MaxRecordPerRead: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        MaxRetryIntervalMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        NumRetries: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        RetryIntervalMs: js.UndefOr[BoxedNonNegativeLong] = js.undefined,
+        RoleArn: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        RoleSessionName: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        StartingPosition: js.UndefOr[StartingPosition] = js.undefined,
+        StreamArn: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        StreamName: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): KinesisStreamingSourceOptions = {
+      val __obj = js.Dynamic.literal()
+      AddIdleTimeBetweenReads.foreach(__v => __obj.updateDynamic("AddIdleTimeBetweenReads")(__v.asInstanceOf[js.Any]))
+      AvoidEmptyBatches.foreach(__v => __obj.updateDynamic("AvoidEmptyBatches")(__v.asInstanceOf[js.Any]))
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DescribeShardInterval.foreach(__v => __obj.updateDynamic("DescribeShardInterval")(__v.asInstanceOf[js.Any]))
+      EndpointUrl.foreach(__v => __obj.updateDynamic("EndpointUrl")(__v.asInstanceOf[js.Any]))
+      IdleTimeBetweenReadsInMs.foreach(__v => __obj.updateDynamic("IdleTimeBetweenReadsInMs")(__v.asInstanceOf[js.Any]))
+      MaxFetchRecordsPerShard.foreach(__v => __obj.updateDynamic("MaxFetchRecordsPerShard")(__v.asInstanceOf[js.Any]))
+      MaxFetchTimeInMs.foreach(__v => __obj.updateDynamic("MaxFetchTimeInMs")(__v.asInstanceOf[js.Any]))
+      MaxRecordPerRead.foreach(__v => __obj.updateDynamic("MaxRecordPerRead")(__v.asInstanceOf[js.Any]))
+      MaxRetryIntervalMs.foreach(__v => __obj.updateDynamic("MaxRetryIntervalMs")(__v.asInstanceOf[js.Any]))
+      NumRetries.foreach(__v => __obj.updateDynamic("NumRetries")(__v.asInstanceOf[js.Any]))
+      RetryIntervalMs.foreach(__v => __obj.updateDynamic("RetryIntervalMs")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoleSessionName.foreach(__v => __obj.updateDynamic("RoleSessionName")(__v.asInstanceOf[js.Any]))
+      StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
+      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KinesisStreamingSourceOptions]
+    }
+  }
+
   /** Specifies configuration properties for a labeling set generation task run.
     */
   @js.native
@@ -7780,6 +10830,27 @@ package object glue {
       val __obj = js.Dynamic.literal()
       OutputS3Path.foreach(__v => __obj.updateDynamic("OutputS3Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingSetGenerationTaskRunProperties]
+    }
+  }
+
+  /** Specifies Lake Formation configuration settings for the crawler.
+    */
+  @js.native
+  trait LakeFormationConfiguration extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var UseLakeFormationCredentials: js.UndefOr[NullableBoolean]
+  }
+
+  object LakeFormationConfiguration {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        UseLakeFormationCredentials: js.UndefOr[NullableBoolean] = js.undefined
+    ): LakeFormationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      UseLakeFormationCredentials.foreach(__v => __obj.updateDynamic("UseLakeFormationCredentials")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LakeFormationConfiguration]
     }
   }
 
@@ -7943,6 +11014,259 @@ package object glue {
       CrawlerNames.foreach(__v => __obj.updateDynamic("CrawlerNames")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCrawlersResponse]
+    }
+  }
+
+  @js.native
+  trait ListCrawlsRequest extends js.Object {
+    var CrawlerName: NameString
+    var Filters: js.UndefOr[CrawlsFilterList]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListCrawlsRequest {
+    @inline
+    def apply(
+        CrawlerName: NameString,
+        Filters: js.UndefOr[CrawlsFilterList] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListCrawlsRequest = {
+      val __obj = js.Dynamic.literal(
+        "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCrawlsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCrawlsResponse extends js.Object {
+    var Crawls: js.UndefOr[CrawlerHistoryList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListCrawlsResponse {
+    @inline
+    def apply(
+        Crawls: js.UndefOr[CrawlerHistoryList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListCrawlsResponse = {
+      val __obj = js.Dynamic.literal()
+      Crawls.foreach(__v => __obj.updateDynamic("Crawls")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCrawlsResponse]
+    }
+  }
+
+  @js.native
+  trait ListCustomEntityTypesRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCustomEntityTypesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCustomEntityTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomEntityTypesRequest]
+    }
+  }
+
+  @js.native
+  trait ListCustomEntityTypesResponse extends js.Object {
+    var CustomEntityTypes: js.UndefOr[CustomEntityTypes]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCustomEntityTypesResponse {
+    @inline
+    def apply(
+        CustomEntityTypes: js.UndefOr[CustomEntityTypes] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCustomEntityTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomEntityTypes.foreach(__v => __obj.updateDynamic("CustomEntityTypes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomEntityTypesResponse]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityResultsRequest extends js.Object {
+    var Filter: js.UndefOr[DataQualityResultFilterCriteria]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDataQualityResultsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[DataQualityResultFilterCriteria] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDataQualityResultsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityResultsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityResultsResponse extends js.Object {
+    var Results: DataQualityResultDescriptionList
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDataQualityResultsResponse {
+    @inline
+    def apply(
+        Results: DataQualityResultDescriptionList,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDataQualityResultsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Results" -> Results.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityResultsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRuleRecommendationRunsRequest extends js.Object {
+    var Filter: js.UndefOr[DataQualityRuleRecommendationRunFilter]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDataQualityRuleRecommendationRunsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[DataQualityRuleRecommendationRunFilter] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDataQualityRuleRecommendationRunsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRuleRecommendationRunsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRuleRecommendationRunsResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var Runs: js.UndefOr[DataQualityRuleRecommendationRunList]
+  }
+
+  object ListDataQualityRuleRecommendationRunsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Runs: js.UndefOr[DataQualityRuleRecommendationRunList] = js.undefined
+    ): ListDataQualityRuleRecommendationRunsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Runs.foreach(__v => __obj.updateDynamic("Runs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRuleRecommendationRunsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRulesetEvaluationRunsRequest extends js.Object {
+    var Filter: js.UndefOr[DataQualityRulesetEvaluationRunFilter]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDataQualityRulesetEvaluationRunsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[DataQualityRulesetEvaluationRunFilter] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDataQualityRulesetEvaluationRunsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRulesetEvaluationRunsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRulesetEvaluationRunsResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var Runs: js.UndefOr[DataQualityRulesetEvaluationRunList]
+  }
+
+  object ListDataQualityRulesetEvaluationRunsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Runs: js.UndefOr[DataQualityRulesetEvaluationRunList] = js.undefined
+    ): ListDataQualityRulesetEvaluationRunsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Runs.foreach(__v => __obj.updateDynamic("Runs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRulesetEvaluationRunsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRulesetsRequest extends js.Object {
+    var Filter: js.UndefOr[DataQualityRulesetFilterCriteria]
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object ListDataQualityRulesetsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[DataQualityRulesetFilterCriteria] = js.undefined,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListDataQualityRulesetsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRulesetsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDataQualityRulesetsResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var Rulesets: js.UndefOr[DataQualityRulesetList]
+  }
+
+  object ListDataQualityRulesetsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Rulesets: js.UndefOr[DataQualityRulesetList] = js.undefined
+    ): ListDataQualityRulesetsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Rulesets.foreach(__v => __obj.updateDynamic("Rulesets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDataQualityRulesetsResponse]
     }
   }
 
@@ -8200,6 +11524,96 @@ package object glue {
   }
 
   @js.native
+  trait ListSessionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[OrchestrationToken]
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object ListSessionsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[OrchestrationToken] = js.undefined,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListSessionsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSessionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSessionsResponse extends js.Object {
+    var Ids: js.UndefOr[SessionIdList]
+    var NextToken: js.UndefOr[OrchestrationToken]
+    var Sessions: js.UndefOr[SessionList]
+  }
+
+  object ListSessionsResponse {
+    @inline
+    def apply(
+        Ids: js.UndefOr[SessionIdList] = js.undefined,
+        NextToken: js.UndefOr[OrchestrationToken] = js.undefined,
+        Sessions: js.UndefOr[SessionList] = js.undefined
+    ): ListSessionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Ids.foreach(__v => __obj.updateDynamic("Ids")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sessions.foreach(__v => __obj.updateDynamic("Sessions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSessionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListStatementsRequest extends js.Object {
+    var SessionId: NameString
+    var NextToken: js.UndefOr[OrchestrationToken]
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object ListStatementsRequest {
+    @inline
+    def apply(
+        SessionId: NameString,
+        NextToken: js.UndefOr[OrchestrationToken] = js.undefined,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): ListStatementsRequest = {
+      val __obj = js.Dynamic.literal(
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStatementsRequest]
+    }
+  }
+
+  @js.native
+  trait ListStatementsResponse extends js.Object {
+    var NextToken: js.UndefOr[OrchestrationToken]
+    var Statements: js.UndefOr[StatementList]
+  }
+
+  object ListStatementsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[OrchestrationToken] = js.undefined,
+        Statements: js.UndefOr[StatementList] = js.undefined
+    ): ListStatementsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Statements.foreach(__v => __obj.updateDynamic("Statements")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStatementsResponse]
+    }
+  }
+
+  @js.native
   trait ListTriggersRequest extends js.Object {
     var DependentJobName: js.UndefOr[NameString]
     var MaxResults: js.UndefOr[PageSize]
@@ -8429,6 +11843,39 @@ package object glue {
     }
   }
 
+  /** Specifies the mapping of data property keys.
+    */
+  @js.native
+  trait Mapping extends js.Object {
+    var Children: js.UndefOr[Mappings]
+    var Dropped: js.UndefOr[BoxedBoolean]
+    var FromPath: js.UndefOr[EnclosedInStringProperties]
+    var FromType: js.UndefOr[EnclosedInStringProperty]
+    var ToKey: js.UndefOr[EnclosedInStringProperty]
+    var ToType: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object Mapping {
+    @inline
+    def apply(
+        Children: js.UndefOr[Mappings] = js.undefined,
+        Dropped: js.UndefOr[BoxedBoolean] = js.undefined,
+        FromPath: js.UndefOr[EnclosedInStringProperties] = js.undefined,
+        FromType: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        ToKey: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        ToType: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): Mapping = {
+      val __obj = js.Dynamic.literal()
+      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
+      Dropped.foreach(__v => __obj.updateDynamic("Dropped")(__v.asInstanceOf[js.Any]))
+      FromPath.foreach(__v => __obj.updateDynamic("FromPath")(__v.asInstanceOf[js.Any]))
+      FromType.foreach(__v => __obj.updateDynamic("FromType")(__v.asInstanceOf[js.Any]))
+      ToKey.foreach(__v => __obj.updateDynamic("ToKey")(__v.asInstanceOf[js.Any]))
+      ToType.foreach(__v => __obj.updateDynamic("ToType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Mapping]
+    }
+  }
+
   /** Defines a mapping.
     */
   @js.native
@@ -8459,6 +11906,34 @@ package object glue {
       TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MappingEntry]
+    }
+  }
+
+  /** Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code> based on the specified primary keys to identify records. Duplicate records (records with the same primary keys) are not de-duplicated.
+    */
+  @js.native
+  trait Merge extends js.Object {
+    var Inputs: TwoInputs
+    var Name: NodeName
+    var PrimaryKeys: GlueStudioPathList
+    var Source: NodeId
+  }
+
+  object Merge {
+    @inline
+    def apply(
+        Inputs: TwoInputs,
+        Name: NodeName,
+        PrimaryKeys: GlueStudioPathList,
+        Source: NodeId
+    ): Merge = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PrimaryKeys" -> PrimaryKeys.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Merge]
     }
   }
 
@@ -8507,6 +11982,59 @@ package object glue {
     }
   }
 
+  /** Specifies a Microsoft SQL server data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait MicrosoftSQLServerCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object MicrosoftSQLServerCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): MicrosoftSQLServerCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MicrosoftSQLServerCatalogSource]
+    }
+  }
+
+  /** Specifies a target that uses Microsoft SQL.
+    */
+  @js.native
+  trait MicrosoftSQLServerCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object MicrosoftSQLServerCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): MicrosoftSQLServerCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MicrosoftSQLServerCatalogTarget]
+    }
+  }
+
   /** Specifies an Amazon DocumentDB or MongoDB data store to crawl.
     */
   @js.native
@@ -8528,6 +12056,59 @@ package object glue {
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       ScanAll.foreach(__v => __obj.updateDynamic("ScanAll")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MongoDBTarget]
+    }
+  }
+
+  /** Specifies a MySQL data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait MySQLCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object MySQLCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): MySQLCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MySQLCatalogSource]
+    }
+  }
+
+  /** Specifies a target that uses MySQL.
+    */
+  @js.native
+  trait MySQLCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object MySQLCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): MySQLCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MySQLCatalogTarget]
     }
   }
 
@@ -8582,6 +12163,105 @@ package object glue {
     }
   }
 
+  /** Represents whether certain values are recognized as null values for removal.
+    */
+  @js.native
+  trait NullCheckBoxList extends js.Object {
+    var IsEmpty: js.UndefOr[BoxedBoolean]
+    var IsNegOne: js.UndefOr[BoxedBoolean]
+    var IsNullString: js.UndefOr[BoxedBoolean]
+  }
+
+  object NullCheckBoxList {
+    @inline
+    def apply(
+        IsEmpty: js.UndefOr[BoxedBoolean] = js.undefined,
+        IsNegOne: js.UndefOr[BoxedBoolean] = js.undefined,
+        IsNullString: js.UndefOr[BoxedBoolean] = js.undefined
+    ): NullCheckBoxList = {
+      val __obj = js.Dynamic.literal()
+      IsEmpty.foreach(__v => __obj.updateDynamic("IsEmpty")(__v.asInstanceOf[js.Any]))
+      IsNegOne.foreach(__v => __obj.updateDynamic("IsNegOne")(__v.asInstanceOf[js.Any]))
+      IsNullString.foreach(__v => __obj.updateDynamic("IsNullString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NullCheckBoxList]
+    }
+  }
+
+  /** Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.
+    */
+  @js.native
+  trait NullValueField extends js.Object {
+    var Datatype: Datatype
+    var Value: EnclosedInStringProperty
+  }
+
+  object NullValueField {
+    @inline
+    def apply(
+        Datatype: Datatype,
+        Value: EnclosedInStringProperty
+    ): NullValueField = {
+      val __obj = js.Dynamic.literal(
+        "Datatype" -> Datatype.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NullValueField]
+    }
+  }
+
+  /** Specifies an Oracle data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait OracleSQLCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object OracleSQLCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): OracleSQLCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OracleSQLCatalogSource]
+    }
+  }
+
+  /** Specifies a target that uses Oracle SQL.
+    */
+  @js.native
+  trait OracleSQLCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object OracleSQLCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): OracleSQLCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OracleSQLCatalogTarget]
+    }
+  }
+
   /** Specifies the sort order of a sorted column.
     */
   @js.native
@@ -8622,6 +12302,47 @@ package object glue {
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       MetadataValue.foreach(__v => __obj.updateDynamic("MetadataValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OtherMetadataValueListItem]
+    }
+  }
+
+  /** Specifies a transform that identifies, removes or masks PII data.
+    */
+  @js.native
+  trait PIIDetection extends js.Object {
+    var EntityTypesToDetect: EnclosedInStringProperties
+    var Inputs: OneInput
+    var Name: NodeName
+    var PiiType: PiiType
+    var MaskValue: js.UndefOr[MaskValue]
+    var OutputColumnName: js.UndefOr[EnclosedInStringProperty]
+    var SampleFraction: js.UndefOr[BoxedDoubleFraction]
+    var ThresholdFraction: js.UndefOr[BoxedDoubleFraction]
+  }
+
+  object PIIDetection {
+    @inline
+    def apply(
+        EntityTypesToDetect: EnclosedInStringProperties,
+        Inputs: OneInput,
+        Name: NodeName,
+        PiiType: PiiType,
+        MaskValue: js.UndefOr[MaskValue] = js.undefined,
+        OutputColumnName: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        SampleFraction: js.UndefOr[BoxedDoubleFraction] = js.undefined,
+        ThresholdFraction: js.UndefOr[BoxedDoubleFraction] = js.undefined
+    ): PIIDetection = {
+      val __obj = js.Dynamic.literal(
+        "EntityTypesToDetect" -> EntityTypesToDetect.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PiiType" -> PiiType.asInstanceOf[js.Any]
+      )
+
+      MaskValue.foreach(__v => __obj.updateDynamic("MaskValue")(__v.asInstanceOf[js.Any]))
+      OutputColumnName.foreach(__v => __obj.updateDynamic("OutputColumnName")(__v.asInstanceOf[js.Any]))
+      SampleFraction.foreach(__v => __obj.updateDynamic("SampleFraction")(__v.asInstanceOf[js.Any]))
+      ThresholdFraction.foreach(__v => __obj.updateDynamic("ThresholdFraction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PIIDetection]
     }
   }
 
@@ -8809,6 +12530,59 @@ package object glue {
       SecurityGroupIdList.foreach(__v => __obj.updateDynamic("SecurityGroupIdList")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhysicalConnectionRequirements]
+    }
+  }
+
+  /** Specifies a PostgresSQL data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait PostgreSQLCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object PostgreSQLCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): PostgreSQLCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PostgreSQLCatalogSource]
+    }
+  }
+
+  /** Specifies a target that uses Postgres SQL.
+    */
+  @js.native
+  trait PostgreSQLCatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object PostgreSQLCatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): PostgreSQLCatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PostgreSQLCatalogTarget]
     }
   }
 
@@ -9146,6 +12920,76 @@ package object glue {
     }
   }
 
+  /** Specifies an Amazon Redshift data store.
+    */
+  @js.native
+  trait RedshiftSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var RedshiftTmpDir: js.UndefOr[EnclosedInStringProperty]
+    var TmpDirIAMRole: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object RedshiftSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        RedshiftTmpDir: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        TmpDirIAMRole: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): RedshiftSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      RedshiftTmpDir.foreach(__v => __obj.updateDynamic("RedshiftTmpDir")(__v.asInstanceOf[js.Any]))
+      TmpDirIAMRole.foreach(__v => __obj.updateDynamic("TmpDirIAMRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftSource]
+    }
+  }
+
+  /** Specifies a target that uses Amazon Redshift.
+    */
+  @js.native
+  trait RedshiftTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var RedshiftTmpDir: js.UndefOr[EnclosedInStringProperty]
+    var TmpDirIAMRole: js.UndefOr[EnclosedInStringProperty]
+    var UpsertRedshiftOptions: js.UndefOr[UpsertRedshiftTargetOptions]
+  }
+
+  object RedshiftTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        RedshiftTmpDir: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        TmpDirIAMRole: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        UpsertRedshiftOptions: js.UndefOr[UpsertRedshiftTargetOptions] = js.undefined
+    ): RedshiftTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      RedshiftTmpDir.foreach(__v => __obj.updateDynamic("RedshiftTmpDir")(__v.asInstanceOf[js.Any]))
+      TmpDirIAMRole.foreach(__v => __obj.updateDynamic("TmpDirIAMRole")(__v.asInstanceOf[js.Any]))
+      UpsertRedshiftOptions.foreach(__v => __obj.updateDynamic("UpsertRedshiftOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedshiftTarget]
+    }
+  }
+
   @js.native
   trait RegisterSchemaVersionInput extends js.Object {
     var SchemaDefinition: SchemaDefinitionString
@@ -9242,6 +13086,31 @@ package object glue {
     }
   }
 
+  /** Specifies a Relational database data source in the Glue Data Catalog.
+    */
+  @js.native
+  trait RelationalCatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+  }
+
+  object RelationalCatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty
+    ): RelationalCatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RelationalCatalogSource]
+    }
+  }
+
   @js.native
   trait RemoveSchemaVersionMetadataInput extends js.Object {
     var MetadataKeyValue: MetadataKeyValuePair
@@ -9303,6 +13172,34 @@ package object glue {
       SchemaVersionId.foreach(__v => __obj.updateDynamic("SchemaVersionId")(__v.asInstanceOf[js.Any]))
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveSchemaVersionMetadataResponse]
+    }
+  }
+
+  /** Specifies a transform that renames a single data property key.
+    */
+  @js.native
+  trait RenameField extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var SourcePath: EnclosedInStringProperties
+    var TargetPath: EnclosedInStringProperties
+  }
+
+  object RenameField {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        SourcePath: EnclosedInStringProperties,
+        TargetPath: EnclosedInStringProperties
+    ): RenameField = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SourcePath" -> SourcePath.asInstanceOf[js.Any],
+        "TargetPath" -> TargetPath.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RenameField]
     }
   }
 
@@ -9406,6 +13303,252 @@ package object glue {
     }
   }
 
+  @js.native
+  trait RunStatementRequest extends js.Object {
+    var Code: OrchestrationStatementCodeString
+    var SessionId: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object RunStatementRequest {
+    @inline
+    def apply(
+        Code: OrchestrationStatementCodeString,
+        SessionId: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): RunStatementRequest = {
+      val __obj = js.Dynamic.literal(
+        "Code" -> Code.asInstanceOf[js.Any],
+        "SessionId" -> SessionId.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunStatementRequest]
+    }
+  }
+
+  @js.native
+  trait RunStatementResponse extends js.Object {
+    var Id: js.UndefOr[IntegerValue]
+  }
+
+  object RunStatementResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[IntegerValue] = js.undefined
+    ): RunStatementResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RunStatementResponse]
+    }
+  }
+
+  /** Specifies an Amazon S3 data store in the Glue Data Catalog.
+    */
+  @js.native
+  trait S3CatalogSource extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var AdditionalOptions: js.UndefOr[S3SourceAdditionalOptions]
+    var PartitionPredicate: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object S3CatalogSource {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        AdditionalOptions: js.UndefOr[S3SourceAdditionalOptions] = js.undefined,
+        PartitionPredicate: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): S3CatalogSource = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      PartitionPredicate.foreach(__v => __obj.updateDynamic("PartitionPredicate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3CatalogSource]
+    }
+  }
+
+  /** Specifies a data target that writes to Amazon S3 using the Glue Data Catalog.
+    */
+  @js.native
+  trait S3CatalogTarget extends js.Object {
+    var Database: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var Table: EnclosedInStringProperty
+    var PartitionKeys: js.UndefOr[GlueStudioPathList]
+    var SchemaChangePolicy: js.UndefOr[CatalogSchemaChangePolicy]
+  }
+
+  object S3CatalogTarget {
+    @inline
+    def apply(
+        Database: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        Table: EnclosedInStringProperty,
+        PartitionKeys: js.UndefOr[GlueStudioPathList] = js.undefined,
+        SchemaChangePolicy: js.UndefOr[CatalogSchemaChangePolicy] = js.undefined
+    ): S3CatalogTarget = {
+      val __obj = js.Dynamic.literal(
+        "Database" -> Database.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Table" -> Table.asInstanceOf[js.Any]
+      )
+
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3CatalogTarget]
+    }
+  }
+
+  /** Specifies a command-separated value (CSV) data store stored in Amazon S3.
+    */
+  @js.native
+  trait S3CsvSource extends js.Object {
+    var Name: NodeName
+    var Paths: EnclosedInStringProperties
+    var QuoteChar: QuoteChar
+    var Separator: Separator
+    var AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions]
+    var CompressionType: js.UndefOr[CompressionType]
+    var Escaper: js.UndefOr[EnclosedInStringPropertyWithQuote]
+    var Exclusions: js.UndefOr[EnclosedInStringProperties]
+    var GroupFiles: js.UndefOr[EnclosedInStringProperty]
+    var GroupSize: js.UndefOr[EnclosedInStringProperty]
+    var MaxBand: js.UndefOr[BoxedNonNegativeInt]
+    var MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt]
+    var Multiline: js.UndefOr[BoxedBoolean]
+    var OptimizePerformance: js.UndefOr[BooleanValue]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+    var Recurse: js.UndefOr[BoxedBoolean]
+    var SkipFirst: js.UndefOr[BoxedBoolean]
+    var WithHeader: js.UndefOr[BoxedBoolean]
+    var WriteHeader: js.UndefOr[BoxedBoolean]
+  }
+
+  object S3CsvSource {
+    @inline
+    def apply(
+        Name: NodeName,
+        Paths: EnclosedInStringProperties,
+        QuoteChar: QuoteChar,
+        Separator: Separator,
+        AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions] = js.undefined,
+        CompressionType: js.UndefOr[CompressionType] = js.undefined,
+        Escaper: js.UndefOr[EnclosedInStringPropertyWithQuote] = js.undefined,
+        Exclusions: js.UndefOr[EnclosedInStringProperties] = js.undefined,
+        GroupFiles: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        GroupSize: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        MaxBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        Multiline: js.UndefOr[BoxedBoolean] = js.undefined,
+        OptimizePerformance: js.UndefOr[BooleanValue] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined,
+        Recurse: js.UndefOr[BoxedBoolean] = js.undefined,
+        SkipFirst: js.UndefOr[BoxedBoolean] = js.undefined,
+        WithHeader: js.UndefOr[BoxedBoolean] = js.undefined,
+        WriteHeader: js.UndefOr[BoxedBoolean] = js.undefined
+    ): S3CsvSource = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any],
+        "QuoteChar" -> QuoteChar.asInstanceOf[js.Any],
+        "Separator" -> Separator.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
+      Escaper.foreach(__v => __obj.updateDynamic("Escaper")(__v.asInstanceOf[js.Any]))
+      Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
+      GroupFiles.foreach(__v => __obj.updateDynamic("GroupFiles")(__v.asInstanceOf[js.Any]))
+      GroupSize.foreach(__v => __obj.updateDynamic("GroupSize")(__v.asInstanceOf[js.Any]))
+      MaxBand.foreach(__v => __obj.updateDynamic("MaxBand")(__v.asInstanceOf[js.Any]))
+      MaxFilesInBand.foreach(__v => __obj.updateDynamic("MaxFilesInBand")(__v.asInstanceOf[js.Any]))
+      Multiline.foreach(__v => __obj.updateDynamic("Multiline")(__v.asInstanceOf[js.Any]))
+      OptimizePerformance.foreach(__v => __obj.updateDynamic("OptimizePerformance")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      Recurse.foreach(__v => __obj.updateDynamic("Recurse")(__v.asInstanceOf[js.Any]))
+      SkipFirst.foreach(__v => __obj.updateDynamic("SkipFirst")(__v.asInstanceOf[js.Any]))
+      WithHeader.foreach(__v => __obj.updateDynamic("WithHeader")(__v.asInstanceOf[js.Any]))
+      WriteHeader.foreach(__v => __obj.updateDynamic("WriteHeader")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3CsvSource]
+    }
+  }
+
+  /** Specifies additional connection options for the Amazon S3 data store.
+    */
+  @js.native
+  trait S3DirectSourceAdditionalOptions extends js.Object {
+    var BoundedFiles: js.UndefOr[BoxedLong]
+    var BoundedSize: js.UndefOr[BoxedLong]
+    var EnableSamplePath: js.UndefOr[BoxedBoolean]
+    var SamplePath: js.UndefOr[EnclosedInStringProperty]
+  }
+
+  object S3DirectSourceAdditionalOptions {
+    @inline
+    def apply(
+        BoundedFiles: js.UndefOr[BoxedLong] = js.undefined,
+        BoundedSize: js.UndefOr[BoxedLong] = js.undefined,
+        EnableSamplePath: js.UndefOr[BoxedBoolean] = js.undefined,
+        SamplePath: js.UndefOr[EnclosedInStringProperty] = js.undefined
+    ): S3DirectSourceAdditionalOptions = {
+      val __obj = js.Dynamic.literal()
+      BoundedFiles.foreach(__v => __obj.updateDynamic("BoundedFiles")(__v.asInstanceOf[js.Any]))
+      BoundedSize.foreach(__v => __obj.updateDynamic("BoundedSize")(__v.asInstanceOf[js.Any]))
+      EnableSamplePath.foreach(__v => __obj.updateDynamic("EnableSamplePath")(__v.asInstanceOf[js.Any]))
+      SamplePath.foreach(__v => __obj.updateDynamic("SamplePath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DirectSourceAdditionalOptions]
+    }
+  }
+
+  /** Specifies a data target that writes to Amazon S3.
+    */
+  @js.native
+  trait S3DirectTarget extends js.Object {
+    var Format: TargetFormat
+    var Inputs: OneInput
+    var Name: NodeName
+    var Path: EnclosedInStringProperty
+    var Compression: js.UndefOr[EnclosedInStringProperty]
+    var PartitionKeys: js.UndefOr[GlueStudioPathList]
+    var SchemaChangePolicy: js.UndefOr[DirectSchemaChangePolicy]
+  }
+
+  object S3DirectTarget {
+    @inline
+    def apply(
+        Format: TargetFormat,
+        Inputs: OneInput,
+        Name: NodeName,
+        Path: EnclosedInStringProperty,
+        Compression: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        PartitionKeys: js.UndefOr[GlueStudioPathList] = js.undefined,
+        SchemaChangePolicy: js.UndefOr[DirectSchemaChangePolicy] = js.undefined
+    ): S3DirectTarget = {
+      val __obj = js.Dynamic.literal(
+        "Format" -> Format.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any]
+      )
+
+      Compression.foreach(__v => __obj.updateDynamic("Compression")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DirectTarget]
+    }
+  }
+
   /** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.
     */
   @js.native
@@ -9424,6 +13567,168 @@ package object glue {
       KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       S3EncryptionMode.foreach(__v => __obj.updateDynamic("S3EncryptionMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Encryption]
+    }
+  }
+
+  /** Specifies a data target that writes to Amazon S3 in Apache Parquet columnar storage.
+    */
+  @js.native
+  trait S3GlueParquetTarget extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Path: EnclosedInStringProperty
+    var Compression: js.UndefOr[ParquetCompressionType]
+    var PartitionKeys: js.UndefOr[GlueStudioPathList]
+    var SchemaChangePolicy: js.UndefOr[DirectSchemaChangePolicy]
+  }
+
+  object S3GlueParquetTarget {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Path: EnclosedInStringProperty,
+        Compression: js.UndefOr[ParquetCompressionType] = js.undefined,
+        PartitionKeys: js.UndefOr[GlueStudioPathList] = js.undefined,
+        SchemaChangePolicy: js.UndefOr[DirectSchemaChangePolicy] = js.undefined
+    ): S3GlueParquetTarget = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any]
+      )
+
+      Compression.foreach(__v => __obj.updateDynamic("Compression")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3GlueParquetTarget]
+    }
+  }
+
+  /** Specifies a JSON data store stored in Amazon S3.
+    */
+  @js.native
+  trait S3JsonSource extends js.Object {
+    var Name: NodeName
+    var Paths: EnclosedInStringProperties
+    var AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions]
+    var CompressionType: js.UndefOr[CompressionType]
+    var Exclusions: js.UndefOr[EnclosedInStringProperties]
+    var GroupFiles: js.UndefOr[EnclosedInStringProperty]
+    var GroupSize: js.UndefOr[EnclosedInStringProperty]
+    var JsonPath: js.UndefOr[EnclosedInStringProperty]
+    var MaxBand: js.UndefOr[BoxedNonNegativeInt]
+    var MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt]
+    var Multiline: js.UndefOr[BoxedBoolean]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+    var Recurse: js.UndefOr[BoxedBoolean]
+  }
+
+  object S3JsonSource {
+    @inline
+    def apply(
+        Name: NodeName,
+        Paths: EnclosedInStringProperties,
+        AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions] = js.undefined,
+        CompressionType: js.UndefOr[CompressionType] = js.undefined,
+        Exclusions: js.UndefOr[EnclosedInStringProperties] = js.undefined,
+        GroupFiles: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        GroupSize: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        JsonPath: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        MaxBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        Multiline: js.UndefOr[BoxedBoolean] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined,
+        Recurse: js.UndefOr[BoxedBoolean] = js.undefined
+    ): S3JsonSource = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
+      Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
+      GroupFiles.foreach(__v => __obj.updateDynamic("GroupFiles")(__v.asInstanceOf[js.Any]))
+      GroupSize.foreach(__v => __obj.updateDynamic("GroupSize")(__v.asInstanceOf[js.Any]))
+      JsonPath.foreach(__v => __obj.updateDynamic("JsonPath")(__v.asInstanceOf[js.Any]))
+      MaxBand.foreach(__v => __obj.updateDynamic("MaxBand")(__v.asInstanceOf[js.Any]))
+      MaxFilesInBand.foreach(__v => __obj.updateDynamic("MaxFilesInBand")(__v.asInstanceOf[js.Any]))
+      Multiline.foreach(__v => __obj.updateDynamic("Multiline")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      Recurse.foreach(__v => __obj.updateDynamic("Recurse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3JsonSource]
+    }
+  }
+
+  /** Specifies an Apache Parquet data store stored in Amazon S3.
+    */
+  @js.native
+  trait S3ParquetSource extends js.Object {
+    var Name: NodeName
+    var Paths: EnclosedInStringProperties
+    var AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions]
+    var CompressionType: js.UndefOr[ParquetCompressionType]
+    var Exclusions: js.UndefOr[EnclosedInStringProperties]
+    var GroupFiles: js.UndefOr[EnclosedInStringProperty]
+    var GroupSize: js.UndefOr[EnclosedInStringProperty]
+    var MaxBand: js.UndefOr[BoxedNonNegativeInt]
+    var MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+    var Recurse: js.UndefOr[BoxedBoolean]
+  }
+
+  object S3ParquetSource {
+    @inline
+    def apply(
+        Name: NodeName,
+        Paths: EnclosedInStringProperties,
+        AdditionalOptions: js.UndefOr[S3DirectSourceAdditionalOptions] = js.undefined,
+        CompressionType: js.UndefOr[ParquetCompressionType] = js.undefined,
+        Exclusions: js.UndefOr[EnclosedInStringProperties] = js.undefined,
+        GroupFiles: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        GroupSize: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        MaxBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        MaxFilesInBand: js.UndefOr[BoxedNonNegativeInt] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined,
+        Recurse: js.UndefOr[BoxedBoolean] = js.undefined
+    ): S3ParquetSource = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
+      Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
+      GroupFiles.foreach(__v => __obj.updateDynamic("GroupFiles")(__v.asInstanceOf[js.Any]))
+      GroupSize.foreach(__v => __obj.updateDynamic("GroupSize")(__v.asInstanceOf[js.Any]))
+      MaxBand.foreach(__v => __obj.updateDynamic("MaxBand")(__v.asInstanceOf[js.Any]))
+      MaxFilesInBand.foreach(__v => __obj.updateDynamic("MaxFilesInBand")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      Recurse.foreach(__v => __obj.updateDynamic("Recurse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ParquetSource]
+    }
+  }
+
+  /** Specifies additional connection options for the Amazon S3 data store.
+    */
+  @js.native
+  trait S3SourceAdditionalOptions extends js.Object {
+    var BoundedFiles: js.UndefOr[BoxedLong]
+    var BoundedSize: js.UndefOr[BoxedLong]
+  }
+
+  object S3SourceAdditionalOptions {
+    @inline
+    def apply(
+        BoundedFiles: js.UndefOr[BoxedLong] = js.undefined,
+        BoundedSize: js.UndefOr[BoxedLong] = js.undefined
+    ): S3SourceAdditionalOptions = {
+      val __obj = js.Dynamic.literal()
+      BoundedFiles.foreach(__v => __obj.updateDynamic("BoundedFiles")(__v.asInstanceOf[js.Any]))
+      BoundedSize.foreach(__v => __obj.updateDynamic("BoundedSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3SourceAdditionalOptions]
     }
   }
 
@@ -9778,6 +14083,56 @@ package object glue {
     }
   }
 
+  /** Specifies a transform that chooses the data property keys that you want to keep.
+    */
+  @js.native
+  trait SelectFields extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Paths: GlueStudioPathList
+  }
+
+  object SelectFields {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Paths: GlueStudioPathList
+    ): SelectFields = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SelectFields]
+    }
+  }
+
+  /** Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code>
+    */
+  @js.native
+  trait SelectFromCollection extends js.Object {
+    var Index: NonNegativeInt
+    var Inputs: OneInput
+    var Name: NodeName
+  }
+
+  object SelectFromCollection {
+    @inline
+    def apply(
+        Index: NonNegativeInt,
+        Inputs: OneInput,
+        Name: NodeName
+    ): SelectFromCollection = {
+      val __obj = js.Dynamic.literal(
+        "Index" -> Index.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SelectFromCollection]
+    }
+  }
+
   /** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.
     */
   @js.native
@@ -9799,6 +14154,81 @@ package object glue {
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       SerializationLibrary.foreach(__v => __obj.updateDynamic("SerializationLibrary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SerDeInfo]
+    }
+  }
+
+  /** The period in which a remote Spark runtime environment is running.
+    */
+  @js.native
+  trait Session extends js.Object {
+    var Command: js.UndefOr[SessionCommand]
+    var Connections: js.UndefOr[ConnectionsList]
+    var CreatedOn: js.UndefOr[TimestampValue]
+    var DefaultArguments: js.UndefOr[OrchestrationArgumentsMap]
+    var Description: js.UndefOr[DescriptionString]
+    var ErrorMessage: js.UndefOr[DescriptionString]
+    var GlueVersion: js.UndefOr[GlueVersionString]
+    var Id: js.UndefOr[NameString]
+    var MaxCapacity: js.UndefOr[NullableDouble]
+    var Progress: js.UndefOr[DoubleValue]
+    var Role: js.UndefOr[OrchestrationRoleArn]
+    var SecurityConfiguration: js.UndefOr[NameString]
+    var Status: js.UndefOr[SessionStatus]
+  }
+
+  object Session {
+    @inline
+    def apply(
+        Command: js.UndefOr[SessionCommand] = js.undefined,
+        Connections: js.UndefOr[ConnectionsList] = js.undefined,
+        CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
+        DefaultArguments: js.UndefOr[OrchestrationArgumentsMap] = js.undefined,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        ErrorMessage: js.UndefOr[DescriptionString] = js.undefined,
+        GlueVersion: js.UndefOr[GlueVersionString] = js.undefined,
+        Id: js.UndefOr[NameString] = js.undefined,
+        MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
+        Progress: js.UndefOr[DoubleValue] = js.undefined,
+        Role: js.UndefOr[OrchestrationRoleArn] = js.undefined,
+        SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
+        Status: js.UndefOr[SessionStatus] = js.undefined
+    ): Session = {
+      val __obj = js.Dynamic.literal()
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Session]
+    }
+  }
+
+  /** The <code>SessionCommand</code> that runs the job.
+    */
+  @js.native
+  trait SessionCommand extends js.Object {
+    var Name: js.UndefOr[NameString]
+    var PythonVersion: js.UndefOr[PythonVersionString]
+  }
+
+  object SessionCommand {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined,
+        PythonVersion: js.UndefOr[PythonVersionString] = js.undefined
+    ): SessionCommand = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PythonVersion.foreach(__v => __obj.updateDynamic("PythonVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SessionCommand]
     }
   }
 
@@ -9844,6 +14274,229 @@ package object glue {
       FieldName.foreach(__v => __obj.updateDynamic("FieldName")(__v.asInstanceOf[js.Any]))
       Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriterion]
+    }
+  }
+
+  /** The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.
+    */
+  @js.native
+  trait SourceControlDetails extends js.Object {
+    var AuthStrategy: js.UndefOr[SourceControlAuthStrategy]
+    var AuthToken: js.UndefOr[Generic512CharString]
+    var Branch: js.UndefOr[Generic512CharString]
+    var Folder: js.UndefOr[Generic512CharString]
+    var LastCommitId: js.UndefOr[Generic512CharString]
+    var Owner: js.UndefOr[Generic512CharString]
+    var Provider: js.UndefOr[SourceControlProvider]
+    var Repository: js.UndefOr[Generic512CharString]
+  }
+
+  object SourceControlDetails {
+    @inline
+    def apply(
+        AuthStrategy: js.UndefOr[SourceControlAuthStrategy] = js.undefined,
+        AuthToken: js.UndefOr[Generic512CharString] = js.undefined,
+        Branch: js.UndefOr[Generic512CharString] = js.undefined,
+        Folder: js.UndefOr[Generic512CharString] = js.undefined,
+        LastCommitId: js.UndefOr[Generic512CharString] = js.undefined,
+        Owner: js.UndefOr[Generic512CharString] = js.undefined,
+        Provider: js.UndefOr[SourceControlProvider] = js.undefined,
+        Repository: js.UndefOr[Generic512CharString] = js.undefined
+    ): SourceControlDetails = {
+      val __obj = js.Dynamic.literal()
+      AuthStrategy.foreach(__v => __obj.updateDynamic("AuthStrategy")(__v.asInstanceOf[js.Any]))
+      AuthToken.foreach(__v => __obj.updateDynamic("AuthToken")(__v.asInstanceOf[js.Any]))
+      Branch.foreach(__v => __obj.updateDynamic("Branch")(__v.asInstanceOf[js.Any]))
+      Folder.foreach(__v => __obj.updateDynamic("Folder")(__v.asInstanceOf[js.Any]))
+      LastCommitId.foreach(__v => __obj.updateDynamic("LastCommitId")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      Repository.foreach(__v => __obj.updateDynamic("Repository")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceControlDetails]
+    }
+  }
+
+  /** Specifies a connector to an Apache Spark data source.
+    */
+  @js.native
+  trait SparkConnectorSource extends js.Object {
+    var ConnectionName: EnclosedInStringProperty
+    var ConnectionType: EnclosedInStringProperty
+    var ConnectorName: EnclosedInStringProperty
+    var Name: NodeName
+    var AdditionalOptions: js.UndefOr[AdditionalOptions]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object SparkConnectorSource {
+    @inline
+    def apply(
+        ConnectionName: EnclosedInStringProperty,
+        ConnectionType: EnclosedInStringProperty,
+        ConnectorName: EnclosedInStringProperty,
+        Name: NodeName,
+        AdditionalOptions: js.UndefOr[AdditionalOptions] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): SparkConnectorSource = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "ConnectorName" -> ConnectorName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SparkConnectorSource]
+    }
+  }
+
+  /** Specifies a target that uses an Apache Spark connector.
+    */
+  @js.native
+  trait SparkConnectorTarget extends js.Object {
+    var ConnectionName: EnclosedInStringProperty
+    var ConnectionType: EnclosedInStringProperty
+    var ConnectorName: EnclosedInStringProperty
+    var Inputs: OneInput
+    var Name: NodeName
+    var AdditionalOptions: js.UndefOr[AdditionalOptions]
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object SparkConnectorTarget {
+    @inline
+    def apply(
+        ConnectionName: EnclosedInStringProperty,
+        ConnectionType: EnclosedInStringProperty,
+        ConnectorName: EnclosedInStringProperty,
+        Inputs: OneInput,
+        Name: NodeName,
+        AdditionalOptions: js.UndefOr[AdditionalOptions] = js.undefined,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): SparkConnectorTarget = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionName" -> ConnectionName.asInstanceOf[js.Any],
+        "ConnectionType" -> ConnectionType.asInstanceOf[js.Any],
+        "ConnectorName" -> ConnectorName.asInstanceOf[js.Any],
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AdditionalOptions.foreach(__v => __obj.updateDynamic("AdditionalOptions")(__v.asInstanceOf[js.Any]))
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SparkConnectorTarget]
+    }
+  }
+
+  /** Specifies a transform where you enter a SQL query using Spark SQL syntax to transform the data. The output is a single <code>DynamicFrame</code>.
+    */
+  @js.native
+  trait SparkSQL extends js.Object {
+    var Inputs: ManyInputs
+    var Name: NodeName
+    var SqlAliases: SqlAliases
+    var SqlQuery: SqlQuery
+    var OutputSchemas: js.UndefOr[GlueSchemas]
+  }
+
+  object SparkSQL {
+    @inline
+    def apply(
+        Inputs: ManyInputs,
+        Name: NodeName,
+        SqlAliases: SqlAliases,
+        SqlQuery: SqlQuery,
+        OutputSchemas: js.UndefOr[GlueSchemas] = js.undefined
+    ): SparkSQL = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SqlAliases" -> SqlAliases.asInstanceOf[js.Any],
+        "SqlQuery" -> SqlQuery.asInstanceOf[js.Any]
+      )
+
+      OutputSchemas.foreach(__v => __obj.updateDynamic("OutputSchemas")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SparkSQL]
+    }
+  }
+
+  /** Specifies a transform that writes samples of the data to an Amazon S3 bucket.
+    */
+  @js.native
+  trait Spigot extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Path: EnclosedInStringProperty
+    var Prob: js.UndefOr[Prob]
+    var Topk: js.UndefOr[Topk]
+  }
+
+  object Spigot {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Path: EnclosedInStringProperty,
+        Prob: js.UndefOr[Prob] = js.undefined,
+        Topk: js.UndefOr[Topk] = js.undefined
+    ): Spigot = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Path" -> Path.asInstanceOf[js.Any]
+      )
+
+      Prob.foreach(__v => __obj.updateDynamic("Prob")(__v.asInstanceOf[js.Any]))
+      Topk.foreach(__v => __obj.updateDynamic("Topk")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Spigot]
+    }
+  }
+
+  /** Specifies a transform that splits data property keys into two <code>DynamicFrames</code>. The output is a collection of <code>DynamicFrames</code>: one with selected data property keys, and one with the remaining data property keys.
+    */
+  @js.native
+  trait SplitFields extends js.Object {
+    var Inputs: OneInput
+    var Name: NodeName
+    var Paths: GlueStudioPathList
+  }
+
+  object SplitFields {
+    @inline
+    def apply(
+        Inputs: OneInput,
+        Name: NodeName,
+        Paths: GlueStudioPathList
+    ): SplitFields = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Paths" -> Paths.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SplitFields]
+    }
+  }
+
+  /** Represents a single entry in the list of values for <code>SqlAliases</code>.
+    */
+  @js.native
+  trait SqlAlias extends js.Object {
+    var Alias: EnclosedInStringPropertyWithQuote
+    var From: NodeId
+  }
+
+  object SqlAlias {
+    @inline
+    def apply(
+        Alias: EnclosedInStringPropertyWithQuote,
+        From: NodeId
+    ): SqlAlias = {
+      val __obj = js.Dynamic.literal(
+        "Alias" -> Alias.asInstanceOf[js.Any],
+        "From" -> From.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SqlAlias]
     }
   }
 
@@ -9944,6 +14597,107 @@ package object glue {
   }
 
   @js.native
+  trait StartDataQualityRuleRecommendationRunRequest extends js.Object {
+    var DataSource: DataSource
+    var Role: RoleString
+    var ClientToken: js.UndefOr[HashString]
+    var CreatedRulesetName: js.UndefOr[NameString]
+    var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var Timeout: js.UndefOr[Timeout]
+  }
+
+  object StartDataQualityRuleRecommendationRunRequest {
+    @inline
+    def apply(
+        DataSource: DataSource,
+        Role: RoleString,
+        ClientToken: js.UndefOr[HashString] = js.undefined,
+        CreatedRulesetName: js.UndefOr[NameString] = js.undefined,
+        NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        Timeout: js.UndefOr[Timeout] = js.undefined
+    ): StartDataQualityRuleRecommendationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      CreatedRulesetName.foreach(__v => __obj.updateDynamic("CreatedRulesetName")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDataQualityRuleRecommendationRunRequest]
+    }
+  }
+
+  @js.native
+  trait StartDataQualityRuleRecommendationRunResponse extends js.Object {
+    var RunId: js.UndefOr[HashString]
+  }
+
+  object StartDataQualityRuleRecommendationRunResponse {
+    @inline
+    def apply(
+        RunId: js.UndefOr[HashString] = js.undefined
+    ): StartDataQualityRuleRecommendationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDataQualityRuleRecommendationRunResponse]
+    }
+  }
+
+  @js.native
+  trait StartDataQualityRulesetEvaluationRunRequest extends js.Object {
+    var DataSource: DataSource
+    var Role: RoleString
+    var RulesetNames: RulesetNames
+    var AdditionalRunOptions: js.UndefOr[DataQualityEvaluationRunAdditionalRunOptions]
+    var ClientToken: js.UndefOr[HashString]
+    var NumberOfWorkers: js.UndefOr[NullableInteger]
+    var Timeout: js.UndefOr[Timeout]
+  }
+
+  object StartDataQualityRulesetEvaluationRunRequest {
+    @inline
+    def apply(
+        DataSource: DataSource,
+        Role: RoleString,
+        RulesetNames: RulesetNames,
+        AdditionalRunOptions: js.UndefOr[DataQualityEvaluationRunAdditionalRunOptions] = js.undefined,
+        ClientToken: js.UndefOr[HashString] = js.undefined,
+        NumberOfWorkers: js.UndefOr[NullableInteger] = js.undefined,
+        Timeout: js.UndefOr[Timeout] = js.undefined
+    ): StartDataQualityRulesetEvaluationRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Role" -> Role.asInstanceOf[js.Any],
+        "RulesetNames" -> RulesetNames.asInstanceOf[js.Any]
+      )
+
+      AdditionalRunOptions.foreach(__v => __obj.updateDynamic("AdditionalRunOptions")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDataQualityRulesetEvaluationRunRequest]
+    }
+  }
+
+  @js.native
+  trait StartDataQualityRulesetEvaluationRunResponse extends js.Object {
+    var RunId: js.UndefOr[HashString]
+  }
+
+  object StartDataQualityRulesetEvaluationRunResponse {
+    @inline
+    def apply(
+        RunId: js.UndefOr[HashString] = js.undefined
+    ): StartDataQualityRulesetEvaluationRunResponse = {
+      val __obj = js.Dynamic.literal()
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartDataQualityRulesetEvaluationRunResponse]
+    }
+  }
+
+  @js.native
   trait StartExportLabelsTaskRunRequest extends js.Object {
     var OutputS3Path: UriString
     var TransformId: HashString
@@ -10024,6 +14778,7 @@ package object glue {
     var JobName: NameString
     var AllocatedCapacity: js.UndefOr[IntegerValue]
     var Arguments: js.UndefOr[GenericMap]
+    var ExecutionClass: js.UndefOr[ExecutionClass]
     var JobRunId: js.UndefOr[IdString]
     var MaxCapacity: js.UndefOr[NullableDouble]
     var NotificationProperty: js.UndefOr[NotificationProperty]
@@ -10039,6 +14794,7 @@ package object glue {
         JobName: NameString,
         AllocatedCapacity: js.UndefOr[IntegerValue] = js.undefined,
         Arguments: js.UndefOr[GenericMap] = js.undefined,
+        ExecutionClass: js.UndefOr[ExecutionClass] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined,
         MaxCapacity: js.UndefOr[NullableDouble] = js.undefined,
         NotificationProperty: js.UndefOr[NotificationProperty] = js.undefined,
@@ -10053,6 +14809,7 @@ package object glue {
 
       AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
       Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      ExecutionClass.foreach(__v => __obj.updateDynamic("ExecutionClass")(__v.asInstanceOf[js.Any]))
       JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
@@ -10185,16 +14942,20 @@ package object glue {
   @js.native
   trait StartWorkflowRunRequest extends js.Object {
     var Name: NameString
+    var RunProperties: js.UndefOr[WorkflowRunProperties]
   }
 
   object StartWorkflowRunRequest {
     @inline
     def apply(
-        Name: NameString
+        Name: NameString,
+        RunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined
     ): StartWorkflowRunRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
+
+      RunProperties.foreach(__v => __obj.updateDynamic("RunProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartWorkflowRunRequest]
     }
   }
@@ -10233,6 +14994,93 @@ package object glue {
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       BatchWindow.foreach(__v => __obj.updateDynamic("BatchWindow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartingEventBatchCondition]
+    }
+  }
+
+  /** The statement or request for a particular action to occur in a session.
+    */
+  @js.native
+  trait Statement extends js.Object {
+    var Code: js.UndefOr[GenericString]
+    var CompletedOn: js.UndefOr[LongValue]
+    var Id: js.UndefOr[IntegerValue]
+    var Output: js.UndefOr[StatementOutput]
+    var Progress: js.UndefOr[DoubleValue]
+    var StartedOn: js.UndefOr[LongValue]
+    var State: js.UndefOr[StatementState]
+  }
+
+  object Statement {
+    @inline
+    def apply(
+        Code: js.UndefOr[GenericString] = js.undefined,
+        CompletedOn: js.UndefOr[LongValue] = js.undefined,
+        Id: js.UndefOr[IntegerValue] = js.undefined,
+        Output: js.UndefOr[StatementOutput] = js.undefined,
+        Progress: js.UndefOr[DoubleValue] = js.undefined,
+        StartedOn: js.UndefOr[LongValue] = js.undefined,
+        State: js.UndefOr[StatementState] = js.undefined
+    ): Statement = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Statement]
+    }
+  }
+
+  /** The code execution output in JSON format.
+    */
+  @js.native
+  trait StatementOutput extends js.Object {
+    var Data: js.UndefOr[StatementOutputData]
+    var ErrorName: js.UndefOr[GenericString]
+    var ErrorValue: js.UndefOr[GenericString]
+    var ExecutionCount: js.UndefOr[IntegerValue]
+    var Status: js.UndefOr[StatementState]
+    var Traceback: js.UndefOr[OrchestrationStringList]
+  }
+
+  object StatementOutput {
+    @inline
+    def apply(
+        Data: js.UndefOr[StatementOutputData] = js.undefined,
+        ErrorName: js.UndefOr[GenericString] = js.undefined,
+        ErrorValue: js.UndefOr[GenericString] = js.undefined,
+        ExecutionCount: js.UndefOr[IntegerValue] = js.undefined,
+        Status: js.UndefOr[StatementState] = js.undefined,
+        Traceback: js.UndefOr[OrchestrationStringList] = js.undefined
+    ): StatementOutput = {
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      ErrorName.foreach(__v => __obj.updateDynamic("ErrorName")(__v.asInstanceOf[js.Any]))
+      ErrorValue.foreach(__v => __obj.updateDynamic("ErrorValue")(__v.asInstanceOf[js.Any]))
+      ExecutionCount.foreach(__v => __obj.updateDynamic("ExecutionCount")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Traceback.foreach(__v => __obj.updateDynamic("Traceback")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatementOutput]
+    }
+  }
+
+  /** The code execution output in JSON format.
+    */
+  @js.native
+  trait StatementOutputData extends js.Object {
+    var TextPlain: js.UndefOr[GenericString]
+  }
+
+  object StatementOutputData {
+    @inline
+    def apply(
+        TextPlain: js.UndefOr[GenericString] = js.undefined
+    ): StatementOutputData = {
+      val __obj = js.Dynamic.literal()
+      TextPlain.foreach(__v => __obj.updateDynamic("TextPlain")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatementOutputData]
     }
   }
 
@@ -10289,6 +15137,43 @@ package object glue {
     def apply(): StopCrawlerScheduleResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[StopCrawlerScheduleResponse]
+    }
+  }
+
+  @js.native
+  trait StopSessionRequest extends js.Object {
+    var Id: NameString
+    var RequestOrigin: js.UndefOr[OrchestrationNameString]
+  }
+
+  object StopSessionRequest {
+    @inline
+    def apply(
+        Id: NameString,
+        RequestOrigin: js.UndefOr[OrchestrationNameString] = js.undefined
+    ): StopSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      RequestOrigin.foreach(__v => __obj.updateDynamic("RequestOrigin")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopSessionRequest]
+    }
+  }
+
+  @js.native
+  trait StopSessionResponse extends js.Object {
+    var Id: js.UndefOr[NameString]
+  }
+
+  object StopSessionResponse {
+    @inline
+    def apply(
+        Id: js.UndefOr[NameString] = js.undefined
+    ): StopSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopSessionResponse]
     }
   }
 
@@ -10360,6 +15245,7 @@ package object glue {
     */
   @js.native
   trait StorageDescriptor extends js.Object {
+    var AdditionalLocations: js.UndefOr[LocationStringList]
     var BucketColumns: js.UndefOr[NameStringList]
     var Columns: js.UndefOr[ColumnList]
     var Compressed: js.UndefOr[Boolean]
@@ -10378,6 +15264,7 @@ package object glue {
   object StorageDescriptor {
     @inline
     def apply(
+        AdditionalLocations: js.UndefOr[LocationStringList] = js.undefined,
         BucketColumns: js.UndefOr[NameStringList] = js.undefined,
         Columns: js.UndefOr[ColumnList] = js.undefined,
         Compressed: js.UndefOr[Boolean] = js.undefined,
@@ -10393,6 +15280,7 @@ package object glue {
         StoredAsSubDirectories: js.UndefOr[Boolean] = js.undefined
     ): StorageDescriptor = {
       val __obj = js.Dynamic.literal()
+      AdditionalLocations.foreach(__v => __obj.updateDynamic("AdditionalLocations")(__v.asInstanceOf[js.Any]))
       BucketColumns.foreach(__v => __obj.updateDynamic("BucketColumns")(__v.asInstanceOf[js.Any]))
       Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
       Compressed.foreach(__v => __obj.updateDynamic("Compressed")(__v.asInstanceOf[js.Any]))
@@ -10407,6 +15295,27 @@ package object glue {
       SortColumns.foreach(__v => __obj.updateDynamic("SortColumns")(__v.asInstanceOf[js.Any]))
       StoredAsSubDirectories.foreach(__v => __obj.updateDynamic("StoredAsSubDirectories")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageDescriptor]
+    }
+  }
+
+  /** Specifies options related to data preview for viewing a sample of your data.
+    */
+  @js.native
+  trait StreamingDataPreviewOptions extends js.Object {
+    var PollingTime: js.UndefOr[PollingTime]
+    var RecordPollingLimit: js.UndefOr[PositiveLong]
+  }
+
+  object StreamingDataPreviewOptions {
+    @inline
+    def apply(
+        PollingTime: js.UndefOr[PollingTime] = js.undefined,
+        RecordPollingLimit: js.UndefOr[PositiveLong] = js.undefined
+    ): StreamingDataPreviewOptions = {
+      val __obj = js.Dynamic.literal()
+      PollingTime.foreach(__v => __obj.updateDynamic("PollingTime")(__v.asInstanceOf[js.Any]))
+      RecordPollingLimit.foreach(__v => __obj.updateDynamic("RecordPollingLimit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamingDataPreviewOptions]
     }
   }
 
@@ -10459,6 +15368,7 @@ package object glue {
     var TableType: js.UndefOr[TableTypeString]
     var TargetTable: js.UndefOr[TableIdentifier]
     var UpdateTime: js.UndefOr[Timestamp]
+    var VersionId: js.UndefOr[VersionString]
     var ViewExpandedText: js.UndefOr[ViewTextString]
     var ViewOriginalText: js.UndefOr[ViewTextString]
   }
@@ -10483,6 +15393,7 @@ package object glue {
         TableType: js.UndefOr[TableTypeString] = js.undefined,
         TargetTable: js.UndefOr[TableIdentifier] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined,
+        VersionId: js.UndefOr[VersionString] = js.undefined,
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): Table = {
@@ -10506,6 +15417,7 @@ package object glue {
       TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
       TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       ViewExpandedText.foreach(__v => __obj.updateDynamic("ViewExpandedText")(__v.asInstanceOf[js.Any]))
       ViewOriginalText.foreach(__v => __obj.updateDynamic("ViewOriginalText")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Table]
@@ -10813,6 +15725,44 @@ package object glue {
     }
   }
 
+  /** Specifies the parameters in the config file of the dynamic transform.
+    */
+  @js.native
+  trait TransformConfigParameter extends js.Object {
+    var Name: EnclosedInStringProperty
+    var Type: ParamType
+    var IsOptional: js.UndefOr[BoxedBoolean]
+    var ListType: js.UndefOr[ParamType]
+    var ValidationMessage: js.UndefOr[EnclosedInStringProperty]
+    var ValidationRule: js.UndefOr[EnclosedInStringProperty]
+    var Value: js.UndefOr[EnclosedInStringProperties]
+  }
+
+  object TransformConfigParameter {
+    @inline
+    def apply(
+        Name: EnclosedInStringProperty,
+        Type: ParamType,
+        IsOptional: js.UndefOr[BoxedBoolean] = js.undefined,
+        ListType: js.UndefOr[ParamType] = js.undefined,
+        ValidationMessage: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        ValidationRule: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        Value: js.UndefOr[EnclosedInStringProperties] = js.undefined
+    ): TransformConfigParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      IsOptional.foreach(__v => __obj.updateDynamic("IsOptional")(__v.asInstanceOf[js.Any]))
+      ListType.foreach(__v => __obj.updateDynamic("ListType")(__v.asInstanceOf[js.Any]))
+      ValidationMessage.foreach(__v => __obj.updateDynamic("ValidationMessage")(__v.asInstanceOf[js.Any]))
+      ValidationRule.foreach(__v => __obj.updateDynamic("ValidationRule")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransformConfigParameter]
+    }
+  }
+
   /** The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS. Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.
     */
   @js.native
@@ -11014,6 +15964,53 @@ package object glue {
       Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TriggerUpdate]
+    }
+  }
+
+  @js.native
+  trait UnfilteredPartition extends js.Object {
+    var AuthorizedColumns: js.UndefOr[NameStringList]
+    var IsRegisteredWithLakeFormation: js.UndefOr[Boolean]
+    var Partition: js.UndefOr[Partition]
+  }
+
+  object UnfilteredPartition {
+    @inline
+    def apply(
+        AuthorizedColumns: js.UndefOr[NameStringList] = js.undefined,
+        IsRegisteredWithLakeFormation: js.UndefOr[Boolean] = js.undefined,
+        Partition: js.UndefOr[Partition] = js.undefined
+    ): UnfilteredPartition = {
+      val __obj = js.Dynamic.literal()
+      AuthorizedColumns.foreach(__v => __obj.updateDynamic("AuthorizedColumns")(__v.asInstanceOf[js.Any]))
+      IsRegisteredWithLakeFormation.foreach(__v => __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any]))
+      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnfilteredPartition]
+    }
+  }
+
+  /** Specifies a transform that combines the rows from two or more datasets into a single result.
+    */
+  @js.native
+  trait Union extends js.Object {
+    var Inputs: TwoInputs
+    var Name: NodeName
+    var UnionType: UnionType
+  }
+
+  object Union {
+    @inline
+    def apply(
+        Inputs: TwoInputs,
+        Name: NodeName,
+        UnionType: UnionType
+    ): Union = {
+      val __obj = js.Dynamic.literal(
+        "Inputs" -> Inputs.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "UnionType" -> UnionType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Union]
     }
   }
 
@@ -11256,6 +16253,7 @@ package object glue {
     var CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration]
     var DatabaseName: js.UndefOr[DatabaseName]
     var Description: js.UndefOr[DescriptionStringRemovable]
+    var LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration]
     var LineageConfiguration: js.UndefOr[LineageConfiguration]
     var RecrawlPolicy: js.UndefOr[RecrawlPolicy]
     var Role: js.UndefOr[Role]
@@ -11274,6 +16272,7 @@ package object glue {
         CrawlerSecurityConfiguration: js.UndefOr[CrawlerSecurityConfiguration] = js.undefined,
         DatabaseName: js.UndefOr[DatabaseName] = js.undefined,
         Description: js.UndefOr[DescriptionStringRemovable] = js.undefined,
+        LakeFormationConfiguration: js.UndefOr[LakeFormationConfiguration] = js.undefined,
         LineageConfiguration: js.UndefOr[LineageConfiguration] = js.undefined,
         RecrawlPolicy: js.UndefOr[RecrawlPolicy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
@@ -11291,6 +16290,7 @@ package object glue {
       CrawlerSecurityConfiguration.foreach(__v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LakeFormationConfiguration.foreach(__v => __obj.updateDynamic("LakeFormationConfiguration")(__v.asInstanceOf[js.Any]))
       LineageConfiguration.foreach(__v => __obj.updateDynamic("LineageConfiguration")(__v.asInstanceOf[js.Any]))
       RecrawlPolicy.foreach(__v => __obj.updateDynamic("RecrawlPolicy")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
@@ -11352,6 +16352,8 @@ package object glue {
     var Name: NameString
     var AllowSingleColumn: js.UndefOr[NullableBoolean]
     var ContainsHeader: js.UndefOr[CsvHeaderOption]
+    var CustomDatatypeConfigured: js.UndefOr[NullableBoolean]
+    var CustomDatatypes: js.UndefOr[CustomDatatypes]
     var Delimiter: js.UndefOr[CsvColumnDelimiter]
     var DisableValueTrimming: js.UndefOr[NullableBoolean]
     var Header: js.UndefOr[CsvHeader]
@@ -11364,6 +16366,8 @@ package object glue {
         Name: NameString,
         AllowSingleColumn: js.UndefOr[NullableBoolean] = js.undefined,
         ContainsHeader: js.UndefOr[CsvHeaderOption] = js.undefined,
+        CustomDatatypeConfigured: js.UndefOr[NullableBoolean] = js.undefined,
+        CustomDatatypes: js.UndefOr[CustomDatatypes] = js.undefined,
         Delimiter: js.UndefOr[CsvColumnDelimiter] = js.undefined,
         DisableValueTrimming: js.UndefOr[NullableBoolean] = js.undefined,
         Header: js.UndefOr[CsvHeader] = js.undefined,
@@ -11375,11 +16379,62 @@ package object glue {
 
       AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
       ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      CustomDatatypeConfigured.foreach(__v => __obj.updateDynamic("CustomDatatypeConfigured")(__v.asInstanceOf[js.Any]))
+      CustomDatatypes.foreach(__v => __obj.updateDynamic("CustomDatatypes")(__v.asInstanceOf[js.Any]))
       Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
       DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
       Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
       QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCsvClassifierRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDataQualityRulesetRequest extends js.Object {
+    var Name: NameString
+    var Description: js.UndefOr[DescriptionString]
+    var Ruleset: js.UndefOr[DataQualityRulesetString]
+    var UpdatedName: js.UndefOr[NameString]
+  }
+
+  object UpdateDataQualityRulesetRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Ruleset: js.UndefOr[DataQualityRulesetString] = js.undefined,
+        UpdatedName: js.UndefOr[NameString] = js.undefined
+    ): UpdateDataQualityRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Ruleset.foreach(__v => __obj.updateDynamic("Ruleset")(__v.asInstanceOf[js.Any]))
+      UpdatedName.foreach(__v => __obj.updateDynamic("UpdatedName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDataQualityRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDataQualityRulesetResponse extends js.Object {
+    var Description: js.UndefOr[DescriptionString]
+    var Name: js.UndefOr[NameString]
+    var Ruleset: js.UndefOr[DataQualityRulesetString]
+  }
+
+  object UpdateDataQualityRulesetResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[DescriptionString] = js.undefined,
+        Name: js.UndefOr[NameString] = js.undefined,
+        Ruleset: js.UndefOr[DataQualityRulesetString] = js.undefined
+    ): UpdateDataQualityRulesetResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Ruleset.foreach(__v => __obj.updateDynamic("Ruleset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDataQualityRulesetResponse]
     }
   }
 
@@ -11494,6 +16549,62 @@ package object glue {
       CustomPatterns.foreach(__v => __obj.updateDynamic("CustomPatterns")(__v.asInstanceOf[js.Any]))
       GrokPattern.foreach(__v => __obj.updateDynamic("GrokPattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGrokClassifierRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateJobFromSourceControlRequest extends js.Object {
+    var AuthStrategy: js.UndefOr[SourceControlAuthStrategy]
+    var AuthToken: js.UndefOr[AuthTokenString]
+    var BranchName: js.UndefOr[NameString]
+    var CommitId: js.UndefOr[CommitIdString]
+    var Folder: js.UndefOr[NameString]
+    var JobName: js.UndefOr[NameString]
+    var Provider: js.UndefOr[SourceControlProvider]
+    var RepositoryName: js.UndefOr[NameString]
+    var RepositoryOwner: js.UndefOr[NameString]
+  }
+
+  object UpdateJobFromSourceControlRequest {
+    @inline
+    def apply(
+        AuthStrategy: js.UndefOr[SourceControlAuthStrategy] = js.undefined,
+        AuthToken: js.UndefOr[AuthTokenString] = js.undefined,
+        BranchName: js.UndefOr[NameString] = js.undefined,
+        CommitId: js.UndefOr[CommitIdString] = js.undefined,
+        Folder: js.UndefOr[NameString] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        Provider: js.UndefOr[SourceControlProvider] = js.undefined,
+        RepositoryName: js.UndefOr[NameString] = js.undefined,
+        RepositoryOwner: js.UndefOr[NameString] = js.undefined
+    ): UpdateJobFromSourceControlRequest = {
+      val __obj = js.Dynamic.literal()
+      AuthStrategy.foreach(__v => __obj.updateDynamic("AuthStrategy")(__v.asInstanceOf[js.Any]))
+      AuthToken.foreach(__v => __obj.updateDynamic("AuthToken")(__v.asInstanceOf[js.Any]))
+      BranchName.foreach(__v => __obj.updateDynamic("BranchName")(__v.asInstanceOf[js.Any]))
+      CommitId.foreach(__v => __obj.updateDynamic("CommitId")(__v.asInstanceOf[js.Any]))
+      Folder.foreach(__v => __obj.updateDynamic("Folder")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      RepositoryName.foreach(__v => __obj.updateDynamic("RepositoryName")(__v.asInstanceOf[js.Any]))
+      RepositoryOwner.foreach(__v => __obj.updateDynamic("RepositoryOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobFromSourceControlRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateJobFromSourceControlResponse extends js.Object {
+    var JobName: js.UndefOr[NameString]
+  }
+
+  object UpdateJobFromSourceControlResponse {
+    @inline
+    def apply(
+        JobName: js.UndefOr[NameString] = js.undefined
+    ): UpdateJobFromSourceControlResponse = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateJobFromSourceControlResponse]
     }
   }
 
@@ -11750,12 +16861,69 @@ package object glue {
   }
 
   @js.native
+  trait UpdateSourceControlFromJobRequest extends js.Object {
+    var AuthStrategy: js.UndefOr[SourceControlAuthStrategy]
+    var AuthToken: js.UndefOr[AuthTokenString]
+    var BranchName: js.UndefOr[NameString]
+    var CommitId: js.UndefOr[CommitIdString]
+    var Folder: js.UndefOr[NameString]
+    var JobName: js.UndefOr[NameString]
+    var Provider: js.UndefOr[SourceControlProvider]
+    var RepositoryName: js.UndefOr[NameString]
+    var RepositoryOwner: js.UndefOr[NameString]
+  }
+
+  object UpdateSourceControlFromJobRequest {
+    @inline
+    def apply(
+        AuthStrategy: js.UndefOr[SourceControlAuthStrategy] = js.undefined,
+        AuthToken: js.UndefOr[AuthTokenString] = js.undefined,
+        BranchName: js.UndefOr[NameString] = js.undefined,
+        CommitId: js.UndefOr[CommitIdString] = js.undefined,
+        Folder: js.UndefOr[NameString] = js.undefined,
+        JobName: js.UndefOr[NameString] = js.undefined,
+        Provider: js.UndefOr[SourceControlProvider] = js.undefined,
+        RepositoryName: js.UndefOr[NameString] = js.undefined,
+        RepositoryOwner: js.UndefOr[NameString] = js.undefined
+    ): UpdateSourceControlFromJobRequest = {
+      val __obj = js.Dynamic.literal()
+      AuthStrategy.foreach(__v => __obj.updateDynamic("AuthStrategy")(__v.asInstanceOf[js.Any]))
+      AuthToken.foreach(__v => __obj.updateDynamic("AuthToken")(__v.asInstanceOf[js.Any]))
+      BranchName.foreach(__v => __obj.updateDynamic("BranchName")(__v.asInstanceOf[js.Any]))
+      CommitId.foreach(__v => __obj.updateDynamic("CommitId")(__v.asInstanceOf[js.Any]))
+      Folder.foreach(__v => __obj.updateDynamic("Folder")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      RepositoryName.foreach(__v => __obj.updateDynamic("RepositoryName")(__v.asInstanceOf[js.Any]))
+      RepositoryOwner.foreach(__v => __obj.updateDynamic("RepositoryOwner")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSourceControlFromJobRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSourceControlFromJobResponse extends js.Object {
+    var JobName: js.UndefOr[NameString]
+  }
+
+  object UpdateSourceControlFromJobResponse {
+    @inline
+    def apply(
+        JobName: js.UndefOr[NameString] = js.undefined
+    ): UpdateSourceControlFromJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSourceControlFromJobResponse]
+    }
+  }
+
+  @js.native
   trait UpdateTableRequest extends js.Object {
     var DatabaseName: NameString
     var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
     var SkipArchive: js.UndefOr[BooleanNullable]
     var TransactionId: js.UndefOr[TransactionIdString]
+    var VersionId: js.UndefOr[VersionString]
   }
 
   object UpdateTableRequest {
@@ -11765,7 +16933,8 @@ package object glue {
         TableInput: TableInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         SkipArchive: js.UndefOr[BooleanNullable] = js.undefined,
-        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined,
+        VersionId: js.UndefOr[VersionString] = js.undefined
     ): UpdateTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -11775,6 +16944,7 @@ package object glue {
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       SkipArchive.foreach(__v => __obj.updateDynamic("SkipArchive")(__v.asInstanceOf[js.Any]))
       TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableRequest]
     }
   }
@@ -11930,6 +17100,30 @@ package object glue {
       Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
       RowTag.foreach(__v => __obj.updateDynamic("RowTag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateXMLClassifierRequest]
+    }
+  }
+
+  /** The options to configure an upsert operation when writing to a Redshift target .
+    */
+  @js.native
+  trait UpsertRedshiftTargetOptions extends js.Object {
+    var ConnectionName: js.UndefOr[EnclosedInStringProperty]
+    var TableLocation: js.UndefOr[EnclosedInStringProperty]
+    var UpsertKeys: js.UndefOr[EnclosedInStringPropertiesMinOne]
+  }
+
+  object UpsertRedshiftTargetOptions {
+    @inline
+    def apply(
+        ConnectionName: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        TableLocation: js.UndefOr[EnclosedInStringProperty] = js.undefined,
+        UpsertKeys: js.UndefOr[EnclosedInStringPropertiesMinOne] = js.undefined
+    ): UpsertRedshiftTargetOptions = {
+      val __obj = js.Dynamic.literal()
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      TableLocation.foreach(__v => __obj.updateDynamic("TableLocation")(__v.asInstanceOf[js.Any]))
+      UpsertKeys.foreach(__v => __obj.updateDynamic("UpsertKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpsertRedshiftTargetOptions]
     }
   }
 
@@ -12117,31 +17311,37 @@ package object glue {
     */
   @js.native
   trait WorkflowRunStatistics extends js.Object {
+    var ErroredActions: js.UndefOr[IntegerValue]
     var FailedActions: js.UndefOr[IntegerValue]
     var RunningActions: js.UndefOr[IntegerValue]
     var StoppedActions: js.UndefOr[IntegerValue]
     var SucceededActions: js.UndefOr[IntegerValue]
     var TimeoutActions: js.UndefOr[IntegerValue]
     var TotalActions: js.UndefOr[IntegerValue]
+    var WaitingActions: js.UndefOr[IntegerValue]
   }
 
   object WorkflowRunStatistics {
     @inline
     def apply(
+        ErroredActions: js.UndefOr[IntegerValue] = js.undefined,
         FailedActions: js.UndefOr[IntegerValue] = js.undefined,
         RunningActions: js.UndefOr[IntegerValue] = js.undefined,
         StoppedActions: js.UndefOr[IntegerValue] = js.undefined,
         SucceededActions: js.UndefOr[IntegerValue] = js.undefined,
         TimeoutActions: js.UndefOr[IntegerValue] = js.undefined,
-        TotalActions: js.UndefOr[IntegerValue] = js.undefined
+        TotalActions: js.UndefOr[IntegerValue] = js.undefined,
+        WaitingActions: js.UndefOr[IntegerValue] = js.undefined
     ): WorkflowRunStatistics = {
       val __obj = js.Dynamic.literal()
+      ErroredActions.foreach(__v => __obj.updateDynamic("ErroredActions")(__v.asInstanceOf[js.Any]))
       FailedActions.foreach(__v => __obj.updateDynamic("FailedActions")(__v.asInstanceOf[js.Any]))
       RunningActions.foreach(__v => __obj.updateDynamic("RunningActions")(__v.asInstanceOf[js.Any]))
       StoppedActions.foreach(__v => __obj.updateDynamic("StoppedActions")(__v.asInstanceOf[js.Any]))
       SucceededActions.foreach(__v => __obj.updateDynamic("SucceededActions")(__v.asInstanceOf[js.Any]))
       TimeoutActions.foreach(__v => __obj.updateDynamic("TimeoutActions")(__v.asInstanceOf[js.Any]))
       TotalActions.foreach(__v => __obj.updateDynamic("TotalActions")(__v.asInstanceOf[js.Any]))
+      WaitingActions.foreach(__v => __obj.updateDynamic("WaitingActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowRunStatistics]
     }
   }

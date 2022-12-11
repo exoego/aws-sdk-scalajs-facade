@@ -12,6 +12,7 @@ package object amp {
   type IdempotencyToken = String
   type ListRuleGroupsNamespacesRequestMaxResultsInteger = Int
   type ListWorkspacesRequestMaxResultsInteger = Int
+  type LogGroupArn = String
   type PaginationToken = String
   type RuleGroupsNamespaceArn = String
   type RuleGroupsNamespaceData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -31,12 +32,15 @@ package object amp {
   final class AmpOps(private val service: Amp) extends AnyVal {
 
     @inline def createAlertManagerDefinitionFuture(params: CreateAlertManagerDefinitionRequest): Future[CreateAlertManagerDefinitionResponse] = service.createAlertManagerDefinition(params).promise().toFuture
+    @inline def createLoggingConfigurationFuture(params: CreateLoggingConfigurationRequest): Future[CreateLoggingConfigurationResponse] = service.createLoggingConfiguration(params).promise().toFuture
     @inline def createRuleGroupsNamespaceFuture(params: CreateRuleGroupsNamespaceRequest): Future[CreateRuleGroupsNamespaceResponse] = service.createRuleGroupsNamespace(params).promise().toFuture
     @inline def createWorkspaceFuture(params: CreateWorkspaceRequest): Future[CreateWorkspaceResponse] = service.createWorkspace(params).promise().toFuture
     @inline def deleteAlertManagerDefinitionFuture(params: DeleteAlertManagerDefinitionRequest): Future[js.Object] = service.deleteAlertManagerDefinition(params).promise().toFuture
+    @inline def deleteLoggingConfigurationFuture(params: DeleteLoggingConfigurationRequest): Future[js.Object] = service.deleteLoggingConfiguration(params).promise().toFuture
     @inline def deleteRuleGroupsNamespaceFuture(params: DeleteRuleGroupsNamespaceRequest): Future[js.Object] = service.deleteRuleGroupsNamespace(params).promise().toFuture
     @inline def deleteWorkspaceFuture(params: DeleteWorkspaceRequest): Future[js.Object] = service.deleteWorkspace(params).promise().toFuture
     @inline def describeAlertManagerDefinitionFuture(params: DescribeAlertManagerDefinitionRequest): Future[DescribeAlertManagerDefinitionResponse] = service.describeAlertManagerDefinition(params).promise().toFuture
+    @inline def describeLoggingConfigurationFuture(params: DescribeLoggingConfigurationRequest): Future[DescribeLoggingConfigurationResponse] = service.describeLoggingConfiguration(params).promise().toFuture
     @inline def describeRuleGroupsNamespaceFuture(params: DescribeRuleGroupsNamespaceRequest): Future[DescribeRuleGroupsNamespaceResponse] = service.describeRuleGroupsNamespace(params).promise().toFuture
     @inline def describeWorkspaceFuture(params: DescribeWorkspaceRequest): Future[DescribeWorkspaceResponse] = service.describeWorkspace(params).promise().toFuture
     @inline def listRuleGroupsNamespacesFuture(params: ListRuleGroupsNamespacesRequest): Future[ListRuleGroupsNamespacesResponse] = service.listRuleGroupsNamespaces(params).promise().toFuture
@@ -46,6 +50,7 @@ package object amp {
     @inline def putRuleGroupsNamespaceFuture(params: PutRuleGroupsNamespaceRequest): Future[PutRuleGroupsNamespaceResponse] = service.putRuleGroupsNamespace(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateLoggingConfigurationFuture(params: UpdateLoggingConfigurationRequest): Future[UpdateLoggingConfigurationResponse] = service.updateLoggingConfiguration(params).promise().toFuture
     @inline def updateWorkspaceAliasFuture(params: UpdateWorkspaceAliasRequest): Future[js.Object] = service.updateWorkspaceAlias(params).promise().toFuture
 
   }
@@ -56,12 +61,15 @@ package object amp {
     def this(config: AWSConfig) = this()
 
     def createAlertManagerDefinition(params: CreateAlertManagerDefinitionRequest): Request[CreateAlertManagerDefinitionResponse] = js.native
+    def createLoggingConfiguration(params: CreateLoggingConfigurationRequest): Request[CreateLoggingConfigurationResponse] = js.native
     def createRuleGroupsNamespace(params: CreateRuleGroupsNamespaceRequest): Request[CreateRuleGroupsNamespaceResponse] = js.native
     def createWorkspace(params: CreateWorkspaceRequest): Request[CreateWorkspaceResponse] = js.native
     def deleteAlertManagerDefinition(params: DeleteAlertManagerDefinitionRequest): Request[js.Object] = js.native
+    def deleteLoggingConfiguration(params: DeleteLoggingConfigurationRequest): Request[js.Object] = js.native
     def deleteRuleGroupsNamespace(params: DeleteRuleGroupsNamespaceRequest): Request[js.Object] = js.native
     def deleteWorkspace(params: DeleteWorkspaceRequest): Request[js.Object] = js.native
     def describeAlertManagerDefinition(params: DescribeAlertManagerDefinitionRequest): Request[DescribeAlertManagerDefinitionResponse] = js.native
+    def describeLoggingConfiguration(params: DescribeLoggingConfigurationRequest): Request[DescribeLoggingConfigurationResponse] = js.native
     def describeRuleGroupsNamespace(params: DescribeRuleGroupsNamespaceRequest): Request[DescribeRuleGroupsNamespaceResponse] = js.native
     def describeWorkspace(params: DescribeWorkspaceRequest): Request[DescribeWorkspaceResponse] = js.native
     def listRuleGroupsNamespaces(params: ListRuleGroupsNamespacesRequest): Request[ListRuleGroupsNamespacesResponse] = js.native
@@ -71,6 +79,7 @@ package object amp {
     def putRuleGroupsNamespace(params: PutRuleGroupsNamespaceRequest): Request[PutRuleGroupsNamespaceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateLoggingConfiguration(params: UpdateLoggingConfigurationRequest): Request[UpdateLoggingConfigurationResponse] = js.native
     def updateWorkspaceAlias(params: UpdateWorkspaceAliasRequest): Request[js.Object] = js.native
   }
   object Amp {
@@ -172,6 +181,51 @@ package object amp {
         "status" -> status.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateAlertManagerDefinitionResponse]
+    }
+  }
+
+  /** Represents the input of a CreateLoggingConfiguration operation.
+    */
+  @js.native
+  trait CreateLoggingConfigurationRequest extends js.Object {
+    var logGroupArn: LogGroupArn
+    var workspaceId: WorkspaceId
+    var clientToken: js.UndefOr[IdempotencyToken]
+  }
+
+  object CreateLoggingConfigurationRequest {
+    @inline
+    def apply(
+        logGroupArn: LogGroupArn,
+        workspaceId: WorkspaceId,
+        clientToken: js.UndefOr[IdempotencyToken] = js.undefined
+    ): CreateLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "logGroupArn" -> logGroupArn.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLoggingConfigurationRequest]
+    }
+  }
+
+  /** Represents the output of a CreateLoggingConfiguration operation.
+    */
+  @js.native
+  trait CreateLoggingConfigurationResponse extends js.Object {
+    var status: LoggingConfigurationStatus
+  }
+
+  object CreateLoggingConfigurationResponse {
+    @inline
+    def apply(
+        status: LoggingConfigurationStatus
+    ): CreateLoggingConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateLoggingConfigurationResponse]
     }
   }
 
@@ -312,6 +366,29 @@ package object amp {
     }
   }
 
+  /** Represents the input of a DeleteLoggingConfiguration operation.
+    */
+  @js.native
+  trait DeleteLoggingConfigurationRequest extends js.Object {
+    var workspaceId: WorkspaceId
+    var clientToken: js.UndefOr[IdempotencyToken]
+  }
+
+  object DeleteLoggingConfigurationRequest {
+    @inline
+    def apply(
+        workspaceId: WorkspaceId,
+        clientToken: js.UndefOr[IdempotencyToken] = js.undefined
+    ): DeleteLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteLoggingConfigurationRequest]
+    }
+  }
+
   /** Represents the input of a DeleteRuleGroupsNamespace operation.
     */
   @js.native
@@ -396,6 +473,44 @@ package object amp {
         "alertManagerDefinition" -> alertManagerDefinition.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribeAlertManagerDefinitionResponse]
+    }
+  }
+
+  /** Represents the input of a DescribeLoggingConfiguration operation.
+    */
+  @js.native
+  trait DescribeLoggingConfigurationRequest extends js.Object {
+    var workspaceId: WorkspaceId
+  }
+
+  object DescribeLoggingConfigurationRequest {
+    @inline
+    def apply(
+        workspaceId: WorkspaceId
+    ): DescribeLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLoggingConfigurationRequest]
+    }
+  }
+
+  /** Represents the output of a DescribeLoggingConfiguration operation.
+    */
+  @js.native
+  trait DescribeLoggingConfigurationResponse extends js.Object {
+    var loggingConfiguration: LoggingConfigurationMetadata
+  }
+
+  object DescribeLoggingConfigurationResponse {
+    @inline
+    def apply(
+        loggingConfiguration: LoggingConfigurationMetadata
+    ): DescribeLoggingConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "loggingConfiguration" -> loggingConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLoggingConfigurationResponse]
     }
   }
 
@@ -607,6 +722,60 @@ package object amp {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkspacesResponse]
+    }
+  }
+
+  /** Represents the properties of a logging configuration metadata.
+    */
+  @js.native
+  trait LoggingConfigurationMetadata extends js.Object {
+    var createdAt: Timestamp
+    var logGroupArn: LogGroupArn
+    var modifiedAt: Timestamp
+    var status: LoggingConfigurationStatus
+    var workspace: WorkspaceId
+  }
+
+  object LoggingConfigurationMetadata {
+    @inline
+    def apply(
+        createdAt: Timestamp,
+        logGroupArn: LogGroupArn,
+        modifiedAt: Timestamp,
+        status: LoggingConfigurationStatus,
+        workspace: WorkspaceId
+    ): LoggingConfigurationMetadata = {
+      val __obj = js.Dynamic.literal(
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "logGroupArn" -> logGroupArn.asInstanceOf[js.Any],
+        "modifiedAt" -> modifiedAt.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "workspace" -> workspace.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LoggingConfigurationMetadata]
+    }
+  }
+
+  /** Represents the status of a logging configuration.
+    */
+  @js.native
+  trait LoggingConfigurationStatus extends js.Object {
+    var statusCode: LoggingConfigurationStatusCode
+    var statusReason: js.UndefOr[String]
+  }
+
+  object LoggingConfigurationStatus {
+    @inline
+    def apply(
+        statusCode: LoggingConfigurationStatusCode,
+        statusReason: js.UndefOr[String] = js.undefined
+    ): LoggingConfigurationStatus = {
+      val __obj = js.Dynamic.literal(
+        "statusCode" -> statusCode.asInstanceOf[js.Any]
+      )
+
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingConfigurationStatus]
     }
   }
 
@@ -868,6 +1037,51 @@ package object amp {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  /** Represents the input of an UpdateLoggingConfiguration operation.
+    */
+  @js.native
+  trait UpdateLoggingConfigurationRequest extends js.Object {
+    var logGroupArn: LogGroupArn
+    var workspaceId: WorkspaceId
+    var clientToken: js.UndefOr[IdempotencyToken]
+  }
+
+  object UpdateLoggingConfigurationRequest {
+    @inline
+    def apply(
+        logGroupArn: LogGroupArn,
+        workspaceId: WorkspaceId,
+        clientToken: js.UndefOr[IdempotencyToken] = js.undefined
+    ): UpdateLoggingConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "logGroupArn" -> logGroupArn.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLoggingConfigurationRequest]
+    }
+  }
+
+  /** Represents the output of an UpdateLoggingConfiguration operation.
+    */
+  @js.native
+  trait UpdateLoggingConfigurationResponse extends js.Object {
+    var status: LoggingConfigurationStatus
+  }
+
+  object UpdateLoggingConfigurationResponse {
+    @inline
+    def apply(
+        status: LoggingConfigurationStatus
+    ): UpdateLoggingConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateLoggingConfigurationResponse]
     }
   }
 

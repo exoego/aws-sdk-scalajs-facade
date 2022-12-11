@@ -12,25 +12,38 @@ package object lookoutmetrics {
   type AlertName = String
   type AlertSummaryList = js.Array[AlertSummary]
   type AnomalyDetectionTaskStatusMessage = String
+  type AnomalyDetectorDataQualityMetricList = js.Array[AnomalyDetectorDataQualityMetric]
   type AnomalyDetectorDescription = String
   type AnomalyDetectorName = String
   type AnomalyDetectorSummaryList = js.Array[AnomalyDetectorSummary]
   type AnomalyGroupSummaryList = js.Array[AnomalyGroupSummary]
   type Arn = String
+  type AthenaDataCatalog = String
+  type AthenaDatabaseName = String
+  type AthenaS3ResultsPath = String
+  type AthenaTableName = String
+  type AthenaWorkGroupName = String
+  type BinaryAttributeValue = String
+  type BinaryListAttributeValue = js.Array[BinaryAttributeValue]
   type Charset = String
   type ColumnName = String
   type DataItem = String
+  type DataQualityMetricDescription = String
+  type DataQualityMetricList = js.Array[DataQualityMetric]
   type DatabaseHost = String
   type DatabasePort = Int
   type DateTimeFormat = String
   type Delimiter = String
   type DimensionContributionList = js.Array[DimensionContribution]
+  type DimensionFilterList = js.Array[DimensionFilter]
   type DimensionList = js.Array[ColumnName]
   type DimensionNameValueList = js.Array[DimensionNameValue]
   type DimensionValue = String
   type DimensionValueContributionList = js.Array[DimensionValueContribution]
+  type DimensionValueList = js.Array[DimensionValue]
   type ErrorMessage = String
   type ExecutionList = js.Array[ExecutionStatus]
+  type FilterList = js.Array[Filter]
   type FlowName = String
   type HeaderList = js.Array[ColumnName]
   type HeaderValue = String
@@ -41,17 +54,23 @@ package object lookoutmetrics {
   type ItemizedMetricStatsList = js.Array[ItemizedMetricStats]
   type KmsKeyArn = String
   type MaxResults = Int
+  type Message = String
   type MetricChangePercentage = Double
   type MetricLevelImpactList = js.Array[MetricLevelImpact]
   type MetricList = js.Array[Metric]
   type MetricName = String
+  type MetricNameList = js.Array[MetricName]
+  type MetricSetDataQualityMetricList = js.Array[MetricSetDataQualityMetric]
   type MetricSetDescription = String
+  type MetricSetDimensionFilterList = js.Array[MetricSetDimensionFilter]
   type MetricSetName = String
   type MetricSetSummaryList = js.Array[MetricSetSummary]
   type MetricValue = Double
   type MetricValueList = js.Array[MetricValue]
   type Namespace = String
   type NextToken = String
+  type NumberAttributeValue = String
+  type NumberListAttributeValue = js.Array[NumberAttributeValue]
   type Offset = Int
   type PoirotSecretManagerArn = String
   type QuoteSymbol = String
@@ -59,12 +78,15 @@ package object lookoutmetrics {
   type RDSDatabaseName = String
   type RedshiftClusterIdentifier = String
   type RedshiftDatabaseName = String
+  type RelatedColumnName = String
   type SampleRow = js.Array[DataItem]
   type SampleRows = js.Array[SampleRow]
   type Score = Double
   type SecurityGroupId = String
   type SecurityGroupIdList = js.Array[SecurityGroupId]
   type SensitivityThreshold = Int
+  type StringAttributeValue = String
+  type StringListAttributeValue = js.Array[StringAttributeValue]
   type SubnetId = String
   type SubnetIdList = js.Array[SubnetId]
   type TableName = String
@@ -90,13 +112,16 @@ package object lookoutmetrics {
     @inline def createAlertFuture(params: CreateAlertRequest): Future[CreateAlertResponse] = service.createAlert(params).promise().toFuture
     @inline def createAnomalyDetectorFuture(params: CreateAnomalyDetectorRequest): Future[CreateAnomalyDetectorResponse] = service.createAnomalyDetector(params).promise().toFuture
     @inline def createMetricSetFuture(params: CreateMetricSetRequest): Future[CreateMetricSetResponse] = service.createMetricSet(params).promise().toFuture
+    @inline def deactivateAnomalyDetectorFuture(params: DeactivateAnomalyDetectorRequest): Future[DeactivateAnomalyDetectorResponse] = service.deactivateAnomalyDetector(params).promise().toFuture
     @inline def deleteAlertFuture(params: DeleteAlertRequest): Future[DeleteAlertResponse] = service.deleteAlert(params).promise().toFuture
     @inline def deleteAnomalyDetectorFuture(params: DeleteAnomalyDetectorRequest): Future[DeleteAnomalyDetectorResponse] = service.deleteAnomalyDetector(params).promise().toFuture
     @inline def describeAlertFuture(params: DescribeAlertRequest): Future[DescribeAlertResponse] = service.describeAlert(params).promise().toFuture
     @inline def describeAnomalyDetectionExecutionsFuture(params: DescribeAnomalyDetectionExecutionsRequest): Future[DescribeAnomalyDetectionExecutionsResponse] = service.describeAnomalyDetectionExecutions(params).promise().toFuture
     @inline def describeAnomalyDetectorFuture(params: DescribeAnomalyDetectorRequest): Future[DescribeAnomalyDetectorResponse] = service.describeAnomalyDetector(params).promise().toFuture
     @inline def describeMetricSetFuture(params: DescribeMetricSetRequest): Future[DescribeMetricSetResponse] = service.describeMetricSet(params).promise().toFuture
+    @inline def detectMetricSetConfigFuture(params: DetectMetricSetConfigRequest): Future[DetectMetricSetConfigResponse] = service.detectMetricSetConfig(params).promise().toFuture
     @inline def getAnomalyGroupFuture(params: GetAnomalyGroupRequest): Future[GetAnomalyGroupResponse] = service.getAnomalyGroup(params).promise().toFuture
+    @inline def getDataQualityMetricsFuture(params: GetDataQualityMetricsRequest): Future[GetDataQualityMetricsResponse] = service.getDataQualityMetrics(params).promise().toFuture
     @inline def getFeedbackFuture(params: GetFeedbackRequest): Future[GetFeedbackResponse] = service.getFeedback(params).promise().toFuture
     @inline def getSampleDataFuture(params: GetSampleDataRequest): Future[GetSampleDataResponse] = service.getSampleData(params).promise().toFuture
     @inline def listAlertsFuture(params: ListAlertsRequest): Future[ListAlertsResponse] = service.listAlerts(params).promise().toFuture
@@ -109,6 +134,7 @@ package object lookoutmetrics {
     @inline def putFeedbackFuture(params: PutFeedbackRequest): Future[PutFeedbackResponse] = service.putFeedback(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAlertFuture(params: UpdateAlertRequest): Future[UpdateAlertResponse] = service.updateAlert(params).promise().toFuture
     @inline def updateAnomalyDetectorFuture(params: UpdateAnomalyDetectorRequest): Future[UpdateAnomalyDetectorResponse] = service.updateAnomalyDetector(params).promise().toFuture
     @inline def updateMetricSetFuture(params: UpdateMetricSetRequest): Future[UpdateMetricSetResponse] = service.updateMetricSet(params).promise().toFuture
 
@@ -124,13 +150,16 @@ package object lookoutmetrics {
     def createAlert(params: CreateAlertRequest): Request[CreateAlertResponse] = js.native
     def createAnomalyDetector(params: CreateAnomalyDetectorRequest): Request[CreateAnomalyDetectorResponse] = js.native
     def createMetricSet(params: CreateMetricSetRequest): Request[CreateMetricSetResponse] = js.native
+    def deactivateAnomalyDetector(params: DeactivateAnomalyDetectorRequest): Request[DeactivateAnomalyDetectorResponse] = js.native
     def deleteAlert(params: DeleteAlertRequest): Request[DeleteAlertResponse] = js.native
     def deleteAnomalyDetector(params: DeleteAnomalyDetectorRequest): Request[DeleteAnomalyDetectorResponse] = js.native
     def describeAlert(params: DescribeAlertRequest): Request[DescribeAlertResponse] = js.native
     def describeAnomalyDetectionExecutions(params: DescribeAnomalyDetectionExecutionsRequest): Request[DescribeAnomalyDetectionExecutionsResponse] = js.native
     def describeAnomalyDetector(params: DescribeAnomalyDetectorRequest): Request[DescribeAnomalyDetectorResponse] = js.native
     def describeMetricSet(params: DescribeMetricSetRequest): Request[DescribeMetricSetResponse] = js.native
+    def detectMetricSetConfig(params: DetectMetricSetConfigRequest): Request[DetectMetricSetConfigResponse] = js.native
     def getAnomalyGroup(params: GetAnomalyGroupRequest): Request[GetAnomalyGroupResponse] = js.native
+    def getDataQualityMetrics(params: GetDataQualityMetricsRequest): Request[GetDataQualityMetricsResponse] = js.native
     def getFeedback(params: GetFeedbackRequest): Request[GetFeedbackResponse] = js.native
     def getSampleData(params: GetSampleDataRequest): Request[GetSampleDataResponse] = js.native
     def listAlerts(params: ListAlertsRequest): Request[ListAlertsResponse] = js.native
@@ -143,6 +172,7 @@ package object lookoutmetrics {
     def putFeedback(params: PutFeedbackRequest): Request[PutFeedbackResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAlert(params: UpdateAlertRequest): Request[UpdateAlertResponse] = js.native
     def updateAnomalyDetector(params: UpdateAnomalyDetectorRequest): Request[UpdateAnomalyDetectorResponse] = js.native
     def updateMetricSet(params: UpdateMetricSetRequest): Request[UpdateMetricSetResponse] = js.native
   }
@@ -208,6 +238,7 @@ package object lookoutmetrics {
     var Action: js.UndefOr[Action]
     var AlertArn: js.UndefOr[Arn]
     var AlertDescription: js.UndefOr[AlertDescription]
+    var AlertFilters: js.UndefOr[AlertFilters]
     var AlertName: js.UndefOr[AlertName]
     var AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold]
     var AlertStatus: js.UndefOr[AlertStatus]
@@ -223,6 +254,7 @@ package object lookoutmetrics {
         Action: js.UndefOr[Action] = js.undefined,
         AlertArn: js.UndefOr[Arn] = js.undefined,
         AlertDescription: js.UndefOr[AlertDescription] = js.undefined,
+        AlertFilters: js.UndefOr[AlertFilters] = js.undefined,
         AlertName: js.UndefOr[AlertName] = js.undefined,
         AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold] = js.undefined,
         AlertStatus: js.UndefOr[AlertStatus] = js.undefined,
@@ -235,6 +267,7 @@ package object lookoutmetrics {
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       AlertArn.foreach(__v => __obj.updateDynamic("AlertArn")(__v.asInstanceOf[js.Any]))
       AlertDescription.foreach(__v => __obj.updateDynamic("AlertDescription")(__v.asInstanceOf[js.Any]))
+      AlertFilters.foreach(__v => __obj.updateDynamic("AlertFilters")(__v.asInstanceOf[js.Any]))
       AlertName.foreach(__v => __obj.updateDynamic("AlertName")(__v.asInstanceOf[js.Any]))
       AlertSensitivityThreshold.foreach(__v => __obj.updateDynamic("AlertSensitivityThreshold")(__v.asInstanceOf[js.Any]))
       AlertStatus.foreach(__v => __obj.updateDynamic("AlertStatus")(__v.asInstanceOf[js.Any]))
@@ -243,6 +276,27 @@ package object lookoutmetrics {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Alert]
+    }
+  }
+
+  /** The configuration of the alert filters.
+    */
+  @js.native
+  trait AlertFilters extends js.Object {
+    var DimensionFilterList: js.UndefOr[DimensionFilterList]
+    var MetricList: js.UndefOr[MetricNameList]
+  }
+
+  object AlertFilters {
+    @inline
+    def apply(
+        DimensionFilterList: js.UndefOr[DimensionFilterList] = js.undefined,
+        MetricList: js.UndefOr[MetricNameList] = js.undefined
+    ): AlertFilters = {
+      val __obj = js.Dynamic.literal()
+      DimensionFilterList.foreach(__v => __obj.updateDynamic("DimensionFilterList")(__v.asInstanceOf[js.Any]))
+      MetricList.foreach(__v => __obj.updateDynamic("MetricList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AlertFilters]
     }
   }
 
@@ -321,6 +375,27 @@ package object lookoutmetrics {
       val __obj = js.Dynamic.literal()
       AnomalyDetectorFrequency.foreach(__v => __obj.updateDynamic("AnomalyDetectorFrequency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetectorConfigSummary]
+    }
+  }
+
+  /** Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code> provided in the <a>GetDataQualityMetrics</a> object.
+    */
+  @js.native
+  trait AnomalyDetectorDataQualityMetric extends js.Object {
+    var MetricSetDataQualityMetricList: js.UndefOr[MetricSetDataQualityMetricList]
+    var StartTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object AnomalyDetectorDataQualityMetric {
+    @inline
+    def apply(
+        MetricSetDataQualityMetricList: js.UndefOr[MetricSetDataQualityMetricList] = js.undefined,
+        StartTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): AnomalyDetectorDataQualityMetric = {
+      val __obj = js.Dynamic.literal()
+      MetricSetDataQualityMetricList.foreach(__v => __obj.updateDynamic("MetricSetDataQualityMetricList")(__v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.updateDynamic("StartTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalyDetectorDataQualityMetric]
     }
   }
 
@@ -499,21 +574,128 @@ package object lookoutmetrics {
     */
   @js.native
   trait AppFlowConfig extends js.Object {
-    var FlowName: FlowName
-    var RoleArn: Arn
+    var FlowName: js.UndefOr[FlowName]
+    var RoleArn: js.UndefOr[Arn]
   }
 
   object AppFlowConfig {
     @inline
     def apply(
-        FlowName: FlowName,
-        RoleArn: Arn
+        FlowName: js.UndefOr[FlowName] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined
     ): AppFlowConfig = {
-      val __obj = js.Dynamic.literal(
-        "FlowName" -> FlowName.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      FlowName.foreach(__v => __obj.updateDynamic("FlowName")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppFlowConfig]
+    }
+  }
+
+  /** Details about an Amazon Athena datasource.
+    */
+  @js.native
+  trait AthenaSourceConfig extends js.Object {
+    var BackTestConfiguration: js.UndefOr[BackTestConfiguration]
+    var DataCatalog: js.UndefOr[AthenaDataCatalog]
+    var DatabaseName: js.UndefOr[AthenaDatabaseName]
+    var RoleArn: js.UndefOr[Arn]
+    var S3ResultsPath: js.UndefOr[AthenaS3ResultsPath]
+    var TableName: js.UndefOr[AthenaTableName]
+    var WorkGroupName: js.UndefOr[AthenaWorkGroupName]
+  }
+
+  object AthenaSourceConfig {
+    @inline
+    def apply(
+        BackTestConfiguration: js.UndefOr[BackTestConfiguration] = js.undefined,
+        DataCatalog: js.UndefOr[AthenaDataCatalog] = js.undefined,
+        DatabaseName: js.UndefOr[AthenaDatabaseName] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined,
+        S3ResultsPath: js.UndefOr[AthenaS3ResultsPath] = js.undefined,
+        TableName: js.UndefOr[AthenaTableName] = js.undefined,
+        WorkGroupName: js.UndefOr[AthenaWorkGroupName] = js.undefined
+    ): AthenaSourceConfig = {
+      val __obj = js.Dynamic.literal()
+      BackTestConfiguration.foreach(__v => __obj.updateDynamic("BackTestConfiguration")(__v.asInstanceOf[js.Any]))
+      DataCatalog.foreach(__v => __obj.updateDynamic("DataCatalog")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      S3ResultsPath.foreach(__v => __obj.updateDynamic("S3ResultsPath")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      WorkGroupName.foreach(__v => __obj.updateDynamic("WorkGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AthenaSourceConfig]
+    }
+  }
+
+  /** An attribute value.
+    */
+  @js.native
+  trait AttributeValue extends js.Object {
+    var B: js.UndefOr[BinaryAttributeValue]
+    var BS: js.UndefOr[BinaryListAttributeValue]
+    var N: js.UndefOr[NumberAttributeValue]
+    var NS: js.UndefOr[NumberListAttributeValue]
+    var S: js.UndefOr[StringAttributeValue]
+    var SS: js.UndefOr[StringListAttributeValue]
+  }
+
+  object AttributeValue {
+    @inline
+    def apply(
+        B: js.UndefOr[BinaryAttributeValue] = js.undefined,
+        BS: js.UndefOr[BinaryListAttributeValue] = js.undefined,
+        N: js.UndefOr[NumberAttributeValue] = js.undefined,
+        NS: js.UndefOr[NumberListAttributeValue] = js.undefined,
+        S: js.UndefOr[StringAttributeValue] = js.undefined,
+        SS: js.UndefOr[StringListAttributeValue] = js.undefined
+    ): AttributeValue = {
+      val __obj = js.Dynamic.literal()
+      B.foreach(__v => __obj.updateDynamic("B")(__v.asInstanceOf[js.Any]))
+      BS.foreach(__v => __obj.updateDynamic("BS")(__v.asInstanceOf[js.Any]))
+      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
+      NS.foreach(__v => __obj.updateDynamic("NS")(__v.asInstanceOf[js.Any]))
+      S.foreach(__v => __obj.updateDynamic("S")(__v.asInstanceOf[js.Any]))
+      SS.foreach(__v => __obj.updateDynamic("SS")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributeValue]
+    }
+  }
+
+  /** An auto detection metric source.
+    */
+  @js.native
+  trait AutoDetectionMetricSource extends js.Object {
+    var S3SourceConfig: js.UndefOr[AutoDetectionS3SourceConfig]
+  }
+
+  object AutoDetectionMetricSource {
+    @inline
+    def apply(
+        S3SourceConfig: js.UndefOr[AutoDetectionS3SourceConfig] = js.undefined
+    ): AutoDetectionMetricSource = {
+      val __obj = js.Dynamic.literal()
+      S3SourceConfig.foreach(__v => __obj.updateDynamic("S3SourceConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoDetectionMetricSource]
+    }
+  }
+
+  /** An auto detection source config.
+    */
+  @js.native
+  trait AutoDetectionS3SourceConfig extends js.Object {
+    var HistoricalDataPathList: js.UndefOr[HistoricalDataPathList]
+    var TemplatedPathList: js.UndefOr[TemplatedPathList]
+  }
+
+  object AutoDetectionS3SourceConfig {
+    @inline
+    def apply(
+        HistoricalDataPathList: js.UndefOr[HistoricalDataPathList] = js.undefined,
+        TemplatedPathList: js.UndefOr[TemplatedPathList] = js.undefined
+    ): AutoDetectionS3SourceConfig = {
+      val __obj = js.Dynamic.literal()
+      HistoricalDataPathList.foreach(__v => __obj.updateDynamic("HistoricalDataPathList")(__v.asInstanceOf[js.Any]))
+      TemplatedPathList.foreach(__v => __obj.updateDynamic("TemplatedPathList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoDetectionS3SourceConfig]
     }
   }
 
@@ -545,21 +727,42 @@ package object lookoutmetrics {
     }
   }
 
+  /** Settings for backtest mode.
+    */
+  @js.native
+  trait BackTestConfiguration extends js.Object {
+    var RunBackTestMode: Boolean
+  }
+
+  object BackTestConfiguration {
+    @inline
+    def apply(
+        RunBackTestMode: Boolean
+    ): BackTestConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "RunBackTestMode" -> RunBackTestMode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BackTestConfiguration]
+    }
+  }
+
   /** Details about an Amazon CloudWatch datasource.
     */
   @js.native
   trait CloudWatchConfig extends js.Object {
-    var RoleArn: Arn
+    var BackTestConfiguration: js.UndefOr[BackTestConfiguration]
+    var RoleArn: js.UndefOr[Arn]
   }
 
   object CloudWatchConfig {
     @inline
     def apply(
-        RoleArn: Arn
+        BackTestConfiguration: js.UndefOr[BackTestConfiguration] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined
     ): CloudWatchConfig = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      BackTestConfiguration.foreach(__v => __obj.updateDynamic("BackTestConfiguration")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchConfig]
     }
   }
@@ -586,9 +789,10 @@ package object lookoutmetrics {
   trait CreateAlertRequest extends js.Object {
     var Action: Action
     var AlertName: AlertName
-    var AlertSensitivityThreshold: SensitivityThreshold
     var AnomalyDetectorArn: Arn
     var AlertDescription: js.UndefOr[AlertDescription]
+    var AlertFilters: js.UndefOr[AlertFilters]
+    var AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -597,19 +801,21 @@ package object lookoutmetrics {
     def apply(
         Action: Action,
         AlertName: AlertName,
-        AlertSensitivityThreshold: SensitivityThreshold,
         AnomalyDetectorArn: Arn,
         AlertDescription: js.UndefOr[AlertDescription] = js.undefined,
+        AlertFilters: js.UndefOr[AlertFilters] = js.undefined,
+        AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateAlertRequest = {
       val __obj = js.Dynamic.literal(
         "Action" -> Action.asInstanceOf[js.Any],
         "AlertName" -> AlertName.asInstanceOf[js.Any],
-        "AlertSensitivityThreshold" -> AlertSensitivityThreshold.asInstanceOf[js.Any],
         "AnomalyDetectorArn" -> AnomalyDetectorArn.asInstanceOf[js.Any]
       )
 
       AlertDescription.foreach(__v => __obj.updateDynamic("AlertDescription")(__v.asInstanceOf[js.Any]))
+      AlertFilters.foreach(__v => __obj.updateDynamic("AlertFilters")(__v.asInstanceOf[js.Any]))
+      AlertSensitivityThreshold.foreach(__v => __obj.updateDynamic("AlertSensitivityThreshold")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAlertRequest]
     }
@@ -683,6 +889,7 @@ package object lookoutmetrics {
     var MetricList: MetricList
     var MetricSetName: MetricSetName
     var MetricSource: MetricSource
+    var DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList]
     var DimensionList: js.UndefOr[DimensionList]
     var MetricSetDescription: js.UndefOr[MetricSetDescription]
     var MetricSetFrequency: js.UndefOr[Frequency]
@@ -699,6 +906,7 @@ package object lookoutmetrics {
         MetricList: MetricList,
         MetricSetName: MetricSetName,
         MetricSource: MetricSource,
+        DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList] = js.undefined,
         DimensionList: js.UndefOr[DimensionList] = js.undefined,
         MetricSetDescription: js.UndefOr[MetricSetDescription] = js.undefined,
         MetricSetFrequency: js.UndefOr[Frequency] = js.undefined,
@@ -714,6 +922,7 @@ package object lookoutmetrics {
         "MetricSource" -> MetricSource.asInstanceOf[js.Any]
       )
 
+      DimensionFilterList.foreach(__v => __obj.updateDynamic("DimensionFilterList")(__v.asInstanceOf[js.Any]))
       DimensionList.foreach(__v => __obj.updateDynamic("DimensionList")(__v.asInstanceOf[js.Any]))
       MetricSetDescription.foreach(__v => __obj.updateDynamic("MetricSetDescription")(__v.asInstanceOf[js.Any]))
       MetricSetFrequency.foreach(__v => __obj.updateDynamic("MetricSetFrequency")(__v.asInstanceOf[js.Any]))
@@ -771,6 +980,61 @@ package object lookoutmetrics {
       HeaderList.foreach(__v => __obj.updateDynamic("HeaderList")(__v.asInstanceOf[js.Any]))
       QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CsvFormatDescriptor]
+    }
+  }
+
+  /** An array that describes a data quality metric. Each <code>DataQualityMetric</code> object contains the data quality metric name, its value, a description of the metric, and the affected column.
+    */
+  @js.native
+  trait DataQualityMetric extends js.Object {
+    var MetricDescription: js.UndefOr[DataQualityMetricDescription]
+    var MetricType: js.UndefOr[DataQualityMetricType]
+    var MetricValue: js.UndefOr[Double]
+    var RelatedColumnName: js.UndefOr[RelatedColumnName]
+  }
+
+  object DataQualityMetric {
+    @inline
+    def apply(
+        MetricDescription: js.UndefOr[DataQualityMetricDescription] = js.undefined,
+        MetricType: js.UndefOr[DataQualityMetricType] = js.undefined,
+        MetricValue: js.UndefOr[Double] = js.undefined,
+        RelatedColumnName: js.UndefOr[RelatedColumnName] = js.undefined
+    ): DataQualityMetric = {
+      val __obj = js.Dynamic.literal()
+      MetricDescription.foreach(__v => __obj.updateDynamic("MetricDescription")(__v.asInstanceOf[js.Any]))
+      MetricType.foreach(__v => __obj.updateDynamic("MetricType")(__v.asInstanceOf[js.Any]))
+      MetricValue.foreach(__v => __obj.updateDynamic("MetricValue")(__v.asInstanceOf[js.Any]))
+      RelatedColumnName.foreach(__v => __obj.updateDynamic("RelatedColumnName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataQualityMetric]
+    }
+  }
+
+  @js.native
+  trait DeactivateAnomalyDetectorRequest extends js.Object {
+    var AnomalyDetectorArn: Arn
+  }
+
+  object DeactivateAnomalyDetectorRequest {
+    @inline
+    def apply(
+        AnomalyDetectorArn: Arn
+    ): DeactivateAnomalyDetectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyDetectorArn" -> AnomalyDetectorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeactivateAnomalyDetectorRequest]
+    }
+  }
+
+  @js.native
+  trait DeactivateAnomalyDetectorResponse extends js.Object
+
+  object DeactivateAnomalyDetectorResponse {
+    @inline
+    def apply(): DeactivateAnomalyDetectorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeactivateAnomalyDetectorResponse]
     }
   }
 
@@ -934,6 +1198,7 @@ package object lookoutmetrics {
     var AnomalyDetectorName: js.UndefOr[AnomalyDetectorName]
     var CreationTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[ErrorMessage]
+    var FailureType: js.UndefOr[AnomalyDetectorFailureType]
     var KmsKeyArn: js.UndefOr[KmsKeyArn]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Status: js.UndefOr[AnomalyDetectorStatus]
@@ -948,6 +1213,7 @@ package object lookoutmetrics {
         AnomalyDetectorName: js.UndefOr[AnomalyDetectorName] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[ErrorMessage] = js.undefined,
+        FailureType: js.UndefOr[AnomalyDetectorFailureType] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[AnomalyDetectorStatus] = js.undefined
@@ -959,6 +1225,7 @@ package object lookoutmetrics {
       AnomalyDetectorName.foreach(__v => __obj.updateDynamic("AnomalyDetectorName")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      FailureType.foreach(__v => __obj.updateDynamic("FailureType")(__v.asInstanceOf[js.Any]))
       KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -987,6 +1254,7 @@ package object lookoutmetrics {
   trait DescribeMetricSetResponse extends js.Object {
     var AnomalyDetectorArn: js.UndefOr[Arn]
     var CreationTime: js.UndefOr[Timestamp]
+    var DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList]
     var DimensionList: js.UndefOr[DimensionList]
     var LastModificationTime: js.UndefOr[Timestamp]
     var MetricList: js.UndefOr[MetricList]
@@ -1005,6 +1273,7 @@ package object lookoutmetrics {
     def apply(
         AnomalyDetectorArn: js.UndefOr[Arn] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList] = js.undefined,
         DimensionList: js.UndefOr[DimensionList] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         MetricList: js.UndefOr[MetricList] = js.undefined,
@@ -1020,6 +1289,7 @@ package object lookoutmetrics {
       val __obj = js.Dynamic.literal()
       AnomalyDetectorArn.foreach(__v => __obj.updateDynamic("AnomalyDetectorArn")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DimensionFilterList.foreach(__v => __obj.updateDynamic("DimensionFilterList")(__v.asInstanceOf[js.Any]))
       DimensionList.foreach(__v => __obj.updateDynamic("DimensionList")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       MetricList.foreach(__v => __obj.updateDynamic("MetricList")(__v.asInstanceOf[js.Any]))
@@ -1032,6 +1302,201 @@ package object lookoutmetrics {
       TimestampColumn.foreach(__v => __obj.updateDynamic("TimestampColumn")(__v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMetricSetResponse]
+    }
+  }
+
+  @js.native
+  trait DetectMetricSetConfigRequest extends js.Object {
+    var AnomalyDetectorArn: Arn
+    var AutoDetectionMetricSource: AutoDetectionMetricSource
+  }
+
+  object DetectMetricSetConfigRequest {
+    @inline
+    def apply(
+        AnomalyDetectorArn: Arn,
+        AutoDetectionMetricSource: AutoDetectionMetricSource
+    ): DetectMetricSetConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyDetectorArn" -> AnomalyDetectorArn.asInstanceOf[js.Any],
+        "AutoDetectionMetricSource" -> AutoDetectionMetricSource.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetectMetricSetConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DetectMetricSetConfigResponse extends js.Object {
+    var DetectedMetricSetConfig: js.UndefOr[DetectedMetricSetConfig]
+  }
+
+  object DetectMetricSetConfigResponse {
+    @inline
+    def apply(
+        DetectedMetricSetConfig: js.UndefOr[DetectedMetricSetConfig] = js.undefined
+    ): DetectMetricSetConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      DetectedMetricSetConfig.foreach(__v => __obj.updateDynamic("DetectedMetricSetConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectMetricSetConfigResponse]
+    }
+  }
+
+  /** Properties of an inferred CSV format.
+    */
+  @js.native
+  trait DetectedCsvFormatDescriptor extends js.Object {
+    var Charset: js.UndefOr[DetectedField]
+    var ContainsHeader: js.UndefOr[DetectedField]
+    var Delimiter: js.UndefOr[DetectedField]
+    var FileCompression: js.UndefOr[DetectedField]
+    var HeaderList: js.UndefOr[DetectedField]
+    var QuoteSymbol: js.UndefOr[DetectedField]
+  }
+
+  object DetectedCsvFormatDescriptor {
+    @inline
+    def apply(
+        Charset: js.UndefOr[DetectedField] = js.undefined,
+        ContainsHeader: js.UndefOr[DetectedField] = js.undefined,
+        Delimiter: js.UndefOr[DetectedField] = js.undefined,
+        FileCompression: js.UndefOr[DetectedField] = js.undefined,
+        HeaderList: js.UndefOr[DetectedField] = js.undefined,
+        QuoteSymbol: js.UndefOr[DetectedField] = js.undefined
+    ): DetectedCsvFormatDescriptor = {
+      val __obj = js.Dynamic.literal()
+      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      FileCompression.foreach(__v => __obj.updateDynamic("FileCompression")(__v.asInstanceOf[js.Any]))
+      HeaderList.foreach(__v => __obj.updateDynamic("HeaderList")(__v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedCsvFormatDescriptor]
+    }
+  }
+
+  /** An inferred field.
+    */
+  @js.native
+  trait DetectedField extends js.Object {
+    var Confidence: js.UndefOr[Confidence]
+    var Message: js.UndefOr[Message]
+    var Value: js.UndefOr[AttributeValue]
+  }
+
+  object DetectedField {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Confidence] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        Value: js.UndefOr[AttributeValue] = js.undefined
+    ): DetectedField = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedField]
+    }
+  }
+
+  /** Properties of an inferred data format.
+    */
+  @js.native
+  trait DetectedFileFormatDescriptor extends js.Object {
+    var CsvFormatDescriptor: js.UndefOr[DetectedCsvFormatDescriptor]
+    var JsonFormatDescriptor: js.UndefOr[DetectedJsonFormatDescriptor]
+  }
+
+  object DetectedFileFormatDescriptor {
+    @inline
+    def apply(
+        CsvFormatDescriptor: js.UndefOr[DetectedCsvFormatDescriptor] = js.undefined,
+        JsonFormatDescriptor: js.UndefOr[DetectedJsonFormatDescriptor] = js.undefined
+    ): DetectedFileFormatDescriptor = {
+      val __obj = js.Dynamic.literal()
+      CsvFormatDescriptor.foreach(__v => __obj.updateDynamic("CsvFormatDescriptor")(__v.asInstanceOf[js.Any]))
+      JsonFormatDescriptor.foreach(__v => __obj.updateDynamic("JsonFormatDescriptor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedFileFormatDescriptor]
+    }
+  }
+
+  /** A detected JSON format descriptor.
+    */
+  @js.native
+  trait DetectedJsonFormatDescriptor extends js.Object {
+    var Charset: js.UndefOr[DetectedField]
+    var FileCompression: js.UndefOr[DetectedField]
+  }
+
+  object DetectedJsonFormatDescriptor {
+    @inline
+    def apply(
+        Charset: js.UndefOr[DetectedField] = js.undefined,
+        FileCompression: js.UndefOr[DetectedField] = js.undefined
+    ): DetectedJsonFormatDescriptor = {
+      val __obj = js.Dynamic.literal()
+      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
+      FileCompression.foreach(__v => __obj.updateDynamic("FileCompression")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedJsonFormatDescriptor]
+    }
+  }
+
+  /** An inferred dataset configuration.
+    */
+  @js.native
+  trait DetectedMetricSetConfig extends js.Object {
+    var MetricSetFrequency: js.UndefOr[DetectedField]
+    var MetricSource: js.UndefOr[DetectedMetricSource]
+    var Offset: js.UndefOr[DetectedField]
+  }
+
+  object DetectedMetricSetConfig {
+    @inline
+    def apply(
+        MetricSetFrequency: js.UndefOr[DetectedField] = js.undefined,
+        MetricSource: js.UndefOr[DetectedMetricSource] = js.undefined,
+        Offset: js.UndefOr[DetectedField] = js.undefined
+    ): DetectedMetricSetConfig = {
+      val __obj = js.Dynamic.literal()
+      MetricSetFrequency.foreach(__v => __obj.updateDynamic("MetricSetFrequency")(__v.asInstanceOf[js.Any]))
+      MetricSource.foreach(__v => __obj.updateDynamic("MetricSource")(__v.asInstanceOf[js.Any]))
+      Offset.foreach(__v => __obj.updateDynamic("Offset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedMetricSetConfig]
+    }
+  }
+
+  /** An inferred data source.
+    */
+  @js.native
+  trait DetectedMetricSource extends js.Object {
+    var S3SourceConfig: js.UndefOr[DetectedS3SourceConfig]
+  }
+
+  object DetectedMetricSource {
+    @inline
+    def apply(
+        S3SourceConfig: js.UndefOr[DetectedS3SourceConfig] = js.undefined
+    ): DetectedMetricSource = {
+      val __obj = js.Dynamic.literal()
+      S3SourceConfig.foreach(__v => __obj.updateDynamic("S3SourceConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedMetricSource]
+    }
+  }
+
+  /** An inferred source configuration.
+    */
+  @js.native
+  trait DetectedS3SourceConfig extends js.Object {
+    var FileFormatDescriptor: js.UndefOr[DetectedFileFormatDescriptor]
+  }
+
+  object DetectedS3SourceConfig {
+    @inline
+    def apply(
+        FileFormatDescriptor: js.UndefOr[DetectedFileFormatDescriptor] = js.undefined
+    ): DetectedS3SourceConfig = {
+      val __obj = js.Dynamic.literal()
+      FileFormatDescriptor.foreach(__v => __obj.updateDynamic("FileFormatDescriptor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedS3SourceConfig]
     }
   }
 
@@ -1053,6 +1518,27 @@ package object lookoutmetrics {
       DimensionName.foreach(__v => __obj.updateDynamic("DimensionName")(__v.asInstanceOf[js.Any]))
       DimensionValueContributionList.foreach(__v => __obj.updateDynamic("DimensionValueContributionList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DimensionContribution]
+    }
+  }
+
+  /** The dimension filter, containing DimensionName and DimensionValueList.
+    */
+  @js.native
+  trait DimensionFilter extends js.Object {
+    var DimensionName: js.UndefOr[ColumnName]
+    var DimensionValueList: js.UndefOr[DimensionValueList]
+  }
+
+  object DimensionFilter {
+    @inline
+    def apply(
+        DimensionName: js.UndefOr[ColumnName] = js.undefined,
+        DimensionValueList: js.UndefOr[DimensionValueList] = js.undefined
+    ): DimensionFilter = {
+      val __obj = js.Dynamic.literal()
+      DimensionName.foreach(__v => __obj.updateDynamic("DimensionName")(__v.asInstanceOf[js.Any]))
+      DimensionValueList.foreach(__v => __obj.updateDynamic("DimensionValueList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DimensionFilter]
     }
   }
 
@@ -1144,6 +1630,27 @@ package object lookoutmetrics {
     }
   }
 
+  /** Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var DimensionValue: js.UndefOr[DimensionValue]
+    var FilterOperation: js.UndefOr[FilterOperation]
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        DimensionValue: js.UndefOr[DimensionValue] = js.undefined,
+        FilterOperation: js.UndefOr[FilterOperation] = js.undefined
+    ): Filter = {
+      val __obj = js.Dynamic.literal()
+      DimensionValue.foreach(__v => __obj.updateDynamic("DimensionValue")(__v.asInstanceOf[js.Any]))
+      FilterOperation.foreach(__v => __obj.updateDynamic("FilterOperation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
   @js.native
   trait GetAnomalyGroupRequest extends js.Object {
     var AnomalyDetectorArn: Arn
@@ -1177,6 +1684,43 @@ package object lookoutmetrics {
       val __obj = js.Dynamic.literal()
       AnomalyGroup.foreach(__v => __obj.updateDynamic("AnomalyGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAnomalyGroupResponse]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityMetricsRequest extends js.Object {
+    var AnomalyDetectorArn: Arn
+    var MetricSetArn: js.UndefOr[Arn]
+  }
+
+  object GetDataQualityMetricsRequest {
+    @inline
+    def apply(
+        AnomalyDetectorArn: Arn,
+        MetricSetArn: js.UndefOr[Arn] = js.undefined
+    ): GetDataQualityMetricsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyDetectorArn" -> AnomalyDetectorArn.asInstanceOf[js.Any]
+      )
+
+      MetricSetArn.foreach(__v => __obj.updateDynamic("MetricSetArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityMetricsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataQualityMetricsResponse extends js.Object {
+    var AnomalyDetectorDataQualityMetricList: js.UndefOr[AnomalyDetectorDataQualityMetricList]
+  }
+
+  object GetDataQualityMetricsResponse {
+    @inline
+    def apply(
+        AnomalyDetectorDataQualityMetricList: js.UndefOr[AnomalyDetectorDataQualityMetricList] = js.undefined
+    ): GetDataQualityMetricsResponse = {
+      val __obj = js.Dynamic.literal()
+      AnomalyDetectorDataQualityMetricList.foreach(__v => __obj.updateDynamic("AnomalyDetectorDataQualityMetricList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataQualityMetricsResponse]
     }
   }
 
@@ -1711,6 +2255,48 @@ package object lookoutmetrics {
     }
   }
 
+  /** An array of <code>DataQualityMetric</code> objects that describes one or more data quality metrics.
+    */
+  @js.native
+  trait MetricSetDataQualityMetric extends js.Object {
+    var DataQualityMetricList: js.UndefOr[DataQualityMetricList]
+    var MetricSetArn: js.UndefOr[Arn]
+  }
+
+  object MetricSetDataQualityMetric {
+    @inline
+    def apply(
+        DataQualityMetricList: js.UndefOr[DataQualityMetricList] = js.undefined,
+        MetricSetArn: js.UndefOr[Arn] = js.undefined
+    ): MetricSetDataQualityMetric = {
+      val __obj = js.Dynamic.literal()
+      DataQualityMetricList.foreach(__v => __obj.updateDynamic("DataQualityMetricList")(__v.asInstanceOf[js.Any]))
+      MetricSetArn.foreach(__v => __obj.updateDynamic("MetricSetArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricSetDataQualityMetric]
+    }
+  }
+
+  /** Describes a list of filters for choosing a subset of dimension values. Each filter consists of the dimension and one of its values that you want to include. When multiple dimensions or values are specified, the dimensions are joined with an AND operation and the values are joined with an OR operation.
+    */
+  @js.native
+  trait MetricSetDimensionFilter extends js.Object {
+    var FilterList: js.UndefOr[FilterList]
+    var Name: js.UndefOr[ColumnName]
+  }
+
+  object MetricSetDimensionFilter {
+    @inline
+    def apply(
+        FilterList: js.UndefOr[FilterList] = js.undefined,
+        Name: js.UndefOr[ColumnName] = js.undefined
+    ): MetricSetDimensionFilter = {
+      val __obj = js.Dynamic.literal()
+      FilterList.foreach(__v => __obj.updateDynamic("FilterList")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricSetDimensionFilter]
+    }
+  }
+
   /** Contains information about a dataset.
     */
   @js.native
@@ -1747,11 +2333,12 @@ package object lookoutmetrics {
     }
   }
 
-  /** Contains information about source data used to generate a metric.
+  /** Contains information about source data used to generate metrics.
     */
   @js.native
   trait MetricSource extends js.Object {
     var AppFlowConfig: js.UndefOr[AppFlowConfig]
+    var AthenaSourceConfig: js.UndefOr[AthenaSourceConfig]
     var CloudWatchConfig: js.UndefOr[CloudWatchConfig]
     var RDSSourceConfig: js.UndefOr[RDSSourceConfig]
     var RedshiftSourceConfig: js.UndefOr[RedshiftSourceConfig]
@@ -1762,6 +2349,7 @@ package object lookoutmetrics {
     @inline
     def apply(
         AppFlowConfig: js.UndefOr[AppFlowConfig] = js.undefined,
+        AthenaSourceConfig: js.UndefOr[AthenaSourceConfig] = js.undefined,
         CloudWatchConfig: js.UndefOr[CloudWatchConfig] = js.undefined,
         RDSSourceConfig: js.UndefOr[RDSSourceConfig] = js.undefined,
         RedshiftSourceConfig: js.UndefOr[RedshiftSourceConfig] = js.undefined,
@@ -1769,6 +2357,7 @@ package object lookoutmetrics {
     ): MetricSource = {
       val __obj = js.Dynamic.literal()
       AppFlowConfig.foreach(__v => __obj.updateDynamic("AppFlowConfig")(__v.asInstanceOf[js.Any]))
+      AthenaSourceConfig.foreach(__v => __obj.updateDynamic("AthenaSourceConfig")(__v.asInstanceOf[js.Any]))
       CloudWatchConfig.foreach(__v => __obj.updateDynamic("CloudWatchConfig")(__v.asInstanceOf[js.Any]))
       RDSSourceConfig.foreach(__v => __obj.updateDynamic("RDSSourceConfig")(__v.asInstanceOf[js.Any]))
       RedshiftSourceConfig.foreach(__v => __obj.updateDynamic("RedshiftSourceConfig")(__v.asInstanceOf[js.Any]))
@@ -1812,38 +2401,37 @@ package object lookoutmetrics {
     */
   @js.native
   trait RDSSourceConfig extends js.Object {
-    var DBInstanceIdentifier: RDSDatabaseIdentifier
-    var DatabaseHost: DatabaseHost
-    var DatabaseName: RDSDatabaseName
-    var DatabasePort: DatabasePort
-    var RoleArn: Arn
-    var SecretManagerArn: PoirotSecretManagerArn
-    var TableName: TableName
-    var VpcConfiguration: VpcConfiguration
+    var DBInstanceIdentifier: js.UndefOr[RDSDatabaseIdentifier]
+    var DatabaseHost: js.UndefOr[DatabaseHost]
+    var DatabaseName: js.UndefOr[RDSDatabaseName]
+    var DatabasePort: js.UndefOr[DatabasePort]
+    var RoleArn: js.UndefOr[Arn]
+    var SecretManagerArn: js.UndefOr[PoirotSecretManagerArn]
+    var TableName: js.UndefOr[TableName]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
   object RDSSourceConfig {
     @inline
     def apply(
-        DBInstanceIdentifier: RDSDatabaseIdentifier,
-        DatabaseHost: DatabaseHost,
-        DatabaseName: RDSDatabaseName,
-        DatabasePort: DatabasePort,
-        RoleArn: Arn,
-        SecretManagerArn: PoirotSecretManagerArn,
-        TableName: TableName,
-        VpcConfiguration: VpcConfiguration
+        DBInstanceIdentifier: js.UndefOr[RDSDatabaseIdentifier] = js.undefined,
+        DatabaseHost: js.UndefOr[DatabaseHost] = js.undefined,
+        DatabaseName: js.UndefOr[RDSDatabaseName] = js.undefined,
+        DatabasePort: js.UndefOr[DatabasePort] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined,
+        SecretManagerArn: js.UndefOr[PoirotSecretManagerArn] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): RDSSourceConfig = {
-      val __obj = js.Dynamic.literal(
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DatabaseHost" -> DatabaseHost.asInstanceOf[js.Any],
-        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "DatabasePort" -> DatabasePort.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "SecretManagerArn" -> SecretManagerArn.asInstanceOf[js.Any],
-        "TableName" -> TableName.asInstanceOf[js.Any],
-        "VpcConfiguration" -> VpcConfiguration.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DatabaseHost.foreach(__v => __obj.updateDynamic("DatabaseHost")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DatabasePort.foreach(__v => __obj.updateDynamic("DatabasePort")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SecretManagerArn.foreach(__v => __obj.updateDynamic("SecretManagerArn")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RDSSourceConfig]
     }
   }
@@ -1852,38 +2440,37 @@ package object lookoutmetrics {
     */
   @js.native
   trait RedshiftSourceConfig extends js.Object {
-    var ClusterIdentifier: RedshiftClusterIdentifier
-    var DatabaseHost: DatabaseHost
-    var DatabaseName: RedshiftDatabaseName
-    var DatabasePort: DatabasePort
-    var RoleArn: Arn
-    var SecretManagerArn: PoirotSecretManagerArn
-    var TableName: TableName
-    var VpcConfiguration: VpcConfiguration
+    var ClusterIdentifier: js.UndefOr[RedshiftClusterIdentifier]
+    var DatabaseHost: js.UndefOr[DatabaseHost]
+    var DatabaseName: js.UndefOr[RedshiftDatabaseName]
+    var DatabasePort: js.UndefOr[DatabasePort]
+    var RoleArn: js.UndefOr[Arn]
+    var SecretManagerArn: js.UndefOr[PoirotSecretManagerArn]
+    var TableName: js.UndefOr[TableName]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
   object RedshiftSourceConfig {
     @inline
     def apply(
-        ClusterIdentifier: RedshiftClusterIdentifier,
-        DatabaseHost: DatabaseHost,
-        DatabaseName: RedshiftDatabaseName,
-        DatabasePort: DatabasePort,
-        RoleArn: Arn,
-        SecretManagerArn: PoirotSecretManagerArn,
-        TableName: TableName,
-        VpcConfiguration: VpcConfiguration
+        ClusterIdentifier: js.UndefOr[RedshiftClusterIdentifier] = js.undefined,
+        DatabaseHost: js.UndefOr[DatabaseHost] = js.undefined,
+        DatabaseName: js.UndefOr[RedshiftDatabaseName] = js.undefined,
+        DatabasePort: js.UndefOr[DatabasePort] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined,
+        SecretManagerArn: js.UndefOr[PoirotSecretManagerArn] = js.undefined,
+        TableName: js.UndefOr[TableName] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): RedshiftSourceConfig = {
-      val __obj = js.Dynamic.literal(
-        "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any],
-        "DatabaseHost" -> DatabaseHost.asInstanceOf[js.Any],
-        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "DatabasePort" -> DatabasePort.asInstanceOf[js.Any],
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
-        "SecretManagerArn" -> SecretManagerArn.asInstanceOf[js.Any],
-        "TableName" -> TableName.asInstanceOf[js.Any],
-        "VpcConfiguration" -> VpcConfiguration.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DatabaseHost.foreach(__v => __obj.updateDynamic("DatabaseHost")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DatabasePort.foreach(__v => __obj.updateDynamic("DatabasePort")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SecretManagerArn.foreach(__v => __obj.updateDynamic("SecretManagerArn")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedshiftSourceConfig]
     }
   }
@@ -1892,26 +2479,24 @@ package object lookoutmetrics {
     */
   @js.native
   trait S3SourceConfig extends js.Object {
-    var RoleArn: Arn
     var FileFormatDescriptor: js.UndefOr[FileFormatDescriptor]
     var HistoricalDataPathList: js.UndefOr[HistoricalDataPathList]
+    var RoleArn: js.UndefOr[Arn]
     var TemplatedPathList: js.UndefOr[TemplatedPathList]
   }
 
   object S3SourceConfig {
     @inline
     def apply(
-        RoleArn: Arn,
         FileFormatDescriptor: js.UndefOr[FileFormatDescriptor] = js.undefined,
         HistoricalDataPathList: js.UndefOr[HistoricalDataPathList] = js.undefined,
+        RoleArn: js.UndefOr[Arn] = js.undefined,
         TemplatedPathList: js.UndefOr[TemplatedPathList] = js.undefined
     ): S3SourceConfig = {
-      val __obj = js.Dynamic.literal(
-        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       FileFormatDescriptor.foreach(__v => __obj.updateDynamic("FileFormatDescriptor")(__v.asInstanceOf[js.Any]))
       HistoricalDataPathList.foreach(__v => __obj.updateDynamic("HistoricalDataPathList")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       TemplatedPathList.foreach(__v => __obj.updateDynamic("TemplatedPathList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SourceConfig]
     }
@@ -1923,18 +2508,22 @@ package object lookoutmetrics {
   trait SNSConfiguration extends js.Object {
     var RoleArn: Arn
     var SnsTopicArn: Arn
+    var SnsFormat: js.UndefOr[SnsFormat]
   }
 
   object SNSConfiguration {
     @inline
     def apply(
         RoleArn: Arn,
-        SnsTopicArn: Arn
+        SnsTopicArn: Arn,
+        SnsFormat: js.UndefOr[SnsFormat] = js.undefined
     ): SNSConfiguration = {
       val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
       )
+
+      SnsFormat.foreach(__v => __obj.updateDynamic("SnsFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SNSConfiguration]
     }
   }
@@ -2098,6 +2687,52 @@ package object lookoutmetrics {
   }
 
   @js.native
+  trait UpdateAlertRequest extends js.Object {
+    var AlertArn: Arn
+    var Action: js.UndefOr[Action]
+    var AlertDescription: js.UndefOr[AlertDescription]
+    var AlertFilters: js.UndefOr[AlertFilters]
+    var AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold]
+  }
+
+  object UpdateAlertRequest {
+    @inline
+    def apply(
+        AlertArn: Arn,
+        Action: js.UndefOr[Action] = js.undefined,
+        AlertDescription: js.UndefOr[AlertDescription] = js.undefined,
+        AlertFilters: js.UndefOr[AlertFilters] = js.undefined,
+        AlertSensitivityThreshold: js.UndefOr[SensitivityThreshold] = js.undefined
+    ): UpdateAlertRequest = {
+      val __obj = js.Dynamic.literal(
+        "AlertArn" -> AlertArn.asInstanceOf[js.Any]
+      )
+
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      AlertDescription.foreach(__v => __obj.updateDynamic("AlertDescription")(__v.asInstanceOf[js.Any]))
+      AlertFilters.foreach(__v => __obj.updateDynamic("AlertFilters")(__v.asInstanceOf[js.Any]))
+      AlertSensitivityThreshold.foreach(__v => __obj.updateDynamic("AlertSensitivityThreshold")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAlertRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAlertResponse extends js.Object {
+    var AlertArn: js.UndefOr[Arn]
+  }
+
+  object UpdateAlertResponse {
+    @inline
+    def apply(
+        AlertArn: js.UndefOr[Arn] = js.undefined
+    ): UpdateAlertResponse = {
+      val __obj = js.Dynamic.literal()
+      AlertArn.foreach(__v => __obj.updateDynamic("AlertArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAlertResponse]
+    }
+  }
+
+  @js.native
   trait UpdateAnomalyDetectorRequest extends js.Object {
     var AnomalyDetectorArn: Arn
     var AnomalyDetectorConfig: js.UndefOr[AnomalyDetectorConfig]
@@ -2143,6 +2778,7 @@ package object lookoutmetrics {
   @js.native
   trait UpdateMetricSetRequest extends js.Object {
     var MetricSetArn: Arn
+    var DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList]
     var DimensionList: js.UndefOr[DimensionList]
     var MetricList: js.UndefOr[MetricList]
     var MetricSetDescription: js.UndefOr[MetricSetDescription]
@@ -2156,6 +2792,7 @@ package object lookoutmetrics {
     @inline
     def apply(
         MetricSetArn: Arn,
+        DimensionFilterList: js.UndefOr[MetricSetDimensionFilterList] = js.undefined,
         DimensionList: js.UndefOr[DimensionList] = js.undefined,
         MetricList: js.UndefOr[MetricList] = js.undefined,
         MetricSetDescription: js.UndefOr[MetricSetDescription] = js.undefined,
@@ -2168,6 +2805,7 @@ package object lookoutmetrics {
         "MetricSetArn" -> MetricSetArn.asInstanceOf[js.Any]
       )
 
+      DimensionFilterList.foreach(__v => __obj.updateDynamic("DimensionFilterList")(__v.asInstanceOf[js.Any]))
       DimensionList.foreach(__v => __obj.updateDynamic("DimensionList")(__v.asInstanceOf[js.Any]))
       MetricList.foreach(__v => __obj.updateDynamic("MetricList")(__v.asInstanceOf[js.Any]))
       MetricSetDescription.foreach(__v => __obj.updateDynamic("MetricSetDescription")(__v.asInstanceOf[js.Any]))

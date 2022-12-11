@@ -18,7 +18,10 @@ package object personalizeruntime {
   type InputList = js.Array[ItemID]
   type ItemID = String
   type ItemList = js.Array[PredictedItem]
+  type Name = String
   type NumResults = Int
+  type PercentPromotedItems = Int
+  type PromotionList = js.Array[Promotion]
   type RecommendationID = String
   type Score = Double
   type UserID = String
@@ -104,6 +107,7 @@ package object personalizeruntime {
     var filterValues: js.UndefOr[FilterValues]
     var itemId: js.UndefOr[ItemID]
     var numResults: js.UndefOr[NumResults]
+    var promotions: js.UndefOr[PromotionList]
     var recommenderArn: js.UndefOr[Arn]
     var userId: js.UndefOr[UserID]
   }
@@ -117,6 +121,7 @@ package object personalizeruntime {
         filterValues: js.UndefOr[FilterValues] = js.undefined,
         itemId: js.UndefOr[ItemID] = js.undefined,
         numResults: js.UndefOr[NumResults] = js.undefined,
+        promotions: js.UndefOr[PromotionList] = js.undefined,
         recommenderArn: js.UndefOr[Arn] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
     ): GetRecommendationsRequest = {
@@ -127,6 +132,7 @@ package object personalizeruntime {
       filterValues.foreach(__v => __obj.updateDynamic("filterValues")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      promotions.foreach(__v => __obj.updateDynamic("promotions")(__v.asInstanceOf[js.Any]))
       recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsRequest]
@@ -157,6 +163,7 @@ package object personalizeruntime {
   @js.native
   trait PredictedItem extends js.Object {
     var itemId: js.UndefOr[ItemID]
+    var promotionName: js.UndefOr[Name]
     var score: js.UndefOr[Score]
   }
 
@@ -164,12 +171,41 @@ package object personalizeruntime {
     @inline
     def apply(
         itemId: js.UndefOr[ItemID] = js.undefined,
+        promotionName: js.UndefOr[Name] = js.undefined,
         score: js.UndefOr[Score] = js.undefined
     ): PredictedItem = {
       val __obj = js.Dynamic.literal()
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      promotionName.foreach(__v => __obj.updateDynamic("promotionName")(__v.asInstanceOf[js.Any]))
       score.foreach(__v => __obj.updateDynamic("score")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictedItem]
+    }
+  }
+
+  /** Contains information on a promotion. A promotion defines additional business rules that apply to a configurable subset of recommended items.
+    */
+  @js.native
+  trait Promotion extends js.Object {
+    var filterArn: js.UndefOr[Arn]
+    var filterValues: js.UndefOr[FilterValues]
+    var name: js.UndefOr[Name]
+    var percentPromotedItems: js.UndefOr[PercentPromotedItems]
+  }
+
+  object Promotion {
+    @inline
+    def apply(
+        filterArn: js.UndefOr[Arn] = js.undefined,
+        filterValues: js.UndefOr[FilterValues] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        percentPromotedItems: js.UndefOr[PercentPromotedItems] = js.undefined
+    ): Promotion = {
+      val __obj = js.Dynamic.literal()
+      filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
+      filterValues.foreach(__v => __obj.updateDynamic("filterValues")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      percentPromotedItems.foreach(__v => __obj.updateDynamic("percentPromotedItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Promotion]
     }
   }
 }

@@ -9,6 +9,15 @@ object AdditionalResultAttributeValueType {
   inline def values: js.Array[AdditionalResultAttributeValueType] = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
 }
 
+type AlfrescoEntity = "wiki" | "blog" | "documentLibrary"
+object AlfrescoEntity {
+  inline val wiki: "wiki" = "wiki"
+  inline val blog: "blog" = "blog"
+  inline val documentLibrary: "documentLibrary" = "documentLibrary"
+
+  inline def values: js.Array[AlfrescoEntity] = js.Array(wiki, blog, documentLibrary)
+}
+
 type ConditionOperator = "GreaterThan" | "GreaterThanOrEquals" | "LessThan" | "LessThanOrEquals" | "Equals" | "NotEquals" | "Contains" | "NotContains" | "Exists" | "NotExists" | "BeginsWith"
 object ConditionOperator {
   inline val GreaterThan: "GreaterThan" = "GreaterThan"
@@ -41,6 +50,14 @@ object ConfluenceAttachmentFieldName {
   inline val VERSION: "VERSION" = "VERSION"
 
   inline def values: js.Array[ConfluenceAttachmentFieldName] = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+}
+
+type ConfluenceAuthenticationType = "HTTP_BASIC" | "PAT"
+object ConfluenceAuthenticationType {
+  inline val HTTP_BASIC: "HTTP_BASIC" = "HTTP_BASIC"
+  inline val PAT: "PAT" = "PAT"
+
+  inline def values: js.Array[ConfluenceAuthenticationType] = js.Array(HTTP_BASIC, PAT)
 }
 
 type ConfluenceBlogFieldName = "AUTHOR" | "DISPLAY_URL" | "ITEM_TYPE" | "LABELS" | "PUBLISH_DATE" | "SPACE_KEY" | "SPACE_NAME" | "URL" | "VERSION"
@@ -129,7 +146,7 @@ object DataSourceSyncJobStatus {
   inline def values: js.Array[DataSourceSyncJobStatus] = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
 }
 
-type DataSourceType = "S3" | "SHAREPOINT" | "DATABASE" | "SALESFORCE" | "ONEDRIVE" | "SERVICENOW" | "CUSTOM" | "CONFLUENCE" | "GOOGLEDRIVE" | "WEBCRAWLER" | "WORKDOCS"
+type DataSourceType = "S3" | "SHAREPOINT" | "DATABASE" | "SALESFORCE" | "ONEDRIVE" | "SERVICENOW" | "CUSTOM" | "CONFLUENCE" | "GOOGLEDRIVE" | "WEBCRAWLER" | "WORKDOCS" | "FSX" | "SLACK" | "BOX" | "QUIP" | "JIRA" | "GITHUB" | "ALFRESCO" | "TEMPLATE"
 object DataSourceType {
   inline val S3: "S3" = "S3"
   inline val SHAREPOINT: "SHAREPOINT" = "SHAREPOINT"
@@ -142,8 +159,36 @@ object DataSourceType {
   inline val GOOGLEDRIVE: "GOOGLEDRIVE" = "GOOGLEDRIVE"
   inline val WEBCRAWLER: "WEBCRAWLER" = "WEBCRAWLER"
   inline val WORKDOCS: "WORKDOCS" = "WORKDOCS"
+  inline val FSX: "FSX" = "FSX"
+  inline val SLACK: "SLACK" = "SLACK"
+  inline val BOX: "BOX" = "BOX"
+  inline val QUIP: "QUIP" = "QUIP"
+  inline val JIRA: "JIRA" = "JIRA"
+  inline val GITHUB: "GITHUB" = "GITHUB"
+  inline val ALFRESCO: "ALFRESCO" = "ALFRESCO"
+  inline val TEMPLATE: "TEMPLATE" = "TEMPLATE"
 
-  inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE, WEBCRAWLER, WORKDOCS)
+  inline def values: js.Array[DataSourceType] = js.Array(
+    S3,
+    SHAREPOINT,
+    DATABASE,
+    SALESFORCE,
+    ONEDRIVE,
+    SERVICENOW,
+    CUSTOM,
+    CONFLUENCE,
+    GOOGLEDRIVE,
+    WEBCRAWLER,
+    WORKDOCS,
+    FSX,
+    SLACK,
+    BOX,
+    QUIP,
+    JIRA,
+    GITHUB,
+    ALFRESCO,
+    TEMPLATE
+  )
 }
 
 type DatabaseEngineType = "RDS_AURORA_MYSQL" | "RDS_AURORA_POSTGRESQL" | "RDS_MYSQL" | "RDS_POSTGRESQL"
@@ -231,6 +276,13 @@ object FaqStatus {
   inline def values: js.Array[FaqStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
+type FsxFileSystemType = "WINDOWS"
+object FsxFileSystemType {
+  inline val WINDOWS: "WINDOWS" = "WINDOWS"
+
+  inline def values: js.Array[FsxFileSystemType] = js.Array(WINDOWS)
+}
+
 type HighlightType = "STANDARD" | "THESAURUS_SYNONYM"
 object HighlightType {
   inline val STANDARD: "STANDARD" = "STANDARD"
@@ -269,6 +321,15 @@ object Interval {
   inline val TWO_MONTHS_AGO: "TWO_MONTHS_AGO" = "TWO_MONTHS_AGO"
 
   inline def values: js.Array[Interval] = js.Array(THIS_MONTH, THIS_WEEK, ONE_WEEK_AGO, TWO_WEEKS_AGO, ONE_MONTH_AGO, TWO_MONTHS_AGO)
+}
+
+type IssueSubEntity = "COMMENTS" | "ATTACHMENTS" | "WORKLOGS"
+object IssueSubEntity {
+  inline val COMMENTS: "COMMENTS" = "COMMENTS"
+  inline val ATTACHMENTS: "ATTACHMENTS" = "ATTACHMENTS"
+  inline val WORKLOGS: "WORKLOGS" = "WORKLOGS"
+
+  inline def values: js.Array[IssueSubEntity] = js.Array(COMMENTS, ATTACHMENTS, WORKLOGS)
 }
 
 type KeyLocation = "URL" | "SECRET_MANAGER"
@@ -340,6 +401,14 @@ object QueryIdentifiersEnclosingOption {
   inline val NONE: "NONE" = "NONE"
 
   inline def values: js.Array[QueryIdentifiersEnclosingOption] = js.Array(DOUBLE_QUOTES, NONE)
+}
+
+type QueryResultFormat = "TABLE" | "TEXT"
+object QueryResultFormat {
+  inline val TABLE: "TABLE" = "TABLE"
+  inline val TEXT: "TEXT" = "TEXT"
+
+  inline def values: js.Array[QueryResultFormat] = js.Array(TABLE, TEXT)
 }
 
 type QueryResultType = "DOCUMENT" | "QUESTION_ANSWER" | "ANSWER"
@@ -456,13 +525,32 @@ object ServiceNowBuildVersionType {
   inline def values: js.Array[ServiceNowBuildVersionType] = js.Array(LONDON, OTHERS)
 }
 
-type SharePointVersion = "SHAREPOINT_2013" | "SHAREPOINT_2016" | "SHAREPOINT_ONLINE"
+type SharePointOnlineAuthenticationType = "HTTP_BASIC" | "OAUTH2"
+object SharePointOnlineAuthenticationType {
+  inline val HTTP_BASIC: "HTTP_BASIC" = "HTTP_BASIC"
+  inline val OAUTH2: "OAUTH2" = "OAUTH2"
+
+  inline def values: js.Array[SharePointOnlineAuthenticationType] = js.Array(HTTP_BASIC, OAUTH2)
+}
+
+type SharePointVersion = "SHAREPOINT_2013" | "SHAREPOINT_2016" | "SHAREPOINT_ONLINE" | "SHAREPOINT_2019"
 object SharePointVersion {
   inline val SHAREPOINT_2013: "SHAREPOINT_2013" = "SHAREPOINT_2013"
   inline val SHAREPOINT_2016: "SHAREPOINT_2016" = "SHAREPOINT_2016"
   inline val SHAREPOINT_ONLINE: "SHAREPOINT_ONLINE" = "SHAREPOINT_ONLINE"
+  inline val SHAREPOINT_2019: "SHAREPOINT_2019" = "SHAREPOINT_2019"
 
-  inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE)
+  inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE, SHAREPOINT_2019)
+}
+
+type SlackEntity = "PUBLIC_CHANNEL" | "PRIVATE_CHANNEL" | "GROUP_MESSAGE" | "DIRECT_MESSAGE"
+object SlackEntity {
+  inline val PUBLIC_CHANNEL: "PUBLIC_CHANNEL" = "PUBLIC_CHANNEL"
+  inline val PRIVATE_CHANNEL: "PRIVATE_CHANNEL" = "PRIVATE_CHANNEL"
+  inline val GROUP_MESSAGE: "GROUP_MESSAGE" = "GROUP_MESSAGE"
+  inline val DIRECT_MESSAGE: "DIRECT_MESSAGE" = "DIRECT_MESSAGE"
+
+  inline def values: js.Array[SlackEntity] = js.Array(PUBLIC_CHANNEL, PRIVATE_CHANNEL, GROUP_MESSAGE, DIRECT_MESSAGE)
 }
 
 type SortOrder = "DESC" | "ASC"
@@ -485,6 +573,14 @@ object ThesaurusStatus {
   inline def values: js.Array[ThesaurusStatus] = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
 }
 
+type Type = "SAAS" | "ON_PREMISE"
+object Type {
+  inline val SAAS: "SAAS" = "SAAS"
+  inline val ON_PREMISE: "ON_PREMISE" = "ON_PREMISE"
+
+  inline def values: js.Array[Type] = js.Array(SAAS, ON_PREMISE)
+}
+
 type UserContextPolicy = "ATTRIBUTE_FILTER" | "USER_TOKEN"
 object UserContextPolicy {
   inline val ATTRIBUTE_FILTER: "ATTRIBUTE_FILTER" = "ATTRIBUTE_FILTER"
@@ -499,6 +595,13 @@ object UserGroupResolutionMode {
   inline val NONE: "NONE" = "NONE"
 
   inline def values: js.Array[UserGroupResolutionMode] = js.Array(AWS_SSO, NONE)
+}
+
+type WarningCode = "QUERY_LANGUAGE_INVALID_SYNTAX"
+object WarningCode {
+  inline val QUERY_LANGUAGE_INVALID_SYNTAX: "QUERY_LANGUAGE_INVALID_SYNTAX" = "QUERY_LANGUAGE_INVALID_SYNTAX"
+
+  inline def values: js.Array[WarningCode] = js.Array(QUERY_LANGUAGE_INVALID_SYNTAX)
 }
 
 type WebCrawlerMode = "HOST_ONLY" | "SUBDOMAINS" | "EVERYTHING"

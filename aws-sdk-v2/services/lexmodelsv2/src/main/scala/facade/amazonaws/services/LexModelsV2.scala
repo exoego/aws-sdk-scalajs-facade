@@ -41,20 +41,28 @@ package object lexmodelsv2 {
   type ChildDirected = Boolean
   type CloudWatchLogGroupArn = String
   type CodeHookInterfaceVersion = String
+  type ConditionExpression = String
   type ConditionKey = String
   type ConditionKeyValueMap = js.Dictionary[ConditionValue]
   type ConditionMap = js.Dictionary[ConditionKeyValueMap]
   type ConditionOperator = String
   type ConditionValue = String
+  type ConditionalBranches = js.Array[ConditionalBranch]
   type ConfidenceThreshold = Double
   type ContextTimeToLiveInSeconds = Int
   type ContextTurnsToLive = Int
   type Count = Int
+  type CreateCustomVocabularyItemsList = js.Array[NewCustomVocabularyItem]
   type CustomPayloadValue = String
+  type CustomVocabularyItems = js.Array[CustomVocabularyItem]
+  type DTMFCharacter = String
+  type DeleteCustomVocabularyItemsList = js.Array[CustomVocabularyEntryId]
   type Description = String
   type DraftBotVersion = String
+  type ErrorMessage = String
   type ExportFilters = js.Array[ExportFilter]
   type ExportSummaryList = js.Array[ExportSummary]
+  type FailedCustomVocabularyItems = js.Array[FailedCustomVocabularyItem]
   type FailureReason = String
   type FailureReasons = js.Array[FailureReason]
   type FilePassword = String
@@ -73,6 +81,7 @@ package object lexmodelsv2 {
   type IntentFilters = js.Array[IntentFilter]
   type IntentSignature = String
   type IntentSummaryList = js.Array[IntentSummary]
+  type ItemId = String
   type KendraIndexArn = String
   type KmsKeyArn = String
   type LambdaARN = String
@@ -80,24 +89,28 @@ package object lexmodelsv2 {
   type LocaleName = String
   type LogPrefix = String
   type MaxResults = Int
+  type MaxUtteranceDigits = Int
   type MessageGroupsList = js.Array[MessageGroup]
   type MessageVariationsList = js.Array[Message]
   type MissedCount = Int
   type Name = String
   type NextIndex = Int
   type NextToken = String
+  type NonEmptyString = String
   type NumericalBotVersion = String
   type ObjectPrefix = String
   type ObjectPrefixes = js.Array[ObjectPrefix]
   type Operation = String
   type OperationList = js.Array[Operation]
   type OutputContextsList = js.Array[OutputContext]
+  type Phrase = String
   type PlainTextMessageValue = String
   type Policy = String
   type PresignedS3Url = String
   type PrincipalArn = String
   type PrincipalList = js.Array[Principal]
   type PriorityValue = Int
+  type PromptAttemptsSpecificationMap = js.Dictionary[PromptAttemptSpecification]
   type PromptMaxRetries = Int
   type QueryFilterString = String
   type RecommendedAction = String
@@ -126,23 +139,35 @@ package object lexmodelsv2 {
   type SlotTypeSignature = String
   type SlotTypeSummaryList = js.Array[SlotTypeSummary]
   type SlotTypeValues = js.Array[SlotTypeValue]
+  type SlotValueOverrideMap = js.Dictionary[SlotValueOverride]
+  type SlotValues = js.Array[SlotValueOverride]
   type StillWaitingResponseFrequency = Int
   type StillWaitingResponseTimeout = Int
+  type StringMap = js.Dictionary[String]
+  type SubSlotExpression = String
+  type SubSlotSpecificationMap = js.Dictionary[Specifications]
+  type SubSlotTypeList = js.Array[SubSlotTypeComposition]
   type SynonymList = js.Array[SampleValue]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type TextLogSettingsList = js.Array[TextLogSetting]
+  type TimeInMilliSeconds = Int
   type TimeValue = Int
   type Timestamp = js.Date
   type Transcript = String
+  type UpdateCustomVocabularyItemsList = js.Array[CustomVocabularyItem]
   type Utterance = String
   type Value = String
   type VoiceId = String
+  type Weight = Int
 
   final class LexModelsV2Ops(private val service: LexModelsV2) extends AnyVal {
 
+    @inline def batchCreateCustomVocabularyItemFuture(params: BatchCreateCustomVocabularyItemRequest): Future[BatchCreateCustomVocabularyItemResponse] = service.batchCreateCustomVocabularyItem(params).promise().toFuture
+    @inline def batchDeleteCustomVocabularyItemFuture(params: BatchDeleteCustomVocabularyItemRequest): Future[BatchDeleteCustomVocabularyItemResponse] = service.batchDeleteCustomVocabularyItem(params).promise().toFuture
+    @inline def batchUpdateCustomVocabularyItemFuture(params: BatchUpdateCustomVocabularyItemRequest): Future[BatchUpdateCustomVocabularyItemResponse] = service.batchUpdateCustomVocabularyItem(params).promise().toFuture
     @inline def buildBotLocaleFuture(params: BuildBotLocaleRequest): Future[BuildBotLocaleResponse] = service.buildBotLocale(params).promise().toFuture
     @inline def createBotAliasFuture(params: CreateBotAliasRequest): Future[CreateBotAliasResponse] = service.createBotAlias(params).promise().toFuture
     @inline def createBotFuture(params: CreateBotRequest): Future[CreateBotResponse] = service.createBot(params).promise().toFuture
@@ -159,6 +184,7 @@ package object lexmodelsv2 {
     @inline def deleteBotFuture(params: DeleteBotRequest): Future[DeleteBotResponse] = service.deleteBot(params).promise().toFuture
     @inline def deleteBotLocaleFuture(params: DeleteBotLocaleRequest): Future[DeleteBotLocaleResponse] = service.deleteBotLocale(params).promise().toFuture
     @inline def deleteBotVersionFuture(params: DeleteBotVersionRequest): Future[DeleteBotVersionResponse] = service.deleteBotVersion(params).promise().toFuture
+    @inline def deleteCustomVocabularyFuture(params: DeleteCustomVocabularyRequest): Future[DeleteCustomVocabularyResponse] = service.deleteCustomVocabulary(params).promise().toFuture
     @inline def deleteExportFuture(params: DeleteExportRequest): Future[DeleteExportResponse] = service.deleteExport(params).promise().toFuture
     @inline def deleteImportFuture(params: DeleteImportRequest): Future[DeleteImportResponse] = service.deleteImport(params).promise().toFuture
     @inline def deleteIntentFuture(params: DeleteIntentRequest): Future[js.Object] = service.deleteIntent(params).promise().toFuture
@@ -172,6 +198,7 @@ package object lexmodelsv2 {
     @inline def describeBotLocaleFuture(params: DescribeBotLocaleRequest): Future[DescribeBotLocaleResponse] = service.describeBotLocale(params).promise().toFuture
     @inline def describeBotRecommendationFuture(params: DescribeBotRecommendationRequest): Future[DescribeBotRecommendationResponse] = service.describeBotRecommendation(params).promise().toFuture
     @inline def describeBotVersionFuture(params: DescribeBotVersionRequest): Future[DescribeBotVersionResponse] = service.describeBotVersion(params).promise().toFuture
+    @inline def describeCustomVocabularyMetadataFuture(params: DescribeCustomVocabularyMetadataRequest): Future[DescribeCustomVocabularyMetadataResponse] = service.describeCustomVocabularyMetadata(params).promise().toFuture
     @inline def describeExportFuture(params: DescribeExportRequest): Future[DescribeExportResponse] = service.describeExport(params).promise().toFuture
     @inline def describeImportFuture(params: DescribeImportRequest): Future[DescribeImportResponse] = service.describeImport(params).promise().toFuture
     @inline def describeIntentFuture(params: DescribeIntentRequest): Future[DescribeIntentResponse] = service.describeIntent(params).promise().toFuture
@@ -186,6 +213,7 @@ package object lexmodelsv2 {
     @inline def listBotsFuture(params: ListBotsRequest): Future[ListBotsResponse] = service.listBots(params).promise().toFuture
     @inline def listBuiltInIntentsFuture(params: ListBuiltInIntentsRequest): Future[ListBuiltInIntentsResponse] = service.listBuiltInIntents(params).promise().toFuture
     @inline def listBuiltInSlotTypesFuture(params: ListBuiltInSlotTypesRequest): Future[ListBuiltInSlotTypesResponse] = service.listBuiltInSlotTypes(params).promise().toFuture
+    @inline def listCustomVocabularyItemsFuture(params: ListCustomVocabularyItemsRequest): Future[ListCustomVocabularyItemsResponse] = service.listCustomVocabularyItems(params).promise().toFuture
     @inline def listExportsFuture(params: ListExportsRequest): Future[ListExportsResponse] = service.listExports(params).promise().toFuture
     @inline def listImportsFuture(params: ListImportsRequest): Future[ListImportsResponse] = service.listImports(params).promise().toFuture
     @inline def listIntentsFuture(params: ListIntentsRequest): Future[ListIntentsResponse] = service.listIntents(params).promise().toFuture
@@ -196,6 +224,7 @@ package object lexmodelsv2 {
     @inline def searchAssociatedTranscriptsFuture(params: SearchAssociatedTranscriptsRequest): Future[SearchAssociatedTranscriptsResponse] = service.searchAssociatedTranscripts(params).promise().toFuture
     @inline def startBotRecommendationFuture(params: StartBotRecommendationRequest): Future[StartBotRecommendationResponse] = service.startBotRecommendation(params).promise().toFuture
     @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] = service.startImport(params).promise().toFuture
+    @inline def stopBotRecommendationFuture(params: StopBotRecommendationRequest): Future[StopBotRecommendationResponse] = service.stopBotRecommendation(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateBotAliasFuture(params: UpdateBotAliasRequest): Future[UpdateBotAliasResponse] = service.updateBotAlias(params).promise().toFuture
@@ -215,6 +244,9 @@ package object lexmodelsv2 {
   class LexModelsV2() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchCreateCustomVocabularyItem(params: BatchCreateCustomVocabularyItemRequest): Request[BatchCreateCustomVocabularyItemResponse] = js.native
+    def batchDeleteCustomVocabularyItem(params: BatchDeleteCustomVocabularyItemRequest): Request[BatchDeleteCustomVocabularyItemResponse] = js.native
+    def batchUpdateCustomVocabularyItem(params: BatchUpdateCustomVocabularyItemRequest): Request[BatchUpdateCustomVocabularyItemResponse] = js.native
     def buildBotLocale(params: BuildBotLocaleRequest): Request[BuildBotLocaleResponse] = js.native
     def createBot(params: CreateBotRequest): Request[CreateBotResponse] = js.native
     def createBotAlias(params: CreateBotAliasRequest): Request[CreateBotAliasResponse] = js.native
@@ -231,6 +263,7 @@ package object lexmodelsv2 {
     def deleteBotAlias(params: DeleteBotAliasRequest): Request[DeleteBotAliasResponse] = js.native
     def deleteBotLocale(params: DeleteBotLocaleRequest): Request[DeleteBotLocaleResponse] = js.native
     def deleteBotVersion(params: DeleteBotVersionRequest): Request[DeleteBotVersionResponse] = js.native
+    def deleteCustomVocabulary(params: DeleteCustomVocabularyRequest): Request[DeleteCustomVocabularyResponse] = js.native
     def deleteExport(params: DeleteExportRequest): Request[DeleteExportResponse] = js.native
     def deleteImport(params: DeleteImportRequest): Request[DeleteImportResponse] = js.native
     def deleteIntent(params: DeleteIntentRequest): Request[js.Object] = js.native
@@ -244,6 +277,7 @@ package object lexmodelsv2 {
     def describeBotLocale(params: DescribeBotLocaleRequest): Request[DescribeBotLocaleResponse] = js.native
     def describeBotRecommendation(params: DescribeBotRecommendationRequest): Request[DescribeBotRecommendationResponse] = js.native
     def describeBotVersion(params: DescribeBotVersionRequest): Request[DescribeBotVersionResponse] = js.native
+    def describeCustomVocabularyMetadata(params: DescribeCustomVocabularyMetadataRequest): Request[DescribeCustomVocabularyMetadataResponse] = js.native
     def describeExport(params: DescribeExportRequest): Request[DescribeExportResponse] = js.native
     def describeImport(params: DescribeImportRequest): Request[DescribeImportResponse] = js.native
     def describeIntent(params: DescribeIntentRequest): Request[DescribeIntentResponse] = js.native
@@ -258,6 +292,7 @@ package object lexmodelsv2 {
     def listBots(params: ListBotsRequest): Request[ListBotsResponse] = js.native
     def listBuiltInIntents(params: ListBuiltInIntentsRequest): Request[ListBuiltInIntentsResponse] = js.native
     def listBuiltInSlotTypes(params: ListBuiltInSlotTypesRequest): Request[ListBuiltInSlotTypesResponse] = js.native
+    def listCustomVocabularyItems(params: ListCustomVocabularyItemsRequest): Request[ListCustomVocabularyItemsResponse] = js.native
     def listExports(params: ListExportsRequest): Request[ListExportsResponse] = js.native
     def listImports(params: ListImportsRequest): Request[ListImportsResponse] = js.native
     def listIntents(params: ListIntentsRequest): Request[ListIntentsResponse] = js.native
@@ -268,6 +303,7 @@ package object lexmodelsv2 {
     def searchAssociatedTranscripts(params: SearchAssociatedTranscriptsRequest): Request[SearchAssociatedTranscriptsResponse] = js.native
     def startBotRecommendation(params: StartBotRecommendationRequest): Request[StartBotRecommendationResponse] = js.native
     def startImport(params: StartImportRequest): Request[StartImportResponse] = js.native
+    def stopBotRecommendation(params: StopBotRecommendationRequest): Request[StopBotRecommendationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateBot(params: UpdateBotRequest): Request[UpdateBotResponse] = js.native
@@ -283,6 +319,24 @@ package object lexmodelsv2 {
   object LexModelsV2 {
     @inline implicit def toOps(service: LexModelsV2): LexModelsV2Ops = {
       new LexModelsV2Ops(service)
+    }
+  }
+
+  /** Provides settings that enable advanced recognition settings for slot values.
+    */
+  @js.native
+  trait AdvancedRecognitionSetting extends js.Object {
+    var audioRecognitionStrategy: js.UndefOr[AudioRecognitionStrategy]
+  }
+
+  object AdvancedRecognitionSetting {
+    @inline
+    def apply(
+        audioRecognitionStrategy: js.UndefOr[AudioRecognitionStrategy] = js.undefined
+    ): AdvancedRecognitionSetting = {
+      val __obj = js.Dynamic.literal()
+      audioRecognitionStrategy.foreach(__v => __obj.updateDynamic("audioRecognitionStrategy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdvancedRecognitionSetting]
     }
   }
 
@@ -366,6 +420,28 @@ package object lexmodelsv2 {
     }
   }
 
+  /** Specifies the allowed input types.
+    */
+  @js.native
+  trait AllowedInputTypes extends js.Object {
+    var allowAudioInput: BoxedBoolean
+    var allowDTMFInput: BoxedBoolean
+  }
+
+  object AllowedInputTypes {
+    @inline
+    def apply(
+        allowAudioInput: BoxedBoolean,
+        allowDTMFInput: BoxedBoolean
+    ): AllowedInputTypes = {
+      val __obj = js.Dynamic.literal(
+        "allowAudioInput" -> allowAudioInput.asInstanceOf[js.Any],
+        "allowDTMFInput" -> allowDTMFInput.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AllowedInputTypes]
+    }
+  }
+
   /** The object containing information that associates the recommended intent/slot type with a conversation.
     */
   @js.native
@@ -403,6 +479,32 @@ package object lexmodelsv2 {
         "values" -> values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssociatedTranscriptFilter]
+    }
+  }
+
+  /** Specifies the audio and DTMF input specification.
+    */
+  @js.native
+  trait AudioAndDTMFInputSpecification extends js.Object {
+    var startTimeoutMs: TimeInMilliSeconds
+    var audioSpecification: js.UndefOr[AudioSpecification]
+    var dtmfSpecification: js.UndefOr[DTMFSpecification]
+  }
+
+  object AudioAndDTMFInputSpecification {
+    @inline
+    def apply(
+        startTimeoutMs: TimeInMilliSeconds,
+        audioSpecification: js.UndefOr[AudioSpecification] = js.undefined,
+        dtmfSpecification: js.UndefOr[DTMFSpecification] = js.undefined
+    ): AudioAndDTMFInputSpecification = {
+      val __obj = js.Dynamic.literal(
+        "startTimeoutMs" -> startTimeoutMs.asInstanceOf[js.Any]
+      )
+
+      audioSpecification.foreach(__v => __obj.updateDynamic("audioSpecification")(__v.asInstanceOf[js.Any]))
+      dtmfSpecification.foreach(__v => __obj.updateDynamic("dtmfSpecification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioAndDTMFInputSpecification]
     }
   }
 
@@ -444,6 +546,190 @@ package object lexmodelsv2 {
         "enabled" -> enabled.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AudioLogSetting]
+    }
+  }
+
+  /** Specifies the audio input specifications.
+    */
+  @js.native
+  trait AudioSpecification extends js.Object {
+    var endTimeoutMs: TimeInMilliSeconds
+    var maxLengthMs: TimeInMilliSeconds
+  }
+
+  object AudioSpecification {
+    @inline
+    def apply(
+        endTimeoutMs: TimeInMilliSeconds,
+        maxLengthMs: TimeInMilliSeconds
+    ): AudioSpecification = {
+      val __obj = js.Dynamic.literal(
+        "endTimeoutMs" -> endTimeoutMs.asInstanceOf[js.Any],
+        "maxLengthMs" -> maxLengthMs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AudioSpecification]
+    }
+  }
+
+  @js.native
+  trait BatchCreateCustomVocabularyItemRequest extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var customVocabularyItemList: CreateCustomVocabularyItemsList
+    var localeId: LocaleId
+  }
+
+  object BatchCreateCustomVocabularyItemRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        customVocabularyItemList: CreateCustomVocabularyItemsList,
+        localeId: LocaleId
+    ): BatchCreateCustomVocabularyItemRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "customVocabularyItemList" -> customVocabularyItemList.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchCreateCustomVocabularyItemRequest]
+    }
+  }
+
+  @js.native
+  trait BatchCreateCustomVocabularyItemResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[BotVersion]
+    var errors: js.UndefOr[FailedCustomVocabularyItems]
+    var localeId: js.UndefOr[LocaleId]
+    var resources: js.UndefOr[CustomVocabularyItems]
+  }
+
+  object BatchCreateCustomVocabularyItemResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
+        errors: js.UndefOr[FailedCustomVocabularyItems] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
+        resources: js.UndefOr[CustomVocabularyItems] = js.undefined
+    ): BatchCreateCustomVocabularyItemResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchCreateCustomVocabularyItemResponse]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteCustomVocabularyItemRequest extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var customVocabularyItemList: DeleteCustomVocabularyItemsList
+    var localeId: LocaleId
+  }
+
+  object BatchDeleteCustomVocabularyItemRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        customVocabularyItemList: DeleteCustomVocabularyItemsList,
+        localeId: LocaleId
+    ): BatchDeleteCustomVocabularyItemRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "customVocabularyItemList" -> customVocabularyItemList.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDeleteCustomVocabularyItemRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteCustomVocabularyItemResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[BotVersion]
+    var errors: js.UndefOr[FailedCustomVocabularyItems]
+    var localeId: js.UndefOr[LocaleId]
+    var resources: js.UndefOr[CustomVocabularyItems]
+  }
+
+  object BatchDeleteCustomVocabularyItemResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
+        errors: js.UndefOr[FailedCustomVocabularyItems] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
+        resources: js.UndefOr[CustomVocabularyItems] = js.undefined
+    ): BatchDeleteCustomVocabularyItemResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteCustomVocabularyItemResponse]
+    }
+  }
+
+  @js.native
+  trait BatchUpdateCustomVocabularyItemRequest extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var customVocabularyItemList: UpdateCustomVocabularyItemsList
+    var localeId: LocaleId
+  }
+
+  object BatchUpdateCustomVocabularyItemRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        customVocabularyItemList: UpdateCustomVocabularyItemsList,
+        localeId: LocaleId
+    ): BatchUpdateCustomVocabularyItemRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "customVocabularyItemList" -> customVocabularyItemList.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchUpdateCustomVocabularyItemRequest]
+    }
+  }
+
+  @js.native
+  trait BatchUpdateCustomVocabularyItemResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[BotVersion]
+    var errors: js.UndefOr[FailedCustomVocabularyItems]
+    var localeId: js.UndefOr[LocaleId]
+    var resources: js.UndefOr[CustomVocabularyItems]
+  }
+
+  object BatchUpdateCustomVocabularyItemResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
+        errors: js.UndefOr[FailedCustomVocabularyItems] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
+        resources: js.UndefOr[CustomVocabularyItems] = js.undefined
+    ): BatchUpdateCustomVocabularyItemResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchUpdateCustomVocabularyItemResponse]
     }
   }
 
@@ -792,7 +1078,7 @@ package object lexmodelsv2 {
     }
   }
 
-  /** The object representing the URL of the bot definition, the URL of the associated transcript and a statistical summary of the bot recommendation results.
+  /** The object representing the URL of the bot definition, the URL of the associated transcript, and a statistical summary of the bot recommendation results.
     */
   @js.native
   trait BotRecommendationResults extends js.Object {
@@ -1171,6 +1457,97 @@ package object lexmodelsv2 {
     }
   }
 
+  /** A composite slot is a combination of two or more slots that capture multiple pieces of information in a single user input.
+    */
+  @js.native
+  trait CompositeSlotTypeSetting extends js.Object {
+    var subSlots: js.UndefOr[SubSlotTypeList]
+  }
+
+  object CompositeSlotTypeSetting {
+    @inline
+    def apply(
+        subSlots: js.UndefOr[SubSlotTypeList] = js.undefined
+    ): CompositeSlotTypeSetting = {
+      val __obj = js.Dynamic.literal()
+      subSlots.foreach(__v => __obj.updateDynamic("subSlots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CompositeSlotTypeSetting]
+    }
+  }
+
+  /** Provides an expression that evaluates to true or false.
+    */
+  @js.native
+  trait Condition extends js.Object {
+    var expressionString: ConditionExpression
+  }
+
+  object Condition {
+    @inline
+    def apply(
+        expressionString: ConditionExpression
+    ): Condition = {
+      val __obj = js.Dynamic.literal(
+        "expressionString" -> expressionString.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Condition]
+    }
+  }
+
+  /** A set of actions that Amazon Lex should run if the condition is matched.
+    */
+  @js.native
+  trait ConditionalBranch extends js.Object {
+    var condition: Condition
+    var name: Name
+    var nextStep: DialogState
+    var response: js.UndefOr[ResponseSpecification]
+  }
+
+  object ConditionalBranch {
+    @inline
+    def apply(
+        condition: Condition,
+        name: Name,
+        nextStep: DialogState,
+        response: js.UndefOr[ResponseSpecification] = js.undefined
+    ): ConditionalBranch = {
+      val __obj = js.Dynamic.literal(
+        "condition" -> condition.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "nextStep" -> nextStep.asInstanceOf[js.Any]
+      )
+
+      response.foreach(__v => __obj.updateDynamic("response")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalBranch]
+    }
+  }
+
+  /** Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.
+    */
+  @js.native
+  trait ConditionalSpecification extends js.Object {
+    var active: BoxedBoolean
+    var conditionalBranches: ConditionalBranches
+    var defaultBranch: DefaultConditionalBranch
+  }
+
+  object ConditionalSpecification {
+    @inline
+    def apply(
+        active: BoxedBoolean,
+        conditionalBranches: ConditionalBranches,
+        defaultBranch: DefaultConditionalBranch
+    ): ConditionalSpecification = {
+      val __obj = js.Dynamic.literal(
+        "active" -> active.asInstanceOf[js.Any],
+        "conditionalBranches" -> conditionalBranches.asInstanceOf[js.Any],
+        "defaultBranch" -> defaultBranch.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConditionalSpecification]
+    }
+  }
+
   /** Configures conversation logging that saves audio, text, and metadata for the conversations with your users.
     */
   @js.native
@@ -1545,6 +1922,7 @@ package object lexmodelsv2 {
     var description: js.UndefOr[Description]
     var dialogCodeHook: js.UndefOr[DialogCodeHookSettings]
     var fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings]
+    var initialResponseSetting: js.UndefOr[InitialResponseSetting]
     var inputContexts: js.UndefOr[InputContextsList]
     var intentClosingSetting: js.UndefOr[IntentClosingSetting]
     var intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting]
@@ -1564,6 +1942,7 @@ package object lexmodelsv2 {
         description: js.UndefOr[Description] = js.undefined,
         dialogCodeHook: js.UndefOr[DialogCodeHookSettings] = js.undefined,
         fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings] = js.undefined,
+        initialResponseSetting: js.UndefOr[InitialResponseSetting] = js.undefined,
         inputContexts: js.UndefOr[InputContextsList] = js.undefined,
         intentClosingSetting: js.UndefOr[IntentClosingSetting] = js.undefined,
         intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting] = js.undefined,
@@ -1582,6 +1961,7 @@ package object lexmodelsv2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       fulfillmentCodeHook.foreach(__v => __obj.updateDynamic("fulfillmentCodeHook")(__v.asInstanceOf[js.Any]))
+      initialResponseSetting.foreach(__v => __obj.updateDynamic("initialResponseSetting")(__v.asInstanceOf[js.Any]))
       inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       intentClosingSetting.foreach(__v => __obj.updateDynamic("intentClosingSetting")(__v.asInstanceOf[js.Any]))
       intentConfirmationSetting.foreach(__v => __obj.updateDynamic("intentConfirmationSetting")(__v.asInstanceOf[js.Any]))
@@ -1601,6 +1981,7 @@ package object lexmodelsv2 {
     var description: js.UndefOr[Description]
     var dialogCodeHook: js.UndefOr[DialogCodeHookSettings]
     var fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings]
+    var initialResponseSetting: js.UndefOr[InitialResponseSetting]
     var inputContexts: js.UndefOr[InputContextsList]
     var intentClosingSetting: js.UndefOr[IntentClosingSetting]
     var intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting]
@@ -1622,6 +2003,7 @@ package object lexmodelsv2 {
         description: js.UndefOr[Description] = js.undefined,
         dialogCodeHook: js.UndefOr[DialogCodeHookSettings] = js.undefined,
         fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings] = js.undefined,
+        initialResponseSetting: js.UndefOr[InitialResponseSetting] = js.undefined,
         inputContexts: js.UndefOr[InputContextsList] = js.undefined,
         intentClosingSetting: js.UndefOr[IntentClosingSetting] = js.undefined,
         intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting] = js.undefined,
@@ -1640,6 +2022,7 @@ package object lexmodelsv2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       fulfillmentCodeHook.foreach(__v => __obj.updateDynamic("fulfillmentCodeHook")(__v.asInstanceOf[js.Any]))
+      initialResponseSetting.foreach(__v => __obj.updateDynamic("initialResponseSetting")(__v.asInstanceOf[js.Any]))
       inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       intentClosingSetting.foreach(__v => __obj.updateDynamic("intentClosingSetting")(__v.asInstanceOf[js.Any]))
       intentConfirmationSetting.foreach(__v => __obj.updateDynamic("intentConfirmationSetting")(__v.asInstanceOf[js.Any]))
@@ -1755,11 +2138,12 @@ package object lexmodelsv2 {
     var intentId: Id
     var localeId: LocaleId
     var slotName: Name
-    var slotTypeId: BuiltInOrCustomSlotTypeId
     var valueElicitationSetting: SlotValueElicitationSetting
     var description: js.UndefOr[Description]
     var multipleValuesSetting: js.UndefOr[MultipleValuesSetting]
     var obfuscationSetting: js.UndefOr[ObfuscationSetting]
+    var slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId]
+    var subSlotSetting: js.UndefOr[SubSlotSetting]
   }
 
   object CreateSlotRequest {
@@ -1770,11 +2154,12 @@ package object lexmodelsv2 {
         intentId: Id,
         localeId: LocaleId,
         slotName: Name,
-        slotTypeId: BuiltInOrCustomSlotTypeId,
         valueElicitationSetting: SlotValueElicitationSetting,
         description: js.UndefOr[Description] = js.undefined,
         multipleValuesSetting: js.UndefOr[MultipleValuesSetting] = js.undefined,
-        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined
+        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined,
+        slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId] = js.undefined,
+        subSlotSetting: js.UndefOr[SubSlotSetting] = js.undefined
     ): CreateSlotRequest = {
       val __obj = js.Dynamic.literal(
         "botId" -> botId.asInstanceOf[js.Any],
@@ -1782,13 +2167,14 @@ package object lexmodelsv2 {
         "intentId" -> intentId.asInstanceOf[js.Any],
         "localeId" -> localeId.asInstanceOf[js.Any],
         "slotName" -> slotName.asInstanceOf[js.Any],
-        "slotTypeId" -> slotTypeId.asInstanceOf[js.Any],
         "valueElicitationSetting" -> valueElicitationSetting.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       multipleValuesSetting.foreach(__v => __obj.updateDynamic("multipleValuesSetting")(__v.asInstanceOf[js.Any]))
       obfuscationSetting.foreach(__v => __obj.updateDynamic("obfuscationSetting")(__v.asInstanceOf[js.Any]))
+      slotTypeId.foreach(__v => __obj.updateDynamic("slotTypeId")(__v.asInstanceOf[js.Any]))
+      subSlotSetting.foreach(__v => __obj.updateDynamic("subSlotSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSlotRequest]
     }
   }
@@ -1806,6 +2192,7 @@ package object lexmodelsv2 {
     var slotId: js.UndefOr[Id]
     var slotName: js.UndefOr[Name]
     var slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId]
+    var subSlotSetting: js.UndefOr[SubSlotSetting]
     var valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting]
   }
 
@@ -1823,6 +2210,7 @@ package object lexmodelsv2 {
         slotId: js.UndefOr[Id] = js.undefined,
         slotName: js.UndefOr[Name] = js.undefined,
         slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId] = js.undefined,
+        subSlotSetting: js.UndefOr[SubSlotSetting] = js.undefined,
         valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting] = js.undefined
     ): CreateSlotResponse = {
       val __obj = js.Dynamic.literal()
@@ -1837,6 +2225,7 @@ package object lexmodelsv2 {
       slotId.foreach(__v => __obj.updateDynamic("slotId")(__v.asInstanceOf[js.Any]))
       slotName.foreach(__v => __obj.updateDynamic("slotName")(__v.asInstanceOf[js.Any]))
       slotTypeId.foreach(__v => __obj.updateDynamic("slotTypeId")(__v.asInstanceOf[js.Any]))
+      subSlotSetting.foreach(__v => __obj.updateDynamic("subSlotSetting")(__v.asInstanceOf[js.Any]))
       valueElicitationSetting.foreach(__v => __obj.updateDynamic("valueElicitationSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSlotResponse]
     }
@@ -1848,6 +2237,7 @@ package object lexmodelsv2 {
     var botVersion: DraftBotVersion
     var localeId: LocaleId
     var slotTypeName: Name
+    var compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting]
     var description: js.UndefOr[Description]
     var externalSourceSetting: js.UndefOr[ExternalSourceSetting]
     var parentSlotTypeSignature: js.UndefOr[SlotTypeSignature]
@@ -1862,6 +2252,7 @@ package object lexmodelsv2 {
         botVersion: DraftBotVersion,
         localeId: LocaleId,
         slotTypeName: Name,
+        compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         externalSourceSetting: js.UndefOr[ExternalSourceSetting] = js.undefined,
         parentSlotTypeSignature: js.UndefOr[SlotTypeSignature] = js.undefined,
@@ -1875,6 +2266,7 @@ package object lexmodelsv2 {
         "slotTypeName" -> slotTypeName.asInstanceOf[js.Any]
       )
 
+      compositeSlotTypeSetting.foreach(__v => __obj.updateDynamic("compositeSlotTypeSetting")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       externalSourceSetting.foreach(__v => __obj.updateDynamic("externalSourceSetting")(__v.asInstanceOf[js.Any]))
       parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
@@ -1888,6 +2280,7 @@ package object lexmodelsv2 {
   trait CreateSlotTypeResponse extends js.Object {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[DraftBotVersion]
+    var compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting]
     var creationDateTime: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var externalSourceSetting: js.UndefOr[ExternalSourceSetting]
@@ -1904,6 +2297,7 @@ package object lexmodelsv2 {
     def apply(
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
+        compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting] = js.undefined,
         creationDateTime: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         externalSourceSetting: js.UndefOr[ExternalSourceSetting] = js.undefined,
@@ -1917,6 +2311,7 @@ package object lexmodelsv2 {
       val __obj = js.Dynamic.literal()
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      compositeSlotTypeSetting.foreach(__v => __obj.updateDynamic("compositeSlotTypeSetting")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       externalSourceSetting.foreach(__v => __obj.updateDynamic("externalSourceSetting")(__v.asInstanceOf[js.Any]))
@@ -1979,6 +2374,132 @@ package object lexmodelsv2 {
     }
   }
 
+  /** The unique entry identifier for the custom vocabulary items.
+    */
+  @js.native
+  trait CustomVocabularyEntryId extends js.Object {
+    var itemId: ItemId
+  }
+
+  object CustomVocabularyEntryId {
+    @inline
+    def apply(
+        itemId: ItemId
+    ): CustomVocabularyEntryId = {
+      val __obj = js.Dynamic.literal(
+        "itemId" -> itemId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomVocabularyEntryId]
+    }
+  }
+
+  /** Provides the parameters required for exporting a custom vocabulary.
+    */
+  @js.native
+  trait CustomVocabularyExportSpecification extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var localeId: LocaleId
+  }
+
+  object CustomVocabularyExportSpecification {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        localeId: LocaleId
+    ): CustomVocabularyExportSpecification = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomVocabularyExportSpecification]
+    }
+  }
+
+  /** Provides the parameters required for importing a custom vocabulary.
+    */
+  @js.native
+  trait CustomVocabularyImportSpecification extends js.Object {
+    var botId: Id
+    var botVersion: DraftBotVersion
+    var localeId: LocaleId
+  }
+
+  object CustomVocabularyImportSpecification {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: DraftBotVersion,
+        localeId: LocaleId
+    ): CustomVocabularyImportSpecification = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomVocabularyImportSpecification]
+    }
+  }
+
+  /** The unique custom vocabulary item from the custom vocabulary list.
+    */
+  @js.native
+  trait CustomVocabularyItem extends js.Object {
+    var itemId: ItemId
+    var phrase: Phrase
+    var displayAs: js.UndefOr[Phrase]
+    var weight: js.UndefOr[Weight]
+  }
+
+  object CustomVocabularyItem {
+    @inline
+    def apply(
+        itemId: ItemId,
+        phrase: Phrase,
+        displayAs: js.UndefOr[Phrase] = js.undefined,
+        weight: js.UndefOr[Weight] = js.undefined
+    ): CustomVocabularyItem = {
+      val __obj = js.Dynamic.literal(
+        "itemId" -> itemId.asInstanceOf[js.Any],
+        "phrase" -> phrase.asInstanceOf[js.Any]
+      )
+
+      displayAs.foreach(__v => __obj.updateDynamic("displayAs")(__v.asInstanceOf[js.Any]))
+      weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomVocabularyItem]
+    }
+  }
+
+  /** Specifies the DTMF input specifications.
+    */
+  @js.native
+  trait DTMFSpecification extends js.Object {
+    var deletionCharacter: DTMFCharacter
+    var endCharacter: DTMFCharacter
+    var endTimeoutMs: TimeInMilliSeconds
+    var maxLength: MaxUtteranceDigits
+  }
+
+  object DTMFSpecification {
+    @inline
+    def apply(
+        deletionCharacter: DTMFCharacter,
+        endCharacter: DTMFCharacter,
+        endTimeoutMs: TimeInMilliSeconds,
+        maxLength: MaxUtteranceDigits
+    ): DTMFSpecification = {
+      val __obj = js.Dynamic.literal(
+        "deletionCharacter" -> deletionCharacter.asInstanceOf[js.Any],
+        "endCharacter" -> endCharacter.asInstanceOf[js.Any],
+        "endTimeoutMs" -> endTimeoutMs.asInstanceOf[js.Any],
+        "maxLength" -> maxLength.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DTMFSpecification]
+    }
+  }
+
   /** By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.
     */
   @js.native
@@ -2017,6 +2538,27 @@ package object lexmodelsv2 {
         "startDateTime" -> startDateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DateRangeFilter]
+    }
+  }
+
+  /** A set of actions that Amazon Lex should run if none of the other conditions are met.
+    */
+  @js.native
+  trait DefaultConditionalBranch extends js.Object {
+    var nextStep: js.UndefOr[DialogState]
+    var response: js.UndefOr[ResponseSpecification]
+  }
+
+  object DefaultConditionalBranch {
+    @inline
+    def apply(
+        nextStep: js.UndefOr[DialogState] = js.undefined,
+        response: js.UndefOr[ResponseSpecification] = js.undefined
+    ): DefaultConditionalBranch = {
+      val __obj = js.Dynamic.literal()
+      nextStep.foreach(__v => __obj.updateDynamic("nextStep")(__v.asInstanceOf[js.Any]))
+      response.foreach(__v => __obj.updateDynamic("response")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultConditionalBranch]
     }
   }
 
@@ -2197,6 +2739,54 @@ package object lexmodelsv2 {
       botStatus.foreach(__v => __obj.updateDynamic("botStatus")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBotVersionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomVocabularyRequest extends js.Object {
+    var botId: Id
+    var botVersion: DraftBotVersion
+    var localeId: LocaleId
+  }
+
+  object DeleteCustomVocabularyRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: DraftBotVersion,
+        localeId: LocaleId
+    ): DeleteCustomVocabularyRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCustomVocabularyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCustomVocabularyResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[DraftBotVersion]
+    var customVocabularyStatus: js.UndefOr[CustomVocabularyStatus]
+    var localeId: js.UndefOr[LocaleId]
+  }
+
+  object DeleteCustomVocabularyResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
+        customVocabularyStatus: js.UndefOr[CustomVocabularyStatus] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined
+    ): DeleteCustomVocabularyResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      customVocabularyStatus.foreach(__v => __obj.updateDynamic("customVocabularyStatus")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteCustomVocabularyResponse]
     }
   }
 
@@ -2821,6 +3411,60 @@ package object lexmodelsv2 {
   }
 
   @js.native
+  trait DescribeCustomVocabularyMetadataRequest extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var localeId: LocaleId
+  }
+
+  object DescribeCustomVocabularyMetadataRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        localeId: LocaleId
+    ): DescribeCustomVocabularyMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeCustomVocabularyMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeCustomVocabularyMetadataResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[BotVersion]
+    var creationDateTime: js.UndefOr[Timestamp]
+    var customVocabularyStatus: js.UndefOr[CustomVocabularyStatus]
+    var lastUpdatedDateTime: js.UndefOr[Timestamp]
+    var localeId: js.UndefOr[LocaleId]
+  }
+
+  object DescribeCustomVocabularyMetadataResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
+        creationDateTime: js.UndefOr[Timestamp] = js.undefined,
+        customVocabularyStatus: js.UndefOr[CustomVocabularyStatus] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Timestamp] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined
+    ): DescribeCustomVocabularyMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      customVocabularyStatus.foreach(__v => __obj.updateDynamic("customVocabularyStatus")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCustomVocabularyMetadataResponse]
+    }
+  }
+
+  @js.native
   trait DescribeExportRequest extends js.Object {
     var exportId: Id
   }
@@ -2965,6 +3609,7 @@ package object lexmodelsv2 {
     var description: js.UndefOr[Description]
     var dialogCodeHook: js.UndefOr[DialogCodeHookSettings]
     var fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings]
+    var initialResponseSetting: js.UndefOr[InitialResponseSetting]
     var inputContexts: js.UndefOr[InputContextsList]
     var intentClosingSetting: js.UndefOr[IntentClosingSetting]
     var intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting]
@@ -2988,6 +3633,7 @@ package object lexmodelsv2 {
         description: js.UndefOr[Description] = js.undefined,
         dialogCodeHook: js.UndefOr[DialogCodeHookSettings] = js.undefined,
         fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings] = js.undefined,
+        initialResponseSetting: js.UndefOr[InitialResponseSetting] = js.undefined,
         inputContexts: js.UndefOr[InputContextsList] = js.undefined,
         intentClosingSetting: js.UndefOr[IntentClosingSetting] = js.undefined,
         intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting] = js.undefined,
@@ -3008,6 +3654,7 @@ package object lexmodelsv2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       fulfillmentCodeHook.foreach(__v => __obj.updateDynamic("fulfillmentCodeHook")(__v.asInstanceOf[js.Any]))
+      initialResponseSetting.foreach(__v => __obj.updateDynamic("initialResponseSetting")(__v.asInstanceOf[js.Any]))
       inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       intentClosingSetting.foreach(__v => __obj.updateDynamic("intentClosingSetting")(__v.asInstanceOf[js.Any]))
       intentConfirmationSetting.foreach(__v => __obj.updateDynamic("intentConfirmationSetting")(__v.asInstanceOf[js.Any]))
@@ -3106,6 +3753,7 @@ package object lexmodelsv2 {
     var slotId: js.UndefOr[Id]
     var slotName: js.UndefOr[Name]
     var slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId]
+    var subSlotSetting: js.UndefOr[SubSlotSetting]
     var valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting]
   }
 
@@ -3124,6 +3772,7 @@ package object lexmodelsv2 {
         slotId: js.UndefOr[Id] = js.undefined,
         slotName: js.UndefOr[Name] = js.undefined,
         slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId] = js.undefined,
+        subSlotSetting: js.UndefOr[SubSlotSetting] = js.undefined,
         valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting] = js.undefined
     ): DescribeSlotResponse = {
       val __obj = js.Dynamic.literal()
@@ -3139,6 +3788,7 @@ package object lexmodelsv2 {
       slotId.foreach(__v => __obj.updateDynamic("slotId")(__v.asInstanceOf[js.Any]))
       slotName.foreach(__v => __obj.updateDynamic("slotName")(__v.asInstanceOf[js.Any]))
       slotTypeId.foreach(__v => __obj.updateDynamic("slotTypeId")(__v.asInstanceOf[js.Any]))
+      subSlotSetting.foreach(__v => __obj.updateDynamic("subSlotSetting")(__v.asInstanceOf[js.Any]))
       valueElicitationSetting.foreach(__v => __obj.updateDynamic("valueElicitationSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSlotResponse]
     }
@@ -3174,6 +3824,7 @@ package object lexmodelsv2 {
   trait DescribeSlotTypeResponse extends js.Object {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[BotVersion]
+    var compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting]
     var creationDateTime: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var externalSourceSetting: js.UndefOr[ExternalSourceSetting]
@@ -3191,6 +3842,7 @@ package object lexmodelsv2 {
     def apply(
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[BotVersion] = js.undefined,
+        compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting] = js.undefined,
         creationDateTime: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         externalSourceSetting: js.UndefOr[ExternalSourceSetting] = js.undefined,
@@ -3205,6 +3857,7 @@ package object lexmodelsv2 {
       val __obj = js.Dynamic.literal()
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      compositeSlotTypeSetting.foreach(__v => __obj.updateDynamic("compositeSlotTypeSetting")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       externalSourceSetting.foreach(__v => __obj.updateDynamic("externalSourceSetting")(__v.asInstanceOf[js.Any]))
@@ -3216,6 +3869,61 @@ package object lexmodelsv2 {
       slotTypeValues.foreach(__v => __obj.updateDynamic("slotTypeValues")(__v.asInstanceOf[js.Any]))
       valueSelectionSetting.foreach(__v => __obj.updateDynamic("valueSelectionSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSlotTypeResponse]
+    }
+  }
+
+  /** Defines the action that the bot executes at runtime when the conversation reaches this step.
+    */
+  @js.native
+  trait DialogAction extends js.Object {
+    var `type`: DialogActionType
+    var slotToElicit: js.UndefOr[Name]
+    var suppressNextMessage: js.UndefOr[BoxedBoolean]
+  }
+
+  object DialogAction {
+    @inline
+    def apply(
+        `type`: DialogActionType,
+        slotToElicit: js.UndefOr[Name] = js.undefined,
+        suppressNextMessage: js.UndefOr[BoxedBoolean] = js.undefined
+    ): DialogAction = {
+      val __obj = js.Dynamic.literal(
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      suppressNextMessage.foreach(__v => __obj.updateDynamic("suppressNextMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DialogAction]
+    }
+  }
+
+  /** Settings that specify the dialog code hook that is called by Amazon Lex at a step of the conversation.
+    */
+  @js.native
+  trait DialogCodeHookInvocationSetting extends js.Object {
+    var active: BoxedBoolean
+    var enableCodeHookInvocation: BoxedBoolean
+    var postCodeHookSpecification: PostDialogCodeHookInvocationSpecification
+    var invocationLabel: js.UndefOr[Name]
+  }
+
+  object DialogCodeHookInvocationSetting {
+    @inline
+    def apply(
+        active: BoxedBoolean,
+        enableCodeHookInvocation: BoxedBoolean,
+        postCodeHookSpecification: PostDialogCodeHookInvocationSpecification,
+        invocationLabel: js.UndefOr[Name] = js.undefined
+    ): DialogCodeHookInvocationSetting = {
+      val __obj = js.Dynamic.literal(
+        "active" -> active.asInstanceOf[js.Any],
+        "enableCodeHookInvocation" -> enableCodeHookInvocation.asInstanceOf[js.Any],
+        "postCodeHookSpecification" -> postCodeHookSpecification.asInstanceOf[js.Any]
+      )
+
+      invocationLabel.foreach(__v => __obj.updateDynamic("invocationLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DialogCodeHookInvocationSetting]
     }
   }
 
@@ -3235,6 +3943,53 @@ package object lexmodelsv2 {
         "enabled" -> enabled.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DialogCodeHookSettings]
+    }
+  }
+
+  /** The current state of the conversation with the user.
+    */
+  @js.native
+  trait DialogState extends js.Object {
+    var dialogAction: js.UndefOr[DialogAction]
+    var intent: js.UndefOr[IntentOverride]
+    var sessionAttributes: js.UndefOr[StringMap]
+  }
+
+  object DialogState {
+    @inline
+    def apply(
+        dialogAction: js.UndefOr[DialogAction] = js.undefined,
+        intent: js.UndefOr[IntentOverride] = js.undefined,
+        sessionAttributes: js.UndefOr[StringMap] = js.undefined
+    ): DialogState = {
+      val __obj = js.Dynamic.literal()
+      dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
+      intent.foreach(__v => __obj.updateDynamic("intent")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DialogState]
+    }
+  }
+
+  /** Settings that specify the dialog code hook that is called by Amazon Lex between eliciting slot values.
+    */
+  @js.native
+  trait ElicitationCodeHookInvocationSetting extends js.Object {
+    var enableCodeHookInvocation: BoxedBoolean
+    var invocationLabel: js.UndefOr[Name]
+  }
+
+  object ElicitationCodeHookInvocationSetting {
+    @inline
+    def apply(
+        enableCodeHookInvocation: BoxedBoolean,
+        invocationLabel: js.UndefOr[Name] = js.undefined
+    ): ElicitationCodeHookInvocationSetting = {
+      val __obj = js.Dynamic.literal(
+        "enableCodeHookInvocation" -> enableCodeHookInvocation.asInstanceOf[js.Any]
+      )
+
+      invocationLabel.foreach(__v => __obj.updateDynamic("invocationLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ElicitationCodeHookInvocationSetting]
     }
   }
 
@@ -3293,17 +4048,20 @@ package object lexmodelsv2 {
   trait ExportResourceSpecification extends js.Object {
     var botExportSpecification: js.UndefOr[BotExportSpecification]
     var botLocaleExportSpecification: js.UndefOr[BotLocaleExportSpecification]
+    var customVocabularyExportSpecification: js.UndefOr[CustomVocabularyExportSpecification]
   }
 
   object ExportResourceSpecification {
     @inline
     def apply(
         botExportSpecification: js.UndefOr[BotExportSpecification] = js.undefined,
-        botLocaleExportSpecification: js.UndefOr[BotLocaleExportSpecification] = js.undefined
+        botLocaleExportSpecification: js.UndefOr[BotLocaleExportSpecification] = js.undefined,
+        customVocabularyExportSpecification: js.UndefOr[CustomVocabularyExportSpecification] = js.undefined
     ): ExportResourceSpecification = {
       val __obj = js.Dynamic.literal()
       botExportSpecification.foreach(__v => __obj.updateDynamic("botExportSpecification")(__v.asInstanceOf[js.Any]))
       botLocaleExportSpecification.foreach(__v => __obj.updateDynamic("botLocaleExportSpecification")(__v.asInstanceOf[js.Any]))
+      customVocabularyExportSpecification.foreach(__v => __obj.updateDynamic("customVocabularyExportSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportResourceSpecification]
     }
   }
@@ -3381,11 +4139,36 @@ package object lexmodelsv2 {
     }
   }
 
+  /** The unique failed custom vocabulary item from the custom vocabulary list.
+    */
+  @js.native
+  trait FailedCustomVocabularyItem extends js.Object {
+    var errorCode: js.UndefOr[ErrorCode]
+    var errorMessage: js.UndefOr[ErrorMessage]
+    var itemId: js.UndefOr[ItemId]
+  }
+
+  object FailedCustomVocabularyItem {
+    @inline
+    def apply(
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        itemId: js.UndefOr[ItemId] = js.undefined
+    ): FailedCustomVocabularyItem = {
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FailedCustomVocabularyItem]
+    }
+  }
+
   /** Determines if a Lambda function should be invoked for a specific intent.
     */
   @js.native
   trait FulfillmentCodeHookSettings extends js.Object {
     var enabled: Boolean
+    var active: js.UndefOr[BoxedBoolean]
     var fulfillmentUpdatesSpecification: js.UndefOr[FulfillmentUpdatesSpecification]
     var postFulfillmentStatusSpecification: js.UndefOr[PostFulfillmentStatusSpecification]
   }
@@ -3394,6 +4177,7 @@ package object lexmodelsv2 {
     @inline
     def apply(
         enabled: Boolean,
+        active: js.UndefOr[BoxedBoolean] = js.undefined,
         fulfillmentUpdatesSpecification: js.UndefOr[FulfillmentUpdatesSpecification] = js.undefined,
         postFulfillmentStatusSpecification: js.UndefOr[PostFulfillmentStatusSpecification] = js.undefined
     ): FulfillmentCodeHookSettings = {
@@ -3401,6 +4185,7 @@ package object lexmodelsv2 {
         "enabled" -> enabled.asInstanceOf[js.Any]
       )
 
+      active.foreach(__v => __obj.updateDynamic("active")(__v.asInstanceOf[js.Any]))
       fulfillmentUpdatesSpecification.foreach(__v => __obj.updateDynamic("fulfillmentUpdatesSpecification")(__v.asInstanceOf[js.Any]))
       postFulfillmentStatusSpecification.foreach(__v => __obj.updateDynamic("postFulfillmentStatusSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FulfillmentCodeHookSettings]
@@ -3592,17 +4377,20 @@ package object lexmodelsv2 {
   trait ImportResourceSpecification extends js.Object {
     var botImportSpecification: js.UndefOr[BotImportSpecification]
     var botLocaleImportSpecification: js.UndefOr[BotLocaleImportSpecification]
+    var customVocabularyImportSpecification: js.UndefOr[CustomVocabularyImportSpecification]
   }
 
   object ImportResourceSpecification {
     @inline
     def apply(
         botImportSpecification: js.UndefOr[BotImportSpecification] = js.undefined,
-        botLocaleImportSpecification: js.UndefOr[BotLocaleImportSpecification] = js.undefined
+        botLocaleImportSpecification: js.UndefOr[BotLocaleImportSpecification] = js.undefined,
+        customVocabularyImportSpecification: js.UndefOr[CustomVocabularyImportSpecification] = js.undefined
     ): ImportResourceSpecification = {
       val __obj = js.Dynamic.literal()
       botImportSpecification.foreach(__v => __obj.updateDynamic("botImportSpecification")(__v.asInstanceOf[js.Any]))
       botLocaleImportSpecification.foreach(__v => __obj.updateDynamic("botLocaleImportSpecification")(__v.asInstanceOf[js.Any]))
+      customVocabularyImportSpecification.foreach(__v => __obj.updateDynamic("customVocabularyImportSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportResourceSpecification]
     }
   }
@@ -3638,6 +4426,7 @@ package object lexmodelsv2 {
     var importStatus: js.UndefOr[ImportStatus]
     var importedResourceId: js.UndefOr[ImportedResourceId]
     var importedResourceName: js.UndefOr[Name]
+    var importedResourceType: js.UndefOr[ImportResourceType]
     var lastUpdatedDateTime: js.UndefOr[Timestamp]
     var mergeStrategy: js.UndefOr[MergeStrategy]
   }
@@ -3650,6 +4439,7 @@ package object lexmodelsv2 {
         importStatus: js.UndefOr[ImportStatus] = js.undefined,
         importedResourceId: js.UndefOr[ImportedResourceId] = js.undefined,
         importedResourceName: js.UndefOr[Name] = js.undefined,
+        importedResourceType: js.UndefOr[ImportResourceType] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Timestamp] = js.undefined,
         mergeStrategy: js.UndefOr[MergeStrategy] = js.undefined
     ): ImportSummary = {
@@ -3659,9 +4449,37 @@ package object lexmodelsv2 {
       importStatus.foreach(__v => __obj.updateDynamic("importStatus")(__v.asInstanceOf[js.Any]))
       importedResourceId.foreach(__v => __obj.updateDynamic("importedResourceId")(__v.asInstanceOf[js.Any]))
       importedResourceName.foreach(__v => __obj.updateDynamic("importedResourceName")(__v.asInstanceOf[js.Any]))
+      importedResourceType.foreach(__v => __obj.updateDynamic("importedResourceType")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       mergeStrategy.foreach(__v => __obj.updateDynamic("mergeStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportSummary]
+    }
+  }
+
+  /** Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
+    */
+  @js.native
+  trait InitialResponseSetting extends js.Object {
+    var codeHook: js.UndefOr[DialogCodeHookInvocationSetting]
+    var conditional: js.UndefOr[ConditionalSpecification]
+    var initialResponse: js.UndefOr[ResponseSpecification]
+    var nextStep: js.UndefOr[DialogState]
+  }
+
+  object InitialResponseSetting {
+    @inline
+    def apply(
+        codeHook: js.UndefOr[DialogCodeHookInvocationSetting] = js.undefined,
+        conditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        initialResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        nextStep: js.UndefOr[DialogState] = js.undefined
+    ): InitialResponseSetting = {
+      val __obj = js.Dynamic.literal()
+      codeHook.foreach(__v => __obj.updateDynamic("codeHook")(__v.asInstanceOf[js.Any]))
+      conditional.foreach(__v => __obj.updateDynamic("conditional")(__v.asInstanceOf[js.Any]))
+      initialResponse.foreach(__v => __obj.updateDynamic("initialResponse")(__v.asInstanceOf[js.Any]))
+      nextStep.foreach(__v => __obj.updateDynamic("nextStep")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InitialResponseSetting]
     }
   }
 
@@ -3688,21 +4506,25 @@ package object lexmodelsv2 {
     */
   @js.native
   trait IntentClosingSetting extends js.Object {
-    var closingResponse: ResponseSpecification
     var active: js.UndefOr[BoxedBoolean]
+    var closingResponse: js.UndefOr[ResponseSpecification]
+    var conditional: js.UndefOr[ConditionalSpecification]
+    var nextStep: js.UndefOr[DialogState]
   }
 
   object IntentClosingSetting {
     @inline
     def apply(
-        closingResponse: ResponseSpecification,
-        active: js.UndefOr[BoxedBoolean] = js.undefined
+        active: js.UndefOr[BoxedBoolean] = js.undefined,
+        closingResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        conditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        nextStep: js.UndefOr[DialogState] = js.undefined
     ): IntentClosingSetting = {
-      val __obj = js.Dynamic.literal(
-        "closingResponse" -> closingResponse.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       active.foreach(__v => __obj.updateDynamic("active")(__v.asInstanceOf[js.Any]))
+      closingResponse.foreach(__v => __obj.updateDynamic("closingResponse")(__v.asInstanceOf[js.Any]))
+      conditional.foreach(__v => __obj.updateDynamic("conditional")(__v.asInstanceOf[js.Any]))
+      nextStep.foreach(__v => __obj.updateDynamic("nextStep")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntentClosingSetting]
     }
   }
@@ -3711,24 +4533,54 @@ package object lexmodelsv2 {
     */
   @js.native
   trait IntentConfirmationSetting extends js.Object {
-    var declinationResponse: ResponseSpecification
     var promptSpecification: PromptSpecification
     var active: js.UndefOr[BoxedBoolean]
+    var codeHook: js.UndefOr[DialogCodeHookInvocationSetting]
+    var confirmationConditional: js.UndefOr[ConditionalSpecification]
+    var confirmationNextStep: js.UndefOr[DialogState]
+    var confirmationResponse: js.UndefOr[ResponseSpecification]
+    var declinationConditional: js.UndefOr[ConditionalSpecification]
+    var declinationNextStep: js.UndefOr[DialogState]
+    var declinationResponse: js.UndefOr[ResponseSpecification]
+    var elicitationCodeHook: js.UndefOr[ElicitationCodeHookInvocationSetting]
+    var failureConditional: js.UndefOr[ConditionalSpecification]
+    var failureNextStep: js.UndefOr[DialogState]
+    var failureResponse: js.UndefOr[ResponseSpecification]
   }
 
   object IntentConfirmationSetting {
     @inline
     def apply(
-        declinationResponse: ResponseSpecification,
         promptSpecification: PromptSpecification,
-        active: js.UndefOr[BoxedBoolean] = js.undefined
+        active: js.UndefOr[BoxedBoolean] = js.undefined,
+        codeHook: js.UndefOr[DialogCodeHookInvocationSetting] = js.undefined,
+        confirmationConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        confirmationNextStep: js.UndefOr[DialogState] = js.undefined,
+        confirmationResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        declinationConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        declinationNextStep: js.UndefOr[DialogState] = js.undefined,
+        declinationResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        elicitationCodeHook: js.UndefOr[ElicitationCodeHookInvocationSetting] = js.undefined,
+        failureConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        failureNextStep: js.UndefOr[DialogState] = js.undefined,
+        failureResponse: js.UndefOr[ResponseSpecification] = js.undefined
     ): IntentConfirmationSetting = {
       val __obj = js.Dynamic.literal(
-        "declinationResponse" -> declinationResponse.asInstanceOf[js.Any],
         "promptSpecification" -> promptSpecification.asInstanceOf[js.Any]
       )
 
       active.foreach(__v => __obj.updateDynamic("active")(__v.asInstanceOf[js.Any]))
+      codeHook.foreach(__v => __obj.updateDynamic("codeHook")(__v.asInstanceOf[js.Any]))
+      confirmationConditional.foreach(__v => __obj.updateDynamic("confirmationConditional")(__v.asInstanceOf[js.Any]))
+      confirmationNextStep.foreach(__v => __obj.updateDynamic("confirmationNextStep")(__v.asInstanceOf[js.Any]))
+      confirmationResponse.foreach(__v => __obj.updateDynamic("confirmationResponse")(__v.asInstanceOf[js.Any]))
+      declinationConditional.foreach(__v => __obj.updateDynamic("declinationConditional")(__v.asInstanceOf[js.Any]))
+      declinationNextStep.foreach(__v => __obj.updateDynamic("declinationNextStep")(__v.asInstanceOf[js.Any]))
+      declinationResponse.foreach(__v => __obj.updateDynamic("declinationResponse")(__v.asInstanceOf[js.Any]))
+      elicitationCodeHook.foreach(__v => __obj.updateDynamic("elicitationCodeHook")(__v.asInstanceOf[js.Any]))
+      failureConditional.foreach(__v => __obj.updateDynamic("failureConditional")(__v.asInstanceOf[js.Any]))
+      failureNextStep.foreach(__v => __obj.updateDynamic("failureNextStep")(__v.asInstanceOf[js.Any]))
+      failureResponse.foreach(__v => __obj.updateDynamic("failureResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntentConfirmationSetting]
     }
   }
@@ -3755,6 +4607,27 @@ package object lexmodelsv2 {
         "values" -> values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[IntentFilter]
+    }
+  }
+
+  /** Override settings to configure the intent state.
+    */
+  @js.native
+  trait IntentOverride extends js.Object {
+    var name: js.UndefOr[Name]
+    var slots: js.UndefOr[SlotValueOverrideMap]
+  }
+
+  object IntentOverride {
+    @inline
+    def apply(
+        name: js.UndefOr[Name] = js.undefined,
+        slots: js.UndefOr[SlotValueOverrideMap] = js.undefined
+    ): IntentOverride = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntentOverride]
     }
   }
 
@@ -4339,10 +5212,69 @@ package object lexmodelsv2 {
   }
 
   @js.native
+  trait ListCustomVocabularyItemsRequest extends js.Object {
+    var botId: Id
+    var botVersion: BotVersion
+    var localeId: LocaleId
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCustomVocabularyItemsRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botVersion: BotVersion,
+        localeId: LocaleId,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCustomVocabularyItemsRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomVocabularyItemsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCustomVocabularyItemsResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botVersion: js.UndefOr[BotVersion]
+    var customVocabularyItems: js.UndefOr[CustomVocabularyItems]
+    var localeId: js.UndefOr[LocaleId]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListCustomVocabularyItemsResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botVersion: js.UndefOr[BotVersion] = js.undefined,
+        customVocabularyItems: js.UndefOr[CustomVocabularyItems] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListCustomVocabularyItemsResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      customVocabularyItems.foreach(__v => __obj.updateDynamic("customVocabularyItems")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomVocabularyItemsResponse]
+    }
+  }
+
+  @js.native
   trait ListExportsRequest extends js.Object {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[BotVersion]
     var filters: js.UndefOr[ExportFilters]
+    var localeId: js.UndefOr[LocaleId]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var sortBy: js.UndefOr[ExportSortBy]
@@ -4354,6 +5286,7 @@ package object lexmodelsv2 {
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[BotVersion] = js.undefined,
         filters: js.UndefOr[ExportFilters] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         sortBy: js.UndefOr[ExportSortBy] = js.undefined
@@ -4362,6 +5295,7 @@ package object lexmodelsv2 {
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
@@ -4374,6 +5308,7 @@ package object lexmodelsv2 {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[BotVersion]
     var exportSummaries: js.UndefOr[ExportSummaryList]
+    var localeId: js.UndefOr[LocaleId]
     var nextToken: js.UndefOr[NextToken]
   }
 
@@ -4383,12 +5318,14 @@ package object lexmodelsv2 {
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[BotVersion] = js.undefined,
         exportSummaries: js.UndefOr[ExportSummaryList] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListExportsResponse = {
       val __obj = js.Dynamic.literal()
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       exportSummaries.foreach(__v => __obj.updateDynamic("exportSummaries")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExportsResponse]
     }
@@ -4399,6 +5336,7 @@ package object lexmodelsv2 {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[DraftBotVersion]
     var filters: js.UndefOr[ImportFilters]
+    var localeId: js.UndefOr[LocaleId]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var sortBy: js.UndefOr[ImportSortBy]
@@ -4410,6 +5348,7 @@ package object lexmodelsv2 {
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
         filters: js.UndefOr[ImportFilters] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         sortBy: js.UndefOr[ImportSortBy] = js.undefined
@@ -4418,6 +5357,7 @@ package object lexmodelsv2 {
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
@@ -4430,6 +5370,7 @@ package object lexmodelsv2 {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[DraftBotVersion]
     var importSummaries: js.UndefOr[ImportSummaryList]
+    var localeId: js.UndefOr[LocaleId]
     var nextToken: js.UndefOr[NextToken]
   }
 
@@ -4439,12 +5380,14 @@ package object lexmodelsv2 {
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
         importSummaries: js.UndefOr[ImportSummaryList] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListImportsResponse = {
       val __obj = js.Dynamic.literal()
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
       importSummaries.foreach(__v => __obj.updateDynamic("importSummaries")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImportsResponse]
     }
@@ -4813,6 +5756,32 @@ package object lexmodelsv2 {
     }
   }
 
+  /** The new custom vocabulary item from the custom vocabulary list.
+    */
+  @js.native
+  trait NewCustomVocabularyItem extends js.Object {
+    var phrase: Phrase
+    var displayAs: js.UndefOr[Phrase]
+    var weight: js.UndefOr[Weight]
+  }
+
+  object NewCustomVocabularyItem {
+    @inline
+    def apply(
+        phrase: Phrase,
+        displayAs: js.UndefOr[Phrase] = js.undefined,
+        weight: js.UndefOr[Weight] = js.undefined
+    ): NewCustomVocabularyItem = {
+      val __obj = js.Dynamic.literal(
+        "phrase" -> phrase.asInstanceOf[js.Any]
+      )
+
+      displayAs.foreach(__v => __obj.updateDynamic("displayAs")(__v.asInstanceOf[js.Any]))
+      weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NewCustomVocabularyItem]
+    }
+  }
+
   /** Determines whether Amazon Lex obscures slot values in conversation logs.
     */
   @js.native
@@ -4894,25 +5863,85 @@ package object lexmodelsv2 {
     }
   }
 
+  /** Specifies next steps to run after the dialog code hook finishes.
+    */
+  @js.native
+  trait PostDialogCodeHookInvocationSpecification extends js.Object {
+    var failureConditional: js.UndefOr[ConditionalSpecification]
+    var failureNextStep: js.UndefOr[DialogState]
+    var failureResponse: js.UndefOr[ResponseSpecification]
+    var successConditional: js.UndefOr[ConditionalSpecification]
+    var successNextStep: js.UndefOr[DialogState]
+    var successResponse: js.UndefOr[ResponseSpecification]
+    var timeoutConditional: js.UndefOr[ConditionalSpecification]
+    var timeoutNextStep: js.UndefOr[DialogState]
+    var timeoutResponse: js.UndefOr[ResponseSpecification]
+  }
+
+  object PostDialogCodeHookInvocationSpecification {
+    @inline
+    def apply(
+        failureConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        failureNextStep: js.UndefOr[DialogState] = js.undefined,
+        failureResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        successConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        successNextStep: js.UndefOr[DialogState] = js.undefined,
+        successResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        timeoutConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        timeoutNextStep: js.UndefOr[DialogState] = js.undefined,
+        timeoutResponse: js.UndefOr[ResponseSpecification] = js.undefined
+    ): PostDialogCodeHookInvocationSpecification = {
+      val __obj = js.Dynamic.literal()
+      failureConditional.foreach(__v => __obj.updateDynamic("failureConditional")(__v.asInstanceOf[js.Any]))
+      failureNextStep.foreach(__v => __obj.updateDynamic("failureNextStep")(__v.asInstanceOf[js.Any]))
+      failureResponse.foreach(__v => __obj.updateDynamic("failureResponse")(__v.asInstanceOf[js.Any]))
+      successConditional.foreach(__v => __obj.updateDynamic("successConditional")(__v.asInstanceOf[js.Any]))
+      successNextStep.foreach(__v => __obj.updateDynamic("successNextStep")(__v.asInstanceOf[js.Any]))
+      successResponse.foreach(__v => __obj.updateDynamic("successResponse")(__v.asInstanceOf[js.Any]))
+      timeoutConditional.foreach(__v => __obj.updateDynamic("timeoutConditional")(__v.asInstanceOf[js.Any]))
+      timeoutNextStep.foreach(__v => __obj.updateDynamic("timeoutNextStep")(__v.asInstanceOf[js.Any]))
+      timeoutResponse.foreach(__v => __obj.updateDynamic("timeoutResponse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PostDialogCodeHookInvocationSpecification]
+    }
+  }
+
   /** Provides a setting that determines whether the post-fulfillment response is sent to the user. For more information, see [[https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete|https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete]]
     */
   @js.native
   trait PostFulfillmentStatusSpecification extends js.Object {
+    var failureConditional: js.UndefOr[ConditionalSpecification]
+    var failureNextStep: js.UndefOr[DialogState]
     var failureResponse: js.UndefOr[ResponseSpecification]
+    var successConditional: js.UndefOr[ConditionalSpecification]
+    var successNextStep: js.UndefOr[DialogState]
     var successResponse: js.UndefOr[ResponseSpecification]
+    var timeoutConditional: js.UndefOr[ConditionalSpecification]
+    var timeoutNextStep: js.UndefOr[DialogState]
     var timeoutResponse: js.UndefOr[ResponseSpecification]
   }
 
   object PostFulfillmentStatusSpecification {
     @inline
     def apply(
+        failureConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        failureNextStep: js.UndefOr[DialogState] = js.undefined,
         failureResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        successConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        successNextStep: js.UndefOr[DialogState] = js.undefined,
         successResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        timeoutConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        timeoutNextStep: js.UndefOr[DialogState] = js.undefined,
         timeoutResponse: js.UndefOr[ResponseSpecification] = js.undefined
     ): PostFulfillmentStatusSpecification = {
       val __obj = js.Dynamic.literal()
+      failureConditional.foreach(__v => __obj.updateDynamic("failureConditional")(__v.asInstanceOf[js.Any]))
+      failureNextStep.foreach(__v => __obj.updateDynamic("failureNextStep")(__v.asInstanceOf[js.Any]))
       failureResponse.foreach(__v => __obj.updateDynamic("failureResponse")(__v.asInstanceOf[js.Any]))
+      successConditional.foreach(__v => __obj.updateDynamic("successConditional")(__v.asInstanceOf[js.Any]))
+      successNextStep.foreach(__v => __obj.updateDynamic("successNextStep")(__v.asInstanceOf[js.Any]))
       successResponse.foreach(__v => __obj.updateDynamic("successResponse")(__v.asInstanceOf[js.Any]))
+      timeoutConditional.foreach(__v => __obj.updateDynamic("timeoutConditional")(__v.asInstanceOf[js.Any]))
+      timeoutNextStep.foreach(__v => __obj.updateDynamic("timeoutNextStep")(__v.asInstanceOf[js.Any]))
       timeoutResponse.foreach(__v => __obj.updateDynamic("timeoutResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostFulfillmentStatusSpecification]
     }
@@ -4939,6 +5968,35 @@ package object lexmodelsv2 {
     }
   }
 
+  /** Specifies the settings on a prompt attempt.
+    */
+  @js.native
+  trait PromptAttemptSpecification extends js.Object {
+    var allowedInputTypes: AllowedInputTypes
+    var allowInterrupt: js.UndefOr[BoxedBoolean]
+    var audioAndDTMFInputSpecification: js.UndefOr[AudioAndDTMFInputSpecification]
+    var textInputSpecification: js.UndefOr[TextInputSpecification]
+  }
+
+  object PromptAttemptSpecification {
+    @inline
+    def apply(
+        allowedInputTypes: AllowedInputTypes,
+        allowInterrupt: js.UndefOr[BoxedBoolean] = js.undefined,
+        audioAndDTMFInputSpecification: js.UndefOr[AudioAndDTMFInputSpecification] = js.undefined,
+        textInputSpecification: js.UndefOr[TextInputSpecification] = js.undefined
+    ): PromptAttemptSpecification = {
+      val __obj = js.Dynamic.literal(
+        "allowedInputTypes" -> allowedInputTypes.asInstanceOf[js.Any]
+      )
+
+      allowInterrupt.foreach(__v => __obj.updateDynamic("allowInterrupt")(__v.asInstanceOf[js.Any]))
+      audioAndDTMFInputSpecification.foreach(__v => __obj.updateDynamic("audioAndDTMFInputSpecification")(__v.asInstanceOf[js.Any]))
+      textInputSpecification.foreach(__v => __obj.updateDynamic("textInputSpecification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PromptAttemptSpecification]
+    }
+  }
+
   /** Specifies a list of message groups that Amazon Lex sends to a user to elicit a response.
     */
   @js.native
@@ -4946,6 +6004,8 @@ package object lexmodelsv2 {
     var maxRetries: PromptMaxRetries
     var messageGroups: MessageGroupsList
     var allowInterrupt: js.UndefOr[BoxedBoolean]
+    var messageSelectionStrategy: js.UndefOr[MessageSelectionStrategy]
+    var promptAttemptsSpecification: js.UndefOr[PromptAttemptsSpecificationMap]
   }
 
   object PromptSpecification {
@@ -4953,7 +6013,9 @@ package object lexmodelsv2 {
     def apply(
         maxRetries: PromptMaxRetries,
         messageGroups: MessageGroupsList,
-        allowInterrupt: js.UndefOr[BoxedBoolean] = js.undefined
+        allowInterrupt: js.UndefOr[BoxedBoolean] = js.undefined,
+        messageSelectionStrategy: js.UndefOr[MessageSelectionStrategy] = js.undefined,
+        promptAttemptsSpecification: js.UndefOr[PromptAttemptsSpecificationMap] = js.undefined
     ): PromptSpecification = {
       val __obj = js.Dynamic.literal(
         "maxRetries" -> maxRetries.asInstanceOf[js.Any],
@@ -4961,6 +6023,8 @@ package object lexmodelsv2 {
       )
 
       allowInterrupt.foreach(__v => __obj.updateDynamic("allowInterrupt")(__v.asInstanceOf[js.Any]))
+      messageSelectionStrategy.foreach(__v => __obj.updateDynamic("messageSelectionStrategy")(__v.asInstanceOf[js.Any]))
+      promptAttemptsSpecification.foreach(__v => __obj.updateDynamic("promptAttemptsSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PromptSpecification]
     }
   }
@@ -5241,6 +6305,45 @@ package object lexmodelsv2 {
     }
   }
 
+  /** Settings used when Amazon Lex successfully captures a slot value from a user.
+    */
+  @js.native
+  trait SlotCaptureSetting extends js.Object {
+    var captureConditional: js.UndefOr[ConditionalSpecification]
+    var captureNextStep: js.UndefOr[DialogState]
+    var captureResponse: js.UndefOr[ResponseSpecification]
+    var codeHook: js.UndefOr[DialogCodeHookInvocationSetting]
+    var elicitationCodeHook: js.UndefOr[ElicitationCodeHookInvocationSetting]
+    var failureConditional: js.UndefOr[ConditionalSpecification]
+    var failureNextStep: js.UndefOr[DialogState]
+    var failureResponse: js.UndefOr[ResponseSpecification]
+  }
+
+  object SlotCaptureSetting {
+    @inline
+    def apply(
+        captureConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        captureNextStep: js.UndefOr[DialogState] = js.undefined,
+        captureResponse: js.UndefOr[ResponseSpecification] = js.undefined,
+        codeHook: js.UndefOr[DialogCodeHookInvocationSetting] = js.undefined,
+        elicitationCodeHook: js.UndefOr[ElicitationCodeHookInvocationSetting] = js.undefined,
+        failureConditional: js.UndefOr[ConditionalSpecification] = js.undefined,
+        failureNextStep: js.UndefOr[DialogState] = js.undefined,
+        failureResponse: js.UndefOr[ResponseSpecification] = js.undefined
+    ): SlotCaptureSetting = {
+      val __obj = js.Dynamic.literal()
+      captureConditional.foreach(__v => __obj.updateDynamic("captureConditional")(__v.asInstanceOf[js.Any]))
+      captureNextStep.foreach(__v => __obj.updateDynamic("captureNextStep")(__v.asInstanceOf[js.Any]))
+      captureResponse.foreach(__v => __obj.updateDynamic("captureResponse")(__v.asInstanceOf[js.Any]))
+      codeHook.foreach(__v => __obj.updateDynamic("codeHook")(__v.asInstanceOf[js.Any]))
+      elicitationCodeHook.foreach(__v => __obj.updateDynamic("elicitationCodeHook")(__v.asInstanceOf[js.Any]))
+      failureConditional.foreach(__v => __obj.updateDynamic("failureConditional")(__v.asInstanceOf[js.Any]))
+      failureNextStep.foreach(__v => __obj.updateDynamic("failureNextStep")(__v.asInstanceOf[js.Any]))
+      failureResponse.foreach(__v => __obj.updateDynamic("failureResponse")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotCaptureSetting]
+    }
+  }
+
   /** Specifies the default value to use when a user doesn't provide a value for a slot.
     */
   @js.native
@@ -5503,7 +6606,25 @@ package object lexmodelsv2 {
     }
   }
 
-  /** Settings that you can use for eliciting a slot value.
+  /** The value to set in a slot.
+    */
+  @js.native
+  trait SlotValue extends js.Object {
+    var interpretedValue: js.UndefOr[NonEmptyString]
+  }
+
+  object SlotValue {
+    @inline
+    def apply(
+        interpretedValue: js.UndefOr[NonEmptyString] = js.undefined
+    ): SlotValue = {
+      val __obj = js.Dynamic.literal()
+      interpretedValue.foreach(__v => __obj.updateDynamic("interpretedValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotValue]
+    }
+  }
+
+  /** Specifies the elicitation setting details for constituent sub slots of a composite slot.
     */
   @js.native
   trait SlotValueElicitationSetting extends js.Object {
@@ -5511,6 +6632,7 @@ package object lexmodelsv2 {
     var defaultValueSpecification: js.UndefOr[SlotDefaultValueSpecification]
     var promptSpecification: js.UndefOr[PromptSpecification]
     var sampleUtterances: js.UndefOr[SampleUtterancesList]
+    var slotCaptureSetting: js.UndefOr[SlotCaptureSetting]
     var waitAndContinueSpecification: js.UndefOr[WaitAndContinueSpecification]
   }
 
@@ -5521,6 +6643,7 @@ package object lexmodelsv2 {
         defaultValueSpecification: js.UndefOr[SlotDefaultValueSpecification] = js.undefined,
         promptSpecification: js.UndefOr[PromptSpecification] = js.undefined,
         sampleUtterances: js.UndefOr[SampleUtterancesList] = js.undefined,
+        slotCaptureSetting: js.UndefOr[SlotCaptureSetting] = js.undefined,
         waitAndContinueSpecification: js.UndefOr[WaitAndContinueSpecification] = js.undefined
     ): SlotValueElicitationSetting = {
       val __obj = js.Dynamic.literal(
@@ -5530,8 +6653,33 @@ package object lexmodelsv2 {
       defaultValueSpecification.foreach(__v => __obj.updateDynamic("defaultValueSpecification")(__v.asInstanceOf[js.Any]))
       promptSpecification.foreach(__v => __obj.updateDynamic("promptSpecification")(__v.asInstanceOf[js.Any]))
       sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
+      slotCaptureSetting.foreach(__v => __obj.updateDynamic("slotCaptureSetting")(__v.asInstanceOf[js.Any]))
       waitAndContinueSpecification.foreach(__v => __obj.updateDynamic("waitAndContinueSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SlotValueElicitationSetting]
+    }
+  }
+
+  /** The slot values that Amazon Lex uses when it sets slot values in a dialog step.
+    */
+  @js.native
+  trait SlotValueOverride extends js.Object {
+    var shape: js.UndefOr[SlotShape]
+    var value: js.UndefOr[SlotValue]
+    var values: js.UndefOr[SlotValues]
+  }
+
+  object SlotValueOverride {
+    @inline
+    def apply(
+        shape: js.UndefOr[SlotShape] = js.undefined,
+        value: js.UndefOr[SlotValue] = js.undefined,
+        values: js.UndefOr[SlotValues] = js.undefined
+    ): SlotValueOverride = {
+      val __obj = js.Dynamic.literal()
+      shape.foreach(__v => __obj.updateDynamic("shape")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlotValueOverride]
     }
   }
 
@@ -5559,6 +6707,7 @@ package object lexmodelsv2 {
   @js.native
   trait SlotValueSelectionSetting extends js.Object {
     var resolutionStrategy: SlotValueResolutionStrategy
+    var advancedRecognitionSetting: js.UndefOr[AdvancedRecognitionSetting]
     var regexFilter: js.UndefOr[SlotValueRegexFilter]
   }
 
@@ -5566,14 +6715,38 @@ package object lexmodelsv2 {
     @inline
     def apply(
         resolutionStrategy: SlotValueResolutionStrategy,
+        advancedRecognitionSetting: js.UndefOr[AdvancedRecognitionSetting] = js.undefined,
         regexFilter: js.UndefOr[SlotValueRegexFilter] = js.undefined
     ): SlotValueSelectionSetting = {
       val __obj = js.Dynamic.literal(
         "resolutionStrategy" -> resolutionStrategy.asInstanceOf[js.Any]
       )
 
+      advancedRecognitionSetting.foreach(__v => __obj.updateDynamic("advancedRecognitionSetting")(__v.asInstanceOf[js.Any]))
       regexFilter.foreach(__v => __obj.updateDynamic("regexFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SlotValueSelectionSetting]
+    }
+  }
+
+  /** Subslot specifications.
+    */
+  @js.native
+  trait Specifications extends js.Object {
+    var slotTypeId: BuiltInOrCustomSlotTypeId
+    var valueElicitationSetting: SubSlotValueElicitationSetting
+  }
+
+  object Specifications {
+    @inline
+    def apply(
+        slotTypeId: BuiltInOrCustomSlotTypeId,
+        valueElicitationSetting: SubSlotValueElicitationSetting
+    ): Specifications = {
+      val __obj = js.Dynamic.literal(
+        "slotTypeId" -> slotTypeId.asInstanceOf[js.Any],
+        "valueElicitationSetting" -> valueElicitationSetting.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Specifications]
     }
   }
 
@@ -5729,6 +6902,132 @@ package object lexmodelsv2 {
   }
 
   @js.native
+  trait StopBotRecommendationRequest extends js.Object {
+    var botId: Id
+    var botRecommendationId: Id
+    var botVersion: DraftBotVersion
+    var localeId: LocaleId
+  }
+
+  object StopBotRecommendationRequest {
+    @inline
+    def apply(
+        botId: Id,
+        botRecommendationId: Id,
+        botVersion: DraftBotVersion,
+        localeId: LocaleId
+    ): StopBotRecommendationRequest = {
+      val __obj = js.Dynamic.literal(
+        "botId" -> botId.asInstanceOf[js.Any],
+        "botRecommendationId" -> botRecommendationId.asInstanceOf[js.Any],
+        "botVersion" -> botVersion.asInstanceOf[js.Any],
+        "localeId" -> localeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopBotRecommendationRequest]
+    }
+  }
+
+  @js.native
+  trait StopBotRecommendationResponse extends js.Object {
+    var botId: js.UndefOr[Id]
+    var botRecommendationId: js.UndefOr[Id]
+    var botRecommendationStatus: js.UndefOr[BotRecommendationStatus]
+    var botVersion: js.UndefOr[DraftBotVersion]
+    var localeId: js.UndefOr[LocaleId]
+  }
+
+  object StopBotRecommendationResponse {
+    @inline
+    def apply(
+        botId: js.UndefOr[Id] = js.undefined,
+        botRecommendationId: js.UndefOr[Id] = js.undefined,
+        botRecommendationStatus: js.UndefOr[BotRecommendationStatus] = js.undefined,
+        botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
+        localeId: js.UndefOr[LocaleId] = js.undefined
+    ): StopBotRecommendationResponse = {
+      val __obj = js.Dynamic.literal()
+      botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
+      botRecommendationId.foreach(__v => __obj.updateDynamic("botRecommendationId")(__v.asInstanceOf[js.Any]))
+      botRecommendationStatus.foreach(__v => __obj.updateDynamic("botRecommendationStatus")(__v.asInstanceOf[js.Any]))
+      botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      localeId.foreach(__v => __obj.updateDynamic("localeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopBotRecommendationResponse]
+    }
+  }
+
+  /** Specifications for the constituent sub slots and the expression for the composite slot.
+    */
+  @js.native
+  trait SubSlotSetting extends js.Object {
+    var expression: js.UndefOr[SubSlotExpression]
+    var slotSpecifications: js.UndefOr[SubSlotSpecificationMap]
+  }
+
+  object SubSlotSetting {
+    @inline
+    def apply(
+        expression: js.UndefOr[SubSlotExpression] = js.undefined,
+        slotSpecifications: js.UndefOr[SubSlotSpecificationMap] = js.undefined
+    ): SubSlotSetting = {
+      val __obj = js.Dynamic.literal()
+      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
+      slotSpecifications.foreach(__v => __obj.updateDynamic("slotSpecifications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubSlotSetting]
+    }
+  }
+
+  /** Subslot type composition.
+    */
+  @js.native
+  trait SubSlotTypeComposition extends js.Object {
+    var name: Name
+    var slotTypeId: BuiltInOrCustomSlotTypeId
+  }
+
+  object SubSlotTypeComposition {
+    @inline
+    def apply(
+        name: Name,
+        slotTypeId: BuiltInOrCustomSlotTypeId
+    ): SubSlotTypeComposition = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "slotTypeId" -> slotTypeId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SubSlotTypeComposition]
+    }
+  }
+
+  /** Subslot elicitation settings. <code>DefaultValueSpecification</code> is a list of default values for a constituent sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values. This is similar to <code>DefaultValueSpecification</code> for slots. <code>PromptSpecification</code> is the prompt that Amazon Lex uses to elicit the sub slot value from the user. This is similar to <code>PromptSpecification</code> for slots.
+    */
+  @js.native
+  trait SubSlotValueElicitationSetting extends js.Object {
+    var promptSpecification: PromptSpecification
+    var defaultValueSpecification: js.UndefOr[SlotDefaultValueSpecification]
+    var sampleUtterances: js.UndefOr[SampleUtterancesList]
+    var waitAndContinueSpecification: js.UndefOr[WaitAndContinueSpecification]
+  }
+
+  object SubSlotValueElicitationSetting {
+    @inline
+    def apply(
+        promptSpecification: PromptSpecification,
+        defaultValueSpecification: js.UndefOr[SlotDefaultValueSpecification] = js.undefined,
+        sampleUtterances: js.UndefOr[SampleUtterancesList] = js.undefined,
+        waitAndContinueSpecification: js.UndefOr[WaitAndContinueSpecification] = js.undefined
+    ): SubSlotValueElicitationSetting = {
+      val __obj = js.Dynamic.literal(
+        "promptSpecification" -> promptSpecification.asInstanceOf[js.Any]
+      )
+
+      defaultValueSpecification.foreach(__v => __obj.updateDynamic("defaultValueSpecification")(__v.asInstanceOf[js.Any]))
+      sampleUtterances.foreach(__v => __obj.updateDynamic("sampleUtterances")(__v.asInstanceOf[js.Any]))
+      waitAndContinueSpecification.foreach(__v => __obj.updateDynamic("waitAndContinueSpecification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubSlotValueElicitationSetting]
+    }
+  }
+
+  @js.native
   trait TagResourceRequest extends js.Object {
     var resourceARN: AmazonResourceName
     var tags: TagMap
@@ -5756,6 +7055,25 @@ package object lexmodelsv2 {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Specifies the text input specifications.
+    */
+  @js.native
+  trait TextInputSpecification extends js.Object {
+    var startTimeoutMs: TimeInMilliSeconds
+  }
+
+  object TextInputSpecification {
+    @inline
+    def apply(
+        startTimeoutMs: TimeInMilliSeconds
+    ): TextInputSpecification = {
+      val __obj = js.Dynamic.literal(
+        "startTimeoutMs" -> startTimeoutMs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TextInputSpecification]
     }
   }
 
@@ -6238,6 +7556,7 @@ package object lexmodelsv2 {
     var description: js.UndefOr[Description]
     var dialogCodeHook: js.UndefOr[DialogCodeHookSettings]
     var fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings]
+    var initialResponseSetting: js.UndefOr[InitialResponseSetting]
     var inputContexts: js.UndefOr[InputContextsList]
     var intentClosingSetting: js.UndefOr[IntentClosingSetting]
     var intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting]
@@ -6259,6 +7578,7 @@ package object lexmodelsv2 {
         description: js.UndefOr[Description] = js.undefined,
         dialogCodeHook: js.UndefOr[DialogCodeHookSettings] = js.undefined,
         fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings] = js.undefined,
+        initialResponseSetting: js.UndefOr[InitialResponseSetting] = js.undefined,
         inputContexts: js.UndefOr[InputContextsList] = js.undefined,
         intentClosingSetting: js.UndefOr[IntentClosingSetting] = js.undefined,
         intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting] = js.undefined,
@@ -6279,6 +7599,7 @@ package object lexmodelsv2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       fulfillmentCodeHook.foreach(__v => __obj.updateDynamic("fulfillmentCodeHook")(__v.asInstanceOf[js.Any]))
+      initialResponseSetting.foreach(__v => __obj.updateDynamic("initialResponseSetting")(__v.asInstanceOf[js.Any]))
       inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       intentClosingSetting.foreach(__v => __obj.updateDynamic("intentClosingSetting")(__v.asInstanceOf[js.Any]))
       intentConfirmationSetting.foreach(__v => __obj.updateDynamic("intentConfirmationSetting")(__v.asInstanceOf[js.Any]))
@@ -6299,6 +7620,7 @@ package object lexmodelsv2 {
     var description: js.UndefOr[Description]
     var dialogCodeHook: js.UndefOr[DialogCodeHookSettings]
     var fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings]
+    var initialResponseSetting: js.UndefOr[InitialResponseSetting]
     var inputContexts: js.UndefOr[InputContextsList]
     var intentClosingSetting: js.UndefOr[IntentClosingSetting]
     var intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting]
@@ -6322,6 +7644,7 @@ package object lexmodelsv2 {
         description: js.UndefOr[Description] = js.undefined,
         dialogCodeHook: js.UndefOr[DialogCodeHookSettings] = js.undefined,
         fulfillmentCodeHook: js.UndefOr[FulfillmentCodeHookSettings] = js.undefined,
+        initialResponseSetting: js.UndefOr[InitialResponseSetting] = js.undefined,
         inputContexts: js.UndefOr[InputContextsList] = js.undefined,
         intentClosingSetting: js.UndefOr[IntentClosingSetting] = js.undefined,
         intentConfirmationSetting: js.UndefOr[IntentConfirmationSetting] = js.undefined,
@@ -6342,6 +7665,7 @@ package object lexmodelsv2 {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       dialogCodeHook.foreach(__v => __obj.updateDynamic("dialogCodeHook")(__v.asInstanceOf[js.Any]))
       fulfillmentCodeHook.foreach(__v => __obj.updateDynamic("fulfillmentCodeHook")(__v.asInstanceOf[js.Any]))
+      initialResponseSetting.foreach(__v => __obj.updateDynamic("initialResponseSetting")(__v.asInstanceOf[js.Any]))
       inputContexts.foreach(__v => __obj.updateDynamic("inputContexts")(__v.asInstanceOf[js.Any]))
       intentClosingSetting.foreach(__v => __obj.updateDynamic("intentClosingSetting")(__v.asInstanceOf[js.Any]))
       intentConfirmationSetting.foreach(__v => __obj.updateDynamic("intentConfirmationSetting")(__v.asInstanceOf[js.Any]))
@@ -6409,11 +7733,12 @@ package object lexmodelsv2 {
     var localeId: LocaleId
     var slotId: Id
     var slotName: Name
-    var slotTypeId: BuiltInOrCustomSlotTypeId
     var valueElicitationSetting: SlotValueElicitationSetting
     var description: js.UndefOr[Description]
     var multipleValuesSetting: js.UndefOr[MultipleValuesSetting]
     var obfuscationSetting: js.UndefOr[ObfuscationSetting]
+    var slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId]
+    var subSlotSetting: js.UndefOr[SubSlotSetting]
   }
 
   object UpdateSlotRequest {
@@ -6425,11 +7750,12 @@ package object lexmodelsv2 {
         localeId: LocaleId,
         slotId: Id,
         slotName: Name,
-        slotTypeId: BuiltInOrCustomSlotTypeId,
         valueElicitationSetting: SlotValueElicitationSetting,
         description: js.UndefOr[Description] = js.undefined,
         multipleValuesSetting: js.UndefOr[MultipleValuesSetting] = js.undefined,
-        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined
+        obfuscationSetting: js.UndefOr[ObfuscationSetting] = js.undefined,
+        slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId] = js.undefined,
+        subSlotSetting: js.UndefOr[SubSlotSetting] = js.undefined
     ): UpdateSlotRequest = {
       val __obj = js.Dynamic.literal(
         "botId" -> botId.asInstanceOf[js.Any],
@@ -6438,13 +7764,14 @@ package object lexmodelsv2 {
         "localeId" -> localeId.asInstanceOf[js.Any],
         "slotId" -> slotId.asInstanceOf[js.Any],
         "slotName" -> slotName.asInstanceOf[js.Any],
-        "slotTypeId" -> slotTypeId.asInstanceOf[js.Any],
         "valueElicitationSetting" -> valueElicitationSetting.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       multipleValuesSetting.foreach(__v => __obj.updateDynamic("multipleValuesSetting")(__v.asInstanceOf[js.Any]))
       obfuscationSetting.foreach(__v => __obj.updateDynamic("obfuscationSetting")(__v.asInstanceOf[js.Any]))
+      slotTypeId.foreach(__v => __obj.updateDynamic("slotTypeId")(__v.asInstanceOf[js.Any]))
+      subSlotSetting.foreach(__v => __obj.updateDynamic("subSlotSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSlotRequest]
     }
   }
@@ -6463,6 +7790,7 @@ package object lexmodelsv2 {
     var slotId: js.UndefOr[Id]
     var slotName: js.UndefOr[Name]
     var slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId]
+    var subSlotSetting: js.UndefOr[SubSlotSetting]
     var valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting]
   }
 
@@ -6481,6 +7809,7 @@ package object lexmodelsv2 {
         slotId: js.UndefOr[Id] = js.undefined,
         slotName: js.UndefOr[Name] = js.undefined,
         slotTypeId: js.UndefOr[BuiltInOrCustomSlotTypeId] = js.undefined,
+        subSlotSetting: js.UndefOr[SubSlotSetting] = js.undefined,
         valueElicitationSetting: js.UndefOr[SlotValueElicitationSetting] = js.undefined
     ): UpdateSlotResponse = {
       val __obj = js.Dynamic.literal()
@@ -6496,6 +7825,7 @@ package object lexmodelsv2 {
       slotId.foreach(__v => __obj.updateDynamic("slotId")(__v.asInstanceOf[js.Any]))
       slotName.foreach(__v => __obj.updateDynamic("slotName")(__v.asInstanceOf[js.Any]))
       slotTypeId.foreach(__v => __obj.updateDynamic("slotTypeId")(__v.asInstanceOf[js.Any]))
+      subSlotSetting.foreach(__v => __obj.updateDynamic("subSlotSetting")(__v.asInstanceOf[js.Any]))
       valueElicitationSetting.foreach(__v => __obj.updateDynamic("valueElicitationSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSlotResponse]
     }
@@ -6508,6 +7838,7 @@ package object lexmodelsv2 {
     var localeId: LocaleId
     var slotTypeId: Id
     var slotTypeName: Name
+    var compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting]
     var description: js.UndefOr[Description]
     var externalSourceSetting: js.UndefOr[ExternalSourceSetting]
     var parentSlotTypeSignature: js.UndefOr[SlotTypeSignature]
@@ -6523,6 +7854,7 @@ package object lexmodelsv2 {
         localeId: LocaleId,
         slotTypeId: Id,
         slotTypeName: Name,
+        compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         externalSourceSetting: js.UndefOr[ExternalSourceSetting] = js.undefined,
         parentSlotTypeSignature: js.UndefOr[SlotTypeSignature] = js.undefined,
@@ -6537,6 +7869,7 @@ package object lexmodelsv2 {
         "slotTypeName" -> slotTypeName.asInstanceOf[js.Any]
       )
 
+      compositeSlotTypeSetting.foreach(__v => __obj.updateDynamic("compositeSlotTypeSetting")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       externalSourceSetting.foreach(__v => __obj.updateDynamic("externalSourceSetting")(__v.asInstanceOf[js.Any]))
       parentSlotTypeSignature.foreach(__v => __obj.updateDynamic("parentSlotTypeSignature")(__v.asInstanceOf[js.Any]))
@@ -6550,6 +7883,7 @@ package object lexmodelsv2 {
   trait UpdateSlotTypeResponse extends js.Object {
     var botId: js.UndefOr[Id]
     var botVersion: js.UndefOr[DraftBotVersion]
+    var compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting]
     var creationDateTime: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var externalSourceSetting: js.UndefOr[ExternalSourceSetting]
@@ -6567,6 +7901,7 @@ package object lexmodelsv2 {
     def apply(
         botId: js.UndefOr[Id] = js.undefined,
         botVersion: js.UndefOr[DraftBotVersion] = js.undefined,
+        compositeSlotTypeSetting: js.UndefOr[CompositeSlotTypeSetting] = js.undefined,
         creationDateTime: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         externalSourceSetting: js.UndefOr[ExternalSourceSetting] = js.undefined,
@@ -6581,6 +7916,7 @@ package object lexmodelsv2 {
       val __obj = js.Dynamic.literal()
       botId.foreach(__v => __obj.updateDynamic("botId")(__v.asInstanceOf[js.Any]))
       botVersion.foreach(__v => __obj.updateDynamic("botVersion")(__v.asInstanceOf[js.Any]))
+      compositeSlotTypeSetting.foreach(__v => __obj.updateDynamic("compositeSlotTypeSetting")(__v.asInstanceOf[js.Any]))
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       externalSourceSetting.foreach(__v => __obj.updateDynamic("externalSourceSetting")(__v.asInstanceOf[js.Any]))

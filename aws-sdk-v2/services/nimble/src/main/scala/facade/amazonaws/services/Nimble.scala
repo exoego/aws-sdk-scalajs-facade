@@ -34,22 +34,28 @@ package object nimble {
   type LaunchProfileProtocolVersion = String
   type LaunchProfileProtocolVersionList = js.Array[LaunchProfileProtocolVersion]
   type LaunchProfileSecurityGroupIdList = js.Array[SecurityGroupId]
+  type LaunchProfileStateList = js.Array[LaunchProfileState]
   type LaunchProfileStudioComponentIdList = js.Array[String]
+  type LaunchProfileValidationStatusMessage = String
   type LaunchPurpose = String
   type LinuxMountPoint = String
   type MaxResults = Int
   type NewLaunchProfileMemberList = js.Array[NewLaunchProfileMember]
   type NewStudioMemberList = js.Array[NewStudioMember]
   type Region = String
+  type RoleArn = String
   type ScriptParameterKey = String
   type ScriptParameterValue = String
   type SecurityGroupId = String
+  type SensitiveString = String
   type StreamConfigurationMaxSessionLengthInMinutes = Int
   type StreamConfigurationMaxStoppedSessionLengthInMinutes = Int
+  type StreamingImageDescription = String
   type StreamingImageEncryptionConfigurationKeyArn = String
   type StreamingImageId = String
   type StreamingImageIdList = js.Array[StreamingImageId]
   type StreamingImageList = js.Array[StreamingImage]
+  type StreamingImageName = String
   type StreamingImageOwner = String
   type StreamingImagePlatform = String
   type StreamingInstanceTypeList = js.Array[StreamingInstanceType]
@@ -68,26 +74,17 @@ package object nimble {
   type StudioComponentName = String
   type StudioComponentScriptParameterKeyValueList = js.Array[ScriptParameterKeyValue]
   type StudioComponentSecurityGroupIdList = js.Array[SecurityGroupId]
+  type StudioComponentStateList = js.Array[StudioComponentState]
   type StudioComponentSummaryList = js.Array[StudioComponentSummary]
+  type StudioComponentTypeList = js.Array[StudioComponentType]
+  type StudioDisplayName = String
   type StudioEncryptionConfigurationKeyArn = String
   type StudioList = js.Array[Studio]
   type StudioMembershipList = js.Array[StudioMembership]
   type StudioName = String
-  type SyntheticComputeFarmConfigurationString = String
-  type SyntheticCreateStreamingImageRequestStreamingImageDescription = String
-  type SyntheticCreateStreamingImageRequestStreamingImageName = String
-  type SyntheticCreateStudioRequestStudioDisplayName = String
-  type SyntheticLicenseServiceConfigurationString = String
-  type SyntheticSharedFileSystemConfigurationString = String
-  type SyntheticStreamingImageStreamingImageDescription = String
-  type SyntheticStreamingImageStreamingImageName = String
-  type SyntheticStreamingSessionStreamString = String
-  type SyntheticStudioStudioDisplayName = String
-  type SyntheticUpdateStreamingImageRequestStreamingImageDescription = String
-  type SyntheticUpdateStreamingImageRequestStreamingImageName = String
-  type SyntheticUpdateStudioRequestStudioDisplayName = String
   type Tags = js.Dictionary[String]
   type Timestamp = js.Date
+  type ValidationResults = js.Array[ValidationResult]
   type WindowsMountDrive = String
 
   final class NimbleOps(private val service: Nimble) extends AnyVal {
@@ -291,14 +288,14 @@ package object nimble {
   @js.native
   trait ComputeFarmConfiguration extends js.Object {
     var activeDirectoryUser: js.UndefOr[String]
-    var endpoint: js.UndefOr[SyntheticComputeFarmConfigurationString]
+    var endpoint: js.UndefOr[SensitiveString]
   }
 
   object ComputeFarmConfiguration {
     @inline
     def apply(
         activeDirectoryUser: js.UndefOr[String] = js.undefined,
-        endpoint: js.UndefOr[SyntheticComputeFarmConfigurationString] = js.undefined
+        endpoint: js.UndefOr[SensitiveString] = js.undefined
     ): ComputeFarmConfiguration = {
       val __obj = js.Dynamic.literal()
       activeDirectoryUser.foreach(__v => __obj.updateDynamic("activeDirectoryUser")(__v.asInstanceOf[js.Any]))
@@ -368,10 +365,10 @@ package object nimble {
   @js.native
   trait CreateStreamingImageRequest extends js.Object {
     var ec2ImageId: EC2ImageId
-    var name: SyntheticCreateStreamingImageRequestStreamingImageName
+    var name: StreamingImageName
     var studioId: String
     var clientToken: js.UndefOr[ClientToken]
-    var description: js.UndefOr[SyntheticCreateStreamingImageRequestStreamingImageDescription]
+    var description: js.UndefOr[StreamingImageDescription]
     var tags: js.UndefOr[Tags]
   }
 
@@ -379,10 +376,10 @@ package object nimble {
     @inline
     def apply(
         ec2ImageId: EC2ImageId,
-        name: SyntheticCreateStreamingImageRequestStreamingImageName,
+        name: StreamingImageName,
         studioId: String,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
-        description: js.UndefOr[SyntheticCreateStreamingImageRequestStreamingImageDescription] = js.undefined,
+        description: js.UndefOr[StreamingImageDescription] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateStreamingImageRequest = {
       val __obj = js.Dynamic.literal(
@@ -519,7 +516,9 @@ package object nimble {
     var description: js.UndefOr[StudioComponentDescription]
     var ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList]
     var initializationScripts: js.UndefOr[StudioComponentInitializationScriptList]
+    var runtimeRoleArn: js.UndefOr[RoleArn]
     var scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList]
+    var secureInitializationRoleArn: js.UndefOr[RoleArn]
     var subtype: js.UndefOr[StudioComponentSubtype]
     var tags: js.UndefOr[Tags]
   }
@@ -535,7 +534,9 @@ package object nimble {
         description: js.UndefOr[StudioComponentDescription] = js.undefined,
         ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList] = js.undefined,
         initializationScripts: js.UndefOr[StudioComponentInitializationScriptList] = js.undefined,
+        runtimeRoleArn: js.UndefOr[RoleArn] = js.undefined,
         scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList] = js.undefined,
+        secureInitializationRoleArn: js.UndefOr[RoleArn] = js.undefined,
         subtype: js.UndefOr[StudioComponentSubtype] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateStudioComponentRequest = {
@@ -550,7 +551,9 @@ package object nimble {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       ec2SecurityGroupIds.foreach(__v => __obj.updateDynamic("ec2SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       initializationScripts.foreach(__v => __obj.updateDynamic("initializationScripts")(__v.asInstanceOf[js.Any]))
+      runtimeRoleArn.foreach(__v => __obj.updateDynamic("runtimeRoleArn")(__v.asInstanceOf[js.Any]))
       scriptParameters.foreach(__v => __obj.updateDynamic("scriptParameters")(__v.asInstanceOf[js.Any]))
+      secureInitializationRoleArn.foreach(__v => __obj.updateDynamic("secureInitializationRoleArn")(__v.asInstanceOf[js.Any]))
       subtype.foreach(__v => __obj.updateDynamic("subtype")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStudioComponentRequest]
@@ -575,10 +578,10 @@ package object nimble {
 
   @js.native
   trait CreateStudioRequest extends js.Object {
-    var adminRoleArn: String
-    var displayName: SyntheticCreateStudioRequestStudioDisplayName
+    var adminRoleArn: RoleArn
+    var displayName: StudioDisplayName
     var studioName: StudioName
-    var userRoleArn: String
+    var userRoleArn: RoleArn
     var clientToken: js.UndefOr[ClientToken]
     var studioEncryptionConfiguration: js.UndefOr[StudioEncryptionConfiguration]
     var tags: js.UndefOr[Tags]
@@ -587,10 +590,10 @@ package object nimble {
   object CreateStudioRequest {
     @inline
     def apply(
-        adminRoleArn: String,
-        displayName: SyntheticCreateStudioRequestStudioDisplayName,
+        adminRoleArn: RoleArn,
+        displayName: StudioDisplayName,
         studioName: StudioName,
-        userRoleArn: String,
+        userRoleArn: RoleArn,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         studioEncryptionConfiguration: js.UndefOr[StudioEncryptionConfiguration] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -1391,6 +1394,7 @@ package object nimble {
     var tags: js.UndefOr[Tags]
     var updatedAt: js.UndefOr[Timestamp]
     var updatedBy: js.UndefOr[String]
+    var validationResults: js.UndefOr[ValidationResults]
   }
 
   object LaunchProfile {
@@ -1411,7 +1415,8 @@ package object nimble {
         studioComponentIds: js.UndefOr[LaunchProfileStudioComponentIdList] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined,
-        updatedBy: js.UndefOr[String] = js.undefined
+        updatedBy: js.UndefOr[String] = js.undefined,
+        validationResults: js.UndefOr[ValidationResults] = js.undefined
     ): LaunchProfile = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -1430,6 +1435,7 @@ package object nimble {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       updatedBy.foreach(__v => __obj.updateDynamic("updatedBy")(__v.asInstanceOf[js.Any]))
+      validationResults.foreach(__v => __obj.updateDynamic("validationResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchProfile]
     }
   }
@@ -1516,7 +1522,9 @@ package object nimble {
     */
   @js.native
   trait LaunchProfileInitializationScript extends js.Object {
+    var runtimeRoleArn: js.UndefOr[RoleArn]
     var script: js.UndefOr[StudioComponentInitializationScriptContent]
+    var secureInitializationRoleArn: js.UndefOr[RoleArn]
     var studioComponentId: js.UndefOr[StudioComponentId]
     var studioComponentName: js.UndefOr[StudioComponentName]
   }
@@ -1524,12 +1532,16 @@ package object nimble {
   object LaunchProfileInitializationScript {
     @inline
     def apply(
+        runtimeRoleArn: js.UndefOr[RoleArn] = js.undefined,
         script: js.UndefOr[StudioComponentInitializationScriptContent] = js.undefined,
+        secureInitializationRoleArn: js.UndefOr[RoleArn] = js.undefined,
         studioComponentId: js.UndefOr[StudioComponentId] = js.undefined,
         studioComponentName: js.UndefOr[StudioComponentName] = js.undefined
     ): LaunchProfileInitializationScript = {
       val __obj = js.Dynamic.literal()
+      runtimeRoleArn.foreach(__v => __obj.updateDynamic("runtimeRoleArn")(__v.asInstanceOf[js.Any]))
       script.foreach(__v => __obj.updateDynamic("script")(__v.asInstanceOf[js.Any]))
+      secureInitializationRoleArn.foreach(__v => __obj.updateDynamic("secureInitializationRoleArn")(__v.asInstanceOf[js.Any]))
       studioComponentId.foreach(__v => __obj.updateDynamic("studioComponentId")(__v.asInstanceOf[js.Any]))
       studioComponentName.foreach(__v => __obj.updateDynamic("studioComponentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchProfileInitializationScript]
@@ -1567,13 +1579,13 @@ package object nimble {
     */
   @js.native
   trait LicenseServiceConfiguration extends js.Object {
-    var endpoint: js.UndefOr[SyntheticLicenseServiceConfigurationString]
+    var endpoint: js.UndefOr[SensitiveString]
   }
 
   object LicenseServiceConfiguration {
     @inline
     def apply(
-        endpoint: js.UndefOr[SyntheticLicenseServiceConfigurationString] = js.undefined
+        endpoint: js.UndefOr[SensitiveString] = js.undefined
     ): LicenseServiceConfiguration = {
       val __obj = js.Dynamic.literal()
       endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
@@ -1714,7 +1726,7 @@ package object nimble {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
     var principalId: js.UndefOr[String]
-    var states: js.UndefOr[StringList]
+    var states: js.UndefOr[LaunchProfileStateList]
   }
 
   object ListLaunchProfilesRequest {
@@ -1724,7 +1736,7 @@ package object nimble {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
         principalId: js.UndefOr[String] = js.undefined,
-        states: js.UndefOr[StringList] = js.undefined
+        states: js.UndefOr[LaunchProfileStateList] = js.undefined
     ): ListLaunchProfilesRequest = {
       val __obj = js.Dynamic.literal(
         "studioId" -> studioId.asInstanceOf[js.Any]
@@ -1854,8 +1866,8 @@ package object nimble {
     var studioId: String
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
-    var states: js.UndefOr[StringList]
-    var types: js.UndefOr[StringList]
+    var states: js.UndefOr[StudioComponentStateList]
+    var types: js.UndefOr[StudioComponentTypeList]
   }
 
   object ListStudioComponentsRequest {
@@ -1864,8 +1876,8 @@ package object nimble {
         studioId: String,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
-        states: js.UndefOr[StringList] = js.undefined,
-        types: js.UndefOr[StringList] = js.undefined
+        states: js.UndefOr[StudioComponentStateList] = js.undefined,
+        types: js.UndefOr[StudioComponentTypeList] = js.undefined
     ): ListStudioComponentsRequest = {
       val __obj = js.Dynamic.literal(
         "studioId" -> studioId.asInstanceOf[js.Any]
@@ -2159,20 +2171,20 @@ package object nimble {
     */
   @js.native
   trait SharedFileSystemConfiguration extends js.Object {
-    var endpoint: js.UndefOr[SyntheticSharedFileSystemConfigurationString]
+    var endpoint: js.UndefOr[SensitiveString]
     var fileSystemId: js.UndefOr[String]
     var linuxMountPoint: js.UndefOr[LinuxMountPoint]
-    var shareName: js.UndefOr[SyntheticSharedFileSystemConfigurationString]
+    var shareName: js.UndefOr[SensitiveString]
     var windowsMountDrive: js.UndefOr[WindowsMountDrive]
   }
 
   object SharedFileSystemConfiguration {
     @inline
     def apply(
-        endpoint: js.UndefOr[SyntheticSharedFileSystemConfigurationString] = js.undefined,
+        endpoint: js.UndefOr[SensitiveString] = js.undefined,
         fileSystemId: js.UndefOr[String] = js.undefined,
         linuxMountPoint: js.UndefOr[LinuxMountPoint] = js.undefined,
-        shareName: js.UndefOr[SyntheticSharedFileSystemConfigurationString] = js.undefined,
+        shareName: js.UndefOr[SensitiveString] = js.undefined,
         windowsMountDrive: js.UndefOr[WindowsMountDrive] = js.undefined
     ): SharedFileSystemConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -2401,11 +2413,11 @@ package object nimble {
   @js.native
   trait StreamingImage extends js.Object {
     var arn: js.UndefOr[String]
-    var description: js.UndefOr[SyntheticStreamingImageStreamingImageDescription]
+    var description: js.UndefOr[StreamingImageDescription]
     var ec2ImageId: js.UndefOr[EC2ImageId]
     var encryptionConfiguration: js.UndefOr[StreamingImageEncryptionConfiguration]
     var eulaIds: js.UndefOr[EulaIdList]
-    var name: js.UndefOr[SyntheticStreamingImageStreamingImageName]
+    var name: js.UndefOr[StreamingImageName]
     var owner: js.UndefOr[StreamingImageOwner]
     var platform: js.UndefOr[StreamingImagePlatform]
     var state: js.UndefOr[StreamingImageState]
@@ -2419,11 +2431,11 @@ package object nimble {
     @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
-        description: js.UndefOr[SyntheticStreamingImageStreamingImageDescription] = js.undefined,
+        description: js.UndefOr[StreamingImageDescription] = js.undefined,
         ec2ImageId: js.UndefOr[EC2ImageId] = js.undefined,
         encryptionConfiguration: js.UndefOr[StreamingImageEncryptionConfiguration] = js.undefined,
         eulaIds: js.UndefOr[EulaIdList] = js.undefined,
-        name: js.UndefOr[SyntheticStreamingImageStreamingImageName] = js.undefined,
+        name: js.UndefOr[StreamingImageName] = js.undefined,
         owner: js.UndefOr[StreamingImageOwner] = js.undefined,
         platform: js.UndefOr[StreamingImagePlatform] = js.undefined,
         state: js.UndefOr[StreamingImageState] = js.undefined,
@@ -2580,7 +2592,7 @@ package object nimble {
     var state: js.UndefOr[StreamingSessionStreamState]
     var statusCode: js.UndefOr[StreamingSessionStreamStatusCode]
     var streamId: js.UndefOr[String]
-    var url: js.UndefOr[SyntheticStreamingSessionStreamString]
+    var url: js.UndefOr[SensitiveString]
   }
 
   object StreamingSessionStream {
@@ -2593,7 +2605,7 @@ package object nimble {
         state: js.UndefOr[StreamingSessionStreamState] = js.undefined,
         statusCode: js.UndefOr[StreamingSessionStreamStatusCode] = js.undefined,
         streamId: js.UndefOr[String] = js.undefined,
-        url: js.UndefOr[SyntheticStreamingSessionStreamString] = js.undefined
+        url: js.UndefOr[SensitiveString] = js.undefined
     ): StreamingSessionStream = {
       val __obj = js.Dynamic.literal()
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
@@ -2608,14 +2620,14 @@ package object nimble {
     }
   }
 
-  /** Represents a studio resource. A studio is the core resource used with Nimble Studio. You must create a studio first, before any other resource type can be created. All other resources you create and manage in Nimble Studio are contained within a studio. When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are assumed by your users when they log in to the Nimble Studio portal via Amazon Web Services SSO and your identity source. The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly. The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly. Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.
+  /** Represents a studio resource. A studio is the core resource used with Nimble Studio. You must create a studio first, before any other resource type can be created. All other resources you create and manage in Nimble Studio are contained within a studio. When creating a studio, you must provides two IAM roles for use with the Nimble Studio portal. These roles are assumed by your users when they log in to the Nimble Studio portal via IAM Identity Center and your identity source. The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function properly. The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function properly. Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.
     */
   @js.native
   trait Studio extends js.Object {
-    var adminRoleArn: js.UndefOr[String]
+    var adminRoleArn: js.UndefOr[RoleArn]
     var arn: js.UndefOr[String]
     var createdAt: js.UndefOr[Timestamp]
-    var displayName: js.UndefOr[SyntheticStudioStudioDisplayName]
+    var displayName: js.UndefOr[StudioDisplayName]
     var homeRegion: js.UndefOr[Region]
     var ssoClientId: js.UndefOr[String]
     var state: js.UndefOr[StudioState]
@@ -2627,16 +2639,16 @@ package object nimble {
     var studioUrl: js.UndefOr[String]
     var tags: js.UndefOr[Tags]
     var updatedAt: js.UndefOr[Timestamp]
-    var userRoleArn: js.UndefOr[String]
+    var userRoleArn: js.UndefOr[RoleArn]
   }
 
   object Studio {
     @inline
     def apply(
-        adminRoleArn: js.UndefOr[String] = js.undefined,
+        adminRoleArn: js.UndefOr[RoleArn] = js.undefined,
         arn: js.UndefOr[String] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
-        displayName: js.UndefOr[SyntheticStudioStudioDisplayName] = js.undefined,
+        displayName: js.UndefOr[StudioDisplayName] = js.undefined,
         homeRegion: js.UndefOr[Region] = js.undefined,
         ssoClientId: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[StudioState] = js.undefined,
@@ -2648,7 +2660,7 @@ package object nimble {
         studioUrl: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined,
-        userRoleArn: js.UndefOr[String] = js.undefined
+        userRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): Studio = {
       val __obj = js.Dynamic.literal()
       adminRoleArn.foreach(__v => __obj.updateDynamic("adminRoleArn")(__v.asInstanceOf[js.Any]))
@@ -2683,7 +2695,9 @@ package object nimble {
     var ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList]
     var initializationScripts: js.UndefOr[StudioComponentInitializationScriptList]
     var name: js.UndefOr[StudioComponentName]
+    var runtimeRoleArn: js.UndefOr[RoleArn]
     var scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList]
+    var secureInitializationRoleArn: js.UndefOr[RoleArn]
     var state: js.UndefOr[StudioComponentState]
     var statusCode: js.UndefOr[StudioComponentStatusCode]
     var statusMessage: js.UndefOr[String]
@@ -2706,7 +2720,9 @@ package object nimble {
         ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList] = js.undefined,
         initializationScripts: js.UndefOr[StudioComponentInitializationScriptList] = js.undefined,
         name: js.UndefOr[StudioComponentName] = js.undefined,
+        runtimeRoleArn: js.UndefOr[RoleArn] = js.undefined,
         scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList] = js.undefined,
+        secureInitializationRoleArn: js.UndefOr[RoleArn] = js.undefined,
         state: js.UndefOr[StudioComponentState] = js.undefined,
         statusCode: js.UndefOr[StudioComponentStatusCode] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined,
@@ -2726,7 +2742,9 @@ package object nimble {
       ec2SecurityGroupIds.foreach(__v => __obj.updateDynamic("ec2SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       initializationScripts.foreach(__v => __obj.updateDynamic("initializationScripts")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      runtimeRoleArn.foreach(__v => __obj.updateDynamic("runtimeRoleArn")(__v.asInstanceOf[js.Any]))
       scriptParameters.foreach(__v => __obj.updateDynamic("scriptParameters")(__v.asInstanceOf[js.Any]))
+      secureInitializationRoleArn.foreach(__v => __obj.updateDynamic("secureInitializationRoleArn")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
@@ -2859,7 +2877,7 @@ package object nimble {
     }
   }
 
-  /** A studio member is an association of a user from your studio identity source to elevated permissions that they are granted in the studio. When you add a user to your studio using the Nimble Studio console, they are given access to the studio's AWS SSO application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership. When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.
+  /** A studio member is an association of a user from your studio identity source to elevated permissions that they are granted in the studio. When you add a user to your studio using the Nimble Studio console, they are given access to the studio's IAM Identity Center application and are given access to log in to the Nimble Studio portal. These users have the permissions provided by the studio's user IAM role and do not appear in the studio membership collection. Only studio admins appear in studio membership. When you add a user to studio membership with the persona ADMIN, upon logging in to the Nimble Studio portal, they are granted permissions specified by the Studio's Admin IAM role.
     */
   @js.native
   trait StudioMembership extends js.Object {
@@ -3055,8 +3073,8 @@ package object nimble {
     var streamingImageId: String
     var studioId: String
     var clientToken: js.UndefOr[ClientToken]
-    var description: js.UndefOr[SyntheticUpdateStreamingImageRequestStreamingImageDescription]
-    var name: js.UndefOr[SyntheticUpdateStreamingImageRequestStreamingImageName]
+    var description: js.UndefOr[StreamingImageDescription]
+    var name: js.UndefOr[StreamingImageName]
   }
 
   object UpdateStreamingImageRequest {
@@ -3065,8 +3083,8 @@ package object nimble {
         streamingImageId: String,
         studioId: String,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
-        description: js.UndefOr[SyntheticUpdateStreamingImageRequestStreamingImageDescription] = js.undefined,
-        name: js.UndefOr[SyntheticUpdateStreamingImageRequestStreamingImageName] = js.undefined
+        description: js.UndefOr[StreamingImageDescription] = js.undefined,
+        name: js.UndefOr[StreamingImageName] = js.undefined
     ): UpdateStreamingImageRequest = {
       val __obj = js.Dynamic.literal(
         "streamingImageId" -> streamingImageId.asInstanceOf[js.Any],
@@ -3106,7 +3124,9 @@ package object nimble {
     var ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList]
     var initializationScripts: js.UndefOr[StudioComponentInitializationScriptList]
     var name: js.UndefOr[StudioComponentName]
+    var runtimeRoleArn: js.UndefOr[RoleArn]
     var scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList]
+    var secureInitializationRoleArn: js.UndefOr[RoleArn]
     var subtype: js.UndefOr[StudioComponentSubtype]
     var `type`: js.UndefOr[StudioComponentType]
   }
@@ -3122,7 +3142,9 @@ package object nimble {
         ec2SecurityGroupIds: js.UndefOr[StudioComponentSecurityGroupIdList] = js.undefined,
         initializationScripts: js.UndefOr[StudioComponentInitializationScriptList] = js.undefined,
         name: js.UndefOr[StudioComponentName] = js.undefined,
+        runtimeRoleArn: js.UndefOr[RoleArn] = js.undefined,
         scriptParameters: js.UndefOr[StudioComponentScriptParameterKeyValueList] = js.undefined,
+        secureInitializationRoleArn: js.UndefOr[RoleArn] = js.undefined,
         subtype: js.UndefOr[StudioComponentSubtype] = js.undefined,
         `type`: js.UndefOr[StudioComponentType] = js.undefined
     ): UpdateStudioComponentRequest = {
@@ -3137,7 +3159,9 @@ package object nimble {
       ec2SecurityGroupIds.foreach(__v => __obj.updateDynamic("ec2SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       initializationScripts.foreach(__v => __obj.updateDynamic("initializationScripts")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      runtimeRoleArn.foreach(__v => __obj.updateDynamic("runtimeRoleArn")(__v.asInstanceOf[js.Any]))
       scriptParameters.foreach(__v => __obj.updateDynamic("scriptParameters")(__v.asInstanceOf[js.Any]))
+      secureInitializationRoleArn.foreach(__v => __obj.updateDynamic("secureInitializationRoleArn")(__v.asInstanceOf[js.Any]))
       subtype.foreach(__v => __obj.updateDynamic("subtype")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStudioComponentRequest]
@@ -3163,20 +3187,20 @@ package object nimble {
   @js.native
   trait UpdateStudioRequest extends js.Object {
     var studioId: String
-    var adminRoleArn: js.UndefOr[String]
+    var adminRoleArn: js.UndefOr[RoleArn]
     var clientToken: js.UndefOr[ClientToken]
-    var displayName: js.UndefOr[SyntheticUpdateStudioRequestStudioDisplayName]
-    var userRoleArn: js.UndefOr[String]
+    var displayName: js.UndefOr[StudioDisplayName]
+    var userRoleArn: js.UndefOr[RoleArn]
   }
 
   object UpdateStudioRequest {
     @inline
     def apply(
         studioId: String,
-        adminRoleArn: js.UndefOr[String] = js.undefined,
+        adminRoleArn: js.UndefOr[RoleArn] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
-        displayName: js.UndefOr[SyntheticUpdateStudioRequestStudioDisplayName] = js.undefined,
-        userRoleArn: js.UndefOr[String] = js.undefined
+        displayName: js.UndefOr[StudioDisplayName] = js.undefined,
+        userRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateStudioRequest = {
       val __obj = js.Dynamic.literal(
         "studioId" -> studioId.asInstanceOf[js.Any]
@@ -3204,6 +3228,34 @@ package object nimble {
         "studio" -> studio.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateStudioResponse]
+    }
+  }
+
+  /** The launch profile validation result.
+    */
+  @js.native
+  trait ValidationResult extends js.Object {
+    var state: LaunchProfileValidationState
+    var statusCode: LaunchProfileValidationStatusCode
+    var statusMessage: LaunchProfileValidationStatusMessage
+    var `type`: LaunchProfileValidationType
+  }
+
+  object ValidationResult {
+    @inline
+    def apply(
+        state: LaunchProfileValidationState,
+        statusCode: LaunchProfileValidationStatusCode,
+        statusMessage: LaunchProfileValidationStatusMessage,
+        `type`: LaunchProfileValidationType
+    ): ValidationResult = {
+      val __obj = js.Dynamic.literal(
+        "state" -> state.asInstanceOf[js.Any],
+        "statusCode" -> statusCode.asInstanceOf[js.Any],
+        "statusMessage" -> statusMessage.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ValidationResult]
     }
   }
 }

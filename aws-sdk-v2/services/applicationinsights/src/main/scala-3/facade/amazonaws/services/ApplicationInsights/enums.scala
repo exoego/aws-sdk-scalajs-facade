@@ -55,6 +55,13 @@ object FeedbackValue {
   inline def values: js.Array[FeedbackValue] = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
 }
 
+type GroupingType = "ACCOUNT_BASED"
+object GroupingType {
+  inline val ACCOUNT_BASED: "ACCOUNT_BASED" = "ACCOUNT_BASED"
+
+  inline def values: js.Array[GroupingType] = js.Array(ACCOUNT_BASED)
+}
+
 type LogFilter = "ERROR" | "WARN" | "INFO"
 object LogFilter {
   inline val ERROR: "ERROR" = "ERROR"
@@ -72,13 +79,14 @@ object OsType {
   inline def values: js.Array[OsType] = js.Array(WINDOWS, LINUX)
 }
 
-type SeverityLevel = "Low" | "Medium" | "High"
+type SeverityLevel = "Informative" | "Low" | "Medium" | "High"
 object SeverityLevel {
+  inline val Informative: "Informative" = "Informative"
   inline val Low: "Low" = "Low"
   inline val Medium: "Medium" = "Medium"
   inline val High: "High" = "High"
 
-  inline def values: js.Array[SeverityLevel] = js.Array(Low, Medium, High)
+  inline def values: js.Array[SeverityLevel] = js.Array(Informative, Low, Medium, High)
 }
 
 type Status = "IGNORE" | "RESOLVED" | "PENDING" | "RECURRING"
@@ -91,7 +99,7 @@ object Status {
   inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING, RECURRING)
 }
 
-type Tier = "CUSTOM" | "DEFAULT" | "DOT_NET_CORE" | "DOT_NET_WORKER" | "DOT_NET_WEB_TIER" | "DOT_NET_WEB" | "SQL_SERVER" | "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" | "MYSQL" | "POSTGRESQL" | "JAVA_JMX" | "ORACLE" | "SAP_HANA_MULTI_NODE" | "SAP_HANA_SINGLE_NODE" | "SAP_HANA_HIGH_AVAILABILITY" | "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
+type Tier = "CUSTOM" | "DEFAULT" | "DOT_NET_CORE" | "DOT_NET_WORKER" | "DOT_NET_WEB_TIER" | "DOT_NET_WEB" | "SQL_SERVER" | "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" | "MYSQL" | "POSTGRESQL" | "JAVA_JMX" | "ORACLE" | "SAP_HANA_MULTI_NODE" | "SAP_HANA_SINGLE_NODE" | "SAP_HANA_HIGH_AVAILABILITY" | "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" | "SHAREPOINT" | "ACTIVE_DIRECTORY"
 object Tier {
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
   inline val DEFAULT: "DEFAULT" = "DEFAULT"
@@ -109,6 +117,8 @@ object Tier {
   inline val SAP_HANA_SINGLE_NODE: "SAP_HANA_SINGLE_NODE" = "SAP_HANA_SINGLE_NODE"
   inline val SAP_HANA_HIGH_AVAILABILITY: "SAP_HANA_HIGH_AVAILABILITY" = "SAP_HANA_HIGH_AVAILABILITY"
   inline val SQL_SERVER_FAILOVER_CLUSTER_INSTANCE: "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" = "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
+  inline val SHAREPOINT: "SHAREPOINT" = "SHAREPOINT"
+  inline val ACTIVE_DIRECTORY: "ACTIVE_DIRECTORY" = "ACTIVE_DIRECTORY"
 
   inline def values: js.Array[Tier] = js.Array(
     CUSTOM,
@@ -126,6 +136,8 @@ object Tier {
     SAP_HANA_MULTI_NODE,
     SAP_HANA_SINGLE_NODE,
     SAP_HANA_HIGH_AVAILABILITY,
-    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE
+    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE,
+    SHAREPOINT,
+    ACTIVE_DIRECTORY
   )
 }

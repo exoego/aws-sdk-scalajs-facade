@@ -13,8 +13,10 @@ package object ioteventsdata {
   type AlarmModelVersion = String
   type AlarmSummaries = js.Array[AlarmSummary]
   type BatchAlarmActionErrorEntries = js.Array[BatchAlarmActionErrorEntry]
+  type BatchDeleteDetectorErrorEntries = js.Array[BatchDeleteDetectorErrorEntry]
   type BatchPutMessageErrorEntries = js.Array[BatchPutMessageErrorEntry]
   type BatchUpdateDetectorErrorEntries = js.Array[BatchUpdateDetectorErrorEntry]
+  type DeleteDetectorRequests = js.Array[DeleteDetectorRequest]
   type DetectorModelName = String
   type DetectorModelVersion = String
   type DetectorSummaries = js.Array[DetectorSummary]
@@ -52,6 +54,7 @@ package object ioteventsdata {
   final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
     @inline def batchAcknowledgeAlarmFuture(params: BatchAcknowledgeAlarmRequest): Future[BatchAcknowledgeAlarmResponse] = service.batchAcknowledgeAlarm(params).promise().toFuture
+    @inline def batchDeleteDetectorFuture(params: BatchDeleteDetectorRequest): Future[BatchDeleteDetectorResponse] = service.batchDeleteDetector(params).promise().toFuture
     @inline def batchDisableAlarmFuture(params: BatchDisableAlarmRequest): Future[BatchDisableAlarmResponse] = service.batchDisableAlarm(params).promise().toFuture
     @inline def batchEnableAlarmFuture(params: BatchEnableAlarmRequest): Future[BatchEnableAlarmResponse] = service.batchEnableAlarm(params).promise().toFuture
     @inline def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] = service.batchPutMessage(params).promise().toFuture
@@ -71,6 +74,7 @@ package object ioteventsdata {
     def this(config: AWSConfig) = this()
 
     def batchAcknowledgeAlarm(params: BatchAcknowledgeAlarmRequest): Request[BatchAcknowledgeAlarmResponse] = js.native
+    def batchDeleteDetector(params: BatchDeleteDetectorRequest): Request[BatchDeleteDetectorResponse] = js.native
     def batchDisableAlarm(params: BatchDisableAlarmRequest): Request[BatchDisableAlarmResponse] = js.native
     def batchEnableAlarm(params: BatchEnableAlarmRequest): Request[BatchEnableAlarmResponse] = js.native
     def batchPutMessage(params: BatchPutMessageRequest): Request[BatchPutMessageResponse] = js.native
@@ -285,6 +289,63 @@ package object ioteventsdata {
       errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       requestId.foreach(__v => __obj.updateDynamic("requestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAlarmActionErrorEntry]
+    }
+  }
+
+  /** Contains error messages associated with the deletion request.
+    */
+  @js.native
+  trait BatchDeleteDetectorErrorEntry extends js.Object {
+    var errorCode: js.UndefOr[ErrorCode]
+    var errorMessage: js.UndefOr[ErrorMessage]
+    var messageId: js.UndefOr[MessageId]
+  }
+
+  object BatchDeleteDetectorErrorEntry {
+    @inline
+    def apply(
+        errorCode: js.UndefOr[ErrorCode] = js.undefined,
+        errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        messageId: js.UndefOr[MessageId] = js.undefined
+    ): BatchDeleteDetectorErrorEntry = {
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteDetectorErrorEntry]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteDetectorRequest extends js.Object {
+    var detectors: DeleteDetectorRequests
+  }
+
+  object BatchDeleteDetectorRequest {
+    @inline
+    def apply(
+        detectors: DeleteDetectorRequests
+    ): BatchDeleteDetectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectors" -> detectors.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDeleteDetectorRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteDetectorResponse extends js.Object {
+    var batchDeleteDetectorErrorEntries: js.UndefOr[BatchDeleteDetectorErrorEntries]
+  }
+
+  object BatchDeleteDetectorResponse {
+    @inline
+    def apply(
+        batchDeleteDetectorErrorEntries: js.UndefOr[BatchDeleteDetectorErrorEntries] = js.undefined
+    ): BatchDeleteDetectorResponse = {
+      val __obj = js.Dynamic.literal()
+      batchDeleteDetectorErrorEntries.foreach(__v => __obj.updateDynamic("batchDeleteDetectorErrorEntries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDeleteDetectorResponse]
     }
   }
 
@@ -564,6 +625,32 @@ package object ioteventsdata {
       resetActionConfiguration.foreach(__v => __obj.updateDynamic("resetActionConfiguration")(__v.asInstanceOf[js.Any]))
       snoozeActionConfiguration.foreach(__v => __obj.updateDynamic("snoozeActionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerAction]
+    }
+  }
+
+  /** Information used to delete the detector model.
+    */
+  @js.native
+  trait DeleteDetectorRequest extends js.Object {
+    var detectorModelName: DetectorModelName
+    var messageId: MessageId
+    var keyValue: js.UndefOr[KeyValue]
+  }
+
+  object DeleteDetectorRequest {
+    @inline
+    def apply(
+        detectorModelName: DetectorModelName,
+        messageId: MessageId,
+        keyValue: js.UndefOr[KeyValue] = js.undefined
+    ): DeleteDetectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
+        "messageId" -> messageId.asInstanceOf[js.Any]
+      )
+
+      keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDetectorRequest]
     }
   }
 

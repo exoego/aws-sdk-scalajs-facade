@@ -155,6 +155,14 @@ object ResolverKind {
 }
 
 @js.native
+sealed trait RuntimeName extends js.Any
+object RuntimeName {
+  val APPSYNC_JS = "APPSYNC_JS".asInstanceOf[RuntimeName]
+
+  @inline def values: js.Array[RuntimeName] = js.Array(APPSYNC_JS)
+}
+
+@js.native
 sealed trait SchemaStatus extends js.Any
 object SchemaStatus {
   val PROCESSING = "PROCESSING".asInstanceOf[SchemaStatus]

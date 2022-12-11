@@ -2,6 +2,14 @@ package facade.amazonaws.services.wellarchitected
 
 import scalajs.js
 
+type AdditionalResourceType = "HELPFUL_RESOURCE" | "IMPROVEMENT_PLAN"
+object AdditionalResourceType {
+  inline val HELPFUL_RESOURCE: "HELPFUL_RESOURCE" = "HELPFUL_RESOURCE"
+  inline val IMPROVEMENT_PLAN: "IMPROVEMENT_PLAN" = "IMPROVEMENT_PLAN"
+
+  inline def values: js.Array[AdditionalResourceType] = js.Array(HELPFUL_RESOURCE, IMPROVEMENT_PLAN)
+}
+
 type AnswerReason = "OUT_OF_SCOPE" | "BUSINESS_PRIORITIES" | "ARCHITECTURE_CONSTRAINTS" | "OTHER" | "NONE"
 object AnswerReason {
   inline val OUT_OF_SCOPE: "OUT_OF_SCOPE" = "OUT_OF_SCOPE"
@@ -11,6 +19,34 @@ object AnswerReason {
   inline val NONE: "NONE" = "NONE"
 
   inline def values: js.Array[AnswerReason] = js.Array(OUT_OF_SCOPE, BUSINESS_PRIORITIES, ARCHITECTURE_CONSTRAINTS, OTHER, NONE)
+}
+
+type CheckFailureReason = "ASSUME_ROLE_ERROR" | "ACCESS_DENIED" | "UNKNOWN_ERROR" | "PREMIUM_SUPPORT_REQUIRED"
+object CheckFailureReason {
+  inline val ASSUME_ROLE_ERROR: "ASSUME_ROLE_ERROR" = "ASSUME_ROLE_ERROR"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val UNKNOWN_ERROR: "UNKNOWN_ERROR" = "UNKNOWN_ERROR"
+  inline val PREMIUM_SUPPORT_REQUIRED: "PREMIUM_SUPPORT_REQUIRED" = "PREMIUM_SUPPORT_REQUIRED"
+
+  inline def values: js.Array[CheckFailureReason] = js.Array(ASSUME_ROLE_ERROR, ACCESS_DENIED, UNKNOWN_ERROR, PREMIUM_SUPPORT_REQUIRED)
+}
+
+type CheckProvider = "TRUSTED_ADVISOR"
+object CheckProvider {
+  inline val TRUSTED_ADVISOR: "TRUSTED_ADVISOR" = "TRUSTED_ADVISOR"
+
+  inline def values: js.Array[CheckProvider] = js.Array(TRUSTED_ADVISOR)
+}
+
+type CheckStatus = "OKAY" | "WARNING" | "ERROR" | "NOT_AVAILABLE" | "FETCH_FAILED"
+object CheckStatus {
+  inline val OKAY: "OKAY" = "OKAY"
+  inline val WARNING: "WARNING" = "WARNING"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val NOT_AVAILABLE: "NOT_AVAILABLE" = "NOT_AVAILABLE"
+  inline val FETCH_FAILED: "FETCH_FAILED" = "FETCH_FAILED"
+
+  inline def values: js.Array[CheckStatus] = js.Array(OKAY, WARNING, ERROR, NOT_AVAILABLE, FETCH_FAILED)
 }
 
 type ChoiceReason = "OUT_OF_SCOPE" | "BUSINESS_PRIORITIES" | "ARCHITECTURE_CONSTRAINTS" | "OTHER" | "NONE"
@@ -88,6 +124,14 @@ object NotificationType {
   inline def values: js.Array[NotificationType] = js.Array(LENS_VERSION_UPGRADED, LENS_VERSION_DEPRECATED)
 }
 
+type OrganizationSharingStatus = "ENABLED" | "DISABLED"
+object OrganizationSharingStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[OrganizationSharingStatus] = js.Array(ENABLED, DISABLED)
+}
+
 /** Permission granted on a workload share.
   */
 type PermissionType = "READONLY" | "CONTRIBUTOR"
@@ -131,15 +175,26 @@ object ShareResourceType {
 
 /** The status of a workload share.
   */
-type ShareStatus = "ACCEPTED" | "REJECTED" | "PENDING" | "REVOKED" | "EXPIRED"
+type ShareStatus = "ACCEPTED" | "REJECTED" | "PENDING" | "REVOKED" | "EXPIRED" | "ASSOCIATING" | "ASSOCIATED" | "FAILED"
 object ShareStatus {
   inline val ACCEPTED: "ACCEPTED" = "ACCEPTED"
   inline val REJECTED: "REJECTED" = "REJECTED"
   inline val PENDING: "PENDING" = "PENDING"
   inline val REVOKED: "REVOKED" = "REVOKED"
   inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val ASSOCIATING: "ASSOCIATING" = "ASSOCIATING"
+  inline val ASSOCIATED: "ASSOCIATED" = "ASSOCIATED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  inline def values: js.Array[ShareStatus] = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED)
+  inline def values: js.Array[ShareStatus] = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED, ASSOCIATING, ASSOCIATED, FAILED)
+}
+
+type TrustedAdvisorIntegrationStatus = "ENABLED" | "DISABLED"
+object TrustedAdvisorIntegrationStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[TrustedAdvisorIntegrationStatus] = js.Array(ENABLED, DISABLED)
 }
 
 /** The environment for the workload.

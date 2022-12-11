@@ -51,8 +51,9 @@ object InputFormat {
   val JSON = "JSON".asInstanceOf[InputFormat]
   val PARQUET = "PARQUET".asInstanceOf[InputFormat]
   val EXCEL = "EXCEL".asInstanceOf[InputFormat]
+  val ORC = "ORC".asInstanceOf[InputFormat]
 
-  @inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL)
+  @inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL, ORC)
 }
 
 @js.native

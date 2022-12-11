@@ -42,6 +42,17 @@ object AnomalyDetectionTaskStatus {
 }
 
 @js.native
+sealed trait AnomalyDetectorFailureType extends js.Any
+object AnomalyDetectorFailureType {
+  val ACTIVATION_FAILURE = "ACTIVATION_FAILURE".asInstanceOf[AnomalyDetectorFailureType]
+  val BACK_TEST_ACTIVATION_FAILURE = "BACK_TEST_ACTIVATION_FAILURE".asInstanceOf[AnomalyDetectorFailureType]
+  val DELETION_FAILURE = "DELETION_FAILURE".asInstanceOf[AnomalyDetectorFailureType]
+  val DEACTIVATION_FAILURE = "DEACTIVATION_FAILURE".asInstanceOf[AnomalyDetectorFailureType]
+
+  @inline def values: js.Array[AnomalyDetectorFailureType] = js.Array(ACTIVATION_FAILURE, BACK_TEST_ACTIVATION_FAILURE, DELETION_FAILURE, DEACTIVATION_FAILURE)
+}
+
+@js.native
 sealed trait AnomalyDetectorStatus extends js.Any
 object AnomalyDetectorStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AnomalyDetectorStatus]
@@ -53,8 +64,10 @@ object AnomalyDetectorStatus {
   val BACK_TEST_ACTIVATING = "BACK_TEST_ACTIVATING".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_ACTIVE = "BACK_TEST_ACTIVE".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_COMPLETE = "BACK_TEST_COMPLETE".asInstanceOf[AnomalyDetectorStatus]
+  val DEACTIVATED = "DEACTIVATED".asInstanceOf[AnomalyDetectorStatus]
+  val DEACTIVATING = "DEACTIVATING".asInstanceOf[AnomalyDetectorStatus]
 
-  @inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, LEARNING, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
+  @inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, LEARNING, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE, DEACTIVATED, DEACTIVATING)
 }
 
 @js.native
@@ -64,6 +77,52 @@ object CSVFileCompression {
   val GZIP = "GZIP".asInstanceOf[CSVFileCompression]
 
   @inline def values: js.Array[CSVFileCompression] = js.Array(NONE, GZIP)
+}
+
+@js.native
+sealed trait Confidence extends js.Any
+object Confidence {
+  val HIGH = "HIGH".asInstanceOf[Confidence]
+  val LOW = "LOW".asInstanceOf[Confidence]
+  val NONE = "NONE".asInstanceOf[Confidence]
+
+  @inline def values: js.Array[Confidence] = js.Array(HIGH, LOW, NONE)
+}
+
+@js.native
+sealed trait DataQualityMetricType extends js.Any
+object DataQualityMetricType {
+  val COLUMN_COMPLETENESS = "COLUMN_COMPLETENESS".asInstanceOf[DataQualityMetricType]
+  val DIMENSION_UNIQUENESS = "DIMENSION_UNIQUENESS".asInstanceOf[DataQualityMetricType]
+  val TIME_SERIES_COUNT = "TIME_SERIES_COUNT".asInstanceOf[DataQualityMetricType]
+  val ROWS_PROCESSED = "ROWS_PROCESSED".asInstanceOf[DataQualityMetricType]
+  val ROWS_PARTIAL_COMPLIANCE = "ROWS_PARTIAL_COMPLIANCE".asInstanceOf[DataQualityMetricType]
+  val INVALID_ROWS_COMPLIANCE = "INVALID_ROWS_COMPLIANCE".asInstanceOf[DataQualityMetricType]
+  val BACKTEST_TRAINING_DATA_START_TIME_STAMP = "BACKTEST_TRAINING_DATA_START_TIME_STAMP".asInstanceOf[DataQualityMetricType]
+  val BACKTEST_TRAINING_DATA_END_TIME_STAMP = "BACKTEST_TRAINING_DATA_END_TIME_STAMP".asInstanceOf[DataQualityMetricType]
+  val BACKTEST_INFERENCE_DATA_START_TIME_STAMP = "BACKTEST_INFERENCE_DATA_START_TIME_STAMP".asInstanceOf[DataQualityMetricType]
+  val BACKTEST_INFERENCE_DATA_END_TIME_STAMP = "BACKTEST_INFERENCE_DATA_END_TIME_STAMP".asInstanceOf[DataQualityMetricType]
+
+  @inline def values: js.Array[DataQualityMetricType] = js.Array(
+    COLUMN_COMPLETENESS,
+    DIMENSION_UNIQUENESS,
+    TIME_SERIES_COUNT,
+    ROWS_PROCESSED,
+    ROWS_PARTIAL_COMPLIANCE,
+    INVALID_ROWS_COMPLIANCE,
+    BACKTEST_TRAINING_DATA_START_TIME_STAMP,
+    BACKTEST_TRAINING_DATA_END_TIME_STAMP,
+    BACKTEST_INFERENCE_DATA_START_TIME_STAMP,
+    BACKTEST_INFERENCE_DATA_END_TIME_STAMP
+  )
+}
+
+@js.native
+sealed trait FilterOperation extends js.Any
+object FilterOperation {
+  val EQUALS = "EQUALS".asInstanceOf[FilterOperation]
+
+  @inline def values: js.Array[FilterOperation] = js.Array(EQUALS)
 }
 
 @js.native
@@ -93,4 +152,14 @@ object RelationshipType {
   val EFFECT_OF_INPUT_ANOMALY_GROUP = "EFFECT_OF_INPUT_ANOMALY_GROUP".asInstanceOf[RelationshipType]
 
   @inline def values: js.Array[RelationshipType] = js.Array(CAUSE_OF_INPUT_ANOMALY_GROUP, EFFECT_OF_INPUT_ANOMALY_GROUP)
+}
+
+@js.native
+sealed trait SnsFormat extends js.Any
+object SnsFormat {
+  val LONG_TEXT = "LONG_TEXT".asInstanceOf[SnsFormat]
+  val SHORT_TEXT = "SHORT_TEXT".asInstanceOf[SnsFormat]
+  val JSON = "JSON".asInstanceOf[SnsFormat]
+
+  @inline def values: js.Array[SnsFormat] = js.Array(LONG_TEXT, SHORT_TEXT, JSON)
 }

@@ -455,6 +455,15 @@ object IndexStatus {
   inline def values: js.Array[IndexStatus] = js.Array(ACTIVE, BUILDING, REBUILDING)
 }
 
+type JobEndBehavior = "STOP_ROLLOUT" | "CANCEL" | "FORCE_CANCEL"
+object JobEndBehavior {
+  inline val STOP_ROLLOUT: "STOP_ROLLOUT" = "STOP_ROLLOUT"
+  inline val CANCEL: "CANCEL" = "CANCEL"
+  inline val FORCE_CANCEL: "FORCE_CANCEL" = "FORCE_CANCEL"
+
+  inline def values: js.Array[JobEndBehavior] = js.Array(STOP_ROLLOUT, CANCEL, FORCE_CANCEL)
+}
+
 type JobExecutionFailureType = "FAILED" | "REJECTED" | "TIMED_OUT" | "ALL"
 object JobExecutionFailureType {
   inline val FAILED: "FAILED" = "FAILED"
@@ -479,14 +488,15 @@ object JobExecutionStatus {
   inline def values: js.Array[JobExecutionStatus] = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
 }
 
-type JobStatus = "IN_PROGRESS" | "CANCELED" | "COMPLETED" | "DELETION_IN_PROGRESS"
+type JobStatus = "IN_PROGRESS" | "CANCELED" | "COMPLETED" | "DELETION_IN_PROGRESS" | "SCHEDULED"
 object JobStatus {
   inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
   inline val CANCELED: "CANCELED" = "CANCELED"
   inline val COMPLETED: "COMPLETED" = "COMPLETED"
   inline val DELETION_IN_PROGRESS: "DELETION_IN_PROGRESS" = "DELETION_IN_PROGRESS"
+  inline val SCHEDULED: "SCHEDULED" = "SCHEDULED"
 
-  inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
+  inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS, SCHEDULED)
 }
 
 type LogLevel = "DEBUG" | "INFO" | "ERROR" | "WARN" | "DISABLED"
@@ -500,12 +510,15 @@ object LogLevel {
   inline def values: js.Array[LogLevel] = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
 }
 
-type LogTargetType = "DEFAULT" | "THING_GROUP"
+type LogTargetType = "DEFAULT" | "THING_GROUP" | "CLIENT_ID" | "SOURCE_IP" | "PRINCIPAL_ID"
 object LogTargetType {
   inline val DEFAULT: "DEFAULT" = "DEFAULT"
   inline val THING_GROUP: "THING_GROUP" = "THING_GROUP"
+  inline val CLIENT_ID: "CLIENT_ID" = "CLIENT_ID"
+  inline val SOURCE_IP: "SOURCE_IP" = "SOURCE_IP"
+  inline val PRINCIPAL_ID: "PRINCIPAL_ID" = "PRINCIPAL_ID"
 
-  inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP)
+  inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP, CLIENT_ID, SOURCE_IP, PRINCIPAL_ID)
 }
 
 type MessageFormat = "RAW" | "JSON"
@@ -578,7 +591,7 @@ object ReportType {
   inline def values: js.Array[ReportType] = js.Array(ERRORS, RESULTS)
 }
 
-type ResourceType = "DEVICE_CERTIFICATE" | "CA_CERTIFICATE" | "IOT_POLICY" | "COGNITO_IDENTITY_POOL" | "CLIENT_ID" | "ACCOUNT_SETTINGS" | "ROLE_ALIAS" | "IAM_ROLE"
+type ResourceType = "DEVICE_CERTIFICATE" | "CA_CERTIFICATE" | "IOT_POLICY" | "COGNITO_IDENTITY_POOL" | "CLIENT_ID" | "ACCOUNT_SETTINGS" | "ROLE_ALIAS" | "IAM_ROLE" | "ISSUER_CERTIFICATE"
 object ResourceType {
   inline val DEVICE_CERTIFICATE: "DEVICE_CERTIFICATE" = "DEVICE_CERTIFICATE"
   inline val CA_CERTIFICATE: "CA_CERTIFICATE" = "CA_CERTIFICATE"
@@ -588,8 +601,18 @@ object ResourceType {
   inline val ACCOUNT_SETTINGS: "ACCOUNT_SETTINGS" = "ACCOUNT_SETTINGS"
   inline val ROLE_ALIAS: "ROLE_ALIAS" = "ROLE_ALIAS"
   inline val IAM_ROLE: "IAM_ROLE" = "IAM_ROLE"
+  inline val ISSUER_CERTIFICATE: "ISSUER_CERTIFICATE" = "ISSUER_CERTIFICATE"
 
-  inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
+  inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE, ISSUER_CERTIFICATE)
+}
+
+type RetryableFailureType = "FAILED" | "TIMED_OUT" | "ALL"
+object RetryableFailureType {
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[RetryableFailureType] = js.Array(FAILED, TIMED_OUT, ALL)
 }
 
 type ServerCertificateStatus = "INVALID" | "VALID"
@@ -626,6 +649,14 @@ object TargetSelection {
   inline val SNAPSHOT: "SNAPSHOT" = "SNAPSHOT"
 
   inline def values: js.Array[TargetSelection] = js.Array(CONTINUOUS, SNAPSHOT)
+}
+
+type TemplateType = "FLEET_PROVISIONING" | "JITP"
+object TemplateType {
+  inline val FLEET_PROVISIONING: "FLEET_PROVISIONING" = "FLEET_PROVISIONING"
+  inline val JITP: "JITP" = "JITP"
+
+  inline def values: js.Array[TemplateType] = js.Array(FLEET_PROVISIONING, JITP)
 }
 
 type ThingConnectivityIndexingMode = "OFF" | "STATUS"

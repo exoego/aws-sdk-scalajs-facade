@@ -16,6 +16,7 @@ package object secretsmanager {
   type DeletedDateType = js.Date
   type DeletionDateType = js.Date
   type DescriptionType = String
+  type DurationType = String
   type ErrorMessage = String
   type ExcludeCharactersType = String
   type ExcludeLowercaseType = Boolean
@@ -45,6 +46,7 @@ package object secretsmanager {
   type RequireEachIncludedTypeType = Boolean
   type RotationEnabledType = Boolean
   type RotationLambdaARNType = String
+  type ScheduleExpressionType = String
   type SecretARNType = String
   type SecretBinaryType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type SecretIdType = String
@@ -932,6 +934,7 @@ package object secretsmanager {
   trait RotateSecretRequest extends js.Object {
     var SecretId: SecretIdType
     var ClientRequestToken: js.UndefOr[ClientRequestTokenType]
+    var RotateImmediately: js.UndefOr[BooleanType]
     var RotationLambdaARN: js.UndefOr[RotationLambdaARNType]
     var RotationRules: js.UndefOr[RotationRulesType]
   }
@@ -941,6 +944,7 @@ package object secretsmanager {
     def apply(
         SecretId: SecretIdType,
         ClientRequestToken: js.UndefOr[ClientRequestTokenType] = js.undefined,
+        RotateImmediately: js.UndefOr[BooleanType] = js.undefined,
         RotationLambdaARN: js.UndefOr[RotationLambdaARNType] = js.undefined,
         RotationRules: js.UndefOr[RotationRulesType] = js.undefined
     ): RotateSecretRequest = {
@@ -949,6 +953,7 @@ package object secretsmanager {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      RotateImmediately.foreach(__v => __obj.updateDynamic("RotateImmediately")(__v.asInstanceOf[js.Any]))
       RotationLambdaARN.foreach(__v => __obj.updateDynamic("RotationLambdaARN")(__v.asInstanceOf[js.Any]))
       RotationRules.foreach(__v => __obj.updateDynamic("RotationRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RotateSecretRequest]
@@ -982,20 +987,26 @@ package object secretsmanager {
   @js.native
   trait RotationRulesType extends js.Object {
     var AutomaticallyAfterDays: js.UndefOr[AutomaticallyRotateAfterDaysType]
+    var Duration: js.UndefOr[DurationType]
+    var ScheduleExpression: js.UndefOr[ScheduleExpressionType]
   }
 
   object RotationRulesType {
     @inline
     def apply(
-        AutomaticallyAfterDays: js.UndefOr[AutomaticallyRotateAfterDaysType] = js.undefined
+        AutomaticallyAfterDays: js.UndefOr[AutomaticallyRotateAfterDaysType] = js.undefined,
+        Duration: js.UndefOr[DurationType] = js.undefined,
+        ScheduleExpression: js.UndefOr[ScheduleExpressionType] = js.undefined
     ): RotationRulesType = {
       val __obj = js.Dynamic.literal()
       AutomaticallyAfterDays.foreach(__v => __obj.updateDynamic("AutomaticallyAfterDays")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RotationRulesType]
     }
   }
 
-  /** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation.
+  /** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html|GetSecretValue]] .
     */
   @js.native
   trait SecretListEntry extends js.Object {

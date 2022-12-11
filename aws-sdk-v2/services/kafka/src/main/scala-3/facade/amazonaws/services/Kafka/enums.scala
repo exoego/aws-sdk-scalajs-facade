@@ -87,3 +87,13 @@ object NodeType {
 
   inline def values: js.Array[NodeType] = js.Array(BROKER)
 }
+
+/** Controls storage mode for various supported storage tiers.
+  */
+type StorageMode = "LOCAL" | "TIERED"
+object StorageMode {
+  inline val LOCAL: "LOCAL" = "LOCAL"
+  inline val TIERED: "TIERED" = "TIERED"
+
+  inline def values: js.Array[StorageMode] = js.Array(LOCAL, TIERED)
+}

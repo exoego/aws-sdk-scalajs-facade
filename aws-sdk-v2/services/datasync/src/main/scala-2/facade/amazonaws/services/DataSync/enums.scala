@@ -21,6 +21,15 @@ object Atime {
 }
 
 @js.native
+sealed trait EfsInTransitEncryption extends js.Any
+object EfsInTransitEncryption {
+  val NONE = "NONE".asInstanceOf[EfsInTransitEncryption]
+  val TLS1_2 = "TLS1_2".asInstanceOf[EfsInTransitEncryption]
+
+  @inline def values: js.Array[EfsInTransitEncryption] = js.Array(NONE, TLS1_2)
+}
+
+@js.native
 sealed trait EndpointType extends js.Any
 object EndpointType {
   val PUBLIC = "PUBLIC".asInstanceOf[EndpointType]
@@ -127,6 +136,15 @@ object ObjectStorageServerProtocol {
   val HTTP = "HTTP".asInstanceOf[ObjectStorageServerProtocol]
 
   @inline def values: js.Array[ObjectStorageServerProtocol] = js.Array(HTTPS, HTTP)
+}
+
+@js.native
+sealed trait ObjectTags extends js.Any
+object ObjectTags {
+  val PRESERVE = "PRESERVE".asInstanceOf[ObjectTags]
+  val NONE = "NONE".asInstanceOf[ObjectTags]
+
+  @inline def values: js.Array[ObjectTags] = js.Array(PRESERVE, NONE)
 }
 
 @js.native

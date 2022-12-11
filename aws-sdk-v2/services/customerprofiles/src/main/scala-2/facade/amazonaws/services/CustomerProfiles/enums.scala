@@ -332,6 +332,20 @@ object StandardIdentifier {
 }
 
 @js.native
+sealed trait Status extends js.Any
+object Status {
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[Status]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
+  val COMPLETE = "COMPLETE".asInstanceOf[Status]
+  val FAILED = "FAILED".asInstanceOf[Status]
+  val SPLIT = "SPLIT".asInstanceOf[Status]
+  val RETRY = "RETRY".asInstanceOf[Status]
+  val CANCELLED = "CANCELLED".asInstanceOf[Status]
+
+  @inline def values: js.Array[Status] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETE, FAILED, SPLIT, RETRY, CANCELLED)
+}
+
+@js.native
 sealed trait TaskType extends js.Any
 object TaskType {
   val Arithmetic = "Arithmetic".asInstanceOf[TaskType]
@@ -353,6 +367,14 @@ object TriggerType {
   val OnDemand = "OnDemand".asInstanceOf[TriggerType]
 
   @inline def values: js.Array[TriggerType] = js.Array(Scheduled, Event, OnDemand)
+}
+
+@js.native
+sealed trait WorkflowType extends js.Any
+object WorkflowType {
+  val APPFLOW_INTEGRATION = "APPFLOW_INTEGRATION".asInstanceOf[WorkflowType]
+
+  @inline def values: js.Array[WorkflowType] = js.Array(APPFLOW_INTEGRATION)
 }
 
 @js.native
@@ -389,4 +411,13 @@ object ZendeskConnectorOperator {
     VALIDATE_NUMERIC,
     NO_OP
   )
+}
+
+@js.native
+sealed trait logicalOperator extends js.Any
+object logicalOperator {
+  val AND = "AND".asInstanceOf[logicalOperator]
+  val OR = "OR".asInstanceOf[logicalOperator]
+
+  @inline def values: js.Array[logicalOperator] = js.Array(AND, OR)
 }

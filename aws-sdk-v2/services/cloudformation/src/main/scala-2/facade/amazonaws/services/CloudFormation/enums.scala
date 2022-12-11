@@ -3,6 +3,17 @@ package facade.amazonaws.services.cloudformation
 import scalajs.js
 
 @js.native
+sealed trait AccountFilterType extends js.Any
+object AccountFilterType {
+  val NONE = "NONE".asInstanceOf[AccountFilterType]
+  val INTERSECTION = "INTERSECTION".asInstanceOf[AccountFilterType]
+  val DIFFERENCE = "DIFFERENCE".asInstanceOf[AccountFilterType]
+  val UNION = "UNION".asInstanceOf[AccountFilterType]
+
+  @inline def values: js.Array[AccountFilterType] = js.Array(NONE, INTERSECTION, DIFFERENCE, UNION)
+}
+
+@js.native
 sealed trait AccountGateStatus extends js.Any
 object AccountGateStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
@@ -52,6 +63,16 @@ object ChangeAction {
   val Dynamic = "Dynamic".asInstanceOf[ChangeAction]
 
   @inline def values: js.Array[ChangeAction] = js.Array(Add, Modify, Remove, Import, Dynamic)
+}
+
+@js.native
+sealed trait ChangeSetHooksStatus extends js.Any
+object ChangeSetHooksStatus {
+  val PLANNING = "PLANNING".asInstanceOf[ChangeSetHooksStatus]
+  val PLANNED = "PLANNED".asInstanceOf[ChangeSetHooksStatus]
+  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ChangeSetHooksStatus]
+
+  @inline def values: js.Array[ChangeSetHooksStatus] = js.Array(PLANNING, PLANNED, UNAVAILABLE)
 }
 
 @js.native
@@ -158,6 +179,10 @@ object HandlerErrorCode {
   val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
   val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
   val InvalidTypeConfiguration = "InvalidTypeConfiguration".asInstanceOf[HandlerErrorCode]
+  val HandlerInternalFailure = "HandlerInternalFailure".asInstanceOf[HandlerErrorCode]
+  val NonCompliant = "NonCompliant".asInstanceOf[HandlerErrorCode]
+  val Unknown = "Unknown".asInstanceOf[HandlerErrorCode]
+  val UnsupportedTarget = "UnsupportedTarget".asInstanceOf[HandlerErrorCode]
 
   @inline def values: js.Array[HandlerErrorCode] = js.Array(
     NotUpdatable,
@@ -174,8 +199,48 @@ object HandlerErrorCode {
     ServiceInternalError,
     NetworkFailure,
     InternalFailure,
-    InvalidTypeConfiguration
+    InvalidTypeConfiguration,
+    HandlerInternalFailure,
+    NonCompliant,
+    Unknown,
+    UnsupportedTarget
   )
+}
+
+@js.native
+sealed trait HookFailureMode extends js.Any
+object HookFailureMode {
+  val FAIL = "FAIL".asInstanceOf[HookFailureMode]
+  val WARN = "WARN".asInstanceOf[HookFailureMode]
+
+  @inline def values: js.Array[HookFailureMode] = js.Array(FAIL, WARN)
+}
+
+@js.native
+sealed trait HookInvocationPoint extends js.Any
+object HookInvocationPoint {
+  val PRE_PROVISION = "PRE_PROVISION".asInstanceOf[HookInvocationPoint]
+
+  @inline def values: js.Array[HookInvocationPoint] = js.Array(PRE_PROVISION)
+}
+
+@js.native
+sealed trait HookStatus extends js.Any
+object HookStatus {
+  val HOOK_IN_PROGRESS = "HOOK_IN_PROGRESS".asInstanceOf[HookStatus]
+  val HOOK_COMPLETE_SUCCEEDED = "HOOK_COMPLETE_SUCCEEDED".asInstanceOf[HookStatus]
+  val HOOK_COMPLETE_FAILED = "HOOK_COMPLETE_FAILED".asInstanceOf[HookStatus]
+  val HOOK_FAILED = "HOOK_FAILED".asInstanceOf[HookStatus]
+
+  @inline def values: js.Array[HookStatus] = js.Array(HOOK_IN_PROGRESS, HOOK_COMPLETE_SUCCEEDED, HOOK_COMPLETE_FAILED, HOOK_FAILED)
+}
+
+@js.native
+sealed trait HookTargetType extends js.Any
+object HookTargetType {
+  val RESOURCE = "RESOURCE".asInstanceOf[HookTargetType]
+
+  @inline def values: js.Array[HookTargetType] = js.Array(RESOURCE)
 }
 
 @js.native
@@ -196,6 +261,14 @@ object OnFailure {
   val DELETE = "DELETE".asInstanceOf[OnFailure]
 
   @inline def values: js.Array[OnFailure] = js.Array(DO_NOTHING, ROLLBACK, DELETE)
+}
+
+@js.native
+sealed trait OperationResultFilterName extends js.Any
+object OperationResultFilterName {
+  val OPERATION_RESULT_STATUS = "OPERATION_RESULT_STATUS".asInstanceOf[OperationResultFilterName]
+
+  @inline def values: js.Array[OperationResultFilterName] = js.Array(OPERATION_RESULT_STATUS)
 }
 
 @js.native
@@ -261,8 +334,9 @@ sealed trait RegistryType extends js.Any
 object RegistryType {
   val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
   val MODULE = "MODULE".asInstanceOf[RegistryType]
+  val HOOK = "HOOK".asInstanceOf[RegistryType]
 
-  @inline def values: js.Array[RegistryType] = js.Array(RESOURCE, MODULE)
+  @inline def values: js.Array[RegistryType] = js.Array(RESOURCE, MODULE, HOOK)
 }
 
 @js.native
@@ -397,8 +471,9 @@ object StackInstanceDetailedStatus {
 sealed trait StackInstanceFilterName extends js.Any
 object StackInstanceFilterName {
   val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
+  val LAST_OPERATION_ID = "LAST_OPERATION_ID".asInstanceOf[StackInstanceFilterName]
 
-  @inline def values: js.Array[StackInstanceFilterName] = js.Array(DETAILED_STATUS)
+  @inline def values: js.Array[StackInstanceFilterName] = js.Array(DETAILED_STATUS, LAST_OPERATION_ID)
 }
 
 @js.native
@@ -557,8 +632,9 @@ sealed trait ThirdPartyType extends js.Any
 object ThirdPartyType {
   val RESOURCE = "RESOURCE".asInstanceOf[ThirdPartyType]
   val MODULE = "MODULE".asInstanceOf[ThirdPartyType]
+  val HOOK = "HOOK".asInstanceOf[ThirdPartyType]
 
-  @inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE)
+  @inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE, HOOK)
 }
 
 @js.native

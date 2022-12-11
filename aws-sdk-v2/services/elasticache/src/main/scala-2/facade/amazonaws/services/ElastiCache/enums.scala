@@ -35,8 +35,9 @@ sealed trait AuthenticationType extends js.Any
 object AuthenticationType {
   val password = "password".asInstanceOf[AuthenticationType]
   val `no-password` = "no-password".asInstanceOf[AuthenticationType]
+  val iam = "iam".asInstanceOf[AuthenticationType]
 
-  @inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`)
+  @inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`, iam)
 }
 
 @js.native
@@ -78,6 +79,25 @@ object DestinationType {
 }
 
 @js.native
+sealed trait InputAuthenticationType extends js.Any
+object InputAuthenticationType {
+  val password = "password".asInstanceOf[InputAuthenticationType]
+  val `no-password-required` = "no-password-required".asInstanceOf[InputAuthenticationType]
+  val iam = "iam".asInstanceOf[InputAuthenticationType]
+
+  @inline def values: js.Array[InputAuthenticationType] = js.Array(password, `no-password-required`, iam)
+}
+
+@js.native
+sealed trait IpDiscovery extends js.Any
+object IpDiscovery {
+  val ipv4 = "ipv4".asInstanceOf[IpDiscovery]
+  val ipv6 = "ipv6".asInstanceOf[IpDiscovery]
+
+  @inline def values: js.Array[IpDiscovery] = js.Array(ipv4, ipv6)
+}
+
+@js.native
 sealed trait LogDeliveryConfigurationStatus extends js.Any
 object LogDeliveryConfigurationStatus {
   val active = "active".asInstanceOf[LogDeliveryConfigurationStatus]
@@ -102,8 +122,9 @@ object LogFormat {
 sealed trait LogType extends js.Any
 object LogType {
   val `slow-log` = "slow-log".asInstanceOf[LogType]
+  val `engine-log` = "engine-log".asInstanceOf[LogType]
 
-  @inline def values: js.Array[LogType] = js.Array(`slow-log`)
+  @inline def values: js.Array[LogType] = js.Array(`slow-log`, `engine-log`)
 }
 
 @js.native
@@ -113,6 +134,16 @@ object MultiAZStatus {
   val disabled = "disabled".asInstanceOf[MultiAZStatus]
 
   @inline def values: js.Array[MultiAZStatus] = js.Array(enabled, disabled)
+}
+
+@js.native
+sealed trait NetworkType extends js.Any
+object NetworkType {
+  val ipv4 = "ipv4".asInstanceOf[NetworkType]
+  val ipv6 = "ipv6".asInstanceOf[NetworkType]
+  val dual_stack = "dual_stack".asInstanceOf[NetworkType]
+
+  @inline def values: js.Array[NetworkType] = js.Array(ipv4, ipv6, dual_stack)
 }
 
 @js.native

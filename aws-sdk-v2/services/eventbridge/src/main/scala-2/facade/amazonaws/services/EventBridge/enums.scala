@@ -82,6 +82,20 @@ object ConnectionState {
 }
 
 @js.native
+sealed trait EndpointState extends js.Any
+object EndpointState {
+  val ACTIVE = "ACTIVE".asInstanceOf[EndpointState]
+  val CREATING = "CREATING".asInstanceOf[EndpointState]
+  val UPDATING = "UPDATING".asInstanceOf[EndpointState]
+  val DELETING = "DELETING".asInstanceOf[EndpointState]
+  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EndpointState]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[EndpointState]
+  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EndpointState]
+
+  @inline def values: js.Array[EndpointState] = js.Array(ACTIVE, CREATING, UPDATING, DELETING, CREATE_FAILED, UPDATE_FAILED, DELETE_FAILED)
+}
+
+@js.native
 sealed trait EventSourceState extends js.Any
 object EventSourceState {
   val PENDING = "PENDING".asInstanceOf[EventSourceState]
@@ -139,6 +153,15 @@ object ReplayState {
   val FAILED = "FAILED".asInstanceOf[ReplayState]
 
   @inline def values: js.Array[ReplayState] = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
+}
+
+@js.native
+sealed trait ReplicationState extends js.Any
+object ReplicationState {
+  val ENABLED = "ENABLED".asInstanceOf[ReplicationState]
+  val DISABLED = "DISABLED".asInstanceOf[ReplicationState]
+
+  @inline def values: js.Array[ReplicationState] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native

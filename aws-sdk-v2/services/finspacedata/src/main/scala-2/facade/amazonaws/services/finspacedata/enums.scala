@@ -2,6 +2,29 @@ package facade.amazonaws.services.finspacedata
 
 import scalajs.js
 
+@js.native
+sealed trait ApiAccess extends js.Any
+object ApiAccess {
+  val ENABLED = "ENABLED".asInstanceOf[ApiAccess]
+  val DISABLED = "DISABLED".asInstanceOf[ApiAccess]
+
+  @inline def values: js.Array[ApiAccess] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait ApplicationPermission extends js.Any
+object ApplicationPermission {
+  val CreateDataset = "CreateDataset".asInstanceOf[ApplicationPermission]
+  val ManageClusters = "ManageClusters".asInstanceOf[ApplicationPermission]
+  val ManageUsersAndGroups = "ManageUsersAndGroups".asInstanceOf[ApplicationPermission]
+  val ManageAttributeSets = "ManageAttributeSets".asInstanceOf[ApplicationPermission]
+  val ViewAuditData = "ViewAuditData".asInstanceOf[ApplicationPermission]
+  val AccessNotebooks = "AccessNotebooks".asInstanceOf[ApplicationPermission]
+  val GetTemporaryCredentials = "GetTemporaryCredentials".asInstanceOf[ApplicationPermission]
+
+  @inline def values: js.Array[ApplicationPermission] = js.Array(CreateDataset, ManageClusters, ManageUsersAndGroups, ManageAttributeSets, ViewAuditData, AccessNotebooks, GetTemporaryCredentials)
+}
+
 /** Indicates how the given change will be applied to the dataset.
   */
 @js.native
@@ -116,6 +139,35 @@ object IngestionStatus {
   val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[IngestionStatus]
 
   @inline def values: js.Array[IngestionStatus] = js.Array(PENDING, FAILED, SUCCESS, RUNNING, STOP_REQUESTED)
+}
+
+@js.native
+sealed trait PermissionGroupMembershipStatus extends js.Any
+object PermissionGroupMembershipStatus {
+  val ADDITION_IN_PROGRESS = "ADDITION_IN_PROGRESS".asInstanceOf[PermissionGroupMembershipStatus]
+  val ADDITION_SUCCESS = "ADDITION_SUCCESS".asInstanceOf[PermissionGroupMembershipStatus]
+  val REMOVAL_IN_PROGRESS = "REMOVAL_IN_PROGRESS".asInstanceOf[PermissionGroupMembershipStatus]
+
+  @inline def values: js.Array[PermissionGroupMembershipStatus] = js.Array(ADDITION_IN_PROGRESS, ADDITION_SUCCESS, REMOVAL_IN_PROGRESS)
+}
+
+@js.native
+sealed trait UserStatus extends js.Any
+object UserStatus {
+  val CREATING = "CREATING".asInstanceOf[UserStatus]
+  val ENABLED = "ENABLED".asInstanceOf[UserStatus]
+  val DISABLED = "DISABLED".asInstanceOf[UserStatus]
+
+  @inline def values: js.Array[UserStatus] = js.Array(CREATING, ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait UserType extends js.Any
+object UserType {
+  val SUPER_USER = "SUPER_USER".asInstanceOf[UserType]
+  val APP_USER = "APP_USER".asInstanceOf[UserType]
+
+  @inline def values: js.Array[UserType] = js.Array(SUPER_USER, APP_USER)
 }
 
 @js.native

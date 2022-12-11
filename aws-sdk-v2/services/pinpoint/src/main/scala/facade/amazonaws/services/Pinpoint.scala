@@ -11,6 +11,7 @@ package object pinpoint {
   type ListOfActivityResponse = js.Array[ActivityResponse]
   type ListOfApplicationResponse = js.Array[ApplicationResponse]
   type ListOfCampaignResponse = js.Array[CampaignResponse]
+  type ListOfClosedDaysRules = js.Array[ClosedDaysRule]
   type ListOfEndpointBatchItem = js.Array[EndpointBatchItem]
   type ListOfEndpointResponse = js.Array[EndpointResponse]
   type ListOfExportJobResponse = js.Array[ExportJobResponse]
@@ -19,6 +20,7 @@ package object pinpoint {
   type ListOfInAppMessageContent = js.Array[InAppMessageContent]
   type ListOfJourneyResponse = js.Array[JourneyResponse]
   type ListOfMultiConditionalBranch = js.Array[MultiConditionalBranch]
+  type ListOfOpenHoursRules = js.Array[OpenHoursRule]
   type ListOfRandomSplitEntry = js.Array[RandomSplitEntry]
   type ListOfRecommenderConfigurationResponse = js.Array[RecommenderConfigurationResponse]
   type ListOfResultRow = js.Array[ResultRow]
@@ -44,6 +46,7 @@ package object pinpoint {
   type MapOfEventItemResponse = js.Dictionary[EventItemResponse]
   type MapOfEventsBatch = js.Dictionary[EventsBatch]
   type MapOfItemResponse = js.Dictionary[ItemResponse]
+  type MapOfListOfOpenHoursRules = js.Dictionary[ListOfOpenHoursRules]
   type MapOfListOf__string = js.Dictionary[ListOf__string]
   type MapOfMapOfEndpointMessageResult = js.Dictionary[MapOfEndpointMessageResult]
   type MapOfMessageResult = js.Dictionary[MessageResult]
@@ -1166,6 +1169,7 @@ package object pinpoint {
     var Arn: __string
     var Id: __string
     var Name: __string
+    var CreationDate: js.UndefOr[__string]
     var tags: js.UndefOr[MapOf__string]
   }
 
@@ -1175,6 +1179,7 @@ package object pinpoint {
         Arn: __string,
         Id: __string,
         Name: __string,
+        CreationDate: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): ApplicationResponse = {
       val __obj = js.Dynamic.literal(
@@ -1183,6 +1188,7 @@ package object pinpoint {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationResponse]
     }
@@ -1852,6 +1858,60 @@ package object pinpoint {
         "Channels" -> Channels.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ChannelsResponse]
+    }
+  }
+
+  /** The time when journey will stop sending messages.
+    */
+  @js.native
+  trait ClosedDays extends js.Object {
+    var CUSTOM: js.UndefOr[ListOfClosedDaysRules]
+    var EMAIL: js.UndefOr[ListOfClosedDaysRules]
+    var PUSH: js.UndefOr[ListOfClosedDaysRules]
+    var SMS: js.UndefOr[ListOfClosedDaysRules]
+    var VOICE: js.UndefOr[ListOfClosedDaysRules]
+  }
+
+  object ClosedDays {
+    @inline
+    def apply(
+        CUSTOM: js.UndefOr[ListOfClosedDaysRules] = js.undefined,
+        EMAIL: js.UndefOr[ListOfClosedDaysRules] = js.undefined,
+        PUSH: js.UndefOr[ListOfClosedDaysRules] = js.undefined,
+        SMS: js.UndefOr[ListOfClosedDaysRules] = js.undefined,
+        VOICE: js.UndefOr[ListOfClosedDaysRules] = js.undefined
+    ): ClosedDays = {
+      val __obj = js.Dynamic.literal()
+      CUSTOM.foreach(__v => __obj.updateDynamic("CUSTOM")(__v.asInstanceOf[js.Any]))
+      EMAIL.foreach(__v => __obj.updateDynamic("EMAIL")(__v.asInstanceOf[js.Any]))
+      PUSH.foreach(__v => __obj.updateDynamic("PUSH")(__v.asInstanceOf[js.Any]))
+      SMS.foreach(__v => __obj.updateDynamic("SMS")(__v.asInstanceOf[js.Any]))
+      VOICE.foreach(__v => __obj.updateDynamic("VOICE")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClosedDays]
+    }
+  }
+
+  /** Closed Days Rule. Part of Journey sending schedule.
+    */
+  @js.native
+  trait ClosedDaysRule extends js.Object {
+    var EndDateTime: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+    var StartDateTime: js.UndefOr[__string]
+  }
+
+  object ClosedDaysRule {
+    @inline
+    def apply(
+        EndDateTime: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        StartDateTime: js.UndefOr[__string] = js.undefined
+    ): ClosedDaysRule = {
+      val __obj = js.Dynamic.literal()
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClosedDaysRule]
     }
   }
 
@@ -7172,15 +7232,18 @@ package object pinpoint {
     var Id: __string
     var Name: __string
     var Activities: js.UndefOr[MapOfActivity]
+    var ClosedDays: js.UndefOr[ClosedDays]
     var CreationDate: js.UndefOr[__string]
     var JourneyChannelSettings: js.UndefOr[JourneyChannelSettings]
     var LastModifiedDate: js.UndefOr[__string]
     var Limits: js.UndefOr[JourneyLimits]
     var LocalTime: js.UndefOr[__boolean]
+    var OpenHours: js.UndefOr[OpenHours]
     var QuietTime: js.UndefOr[QuietTime]
     var RefreshFrequency: js.UndefOr[__string]
     var RefreshOnSegmentUpdate: js.UndefOr[__boolean]
     var Schedule: js.UndefOr[JourneySchedule]
+    var SendingSchedule: js.UndefOr[__boolean]
     var StartActivity: js.UndefOr[__string]
     var StartCondition: js.UndefOr[StartCondition]
     var State: js.UndefOr[State]
@@ -7195,15 +7258,18 @@ package object pinpoint {
         Id: __string,
         Name: __string,
         Activities: js.UndefOr[MapOfActivity] = js.undefined,
+        ClosedDays: js.UndefOr[ClosedDays] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
         JourneyChannelSettings: js.UndefOr[JourneyChannelSettings] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Limits: js.UndefOr[JourneyLimits] = js.undefined,
         LocalTime: js.UndefOr[__boolean] = js.undefined,
+        OpenHours: js.UndefOr[OpenHours] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
         RefreshFrequency: js.UndefOr[__string] = js.undefined,
         RefreshOnSegmentUpdate: js.UndefOr[__boolean] = js.undefined,
         Schedule: js.UndefOr[JourneySchedule] = js.undefined,
+        SendingSchedule: js.UndefOr[__boolean] = js.undefined,
         StartActivity: js.UndefOr[__string] = js.undefined,
         StartCondition: js.UndefOr[StartCondition] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
@@ -7217,15 +7283,18 @@ package object pinpoint {
       )
 
       Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
+      ClosedDays.foreach(__v => __obj.updateDynamic("ClosedDays")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       JourneyChannelSettings.foreach(__v => __obj.updateDynamic("JourneyChannelSettings")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       LocalTime.foreach(__v => __obj.updateDynamic("LocalTime")(__v.asInstanceOf[js.Any]))
+      OpenHours.foreach(__v => __obj.updateDynamic("OpenHours")(__v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       RefreshFrequency.foreach(__v => __obj.updateDynamic("RefreshFrequency")(__v.asInstanceOf[js.Any]))
       RefreshOnSegmentUpdate.foreach(__v => __obj.updateDynamic("RefreshOnSegmentUpdate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SendingSchedule.foreach(__v => __obj.updateDynamic("SendingSchedule")(__v.asInstanceOf[js.Any]))
       StartActivity.foreach(__v => __obj.updateDynamic("StartActivity")(__v.asInstanceOf[js.Any]))
       StartCondition.foreach(__v => __obj.updateDynamic("StartCondition")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
@@ -7868,6 +7937,57 @@ package object pinpoint {
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       ZipCode.foreach(__v => __obj.updateDynamic("ZipCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NumberValidateResponse]
+    }
+  }
+
+  /** The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.
+    */
+  @js.native
+  trait OpenHours extends js.Object {
+    var CUSTOM: js.UndefOr[MapOfListOfOpenHoursRules]
+    var EMAIL: js.UndefOr[MapOfListOfOpenHoursRules]
+    var PUSH: js.UndefOr[MapOfListOfOpenHoursRules]
+    var SMS: js.UndefOr[MapOfListOfOpenHoursRules]
+    var VOICE: js.UndefOr[MapOfListOfOpenHoursRules]
+  }
+
+  object OpenHours {
+    @inline
+    def apply(
+        CUSTOM: js.UndefOr[MapOfListOfOpenHoursRules] = js.undefined,
+        EMAIL: js.UndefOr[MapOfListOfOpenHoursRules] = js.undefined,
+        PUSH: js.UndefOr[MapOfListOfOpenHoursRules] = js.undefined,
+        SMS: js.UndefOr[MapOfListOfOpenHoursRules] = js.undefined,
+        VOICE: js.UndefOr[MapOfListOfOpenHoursRules] = js.undefined
+    ): OpenHours = {
+      val __obj = js.Dynamic.literal()
+      CUSTOM.foreach(__v => __obj.updateDynamic("CUSTOM")(__v.asInstanceOf[js.Any]))
+      EMAIL.foreach(__v => __obj.updateDynamic("EMAIL")(__v.asInstanceOf[js.Any]))
+      PUSH.foreach(__v => __obj.updateDynamic("PUSH")(__v.asInstanceOf[js.Any]))
+      SMS.foreach(__v => __obj.updateDynamic("SMS")(__v.asInstanceOf[js.Any]))
+      VOICE.foreach(__v => __obj.updateDynamic("VOICE")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpenHours]
+    }
+  }
+
+  /** List of OpenHours Rules.
+    */
+  @js.native
+  trait OpenHoursRule extends js.Object {
+    var EndTime: js.UndefOr[__string]
+    var StartTime: js.UndefOr[__string]
+  }
+
+  object OpenHoursRule {
+    @inline
+    def apply(
+        EndTime: js.UndefOr[__string] = js.undefined,
+        StartTime: js.UndefOr[__string] = js.undefined
+    ): OpenHoursRule = {
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpenHoursRule]
     }
   }
 
@@ -11118,14 +11238,18 @@ package object pinpoint {
   trait WriteJourneyRequest extends js.Object {
     var Name: __string
     var Activities: js.UndefOr[MapOfActivity]
+    var ClosedDays: js.UndefOr[ClosedDays]
     var CreationDate: js.UndefOr[__string]
+    var JourneyChannelSettings: js.UndefOr[JourneyChannelSettings]
     var LastModifiedDate: js.UndefOr[__string]
     var Limits: js.UndefOr[JourneyLimits]
     var LocalTime: js.UndefOr[__boolean]
+    var OpenHours: js.UndefOr[OpenHours]
     var QuietTime: js.UndefOr[QuietTime]
     var RefreshFrequency: js.UndefOr[__string]
     var RefreshOnSegmentUpdate: js.UndefOr[__boolean]
     var Schedule: js.UndefOr[JourneySchedule]
+    var SendingSchedule: js.UndefOr[__boolean]
     var StartActivity: js.UndefOr[__string]
     var StartCondition: js.UndefOr[StartCondition]
     var State: js.UndefOr[State]
@@ -11137,14 +11261,18 @@ package object pinpoint {
     def apply(
         Name: __string,
         Activities: js.UndefOr[MapOfActivity] = js.undefined,
+        ClosedDays: js.UndefOr[ClosedDays] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
+        JourneyChannelSettings: js.UndefOr[JourneyChannelSettings] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Limits: js.UndefOr[JourneyLimits] = js.undefined,
         LocalTime: js.UndefOr[__boolean] = js.undefined,
+        OpenHours: js.UndefOr[OpenHours] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
         RefreshFrequency: js.UndefOr[__string] = js.undefined,
         RefreshOnSegmentUpdate: js.UndefOr[__boolean] = js.undefined,
         Schedule: js.UndefOr[JourneySchedule] = js.undefined,
+        SendingSchedule: js.UndefOr[__boolean] = js.undefined,
         StartActivity: js.UndefOr[__string] = js.undefined,
         StartCondition: js.UndefOr[StartCondition] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
@@ -11155,14 +11283,18 @@ package object pinpoint {
       )
 
       Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
+      ClosedDays.foreach(__v => __obj.updateDynamic("ClosedDays")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      JourneyChannelSettings.foreach(__v => __obj.updateDynamic("JourneyChannelSettings")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       LocalTime.foreach(__v => __obj.updateDynamic("LocalTime")(__v.asInstanceOf[js.Any]))
+      OpenHours.foreach(__v => __obj.updateDynamic("OpenHours")(__v.asInstanceOf[js.Any]))
       QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       RefreshFrequency.foreach(__v => __obj.updateDynamic("RefreshFrequency")(__v.asInstanceOf[js.Any]))
       RefreshOnSegmentUpdate.foreach(__v => __obj.updateDynamic("RefreshOnSegmentUpdate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SendingSchedule.foreach(__v => __obj.updateDynamic("SendingSchedule")(__v.asInstanceOf[js.Any]))
       StartActivity.foreach(__v => __obj.updateDynamic("StartActivity")(__v.asInstanceOf[js.Any]))
       StartCondition.foreach(__v => __obj.updateDynamic("StartCondition")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))

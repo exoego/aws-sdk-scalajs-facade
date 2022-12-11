@@ -8,6 +8,9 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object kendra {
+  type AccessControlConfigurationId = String
+  type AccessControlConfigurationName = String
+  type AccessControlConfigurationSummaryList = js.Array[AccessControlConfigurationSummary]
   type AdditionalResultAttributeList = js.Array[AdditionalResultAttribute]
   type AmazonResourceName = String
   type AssociateEntitiesToExperienceFailedEntityList = js.Array[FailedEntity]
@@ -29,6 +32,7 @@ package object kendra {
   type ConfluenceSpaceFieldMappingsList = js.Array[ConfluenceSpaceToIndexFieldMapping]
   type ConfluenceSpaceIdentifier = String
   type ConfluenceSpaceList = js.Array[ConfluenceSpaceIdentifier]
+  type CorrectionList = js.Array[Correction]
   type CrawlDepth = Int
   type DataSourceDateFieldFormat = String
   type DataSourceFieldName = String
@@ -62,8 +66,11 @@ package object kendra {
   type DocumentMetadataConfigurationName = String
   type DocumentRelevanceOverrideConfigurationList = js.Array[DocumentRelevanceConfiguration]
   type DocumentStatusList = js.Array[Status]
+  type Domain = String
   type Duration = String
   type Endpoint = String
+  type EnterpriseId = String
+  type EntityFilter = js.Array[AlfrescoEntity]
   type EntityId = String
   type EntityIdsList = js.Array[EntityId]
   type EntityPersonaConfigurationList = js.Array[EntityPersonaConfiguration]
@@ -85,6 +92,9 @@ package object kendra {
   type FaqName = String
   type FaqSummaryItems = js.Array[FaqSummary]
   type FeedbackToken = String
+  type FileSystemId = String
+  type FolderId = String
+  type FolderIdList = js.Array[FolderId]
   type GroupAttributeField = String
   type GroupId = String
   type GroupOrderingIdSummaries = js.Array[GroupOrderingIdSummary]
@@ -102,13 +112,19 @@ package object kendra {
   type IndexedTextBytes = Double
   type IndexedTextDocumentsCount = Int
   type InlineCustomDocumentEnrichmentConfigurationList = js.Array[InlineCustomDocumentEnrichmentConfiguration]
+  type IssueSubEntityFilter = js.Array[IssueSubEntity]
+  type IssueType = js.Array[String]
   type Issuer = String
+  type JiraAccountUrl = String
+  type JiraStatus = js.Array[String]
   type KmsKeyId = String
   type LambdaArn = String
   type LanguageCode = String
   type ListOfGroupSummaries = js.Array[GroupSummary]
+  type LookBackPeriod = Int
   type MaxContentSizePerPageInMegaBytes = Float
   type MaxLinksPerPage = Int
+  type MaxResultsIntegerForListAccessControlConfigurationsRequest = Int
   type MaxResultsIntegerForListDataSourceSyncJobsRequest = Int
   type MaxResultsIntegerForListDataSourcesRequest = Int
   type MaxResultsIntegerForListEntityPersonasRequest = Int
@@ -131,11 +147,15 @@ package object kendra {
   type OneDriveUser = String
   type OneDriveUserList = js.Array[OneDriveUser]
   type OrganizationId = String
+  type OrganizationName = String
   type PersonasSummaryList = js.Array[PersonasSummary]
   type Port = Int
   type PrincipalList = js.Array[Principal]
   type PrincipalName = String
   type PrincipalOrderingId = Double
+  type PrivateChannelFilter = js.Array[String]
+  type Project = js.Array[String]
+  type PublicChannelFilter = js.Array[String]
   type QueryCapacityUnit = Int
   type QueryId = String
   type QueryResultItemList = js.Array[QueryResultItem]
@@ -145,6 +165,8 @@ package object kendra {
   type QuerySuggestionsId = String
   type QueryText = String
   type RelevanceFeedbackList = js.Array[RelevanceFeedback]
+  type RepositoryName = String
+  type RepositoryNames = js.Array[RepositoryName]
   type ResultId = String
   type RoleArn = String
   type S3BucketName = String
@@ -163,22 +185,32 @@ package object kendra {
   type ServiceNowKnowledgeArticleFilterQuery = String
   type SharePointUrlList = js.Array[Url]
   type SharedDriveId = String
+  type SinceCrawlDate = String
+  type SiteId = String
   type SiteMap = String
   type SiteMapsList = js.Array[SiteMap]
+  type SiteUrl = String
+  type SlackEntityList = js.Array[SlackEntity]
   type SnapshotsDataHeaderFields = js.Array[String]
   type SnapshotsDataRecord = js.Array[String]
   type SnapshotsDataRecords = js.Array[SnapshotsDataRecord]
+  type SpellCorrectedQueryList = js.Array[SpellCorrectedQuery]
   type StorageCapacityUnit = Int
+  type StringList = js.Array[String]
   type SubnetId = String
   type SubnetIdList = js.Array[SubnetId]
+  type SuggestedQueryText = String
   type SuggestionHighlightList = js.Array[SuggestionHighlight]
   type SuggestionList = js.Array[Suggestion]
   type SuggestionQueryText = String
+  type TableCellList = js.Array[TableCell]
   type TableName = String
+  type TableRowList = js.Array[TableRow]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TeamId = String
   type TenantDomain = String
   type ThesaurusId = String
   type ThesaurusName = String
@@ -186,6 +218,7 @@ package object kendra {
   type Timestamp = js.Date
   type Title = String
   type Token = String
+  type TopDocumentAttributeValueCountPairsSize = Int
   type Url = String
   type UserAccount = String
   type UserId = String
@@ -195,6 +228,8 @@ package object kendra {
   type ValueImportanceMapKey = String
   type VisitorId = String
   type VpcSecurityGroupId = String
+  type WarningList = js.Array[Warning]
+  type WarningMessage = String
 
   final class KendraOps(private val service: Kendra) extends AnyVal {
 
@@ -204,12 +239,14 @@ package object kendra {
     @inline def batchGetDocumentStatusFuture(params: BatchGetDocumentStatusRequest): Future[BatchGetDocumentStatusResponse] = service.batchGetDocumentStatus(params).promise().toFuture
     @inline def batchPutDocumentFuture(params: BatchPutDocumentRequest): Future[BatchPutDocumentResponse] = service.batchPutDocument(params).promise().toFuture
     @inline def clearQuerySuggestionsFuture(params: ClearQuerySuggestionsRequest): Future[js.Object] = service.clearQuerySuggestions(params).promise().toFuture
+    @inline def createAccessControlConfigurationFuture(params: CreateAccessControlConfigurationRequest): Future[CreateAccessControlConfigurationResponse] = service.createAccessControlConfiguration(params).promise().toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
     @inline def createExperienceFuture(params: CreateExperienceRequest): Future[CreateExperienceResponse] = service.createExperience(params).promise().toFuture
     @inline def createFaqFuture(params: CreateFaqRequest): Future[CreateFaqResponse] = service.createFaq(params).promise().toFuture
     @inline def createIndexFuture(params: CreateIndexRequest): Future[CreateIndexResponse] = service.createIndex(params).promise().toFuture
     @inline def createQuerySuggestionsBlockListFuture(params: CreateQuerySuggestionsBlockListRequest): Future[CreateQuerySuggestionsBlockListResponse] = service.createQuerySuggestionsBlockList(params).promise().toFuture
     @inline def createThesaurusFuture(params: CreateThesaurusRequest): Future[CreateThesaurusResponse] = service.createThesaurus(params).promise().toFuture
+    @inline def deleteAccessControlConfigurationFuture(params: DeleteAccessControlConfigurationRequest): Future[DeleteAccessControlConfigurationResponse] = service.deleteAccessControlConfiguration(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[js.Object] = service.deleteDataSource(params).promise().toFuture
     @inline def deleteExperienceFuture(params: DeleteExperienceRequest): Future[DeleteExperienceResponse] = service.deleteExperience(params).promise().toFuture
     @inline def deleteFaqFuture(params: DeleteFaqRequest): Future[js.Object] = service.deleteFaq(params).promise().toFuture
@@ -217,6 +254,7 @@ package object kendra {
     @inline def deletePrincipalMappingFuture(params: DeletePrincipalMappingRequest): Future[js.Object] = service.deletePrincipalMapping(params).promise().toFuture
     @inline def deleteQuerySuggestionsBlockListFuture(params: DeleteQuerySuggestionsBlockListRequest): Future[js.Object] = service.deleteQuerySuggestionsBlockList(params).promise().toFuture
     @inline def deleteThesaurusFuture(params: DeleteThesaurusRequest): Future[js.Object] = service.deleteThesaurus(params).promise().toFuture
+    @inline def describeAccessControlConfigurationFuture(params: DescribeAccessControlConfigurationRequest): Future[DescribeAccessControlConfigurationResponse] = service.describeAccessControlConfiguration(params).promise().toFuture
     @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] = service.describeDataSource(params).promise().toFuture
     @inline def describeExperienceFuture(params: DescribeExperienceRequest): Future[DescribeExperienceResponse] = service.describeExperience(params).promise().toFuture
     @inline def describeFaqFuture(params: DescribeFaqRequest): Future[DescribeFaqResponse] = service.describeFaq(params).promise().toFuture
@@ -229,6 +267,7 @@ package object kendra {
     @inline def disassociatePersonasFromEntitiesFuture(params: DisassociatePersonasFromEntitiesRequest): Future[DisassociatePersonasFromEntitiesResponse] = service.disassociatePersonasFromEntities(params).promise().toFuture
     @inline def getQuerySuggestionsFuture(params: GetQuerySuggestionsRequest): Future[GetQuerySuggestionsResponse] = service.getQuerySuggestions(params).promise().toFuture
     @inline def getSnapshotsFuture(params: GetSnapshotsRequest): Future[GetSnapshotsResponse] = service.getSnapshots(params).promise().toFuture
+    @inline def listAccessControlConfigurationsFuture(params: ListAccessControlConfigurationsRequest): Future[ListAccessControlConfigurationsResponse] = service.listAccessControlConfigurations(params).promise().toFuture
     @inline def listDataSourceSyncJobsFuture(params: ListDataSourceSyncJobsRequest): Future[ListDataSourceSyncJobsResponse] = service.listDataSourceSyncJobs(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
     @inline def listEntityPersonasFuture(params: ListEntityPersonasRequest): Future[ListEntityPersonasResponse] = service.listEntityPersonas(params).promise().toFuture
@@ -247,6 +286,7 @@ package object kendra {
     @inline def submitFeedbackFuture(params: SubmitFeedbackRequest): Future[js.Object] = service.submitFeedback(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAccessControlConfigurationFuture(params: UpdateAccessControlConfigurationRequest): Future[UpdateAccessControlConfigurationResponse] = service.updateAccessControlConfiguration(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[js.Object] = service.updateDataSource(params).promise().toFuture
     @inline def updateExperienceFuture(params: UpdateExperienceRequest): Future[js.Object] = service.updateExperience(params).promise().toFuture
     @inline def updateIndexFuture(params: UpdateIndexRequest): Future[js.Object] = service.updateIndex(params).promise().toFuture
@@ -267,12 +307,14 @@ package object kendra {
     def batchGetDocumentStatus(params: BatchGetDocumentStatusRequest): Request[BatchGetDocumentStatusResponse] = js.native
     def batchPutDocument(params: BatchPutDocumentRequest): Request[BatchPutDocumentResponse] = js.native
     def clearQuerySuggestions(params: ClearQuerySuggestionsRequest): Request[js.Object] = js.native
+    def createAccessControlConfiguration(params: CreateAccessControlConfigurationRequest): Request[CreateAccessControlConfigurationResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
     def createExperience(params: CreateExperienceRequest): Request[CreateExperienceResponse] = js.native
     def createFaq(params: CreateFaqRequest): Request[CreateFaqResponse] = js.native
     def createIndex(params: CreateIndexRequest): Request[CreateIndexResponse] = js.native
     def createQuerySuggestionsBlockList(params: CreateQuerySuggestionsBlockListRequest): Request[CreateQuerySuggestionsBlockListResponse] = js.native
     def createThesaurus(params: CreateThesaurusRequest): Request[CreateThesaurusResponse] = js.native
+    def deleteAccessControlConfiguration(params: DeleteAccessControlConfigurationRequest): Request[DeleteAccessControlConfigurationResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[js.Object] = js.native
     def deleteExperience(params: DeleteExperienceRequest): Request[DeleteExperienceResponse] = js.native
     def deleteFaq(params: DeleteFaqRequest): Request[js.Object] = js.native
@@ -280,6 +322,7 @@ package object kendra {
     def deletePrincipalMapping(params: DeletePrincipalMappingRequest): Request[js.Object] = js.native
     def deleteQuerySuggestionsBlockList(params: DeleteQuerySuggestionsBlockListRequest): Request[js.Object] = js.native
     def deleteThesaurus(params: DeleteThesaurusRequest): Request[js.Object] = js.native
+    def describeAccessControlConfiguration(params: DescribeAccessControlConfigurationRequest): Request[DescribeAccessControlConfigurationResponse] = js.native
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
     def describeExperience(params: DescribeExperienceRequest): Request[DescribeExperienceResponse] = js.native
     def describeFaq(params: DescribeFaqRequest): Request[DescribeFaqResponse] = js.native
@@ -292,6 +335,7 @@ package object kendra {
     def disassociatePersonasFromEntities(params: DisassociatePersonasFromEntitiesRequest): Request[DisassociatePersonasFromEntitiesResponse] = js.native
     def getQuerySuggestions(params: GetQuerySuggestionsRequest): Request[GetQuerySuggestionsResponse] = js.native
     def getSnapshots(params: GetSnapshotsRequest): Request[GetSnapshotsResponse] = js.native
+    def listAccessControlConfigurations(params: ListAccessControlConfigurationsRequest): Request[ListAccessControlConfigurationsResponse] = js.native
     def listDataSourceSyncJobs(params: ListDataSourceSyncJobsRequest): Request[ListDataSourceSyncJobsResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
     def listEntityPersonas(params: ListEntityPersonasRequest): Request[ListEntityPersonasResponse] = js.native
@@ -310,6 +354,7 @@ package object kendra {
     def submitFeedback(params: SubmitFeedbackRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAccessControlConfiguration(params: UpdateAccessControlConfigurationRequest): Request[UpdateAccessControlConfigurationResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[js.Object] = js.native
     def updateExperience(params: UpdateExperienceRequest): Request[js.Object] = js.native
     def updateIndex(params: UpdateIndexRequest): Request[js.Object] = js.native
@@ -320,6 +365,25 @@ package object kendra {
   object Kendra {
     @inline implicit def toOps(service: Kendra): KendraOps = {
       new KendraOps(service)
+    }
+  }
+
+  /** Summary information on an access control configuration that you created for your documents in an index.
+    */
+  @js.native
+  trait AccessControlConfigurationSummary extends js.Object {
+    var Id: AccessControlConfigurationId
+  }
+
+  object AccessControlConfigurationSummary {
+    @inline
+    def apply(
+        Id: AccessControlConfigurationId
+    ): AccessControlConfigurationSummary = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AccessControlConfigurationSummary]
     }
   }
 
@@ -403,6 +467,64 @@ package object kendra {
     }
   }
 
+  /** Provides the configuration information to connect to Alfresco as your data source.
+    *
+    * '''Note:'''Alfresco data source connector is currently in preview mode. Basic authentication is currently supported. If you would like to use Alfresco connector in production, contact [[http://aws.amazon.com/contact-us/|Support]].
+    */
+  @js.native
+  trait AlfrescoConfiguration extends js.Object {
+    var SecretArn: SecretArn
+    var SiteId: SiteId
+    var SiteUrl: SiteUrl
+    var SslCertificateS3Path: S3Path
+    var BlogFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var CrawlComments: js.UndefOr[Boolean]
+    var CrawlSystemFolders: js.UndefOr[Boolean]
+    var DocumentLibraryFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var EntityFilter: js.UndefOr[EntityFilter]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+    var WikiFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+  }
+
+  object AlfrescoConfiguration {
+    @inline
+    def apply(
+        SecretArn: SecretArn,
+        SiteId: SiteId,
+        SiteUrl: SiteUrl,
+        SslCertificateS3Path: S3Path,
+        BlogFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        CrawlComments: js.UndefOr[Boolean] = js.undefined,
+        CrawlSystemFolders: js.UndefOr[Boolean] = js.undefined,
+        DocumentLibraryFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        EntityFilter: js.UndefOr[EntityFilter] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined,
+        WikiFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined
+    ): AlfrescoConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
+        "SiteId" -> SiteId.asInstanceOf[js.Any],
+        "SiteUrl" -> SiteUrl.asInstanceOf[js.Any],
+        "SslCertificateS3Path" -> SslCertificateS3Path.asInstanceOf[js.Any]
+      )
+
+      BlogFieldMappings.foreach(__v => __obj.updateDynamic("BlogFieldMappings")(__v.asInstanceOf[js.Any]))
+      CrawlComments.foreach(__v => __obj.updateDynamic("CrawlComments")(__v.asInstanceOf[js.Any]))
+      CrawlSystemFolders.foreach(__v => __obj.updateDynamic("CrawlSystemFolders")(__v.asInstanceOf[js.Any]))
+      DocumentLibraryFieldMappings.foreach(__v => __obj.updateDynamic("DocumentLibraryFieldMappings")(__v.asInstanceOf[js.Any]))
+      EntityFilter.foreach(__v => __obj.updateDynamic("EntityFilter")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      WikiFieldMappings.foreach(__v => __obj.updateDynamic("WikiFieldMappings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AlfrescoConfiguration]
+    }
+  }
+
   @js.native
   trait AssociateEntitiesToExperienceRequest extends js.Object {
     var EntityList: AssociateEntityList
@@ -481,7 +603,7 @@ package object kendra {
     }
   }
 
-  /** Provides filtering the query results based on document attributes. When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use: <code>&lt;AndAllFilters&gt;</code> <ol> * <code> &lt;OrAllFilters&gt;</code> * <code> &lt;EqualsTo&gt;</code> </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2." If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with the message "<code>AttributeFilter</code> cannot have a length of more than 10".
+  /** Provides filtering the query results based on document attributes or metadata fields. When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the first attribute filter. For example, you can use: <code>&lt;AndAllFilters&gt;</code> <ol> * <code> &lt;OrAllFilters&gt;</code> * <code> &lt;EqualsTo&gt;</code> </ol> If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "<code>AttributeFilter</code> cannot have a depth of more than 2." If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with the message "<code>AttributeFilter</code> cannot have a length of more than 10".
     */
   @js.native
   trait AttributeFilter extends js.Object {
@@ -609,7 +731,7 @@ package object kendra {
     }
   }
 
-  /** Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> operation.
+  /** Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code> API.
     */
   @js.native
   trait BatchDeleteDocumentResponseFailedDocument extends js.Object {
@@ -763,7 +885,63 @@ package object kendra {
     }
   }
 
-  /** Specifies capacity units configured for your enterprise edition index. You can add and remove capacity units to tune an index to your requirements.
+  /** Provides the configuration information to connect to Box as your data source.
+    */
+  @js.native
+  trait BoxConfiguration extends js.Object {
+    var EnterpriseId: EnterpriseId
+    var SecretArn: SecretArn
+    var CommentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var CrawlComments: js.UndefOr[Boolean]
+    var CrawlTasks: js.UndefOr[Boolean]
+    var CrawlWebLinks: js.UndefOr[Boolean]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var FileFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var TaskFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var UseChangeLog: js.UndefOr[Boolean]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+    var WebLinkFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+  }
+
+  object BoxConfiguration {
+    @inline
+    def apply(
+        EnterpriseId: EnterpriseId,
+        SecretArn: SecretArn,
+        CommentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        CrawlComments: js.UndefOr[Boolean] = js.undefined,
+        CrawlTasks: js.UndefOr[Boolean] = js.undefined,
+        CrawlWebLinks: js.UndefOr[Boolean] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        FileFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        TaskFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        UseChangeLog: js.UndefOr[Boolean] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined,
+        WebLinkFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined
+    ): BoxConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EnterpriseId" -> EnterpriseId.asInstanceOf[js.Any],
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
+
+      CommentFieldMappings.foreach(__v => __obj.updateDynamic("CommentFieldMappings")(__v.asInstanceOf[js.Any]))
+      CrawlComments.foreach(__v => __obj.updateDynamic("CrawlComments")(__v.asInstanceOf[js.Any]))
+      CrawlTasks.foreach(__v => __obj.updateDynamic("CrawlTasks")(__v.asInstanceOf[js.Any]))
+      CrawlWebLinks.foreach(__v => __obj.updateDynamic("CrawlWebLinks")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      FileFieldMappings.foreach(__v => __obj.updateDynamic("FileFieldMappings")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      TaskFieldMappings.foreach(__v => __obj.updateDynamic("TaskFieldMappings")(__v.asInstanceOf[js.Any]))
+      UseChangeLog.foreach(__v => __obj.updateDynamic("UseChangeLog")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      WebLinkFieldMappings.foreach(__v => __obj.updateDynamic("WebLinkFieldMappings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxConfiguration]
+    }
+  }
+
+  /** Specifies additional capacity units configured for your Enterprise Edition index. You can add and remove capacity units to fit your usage requirements.
     */
   @js.native
   trait CapacityUnitsConfiguration extends js.Object {
@@ -802,7 +980,7 @@ package object kendra {
     }
   }
 
-  /** Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> operation to provide click information.
+  /** Gathers information about when a particular result was clicked by a user. Your application uses the <code>SubmitFeedback</code> API to provide click information.
     */
   @js.native
   trait ClickFeedback extends js.Object {
@@ -856,7 +1034,7 @@ package object kendra {
     }
   }
 
-  /** Specifies the attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them.
+  /** Configuration of attachment settings for the Confluence data source. Attachment settings are optional, if you don't specify settings attachments, Amazon Kendra won't index them.
     */
   @js.native
   trait ConfluenceAttachmentConfiguration extends js.Object {
@@ -877,7 +1055,7 @@ package object kendra {
     }
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Maps attributes or field names of Confluence attachments to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html|Mapping data source fields]]. The Confuence data source field names must exist in your Confluence custom metadata.
     */
   @js.native
   trait ConfluenceAttachmentToIndexFieldMapping extends js.Object {
@@ -901,7 +1079,7 @@ package object kendra {
     }
   }
 
-  /** Specifies the blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> type.
+  /** Configuration of blog settings for the Confluence data source. Blogs are always indexed unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code> fields in the <code>ConfluenceConfiguration</code> object.
     */
   @js.native
   trait ConfluenceBlogConfiguration extends js.Object {
@@ -919,7 +1097,7 @@ package object kendra {
     }
   }
 
-  /** Defines the mapping between a blog field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** Maps attributes or field names of Confluence blog to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html|Mapping data source fields]]. The Confluence data source field names must exist in your Confluence custom metadata.
     */
   @js.native
   trait ConfluenceBlogToIndexFieldMapping extends js.Object {
@@ -943,7 +1121,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for data sources that connect to Confluence.
+  /** Provides the configuration information to connect to Confluence as your data source.
     */
   @js.native
   trait ConfluenceConfiguration extends js.Object {
@@ -951,10 +1129,12 @@ package object kendra {
     var ServerUrl: Url
     var Version: ConfluenceVersion
     var AttachmentConfiguration: js.UndefOr[ConfluenceAttachmentConfiguration]
+    var AuthenticationType: js.UndefOr[ConfluenceAuthenticationType]
     var BlogConfiguration: js.UndefOr[ConfluenceBlogConfiguration]
     var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
     var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
     var PageConfiguration: js.UndefOr[ConfluencePageConfiguration]
+    var ProxyConfiguration: js.UndefOr[ProxyConfiguration]
     var SpaceConfiguration: js.UndefOr[ConfluenceSpaceConfiguration]
     var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
   }
@@ -966,10 +1146,12 @@ package object kendra {
         ServerUrl: Url,
         Version: ConfluenceVersion,
         AttachmentConfiguration: js.UndefOr[ConfluenceAttachmentConfiguration] = js.undefined,
+        AuthenticationType: js.UndefOr[ConfluenceAuthenticationType] = js.undefined,
         BlogConfiguration: js.UndefOr[ConfluenceBlogConfiguration] = js.undefined,
         ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         PageConfiguration: js.UndefOr[ConfluencePageConfiguration] = js.undefined,
+        ProxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
         SpaceConfiguration: js.UndefOr[ConfluenceSpaceConfiguration] = js.undefined,
         VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): ConfluenceConfiguration = {
@@ -980,17 +1162,19 @@ package object kendra {
       )
 
       AttachmentConfiguration.foreach(__v => __obj.updateDynamic("AttachmentConfiguration")(__v.asInstanceOf[js.Any]))
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
       BlogConfiguration.foreach(__v => __obj.updateDynamic("BlogConfiguration")(__v.asInstanceOf[js.Any]))
       ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
       InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
       PageConfiguration.foreach(__v => __obj.updateDynamic("PageConfiguration")(__v.asInstanceOf[js.Any]))
+      ProxyConfiguration.foreach(__v => __obj.updateDynamic("ProxyConfiguration")(__v.asInstanceOf[js.Any]))
       SpaceConfiguration.foreach(__v => __obj.updateDynamic("SpaceConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfluenceConfiguration]
     }
   }
 
-  /** Specifies the page settings for the Confluence data source.
+  /** Configuration of the page settings for the Confluence data source.
     */
   @js.native
   trait ConfluencePageConfiguration extends js.Object {
@@ -1008,7 +1192,7 @@ package object kendra {
     }
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** &gt;Maps attributes or field names of Confluence pages to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html|Mapping data source fields]]. The Confluence data source field names must exist in your Confluence custom metadata.
     */
   @js.native
   trait ConfluencePageToIndexFieldMapping extends js.Object {
@@ -1032,7 +1216,7 @@ package object kendra {
     }
   }
 
-  /** Specifies the configuration for indexing Confluence spaces.
+  /** Configuration information for indexing Confluence spaces.
     */
   @js.native
   trait ConfluenceSpaceConfiguration extends js.Object {
@@ -1062,7 +1246,7 @@ package object kendra {
     }
   }
 
-  /** Defines the mapping between a field in the Confluence data source to a Amazon Kendra index field. You must first create the index field using the <code>UpdateIndex</code> operation.
+  /** &gt;Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html|Mapping data source fields]]. The Confluence data source field names must exist in your Confluence custom metadata.
     */
   @js.native
   trait ConfluenceSpaceToIndexFieldMapping extends js.Object {
@@ -1086,7 +1270,7 @@ package object kendra {
     }
   }
 
-  /** Provides the information necessary to connect to a database.
+  /** Provides the configuration information that's required to connect to a database.
     */
   @js.native
   trait ConnectionConfiguration extends js.Object {
@@ -1117,7 +1301,7 @@ package object kendra {
     }
   }
 
-  /** Configuration information for your content sources, such as data sources, FAQs, and content indexed directly via [[https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html|BatchPutDocument]].
+  /** Provides the configuration information for your content sources, such as data sources, FAQs, and content indexed directly via [[https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html|BatchPutDocument]].
     */
   @js.native
   trait ContentSourceConfiguration extends js.Object {
@@ -1141,6 +1325,83 @@ package object kendra {
     }
   }
 
+  /** A corrected misspelled word in a query.
+    */
+  @js.native
+  trait Correction extends js.Object {
+    var BeginOffset: js.UndefOr[Int]
+    var CorrectedTerm: js.UndefOr[String]
+    var EndOffset: js.UndefOr[Int]
+    var Term: js.UndefOr[String]
+  }
+
+  object Correction {
+    @inline
+    def apply(
+        BeginOffset: js.UndefOr[Int] = js.undefined,
+        CorrectedTerm: js.UndefOr[String] = js.undefined,
+        EndOffset: js.UndefOr[Int] = js.undefined,
+        Term: js.UndefOr[String] = js.undefined
+    ): Correction = {
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      CorrectedTerm.foreach(__v => __obj.updateDynamic("CorrectedTerm")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Term.foreach(__v => __obj.updateDynamic("Term")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Correction]
+    }
+  }
+
+  @js.native
+  trait CreateAccessControlConfigurationRequest extends js.Object {
+    var IndexId: IndexId
+    var Name: AccessControlConfigurationName
+    var AccessControlList: js.UndefOr[PrincipalList]
+    var ClientToken: js.UndefOr[ClientTokenName]
+    var Description: js.UndefOr[Description]
+    var HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList]
+  }
+
+  object CreateAccessControlConfigurationRequest {
+    @inline
+    def apply(
+        IndexId: IndexId,
+        Name: AccessControlConfigurationName,
+        AccessControlList: js.UndefOr[PrincipalList] = js.undefined,
+        ClientToken: js.UndefOr[ClientTokenName] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList] = js.undefined
+    ): CreateAccessControlConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexId" -> IndexId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HierarchicalAccessControlList.foreach(__v => __obj.updateDynamic("HierarchicalAccessControlList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccessControlConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccessControlConfigurationResponse extends js.Object {
+    var Id: AccessControlConfigurationId
+  }
+
+  object CreateAccessControlConfigurationResponse {
+    @inline
+    def apply(
+        Id: AccessControlConfigurationId
+    ): CreateAccessControlConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAccessControlConfigurationResponse]
+    }
+  }
+
   @js.native
   trait CreateDataSourceRequest extends js.Object {
     var IndexId: IndexId
@@ -1154,6 +1415,7 @@ package object kendra {
     var RoleArn: js.UndefOr[RoleArn]
     var Schedule: js.UndefOr[ScanSchedule]
     var Tags: js.UndefOr[TagList]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
   }
 
   object CreateDataSourceRequest {
@@ -1169,7 +1431,8 @@ package object kendra {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         Schedule: js.UndefOr[ScanSchedule] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): CreateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "IndexId" -> IndexId.asInstanceOf[js.Any],
@@ -1185,6 +1448,7 @@ package object kendra {
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSourceRequest]
     }
   }
@@ -1506,18 +1770,26 @@ package object kendra {
     }
   }
 
-  /** Configuration information for an Amazon Kendra data source.
+  /** Provides the configuration information for an Amazon Kendra data source.
     */
   @js.native
   trait DataSourceConfiguration extends js.Object {
+    var AlfrescoConfiguration: js.UndefOr[AlfrescoConfiguration]
+    var BoxConfiguration: js.UndefOr[BoxConfiguration]
     var ConfluenceConfiguration: js.UndefOr[ConfluenceConfiguration]
     var DatabaseConfiguration: js.UndefOr[DatabaseConfiguration]
+    var FsxConfiguration: js.UndefOr[FsxConfiguration]
+    var GitHubConfiguration: js.UndefOr[GitHubConfiguration]
     var GoogleDriveConfiguration: js.UndefOr[GoogleDriveConfiguration]
+    var JiraConfiguration: js.UndefOr[JiraConfiguration]
     var OneDriveConfiguration: js.UndefOr[OneDriveConfiguration]
+    var QuipConfiguration: js.UndefOr[QuipConfiguration]
     var S3Configuration: js.UndefOr[S3DataSourceConfiguration]
     var SalesforceConfiguration: js.UndefOr[SalesforceConfiguration]
     var ServiceNowConfiguration: js.UndefOr[ServiceNowConfiguration]
     var SharePointConfiguration: js.UndefOr[SharePointConfiguration]
+    var SlackConfiguration: js.UndefOr[SlackConfiguration]
+    var TemplateConfiguration: js.UndefOr[TemplateConfiguration]
     var WebCrawlerConfiguration: js.UndefOr[WebCrawlerConfiguration]
     var WorkDocsConfiguration: js.UndefOr[WorkDocsConfiguration]
   }
@@ -1525,26 +1797,42 @@ package object kendra {
   object DataSourceConfiguration {
     @inline
     def apply(
+        AlfrescoConfiguration: js.UndefOr[AlfrescoConfiguration] = js.undefined,
+        BoxConfiguration: js.UndefOr[BoxConfiguration] = js.undefined,
         ConfluenceConfiguration: js.UndefOr[ConfluenceConfiguration] = js.undefined,
         DatabaseConfiguration: js.UndefOr[DatabaseConfiguration] = js.undefined,
+        FsxConfiguration: js.UndefOr[FsxConfiguration] = js.undefined,
+        GitHubConfiguration: js.UndefOr[GitHubConfiguration] = js.undefined,
         GoogleDriveConfiguration: js.UndefOr[GoogleDriveConfiguration] = js.undefined,
+        JiraConfiguration: js.UndefOr[JiraConfiguration] = js.undefined,
         OneDriveConfiguration: js.UndefOr[OneDriveConfiguration] = js.undefined,
+        QuipConfiguration: js.UndefOr[QuipConfiguration] = js.undefined,
         S3Configuration: js.UndefOr[S3DataSourceConfiguration] = js.undefined,
         SalesforceConfiguration: js.UndefOr[SalesforceConfiguration] = js.undefined,
         ServiceNowConfiguration: js.UndefOr[ServiceNowConfiguration] = js.undefined,
         SharePointConfiguration: js.UndefOr[SharePointConfiguration] = js.undefined,
+        SlackConfiguration: js.UndefOr[SlackConfiguration] = js.undefined,
+        TemplateConfiguration: js.UndefOr[TemplateConfiguration] = js.undefined,
         WebCrawlerConfiguration: js.UndefOr[WebCrawlerConfiguration] = js.undefined,
         WorkDocsConfiguration: js.UndefOr[WorkDocsConfiguration] = js.undefined
     ): DataSourceConfiguration = {
       val __obj = js.Dynamic.literal()
+      AlfrescoConfiguration.foreach(__v => __obj.updateDynamic("AlfrescoConfiguration")(__v.asInstanceOf[js.Any]))
+      BoxConfiguration.foreach(__v => __obj.updateDynamic("BoxConfiguration")(__v.asInstanceOf[js.Any]))
       ConfluenceConfiguration.foreach(__v => __obj.updateDynamic("ConfluenceConfiguration")(__v.asInstanceOf[js.Any]))
       DatabaseConfiguration.foreach(__v => __obj.updateDynamic("DatabaseConfiguration")(__v.asInstanceOf[js.Any]))
+      FsxConfiguration.foreach(__v => __obj.updateDynamic("FsxConfiguration")(__v.asInstanceOf[js.Any]))
+      GitHubConfiguration.foreach(__v => __obj.updateDynamic("GitHubConfiguration")(__v.asInstanceOf[js.Any]))
       GoogleDriveConfiguration.foreach(__v => __obj.updateDynamic("GoogleDriveConfiguration")(__v.asInstanceOf[js.Any]))
+      JiraConfiguration.foreach(__v => __obj.updateDynamic("JiraConfiguration")(__v.asInstanceOf[js.Any]))
       OneDriveConfiguration.foreach(__v => __obj.updateDynamic("OneDriveConfiguration")(__v.asInstanceOf[js.Any]))
+      QuipConfiguration.foreach(__v => __obj.updateDynamic("QuipConfiguration")(__v.asInstanceOf[js.Any]))
       S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
       SalesforceConfiguration.foreach(__v => __obj.updateDynamic("SalesforceConfiguration")(__v.asInstanceOf[js.Any]))
       ServiceNowConfiguration.foreach(__v => __obj.updateDynamic("ServiceNowConfiguration")(__v.asInstanceOf[js.Any]))
       SharePointConfiguration.foreach(__v => __obj.updateDynamic("SharePointConfiguration")(__v.asInstanceOf[js.Any]))
+      SlackConfiguration.foreach(__v => __obj.updateDynamic("SlackConfiguration")(__v.asInstanceOf[js.Any]))
+      TemplateConfiguration.foreach(__v => __obj.updateDynamic("TemplateConfiguration")(__v.asInstanceOf[js.Any]))
       WebCrawlerConfiguration.foreach(__v => __obj.updateDynamic("WebCrawlerConfiguration")(__v.asInstanceOf[js.Any]))
       WorkDocsConfiguration.foreach(__v => __obj.updateDynamic("WorkDocsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceConfiguration]
@@ -1573,7 +1861,7 @@ package object kendra {
     }
   }
 
-  /** Summary information for a Amazon Kendra data source. Returned in a call to the <code>DescribeDataSource</code> operation.
+  /** Summary information for a Amazon Kendra data source.
     */
   @js.native
   trait DataSourceSummary extends js.Object {
@@ -1609,7 +1897,7 @@ package object kendra {
     }
   }
 
-  /** Provides information about a synchronization job.
+  /** Provides information about a data source synchronization job.
     */
   @js.native
   trait DataSourceSyncJob extends js.Object {
@@ -1701,7 +1989,7 @@ package object kendra {
     }
   }
 
-  /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> operation.
+  /** Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.
     */
   @js.native
   trait DataSourceToIndexFieldMapping extends js.Object {
@@ -1727,7 +2015,7 @@ package object kendra {
     }
   }
 
-  /** Provides information for connecting to an Amazon VPC.
+  /** Provides the configuration information to connect to an Amazon VPC.
     */
   @js.native
   trait DataSourceVpcConfiguration extends js.Object {
@@ -1749,7 +2037,7 @@ package object kendra {
     }
   }
 
-  /** Provides the information necessary to connect a database to an index.
+  /** Provides the configuration information to connect to a index.
     */
   @js.native
   trait DatabaseConfiguration extends js.Object {
@@ -1781,6 +2069,37 @@ package object kendra {
       SqlConfiguration.foreach(__v => __obj.updateDynamic("SqlConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseConfiguration]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessControlConfigurationRequest extends js.Object {
+    var Id: AccessControlConfigurationId
+    var IndexId: IndexId
+  }
+
+  object DeleteAccessControlConfigurationRequest {
+    @inline
+    def apply(
+        Id: AccessControlConfigurationId,
+        IndexId: IndexId
+    ): DeleteAccessControlConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAccessControlConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccessControlConfigurationResponse extends js.Object
+
+  object DeleteAccessControlConfigurationResponse {
+    @inline
+    def apply(): DeleteAccessControlConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAccessControlConfigurationResponse]
     }
   }
 
@@ -1940,6 +2259,56 @@ package object kendra {
   }
 
   @js.native
+  trait DescribeAccessControlConfigurationRequest extends js.Object {
+    var Id: AccessControlConfigurationId
+    var IndexId: IndexId
+  }
+
+  object DescribeAccessControlConfigurationRequest {
+    @inline
+    def apply(
+        Id: AccessControlConfigurationId,
+        IndexId: IndexId
+    ): DescribeAccessControlConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAccessControlConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAccessControlConfigurationResponse extends js.Object {
+    var Name: AccessControlConfigurationName
+    var AccessControlList: js.UndefOr[PrincipalList]
+    var Description: js.UndefOr[Description]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList]
+  }
+
+  object DescribeAccessControlConfigurationResponse {
+    @inline
+    def apply(
+        Name: AccessControlConfigurationName,
+        AccessControlList: js.UndefOr[PrincipalList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList] = js.undefined
+    ): DescribeAccessControlConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      HierarchicalAccessControlList.foreach(__v => __obj.updateDynamic("HierarchicalAccessControlList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccessControlConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDataSourceRequest extends js.Object {
     var Id: DataSourceId
     var IndexId: IndexId
@@ -1975,6 +2344,7 @@ package object kendra {
     var Status: js.UndefOr[DataSourceStatus]
     var Type: js.UndefOr[DataSourceType]
     var UpdatedAt: js.UndefOr[Timestamp]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
   }
 
   object DescribeDataSourceResponse {
@@ -1993,7 +2363,8 @@ package object kendra {
         Schedule: js.UndefOr[ScanSchedule] = js.undefined,
         Status: js.UndefOr[DataSourceStatus] = js.undefined,
         Type: js.UndefOr[DataSourceType] = js.undefined,
-        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): DescribeDataSourceResponse = {
       val __obj = js.Dynamic.literal()
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
@@ -2010,6 +2381,7 @@ package object kendra {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDataSourceResponse]
     }
   }
@@ -2557,6 +2929,7 @@ package object kendra {
   @js.native
   trait Document extends js.Object {
     var Id: DocumentId
+    var AccessControlConfigurationId: js.UndefOr[AccessControlConfigurationId]
     var AccessControlList: js.UndefOr[PrincipalList]
     var Attributes: js.UndefOr[DocumentAttributeList]
     var Blob: js.UndefOr[Blob]
@@ -2570,6 +2943,7 @@ package object kendra {
     @inline
     def apply(
         Id: DocumentId,
+        AccessControlConfigurationId: js.UndefOr[AccessControlConfigurationId] = js.undefined,
         AccessControlList: js.UndefOr[PrincipalList] = js.undefined,
         Attributes: js.UndefOr[DocumentAttributeList] = js.undefined,
         Blob: js.UndefOr[Blob] = js.undefined,
@@ -2582,6 +2956,7 @@ package object kendra {
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
+      AccessControlConfigurationId.foreach(__v => __obj.updateDynamic("AccessControlConfigurationId")(__v.asInstanceOf[js.Any]))
       AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       Blob.foreach(__v => __obj.updateDynamic("Blob")(__v.asInstanceOf[js.Any]))
@@ -2593,7 +2968,7 @@ package object kendra {
     }
   }
 
-  /** A custom attribute value assigned to a document.
+  /** A document attribute or metadata field. To create custom document attributes, see [[https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html|Custom attributes]].
     */
   @js.native
   trait DocumentAttribute extends js.Object {
@@ -2665,7 +3040,7 @@ package object kendra {
     }
   }
 
-  /** The value of a custom document attribute. You can only provide one value for a custom attribute.
+  /** The value of a document attribute. You can only provide one value for a document attribute.
     */
   @js.native
   trait DocumentAttributeValue extends js.Object {
@@ -2698,17 +3073,20 @@ package object kendra {
   trait DocumentAttributeValueCountPair extends js.Object {
     var Count: js.UndefOr[Int]
     var DocumentAttributeValue: js.UndefOr[DocumentAttributeValue]
+    var FacetResults: js.UndefOr[FacetResultList]
   }
 
   object DocumentAttributeValueCountPair {
     @inline
     def apply(
         Count: js.UndefOr[Int] = js.undefined,
-        DocumentAttributeValue: js.UndefOr[DocumentAttributeValue] = js.undefined
+        DocumentAttributeValue: js.UndefOr[DocumentAttributeValue] = js.undefined,
+        FacetResults: js.UndefOr[FacetResultList] = js.undefined
     ): DocumentAttributeValueCountPair = {
       val __obj = js.Dynamic.literal()
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       DocumentAttributeValue.foreach(__v => __obj.updateDynamic("DocumentAttributeValue")(__v.asInstanceOf[js.Any]))
+      FacetResults.foreach(__v => __obj.updateDynamic("FacetResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentAttributeValueCountPair]
     }
   }
@@ -2736,7 +3114,7 @@ package object kendra {
     }
   }
 
-  /** Specifies the properties of a custom index field.
+  /** Specifies the properties, such as relevance tuning and searchability, of an index field.
     */
   @js.native
   trait DocumentMetadataConfiguration extends js.Object {
@@ -2805,7 +3183,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information of users or groups in your Amazon Web Services SSO identity source to grant access your Amazon Kendra experience.
+  /** Provides the configuration information for users or groups in your IAM Identity Center identity source to grant access your Amazon Kendra experience.
     */
   @js.native
   trait EntityConfiguration extends js.Object {
@@ -2857,7 +3235,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information of users or groups in your Amazon Web Services SSO identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.
+  /** Provides the configuration information for users or groups in your IAM Identity Center identity source for access to your Amazon Kendra experience. Specific permissions are defined for each user or group once they are granted access to your Amazon Kendra experience.
     */
   @js.native
   trait EntityPersonaConfiguration extends js.Object {
@@ -2879,7 +3257,7 @@ package object kendra {
     }
   }
 
-  /** Specifies the configuration information for your Amazon Kendra experience. This includes the data source IDs and/or FAQ IDs, and user or group information to grant access to your Amazon Kendra experience.
+  /** Provides the configuration information for your Amazon Kendra experience. This includes the data source IDs and/or FAQ IDs, and user or group information to grant access to your Amazon Kendra experience.
     */
   @js.native
   trait ExperienceConfiguration extends js.Object {
@@ -2900,7 +3278,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information of the endpoint for your Amazon Kendra experience.
+  /** Provides the configuration information for the endpoint for your Amazon Kendra experience.
     */
   @js.native
   trait ExperienceEndpoint extends js.Object {
@@ -2921,7 +3299,7 @@ package object kendra {
     }
   }
 
-  /** Summary information for users or groups in your Amazon Web Services SSO identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see [[https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html|Building a search experience with no code]].
+  /** Summary information for users or groups in your IAM Identity Center identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see [[https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html|Building a search experience with no code]].
     */
   @js.native
   trait ExperienceEntitiesSummary extends js.Object {
@@ -2975,20 +3353,26 @@ package object kendra {
     }
   }
 
-  /** Information about a document attribute
+  /** Information about a document attribute. You can use document attributes as facets. For example, the document attribute or facet "Department" includes the values "HR", "Engineering", and "Accounting". You can display these values in the search results so that documents can be searched by department. You can display up to 10 facet values per facet for a query. If you want to increase this limit, contact [[http://aws.amazon.com/contact-us/|Support]].
     */
   @js.native
   trait Facet extends js.Object {
     var DocumentAttributeKey: js.UndefOr[DocumentAttributeKey]
+    var Facets: js.UndefOr[FacetList]
+    var MaxResults: js.UndefOr[TopDocumentAttributeValueCountPairsSize]
   }
 
   object Facet {
     @inline
     def apply(
-        DocumentAttributeKey: js.UndefOr[DocumentAttributeKey] = js.undefined
+        DocumentAttributeKey: js.UndefOr[DocumentAttributeKey] = js.undefined,
+        Facets: js.UndefOr[FacetList] = js.undefined,
+        MaxResults: js.UndefOr[TopDocumentAttributeValueCountPairsSize] = js.undefined
     ): Facet = {
       val __obj = js.Dynamic.literal()
       DocumentAttributeKey.foreach(__v => __obj.updateDynamic("DocumentAttributeKey")(__v.asInstanceOf[js.Any]))
+      Facets.foreach(__v => __obj.updateDynamic("Facets")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Facet]
     }
   }
@@ -3017,7 +3401,7 @@ package object kendra {
     }
   }
 
-  /** Information on the users or groups in your Amazon Web Services SSO identity source that failed to properly configure with your Amazon Kendra experience.
+  /** Information on the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.
     */
   @js.native
   trait FailedEntity extends js.Object {
@@ -3057,7 +3441,7 @@ package object kendra {
     }
   }
 
-  /** Provides information about a frequently asked questions and answer contained in an index.
+  /** Summary information for frequently asked questions and answers included in an index.
     */
   @js.native
   trait FaqSummary extends js.Object {
@@ -3090,6 +3474,44 @@ package object kendra {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaqSummary]
+    }
+  }
+
+  /** Provides the configuration information to connect to Amazon FSx as your data source.
+    */
+  @js.native
+  trait FsxConfiguration extends js.Object {
+    var FileSystemId: FileSystemId
+    var FileSystemType: FsxFileSystemType
+    var VpcConfiguration: DataSourceVpcConfiguration
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var SecretArn: js.UndefOr[SecretArn]
+  }
+
+  object FsxConfiguration {
+    @inline
+    def apply(
+        FileSystemId: FileSystemId,
+        FileSystemType: FsxFileSystemType,
+        VpcConfiguration: DataSourceVpcConfiguration,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        SecretArn: js.UndefOr[SecretArn] = js.undefined
+    ): FsxConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
+        "FileSystemType" -> FileSystemType.asInstanceOf[js.Any],
+        "VpcConfiguration" -> VpcConfiguration.asInstanceOf[js.Any]
+      )
+
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FsxConfiguration]
     }
   }
 
@@ -3191,7 +3613,126 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for data sources that connect to Google Drive.
+  /** Provides the configuration information to connect to GitHub as your data source.
+    */
+  @js.native
+  trait GitHubConfiguration extends js.Object {
+    var SecretArn: SecretArn
+    var ExclusionFileNamePatterns: js.UndefOr[StringList]
+    var ExclusionFileTypePatterns: js.UndefOr[StringList]
+    var ExclusionFolderNamePatterns: js.UndefOr[StringList]
+    var GitHubCommitConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubDocumentCrawlProperties: js.UndefOr[GitHubDocumentCrawlProperties]
+    var GitHubIssueAttachmentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubIssueCommentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubIssueDocumentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubPullRequestCommentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubPullRequestDocumentAttachmentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubPullRequestDocumentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var GitHubRepositoryConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var InclusionFileNamePatterns: js.UndefOr[StringList]
+    var InclusionFileTypePatterns: js.UndefOr[StringList]
+    var InclusionFolderNamePatterns: js.UndefOr[StringList]
+    var OnPremiseConfiguration: js.UndefOr[OnPremiseConfiguration]
+    var RepositoryFilter: js.UndefOr[RepositoryNames]
+    var SaaSConfiguration: js.UndefOr[SaaSConfiguration]
+    var Type: js.UndefOr[Type]
+    var UseChangeLog: js.UndefOr[Boolean]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+  }
+
+  object GitHubConfiguration {
+    @inline
+    def apply(
+        SecretArn: SecretArn,
+        ExclusionFileNamePatterns: js.UndefOr[StringList] = js.undefined,
+        ExclusionFileTypePatterns: js.UndefOr[StringList] = js.undefined,
+        ExclusionFolderNamePatterns: js.UndefOr[StringList] = js.undefined,
+        GitHubCommitConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubDocumentCrawlProperties: js.UndefOr[GitHubDocumentCrawlProperties] = js.undefined,
+        GitHubIssueAttachmentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubIssueCommentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubIssueDocumentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubPullRequestCommentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubPullRequestDocumentAttachmentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubPullRequestDocumentConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        GitHubRepositoryConfigurationFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        InclusionFileNamePatterns: js.UndefOr[StringList] = js.undefined,
+        InclusionFileTypePatterns: js.UndefOr[StringList] = js.undefined,
+        InclusionFolderNamePatterns: js.UndefOr[StringList] = js.undefined,
+        OnPremiseConfiguration: js.UndefOr[OnPremiseConfiguration] = js.undefined,
+        RepositoryFilter: js.UndefOr[RepositoryNames] = js.undefined,
+        SaaSConfiguration: js.UndefOr[SaaSConfiguration] = js.undefined,
+        Type: js.UndefOr[Type] = js.undefined,
+        UseChangeLog: js.UndefOr[Boolean] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
+    ): GitHubConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
+
+      ExclusionFileNamePatterns.foreach(__v => __obj.updateDynamic("ExclusionFileNamePatterns")(__v.asInstanceOf[js.Any]))
+      ExclusionFileTypePatterns.foreach(__v => __obj.updateDynamic("ExclusionFileTypePatterns")(__v.asInstanceOf[js.Any]))
+      ExclusionFolderNamePatterns.foreach(__v => __obj.updateDynamic("ExclusionFolderNamePatterns")(__v.asInstanceOf[js.Any]))
+      GitHubCommitConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubCommitConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubDocumentCrawlProperties.foreach(__v => __obj.updateDynamic("GitHubDocumentCrawlProperties")(__v.asInstanceOf[js.Any]))
+      GitHubIssueAttachmentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubIssueAttachmentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubIssueCommentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubIssueCommentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubIssueDocumentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubIssueDocumentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubPullRequestCommentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubPullRequestCommentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubPullRequestDocumentAttachmentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubPullRequestDocumentAttachmentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubPullRequestDocumentConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubPullRequestDocumentConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      GitHubRepositoryConfigurationFieldMappings.foreach(__v => __obj.updateDynamic("GitHubRepositoryConfigurationFieldMappings")(__v.asInstanceOf[js.Any]))
+      InclusionFileNamePatterns.foreach(__v => __obj.updateDynamic("InclusionFileNamePatterns")(__v.asInstanceOf[js.Any]))
+      InclusionFileTypePatterns.foreach(__v => __obj.updateDynamic("InclusionFileTypePatterns")(__v.asInstanceOf[js.Any]))
+      InclusionFolderNamePatterns.foreach(__v => __obj.updateDynamic("InclusionFolderNamePatterns")(__v.asInstanceOf[js.Any]))
+      OnPremiseConfiguration.foreach(__v => __obj.updateDynamic("OnPremiseConfiguration")(__v.asInstanceOf[js.Any]))
+      RepositoryFilter.foreach(__v => __obj.updateDynamic("RepositoryFilter")(__v.asInstanceOf[js.Any]))
+      SaaSConfiguration.foreach(__v => __obj.updateDynamic("SaaSConfiguration")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UseChangeLog.foreach(__v => __obj.updateDynamic("UseChangeLog")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GitHubConfiguration]
+    }
+  }
+
+  /** Provides the configuration information to include certain types of GitHub content. You can configure to index repository files only, or also include issues and pull requests, comments, and comment attachments.
+    */
+  @js.native
+  trait GitHubDocumentCrawlProperties extends js.Object {
+    var CrawlIssue: js.UndefOr[Boolean]
+    var CrawlIssueComment: js.UndefOr[Boolean]
+    var CrawlIssueCommentAttachment: js.UndefOr[Boolean]
+    var CrawlPullRequest: js.UndefOr[Boolean]
+    var CrawlPullRequestComment: js.UndefOr[Boolean]
+    var CrawlPullRequestCommentAttachment: js.UndefOr[Boolean]
+    var CrawlRepositoryDocuments: js.UndefOr[Boolean]
+  }
+
+  object GitHubDocumentCrawlProperties {
+    @inline
+    def apply(
+        CrawlIssue: js.UndefOr[Boolean] = js.undefined,
+        CrawlIssueComment: js.UndefOr[Boolean] = js.undefined,
+        CrawlIssueCommentAttachment: js.UndefOr[Boolean] = js.undefined,
+        CrawlPullRequest: js.UndefOr[Boolean] = js.undefined,
+        CrawlPullRequestComment: js.UndefOr[Boolean] = js.undefined,
+        CrawlPullRequestCommentAttachment: js.UndefOr[Boolean] = js.undefined,
+        CrawlRepositoryDocuments: js.UndefOr[Boolean] = js.undefined
+    ): GitHubDocumentCrawlProperties = {
+      val __obj = js.Dynamic.literal()
+      CrawlIssue.foreach(__v => __obj.updateDynamic("CrawlIssue")(__v.asInstanceOf[js.Any]))
+      CrawlIssueComment.foreach(__v => __obj.updateDynamic("CrawlIssueComment")(__v.asInstanceOf[js.Any]))
+      CrawlIssueCommentAttachment.foreach(__v => __obj.updateDynamic("CrawlIssueCommentAttachment")(__v.asInstanceOf[js.Any]))
+      CrawlPullRequest.foreach(__v => __obj.updateDynamic("CrawlPullRequest")(__v.asInstanceOf[js.Any]))
+      CrawlPullRequestComment.foreach(__v => __obj.updateDynamic("CrawlPullRequestComment")(__v.asInstanceOf[js.Any]))
+      CrawlPullRequestCommentAttachment.foreach(__v => __obj.updateDynamic("CrawlPullRequestCommentAttachment")(__v.asInstanceOf[js.Any]))
+      CrawlRepositoryDocuments.foreach(__v => __obj.updateDynamic("CrawlRepositoryDocuments")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GitHubDocumentCrawlProperties]
+    }
+  }
+
+  /** Provides the configuration information to connect to Google Drive as your data source.
     */
   @js.native
   trait GoogleDriveConfiguration extends js.Object {
@@ -3229,7 +3770,7 @@ package object kendra {
     }
   }
 
-  /** A list of users or sub groups that belong to a group. Users and groups are useful for filtering search results to different users based on their group's access to documents.
+  /** A list of users or sub groups that belong to a group. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.
     */
   @js.native
   trait GroupMembers extends js.Object {
@@ -3253,7 +3794,7 @@ package object kendra {
     }
   }
 
-  /** Information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
+  /** Summary information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.
     */
   @js.native
   trait GroupOrderingIdSummary extends js.Object {
@@ -3283,7 +3824,7 @@ package object kendra {
     }
   }
 
-  /** Group summary information.
+  /** Summary information for groups.
     */
   @js.native
   trait GroupSummary extends js.Object {
@@ -3352,7 +3893,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using [[https://docs.aws.amazon.com/kendra/latest/dg/API_PreExtractionHookConfiguration.html|PreExtractionHookConfiguration]] if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using [[https://docs.aws.amazon.com/kendra/latest/dg/API_PostExtractionHookConfiguration.html|PostExtractionHookConfiguration]]. You can only invoke one Lambda function. However, this function can invoke other functions it requires. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html|Customizing document metadata during the ingestion process]].
+  /** Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using [[https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html|PreExtractionHookConfiguration]] if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using [[https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html|PostExtractionHookConfiguration]]. You can only invoke one Lambda function. However, this function can invoke other functions it requires. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html|Customizing document metadata during the ingestion process]].
     */
   @js.native
   trait HookConfiguration extends js.Object {
@@ -3378,7 +3919,7 @@ package object kendra {
     }
   }
 
-  /** A summary of information about an index.
+  /** Summary information on the configuration of an index.
     */
   @js.native
   trait IndexConfigurationSummary extends js.Object {
@@ -3459,7 +4000,69 @@ package object kendra {
     }
   }
 
-  /** Configuration information for the JSON token type.
+  /** Provides the configuration information to connect to Jira as your data source.
+    */
+  @js.native
+  trait JiraConfiguration extends js.Object {
+    var JiraAccountUrl: JiraAccountUrl
+    var SecretArn: SecretArn
+    var AttachmentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var CommentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var IssueFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var IssueSubEntityFilter: js.UndefOr[IssueSubEntityFilter]
+    var IssueType: js.UndefOr[IssueType]
+    var Project: js.UndefOr[Project]
+    var ProjectFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var Status: js.UndefOr[JiraStatus]
+    var UseChangeLog: js.UndefOr[Boolean]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+    var WorkLogFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+  }
+
+  object JiraConfiguration {
+    @inline
+    def apply(
+        JiraAccountUrl: JiraAccountUrl,
+        SecretArn: SecretArn,
+        AttachmentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        CommentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        IssueFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        IssueSubEntityFilter: js.UndefOr[IssueSubEntityFilter] = js.undefined,
+        IssueType: js.UndefOr[IssueType] = js.undefined,
+        Project: js.UndefOr[Project] = js.undefined,
+        ProjectFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        Status: js.UndefOr[JiraStatus] = js.undefined,
+        UseChangeLog: js.UndefOr[Boolean] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined,
+        WorkLogFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined
+    ): JiraConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "JiraAccountUrl" -> JiraAccountUrl.asInstanceOf[js.Any],
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
+
+      AttachmentFieldMappings.foreach(__v => __obj.updateDynamic("AttachmentFieldMappings")(__v.asInstanceOf[js.Any]))
+      CommentFieldMappings.foreach(__v => __obj.updateDynamic("CommentFieldMappings")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      IssueFieldMappings.foreach(__v => __obj.updateDynamic("IssueFieldMappings")(__v.asInstanceOf[js.Any]))
+      IssueSubEntityFilter.foreach(__v => __obj.updateDynamic("IssueSubEntityFilter")(__v.asInstanceOf[js.Any]))
+      IssueType.foreach(__v => __obj.updateDynamic("IssueType")(__v.asInstanceOf[js.Any]))
+      Project.foreach(__v => __obj.updateDynamic("Project")(__v.asInstanceOf[js.Any]))
+      ProjectFieldMappings.foreach(__v => __obj.updateDynamic("ProjectFieldMappings")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UseChangeLog.foreach(__v => __obj.updateDynamic("UseChangeLog")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      WorkLogFieldMappings.foreach(__v => __obj.updateDynamic("WorkLogFieldMappings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JiraConfiguration]
+    }
+  }
+
+  /** Provides the configuration information for the JSON token type.
     */
   @js.native
   trait JsonTokenTypeConfiguration extends js.Object {
@@ -3481,7 +4084,7 @@ package object kendra {
     }
   }
 
-  /** Configuration information for the JWT token type.
+  /** Provides the configuration information for the JWT token type.
     */
   @js.native
   trait JwtTokenTypeConfiguration extends js.Object {
@@ -3516,6 +4119,51 @@ package object kendra {
       URL.foreach(__v => __obj.updateDynamic("URL")(__v.asInstanceOf[js.Any]))
       UserNameAttributeField.foreach(__v => __obj.updateDynamic("UserNameAttributeField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JwtTokenTypeConfiguration]
+    }
+  }
+
+  @js.native
+  trait ListAccessControlConfigurationsRequest extends js.Object {
+    var IndexId: IndexId
+    var MaxResults: js.UndefOr[MaxResultsIntegerForListAccessControlConfigurationsRequest]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListAccessControlConfigurationsRequest {
+    @inline
+    def apply(
+        IndexId: IndexId,
+        MaxResults: js.UndefOr[MaxResultsIntegerForListAccessControlConfigurationsRequest] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListAccessControlConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessControlConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAccessControlConfigurationsResponse extends js.Object {
+    var AccessControlConfigurations: AccessControlConfigurationSummaryList
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListAccessControlConfigurationsResponse {
+    @inline
+    def apply(
+        AccessControlConfigurations: AccessControlConfigurationSummaryList,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListAccessControlConfigurationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "AccessControlConfigurations" -> AccessControlConfigurations.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAccessControlConfigurationsResponse]
     }
   }
 
@@ -4037,7 +4685,32 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for data sources that connect to OneDrive.
+  /** Provides the configuration information to connect to GitHub Enterprise Server (on premises).
+    */
+  @js.native
+  trait OnPremiseConfiguration extends js.Object {
+    var HostUrl: Url
+    var OrganizationName: OrganizationName
+    var SslCertificateS3Path: S3Path
+  }
+
+  object OnPremiseConfiguration {
+    @inline
+    def apply(
+        HostUrl: Url,
+        OrganizationName: OrganizationName,
+        SslCertificateS3Path: S3Path
+    ): OnPremiseConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "HostUrl" -> HostUrl.asInstanceOf[js.Any],
+        "OrganizationName" -> OrganizationName.asInstanceOf[js.Any],
+        "SslCertificateS3Path" -> SslCertificateS3Path.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OnPremiseConfiguration]
+    }
+  }
+
+  /** Provides the configuration information to connect to OneDrive as your data source.
     */
   @js.native
   trait OneDriveConfiguration extends js.Object {
@@ -4096,7 +4769,7 @@ package object kendra {
     }
   }
 
-  /** Summary information for users or groups in your Amazon Web Services SSO identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see [[https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html|Building a search experience with no code]].
+  /** Summary information for users or groups in your IAM Identity Center identity source. This applies to users and groups with specific permissions that define their level of access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see [[https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html|Building a search experience with no code]].
     */
   @js.native
   trait PersonasSummary extends js.Object {
@@ -4123,7 +4796,7 @@ package object kendra {
     }
   }
 
-  /** Provides user and group information for document access filtering.
+  /** Provides user and group information for [[https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html|user context filtering]].
     */
   @js.native
   trait Principal extends js.Object {
@@ -4214,15 +4887,16 @@ package object kendra {
   @js.native
   trait QueryRequest extends js.Object {
     var IndexId: IndexId
-    var QueryText: QueryText
     var AttributeFilter: js.UndefOr[AttributeFilter]
     var DocumentRelevanceOverrideConfigurations: js.UndefOr[DocumentRelevanceOverrideConfigurationList]
     var Facets: js.UndefOr[FacetList]
     var PageNumber: js.UndefOr[Int]
     var PageSize: js.UndefOr[Int]
     var QueryResultTypeFilter: js.UndefOr[QueryResultType]
+    var QueryText: js.UndefOr[QueryText]
     var RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList]
     var SortingConfiguration: js.UndefOr[SortingConfiguration]
+    var SpellCorrectionConfiguration: js.UndefOr[SpellCorrectionConfiguration]
     var UserContext: js.UndefOr[UserContext]
     var VisitorId: js.UndefOr[VisitorId]
   }
@@ -4231,21 +4905,21 @@ package object kendra {
     @inline
     def apply(
         IndexId: IndexId,
-        QueryText: QueryText,
         AttributeFilter: js.UndefOr[AttributeFilter] = js.undefined,
         DocumentRelevanceOverrideConfigurations: js.UndefOr[DocumentRelevanceOverrideConfigurationList] = js.undefined,
         Facets: js.UndefOr[FacetList] = js.undefined,
         PageNumber: js.UndefOr[Int] = js.undefined,
         PageSize: js.UndefOr[Int] = js.undefined,
         QueryResultTypeFilter: js.UndefOr[QueryResultType] = js.undefined,
+        QueryText: js.UndefOr[QueryText] = js.undefined,
         RequestedDocumentAttributes: js.UndefOr[DocumentAttributeKeyList] = js.undefined,
         SortingConfiguration: js.UndefOr[SortingConfiguration] = js.undefined,
+        SpellCorrectionConfiguration: js.UndefOr[SpellCorrectionConfiguration] = js.undefined,
         UserContext: js.UndefOr[UserContext] = js.undefined,
         VisitorId: js.UndefOr[VisitorId] = js.undefined
     ): QueryRequest = {
       val __obj = js.Dynamic.literal(
-        "IndexId" -> IndexId.asInstanceOf[js.Any],
-        "QueryText" -> QueryText.asInstanceOf[js.Any]
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
       )
 
       AttributeFilter.foreach(__v => __obj.updateDynamic("AttributeFilter")(__v.asInstanceOf[js.Any]))
@@ -4254,8 +4928,10 @@ package object kendra {
       PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       QueryResultTypeFilter.foreach(__v => __obj.updateDynamic("QueryResultTypeFilter")(__v.asInstanceOf[js.Any]))
+      QueryText.foreach(__v => __obj.updateDynamic("QueryText")(__v.asInstanceOf[js.Any]))
       RequestedDocumentAttributes.foreach(__v => __obj.updateDynamic("RequestedDocumentAttributes")(__v.asInstanceOf[js.Any]))
       SortingConfiguration.foreach(__v => __obj.updateDynamic("SortingConfiguration")(__v.asInstanceOf[js.Any]))
+      SpellCorrectionConfiguration.foreach(__v => __obj.updateDynamic("SpellCorrectionConfiguration")(__v.asInstanceOf[js.Any]))
       UserContext.foreach(__v => __obj.updateDynamic("UserContext")(__v.asInstanceOf[js.Any]))
       VisitorId.foreach(__v => __obj.updateDynamic("VisitorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryRequest]
@@ -4267,7 +4943,9 @@ package object kendra {
     var FacetResults: js.UndefOr[FacetResultList]
     var QueryId: js.UndefOr[QueryId]
     var ResultItems: js.UndefOr[QueryResultItemList]
+    var SpellCorrectedQueries: js.UndefOr[SpellCorrectedQueryList]
     var TotalNumberOfResults: js.UndefOr[Int]
+    var Warnings: js.UndefOr[WarningList]
   }
 
   object QueryResult {
@@ -4276,13 +4954,17 @@ package object kendra {
         FacetResults: js.UndefOr[FacetResultList] = js.undefined,
         QueryId: js.UndefOr[QueryId] = js.undefined,
         ResultItems: js.UndefOr[QueryResultItemList] = js.undefined,
-        TotalNumberOfResults: js.UndefOr[Int] = js.undefined
+        SpellCorrectedQueries: js.UndefOr[SpellCorrectedQueryList] = js.undefined,
+        TotalNumberOfResults: js.UndefOr[Int] = js.undefined,
+        Warnings: js.UndefOr[WarningList] = js.undefined
     ): QueryResult = {
       val __obj = js.Dynamic.literal()
       FacetResults.foreach(__v => __obj.updateDynamic("FacetResults")(__v.asInstanceOf[js.Any]))
       QueryId.foreach(__v => __obj.updateDynamic("QueryId")(__v.asInstanceOf[js.Any]))
       ResultItems.foreach(__v => __obj.updateDynamic("ResultItems")(__v.asInstanceOf[js.Any]))
+      SpellCorrectedQueries.foreach(__v => __obj.updateDynamic("SpellCorrectedQueries")(__v.asInstanceOf[js.Any]))
       TotalNumberOfResults.foreach(__v => __obj.updateDynamic("TotalNumberOfResults")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryResult]
     }
   }
@@ -4298,8 +4980,10 @@ package object kendra {
     var DocumentTitle: js.UndefOr[TextWithHighlights]
     var DocumentURI: js.UndefOr[Url]
     var FeedbackToken: js.UndefOr[FeedbackToken]
+    var Format: js.UndefOr[QueryResultFormat]
     var Id: js.UndefOr[ResultId]
     var ScoreAttributes: js.UndefOr[ScoreAttributes]
+    var TableExcerpt: js.UndefOr[TableExcerpt]
     var Type: js.UndefOr[QueryResultType]
   }
 
@@ -4313,8 +4997,10 @@ package object kendra {
         DocumentTitle: js.UndefOr[TextWithHighlights] = js.undefined,
         DocumentURI: js.UndefOr[Url] = js.undefined,
         FeedbackToken: js.UndefOr[FeedbackToken] = js.undefined,
+        Format: js.UndefOr[QueryResultFormat] = js.undefined,
         Id: js.UndefOr[ResultId] = js.undefined,
         ScoreAttributes: js.UndefOr[ScoreAttributes] = js.undefined,
+        TableExcerpt: js.UndefOr[TableExcerpt] = js.undefined,
         Type: js.UndefOr[QueryResultType] = js.undefined
     ): QueryResultItem = {
       val __obj = js.Dynamic.literal()
@@ -4325,8 +5011,10 @@ package object kendra {
       DocumentTitle.foreach(__v => __obj.updateDynamic("DocumentTitle")(__v.asInstanceOf[js.Any]))
       DocumentURI.foreach(__v => __obj.updateDynamic("DocumentURI")(__v.asInstanceOf[js.Any]))
       FeedbackToken.foreach(__v => __obj.updateDynamic("FeedbackToken")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       ScoreAttributes.foreach(__v => __obj.updateDynamic("ScoreAttributes")(__v.asInstanceOf[js.Any]))
+      TableExcerpt.foreach(__v => __obj.updateDynamic("TableExcerpt")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryResultItem]
     }
@@ -4365,7 +5053,60 @@ package object kendra {
     }
   }
 
-  /** Provides information for manually tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.
+  /** Provides the configuration information to connect to Quip as your data source.
+    */
+  @js.native
+  trait QuipConfiguration extends js.Object {
+    var Domain: Domain
+    var SecretArn: SecretArn
+    var AttachmentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var CrawlAttachments: js.UndefOr[Boolean]
+    var CrawlChatRooms: js.UndefOr[Boolean]
+    var CrawlFileComments: js.UndefOr[Boolean]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var FolderIds: js.UndefOr[FolderIdList]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var MessageFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var ThreadFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+  }
+
+  object QuipConfiguration {
+    @inline
+    def apply(
+        Domain: Domain,
+        SecretArn: SecretArn,
+        AttachmentFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        CrawlAttachments: js.UndefOr[Boolean] = js.undefined,
+        CrawlChatRooms: js.UndefOr[Boolean] = js.undefined,
+        CrawlFileComments: js.UndefOr[Boolean] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        FolderIds: js.UndefOr[FolderIdList] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        MessageFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        ThreadFieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
+    ): QuipConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any]
+      )
+
+      AttachmentFieldMappings.foreach(__v => __obj.updateDynamic("AttachmentFieldMappings")(__v.asInstanceOf[js.Any]))
+      CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
+      CrawlChatRooms.foreach(__v => __obj.updateDynamic("CrawlChatRooms")(__v.asInstanceOf[js.Any]))
+      CrawlFileComments.foreach(__v => __obj.updateDynamic("CrawlFileComments")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      FolderIds.foreach(__v => __obj.updateDynamic("FolderIds")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      MessageFieldMappings.foreach(__v => __obj.updateDynamic("MessageFieldMappings")(__v.asInstanceOf[js.Any]))
+      ThreadFieldMappings.foreach(__v => __obj.updateDynamic("ThreadFieldMappings")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QuipConfiguration]
+    }
+  }
+
+  /** Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.
     */
   @js.native
   trait Relevance extends js.Object {
@@ -4395,7 +5136,7 @@ package object kendra {
     }
   }
 
-  /** Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> operation to provide relevance information.
+  /** Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.
     */
   @js.native
   trait RelevanceFeedback extends js.Object {
@@ -4417,7 +5158,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for a data source to index documents in an Amazon S3 bucket.
+  /** Provides the configuration information to connect to an Amazon S3 bucket.
     */
   @js.native
   trait S3DataSourceConfiguration extends js.Object {
@@ -4474,7 +5215,29 @@ package object kendra {
     }
   }
 
-  /** Defines configuration for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.
+  /** Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).
+    */
+  @js.native
+  trait SaaSConfiguration extends js.Object {
+    var HostUrl: Url
+    var OrganizationName: OrganizationName
+  }
+
+  object SaaSConfiguration {
+    @inline
+    def apply(
+        HostUrl: Url,
+        OrganizationName: OrganizationName
+    ): SaaSConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "HostUrl" -> HostUrl.asInstanceOf[js.Any],
+        "OrganizationName" -> OrganizationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SaaSConfiguration]
+    }
+  }
+
+  /** The configuration information for syncing a Salesforce chatter feed. The contents of the object comes from the Salesforce FeedItem table.
     */
   @js.native
   trait SalesforceChatterFeedConfiguration extends js.Object {
@@ -4503,7 +5266,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for connecting to a Salesforce data source.
+  /** Provides the configuration information to connect to Salesforce as your data source.
     */
   @js.native
   trait SalesforceConfiguration extends js.Object {
@@ -4547,7 +5310,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for indexing Salesforce custom articles.
+  /** Provides the configuration information for indexing Salesforce custom articles.
     */
   @js.native
   trait SalesforceCustomKnowledgeArticleTypeConfiguration extends js.Object {
@@ -4576,7 +5339,7 @@ package object kendra {
     }
   }
 
-  /** Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
+  /** Provides the configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both
     */
   @js.native
   trait SalesforceKnowledgeArticleConfiguration extends js.Object {
@@ -4602,7 +5365,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for standard Salesforce knowledge articles.
+  /** Provides the configuration information for standard Salesforce knowledge articles.
     */
   @js.native
   trait SalesforceStandardKnowledgeArticleTypeConfiguration extends js.Object {
@@ -4628,7 +5391,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for processing attachments to Salesforce standard objects.
+  /** Provides the configuration information for processing attachments to Salesforce standard objects.
     */
   @js.native
   trait SalesforceStandardObjectAttachmentConfiguration extends js.Object {
@@ -4649,7 +5412,7 @@ package object kendra {
     }
   }
 
-  /** Specifies configuration information for indexing a single standard object.
+  /** Provides the configuration information for indexing a single standard object.
     */
   @js.native
   trait SalesforceStandardObjectConfiguration extends js.Object {
@@ -4723,7 +5486,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information of the seed or starting point URLs to crawl. <i>When selecting websites to index, you must adhere to the [[https://aws.amazon.com/aup/|Amazon Acceptable Use Policy]] and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i>
+  /** Provides the configuration information for the seed or starting point URLs to crawl. <i>When selecting websites to index, you must adhere to the [[https://aws.amazon.com/aup/|Amazon Acceptable Use Policy]] and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i>
     */
   @js.native
   trait SeedUrlConfiguration extends js.Object {
@@ -4746,7 +5509,7 @@ package object kendra {
     }
   }
 
-  /** Provides the identifier of the KMScustomer master key (CMK) used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.
+  /** Provides the identifier of the KMS key used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric keys.
     */
   @js.native
   trait ServerSideEncryptionConfiguration extends js.Object {
@@ -4764,7 +5527,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information required to connect to a ServiceNow data source.
+  /** Provides the configuration information to connect to ServiceNow as your data source.
     */
   @js.native
   trait ServiceNowConfiguration extends js.Object {
@@ -4799,7 +5562,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for crawling knowledge articles in the ServiceNow site.
+  /** Provides the configuration information for crawling knowledge articles in the ServiceNow site.
     */
   @js.native
   trait ServiceNowKnowledgeArticleConfiguration extends js.Object {
@@ -4837,7 +5600,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for crawling service catalog items in the ServiceNow site
+  /** Provides the configuration information for crawling service catalog items in the ServiceNow site
     */
   @js.native
   trait ServiceNowServiceCatalogConfiguration extends js.Object {
@@ -4872,19 +5635,21 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for connecting to a Microsoft SharePoint data source.
+  /** Provides the configuration information to connect to Microsoft SharePoint as your data source.
     */
   @js.native
   trait SharePointConfiguration extends js.Object {
     var SecretArn: SecretArn
     var SharePointVersion: SharePointVersion
     var Urls: SharePointUrlList
+    var AuthenticationType: js.UndefOr[SharePointOnlineAuthenticationType]
     var CrawlAttachments: js.UndefOr[Boolean]
     var DisableLocalGroups: js.UndefOr[Boolean]
     var DocumentTitleFieldName: js.UndefOr[DataSourceFieldName]
     var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
     var FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
     var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var ProxyConfiguration: js.UndefOr[ProxyConfiguration]
     var SslCertificateS3Path: js.UndefOr[S3Path]
     var UseChangeLog: js.UndefOr[Boolean]
     var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
@@ -4896,12 +5661,14 @@ package object kendra {
         SecretArn: SecretArn,
         SharePointVersion: SharePointVersion,
         Urls: SharePointUrlList,
+        AuthenticationType: js.UndefOr[SharePointOnlineAuthenticationType] = js.undefined,
         CrawlAttachments: js.UndefOr[Boolean] = js.undefined,
         DisableLocalGroups: js.UndefOr[Boolean] = js.undefined,
         DocumentTitleFieldName: js.UndefOr[DataSourceFieldName] = js.undefined,
         ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
         FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
         InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        ProxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
         SslCertificateS3Path: js.UndefOr[S3Path] = js.undefined,
         UseChangeLog: js.UndefOr[Boolean] = js.undefined,
         VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
@@ -4912,12 +5679,14 @@ package object kendra {
         "Urls" -> Urls.asInstanceOf[js.Any]
       )
 
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
       CrawlAttachments.foreach(__v => __obj.updateDynamic("CrawlAttachments")(__v.asInstanceOf[js.Any]))
       DisableLocalGroups.foreach(__v => __obj.updateDynamic("DisableLocalGroups")(__v.asInstanceOf[js.Any]))
       DocumentTitleFieldName.foreach(__v => __obj.updateDynamic("DocumentTitleFieldName")(__v.asInstanceOf[js.Any]))
       ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
       FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
       InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      ProxyConfiguration.foreach(__v => __obj.updateDynamic("ProxyConfiguration")(__v.asInstanceOf[js.Any]))
       SslCertificateS3Path.foreach(__v => __obj.updateDynamic("SslCertificateS3Path")(__v.asInstanceOf[js.Any]))
       UseChangeLog.foreach(__v => __obj.updateDynamic("UseChangeLog")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
@@ -4925,7 +5694,7 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information of the sitemap URLs to crawl. <i>When selecting websites to index, you must adhere to the [[https://aws.amazon.com/aup/|Amazon Acceptable Use Policy]] and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i>
+  /** Provides the configuration information for the sitemap URLs to crawl. <i>When selecting websites to index, you must adhere to the [[https://aws.amazon.com/aup/|Amazon Acceptable Use Policy]] and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own webpages, or webpages that you have authorization to index.</i>
     */
   @js.native
   trait SiteMapsConfiguration extends js.Object {
@@ -4941,6 +5710,65 @@ package object kendra {
         "SiteMaps" -> SiteMaps.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[SiteMapsConfiguration]
+    }
+  }
+
+  /** Provides the configuration information to connect to Slack as your data source.
+    */
+  @js.native
+  trait SlackConfiguration extends js.Object {
+    var SecretArn: SecretArn
+    var SinceCrawlDate: SinceCrawlDate
+    var SlackEntityList: SlackEntityList
+    var TeamId: TeamId
+    var CrawlBotMessage: js.UndefOr[Boolean]
+    var ExcludeArchived: js.UndefOr[Boolean]
+    var ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList]
+    var InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings]
+    var LookBackPeriod: js.UndefOr[LookBackPeriod]
+    var PrivateChannelFilter: js.UndefOr[PrivateChannelFilter]
+    var PublicChannelFilter: js.UndefOr[PublicChannelFilter]
+    var UseChangeLog: js.UndefOr[Boolean]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
+  }
+
+  object SlackConfiguration {
+    @inline
+    def apply(
+        SecretArn: SecretArn,
+        SinceCrawlDate: SinceCrawlDate,
+        SlackEntityList: SlackEntityList,
+        TeamId: TeamId,
+        CrawlBotMessage: js.UndefOr[Boolean] = js.undefined,
+        ExcludeArchived: js.UndefOr[Boolean] = js.undefined,
+        ExclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        FieldMappings: js.UndefOr[DataSourceToIndexFieldMappingList] = js.undefined,
+        InclusionPatterns: js.UndefOr[DataSourceInclusionsExclusionsStrings] = js.undefined,
+        LookBackPeriod: js.UndefOr[LookBackPeriod] = js.undefined,
+        PrivateChannelFilter: js.UndefOr[PrivateChannelFilter] = js.undefined,
+        PublicChannelFilter: js.UndefOr[PublicChannelFilter] = js.undefined,
+        UseChangeLog: js.UndefOr[Boolean] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
+    ): SlackConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "SecretArn" -> SecretArn.asInstanceOf[js.Any],
+        "SinceCrawlDate" -> SinceCrawlDate.asInstanceOf[js.Any],
+        "SlackEntityList" -> SlackEntityList.asInstanceOf[js.Any],
+        "TeamId" -> TeamId.asInstanceOf[js.Any]
+      )
+
+      CrawlBotMessage.foreach(__v => __obj.updateDynamic("CrawlBotMessage")(__v.asInstanceOf[js.Any]))
+      ExcludeArchived.foreach(__v => __obj.updateDynamic("ExcludeArchived")(__v.asInstanceOf[js.Any]))
+      ExclusionPatterns.foreach(__v => __obj.updateDynamic("ExclusionPatterns")(__v.asInstanceOf[js.Any]))
+      FieldMappings.foreach(__v => __obj.updateDynamic("FieldMappings")(__v.asInstanceOf[js.Any]))
+      InclusionPatterns.foreach(__v => __obj.updateDynamic("InclusionPatterns")(__v.asInstanceOf[js.Any]))
+      LookBackPeriod.foreach(__v => __obj.updateDynamic("LookBackPeriod")(__v.asInstanceOf[js.Any]))
+      PrivateChannelFilter.foreach(__v => __obj.updateDynamic("PrivateChannelFilter")(__v.asInstanceOf[js.Any]))
+      PublicChannelFilter.foreach(__v => __obj.updateDynamic("PublicChannelFilter")(__v.asInstanceOf[js.Any]))
+      UseChangeLog.foreach(__v => __obj.updateDynamic("UseChangeLog")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SlackConfiguration]
     }
   }
 
@@ -4966,7 +5794,47 @@ package object kendra {
     }
   }
 
-  /** Provides information that configures Amazon Kendra to use a SQL database.
+  /** A query with suggested spell corrections.
+    */
+  @js.native
+  trait SpellCorrectedQuery extends js.Object {
+    var Corrections: js.UndefOr[CorrectionList]
+    var SuggestedQueryText: js.UndefOr[SuggestedQueryText]
+  }
+
+  object SpellCorrectedQuery {
+    @inline
+    def apply(
+        Corrections: js.UndefOr[CorrectionList] = js.undefined,
+        SuggestedQueryText: js.UndefOr[SuggestedQueryText] = js.undefined
+    ): SpellCorrectedQuery = {
+      val __obj = js.Dynamic.literal()
+      Corrections.foreach(__v => __obj.updateDynamic("Corrections")(__v.asInstanceOf[js.Any]))
+      SuggestedQueryText.foreach(__v => __obj.updateDynamic("SuggestedQueryText")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SpellCorrectedQuery]
+    }
+  }
+
+  /** Provides the configuration information for suggested query spell corrections. Suggested spell corrections are based on words that appear in your indexed documents and how closely a corrected word matches a misspelled word. This feature is designed with certain defaults or limits. For information on the current limits and how to request more support for some limits, see the [[https://docs.aws.amazon.com/kendra/latest/dg/query-spell-check.html|Spell Checker documentation]].
+    */
+  @js.native
+  trait SpellCorrectionConfiguration extends js.Object {
+    var IncludeQuerySpellCheckSuggestions: Boolean
+  }
+
+  object SpellCorrectionConfiguration {
+    @inline
+    def apply(
+        IncludeQuerySpellCheckSuggestions: Boolean
+    ): SpellCorrectionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "IncludeQuerySpellCheckSuggestions" -> IncludeQuerySpellCheckSuggestions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SpellCorrectionConfiguration]
+    }
+  }
+
+  /** Provides the configuration information to use a SQL database.
     */
   @js.native
   trait SqlConfiguration extends js.Object {
@@ -5175,6 +6043,72 @@ package object kendra {
     }
   }
 
+  /** Provides information about a table cell in a table excerpt.
+    */
+  @js.native
+  trait TableCell extends js.Object {
+    var Header: js.UndefOr[Boolean]
+    var Highlighted: js.UndefOr[Boolean]
+    var TopAnswer: js.UndefOr[Boolean]
+    var Value: js.UndefOr[String]
+  }
+
+  object TableCell {
+    @inline
+    def apply(
+        Header: js.UndefOr[Boolean] = js.undefined,
+        Highlighted: js.UndefOr[Boolean] = js.undefined,
+        TopAnswer: js.UndefOr[Boolean] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): TableCell = {
+      val __obj = js.Dynamic.literal()
+      Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
+      Highlighted.foreach(__v => __obj.updateDynamic("Highlighted")(__v.asInstanceOf[js.Any]))
+      TopAnswer.foreach(__v => __obj.updateDynamic("TopAnswer")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableCell]
+    }
+  }
+
+  /** An excerpt from a table within a document. The table excerpt displays up to five columns and three rows, depending on how many table cells are relevant to the query and how many columns are available in the original table. The top most relevant cell is displayed in the table excerpt, along with the next most relevant cells.
+    */
+  @js.native
+  trait TableExcerpt extends js.Object {
+    var Rows: js.UndefOr[TableRowList]
+    var TotalNumberOfRows: js.UndefOr[Int]
+  }
+
+  object TableExcerpt {
+    @inline
+    def apply(
+        Rows: js.UndefOr[TableRowList] = js.undefined,
+        TotalNumberOfRows: js.UndefOr[Int] = js.undefined
+    ): TableExcerpt = {
+      val __obj = js.Dynamic.literal()
+      Rows.foreach(__v => __obj.updateDynamic("Rows")(__v.asInstanceOf[js.Any]))
+      TotalNumberOfRows.foreach(__v => __obj.updateDynamic("TotalNumberOfRows")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableExcerpt]
+    }
+  }
+
+  /** Information about a row in a table excerpt.
+    */
+  @js.native
+  trait TableRow extends js.Object {
+    var Cells: js.UndefOr[TableCellList]
+  }
+
+  object TableRow {
+    @inline
+    def apply(
+        Cells: js.UndefOr[TableCellList] = js.undefined
+    ): TableRow = {
+      val __obj = js.Dynamic.literal()
+      Cells.foreach(__v => __obj.updateDynamic("Cells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableRow]
+    }
+  }
+
   /** A list of key/value pairs that identify an index, FAQ, or data source. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.
     */
   @js.native
@@ -5225,6 +6159,37 @@ package object kendra {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** The template schema used for the data source, where templates schemas are supported. See [[https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html|Data source template schemas]].
+    */
+  @js.native
+  trait Template extends js.Object
+
+  object Template {
+    @inline
+    def apply(): Template = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[Template]
+    }
+  }
+
+  /** Provides a template for the configuration information to connect to your data source.
+    */
+  @js.native
+  trait TemplateConfiguration extends js.Object {
+    var Template: js.UndefOr[Template]
+  }
+
+  object TemplateConfiguration {
+    @inline
+    def apply(
+        Template: js.UndefOr[Template] = js.undefined
+    ): TemplateConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateConfiguration]
     }
   }
 
@@ -5354,6 +6319,50 @@ package object kendra {
   }
 
   @js.native
+  trait UpdateAccessControlConfigurationRequest extends js.Object {
+    var Id: AccessControlConfigurationId
+    var IndexId: IndexId
+    var AccessControlList: js.UndefOr[PrincipalList]
+    var Description: js.UndefOr[Description]
+    var HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList]
+    var Name: js.UndefOr[AccessControlConfigurationName]
+  }
+
+  object UpdateAccessControlConfigurationRequest {
+    @inline
+    def apply(
+        Id: AccessControlConfigurationId,
+        IndexId: IndexId,
+        AccessControlList: js.UndefOr[PrincipalList] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        HierarchicalAccessControlList: js.UndefOr[HierarchicalPrincipalList] = js.undefined,
+        Name: js.UndefOr[AccessControlConfigurationName] = js.undefined
+    ): UpdateAccessControlConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "IndexId" -> IndexId.asInstanceOf[js.Any]
+      )
+
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HierarchicalAccessControlList.foreach(__v => __obj.updateDynamic("HierarchicalAccessControlList")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAccessControlConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAccessControlConfigurationResponse extends js.Object
+
+  object UpdateAccessControlConfigurationResponse {
+    @inline
+    def apply(): UpdateAccessControlConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateAccessControlConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateDataSourceRequest extends js.Object {
     var Id: DataSourceId
     var IndexId: IndexId
@@ -5364,6 +6373,7 @@ package object kendra {
     var Name: js.UndefOr[DataSourceName]
     var RoleArn: js.UndefOr[RoleArn]
     var Schedule: js.UndefOr[ScanSchedule]
+    var VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration]
   }
 
   object UpdateDataSourceRequest {
@@ -5377,7 +6387,8 @@ package object kendra {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         Name: js.UndefOr[DataSourceName] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
-        Schedule: js.UndefOr[ScanSchedule] = js.undefined
+        Schedule: js.UndefOr[ScanSchedule] = js.undefined,
+        VpcConfiguration: js.UndefOr[DataSourceVpcConfiguration] = js.undefined
     ): UpdateDataSourceRequest = {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any],
@@ -5391,6 +6402,7 @@ package object kendra {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSourceRequest]
     }
   }
@@ -5590,7 +6602,7 @@ package object kendra {
     }
   }
 
-  /** Provides information about the user context for an Amazon Kendra index. This is used for filtering search results for different users based on their access to documents. You provide one of the following: * User token * User ID, the groups the user belongs to, and any data sources the groups can access. If you provide both, an exception is thrown.
+  /** Provides information about the user context for an Amazon Kendra index. User context filtering is a kind of personalized search with the benefit of controlling access to documents. For example, not all teams that search the company portal for information should access top-secret company documents, nor are these documents relevant to all users. Only specific users or groups of teams given access to top-secret documents should see these documents in their search results. You provide one of the following: * User token * User ID, the groups the user belongs to, and any data sources the groups can access. If you provide both, an exception is thrown.
     */
   @js.native
   trait UserContext extends js.Object {
@@ -5617,7 +6629,8 @@ package object kendra {
     }
   }
 
-  /** Provides the configuration information to fetch access levels of groups and users from an Amazon Web Services Single Sign On identity source. This is useful for setting up user context filtering, where Amazon Kendra filters search results for different users based on their group's access to documents. You can also map your users to their groups for user context filtering using the [[https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html|PutPrincipalMapping operation]]. To set up an Amazon Web Services SSO identity source in the console to use with Amazon Kendra, see [[https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html|Getting started with an Amazon Web Services SSO identity source]]. You must also grant the required permissions to use Amazon Web Services SSO with Amazon Kendra. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso|IAM roles for Amazon Web Services SSO]].
+  /** Provides the configuration information to fetch access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents. You can also use the [[https://docs.aws.amazon.com/kendra/latest/dg/API_PutPrincipalMapping.html|PutPrincipalMapping]] API to map users to their groups so that you only need to provide the user ID when you issue the query. To set up an IAM Identity Center identity source in the console to use with Amazon Kendra, see [[https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html|Getting started with an IAM Identity Center identity source]]. You must also grant the required permissions to use IAM Identity Center with Amazon Kendra. For more information, see [[https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso|IAM roles for IAM Identity Center]]. Amazon Kendra
+    * currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.
     */
   @js.native
   trait UserGroupResolutionConfiguration extends js.Object {
@@ -5636,7 +6649,7 @@ package object kendra {
     }
   }
 
-  /** Configuration information for the identifiers of your users.
+  /** Provides the configuration information for the identifiers of your users.
     */
   @js.native
   trait UserIdentityConfiguration extends js.Object {
@@ -5654,7 +6667,7 @@ package object kendra {
     }
   }
 
-  /** Provides configuration information for a token configuration.
+  /** Provides the configuration information for a token.
     */
   @js.native
   trait UserTokenConfiguration extends js.Object {
@@ -5672,6 +6685,27 @@ package object kendra {
       JsonTokenTypeConfiguration.foreach(__v => __obj.updateDynamic("JsonTokenTypeConfiguration")(__v.asInstanceOf[js.Any]))
       JwtTokenTypeConfiguration.foreach(__v => __obj.updateDynamic("JwtTokenTypeConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserTokenConfiguration]
+    }
+  }
+
+  /** The warning code and message that explains a problem with a query.
+    */
+  @js.native
+  trait Warning extends js.Object {
+    var Code: js.UndefOr[WarningCode]
+    var Message: js.UndefOr[WarningMessage]
+  }
+
+  object Warning {
+    @inline
+    def apply(
+        Code: js.UndefOr[WarningCode] = js.undefined,
+        Message: js.UndefOr[WarningMessage] = js.undefined
+    ): Warning = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Warning]
     }
   }
 

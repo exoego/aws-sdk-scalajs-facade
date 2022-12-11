@@ -97,7 +97,7 @@ object InstanceRefreshStatus {
   inline def values: js.Array[InstanceRefreshStatus] = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
 }
 
-type LifecycleState = "Pending" | "Pending:Wait" | "Pending:Proceed" | "Quarantined" | "InService" | "Terminating" | "Terminating:Wait" | "Terminating:Proceed" | "Terminated" | "Detaching" | "Detached" | "EnteringStandby" | "Standby" | "Warmed:Pending" | "Warmed:Pending:Wait" | "Warmed:Pending:Proceed" | "Warmed:Terminating" | "Warmed:Terminating:Wait" | "Warmed:Terminating:Proceed" | "Warmed:Terminated" | "Warmed:Stopped" | "Warmed:Running"
+type LifecycleState = "Pending" | "Pending:Wait" | "Pending:Proceed" | "Quarantined" | "InService" | "Terminating" | "Terminating:Wait" | "Terminating:Proceed" | "Terminated" | "Detaching" | "Detached" | "EnteringStandby" | "Standby" | "Warmed:Pending" | "Warmed:Pending:Wait" | "Warmed:Pending:Proceed" | "Warmed:Terminating" | "Warmed:Terminating:Wait" | "Warmed:Terminating:Proceed" | "Warmed:Terminated" | "Warmed:Stopped" | "Warmed:Running" | "Warmed:Hibernated"
 object LifecycleState {
   inline val Pending: "Pending" = "Pending"
   inline val `Pending:Wait`: "Pending:Wait" = "Pending:Wait"
@@ -121,6 +121,7 @@ object LifecycleState {
   inline val `Warmed:Terminated`: "Warmed:Terminated" = "Warmed:Terminated"
   inline val `Warmed:Stopped`: "Warmed:Stopped" = "Warmed:Stopped"
   inline val `Warmed:Running`: "Warmed:Running" = "Warmed:Running"
+  inline val `Warmed:Hibernated`: "Warmed:Hibernated" = "Warmed:Hibernated"
 
   inline def values: js.Array[LifecycleState] = js.Array(
     Pending,
@@ -144,7 +145,8 @@ object LifecycleState {
     `Warmed:Terminating:Proceed`,
     `Warmed:Terminated`,
     `Warmed:Stopped`,
-    `Warmed:Running`
+    `Warmed:Running`,
+    `Warmed:Hibernated`
   )
 }
 
@@ -270,12 +272,13 @@ object ScalingActivityStatusCode {
   )
 }
 
-type WarmPoolState = "Stopped" | "Running"
+type WarmPoolState = "Stopped" | "Running" | "Hibernated"
 object WarmPoolState {
   inline val Stopped: "Stopped" = "Stopped"
   inline val Running: "Running" = "Running"
+  inline val Hibernated: "Hibernated" = "Hibernated"
 
-  inline def values: js.Array[WarmPoolState] = js.Array(Stopped, Running)
+  inline def values: js.Array[WarmPoolState] = js.Array(Stopped, Running, Hibernated)
 }
 
 type WarmPoolStatus = "PendingDelete"

@@ -50,6 +50,7 @@ package object emr {
   type NewSupportedProductsList = js.Array[SupportedProductConfig]
   type NonNegativeDouble = Double
   type NotebookExecutionSummaryList = js.Array[NotebookExecutionSummary]
+  type OSReleaseList = js.Array[OSRelease]
   type OptionalArnType = String
   type PlacementGroupConfigList = js.Array[PlacementGroupConfig]
   type Port = Int
@@ -72,6 +73,7 @@ package object emr {
   type SubnetIdList = js.Array[String]
   type SupportedProductsList = js.Array[XmlStringMaxLen256]
   type TagList = js.Array[Tag]
+  type ThroughputVal = Int
   type WholeNumber = Int
   type XmlString = String
   type XmlStringList = js.Array[XmlString]
@@ -292,18 +294,22 @@ package object emr {
   trait AddJobFlowStepsInput extends js.Object {
     var JobFlowId: XmlStringMaxLen256
     var Steps: StepConfigList
+    var ExecutionRoleArn: js.UndefOr[ArnType]
   }
 
   object AddJobFlowStepsInput {
     @inline
     def apply(
         JobFlowId: XmlStringMaxLen256,
-        Steps: StepConfigList
+        Steps: StepConfigList,
+        ExecutionRoleArn: js.UndefOr[ArnType] = js.undefined
     ): AddJobFlowStepsInput = {
       val __obj = js.Dynamic.literal(
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
         "Steps" -> Steps.asInstanceOf[js.Any]
       )
+
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddJobFlowStepsInput]
     }
   }
@@ -711,6 +717,7 @@ package object emr {
     var MasterPublicDnsName: js.UndefOr[String]
     var Name: js.UndefOr[String]
     var NormalizedInstanceHours: js.UndefOr[Int]
+    var OSReleaseLabel: js.UndefOr[String]
     var OutpostArn: js.UndefOr[OptionalArnType]
     var PlacementGroups: js.UndefOr[PlacementGroupConfigList]
     var ReleaseLabel: js.UndefOr[String]
@@ -746,6 +753,7 @@ package object emr {
         MasterPublicDnsName: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
+        OSReleaseLabel: js.UndefOr[String] = js.undefined,
         OutpostArn: js.UndefOr[OptionalArnType] = js.undefined,
         PlacementGroups: js.UndefOr[PlacementGroupConfigList] = js.undefined,
         ReleaseLabel: js.UndefOr[String] = js.undefined,
@@ -778,6 +786,7 @@ package object emr {
       MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      OSReleaseLabel.foreach(__v => __obj.updateDynamic("OSReleaseLabel")(__v.asInstanceOf[js.Any]))
       OutpostArn.foreach(__v => __obj.updateDynamic("OutpostArn")(__v.asInstanceOf[js.Any]))
       PlacementGroups.foreach(__v => __obj.updateDynamic("PlacementGroups")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
@@ -1333,6 +1342,7 @@ package object emr {
   @js.native
   trait DescribeReleaseLabelOutput extends js.Object {
     var Applications: js.UndefOr[SimplifiedApplicationList]
+    var AvailableOSReleases: js.UndefOr[OSReleaseList]
     var NextToken: js.UndefOr[String]
     var ReleaseLabel: js.UndefOr[String]
   }
@@ -1341,11 +1351,13 @@ package object emr {
     @inline
     def apply(
         Applications: js.UndefOr[SimplifiedApplicationList] = js.undefined,
+        AvailableOSReleases: js.UndefOr[OSReleaseList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
         ReleaseLabel: js.UndefOr[String] = js.undefined
     ): DescribeReleaseLabelOutput = {
       val __obj = js.Dynamic.literal()
       Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
+      AvailableOSReleases.foreach(__v => __obj.updateDynamic("AvailableOSReleases")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReleaseLabelOutput]
@@ -1485,7 +1497,7 @@ package object emr {
     }
   }
 
-  /** Configuration of requested EBS block device associated with the instance group with count of volumes that will be associated to every instance.
+  /** Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.
     */
   @js.native
   trait EbsBlockDeviceConfig extends js.Object {
@@ -2291,6 +2303,7 @@ package object emr {
     var Configurations: js.UndefOr[ConfigurationList]
     var EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList]
     var InstanceCount: js.UndefOr[Int]
+    var ReconfigurationType: js.UndefOr[ReconfigurationType]
     var ShrinkPolicy: js.UndefOr[ShrinkPolicy]
   }
 
@@ -2301,6 +2314,7 @@ package object emr {
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
         EC2InstanceIdsToTerminate: js.UndefOr[EC2InstanceIdsToTerminateList] = js.undefined,
         InstanceCount: js.UndefOr[Int] = js.undefined,
+        ReconfigurationType: js.UndefOr[ReconfigurationType] = js.undefined,
         ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined
     ): InstanceGroupModifyConfig = {
       val __obj = js.Dynamic.literal(
@@ -2310,6 +2324,7 @@ package object emr {
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       EC2InstanceIdsToTerminate.foreach(__v => __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any]))
       InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      ReconfigurationType.foreach(__v => __obj.updateDynamic("ReconfigurationType")(__v.asInstanceOf[js.Any]))
       ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupModifyConfig]
     }
@@ -3518,6 +3533,24 @@ package object emr {
     }
   }
 
+  /** The Amazon Linux release specified for a cluster in the RunJobFlow request.
+    */
+  @js.native
+  trait OSRelease extends js.Object {
+    var Label: js.UndefOr[String]
+  }
+
+  object OSRelease {
+    @inline
+    def apply(
+        Label: js.UndefOr[String] = js.undefined
+    ): OSRelease = {
+      val __obj = js.Dynamic.literal()
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OSRelease]
+    }
+  }
+
   /** Describes the strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
     */
   @js.native
@@ -3937,6 +3970,7 @@ package object emr {
     var LogUri: js.UndefOr[XmlString]
     var ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy]
     var NewSupportedProducts: js.UndefOr[NewSupportedProductsList]
+    var OSReleaseLabel: js.UndefOr[XmlStringMaxLen256]
     var PlacementGroupConfigs: js.UndefOr[PlacementGroupConfigList]
     var ReleaseLabel: js.UndefOr[XmlStringMaxLen256]
     var RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot]
@@ -3970,6 +4004,7 @@ package object emr {
         LogUri: js.UndefOr[XmlString] = js.undefined,
         ManagedScalingPolicy: js.UndefOr[ManagedScalingPolicy] = js.undefined,
         NewSupportedProducts: js.UndefOr[NewSupportedProductsList] = js.undefined,
+        OSReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         PlacementGroupConfigs: js.UndefOr[PlacementGroupConfigList] = js.undefined,
         ReleaseLabel: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         RepoUpgradeOnBoot: js.UndefOr[RepoUpgradeOnBoot] = js.undefined,
@@ -4002,6 +4037,7 @@ package object emr {
       LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
       ManagedScalingPolicy.foreach(__v => __obj.updateDynamic("ManagedScalingPolicy")(__v.asInstanceOf[js.Any]))
       NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
+      OSReleaseLabel.foreach(__v => __obj.updateDynamic("OSReleaseLabel")(__v.asInstanceOf[js.Any]))
       PlacementGroupConfigs.foreach(__v => __obj.updateDynamic("PlacementGroupConfigs")(__v.asInstanceOf[js.Any]))
       ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
       RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
@@ -4358,7 +4394,7 @@ package object emr {
 
   /** The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
-    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
+    * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later. '''Note:'''Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022.
     */
   @js.native
   trait SpotProvisioningSpecification extends js.Object {
@@ -4448,6 +4484,7 @@ package object emr {
   trait Step extends js.Object {
     var ActionOnFailure: js.UndefOr[ActionOnFailure]
     var Config: js.UndefOr[HadoopStepConfig]
+    var ExecutionRoleArn: js.UndefOr[OptionalArnType]
     var Id: js.UndefOr[StepId]
     var Name: js.UndefOr[String]
     var Status: js.UndefOr[StepStatus]
@@ -4458,6 +4495,7 @@ package object emr {
     def apply(
         ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined,
         Config: js.UndefOr[HadoopStepConfig] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[OptionalArnType] = js.undefined,
         Id: js.UndefOr[StepId] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StepStatus] = js.undefined
@@ -4465,6 +4503,7 @@ package object emr {
       val __obj = js.Dynamic.literal()
       ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
       Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -4894,13 +4933,14 @@ package object emr {
     }
   }
 
-  /** EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested for the EBS volume attached to an EC2 instance in the cluster.
+  /** EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.
     */
   @js.native
   trait VolumeSpecification extends js.Object {
     var SizeInGB: Int
     var VolumeType: String
     var Iops: js.UndefOr[Int]
+    var Throughput: js.UndefOr[ThroughputVal]
   }
 
   object VolumeSpecification {
@@ -4908,7 +4948,8 @@ package object emr {
     def apply(
         SizeInGB: Int,
         VolumeType: String,
-        Iops: js.UndefOr[Int] = js.undefined
+        Iops: js.UndefOr[Int] = js.undefined,
+        Throughput: js.UndefOr[ThroughputVal] = js.undefined
     ): VolumeSpecification = {
       val __obj = js.Dynamic.literal(
         "SizeInGB" -> SizeInGB.asInstanceOf[js.Any],
@@ -4916,6 +4957,7 @@ package object emr {
       )
 
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      Throughput.foreach(__v => __obj.updateDynamic("Throughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeSpecification]
     }
   }

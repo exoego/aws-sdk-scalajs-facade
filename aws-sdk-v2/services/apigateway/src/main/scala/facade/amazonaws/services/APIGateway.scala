@@ -332,25 +332,7 @@ package object apigateway {
     }
   }
 
-  /** Represents an AWS account that is associated with API Gateway. <div class="remarks"> To view the account info, call <code>GET</code> on this resource.
-    *
-    * =Error Codes=
-    * The following exception may be thrown when the request fails. * UnauthorizedException * NotFoundException * TooManyRequestsException For detailed error code information, including the corresponding HTTP Status Codes, see [[https://docs.aws.amazon.com/apigateway/api-reference/handling-errors/#api-error-codes|API Gateway Error Codes]]
-    *
-    * =Example: Get the information about an account.=
-    *
-    * ==Request==
-    * {{{
-    * GET /account HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date: 20160531T184618Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
-    * }}}
-    * ==Response==
-    * The successful response returns a <code>200 OK</code> status code and a payload similar to the following:
-    * {{{
-    * { "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/account-apigateway-{rel}.html", "name": "account", "templated": true }, "self": { "href": "/account" }, "account:update": { "href": "/account" } }, "cloudwatchRoleArn": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "throttleSettings": { "rateLimit": 500, "burstLimit": 1000 } }
-    * }}}
-    * In addition to making the REST API call directly, you can use the AWS CLI and an AWS SDK to access this resource. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-limits.html|API Gateway Limits]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html|Developer Guide]], [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-account.html|AWS CLI]]
+  /** Represents an AWS account that is associated with API Gateway.
     */
   @js.native
   trait Account extends js.Object {
@@ -377,10 +359,7 @@ package object apigateway {
     }
   }
 
-  /** A resource that can be distributed to callers for executing <a>Method</a> resources that require an API key. API keys can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make requests to that stage.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html|Use API Keys]]
+  /** A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.
     */
   @js.native
   trait ApiKey extends js.Object {
@@ -425,7 +404,7 @@ package object apigateway {
     }
   }
 
-  /** The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.
+  /** The identifier of an ApiKey used in a UsagePlan.
     */
   @js.native
   trait ApiKeyIds extends js.Object {
@@ -446,10 +425,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of API keys as represented by an <a>ApiKeys</a> resource.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html|Use API Keys]]
+  /** Represents a collection of API keys as represented by an ApiKeys resource.
     */
   @js.native
   trait ApiKeys extends js.Object {
@@ -498,9 +474,6 @@ package object apigateway {
   }
 
   /** Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
     */
   @js.native
   trait Authorizer extends js.Object {
@@ -545,10 +518,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>Authorizer</a> resources.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html|Use Lambda Function as Authorizer]] [[https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html|Use Cognito User Pool as Authorizer]]
+  /** Represents a collection of Authorizer resources.
     */
   @js.native
   trait Authorizers extends js.Object {
@@ -569,9 +539,7 @@ package object apigateway {
     }
   }
 
-  /** Represents the base path that callers of the API must provide as part of the URL after the domain name. <div class="remarks">A custom domain name plus a <code>BasePathMapping</code> specification identifies a deployed <a>RestApi</a> in a given stage of the owner <a>Account</a>.</div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Custom Domain Names]]
+  /** Represents the base path that callers of the API must provide as part of the URL after the domain name.
     */
   @js.native
   trait BasePathMapping extends js.Object {
@@ -595,10 +563,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>BasePathMapping</a> resources.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Custom Domain Names]]
+  /** Represents a collection of BasePathMapping resources.
     */
   @js.native
   trait BasePathMappings extends js.Object {
@@ -646,9 +611,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint. <div class="remarks">Client certificates are used to authenticate an API by the backend server. To authenticate an API client (or user), use IAM roles and policies, a custom <a>Authorizer</a> or an Amazon Cognito user pool.</div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html|Use Client-Side Certificate]]
+  /** Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.
     */
   @js.native
   trait ClientCertificate extends js.Object {
@@ -681,10 +644,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>ClientCertificate</a> resources.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html|Use Client-Side Certificate]]
+  /** Represents a collection of ClientCertificate resources.
     */
   @js.native
   trait ClientCertificates extends js.Object {
@@ -705,7 +665,7 @@ package object apigateway {
     }
   }
 
-  /** Request to create an <a>ApiKey</a> resource.
+  /** Request to create an ApiKey resource.
     */
   @js.native
   trait CreateApiKeyRequest extends js.Object {
@@ -744,7 +704,7 @@ package object apigateway {
     }
   }
 
-  /** Request to add a new <a>Authorizer</a> to an existing <a>RestApi</a> resource.
+  /** Request to add a new Authorizer to an existing RestApi resource.
     */
   @js.native
   trait CreateAuthorizerRequest extends js.Object {
@@ -791,7 +751,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to create a new <a>BasePathMapping</a> resource.
+  /** Requests API Gateway to create a new BasePathMapping resource.
     */
   @js.native
   trait CreateBasePathMappingRequest extends js.Object {
@@ -820,7 +780,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to create a <a>Deployment</a> resource.
+  /** Requests API Gateway to create a Deployment resource.
     */
   @js.native
   trait CreateDeploymentRequest extends js.Object {
@@ -974,7 +934,7 @@ package object apigateway {
     }
   }
 
-  /** Request to add a new <a>Model</a> to an existing <a>RestApi</a> resource.
+  /** Request to add a new Model to an existing RestApi resource.
     */
   @js.native
   trait CreateModelRequest extends js.Object {
@@ -1006,7 +966,7 @@ package object apigateway {
     }
   }
 
-  /** Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+  /** Creates a RequestValidator of a given RestApi.
     */
   @js.native
   trait CreateRequestValidatorRequest extends js.Object {
@@ -1035,7 +995,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to create a <a>Resource</a> resource.
+  /** Requests API Gateway to create a Resource resource.
     */
   @js.native
   trait CreateResourceRequest extends js.Object {
@@ -1060,7 +1020,7 @@ package object apigateway {
     }
   }
 
-  /** The POST Request to add a new <a>RestApi</a> resource to your collection.
+  /** The POST Request to add a new RestApi resource to your collection.
     */
   @js.native
   trait CreateRestApiRequest extends js.Object {
@@ -1110,7 +1070,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to create a <a>Stage</a> resource.
+  /** Requests API Gateway to create a Stage resource.
     */
   @js.native
   trait CreateStageRequest extends js.Object {
@@ -1249,7 +1209,7 @@ package object apigateway {
     }
   }
 
-  /** A request to delete the <a>ApiKey</a> resource.
+  /** A request to delete the ApiKey resource.
     */
   @js.native
   trait DeleteApiKeyRequest extends js.Object {
@@ -1268,7 +1228,7 @@ package object apigateway {
     }
   }
 
-  /** Request to delete an existing <a>Authorizer</a> resource.
+  /** Request to delete an existing Authorizer resource.
     */
   @js.native
   trait DeleteAuthorizerRequest extends js.Object {
@@ -1290,7 +1250,7 @@ package object apigateway {
     }
   }
 
-  /** A request to delete the <a>BasePathMapping</a> resource.
+  /** A request to delete the BasePathMapping resource.
     */
   @js.native
   trait DeleteBasePathMappingRequest extends js.Object {
@@ -1312,7 +1272,7 @@ package object apigateway {
     }
   }
 
-  /** A request to delete the <a>ClientCertificate</a> resource.
+  /** A request to delete the ClientCertificate resource.
     */
   @js.native
   trait DeleteClientCertificateRequest extends js.Object {
@@ -1331,7 +1291,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to delete a <a>Deployment</a> resource.
+  /** Requests API Gateway to delete a Deployment resource.
     */
   @js.native
   trait DeleteDeploymentRequest extends js.Object {
@@ -1397,7 +1357,7 @@ package object apigateway {
     }
   }
 
-  /** A request to delete the <a>DomainName</a> resource.
+  /** A request to delete the DomainName resource.
     */
   @js.native
   trait DeleteDomainNameRequest extends js.Object {
@@ -1416,7 +1376,7 @@ package object apigateway {
     }
   }
 
-  /** Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and resets it with the default settings.
+  /** Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.
     */
   @js.native
   trait DeleteGatewayResponseRequest extends js.Object {
@@ -1491,7 +1451,7 @@ package object apigateway {
     }
   }
 
-  /** Request to delete an existing <a>Method</a> resource.
+  /** Request to delete an existing Method resource.
     */
   @js.native
   trait DeleteMethodRequest extends js.Object {
@@ -1516,7 +1476,7 @@ package object apigateway {
     }
   }
 
-  /** A request to delete an existing <a>MethodResponse</a> resource.
+  /** A request to delete an existing MethodResponse resource.
     */
   @js.native
   trait DeleteMethodResponseRequest extends js.Object {
@@ -1544,7 +1504,7 @@ package object apigateway {
     }
   }
 
-  /** Request to delete an existing model in an existing <a>RestApi</a> resource.
+  /** Request to delete an existing model in an existing RestApi resource.
     */
   @js.native
   trait DeleteModelRequest extends js.Object {
@@ -1566,7 +1526,7 @@ package object apigateway {
     }
   }
 
-  /** Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+  /** Deletes a specified RequestValidator of a given RestApi.
     */
   @js.native
   trait DeleteRequestValidatorRequest extends js.Object {
@@ -1588,7 +1548,7 @@ package object apigateway {
     }
   }
 
-  /** Request to delete a <a>Resource</a>.
+  /** Request to delete a Resource.
     */
   @js.native
   trait DeleteResourceRequest extends js.Object {
@@ -1629,7 +1589,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to delete a <a>Stage</a> resource.
+  /** Requests API Gateway to delete a Stage resource.
     */
   @js.native
   trait DeleteStageRequest extends js.Object {
@@ -1692,7 +1652,7 @@ package object apigateway {
     }
   }
 
-  /** Deletes an existing <a>VpcLink</a> of a specified identifier.
+  /** Deletes an existing VpcLink of a specified identifier.
     */
   @js.native
   trait DeleteVpcLinkRequest extends js.Object {
@@ -1711,9 +1671,7 @@ package object apigateway {
     }
   }
 
-  /** An immutable representation of a <a>RestApi</a> resource that can be called by users using <a>Stages</a>. A deployment must be associated with a <a>Stage</a> for it to be callable over the Internet. <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a> resource of a <a>RestApi</a>. To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code> on the specified deployment resource (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div>
-    * @see
-    *   <a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html|AWS CLI]], [[https://aws.amazon.com/tools/|AWS SDKs]]
+  /** An immutable representation of a RestApi resource that can be called by users using Stages. A deployment must be associated with a Stage for it to be callable over the Internet.
     */
   @js.native
   trait Deployment extends js.Object {
@@ -1764,9 +1722,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments. <div class="remarks">To create a new deployment of a <a>RestApi</a>, make a <code>POST</code> request against this resource. To view, update, or delete an existing deployment, make a <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code> request, respectively, on a specified <a>Deployment</a> resource.</div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html|Deploying an API]], [[https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html|AWS CLI]], [[https://aws.amazon.com/tools/|AWS SDKs]]
+  /** Represents a collection resource that contains zero or more references to your existing deployments, and links that guide you on how to interact with your collection. The collection offers a paginated view of the contained deployments.
     */
   @js.native
   trait Deployments extends js.Object {
@@ -1787,9 +1743,7 @@ package object apigateway {
     }
   }
 
-  /** A documentation part for a targeted API entity. <div class="remarks"> A documentation part consists of a content map (<code>properties</code>) and a target (<code>location</code>). The target specifies an API entity to which the documentation content applies. The supported API entity types are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Valid <code>location</code> fields depend on the API entity type. All valid fields are not required. The content map is a JSON string of API-specific key-value pairs. Although an API can use any shape for the content map, only the OpenAPI-compliant documentation fields will be injected into the associated API entity definition in the exported OpenAPI definition file. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationParts</a>
+  /** A documentation part for a targeted API entity.
     */
   @js.native
   trait DocumentationPart extends js.Object {
@@ -1813,9 +1767,7 @@ package object apigateway {
     }
   }
 
-  /** A collection of the imported <a>DocumentationPart</a> identifiers. <div class="remarks">This is used to return the result when documentation parts in an external (e.g., OpenAPI) file are imported into API Gateway</div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], [[https://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/|documentationpart:import]], <a>DocumentationPart</a>
+  /** A collection of the imported DocumentationPart identifiers.
     */
   @js.native
   trait DocumentationPartIds extends js.Object {
@@ -1868,9 +1820,7 @@ package object apigateway {
     }
   }
 
-  /** The collection of documentation parts of an API. <div class="remarks"/>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>
+  /** The collection of documentation parts of an API.
     */
   @js.native
   trait DocumentationParts extends js.Object {
@@ -1891,9 +1841,7 @@ package object apigateway {
     }
   }
 
-  /** A snapshot of the documentation of an API. <div class="remarks">Publishing API documentation involves creating a documentation version associated with an API stage and exporting the versioned documentation to an external (e.g., OpenAPI) file. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>, <a>DocumentationVersions</a>
+  /** A snapshot of the documentation of an API.
     */
   @js.native
   trait DocumentationVersion extends js.Object {
@@ -1917,9 +1865,7 @@ package object apigateway {
     }
   }
 
-  /** The collection of documentation snapshots of an API. <div class="remarks">Use the <a>DocumentationVersions</a> to manage documentation snapshots associated with various API stages. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html|Documenting an API]], <a>DocumentationPart</a>, <a>DocumentationVersion</a>
+  /** The collection of documentation snapshots of an API.
     */
   @js.native
   trait DocumentationVersions extends js.Object {
@@ -1940,9 +1886,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>). <div class="Remarks"> When you deploy an API, API Gateway creates a default host name for the API. This default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access the API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>. When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path mapping (<a>BasePathMapping</a>) of your API under the custom domain name. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Set a Custom Host Name for an API]]
+  /** Represents a custom domain name as a user-friendly host name of an API (RestApi).
     */
   @js.native
   trait DomainName extends js.Object {
@@ -2008,10 +1952,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>DomainName</a> resources.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html|Use Client-Side Certificate]]
+  /** Represents a collection of DomainName resources.
     */
   @js.native
   trait DomainNames extends js.Object {
@@ -2032,7 +1973,7 @@ package object apigateway {
     }
   }
 
-  /** The endpoint configuration to indicate the types of endpoints an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>) has.
+  /** The endpoint configuration to indicate the types of endpoints an API (RestApi) or its custom domain name (DomainName) has.
     */
   @js.native
   trait EndpointConfiguration extends js.Object {
@@ -2053,7 +1994,7 @@ package object apigateway {
     }
   }
 
-  /** The binary blob response to <a>GetExport</a>, which contains the generated SDK.
+  /** The binary blob response to GetExport, which contains the generated SDK.
     */
   @js.native
   trait ExportResponse extends js.Object {
@@ -2121,24 +2062,7 @@ package object apigateway {
     }
   }
 
-  /** A gateway response of a given response type and status code, with optional response parameters and mapping templates. <div class="remarks"> For more information about valid gateway response types, see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html|Gateway Response Types Supported by API Gateway]] <div class="example">
-    * =Example: Get a Gateway Response of a given response type=
-    *
-    * ==Request==
-    * This example shows how to get a gateway response of the <code>MISSING_AUTHENTICATION_TOKEN</code> type.
-    * {{{
-    * GET /restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN HTTP/1.1 Host: beta-apigateway.us-east-1.amazonaws.com Content-Type: application/json X-Amz-Date: 20170503T202516Z Authorization: AWS4-HMAC-SHA256 Credential={access-key-id}/20170503/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=1b52460e3159c1a26cff29093855d50ea141c1c5b937528fecaf60f51129697a Cache-Control: no-cache Postman-Token: 3b2a1ce9-c848-2e26-2e2f-9c2caefbed45
-    * }}}
-    * The response type is specified as a URL path.
-    *
-    * ==Response==
-    * The successful operation returns the <code>200 OK</code> status code and a payload similar to the following:
-    * {{{
-    * { "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-gatewayresponse-{rel}.html", "name": "gatewayresponse", "templated": true }, "self": { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" }, "gatewayresponse:delete": { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" } }, "defaultResponse": false, "responseParameters": { "gatewayresponse.header.x-request-path": "method.request.path.petId", "gatewayresponse.header.Access-Control-Allow-Origin": "&apos;a.b.c&apos;", "gatewayresponse.header.x-request-query": "method.request.querystring.q", "gatewayresponse.header.x-request-header": "method.request.header.Accept" }, "responseTemplates": { "application/json": "{n "message": context.error.messageString,n "type": "context.error.responseType",n "stage": "context.stage",n "resourcePath": "context.resourcePath",n "stageVariables.a": "stageVariables.a",n "statusCode": "&apos;404&apos;"n}" }, "responseType": "MISSING_AUTHENTICATION_TOKEN", "statusCode": "404" }
-    * }}}
-    * <p/> </div> </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html|Customize Gateway Responses]]
+  /** A gateway response of a given response type and status code, with optional response parameters and mapping templates.
     */
   @js.native
   trait GatewayResponse extends js.Object {
@@ -2168,23 +2092,7 @@ package object apigateway {
     }
   }
 
-  /** The collection of the <a>GatewayResponse</a> instances of a <a>RestApi</a> as a <code>responseType</code>-to-<a>GatewayResponse</a> object map of key-value pairs. As such, pagination is not supported for querying this collection. <div class="remarks"> For more information about valid gateway response types, see [[https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html|Gateway Response Types Supported by API Gateway]] <div class="example">
-    * =Example: Get the collection of gateway responses of an API=
-    *
-    * ==Request==
-    * This example request shows how to retrieve the <a>GatewayResponses</a> collection from an API.
-    * {{{
-    * GET /restapis/o81lxisefl/gatewayresponses HTTP/1.1 Host: beta-apigateway.us-east-1.amazonaws.com Content-Type: application/json X-Amz-Date: 20170503T220604Z Authorization: AWS4-HMAC-SHA256 Credential={access-key-id}/20170503/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=59b42fe54a76a5de8adf2c67baa6d39206f8e9ad49a1d77ccc6a5da3103a398a Cache-Control: no-cache Postman-Token: 5637af27-dc29-fc5c-9dfe-0645d52cb515
-    * }}}
-    * <p/>
-    * ==Response==
-    * The successful operation returns the <code>200 OK</code> status code and a payload similar to the following:
-    * {{{
-    * { "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-gatewayresponse-{rel}.html", "name": "gatewayresponse", "templated": true }, "self": { "href": "/restapis/o81lxisefl/gatewayresponses" }, "first": { "href": "/restapis/o81lxisefl/gatewayresponses" }, "gatewayresponse:by-type": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "item": [ { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_FAILURE" }, { "href": "/restapis/o81lxisefl/gatewayresponses/RESOURCE_NOT_FOUND" }, { "href": "/restapis/o81lxisefl/gatewayresponses/REQUEST_TOO_LARGE" }, { "href": "/restapis/o81lxisefl/gatewayresponses/THROTTLED" }, { "href": "/restapis/o81lxisefl/gatewayresponses/UNSUPPORTED_MEDIA_TYPE" }, { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_CONFIGURATION_ERROR" }, { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_5XX" }, { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_4XX" }, { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_PARAMETERS" }, { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_BODY" }, { "href": "/restapis/o81lxisefl/gatewayresponses/EXPIRED_TOKEN" }, { "href": "/restapis/o81lxisefl/gatewayresponses/ACCESS_DENIED" }, { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_API_KEY" }, { "href": "/restapis/o81lxisefl/gatewayresponses/UNAUTHORIZED" }, { "href": "/restapis/o81lxisefl/gatewayresponses/API_CONFIGURATION_ERROR" }, { "href": "/restapis/o81lxisefl/gatewayresponses/QUOTA_EXCEEDED" }, { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_TIMEOUT" }, { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" }, { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_SIGNATURE" }, { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_FAILURE" } ] }, "_embedded": { "item": [ { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_FAILURE" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_FAILURE" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "INTEGRATION_FAILURE", "statusCode": "504" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/RESOURCE_NOT_FOUND" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/RESOURCE_NOT_FOUND" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "RESOURCE_NOT_FOUND", "statusCode": "404" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/REQUEST_TOO_LARGE" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/REQUEST_TOO_LARGE" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "REQUEST_TOO_LARGE", "statusCode": "413" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/THROTTLED" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/THROTTLED" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "THROTTLED", "statusCode": "429" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/UNSUPPORTED_MEDIA_TYPE" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/UNSUPPORTED_MEDIA_TYPE" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "UNSUPPORTED_MEDIA_TYPE", "statusCode": "415" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_CONFIGURATION_ERROR" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_CONFIGURATION_ERROR" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "AUTHORIZER_CONFIGURATION_ERROR", "statusCode": "500" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_5XX" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_5XX" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "DEFAULT_5XX" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_4XX" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/DEFAULT_4XX" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "DEFAULT_4XX" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_PARAMETERS" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_PARAMETERS" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "BAD_REQUEST_PARAMETERS", "statusCode": "400" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_BODY" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/BAD_REQUEST_BODY" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "BAD_REQUEST_BODY", "statusCode": "400" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/EXPIRED_TOKEN" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/EXPIRED_TOKEN" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "EXPIRED_TOKEN", "statusCode": "403" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/ACCESS_DENIED" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/ACCESS_DENIED" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "ACCESS_DENIED", "statusCode": "403" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_API_KEY" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_API_KEY" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "INVALID_API_KEY", "statusCode": "403" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/UNAUTHORIZED" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/UNAUTHORIZED" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "UNAUTHORIZED", "statusCode": "401" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/API_CONFIGURATION_ERROR" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/API_CONFIGURATION_ERROR" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "API_CONFIGURATION_ERROR", "statusCode": "500" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/QUOTA_EXCEEDED" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/QUOTA_EXCEEDED" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "QUOTA_EXCEEDED", "statusCode": "429" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_TIMEOUT" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/INTEGRATION_TIMEOUT" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "INTEGRATION_TIMEOUT", "statusCode": "504" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/MISSING_AUTHENTICATION_TOKEN" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "MISSING_AUTHENTICATION_TOKEN", "statusCode": "403" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_SIGNATURE" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/INVALID_SIGNATURE" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "INVALID_SIGNATURE", "statusCode": "403" }, { "_links": { "self": { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_FAILURE" }, "gatewayresponse:put": { "href": "/restapis/o81lxisefl/gatewayresponses/{response_type}", "templated": true }, "gatewayresponse:update": { "href": "/restapis/o81lxisefl/gatewayresponses/AUTHORIZER_FAILURE" } }, "defaultResponse": true, "responseParameters": {}, "responseTemplates": { "application/json": "{"message":context.error.messageString}" }, "responseType": "AUTHORIZER_FAILURE", "statusCode": "500" } ] } }
-    * }}}
-    * <p/> </div> </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html|Customize Gateway Responses]]
+  /** The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse object map of key-value pairs. As such, pagination is not supported for querying this collection.
     */
   @js.native
   trait GatewayResponses extends js.Object {
@@ -2205,7 +2113,7 @@ package object apigateway {
     }
   }
 
-  /** A request to generate a <a>ClientCertificate</a> resource.
+  /** A request to generate a ClientCertificate resource.
     */
   @js.native
   trait GenerateClientCertificateRequest extends js.Object {
@@ -2226,7 +2134,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to get information about the current <a>Account</a> resource.
+  /** Requests API Gateway to get information about the current Account resource.
     */
   @js.native
   trait GetAccountRequest extends js.Object
@@ -2239,7 +2147,7 @@ package object apigateway {
     }
   }
 
-  /** A request to get information about the current <a>ApiKey</a> resource.
+  /** A request to get information about the current ApiKey resource.
     */
   @js.native
   trait GetApiKeyRequest extends js.Object {
@@ -2262,7 +2170,7 @@ package object apigateway {
     }
   }
 
-  /** A request to get information about the current <a>ApiKeys</a> resource.
+  /** A request to get information about the current ApiKeys resource.
     */
   @js.native
   trait GetApiKeysRequest extends js.Object {
@@ -2292,7 +2200,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe an existing <a>Authorizer</a> resource.
+  /** Request to describe an existing Authorizer resource.
     */
   @js.native
   trait GetAuthorizerRequest extends js.Object {
@@ -2314,7 +2222,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe an existing <a>Authorizers</a> resource.
+  /** Request to describe an existing Authorizers resource.
     */
   @js.native
   trait GetAuthorizersRequest extends js.Object {
@@ -2340,7 +2248,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe a <a>BasePathMapping</a> resource.
+  /** Request to describe a BasePathMapping resource.
     */
   @js.native
   trait GetBasePathMappingRequest extends js.Object {
@@ -2362,7 +2270,7 @@ package object apigateway {
     }
   }
 
-  /** A request to get information about a collection of <a>BasePathMapping</a> resources.
+  /** A request to get information about a collection of BasePathMapping resources.
     */
   @js.native
   trait GetBasePathMappingsRequest extends js.Object {
@@ -2388,7 +2296,7 @@ package object apigateway {
     }
   }
 
-  /** A request to get information about the current <a>ClientCertificate</a> resource.
+  /** A request to get information about the current ClientCertificate resource.
     */
   @js.native
   trait GetClientCertificateRequest extends js.Object {
@@ -2407,7 +2315,7 @@ package object apigateway {
     }
   }
 
-  /** A request to get information about a collection of <a>ClientCertificate</a> resources.
+  /** A request to get information about a collection of ClientCertificate resources.
     */
   @js.native
   trait GetClientCertificatesRequest extends js.Object {
@@ -2428,7 +2336,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to get information about a <a>Deployment</a> resource.
+  /** Requests API Gateway to get information about a Deployment resource.
     */
   @js.native
   trait GetDeploymentRequest extends js.Object {
@@ -2454,7 +2362,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to get information about a <a>Deployments</a> collection.
+  /** Requests API Gateway to get information about a Deployments collection.
     */
   @js.native
   trait GetDeploymentsRequest extends js.Object {
@@ -2588,7 +2496,7 @@ package object apigateway {
     }
   }
 
-  /** Request to get the name of a <a>DomainName</a> resource.
+  /** Request to get the name of a DomainName resource.
     */
   @js.native
   trait GetDomainNameRequest extends js.Object {
@@ -2607,7 +2515,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe a collection of <a>DomainName</a> resources.
+  /** Request to describe a collection of DomainName resources.
     */
   @js.native
   trait GetDomainNamesRequest extends js.Object {
@@ -2628,7 +2536,7 @@ package object apigateway {
     }
   }
 
-  /** Request a new export of a <a>RestApi</a> for a particular <a>Stage</a>.
+  /** Request a new export of a RestApi for a particular Stage.
     */
   @js.native
   trait GetExportRequest extends js.Object {
@@ -2660,7 +2568,7 @@ package object apigateway {
     }
   }
 
-  /** Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+  /** Gets a GatewayResponse of a specified response type on the given RestApi.
     */
   @js.native
   trait GetGatewayResponseRequest extends js.Object {
@@ -2682,7 +2590,7 @@ package object apigateway {
     }
   }
 
-  /** Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a> collection for the supported response types.
+  /** Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.
     */
   @js.native
   trait GetGatewayResponsesRequest extends js.Object {
@@ -2761,7 +2669,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe an existing <a>Method</a> resource.
+  /** Request to describe an existing Method resource.
     */
   @js.native
   trait GetMethodRequest extends js.Object {
@@ -2786,7 +2694,7 @@ package object apigateway {
     }
   }
 
-  /** Request to describe a <a>MethodResponse</a> resource.
+  /** Request to describe a MethodResponse resource.
     */
   @js.native
   trait GetMethodResponseRequest extends js.Object {
@@ -2814,7 +2722,7 @@ package object apigateway {
     }
   }
 
-  /** Request to list information about a model in an existing <a>RestApi</a> resource.
+  /** Request to list information about a model in an existing RestApi resource.
     */
   @js.native
   trait GetModelRequest extends js.Object {
@@ -2862,7 +2770,7 @@ package object apigateway {
     }
   }
 
-  /** Request to list existing <a>Models</a> defined for a <a>RestApi</a> resource.
+  /** Request to list existing Models defined for a RestApi resource.
     */
   @js.native
   trait GetModelsRequest extends js.Object {
@@ -2888,7 +2796,7 @@ package object apigateway {
     }
   }
 
-  /** Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+  /** Gets a RequestValidator of a given RestApi.
     */
   @js.native
   trait GetRequestValidatorRequest extends js.Object {
@@ -2910,7 +2818,7 @@ package object apigateway {
     }
   }
 
-  /** Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+  /** Gets the RequestValidators collection of a given RestApi.
     */
   @js.native
   trait GetRequestValidatorsRequest extends js.Object {
@@ -2991,7 +2899,7 @@ package object apigateway {
     }
   }
 
-  /** The GET request to list an existing <a>RestApi</a> defined for your collection.
+  /** The GET request to list an existing RestApi defined for your collection.
     */
   @js.native
   trait GetRestApiRequest extends js.Object {
@@ -3010,7 +2918,7 @@ package object apigateway {
     }
   }
 
-  /** The GET request to list existing <a>RestApis</a> defined for your collection.
+  /** The GET request to list existing RestApis defined for your collection.
     */
   @js.native
   trait GetRestApisRequest extends js.Object {
@@ -3031,7 +2939,7 @@ package object apigateway {
     }
   }
 
-  /** Request a new generated client SDK for a <a>RestApi</a> and <a>Stage</a>.
+  /** Request a new generated client SDK for a RestApi and Stage.
     */
   @js.native
   trait GetSdkRequest extends js.Object {
@@ -3060,7 +2968,7 @@ package object apigateway {
     }
   }
 
-  /** Get an <a>SdkType</a> instance.
+  /** Get an SdkType instance.
     */
   @js.native
   trait GetSdkTypeRequest extends js.Object {
@@ -3079,7 +2987,7 @@ package object apigateway {
     }
   }
 
-  /** Get the <a>SdkTypes</a> collection.
+  /** Get the SdkTypes collection.
     */
   @js.native
   trait GetSdkTypesRequest extends js.Object {
@@ -3100,7 +3008,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to get information about a <a>Stage</a> resource.
+  /** Requests API Gateway to get information about a Stage resource.
     */
   @js.native
   trait GetStageRequest extends js.Object {
@@ -3122,7 +3030,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to get information about one or more <a>Stage</a> resources.
+  /** Requests API Gateway to get information about one or more Stage resources.
     */
   @js.native
   trait GetStagesRequest extends js.Object {
@@ -3145,7 +3053,7 @@ package object apigateway {
     }
   }
 
-  /** Gets the <a>Tags</a> collection for a given resource.
+  /** Gets the Tags collection for a given resource.
     */
   @js.native
   trait GetTagsRequest extends js.Object {
@@ -3319,7 +3227,7 @@ package object apigateway {
     }
   }
 
-  /** Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+  /** Gets the VpcLinks collection under the caller's account in a selected region.
     */
   @js.native
   trait GetVpcLinksRequest extends js.Object {
@@ -3421,9 +3329,7 @@ package object apigateway {
     }
   }
 
-  /** Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration. <div class="remarks">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
+  /** Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.
     */
   @js.native
   trait Integration extends js.Object {
@@ -3483,10 +3389,7 @@ package object apigateway {
     }
   }
 
-  /** Represents an integration response. The status code must map to an existing <a>MethodResponse</a>, and parameters and templates can be used to transform the back-end response.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
+  /** Represents an integration response. The status code must map to an existing MethodResponse, and parameters and templates can be used to transform the back-end response.
     */
   @js.native
   trait IntegrationResponse extends js.Object {
@@ -3516,22 +3419,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a client-facing interface by which the client calls the API to access back-end resources. A ```Method``` resource is integrated with an <a>Integration</a> resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a ```Method``` resource, whereas an integration request is embodied in an <a>Integration</a> resource. On the other hand, a method response is represented by a <a>MethodResponse</a> resource, whereas an integration response is represented by an <a>IntegrationResponse</a> resource. <div class="remarks"> <p/>
-    * =Example: Retrive the GET method on a specified resource=
-    *
-    * ==Request==
-    * The following example request retrieves the information about the GET method on an API resource (<code>3kzxbg5sa2</code>) of an API (<code>fugvjdxtri</code>).
-    * {{{
-    * GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date: 20160603T210259Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160603/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
-    * }}}
-    * ==Response==
-    * The successful response returns a <code>200 OK</code> status code and a payload similar to the following:
-    * {{{
-    * { "_links": { "curies": [ { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html", "name": "integration", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html", "name": "integrationresponse", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html", "name": "method", "templated": true }, { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true } ], "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title": "GET" }, "integration:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "method:integration": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "method:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "method:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET" }, "methodresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}", "templated": true } }, "apiKeyRequired": true, "authorizationType": "NONE", "httpMethod": "GET", "_embedded": { "method:integration": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integration:responses": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integration:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration" }, "integrationresponse:put": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}", "templated": true } }, "cacheKeyParameters": [], "cacheNamespace": "3kzxbg5sa2", "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole", "httpMethod": "POST", "passthroughBehavior": "WHEN_NO_MATCH", "requestParameters": { "integration.request.header.Content-Type": "'application/x-amz-json-1.1'" }, "requestTemplates": { "application/json": "{n}" }, "type": "AWS", "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams", "_embedded": { "integration:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200", "name": "200", "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200" } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'" }, "responseTemplates": { "application/json": "util.urlDecode("%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E")" }, "statusCode": "200" } } }, "method:responses": { "_links": { "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "name": "200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type": false }, "statusCode": "200" } } }
-    * }}}
-    * In the example above, the response template for the <code>200 OK</code> response maps the JSON output from the <code>ListStreams</code> action in the back end to an XML output. The mapping template is URL-encoded as <code>%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E</code> and the output is decoded using the [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference|util.urlDecode()]] helper function. </div>
-    * @see
-    *   <a>MethodResponse</a>, <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html|Set up an API's method]]
+  /** Represents a client-facing interface by which the client calls the API to access back-end resources. A Method resource is integrated with an Integration resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a Method resource, whereas an integration request is embodied in an Integration resource. On the other hand, a method response is represented by a MethodResponse resource, whereas an integration response is represented by an IntegrationResponse resource.
     */
   @js.native
   trait Method extends js.Object {
@@ -3579,22 +3467,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template. <div class="remarks"> <p/>
-    * =Example: A ```MethodResponse``` instance of an API=
-    *
-    * ==Request==
-    * The example request retrieves a ```MethodResponse``` of the 200 status code.
-    * {{{
-    * GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200 HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date: 20160603T222952Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160603/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
-    * }}}
-    * ==Response==
-    * The successful response returns <code>200 OK</code> status and a payload as follows:
-    * {{{
-    * { "_links": { "curies": { "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html", "name": "methodresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200", "title": "200" }, "methodresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" }, "methodresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200" } }, "responseModels": { "application/json": "Empty" }, "responseParameters": { "method.response.header.Content-Type": false }, "statusCode": "200" }
-    * }}}
-    * <p/> </div>
-    * @see
-    *   <a>Method</a>, <a>IntegrationResponse</a>, <a>Integration</a> [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Creating an API]]
+  /** Represents a method response of a given HTTP status code returned to the client. The method response is passed from the back end through the associated integration response that can be transformed using a mapping template.
     */
   @js.native
   trait MethodResponse extends js.Object {
@@ -3663,7 +3536,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a summary of a <a>Method</a> resource, given a particular date and time.
+  /** Represents a summary of a Method resource, given a particular date and time.
     */
   @js.native
   trait MethodSnapshot extends js.Object {
@@ -3684,9 +3557,7 @@ package object apigateway {
     }
   }
 
-  /** Represents the data structure of a method's request or response payload. <div class="remarks"> A request model defines the data structure of the client-supplied request payload. A response model defines the data structure of the response payload returned by the back end. Although not required, models are useful for mapping payloads between the front end and back end. A model is used for generating an API's SDK, validating the input request body, and creating a skeletal mapping template. </div>
-    * @see
-    *   <a>Method</a>, <a>MethodResponse</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Models and Mappings]]
+  /** Represents the data structure of a method's request or response payload.
     */
   @js.native
   trait Model extends js.Object {
@@ -3716,10 +3587,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>Model</a> resources.
-    *
-    * @see
-    *   <a>Method</a>, <a>MethodResponse</a>, [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html|Models and Mappings]]
+  /** Represents a collection of Model resources.
     */
   @js.native
   trait Models extends js.Object {
@@ -3740,7 +3608,7 @@ package object apigateway {
     }
   }
 
-  /** If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.
+  /** The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.
     */
   @js.native
   trait MutualTlsAuthentication extends js.Object {
@@ -3764,7 +3632,7 @@ package object apigateway {
     }
   }
 
-  /** If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.
+  /** The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.
     */
   @js.native
   trait MutualTlsAuthenticationInput extends js.Object {
@@ -3785,7 +3653,7 @@ package object apigateway {
     }
   }
 
-  /** A single patch operation to apply to the specified resource. Please refer to http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
+  /** For more information about supported patch operations, see [[https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html|Patch Operations]].
     */
   @js.native
   trait PatchOperation extends js.Object {
@@ -3812,7 +3680,7 @@ package object apigateway {
     }
   }
 
-  /** Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given <a>RestApi</a>.
+  /** Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.
     */
   @js.native
   trait PutGatewayResponseRequest extends js.Object {
@@ -3953,7 +3821,7 @@ package object apigateway {
     }
   }
 
-  /** Request to add a method to an existing <a>Resource</a> resource.
+  /** Request to add a method to an existing Resource resource.
     */
   @js.native
   trait PutMethodRequest extends js.Object {
@@ -4003,7 +3871,7 @@ package object apigateway {
     }
   }
 
-  /** Request to add a <a>MethodResponse</a> to an existing <a>Method</a> resource.
+  /** Request to add a MethodResponse to an existing Method resource.
     */
   @js.native
   trait PutMethodResponseRequest extends js.Object {
@@ -4094,9 +3962,7 @@ package object apigateway {
     }
   }
 
-  /** A set of validation rules for incoming <a>Method</a> requests. <div class="remarks"> In OpenAPI, a <a>RequestValidator</a> of an API is defined by the [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html|x-amazon-apigateway-request-validators.requestValidator]] object. It the referenced using the [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator|x-amazon-apigateway-request-validator]] property. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html|Enable Basic Request Validation in API Gateway]]
+  /** A set of validation rules for incoming Method requests.
     */
   @js.native
   trait RequestValidator extends js.Object {
@@ -4123,9 +3989,7 @@ package object apigateway {
     }
   }
 
-  /** A collection of <a>RequestValidator</a> resources of a given <a>RestApi</a>. <div class="remarks"> In OpenAPI, the <a>RequestValidators</a> of an API is defined by the [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.html|x-amazon-apigateway-request-validators]] extension. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html|Enable Basic Request Validation in API Gateway]]
+  /** A collection of RequestValidator resources of a given RestApi.
     */
   @js.native
   trait RequestValidators extends js.Object {
@@ -4147,9 +4011,6 @@ package object apigateway {
   }
 
   /** Represents an API resource.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
   trait Resource extends js.Object {
@@ -4179,10 +4040,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a collection of <a>Resource</a> resources.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
+  /** Represents a collection of Resource resources.
     */
   @js.native
   trait Resources extends js.Object {
@@ -4204,9 +4062,6 @@ package object apigateway {
   }
 
   /** Represents a REST API.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
   trait RestApi extends js.Object {
@@ -4261,9 +4116,6 @@ package object apigateway {
   }
 
   /** Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html|Create an API]]
     */
   @js.native
   trait RestApis extends js.Object {
@@ -4314,7 +4166,7 @@ package object apigateway {
     }
   }
 
-  /** The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+  /** The binary blob response to GetSdk, which contains the generated SDK.
     */
   @js.native
   trait SdkResponse extends js.Object {
@@ -4365,7 +4217,7 @@ package object apigateway {
     }
   }
 
-  /** The collection of <a>SdkType</a> instances.
+  /** The collection of SdkType instances.
     */
   @js.native
   trait SdkTypes extends js.Object {
@@ -4386,10 +4238,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html|Deploy an API]]
+  /** Represents a unique identifier for a version of a deployed RestApi that is callable by users.
     */
   @js.native
   trait Stage extends js.Object {
@@ -4476,10 +4325,7 @@ package object apigateway {
     }
   }
 
-  /** A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html|Deploying API in Stages]]
+  /** A list of Stage resources that are associated with the ApiKey resource.
     */
   @js.native
   trait Stages extends js.Object {
@@ -4538,9 +4384,6 @@ package object apigateway {
   }
 
   /** Represents a mapping template used to transform a payload.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings|Mapping Templates]]
     */
   @js.native
   trait Template extends js.Object {
@@ -4558,7 +4401,7 @@ package object apigateway {
     }
   }
 
-  /** Make a request to simulate the execution of an <a>Authorizer</a>.
+  /** Make a request to simulate the invocation of an Authorizer.
     */
   @js.native
   trait TestInvokeAuthorizerRequest extends js.Object {
@@ -4599,7 +4442,7 @@ package object apigateway {
     }
   }
 
-  /** Represents the response of the test invoke request for a custom <a>Authorizer</a>
+  /** Represents the response of the test invoke request for a custom Authorizer
     */
   @js.native
   trait TestInvokeAuthorizerResponse extends js.Object {
@@ -4635,7 +4478,7 @@ package object apigateway {
     }
   }
 
-  /** Make a request to simulate the execution of a <a>Method</a>.
+  /** Make a request to simulate the invocation of a Method.
     */
   @js.native
   trait TestInvokeMethodRequest extends js.Object {
@@ -4680,9 +4523,6 @@ package object apigateway {
   }
 
   /** Represents the response of the test invoke request in the HTTP method.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console|Test API using the API Gateway console]]
     */
   @js.native
   trait TestInvokeMethodResponse extends js.Object {
@@ -4736,6 +4576,8 @@ package object apigateway {
     }
   }
 
+  /** Specifies the TLS configuration for an integration.
+    */
   @js.native
   trait TlsConfig extends js.Object {
     var insecureSkipVerification: js.UndefOr[Boolean]
@@ -4774,7 +4616,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to change information about the current <a>Account</a> resource.
+  /** Requests API Gateway to change information about the current Account resource.
     */
   @js.native
   trait UpdateAccountRequest extends js.Object {
@@ -4792,7 +4634,7 @@ package object apigateway {
     }
   }
 
-  /** A request to change information about an <a>ApiKey</a> resource.
+  /** A request to change information about an ApiKey resource.
     */
   @js.native
   trait UpdateApiKeyRequest extends js.Object {
@@ -4815,7 +4657,7 @@ package object apigateway {
     }
   }
 
-  /** Request to update an existing <a>Authorizer</a> resource.
+  /** Request to update an existing Authorizer resource.
     */
   @js.native
   trait UpdateAuthorizerRequest extends js.Object {
@@ -4841,7 +4683,7 @@ package object apigateway {
     }
   }
 
-  /** A request to change information about the <a>BasePathMapping</a> resource.
+  /** A request to change information about the BasePathMapping resource.
     */
   @js.native
   trait UpdateBasePathMappingRequest extends js.Object {
@@ -4867,7 +4709,7 @@ package object apigateway {
     }
   }
 
-  /** A request to change information about an <a>ClientCertificate</a> resource.
+  /** A request to change information about an ClientCertificate resource.
     */
   @js.native
   trait UpdateClientCertificateRequest extends js.Object {
@@ -4890,7 +4732,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to change information about a <a>Deployment</a> resource.
+  /** Requests API Gateway to change information about a Deployment resource.
     */
   @js.native
   trait UpdateDeploymentRequest extends js.Object {
@@ -4968,7 +4810,7 @@ package object apigateway {
     }
   }
 
-  /** A request to change information about the <a>DomainName</a> resource.
+  /** A request to change information about the DomainName resource.
     */
   @js.native
   trait UpdateDomainNameRequest extends js.Object {
@@ -4991,7 +4833,7 @@ package object apigateway {
     }
   }
 
-  /** Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+  /** Updates a GatewayResponse of a specified response type on the given RestApi.
     */
   @js.native
   trait UpdateGatewayResponseRequest extends js.Object {
@@ -5078,7 +4920,7 @@ package object apigateway {
     }
   }
 
-  /** Request to update an existing <a>Method</a> resource.
+  /** Request to update an existing Method resource.
     */
   @js.native
   trait UpdateMethodRequest extends js.Object {
@@ -5107,7 +4949,7 @@ package object apigateway {
     }
   }
 
-  /** A request to update an existing <a>MethodResponse</a> resource.
+  /** A request to update an existing MethodResponse resource.
     */
   @js.native
   trait UpdateMethodResponseRequest extends js.Object {
@@ -5139,7 +4981,7 @@ package object apigateway {
     }
   }
 
-  /** Request to update an existing model in an existing <a>RestApi</a> resource.
+  /** Request to update an existing model in an existing RestApi resource.
     */
   @js.native
   trait UpdateModelRequest extends js.Object {
@@ -5165,7 +5007,7 @@ package object apigateway {
     }
   }
 
-  /** Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+  /** Updates a RequestValidator of a given RestApi.
     */
   @js.native
   trait UpdateRequestValidatorRequest extends js.Object {
@@ -5191,7 +5033,7 @@ package object apigateway {
     }
   }
 
-  /** Request to change information about a <a>Resource</a> resource.
+  /** Request to change information about a Resource resource.
     */
   @js.native
   trait UpdateResourceRequest extends js.Object {
@@ -5217,7 +5059,7 @@ package object apigateway {
     }
   }
 
-  /** Request to update an existing <a>RestApi</a> resource in your collection.
+  /** Request to update an existing RestApi resource in your collection.
     */
   @js.native
   trait UpdateRestApiRequest extends js.Object {
@@ -5240,7 +5082,7 @@ package object apigateway {
     }
   }
 
-  /** Requests API Gateway to change information about a <a>Stage</a> resource.
+  /** Requests API Gateway to change information about a Stage resource.
     */
   @js.native
   trait UpdateStageRequest extends js.Object {
@@ -5315,7 +5157,7 @@ package object apigateway {
     }
   }
 
-  /** Updates an existing <a>VpcLink</a> of a specified identifier.
+  /** Updates an existing VpcLink of a specified identifier.
     */
   @js.native
   trait UpdateVpcLinkRequest extends js.Object {
@@ -5338,9 +5180,7 @@ package object apigateway {
     }
   }
 
-  /** Represents the usage data of a usage plan. <div class="remarks"/>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]], [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-console.html#api-gateway-usage-plan-manage-usage|Manage Usage in a Usage Plan]]
+  /** Represents the usage data of a usage plan.
     */
   @js.native
   trait Usage extends js.Object {
@@ -5370,9 +5210,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [[https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html|AWS Budgets]] to monitor costs and [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF]] to manage API requests. <div class="remarks"> In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan customers by adding API keys to the plan. </div>
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
+  /** Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [[https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html|Amazon Web Services Budgets]] to monitor costs and [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|WAF]] to manage API requests.
     */
   @js.native
   trait UsagePlan extends js.Object {
@@ -5411,9 +5249,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a usage plan key to identify a plan customer. <div class="remarks"> To associate an API stage with a selected API key in a usage plan, you must create a UsagePlanKey resource to represent the selected <a>ApiKey</a>. </div>"
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
+  /** Represents a usage plan key to identify a plan customer.
     */
   @js.native
   trait UsagePlanKey extends js.Object {
@@ -5441,9 +5277,6 @@ package object apigateway {
   }
 
   /** Represents the collection of usage plan keys added to usage plans for the associated API keys and, possibly, other types of keys.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
   trait UsagePlanKeys extends js.Object {
@@ -5465,9 +5298,6 @@ package object apigateway {
   }
 
   /** Represents a collection of usage plans for an AWS account.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */
   @js.native
   trait UsagePlans extends js.Object {
@@ -5488,7 +5318,7 @@ package object apigateway {
     }
   }
 
-  /** An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC). <div class="remarks"> <p>To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you, as an API developer, create a <a>VpcLink</a> resource targeted for one or more network load balancers of the VPC and then integrate an API method with a private integration that uses the <a>VpcLink</a>. The private integration has an integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property to identify the <a>VpcLink</a> used. </p> </div>
+  /** An API Gateway VPC link for a RestApi to access resources in an Amazon Virtual Private Cloud (VPC).
     */
   @js.native
   trait VpcLink extends js.Object {
@@ -5525,9 +5355,6 @@ package object apigateway {
   }
 
   /** The collection of VPC links under the caller's account in a region.
-    *
-    * @see
-    *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-with-private-integration.html|Getting Started with Private Integrations]], [[https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-private-integration.html|Set up Private Integrations]]
     */
   @js.native
   trait VpcLinks extends js.Object {

@@ -19,8 +19,9 @@ object ResourceGroupState {
 sealed trait ResourceType extends js.Any
 object ResourceType {
   val CFN_STACK = "CFN_STACK".asInstanceOf[ResourceType]
+  val RESOURCE_TAG_VALUE = "RESOURCE_TAG_VALUE".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(CFN_STACK)
+  @inline def values: js.Array[ResourceType] = js.Array(CFN_STACK, RESOURCE_TAG_VALUE)
 }
 
 @js.native

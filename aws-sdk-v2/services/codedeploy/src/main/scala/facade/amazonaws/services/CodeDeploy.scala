@@ -263,7 +263,7 @@ package object codedeploy {
     }
   }
 
-  /** Information about alarms associated with the deployment group.
+  /** Information about alarms associated with a deployment or deployment group.
     */
   @js.native
   trait AlarmConfiguration extends js.Object {
@@ -287,7 +287,7 @@ package object codedeploy {
     }
   }
 
-  /** A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.
+  /** A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.
     */
   @js.native
   trait AppSpecContent extends js.Object {
@@ -706,7 +706,7 @@ package object codedeploy {
     }
   }
 
-  /** Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.
+  /** Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.
     */
   @js.native
   trait CloudFormationTarget extends js.Object {
@@ -952,6 +952,7 @@ package object codedeploy {
     var description: js.UndefOr[Description]
     var fileExistsBehavior: js.UndefOr[FileExistsBehavior]
     var ignoreApplicationStopFailures: js.UndefOr[Boolean]
+    var overrideAlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var revision: js.UndefOr[RevisionLocation]
     var targetInstances: js.UndefOr[TargetInstances]
     var updateOutdatedInstancesOnly: js.UndefOr[Boolean]
@@ -967,6 +968,7 @@ package object codedeploy {
         description: js.UndefOr[Description] = js.undefined,
         fileExistsBehavior: js.UndefOr[FileExistsBehavior] = js.undefined,
         ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
+        overrideAlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         revision: js.UndefOr[RevisionLocation] = js.undefined,
         targetInstances: js.UndefOr[TargetInstances] = js.undefined,
         updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
@@ -981,6 +983,7 @@ package object codedeploy {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
       ignoreApplicationStopFailures.foreach(__v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any]))
+      overrideAlarmConfiguration.foreach(__v => __obj.updateDynamic("overrideAlarmConfiguration")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
       updateOutdatedInstancesOnly.foreach(__v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any]))
@@ -1286,6 +1289,7 @@ package object codedeploy {
     var ignoreApplicationStopFailures: js.UndefOr[Boolean]
     var instanceTerminationWaitTimeStarted: js.UndefOr[Boolean]
     var loadBalancerInfo: js.UndefOr[LoadBalancerInfo]
+    var overrideAlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var previousRevision: js.UndefOr[RevisionLocation]
     var relatedDeployments: js.UndefOr[RelatedDeployments]
     var revision: js.UndefOr[RevisionLocation]
@@ -1320,6 +1324,7 @@ package object codedeploy {
         ignoreApplicationStopFailures: js.UndefOr[Boolean] = js.undefined,
         instanceTerminationWaitTimeStarted: js.UndefOr[Boolean] = js.undefined,
         loadBalancerInfo: js.UndefOr[LoadBalancerInfo] = js.undefined,
+        overrideAlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         previousRevision: js.UndefOr[RevisionLocation] = js.undefined,
         relatedDeployments: js.UndefOr[RelatedDeployments] = js.undefined,
         revision: js.UndefOr[RevisionLocation] = js.undefined,
@@ -1351,6 +1356,7 @@ package object codedeploy {
       ignoreApplicationStopFailures.foreach(__v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any]))
       instanceTerminationWaitTimeStarted.foreach(__v => __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any]))
       loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
+      overrideAlarmConfiguration.foreach(__v => __obj.updateDynamic("overrideAlarmConfiguration")(__v.asInstanceOf[js.Any]))
       previousRevision.foreach(__v => __obj.updateDynamic("previousRevision")(__v.asInstanceOf[js.Any]))
       relatedDeployments.foreach(__v => __obj.updateDynamic("relatedDeployments")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
@@ -1538,7 +1544,7 @@ package object codedeploy {
     }
   }
 
-  /** Information about groups of EC2 instance tags.
+  /** Information about groups of Amazon EC2 instance tags.
     */
   @js.native
   trait EC2TagSet extends js.Object {
@@ -1613,7 +1619,7 @@ package object codedeploy {
     }
   }
 
-  /** Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.
+  /** Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.
     */
   @js.native
   trait ECSTaskSet extends js.Object {
@@ -2205,7 +2211,7 @@ package object codedeploy {
     }
   }
 
-  /** Information about the target AWS Lambda function during an AWS Lambda deployment.
+  /** Information about the target Lambda function during an Lambda deployment.
     */
   @js.native
   trait LambdaTarget extends js.Object {
@@ -2852,7 +2858,7 @@ package object codedeploy {
     }
   }
 
-  /** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
+  /** A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.
     */
   @deprecated("RawString and String revision type are deprecated, use AppSpecContent type instead.", "forever")
   @js.native
@@ -3276,7 +3282,7 @@ package object codedeploy {
     }
   }
 
-  /** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
+  /** A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     */
   @js.native
   trait TimeBasedCanary extends js.Object {
@@ -3357,7 +3363,7 @@ package object codedeploy {
     }
   }
 
-  /** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
+  /** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
     */
   @js.native
   trait TrafficRoutingConfig extends js.Object {

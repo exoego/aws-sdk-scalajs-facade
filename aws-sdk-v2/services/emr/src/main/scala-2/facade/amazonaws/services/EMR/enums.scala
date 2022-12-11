@@ -328,6 +328,15 @@ object PlacementGroupStrategy {
 }
 
 @js.native
+sealed trait ReconfigurationType extends js.Any
+object ReconfigurationType {
+  val OVERWRITE = "OVERWRITE".asInstanceOf[ReconfigurationType]
+  val MERGE = "MERGE".asInstanceOf[ReconfigurationType]
+
+  @inline def values: js.Array[ReconfigurationType] = js.Array(OVERWRITE, MERGE)
+}
+
+@js.native
 sealed trait RepoUpgradeOnBoot extends js.Any
 object RepoUpgradeOnBoot {
   val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]

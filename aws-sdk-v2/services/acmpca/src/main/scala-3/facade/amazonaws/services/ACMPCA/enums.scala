@@ -58,6 +58,14 @@ object CertificateAuthorityType {
   inline def values: js.Array[CertificateAuthorityType] = js.Array(ROOT, SUBORDINATE)
 }
 
+type CertificateAuthorityUsageMode = "GENERAL_PURPOSE" | "SHORT_LIVED_CERTIFICATE"
+object CertificateAuthorityUsageMode {
+  inline val GENERAL_PURPOSE: "GENERAL_PURPOSE" = "GENERAL_PURPOSE"
+  inline val SHORT_LIVED_CERTIFICATE: "SHORT_LIVED_CERTIFICATE" = "SHORT_LIVED_CERTIFICATE"
+
+  inline def values: js.Array[CertificateAuthorityUsageMode] = js.Array(GENERAL_PURPOSE, SHORT_LIVED_CERTIFICATE)
+}
+
 type ExtendedKeyUsageType = "SERVER_AUTH" | "CLIENT_AUTH" | "CODE_SIGNING" | "EMAIL_PROTECTION" | "TIME_STAMPING" | "OCSP_SIGNING" | "SMART_CARD_LOGIN" | "DOCUMENT_SIGNING" | "CERTIFICATE_TRANSPARENCY"
 object ExtendedKeyUsageType {
   inline val SERVER_AUTH: "SERVER_AUTH" = "SERVER_AUTH"

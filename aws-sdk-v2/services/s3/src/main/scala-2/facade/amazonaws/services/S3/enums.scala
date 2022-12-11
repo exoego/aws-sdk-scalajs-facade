@@ -50,6 +50,7 @@ object BucketLocationConstraint {
   val `ap-south-1` = "ap-south-1".asInstanceOf[BucketLocationConstraint]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[BucketLocationConstraint]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[BucketLocationConstraint]
+  val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[BucketLocationConstraint]
   val `ca-central-1` = "ca-central-1".asInstanceOf[BucketLocationConstraint]
   val `cn-north-1` = "cn-north-1".asInstanceOf[BucketLocationConstraint]
   val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[BucketLocationConstraint]
@@ -77,6 +78,7 @@ object BucketLocationConstraint {
     `ap-south-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ca-central-1`,
     `cn-north-1`,
     `cn-northwest-1`,
@@ -114,6 +116,25 @@ object BucketVersioningStatus {
   val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
   @inline def values: js.Array[BucketVersioningStatus] = js.Array(Enabled, Suspended)
+}
+
+@js.native
+sealed trait ChecksumAlgorithm extends js.Any
+object ChecksumAlgorithm {
+  val CRC32 = "CRC32".asInstanceOf[ChecksumAlgorithm]
+  val CRC32C = "CRC32C".asInstanceOf[ChecksumAlgorithm]
+  val SHA1 = "SHA1".asInstanceOf[ChecksumAlgorithm]
+  val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
+
+  @inline def values: js.Array[ChecksumAlgorithm] = js.Array(CRC32, CRC32C, SHA1, SHA256)
+}
+
+@js.native
+sealed trait ChecksumMode extends js.Any
+object ChecksumMode {
+  val ENABLED = "ENABLED".asInstanceOf[ChecksumMode]
+
+  @inline def values: js.Array[ChecksumMode] = js.Array(ENABLED)
 }
 
 @js.native
@@ -315,6 +336,7 @@ object InventoryOptionalField {
   val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
   val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
   val BucketKeyStatus = "BucketKeyStatus".asInstanceOf[InventoryOptionalField]
+  val ChecksumAlgorithm = "ChecksumAlgorithm".asInstanceOf[InventoryOptionalField]
 
   @inline def values: js.Array[InventoryOptionalField] = js.Array(
     Size,
@@ -328,7 +350,8 @@ object InventoryOptionalField {
     ObjectLockMode,
     ObjectLockLegalHoldStatus,
     IntelligentTieringAccessTier,
-    BucketKeyStatus
+    BucketKeyStatus,
+    ChecksumAlgorithm
   )
 }
 
@@ -375,6 +398,18 @@ object MetricsStatus {
   val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
   @inline def values: js.Array[MetricsStatus] = js.Array(Enabled, Disabled)
+}
+
+@js.native
+sealed trait ObjectAttributes extends js.Any
+object ObjectAttributes {
+  val ETag = "ETag".asInstanceOf[ObjectAttributes]
+  val Checksum = "Checksum".asInstanceOf[ObjectAttributes]
+  val ObjectParts = "ObjectParts".asInstanceOf[ObjectAttributes]
+  val StorageClass = "StorageClass".asInstanceOf[ObjectAttributes]
+  val ObjectSize = "ObjectSize".asInstanceOf[ObjectAttributes]
+
+  @inline def values: js.Array[ObjectAttributes] = js.Array(ETag, Checksum, ObjectParts, StorageClass, ObjectSize)
 }
 
 @js.native
@@ -557,7 +592,7 @@ object RequestCharged {
   @inline def values: js.Array[RequestCharged] = js.Array(requester)
 }
 
-/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 User Guide</i>.
+/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requester Pays Buckets]] in the <i>Amazon S3 User Guide</i>.
   */
 @js.native
 sealed trait RequestPayer extends js.Any

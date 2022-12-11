@@ -83,6 +83,15 @@ object DatasetType {
 }
 
 @js.native
+sealed trait DetectLabelsFeatureName extends js.Any
+object DetectLabelsFeatureName {
+  val GENERAL_LABELS = "GENERAL_LABELS".asInstanceOf[DetectLabelsFeatureName]
+  val IMAGE_PROPERTIES = "IMAGE_PROPERTIES".asInstanceOf[DetectLabelsFeatureName]
+
+  @inline def values: js.Array[DetectLabelsFeatureName] = js.Array(GENERAL_LABELS, IMAGE_PROPERTIES)
+}
+
+@js.native
 sealed trait EmotionName extends js.Any
 object EmotionName {
   val HAPPY = "HAPPY".asInstanceOf[EmotionName]
@@ -257,8 +266,24 @@ object ProjectVersionStatus {
   val STOPPING = "STOPPING".asInstanceOf[ProjectVersionStatus]
   val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
   val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
+  val COPYING_IN_PROGRESS = "COPYING_IN_PROGRESS".asInstanceOf[ProjectVersionStatus]
+  val COPYING_COMPLETED = "COPYING_COMPLETED".asInstanceOf[ProjectVersionStatus]
+  val COPYING_FAILED = "COPYING_FAILED".asInstanceOf[ProjectVersionStatus]
 
-  @inline def values: js.Array[ProjectVersionStatus] = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
+  @inline def values: js.Array[ProjectVersionStatus] = js.Array(
+    TRAINING_IN_PROGRESS,
+    TRAINING_COMPLETED,
+    TRAINING_FAILED,
+    STARTING,
+    RUNNING,
+    FAILED,
+    STOPPING,
+    STOPPED,
+    DELETING,
+    COPYING_IN_PROGRESS,
+    COPYING_COMPLETED,
+    COPYING_FAILED
+  )
 }
 
 @js.native
@@ -307,6 +332,15 @@ object SegmentType {
 }
 
 @js.native
+sealed trait StreamProcessorParameterToDelete extends js.Any
+object StreamProcessorParameterToDelete {
+  val ConnectedHomeMinConfidence = "ConnectedHomeMinConfidence".asInstanceOf[StreamProcessorParameterToDelete]
+  val RegionsOfInterest = "RegionsOfInterest".asInstanceOf[StreamProcessorParameterToDelete]
+
+  @inline def values: js.Array[StreamProcessorParameterToDelete] = js.Array(ConnectedHomeMinConfidence, RegionsOfInterest)
+}
+
+@js.native
 sealed trait StreamProcessorStatus extends js.Any
 object StreamProcessorStatus {
   val STOPPED = "STOPPED".asInstanceOf[StreamProcessorStatus]
@@ -314,8 +348,9 @@ object StreamProcessorStatus {
   val RUNNING = "RUNNING".asInstanceOf[StreamProcessorStatus]
   val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
   val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
+  val UPDATING = "UPDATING".asInstanceOf[StreamProcessorStatus]
 
-  @inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
+  @inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING, UPDATING)
 }
 
 @js.native

@@ -2,16 +2,16 @@ package facade.amazonaws.services.dataexchange
 
 import scalajs.js
 
-/** The type of asset that is added to a data set.
-  */
 @js.native
 sealed trait AssetType extends js.Any
 object AssetType {
   val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
   val REDSHIFT_DATA_SHARE = "REDSHIFT_DATA_SHARE".asInstanceOf[AssetType]
   val API_GATEWAY_API = "API_GATEWAY_API".asInstanceOf[AssetType]
+  val S3_DATA_ACCESS = "S3_DATA_ACCESS".asInstanceOf[AssetType]
+  val LAKE_FORMATION_DATA_PERMISSION = "LAKE_FORMATION_DATA_PERMISSION".asInstanceOf[AssetType]
 
-  @inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT, REDSHIFT_DATA_SHARE, API_GATEWAY_API)
+  @inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT, REDSHIFT_DATA_SHARE, API_GATEWAY_API, S3_DATA_ACCESS, LAKE_FORMATION_DATA_PERMISSION)
 }
 
 @js.native
@@ -36,20 +36,32 @@ object Code {
   )
 }
 
-/** The name of the limit that was reached.
-  */
+@js.native
+sealed trait DatabaseLFTagPolicyPermission extends js.Any
+object DatabaseLFTagPolicyPermission {
+  val DESCRIBE = "DESCRIBE".asInstanceOf[DatabaseLFTagPolicyPermission]
+
+  @inline def values: js.Array[DatabaseLFTagPolicyPermission] = js.Array(DESCRIBE)
+}
+
 @js.native
 sealed trait JobErrorLimitName extends js.Any
 object JobErrorLimitName {
   val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
   val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
   val `Amazon Redshift datashare assets per revision` = "Amazon Redshift datashare assets per revision".asInstanceOf[JobErrorLimitName]
+  val `AWS Lake Formation data permission assets per revision` = "AWS Lake Formation data permission assets per revision".asInstanceOf[JobErrorLimitName]
+  val `Amazon S3 data access assets per revision` = "Amazon S3 data access assets per revision".asInstanceOf[JobErrorLimitName]
 
-  @inline def values: js.Array[JobErrorLimitName] = js.Array(`Assets per revision`, `Asset size in GB`, `Amazon Redshift datashare assets per revision`)
+  @inline def values: js.Array[JobErrorLimitName] = js.Array(
+    `Assets per revision`,
+    `Asset size in GB`,
+    `Amazon Redshift datashare assets per revision`,
+    `AWS Lake Formation data permission assets per revision`,
+    `Amazon S3 data access assets per revision`
+  )
 }
 
-/** The types of resource which the job error can apply to.
-  */
 @js.native
 sealed trait JobErrorResourceTypes extends js.Any
 object JobErrorResourceTypes {
@@ -60,8 +72,32 @@ object JobErrorResourceTypes {
   @inline def values: js.Array[JobErrorResourceTypes] = js.Array(REVISION, ASSET, DATA_SET)
 }
 
-/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
-  */
+@js.native
+sealed trait LFPermission extends js.Any
+object LFPermission {
+  val DESCRIBE = "DESCRIBE".asInstanceOf[LFPermission]
+  val SELECT = "SELECT".asInstanceOf[LFPermission]
+
+  @inline def values: js.Array[LFPermission] = js.Array(DESCRIBE, SELECT)
+}
+
+@js.native
+sealed trait LFResourceType extends js.Any
+object LFResourceType {
+  val TABLE = "TABLE".asInstanceOf[LFResourceType]
+  val DATABASE = "DATABASE".asInstanceOf[LFResourceType]
+
+  @inline def values: js.Array[LFResourceType] = js.Array(TABLE, DATABASE)
+}
+
+@js.native
+sealed trait LakeFormationDataPermissionType extends js.Any
+object LakeFormationDataPermissionType {
+  val LFTagPolicy = "LFTagPolicy".asInstanceOf[LakeFormationDataPermissionType]
+
+  @inline def values: js.Array[LakeFormationDataPermissionType] = js.Array(LFTagPolicy)
+}
+
 @js.native
 sealed trait Origin extends js.Any
 object Origin {
@@ -79,8 +115,6 @@ object ProtocolType {
   @inline def values: js.Array[ProtocolType] = js.Array(REST)
 }
 
-/** The types of encryption supported in export jobs to Amazon S3.
-  */
 @js.native
 sealed trait ServerSideEncryptionTypes extends js.Any
 object ServerSideEncryptionTypes {
@@ -104,6 +138,15 @@ object State {
 }
 
 @js.native
+sealed trait TableTagPolicyLFPermission extends js.Any
+object TableTagPolicyLFPermission {
+  val DESCRIBE = "DESCRIBE".asInstanceOf[TableTagPolicyLFPermission]
+  val SELECT = "SELECT".asInstanceOf[TableTagPolicyLFPermission]
+
+  @inline def values: js.Array[TableTagPolicyLFPermission] = js.Array(DESCRIBE, SELECT)
+}
+
+@js.native
 sealed trait Type extends js.Any
 object Type {
   val IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
@@ -113,6 +156,8 @@ object Type {
   val EXPORT_REVISIONS_TO_S3 = "EXPORT_REVISIONS_TO_S3".asInstanceOf[Type]
   val IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES = "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES".asInstanceOf[Type]
   val IMPORT_ASSET_FROM_API_GATEWAY_API = "IMPORT_ASSET_FROM_API_GATEWAY_API".asInstanceOf[Type]
+  val CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET = "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET".asInstanceOf[Type]
+  val IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY = "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY".asInstanceOf[Type]
 
   @inline def values: js.Array[Type] = js.Array(
     IMPORT_ASSETS_FROM_S3,
@@ -121,6 +166,8 @@ object Type {
     EXPORT_ASSET_TO_SIGNED_URL,
     EXPORT_REVISIONS_TO_S3,
     IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES,
-    IMPORT_ASSET_FROM_API_GATEWAY_API
+    IMPORT_ASSET_FROM_API_GATEWAY_API,
+    CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET,
+    IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY
   )
 }

@@ -17,14 +17,16 @@ package object ssoadmin {
   type AccountId = String
   type AccountList = js.Array[AccountId]
   type AttachedManagedPolicyList = js.Array[AttachedManagedPolicy]
+  type CustomerManagedPolicyReferenceList = js.Array[CustomerManagedPolicyReference]
   type Date = js.Date
   type Duration = String
-  type GeneralArn = String
   type Id = String
   type InstanceAccessControlAttributeConfigurationStatusReason = String
   type InstanceArn = String
   type InstanceList = js.Array[InstanceMetadata]
   type ManagedPolicyArn = String
+  type ManagedPolicyName = String
+  type ManagedPolicyPath = String
   type MaxResults = Int
   type Name = String
   type PermissionSetArn = String
@@ -40,12 +42,14 @@ package object ssoadmin {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TaggableResourceArn = String
   type TargetId = String
   type Token = String
   type UUId = String
 
   final class SSOAdminOps(private val service: SSOAdmin) extends AnyVal {
 
+    @inline def attachCustomerManagedPolicyReferenceToPermissionSetFuture(params: AttachCustomerManagedPolicyReferenceToPermissionSetRequest): Future[AttachCustomerManagedPolicyReferenceToPermissionSetResponse] = service.attachCustomerManagedPolicyReferenceToPermissionSet(params).promise().toFuture
     @inline def attachManagedPolicyToPermissionSetFuture(params: AttachManagedPolicyToPermissionSetRequest): Future[AttachManagedPolicyToPermissionSetResponse] = service.attachManagedPolicyToPermissionSet(params).promise().toFuture
     @inline def createAccountAssignmentFuture(params: CreateAccountAssignmentRequest): Future[CreateAccountAssignmentResponse] = service.createAccountAssignment(params).promise().toFuture
     @inline def createInstanceAccessControlAttributeConfigurationFuture(params: CreateInstanceAccessControlAttributeConfigurationRequest): Future[CreateInstanceAccessControlAttributeConfigurationResponse] = service.createInstanceAccessControlAttributeConfiguration(params).promise().toFuture
@@ -54,17 +58,21 @@ package object ssoadmin {
     @inline def deleteInlinePolicyFromPermissionSetFuture(params: DeleteInlinePolicyFromPermissionSetRequest): Future[DeleteInlinePolicyFromPermissionSetResponse] = service.deleteInlinePolicyFromPermissionSet(params).promise().toFuture
     @inline def deleteInstanceAccessControlAttributeConfigurationFuture(params: DeleteInstanceAccessControlAttributeConfigurationRequest): Future[DeleteInstanceAccessControlAttributeConfigurationResponse] = service.deleteInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def deletePermissionSetFuture(params: DeletePermissionSetRequest): Future[DeletePermissionSetResponse] = service.deletePermissionSet(params).promise().toFuture
+    @inline def deletePermissionsBoundaryFromPermissionSetFuture(params: DeletePermissionsBoundaryFromPermissionSetRequest): Future[DeletePermissionsBoundaryFromPermissionSetResponse] = service.deletePermissionsBoundaryFromPermissionSet(params).promise().toFuture
     @inline def describeAccountAssignmentCreationStatusFuture(params: DescribeAccountAssignmentCreationStatusRequest): Future[DescribeAccountAssignmentCreationStatusResponse] = service.describeAccountAssignmentCreationStatus(params).promise().toFuture
     @inline def describeAccountAssignmentDeletionStatusFuture(params: DescribeAccountAssignmentDeletionStatusRequest): Future[DescribeAccountAssignmentDeletionStatusResponse] = service.describeAccountAssignmentDeletionStatus(params).promise().toFuture
     @inline def describeInstanceAccessControlAttributeConfigurationFuture(params: DescribeInstanceAccessControlAttributeConfigurationRequest): Future[DescribeInstanceAccessControlAttributeConfigurationResponse] = service.describeInstanceAccessControlAttributeConfiguration(params).promise().toFuture
     @inline def describePermissionSetFuture(params: DescribePermissionSetRequest): Future[DescribePermissionSetResponse] = service.describePermissionSet(params).promise().toFuture
     @inline def describePermissionSetProvisioningStatusFuture(params: DescribePermissionSetProvisioningStatusRequest): Future[DescribePermissionSetProvisioningStatusResponse] = service.describePermissionSetProvisioningStatus(params).promise().toFuture
+    @inline def detachCustomerManagedPolicyReferenceFromPermissionSetFuture(params: DetachCustomerManagedPolicyReferenceFromPermissionSetRequest): Future[DetachCustomerManagedPolicyReferenceFromPermissionSetResponse] = service.detachCustomerManagedPolicyReferenceFromPermissionSet(params).promise().toFuture
     @inline def detachManagedPolicyFromPermissionSetFuture(params: DetachManagedPolicyFromPermissionSetRequest): Future[DetachManagedPolicyFromPermissionSetResponse] = service.detachManagedPolicyFromPermissionSet(params).promise().toFuture
     @inline def getInlinePolicyForPermissionSetFuture(params: GetInlinePolicyForPermissionSetRequest): Future[GetInlinePolicyForPermissionSetResponse] = service.getInlinePolicyForPermissionSet(params).promise().toFuture
+    @inline def getPermissionsBoundaryForPermissionSetFuture(params: GetPermissionsBoundaryForPermissionSetRequest): Future[GetPermissionsBoundaryForPermissionSetResponse] = service.getPermissionsBoundaryForPermissionSet(params).promise().toFuture
     @inline def listAccountAssignmentCreationStatusFuture(params: ListAccountAssignmentCreationStatusRequest): Future[ListAccountAssignmentCreationStatusResponse] = service.listAccountAssignmentCreationStatus(params).promise().toFuture
     @inline def listAccountAssignmentDeletionStatusFuture(params: ListAccountAssignmentDeletionStatusRequest): Future[ListAccountAssignmentDeletionStatusResponse] = service.listAccountAssignmentDeletionStatus(params).promise().toFuture
     @inline def listAccountAssignmentsFuture(params: ListAccountAssignmentsRequest): Future[ListAccountAssignmentsResponse] = service.listAccountAssignments(params).promise().toFuture
     @inline def listAccountsForProvisionedPermissionSetFuture(params: ListAccountsForProvisionedPermissionSetRequest): Future[ListAccountsForProvisionedPermissionSetResponse] = service.listAccountsForProvisionedPermissionSet(params).promise().toFuture
+    @inline def listCustomerManagedPolicyReferencesInPermissionSetFuture(params: ListCustomerManagedPolicyReferencesInPermissionSetRequest): Future[ListCustomerManagedPolicyReferencesInPermissionSetResponse] = service.listCustomerManagedPolicyReferencesInPermissionSet(params).promise().toFuture
     @inline def listInstancesFuture(params: ListInstancesRequest): Future[ListInstancesResponse] = service.listInstances(params).promise().toFuture
     @inline def listManagedPoliciesInPermissionSetFuture(params: ListManagedPoliciesInPermissionSetRequest): Future[ListManagedPoliciesInPermissionSetResponse] = service.listManagedPoliciesInPermissionSet(params).promise().toFuture
     @inline def listPermissionSetProvisioningStatusFuture(params: ListPermissionSetProvisioningStatusRequest): Future[ListPermissionSetProvisioningStatusResponse] = service.listPermissionSetProvisioningStatus(params).promise().toFuture
@@ -73,6 +81,7 @@ package object ssoadmin {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def provisionPermissionSetFuture(params: ProvisionPermissionSetRequest): Future[ProvisionPermissionSetResponse] = service.provisionPermissionSet(params).promise().toFuture
     @inline def putInlinePolicyToPermissionSetFuture(params: PutInlinePolicyToPermissionSetRequest): Future[PutInlinePolicyToPermissionSetResponse] = service.putInlinePolicyToPermissionSet(params).promise().toFuture
+    @inline def putPermissionsBoundaryToPermissionSetFuture(params: PutPermissionsBoundaryToPermissionSetRequest): Future[PutPermissionsBoundaryToPermissionSetResponse] = service.putPermissionsBoundaryToPermissionSet(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateInstanceAccessControlAttributeConfigurationFuture(params: UpdateInstanceAccessControlAttributeConfigurationRequest): Future[UpdateInstanceAccessControlAttributeConfigurationResponse] = service.updateInstanceAccessControlAttributeConfiguration(params).promise().toFuture
@@ -85,6 +94,7 @@ package object ssoadmin {
   class SSOAdmin() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def attachCustomerManagedPolicyReferenceToPermissionSet(params: AttachCustomerManagedPolicyReferenceToPermissionSetRequest): Request[AttachCustomerManagedPolicyReferenceToPermissionSetResponse] = js.native
     def attachManagedPolicyToPermissionSet(params: AttachManagedPolicyToPermissionSetRequest): Request[AttachManagedPolicyToPermissionSetResponse] = js.native
     def createAccountAssignment(params: CreateAccountAssignmentRequest): Request[CreateAccountAssignmentResponse] = js.native
     def createInstanceAccessControlAttributeConfiguration(params: CreateInstanceAccessControlAttributeConfigurationRequest): Request[CreateInstanceAccessControlAttributeConfigurationResponse] = js.native
@@ -93,17 +103,21 @@ package object ssoadmin {
     def deleteInlinePolicyFromPermissionSet(params: DeleteInlinePolicyFromPermissionSetRequest): Request[DeleteInlinePolicyFromPermissionSetResponse] = js.native
     def deleteInstanceAccessControlAttributeConfiguration(params: DeleteInstanceAccessControlAttributeConfigurationRequest): Request[DeleteInstanceAccessControlAttributeConfigurationResponse] = js.native
     def deletePermissionSet(params: DeletePermissionSetRequest): Request[DeletePermissionSetResponse] = js.native
+    def deletePermissionsBoundaryFromPermissionSet(params: DeletePermissionsBoundaryFromPermissionSetRequest): Request[DeletePermissionsBoundaryFromPermissionSetResponse] = js.native
     def describeAccountAssignmentCreationStatus(params: DescribeAccountAssignmentCreationStatusRequest): Request[DescribeAccountAssignmentCreationStatusResponse] = js.native
     def describeAccountAssignmentDeletionStatus(params: DescribeAccountAssignmentDeletionStatusRequest): Request[DescribeAccountAssignmentDeletionStatusResponse] = js.native
     def describeInstanceAccessControlAttributeConfiguration(params: DescribeInstanceAccessControlAttributeConfigurationRequest): Request[DescribeInstanceAccessControlAttributeConfigurationResponse] = js.native
     def describePermissionSet(params: DescribePermissionSetRequest): Request[DescribePermissionSetResponse] = js.native
     def describePermissionSetProvisioningStatus(params: DescribePermissionSetProvisioningStatusRequest): Request[DescribePermissionSetProvisioningStatusResponse] = js.native
+    def detachCustomerManagedPolicyReferenceFromPermissionSet(params: DetachCustomerManagedPolicyReferenceFromPermissionSetRequest): Request[DetachCustomerManagedPolicyReferenceFromPermissionSetResponse] = js.native
     def detachManagedPolicyFromPermissionSet(params: DetachManagedPolicyFromPermissionSetRequest): Request[DetachManagedPolicyFromPermissionSetResponse] = js.native
     def getInlinePolicyForPermissionSet(params: GetInlinePolicyForPermissionSetRequest): Request[GetInlinePolicyForPermissionSetResponse] = js.native
+    def getPermissionsBoundaryForPermissionSet(params: GetPermissionsBoundaryForPermissionSetRequest): Request[GetPermissionsBoundaryForPermissionSetResponse] = js.native
     def listAccountAssignmentCreationStatus(params: ListAccountAssignmentCreationStatusRequest): Request[ListAccountAssignmentCreationStatusResponse] = js.native
     def listAccountAssignmentDeletionStatus(params: ListAccountAssignmentDeletionStatusRequest): Request[ListAccountAssignmentDeletionStatusResponse] = js.native
     def listAccountAssignments(params: ListAccountAssignmentsRequest): Request[ListAccountAssignmentsResponse] = js.native
     def listAccountsForProvisionedPermissionSet(params: ListAccountsForProvisionedPermissionSetRequest): Request[ListAccountsForProvisionedPermissionSetResponse] = js.native
+    def listCustomerManagedPolicyReferencesInPermissionSet(params: ListCustomerManagedPolicyReferencesInPermissionSetRequest): Request[ListCustomerManagedPolicyReferencesInPermissionSetResponse] = js.native
     def listInstances(params: ListInstancesRequest): Request[ListInstancesResponse] = js.native
     def listManagedPoliciesInPermissionSet(params: ListManagedPoliciesInPermissionSetRequest): Request[ListManagedPoliciesInPermissionSetResponse] = js.native
     def listPermissionSetProvisioningStatus(params: ListPermissionSetProvisioningStatusRequest): Request[ListPermissionSetProvisioningStatusResponse] = js.native
@@ -112,6 +126,7 @@ package object ssoadmin {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def provisionPermissionSet(params: ProvisionPermissionSetRequest): Request[ProvisionPermissionSetResponse] = js.native
     def putInlinePolicyToPermissionSet(params: PutInlinePolicyToPermissionSetRequest): Request[PutInlinePolicyToPermissionSetResponse] = js.native
+    def putPermissionsBoundaryToPermissionSet(params: PutPermissionsBoundaryToPermissionSetRequest): Request[PutPermissionsBoundaryToPermissionSetResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateInstanceAccessControlAttributeConfiguration(params: UpdateInstanceAccessControlAttributeConfigurationRequest): Request[UpdateInstanceAccessControlAttributeConfigurationResponse] = js.native
@@ -123,7 +138,7 @@ package object ssoadmin {
     }
   }
 
-  /** These are Amazon Web Services SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your Amazon Web Services resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, Amazon Web Services SSO passes the attribute values of the authenticated user into IAM for use in policy evaluation.
+  /** These are IAM Identity Center identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your AWS resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, IAM Identity Center passes the attribute values of the authenticated user into IAM for use in policy evaluation.
     */
   @js.native
   trait AccessControlAttribute extends js.Object {
@@ -145,7 +160,7 @@ package object ssoadmin {
     }
   }
 
-  /** The value used for mapping a specified attribute to an identity source.
+  /** The value used for mapping a specified attribute to an identity source. For more information, see [[https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html|Attribute mappings]] in the <i>IAM Identity Center User Guide</i>.
     */
   @js.native
   trait AccessControlAttributeValue extends js.Object {
@@ -164,9 +179,9 @@ package object ssoadmin {
     }
   }
 
-  /** The assignment that indicates a principal's limited access to a specified Amazon Web Services account with a specified permission set.
+  /** The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.
     *
-    * '''Note:'''The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.
+    * '''Note:'''The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.
     */
   @js.native
   trait AccountAssignment extends js.Object {
@@ -260,6 +275,40 @@ package object ssoadmin {
   }
 
   @js.native
+  trait AttachCustomerManagedPolicyReferenceToPermissionSetRequest extends js.Object {
+    var CustomerManagedPolicyReference: CustomerManagedPolicyReference
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+  }
+
+  object AttachCustomerManagedPolicyReferenceToPermissionSetRequest {
+    @inline
+    def apply(
+        CustomerManagedPolicyReference: CustomerManagedPolicyReference,
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn
+    ): AttachCustomerManagedPolicyReferenceToPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "CustomerManagedPolicyReference" -> CustomerManagedPolicyReference.asInstanceOf[js.Any],
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AttachCustomerManagedPolicyReferenceToPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait AttachCustomerManagedPolicyReferenceToPermissionSetResponse extends js.Object
+
+  object AttachCustomerManagedPolicyReferenceToPermissionSetResponse {
+    @inline
+    def apply(): AttachCustomerManagedPolicyReferenceToPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AttachCustomerManagedPolicyReferenceToPermissionSetResponse]
+    }
+  }
+
+  @js.native
   trait AttachManagedPolicyToPermissionSetRequest extends js.Object {
     var InstanceArn: InstanceArn
     var ManagedPolicyArn: ManagedPolicyArn
@@ -293,7 +342,7 @@ package object ssoadmin {
     }
   }
 
-  /** A structure that stores the details of the IAM managed policy.
+  /** A structure that stores the details of the AWS managed policy.
     */
   @js.native
   trait AttachedManagedPolicy extends js.Object {
@@ -442,6 +491,29 @@ package object ssoadmin {
     }
   }
 
+  /** Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.
+    */
+  @js.native
+  trait CustomerManagedPolicyReference extends js.Object {
+    var Name: ManagedPolicyName
+    var Path: js.UndefOr[ManagedPolicyPath]
+  }
+
+  object CustomerManagedPolicyReference {
+    @inline
+    def apply(
+        Name: ManagedPolicyName,
+        Path: js.UndefOr[ManagedPolicyPath] = js.undefined
+    ): CustomerManagedPolicyReference = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerManagedPolicyReference]
+    }
+  }
+
   @js.native
   trait DeleteAccountAssignmentRequest extends js.Object {
     var InstanceArn: InstanceArn
@@ -577,6 +649,37 @@ package object ssoadmin {
     def apply(): DeletePermissionSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeletePermissionSetResponse]
+    }
+  }
+
+  @js.native
+  trait DeletePermissionsBoundaryFromPermissionSetRequest extends js.Object {
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+  }
+
+  object DeletePermissionsBoundaryFromPermissionSetRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn
+    ): DeletePermissionsBoundaryFromPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePermissionsBoundaryFromPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePermissionsBoundaryFromPermissionSetResponse extends js.Object
+
+  object DeletePermissionsBoundaryFromPermissionSetResponse {
+    @inline
+    def apply(): DeletePermissionsBoundaryFromPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeletePermissionsBoundaryFromPermissionSetResponse]
     }
   }
 
@@ -764,6 +867,40 @@ package object ssoadmin {
   }
 
   @js.native
+  trait DetachCustomerManagedPolicyReferenceFromPermissionSetRequest extends js.Object {
+    var CustomerManagedPolicyReference: CustomerManagedPolicyReference
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+  }
+
+  object DetachCustomerManagedPolicyReferenceFromPermissionSetRequest {
+    @inline
+    def apply(
+        CustomerManagedPolicyReference: CustomerManagedPolicyReference,
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn
+    ): DetachCustomerManagedPolicyReferenceFromPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "CustomerManagedPolicyReference" -> CustomerManagedPolicyReference.asInstanceOf[js.Any],
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetachCustomerManagedPolicyReferenceFromPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait DetachCustomerManagedPolicyReferenceFromPermissionSetResponse extends js.Object
+
+  object DetachCustomerManagedPolicyReferenceFromPermissionSetResponse {
+    @inline
+    def apply(): DetachCustomerManagedPolicyReferenceFromPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DetachCustomerManagedPolicyReferenceFromPermissionSetResponse]
+    }
+  }
+
+  @js.native
   trait DetachManagedPolicyFromPermissionSetRequest extends js.Object {
     var InstanceArn: InstanceArn
     var ManagedPolicyArn: ManagedPolicyArn
@@ -833,6 +970,42 @@ package object ssoadmin {
     }
   }
 
+  @js.native
+  trait GetPermissionsBoundaryForPermissionSetRequest extends js.Object {
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+  }
+
+  object GetPermissionsBoundaryForPermissionSetRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn
+    ): GetPermissionsBoundaryForPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPermissionsBoundaryForPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait GetPermissionsBoundaryForPermissionSetResponse extends js.Object {
+    var PermissionsBoundary: js.UndefOr[PermissionsBoundary]
+  }
+
+  object GetPermissionsBoundaryForPermissionSetResponse {
+    @inline
+    def apply(
+        PermissionsBoundary: js.UndefOr[PermissionsBoundary] = js.undefined
+    ): GetPermissionsBoundaryForPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionsBoundaryForPermissionSetResponse]
+    }
+  }
+
   /** Specifies the attributes to add to your attribute-based access control (ABAC) configuration.
     */
   @js.native
@@ -852,7 +1025,7 @@ package object ssoadmin {
     }
   }
 
-  /** Provides information about the SSO instance.
+  /** Provides information about the IAM Identity Center instance.
     */
   @js.native
   trait InstanceMetadata extends js.Object {
@@ -1060,6 +1233,52 @@ package object ssoadmin {
       AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountsForProvisionedPermissionSetResponse]
+    }
+  }
+
+  @js.native
+  trait ListCustomerManagedPolicyReferencesInPermissionSetRequest extends js.Object {
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListCustomerManagedPolicyReferencesInPermissionSetRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListCustomerManagedPolicyReferencesInPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomerManagedPolicyReferencesInPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait ListCustomerManagedPolicyReferencesInPermissionSetResponse extends js.Object {
+    var CustomerManagedPolicyReferences: js.UndefOr[CustomerManagedPolicyReferenceList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListCustomerManagedPolicyReferencesInPermissionSetResponse {
+    @inline
+    def apply(
+        CustomerManagedPolicyReferences: js.UndefOr[CustomerManagedPolicyReferenceList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListCustomerManagedPolicyReferencesInPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      CustomerManagedPolicyReferences.foreach(__v => __obj.updateDynamic("CustomerManagedPolicyReferences")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCustomerManagedPolicyReferencesInPermissionSetResponse]
     }
   }
 
@@ -1288,7 +1507,7 @@ package object ssoadmin {
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var InstanceArn: InstanceArn
-    var ResourceArn: GeneralArn
+    var ResourceArn: TaggableResourceArn
     var NextToken: js.UndefOr[Token]
   }
 
@@ -1296,7 +1515,7 @@ package object ssoadmin {
     @inline
     def apply(
         InstanceArn: InstanceArn,
-        ResourceArn: GeneralArn,
+        ResourceArn: TaggableResourceArn,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1436,6 +1655,27 @@ package object ssoadmin {
     }
   }
 
+  /** Specifies the configuration of the AWS managed or customer managed policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code> to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code> to use the ARN of an AWS managed policy. A permissions boundary represents the maximum permissions that any policy can grant your role. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM entities]] in the <i>IAM User Guide</i>. <important> Policies used as permissions boundaries don't provide permissions. You must also attach an IAM policy to the role. To learn how the effective permissions for a role are evaluated, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html|IAM JSON policy evaluation logic]] in the <i>IAM User Guide</i>. </important>
+    */
+  @js.native
+  trait PermissionsBoundary extends js.Object {
+    var CustomerManagedPolicyReference: js.UndefOr[CustomerManagedPolicyReference]
+    var ManagedPolicyArn: js.UndefOr[ManagedPolicyArn]
+  }
+
+  object PermissionsBoundary {
+    @inline
+    def apply(
+        CustomerManagedPolicyReference: js.UndefOr[CustomerManagedPolicyReference] = js.undefined,
+        ManagedPolicyArn: js.UndefOr[ManagedPolicyArn] = js.undefined
+    ): PermissionsBoundary = {
+      val __obj = js.Dynamic.literal()
+      CustomerManagedPolicyReference.foreach(__v => __obj.updateDynamic("CustomerManagedPolicyReference")(__v.asInstanceOf[js.Any]))
+      ManagedPolicyArn.foreach(__v => __obj.updateDynamic("ManagedPolicyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PermissionsBoundary]
+    }
+  }
+
   @js.native
   trait ProvisionPermissionSetRequest extends js.Object {
     var InstanceArn: InstanceArn
@@ -1513,23 +1753,58 @@ package object ssoadmin {
     }
   }
 
-  /** A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that Amazon Web Services SSO creates in Amazon Web Services accounts.
+  @js.native
+  trait PutPermissionsBoundaryToPermissionSetRequest extends js.Object {
+    var InstanceArn: InstanceArn
+    var PermissionSetArn: PermissionSetArn
+    var PermissionsBoundary: PermissionsBoundary
+  }
+
+  object PutPermissionsBoundaryToPermissionSetRequest {
+    @inline
+    def apply(
+        InstanceArn: InstanceArn,
+        PermissionSetArn: PermissionSetArn,
+        PermissionsBoundary: PermissionsBoundary
+    ): PutPermissionsBoundaryToPermissionSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "InstanceArn" -> InstanceArn.asInstanceOf[js.Any],
+        "PermissionSetArn" -> PermissionSetArn.asInstanceOf[js.Any],
+        "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutPermissionsBoundaryToPermissionSetRequest]
+    }
+  }
+
+  @js.native
+  trait PutPermissionsBoundaryToPermissionSetResponse extends js.Object
+
+  object PutPermissionsBoundaryToPermissionSetResponse {
+    @inline
+    def apply(): PutPermissionsBoundaryToPermissionSetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutPermissionsBoundaryToPermissionSetResponse]
+    }
+  }
+
+  /** A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that IAM Identity Center creates in AWS accounts.
     */
   @js.native
   trait Tag extends js.Object {
-    var Key: js.UndefOr[TagKey]
-    var Value: js.UndefOr[TagValue]
+    var Key: TagKey
+    var Value: TagValue
   }
 
   object Tag {
     @inline
     def apply(
-        Key: js.UndefOr[TagKey] = js.undefined,
-        Value: js.UndefOr[TagValue] = js.undefined
+        Key: TagKey,
+        Value: TagValue
     ): Tag = {
-      val __obj = js.Dynamic.literal()
-      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1537,7 +1812,7 @@ package object ssoadmin {
   @js.native
   trait TagResourceRequest extends js.Object {
     var InstanceArn: InstanceArn
-    var ResourceArn: GeneralArn
+    var ResourceArn: TaggableResourceArn
     var Tags: TagList
   }
 
@@ -1545,7 +1820,7 @@ package object ssoadmin {
     @inline
     def apply(
         InstanceArn: InstanceArn,
-        ResourceArn: GeneralArn,
+        ResourceArn: TaggableResourceArn,
         Tags: TagList
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1571,7 +1846,7 @@ package object ssoadmin {
   @js.native
   trait UntagResourceRequest extends js.Object {
     var InstanceArn: InstanceArn
-    var ResourceArn: GeneralArn
+    var ResourceArn: TaggableResourceArn
     var TagKeys: TagKeyList
   }
 
@@ -1579,7 +1854,7 @@ package object ssoadmin {
     @inline
     def apply(
         InstanceArn: InstanceArn,
-        ResourceArn: GeneralArn,
+        ResourceArn: TaggableResourceArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(

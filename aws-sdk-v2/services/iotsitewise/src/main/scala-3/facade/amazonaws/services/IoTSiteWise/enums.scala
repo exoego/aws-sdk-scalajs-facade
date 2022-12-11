@@ -59,6 +59,41 @@ object AuthMode {
   inline def values: js.Array[AuthMode] = js.Array(IAM, SSO)
 }
 
+type BatchEntryCompletionStatus = "SUCCESS" | "ERROR"
+object BatchEntryCompletionStatus {
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[BatchEntryCompletionStatus] = js.Array(SUCCESS, ERROR)
+}
+
+type BatchGetAssetPropertyAggregatesErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "AccessDeniedException"
+object BatchGetAssetPropertyAggregatesErrorCode {
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
+  inline val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
+
+  inline def values: js.Array[BatchGetAssetPropertyAggregatesErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
+type BatchGetAssetPropertyValueErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "AccessDeniedException"
+object BatchGetAssetPropertyValueErrorCode {
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
+  inline val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
+
+  inline def values: js.Array[BatchGetAssetPropertyValueErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
+type BatchGetAssetPropertyValueHistoryErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "AccessDeniedException"
+object BatchGetAssetPropertyValueHistoryErrorCode {
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
+  inline val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
+
+  inline def values: js.Array[BatchGetAssetPropertyValueHistoryErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
 type BatchPutAssetPropertyValueErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "InternalFailureException" | "ServiceUnavailableException" | "ThrottlingException" | "LimitExceededException" | "ConflictingOperationException" | "TimestampOutOfRangeException" | "AccessDeniedException"
 object BatchPutAssetPropertyValueErrorCode {
   inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
@@ -92,6 +127,20 @@ object CapabilitySyncStatus {
   inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
   inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED, UNKNOWN)
+}
+
+type ColumnName = "ALIAS" | "ASSET_ID" | "PROPERTY_ID" | "DATA_TYPE" | "TIMESTAMP_SECONDS" | "TIMESTAMP_NANO_OFFSET" | "QUALITY" | "VALUE"
+object ColumnName {
+  inline val ALIAS: "ALIAS" = "ALIAS"
+  inline val ASSET_ID: "ASSET_ID" = "ASSET_ID"
+  inline val PROPERTY_ID: "PROPERTY_ID" = "PROPERTY_ID"
+  inline val DATA_TYPE: "DATA_TYPE" = "DATA_TYPE"
+  inline val TIMESTAMP_SECONDS: "TIMESTAMP_SECONDS" = "TIMESTAMP_SECONDS"
+  inline val TIMESTAMP_NANO_OFFSET: "TIMESTAMP_NANO_OFFSET" = "TIMESTAMP_NANO_OFFSET"
+  inline val QUALITY: "QUALITY" = "QUALITY"
+  inline val VALUE: "VALUE" = "VALUE"
+
+  inline def values: js.Array[ColumnName] = js.Array(ALIAS, ASSET_ID, PROPERTY_ID, DATA_TYPE, TIMESTAMP_SECONDS, TIMESTAMP_NANO_OFFSET, QUALITY, VALUE)
 }
 
 type ComputeLocation = "EDGE" | "CLOUD"
@@ -167,12 +216,53 @@ object ImageFileType {
   inline def values: js.Array[ImageFileType] = js.Array(PNG)
 }
 
+type JobStatus = "PENDING" | "CANCELLED" | "RUNNING" | "COMPLETED" | "FAILED" | "COMPLETED_WITH_FAILURES"
+object JobStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED_WITH_FAILURES: "COMPLETED_WITH_FAILURES" = "COMPLETED_WITH_FAILURES"
+
+  inline def values: js.Array[JobStatus] = js.Array(PENDING, CANCELLED, RUNNING, COMPLETED, FAILED, COMPLETED_WITH_FAILURES)
+}
+
+type ListAssetModelPropertiesFilter = "ALL" | "BASE"
+object ListAssetModelPropertiesFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val BASE: "BASE" = "BASE"
+
+  inline def values: js.Array[ListAssetModelPropertiesFilter] = js.Array(ALL, BASE)
+}
+
+type ListAssetPropertiesFilter = "ALL" | "BASE"
+object ListAssetPropertiesFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val BASE: "BASE" = "BASE"
+
+  inline def values: js.Array[ListAssetPropertiesFilter] = js.Array(ALL, BASE)
+}
+
 type ListAssetsFilter = "ALL" | "TOP_LEVEL"
 object ListAssetsFilter {
   inline val ALL: "ALL" = "ALL"
   inline val TOP_LEVEL: "TOP_LEVEL" = "TOP_LEVEL"
 
   inline def values: js.Array[ListAssetsFilter] = js.Array(ALL, TOP_LEVEL)
+}
+
+type ListBulkImportJobsFilter = "ALL" | "PENDING" | "RUNNING" | "CANCELLED" | "FAILED" | "COMPLETED_WITH_FAILURES" | "COMPLETED"
+object ListBulkImportJobsFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED_WITH_FAILURES: "COMPLETED_WITH_FAILURES" = "COMPLETED_WITH_FAILURES"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+
+  inline def values: js.Array[ListBulkImportJobsFilter] = js.Array(ALL, PENDING, RUNNING, CANCELLED, FAILED, COMPLETED_WITH_FAILURES, COMPLETED)
 }
 
 type ListTimeSeriesType = "ASSOCIATED" | "DISASSOCIATED"

@@ -244,11 +244,12 @@ object StorageType {
   inline def values: js.Array[StorageType] = js.Array(UNLIMITED, QUOTA)
 }
 
-type SubscriptionProtocolType = "HTTPS"
+type SubscriptionProtocolType = "HTTPS" | "SQS"
 object SubscriptionProtocolType {
   inline val HTTPS: "HTTPS" = "HTTPS"
+  inline val SQS: "SQS" = "SQS"
 
-  inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS)
+  inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS, SQS)
 }
 
 type SubscriptionType = "ALL"

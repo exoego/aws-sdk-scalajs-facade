@@ -89,6 +89,7 @@ package object lightsail {
   type LoadBalancerTlsCertificateDomainValidationRecordList = js.Array[LoadBalancerTlsCertificateDomainValidationRecord]
   type LoadBalancerTlsCertificateList = js.Array[LoadBalancerTlsCertificate]
   type LoadBalancerTlsCertificateSummaryList = js.Array[LoadBalancerTlsCertificateSummary]
+  type LoadBalancerTlsPolicyList = js.Array[LoadBalancerTlsPolicy]
   type LogEventList = js.Array[LogEvent]
   type MetricDatapointList = js.Array[MetricDatapoint]
   type MetricPeriod = Int
@@ -234,6 +235,7 @@ package object lightsail {
     @inline def getLoadBalancerFuture(params: GetLoadBalancerRequest): Future[GetLoadBalancerResult] = service.getLoadBalancer(params).promise().toFuture
     @inline def getLoadBalancerMetricDataFuture(params: GetLoadBalancerMetricDataRequest): Future[GetLoadBalancerMetricDataResult] = service.getLoadBalancerMetricData(params).promise().toFuture
     @inline def getLoadBalancerTlsCertificatesFuture(params: GetLoadBalancerTlsCertificatesRequest): Future[GetLoadBalancerTlsCertificatesResult] = service.getLoadBalancerTlsCertificates(params).promise().toFuture
+    @inline def getLoadBalancerTlsPoliciesFuture(params: GetLoadBalancerTlsPoliciesRequest): Future[GetLoadBalancerTlsPoliciesResult] = service.getLoadBalancerTlsPolicies(params).promise().toFuture
     @inline def getLoadBalancersFuture(params: GetLoadBalancersRequest): Future[GetLoadBalancersResult] = service.getLoadBalancers(params).promise().toFuture
     @inline def getOperationFuture(params: GetOperationRequest): Future[GetOperationResult] = service.getOperation(params).promise().toFuture
     @inline def getOperationsForResourceFuture(params: GetOperationsForResourceRequest): Future[GetOperationsForResourceResult] = service.getOperationsForResource(params).promise().toFuture
@@ -281,6 +283,7 @@ package object lightsail {
     @inline def updateDistributionBundleFuture(params: UpdateDistributionBundleRequest): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
     @inline def updateDomainEntryFuture(params: UpdateDomainEntryRequest): Future[UpdateDomainEntryResult] = service.updateDomainEntry(params).promise().toFuture
+    @inline def updateInstanceMetadataOptionsFuture(params: UpdateInstanceMetadataOptionsRequest): Future[UpdateInstanceMetadataOptionsResult] = service.updateInstanceMetadataOptions(params).promise().toFuture
     @inline def updateLoadBalancerAttributeFuture(params: UpdateLoadBalancerAttributeRequest): Future[UpdateLoadBalancerAttributeResult] = service.updateLoadBalancerAttribute(params).promise().toFuture
     @inline def updateRelationalDatabaseFuture(params: UpdateRelationalDatabaseRequest): Future[UpdateRelationalDatabaseResult] = service.updateRelationalDatabase(params).promise().toFuture
     @inline def updateRelationalDatabaseParametersFuture(params: UpdateRelationalDatabaseParametersRequest): Future[UpdateRelationalDatabaseParametersResult] = service.updateRelationalDatabaseParameters(params).promise().toFuture
@@ -395,6 +398,7 @@ package object lightsail {
     def getLoadBalancer(params: GetLoadBalancerRequest): Request[GetLoadBalancerResult] = js.native
     def getLoadBalancerMetricData(params: GetLoadBalancerMetricDataRequest): Request[GetLoadBalancerMetricDataResult] = js.native
     def getLoadBalancerTlsCertificates(params: GetLoadBalancerTlsCertificatesRequest): Request[GetLoadBalancerTlsCertificatesResult] = js.native
+    def getLoadBalancerTlsPolicies(params: GetLoadBalancerTlsPoliciesRequest): Request[GetLoadBalancerTlsPoliciesResult] = js.native
     def getLoadBalancers(params: GetLoadBalancersRequest): Request[GetLoadBalancersResult] = js.native
     def getOperation(params: GetOperationRequest): Request[GetOperationResult] = js.native
     def getOperations(params: GetOperationsRequest): Request[GetOperationsResult] = js.native
@@ -442,6 +446,7 @@ package object lightsail {
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
     def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] = js.native
     def updateDomainEntry(params: UpdateDomainEntryRequest): Request[UpdateDomainEntryResult] = js.native
+    def updateInstanceMetadataOptions(params: UpdateInstanceMetadataOptionsRequest): Request[UpdateInstanceMetadataOptionsResult] = js.native
     def updateLoadBalancerAttribute(params: UpdateLoadBalancerAttributeRequest): Request[UpdateLoadBalancerAttributeResult] = js.native
     def updateRelationalDatabase(params: UpdateRelationalDatabaseRequest): Request[UpdateRelationalDatabaseResult] = js.native
     def updateRelationalDatabaseParameters(params: UpdateRelationalDatabaseParametersRequest): Request[UpdateRelationalDatabaseParametersResult] = js.native
@@ -452,7 +457,7 @@ package object lightsail {
     }
   }
 
-  /** Describes an access key for an Amazon Lightsail bucket. Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <a>CreateBucketAccessKey</a> action to create an access key for a specific bucket. For more information about access keys, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys|Creating access keys for a bucket in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>. <important> The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key. </important>
+  /** Describes an access key for an Amazon Lightsail bucket. Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the [[https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html|CreateBucketAccessKey]] action to create an access key for a specific bucket. For more information about access keys, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys|Creating access keys for a bucket in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>. <important> The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key. </important>
     */
   @js.native
   trait AccessKey extends js.Object {
@@ -484,7 +489,7 @@ package object lightsail {
 
   /** Describes the last time an access key was used.
     *
-    * '''Note:'''This object does not include data in the response of a <a>CreateBucketAccessKey</a> action.
+    * '''Note:'''This object does not include data in the response of a [[https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html|CreateBucketAccessKey]] action.
     */
   @js.native
   trait AccessKeyLastUsed extends js.Object {
@@ -526,6 +531,34 @@ package object lightsail {
       allowPublicOverrides.foreach(__v => __obj.updateDynamic("allowPublicOverrides")(__v.asInstanceOf[js.Any]))
       getObject.foreach(__v => __obj.updateDynamic("getObject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessRules]
+    }
+  }
+
+  /** Describes the synchronization status of the Amazon Simple Storage Service (Amazon S3) account-level block public access (BPA) feature for your Lightsail buckets. The account-level BPA feature of Amazon S3 provides centralized controls to limit public access to all Amazon S3 buckets in an account. BPA can make all Amazon S3 buckets in an Amazon Web Services account private regardless of the individual bucket and object permissions that are configured. Lightsail buckets take into account the Amazon S3 account-level BPA configuration when allowing or denying public access. To do this, Lightsail periodically fetches the account-level BPA configuration from Amazon S3. When the account-level BPA status is <code>InSync</code>, the Amazon S3 account-level BPA configuration is synchronized and it applies to your Lightsail buckets. For more information about Amazon Simple Storage Service account-level BPA and how it affects Lightsail buckets, see
+    * [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets|Block public access for buckets in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait AccountLevelBpaSync extends js.Object {
+    var bpaImpactsLightsail: js.UndefOr[Boolean]
+    var lastSyncedAt: js.UndefOr[IsoDate]
+    var message: js.UndefOr[BPAStatusMessage]
+    var status: js.UndefOr[AccountLevelBpaSyncStatus]
+  }
+
+  object AccountLevelBpaSync {
+    @inline
+    def apply(
+        bpaImpactsLightsail: js.UndefOr[Boolean] = js.undefined,
+        lastSyncedAt: js.UndefOr[IsoDate] = js.undefined,
+        message: js.UndefOr[BPAStatusMessage] = js.undefined,
+        status: js.UndefOr[AccountLevelBpaSyncStatus] = js.undefined
+    ): AccountLevelBpaSync = {
+      val __obj = js.Dynamic.literal()
+      bpaImpactsLightsail.foreach(__v => __obj.updateDynamic("bpaImpactsLightsail")(__v.asInstanceOf[js.Any]))
+      lastSyncedAt.foreach(__v => __obj.updateDynamic("lastSyncedAt")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountLevelBpaSync]
     }
   }
 
@@ -1220,7 +1253,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution. A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache. if the cacheBehavior's behavior is set to 'cache', then
+  /** Describes the per-path cache behavior of an Amazon Lightsail content delivery network (CDN) distribution. A per-path cache behavior is used to override, or add an exception to, the default cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is set to <code>cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will cache. Alternately, if the distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path cache behavior can be used to specify a directory, file, or file type that your distribution will not cache.
     */
   @js.native
   trait CacheBehaviorPerPath extends js.Object {
@@ -1597,6 +1630,7 @@ package object lightsail {
     var powerId: js.UndefOr[String]
     var principalArn: js.UndefOr[String]
     var privateDomainName: js.UndefOr[String]
+    var privateRegistryAccess: js.UndefOr[PrivateRegistryAccess]
     var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
     var resourceType: js.UndefOr[ResourceType]
     var scale: js.UndefOr[ContainerServiceScale]
@@ -1620,6 +1654,7 @@ package object lightsail {
         powerId: js.UndefOr[String] = js.undefined,
         principalArn: js.UndefOr[String] = js.undefined,
         privateDomainName: js.UndefOr[String] = js.undefined,
+        privateRegistryAccess: js.UndefOr[PrivateRegistryAccess] = js.undefined,
         publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined,
         scale: js.UndefOr[ContainerServiceScale] = js.undefined,
@@ -1640,6 +1675,7 @@ package object lightsail {
       powerId.foreach(__v => __obj.updateDynamic("powerId")(__v.asInstanceOf[js.Any]))
       principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
       privateDomainName.foreach(__v => __obj.updateDynamic("privateDomainName")(__v.asInstanceOf[js.Any]))
+      privateRegistryAccess.foreach(__v => __obj.updateDynamic("privateRegistryAccess")(__v.asInstanceOf[js.Any]))
       publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
@@ -1699,6 +1735,45 @@ package object lightsail {
       containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
       publicEndpoint.foreach(__v => __obj.updateDynamic("publicEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerServiceDeploymentRequest]
+    }
+  }
+
+  /** Describes the activation status of the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories. When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access|Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait ContainerServiceECRImagePullerRole extends js.Object {
+    var isActive: js.UndefOr[Boolean]
+    var principalArn: js.UndefOr[String]
+  }
+
+  object ContainerServiceECRImagePullerRole {
+    @inline
+    def apply(
+        isActive: js.UndefOr[Boolean] = js.undefined,
+        principalArn: js.UndefOr[String] = js.undefined
+    ): ContainerServiceECRImagePullerRole = {
+      val __obj = js.Dynamic.literal()
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      principalArn.foreach(__v => __obj.updateDynamic("principalArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceECRImagePullerRole]
+    }
+  }
+
+  /** Describes a request to activate or deactivate the role that you can use to grant an Amazon Lightsail container service access to Amazon Elastic Container Registry (Amazon ECR) private repositories. When activated, Lightsail creates an Identity and Access Management (IAM) role for the specified Lightsail container service. You can use the ARN of the role to create a trust relationship between your Lightsail container service and an Amazon ECR private repository in your Amazon Web Services account. This allows your container service to pull images from Amazon ECR private repositories. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access|Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait ContainerServiceECRImagePullerRoleRequest extends js.Object {
+    var isActive: js.UndefOr[Boolean]
+  }
+
+  object ContainerServiceECRImagePullerRoleRequest {
+    @inline
+    def apply(
+        isActive: js.UndefOr[Boolean] = js.undefined
+    ): ContainerServiceECRImagePullerRoleRequest = {
+      val __obj = js.Dynamic.literal()
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerServiceECRImagePullerRoleRequest]
     }
   }
 
@@ -2217,6 +2292,7 @@ package object lightsail {
     var scale: ContainerServiceScale
     var serviceName: ContainerServiceName
     var deployment: js.UndefOr[ContainerServiceDeploymentRequest]
+    var privateRegistryAccess: js.UndefOr[PrivateRegistryAccessRequest]
     var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
     var tags: js.UndefOr[TagList]
   }
@@ -2228,6 +2304,7 @@ package object lightsail {
         scale: ContainerServiceScale,
         serviceName: ContainerServiceName,
         deployment: js.UndefOr[ContainerServiceDeploymentRequest] = js.undefined,
+        privateRegistryAccess: js.UndefOr[PrivateRegistryAccessRequest] = js.undefined,
         publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateContainerServiceRequest = {
@@ -2238,6 +2315,7 @@ package object lightsail {
       )
 
       deployment.foreach(__v => __obj.updateDynamic("deployment")(__v.asInstanceOf[js.Any]))
+      privateRegistryAccess.foreach(__v => __obj.updateDynamic("privateRegistryAccess")(__v.asInstanceOf[js.Any]))
       publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContainerServiceRequest]
@@ -2765,6 +2843,7 @@ package object lightsail {
     var healthCheckPath: js.UndefOr[String]
     var ipAddressType: js.UndefOr[IpAddressType]
     var tags: js.UndefOr[TagList]
+    var tlsPolicyName: js.UndefOr[String]
   }
 
   object CreateLoadBalancerRequest {
@@ -2777,7 +2856,8 @@ package object lightsail {
         certificateName: js.UndefOr[ResourceName] = js.undefined,
         healthCheckPath: js.UndefOr[String] = js.undefined,
         ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
-        tags: js.UndefOr[TagList] = js.undefined
+        tags: js.UndefOr[TagList] = js.undefined,
+        tlsPolicyName: js.UndefOr[String] = js.undefined
     ): CreateLoadBalancerRequest = {
       val __obj = js.Dynamic.literal(
         "instancePort" -> instancePort.asInstanceOf[js.Any],
@@ -2790,6 +2870,7 @@ package object lightsail {
       healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
       ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      tlsPolicyName.foreach(__v => __obj.updateDynamic("tlsPolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerRequest]
     }
   }
@@ -3529,16 +3610,20 @@ package object lightsail {
   @js.native
   trait DeleteKeyPairRequest extends js.Object {
     var keyPairName: ResourceName
+    var expectedFingerprint: js.UndefOr[String]
   }
 
   object DeleteKeyPairRequest {
     @inline
     def apply(
-        keyPairName: ResourceName
+        keyPairName: ResourceName,
+        expectedFingerprint: js.UndefOr[String] = js.undefined
     ): DeleteKeyPairRequest = {
       val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
+
+      expectedFingerprint.foreach(__v => __obj.updateDynamic("expectedFingerprint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteKeyPairRequest]
     }
   }
@@ -4152,6 +4237,27 @@ package object lightsail {
     }
   }
 
+  /** Describes the creation state of the canonical name (CNAME) records that are automatically added by Amazon Lightsail to the DNS of a domain to validate domain ownership for an SSL/TLS certificate. When you create an SSL/TLS certificate for a Lightsail resource, you must add a set of CNAME records to the DNS of the domains for the certificate to validate that you own the domains. Lightsail can automatically add the CNAME records to the DNS of the domain if the DNS zone for the domain exists within your Lightsail account. If automatic record addition fails, or if you manage the DNS of your domain using a third-party service, then you must manually add the CNAME records to the DNS of your domain. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/verify-tls-ssl-certificate-using-dns-cname-https|Verify an SSL/TLS certificate in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait DnsRecordCreationState extends js.Object {
+    var code: js.UndefOr[DnsRecordCreationStateCode]
+    var message: js.UndefOr[String]
+  }
+
+  object DnsRecordCreationState {
+    @inline
+    def apply(
+        code: js.UndefOr[DnsRecordCreationStateCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): DnsRecordCreationState = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsRecordCreationState]
+    }
+  }
+
   /** Describes a domain where you are storing recordsets.
     */
   @js.native
@@ -4161,6 +4267,7 @@ package object lightsail {
     var domainEntries: js.UndefOr[DomainEntryList]
     var location: js.UndefOr[ResourceLocation]
     var name: js.UndefOr[ResourceName]
+    var registeredDomainDelegationInfo: js.UndefOr[RegisteredDomainDelegationInfo]
     var resourceType: js.UndefOr[ResourceType]
     var supportCode: js.UndefOr[String]
     var tags: js.UndefOr[TagList]
@@ -4174,6 +4281,7 @@ package object lightsail {
         domainEntries: js.UndefOr[DomainEntryList] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        registeredDomainDelegationInfo: js.UndefOr[RegisteredDomainDelegationInfo] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined,
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -4184,6 +4292,7 @@ package object lightsail {
       domainEntries.foreach(__v => __obj.updateDynamic("domainEntries")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      registeredDomainDelegationInfo.foreach(__v => __obj.updateDynamic("registeredDomainDelegationInfo")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -4224,23 +4333,29 @@ package object lightsail {
     }
   }
 
-  /** Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
+  /** Describes the domain name system (DNS) records that you must add to the DNS of your registered domain to validate ownership for an Amazon Lightsail SSL/TLS certificate.
     */
   @js.native
   trait DomainValidationRecord extends js.Object {
+    var dnsRecordCreationState: js.UndefOr[DnsRecordCreationState]
     var domainName: js.UndefOr[DomainName]
     var resourceRecord: js.UndefOr[ResourceRecord]
+    var validationStatus: js.UndefOr[CertificateDomainValidationStatus]
   }
 
   object DomainValidationRecord {
     @inline
     def apply(
+        dnsRecordCreationState: js.UndefOr[DnsRecordCreationState] = js.undefined,
         domainName: js.UndefOr[DomainName] = js.undefined,
-        resourceRecord: js.UndefOr[ResourceRecord] = js.undefined
+        resourceRecord: js.UndefOr[ResourceRecord] = js.undefined,
+        validationStatus: js.UndefOr[CertificateDomainValidationStatus] = js.undefined
     ): DomainValidationRecord = {
       val __obj = js.Dynamic.literal()
+      dnsRecordCreationState.foreach(__v => __obj.updateDynamic("dnsRecordCreationState")(__v.asInstanceOf[js.Any]))
       domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       resourceRecord.foreach(__v => __obj.updateDynamic("resourceRecord")(__v.asInstanceOf[js.Any]))
+      validationStatus.foreach(__v => __obj.updateDynamic("validationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainValidationRecord]
     }
   }
@@ -4258,6 +4373,7 @@ package object lightsail {
 
   @js.native
   trait DownloadDefaultKeyPairResult extends js.Object {
+    var createdAt: js.UndefOr[IsoDate]
     var privateKeyBase64: js.UndefOr[Base64]
     var publicKeyBase64: js.UndefOr[Base64]
   }
@@ -4265,10 +4381,12 @@ package object lightsail {
   object DownloadDefaultKeyPairResult {
     @inline
     def apply(
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
         privateKeyBase64: js.UndefOr[Base64] = js.undefined,
         publicKeyBase64: js.UndefOr[Base64] = js.undefined
     ): DownloadDefaultKeyPairResult = {
       val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       privateKeyBase64.foreach(__v => __obj.updateDynamic("privateKeyBase64")(__v.asInstanceOf[js.Any]))
       publicKeyBase64.foreach(__v => __obj.updateDynamic("publicKeyBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DownloadDefaultKeyPairResult]
@@ -4744,6 +4862,7 @@ package object lightsail {
 
   @js.native
   trait GetBucketsResult extends js.Object {
+    var accountLevelBpaSync: js.UndefOr[AccountLevelBpaSync]
     var buckets: js.UndefOr[BucketList]
     var nextPageToken: js.UndefOr[String]
   }
@@ -4751,10 +4870,12 @@ package object lightsail {
   object GetBucketsResult {
     @inline
     def apply(
+        accountLevelBpaSync: js.UndefOr[AccountLevelBpaSync] = js.undefined,
         buckets: js.UndefOr[BucketList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetBucketsResult = {
       val __obj = js.Dynamic.literal()
+      accountLevelBpaSync.foreach(__v => __obj.updateDynamic("accountLevelBpaSync")(__v.asInstanceOf[js.Any]))
       buckets.foreach(__v => __obj.updateDynamic("buckets")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBucketsResult]
@@ -5864,15 +5985,18 @@ package object lightsail {
 
   @js.native
   trait GetKeyPairsRequest extends js.Object {
+    var includeDefaultKeyPair: js.UndefOr[Boolean]
     var pageToken: js.UndefOr[String]
   }
 
   object GetKeyPairsRequest {
     @inline
     def apply(
+        includeDefaultKeyPair: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetKeyPairsRequest = {
       val __obj = js.Dynamic.literal()
+      includeDefaultKeyPair.foreach(__v => __obj.updateDynamic("includeDefaultKeyPair")(__v.asInstanceOf[js.Any]))
       pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetKeyPairsRequest]
     }
@@ -6014,6 +6138,41 @@ package object lightsail {
       val __obj = js.Dynamic.literal()
       tlsCertificates.foreach(__v => __obj.updateDynamic("tlsCertificates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancerTlsCertificatesResult]
+    }
+  }
+
+  @js.native
+  trait GetLoadBalancerTlsPoliciesRequest extends js.Object {
+    var pageToken: js.UndefOr[String]
+  }
+
+  object GetLoadBalancerTlsPoliciesRequest {
+    @inline
+    def apply(
+        pageToken: js.UndefOr[String] = js.undefined
+    ): GetLoadBalancerTlsPoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLoadBalancerTlsPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait GetLoadBalancerTlsPoliciesResult extends js.Object {
+    var nextPageToken: js.UndefOr[String]
+    var tlsPolicies: js.UndefOr[LoadBalancerTlsPolicyList]
+  }
+
+  object GetLoadBalancerTlsPoliciesResult {
+    @inline
+    def apply(
+        nextPageToken: js.UndefOr[String] = js.undefined,
+        tlsPolicies: js.UndefOr[LoadBalancerTlsPolicyList] = js.undefined
+    ): GetLoadBalancerTlsPoliciesResult = {
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      tlsPolicies.foreach(__v => __obj.updateDynamic("tlsPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLoadBalancerTlsPoliciesResult]
     }
   }
 
@@ -6235,15 +6394,18 @@ package object lightsail {
 
   @js.native
   trait GetRelationalDatabaseBundlesRequest extends js.Object {
+    var includeInactive: js.UndefOr[Boolean]
     var pageToken: js.UndefOr[String]
   }
 
   object GetRelationalDatabaseBundlesRequest {
     @inline
     def apply(
+        includeInactive: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBundlesRequest = {
       val __obj = js.Dynamic.literal()
+      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
       pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseBundlesRequest]
     }
@@ -6830,7 +6992,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution. An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution. An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait InputOrigin extends js.Object {
@@ -6869,6 +7031,7 @@ package object lightsail {
     var ipv6Addresses: js.UndefOr[Ipv6AddressList]
     var isStaticIp: js.UndefOr[Boolean]
     var location: js.UndefOr[ResourceLocation]
+    var metadataOptions: js.UndefOr[InstanceMetadataOptions]
     var name: js.UndefOr[ResourceName]
     var networking: js.UndefOr[InstanceNetworking]
     var privateIpAddress: js.UndefOr[IpAddress]
@@ -6895,6 +7058,7 @@ package object lightsail {
         ipv6Addresses: js.UndefOr[Ipv6AddressList] = js.undefined,
         isStaticIp: js.UndefOr[Boolean] = js.undefined,
         location: js.UndefOr[ResourceLocation] = js.undefined,
+        metadataOptions: js.UndefOr[InstanceMetadataOptions] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         networking: js.UndefOr[InstanceNetworking] = js.undefined,
         privateIpAddress: js.UndefOr[IpAddress] = js.undefined,
@@ -6918,6 +7082,7 @@ package object lightsail {
       ipv6Addresses.foreach(__v => __obj.updateDynamic("ipv6Addresses")(__v.asInstanceOf[js.Any]))
       isStaticIp.foreach(__v => __obj.updateDynamic("isStaticIp")(__v.asInstanceOf[js.Any]))
       location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      metadataOptions.foreach(__v => __obj.updateDynamic("metadataOptions")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       networking.foreach(__v => __obj.updateDynamic("networking")(__v.asInstanceOf[js.Any]))
       privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
@@ -7054,6 +7219,36 @@ package object lightsail {
       instanceHealthReason.foreach(__v => __obj.updateDynamic("instanceHealthReason")(__v.asInstanceOf[js.Any]))
       instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceHealthSummary]
+    }
+  }
+
+  /** The metadata options for the instance.
+    */
+  @js.native
+  trait InstanceMetadataOptions extends js.Object {
+    var httpEndpoint: js.UndefOr[HttpEndpoint]
+    var httpProtocolIpv6: js.UndefOr[HttpProtocolIpv6]
+    var httpPutResponseHopLimit: js.UndefOr[Int]
+    var httpTokens: js.UndefOr[HttpTokens]
+    var state: js.UndefOr[InstanceMetadataState]
+  }
+
+  object InstanceMetadataOptions {
+    @inline
+    def apply(
+        httpEndpoint: js.UndefOr[HttpEndpoint] = js.undefined,
+        httpProtocolIpv6: js.UndefOr[HttpProtocolIpv6] = js.undefined,
+        httpPutResponseHopLimit: js.UndefOr[Int] = js.undefined,
+        httpTokens: js.UndefOr[HttpTokens] = js.undefined,
+        state: js.UndefOr[InstanceMetadataState] = js.undefined
+    ): InstanceMetadataOptions = {
+      val __obj = js.Dynamic.literal()
+      httpEndpoint.foreach(__v => __obj.updateDynamic("httpEndpoint")(__v.asInstanceOf[js.Any]))
+      httpProtocolIpv6.foreach(__v => __obj.updateDynamic("httpProtocolIpv6")(__v.asInstanceOf[js.Any]))
+      httpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("httpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      httpTokens.foreach(__v => __obj.updateDynamic("httpTokens")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceMetadataOptions]
     }
   }
 
@@ -7417,6 +7612,7 @@ package object lightsail {
     var createdAt: js.UndefOr[IsoDate]
     var dnsName: js.UndefOr[NonEmptyString]
     var healthCheckPath: js.UndefOr[NonEmptyString]
+    var httpsRedirectionEnabled: js.UndefOr[Boolean]
     var instanceHealthSummary: js.UndefOr[InstanceHealthSummaryList]
     var instancePort: js.UndefOr[Int]
     var ipAddressType: js.UndefOr[IpAddressType]
@@ -7429,6 +7625,7 @@ package object lightsail {
     var supportCode: js.UndefOr[String]
     var tags: js.UndefOr[TagList]
     var tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList]
+    var tlsPolicyName: js.UndefOr[ResourceName]
   }
 
   object LoadBalancer {
@@ -7439,6 +7636,7 @@ package object lightsail {
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         dnsName: js.UndefOr[NonEmptyString] = js.undefined,
         healthCheckPath: js.UndefOr[NonEmptyString] = js.undefined,
+        httpsRedirectionEnabled: js.UndefOr[Boolean] = js.undefined,
         instanceHealthSummary: js.UndefOr[InstanceHealthSummaryList] = js.undefined,
         instancePort: js.UndefOr[Int] = js.undefined,
         ipAddressType: js.UndefOr[IpAddressType] = js.undefined,
@@ -7450,7 +7648,8 @@ package object lightsail {
         state: js.UndefOr[LoadBalancerState] = js.undefined,
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
-        tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList] = js.undefined
+        tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList] = js.undefined,
+        tlsPolicyName: js.UndefOr[ResourceName] = js.undefined
     ): LoadBalancer = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -7458,6 +7657,7 @@ package object lightsail {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       dnsName.foreach(__v => __obj.updateDynamic("dnsName")(__v.asInstanceOf[js.Any]))
       healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
+      httpsRedirectionEnabled.foreach(__v => __obj.updateDynamic("httpsRedirectionEnabled")(__v.asInstanceOf[js.Any]))
       instanceHealthSummary.foreach(__v => __obj.updateDynamic("instanceHealthSummary")(__v.asInstanceOf[js.Any]))
       instancePort.foreach(__v => __obj.updateDynamic("instancePort")(__v.asInstanceOf[js.Any]))
       ipAddressType.foreach(__v => __obj.updateDynamic("ipAddressType")(__v.asInstanceOf[js.Any]))
@@ -7470,6 +7670,7 @@ package object lightsail {
       supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       tlsCertificateSummaries.foreach(__v => __obj.updateDynamic("tlsCertificateSummaries")(__v.asInstanceOf[js.Any]))
+      tlsPolicyName.foreach(__v => __obj.updateDynamic("tlsPolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancer]
     }
   }
@@ -7564,6 +7765,27 @@ package object lightsail {
     }
   }
 
+  /** An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.
+    */
+  @js.native
+  trait LoadBalancerTlsCertificateDnsRecordCreationState extends js.Object {
+    var code: js.UndefOr[LoadBalancerTlsCertificateDnsRecordCreationStateCode]
+    var message: js.UndefOr[String]
+  }
+
+  object LoadBalancerTlsCertificateDnsRecordCreationState {
+    @inline
+    def apply(
+        code: js.UndefOr[LoadBalancerTlsCertificateDnsRecordCreationStateCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): LoadBalancerTlsCertificateDnsRecordCreationState = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancerTlsCertificateDnsRecordCreationState]
+    }
+  }
+
   /** Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
     */
   @js.native
@@ -7589,6 +7811,7 @@ package object lightsail {
     */
   @js.native
   trait LoadBalancerTlsCertificateDomainValidationRecord extends js.Object {
+    var dnsRecordCreationState: js.UndefOr[LoadBalancerTlsCertificateDnsRecordCreationState]
     var domainName: js.UndefOr[DomainName]
     var name: js.UndefOr[NonEmptyString]
     var `type`: js.UndefOr[NonEmptyString]
@@ -7599,6 +7822,7 @@ package object lightsail {
   object LoadBalancerTlsCertificateDomainValidationRecord {
     @inline
     def apply(
+        dnsRecordCreationState: js.UndefOr[LoadBalancerTlsCertificateDnsRecordCreationState] = js.undefined,
         domainName: js.UndefOr[DomainName] = js.undefined,
         name: js.UndefOr[NonEmptyString] = js.undefined,
         `type`: js.UndefOr[NonEmptyString] = js.undefined,
@@ -7606,6 +7830,7 @@ package object lightsail {
         value: js.UndefOr[NonEmptyString] = js.undefined
     ): LoadBalancerTlsCertificateDomainValidationRecord = {
       val __obj = js.Dynamic.literal()
+      dnsRecordCreationState.foreach(__v => __obj.updateDynamic("dnsRecordCreationState")(__v.asInstanceOf[js.Any]))
       domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
@@ -7655,6 +7880,36 @@ package object lightsail {
       isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificateSummary]
+    }
+  }
+
+  /** Describes the TLS security policies that are available for Lightsail load balancers. For more information about load balancer TLS security policies, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configure-load-balancer-tls-security-policy|Configuring TLS security policies on your Amazon Lightsail load balancers]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait LoadBalancerTlsPolicy extends js.Object {
+    var ciphers: js.UndefOr[StringList]
+    var description: js.UndefOr[String]
+    var isDefault: js.UndefOr[Boolean]
+    var name: js.UndefOr[ResourceName]
+    var protocols: js.UndefOr[StringList]
+  }
+
+  object LoadBalancerTlsPolicy {
+    @inline
+    def apply(
+        ciphers: js.UndefOr[StringList] = js.undefined,
+        description: js.UndefOr[String] = js.undefined,
+        isDefault: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[ResourceName] = js.undefined,
+        protocols: js.UndefOr[StringList] = js.undefined
+    ): LoadBalancerTlsPolicy = {
+      val __obj = js.Dynamic.literal()
+      ciphers.foreach(__v => __obj.updateDynamic("ciphers")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      isDefault.foreach(__v => __obj.updateDynamic("isDefault")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocols.foreach(__v => __obj.updateDynamic("protocols")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadBalancerTlsPolicy]
     }
   }
 
@@ -7757,6 +8012,27 @@ package object lightsail {
     }
   }
 
+  /** Describes the state of the name server records update made by Amazon Lightsail to an Amazon Route 53 registered domain. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/understanding-dns-in-amazon-lightsail|DNS in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait NameServersUpdateState extends js.Object {
+    var code: js.UndefOr[NameServersUpdateStateCode]
+    var message: js.UndefOr[String]
+  }
+
+  object NameServersUpdateState {
+    @inline
+    def apply(
+        code: js.UndefOr[NameServersUpdateStateCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): NameServersUpdateState = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NameServersUpdateState]
+    }
+  }
+
   @js.native
   trait OpenInstancePublicPortsRequest extends js.Object {
     var instanceName: ResourceName
@@ -7844,7 +8120,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution. An origin can be a Lightsail instance or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
+  /** Describes the origin resource of an Amazon Lightsail content delivery network (CDN) distribution. An origin can be a Lightsail instance, bucket, or load balancer. A distribution pulls content from an origin, caches it, and serves it to viewers via a worldwide network of edge servers.
     */
   @js.native
   trait Origin extends js.Object {
@@ -8000,6 +8276,42 @@ package object lightsail {
     }
   }
 
+  /** Describes the configuration for an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access|Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait PrivateRegistryAccess extends js.Object {
+    var ecrImagePullerRole: js.UndefOr[ContainerServiceECRImagePullerRole]
+  }
+
+  object PrivateRegistryAccess {
+    @inline
+    def apply(
+        ecrImagePullerRole: js.UndefOr[ContainerServiceECRImagePullerRole] = js.undefined
+    ): PrivateRegistryAccess = {
+      val __obj = js.Dynamic.literal()
+      ecrImagePullerRole.foreach(__v => __obj.updateDynamic("ecrImagePullerRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateRegistryAccess]
+    }
+  }
+
+  /** Describes a request to configure an Amazon Lightsail container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access|Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait PrivateRegistryAccessRequest extends js.Object {
+    var ecrImagePullerRole: js.UndefOr[ContainerServiceECRImagePullerRoleRequest]
+  }
+
+  object PrivateRegistryAccessRequest {
+    @inline
+    def apply(
+        ecrImagePullerRole: js.UndefOr[ContainerServiceECRImagePullerRoleRequest] = js.undefined
+    ): PrivateRegistryAccessRequest = {
+      val __obj = js.Dynamic.literal()
+      ecrImagePullerRole.foreach(__v => __obj.updateDynamic("ecrImagePullerRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateRegistryAccessRequest]
+    }
+  }
+
   @js.native
   trait PutAlarmRequest extends js.Object {
     var alarmName: ResourceName
@@ -8121,6 +8433,27 @@ package object lightsail {
     }
   }
 
+  /** Describes the deletion state of an Amazon Route 53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.
+    */
+  @js.native
+  trait R53HostedZoneDeletionState extends js.Object {
+    var code: js.UndefOr[R53HostedZoneDeletionStateCode]
+    var message: js.UndefOr[String]
+  }
+
+  object R53HostedZoneDeletionState {
+    @inline
+    def apply(
+        code: js.UndefOr[R53HostedZoneDeletionStateCode] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): R53HostedZoneDeletionState = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[R53HostedZoneDeletionState]
+    }
+  }
+
   @js.native
   trait RebootInstanceRequest extends js.Object {
     var instanceName: ResourceName
@@ -8187,7 +8520,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the AWS Region.
+  /** Describes the Amazon Web Services Region.
     */
   @js.native
   trait Region extends js.Object {
@@ -8256,6 +8589,28 @@ package object lightsail {
       val __obj = js.Dynamic.literal()
       containerImage.foreach(__v => __obj.updateDynamic("containerImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterContainerImageResult]
+    }
+  }
+
+  /** Describes the delegation state of an Amazon Route 53 registered domain to Amazon Lightsail. When you delegate an Amazon Route 53 registered domain to Lightsail, you can manage the DNS of the domain using a Lightsail DNS zone. You no longer use the Route 53 hosted zone to manage the DNS of the domain. To delegate the domain, Lightsail automatically updates the domain's name servers in Route 53 to the name servers of the Lightsail DNS zone. Then, Lightsail automatically deletes the Route 53 hosted zone for the domain. All of the following conditions must be true for automatic domain delegation to be successful: * The registered domain must be in the same Amazon Web Services account as the Lightsail account making the request. * The user or entity making the request must have permission to manage domains in Route 53. * The Route 53 hosted zone for the domain must be empty. It cannot contain DNS records other than start of authority (SOA) and name server records. If automatic domain
+    * delegation fails, or if you manage the DNS of your domain using a service other than Route 53, then you must manually add the Lightsail DNS zone name servers to your domain in order to delegate management of its DNS to Lightsail. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-create-dns-entry|Creating a DNS zone to manage your domain’s records in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait RegisteredDomainDelegationInfo extends js.Object {
+    var nameServersUpdateState: js.UndefOr[NameServersUpdateState]
+    var r53HostedZoneDeletionState: js.UndefOr[R53HostedZoneDeletionState]
+  }
+
+  object RegisteredDomainDelegationInfo {
+    @inline
+    def apply(
+        nameServersUpdateState: js.UndefOr[NameServersUpdateState] = js.undefined,
+        r53HostedZoneDeletionState: js.UndefOr[R53HostedZoneDeletionState] = js.undefined
+    ): RegisteredDomainDelegationInfo = {
+      val __obj = js.Dynamic.literal()
+      nameServersUpdateState.foreach(__v => __obj.updateDynamic("nameServersUpdateState")(__v.asInstanceOf[js.Any]))
+      r53HostedZoneDeletionState.foreach(__v => __obj.updateDynamic("r53HostedZoneDeletionState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisteredDomainDelegationInfo]
     }
   }
 
@@ -9309,6 +9664,7 @@ package object lightsail {
     var serviceName: ContainerServiceName
     var isDisabled: js.UndefOr[Boolean]
     var power: js.UndefOr[ContainerServicePowerName]
+    var privateRegistryAccess: js.UndefOr[PrivateRegistryAccessRequest]
     var publicDomainNames: js.UndefOr[ContainerServicePublicDomains]
     var scale: js.UndefOr[ContainerServiceScale]
   }
@@ -9319,6 +9675,7 @@ package object lightsail {
         serviceName: ContainerServiceName,
         isDisabled: js.UndefOr[Boolean] = js.undefined,
         power: js.UndefOr[ContainerServicePowerName] = js.undefined,
+        privateRegistryAccess: js.UndefOr[PrivateRegistryAccessRequest] = js.undefined,
         publicDomainNames: js.UndefOr[ContainerServicePublicDomains] = js.undefined,
         scale: js.UndefOr[ContainerServiceScale] = js.undefined
     ): UpdateContainerServiceRequest = {
@@ -9328,6 +9685,7 @@ package object lightsail {
 
       isDisabled.foreach(__v => __obj.updateDynamic("isDisabled")(__v.asInstanceOf[js.Any]))
       power.foreach(__v => __obj.updateDynamic("power")(__v.asInstanceOf[js.Any]))
+      privateRegistryAccess.foreach(__v => __obj.updateDynamic("privateRegistryAccess")(__v.asInstanceOf[js.Any]))
       publicDomainNames.foreach(__v => __obj.updateDynamic("publicDomainNames")(__v.asInstanceOf[js.Any]))
       scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateContainerServiceRequest]
@@ -9467,6 +9825,52 @@ package object lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainEntryResult]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceMetadataOptionsRequest extends js.Object {
+    var instanceName: ResourceName
+    var httpEndpoint: js.UndefOr[HttpEndpoint]
+    var httpProtocolIpv6: js.UndefOr[HttpProtocolIpv6]
+    var httpPutResponseHopLimit: js.UndefOr[Int]
+    var httpTokens: js.UndefOr[HttpTokens]
+  }
+
+  object UpdateInstanceMetadataOptionsRequest {
+    @inline
+    def apply(
+        instanceName: ResourceName,
+        httpEndpoint: js.UndefOr[HttpEndpoint] = js.undefined,
+        httpProtocolIpv6: js.UndefOr[HttpProtocolIpv6] = js.undefined,
+        httpPutResponseHopLimit: js.UndefOr[Int] = js.undefined,
+        httpTokens: js.UndefOr[HttpTokens] = js.undefined
+    ): UpdateInstanceMetadataOptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "instanceName" -> instanceName.asInstanceOf[js.Any]
+      )
+
+      httpEndpoint.foreach(__v => __obj.updateDynamic("httpEndpoint")(__v.asInstanceOf[js.Any]))
+      httpProtocolIpv6.foreach(__v => __obj.updateDynamic("httpProtocolIpv6")(__v.asInstanceOf[js.Any]))
+      httpPutResponseHopLimit.foreach(__v => __obj.updateDynamic("httpPutResponseHopLimit")(__v.asInstanceOf[js.Any]))
+      httpTokens.foreach(__v => __obj.updateDynamic("httpTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInstanceMetadataOptionsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateInstanceMetadataOptionsResult extends js.Object {
+    var operation: js.UndefOr[Operation]
+  }
+
+  object UpdateInstanceMetadataOptionsResult {
+    @inline
+    def apply(
+        operation: js.UndefOr[Operation] = js.undefined
+    ): UpdateInstanceMetadataOptionsResult = {
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInstanceMetadataOptionsResult]
     }
   }
 

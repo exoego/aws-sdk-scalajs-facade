@@ -13,8 +13,9 @@ object BackupJobState {
   val COMPLETED = "COMPLETED".asInstanceOf[BackupJobState]
   val FAILED = "FAILED".asInstanceOf[BackupJobState]
   val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
+  val PARTIAL = "PARTIAL".asInstanceOf[BackupJobState]
 
-  @inline def values: js.Array[BackupJobState] = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
+  @inline def values: js.Array[BackupJobState] = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED, PARTIAL)
 }
 
 @js.native
@@ -35,6 +36,8 @@ object BackupVaultEvent {
   val RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED".asInstanceOf[BackupVaultEvent]
   val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
   val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
+  val S3_BACKUP_OBJECT_FAILED = "S3_BACKUP_OBJECT_FAILED".asInstanceOf[BackupVaultEvent]
+  val S3_RESTORE_OBJECT_FAILED = "S3_RESTORE_OBJECT_FAILED".asInstanceOf[BackupVaultEvent]
 
   @inline def values: js.Array[BackupVaultEvent] = js.Array(
     BACKUP_JOB_STARTED,
@@ -51,7 +54,9 @@ object BackupVaultEvent {
     COPY_JOB_FAILED,
     RECOVERY_POINT_MODIFIED,
     BACKUP_PLAN_CREATED,
-    BACKUP_PLAN_MODIFIED
+    BACKUP_PLAN_MODIFIED,
+    S3_BACKUP_OBJECT_FAILED,
+    S3_RESTORE_OBJECT_FAILED
   )
 }
 
@@ -70,8 +75,20 @@ object CopyJobState {
   val RUNNING = "RUNNING".asInstanceOf[CopyJobState]
   val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
   val FAILED = "FAILED".asInstanceOf[CopyJobState]
+  val PARTIAL = "PARTIAL".asInstanceOf[CopyJobState]
 
-  @inline def values: js.Array[CopyJobState] = js.Array(CREATED, RUNNING, COMPLETED, FAILED)
+  @inline def values: js.Array[CopyJobState] = js.Array(CREATED, RUNNING, COMPLETED, FAILED, PARTIAL)
+}
+
+@js.native
+sealed trait LegalHoldStatus extends js.Any
+object LegalHoldStatus {
+  val CREATING = "CREATING".asInstanceOf[LegalHoldStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[LegalHoldStatus]
+  val CANCELING = "CANCELING".asInstanceOf[LegalHoldStatus]
+  val CANCELED = "CANCELED".asInstanceOf[LegalHoldStatus]
+
+  @inline def values: js.Array[LegalHoldStatus] = js.Array(CREATING, ACTIVE, CANCELING, CANCELED)
 }
 
 @js.native

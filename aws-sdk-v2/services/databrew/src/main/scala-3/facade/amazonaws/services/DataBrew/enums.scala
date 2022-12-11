@@ -40,14 +40,15 @@ object EncryptionMode {
   inline def values: js.Array[EncryptionMode] = js.Array(`SSE-KMS`, `SSE-S3`)
 }
 
-type InputFormat = "CSV" | "JSON" | "PARQUET" | "EXCEL"
+type InputFormat = "CSV" | "JSON" | "PARQUET" | "EXCEL" | "ORC"
 object InputFormat {
   inline val CSV: "CSV" = "CSV"
   inline val JSON: "JSON" = "JSON"
   inline val PARQUET: "PARQUET" = "PARQUET"
   inline val EXCEL: "EXCEL" = "EXCEL"
+  inline val ORC: "ORC" = "ORC"
 
-  inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL)
+  inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL, ORC)
 }
 
 type JobRunState = "STARTING" | "RUNNING" | "STOPPING" | "STOPPED" | "SUCCEEDED" | "FAILED" | "TIMEOUT"

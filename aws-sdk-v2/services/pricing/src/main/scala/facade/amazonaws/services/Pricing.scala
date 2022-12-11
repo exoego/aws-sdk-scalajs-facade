@@ -12,8 +12,8 @@ package object pricing {
   type AttributeValueList = js.Array[AttributeValue]
   type BoxedInteger = Int
   type Filters = js.Array[Filter]
-  type PriceList = js.Array[PriceListItemJSON]
-  type PriceListItemJSON = String
+  type PriceListJsonItem = String
+  type PriceListJsonItems = js.Array[PriceListJsonItem]
   type ServiceList = js.Array[Service]
 
   final class PricingOps(private val service: Pricing) extends AnyVal {
@@ -177,28 +177,30 @@ package object pricing {
 
   @js.native
   trait GetProductsRequest extends js.Object {
+    var ServiceCode: String
     var Filters: js.UndefOr[Filters]
     var FormatVersion: js.UndefOr[String]
     var MaxResults: js.UndefOr[BoxedInteger]
     var NextToken: js.UndefOr[String]
-    var ServiceCode: js.UndefOr[String]
   }
 
   object GetProductsRequest {
     @inline
     def apply(
+        ServiceCode: String,
         Filters: js.UndefOr[Filters] = js.undefined,
         FormatVersion: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
-        ServiceCode: js.UndefOr[String] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined
     ): GetProductsRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
+      )
+
       Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProductsRequest]
     }
   }
@@ -207,7 +209,7 @@ package object pricing {
   trait GetProductsResponse extends js.Object {
     var FormatVersion: js.UndefOr[String]
     var NextToken: js.UndefOr[String]
-    var PriceList: js.UndefOr[PriceList]
+    var PriceList: js.UndefOr[PriceListJsonItems]
   }
 
   object GetProductsResponse {
@@ -215,7 +217,7 @@ package object pricing {
     def apply(
         FormatVersion: js.UndefOr[String] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
-        PriceList: js.UndefOr[PriceList] = js.undefined
+        PriceList: js.UndefOr[PriceListJsonItems] = js.undefined
     ): GetProductsResponse = {
       val __obj = js.Dynamic.literal()
       FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
@@ -229,19 +231,21 @@ package object pricing {
     */
   @js.native
   trait Service extends js.Object {
+    var ServiceCode: String
     var AttributeNames: js.UndefOr[AttributeNameList]
-    var ServiceCode: js.UndefOr[String]
   }
 
   object Service {
     @inline
     def apply(
-        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
-        ServiceCode: js.UndefOr[String] = js.undefined
+        ServiceCode: String,
+        AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
     ): Service = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
+      )
+
       AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }

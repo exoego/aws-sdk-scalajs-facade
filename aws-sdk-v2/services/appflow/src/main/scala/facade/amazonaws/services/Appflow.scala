@@ -15,27 +15,56 @@ package object appflow {
   type ApiKey = String
   type ApiSecretKey = String
   type ApiToken = String
+  type ApiVersion = String
   type ApplicationHostUrl = String
   type ApplicationKey = String
   type ApplicationServicePath = String
+  type ApplicationType = String
   type AuthCode = String
   type AuthCodeUrl = String
+  type AuthCodeUrlList = js.Array[AuthCodeUrl]
+  type AuthParameterList = js.Array[AuthParameter]
   type BucketName = String
   type BucketPrefix = String
   type ClientCredentialsArn = String
   type ClientId = String
   type ClientNumber = String
   type ClientSecret = String
+  type ClusterIdentifier = String
   type ConnectorConfigurationsMap = js.Dictionary[ConnectorConfiguration]
+  type ConnectorDescription = String
   type ConnectorEntityFieldList = js.Array[ConnectorEntityField]
   type ConnectorEntityList = js.Array[ConnectorEntity]
   type ConnectorEntityMap = js.Dictionary[ConnectorEntityList]
+  type ConnectorLabel = String
+  type ConnectorList = js.Array[ConnectorDetail]
+  type ConnectorMode = String
+  type ConnectorModeList = js.Array[ConnectorMode]
+  type ConnectorName = String
+  type ConnectorOwner = String
   type ConnectorProfileArn = String
   type ConnectorProfileDetailList = js.Array[ConnectorProfile]
   type ConnectorProfileName = String
   type ConnectorProfileNameList = js.Array[ConnectorProfileName]
+  type ConnectorRuntimeSettingDataType = String
+  type ConnectorRuntimeSettingList = js.Array[ConnectorRuntimeSetting]
+  type ConnectorRuntimeSettingScope = String
+  type ConnectorSuppliedValue = String
+  type ConnectorSuppliedValueList = js.Array[ConnectorSuppliedValue]
+  type ConnectorSuppliedValueOptionList = js.Array[ConnectorSuppliedValue]
   type ConnectorTypeList = js.Array[ConnectorType]
+  type ConnectorVersion = String
   type CreatedBy = String
+  type CredentialsMap = js.Dictionary[CredentialsMapValue]
+  type CredentialsMapKey = String
+  type CredentialsMapValue = String
+  type CustomAuthConfigList = js.Array[CustomAuthConfig]
+  type CustomAuthenticationType = String
+  type CustomProperties = js.Dictionary[CustomPropertyValue]
+  type CustomPropertyKey = String
+  type CustomPropertyValue = String
+  type DataApiRoleArn = String
+  type DatabaseName = String
   type DatabaseUrl = String
   type Date = js.Date
   type DatetimeTypeFieldName = String
@@ -45,48 +74,67 @@ package object appflow {
   type DocumentType = String
   type DomainName = String
   type EntitiesPath = String
+  type EntityName = String
   type ExecutionId = String
   type ExecutionMessage = String
   type FieldType = String
   type FilterOperatorList = js.Array[Operator]
   type FlowArn = String
   type FlowDescription = String
+  type FlowErrorDeactivationThreshold = Int
   type FlowExecutionList = js.Array[ExecutionRecord]
   type FlowList = js.Array[FlowDefinition]
   type FlowName = String
   type FlowStatusMessage = String
+  type GlueDataCatalogDatabaseName = String
+  type GlueDataCatalogIAMRole = String
+  type GlueDataCatalogTablePrefix = String
   type Group = String
   type IdFieldNameList = js.Array[Name]
   type Identifier = String
   type InstanceUrl = String
+  type JavaBoolean = Boolean
   type KMSArn = String
   type Key = String
   type Label = String
+  type LogoURL = String
   type LogonLanguage = String
   type MaxResults = Int
+  type MetadataCatalogDetails = js.Array[MetadataCatalogDetail]
   type MostRecentExecutionMessage = String
   type Name = String
   type NextToken = String
+  type OAuth2CustomPropertiesList = js.Array[OAuth2CustomParameter]
+  type OAuth2GrantTypeSupportedList = js.Array[OAuth2GrantType]
   type OAuthScope = String
   type OAuthScopeList = js.Array[OAuthScope]
   type Object = String
   type ObjectTypeName = String
   type Password = String
+  type PathPrefixHierarchy = js.Array[PathPrefix]
   type PortNumber = Int
   type PrivateConnectionProvisioningFailureMessage = String
   type PrivateLinkServiceName = String
+  type ProfilePropertiesMap = js.Dictionary[ProfilePropertyValue]
+  type ProfilePropertyKey = String
+  type ProfilePropertyValue = String
   type Property = String
   type RedirectUri = String
   type RefreshToken = String
   type Region = String
   type RegionList = js.Array[Region]
+  type RegisteredBy = String
   type RoleArn = String
+  type SalesforceDataTransferApiList = js.Array[SalesforceDataTransferApi]
   type ScheduleExpression = String
   type ScheduleOffset = Double
   type SchedulingFrequencyTypeList = js.Array[ScheduleFrequencyType]
   type SecretKey = String
   type SourceFields = js.Array[String]
   type Stage = String
+  type SupportedApiVersion = String
+  type SupportedApiVersionList = js.Array[SupportedApiVersion]
+  type SupportedOperatorList = js.Array[Operators]
   type SupportedValueList = js.Array[Value]
   type SupportedWriteOperationList = js.Array[WriteOperationType]
   type TagKey = String
@@ -97,12 +145,15 @@ package object appflow {
   type Tasks = js.Array[Task]
   type Timezone = String
   type TokenUrl = String
+  type TokenUrlCustomProperties = js.Dictionary[CustomPropertyValue]
+  type TokenUrlList = js.Array[TokenUrl]
   type TriggerTypeList = js.Array[TriggerType]
   type UpdatedBy = String
   type UpsolverBucketName = String
   type Username = String
   type Value = String
   type Warehouse = String
+  type WorkgroupName = String
 
   final class AppflowOps(private val service: Appflow) extends AnyVal {
 
@@ -111,18 +162,23 @@ package object appflow {
     @inline def deleteConnectorProfileFuture(params: DeleteConnectorProfileRequest): Future[DeleteConnectorProfileResponse] = service.deleteConnectorProfile(params).promise().toFuture
     @inline def deleteFlowFuture(params: DeleteFlowRequest): Future[DeleteFlowResponse] = service.deleteFlow(params).promise().toFuture
     @inline def describeConnectorEntityFuture(params: DescribeConnectorEntityRequest): Future[DescribeConnectorEntityResponse] = service.describeConnectorEntity(params).promise().toFuture
+    @inline def describeConnectorFuture(params: DescribeConnectorRequest): Future[DescribeConnectorResponse] = service.describeConnector(params).promise().toFuture
     @inline def describeConnectorProfilesFuture(params: DescribeConnectorProfilesRequest): Future[DescribeConnectorProfilesResponse] = service.describeConnectorProfiles(params).promise().toFuture
     @inline def describeConnectorsFuture(params: DescribeConnectorsRequest): Future[DescribeConnectorsResponse] = service.describeConnectors(params).promise().toFuture
     @inline def describeFlowExecutionRecordsFuture(params: DescribeFlowExecutionRecordsRequest): Future[DescribeFlowExecutionRecordsResponse] = service.describeFlowExecutionRecords(params).promise().toFuture
     @inline def describeFlowFuture(params: DescribeFlowRequest): Future[DescribeFlowResponse] = service.describeFlow(params).promise().toFuture
     @inline def listConnectorEntitiesFuture(params: ListConnectorEntitiesRequest): Future[ListConnectorEntitiesResponse] = service.listConnectorEntities(params).promise().toFuture
+    @inline def listConnectorsFuture(params: ListConnectorsRequest): Future[ListConnectorsResponse] = service.listConnectors(params).promise().toFuture
     @inline def listFlowsFuture(params: ListFlowsRequest): Future[ListFlowsResponse] = service.listFlows(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def registerConnectorFuture(params: RegisterConnectorRequest): Future[RegisterConnectorResponse] = service.registerConnector(params).promise().toFuture
     @inline def startFlowFuture(params: StartFlowRequest): Future[StartFlowResponse] = service.startFlow(params).promise().toFuture
     @inline def stopFlowFuture(params: StopFlowRequest): Future[StopFlowResponse] = service.stopFlow(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def unregisterConnectorFuture(params: UnregisterConnectorRequest): Future[UnregisterConnectorResponse] = service.unregisterConnector(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConnectorProfileFuture(params: UpdateConnectorProfileRequest): Future[UpdateConnectorProfileResponse] = service.updateConnectorProfile(params).promise().toFuture
+    @inline def updateConnectorRegistrationFuture(params: UpdateConnectorRegistrationRequest): Future[UpdateConnectorRegistrationResponse] = service.updateConnectorRegistration(params).promise().toFuture
     @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] = service.updateFlow(params).promise().toFuture
 
   }
@@ -136,19 +192,24 @@ package object appflow {
     def createFlow(params: CreateFlowRequest): Request[CreateFlowResponse] = js.native
     def deleteConnectorProfile(params: DeleteConnectorProfileRequest): Request[DeleteConnectorProfileResponse] = js.native
     def deleteFlow(params: DeleteFlowRequest): Request[DeleteFlowResponse] = js.native
+    def describeConnector(params: DescribeConnectorRequest): Request[DescribeConnectorResponse] = js.native
     def describeConnectorEntity(params: DescribeConnectorEntityRequest): Request[DescribeConnectorEntityResponse] = js.native
     def describeConnectorProfiles(params: DescribeConnectorProfilesRequest): Request[DescribeConnectorProfilesResponse] = js.native
     def describeConnectors(params: DescribeConnectorsRequest): Request[DescribeConnectorsResponse] = js.native
     def describeFlow(params: DescribeFlowRequest): Request[DescribeFlowResponse] = js.native
     def describeFlowExecutionRecords(params: DescribeFlowExecutionRecordsRequest): Request[DescribeFlowExecutionRecordsResponse] = js.native
     def listConnectorEntities(params: ListConnectorEntitiesRequest): Request[ListConnectorEntitiesResponse] = js.native
+    def listConnectors(params: ListConnectorsRequest): Request[ListConnectorsResponse] = js.native
     def listFlows(params: ListFlowsRequest): Request[ListFlowsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def registerConnector(params: RegisterConnectorRequest): Request[RegisterConnectorResponse] = js.native
     def startFlow(params: StartFlowRequest): Request[StartFlowResponse] = js.native
     def stopFlow(params: StopFlowRequest): Request[StopFlowResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def unregisterConnector(params: UnregisterConnectorRequest): Request[UnregisterConnectorResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConnectorProfile(params: UpdateConnectorProfileRequest): Request[UpdateConnectorProfileResponse] = js.native
+    def updateConnectorRegistration(params: UpdateConnectorRegistrationRequest): Request[UpdateConnectorRegistrationResponse] = js.native
     def updateFlow(params: UpdateFlowRequest): Request[UpdateFlowResponse] = js.native
   }
   object Appflow {
@@ -162,15 +223,18 @@ package object appflow {
   @js.native
   trait AggregationConfig extends js.Object {
     var aggregationType: js.UndefOr[AggregationType]
+    var targetFileSize: js.UndefOr[Double]
   }
 
   object AggregationConfig {
     @inline
     def apply(
-        aggregationType: js.UndefOr[AggregationType] = js.undefined
+        aggregationType: js.UndefOr[AggregationType] = js.undefined,
+        targetFileSize: js.UndefOr[Double] = js.undefined
     ): AggregationConfig = {
       val __obj = js.Dynamic.literal()
       aggregationType.foreach(__v => __obj.updateDynamic("aggregationType")(__v.asInstanceOf[js.Any]))
+      targetFileSize.foreach(__v => __obj.updateDynamic("targetFileSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AggregationConfig]
     }
   }
@@ -242,6 +306,95 @@ package object appflow {
     }
   }
 
+  /** The API key credentials required for API key authentication.
+    */
+  @js.native
+  trait ApiKeyCredentials extends js.Object {
+    var apiKey: ApiKey
+    var apiSecretKey: js.UndefOr[ApiSecretKey]
+  }
+
+  object ApiKeyCredentials {
+    @inline
+    def apply(
+        apiKey: ApiKey,
+        apiSecretKey: js.UndefOr[ApiSecretKey] = js.undefined
+    ): ApiKeyCredentials = {
+      val __obj = js.Dynamic.literal(
+        "apiKey" -> apiKey.asInstanceOf[js.Any]
+      )
+
+      apiSecretKey.foreach(__v => __obj.updateDynamic("apiSecretKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiKeyCredentials]
+    }
+  }
+
+  /** Information about required authentication parameters.
+    */
+  @js.native
+  trait AuthParameter extends js.Object {
+    var connectorSuppliedValues: js.UndefOr[ConnectorSuppliedValueList]
+    var description: js.UndefOr[Description]
+    var isRequired: js.UndefOr[Boolean]
+    var isSensitiveField: js.UndefOr[Boolean]
+    var key: js.UndefOr[Key]
+    var label: js.UndefOr[Label]
+  }
+
+  object AuthParameter {
+    @inline
+    def apply(
+        connectorSuppliedValues: js.UndefOr[ConnectorSuppliedValueList] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        isRequired: js.UndefOr[Boolean] = js.undefined,
+        isSensitiveField: js.UndefOr[Boolean] = js.undefined,
+        key: js.UndefOr[Key] = js.undefined,
+        label: js.UndefOr[Label] = js.undefined
+    ): AuthParameter = {
+      val __obj = js.Dynamic.literal()
+      connectorSuppliedValues.foreach(__v => __obj.updateDynamic("connectorSuppliedValues")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      isRequired.foreach(__v => __obj.updateDynamic("isRequired")(__v.asInstanceOf[js.Any]))
+      isSensitiveField.foreach(__v => __obj.updateDynamic("isSensitiveField")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthParameter]
+    }
+  }
+
+  /** Contains information about the authentication config that the connector supports.
+    */
+  @js.native
+  trait AuthenticationConfig extends js.Object {
+    var customAuthConfigs: js.UndefOr[CustomAuthConfigList]
+    var isApiKeyAuthSupported: js.UndefOr[Boolean]
+    var isBasicAuthSupported: js.UndefOr[Boolean]
+    var isCustomAuthSupported: js.UndefOr[Boolean]
+    var isOAuth2Supported: js.UndefOr[Boolean]
+    var oAuth2Defaults: js.UndefOr[OAuth2Defaults]
+  }
+
+  object AuthenticationConfig {
+    @inline
+    def apply(
+        customAuthConfigs: js.UndefOr[CustomAuthConfigList] = js.undefined,
+        isApiKeyAuthSupported: js.UndefOr[Boolean] = js.undefined,
+        isBasicAuthSupported: js.UndefOr[Boolean] = js.undefined,
+        isCustomAuthSupported: js.UndefOr[Boolean] = js.undefined,
+        isOAuth2Supported: js.UndefOr[Boolean] = js.undefined,
+        oAuth2Defaults: js.UndefOr[OAuth2Defaults] = js.undefined
+    ): AuthenticationConfig = {
+      val __obj = js.Dynamic.literal()
+      customAuthConfigs.foreach(__v => __obj.updateDynamic("customAuthConfigs")(__v.asInstanceOf[js.Any]))
+      isApiKeyAuthSupported.foreach(__v => __obj.updateDynamic("isApiKeyAuthSupported")(__v.asInstanceOf[js.Any]))
+      isBasicAuthSupported.foreach(__v => __obj.updateDynamic("isBasicAuthSupported")(__v.asInstanceOf[js.Any]))
+      isCustomAuthSupported.foreach(__v => __obj.updateDynamic("isCustomAuthSupported")(__v.asInstanceOf[js.Any]))
+      isOAuth2Supported.foreach(__v => __obj.updateDynamic("isOAuth2Supported")(__v.asInstanceOf[js.Any]))
+      oAuth2Defaults.foreach(__v => __obj.updateDynamic("oAuth2Defaults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthenticationConfig]
+    }
+  }
+
   /** The basic auth credentials required for basic authentication.
     */
   @js.native
@@ -268,38 +421,140 @@ package object appflow {
     */
   @js.native
   trait ConnectorConfiguration extends js.Object {
+    var authenticationConfig: js.UndefOr[AuthenticationConfig]
     var canUseAsDestination: js.UndefOr[Boolean]
     var canUseAsSource: js.UndefOr[Boolean]
+    var connectorArn: js.UndefOr[ARN]
+    var connectorDescription: js.UndefOr[ConnectorDescription]
+    var connectorLabel: js.UndefOr[ConnectorLabel]
     var connectorMetadata: js.UndefOr[ConnectorMetadata]
+    var connectorModes: js.UndefOr[ConnectorModeList]
+    var connectorName: js.UndefOr[ConnectorName]
+    var connectorOwner: js.UndefOr[ConnectorOwner]
+    var connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig]
+    var connectorProvisioningType: js.UndefOr[ConnectorProvisioningType]
+    var connectorRuntimeSettings: js.UndefOr[ConnectorRuntimeSettingList]
+    var connectorType: js.UndefOr[ConnectorType]
+    var connectorVersion: js.UndefOr[ConnectorVersion]
     var isPrivateLinkEnabled: js.UndefOr[Boolean]
     var isPrivateLinkEndpointUrlRequired: js.UndefOr[Boolean]
+    var logoURL: js.UndefOr[LogoURL]
+    var registeredAt: js.UndefOr[Date]
+    var registeredBy: js.UndefOr[RegisteredBy]
+    var supportedApiVersions: js.UndefOr[SupportedApiVersionList]
     var supportedDestinationConnectors: js.UndefOr[ConnectorTypeList]
+    var supportedOperators: js.UndefOr[SupportedOperatorList]
     var supportedSchedulingFrequencies: js.UndefOr[SchedulingFrequencyTypeList]
     var supportedTriggerTypes: js.UndefOr[TriggerTypeList]
+    var supportedWriteOperations: js.UndefOr[SupportedWriteOperationList]
   }
 
   object ConnectorConfiguration {
     @inline
     def apply(
+        authenticationConfig: js.UndefOr[AuthenticationConfig] = js.undefined,
         canUseAsDestination: js.UndefOr[Boolean] = js.undefined,
         canUseAsSource: js.UndefOr[Boolean] = js.undefined,
+        connectorArn: js.UndefOr[ARN] = js.undefined,
+        connectorDescription: js.UndefOr[ConnectorDescription] = js.undefined,
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         connectorMetadata: js.UndefOr[ConnectorMetadata] = js.undefined,
+        connectorModes: js.UndefOr[ConnectorModeList] = js.undefined,
+        connectorName: js.UndefOr[ConnectorName] = js.undefined,
+        connectorOwner: js.UndefOr[ConnectorOwner] = js.undefined,
+        connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig] = js.undefined,
+        connectorProvisioningType: js.UndefOr[ConnectorProvisioningType] = js.undefined,
+        connectorRuntimeSettings: js.UndefOr[ConnectorRuntimeSettingList] = js.undefined,
+        connectorType: js.UndefOr[ConnectorType] = js.undefined,
+        connectorVersion: js.UndefOr[ConnectorVersion] = js.undefined,
         isPrivateLinkEnabled: js.UndefOr[Boolean] = js.undefined,
         isPrivateLinkEndpointUrlRequired: js.UndefOr[Boolean] = js.undefined,
+        logoURL: js.UndefOr[LogoURL] = js.undefined,
+        registeredAt: js.UndefOr[Date] = js.undefined,
+        registeredBy: js.UndefOr[RegisteredBy] = js.undefined,
+        supportedApiVersions: js.UndefOr[SupportedApiVersionList] = js.undefined,
         supportedDestinationConnectors: js.UndefOr[ConnectorTypeList] = js.undefined,
+        supportedOperators: js.UndefOr[SupportedOperatorList] = js.undefined,
         supportedSchedulingFrequencies: js.UndefOr[SchedulingFrequencyTypeList] = js.undefined,
-        supportedTriggerTypes: js.UndefOr[TriggerTypeList] = js.undefined
+        supportedTriggerTypes: js.UndefOr[TriggerTypeList] = js.undefined,
+        supportedWriteOperations: js.UndefOr[SupportedWriteOperationList] = js.undefined
     ): ConnectorConfiguration = {
       val __obj = js.Dynamic.literal()
+      authenticationConfig.foreach(__v => __obj.updateDynamic("authenticationConfig")(__v.asInstanceOf[js.Any]))
       canUseAsDestination.foreach(__v => __obj.updateDynamic("canUseAsDestination")(__v.asInstanceOf[js.Any]))
       canUseAsSource.foreach(__v => __obj.updateDynamic("canUseAsSource")(__v.asInstanceOf[js.Any]))
+      connectorArn.foreach(__v => __obj.updateDynamic("connectorArn")(__v.asInstanceOf[js.Any]))
+      connectorDescription.foreach(__v => __obj.updateDynamic("connectorDescription")(__v.asInstanceOf[js.Any]))
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
       connectorMetadata.foreach(__v => __obj.updateDynamic("connectorMetadata")(__v.asInstanceOf[js.Any]))
+      connectorModes.foreach(__v => __obj.updateDynamic("connectorModes")(__v.asInstanceOf[js.Any]))
+      connectorName.foreach(__v => __obj.updateDynamic("connectorName")(__v.asInstanceOf[js.Any]))
+      connectorOwner.foreach(__v => __obj.updateDynamic("connectorOwner")(__v.asInstanceOf[js.Any]))
+      connectorProvisioningConfig.foreach(__v => __obj.updateDynamic("connectorProvisioningConfig")(__v.asInstanceOf[js.Any]))
+      connectorProvisioningType.foreach(__v => __obj.updateDynamic("connectorProvisioningType")(__v.asInstanceOf[js.Any]))
+      connectorRuntimeSettings.foreach(__v => __obj.updateDynamic("connectorRuntimeSettings")(__v.asInstanceOf[js.Any]))
+      connectorType.foreach(__v => __obj.updateDynamic("connectorType")(__v.asInstanceOf[js.Any]))
+      connectorVersion.foreach(__v => __obj.updateDynamic("connectorVersion")(__v.asInstanceOf[js.Any]))
       isPrivateLinkEnabled.foreach(__v => __obj.updateDynamic("isPrivateLinkEnabled")(__v.asInstanceOf[js.Any]))
       isPrivateLinkEndpointUrlRequired.foreach(__v => __obj.updateDynamic("isPrivateLinkEndpointUrlRequired")(__v.asInstanceOf[js.Any]))
+      logoURL.foreach(__v => __obj.updateDynamic("logoURL")(__v.asInstanceOf[js.Any]))
+      registeredAt.foreach(__v => __obj.updateDynamic("registeredAt")(__v.asInstanceOf[js.Any]))
+      registeredBy.foreach(__v => __obj.updateDynamic("registeredBy")(__v.asInstanceOf[js.Any]))
+      supportedApiVersions.foreach(__v => __obj.updateDynamic("supportedApiVersions")(__v.asInstanceOf[js.Any]))
       supportedDestinationConnectors.foreach(__v => __obj.updateDynamic("supportedDestinationConnectors")(__v.asInstanceOf[js.Any]))
+      supportedOperators.foreach(__v => __obj.updateDynamic("supportedOperators")(__v.asInstanceOf[js.Any]))
       supportedSchedulingFrequencies.foreach(__v => __obj.updateDynamic("supportedSchedulingFrequencies")(__v.asInstanceOf[js.Any]))
       supportedTriggerTypes.foreach(__v => __obj.updateDynamic("supportedTriggerTypes")(__v.asInstanceOf[js.Any]))
+      supportedWriteOperations.foreach(__v => __obj.updateDynamic("supportedWriteOperations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorConfiguration]
+    }
+  }
+
+  /** Information about the registered connector.
+    */
+  @js.native
+  trait ConnectorDetail extends js.Object {
+    var applicationType: js.UndefOr[ApplicationType]
+    var connectorDescription: js.UndefOr[ConnectorDescription]
+    var connectorLabel: js.UndefOr[ConnectorLabel]
+    var connectorModes: js.UndefOr[ConnectorModeList]
+    var connectorName: js.UndefOr[ConnectorName]
+    var connectorOwner: js.UndefOr[ConnectorOwner]
+    var connectorProvisioningType: js.UndefOr[ConnectorProvisioningType]
+    var connectorType: js.UndefOr[ConnectorType]
+    var connectorVersion: js.UndefOr[ConnectorVersion]
+    var registeredAt: js.UndefOr[Date]
+    var registeredBy: js.UndefOr[RegisteredBy]
+  }
+
+  object ConnectorDetail {
+    @inline
+    def apply(
+        applicationType: js.UndefOr[ApplicationType] = js.undefined,
+        connectorDescription: js.UndefOr[ConnectorDescription] = js.undefined,
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
+        connectorModes: js.UndefOr[ConnectorModeList] = js.undefined,
+        connectorName: js.UndefOr[ConnectorName] = js.undefined,
+        connectorOwner: js.UndefOr[ConnectorOwner] = js.undefined,
+        connectorProvisioningType: js.UndefOr[ConnectorProvisioningType] = js.undefined,
+        connectorType: js.UndefOr[ConnectorType] = js.undefined,
+        connectorVersion: js.UndefOr[ConnectorVersion] = js.undefined,
+        registeredAt: js.UndefOr[Date] = js.undefined,
+        registeredBy: js.UndefOr[RegisteredBy] = js.undefined
+    ): ConnectorDetail = {
+      val __obj = js.Dynamic.literal()
+      applicationType.foreach(__v => __obj.updateDynamic("applicationType")(__v.asInstanceOf[js.Any]))
+      connectorDescription.foreach(__v => __obj.updateDynamic("connectorDescription")(__v.asInstanceOf[js.Any]))
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
+      connectorModes.foreach(__v => __obj.updateDynamic("connectorModes")(__v.asInstanceOf[js.Any]))
+      connectorName.foreach(__v => __obj.updateDynamic("connectorName")(__v.asInstanceOf[js.Any]))
+      connectorOwner.foreach(__v => __obj.updateDynamic("connectorOwner")(__v.asInstanceOf[js.Any]))
+      connectorProvisioningType.foreach(__v => __obj.updateDynamic("connectorProvisioningType")(__v.asInstanceOf[js.Any]))
+      connectorType.foreach(__v => __obj.updateDynamic("connectorType")(__v.asInstanceOf[js.Any]))
+      connectorVersion.foreach(__v => __obj.updateDynamic("connectorVersion")(__v.asInstanceOf[js.Any]))
+      registeredAt.foreach(__v => __obj.updateDynamic("registeredAt")(__v.asInstanceOf[js.Any]))
+      registeredBy.foreach(__v => __obj.updateDynamic("registeredBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectorDetail]
     }
   }
 
@@ -334,9 +589,14 @@ package object appflow {
   @js.native
   trait ConnectorEntityField extends js.Object {
     var identifier: Identifier
+    var customProperties: js.UndefOr[CustomProperties]
+    var defaultValue: js.UndefOr[String]
     var description: js.UndefOr[Description]
     var destinationProperties: js.UndefOr[DestinationFieldProperties]
+    var isDeprecated: js.UndefOr[Boolean]
+    var isPrimaryKey: js.UndefOr[Boolean]
     var label: js.UndefOr[Label]
+    var parentIdentifier: js.UndefOr[Identifier]
     var sourceProperties: js.UndefOr[SourceFieldProperties]
     var supportedFieldTypeDetails: js.UndefOr[SupportedFieldTypeDetails]
   }
@@ -345,9 +605,14 @@ package object appflow {
     @inline
     def apply(
         identifier: Identifier,
+        customProperties: js.UndefOr[CustomProperties] = js.undefined,
+        defaultValue: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         destinationProperties: js.UndefOr[DestinationFieldProperties] = js.undefined,
+        isDeprecated: js.UndefOr[Boolean] = js.undefined,
+        isPrimaryKey: js.UndefOr[Boolean] = js.undefined,
         label: js.UndefOr[Label] = js.undefined,
+        parentIdentifier: js.UndefOr[Identifier] = js.undefined,
         sourceProperties: js.UndefOr[SourceFieldProperties] = js.undefined,
         supportedFieldTypeDetails: js.UndefOr[SupportedFieldTypeDetails] = js.undefined
     ): ConnectorEntityField = {
@@ -355,9 +620,14 @@ package object appflow {
         "identifier" -> identifier.asInstanceOf[js.Any]
       )
 
+      customProperties.foreach(__v => __obj.updateDynamic("customProperties")(__v.asInstanceOf[js.Any]))
+      defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       destinationProperties.foreach(__v => __obj.updateDynamic("destinationProperties")(__v.asInstanceOf[js.Any]))
+      isDeprecated.foreach(__v => __obj.updateDynamic("isDeprecated")(__v.asInstanceOf[js.Any]))
+      isPrimaryKey.foreach(__v => __obj.updateDynamic("isPrimaryKey")(__v.asInstanceOf[js.Any]))
       label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
+      parentIdentifier.foreach(__v => __obj.updateDynamic("parentIdentifier")(__v.asInstanceOf[js.Any]))
       sourceProperties.foreach(__v => __obj.updateDynamic("sourceProperties")(__v.asInstanceOf[js.Any]))
       supportedFieldTypeDetails.foreach(__v => __obj.updateDynamic("supportedFieldTypeDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorEntityField]
@@ -468,6 +738,7 @@ package object appflow {
   @js.native
   trait ConnectorOperator extends js.Object {
     var Amplitude: js.UndefOr[AmplitudeConnectorOperator]
+    var CustomConnector: js.UndefOr[Operator]
     var Datadog: js.UndefOr[DatadogConnectorOperator]
     var Dynatrace: js.UndefOr[DynatraceConnectorOperator]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorOperator]
@@ -488,6 +759,7 @@ package object appflow {
     @inline
     def apply(
         Amplitude: js.UndefOr[AmplitudeConnectorOperator] = js.undefined,
+        CustomConnector: js.UndefOr[Operator] = js.undefined,
         Datadog: js.UndefOr[DatadogConnectorOperator] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceConnectorOperator] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorOperator] = js.undefined,
@@ -505,6 +777,7 @@ package object appflow {
     ): ConnectorOperator = {
       val __obj = js.Dynamic.literal()
       Amplitude.foreach(__v => __obj.updateDynamic("Amplitude")(__v.asInstanceOf[js.Any]))
+      CustomConnector.foreach(__v => __obj.updateDynamic("CustomConnector")(__v.asInstanceOf[js.Any]))
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
@@ -528,6 +801,7 @@ package object appflow {
   @js.native
   trait ConnectorProfile extends js.Object {
     var connectionMode: js.UndefOr[ConnectionMode]
+    var connectorLabel: js.UndefOr[ConnectorLabel]
     var connectorProfileArn: js.UndefOr[ConnectorProfileArn]
     var connectorProfileName: js.UndefOr[ConnectorProfileName]
     var connectorProfileProperties: js.UndefOr[ConnectorProfileProperties]
@@ -542,6 +816,7 @@ package object appflow {
     @inline
     def apply(
         connectionMode: js.UndefOr[ConnectionMode] = js.undefined,
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         connectorProfileArn: js.UndefOr[ConnectorProfileArn] = js.undefined,
         connectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined,
         connectorProfileProperties: js.UndefOr[ConnectorProfileProperties] = js.undefined,
@@ -553,6 +828,7 @@ package object appflow {
     ): ConnectorProfile = {
       val __obj = js.Dynamic.literal()
       connectionMode.foreach(__v => __obj.updateDynamic("connectionMode")(__v.asInstanceOf[js.Any]))
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
       connectorProfileArn.foreach(__v => __obj.updateDynamic("connectorProfileArn")(__v.asInstanceOf[js.Any]))
       connectorProfileName.foreach(__v => __obj.updateDynamic("connectorProfileName")(__v.asInstanceOf[js.Any]))
       connectorProfileProperties.foreach(__v => __obj.updateDynamic("connectorProfileProperties")(__v.asInstanceOf[js.Any]))
@@ -569,20 +845,21 @@ package object appflow {
     */
   @js.native
   trait ConnectorProfileConfig extends js.Object {
-    var connectorProfileCredentials: ConnectorProfileCredentials
     var connectorProfileProperties: ConnectorProfileProperties
+    var connectorProfileCredentials: js.UndefOr[ConnectorProfileCredentials]
   }
 
   object ConnectorProfileConfig {
     @inline
     def apply(
-        connectorProfileCredentials: ConnectorProfileCredentials,
-        connectorProfileProperties: ConnectorProfileProperties
+        connectorProfileProperties: ConnectorProfileProperties,
+        connectorProfileCredentials: js.UndefOr[ConnectorProfileCredentials] = js.undefined
     ): ConnectorProfileConfig = {
       val __obj = js.Dynamic.literal(
-        "connectorProfileCredentials" -> connectorProfileCredentials.asInstanceOf[js.Any],
         "connectorProfileProperties" -> connectorProfileProperties.asInstanceOf[js.Any]
       )
+
+      connectorProfileCredentials.foreach(__v => __obj.updateDynamic("connectorProfileCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorProfileConfig]
     }
   }
@@ -592,6 +869,7 @@ package object appflow {
   @js.native
   trait ConnectorProfileCredentials extends js.Object {
     var Amplitude: js.UndefOr[AmplitudeConnectorProfileCredentials]
+    var CustomConnector: js.UndefOr[CustomConnectorProfileCredentials]
     var Datadog: js.UndefOr[DatadogConnectorProfileCredentials]
     var Dynatrace: js.UndefOr[DynatraceConnectorProfileCredentials]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileCredentials]
@@ -614,6 +892,7 @@ package object appflow {
     @inline
     def apply(
         Amplitude: js.UndefOr[AmplitudeConnectorProfileCredentials] = js.undefined,
+        CustomConnector: js.UndefOr[CustomConnectorProfileCredentials] = js.undefined,
         Datadog: js.UndefOr[DatadogConnectorProfileCredentials] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceConnectorProfileCredentials] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileCredentials] = js.undefined,
@@ -633,6 +912,7 @@ package object appflow {
     ): ConnectorProfileCredentials = {
       val __obj = js.Dynamic.literal()
       Amplitude.foreach(__v => __obj.updateDynamic("Amplitude")(__v.asInstanceOf[js.Any]))
+      CustomConnector.foreach(__v => __obj.updateDynamic("CustomConnector")(__v.asInstanceOf[js.Any]))
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
@@ -658,6 +938,7 @@ package object appflow {
   @js.native
   trait ConnectorProfileProperties extends js.Object {
     var Amplitude: js.UndefOr[AmplitudeConnectorProfileProperties]
+    var CustomConnector: js.UndefOr[CustomConnectorProfileProperties]
     var Datadog: js.UndefOr[DatadogConnectorProfileProperties]
     var Dynatrace: js.UndefOr[DynatraceConnectorProfileProperties]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileProperties]
@@ -680,6 +961,7 @@ package object appflow {
     @inline
     def apply(
         Amplitude: js.UndefOr[AmplitudeConnectorProfileProperties] = js.undefined,
+        CustomConnector: js.UndefOr[CustomConnectorProfileProperties] = js.undefined,
         Datadog: js.UndefOr[DatadogConnectorProfileProperties] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceConnectorProfileProperties] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsConnectorProfileProperties] = js.undefined,
@@ -699,6 +981,7 @@ package object appflow {
     ): ConnectorProfileProperties = {
       val __obj = js.Dynamic.literal()
       Amplitude.foreach(__v => __obj.updateDynamic("Amplitude")(__v.asInstanceOf[js.Any]))
+      CustomConnector.foreach(__v => __obj.updateDynamic("CustomConnector")(__v.asInstanceOf[js.Any]))
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
@@ -719,12 +1002,67 @@ package object appflow {
     }
   }
 
+  /** Contains information about the configuration of the connector being registered.
+    */
+  @js.native
+  trait ConnectorProvisioningConfig extends js.Object {
+    var lambda: js.UndefOr[LambdaConnectorProvisioningConfig]
+  }
+
+  object ConnectorProvisioningConfig {
+    @inline
+    def apply(
+        lambda: js.UndefOr[LambdaConnectorProvisioningConfig] = js.undefined
+    ): ConnectorProvisioningConfig = {
+      val __obj = js.Dynamic.literal()
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectorProvisioningConfig]
+    }
+  }
+
+  /** Contains information about the connector runtime settings that are required for flow execution.
+    */
+  @js.native
+  trait ConnectorRuntimeSetting extends js.Object {
+    var connectorSuppliedValueOptions: js.UndefOr[ConnectorSuppliedValueOptionList]
+    var dataType: js.UndefOr[ConnectorRuntimeSettingDataType]
+    var description: js.UndefOr[Description]
+    var isRequired: js.UndefOr[Boolean]
+    var key: js.UndefOr[Key]
+    var label: js.UndefOr[Label]
+    var scope: js.UndefOr[ConnectorRuntimeSettingScope]
+  }
+
+  object ConnectorRuntimeSetting {
+    @inline
+    def apply(
+        connectorSuppliedValueOptions: js.UndefOr[ConnectorSuppliedValueOptionList] = js.undefined,
+        dataType: js.UndefOr[ConnectorRuntimeSettingDataType] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        isRequired: js.UndefOr[Boolean] = js.undefined,
+        key: js.UndefOr[Key] = js.undefined,
+        label: js.UndefOr[Label] = js.undefined,
+        scope: js.UndefOr[ConnectorRuntimeSettingScope] = js.undefined
+    ): ConnectorRuntimeSetting = {
+      val __obj = js.Dynamic.literal()
+      connectorSuppliedValueOptions.foreach(__v => __obj.updateDynamic("connectorSuppliedValueOptions")(__v.asInstanceOf[js.Any]))
+      dataType.foreach(__v => __obj.updateDynamic("dataType")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      isRequired.foreach(__v => __obj.updateDynamic("isRequired")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
+      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectorRuntimeSetting]
+    }
+  }
+
   @js.native
   trait CreateConnectorProfileRequest extends js.Object {
     var connectionMode: ConnectionMode
     var connectorProfileConfig: ConnectorProfileConfig
     var connectorProfileName: ConnectorProfileName
     var connectorType: ConnectorType
+    var connectorLabel: js.UndefOr[ConnectorLabel]
     var kmsArn: js.UndefOr[KMSArn]
   }
 
@@ -735,6 +1073,7 @@ package object appflow {
         connectorProfileConfig: ConnectorProfileConfig,
         connectorProfileName: ConnectorProfileName,
         connectorType: ConnectorType,
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         kmsArn: js.UndefOr[KMSArn] = js.undefined
     ): CreateConnectorProfileRequest = {
       val __obj = js.Dynamic.literal(
@@ -744,6 +1083,7 @@ package object appflow {
         "connectorType" -> connectorType.asInstanceOf[js.Any]
       )
 
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
       kmsArn.foreach(__v => __obj.updateDynamic("kmsArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectorProfileRequest]
     }
@@ -774,6 +1114,7 @@ package object appflow {
     var triggerConfig: TriggerConfig
     var description: js.UndefOr[FlowDescription]
     var kmsArn: js.UndefOr[KMSArn]
+    var metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -787,6 +1128,7 @@ package object appflow {
         triggerConfig: TriggerConfig,
         description: js.UndefOr[FlowDescription] = js.undefined,
         kmsArn: js.UndefOr[KMSArn] = js.undefined,
+        metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFlowRequest = {
       val __obj = js.Dynamic.literal(
@@ -799,6 +1141,7 @@ package object appflow {
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       kmsArn.foreach(__v => __obj.updateDynamic("kmsArn")(__v.asInstanceOf[js.Any]))
+      metadataCatalogConfig.foreach(__v => __obj.updateDynamic("metadataCatalogConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowRequest]
     }
@@ -820,6 +1163,158 @@ package object appflow {
       flowArn.foreach(__v => __obj.updateDynamic("flowArn")(__v.asInstanceOf[js.Any]))
       flowStatus.foreach(__v => __obj.updateDynamic("flowStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowResponse]
+    }
+  }
+
+  /** Configuration information required for custom authentication.
+    */
+  @js.native
+  trait CustomAuthConfig extends js.Object {
+    var authParameters: js.UndefOr[AuthParameterList]
+    var customAuthenticationType: js.UndefOr[CustomAuthenticationType]
+  }
+
+  object CustomAuthConfig {
+    @inline
+    def apply(
+        authParameters: js.UndefOr[AuthParameterList] = js.undefined,
+        customAuthenticationType: js.UndefOr[CustomAuthenticationType] = js.undefined
+    ): CustomAuthConfig = {
+      val __obj = js.Dynamic.literal()
+      authParameters.foreach(__v => __obj.updateDynamic("authParameters")(__v.asInstanceOf[js.Any]))
+      customAuthenticationType.foreach(__v => __obj.updateDynamic("customAuthenticationType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomAuthConfig]
+    }
+  }
+
+  /** The custom credentials required for custom authentication.
+    */
+  @js.native
+  trait CustomAuthCredentials extends js.Object {
+    var customAuthenticationType: CustomAuthenticationType
+    var credentialsMap: js.UndefOr[CredentialsMap]
+  }
+
+  object CustomAuthCredentials {
+    @inline
+    def apply(
+        customAuthenticationType: CustomAuthenticationType,
+        credentialsMap: js.UndefOr[CredentialsMap] = js.undefined
+    ): CustomAuthCredentials = {
+      val __obj = js.Dynamic.literal(
+        "customAuthenticationType" -> customAuthenticationType.asInstanceOf[js.Any]
+      )
+
+      credentialsMap.foreach(__v => __obj.updateDynamic("credentialsMap")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomAuthCredentials]
+    }
+  }
+
+  /** The properties that are applied when the custom connector is being used as a destination.
+    */
+  @js.native
+  trait CustomConnectorDestinationProperties extends js.Object {
+    var entityName: EntityName
+    var customProperties: js.UndefOr[CustomProperties]
+    var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
+    var idFieldNames: js.UndefOr[IdFieldNameList]
+    var writeOperationType: js.UndefOr[WriteOperationType]
+  }
+
+  object CustomConnectorDestinationProperties {
+    @inline
+    def apply(
+        entityName: EntityName,
+        customProperties: js.UndefOr[CustomProperties] = js.undefined,
+        errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined,
+        idFieldNames: js.UndefOr[IdFieldNameList] = js.undefined,
+        writeOperationType: js.UndefOr[WriteOperationType] = js.undefined
+    ): CustomConnectorDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "entityName" -> entityName.asInstanceOf[js.Any]
+      )
+
+      customProperties.foreach(__v => __obj.updateDynamic("customProperties")(__v.asInstanceOf[js.Any]))
+      errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
+      idFieldNames.foreach(__v => __obj.updateDynamic("idFieldNames")(__v.asInstanceOf[js.Any]))
+      writeOperationType.foreach(__v => __obj.updateDynamic("writeOperationType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomConnectorDestinationProperties]
+    }
+  }
+
+  /** The connector-specific profile credentials that are required when using the custom connector.
+    */
+  @js.native
+  trait CustomConnectorProfileCredentials extends js.Object {
+    var authenticationType: AuthenticationType
+    var apiKey: js.UndefOr[ApiKeyCredentials]
+    var basic: js.UndefOr[BasicAuthCredentials]
+    var custom: js.UndefOr[CustomAuthCredentials]
+    var oauth2: js.UndefOr[OAuth2Credentials]
+  }
+
+  object CustomConnectorProfileCredentials {
+    @inline
+    def apply(
+        authenticationType: AuthenticationType,
+        apiKey: js.UndefOr[ApiKeyCredentials] = js.undefined,
+        basic: js.UndefOr[BasicAuthCredentials] = js.undefined,
+        custom: js.UndefOr[CustomAuthCredentials] = js.undefined,
+        oauth2: js.UndefOr[OAuth2Credentials] = js.undefined
+    ): CustomConnectorProfileCredentials = {
+      val __obj = js.Dynamic.literal(
+        "authenticationType" -> authenticationType.asInstanceOf[js.Any]
+      )
+
+      apiKey.foreach(__v => __obj.updateDynamic("apiKey")(__v.asInstanceOf[js.Any]))
+      basic.foreach(__v => __obj.updateDynamic("basic")(__v.asInstanceOf[js.Any]))
+      custom.foreach(__v => __obj.updateDynamic("custom")(__v.asInstanceOf[js.Any]))
+      oauth2.foreach(__v => __obj.updateDynamic("oauth2")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomConnectorProfileCredentials]
+    }
+  }
+
+  /** The profile properties required by the custom connector.
+    */
+  @js.native
+  trait CustomConnectorProfileProperties extends js.Object {
+    var oAuth2Properties: js.UndefOr[OAuth2Properties]
+    var profileProperties: js.UndefOr[ProfilePropertiesMap]
+  }
+
+  object CustomConnectorProfileProperties {
+    @inline
+    def apply(
+        oAuth2Properties: js.UndefOr[OAuth2Properties] = js.undefined,
+        profileProperties: js.UndefOr[ProfilePropertiesMap] = js.undefined
+    ): CustomConnectorProfileProperties = {
+      val __obj = js.Dynamic.literal()
+      oAuth2Properties.foreach(__v => __obj.updateDynamic("oAuth2Properties")(__v.asInstanceOf[js.Any]))
+      profileProperties.foreach(__v => __obj.updateDynamic("profileProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomConnectorProfileProperties]
+    }
+  }
+
+  /** The properties that are applied when the custom connector is being used as a source.
+    */
+  @js.native
+  trait CustomConnectorSourceProperties extends js.Object {
+    var entityName: EntityName
+    var customProperties: js.UndefOr[CustomProperties]
+  }
+
+  object CustomConnectorSourceProperties {
+    @inline
+    def apply(
+        entityName: EntityName,
+        customProperties: js.UndefOr[CustomProperties] = js.undefined
+    ): CustomConnectorSourceProperties = {
+      val __obj = js.Dynamic.literal(
+        "entityName" -> entityName.asInstanceOf[js.Any]
+      )
+
+      customProperties.foreach(__v => __obj.updateDynamic("customProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomConnectorSourceProperties]
     }
   }
 
@@ -998,7 +1493,8 @@ package object appflow {
 
   @js.native
   trait DescribeConnectorEntityRequest extends js.Object {
-    var connectorEntityName: Name
+    var connectorEntityName: EntityName
+    var apiVersion: js.UndefOr[ApiVersion]
     var connectorProfileName: js.UndefOr[ConnectorProfileName]
     var connectorType: js.UndefOr[ConnectorType]
   }
@@ -1006,7 +1502,8 @@ package object appflow {
   object DescribeConnectorEntityRequest {
     @inline
     def apply(
-        connectorEntityName: Name,
+        connectorEntityName: EntityName,
+        apiVersion: js.UndefOr[ApiVersion] = js.undefined,
         connectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined,
         connectorType: js.UndefOr[ConnectorType] = js.undefined
     ): DescribeConnectorEntityRequest = {
@@ -1014,6 +1511,7 @@ package object appflow {
         "connectorEntityName" -> connectorEntityName.asInstanceOf[js.Any]
       )
 
+      apiVersion.foreach(__v => __obj.updateDynamic("apiVersion")(__v.asInstanceOf[js.Any]))
       connectorProfileName.foreach(__v => __obj.updateDynamic("connectorProfileName")(__v.asInstanceOf[js.Any]))
       connectorType.foreach(__v => __obj.updateDynamic("connectorType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConnectorEntityRequest]
@@ -1039,6 +1537,7 @@ package object appflow {
 
   @js.native
   trait DescribeConnectorProfilesRequest extends js.Object {
+    var connectorLabel: js.UndefOr[ConnectorLabel]
     var connectorProfileNames: js.UndefOr[ConnectorProfileNameList]
     var connectorType: js.UndefOr[ConnectorType]
     var maxResults: js.UndefOr[MaxResults]
@@ -1048,12 +1547,14 @@ package object appflow {
   object DescribeConnectorProfilesRequest {
     @inline
     def apply(
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         connectorProfileNames: js.UndefOr[ConnectorProfileNameList] = js.undefined,
         connectorType: js.UndefOr[ConnectorType] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeConnectorProfilesRequest = {
       val __obj = js.Dynamic.literal()
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
       connectorProfileNames.foreach(__v => __obj.updateDynamic("connectorProfileNames")(__v.asInstanceOf[js.Any]))
       connectorType.foreach(__v => __obj.updateDynamic("connectorType")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1082,8 +1583,46 @@ package object appflow {
   }
 
   @js.native
+  trait DescribeConnectorRequest extends js.Object {
+    var connectorType: ConnectorType
+    var connectorLabel: js.UndefOr[ConnectorLabel]
+  }
+
+  object DescribeConnectorRequest {
+    @inline
+    def apply(
+        connectorType: ConnectorType,
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined
+    ): DescribeConnectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectorType" -> connectorType.asInstanceOf[js.Any]
+      )
+
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeConnectorResponse extends js.Object {
+    var connectorConfiguration: js.UndefOr[ConnectorConfiguration]
+  }
+
+  object DescribeConnectorResponse {
+    @inline
+    def apply(
+        connectorConfiguration: js.UndefOr[ConnectorConfiguration] = js.undefined
+    ): DescribeConnectorResponse = {
+      val __obj = js.Dynamic.literal()
+      connectorConfiguration.foreach(__v => __obj.updateDynamic("connectorConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConnectorResponse]
+    }
+  }
+
+  @js.native
   trait DescribeConnectorsRequest extends js.Object {
     var connectorTypes: js.UndefOr[ConnectorTypeList]
+    var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
   }
 
@@ -1091,10 +1630,12 @@ package object appflow {
     @inline
     def apply(
         connectorTypes: js.UndefOr[ConnectorTypeList] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeConnectorsRequest = {
       val __obj = js.Dynamic.literal()
       connectorTypes.foreach(__v => __obj.updateDynamic("connectorTypes")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConnectorsRequest]
     }
@@ -1103,6 +1644,7 @@ package object appflow {
   @js.native
   trait DescribeConnectorsResponse extends js.Object {
     var connectorConfigurations: js.UndefOr[ConnectorConfigurationsMap]
+    var connectors: js.UndefOr[ConnectorList]
     var nextToken: js.UndefOr[NextToken]
   }
 
@@ -1110,10 +1652,12 @@ package object appflow {
     @inline
     def apply(
         connectorConfigurations: js.UndefOr[ConnectorConfigurationsMap] = js.undefined,
+        connectors: js.UndefOr[ConnectorList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeConnectorsResponse = {
       val __obj = js.Dynamic.literal()
       connectorConfigurations.foreach(__v => __obj.updateDynamic("connectorConfigurations")(__v.asInstanceOf[js.Any]))
+      connectors.foreach(__v => __obj.updateDynamic("connectors")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConnectorsResponse]
     }
@@ -1191,8 +1735,11 @@ package object appflow {
     var flowStatusMessage: js.UndefOr[FlowStatusMessage]
     var kmsArn: js.UndefOr[KMSArn]
     var lastRunExecutionDetails: js.UndefOr[ExecutionDetails]
+    var lastRunMetadataCatalogDetails: js.UndefOr[MetadataCatalogDetails]
     var lastUpdatedAt: js.UndefOr[Date]
     var lastUpdatedBy: js.UndefOr[UpdatedBy]
+    var metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig]
+    var schemaVersion: js.UndefOr[Double]
     var sourceFlowConfig: js.UndefOr[SourceFlowConfig]
     var tags: js.UndefOr[TagMap]
     var tasks: js.UndefOr[Tasks]
@@ -1212,8 +1759,11 @@ package object appflow {
         flowStatusMessage: js.UndefOr[FlowStatusMessage] = js.undefined,
         kmsArn: js.UndefOr[KMSArn] = js.undefined,
         lastRunExecutionDetails: js.UndefOr[ExecutionDetails] = js.undefined,
+        lastRunMetadataCatalogDetails: js.UndefOr[MetadataCatalogDetails] = js.undefined,
         lastUpdatedAt: js.UndefOr[Date] = js.undefined,
         lastUpdatedBy: js.UndefOr[UpdatedBy] = js.undefined,
+        metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig] = js.undefined,
+        schemaVersion: js.UndefOr[Double] = js.undefined,
         sourceFlowConfig: js.UndefOr[SourceFlowConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         tasks: js.UndefOr[Tasks] = js.undefined,
@@ -1230,8 +1780,11 @@ package object appflow {
       flowStatusMessage.foreach(__v => __obj.updateDynamic("flowStatusMessage")(__v.asInstanceOf[js.Any]))
       kmsArn.foreach(__v => __obj.updateDynamic("kmsArn")(__v.asInstanceOf[js.Any]))
       lastRunExecutionDetails.foreach(__v => __obj.updateDynamic("lastRunExecutionDetails")(__v.asInstanceOf[js.Any]))
+      lastRunMetadataCatalogDetails.foreach(__v => __obj.updateDynamic("lastRunMetadataCatalogDetails")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       lastUpdatedBy.foreach(__v => __obj.updateDynamic("lastUpdatedBy")(__v.asInstanceOf[js.Any]))
+      metadataCatalogConfig.foreach(__v => __obj.updateDynamic("metadataCatalogConfig")(__v.asInstanceOf[js.Any]))
+      schemaVersion.foreach(__v => __obj.updateDynamic("schemaVersion")(__v.asInstanceOf[js.Any]))
       sourceFlowConfig.foreach(__v => __obj.updateDynamic("sourceFlowConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
@@ -1244,12 +1797,15 @@ package object appflow {
     */
   @js.native
   trait DestinationConnectorProperties extends js.Object {
+    var CustomConnector: js.UndefOr[CustomConnectorDestinationProperties]
     var CustomerProfiles: js.UndefOr[CustomerProfilesDestinationProperties]
     var EventBridge: js.UndefOr[EventBridgeDestinationProperties]
     var Honeycode: js.UndefOr[HoneycodeDestinationProperties]
     var LookoutMetrics: js.UndefOr[LookoutMetricsDestinationProperties]
+    var Marketo: js.UndefOr[MarketoDestinationProperties]
     var Redshift: js.UndefOr[RedshiftDestinationProperties]
     var S3: js.UndefOr[S3DestinationProperties]
+    var SAPOData: js.UndefOr[SAPODataDestinationProperties]
     var Salesforce: js.UndefOr[SalesforceDestinationProperties]
     var Snowflake: js.UndefOr[SnowflakeDestinationProperties]
     var Upsolver: js.UndefOr[UpsolverDestinationProperties]
@@ -1259,24 +1815,30 @@ package object appflow {
   object DestinationConnectorProperties {
     @inline
     def apply(
+        CustomConnector: js.UndefOr[CustomConnectorDestinationProperties] = js.undefined,
         CustomerProfiles: js.UndefOr[CustomerProfilesDestinationProperties] = js.undefined,
         EventBridge: js.UndefOr[EventBridgeDestinationProperties] = js.undefined,
         Honeycode: js.UndefOr[HoneycodeDestinationProperties] = js.undefined,
         LookoutMetrics: js.UndefOr[LookoutMetricsDestinationProperties] = js.undefined,
+        Marketo: js.UndefOr[MarketoDestinationProperties] = js.undefined,
         Redshift: js.UndefOr[RedshiftDestinationProperties] = js.undefined,
         S3: js.UndefOr[S3DestinationProperties] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataDestinationProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceDestinationProperties] = js.undefined,
         Snowflake: js.UndefOr[SnowflakeDestinationProperties] = js.undefined,
         Upsolver: js.UndefOr[UpsolverDestinationProperties] = js.undefined,
         Zendesk: js.UndefOr[ZendeskDestinationProperties] = js.undefined
     ): DestinationConnectorProperties = {
       val __obj = js.Dynamic.literal()
+      CustomConnector.foreach(__v => __obj.updateDynamic("CustomConnector")(__v.asInstanceOf[js.Any]))
       CustomerProfiles.foreach(__v => __obj.updateDynamic("CustomerProfiles")(__v.asInstanceOf[js.Any]))
       EventBridge.foreach(__v => __obj.updateDynamic("EventBridge")(__v.asInstanceOf[js.Any]))
       Honeycode.foreach(__v => __obj.updateDynamic("Honeycode")(__v.asInstanceOf[js.Any]))
       LookoutMetrics.foreach(__v => __obj.updateDynamic("LookoutMetrics")(__v.asInstanceOf[js.Any]))
+      Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       Snowflake.foreach(__v => __obj.updateDynamic("Snowflake")(__v.asInstanceOf[js.Any]))
       Upsolver.foreach(__v => __obj.updateDynamic("Upsolver")(__v.asInstanceOf[js.Any]))
@@ -1290,6 +1852,7 @@ package object appflow {
   @js.native
   trait DestinationFieldProperties extends js.Object {
     var isCreatable: js.UndefOr[Boolean]
+    var isDefaultedOnCreate: js.UndefOr[Boolean]
     var isNullable: js.UndefOr[Boolean]
     var isUpdatable: js.UndefOr[Boolean]
     var isUpsertable: js.UndefOr[Boolean]
@@ -1300,6 +1863,7 @@ package object appflow {
     @inline
     def apply(
         isCreatable: js.UndefOr[Boolean] = js.undefined,
+        isDefaultedOnCreate: js.UndefOr[Boolean] = js.undefined,
         isNullable: js.UndefOr[Boolean] = js.undefined,
         isUpdatable: js.UndefOr[Boolean] = js.undefined,
         isUpsertable: js.UndefOr[Boolean] = js.undefined,
@@ -1307,6 +1871,7 @@ package object appflow {
     ): DestinationFieldProperties = {
       val __obj = js.Dynamic.literal()
       isCreatable.foreach(__v => __obj.updateDynamic("isCreatable")(__v.asInstanceOf[js.Any]))
+      isDefaultedOnCreate.foreach(__v => __obj.updateDynamic("isDefaultedOnCreate")(__v.asInstanceOf[js.Any]))
       isNullable.foreach(__v => __obj.updateDynamic("isNullable")(__v.asInstanceOf[js.Any]))
       isUpdatable.foreach(__v => __obj.updateDynamic("isUpdatable")(__v.asInstanceOf[js.Any]))
       isUpsertable.foreach(__v => __obj.updateDynamic("isUpsertable")(__v.asInstanceOf[js.Any]))
@@ -1321,6 +1886,7 @@ package object appflow {
   trait DestinationFlowConfig extends js.Object {
     var connectorType: ConnectorType
     var destinationConnectorProperties: DestinationConnectorProperties
+    var apiVersion: js.UndefOr[ApiVersion]
     var connectorProfileName: js.UndefOr[ConnectorProfileName]
   }
 
@@ -1329,6 +1895,7 @@ package object appflow {
     def apply(
         connectorType: ConnectorType,
         destinationConnectorProperties: DestinationConnectorProperties,
+        apiVersion: js.UndefOr[ApiVersion] = js.undefined,
         connectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined
     ): DestinationFlowConfig = {
       val __obj = js.Dynamic.literal(
@@ -1336,6 +1903,7 @@ package object appflow {
         "destinationConnectorProperties" -> destinationConnectorProperties.asInstanceOf[js.Any]
       )
 
+      apiVersion.foreach(__v => __obj.updateDynamic("apiVersion")(__v.asInstanceOf[js.Any]))
       connectorProfileName.foreach(__v => __obj.updateDynamic("connectorProfileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationFlowConfig]
     }
@@ -1526,6 +2094,7 @@ package object appflow {
     var executionResult: js.UndefOr[ExecutionResult]
     var executionStatus: js.UndefOr[ExecutionStatus]
     var lastUpdatedAt: js.UndefOr[Date]
+    var metadataCatalogDetails: js.UndefOr[MetadataCatalogDetails]
     var startedAt: js.UndefOr[Date]
   }
 
@@ -1538,6 +2107,7 @@ package object appflow {
         executionResult: js.UndefOr[ExecutionResult] = js.undefined,
         executionStatus: js.UndefOr[ExecutionStatus] = js.undefined,
         lastUpdatedAt: js.UndefOr[Date] = js.undefined,
+        metadataCatalogDetails: js.UndefOr[MetadataCatalogDetails] = js.undefined,
         startedAt: js.UndefOr[Date] = js.undefined
     ): ExecutionRecord = {
       val __obj = js.Dynamic.literal()
@@ -1547,6 +2117,7 @@ package object appflow {
       executionResult.foreach(__v => __obj.updateDynamic("executionResult")(__v.asInstanceOf[js.Any]))
       executionStatus.foreach(__v => __obj.updateDynamic("executionStatus")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      metadataCatalogDetails.foreach(__v => __obj.updateDynamic("metadataCatalogDetails")(__v.asInstanceOf[js.Any]))
       startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionRecord]
     }
@@ -1585,7 +2156,11 @@ package object appflow {
   trait FieldTypeDetails extends js.Object {
     var fieldType: FieldType
     var filterOperators: FilterOperatorList
+    var fieldLengthRange: js.UndefOr[Range]
+    var fieldValueRange: js.UndefOr[Range]
+    var supportedDateFormat: js.UndefOr[String]
     var supportedValues: js.UndefOr[SupportedValueList]
+    var valueRegexPattern: js.UndefOr[String]
   }
 
   object FieldTypeDetails {
@@ -1593,14 +2168,22 @@ package object appflow {
     def apply(
         fieldType: FieldType,
         filterOperators: FilterOperatorList,
-        supportedValues: js.UndefOr[SupportedValueList] = js.undefined
+        fieldLengthRange: js.UndefOr[Range] = js.undefined,
+        fieldValueRange: js.UndefOr[Range] = js.undefined,
+        supportedDateFormat: js.UndefOr[String] = js.undefined,
+        supportedValues: js.UndefOr[SupportedValueList] = js.undefined,
+        valueRegexPattern: js.UndefOr[String] = js.undefined
     ): FieldTypeDetails = {
       val __obj = js.Dynamic.literal(
         "fieldType" -> fieldType.asInstanceOf[js.Any],
         "filterOperators" -> filterOperators.asInstanceOf[js.Any]
       )
 
+      fieldLengthRange.foreach(__v => __obj.updateDynamic("fieldLengthRange")(__v.asInstanceOf[js.Any]))
+      fieldValueRange.foreach(__v => __obj.updateDynamic("fieldValueRange")(__v.asInstanceOf[js.Any]))
+      supportedDateFormat.foreach(__v => __obj.updateDynamic("supportedDateFormat")(__v.asInstanceOf[js.Any]))
       supportedValues.foreach(__v => __obj.updateDynamic("supportedValues")(__v.asInstanceOf[js.Any]))
+      valueRegexPattern.foreach(__v => __obj.updateDynamic("valueRegexPattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FieldTypeDetails]
     }
   }
@@ -1612,6 +2195,7 @@ package object appflow {
     var createdAt: js.UndefOr[Date]
     var createdBy: js.UndefOr[CreatedBy]
     var description: js.UndefOr[FlowDescription]
+    var destinationConnectorLabel: js.UndefOr[ConnectorLabel]
     var destinationConnectorType: js.UndefOr[ConnectorType]
     var flowArn: js.UndefOr[FlowArn]
     var flowName: js.UndefOr[FlowName]
@@ -1619,6 +2203,7 @@ package object appflow {
     var lastRunExecutionDetails: js.UndefOr[ExecutionDetails]
     var lastUpdatedAt: js.UndefOr[Date]
     var lastUpdatedBy: js.UndefOr[UpdatedBy]
+    var sourceConnectorLabel: js.UndefOr[ConnectorLabel]
     var sourceConnectorType: js.UndefOr[ConnectorType]
     var tags: js.UndefOr[TagMap]
     var triggerType: js.UndefOr[TriggerType]
@@ -1630,6 +2215,7 @@ package object appflow {
         createdAt: js.UndefOr[Date] = js.undefined,
         createdBy: js.UndefOr[CreatedBy] = js.undefined,
         description: js.UndefOr[FlowDescription] = js.undefined,
+        destinationConnectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         destinationConnectorType: js.UndefOr[ConnectorType] = js.undefined,
         flowArn: js.UndefOr[FlowArn] = js.undefined,
         flowName: js.UndefOr[FlowName] = js.undefined,
@@ -1637,6 +2223,7 @@ package object appflow {
         lastRunExecutionDetails: js.UndefOr[ExecutionDetails] = js.undefined,
         lastUpdatedAt: js.UndefOr[Date] = js.undefined,
         lastUpdatedBy: js.UndefOr[UpdatedBy] = js.undefined,
+        sourceConnectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
         sourceConnectorType: js.UndefOr[ConnectorType] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         triggerType: js.UndefOr[TriggerType] = js.undefined
@@ -1645,6 +2232,7 @@ package object appflow {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       createdBy.foreach(__v => __obj.updateDynamic("createdBy")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      destinationConnectorLabel.foreach(__v => __obj.updateDynamic("destinationConnectorLabel")(__v.asInstanceOf[js.Any]))
       destinationConnectorType.foreach(__v => __obj.updateDynamic("destinationConnectorType")(__v.asInstanceOf[js.Any]))
       flowArn.foreach(__v => __obj.updateDynamic("flowArn")(__v.asInstanceOf[js.Any]))
       flowName.foreach(__v => __obj.updateDynamic("flowName")(__v.asInstanceOf[js.Any]))
@@ -1652,10 +2240,38 @@ package object appflow {
       lastRunExecutionDetails.foreach(__v => __obj.updateDynamic("lastRunExecutionDetails")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       lastUpdatedBy.foreach(__v => __obj.updateDynamic("lastUpdatedBy")(__v.asInstanceOf[js.Any]))
+      sourceConnectorLabel.foreach(__v => __obj.updateDynamic("sourceConnectorLabel")(__v.asInstanceOf[js.Any]))
       sourceConnectorType.foreach(__v => __obj.updateDynamic("sourceConnectorType")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       triggerType.foreach(__v => __obj.updateDynamic("triggerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlowDefinition]
+    }
+  }
+
+  /** Specifies the configuration that Amazon AppFlow uses when it catalogs your data with the Glue Data Catalog. When Amazon AppFlow catalogs your data, it stores metadata in Data Catalog tables. This metadata represents the data that's transferred by the flow that you configure with these settings.
+    *
+    * '''Note:'''You can configure a flow with these settings only when the flow destination is Amazon S3.
+    */
+  @js.native
+  trait GlueDataCatalogConfig extends js.Object {
+    var databaseName: GlueDataCatalogDatabaseName
+    var roleArn: GlueDataCatalogIAMRole
+    var tablePrefix: GlueDataCatalogTablePrefix
+  }
+
+  object GlueDataCatalogConfig {
+    @inline
+    def apply(
+        databaseName: GlueDataCatalogDatabaseName,
+        roleArn: GlueDataCatalogIAMRole,
+        tablePrefix: GlueDataCatalogTablePrefix
+    ): GlueDataCatalogConfig = {
+      val __obj = js.Dynamic.literal(
+        "databaseName" -> databaseName.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "tablePrefix" -> tablePrefix.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GlueDataCatalogConfig]
     }
   }
 
@@ -1916,8 +2532,28 @@ package object appflow {
     }
   }
 
+  /** Contains information about the configuration of the lambda which is being registered as the connector.
+    */
+  @js.native
+  trait LambdaConnectorProvisioningConfig extends js.Object {
+    var lambdaArn: ARN
+  }
+
+  object LambdaConnectorProvisioningConfig {
+    @inline
+    def apply(
+        lambdaArn: ARN
+    ): LambdaConnectorProvisioningConfig = {
+      val __obj = js.Dynamic.literal(
+        "lambdaArn" -> lambdaArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LambdaConnectorProvisioningConfig]
+    }
+  }
+
   @js.native
   trait ListConnectorEntitiesRequest extends js.Object {
+    var apiVersion: js.UndefOr[ApiVersion]
     var connectorProfileName: js.UndefOr[ConnectorProfileName]
     var connectorType: js.UndefOr[ConnectorType]
     var entitiesPath: js.UndefOr[EntitiesPath]
@@ -1926,11 +2562,13 @@ package object appflow {
   object ListConnectorEntitiesRequest {
     @inline
     def apply(
+        apiVersion: js.UndefOr[ApiVersion] = js.undefined,
         connectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined,
         connectorType: js.UndefOr[ConnectorType] = js.undefined,
         entitiesPath: js.UndefOr[EntitiesPath] = js.undefined
     ): ListConnectorEntitiesRequest = {
       val __obj = js.Dynamic.literal()
+      apiVersion.foreach(__v => __obj.updateDynamic("apiVersion")(__v.asInstanceOf[js.Any]))
       connectorProfileName.foreach(__v => __obj.updateDynamic("connectorProfileName")(__v.asInstanceOf[js.Any]))
       connectorType.foreach(__v => __obj.updateDynamic("connectorType")(__v.asInstanceOf[js.Any]))
       entitiesPath.foreach(__v => __obj.updateDynamic("entitiesPath")(__v.asInstanceOf[js.Any]))
@@ -1952,6 +2590,44 @@ package object appflow {
         "connectorEntityMap" -> connectorEntityMap.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ListConnectorEntitiesResponse]
+    }
+  }
+
+  @js.native
+  trait ListConnectorsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListConnectorsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListConnectorsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConnectorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListConnectorsResponse extends js.Object {
+    var connectors: js.UndefOr[ConnectorList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListConnectorsResponse {
+    @inline
+    def apply(
+        connectors: js.UndefOr[ConnectorList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListConnectorsResponse = {
+      val __obj = js.Dynamic.literal()
+      connectors.foreach(__v => __obj.updateDynamic("connectors")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConnectorsResponse]
     }
   }
 
@@ -2087,6 +2763,29 @@ package object appflow {
     }
   }
 
+  /** The properties that Amazon AppFlow applies when you use Marketo as a flow destination.
+    */
+  @js.native
+  trait MarketoDestinationProperties extends js.Object {
+    var `object`: Object
+    var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
+  }
+
+  object MarketoDestinationProperties {
+    @inline
+    def apply(
+        `object`: Object,
+        errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined
+    ): MarketoDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "object" -> `object`.asInstanceOf[js.Any]
+      )
+
+      errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MarketoDestinationProperties]
+    }
+  }
+
   /** The connector metadata specific to Marketo.
     */
   @js.native
@@ -2116,6 +2815,173 @@ package object appflow {
         "object" -> `object`.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[MarketoSourceProperties]
+    }
+  }
+
+  /** Specifies the configuration that Amazon AppFlow uses when it catalogs your data. When Amazon AppFlow catalogs your data, it stores metadata in a data catalog.
+    */
+  @js.native
+  trait MetadataCatalogConfig extends js.Object {
+    var glueDataCatalog: js.UndefOr[GlueDataCatalogConfig]
+  }
+
+  object MetadataCatalogConfig {
+    @inline
+    def apply(
+        glueDataCatalog: js.UndefOr[GlueDataCatalogConfig] = js.undefined
+    ): MetadataCatalogConfig = {
+      val __obj = js.Dynamic.literal()
+      glueDataCatalog.foreach(__v => __obj.updateDynamic("glueDataCatalog")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataCatalogConfig]
+    }
+  }
+
+  /** Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.
+    */
+  @js.native
+  trait MetadataCatalogDetail extends js.Object {
+    var catalogType: js.UndefOr[CatalogType]
+    var partitionRegistrationOutput: js.UndefOr[RegistrationOutput]
+    var tableName: js.UndefOr[String]
+    var tableRegistrationOutput: js.UndefOr[RegistrationOutput]
+  }
+
+  object MetadataCatalogDetail {
+    @inline
+    def apply(
+        catalogType: js.UndefOr[CatalogType] = js.undefined,
+        partitionRegistrationOutput: js.UndefOr[RegistrationOutput] = js.undefined,
+        tableName: js.UndefOr[String] = js.undefined,
+        tableRegistrationOutput: js.UndefOr[RegistrationOutput] = js.undefined
+    ): MetadataCatalogDetail = {
+      val __obj = js.Dynamic.literal()
+      catalogType.foreach(__v => __obj.updateDynamic("catalogType")(__v.asInstanceOf[js.Any]))
+      partitionRegistrationOutput.foreach(__v => __obj.updateDynamic("partitionRegistrationOutput")(__v.asInstanceOf[js.Any]))
+      tableName.foreach(__v => __obj.updateDynamic("tableName")(__v.asInstanceOf[js.Any]))
+      tableRegistrationOutput.foreach(__v => __obj.updateDynamic("tableRegistrationOutput")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetadataCatalogDetail]
+    }
+  }
+
+  /** The OAuth 2.0 credentials required for OAuth 2.0 authentication.
+    */
+  @js.native
+  trait OAuth2Credentials extends js.Object {
+    var accessToken: js.UndefOr[AccessToken]
+    var clientId: js.UndefOr[ClientId]
+    var clientSecret: js.UndefOr[ClientSecret]
+    var oAuthRequest: js.UndefOr[ConnectorOAuthRequest]
+    var refreshToken: js.UndefOr[RefreshToken]
+  }
+
+  object OAuth2Credentials {
+    @inline
+    def apply(
+        accessToken: js.UndefOr[AccessToken] = js.undefined,
+        clientId: js.UndefOr[ClientId] = js.undefined,
+        clientSecret: js.UndefOr[ClientSecret] = js.undefined,
+        oAuthRequest: js.UndefOr[ConnectorOAuthRequest] = js.undefined,
+        refreshToken: js.UndefOr[RefreshToken] = js.undefined
+    ): OAuth2Credentials = {
+      val __obj = js.Dynamic.literal()
+      accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
+      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
+      clientSecret.foreach(__v => __obj.updateDynamic("clientSecret")(__v.asInstanceOf[js.Any]))
+      oAuthRequest.foreach(__v => __obj.updateDynamic("oAuthRequest")(__v.asInstanceOf[js.Any]))
+      refreshToken.foreach(__v => __obj.updateDynamic("refreshToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OAuth2Credentials]
+    }
+  }
+
+  /** Custom parameter required for OAuth 2.0 authentication.
+    */
+  @js.native
+  trait OAuth2CustomParameter extends js.Object {
+    var connectorSuppliedValues: js.UndefOr[ConnectorSuppliedValueList]
+    var description: js.UndefOr[Description]
+    var isRequired: js.UndefOr[Boolean]
+    var isSensitiveField: js.UndefOr[Boolean]
+    var key: js.UndefOr[Key]
+    var label: js.UndefOr[Label]
+    var `type`: js.UndefOr[OAuth2CustomPropType]
+  }
+
+  object OAuth2CustomParameter {
+    @inline
+    def apply(
+        connectorSuppliedValues: js.UndefOr[ConnectorSuppliedValueList] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        isRequired: js.UndefOr[Boolean] = js.undefined,
+        isSensitiveField: js.UndefOr[Boolean] = js.undefined,
+        key: js.UndefOr[Key] = js.undefined,
+        label: js.UndefOr[Label] = js.undefined,
+        `type`: js.UndefOr[OAuth2CustomPropType] = js.undefined
+    ): OAuth2CustomParameter = {
+      val __obj = js.Dynamic.literal()
+      connectorSuppliedValues.foreach(__v => __obj.updateDynamic("connectorSuppliedValues")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      isRequired.foreach(__v => __obj.updateDynamic("isRequired")(__v.asInstanceOf[js.Any]))
+      isSensitiveField.foreach(__v => __obj.updateDynamic("isSensitiveField")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OAuth2CustomParameter]
+    }
+  }
+
+  /** Contains the default values required for OAuth 2.0 authentication.
+    */
+  @js.native
+  trait OAuth2Defaults extends js.Object {
+    var authCodeUrls: js.UndefOr[AuthCodeUrlList]
+    var oauth2CustomProperties: js.UndefOr[OAuth2CustomPropertiesList]
+    var oauth2GrantTypesSupported: js.UndefOr[OAuth2GrantTypeSupportedList]
+    var oauthScopes: js.UndefOr[OAuthScopeList]
+    var tokenUrls: js.UndefOr[TokenUrlList]
+  }
+
+  object OAuth2Defaults {
+    @inline
+    def apply(
+        authCodeUrls: js.UndefOr[AuthCodeUrlList] = js.undefined,
+        oauth2CustomProperties: js.UndefOr[OAuth2CustomPropertiesList] = js.undefined,
+        oauth2GrantTypesSupported: js.UndefOr[OAuth2GrantTypeSupportedList] = js.undefined,
+        oauthScopes: js.UndefOr[OAuthScopeList] = js.undefined,
+        tokenUrls: js.UndefOr[TokenUrlList] = js.undefined
+    ): OAuth2Defaults = {
+      val __obj = js.Dynamic.literal()
+      authCodeUrls.foreach(__v => __obj.updateDynamic("authCodeUrls")(__v.asInstanceOf[js.Any]))
+      oauth2CustomProperties.foreach(__v => __obj.updateDynamic("oauth2CustomProperties")(__v.asInstanceOf[js.Any]))
+      oauth2GrantTypesSupported.foreach(__v => __obj.updateDynamic("oauth2GrantTypesSupported")(__v.asInstanceOf[js.Any]))
+      oauthScopes.foreach(__v => __obj.updateDynamic("oauthScopes")(__v.asInstanceOf[js.Any]))
+      tokenUrls.foreach(__v => __obj.updateDynamic("tokenUrls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OAuth2Defaults]
+    }
+  }
+
+  /** The OAuth 2.0 properties required for OAuth 2.0 authentication.
+    */
+  @js.native
+  trait OAuth2Properties extends js.Object {
+    var oAuth2GrantType: OAuth2GrantType
+    var tokenUrl: TokenUrl
+    var tokenUrlCustomProperties: js.UndefOr[TokenUrlCustomProperties]
+  }
+
+  object OAuth2Properties {
+    @inline
+    def apply(
+        oAuth2GrantType: OAuth2GrantType,
+        tokenUrl: TokenUrl,
+        tokenUrlCustomProperties: js.UndefOr[TokenUrlCustomProperties] = js.undefined
+    ): OAuth2Properties = {
+      val __obj = js.Dynamic.literal(
+        "oAuth2GrantType" -> oAuth2GrantType.asInstanceOf[js.Any],
+        "tokenUrl" -> tokenUrl.asInstanceOf[js.Any]
+      )
+
+      tokenUrlCustomProperties.foreach(__v => __obj.updateDynamic("tokenUrlCustomProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OAuth2Properties]
     }
   }
 
@@ -2176,10 +3042,11 @@ package object appflow {
     }
   }
 
-  /** Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date.
+  /** Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.
     */
   @js.native
   trait PrefixConfig extends js.Object {
+    var pathPrefixHierarchy: js.UndefOr[PathPrefixHierarchy]
     var prefixFormat: js.UndefOr[PrefixFormat]
     var prefixType: js.UndefOr[PrefixType]
   }
@@ -2187,10 +3054,12 @@ package object appflow {
   object PrefixConfig {
     @inline
     def apply(
+        pathPrefixHierarchy: js.UndefOr[PathPrefixHierarchy] = js.undefined,
         prefixFormat: js.UndefOr[PrefixFormat] = js.undefined,
         prefixType: js.UndefOr[PrefixType] = js.undefined
     ): PrefixConfig = {
       val __obj = js.Dynamic.literal()
+      pathPrefixHierarchy.foreach(__v => __obj.updateDynamic("pathPrefixHierarchy")(__v.asInstanceOf[js.Any]))
       prefixFormat.foreach(__v => __obj.updateDynamic("prefixFormat")(__v.asInstanceOf[js.Any]))
       prefixType.foreach(__v => __obj.updateDynamic("prefixType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrefixConfig]
@@ -2221,24 +3090,44 @@ package object appflow {
     }
   }
 
+  /** The range of values that the property supports.
+    */
+  @js.native
+  trait Range extends js.Object {
+    var maximum: js.UndefOr[Double]
+    var minimum: js.UndefOr[Double]
+  }
+
+  object Range {
+    @inline
+    def apply(
+        maximum: js.UndefOr[Double] = js.undefined,
+        minimum: js.UndefOr[Double] = js.undefined
+    ): Range = {
+      val __obj = js.Dynamic.literal()
+      maximum.foreach(__v => __obj.updateDynamic("maximum")(__v.asInstanceOf[js.Any]))
+      minimum.foreach(__v => __obj.updateDynamic("minimum")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Range]
+    }
+  }
+
   /** The connector-specific profile credentials required when using Amazon Redshift.
     */
   @js.native
   trait RedshiftConnectorProfileCredentials extends js.Object {
-    var password: Password
-    var username: Username
+    var password: js.UndefOr[Password]
+    var username: js.UndefOr[String]
   }
 
   object RedshiftConnectorProfileCredentials {
     @inline
     def apply(
-        password: Password,
-        username: Username
+        password: js.UndefOr[Password] = js.undefined,
+        username: js.UndefOr[String] = js.undefined
     ): RedshiftConnectorProfileCredentials = {
-      val __obj = js.Dynamic.literal(
-        "password" -> password.asInstanceOf[js.Any],
-        "username" -> username.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      password.foreach(__v => __obj.updateDynamic("password")(__v.asInstanceOf[js.Any]))
+      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedshiftConnectorProfileCredentials]
     }
   }
@@ -2248,26 +3137,41 @@ package object appflow {
   @js.native
   trait RedshiftConnectorProfileProperties extends js.Object {
     var bucketName: BucketName
-    var databaseUrl: DatabaseUrl
     var roleArn: RoleArn
     var bucketPrefix: js.UndefOr[BucketPrefix]
+    var clusterIdentifier: js.UndefOr[ClusterIdentifier]
+    var dataApiRoleArn: js.UndefOr[DataApiRoleArn]
+    var databaseName: js.UndefOr[DatabaseName]
+    var databaseUrl: js.UndefOr[DatabaseUrl]
+    var isRedshiftServerless: js.UndefOr[Boolean]
+    var workgroupName: js.UndefOr[WorkgroupName]
   }
 
   object RedshiftConnectorProfileProperties {
     @inline
     def apply(
         bucketName: BucketName,
-        databaseUrl: DatabaseUrl,
         roleArn: RoleArn,
-        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined
+        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined,
+        clusterIdentifier: js.UndefOr[ClusterIdentifier] = js.undefined,
+        dataApiRoleArn: js.UndefOr[DataApiRoleArn] = js.undefined,
+        databaseName: js.UndefOr[DatabaseName] = js.undefined,
+        databaseUrl: js.UndefOr[DatabaseUrl] = js.undefined,
+        isRedshiftServerless: js.UndefOr[Boolean] = js.undefined,
+        workgroupName: js.UndefOr[WorkgroupName] = js.undefined
     ): RedshiftConnectorProfileProperties = {
       val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
-        "databaseUrl" -> databaseUrl.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
       bucketPrefix.foreach(__v => __obj.updateDynamic("bucketPrefix")(__v.asInstanceOf[js.Any]))
+      clusterIdentifier.foreach(__v => __obj.updateDynamic("clusterIdentifier")(__v.asInstanceOf[js.Any]))
+      dataApiRoleArn.foreach(__v => __obj.updateDynamic("dataApiRoleArn")(__v.asInstanceOf[js.Any]))
+      databaseName.foreach(__v => __obj.updateDynamic("databaseName")(__v.asInstanceOf[js.Any]))
+      databaseUrl.foreach(__v => __obj.updateDynamic("databaseUrl")(__v.asInstanceOf[js.Any]))
+      isRedshiftServerless.foreach(__v => __obj.updateDynamic("isRedshiftServerless")(__v.asInstanceOf[js.Any]))
+      workgroupName.foreach(__v => __obj.updateDynamic("workgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedshiftConnectorProfileProperties]
     }
   }
@@ -2311,6 +3215,71 @@ package object appflow {
     def apply(): RedshiftMetadata = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RedshiftMetadata]
+    }
+  }
+
+  @js.native
+  trait RegisterConnectorRequest extends js.Object {
+    var connectorLabel: js.UndefOr[ConnectorLabel]
+    var connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig]
+    var connectorProvisioningType: js.UndefOr[ConnectorProvisioningType]
+    var description: js.UndefOr[Description]
+  }
+
+  object RegisterConnectorRequest {
+    @inline
+    def apply(
+        connectorLabel: js.UndefOr[ConnectorLabel] = js.undefined,
+        connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig] = js.undefined,
+        connectorProvisioningType: js.UndefOr[ConnectorProvisioningType] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined
+    ): RegisterConnectorRequest = {
+      val __obj = js.Dynamic.literal()
+      connectorLabel.foreach(__v => __obj.updateDynamic("connectorLabel")(__v.asInstanceOf[js.Any]))
+      connectorProvisioningConfig.foreach(__v => __obj.updateDynamic("connectorProvisioningConfig")(__v.asInstanceOf[js.Any]))
+      connectorProvisioningType.foreach(__v => __obj.updateDynamic("connectorProvisioningType")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterConnectorResponse extends js.Object {
+    var connectorArn: js.UndefOr[ARN]
+  }
+
+  object RegisterConnectorResponse {
+    @inline
+    def apply(
+        connectorArn: js.UndefOr[ARN] = js.undefined
+    ): RegisterConnectorResponse = {
+      val __obj = js.Dynamic.literal()
+      connectorArn.foreach(__v => __obj.updateDynamic("connectorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterConnectorResponse]
+    }
+  }
+
+  /** Describes the status of an attempt from Amazon AppFlow to register a resource. When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow registers a metadata table and data partitions with that catalog. This operation provides the status of that registration attempt. The operation also indicates how many related resources Amazon AppFlow created or updated.
+    */
+  @js.native
+  trait RegistrationOutput extends js.Object {
+    var message: js.UndefOr[String]
+    var result: js.UndefOr[String]
+    var status: js.UndefOr[ExecutionStatus]
+  }
+
+  object RegistrationOutput {
+    @inline
+    def apply(
+        message: js.UndefOr[String] = js.undefined,
+        result: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[ExecutionStatus] = js.undefined
+    ): RegistrationOutput = {
+      val __obj = js.Dynamic.literal()
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegistrationOutput]
     }
   }
 
@@ -2378,6 +3347,7 @@ package object appflow {
     var aggregationConfig: js.UndefOr[AggregationConfig]
     var fileType: js.UndefOr[FileType]
     var prefixConfig: js.UndefOr[PrefixConfig]
+    var preserveSourceDataTyping: js.UndefOr[JavaBoolean]
   }
 
   object S3OutputFormatConfig {
@@ -2385,12 +3355,14 @@ package object appflow {
     def apply(
         aggregationConfig: js.UndefOr[AggregationConfig] = js.undefined,
         fileType: js.UndefOr[FileType] = js.undefined,
-        prefixConfig: js.UndefOr[PrefixConfig] = js.undefined
+        prefixConfig: js.UndefOr[PrefixConfig] = js.undefined,
+        preserveSourceDataTyping: js.UndefOr[JavaBoolean] = js.undefined
     ): S3OutputFormatConfig = {
       val __obj = js.Dynamic.literal()
       aggregationConfig.foreach(__v => __obj.updateDynamic("aggregationConfig")(__v.asInstanceOf[js.Any]))
       fileType.foreach(__v => __obj.updateDynamic("fileType")(__v.asInstanceOf[js.Any]))
       prefixConfig.foreach(__v => __obj.updateDynamic("prefixConfig")(__v.asInstanceOf[js.Any]))
+      preserveSourceDataTyping.foreach(__v => __obj.updateDynamic("preserveSourceDataTyping")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3OutputFormatConfig]
     }
   }
@@ -2480,6 +3452,38 @@ package object appflow {
     }
   }
 
+  /** The properties that are applied when using SAPOData as a flow destination
+    */
+  @js.native
+  trait SAPODataDestinationProperties extends js.Object {
+    var objectPath: Object
+    var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
+    var idFieldNames: js.UndefOr[IdFieldNameList]
+    var successResponseHandlingConfig: js.UndefOr[SuccessResponseHandlingConfig]
+    var writeOperationType: js.UndefOr[WriteOperationType]
+  }
+
+  object SAPODataDestinationProperties {
+    @inline
+    def apply(
+        objectPath: Object,
+        errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined,
+        idFieldNames: js.UndefOr[IdFieldNameList] = js.undefined,
+        successResponseHandlingConfig: js.UndefOr[SuccessResponseHandlingConfig] = js.undefined,
+        writeOperationType: js.UndefOr[WriteOperationType] = js.undefined
+    ): SAPODataDestinationProperties = {
+      val __obj = js.Dynamic.literal(
+        "objectPath" -> objectPath.asInstanceOf[js.Any]
+      )
+
+      errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
+      idFieldNames.foreach(__v => __obj.updateDynamic("idFieldNames")(__v.asInstanceOf[js.Any]))
+      successResponseHandlingConfig.foreach(__v => __obj.updateDynamic("successResponseHandlingConfig")(__v.asInstanceOf[js.Any]))
+      writeOperationType.foreach(__v => __obj.updateDynamic("writeOperationType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAPODataDestinationProperties]
+    }
+  }
+
   /** The connector metadata specific to SAPOData.
     */
   @js.native
@@ -2564,6 +3568,7 @@ package object appflow {
   @js.native
   trait SalesforceDestinationProperties extends js.Object {
     var `object`: Object
+    var dataTransferApi: js.UndefOr[SalesforceDataTransferApi]
     var errorHandlingConfig: js.UndefOr[ErrorHandlingConfig]
     var idFieldNames: js.UndefOr[IdFieldNameList]
     var writeOperationType: js.UndefOr[WriteOperationType]
@@ -2573,6 +3578,7 @@ package object appflow {
     @inline
     def apply(
         `object`: Object,
+        dataTransferApi: js.UndefOr[SalesforceDataTransferApi] = js.undefined,
         errorHandlingConfig: js.UndefOr[ErrorHandlingConfig] = js.undefined,
         idFieldNames: js.UndefOr[IdFieldNameList] = js.undefined,
         writeOperationType: js.UndefOr[WriteOperationType] = js.undefined
@@ -2581,6 +3587,7 @@ package object appflow {
         "object" -> `object`.asInstanceOf[js.Any]
       )
 
+      dataTransferApi.foreach(__v => __obj.updateDynamic("dataTransferApi")(__v.asInstanceOf[js.Any]))
       errorHandlingConfig.foreach(__v => __obj.updateDynamic("errorHandlingConfig")(__v.asInstanceOf[js.Any]))
       idFieldNames.foreach(__v => __obj.updateDynamic("idFieldNames")(__v.asInstanceOf[js.Any]))
       writeOperationType.foreach(__v => __obj.updateDynamic("writeOperationType")(__v.asInstanceOf[js.Any]))
@@ -2592,15 +3599,18 @@ package object appflow {
     */
   @js.native
   trait SalesforceMetadata extends js.Object {
+    var dataTransferApis: js.UndefOr[SalesforceDataTransferApiList]
     var oAuthScopes: js.UndefOr[OAuthScopeList]
   }
 
   object SalesforceMetadata {
     @inline
     def apply(
+        dataTransferApis: js.UndefOr[SalesforceDataTransferApiList] = js.undefined,
         oAuthScopes: js.UndefOr[OAuthScopeList] = js.undefined
     ): SalesforceMetadata = {
       val __obj = js.Dynamic.literal()
+      dataTransferApis.foreach(__v => __obj.updateDynamic("dataTransferApis")(__v.asInstanceOf[js.Any]))
       oAuthScopes.foreach(__v => __obj.updateDynamic("oAuthScopes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SalesforceMetadata]
     }
@@ -2611,6 +3621,7 @@ package object appflow {
   @js.native
   trait SalesforceSourceProperties extends js.Object {
     var `object`: Object
+    var dataTransferApi: js.UndefOr[SalesforceDataTransferApi]
     var enableDynamicFieldUpdate: js.UndefOr[Boolean]
     var includeDeletedRecords: js.UndefOr[Boolean]
   }
@@ -2619,6 +3630,7 @@ package object appflow {
     @inline
     def apply(
         `object`: Object,
+        dataTransferApi: js.UndefOr[SalesforceDataTransferApi] = js.undefined,
         enableDynamicFieldUpdate: js.UndefOr[Boolean] = js.undefined,
         includeDeletedRecords: js.UndefOr[Boolean] = js.undefined
     ): SalesforceSourceProperties = {
@@ -2626,6 +3638,7 @@ package object appflow {
         "object" -> `object`.asInstanceOf[js.Any]
       )
 
+      dataTransferApi.foreach(__v => __obj.updateDynamic("dataTransferApi")(__v.asInstanceOf[js.Any]))
       enableDynamicFieldUpdate.foreach(__v => __obj.updateDynamic("enableDynamicFieldUpdate")(__v.asInstanceOf[js.Any]))
       includeDeletedRecords.foreach(__v => __obj.updateDynamic("includeDeletedRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SalesforceSourceProperties]
@@ -2639,6 +3652,7 @@ package object appflow {
     var scheduleExpression: ScheduleExpression
     var dataPullMode: js.UndefOr[DataPullMode]
     var firstExecutionFrom: js.UndefOr[Date]
+    var flowErrorDeactivationThreshold: js.UndefOr[FlowErrorDeactivationThreshold]
     var scheduleEndTime: js.UndefOr[Date]
     var scheduleOffset: js.UndefOr[ScheduleOffset]
     var scheduleStartTime: js.UndefOr[Date]
@@ -2651,6 +3665,7 @@ package object appflow {
         scheduleExpression: ScheduleExpression,
         dataPullMode: js.UndefOr[DataPullMode] = js.undefined,
         firstExecutionFrom: js.UndefOr[Date] = js.undefined,
+        flowErrorDeactivationThreshold: js.UndefOr[FlowErrorDeactivationThreshold] = js.undefined,
         scheduleEndTime: js.UndefOr[Date] = js.undefined,
         scheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         scheduleStartTime: js.UndefOr[Date] = js.undefined,
@@ -2662,6 +3677,7 @@ package object appflow {
 
       dataPullMode.foreach(__v => __obj.updateDynamic("dataPullMode")(__v.asInstanceOf[js.Any]))
       firstExecutionFrom.foreach(__v => __obj.updateDynamic("firstExecutionFrom")(__v.asInstanceOf[js.Any]))
+      flowErrorDeactivationThreshold.foreach(__v => __obj.updateDynamic("flowErrorDeactivationThreshold")(__v.asInstanceOf[js.Any]))
       scheduleEndTime.foreach(__v => __obj.updateDynamic("scheduleEndTime")(__v.asInstanceOf[js.Any]))
       scheduleOffset.foreach(__v => __obj.updateDynamic("scheduleOffset")(__v.asInstanceOf[js.Any]))
       scheduleStartTime.foreach(__v => __obj.updateDynamic("scheduleStartTime")(__v.asInstanceOf[js.Any]))
@@ -3004,6 +4020,7 @@ package object appflow {
   @js.native
   trait SourceConnectorProperties extends js.Object {
     var Amplitude: js.UndefOr[AmplitudeSourceProperties]
+    var CustomConnector: js.UndefOr[CustomConnectorSourceProperties]
     var Datadog: js.UndefOr[DatadogSourceProperties]
     var Dynatrace: js.UndefOr[DynatraceSourceProperties]
     var GoogleAnalytics: js.UndefOr[GoogleAnalyticsSourceProperties]
@@ -3024,6 +4041,7 @@ package object appflow {
     @inline
     def apply(
         Amplitude: js.UndefOr[AmplitudeSourceProperties] = js.undefined,
+        CustomConnector: js.UndefOr[CustomConnectorSourceProperties] = js.undefined,
         Datadog: js.UndefOr[DatadogSourceProperties] = js.undefined,
         Dynatrace: js.UndefOr[DynatraceSourceProperties] = js.undefined,
         GoogleAnalytics: js.UndefOr[GoogleAnalyticsSourceProperties] = js.undefined,
@@ -3041,6 +4059,7 @@ package object appflow {
     ): SourceConnectorProperties = {
       val __obj = js.Dynamic.literal()
       Amplitude.foreach(__v => __obj.updateDynamic("Amplitude")(__v.asInstanceOf[js.Any]))
+      CustomConnector.foreach(__v => __obj.updateDynamic("CustomConnector")(__v.asInstanceOf[js.Any]))
       Datadog.foreach(__v => __obj.updateDynamic("Datadog")(__v.asInstanceOf[js.Any]))
       Dynatrace.foreach(__v => __obj.updateDynamic("Dynatrace")(__v.asInstanceOf[js.Any]))
       GoogleAnalytics.foreach(__v => __obj.updateDynamic("GoogleAnalytics")(__v.asInstanceOf[js.Any]))
@@ -3065,17 +4084,20 @@ package object appflow {
   trait SourceFieldProperties extends js.Object {
     var isQueryable: js.UndefOr[Boolean]
     var isRetrievable: js.UndefOr[Boolean]
+    var isTimestampFieldForIncrementalQueries: js.UndefOr[Boolean]
   }
 
   object SourceFieldProperties {
     @inline
     def apply(
         isQueryable: js.UndefOr[Boolean] = js.undefined,
-        isRetrievable: js.UndefOr[Boolean] = js.undefined
+        isRetrievable: js.UndefOr[Boolean] = js.undefined,
+        isTimestampFieldForIncrementalQueries: js.UndefOr[Boolean] = js.undefined
     ): SourceFieldProperties = {
       val __obj = js.Dynamic.literal()
       isQueryable.foreach(__v => __obj.updateDynamic("isQueryable")(__v.asInstanceOf[js.Any]))
       isRetrievable.foreach(__v => __obj.updateDynamic("isRetrievable")(__v.asInstanceOf[js.Any]))
+      isTimestampFieldForIncrementalQueries.foreach(__v => __obj.updateDynamic("isTimestampFieldForIncrementalQueries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceFieldProperties]
     }
   }
@@ -3086,6 +4108,7 @@ package object appflow {
   trait SourceFlowConfig extends js.Object {
     var connectorType: ConnectorType
     var sourceConnectorProperties: SourceConnectorProperties
+    var apiVersion: js.UndefOr[ApiVersion]
     var connectorProfileName: js.UndefOr[ConnectorProfileName]
     var incrementalPullConfig: js.UndefOr[IncrementalPullConfig]
   }
@@ -3095,6 +4118,7 @@ package object appflow {
     def apply(
         connectorType: ConnectorType,
         sourceConnectorProperties: SourceConnectorProperties,
+        apiVersion: js.UndefOr[ApiVersion] = js.undefined,
         connectorProfileName: js.UndefOr[ConnectorProfileName] = js.undefined,
         incrementalPullConfig: js.UndefOr[IncrementalPullConfig] = js.undefined
     ): SourceFlowConfig = {
@@ -3103,6 +4127,7 @@ package object appflow {
         "sourceConnectorProperties" -> sourceConnectorProperties.asInstanceOf[js.Any]
       )
 
+      apiVersion.foreach(__v => __obj.updateDynamic("apiVersion")(__v.asInstanceOf[js.Any]))
       connectorProfileName.foreach(__v => __obj.updateDynamic("connectorProfileName")(__v.asInstanceOf[js.Any]))
       incrementalPullConfig.foreach(__v => __obj.updateDynamic("incrementalPullConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceFlowConfig]
@@ -3181,6 +4206,27 @@ package object appflow {
       flowArn.foreach(__v => __obj.updateDynamic("flowArn")(__v.asInstanceOf[js.Any]))
       flowStatus.foreach(__v => __obj.updateDynamic("flowStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopFlowResponse]
+    }
+  }
+
+  /** Determines how Amazon AppFlow handles the success response that it gets from the connector after placing data. For example, this setting would determine where to write the response from the destination connector upon a successful insert operation.
+    */
+  @js.native
+  trait SuccessResponseHandlingConfig extends js.Object {
+    var bucketName: js.UndefOr[BucketName]
+    var bucketPrefix: js.UndefOr[BucketPrefix]
+  }
+
+  object SuccessResponseHandlingConfig {
+    @inline
+    def apply(
+        bucketName: js.UndefOr[BucketName] = js.undefined,
+        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined
+    ): SuccessResponseHandlingConfig = {
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      bucketPrefix.foreach(__v => __obj.updateDynamic("bucketPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SuccessResponseHandlingConfig]
     }
   }
 
@@ -3372,6 +4418,38 @@ package object appflow {
   }
 
   @js.native
+  trait UnregisterConnectorRequest extends js.Object {
+    var connectorLabel: ConnectorLabel
+    var forceDelete: js.UndefOr[Boolean]
+  }
+
+  object UnregisterConnectorRequest {
+    @inline
+    def apply(
+        connectorLabel: ConnectorLabel,
+        forceDelete: js.UndefOr[Boolean] = js.undefined
+    ): UnregisterConnectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectorLabel" -> connectorLabel.asInstanceOf[js.Any]
+      )
+
+      forceDelete.foreach(__v => __obj.updateDynamic("forceDelete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnregisterConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait UnregisterConnectorResponse extends js.Object
+
+  object UnregisterConnectorResponse {
+    @inline
+    def apply(): UnregisterConnectorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UnregisterConnectorResponse]
+    }
+  }
+
+  @js.native
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ARN
     var tagKeys: TagKeyList
@@ -3442,6 +4520,46 @@ package object appflow {
   }
 
   @js.native
+  trait UpdateConnectorRegistrationRequest extends js.Object {
+    var connectorLabel: ConnectorLabel
+    var connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig]
+    var description: js.UndefOr[Description]
+  }
+
+  object UpdateConnectorRegistrationRequest {
+    @inline
+    def apply(
+        connectorLabel: ConnectorLabel,
+        connectorProvisioningConfig: js.UndefOr[ConnectorProvisioningConfig] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined
+    ): UpdateConnectorRegistrationRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectorLabel" -> connectorLabel.asInstanceOf[js.Any]
+      )
+
+      connectorProvisioningConfig.foreach(__v => __obj.updateDynamic("connectorProvisioningConfig")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectorRegistrationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectorRegistrationResponse extends js.Object {
+    var connectorArn: js.UndefOr[ARN]
+  }
+
+  object UpdateConnectorRegistrationResponse {
+    @inline
+    def apply(
+        connectorArn: js.UndefOr[ARN] = js.undefined
+    ): UpdateConnectorRegistrationResponse = {
+      val __obj = js.Dynamic.literal()
+      connectorArn.foreach(__v => __obj.updateDynamic("connectorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectorRegistrationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateFlowRequest extends js.Object {
     var destinationFlowConfigList: DestinationFlowConfigList
     var flowName: FlowName
@@ -3449,6 +4567,7 @@ package object appflow {
     var tasks: Tasks
     var triggerConfig: TriggerConfig
     var description: js.UndefOr[FlowDescription]
+    var metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig]
   }
 
   object UpdateFlowRequest {
@@ -3459,7 +4578,8 @@ package object appflow {
         sourceFlowConfig: SourceFlowConfig,
         tasks: Tasks,
         triggerConfig: TriggerConfig,
-        description: js.UndefOr[FlowDescription] = js.undefined
+        description: js.UndefOr[FlowDescription] = js.undefined,
+        metadataCatalogConfig: js.UndefOr[MetadataCatalogConfig] = js.undefined
     ): UpdateFlowRequest = {
       val __obj = js.Dynamic.literal(
         "destinationFlowConfigList" -> destinationFlowConfigList.asInstanceOf[js.Any],
@@ -3470,6 +4590,7 @@ package object appflow {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      metadataCatalogConfig.foreach(__v => __obj.updateDynamic("metadataCatalogConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowRequest]
     }
   }

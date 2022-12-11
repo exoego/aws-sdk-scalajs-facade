@@ -15,6 +15,7 @@ package object organizations {
   type AwsManagedPolicy = Boolean
   type ChildId = String
   type Children = js.Array[Child]
+  type CreateAccountName = String
   type CreateAccountRequestId = String
   type CreateAccountStates = js.Array[CreateAccountState]
   type CreateAccountStatuses = js.Array[CreateAccountStatus]
@@ -50,6 +51,9 @@ package object organizations {
   type PolicyTargetId = String
   type PolicyTargets = js.Array[PolicyTargetSummary]
   type PolicyTypes = js.Array[PolicyTypeSummary]
+  type ResourcePolicyArn = String
+  type ResourcePolicyContent = String
+  type ResourcePolicyId = String
   type RoleName = String
   type RootArn = String
   type RootId = String
@@ -69,6 +73,7 @@ package object organizations {
     @inline def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] = service.acceptHandshake(params).promise().toFuture
     @inline def attachPolicyFuture(params: AttachPolicyRequest): Future[js.Object] = service.attachPolicy(params).promise().toFuture
     @inline def cancelHandshakeFuture(params: CancelHandshakeRequest): Future[CancelHandshakeResponse] = service.cancelHandshake(params).promise().toFuture
+    @inline def closeAccountFuture(params: CloseAccountRequest): Future[js.Object] = service.closeAccount(params).promise().toFuture
     @inline def createAccountFuture(params: CreateAccountRequest): Future[CreateAccountResponse] = service.createAccount(params).promise().toFuture
     @inline def createGovCloudAccountFuture(params: CreateGovCloudAccountRequest): Future[CreateGovCloudAccountResponse] = service.createGovCloudAccount(params).promise().toFuture
     @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] = service.createOrganization(params).promise().toFuture
@@ -78,6 +83,7 @@ package object organizations {
     @inline def deleteOrganizationFuture(): Future[js.Object] = service.deleteOrganization().promise().toFuture
     @inline def deleteOrganizationalUnitFuture(params: DeleteOrganizationalUnitRequest): Future[js.Object] = service.deleteOrganizationalUnit(params).promise().toFuture
     @inline def deletePolicyFuture(params: DeletePolicyRequest): Future[js.Object] = service.deletePolicy(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(): Future[js.Object] = service.deleteResourcePolicy().promise().toFuture
     @inline def deregisterDelegatedAdministratorFuture(params: DeregisterDelegatedAdministratorRequest): Future[js.Object] = service.deregisterDelegatedAdministrator(params).promise().toFuture
     @inline def describeAccountFuture(params: DescribeAccountRequest): Future[DescribeAccountResponse] = service.describeAccount(params).promise().toFuture
     @inline def describeCreateAccountStatusFuture(params: DescribeCreateAccountStatusRequest): Future[DescribeCreateAccountStatusResponse] = service.describeCreateAccountStatus(params).promise().toFuture
@@ -86,6 +92,7 @@ package object organizations {
     @inline def describeOrganizationFuture(): Future[DescribeOrganizationResponse] = service.describeOrganization().promise().toFuture
     @inline def describeOrganizationalUnitFuture(params: DescribeOrganizationalUnitRequest): Future[DescribeOrganizationalUnitResponse] = service.describeOrganizationalUnit(params).promise().toFuture
     @inline def describePolicyFuture(params: DescribePolicyRequest): Future[DescribePolicyResponse] = service.describePolicy(params).promise().toFuture
+    @inline def describeResourcePolicyFuture(): Future[DescribeResourcePolicyResponse] = service.describeResourcePolicy().promise().toFuture
     @inline def detachPolicyFuture(params: DetachPolicyRequest): Future[js.Object] = service.detachPolicy(params).promise().toFuture
     @inline def disableAWSServiceAccessFuture(params: DisableAWSServiceAccessRequest): Future[js.Object] = service.disableAWSServiceAccess(params).promise().toFuture
     @inline def disablePolicyTypeFuture(params: DisablePolicyTypeRequest): Future[DisablePolicyTypeResponse] = service.disablePolicyType(params).promise().toFuture
@@ -111,6 +118,7 @@ package object organizations {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTargetsForPolicyFuture(params: ListTargetsForPolicyRequest): Future[ListTargetsForPolicyResponse] = service.listTargetsForPolicy(params).promise().toFuture
     @inline def moveAccountFuture(params: MoveAccountRequest): Future[js.Object] = service.moveAccount(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def registerDelegatedAdministratorFuture(params: RegisterDelegatedAdministratorRequest): Future[js.Object] = service.registerDelegatedAdministrator(params).promise().toFuture
     @inline def removeAccountFromOrganizationFuture(params: RemoveAccountFromOrganizationRequest): Future[js.Object] = service.removeAccountFromOrganization(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
@@ -128,6 +136,7 @@ package object organizations {
     def acceptHandshake(params: AcceptHandshakeRequest): Request[AcceptHandshakeResponse] = js.native
     def attachPolicy(params: AttachPolicyRequest): Request[js.Object] = js.native
     def cancelHandshake(params: CancelHandshakeRequest): Request[CancelHandshakeResponse] = js.native
+    def closeAccount(params: CloseAccountRequest): Request[js.Object] = js.native
     def createAccount(params: CreateAccountRequest): Request[CreateAccountResponse] = js.native
     def createGovCloudAccount(params: CreateGovCloudAccountRequest): Request[CreateGovCloudAccountResponse] = js.native
     def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
@@ -137,6 +146,7 @@ package object organizations {
     def deleteOrganization(): Request[js.Object] = js.native
     def deleteOrganizationalUnit(params: DeleteOrganizationalUnitRequest): Request[js.Object] = js.native
     def deletePolicy(params: DeletePolicyRequest): Request[js.Object] = js.native
+    def deleteResourcePolicy(): Request[js.Object] = js.native
     def deregisterDelegatedAdministrator(params: DeregisterDelegatedAdministratorRequest): Request[js.Object] = js.native
     def describeAccount(params: DescribeAccountRequest): Request[DescribeAccountResponse] = js.native
     def describeCreateAccountStatus(params: DescribeCreateAccountStatusRequest): Request[DescribeCreateAccountStatusResponse] = js.native
@@ -145,6 +155,7 @@ package object organizations {
     def describeOrganization(): Request[DescribeOrganizationResponse] = js.native
     def describeOrganizationalUnit(params: DescribeOrganizationalUnitRequest): Request[DescribeOrganizationalUnitResponse] = js.native
     def describePolicy(params: DescribePolicyRequest): Request[DescribePolicyResponse] = js.native
+    def describeResourcePolicy(): Request[DescribeResourcePolicyResponse] = js.native
     def detachPolicy(params: DetachPolicyRequest): Request[js.Object] = js.native
     def disableAWSServiceAccess(params: DisableAWSServiceAccessRequest): Request[js.Object] = js.native
     def disablePolicyType(params: DisablePolicyTypeRequest): Request[DisablePolicyTypeResponse] = js.native
@@ -170,6 +181,7 @@ package object organizations {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTargetsForPolicy(params: ListTargetsForPolicyRequest): Request[ListTargetsForPolicyResponse] = js.native
     def moveAccount(params: MoveAccountRequest): Request[js.Object] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def registerDelegatedAdministrator(params: RegisterDelegatedAdministratorRequest): Request[js.Object] = js.native
     def removeAccountFromOrganization(params: RemoveAccountFromOrganizationRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -216,7 +228,7 @@ package object organizations {
     }
   }
 
-  /** Contains information about an AWS account that is a member of an organization.
+  /** Contains information about an Amazon Web Services account that is a member of an organization.
     */
   @js.native
   trait Account extends js.Object {
@@ -327,8 +339,25 @@ package object organizations {
   }
 
   @js.native
+  trait CloseAccountRequest extends js.Object {
+    var AccountId: AccountId
+  }
+
+  object CloseAccountRequest {
+    @inline
+    def apply(
+        AccountId: AccountId
+    ): CloseAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CloseAccountRequest]
+    }
+  }
+
+  @js.native
   trait CreateAccountRequest extends js.Object {
-    var AccountName: AccountName
+    var AccountName: CreateAccountName
     var Email: Email
     var IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling]
     var RoleName: js.UndefOr[RoleName]
@@ -338,7 +367,7 @@ package object organizations {
   object CreateAccountRequest {
     @inline
     def apply(
-        AccountName: AccountName,
+        AccountName: CreateAccountName,
         Email: Email,
         IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
         RoleName: js.UndefOr[RoleName] = js.undefined,
@@ -372,12 +401,12 @@ package object organizations {
     }
   }
 
-  /** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud (US) account in an organization.
+  /** Contains the status about a <a>CreateAccount</a> or <a>CreateGovCloudAccount</a> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.
     */
   @js.native
   trait CreateAccountStatus extends js.Object {
     var AccountId: js.UndefOr[AccountId]
-    var AccountName: js.UndefOr[AccountName]
+    var AccountName: js.UndefOr[CreateAccountName]
     var CompletedTimestamp: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[CreateAccountFailureReason]
     var GovCloudAccountId: js.UndefOr[AccountId]
@@ -390,7 +419,7 @@ package object organizations {
     @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
-        AccountName: js.UndefOr[AccountName] = js.undefined,
+        AccountName: js.UndefOr[CreateAccountName] = js.undefined,
         CompletedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[CreateAccountFailureReason] = js.undefined,
         GovCloudAccountId: js.UndefOr[AccountId] = js.undefined,
@@ -413,7 +442,7 @@ package object organizations {
 
   @js.native
   trait CreateGovCloudAccountRequest extends js.Object {
-    var AccountName: AccountName
+    var AccountName: CreateAccountName
     var Email: Email
     var IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling]
     var RoleName: js.UndefOr[RoleName]
@@ -423,7 +452,7 @@ package object organizations {
   object CreateGovCloudAccountRequest {
     @inline
     def apply(
-        AccountName: AccountName,
+        AccountName: CreateAccountName,
         Email: Email,
         IamUserAccessToBilling: js.UndefOr[IAMUserAccessToBilling] = js.undefined,
         RoleName: js.UndefOr[RoleName] = js.undefined,
@@ -647,7 +676,7 @@ package object organizations {
     }
   }
 
-  /** Contains information about the AWS service for which the account is a delegated administrator.
+  /** Contains information about the Amazon Web Services service for which the account is a delegated administrator.
     */
   @js.native
   trait DelegatedService extends js.Object {
@@ -941,6 +970,22 @@ package object organizations {
   }
 
   @js.native
+  trait DescribeResourcePolicyResponse extends js.Object {
+    var ResourcePolicy: js.UndefOr[ResourcePolicy]
+  }
+
+  object DescribeResourcePolicyResponse {
+    @inline
+    def apply(
+        ResourcePolicy: js.UndefOr[ResourcePolicy] = js.undefined
+    ): DescribeResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeResourcePolicyResponse]
+    }
+  }
+
+  @js.native
   trait DetachPolicyRequest extends js.Object {
     var PolicyId: PolicyId
     var TargetId: PolicyTargetId
@@ -1120,7 +1165,7 @@ package object organizations {
     }
   }
 
-  /** A structure that contains details of a service principal that represents an AWS service that is enabled to integrate with AWS Organizations.
+  /** A structure that contains details of a service principal that represents an Amazon Web Services service that is enabled to integrate with Organizations.
     */
   @js.native
   trait EnabledServicePrincipal extends js.Object {
@@ -1141,7 +1186,8 @@ package object organizations {
     }
   }
 
-  /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses. \```Note:``` Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or <code>DECLINED</code> show up in lists for only 30 days after entering that state After that they are deleted.
+  /** Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.
+    * \```Note:``` Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.
     */
   @js.native
   trait Handshake extends js.Object {
@@ -2014,7 +2060,7 @@ package object organizations {
     }
   }
 
-  /** Contains details about an organizational unit (OU). An OU is a container of AWS accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
+  /** Contains details about an organizational unit (OU). An OU is a container of Amazon Web Services accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.
     */
   @js.native
   trait OrganizationalUnit extends js.Object {
@@ -2162,6 +2208,43 @@ package object organizations {
   }
 
   @js.native
+  trait PutResourcePolicyRequest extends js.Object {
+    var Content: ResourcePolicyContent
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object PutResourcePolicyRequest {
+    @inline
+    def apply(
+        Content: ResourcePolicyContent,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): PutResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Content" -> Content.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyResponse extends js.Object {
+    var ResourcePolicy: js.UndefOr[ResourcePolicy]
+  }
+
+  object PutResourcePolicyResponse {
+    @inline
+    def apply(
+        ResourcePolicy: js.UndefOr[ResourcePolicy] = js.undefined
+    ): PutResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
+    }
+  }
+
+  @js.native
   trait RegisterDelegatedAdministratorRequest extends js.Object {
     var AccountId: AccountId
     var ServicePrincipal: ServicePrincipal
@@ -2198,7 +2281,49 @@ package object organizations {
     }
   }
 
-  /** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every AWS account in the organization.
+  /** A structure that contains details about a resource policy.
+    */
+  @js.native
+  trait ResourcePolicy extends js.Object {
+    var Content: js.UndefOr[ResourcePolicyContent]
+    var ResourcePolicySummary: js.UndefOr[ResourcePolicySummary]
+  }
+
+  object ResourcePolicy {
+    @inline
+    def apply(
+        Content: js.UndefOr[ResourcePolicyContent] = js.undefined,
+        ResourcePolicySummary: js.UndefOr[ResourcePolicySummary] = js.undefined
+    ): ResourcePolicy = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      ResourcePolicySummary.foreach(__v => __obj.updateDynamic("ResourcePolicySummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePolicy]
+    }
+  }
+
+  /** A structure that contains resource policy ID and Amazon Resource Name (ARN).
+    */
+  @js.native
+  trait ResourcePolicySummary extends js.Object {
+    var Arn: js.UndefOr[ResourcePolicyArn]
+    var Id: js.UndefOr[ResourcePolicyId]
+  }
+
+  object ResourcePolicySummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ResourcePolicyArn] = js.undefined,
+        Id: js.UndefOr[ResourcePolicyId] = js.undefined
+    ): ResourcePolicySummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourcePolicySummary]
+    }
+  }
+
+  /** Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.
     */
   @js.native
   trait Root extends js.Object {
@@ -2225,7 +2350,7 @@ package object organizations {
     }
   }
 
-  /** A custom key-value pair associated with a resource within your organization. You can attach tags to any of the following organization resources. * AWS account * Organizational unit (OU) * Organization root * Policy
+  /** A custom key-value pair associated with a resource within your organization. You can attach tags to any of the following organization resources. * Amazon Web Services account * Organizational unit (OU) * Organization root * Policy
     */
   @js.native
   trait Tag extends js.Object {

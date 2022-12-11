@@ -324,6 +324,7 @@ package object memorydb {
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var AvailabilityMode: js.UndefOr[AZStatus]
     var ClusterEndpoint: js.UndefOr[Endpoint]
+    var DataTiering: js.UndefOr[DataTieringStatus]
     var Description: js.UndefOr[String]
     var EnginePatchVersion: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -354,6 +355,7 @@ package object memorydb {
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AvailabilityMode: js.UndefOr[AZStatus] = js.undefined,
         ClusterEndpoint: js.UndefOr[Endpoint] = js.undefined,
+        DataTiering: js.UndefOr[DataTieringStatus] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         EnginePatchVersion: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -381,6 +383,7 @@ package object memorydb {
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AvailabilityMode.foreach(__v => __obj.updateDynamic("AvailabilityMode")(__v.asInstanceOf[js.Any]))
       ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
+      DataTiering.foreach(__v => __obj.updateDynamic("DataTiering")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EnginePatchVersion.foreach(__v => __obj.updateDynamic("EnginePatchVersion")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -578,6 +581,7 @@ package object memorydb {
     var ClusterName: String
     var NodeType: String
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
+    var DataTiering: js.UndefOr[BooleanOptional]
     var Description: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
@@ -604,6 +608,7 @@ package object memorydb {
         ClusterName: String,
         NodeType: String,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
+        DataTiering: js.UndefOr[BooleanOptional] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -629,6 +634,7 @@ package object memorydb {
       )
 
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      DataTiering.foreach(__v => __obj.updateDynamic("DataTiering")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -2096,6 +2102,7 @@ package object memorydb {
   trait Snapshot extends js.Object {
     var ARN: js.UndefOr[String]
     var ClusterConfiguration: js.UndefOr[ClusterConfiguration]
+    var DataTiering: js.UndefOr[DataTieringStatus]
     var KmsKeyId: js.UndefOr[String]
     var Name: js.UndefOr[String]
     var Source: js.UndefOr[String]
@@ -2107,6 +2114,7 @@ package object memorydb {
     def apply(
         ARN: js.UndefOr[String] = js.undefined,
         ClusterConfiguration: js.UndefOr[ClusterConfiguration] = js.undefined,
+        DataTiering: js.UndefOr[DataTieringStatus] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined,
@@ -2115,6 +2123,7 @@ package object memorydb {
       val __obj = js.Dynamic.literal()
       ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       ClusterConfiguration.foreach(__v => __obj.updateDynamic("ClusterConfiguration")(__v.asInstanceOf[js.Any]))
+      DataTiering.foreach(__v => __obj.updateDynamic("DataTiering")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))

@@ -12,7 +12,7 @@ object AcceleratorManufacturer {
   inline def values: js.Array[AcceleratorManufacturer] = js.Array(nvidia, amd, `amazon-web-services`, xilinx)
 }
 
-type AcceleratorName = "a100" | "v100" | "k80" | "t4" | "m60" | "radeon-pro-v520" | "vu9p"
+type AcceleratorName = "a100" | "v100" | "k80" | "t4" | "m60" | "radeon-pro-v520" | "vu9p" | "inferentia" | "k520"
 object AcceleratorName {
   inline val a100: "a100" = "a100"
   inline val v100: "v100" = "v100"
@@ -21,8 +21,10 @@ object AcceleratorName {
   inline val m60: "m60" = "m60"
   inline val `radeon-pro-v520`: "radeon-pro-v520" = "radeon-pro-v520"
   inline val vu9p: "vu9p" = "vu9p"
+  inline val inferentia: "inferentia" = "inferentia"
+  inline val k520: "k520" = "k520"
 
-  inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+  inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p, inferentia, k520)
 }
 
 type AcceleratorType = "gpu" | "fpga" | "inference"
@@ -67,6 +69,15 @@ object AddressFamily {
   inline def values: js.Array[AddressFamily] = js.Array(ipv4, ipv6)
 }
 
+type AddressTransferStatus = "pending" | "disabled" | "accepted"
+object AddressTransferStatus {
+  inline val pending: "pending" = "pending"
+  inline val disabled: "disabled" = "disabled"
+  inline val accepted: "accepted" = "accepted"
+
+  inline def values: js.Array[AddressTransferStatus] = js.Array(pending, disabled, accepted)
+}
+
 type Affinity = "default" | "host"
 object Affinity {
   inline val default: "default" = "default"
@@ -87,14 +98,22 @@ object AllocationState {
   inline def values: js.Array[AllocationState] = js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
 }
 
-type AllocationStrategy = "lowestPrice" | "diversified" | "capacityOptimized" | "capacityOptimizedPrioritized"
+type AllocationStrategy = "lowestPrice" | "diversified" | "capacityOptimized" | "capacityOptimizedPrioritized" | "priceCapacityOptimized"
 object AllocationStrategy {
   inline val lowestPrice: "lowestPrice" = "lowestPrice"
   inline val diversified: "diversified" = "diversified"
   inline val capacityOptimized: "capacityOptimized" = "capacityOptimized"
   inline val capacityOptimizedPrioritized: "capacityOptimizedPrioritized" = "capacityOptimizedPrioritized"
+  inline val priceCapacityOptimized: "priceCapacityOptimized" = "priceCapacityOptimized"
 
-  inline def values: js.Array[AllocationStrategy] = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized)
+  inline def values: js.Array[AllocationStrategy] = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized, priceCapacityOptimized)
+}
+
+type AllocationType = "used"
+object AllocationType {
+  inline val used: "used" = "used"
+
+  inline def values: js.Array[AllocationType] = js.Array(used)
 }
 
 type AllowsMultipleInstanceTypes = "on" | "off"
@@ -122,24 +141,26 @@ object ApplianceModeSupportValue {
   inline def values: js.Array[ApplianceModeSupportValue] = js.Array(enable, disable)
 }
 
-type ArchitectureType = "i386" | "x86_64" | "arm64" | "x86_64_mac"
+type ArchitectureType = "i386" | "x86_64" | "arm64" | "x86_64_mac" | "arm64_mac"
 object ArchitectureType {
   inline val i386: "i386" = "i386"
   inline val x86_64: "x86_64" = "x86_64"
   inline val arm64: "arm64" = "arm64"
   inline val x86_64_mac: "x86_64_mac" = "x86_64_mac"
+  inline val arm64_mac: "arm64_mac" = "arm64_mac"
 
-  inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac)
+  inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac, arm64_mac)
 }
 
-type ArchitectureValues = "i386" | "x86_64" | "arm64" | "x86_64_mac"
+type ArchitectureValues = "i386" | "x86_64" | "arm64" | "x86_64_mac" | "arm64_mac"
 object ArchitectureValues {
   inline val i386: "i386" = "i386"
   inline val x86_64: "x86_64" = "x86_64"
   inline val arm64: "arm64" = "arm64"
   inline val x86_64_mac: "x86_64_mac" = "x86_64_mac"
+  inline val arm64_mac: "arm64_mac" = "arm64_mac"
 
-  inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac)
+  inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac, arm64_mac)
 }
 
 type AssociatedNetworkType = "vpc"
@@ -340,7 +361,7 @@ object CapacityReservationFleetState {
   inline def values: js.Array[CapacityReservationFleetState] = js.Array(submitted, modifying, active, partially_fulfilled, expiring, expired, cancelling, cancelled, failed)
 }
 
-type CapacityReservationInstancePlatform = "Linux/UNIX" | "Red Hat Enterprise Linux" | "SUSE Linux" | "Windows" | "Windows with SQL Server" | "Windows with SQL Server Enterprise" | "Windows with SQL Server Standard" | "Windows with SQL Server Web" | "Linux with SQL Server Standard" | "Linux with SQL Server Web" | "Linux with SQL Server Enterprise"
+type CapacityReservationInstancePlatform = "Linux/UNIX" | "Red Hat Enterprise Linux" | "SUSE Linux" | "Windows" | "Windows with SQL Server" | "Windows with SQL Server Enterprise" | "Windows with SQL Server Standard" | "Windows with SQL Server Web" | "Linux with SQL Server Standard" | "Linux with SQL Server Web" | "Linux with SQL Server Enterprise" | "RHEL with SQL Server Standard" | "RHEL with SQL Server Enterprise" | "RHEL with SQL Server Web" | "RHEL with HA" | "RHEL with HA and SQL Server Standard" | "RHEL with HA and SQL Server Enterprise"
 object CapacityReservationInstancePlatform {
   inline val `Linux/UNIX`: "Linux/UNIX" = "Linux/UNIX"
   inline val `Red Hat Enterprise Linux`: "Red Hat Enterprise Linux" = "Red Hat Enterprise Linux"
@@ -353,6 +374,12 @@ object CapacityReservationInstancePlatform {
   inline val `Linux with SQL Server Standard`: "Linux with SQL Server Standard" = "Linux with SQL Server Standard"
   inline val `Linux with SQL Server Web`: "Linux with SQL Server Web" = "Linux with SQL Server Web"
   inline val `Linux with SQL Server Enterprise`: "Linux with SQL Server Enterprise" = "Linux with SQL Server Enterprise"
+  inline val `RHEL with SQL Server Standard`: "RHEL with SQL Server Standard" = "RHEL with SQL Server Standard"
+  inline val `RHEL with SQL Server Enterprise`: "RHEL with SQL Server Enterprise" = "RHEL with SQL Server Enterprise"
+  inline val `RHEL with SQL Server Web`: "RHEL with SQL Server Web" = "RHEL with SQL Server Web"
+  inline val `RHEL with HA`: "RHEL with HA" = "RHEL with HA"
+  inline val `RHEL with HA and SQL Server Standard`: "RHEL with HA and SQL Server Standard" = "RHEL with HA and SQL Server Standard"
+  inline val `RHEL with HA and SQL Server Enterprise`: "RHEL with HA and SQL Server Enterprise" = "RHEL with HA and SQL Server Enterprise"
 
   inline def values: js.Array[CapacityReservationInstancePlatform] = js.Array(
     `Linux/UNIX`,
@@ -365,7 +392,13 @@ object CapacityReservationInstancePlatform {
     `Windows with SQL Server Web`,
     `Linux with SQL Server Standard`,
     `Linux with SQL Server Web`,
-    `Linux with SQL Server Enterprise`
+    `Linux with SQL Server Enterprise`,
+    `RHEL with SQL Server Standard`,
+    `RHEL with SQL Server Enterprise`,
+    `RHEL with SQL Server Web`,
+    `RHEL with HA`,
+    `RHEL with HA and SQL Server Standard`,
+    `RHEL with HA and SQL Server Enterprise`
   )
 }
 
@@ -593,6 +626,14 @@ object DestinationFileFormat {
   inline def values: js.Array[DestinationFileFormat] = js.Array(`plain-text`, parquet)
 }
 
+type DeviceTrustProviderType = "jamf" | "crowdstrike"
+object DeviceTrustProviderType {
+  inline val jamf: "jamf" = "jamf"
+  inline val crowdstrike: "crowdstrike" = "crowdstrike"
+
+  inline def values: js.Array[DeviceTrustProviderType] = js.Array(jamf, crowdstrike)
+}
+
 type DeviceType = "ebs" | "instance-store"
 object DeviceType {
   inline val ebs: "ebs" = "ebs"
@@ -627,6 +668,16 @@ object DnsNameState {
   inline def values: js.Array[DnsNameState] = js.Array(pendingVerification, verified, failed)
 }
 
+type DnsRecordIpType = "ipv4" | "dualstack" | "ipv6" | "service-defined"
+object DnsRecordIpType {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val dualstack: "dualstack" = "dualstack"
+  inline val ipv6: "ipv6" = "ipv6"
+  inline val `service-defined`: "service-defined" = "service-defined"
+
+  inline def values: js.Array[DnsRecordIpType] = js.Array(ipv4, dualstack, ipv6, `service-defined`)
+}
+
 type DnsSupportValue = "enable" | "disable"
 object DnsSupportValue {
   inline val enable: "enable" = "enable"
@@ -641,6 +692,14 @@ object DomainType {
   inline val standard: "standard" = "standard"
 
   inline def values: js.Array[DomainType] = js.Array(vpc, standard)
+}
+
+type DynamicRoutingValue = "enable" | "disable"
+object DynamicRoutingValue {
+  inline val enable: "enable" = "enable"
+  inline val disable: "disable" = "disable"
+
+  inline def values: js.Array[DynamicRoutingValue] = js.Array(enable, disable)
 }
 
 type EbsEncryptionSupport = "unsupported" | "supported"
@@ -758,6 +817,25 @@ object ExportTaskState {
   inline def values: js.Array[ExportTaskState] = js.Array(active, cancelling, cancelled, completed)
 }
 
+type FastLaunchResourceType = "snapshot"
+object FastLaunchResourceType {
+  inline val snapshot: "snapshot" = "snapshot"
+
+  inline def values: js.Array[FastLaunchResourceType] = js.Array(snapshot)
+}
+
+type FastLaunchStateCode = "enabling" | "enabling-failed" | "enabled" | "enabled-failed" | "disabling" | "disabling-failed"
+object FastLaunchStateCode {
+  inline val enabling: "enabling" = "enabling"
+  inline val `enabling-failed`: "enabling-failed" = "enabling-failed"
+  inline val enabled: "enabled" = "enabled"
+  inline val `enabled-failed`: "enabled-failed" = "enabled-failed"
+  inline val disabling: "disabling" = "disabling"
+  inline val `disabling-failed`: "disabling-failed" = "disabling-failed"
+
+  inline def values: js.Array[FastLaunchStateCode] = js.Array(enabling, `enabling-failed`, enabled, `enabled-failed`, disabling, `disabling-failed`)
+}
+
 type FastSnapshotRestoreStateCode = "enabling" | "optimizing" | "enabled" | "disabling" | "disabled"
 object FastSnapshotRestoreStateCode {
   inline val enabling: "enabling" = "enabling"
@@ -864,13 +942,15 @@ object FleetType {
   inline def values: js.Array[FleetType] = js.Array(request, maintain, instant)
 }
 
-type FlowLogsResourceType = "VPC" | "Subnet" | "NetworkInterface"
+type FlowLogsResourceType = "VPC" | "Subnet" | "NetworkInterface" | "TransitGateway" | "TransitGatewayAttachment"
 object FlowLogsResourceType {
   inline val VPC: "VPC" = "VPC"
   inline val Subnet: "Subnet" = "Subnet"
   inline val NetworkInterface: "NetworkInterface" = "NetworkInterface"
+  inline val TransitGateway: "TransitGateway" = "TransitGateway"
+  inline val TransitGatewayAttachment: "TransitGatewayAttachment" = "TransitGatewayAttachment"
 
-  inline def values: js.Array[FlowLogsResourceType] = js.Array(VPC, Subnet, NetworkInterface)
+  inline def values: js.Array[FlowLogsResourceType] = js.Array(VPC, Subnet, NetworkInterface, TransitGateway, TransitGatewayAttachment)
 }
 
 type FpgaImageAttributeName = "description" | "name" | "loadPermission" | "productCodes"
@@ -968,7 +1048,7 @@ object Igmpv2SupportValue {
   inline def values: js.Array[Igmpv2SupportValue] = js.Array(enable, disable)
 }
 
-type ImageAttributeName = "description" | "kernel" | "ramdisk" | "launchPermission" | "productCodes" | "blockDeviceMapping" | "sriovNetSupport" | "bootMode"
+type ImageAttributeName = "description" | "kernel" | "ramdisk" | "launchPermission" | "productCodes" | "blockDeviceMapping" | "sriovNetSupport" | "bootMode" | "tpmSupport" | "uefiData" | "lastLaunchedTime" | "imdsSupport"
 object ImageAttributeName {
   inline val description: "description" = "description"
   inline val kernel: "kernel" = "kernel"
@@ -978,8 +1058,12 @@ object ImageAttributeName {
   inline val blockDeviceMapping: "blockDeviceMapping" = "blockDeviceMapping"
   inline val sriovNetSupport: "sriovNetSupport" = "sriovNetSupport"
   inline val bootMode: "bootMode" = "bootMode"
+  inline val tpmSupport: "tpmSupport" = "tpmSupport"
+  inline val uefiData: "uefiData" = "uefiData"
+  inline val lastLaunchedTime: "lastLaunchedTime" = "lastLaunchedTime"
+  inline val imdsSupport: "imdsSupport" = "imdsSupport"
 
-  inline def values: js.Array[ImageAttributeName] = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode)
+  inline def values: js.Array[ImageAttributeName] = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode, tpmSupport, uefiData, lastLaunchedTime, imdsSupport)
 }
 
 type ImageState = "pending" | "available" | "invalid" | "deregistered" | "transient" | "failed" | "error"
@@ -1004,7 +1088,14 @@ object ImageTypeValues {
   inline def values: js.Array[ImageTypeValues] = js.Array(machine, kernel, ramdisk)
 }
 
-type InstanceAttributeName = "instanceType" | "kernel" | "ramdisk" | "userData" | "disableApiTermination" | "instanceInitiatedShutdownBehavior" | "rootDeviceName" | "blockDeviceMapping" | "productCodes" | "sourceDestCheck" | "groupSet" | "ebsOptimized" | "sriovNetSupport" | "enaSupport" | "enclaveOptions"
+type ImdsSupportValues = "v2.0"
+object ImdsSupportValues {
+  inline val `v2.0`: "v2.0" = "v2.0"
+
+  inline def values: js.Array[ImdsSupportValues] = js.Array(`v2.0`)
+}
+
+type InstanceAttributeName = "instanceType" | "kernel" | "ramdisk" | "userData" | "disableApiTermination" | "instanceInitiatedShutdownBehavior" | "rootDeviceName" | "blockDeviceMapping" | "productCodes" | "sourceDestCheck" | "groupSet" | "ebsOptimized" | "sriovNetSupport" | "enaSupport" | "enclaveOptions" | "disableApiStop"
 object InstanceAttributeName {
   inline val instanceType: "instanceType" = "instanceType"
   inline val kernel: "kernel" = "kernel"
@@ -1021,6 +1112,7 @@ object InstanceAttributeName {
   inline val sriovNetSupport: "sriovNetSupport" = "sriovNetSupport"
   inline val enaSupport: "enaSupport" = "enaSupport"
   inline val enclaveOptions: "enclaveOptions" = "enclaveOptions"
+  inline val disableApiStop: "disableApiStop" = "disableApiStop"
 
   inline def values: js.Array[InstanceAttributeName] = js.Array(
     instanceType,
@@ -1037,8 +1129,17 @@ object InstanceAttributeName {
     ebsOptimized,
     sriovNetSupport,
     enaSupport,
-    enclaveOptions
+    enclaveOptions,
+    disableApiStop
   )
+}
+
+type InstanceAutoRecoveryState = "disabled" | "default"
+object InstanceAutoRecoveryState {
+  inline val disabled: "disabled" = "disabled"
+  inline val default: "default" = "default"
+
+  inline def values: js.Array[InstanceAutoRecoveryState] = js.Array(disabled, default)
 }
 
 type InstanceEventWindowState = "creating" | "deleting" | "active" | "deleted"
@@ -1124,6 +1225,14 @@ object InstanceMetadataProtocolState {
   inline def values: js.Array[InstanceMetadataProtocolState] = js.Array(disabled, enabled)
 }
 
+type InstanceMetadataTagsState = "disabled" | "enabled"
+object InstanceMetadataTagsState {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[InstanceMetadataTagsState] = js.Array(disabled, enabled)
+}
+
 type InstanceStateName = "pending" | "running" | "shutting-down" | "terminated" | "stopping" | "stopped"
 object InstanceStateName {
   inline val pending: "pending" = "pending"
@@ -1144,163 +1253,15 @@ object InstanceStorageEncryptionSupport {
   inline def values: js.Array[InstanceStorageEncryptionSupport] = js.Array(unsupported, required)
 }
 
-type InstanceType = "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "t2.xlarge" | "t2.2xlarge" | "t3.nano" | "t3.micro" | "t3.small" | "t3.medium" | "t3.large" | "t3.xlarge" | "t3.2xlarge" | "t3a.nano" | "t3a.micro" | "t3a.small" | "t3a.medium" | "t3a.large" | "t3a.xlarge" | "t3a.2xlarge" | "t4g.nano" | "t4g.micro" | "t4g.small" | "t4g.medium" | "t4g.large" | "t4g.xlarge" | "t4g.2xlarge" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "cr1.8xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5.metal" | "r5a.large" |
-  "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "r5b.large" | "r5b.xlarge" | "r5b.2xlarge" | "r5b.4xlarge" | "r5b.8xlarge" | "r5b.12xlarge" | "r5b.16xlarge" | "r5b.24xlarge" | "r5b.metal" | "r5d.large" | "r5d.xlarge" | "r5d.2xlarge" | "r5d.4xlarge" | "r5d.8xlarge" | "r5d.12xlarge" | "r5d.16xlarge" | "r5d.24xlarge" | "r5d.metal" | "r5ad.large" | "r5ad.xlarge" | "r5ad.2xlarge" | "r5ad.4xlarge" | "r5ad.8xlarge" | "r5ad.12xlarge" | "r5ad.16xlarge" | "r5ad.24xlarge" | "r6g.metal" | "r6g.medium" | "r6g.large" | "r6g.xlarge" | "r6g.2xlarge" | "r6g.4xlarge" | "r6g.8xlarge" | "r6g.12xlarge" | "r6g.16xlarge" | "r6gd.metal" | "r6gd.medium" | "r6gd.large" | "r6gd.xlarge" | "r6gd.2xlarge" | "r6gd.4xlarge" | "r6gd.8xlarge" | "r6gd.12xlarge" | "r6gd.16xlarge" | "x1.16xlarge" | "x1.32xlarge" | "x1e.xlarge" | "x1e.2xlarge" | "x1e.4xlarge" | "x1e.8xlarge" | "x1e.16xlarge" | "x1e.32xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" |
-  "i2.8xlarge" | "i3.large" | "i3.xlarge" | "i3.2xlarge" | "i3.4xlarge" | "i3.8xlarge" | "i3.16xlarge" | "i3.metal" | "i3en.large" | "i3en.xlarge" | "i3en.2xlarge" | "i3en.3xlarge" | "i3en.6xlarge" | "i3en.12xlarge" | "i3en.24xlarge" | "i3en.metal" | "hi1.4xlarge" | "hs1.8xlarge" | "c1.medium" | "c1.xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5.metal" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "c5ad.large" | "c5ad.xlarge" | "c5ad.2xlarge" | "c5ad.4xlarge" | "c5ad.8xlarge" | "c5ad.12xlarge" | "c5ad.16xlarge" | "c5ad.24xlarge" | "c5d.large" | "c5d.xlarge" | "c5d.2xlarge" | "c5d.4xlarge" | "c5d.9xlarge" | "c5d.12xlarge" | "c5d.18xlarge" | "c5d.24xlarge" | "c5d.metal" |
-  "c5n.large" | "c5n.xlarge" | "c5n.2xlarge" | "c5n.4xlarge" | "c5n.9xlarge" | "c5n.18xlarge" | "c5n.metal" | "c6g.metal" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "c6gd.metal" | "c6gd.medium" | "c6gd.large" | "c6gd.xlarge" | "c6gd.2xlarge" | "c6gd.4xlarge" | "c6gd.8xlarge" | "c6gd.12xlarge" | "c6gd.16xlarge" | "c6gn.medium" | "c6gn.large" | "c6gn.xlarge" | "c6gn.2xlarge" | "c6gn.4xlarge" | "c6gn.8xlarge" | "c6gn.12xlarge" | "c6gn.16xlarge" | "c6i.large" | "c6i.xlarge" | "c6i.2xlarge" | "c6i.4xlarge" | "c6i.8xlarge" | "c6i.12xlarge" | "c6i.16xlarge" | "c6i.24xlarge" | "c6i.32xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "g3.4xlarge" | "g3.8xlarge" | "g3.16xlarge" | "g3s.xlarge" | "g4ad.xlarge" | "g4ad.2xlarge" | "g4ad.4xlarge" | "g4ad.8xlarge" | "g4ad.16xlarge" | "g4dn.xlarge" | "g4dn.2xlarge" | "g4dn.4xlarge" | "g4dn.8xlarge" | "g4dn.12xlarge" | "g4dn.16xlarge" |
-  "g4dn.metal" | "cg1.4xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "p3.2xlarge" | "p3.8xlarge" | "p3.16xlarge" | "p3dn.24xlarge" | "p4d.24xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "d3.xlarge" | "d3.2xlarge" | "d3.4xlarge" | "d3.8xlarge" | "d3en.xlarge" | "d3en.2xlarge" | "d3en.4xlarge" | "d3en.6xlarge" | "d3en.8xlarge" | "d3en.12xlarge" | "dl1.24xlarge" | "f1.2xlarge" | "f1.4xlarge" | "f1.16xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5.metal" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m5d.large" | "m5d.xlarge" | "m5d.2xlarge" | "m5d.4xlarge" | "m5d.8xlarge" | "m5d.12xlarge" | "m5d.16xlarge" | "m5d.24xlarge" | "m5d.metal" | "m5ad.large" | "m5ad.xlarge" | "m5ad.2xlarge" | "m5ad.4xlarge" | "m5ad.8xlarge" | "m5ad.12xlarge" | "m5ad.16xlarge" | "m5ad.24xlarge" | "m5zn.large" |
-  "m5zn.xlarge" | "m5zn.2xlarge" | "m5zn.3xlarge" | "m5zn.6xlarge" | "m5zn.12xlarge" | "m5zn.metal" | "h1.2xlarge" | "h1.4xlarge" | "h1.8xlarge" | "h1.16xlarge" | "z1d.large" | "z1d.xlarge" | "z1d.2xlarge" | "z1d.3xlarge" | "z1d.6xlarge" | "z1d.12xlarge" | "z1d.metal" | "u-6tb1.56xlarge" | "u-6tb1.112xlarge" | "u-9tb1.112xlarge" | "u-12tb1.112xlarge" | "u-6tb1.metal" | "u-9tb1.metal" | "u-12tb1.metal" | "u-18tb1.metal" | "u-24tb1.metal" | "a1.medium" | "a1.large" | "a1.xlarge" | "a1.2xlarge" | "a1.4xlarge" | "a1.metal" | "m5dn.large" | "m5dn.xlarge" | "m5dn.2xlarge" | "m5dn.4xlarge" | "m5dn.8xlarge" | "m5dn.12xlarge" | "m5dn.16xlarge" | "m5dn.24xlarge" | "m5dn.metal" | "m5n.large" | "m5n.xlarge" | "m5n.2xlarge" | "m5n.4xlarge" | "m5n.8xlarge" | "m5n.12xlarge" | "m5n.16xlarge" | "m5n.24xlarge" | "m5n.metal" | "r5dn.large" | "r5dn.xlarge" | "r5dn.2xlarge" | "r5dn.4xlarge" | "r5dn.8xlarge" | "r5dn.12xlarge" | "r5dn.16xlarge" | "r5dn.24xlarge" | "r5dn.metal" | "r5n.large" | "r5n.xlarge" |
-  "r5n.2xlarge" | "r5n.4xlarge" | "r5n.8xlarge" | "r5n.12xlarge" | "r5n.16xlarge" | "r5n.24xlarge" | "r5n.metal" | "inf1.xlarge" | "inf1.2xlarge" | "inf1.6xlarge" | "inf1.24xlarge" | "m6g.metal" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge" | "m6gd.metal" | "m6gd.medium" | "m6gd.large" | "m6gd.xlarge" | "m6gd.2xlarge" | "m6gd.4xlarge" | "m6gd.8xlarge" | "m6gd.12xlarge" | "m6gd.16xlarge" | "m6a.large" | "m6a.xlarge" | "m6a.2xlarge" | "m6a.4xlarge" | "m6a.8xlarge" | "m6a.12xlarge" | "m6a.16xlarge" | "m6a.24xlarge" | "m6a.32xlarge" | "m6a.48xlarge" | "m6i.large" | "m6i.xlarge" | "m6i.2xlarge" | "m6i.4xlarge" | "m6i.8xlarge" | "m6i.12xlarge" | "m6i.16xlarge" | "m6i.24xlarge" | "m6i.32xlarge" | "mac1.metal" | "x2gd.medium" | "x2gd.large" | "x2gd.xlarge" | "x2gd.2xlarge" | "x2gd.4xlarge" | "x2gd.8xlarge" | "x2gd.12xlarge" | "x2gd.16xlarge" | "x2gd.metal" | "vt1.3xlarge" | "vt1.6xlarge" | "vt1.24xlarge" |
-  "im4gn.16xlarge" | "im4gn.2xlarge" | "im4gn.4xlarge" | "im4gn.8xlarge" | "im4gn.large" | "im4gn.xlarge" | "is4gen.2xlarge" | "is4gen.4xlarge" | "is4gen.8xlarge" | "is4gen.large" | "is4gen.medium" | "is4gen.xlarge" | "g5g.xlarge" | "g5g.2xlarge" | "g5g.4xlarge" | "g5g.8xlarge" | "g5g.16xlarge" | "g5g.metal" | "g5.xlarge" | "g5.2xlarge" | "g5.4xlarge" | "g5.8xlarge" | "g5.12xlarge" | "g5.16xlarge" | "g5.24xlarge" | "g5.48xlarge"
+type InstanceType =
+  "a1.medium" | "a1.large" | "a1.xlarge" | "a1.2xlarge" | "a1.4xlarge" | "a1.metal" | "c1.medium" | "c1.xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5.metal" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "c5ad.large" | "c5ad.xlarge" | "c5ad.2xlarge" | "c5ad.4xlarge" | "c5ad.8xlarge" | "c5ad.12xlarge" | "c5ad.16xlarge" | "c5ad.24xlarge" | "c5d.large" | "c5d.xlarge" | "c5d.2xlarge" | "c5d.4xlarge" | "c5d.9xlarge" | "c5d.12xlarge" | "c5d.18xlarge" | "c5d.24xlarge" | "c5d.metal" | "c5n.large" | "c5n.xlarge" | "c5n.2xlarge" | "c5n.4xlarge" | "c5n.9xlarge" | "c5n.18xlarge" | "c5n.metal" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "c6g.metal" | "c6gd.medium" | "c6gd.large" | "c6gd.xlarge" | "c6gd.2xlarge" | "c6gd.4xlarge" | "c6gd.8xlarge" | "c6gd.12xlarge" | "c6gd.16xlarge" | "c6gd.metal" | "c6gn.medium" | "c6gn.large" | "c6gn.xlarge" | "c6gn.2xlarge" | "c6gn.4xlarge" | "c6gn.8xlarge" | "c6gn.12xlarge" | "c6gn.16xlarge" | "c6i.large" | "c6i.xlarge" | "c6i.2xlarge" | "c6i.4xlarge" | "c6i.8xlarge" | "c6i.12xlarge" | "c6i.16xlarge" | "c6i.24xlarge" | "c6i.32xlarge" | "c6i.metal" | "cc1.4xlarge" | "cc2.8xlarge" | "cg1.4xlarge" | "cr1.8xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "d3.xlarge" | "d3.2xlarge" | "d3.4xlarge" | "d3.8xlarge" | "d3en.xlarge" | "d3en.2xlarge" | "d3en.4xlarge" | "d3en.6xlarge" | "d3en.8xlarge" | "d3en.12xlarge" | "dl1.24xlarge" | "f1.2xlarge" | "f1.4xlarge" | "f1.16xlarge" | "g2.2xlarge" | "g2.8xlarge" | "g3.4xlarge" | "g3.8xlarge" | "g3.16xlarge" | "g3s.xlarge" | "g4ad.xlarge" | "g4ad.2xlarge" | "g4ad.4xlarge" | "g4ad.8xlarge" | "g4ad.16xlarge" | "g4dn.xlarge" | "g4dn.2xlarge" | "g4dn.4xlarge" | "g4dn.8xlarge" | "g4dn.12xlarge" | "g4dn.16xlarge" | "g4dn.metal" | "g5.xlarge" | "g5.2xlarge" | "g5.4xlarge" | "g5.8xlarge" | "g5.12xlarge" | "g5.16xlarge" | "g5.24xlarge" | "g5.48xlarge" | "g5g.xlarge" | "g5g.2xlarge" | "g5g.4xlarge" | "g5g.8xlarge" | "g5g.16xlarge" | "g5g.metal" | "hi1.4xlarge" | "hpc6a.48xlarge" | "hs1.8xlarge" | "h1.2xlarge" | "h1.4xlarge" | "h1.8xlarge" | "h1.16xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" | "i2.8xlarge" | "i3.large" | "i3.xlarge" | "i3.2xlarge" | "i3.4xlarge" | "i3.8xlarge" | "i3.16xlarge" | "i3.metal" | "i3en.large" | "i3en.xlarge" | "i3en.2xlarge" | "i3en.3xlarge" | "i3en.6xlarge" | "i3en.12xlarge" | "i3en.24xlarge" | "i3en.metal" | "im4gn.large" | "im4gn.xlarge" | "im4gn.2xlarge" | "im4gn.4xlarge" | "im4gn.8xlarge" | "im4gn.16xlarge" | "inf1.xlarge" | "inf1.2xlarge" | "inf1.6xlarge" | "inf1.24xlarge" | "is4gen.medium" | "is4gen.large" | "is4gen.xlarge" | "is4gen.2xlarge" | "is4gen.4xlarge" | "is4gen.8xlarge" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5.metal" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m5ad.large" | "m5ad.xlarge" | "m5ad.2xlarge" | "m5ad.4xlarge" | "m5ad.8xlarge" | "m5ad.12xlarge" | "m5ad.16xlarge" | "m5ad.24xlarge" | "m5d.large" | "m5d.xlarge" | "m5d.2xlarge" | "m5d.4xlarge" | "m5d.8xlarge" | "m5d.12xlarge" | "m5d.16xlarge" | "m5d.24xlarge" | "m5d.metal" | "m5dn.large" | "m5dn.xlarge" | "m5dn.2xlarge" | "m5dn.4xlarge" | "m5dn.8xlarge" | "m5dn.12xlarge" | "m5dn.16xlarge" | "m5dn.24xlarge" | "m5dn.metal" | "m5n.large" | "m5n.xlarge" | "m5n.2xlarge" | "m5n.4xlarge" | "m5n.8xlarge" | "m5n.12xlarge" | "m5n.16xlarge" | "m5n.24xlarge" | "m5n.metal" | "m5zn.large" | "m5zn.xlarge" | "m5zn.2xlarge" | "m5zn.3xlarge" | "m5zn.6xlarge" | "m5zn.12xlarge" | "m5zn.metal" | "m6a.large" | "m6a.xlarge" | "m6a.2xlarge" | "m6a.4xlarge" | "m6a.8xlarge" | "m6a.12xlarge" | "m6a.16xlarge" | "m6a.24xlarge" | "m6a.32xlarge" | "m6a.48xlarge" | "m6g.metal" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge" | "m6gd.metal" | "m6gd.medium" | "m6gd.large" | "m6gd.xlarge" | "m6gd.2xlarge" | "m6gd.4xlarge" | "m6gd.8xlarge" | "m6gd.12xlarge" | "m6gd.16xlarge" | "m6i.large" | "m6i.xlarge" | "m6i.2xlarge" | "m6i.4xlarge" | "m6i.8xlarge" | "m6i.12xlarge" | "m6i.16xlarge" | "m6i.24xlarge" | "m6i.32xlarge" | "m6i.metal" | "mac1.metal" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "p3.2xlarge" | "p3.8xlarge" | "p3.16xlarge" | "p3dn.24xlarge" | "p4d.24xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5.metal" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "r5ad.large" | "r5ad.xlarge" | "r5ad.2xlarge" | "r5ad.4xlarge" | "r5ad.8xlarge" | "r5ad.12xlarge" | "r5ad.16xlarge" | "r5ad.24xlarge" | "r5b.large" | "r5b.xlarge" | "r5b.2xlarge" | "r5b.4xlarge" | "r5b.8xlarge" | "r5b.12xlarge" | "r5b.16xlarge" | "r5b.24xlarge" | "r5b.metal" | "r5d.large" | "r5d.xlarge" | "r5d.2xlarge" | "r5d.4xlarge" | "r5d.8xlarge" | "r5d.12xlarge" | "r5d.16xlarge" | "r5d.24xlarge" | "r5d.metal" | "r5dn.large" | "r5dn.xlarge" | "r5dn.2xlarge" | "r5dn.4xlarge" | "r5dn.8xlarge" | "r5dn.12xlarge" | "r5dn.16xlarge" | "r5dn.24xlarge" | "r5dn.metal" | "r5n.large" | "r5n.xlarge" | "r5n.2xlarge" | "r5n.4xlarge" | "r5n.8xlarge" | "r5n.12xlarge" | "r5n.16xlarge" | "r5n.24xlarge" | "r5n.metal" | "r6g.medium" | "r6g.large" | "r6g.xlarge" | "r6g.2xlarge" | "r6g.4xlarge" | "r6g.8xlarge" | "r6g.12xlarge" | "r6g.16xlarge" | "r6g.metal" | "r6gd.medium" | "r6gd.large" | "r6gd.xlarge" | "r6gd.2xlarge" | "r6gd.4xlarge" | "r6gd.8xlarge" | "r6gd.12xlarge" | "r6gd.16xlarge" | "r6gd.metal" | "r6i.large" | "r6i.xlarge" | "r6i.2xlarge" | "r6i.4xlarge" | "r6i.8xlarge" | "r6i.12xlarge" | "r6i.16xlarge" | "r6i.24xlarge" | "r6i.32xlarge" | "r6i.metal" | "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "t2.xlarge" | "t2.2xlarge" | "t3.nano" | "t3.micro" | "t3.small" | "t3.medium" | "t3.large" | "t3.xlarge" | "t3.2xlarge" | "t3a.nano" | "t3a.micro" | "t3a.small" | "t3a.medium" | "t3a.large" | "t3a.xlarge" | "t3a.2xlarge" | "t4g.nano" | "t4g.micro" | "t4g.small" | "t4g.medium" | "t4g.large" | "t4g.xlarge" | "t4g.2xlarge" | "u-6tb1.56xlarge" | "u-6tb1.112xlarge" | "u-9tb1.112xlarge" | "u-12tb1.112xlarge" | "u-6tb1.metal" | "u-9tb1.metal" | "u-12tb1.metal" | "u-18tb1.metal" | "u-24tb1.metal" | "vt1.3xlarge" | "vt1.6xlarge" | "vt1.24xlarge" | "x1.16xlarge" | "x1.32xlarge" | "x1e.xlarge" | "x1e.2xlarge" | "x1e.4xlarge" | "x1e.8xlarge" | "x1e.16xlarge" | "x1e.32xlarge" | "x2iezn.2xlarge" | "x2iezn.4xlarge" | "x2iezn.6xlarge" | "x2iezn.8xlarge" | "x2iezn.12xlarge" | "x2iezn.metal" | "x2gd.medium" | "x2gd.large" | "x2gd.xlarge" | "x2gd.2xlarge" | "x2gd.4xlarge" | "x2gd.8xlarge" | "x2gd.12xlarge" | "x2gd.16xlarge" | "x2gd.metal" | "z1d.large" | "z1d.xlarge" | "z1d.2xlarge" | "z1d.3xlarge" | "z1d.6xlarge" | "z1d.12xlarge" | "z1d.metal" | "x2idn.16xlarge" | "x2idn.24xlarge" | "x2idn.32xlarge" | "x2iedn.xlarge" | "x2iedn.2xlarge" | "x2iedn.4xlarge" | "x2iedn.8xlarge" | "x2iedn.16xlarge" | "x2iedn.24xlarge" | "x2iedn.32xlarge" | "c6a.large" | "c6a.xlarge" | "c6a.2xlarge" | "c6a.4xlarge" | "c6a.8xlarge" | "c6a.12xlarge" | "c6a.16xlarge" | "c6a.24xlarge" | "c6a.32xlarge" | "c6a.48xlarge" | "c6a.metal" | "m6a.metal" | "i4i.large" | "i4i.xlarge" | "i4i.2xlarge" | "i4i.4xlarge" | "i4i.8xlarge" | "i4i.16xlarge" | "i4i.32xlarge" | "i4i.metal" | "x2idn.metal" | "x2iedn.metal" | "c7g.medium" | "c7g.large" | "c7g.xlarge" | "c7g.2xlarge" | "c7g.4xlarge" | "c7g.8xlarge" | "c7g.12xlarge" | "c7g.16xlarge" | "mac2.metal" | "c6id.large" | "c6id.xlarge" | "c6id.2xlarge" | "c6id.4xlarge" | "c6id.8xlarge" | "c6id.12xlarge" | "c6id.16xlarge" | "c6id.24xlarge" | "c6id.32xlarge" | "c6id.metal" | "m6id.large" | "m6id.xlarge" | "m6id.2xlarge" | "m6id.4xlarge" | "m6id.8xlarge" | "m6id.12xlarge" | "m6id.16xlarge" | "m6id.24xlarge" | "m6id.32xlarge" | "m6id.metal" | "r6id.large" | "r6id.xlarge" | "r6id.2xlarge" | "r6id.4xlarge" | "r6id.8xlarge" | "r6id.12xlarge" | "r6id.16xlarge" | "r6id.24xlarge" | "r6id.32xlarge" | "r6id.metal" | "r6a.large" | "r6a.xlarge" | "r6a.2xlarge" | "r6a.4xlarge" | "r6a.8xlarge" | "r6a.12xlarge" | "r6a.16xlarge" | "r6a.24xlarge" | "r6a.32xlarge" | "r6a.48xlarge" | "r6a.metal" | "p4de.24xlarge" | "u-3tb1.56xlarge" | "u-18tb1.112xlarge" | "u-24tb1.112xlarge" | "trn1.2xlarge" | "trn1.32xlarge" | "hpc6id.32xlarge"
 object InstanceType {
-  inline val `t1.micro`: "t1.micro" = "t1.micro"
-  inline val `t2.nano`: "t2.nano" = "t2.nano"
-  inline val `t2.micro`: "t2.micro" = "t2.micro"
-  inline val `t2.small`: "t2.small" = "t2.small"
-  inline val `t2.medium`: "t2.medium" = "t2.medium"
-  inline val `t2.large`: "t2.large" = "t2.large"
-  inline val `t2.xlarge`: "t2.xlarge" = "t2.xlarge"
-  inline val `t2.2xlarge`: "t2.2xlarge" = "t2.2xlarge"
-  inline val `t3.nano`: "t3.nano" = "t3.nano"
-  inline val `t3.micro`: "t3.micro" = "t3.micro"
-  inline val `t3.small`: "t3.small" = "t3.small"
-  inline val `t3.medium`: "t3.medium" = "t3.medium"
-  inline val `t3.large`: "t3.large" = "t3.large"
-  inline val `t3.xlarge`: "t3.xlarge" = "t3.xlarge"
-  inline val `t3.2xlarge`: "t3.2xlarge" = "t3.2xlarge"
-  inline val `t3a.nano`: "t3a.nano" = "t3a.nano"
-  inline val `t3a.micro`: "t3a.micro" = "t3a.micro"
-  inline val `t3a.small`: "t3a.small" = "t3a.small"
-  inline val `t3a.medium`: "t3a.medium" = "t3a.medium"
-  inline val `t3a.large`: "t3a.large" = "t3a.large"
-  inline val `t3a.xlarge`: "t3a.xlarge" = "t3a.xlarge"
-  inline val `t3a.2xlarge`: "t3a.2xlarge" = "t3a.2xlarge"
-  inline val `t4g.nano`: "t4g.nano" = "t4g.nano"
-  inline val `t4g.micro`: "t4g.micro" = "t4g.micro"
-  inline val `t4g.small`: "t4g.small" = "t4g.small"
-  inline val `t4g.medium`: "t4g.medium" = "t4g.medium"
-  inline val `t4g.large`: "t4g.large" = "t4g.large"
-  inline val `t4g.xlarge`: "t4g.xlarge" = "t4g.xlarge"
-  inline val `t4g.2xlarge`: "t4g.2xlarge" = "t4g.2xlarge"
-  inline val `m1.small`: "m1.small" = "m1.small"
-  inline val `m1.medium`: "m1.medium" = "m1.medium"
-  inline val `m1.large`: "m1.large" = "m1.large"
-  inline val `m1.xlarge`: "m1.xlarge" = "m1.xlarge"
-  inline val `m3.medium`: "m3.medium" = "m3.medium"
-  inline val `m3.large`: "m3.large" = "m3.large"
-  inline val `m3.xlarge`: "m3.xlarge" = "m3.xlarge"
-  inline val `m3.2xlarge`: "m3.2xlarge" = "m3.2xlarge"
-  inline val `m4.large`: "m4.large" = "m4.large"
-  inline val `m4.xlarge`: "m4.xlarge" = "m4.xlarge"
-  inline val `m4.2xlarge`: "m4.2xlarge" = "m4.2xlarge"
-  inline val `m4.4xlarge`: "m4.4xlarge" = "m4.4xlarge"
-  inline val `m4.10xlarge`: "m4.10xlarge" = "m4.10xlarge"
-  inline val `m4.16xlarge`: "m4.16xlarge" = "m4.16xlarge"
-  inline val `m2.xlarge`: "m2.xlarge" = "m2.xlarge"
-  inline val `m2.2xlarge`: "m2.2xlarge" = "m2.2xlarge"
-  inline val `m2.4xlarge`: "m2.4xlarge" = "m2.4xlarge"
-  inline val `cr1.8xlarge`: "cr1.8xlarge" = "cr1.8xlarge"
-  inline val `r3.large`: "r3.large" = "r3.large"
-  inline val `r3.xlarge`: "r3.xlarge" = "r3.xlarge"
-  inline val `r3.2xlarge`: "r3.2xlarge" = "r3.2xlarge"
-  inline val `r3.4xlarge`: "r3.4xlarge" = "r3.4xlarge"
-  inline val `r3.8xlarge`: "r3.8xlarge" = "r3.8xlarge"
-  inline val `r4.large`: "r4.large" = "r4.large"
-  inline val `r4.xlarge`: "r4.xlarge" = "r4.xlarge"
-  inline val `r4.2xlarge`: "r4.2xlarge" = "r4.2xlarge"
-  inline val `r4.4xlarge`: "r4.4xlarge" = "r4.4xlarge"
-  inline val `r4.8xlarge`: "r4.8xlarge" = "r4.8xlarge"
-  inline val `r4.16xlarge`: "r4.16xlarge" = "r4.16xlarge"
-  inline val `r5.large`: "r5.large" = "r5.large"
-  inline val `r5.xlarge`: "r5.xlarge" = "r5.xlarge"
-  inline val `r5.2xlarge`: "r5.2xlarge" = "r5.2xlarge"
-  inline val `r5.4xlarge`: "r5.4xlarge" = "r5.4xlarge"
-  inline val `r5.8xlarge`: "r5.8xlarge" = "r5.8xlarge"
-  inline val `r5.12xlarge`: "r5.12xlarge" = "r5.12xlarge"
-  inline val `r5.16xlarge`: "r5.16xlarge" = "r5.16xlarge"
-  inline val `r5.24xlarge`: "r5.24xlarge" = "r5.24xlarge"
-  inline val `r5.metal`: "r5.metal" = "r5.metal"
-  inline val `r5a.large`: "r5a.large" = "r5a.large"
-  inline val `r5a.xlarge`: "r5a.xlarge" = "r5a.xlarge"
-  inline val `r5a.2xlarge`: "r5a.2xlarge" = "r5a.2xlarge"
-  inline val `r5a.4xlarge`: "r5a.4xlarge" = "r5a.4xlarge"
-  inline val `r5a.8xlarge`: "r5a.8xlarge" = "r5a.8xlarge"
-  inline val `r5a.12xlarge`: "r5a.12xlarge" = "r5a.12xlarge"
-  inline val `r5a.16xlarge`: "r5a.16xlarge" = "r5a.16xlarge"
-  inline val `r5a.24xlarge`: "r5a.24xlarge" = "r5a.24xlarge"
-  inline val `r5b.large`: "r5b.large" = "r5b.large"
-  inline val `r5b.xlarge`: "r5b.xlarge" = "r5b.xlarge"
-  inline val `r5b.2xlarge`: "r5b.2xlarge" = "r5b.2xlarge"
-  inline val `r5b.4xlarge`: "r5b.4xlarge" = "r5b.4xlarge"
-  inline val `r5b.8xlarge`: "r5b.8xlarge" = "r5b.8xlarge"
-  inline val `r5b.12xlarge`: "r5b.12xlarge" = "r5b.12xlarge"
-  inline val `r5b.16xlarge`: "r5b.16xlarge" = "r5b.16xlarge"
-  inline val `r5b.24xlarge`: "r5b.24xlarge" = "r5b.24xlarge"
-  inline val `r5b.metal`: "r5b.metal" = "r5b.metal"
-  inline val `r5d.large`: "r5d.large" = "r5d.large"
-  inline val `r5d.xlarge`: "r5d.xlarge" = "r5d.xlarge"
-  inline val `r5d.2xlarge`: "r5d.2xlarge" = "r5d.2xlarge"
-  inline val `r5d.4xlarge`: "r5d.4xlarge" = "r5d.4xlarge"
-  inline val `r5d.8xlarge`: "r5d.8xlarge" = "r5d.8xlarge"
-  inline val `r5d.12xlarge`: "r5d.12xlarge" = "r5d.12xlarge"
-  inline val `r5d.16xlarge`: "r5d.16xlarge" = "r5d.16xlarge"
-  inline val `r5d.24xlarge`: "r5d.24xlarge" = "r5d.24xlarge"
-  inline val `r5d.metal`: "r5d.metal" = "r5d.metal"
-  inline val `r5ad.large`: "r5ad.large" = "r5ad.large"
-  inline val `r5ad.xlarge`: "r5ad.xlarge" = "r5ad.xlarge"
-  inline val `r5ad.2xlarge`: "r5ad.2xlarge" = "r5ad.2xlarge"
-  inline val `r5ad.4xlarge`: "r5ad.4xlarge" = "r5ad.4xlarge"
-  inline val `r5ad.8xlarge`: "r5ad.8xlarge" = "r5ad.8xlarge"
-  inline val `r5ad.12xlarge`: "r5ad.12xlarge" = "r5ad.12xlarge"
-  inline val `r5ad.16xlarge`: "r5ad.16xlarge" = "r5ad.16xlarge"
-  inline val `r5ad.24xlarge`: "r5ad.24xlarge" = "r5ad.24xlarge"
-  inline val `r6g.metal`: "r6g.metal" = "r6g.metal"
-  inline val `r6g.medium`: "r6g.medium" = "r6g.medium"
-  inline val `r6g.large`: "r6g.large" = "r6g.large"
-  inline val `r6g.xlarge`: "r6g.xlarge" = "r6g.xlarge"
-  inline val `r6g.2xlarge`: "r6g.2xlarge" = "r6g.2xlarge"
-  inline val `r6g.4xlarge`: "r6g.4xlarge" = "r6g.4xlarge"
-  inline val `r6g.8xlarge`: "r6g.8xlarge" = "r6g.8xlarge"
-  inline val `r6g.12xlarge`: "r6g.12xlarge" = "r6g.12xlarge"
-  inline val `r6g.16xlarge`: "r6g.16xlarge" = "r6g.16xlarge"
-  inline val `r6gd.metal`: "r6gd.metal" = "r6gd.metal"
-  inline val `r6gd.medium`: "r6gd.medium" = "r6gd.medium"
-  inline val `r6gd.large`: "r6gd.large" = "r6gd.large"
-  inline val `r6gd.xlarge`: "r6gd.xlarge" = "r6gd.xlarge"
-  inline val `r6gd.2xlarge`: "r6gd.2xlarge" = "r6gd.2xlarge"
-  inline val `r6gd.4xlarge`: "r6gd.4xlarge" = "r6gd.4xlarge"
-  inline val `r6gd.8xlarge`: "r6gd.8xlarge" = "r6gd.8xlarge"
-  inline val `r6gd.12xlarge`: "r6gd.12xlarge" = "r6gd.12xlarge"
-  inline val `r6gd.16xlarge`: "r6gd.16xlarge" = "r6gd.16xlarge"
-  inline val `x1.16xlarge`: "x1.16xlarge" = "x1.16xlarge"
-  inline val `x1.32xlarge`: "x1.32xlarge" = "x1.32xlarge"
-  inline val `x1e.xlarge`: "x1e.xlarge" = "x1e.xlarge"
-  inline val `x1e.2xlarge`: "x1e.2xlarge" = "x1e.2xlarge"
-  inline val `x1e.4xlarge`: "x1e.4xlarge" = "x1e.4xlarge"
-  inline val `x1e.8xlarge`: "x1e.8xlarge" = "x1e.8xlarge"
-  inline val `x1e.16xlarge`: "x1e.16xlarge" = "x1e.16xlarge"
-  inline val `x1e.32xlarge`: "x1e.32xlarge" = "x1e.32xlarge"
-  inline val `i2.xlarge`: "i2.xlarge" = "i2.xlarge"
-  inline val `i2.2xlarge`: "i2.2xlarge" = "i2.2xlarge"
-  inline val `i2.4xlarge`: "i2.4xlarge" = "i2.4xlarge"
-  inline val `i2.8xlarge`: "i2.8xlarge" = "i2.8xlarge"
-  inline val `i3.large`: "i3.large" = "i3.large"
-  inline val `i3.xlarge`: "i3.xlarge" = "i3.xlarge"
-  inline val `i3.2xlarge`: "i3.2xlarge" = "i3.2xlarge"
-  inline val `i3.4xlarge`: "i3.4xlarge" = "i3.4xlarge"
-  inline val `i3.8xlarge`: "i3.8xlarge" = "i3.8xlarge"
-  inline val `i3.16xlarge`: "i3.16xlarge" = "i3.16xlarge"
-  inline val `i3.metal`: "i3.metal" = "i3.metal"
-  inline val `i3en.large`: "i3en.large" = "i3en.large"
-  inline val `i3en.xlarge`: "i3en.xlarge" = "i3en.xlarge"
-  inline val `i3en.2xlarge`: "i3en.2xlarge" = "i3en.2xlarge"
-  inline val `i3en.3xlarge`: "i3en.3xlarge" = "i3en.3xlarge"
-  inline val `i3en.6xlarge`: "i3en.6xlarge" = "i3en.6xlarge"
-  inline val `i3en.12xlarge`: "i3en.12xlarge" = "i3en.12xlarge"
-  inline val `i3en.24xlarge`: "i3en.24xlarge" = "i3en.24xlarge"
-  inline val `i3en.metal`: "i3en.metal" = "i3en.metal"
-  inline val `hi1.4xlarge`: "hi1.4xlarge" = "hi1.4xlarge"
-  inline val `hs1.8xlarge`: "hs1.8xlarge" = "hs1.8xlarge"
+  inline val `a1.medium`: "a1.medium" = "a1.medium"
+  inline val `a1.large`: "a1.large" = "a1.large"
+  inline val `a1.xlarge`: "a1.xlarge" = "a1.xlarge"
+  inline val `a1.2xlarge`: "a1.2xlarge" = "a1.2xlarge"
+  inline val `a1.4xlarge`: "a1.4xlarge" = "a1.4xlarge"
+  inline val `a1.metal`: "a1.metal" = "a1.metal"
   inline val `c1.medium`: "c1.medium" = "c1.medium"
   inline val `c1.xlarge`: "c1.xlarge" = "c1.xlarge"
   inline val `c3.large`: "c3.large" = "c3.large"
@@ -1354,7 +1315,6 @@ object InstanceType {
   inline val `c5n.9xlarge`: "c5n.9xlarge" = "c5n.9xlarge"
   inline val `c5n.18xlarge`: "c5n.18xlarge" = "c5n.18xlarge"
   inline val `c5n.metal`: "c5n.metal" = "c5n.metal"
-  inline val `c6g.metal`: "c6g.metal" = "c6g.metal"
   inline val `c6g.medium`: "c6g.medium" = "c6g.medium"
   inline val `c6g.large`: "c6g.large" = "c6g.large"
   inline val `c6g.xlarge`: "c6g.xlarge" = "c6g.xlarge"
@@ -1363,7 +1323,7 @@ object InstanceType {
   inline val `c6g.8xlarge`: "c6g.8xlarge" = "c6g.8xlarge"
   inline val `c6g.12xlarge`: "c6g.12xlarge" = "c6g.12xlarge"
   inline val `c6g.16xlarge`: "c6g.16xlarge" = "c6g.16xlarge"
-  inline val `c6gd.metal`: "c6gd.metal" = "c6gd.metal"
+  inline val `c6g.metal`: "c6g.metal" = "c6g.metal"
   inline val `c6gd.medium`: "c6gd.medium" = "c6gd.medium"
   inline val `c6gd.large`: "c6gd.large" = "c6gd.large"
   inline val `c6gd.xlarge`: "c6gd.xlarge" = "c6gd.xlarge"
@@ -1372,6 +1332,7 @@ object InstanceType {
   inline val `c6gd.8xlarge`: "c6gd.8xlarge" = "c6gd.8xlarge"
   inline val `c6gd.12xlarge`: "c6gd.12xlarge" = "c6gd.12xlarge"
   inline val `c6gd.16xlarge`: "c6gd.16xlarge" = "c6gd.16xlarge"
+  inline val `c6gd.metal`: "c6gd.metal" = "c6gd.metal"
   inline val `c6gn.medium`: "c6gn.medium" = "c6gn.medium"
   inline val `c6gn.large`: "c6gn.large" = "c6gn.large"
   inline val `c6gn.xlarge`: "c6gn.xlarge" = "c6gn.xlarge"
@@ -1389,35 +1350,11 @@ object InstanceType {
   inline val `c6i.16xlarge`: "c6i.16xlarge" = "c6i.16xlarge"
   inline val `c6i.24xlarge`: "c6i.24xlarge" = "c6i.24xlarge"
   inline val `c6i.32xlarge`: "c6i.32xlarge" = "c6i.32xlarge"
+  inline val `c6i.metal`: "c6i.metal" = "c6i.metal"
   inline val `cc1.4xlarge`: "cc1.4xlarge" = "cc1.4xlarge"
   inline val `cc2.8xlarge`: "cc2.8xlarge" = "cc2.8xlarge"
-  inline val `g2.2xlarge`: "g2.2xlarge" = "g2.2xlarge"
-  inline val `g2.8xlarge`: "g2.8xlarge" = "g2.8xlarge"
-  inline val `g3.4xlarge`: "g3.4xlarge" = "g3.4xlarge"
-  inline val `g3.8xlarge`: "g3.8xlarge" = "g3.8xlarge"
-  inline val `g3.16xlarge`: "g3.16xlarge" = "g3.16xlarge"
-  inline val `g3s.xlarge`: "g3s.xlarge" = "g3s.xlarge"
-  inline val `g4ad.xlarge`: "g4ad.xlarge" = "g4ad.xlarge"
-  inline val `g4ad.2xlarge`: "g4ad.2xlarge" = "g4ad.2xlarge"
-  inline val `g4ad.4xlarge`: "g4ad.4xlarge" = "g4ad.4xlarge"
-  inline val `g4ad.8xlarge`: "g4ad.8xlarge" = "g4ad.8xlarge"
-  inline val `g4ad.16xlarge`: "g4ad.16xlarge" = "g4ad.16xlarge"
-  inline val `g4dn.xlarge`: "g4dn.xlarge" = "g4dn.xlarge"
-  inline val `g4dn.2xlarge`: "g4dn.2xlarge" = "g4dn.2xlarge"
-  inline val `g4dn.4xlarge`: "g4dn.4xlarge" = "g4dn.4xlarge"
-  inline val `g4dn.8xlarge`: "g4dn.8xlarge" = "g4dn.8xlarge"
-  inline val `g4dn.12xlarge`: "g4dn.12xlarge" = "g4dn.12xlarge"
-  inline val `g4dn.16xlarge`: "g4dn.16xlarge" = "g4dn.16xlarge"
-  inline val `g4dn.metal`: "g4dn.metal" = "g4dn.metal"
   inline val `cg1.4xlarge`: "cg1.4xlarge" = "cg1.4xlarge"
-  inline val `p2.xlarge`: "p2.xlarge" = "p2.xlarge"
-  inline val `p2.8xlarge`: "p2.8xlarge" = "p2.8xlarge"
-  inline val `p2.16xlarge`: "p2.16xlarge" = "p2.16xlarge"
-  inline val `p3.2xlarge`: "p3.2xlarge" = "p3.2xlarge"
-  inline val `p3.8xlarge`: "p3.8xlarge" = "p3.8xlarge"
-  inline val `p3.16xlarge`: "p3.16xlarge" = "p3.16xlarge"
-  inline val `p3dn.24xlarge`: "p3dn.24xlarge" = "p3dn.24xlarge"
-  inline val `p4d.24xlarge`: "p4d.24xlarge" = "p4d.24xlarge"
+  inline val `cr1.8xlarge`: "cr1.8xlarge" = "cr1.8xlarge"
   inline val `d2.xlarge`: "d2.xlarge" = "d2.xlarge"
   inline val `d2.2xlarge`: "d2.2xlarge" = "d2.2xlarge"
   inline val `d2.4xlarge`: "d2.4xlarge" = "d2.4xlarge"
@@ -1436,6 +1373,97 @@ object InstanceType {
   inline val `f1.2xlarge`: "f1.2xlarge" = "f1.2xlarge"
   inline val `f1.4xlarge`: "f1.4xlarge" = "f1.4xlarge"
   inline val `f1.16xlarge`: "f1.16xlarge" = "f1.16xlarge"
+  inline val `g2.2xlarge`: "g2.2xlarge" = "g2.2xlarge"
+  inline val `g2.8xlarge`: "g2.8xlarge" = "g2.8xlarge"
+  inline val `g3.4xlarge`: "g3.4xlarge" = "g3.4xlarge"
+  inline val `g3.8xlarge`: "g3.8xlarge" = "g3.8xlarge"
+  inline val `g3.16xlarge`: "g3.16xlarge" = "g3.16xlarge"
+  inline val `g3s.xlarge`: "g3s.xlarge" = "g3s.xlarge"
+  inline val `g4ad.xlarge`: "g4ad.xlarge" = "g4ad.xlarge"
+  inline val `g4ad.2xlarge`: "g4ad.2xlarge" = "g4ad.2xlarge"
+  inline val `g4ad.4xlarge`: "g4ad.4xlarge" = "g4ad.4xlarge"
+  inline val `g4ad.8xlarge`: "g4ad.8xlarge" = "g4ad.8xlarge"
+  inline val `g4ad.16xlarge`: "g4ad.16xlarge" = "g4ad.16xlarge"
+  inline val `g4dn.xlarge`: "g4dn.xlarge" = "g4dn.xlarge"
+  inline val `g4dn.2xlarge`: "g4dn.2xlarge" = "g4dn.2xlarge"
+  inline val `g4dn.4xlarge`: "g4dn.4xlarge" = "g4dn.4xlarge"
+  inline val `g4dn.8xlarge`: "g4dn.8xlarge" = "g4dn.8xlarge"
+  inline val `g4dn.12xlarge`: "g4dn.12xlarge" = "g4dn.12xlarge"
+  inline val `g4dn.16xlarge`: "g4dn.16xlarge" = "g4dn.16xlarge"
+  inline val `g4dn.metal`: "g4dn.metal" = "g4dn.metal"
+  inline val `g5.xlarge`: "g5.xlarge" = "g5.xlarge"
+  inline val `g5.2xlarge`: "g5.2xlarge" = "g5.2xlarge"
+  inline val `g5.4xlarge`: "g5.4xlarge" = "g5.4xlarge"
+  inline val `g5.8xlarge`: "g5.8xlarge" = "g5.8xlarge"
+  inline val `g5.12xlarge`: "g5.12xlarge" = "g5.12xlarge"
+  inline val `g5.16xlarge`: "g5.16xlarge" = "g5.16xlarge"
+  inline val `g5.24xlarge`: "g5.24xlarge" = "g5.24xlarge"
+  inline val `g5.48xlarge`: "g5.48xlarge" = "g5.48xlarge"
+  inline val `g5g.xlarge`: "g5g.xlarge" = "g5g.xlarge"
+  inline val `g5g.2xlarge`: "g5g.2xlarge" = "g5g.2xlarge"
+  inline val `g5g.4xlarge`: "g5g.4xlarge" = "g5g.4xlarge"
+  inline val `g5g.8xlarge`: "g5g.8xlarge" = "g5g.8xlarge"
+  inline val `g5g.16xlarge`: "g5g.16xlarge" = "g5g.16xlarge"
+  inline val `g5g.metal`: "g5g.metal" = "g5g.metal"
+  inline val `hi1.4xlarge`: "hi1.4xlarge" = "hi1.4xlarge"
+  inline val `hpc6a.48xlarge`: "hpc6a.48xlarge" = "hpc6a.48xlarge"
+  inline val `hs1.8xlarge`: "hs1.8xlarge" = "hs1.8xlarge"
+  inline val `h1.2xlarge`: "h1.2xlarge" = "h1.2xlarge"
+  inline val `h1.4xlarge`: "h1.4xlarge" = "h1.4xlarge"
+  inline val `h1.8xlarge`: "h1.8xlarge" = "h1.8xlarge"
+  inline val `h1.16xlarge`: "h1.16xlarge" = "h1.16xlarge"
+  inline val `i2.xlarge`: "i2.xlarge" = "i2.xlarge"
+  inline val `i2.2xlarge`: "i2.2xlarge" = "i2.2xlarge"
+  inline val `i2.4xlarge`: "i2.4xlarge" = "i2.4xlarge"
+  inline val `i2.8xlarge`: "i2.8xlarge" = "i2.8xlarge"
+  inline val `i3.large`: "i3.large" = "i3.large"
+  inline val `i3.xlarge`: "i3.xlarge" = "i3.xlarge"
+  inline val `i3.2xlarge`: "i3.2xlarge" = "i3.2xlarge"
+  inline val `i3.4xlarge`: "i3.4xlarge" = "i3.4xlarge"
+  inline val `i3.8xlarge`: "i3.8xlarge" = "i3.8xlarge"
+  inline val `i3.16xlarge`: "i3.16xlarge" = "i3.16xlarge"
+  inline val `i3.metal`: "i3.metal" = "i3.metal"
+  inline val `i3en.large`: "i3en.large" = "i3en.large"
+  inline val `i3en.xlarge`: "i3en.xlarge" = "i3en.xlarge"
+  inline val `i3en.2xlarge`: "i3en.2xlarge" = "i3en.2xlarge"
+  inline val `i3en.3xlarge`: "i3en.3xlarge" = "i3en.3xlarge"
+  inline val `i3en.6xlarge`: "i3en.6xlarge" = "i3en.6xlarge"
+  inline val `i3en.12xlarge`: "i3en.12xlarge" = "i3en.12xlarge"
+  inline val `i3en.24xlarge`: "i3en.24xlarge" = "i3en.24xlarge"
+  inline val `i3en.metal`: "i3en.metal" = "i3en.metal"
+  inline val `im4gn.large`: "im4gn.large" = "im4gn.large"
+  inline val `im4gn.xlarge`: "im4gn.xlarge" = "im4gn.xlarge"
+  inline val `im4gn.2xlarge`: "im4gn.2xlarge" = "im4gn.2xlarge"
+  inline val `im4gn.4xlarge`: "im4gn.4xlarge" = "im4gn.4xlarge"
+  inline val `im4gn.8xlarge`: "im4gn.8xlarge" = "im4gn.8xlarge"
+  inline val `im4gn.16xlarge`: "im4gn.16xlarge" = "im4gn.16xlarge"
+  inline val `inf1.xlarge`: "inf1.xlarge" = "inf1.xlarge"
+  inline val `inf1.2xlarge`: "inf1.2xlarge" = "inf1.2xlarge"
+  inline val `inf1.6xlarge`: "inf1.6xlarge" = "inf1.6xlarge"
+  inline val `inf1.24xlarge`: "inf1.24xlarge" = "inf1.24xlarge"
+  inline val `is4gen.medium`: "is4gen.medium" = "is4gen.medium"
+  inline val `is4gen.large`: "is4gen.large" = "is4gen.large"
+  inline val `is4gen.xlarge`: "is4gen.xlarge" = "is4gen.xlarge"
+  inline val `is4gen.2xlarge`: "is4gen.2xlarge" = "is4gen.2xlarge"
+  inline val `is4gen.4xlarge`: "is4gen.4xlarge" = "is4gen.4xlarge"
+  inline val `is4gen.8xlarge`: "is4gen.8xlarge" = "is4gen.8xlarge"
+  inline val `m1.small`: "m1.small" = "m1.small"
+  inline val `m1.medium`: "m1.medium" = "m1.medium"
+  inline val `m1.large`: "m1.large" = "m1.large"
+  inline val `m1.xlarge`: "m1.xlarge" = "m1.xlarge"
+  inline val `m2.xlarge`: "m2.xlarge" = "m2.xlarge"
+  inline val `m2.2xlarge`: "m2.2xlarge" = "m2.2xlarge"
+  inline val `m2.4xlarge`: "m2.4xlarge" = "m2.4xlarge"
+  inline val `m3.medium`: "m3.medium" = "m3.medium"
+  inline val `m3.large`: "m3.large" = "m3.large"
+  inline val `m3.xlarge`: "m3.xlarge" = "m3.xlarge"
+  inline val `m3.2xlarge`: "m3.2xlarge" = "m3.2xlarge"
+  inline val `m4.large`: "m4.large" = "m4.large"
+  inline val `m4.xlarge`: "m4.xlarge" = "m4.xlarge"
+  inline val `m4.2xlarge`: "m4.2xlarge" = "m4.2xlarge"
+  inline val `m4.4xlarge`: "m4.4xlarge" = "m4.4xlarge"
+  inline val `m4.10xlarge`: "m4.10xlarge" = "m4.10xlarge"
+  inline val `m4.16xlarge`: "m4.16xlarge" = "m4.16xlarge"
   inline val `m5.large`: "m5.large" = "m5.large"
   inline val `m5.xlarge`: "m5.xlarge" = "m5.xlarge"
   inline val `m5.2xlarge`: "m5.2xlarge" = "m5.2xlarge"
@@ -1453,6 +1481,14 @@ object InstanceType {
   inline val `m5a.12xlarge`: "m5a.12xlarge" = "m5a.12xlarge"
   inline val `m5a.16xlarge`: "m5a.16xlarge" = "m5a.16xlarge"
   inline val `m5a.24xlarge`: "m5a.24xlarge" = "m5a.24xlarge"
+  inline val `m5ad.large`: "m5ad.large" = "m5ad.large"
+  inline val `m5ad.xlarge`: "m5ad.xlarge" = "m5ad.xlarge"
+  inline val `m5ad.2xlarge`: "m5ad.2xlarge" = "m5ad.2xlarge"
+  inline val `m5ad.4xlarge`: "m5ad.4xlarge" = "m5ad.4xlarge"
+  inline val `m5ad.8xlarge`: "m5ad.8xlarge" = "m5ad.8xlarge"
+  inline val `m5ad.12xlarge`: "m5ad.12xlarge" = "m5ad.12xlarge"
+  inline val `m5ad.16xlarge`: "m5ad.16xlarge" = "m5ad.16xlarge"
+  inline val `m5ad.24xlarge`: "m5ad.24xlarge" = "m5ad.24xlarge"
   inline val `m5d.large`: "m5d.large" = "m5d.large"
   inline val `m5d.xlarge`: "m5d.xlarge" = "m5d.xlarge"
   inline val `m5d.2xlarge`: "m5d.2xlarge" = "m5d.2xlarge"
@@ -1462,47 +1498,6 @@ object InstanceType {
   inline val `m5d.16xlarge`: "m5d.16xlarge" = "m5d.16xlarge"
   inline val `m5d.24xlarge`: "m5d.24xlarge" = "m5d.24xlarge"
   inline val `m5d.metal`: "m5d.metal" = "m5d.metal"
-  inline val `m5ad.large`: "m5ad.large" = "m5ad.large"
-  inline val `m5ad.xlarge`: "m5ad.xlarge" = "m5ad.xlarge"
-  inline val `m5ad.2xlarge`: "m5ad.2xlarge" = "m5ad.2xlarge"
-  inline val `m5ad.4xlarge`: "m5ad.4xlarge" = "m5ad.4xlarge"
-  inline val `m5ad.8xlarge`: "m5ad.8xlarge" = "m5ad.8xlarge"
-  inline val `m5ad.12xlarge`: "m5ad.12xlarge" = "m5ad.12xlarge"
-  inline val `m5ad.16xlarge`: "m5ad.16xlarge" = "m5ad.16xlarge"
-  inline val `m5ad.24xlarge`: "m5ad.24xlarge" = "m5ad.24xlarge"
-  inline val `m5zn.large`: "m5zn.large" = "m5zn.large"
-  inline val `m5zn.xlarge`: "m5zn.xlarge" = "m5zn.xlarge"
-  inline val `m5zn.2xlarge`: "m5zn.2xlarge" = "m5zn.2xlarge"
-  inline val `m5zn.3xlarge`: "m5zn.3xlarge" = "m5zn.3xlarge"
-  inline val `m5zn.6xlarge`: "m5zn.6xlarge" = "m5zn.6xlarge"
-  inline val `m5zn.12xlarge`: "m5zn.12xlarge" = "m5zn.12xlarge"
-  inline val `m5zn.metal`: "m5zn.metal" = "m5zn.metal"
-  inline val `h1.2xlarge`: "h1.2xlarge" = "h1.2xlarge"
-  inline val `h1.4xlarge`: "h1.4xlarge" = "h1.4xlarge"
-  inline val `h1.8xlarge`: "h1.8xlarge" = "h1.8xlarge"
-  inline val `h1.16xlarge`: "h1.16xlarge" = "h1.16xlarge"
-  inline val `z1d.large`: "z1d.large" = "z1d.large"
-  inline val `z1d.xlarge`: "z1d.xlarge" = "z1d.xlarge"
-  inline val `z1d.2xlarge`: "z1d.2xlarge" = "z1d.2xlarge"
-  inline val `z1d.3xlarge`: "z1d.3xlarge" = "z1d.3xlarge"
-  inline val `z1d.6xlarge`: "z1d.6xlarge" = "z1d.6xlarge"
-  inline val `z1d.12xlarge`: "z1d.12xlarge" = "z1d.12xlarge"
-  inline val `z1d.metal`: "z1d.metal" = "z1d.metal"
-  inline val `u-6tb1.56xlarge`: "u-6tb1.56xlarge" = "u-6tb1.56xlarge"
-  inline val `u-6tb1.112xlarge`: "u-6tb1.112xlarge" = "u-6tb1.112xlarge"
-  inline val `u-9tb1.112xlarge`: "u-9tb1.112xlarge" = "u-9tb1.112xlarge"
-  inline val `u-12tb1.112xlarge`: "u-12tb1.112xlarge" = "u-12tb1.112xlarge"
-  inline val `u-6tb1.metal`: "u-6tb1.metal" = "u-6tb1.metal"
-  inline val `u-9tb1.metal`: "u-9tb1.metal" = "u-9tb1.metal"
-  inline val `u-12tb1.metal`: "u-12tb1.metal" = "u-12tb1.metal"
-  inline val `u-18tb1.metal`: "u-18tb1.metal" = "u-18tb1.metal"
-  inline val `u-24tb1.metal`: "u-24tb1.metal" = "u-24tb1.metal"
-  inline val `a1.medium`: "a1.medium" = "a1.medium"
-  inline val `a1.large`: "a1.large" = "a1.large"
-  inline val `a1.xlarge`: "a1.xlarge" = "a1.xlarge"
-  inline val `a1.2xlarge`: "a1.2xlarge" = "a1.2xlarge"
-  inline val `a1.4xlarge`: "a1.4xlarge" = "a1.4xlarge"
-  inline val `a1.metal`: "a1.metal" = "a1.metal"
   inline val `m5dn.large`: "m5dn.large" = "m5dn.large"
   inline val `m5dn.xlarge`: "m5dn.xlarge" = "m5dn.xlarge"
   inline val `m5dn.2xlarge`: "m5dn.2xlarge" = "m5dn.2xlarge"
@@ -1521,28 +1516,23 @@ object InstanceType {
   inline val `m5n.16xlarge`: "m5n.16xlarge" = "m5n.16xlarge"
   inline val `m5n.24xlarge`: "m5n.24xlarge" = "m5n.24xlarge"
   inline val `m5n.metal`: "m5n.metal" = "m5n.metal"
-  inline val `r5dn.large`: "r5dn.large" = "r5dn.large"
-  inline val `r5dn.xlarge`: "r5dn.xlarge" = "r5dn.xlarge"
-  inline val `r5dn.2xlarge`: "r5dn.2xlarge" = "r5dn.2xlarge"
-  inline val `r5dn.4xlarge`: "r5dn.4xlarge" = "r5dn.4xlarge"
-  inline val `r5dn.8xlarge`: "r5dn.8xlarge" = "r5dn.8xlarge"
-  inline val `r5dn.12xlarge`: "r5dn.12xlarge" = "r5dn.12xlarge"
-  inline val `r5dn.16xlarge`: "r5dn.16xlarge" = "r5dn.16xlarge"
-  inline val `r5dn.24xlarge`: "r5dn.24xlarge" = "r5dn.24xlarge"
-  inline val `r5dn.metal`: "r5dn.metal" = "r5dn.metal"
-  inline val `r5n.large`: "r5n.large" = "r5n.large"
-  inline val `r5n.xlarge`: "r5n.xlarge" = "r5n.xlarge"
-  inline val `r5n.2xlarge`: "r5n.2xlarge" = "r5n.2xlarge"
-  inline val `r5n.4xlarge`: "r5n.4xlarge" = "r5n.4xlarge"
-  inline val `r5n.8xlarge`: "r5n.8xlarge" = "r5n.8xlarge"
-  inline val `r5n.12xlarge`: "r5n.12xlarge" = "r5n.12xlarge"
-  inline val `r5n.16xlarge`: "r5n.16xlarge" = "r5n.16xlarge"
-  inline val `r5n.24xlarge`: "r5n.24xlarge" = "r5n.24xlarge"
-  inline val `r5n.metal`: "r5n.metal" = "r5n.metal"
-  inline val `inf1.xlarge`: "inf1.xlarge" = "inf1.xlarge"
-  inline val `inf1.2xlarge`: "inf1.2xlarge" = "inf1.2xlarge"
-  inline val `inf1.6xlarge`: "inf1.6xlarge" = "inf1.6xlarge"
-  inline val `inf1.24xlarge`: "inf1.24xlarge" = "inf1.24xlarge"
+  inline val `m5zn.large`: "m5zn.large" = "m5zn.large"
+  inline val `m5zn.xlarge`: "m5zn.xlarge" = "m5zn.xlarge"
+  inline val `m5zn.2xlarge`: "m5zn.2xlarge" = "m5zn.2xlarge"
+  inline val `m5zn.3xlarge`: "m5zn.3xlarge" = "m5zn.3xlarge"
+  inline val `m5zn.6xlarge`: "m5zn.6xlarge" = "m5zn.6xlarge"
+  inline val `m5zn.12xlarge`: "m5zn.12xlarge" = "m5zn.12xlarge"
+  inline val `m5zn.metal`: "m5zn.metal" = "m5zn.metal"
+  inline val `m6a.large`: "m6a.large" = "m6a.large"
+  inline val `m6a.xlarge`: "m6a.xlarge" = "m6a.xlarge"
+  inline val `m6a.2xlarge`: "m6a.2xlarge" = "m6a.2xlarge"
+  inline val `m6a.4xlarge`: "m6a.4xlarge" = "m6a.4xlarge"
+  inline val `m6a.8xlarge`: "m6a.8xlarge" = "m6a.8xlarge"
+  inline val `m6a.12xlarge`: "m6a.12xlarge" = "m6a.12xlarge"
+  inline val `m6a.16xlarge`: "m6a.16xlarge" = "m6a.16xlarge"
+  inline val `m6a.24xlarge`: "m6a.24xlarge" = "m6a.24xlarge"
+  inline val `m6a.32xlarge`: "m6a.32xlarge" = "m6a.32xlarge"
+  inline val `m6a.48xlarge`: "m6a.48xlarge" = "m6a.48xlarge"
   inline val `m6g.metal`: "m6g.metal" = "m6g.metal"
   inline val `m6g.medium`: "m6g.medium" = "m6g.medium"
   inline val `m6g.large`: "m6g.large" = "m6g.large"
@@ -1561,16 +1551,6 @@ object InstanceType {
   inline val `m6gd.8xlarge`: "m6gd.8xlarge" = "m6gd.8xlarge"
   inline val `m6gd.12xlarge`: "m6gd.12xlarge" = "m6gd.12xlarge"
   inline val `m6gd.16xlarge`: "m6gd.16xlarge" = "m6gd.16xlarge"
-  inline val `m6a.large`: "m6a.large" = "m6a.large"
-  inline val `m6a.xlarge`: "m6a.xlarge" = "m6a.xlarge"
-  inline val `m6a.2xlarge`: "m6a.2xlarge" = "m6a.2xlarge"
-  inline val `m6a.4xlarge`: "m6a.4xlarge" = "m6a.4xlarge"
-  inline val `m6a.8xlarge`: "m6a.8xlarge" = "m6a.8xlarge"
-  inline val `m6a.12xlarge`: "m6a.12xlarge" = "m6a.12xlarge"
-  inline val `m6a.16xlarge`: "m6a.16xlarge" = "m6a.16xlarge"
-  inline val `m6a.24xlarge`: "m6a.24xlarge" = "m6a.24xlarge"
-  inline val `m6a.32xlarge`: "m6a.32xlarge" = "m6a.32xlarge"
-  inline val `m6a.48xlarge`: "m6a.48xlarge" = "m6a.48xlarge"
   inline val `m6i.large`: "m6i.large" = "m6i.large"
   inline val `m6i.xlarge`: "m6i.xlarge" = "m6i.xlarge"
   inline val `m6i.2xlarge`: "m6i.2xlarge" = "m6i.2xlarge"
@@ -1580,7 +1560,171 @@ object InstanceType {
   inline val `m6i.16xlarge`: "m6i.16xlarge" = "m6i.16xlarge"
   inline val `m6i.24xlarge`: "m6i.24xlarge" = "m6i.24xlarge"
   inline val `m6i.32xlarge`: "m6i.32xlarge" = "m6i.32xlarge"
+  inline val `m6i.metal`: "m6i.metal" = "m6i.metal"
   inline val `mac1.metal`: "mac1.metal" = "mac1.metal"
+  inline val `p2.xlarge`: "p2.xlarge" = "p2.xlarge"
+  inline val `p2.8xlarge`: "p2.8xlarge" = "p2.8xlarge"
+  inline val `p2.16xlarge`: "p2.16xlarge" = "p2.16xlarge"
+  inline val `p3.2xlarge`: "p3.2xlarge" = "p3.2xlarge"
+  inline val `p3.8xlarge`: "p3.8xlarge" = "p3.8xlarge"
+  inline val `p3.16xlarge`: "p3.16xlarge" = "p3.16xlarge"
+  inline val `p3dn.24xlarge`: "p3dn.24xlarge" = "p3dn.24xlarge"
+  inline val `p4d.24xlarge`: "p4d.24xlarge" = "p4d.24xlarge"
+  inline val `r3.large`: "r3.large" = "r3.large"
+  inline val `r3.xlarge`: "r3.xlarge" = "r3.xlarge"
+  inline val `r3.2xlarge`: "r3.2xlarge" = "r3.2xlarge"
+  inline val `r3.4xlarge`: "r3.4xlarge" = "r3.4xlarge"
+  inline val `r3.8xlarge`: "r3.8xlarge" = "r3.8xlarge"
+  inline val `r4.large`: "r4.large" = "r4.large"
+  inline val `r4.xlarge`: "r4.xlarge" = "r4.xlarge"
+  inline val `r4.2xlarge`: "r4.2xlarge" = "r4.2xlarge"
+  inline val `r4.4xlarge`: "r4.4xlarge" = "r4.4xlarge"
+  inline val `r4.8xlarge`: "r4.8xlarge" = "r4.8xlarge"
+  inline val `r4.16xlarge`: "r4.16xlarge" = "r4.16xlarge"
+  inline val `r5.large`: "r5.large" = "r5.large"
+  inline val `r5.xlarge`: "r5.xlarge" = "r5.xlarge"
+  inline val `r5.2xlarge`: "r5.2xlarge" = "r5.2xlarge"
+  inline val `r5.4xlarge`: "r5.4xlarge" = "r5.4xlarge"
+  inline val `r5.8xlarge`: "r5.8xlarge" = "r5.8xlarge"
+  inline val `r5.12xlarge`: "r5.12xlarge" = "r5.12xlarge"
+  inline val `r5.16xlarge`: "r5.16xlarge" = "r5.16xlarge"
+  inline val `r5.24xlarge`: "r5.24xlarge" = "r5.24xlarge"
+  inline val `r5.metal`: "r5.metal" = "r5.metal"
+  inline val `r5a.large`: "r5a.large" = "r5a.large"
+  inline val `r5a.xlarge`: "r5a.xlarge" = "r5a.xlarge"
+  inline val `r5a.2xlarge`: "r5a.2xlarge" = "r5a.2xlarge"
+  inline val `r5a.4xlarge`: "r5a.4xlarge" = "r5a.4xlarge"
+  inline val `r5a.8xlarge`: "r5a.8xlarge" = "r5a.8xlarge"
+  inline val `r5a.12xlarge`: "r5a.12xlarge" = "r5a.12xlarge"
+  inline val `r5a.16xlarge`: "r5a.16xlarge" = "r5a.16xlarge"
+  inline val `r5a.24xlarge`: "r5a.24xlarge" = "r5a.24xlarge"
+  inline val `r5ad.large`: "r5ad.large" = "r5ad.large"
+  inline val `r5ad.xlarge`: "r5ad.xlarge" = "r5ad.xlarge"
+  inline val `r5ad.2xlarge`: "r5ad.2xlarge" = "r5ad.2xlarge"
+  inline val `r5ad.4xlarge`: "r5ad.4xlarge" = "r5ad.4xlarge"
+  inline val `r5ad.8xlarge`: "r5ad.8xlarge" = "r5ad.8xlarge"
+  inline val `r5ad.12xlarge`: "r5ad.12xlarge" = "r5ad.12xlarge"
+  inline val `r5ad.16xlarge`: "r5ad.16xlarge" = "r5ad.16xlarge"
+  inline val `r5ad.24xlarge`: "r5ad.24xlarge" = "r5ad.24xlarge"
+  inline val `r5b.large`: "r5b.large" = "r5b.large"
+  inline val `r5b.xlarge`: "r5b.xlarge" = "r5b.xlarge"
+  inline val `r5b.2xlarge`: "r5b.2xlarge" = "r5b.2xlarge"
+  inline val `r5b.4xlarge`: "r5b.4xlarge" = "r5b.4xlarge"
+  inline val `r5b.8xlarge`: "r5b.8xlarge" = "r5b.8xlarge"
+  inline val `r5b.12xlarge`: "r5b.12xlarge" = "r5b.12xlarge"
+  inline val `r5b.16xlarge`: "r5b.16xlarge" = "r5b.16xlarge"
+  inline val `r5b.24xlarge`: "r5b.24xlarge" = "r5b.24xlarge"
+  inline val `r5b.metal`: "r5b.metal" = "r5b.metal"
+  inline val `r5d.large`: "r5d.large" = "r5d.large"
+  inline val `r5d.xlarge`: "r5d.xlarge" = "r5d.xlarge"
+  inline val `r5d.2xlarge`: "r5d.2xlarge" = "r5d.2xlarge"
+  inline val `r5d.4xlarge`: "r5d.4xlarge" = "r5d.4xlarge"
+  inline val `r5d.8xlarge`: "r5d.8xlarge" = "r5d.8xlarge"
+  inline val `r5d.12xlarge`: "r5d.12xlarge" = "r5d.12xlarge"
+  inline val `r5d.16xlarge`: "r5d.16xlarge" = "r5d.16xlarge"
+  inline val `r5d.24xlarge`: "r5d.24xlarge" = "r5d.24xlarge"
+  inline val `r5d.metal`: "r5d.metal" = "r5d.metal"
+  inline val `r5dn.large`: "r5dn.large" = "r5dn.large"
+  inline val `r5dn.xlarge`: "r5dn.xlarge" = "r5dn.xlarge"
+  inline val `r5dn.2xlarge`: "r5dn.2xlarge" = "r5dn.2xlarge"
+  inline val `r5dn.4xlarge`: "r5dn.4xlarge" = "r5dn.4xlarge"
+  inline val `r5dn.8xlarge`: "r5dn.8xlarge" = "r5dn.8xlarge"
+  inline val `r5dn.12xlarge`: "r5dn.12xlarge" = "r5dn.12xlarge"
+  inline val `r5dn.16xlarge`: "r5dn.16xlarge" = "r5dn.16xlarge"
+  inline val `r5dn.24xlarge`: "r5dn.24xlarge" = "r5dn.24xlarge"
+  inline val `r5dn.metal`: "r5dn.metal" = "r5dn.metal"
+  inline val `r5n.large`: "r5n.large" = "r5n.large"
+  inline val `r5n.xlarge`: "r5n.xlarge" = "r5n.xlarge"
+  inline val `r5n.2xlarge`: "r5n.2xlarge" = "r5n.2xlarge"
+  inline val `r5n.4xlarge`: "r5n.4xlarge" = "r5n.4xlarge"
+  inline val `r5n.8xlarge`: "r5n.8xlarge" = "r5n.8xlarge"
+  inline val `r5n.12xlarge`: "r5n.12xlarge" = "r5n.12xlarge"
+  inline val `r5n.16xlarge`: "r5n.16xlarge" = "r5n.16xlarge"
+  inline val `r5n.24xlarge`: "r5n.24xlarge" = "r5n.24xlarge"
+  inline val `r5n.metal`: "r5n.metal" = "r5n.metal"
+  inline val `r6g.medium`: "r6g.medium" = "r6g.medium"
+  inline val `r6g.large`: "r6g.large" = "r6g.large"
+  inline val `r6g.xlarge`: "r6g.xlarge" = "r6g.xlarge"
+  inline val `r6g.2xlarge`: "r6g.2xlarge" = "r6g.2xlarge"
+  inline val `r6g.4xlarge`: "r6g.4xlarge" = "r6g.4xlarge"
+  inline val `r6g.8xlarge`: "r6g.8xlarge" = "r6g.8xlarge"
+  inline val `r6g.12xlarge`: "r6g.12xlarge" = "r6g.12xlarge"
+  inline val `r6g.16xlarge`: "r6g.16xlarge" = "r6g.16xlarge"
+  inline val `r6g.metal`: "r6g.metal" = "r6g.metal"
+  inline val `r6gd.medium`: "r6gd.medium" = "r6gd.medium"
+  inline val `r6gd.large`: "r6gd.large" = "r6gd.large"
+  inline val `r6gd.xlarge`: "r6gd.xlarge" = "r6gd.xlarge"
+  inline val `r6gd.2xlarge`: "r6gd.2xlarge" = "r6gd.2xlarge"
+  inline val `r6gd.4xlarge`: "r6gd.4xlarge" = "r6gd.4xlarge"
+  inline val `r6gd.8xlarge`: "r6gd.8xlarge" = "r6gd.8xlarge"
+  inline val `r6gd.12xlarge`: "r6gd.12xlarge" = "r6gd.12xlarge"
+  inline val `r6gd.16xlarge`: "r6gd.16xlarge" = "r6gd.16xlarge"
+  inline val `r6gd.metal`: "r6gd.metal" = "r6gd.metal"
+  inline val `r6i.large`: "r6i.large" = "r6i.large"
+  inline val `r6i.xlarge`: "r6i.xlarge" = "r6i.xlarge"
+  inline val `r6i.2xlarge`: "r6i.2xlarge" = "r6i.2xlarge"
+  inline val `r6i.4xlarge`: "r6i.4xlarge" = "r6i.4xlarge"
+  inline val `r6i.8xlarge`: "r6i.8xlarge" = "r6i.8xlarge"
+  inline val `r6i.12xlarge`: "r6i.12xlarge" = "r6i.12xlarge"
+  inline val `r6i.16xlarge`: "r6i.16xlarge" = "r6i.16xlarge"
+  inline val `r6i.24xlarge`: "r6i.24xlarge" = "r6i.24xlarge"
+  inline val `r6i.32xlarge`: "r6i.32xlarge" = "r6i.32xlarge"
+  inline val `r6i.metal`: "r6i.metal" = "r6i.metal"
+  inline val `t1.micro`: "t1.micro" = "t1.micro"
+  inline val `t2.nano`: "t2.nano" = "t2.nano"
+  inline val `t2.micro`: "t2.micro" = "t2.micro"
+  inline val `t2.small`: "t2.small" = "t2.small"
+  inline val `t2.medium`: "t2.medium" = "t2.medium"
+  inline val `t2.large`: "t2.large" = "t2.large"
+  inline val `t2.xlarge`: "t2.xlarge" = "t2.xlarge"
+  inline val `t2.2xlarge`: "t2.2xlarge" = "t2.2xlarge"
+  inline val `t3.nano`: "t3.nano" = "t3.nano"
+  inline val `t3.micro`: "t3.micro" = "t3.micro"
+  inline val `t3.small`: "t3.small" = "t3.small"
+  inline val `t3.medium`: "t3.medium" = "t3.medium"
+  inline val `t3.large`: "t3.large" = "t3.large"
+  inline val `t3.xlarge`: "t3.xlarge" = "t3.xlarge"
+  inline val `t3.2xlarge`: "t3.2xlarge" = "t3.2xlarge"
+  inline val `t3a.nano`: "t3a.nano" = "t3a.nano"
+  inline val `t3a.micro`: "t3a.micro" = "t3a.micro"
+  inline val `t3a.small`: "t3a.small" = "t3a.small"
+  inline val `t3a.medium`: "t3a.medium" = "t3a.medium"
+  inline val `t3a.large`: "t3a.large" = "t3a.large"
+  inline val `t3a.xlarge`: "t3a.xlarge" = "t3a.xlarge"
+  inline val `t3a.2xlarge`: "t3a.2xlarge" = "t3a.2xlarge"
+  inline val `t4g.nano`: "t4g.nano" = "t4g.nano"
+  inline val `t4g.micro`: "t4g.micro" = "t4g.micro"
+  inline val `t4g.small`: "t4g.small" = "t4g.small"
+  inline val `t4g.medium`: "t4g.medium" = "t4g.medium"
+  inline val `t4g.large`: "t4g.large" = "t4g.large"
+  inline val `t4g.xlarge`: "t4g.xlarge" = "t4g.xlarge"
+  inline val `t4g.2xlarge`: "t4g.2xlarge" = "t4g.2xlarge"
+  inline val `u-6tb1.56xlarge`: "u-6tb1.56xlarge" = "u-6tb1.56xlarge"
+  inline val `u-6tb1.112xlarge`: "u-6tb1.112xlarge" = "u-6tb1.112xlarge"
+  inline val `u-9tb1.112xlarge`: "u-9tb1.112xlarge" = "u-9tb1.112xlarge"
+  inline val `u-12tb1.112xlarge`: "u-12tb1.112xlarge" = "u-12tb1.112xlarge"
+  inline val `u-6tb1.metal`: "u-6tb1.metal" = "u-6tb1.metal"
+  inline val `u-9tb1.metal`: "u-9tb1.metal" = "u-9tb1.metal"
+  inline val `u-12tb1.metal`: "u-12tb1.metal" = "u-12tb1.metal"
+  inline val `u-18tb1.metal`: "u-18tb1.metal" = "u-18tb1.metal"
+  inline val `u-24tb1.metal`: "u-24tb1.metal" = "u-24tb1.metal"
+  inline val `vt1.3xlarge`: "vt1.3xlarge" = "vt1.3xlarge"
+  inline val `vt1.6xlarge`: "vt1.6xlarge" = "vt1.6xlarge"
+  inline val `vt1.24xlarge`: "vt1.24xlarge" = "vt1.24xlarge"
+  inline val `x1.16xlarge`: "x1.16xlarge" = "x1.16xlarge"
+  inline val `x1.32xlarge`: "x1.32xlarge" = "x1.32xlarge"
+  inline val `x1e.xlarge`: "x1e.xlarge" = "x1e.xlarge"
+  inline val `x1e.2xlarge`: "x1e.2xlarge" = "x1e.2xlarge"
+  inline val `x1e.4xlarge`: "x1e.4xlarge" = "x1e.4xlarge"
+  inline val `x1e.8xlarge`: "x1e.8xlarge" = "x1e.8xlarge"
+  inline val `x1e.16xlarge`: "x1e.16xlarge" = "x1e.16xlarge"
+  inline val `x1e.32xlarge`: "x1e.32xlarge" = "x1e.32xlarge"
+  inline val `x2iezn.2xlarge`: "x2iezn.2xlarge" = "x2iezn.2xlarge"
+  inline val `x2iezn.4xlarge`: "x2iezn.4xlarge" = "x2iezn.4xlarge"
+  inline val `x2iezn.6xlarge`: "x2iezn.6xlarge" = "x2iezn.6xlarge"
+  inline val `x2iezn.8xlarge`: "x2iezn.8xlarge" = "x2iezn.8xlarge"
+  inline val `x2iezn.12xlarge`: "x2iezn.12xlarge" = "x2iezn.12xlarge"
+  inline val `x2iezn.metal`: "x2iezn.metal" = "x2iezn.metal"
   inline val `x2gd.medium`: "x2gd.medium" = "x2gd.medium"
   inline val `x2gd.large`: "x2gd.large" = "x2gd.large"
   inline val `x2gd.xlarge`: "x2gd.xlarge" = "x2gd.xlarge"
@@ -1590,185 +1734,110 @@ object InstanceType {
   inline val `x2gd.12xlarge`: "x2gd.12xlarge" = "x2gd.12xlarge"
   inline val `x2gd.16xlarge`: "x2gd.16xlarge" = "x2gd.16xlarge"
   inline val `x2gd.metal`: "x2gd.metal" = "x2gd.metal"
-  inline val `vt1.3xlarge`: "vt1.3xlarge" = "vt1.3xlarge"
-  inline val `vt1.6xlarge`: "vt1.6xlarge" = "vt1.6xlarge"
-  inline val `vt1.24xlarge`: "vt1.24xlarge" = "vt1.24xlarge"
-  inline val `im4gn.16xlarge`: "im4gn.16xlarge" = "im4gn.16xlarge"
-  inline val `im4gn.2xlarge`: "im4gn.2xlarge" = "im4gn.2xlarge"
-  inline val `im4gn.4xlarge`: "im4gn.4xlarge" = "im4gn.4xlarge"
-  inline val `im4gn.8xlarge`: "im4gn.8xlarge" = "im4gn.8xlarge"
-  inline val `im4gn.large`: "im4gn.large" = "im4gn.large"
-  inline val `im4gn.xlarge`: "im4gn.xlarge" = "im4gn.xlarge"
-  inline val `is4gen.2xlarge`: "is4gen.2xlarge" = "is4gen.2xlarge"
-  inline val `is4gen.4xlarge`: "is4gen.4xlarge" = "is4gen.4xlarge"
-  inline val `is4gen.8xlarge`: "is4gen.8xlarge" = "is4gen.8xlarge"
-  inline val `is4gen.large`: "is4gen.large" = "is4gen.large"
-  inline val `is4gen.medium`: "is4gen.medium" = "is4gen.medium"
-  inline val `is4gen.xlarge`: "is4gen.xlarge" = "is4gen.xlarge"
-  inline val `g5g.xlarge`: "g5g.xlarge" = "g5g.xlarge"
-  inline val `g5g.2xlarge`: "g5g.2xlarge" = "g5g.2xlarge"
-  inline val `g5g.4xlarge`: "g5g.4xlarge" = "g5g.4xlarge"
-  inline val `g5g.8xlarge`: "g5g.8xlarge" = "g5g.8xlarge"
-  inline val `g5g.16xlarge`: "g5g.16xlarge" = "g5g.16xlarge"
-  inline val `g5g.metal`: "g5g.metal" = "g5g.metal"
-  inline val `g5.xlarge`: "g5.xlarge" = "g5.xlarge"
-  inline val `g5.2xlarge`: "g5.2xlarge" = "g5.2xlarge"
-  inline val `g5.4xlarge`: "g5.4xlarge" = "g5.4xlarge"
-  inline val `g5.8xlarge`: "g5.8xlarge" = "g5.8xlarge"
-  inline val `g5.12xlarge`: "g5.12xlarge" = "g5.12xlarge"
-  inline val `g5.16xlarge`: "g5.16xlarge" = "g5.16xlarge"
-  inline val `g5.24xlarge`: "g5.24xlarge" = "g5.24xlarge"
-  inline val `g5.48xlarge`: "g5.48xlarge" = "g5.48xlarge"
+  inline val `z1d.large`: "z1d.large" = "z1d.large"
+  inline val `z1d.xlarge`: "z1d.xlarge" = "z1d.xlarge"
+  inline val `z1d.2xlarge`: "z1d.2xlarge" = "z1d.2xlarge"
+  inline val `z1d.3xlarge`: "z1d.3xlarge" = "z1d.3xlarge"
+  inline val `z1d.6xlarge`: "z1d.6xlarge" = "z1d.6xlarge"
+  inline val `z1d.12xlarge`: "z1d.12xlarge" = "z1d.12xlarge"
+  inline val `z1d.metal`: "z1d.metal" = "z1d.metal"
+  inline val `x2idn.16xlarge`: "x2idn.16xlarge" = "x2idn.16xlarge"
+  inline val `x2idn.24xlarge`: "x2idn.24xlarge" = "x2idn.24xlarge"
+  inline val `x2idn.32xlarge`: "x2idn.32xlarge" = "x2idn.32xlarge"
+  inline val `x2iedn.xlarge`: "x2iedn.xlarge" = "x2iedn.xlarge"
+  inline val `x2iedn.2xlarge`: "x2iedn.2xlarge" = "x2iedn.2xlarge"
+  inline val `x2iedn.4xlarge`: "x2iedn.4xlarge" = "x2iedn.4xlarge"
+  inline val `x2iedn.8xlarge`: "x2iedn.8xlarge" = "x2iedn.8xlarge"
+  inline val `x2iedn.16xlarge`: "x2iedn.16xlarge" = "x2iedn.16xlarge"
+  inline val `x2iedn.24xlarge`: "x2iedn.24xlarge" = "x2iedn.24xlarge"
+  inline val `x2iedn.32xlarge`: "x2iedn.32xlarge" = "x2iedn.32xlarge"
+  inline val `c6a.large`: "c6a.large" = "c6a.large"
+  inline val `c6a.xlarge`: "c6a.xlarge" = "c6a.xlarge"
+  inline val `c6a.2xlarge`: "c6a.2xlarge" = "c6a.2xlarge"
+  inline val `c6a.4xlarge`: "c6a.4xlarge" = "c6a.4xlarge"
+  inline val `c6a.8xlarge`: "c6a.8xlarge" = "c6a.8xlarge"
+  inline val `c6a.12xlarge`: "c6a.12xlarge" = "c6a.12xlarge"
+  inline val `c6a.16xlarge`: "c6a.16xlarge" = "c6a.16xlarge"
+  inline val `c6a.24xlarge`: "c6a.24xlarge" = "c6a.24xlarge"
+  inline val `c6a.32xlarge`: "c6a.32xlarge" = "c6a.32xlarge"
+  inline val `c6a.48xlarge`: "c6a.48xlarge" = "c6a.48xlarge"
+  inline val `c6a.metal`: "c6a.metal" = "c6a.metal"
+  inline val `m6a.metal`: "m6a.metal" = "m6a.metal"
+  inline val `i4i.large`: "i4i.large" = "i4i.large"
+  inline val `i4i.xlarge`: "i4i.xlarge" = "i4i.xlarge"
+  inline val `i4i.2xlarge`: "i4i.2xlarge" = "i4i.2xlarge"
+  inline val `i4i.4xlarge`: "i4i.4xlarge" = "i4i.4xlarge"
+  inline val `i4i.8xlarge`: "i4i.8xlarge" = "i4i.8xlarge"
+  inline val `i4i.16xlarge`: "i4i.16xlarge" = "i4i.16xlarge"
+  inline val `i4i.32xlarge`: "i4i.32xlarge" = "i4i.32xlarge"
+  inline val `i4i.metal`: "i4i.metal" = "i4i.metal"
+  inline val `x2idn.metal`: "x2idn.metal" = "x2idn.metal"
+  inline val `x2iedn.metal`: "x2iedn.metal" = "x2iedn.metal"
+  inline val `c7g.medium`: "c7g.medium" = "c7g.medium"
+  inline val `c7g.large`: "c7g.large" = "c7g.large"
+  inline val `c7g.xlarge`: "c7g.xlarge" = "c7g.xlarge"
+  inline val `c7g.2xlarge`: "c7g.2xlarge" = "c7g.2xlarge"
+  inline val `c7g.4xlarge`: "c7g.4xlarge" = "c7g.4xlarge"
+  inline val `c7g.8xlarge`: "c7g.8xlarge" = "c7g.8xlarge"
+  inline val `c7g.12xlarge`: "c7g.12xlarge" = "c7g.12xlarge"
+  inline val `c7g.16xlarge`: "c7g.16xlarge" = "c7g.16xlarge"
+  inline val `mac2.metal`: "mac2.metal" = "mac2.metal"
+  inline val `c6id.large`: "c6id.large" = "c6id.large"
+  inline val `c6id.xlarge`: "c6id.xlarge" = "c6id.xlarge"
+  inline val `c6id.2xlarge`: "c6id.2xlarge" = "c6id.2xlarge"
+  inline val `c6id.4xlarge`: "c6id.4xlarge" = "c6id.4xlarge"
+  inline val `c6id.8xlarge`: "c6id.8xlarge" = "c6id.8xlarge"
+  inline val `c6id.12xlarge`: "c6id.12xlarge" = "c6id.12xlarge"
+  inline val `c6id.16xlarge`: "c6id.16xlarge" = "c6id.16xlarge"
+  inline val `c6id.24xlarge`: "c6id.24xlarge" = "c6id.24xlarge"
+  inline val `c6id.32xlarge`: "c6id.32xlarge" = "c6id.32xlarge"
+  inline val `c6id.metal`: "c6id.metal" = "c6id.metal"
+  inline val `m6id.large`: "m6id.large" = "m6id.large"
+  inline val `m6id.xlarge`: "m6id.xlarge" = "m6id.xlarge"
+  inline val `m6id.2xlarge`: "m6id.2xlarge" = "m6id.2xlarge"
+  inline val `m6id.4xlarge`: "m6id.4xlarge" = "m6id.4xlarge"
+  inline val `m6id.8xlarge`: "m6id.8xlarge" = "m6id.8xlarge"
+  inline val `m6id.12xlarge`: "m6id.12xlarge" = "m6id.12xlarge"
+  inline val `m6id.16xlarge`: "m6id.16xlarge" = "m6id.16xlarge"
+  inline val `m6id.24xlarge`: "m6id.24xlarge" = "m6id.24xlarge"
+  inline val `m6id.32xlarge`: "m6id.32xlarge" = "m6id.32xlarge"
+  inline val `m6id.metal`: "m6id.metal" = "m6id.metal"
+  inline val `r6id.large`: "r6id.large" = "r6id.large"
+  inline val `r6id.xlarge`: "r6id.xlarge" = "r6id.xlarge"
+  inline val `r6id.2xlarge`: "r6id.2xlarge" = "r6id.2xlarge"
+  inline val `r6id.4xlarge`: "r6id.4xlarge" = "r6id.4xlarge"
+  inline val `r6id.8xlarge`: "r6id.8xlarge" = "r6id.8xlarge"
+  inline val `r6id.12xlarge`: "r6id.12xlarge" = "r6id.12xlarge"
+  inline val `r6id.16xlarge`: "r6id.16xlarge" = "r6id.16xlarge"
+  inline val `r6id.24xlarge`: "r6id.24xlarge" = "r6id.24xlarge"
+  inline val `r6id.32xlarge`: "r6id.32xlarge" = "r6id.32xlarge"
+  inline val `r6id.metal`: "r6id.metal" = "r6id.metal"
+  inline val `r6a.large`: "r6a.large" = "r6a.large"
+  inline val `r6a.xlarge`: "r6a.xlarge" = "r6a.xlarge"
+  inline val `r6a.2xlarge`: "r6a.2xlarge" = "r6a.2xlarge"
+  inline val `r6a.4xlarge`: "r6a.4xlarge" = "r6a.4xlarge"
+  inline val `r6a.8xlarge`: "r6a.8xlarge" = "r6a.8xlarge"
+  inline val `r6a.12xlarge`: "r6a.12xlarge" = "r6a.12xlarge"
+  inline val `r6a.16xlarge`: "r6a.16xlarge" = "r6a.16xlarge"
+  inline val `r6a.24xlarge`: "r6a.24xlarge" = "r6a.24xlarge"
+  inline val `r6a.32xlarge`: "r6a.32xlarge" = "r6a.32xlarge"
+  inline val `r6a.48xlarge`: "r6a.48xlarge" = "r6a.48xlarge"
+  inline val `r6a.metal`: "r6a.metal" = "r6a.metal"
+  inline val `p4de.24xlarge`: "p4de.24xlarge" = "p4de.24xlarge"
+  inline val `u-3tb1.56xlarge`: "u-3tb1.56xlarge" = "u-3tb1.56xlarge"
+  inline val `u-18tb1.112xlarge`: "u-18tb1.112xlarge" = "u-18tb1.112xlarge"
+  inline val `u-24tb1.112xlarge`: "u-24tb1.112xlarge" = "u-24tb1.112xlarge"
+  inline val `trn1.2xlarge`: "trn1.2xlarge" = "trn1.2xlarge"
+  inline val `trn1.32xlarge`: "trn1.32xlarge" = "trn1.32xlarge"
+  inline val `hpc6id.32xlarge`: "hpc6id.32xlarge" = "hpc6id.32xlarge"
 
   inline def values: js.Array[InstanceType] = js.Array(
-    `t1.micro`,
-    `t2.nano`,
-    `t2.micro`,
-    `t2.small`,
-    `t2.medium`,
-    `t2.large`,
-    `t2.xlarge`,
-    `t2.2xlarge`,
-    `t3.nano`,
-    `t3.micro`,
-    `t3.small`,
-    `t3.medium`,
-    `t3.large`,
-    `t3.xlarge`,
-    `t3.2xlarge`,
-    `t3a.nano`,
-    `t3a.micro`,
-    `t3a.small`,
-    `t3a.medium`,
-    `t3a.large`,
-    `t3a.xlarge`,
-    `t3a.2xlarge`,
-    `t4g.nano`,
-    `t4g.micro`,
-    `t4g.small`,
-    `t4g.medium`,
-    `t4g.large`,
-    `t4g.xlarge`,
-    `t4g.2xlarge`,
-    `m1.small`,
-    `m1.medium`,
-    `m1.large`,
-    `m1.xlarge`,
-    `m3.medium`,
-    `m3.large`,
-    `m3.xlarge`,
-    `m3.2xlarge`,
-    `m4.large`,
-    `m4.xlarge`,
-    `m4.2xlarge`,
-    `m4.4xlarge`,
-    `m4.10xlarge`,
-    `m4.16xlarge`,
-    `m2.xlarge`,
-    `m2.2xlarge`,
-    `m2.4xlarge`,
-    `cr1.8xlarge`,
-    `r3.large`,
-    `r3.xlarge`,
-    `r3.2xlarge`,
-    `r3.4xlarge`,
-    `r3.8xlarge`,
-    `r4.large`,
-    `r4.xlarge`,
-    `r4.2xlarge`,
-    `r4.4xlarge`,
-    `r4.8xlarge`,
-    `r4.16xlarge`,
-    `r5.large`,
-    `r5.xlarge`,
-    `r5.2xlarge`,
-    `r5.4xlarge`,
-    `r5.8xlarge`,
-    `r5.12xlarge`,
-    `r5.16xlarge`,
-    `r5.24xlarge`,
-    `r5.metal`,
-    `r5a.large`,
-    `r5a.xlarge`,
-    `r5a.2xlarge`,
-    `r5a.4xlarge`,
-    `r5a.8xlarge`,
-    `r5a.12xlarge`,
-    `r5a.16xlarge`,
-    `r5a.24xlarge`,
-    `r5b.large`,
-    `r5b.xlarge`,
-    `r5b.2xlarge`,
-    `r5b.4xlarge`,
-    `r5b.8xlarge`,
-    `r5b.12xlarge`,
-    `r5b.16xlarge`,
-    `r5b.24xlarge`,
-    `r5b.metal`,
-    `r5d.large`,
-    `r5d.xlarge`,
-    `r5d.2xlarge`,
-    `r5d.4xlarge`,
-    `r5d.8xlarge`,
-    `r5d.12xlarge`,
-    `r5d.16xlarge`,
-    `r5d.24xlarge`,
-    `r5d.metal`,
-    `r5ad.large`,
-    `r5ad.xlarge`,
-    `r5ad.2xlarge`,
-    `r5ad.4xlarge`,
-    `r5ad.8xlarge`,
-    `r5ad.12xlarge`,
-    `r5ad.16xlarge`,
-    `r5ad.24xlarge`,
-    `r6g.metal`,
-    `r6g.medium`,
-    `r6g.large`,
-    `r6g.xlarge`,
-    `r6g.2xlarge`,
-    `r6g.4xlarge`,
-    `r6g.8xlarge`,
-    `r6g.12xlarge`,
-    `r6g.16xlarge`,
-    `r6gd.metal`,
-    `r6gd.medium`,
-    `r6gd.large`,
-    `r6gd.xlarge`,
-    `r6gd.2xlarge`,
-    `r6gd.4xlarge`,
-    `r6gd.8xlarge`,
-    `r6gd.12xlarge`,
-    `r6gd.16xlarge`,
-    `x1.16xlarge`,
-    `x1.32xlarge`,
-    `x1e.xlarge`,
-    `x1e.2xlarge`,
-    `x1e.4xlarge`,
-    `x1e.8xlarge`,
-    `x1e.16xlarge`,
-    `x1e.32xlarge`,
-    `i2.xlarge`,
-    `i2.2xlarge`,
-    `i2.4xlarge`,
-    `i2.8xlarge`,
-    `i3.large`,
-    `i3.xlarge`,
-    `i3.2xlarge`,
-    `i3.4xlarge`,
-    `i3.8xlarge`,
-    `i3.16xlarge`,
-    `i3.metal`,
-    `i3en.large`,
-    `i3en.xlarge`,
-    `i3en.2xlarge`,
-    `i3en.3xlarge`,
-    `i3en.6xlarge`,
-    `i3en.12xlarge`,
-    `i3en.24xlarge`,
-    `i3en.metal`,
-    `hi1.4xlarge`,
-    `hs1.8xlarge`,
+    `a1.medium`,
+    `a1.large`,
+    `a1.xlarge`,
+    `a1.2xlarge`,
+    `a1.4xlarge`,
+    `a1.metal`,
     `c1.medium`,
     `c1.xlarge`,
     `c3.large`,
@@ -1822,7 +1891,6 @@ object InstanceType {
     `c5n.9xlarge`,
     `c5n.18xlarge`,
     `c5n.metal`,
-    `c6g.metal`,
     `c6g.medium`,
     `c6g.large`,
     `c6g.xlarge`,
@@ -1831,7 +1899,7 @@ object InstanceType {
     `c6g.8xlarge`,
     `c6g.12xlarge`,
     `c6g.16xlarge`,
-    `c6gd.metal`,
+    `c6g.metal`,
     `c6gd.medium`,
     `c6gd.large`,
     `c6gd.xlarge`,
@@ -1840,6 +1908,7 @@ object InstanceType {
     `c6gd.8xlarge`,
     `c6gd.12xlarge`,
     `c6gd.16xlarge`,
+    `c6gd.metal`,
     `c6gn.medium`,
     `c6gn.large`,
     `c6gn.xlarge`,
@@ -1857,35 +1926,11 @@ object InstanceType {
     `c6i.16xlarge`,
     `c6i.24xlarge`,
     `c6i.32xlarge`,
+    `c6i.metal`,
     `cc1.4xlarge`,
     `cc2.8xlarge`,
-    `g2.2xlarge`,
-    `g2.8xlarge`,
-    `g3.4xlarge`,
-    `g3.8xlarge`,
-    `g3.16xlarge`,
-    `g3s.xlarge`,
-    `g4ad.xlarge`,
-    `g4ad.2xlarge`,
-    `g4ad.4xlarge`,
-    `g4ad.8xlarge`,
-    `g4ad.16xlarge`,
-    `g4dn.xlarge`,
-    `g4dn.2xlarge`,
-    `g4dn.4xlarge`,
-    `g4dn.8xlarge`,
-    `g4dn.12xlarge`,
-    `g4dn.16xlarge`,
-    `g4dn.metal`,
     `cg1.4xlarge`,
-    `p2.xlarge`,
-    `p2.8xlarge`,
-    `p2.16xlarge`,
-    `p3.2xlarge`,
-    `p3.8xlarge`,
-    `p3.16xlarge`,
-    `p3dn.24xlarge`,
-    `p4d.24xlarge`,
+    `cr1.8xlarge`,
     `d2.xlarge`,
     `d2.2xlarge`,
     `d2.4xlarge`,
@@ -1904,6 +1949,97 @@ object InstanceType {
     `f1.2xlarge`,
     `f1.4xlarge`,
     `f1.16xlarge`,
+    `g2.2xlarge`,
+    `g2.8xlarge`,
+    `g3.4xlarge`,
+    `g3.8xlarge`,
+    `g3.16xlarge`,
+    `g3s.xlarge`,
+    `g4ad.xlarge`,
+    `g4ad.2xlarge`,
+    `g4ad.4xlarge`,
+    `g4ad.8xlarge`,
+    `g4ad.16xlarge`,
+    `g4dn.xlarge`,
+    `g4dn.2xlarge`,
+    `g4dn.4xlarge`,
+    `g4dn.8xlarge`,
+    `g4dn.12xlarge`,
+    `g4dn.16xlarge`,
+    `g4dn.metal`,
+    `g5.xlarge`,
+    `g5.2xlarge`,
+    `g5.4xlarge`,
+    `g5.8xlarge`,
+    `g5.12xlarge`,
+    `g5.16xlarge`,
+    `g5.24xlarge`,
+    `g5.48xlarge`,
+    `g5g.xlarge`,
+    `g5g.2xlarge`,
+    `g5g.4xlarge`,
+    `g5g.8xlarge`,
+    `g5g.16xlarge`,
+    `g5g.metal`,
+    `hi1.4xlarge`,
+    `hpc6a.48xlarge`,
+    `hs1.8xlarge`,
+    `h1.2xlarge`,
+    `h1.4xlarge`,
+    `h1.8xlarge`,
+    `h1.16xlarge`,
+    `i2.xlarge`,
+    `i2.2xlarge`,
+    `i2.4xlarge`,
+    `i2.8xlarge`,
+    `i3.large`,
+    `i3.xlarge`,
+    `i3.2xlarge`,
+    `i3.4xlarge`,
+    `i3.8xlarge`,
+    `i3.16xlarge`,
+    `i3.metal`,
+    `i3en.large`,
+    `i3en.xlarge`,
+    `i3en.2xlarge`,
+    `i3en.3xlarge`,
+    `i3en.6xlarge`,
+    `i3en.12xlarge`,
+    `i3en.24xlarge`,
+    `i3en.metal`,
+    `im4gn.large`,
+    `im4gn.xlarge`,
+    `im4gn.2xlarge`,
+    `im4gn.4xlarge`,
+    `im4gn.8xlarge`,
+    `im4gn.16xlarge`,
+    `inf1.xlarge`,
+    `inf1.2xlarge`,
+    `inf1.6xlarge`,
+    `inf1.24xlarge`,
+    `is4gen.medium`,
+    `is4gen.large`,
+    `is4gen.xlarge`,
+    `is4gen.2xlarge`,
+    `is4gen.4xlarge`,
+    `is4gen.8xlarge`,
+    `m1.small`,
+    `m1.medium`,
+    `m1.large`,
+    `m1.xlarge`,
+    `m2.xlarge`,
+    `m2.2xlarge`,
+    `m2.4xlarge`,
+    `m3.medium`,
+    `m3.large`,
+    `m3.xlarge`,
+    `m3.2xlarge`,
+    `m4.large`,
+    `m4.xlarge`,
+    `m4.2xlarge`,
+    `m4.4xlarge`,
+    `m4.10xlarge`,
+    `m4.16xlarge`,
     `m5.large`,
     `m5.xlarge`,
     `m5.2xlarge`,
@@ -1921,6 +2057,14 @@ object InstanceType {
     `m5a.12xlarge`,
     `m5a.16xlarge`,
     `m5a.24xlarge`,
+    `m5ad.large`,
+    `m5ad.xlarge`,
+    `m5ad.2xlarge`,
+    `m5ad.4xlarge`,
+    `m5ad.8xlarge`,
+    `m5ad.12xlarge`,
+    `m5ad.16xlarge`,
+    `m5ad.24xlarge`,
     `m5d.large`,
     `m5d.xlarge`,
     `m5d.2xlarge`,
@@ -1930,47 +2074,6 @@ object InstanceType {
     `m5d.16xlarge`,
     `m5d.24xlarge`,
     `m5d.metal`,
-    `m5ad.large`,
-    `m5ad.xlarge`,
-    `m5ad.2xlarge`,
-    `m5ad.4xlarge`,
-    `m5ad.8xlarge`,
-    `m5ad.12xlarge`,
-    `m5ad.16xlarge`,
-    `m5ad.24xlarge`,
-    `m5zn.large`,
-    `m5zn.xlarge`,
-    `m5zn.2xlarge`,
-    `m5zn.3xlarge`,
-    `m5zn.6xlarge`,
-    `m5zn.12xlarge`,
-    `m5zn.metal`,
-    `h1.2xlarge`,
-    `h1.4xlarge`,
-    `h1.8xlarge`,
-    `h1.16xlarge`,
-    `z1d.large`,
-    `z1d.xlarge`,
-    `z1d.2xlarge`,
-    `z1d.3xlarge`,
-    `z1d.6xlarge`,
-    `z1d.12xlarge`,
-    `z1d.metal`,
-    `u-6tb1.56xlarge`,
-    `u-6tb1.112xlarge`,
-    `u-9tb1.112xlarge`,
-    `u-12tb1.112xlarge`,
-    `u-6tb1.metal`,
-    `u-9tb1.metal`,
-    `u-12tb1.metal`,
-    `u-18tb1.metal`,
-    `u-24tb1.metal`,
-    `a1.medium`,
-    `a1.large`,
-    `a1.xlarge`,
-    `a1.2xlarge`,
-    `a1.4xlarge`,
-    `a1.metal`,
     `m5dn.large`,
     `m5dn.xlarge`,
     `m5dn.2xlarge`,
@@ -1989,28 +2092,23 @@ object InstanceType {
     `m5n.16xlarge`,
     `m5n.24xlarge`,
     `m5n.metal`,
-    `r5dn.large`,
-    `r5dn.xlarge`,
-    `r5dn.2xlarge`,
-    `r5dn.4xlarge`,
-    `r5dn.8xlarge`,
-    `r5dn.12xlarge`,
-    `r5dn.16xlarge`,
-    `r5dn.24xlarge`,
-    `r5dn.metal`,
-    `r5n.large`,
-    `r5n.xlarge`,
-    `r5n.2xlarge`,
-    `r5n.4xlarge`,
-    `r5n.8xlarge`,
-    `r5n.12xlarge`,
-    `r5n.16xlarge`,
-    `r5n.24xlarge`,
-    `r5n.metal`,
-    `inf1.xlarge`,
-    `inf1.2xlarge`,
-    `inf1.6xlarge`,
-    `inf1.24xlarge`,
+    `m5zn.large`,
+    `m5zn.xlarge`,
+    `m5zn.2xlarge`,
+    `m5zn.3xlarge`,
+    `m5zn.6xlarge`,
+    `m5zn.12xlarge`,
+    `m5zn.metal`,
+    `m6a.large`,
+    `m6a.xlarge`,
+    `m6a.2xlarge`,
+    `m6a.4xlarge`,
+    `m6a.8xlarge`,
+    `m6a.12xlarge`,
+    `m6a.16xlarge`,
+    `m6a.24xlarge`,
+    `m6a.32xlarge`,
+    `m6a.48xlarge`,
     `m6g.metal`,
     `m6g.medium`,
     `m6g.large`,
@@ -2029,16 +2127,6 @@ object InstanceType {
     `m6gd.8xlarge`,
     `m6gd.12xlarge`,
     `m6gd.16xlarge`,
-    `m6a.large`,
-    `m6a.xlarge`,
-    `m6a.2xlarge`,
-    `m6a.4xlarge`,
-    `m6a.8xlarge`,
-    `m6a.12xlarge`,
-    `m6a.16xlarge`,
-    `m6a.24xlarge`,
-    `m6a.32xlarge`,
-    `m6a.48xlarge`,
     `m6i.large`,
     `m6i.xlarge`,
     `m6i.2xlarge`,
@@ -2048,7 +2136,171 @@ object InstanceType {
     `m6i.16xlarge`,
     `m6i.24xlarge`,
     `m6i.32xlarge`,
+    `m6i.metal`,
     `mac1.metal`,
+    `p2.xlarge`,
+    `p2.8xlarge`,
+    `p2.16xlarge`,
+    `p3.2xlarge`,
+    `p3.8xlarge`,
+    `p3.16xlarge`,
+    `p3dn.24xlarge`,
+    `p4d.24xlarge`,
+    `r3.large`,
+    `r3.xlarge`,
+    `r3.2xlarge`,
+    `r3.4xlarge`,
+    `r3.8xlarge`,
+    `r4.large`,
+    `r4.xlarge`,
+    `r4.2xlarge`,
+    `r4.4xlarge`,
+    `r4.8xlarge`,
+    `r4.16xlarge`,
+    `r5.large`,
+    `r5.xlarge`,
+    `r5.2xlarge`,
+    `r5.4xlarge`,
+    `r5.8xlarge`,
+    `r5.12xlarge`,
+    `r5.16xlarge`,
+    `r5.24xlarge`,
+    `r5.metal`,
+    `r5a.large`,
+    `r5a.xlarge`,
+    `r5a.2xlarge`,
+    `r5a.4xlarge`,
+    `r5a.8xlarge`,
+    `r5a.12xlarge`,
+    `r5a.16xlarge`,
+    `r5a.24xlarge`,
+    `r5ad.large`,
+    `r5ad.xlarge`,
+    `r5ad.2xlarge`,
+    `r5ad.4xlarge`,
+    `r5ad.8xlarge`,
+    `r5ad.12xlarge`,
+    `r5ad.16xlarge`,
+    `r5ad.24xlarge`,
+    `r5b.large`,
+    `r5b.xlarge`,
+    `r5b.2xlarge`,
+    `r5b.4xlarge`,
+    `r5b.8xlarge`,
+    `r5b.12xlarge`,
+    `r5b.16xlarge`,
+    `r5b.24xlarge`,
+    `r5b.metal`,
+    `r5d.large`,
+    `r5d.xlarge`,
+    `r5d.2xlarge`,
+    `r5d.4xlarge`,
+    `r5d.8xlarge`,
+    `r5d.12xlarge`,
+    `r5d.16xlarge`,
+    `r5d.24xlarge`,
+    `r5d.metal`,
+    `r5dn.large`,
+    `r5dn.xlarge`,
+    `r5dn.2xlarge`,
+    `r5dn.4xlarge`,
+    `r5dn.8xlarge`,
+    `r5dn.12xlarge`,
+    `r5dn.16xlarge`,
+    `r5dn.24xlarge`,
+    `r5dn.metal`,
+    `r5n.large`,
+    `r5n.xlarge`,
+    `r5n.2xlarge`,
+    `r5n.4xlarge`,
+    `r5n.8xlarge`,
+    `r5n.12xlarge`,
+    `r5n.16xlarge`,
+    `r5n.24xlarge`,
+    `r5n.metal`,
+    `r6g.medium`,
+    `r6g.large`,
+    `r6g.xlarge`,
+    `r6g.2xlarge`,
+    `r6g.4xlarge`,
+    `r6g.8xlarge`,
+    `r6g.12xlarge`,
+    `r6g.16xlarge`,
+    `r6g.metal`,
+    `r6gd.medium`,
+    `r6gd.large`,
+    `r6gd.xlarge`,
+    `r6gd.2xlarge`,
+    `r6gd.4xlarge`,
+    `r6gd.8xlarge`,
+    `r6gd.12xlarge`,
+    `r6gd.16xlarge`,
+    `r6gd.metal`,
+    `r6i.large`,
+    `r6i.xlarge`,
+    `r6i.2xlarge`,
+    `r6i.4xlarge`,
+    `r6i.8xlarge`,
+    `r6i.12xlarge`,
+    `r6i.16xlarge`,
+    `r6i.24xlarge`,
+    `r6i.32xlarge`,
+    `r6i.metal`,
+    `t1.micro`,
+    `t2.nano`,
+    `t2.micro`,
+    `t2.small`,
+    `t2.medium`,
+    `t2.large`,
+    `t2.xlarge`,
+    `t2.2xlarge`,
+    `t3.nano`,
+    `t3.micro`,
+    `t3.small`,
+    `t3.medium`,
+    `t3.large`,
+    `t3.xlarge`,
+    `t3.2xlarge`,
+    `t3a.nano`,
+    `t3a.micro`,
+    `t3a.small`,
+    `t3a.medium`,
+    `t3a.large`,
+    `t3a.xlarge`,
+    `t3a.2xlarge`,
+    `t4g.nano`,
+    `t4g.micro`,
+    `t4g.small`,
+    `t4g.medium`,
+    `t4g.large`,
+    `t4g.xlarge`,
+    `t4g.2xlarge`,
+    `u-6tb1.56xlarge`,
+    `u-6tb1.112xlarge`,
+    `u-9tb1.112xlarge`,
+    `u-12tb1.112xlarge`,
+    `u-6tb1.metal`,
+    `u-9tb1.metal`,
+    `u-12tb1.metal`,
+    `u-18tb1.metal`,
+    `u-24tb1.metal`,
+    `vt1.3xlarge`,
+    `vt1.6xlarge`,
+    `vt1.24xlarge`,
+    `x1.16xlarge`,
+    `x1.32xlarge`,
+    `x1e.xlarge`,
+    `x1e.2xlarge`,
+    `x1e.4xlarge`,
+    `x1e.8xlarge`,
+    `x1e.16xlarge`,
+    `x1e.32xlarge`,
+    `x2iezn.2xlarge`,
+    `x2iezn.4xlarge`,
+    `x2iezn.6xlarge`,
+    `x2iezn.8xlarge`,
+    `x2iezn.12xlarge`,
+    `x2iezn.metal`,
     `x2gd.medium`,
     `x2gd.large`,
     `x2gd.xlarge`,
@@ -2058,35 +2310,102 @@ object InstanceType {
     `x2gd.12xlarge`,
     `x2gd.16xlarge`,
     `x2gd.metal`,
-    `vt1.3xlarge`,
-    `vt1.6xlarge`,
-    `vt1.24xlarge`,
-    `im4gn.16xlarge`,
-    `im4gn.2xlarge`,
-    `im4gn.4xlarge`,
-    `im4gn.8xlarge`,
-    `im4gn.large`,
-    `im4gn.xlarge`,
-    `is4gen.2xlarge`,
-    `is4gen.4xlarge`,
-    `is4gen.8xlarge`,
-    `is4gen.large`,
-    `is4gen.medium`,
-    `is4gen.xlarge`,
-    `g5g.xlarge`,
-    `g5g.2xlarge`,
-    `g5g.4xlarge`,
-    `g5g.8xlarge`,
-    `g5g.16xlarge`,
-    `g5g.metal`,
-    `g5.xlarge`,
-    `g5.2xlarge`,
-    `g5.4xlarge`,
-    `g5.8xlarge`,
-    `g5.12xlarge`,
-    `g5.16xlarge`,
-    `g5.24xlarge`,
-    `g5.48xlarge`
+    `z1d.large`,
+    `z1d.xlarge`,
+    `z1d.2xlarge`,
+    `z1d.3xlarge`,
+    `z1d.6xlarge`,
+    `z1d.12xlarge`,
+    `z1d.metal`,
+    `x2idn.16xlarge`,
+    `x2idn.24xlarge`,
+    `x2idn.32xlarge`,
+    `x2iedn.xlarge`,
+    `x2iedn.2xlarge`,
+    `x2iedn.4xlarge`,
+    `x2iedn.8xlarge`,
+    `x2iedn.16xlarge`,
+    `x2iedn.24xlarge`,
+    `x2iedn.32xlarge`,
+    `c6a.large`,
+    `c6a.xlarge`,
+    `c6a.2xlarge`,
+    `c6a.4xlarge`,
+    `c6a.8xlarge`,
+    `c6a.12xlarge`,
+    `c6a.16xlarge`,
+    `c6a.24xlarge`,
+    `c6a.32xlarge`,
+    `c6a.48xlarge`,
+    `c6a.metal`,
+    `m6a.metal`,
+    `i4i.large`,
+    `i4i.xlarge`,
+    `i4i.2xlarge`,
+    `i4i.4xlarge`,
+    `i4i.8xlarge`,
+    `i4i.16xlarge`,
+    `i4i.32xlarge`,
+    `i4i.metal`,
+    `x2idn.metal`,
+    `x2iedn.metal`,
+    `c7g.medium`,
+    `c7g.large`,
+    `c7g.xlarge`,
+    `c7g.2xlarge`,
+    `c7g.4xlarge`,
+    `c7g.8xlarge`,
+    `c7g.12xlarge`,
+    `c7g.16xlarge`,
+    `mac2.metal`,
+    `c6id.large`,
+    `c6id.xlarge`,
+    `c6id.2xlarge`,
+    `c6id.4xlarge`,
+    `c6id.8xlarge`,
+    `c6id.12xlarge`,
+    `c6id.16xlarge`,
+    `c6id.24xlarge`,
+    `c6id.32xlarge`,
+    `c6id.metal`,
+    `m6id.large`,
+    `m6id.xlarge`,
+    `m6id.2xlarge`,
+    `m6id.4xlarge`,
+    `m6id.8xlarge`,
+    `m6id.12xlarge`,
+    `m6id.16xlarge`,
+    `m6id.24xlarge`,
+    `m6id.32xlarge`,
+    `m6id.metal`,
+    `r6id.large`,
+    `r6id.xlarge`,
+    `r6id.2xlarge`,
+    `r6id.4xlarge`,
+    `r6id.8xlarge`,
+    `r6id.12xlarge`,
+    `r6id.16xlarge`,
+    `r6id.24xlarge`,
+    `r6id.32xlarge`,
+    `r6id.metal`,
+    `r6a.large`,
+    `r6a.xlarge`,
+    `r6a.2xlarge`,
+    `r6a.4xlarge`,
+    `r6a.8xlarge`,
+    `r6a.12xlarge`,
+    `r6a.16xlarge`,
+    `r6a.24xlarge`,
+    `r6a.32xlarge`,
+    `r6a.48xlarge`,
+    `r6a.metal`,
+    `p4de.24xlarge`,
+    `u-3tb1.56xlarge`,
+    `u-18tb1.112xlarge`,
+    `u-24tb1.112xlarge`,
+    `trn1.2xlarge`,
+    `trn1.32xlarge`,
+    `hpc6id.32xlarge`
   )
 }
 
@@ -2112,6 +2431,15 @@ object InterfaceProtocolType {
   inline val GRE: "GRE" = "GRE"
 
   inline def values: js.Array[InterfaceProtocolType] = js.Array(VLAN, GRE)
+}
+
+type IpAddressType = "ipv4" | "dualstack" | "ipv6"
+object IpAddressType {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val dualstack: "dualstack" = "dualstack"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[IpAddressType] = js.Array(ipv4, dualstack, ipv6)
 }
 
 type IpamAddressHistoryResourceType = "eip" | "vpc" | "subnet" | "network-interface" | "instance"
@@ -2191,7 +2519,7 @@ object IpamPoolCidrState {
   inline def values: js.Array[IpamPoolCidrState] = js.Array(`pending-provision`, provisioned, `failed-provision`, `pending-deprovision`, deprovisioned, `failed-deprovision`, `pending-import`, `failed-import`)
 }
 
-type IpamPoolState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+type IpamPoolState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed" | "isolate-in-progress" | "isolate-complete" | "restore-in-progress"
 object IpamPoolState {
   inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
   inline val `create-complete`: "create-complete" = "create-complete"
@@ -2202,6 +2530,9 @@ object IpamPoolState {
   inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
   inline val `delete-complete`: "delete-complete" = "delete-complete"
   inline val `delete-failed`: "delete-failed" = "delete-failed"
+  inline val `isolate-in-progress`: "isolate-in-progress" = "isolate-in-progress"
+  inline val `isolate-complete`: "isolate-complete" = "isolate-complete"
+  inline val `restore-in-progress`: "restore-in-progress" = "restore-in-progress"
 
   inline def values: js.Array[IpamPoolState] = js.Array(
     `create-in-progress`,
@@ -2212,7 +2543,10 @@ object IpamPoolState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2227,7 +2561,7 @@ object IpamResourceType {
   inline def values: js.Array[IpamResourceType] = js.Array(vpc, subnet, eip, `public-ipv4-pool`, `ipv6-pool`)
 }
 
-type IpamScopeState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+type IpamScopeState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed" | "isolate-in-progress" | "isolate-complete" | "restore-in-progress"
 object IpamScopeState {
   inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
   inline val `create-complete`: "create-complete" = "create-complete"
@@ -2238,6 +2572,9 @@ object IpamScopeState {
   inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
   inline val `delete-complete`: "delete-complete" = "delete-complete"
   inline val `delete-failed`: "delete-failed" = "delete-failed"
+  inline val `isolate-in-progress`: "isolate-in-progress" = "isolate-in-progress"
+  inline val `isolate-complete`: "isolate-complete" = "isolate-complete"
+  inline val `restore-in-progress`: "restore-in-progress" = "restore-in-progress"
 
   inline def values: js.Array[IpamScopeState] = js.Array(
     `create-in-progress`,
@@ -2248,7 +2585,10 @@ object IpamScopeState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2260,7 +2600,7 @@ object IpamScopeType {
   inline def values: js.Array[IpamScopeType] = js.Array(`public`, `private`)
 }
 
-type IpamState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+type IpamState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed" | "isolate-in-progress" | "isolate-complete" | "restore-in-progress"
 object IpamState {
   inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
   inline val `create-complete`: "create-complete" = "create-complete"
@@ -2271,6 +2611,9 @@ object IpamState {
   inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
   inline val `delete-complete`: "delete-complete" = "delete-complete"
   inline val `delete-failed`: "delete-failed" = "delete-failed"
+  inline val `isolate-in-progress`: "isolate-in-progress" = "isolate-in-progress"
+  inline val `isolate-complete`: "isolate-complete" = "isolate-complete"
+  inline val `restore-in-progress`: "restore-in-progress" = "restore-in-progress"
 
   inline def values: js.Array[IpamState] = js.Array(
     `create-in-progress`,
@@ -2281,7 +2624,10 @@ object IpamState {
     `modify-failed`,
     `delete-in-progress`,
     `delete-complete`,
-    `delete-failed`
+    `delete-failed`,
+    `isolate-in-progress`,
+    `isolate-complete`,
+    `restore-in-progress`
   )
 }
 
@@ -2293,12 +2639,28 @@ object Ipv6SupportValue {
   inline def values: js.Array[Ipv6SupportValue] = js.Array(enable, disable)
 }
 
+type KeyFormat = "pem" | "ppk"
+object KeyFormat {
+  inline val pem: "pem" = "pem"
+  inline val ppk: "ppk" = "ppk"
+
+  inline def values: js.Array[KeyFormat] = js.Array(pem, ppk)
+}
+
 type KeyType = "rsa" | "ed25519"
 object KeyType {
   inline val rsa: "rsa" = "rsa"
   inline val ed25519: "ed25519" = "ed25519"
 
   inline def values: js.Array[KeyType] = js.Array(rsa, ed25519)
+}
+
+type LaunchTemplateAutoRecoveryState = "default" | "disabled"
+object LaunchTemplateAutoRecoveryState {
+  inline val default: "default" = "default"
+  inline val disabled: "disabled" = "disabled"
+
+  inline def values: js.Array[LaunchTemplateAutoRecoveryState] = js.Array(default, disabled)
 }
 
 type LaunchTemplateErrorCode = "launchTemplateIdDoesNotExist" | "launchTemplateIdMalformed" | "launchTemplateNameDoesNotExist" | "launchTemplateNameMalformed" | "launchTemplateVersionDoesNotExist" | "unexpectedError"
@@ -2352,6 +2714,14 @@ object LaunchTemplateInstanceMetadataProtocolIpv6 {
   inline def values: js.Array[LaunchTemplateInstanceMetadataProtocolIpv6] = js.Array(disabled, enabled)
 }
 
+type LaunchTemplateInstanceMetadataTagsState = "disabled" | "enabled"
+object LaunchTemplateInstanceMetadataTagsState {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[LaunchTemplateInstanceMetadataTagsState] = js.Array(disabled, enabled)
+}
+
 type ListingState = "available" | "sold" | "cancelled" | "pending"
 object ListingState {
   inline val available: "available" = "available"
@@ -2381,6 +2751,14 @@ object LocalGatewayRouteState {
   inline val deleted: "deleted" = "deleted"
 
   inline def values: js.Array[LocalGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
+}
+
+type LocalGatewayRouteTableMode = "direct-vpc-routing" | "coip"
+object LocalGatewayRouteTableMode {
+  inline val `direct-vpc-routing`: "direct-vpc-routing" = "direct-vpc-routing"
+  inline val coip: "coip" = "coip"
+
+  inline def values: js.Array[LocalGatewayRouteTableMode] = js.Array(`direct-vpc-routing`, coip)
 }
 
 type LocalGatewayRouteType = "static" | "propagated"
@@ -2417,12 +2795,13 @@ object LocationType {
   inline def values: js.Array[LocationType] = js.Array(region, `availability-zone`, `availability-zone-id`)
 }
 
-type LogDestinationType = "cloud-watch-logs" | "s3"
+type LogDestinationType = "cloud-watch-logs" | "s3" | "kinesis-data-firehose"
 object LogDestinationType {
   inline val `cloud-watch-logs`: "cloud-watch-logs" = "cloud-watch-logs"
   inline val s3: "s3" = "s3"
+  inline val `kinesis-data-firehose`: "kinesis-data-firehose" = "kinesis-data-firehose"
 
-  inline def values: js.Array[LogDestinationType] = js.Array(`cloud-watch-logs`, s3)
+  inline def values: js.Array[LogDestinationType] = js.Array(`cloud-watch-logs`, s3, `kinesis-data-firehose`)
 }
 
 type MarketType = "spot"
@@ -2438,6 +2817,13 @@ object MembershipType {
   inline val igmp: "igmp" = "igmp"
 
   inline def values: js.Array[MembershipType] = js.Array(static, igmp)
+}
+
+type MetricType = "aggregate-latency"
+object MetricType {
+  inline val `aggregate-latency`: "aggregate-latency" = "aggregate-latency"
+
+  inline def values: js.Array[MetricType] = js.Array(`aggregate-latency`)
 }
 
 type ModifyAvailabilityZoneOptInStatus = "opted-in" | "not-opted-in"
@@ -2525,14 +2911,45 @@ object NetworkInterfaceStatus {
   inline def values: js.Array[NetworkInterfaceStatus] = js.Array(available, associated, attaching, `in-use`, detaching)
 }
 
-type NetworkInterfaceType = "interface" | "natGateway" | "efa" | "trunk"
+type NetworkInterfaceType = "interface" | "natGateway" | "efa" | "trunk" | "load_balancer" | "network_load_balancer" | "vpc_endpoint" | "branch" | "transit_gateway" | "lambda" | "quicksight" | "global_accelerator_managed" | "api_gateway_managed" | "gateway_load_balancer" | "gateway_load_balancer_endpoint" | "iot_rules_managed" | "aws_codestar_connections_managed"
 object NetworkInterfaceType {
   inline val interface: "interface" = "interface"
   inline val natGateway: "natGateway" = "natGateway"
   inline val efa: "efa" = "efa"
   inline val trunk: "trunk" = "trunk"
+  inline val load_balancer: "load_balancer" = "load_balancer"
+  inline val network_load_balancer: "network_load_balancer" = "network_load_balancer"
+  inline val vpc_endpoint: "vpc_endpoint" = "vpc_endpoint"
+  inline val branch: "branch" = "branch"
+  inline val transit_gateway: "transit_gateway" = "transit_gateway"
+  inline val lambda: "lambda" = "lambda"
+  inline val quicksight: "quicksight" = "quicksight"
+  inline val global_accelerator_managed: "global_accelerator_managed" = "global_accelerator_managed"
+  inline val api_gateway_managed: "api_gateway_managed" = "api_gateway_managed"
+  inline val gateway_load_balancer: "gateway_load_balancer" = "gateway_load_balancer"
+  inline val gateway_load_balancer_endpoint: "gateway_load_balancer_endpoint" = "gateway_load_balancer_endpoint"
+  inline val iot_rules_managed: "iot_rules_managed" = "iot_rules_managed"
+  inline val aws_codestar_connections_managed: "aws_codestar_connections_managed" = "aws_codestar_connections_managed"
 
-  inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa, trunk)
+  inline def values: js.Array[NetworkInterfaceType] = js.Array(
+    interface,
+    natGateway,
+    efa,
+    trunk,
+    load_balancer,
+    network_load_balancer,
+    vpc_endpoint,
+    branch,
+    transit_gateway,
+    lambda,
+    quicksight,
+    global_accelerator_managed,
+    api_gateway_managed,
+    gateway_load_balancer,
+    gateway_load_balancer_endpoint,
+    iot_rules_managed,
+    aws_codestar_connections_managed
+  )
 }
 
 type OfferingClassType = "standard" | "convertible"
@@ -2581,6 +2998,13 @@ object PartitionLoadFrequency {
   inline def values: js.Array[PartitionLoadFrequency] = js.Array(none, daily, weekly, monthly)
 }
 
+type PayerResponsibility = "ServiceOwner"
+object PayerResponsibility {
+  inline val ServiceOwner: "ServiceOwner" = "ServiceOwner"
+
+  inline def values: js.Array[PayerResponsibility] = js.Array(ServiceOwner)
+}
+
 type PaymentOption = "AllUpfront" | "PartialUpfront" | "NoUpfront"
 object PaymentOption {
   inline val AllUpfront: "AllUpfront" = "AllUpfront"
@@ -2588,6 +3012,18 @@ object PaymentOption {
   inline val NoUpfront: "NoUpfront" = "NoUpfront"
 
   inline def values: js.Array[PaymentOption] = js.Array(AllUpfront, PartialUpfront, NoUpfront)
+}
+
+type PeriodType = "five-minutes" | "fifteen-minutes" | "one-hour" | "three-hours" | "one-day" | "one-week"
+object PeriodType {
+  inline val `five-minutes`: "five-minutes" = "five-minutes"
+  inline val `fifteen-minutes`: "fifteen-minutes" = "fifteen-minutes"
+  inline val `one-hour`: "one-hour" = "one-hour"
+  inline val `three-hours`: "three-hours" = "three-hours"
+  inline val `one-day`: "one-day" = "one-day"
+  inline val `one-week`: "one-week" = "one-week"
+
+  inline def values: js.Array[PeriodType] = js.Array(`five-minutes`, `fifteen-minutes`, `one-hour`, `three-hours`, `one-day`, `one-week`)
 }
 
 type PermissionGroup = "all"
@@ -2804,13 +3240,14 @@ object ResetImageAttributeName {
   inline def values: js.Array[ResetImageAttributeName] = js.Array(launchPermission)
 }
 
-type ResourceType = "capacity-reservation" | "client-vpn-endpoint" | "customer-gateway" | "carrier-gateway" | "dedicated-host" | "dhcp-options" | "egress-only-internet-gateway" | "elastic-ip" | "elastic-gpu" | "export-image-task" | "export-instance-task" | "fleet" | "fpga-image" | "host-reservation" | "image" | "import-image-task" | "import-snapshot-task" | "instance" | "instance-event-window" | "internet-gateway" | "ipam" | "ipam-pool" | "ipam-scope" | "ipv4pool-ec2" | "ipv6pool-ec2" | "key-pair" | "launch-template" | "local-gateway" | "local-gateway-route-table" | "local-gateway-virtual-interface" | "local-gateway-virtual-interface-group" | "local-gateway-route-table-vpc-association" | "local-gateway-route-table-virtual-interface-group-association" | "natgateway" | "network-acl" | "network-interface" | "network-insights-analysis" | "network-insights-path" | "network-insights-access-scope" | "network-insights-access-scope-analysis" | "placement-group" | "prefix-list" |
-  "replace-root-volume-task" | "reserved-instances" | "route-table" | "security-group" | "security-group-rule" | "snapshot" | "spot-fleet-request" | "spot-instances-request" | "subnet" | "traffic-mirror-filter" | "traffic-mirror-session" | "traffic-mirror-target" | "transit-gateway" | "transit-gateway-attachment" | "transit-gateway-connect-peer" | "transit-gateway-multicast-domain" | "transit-gateway-route-table" | "volume" | "vpc" | "vpc-endpoint" | "vpc-endpoint-service" | "vpc-peering-connection" | "vpn-connection" | "vpn-gateway" | "vpc-flow-log"
+type ResourceType =
+  "capacity-reservation" | "client-vpn-endpoint" | "customer-gateway" | "carrier-gateway" | "coip-pool" | "dedicated-host" | "dhcp-options" | "egress-only-internet-gateway" | "elastic-ip" | "elastic-gpu" | "export-image-task" | "export-instance-task" | "fleet" | "fpga-image" | "host-reservation" | "image" | "import-image-task" | "import-snapshot-task" | "instance" | "instance-event-window" | "internet-gateway" | "ipam" | "ipam-pool" | "ipam-scope" | "ipv4pool-ec2" | "ipv6pool-ec2" | "key-pair" | "launch-template" | "local-gateway" | "local-gateway-route-table" | "local-gateway-virtual-interface" | "local-gateway-virtual-interface-group" | "local-gateway-route-table-vpc-association" | "local-gateway-route-table-virtual-interface-group-association" | "natgateway" | "network-acl" | "network-interface" | "network-insights-analysis" | "network-insights-path" | "network-insights-access-scope" | "network-insights-access-scope-analysis" | "placement-group" | "prefix-list" | "replace-root-volume-task" | "reserved-instances" | "route-table" | "security-group" | "security-group-rule" | "snapshot" | "spot-fleet-request" | "spot-instances-request" | "subnet" | "subnet-cidr-reservation" | "traffic-mirror-filter" | "traffic-mirror-session" | "traffic-mirror-target" | "transit-gateway" | "transit-gateway-attachment" | "transit-gateway-connect-peer" | "transit-gateway-multicast-domain" | "transit-gateway-policy-table" | "transit-gateway-route-table" | "transit-gateway-route-table-announcement" | "volume" | "vpc" | "vpc-endpoint" | "vpc-endpoint-connection" | "vpc-endpoint-service" | "vpc-endpoint-service-permission" | "vpc-peering-connection" | "vpn-connection" | "vpn-gateway" | "vpc-flow-log" | "capacity-reservation-fleet" | "traffic-mirror-filter-rule" | "vpc-endpoint-connection-device-type" | "verified-access-instance" | "verified-access-group" | "verified-access-endpoint" | "verified-access-policy" | "verified-access-trust-provider" | "vpn-connection-device-type"
 object ResourceType {
   inline val `capacity-reservation`: "capacity-reservation" = "capacity-reservation"
   inline val `client-vpn-endpoint`: "client-vpn-endpoint" = "client-vpn-endpoint"
   inline val `customer-gateway`: "customer-gateway" = "customer-gateway"
   inline val `carrier-gateway`: "carrier-gateway" = "carrier-gateway"
+  inline val `coip-pool`: "coip-pool" = "coip-pool"
   inline val `dedicated-host`: "dedicated-host" = "dedicated-host"
   inline val `dhcp-options`: "dhcp-options" = "dhcp-options"
   inline val `egress-only-internet-gateway`: "egress-only-internet-gateway" = "egress-only-internet-gateway"
@@ -2858,6 +3295,7 @@ object ResourceType {
   inline val `spot-fleet-request`: "spot-fleet-request" = "spot-fleet-request"
   inline val `spot-instances-request`: "spot-instances-request" = "spot-instances-request"
   inline val subnet: "subnet" = "subnet"
+  inline val `subnet-cidr-reservation`: "subnet-cidr-reservation" = "subnet-cidr-reservation"
   inline val `traffic-mirror-filter`: "traffic-mirror-filter" = "traffic-mirror-filter"
   inline val `traffic-mirror-session`: "traffic-mirror-session" = "traffic-mirror-session"
   inline val `traffic-mirror-target`: "traffic-mirror-target" = "traffic-mirror-target"
@@ -2865,21 +3303,35 @@ object ResourceType {
   inline val `transit-gateway-attachment`: "transit-gateway-attachment" = "transit-gateway-attachment"
   inline val `transit-gateway-connect-peer`: "transit-gateway-connect-peer" = "transit-gateway-connect-peer"
   inline val `transit-gateway-multicast-domain`: "transit-gateway-multicast-domain" = "transit-gateway-multicast-domain"
+  inline val `transit-gateway-policy-table`: "transit-gateway-policy-table" = "transit-gateway-policy-table"
   inline val `transit-gateway-route-table`: "transit-gateway-route-table" = "transit-gateway-route-table"
+  inline val `transit-gateway-route-table-announcement`: "transit-gateway-route-table-announcement" = "transit-gateway-route-table-announcement"
   inline val volume: "volume" = "volume"
   inline val vpc: "vpc" = "vpc"
   inline val `vpc-endpoint`: "vpc-endpoint" = "vpc-endpoint"
+  inline val `vpc-endpoint-connection`: "vpc-endpoint-connection" = "vpc-endpoint-connection"
   inline val `vpc-endpoint-service`: "vpc-endpoint-service" = "vpc-endpoint-service"
+  inline val `vpc-endpoint-service-permission`: "vpc-endpoint-service-permission" = "vpc-endpoint-service-permission"
   inline val `vpc-peering-connection`: "vpc-peering-connection" = "vpc-peering-connection"
   inline val `vpn-connection`: "vpn-connection" = "vpn-connection"
   inline val `vpn-gateway`: "vpn-gateway" = "vpn-gateway"
   inline val `vpc-flow-log`: "vpc-flow-log" = "vpc-flow-log"
+  inline val `capacity-reservation-fleet`: "capacity-reservation-fleet" = "capacity-reservation-fleet"
+  inline val `traffic-mirror-filter-rule`: "traffic-mirror-filter-rule" = "traffic-mirror-filter-rule"
+  inline val `vpc-endpoint-connection-device-type`: "vpc-endpoint-connection-device-type" = "vpc-endpoint-connection-device-type"
+  inline val `verified-access-instance`: "verified-access-instance" = "verified-access-instance"
+  inline val `verified-access-group`: "verified-access-group" = "verified-access-group"
+  inline val `verified-access-endpoint`: "verified-access-endpoint" = "verified-access-endpoint"
+  inline val `verified-access-policy`: "verified-access-policy" = "verified-access-policy"
+  inline val `verified-access-trust-provider`: "verified-access-trust-provider" = "verified-access-trust-provider"
+  inline val `vpn-connection-device-type`: "vpn-connection-device-type" = "vpn-connection-device-type"
 
   inline def values: js.Array[ResourceType] = js.Array(
     `capacity-reservation`,
     `client-vpn-endpoint`,
     `customer-gateway`,
     `carrier-gateway`,
+    `coip-pool`,
     `dedicated-host`,
     `dhcp-options`,
     `egress-only-internet-gateway`,
@@ -2927,6 +3379,7 @@ object ResourceType {
     `spot-fleet-request`,
     `spot-instances-request`,
     subnet,
+    `subnet-cidr-reservation`,
     `traffic-mirror-filter`,
     `traffic-mirror-session`,
     `traffic-mirror-target`,
@@ -2934,15 +3387,28 @@ object ResourceType {
     `transit-gateway-attachment`,
     `transit-gateway-connect-peer`,
     `transit-gateway-multicast-domain`,
+    `transit-gateway-policy-table`,
     `transit-gateway-route-table`,
+    `transit-gateway-route-table-announcement`,
     volume,
     vpc,
     `vpc-endpoint`,
+    `vpc-endpoint-connection`,
     `vpc-endpoint-service`,
+    `vpc-endpoint-service-permission`,
     `vpc-peering-connection`,
     `vpn-connection`,
     `vpn-gateway`,
-    `vpc-flow-log`
+    `vpc-flow-log`,
+    `capacity-reservation-fleet`,
+    `traffic-mirror-filter-rule`,
+    `vpc-endpoint-connection-device-type`,
+    `verified-access-instance`,
+    `verified-access-group`,
+    `verified-access-endpoint`,
+    `verified-access-policy`,
+    `verified-access-trust-provider`,
+    `vpn-connection-device-type`
   )
 }
 
@@ -2998,6 +3464,14 @@ object SelfServicePortal {
   inline def values: js.Array[SelfServicePortal] = js.Array(enabled, disabled)
 }
 
+type ServiceConnectivityType = "ipv4" | "ipv6"
+object ServiceConnectivityType {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[ServiceConnectivityType] = js.Array(ipv4, ipv6)
+}
+
 type ServiceState = "Pending" | "Available" | "Deleting" | "Deleted" | "Failed"
 object ServiceState {
   inline val Pending: "Pending" = "Pending"
@@ -3045,14 +3519,15 @@ object SnapshotState {
   inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error, recoverable, recovering)
 }
 
-type SpotAllocationStrategy = "lowest-price" | "diversified" | "capacity-optimized" | "capacity-optimized-prioritized"
+type SpotAllocationStrategy = "lowest-price" | "diversified" | "capacity-optimized" | "capacity-optimized-prioritized" | "price-capacity-optimized"
 object SpotAllocationStrategy {
   inline val `lowest-price`: "lowest-price" = "lowest-price"
   inline val diversified: "diversified" = "diversified"
   inline val `capacity-optimized`: "capacity-optimized" = "capacity-optimized"
   inline val `capacity-optimized-prioritized`: "capacity-optimized-prioritized" = "capacity-optimized-prioritized"
+  inline val `price-capacity-optimized`: "price-capacity-optimized" = "price-capacity-optimized"
 
-  inline def values: js.Array[SpotAllocationStrategy] = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`)
+  inline def values: js.Array[SpotAllocationStrategy] = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`, `price-capacity-optimized`)
 }
 
 type SpotInstanceInterruptionBehavior = "hibernate" | "stop" | "terminate"
@@ -3083,6 +3558,14 @@ object SpotInstanceType {
   inline def values: js.Array[SpotInstanceType] = js.Array(`one-time`, persistent)
 }
 
+type SpreadLevel = "host" | "rack"
+object SpreadLevel {
+  inline val host: "host" = "host"
+  inline val rack: "rack" = "rack"
+
+  inline def values: js.Array[SpreadLevel] = js.Array(host, rack)
+}
+
 type State = "PendingAcceptance" | "Pending" | "Available" | "Deleting" | "Deleted" | "Rejected" | "Failed" | "Expired"
 object State {
   inline val PendingAcceptance: "PendingAcceptance" = "PendingAcceptance"
@@ -3103,6 +3586,13 @@ object StaticSourcesSupportValue {
   inline val disable: "disable" = "disable"
 
   inline def values: js.Array[StaticSourcesSupportValue] = js.Array(enable, disable)
+}
+
+type StatisticType = "p50"
+object StatisticType {
+  inline val p50: "p50" = "p50"
+
+  inline def values: js.Array[StatisticType] = js.Array(p50)
 }
 
 type Status = "MoveInProgress" | "InVpc" | "InClassic"
@@ -3236,6 +3726,13 @@ object TieringOperationStatus {
   )
 }
 
+type TpmSupportValues = "v2.0"
+object TpmSupportValues {
+  inline val `v2.0`: "v2.0" = "v2.0"
+
+  inline def values: js.Array[TpmSupportValues] = js.Array(`v2.0`)
+}
+
 type TrafficDirection = "ingress" | "egress"
 object TrafficDirection {
   inline val ingress: "ingress" = "ingress"
@@ -3278,12 +3775,13 @@ object TrafficMirrorSessionField {
   inline def values: js.Array[TrafficMirrorSessionField] = js.Array(`packet-length`, description, `virtual-network-id`)
 }
 
-type TrafficMirrorTargetType = "network-interface" | "network-load-balancer"
+type TrafficMirrorTargetType = "network-interface" | "network-load-balancer" | "gateway-load-balancer-endpoint"
 object TrafficMirrorTargetType {
   inline val `network-interface`: "network-interface" = "network-interface"
   inline val `network-load-balancer`: "network-load-balancer" = "network-load-balancer"
+  inline val `gateway-load-balancer-endpoint`: "gateway-load-balancer-endpoint" = "gateway-load-balancer-endpoint"
 
-  inline def values: js.Array[TrafficMirrorTargetType] = js.Array(`network-interface`, `network-load-balancer`)
+  inline def values: js.Array[TrafficMirrorTargetType] = js.Array(`network-interface`, `network-load-balancer`, `gateway-load-balancer-endpoint`)
 }
 
 type TrafficType = "ACCEPT" | "REJECT" | "ALL"
@@ -3369,6 +3867,16 @@ object TransitGatewayMulticastDomainState {
   inline def values: js.Array[TransitGatewayMulticastDomainState] = js.Array(pending, available, deleting, deleted)
 }
 
+type TransitGatewayPolicyTableState = "pending" | "available" | "deleting" | "deleted"
+object TransitGatewayPolicyTableState {
+  inline val pending: "pending" = "pending"
+  inline val available: "available" = "available"
+  inline val deleting: "deleting" = "deleting"
+  inline val deleted: "deleted" = "deleted"
+
+  inline def values: js.Array[TransitGatewayPolicyTableState] = js.Array(pending, available, deleting, deleted)
+}
+
 type TransitGatewayPrefixListReferenceState = "pending" | "available" | "modifying" | "deleting"
 object TransitGatewayPrefixListReferenceState {
   inline val pending: "pending" = "pending"
@@ -3398,6 +3906,26 @@ object TransitGatewayRouteState {
   inline val deleted: "deleted" = "deleted"
 
   inline def values: js.Array[TransitGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
+}
+
+type TransitGatewayRouteTableAnnouncementDirection = "outgoing" | "incoming"
+object TransitGatewayRouteTableAnnouncementDirection {
+  inline val outgoing: "outgoing" = "outgoing"
+  inline val incoming: "incoming" = "incoming"
+
+  inline def values: js.Array[TransitGatewayRouteTableAnnouncementDirection] = js.Array(outgoing, incoming)
+}
+
+type TransitGatewayRouteTableAnnouncementState = "available" | "pending" | "failing" | "failed" | "deleting" | "deleted"
+object TransitGatewayRouteTableAnnouncementState {
+  inline val available: "available" = "available"
+  inline val pending: "pending" = "pending"
+  inline val failing: "failing" = "failing"
+  inline val failed: "failed" = "failed"
+  inline val deleting: "deleting" = "deleting"
+  inline val deleted: "deleted" = "deleted"
+
+  inline def values: js.Array[TransitGatewayRouteTableAnnouncementState] = js.Array(available, pending, failing, failed, deleting, deleted)
 }
 
 type TransitGatewayRouteTableState = "pending" | "available" | "deleting" | "deleted"
@@ -3437,6 +3965,14 @@ object TransportProtocol {
   inline def values: js.Array[TransportProtocol] = js.Array(tcp, udp)
 }
 
+type TrustProviderType = "user" | "device"
+object TrustProviderType {
+  inline val user: "user" = "user"
+  inline val device: "device" = "device"
+
+  inline def values: js.Array[TrustProviderType] = js.Array(user, device)
+}
+
 type TunnelInsideIpVersion = "ipv4" | "ipv6"
 object TunnelInsideIpVersion {
   inline val ipv4: "ipv4" = "ipv4"
@@ -3471,6 +4007,56 @@ object UsageClassType {
   inline val `on-demand`: "on-demand" = "on-demand"
 
   inline def values: js.Array[UsageClassType] = js.Array(spot, `on-demand`)
+}
+
+type UserTrustProviderType = "iam-identity-center" | "oidc"
+object UserTrustProviderType {
+  inline val `iam-identity-center`: "iam-identity-center" = "iam-identity-center"
+  inline val oidc: "oidc" = "oidc"
+
+  inline def values: js.Array[UserTrustProviderType] = js.Array(`iam-identity-center`, oidc)
+}
+
+type VerifiedAccessEndpointAttachmentType = "vpc"
+object VerifiedAccessEndpointAttachmentType {
+  inline val vpc: "vpc" = "vpc"
+
+  inline def values: js.Array[VerifiedAccessEndpointAttachmentType] = js.Array(vpc)
+}
+
+type VerifiedAccessEndpointProtocol = "http" | "https"
+object VerifiedAccessEndpointProtocol {
+  inline val http: "http" = "http"
+  inline val https: "https" = "https"
+
+  inline def values: js.Array[VerifiedAccessEndpointProtocol] = js.Array(http, https)
+}
+
+type VerifiedAccessEndpointStatusCode = "pending" | "active" | "updating" | "deleting" | "deleted"
+object VerifiedAccessEndpointStatusCode {
+  inline val pending: "pending" = "pending"
+  inline val active: "active" = "active"
+  inline val updating: "updating" = "updating"
+  inline val deleting: "deleting" = "deleting"
+  inline val deleted: "deleted" = "deleted"
+
+  inline def values: js.Array[VerifiedAccessEndpointStatusCode] = js.Array(pending, active, updating, deleting, deleted)
+}
+
+type VerifiedAccessEndpointType = "load-balancer" | "network-interface"
+object VerifiedAccessEndpointType {
+  inline val `load-balancer`: "load-balancer" = "load-balancer"
+  inline val `network-interface`: "network-interface" = "network-interface"
+
+  inline def values: js.Array[VerifiedAccessEndpointType] = js.Array(`load-balancer`, `network-interface`)
+}
+
+type VerifiedAccessLogDeliveryStatusCode = "success" | "failed"
+object VerifiedAccessLogDeliveryStatusCode {
+  inline val success: "success" = "success"
+  inline val failed: "failed" = "failed"
+
+  inline def values: js.Array[VerifiedAccessLogDeliveryStatusCode] = js.Array(success, failed)
 }
 
 type VirtualizationType = "hvm" | "paravirtual"
@@ -3552,12 +4138,13 @@ object VolumeType {
   inline def values: js.Array[VolumeType] = js.Array(standard, io1, io2, gp2, sc1, st1, gp3)
 }
 
-type VpcAttributeName = "enableDnsSupport" | "enableDnsHostnames"
+type VpcAttributeName = "enableDnsSupport" | "enableDnsHostnames" | "enableNetworkAddressUsageMetrics"
 object VpcAttributeName {
   inline val enableDnsSupport: "enableDnsSupport" = "enableDnsSupport"
   inline val enableDnsHostnames: "enableDnsHostnames" = "enableDnsHostnames"
+  inline val enableNetworkAddressUsageMetrics: "enableNetworkAddressUsageMetrics" = "enableNetworkAddressUsageMetrics"
 
-  inline def values: js.Array[VpcAttributeName] = js.Array(enableDnsSupport, enableDnsHostnames)
+  inline def values: js.Array[VpcAttributeName] = js.Array(enableDnsSupport, enableDnsHostnames, enableNetworkAddressUsageMetrics)
 }
 
 type VpcCidrBlockStateCode = "associating" | "associated" | "disassociating" | "disassociated" | "failing" | "failed"

@@ -8,10 +8,13 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object groundstation {
+  type AWSRegion = String
+  type AnyArn = String
   type BucketArn = String
   type ConfigArn = String
   type ConfigList = js.Array[ConfigListItem]
   type ContactList = js.Array[ContactData]
+  type CustomerEphemerisPriority = Int
   type DataflowEdge = js.Array[ConfigArn]
   type DataflowEdgeList = js.Array[DataflowEdge]
   type DataflowEndpointGroupArn = String
@@ -20,22 +23,39 @@ package object groundstation {
   type DataflowList = js.Array[DataflowDetail]
   type DurationInSeconds = Int
   type EndpointDetailsList = js.Array[EndpointDetails]
-  type GroundStationIdList = js.Array[String]
+  type EphemeridesList = js.Array[EphemerisItem]
+  type EphemerisPriority = Int
+  type EphemerisStatusList = js.Array[EphemerisStatus]
+  type GroundStationIdList = js.Array[GroundStationName]
   type GroundStationList = js.Array[GroundStationData]
+  type GroundStationName = String
   type JsonString = String
+  type KeyArn = String
   type MissionProfileArn = String
   type MissionProfileList = js.Array[MissionProfileListItem]
+  type Month = Int
+  type PaginationMaxResults = Int
+  type PaginationToken = String
+  type PositiveDurationInSeconds = Int
   type RoleArn = String
+  type S3BucketName = String
   type S3KeyPrefix = String
+  type S3ObjectKey = String
+  type S3VersionId = String
   type SafeName = String
   type SatelliteList = js.Array[SatelliteListItem]
   type SecurityGroupIdList = js.Array[String]
   type StatusList = js.Array[ContactStatus]
   type SubnetList = js.Array[String]
-  type TagKeys = js.Array[String]
+  type TLEDataList = js.Array[TLEData]
+  type TagKeys = js.Array[UnboundedString]
   type TagsMap = js.Dictionary[String]
   type Timestamp = js.Date
+  type TleLineOne = String
+  type TleLineTwo = String
+  type UnboundedString = String
   type Uuid = String
+  type Year = Int
   type noradSatelliteID = Int
   type satelliteArn = String
 
@@ -44,11 +64,14 @@ package object groundstation {
     @inline def cancelContactFuture(params: CancelContactRequest): Future[ContactIdResponse] = service.cancelContact(params).promise().toFuture
     @inline def createConfigFuture(params: CreateConfigRequest): Future[ConfigIdResponse] = service.createConfig(params).promise().toFuture
     @inline def createDataflowEndpointGroupFuture(params: CreateDataflowEndpointGroupRequest): Future[DataflowEndpointGroupIdResponse] = service.createDataflowEndpointGroup(params).promise().toFuture
+    @inline def createEphemerisFuture(params: CreateEphemerisRequest): Future[EphemerisIdResponse] = service.createEphemeris(params).promise().toFuture
     @inline def createMissionProfileFuture(params: CreateMissionProfileRequest): Future[MissionProfileIdResponse] = service.createMissionProfile(params).promise().toFuture
     @inline def deleteConfigFuture(params: DeleteConfigRequest): Future[ConfigIdResponse] = service.deleteConfig(params).promise().toFuture
     @inline def deleteDataflowEndpointGroupFuture(params: DeleteDataflowEndpointGroupRequest): Future[DataflowEndpointGroupIdResponse] = service.deleteDataflowEndpointGroup(params).promise().toFuture
+    @inline def deleteEphemerisFuture(params: DeleteEphemerisRequest): Future[EphemerisIdResponse] = service.deleteEphemeris(params).promise().toFuture
     @inline def deleteMissionProfileFuture(params: DeleteMissionProfileRequest): Future[MissionProfileIdResponse] = service.deleteMissionProfile(params).promise().toFuture
     @inline def describeContactFuture(params: DescribeContactRequest): Future[DescribeContactResponse] = service.describeContact(params).promise().toFuture
+    @inline def describeEphemerisFuture(params: DescribeEphemerisRequest): Future[DescribeEphemerisResponse] = service.describeEphemeris(params).promise().toFuture
     @inline def getConfigFuture(params: GetConfigRequest): Future[GetConfigResponse] = service.getConfig(params).promise().toFuture
     @inline def getDataflowEndpointGroupFuture(params: GetDataflowEndpointGroupRequest): Future[GetDataflowEndpointGroupResponse] = service.getDataflowEndpointGroup(params).promise().toFuture
     @inline def getMinuteUsageFuture(params: GetMinuteUsageRequest): Future[GetMinuteUsageResponse] = service.getMinuteUsage(params).promise().toFuture
@@ -57,6 +80,7 @@ package object groundstation {
     @inline def listConfigsFuture(params: ListConfigsRequest): Future[ListConfigsResponse] = service.listConfigs(params).promise().toFuture
     @inline def listContactsFuture(params: ListContactsRequest): Future[ListContactsResponse] = service.listContacts(params).promise().toFuture
     @inline def listDataflowEndpointGroupsFuture(params: ListDataflowEndpointGroupsRequest): Future[ListDataflowEndpointGroupsResponse] = service.listDataflowEndpointGroups(params).promise().toFuture
+    @inline def listEphemeridesFuture(params: ListEphemeridesRequest): Future[ListEphemeridesResponse] = service.listEphemerides(params).promise().toFuture
     @inline def listGroundStationsFuture(params: ListGroundStationsRequest): Future[ListGroundStationsResponse] = service.listGroundStations(params).promise().toFuture
     @inline def listMissionProfilesFuture(params: ListMissionProfilesRequest): Future[ListMissionProfilesResponse] = service.listMissionProfiles(params).promise().toFuture
     @inline def listSatellitesFuture(params: ListSatellitesRequest): Future[ListSatellitesResponse] = service.listSatellites(params).promise().toFuture
@@ -65,6 +89,7 @@ package object groundstation {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConfigFuture(params: UpdateConfigRequest): Future[ConfigIdResponse] = service.updateConfig(params).promise().toFuture
+    @inline def updateEphemerisFuture(params: UpdateEphemerisRequest): Future[EphemerisIdResponse] = service.updateEphemeris(params).promise().toFuture
     @inline def updateMissionProfileFuture(params: UpdateMissionProfileRequest): Future[MissionProfileIdResponse] = service.updateMissionProfile(params).promise().toFuture
 
   }
@@ -77,11 +102,14 @@ package object groundstation {
     def cancelContact(params: CancelContactRequest): Request[ContactIdResponse] = js.native
     def createConfig(params: CreateConfigRequest): Request[ConfigIdResponse] = js.native
     def createDataflowEndpointGroup(params: CreateDataflowEndpointGroupRequest): Request[DataflowEndpointGroupIdResponse] = js.native
+    def createEphemeris(params: CreateEphemerisRequest): Request[EphemerisIdResponse] = js.native
     def createMissionProfile(params: CreateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
     def deleteConfig(params: DeleteConfigRequest): Request[ConfigIdResponse] = js.native
     def deleteDataflowEndpointGroup(params: DeleteDataflowEndpointGroupRequest): Request[DataflowEndpointGroupIdResponse] = js.native
+    def deleteEphemeris(params: DeleteEphemerisRequest): Request[EphemerisIdResponse] = js.native
     def deleteMissionProfile(params: DeleteMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
     def describeContact(params: DescribeContactRequest): Request[DescribeContactResponse] = js.native
+    def describeEphemeris(params: DescribeEphemerisRequest): Request[DescribeEphemerisResponse] = js.native
     def getConfig(params: GetConfigRequest): Request[GetConfigResponse] = js.native
     def getDataflowEndpointGroup(params: GetDataflowEndpointGroupRequest): Request[GetDataflowEndpointGroupResponse] = js.native
     def getMinuteUsage(params: GetMinuteUsageRequest): Request[GetMinuteUsageResponse] = js.native
@@ -90,6 +118,7 @@ package object groundstation {
     def listConfigs(params: ListConfigsRequest): Request[ListConfigsResponse] = js.native
     def listContacts(params: ListContactsRequest): Request[ListContactsResponse] = js.native
     def listDataflowEndpointGroups(params: ListDataflowEndpointGroupsRequest): Request[ListDataflowEndpointGroupsResponse] = js.native
+    def listEphemerides(params: ListEphemeridesRequest): Request[ListEphemeridesResponse] = js.native
     def listGroundStations(params: ListGroundStationsRequest): Request[ListGroundStationsResponse] = js.native
     def listMissionProfiles(params: ListMissionProfilesRequest): Request[ListMissionProfilesResponse] = js.native
     def listSatellites(params: ListSatellitesRequest): Request[ListSatellitesResponse] = js.native
@@ -98,6 +127,7 @@ package object groundstation {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConfig(params: UpdateConfigRequest): Request[ConfigIdResponse] = js.native
+    def updateEphemeris(params: UpdateEphemerisRequest): Request[EphemerisIdResponse] = js.native
     def updateMissionProfile(params: UpdateMissionProfileRequest): Request[MissionProfileIdResponse] = js.native
   }
   object GroundStation {
@@ -198,13 +228,13 @@ package object groundstation {
     */
   @js.native
   trait CancelContactRequest extends js.Object {
-    var contactId: String
+    var contactId: Uuid
   }
 
   object CancelContactRequest {
     @inline
     def apply(
-        contactId: String
+        contactId: Uuid
     ): CancelContactRequest = {
       val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
@@ -328,7 +358,7 @@ package object groundstation {
     */
   @js.native
   trait ContactData extends js.Object {
-    var contactId: js.UndefOr[String]
+    var contactId: js.UndefOr[Uuid]
     var contactStatus: js.UndefOr[ContactStatus]
     var endTime: js.UndefOr[Timestamp]
     var errorMessage: js.UndefOr[String]
@@ -346,7 +376,7 @@ package object groundstation {
   object ContactData {
     @inline
     def apply(
-        contactId: js.UndefOr[String] = js.undefined,
+        contactId: js.UndefOr[Uuid] = js.undefined,
         contactStatus: js.UndefOr[ContactStatus] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         errorMessage: js.UndefOr[String] = js.undefined,
@@ -382,13 +412,13 @@ package object groundstation {
     */
   @js.native
   trait ContactIdResponse extends js.Object {
-    var contactId: js.UndefOr[String]
+    var contactId: js.UndefOr[Uuid]
   }
 
   object ContactIdResponse {
     @inline
     def apply(
-        contactId: js.UndefOr[String] = js.undefined
+        contactId: js.UndefOr[Uuid] = js.undefined
     ): ContactIdResponse = {
       val __obj = js.Dynamic.literal()
       contactId.foreach(__v => __obj.updateDynamic("contactId")(__v.asInstanceOf[js.Any]))
@@ -445,12 +475,51 @@ package object groundstation {
     }
   }
 
+  @js.native
+  trait CreateEphemerisRequest extends js.Object {
+    var name: SafeName
+    var satelliteId: Uuid
+    var enabled: js.UndefOr[Boolean]
+    var ephemeris: js.UndefOr[EphemerisData]
+    var expirationTime: js.UndefOr[Timestamp]
+    var kmsKeyArn: js.UndefOr[KeyArn]
+    var priority: js.UndefOr[CustomerEphemerisPriority]
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateEphemerisRequest {
+    @inline
+    def apply(
+        name: SafeName,
+        satelliteId: Uuid,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        ephemeris: js.UndefOr[EphemerisData] = js.undefined,
+        expirationTime: js.UndefOr[Timestamp] = js.undefined,
+        kmsKeyArn: js.UndefOr[KeyArn] = js.undefined,
+        priority: js.UndefOr[CustomerEphemerisPriority] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateEphemerisRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "satelliteId" -> satelliteId.asInstanceOf[js.Any]
+      )
+
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      ephemeris.foreach(__v => __obj.updateDynamic("ephemeris")(__v.asInstanceOf[js.Any]))
+      expirationTime.foreach(__v => __obj.updateDynamic("expirationTime")(__v.asInstanceOf[js.Any]))
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEphemerisRequest]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait CreateMissionProfileRequest extends js.Object {
     var dataflowEdges: DataflowEdgeList
-    var minimumViableContactDurationSeconds: DurationInSeconds
+    var minimumViableContactDurationSeconds: PositiveDurationInSeconds
     var name: SafeName
     var trackingConfigArn: ConfigArn
     var contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds]
@@ -462,7 +531,7 @@ package object groundstation {
     @inline
     def apply(
         dataflowEdges: DataflowEdgeList,
-        minimumViableContactDurationSeconds: DurationInSeconds,
+        minimumViableContactDurationSeconds: PositiveDurationInSeconds,
         name: SafeName,
         trackingConfigArn: ConfigArn,
         contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
@@ -561,13 +630,13 @@ package object groundstation {
     */
   @js.native
   trait DataflowEndpointGroupIdResponse extends js.Object {
-    var dataflowEndpointGroupId: js.UndefOr[String]
+    var dataflowEndpointGroupId: js.UndefOr[Uuid]
   }
 
   object DataflowEndpointGroupIdResponse {
     @inline
     def apply(
-        dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
+        dataflowEndpointGroupId: js.UndefOr[Uuid] = js.undefined
     ): DataflowEndpointGroupIdResponse = {
       val __obj = js.Dynamic.literal()
       dataflowEndpointGroupId.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupId")(__v.asInstanceOf[js.Any]))
@@ -580,14 +649,14 @@ package object groundstation {
   @js.native
   trait DataflowEndpointListItem extends js.Object {
     var dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn]
-    var dataflowEndpointGroupId: js.UndefOr[String]
+    var dataflowEndpointGroupId: js.UndefOr[Uuid]
   }
 
   object DataflowEndpointListItem {
     @inline
     def apply(
         dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn] = js.undefined,
-        dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
+        dataflowEndpointGroupId: js.UndefOr[Uuid] = js.undefined
     ): DataflowEndpointListItem = {
       val __obj = js.Dynamic.literal()
       dataflowEndpointGroupArn.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupArn")(__v.asInstanceOf[js.Any]))
@@ -619,14 +688,14 @@ package object groundstation {
     */
   @js.native
   trait DeleteConfigRequest extends js.Object {
-    var configId: String
+    var configId: Uuid
     var configType: ConfigCapabilityType
   }
 
   object DeleteConfigRequest {
     @inline
     def apply(
-        configId: String,
+        configId: Uuid,
         configType: ConfigCapabilityType
     ): DeleteConfigRequest = {
       val __obj = js.Dynamic.literal(
@@ -641,13 +710,13 @@ package object groundstation {
     */
   @js.native
   trait DeleteDataflowEndpointGroupRequest extends js.Object {
-    var dataflowEndpointGroupId: String
+    var dataflowEndpointGroupId: Uuid
   }
 
   object DeleteDataflowEndpointGroupRequest {
     @inline
     def apply(
-        dataflowEndpointGroupId: String
+        dataflowEndpointGroupId: Uuid
     ): DeleteDataflowEndpointGroupRequest = {
       val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
@@ -656,17 +725,34 @@ package object groundstation {
     }
   }
 
+  @js.native
+  trait DeleteEphemerisRequest extends js.Object {
+    var ephemerisId: Uuid
+  }
+
+  object DeleteEphemerisRequest {
+    @inline
+    def apply(
+        ephemerisId: Uuid
+    ): DeleteEphemerisRequest = {
+      val __obj = js.Dynamic.literal(
+        "ephemerisId" -> ephemerisId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEphemerisRequest]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait DeleteMissionProfileRequest extends js.Object {
-    var missionProfileId: String
+    var missionProfileId: Uuid
   }
 
   object DeleteMissionProfileRequest {
     @inline
     def apply(
-        missionProfileId: String
+        missionProfileId: Uuid
     ): DeleteMissionProfileRequest = {
       val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
@@ -698,13 +784,13 @@ package object groundstation {
     */
   @js.native
   trait DescribeContactRequest extends js.Object {
-    var contactId: String
+    var contactId: Uuid
   }
 
   object DescribeContactRequest {
     @inline
     def apply(
-        contactId: String
+        contactId: Uuid
     ): DescribeContactRequest = {
       val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
@@ -717,7 +803,7 @@ package object groundstation {
     */
   @js.native
   trait DescribeContactResponse extends js.Object {
-    var contactId: js.UndefOr[String]
+    var contactId: js.UndefOr[Uuid]
     var contactStatus: js.UndefOr[ContactStatus]
     var dataflowList: js.UndefOr[DataflowList]
     var endTime: js.UndefOr[Timestamp]
@@ -736,7 +822,7 @@ package object groundstation {
   object DescribeContactResponse {
     @inline
     def apply(
-        contactId: js.UndefOr[String] = js.undefined,
+        contactId: js.UndefOr[Uuid] = js.undefined,
         contactStatus: js.UndefOr[ContactStatus] = js.undefined,
         dataflowList: js.UndefOr[DataflowList] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
@@ -770,12 +856,72 @@ package object groundstation {
     }
   }
 
+  @js.native
+  trait DescribeEphemerisRequest extends js.Object {
+    var ephemerisId: Uuid
+  }
+
+  object DescribeEphemerisRequest {
+    @inline
+    def apply(
+        ephemerisId: Uuid
+    ): DescribeEphemerisRequest = {
+      val __obj = js.Dynamic.literal(
+        "ephemerisId" -> ephemerisId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeEphemerisRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEphemerisResponse extends js.Object {
+    var creationTime: js.UndefOr[Timestamp]
+    var enabled: js.UndefOr[Boolean]
+    var ephemerisId: js.UndefOr[Uuid]
+    var invalidReason: js.UndefOr[EphemerisInvalidReason]
+    var name: js.UndefOr[SafeName]
+    var priority: js.UndefOr[EphemerisPriority]
+    var satelliteId: js.UndefOr[Uuid]
+    var status: js.UndefOr[EphemerisStatus]
+    var suppliedData: js.UndefOr[EphemerisTypeDescription]
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object DescribeEphemerisResponse {
+    @inline
+    def apply(
+        creationTime: js.UndefOr[Timestamp] = js.undefined,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        ephemerisId: js.UndefOr[Uuid] = js.undefined,
+        invalidReason: js.UndefOr[EphemerisInvalidReason] = js.undefined,
+        name: js.UndefOr[SafeName] = js.undefined,
+        priority: js.UndefOr[EphemerisPriority] = js.undefined,
+        satelliteId: js.UndefOr[Uuid] = js.undefined,
+        status: js.UndefOr[EphemerisStatus] = js.undefined,
+        suppliedData: js.UndefOr[EphemerisTypeDescription] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): DescribeEphemerisResponse = {
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      ephemerisId.foreach(__v => __obj.updateDynamic("ephemerisId")(__v.asInstanceOf[js.Any]))
+      invalidReason.foreach(__v => __obj.updateDynamic("invalidReason")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      suppliedData.foreach(__v => __obj.updateDynamic("suppliedData")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEphemerisResponse]
+    }
+  }
+
   /** Dataflow details for the destination side.
     */
   @js.native
   trait Destination extends js.Object {
     var configDetails: js.UndefOr[ConfigDetails]
-    var configId: js.UndefOr[String]
+    var configId: js.UndefOr[Uuid]
     var configType: js.UndefOr[ConfigCapabilityType]
     var dataflowDestinationRegion: js.UndefOr[String]
   }
@@ -784,7 +930,7 @@ package object groundstation {
     @inline
     def apply(
         configDetails: js.UndefOr[ConfigDetails] = js.undefined,
-        configId: js.UndefOr[String] = js.undefined,
+        configId: js.UndefOr[Uuid] = js.undefined,
         configType: js.UndefOr[ConfigCapabilityType] = js.undefined,
         dataflowDestinationRegion: js.UndefOr[String] = js.undefined
     ): Destination = {
@@ -862,6 +1008,150 @@ package object groundstation {
     }
   }
 
+  /** Ephemeris data.
+    */
+  @js.native
+  trait EphemerisData extends js.Object {
+    var oem: js.UndefOr[OEMEphemeris]
+    var tle: js.UndefOr[TLEEphemeris]
+  }
+
+  object EphemerisData {
+    @inline
+    def apply(
+        oem: js.UndefOr[OEMEphemeris] = js.undefined,
+        tle: js.UndefOr[TLEEphemeris] = js.undefined
+    ): EphemerisData = {
+      val __obj = js.Dynamic.literal()
+      oem.foreach(__v => __obj.updateDynamic("oem")(__v.asInstanceOf[js.Any]))
+      tle.foreach(__v => __obj.updateDynamic("tle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisData]
+    }
+  }
+
+  /** Description of ephemeris.
+    */
+  @js.native
+  trait EphemerisDescription extends js.Object {
+    var ephemerisData: js.UndefOr[UnboundedString]
+    var sourceS3Object: js.UndefOr[S3Object]
+  }
+
+  object EphemerisDescription {
+    @inline
+    def apply(
+        ephemerisData: js.UndefOr[UnboundedString] = js.undefined,
+        sourceS3Object: js.UndefOr[S3Object] = js.undefined
+    ): EphemerisDescription = {
+      val __obj = js.Dynamic.literal()
+      ephemerisData.foreach(__v => __obj.updateDynamic("ephemerisData")(__v.asInstanceOf[js.Any]))
+      sourceS3Object.foreach(__v => __obj.updateDynamic("sourceS3Object")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisDescription]
+    }
+  }
+
+  @js.native
+  trait EphemerisIdResponse extends js.Object {
+    var ephemerisId: js.UndefOr[Uuid]
+  }
+
+  object EphemerisIdResponse {
+    @inline
+    def apply(
+        ephemerisId: js.UndefOr[Uuid] = js.undefined
+    ): EphemerisIdResponse = {
+      val __obj = js.Dynamic.literal()
+      ephemerisId.foreach(__v => __obj.updateDynamic("ephemerisId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisIdResponse]
+    }
+  }
+
+  /** Ephemeris item.
+    */
+  @js.native
+  trait EphemerisItem extends js.Object {
+    var creationTime: js.UndefOr[Timestamp]
+    var enabled: js.UndefOr[Boolean]
+    var ephemerisId: js.UndefOr[Uuid]
+    var name: js.UndefOr[SafeName]
+    var priority: js.UndefOr[EphemerisPriority]
+    var sourceS3Object: js.UndefOr[S3Object]
+    var status: js.UndefOr[EphemerisStatus]
+  }
+
+  object EphemerisItem {
+    @inline
+    def apply(
+        creationTime: js.UndefOr[Timestamp] = js.undefined,
+        enabled: js.UndefOr[Boolean] = js.undefined,
+        ephemerisId: js.UndefOr[Uuid] = js.undefined,
+        name: js.UndefOr[SafeName] = js.undefined,
+        priority: js.UndefOr[EphemerisPriority] = js.undefined,
+        sourceS3Object: js.UndefOr[S3Object] = js.undefined,
+        status: js.UndefOr[EphemerisStatus] = js.undefined
+    ): EphemerisItem = {
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      ephemerisId.foreach(__v => __obj.updateDynamic("ephemerisId")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      sourceS3Object.foreach(__v => __obj.updateDynamic("sourceS3Object")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisItem]
+    }
+  }
+
+  /** Metadata describing a particular ephemeris.
+    */
+  @js.native
+  trait EphemerisMetaData extends js.Object {
+    var source: EphemerisSource
+    var ephemerisId: js.UndefOr[Uuid]
+    var epoch: js.UndefOr[Timestamp]
+    var name: js.UndefOr[SafeName]
+  }
+
+  object EphemerisMetaData {
+    @inline
+    def apply(
+        source: EphemerisSource,
+        ephemerisId: js.UndefOr[Uuid] = js.undefined,
+        epoch: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[SafeName] = js.undefined
+    ): EphemerisMetaData = {
+      val __obj = js.Dynamic.literal(
+        "source" -> source.asInstanceOf[js.Any]
+      )
+
+      ephemerisId.foreach(__v => __obj.updateDynamic("ephemerisId")(__v.asInstanceOf[js.Any]))
+      epoch.foreach(__v => __obj.updateDynamic("epoch")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisMetaData]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait EphemerisTypeDescription extends js.Object {
+    var oem: js.UndefOr[EphemerisDescription]
+    var tle: js.UndefOr[EphemerisDescription]
+  }
+
+  object EphemerisTypeDescription {
+    @inline
+    def apply(
+        oem: js.UndefOr[EphemerisDescription] = js.undefined,
+        tle: js.UndefOr[EphemerisDescription] = js.undefined
+    ): EphemerisTypeDescription = {
+      val __obj = js.Dynamic.literal()
+      oem.foreach(__v => __obj.updateDynamic("oem")(__v.asInstanceOf[js.Any]))
+      tle.foreach(__v => __obj.updateDynamic("tle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EphemerisTypeDescription]
+    }
+  }
+
   /** Object that describes the frequency.
     */
   @js.native
@@ -910,14 +1200,14 @@ package object groundstation {
     */
   @js.native
   trait GetConfigRequest extends js.Object {
-    var configId: String
+    var configId: Uuid
     var configType: ConfigCapabilityType
   }
 
   object GetConfigRequest {
     @inline
     def apply(
-        configId: String,
+        configId: Uuid,
         configType: ConfigCapabilityType
     ): GetConfigRequest = {
       val __obj = js.Dynamic.literal(
@@ -967,13 +1257,13 @@ package object groundstation {
     */
   @js.native
   trait GetDataflowEndpointGroupRequest extends js.Object {
-    var dataflowEndpointGroupId: String
+    var dataflowEndpointGroupId: Uuid
   }
 
   object GetDataflowEndpointGroupRequest {
     @inline
     def apply(
-        dataflowEndpointGroupId: String
+        dataflowEndpointGroupId: Uuid
     ): GetDataflowEndpointGroupRequest = {
       val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
@@ -987,7 +1277,7 @@ package object groundstation {
   @js.native
   trait GetDataflowEndpointGroupResponse extends js.Object {
     var dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn]
-    var dataflowEndpointGroupId: js.UndefOr[String]
+    var dataflowEndpointGroupId: js.UndefOr[Uuid]
     var endpointsDetails: js.UndefOr[EndpointDetailsList]
     var tags: js.UndefOr[TagsMap]
   }
@@ -996,7 +1286,7 @@ package object groundstation {
     @inline
     def apply(
         dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn] = js.undefined,
-        dataflowEndpointGroupId: js.UndefOr[String] = js.undefined,
+        dataflowEndpointGroupId: js.UndefOr[Uuid] = js.undefined,
         endpointsDetails: js.UndefOr[EndpointDetailsList] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): GetDataflowEndpointGroupResponse = {
@@ -1013,15 +1303,15 @@ package object groundstation {
     */
   @js.native
   trait GetMinuteUsageRequest extends js.Object {
-    var month: Int
-    var year: Int
+    var month: Month
+    var year: Year
   }
 
   object GetMinuteUsageRequest {
     @inline
     def apply(
-        month: Int,
-        year: Int
+        month: Month,
+        year: Year
     ): GetMinuteUsageRequest = {
       val __obj = js.Dynamic.literal(
         "month" -> month.asInstanceOf[js.Any],
@@ -1065,13 +1355,13 @@ package object groundstation {
     */
   @js.native
   trait GetMissionProfileRequest extends js.Object {
-    var missionProfileId: String
+    var missionProfileId: Uuid
   }
 
   object GetMissionProfileRequest {
     @inline
     def apply(
-        missionProfileId: String
+        missionProfileId: Uuid
     ): GetMissionProfileRequest = {
       val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
@@ -1087,11 +1377,11 @@ package object groundstation {
     var contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds]
     var contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds]
     var dataflowEdges: js.UndefOr[DataflowEdgeList]
-    var minimumViableContactDurationSeconds: js.UndefOr[DurationInSeconds]
+    var minimumViableContactDurationSeconds: js.UndefOr[PositiveDurationInSeconds]
     var missionProfileArn: js.UndefOr[MissionProfileArn]
-    var missionProfileId: js.UndefOr[String]
-    var name: js.UndefOr[String]
-    var region: js.UndefOr[String]
+    var missionProfileId: js.UndefOr[Uuid]
+    var name: js.UndefOr[SafeName]
+    var region: js.UndefOr[AWSRegion]
     var tags: js.UndefOr[TagsMap]
     var trackingConfigArn: js.UndefOr[ConfigArn]
   }
@@ -1102,11 +1392,11 @@ package object groundstation {
         contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         dataflowEdges: js.UndefOr[DataflowEdgeList] = js.undefined,
-        minimumViableContactDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
+        minimumViableContactDurationSeconds: js.UndefOr[PositiveDurationInSeconds] = js.undefined,
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
-        missionProfileId: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        region: js.UndefOr[String] = js.undefined,
+        missionProfileId: js.UndefOr[Uuid] = js.undefined,
+        name: js.UndefOr[SafeName] = js.undefined,
+        region: js.UndefOr[AWSRegion] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined,
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): GetMissionProfileResponse = {
@@ -1129,13 +1419,13 @@ package object groundstation {
     */
   @js.native
   trait GetSatelliteRequest extends js.Object {
-    var satelliteId: String
+    var satelliteId: Uuid
   }
 
   object GetSatelliteRequest {
     @inline
     def apply(
-        satelliteId: String
+        satelliteId: Uuid
     ): GetSatelliteRequest = {
       val __obj = js.Dynamic.literal(
         "satelliteId" -> satelliteId.asInstanceOf[js.Any]
@@ -1148,6 +1438,7 @@ package object groundstation {
     */
   @js.native
   trait GetSatelliteResponse extends js.Object {
+    var currentEphemeris: js.UndefOr[EphemerisMetaData]
     var groundStations: js.UndefOr[GroundStationIdList]
     var noradSatelliteID: js.UndefOr[noradSatelliteID]
     var satelliteArn: js.UndefOr[satelliteArn]
@@ -1157,12 +1448,14 @@ package object groundstation {
   object GetSatelliteResponse {
     @inline
     def apply(
+        currentEphemeris: js.UndefOr[EphemerisMetaData] = js.undefined,
         groundStations: js.UndefOr[GroundStationIdList] = js.undefined,
         noradSatelliteID: js.UndefOr[noradSatelliteID] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         satelliteId: js.UndefOr[Uuid] = js.undefined
     ): GetSatelliteResponse = {
       val __obj = js.Dynamic.literal()
+      currentEphemeris.foreach(__v => __obj.updateDynamic("currentEphemeris")(__v.asInstanceOf[js.Any]))
       groundStations.foreach(__v => __obj.updateDynamic("groundStations")(__v.asInstanceOf[js.Any]))
       noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
@@ -1175,17 +1468,17 @@ package object groundstation {
     */
   @js.native
   trait GroundStationData extends js.Object {
-    var groundStationId: js.UndefOr[String]
-    var groundStationName: js.UndefOr[String]
-    var region: js.UndefOr[String]
+    var groundStationId: js.UndefOr[GroundStationName]
+    var groundStationName: js.UndefOr[GroundStationName]
+    var region: js.UndefOr[AWSRegion]
   }
 
   object GroundStationData {
     @inline
     def apply(
-        groundStationId: js.UndefOr[String] = js.undefined,
-        groundStationName: js.UndefOr[String] = js.undefined,
-        region: js.UndefOr[String] = js.undefined
+        groundStationId: js.UndefOr[GroundStationName] = js.undefined,
+        groundStationName: js.UndefOr[GroundStationName] = js.undefined,
+        region: js.UndefOr[AWSRegion] = js.undefined
     ): GroundStationData = {
       val __obj = js.Dynamic.literal()
       groundStationId.foreach(__v => __obj.updateDynamic("groundStationId")(__v.asInstanceOf[js.Any]))
@@ -1199,15 +1492,15 @@ package object groundstation {
     */
   @js.native
   trait ListConfigsRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListConfigsRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListConfigsRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1221,14 +1514,14 @@ package object groundstation {
   @js.native
   trait ListConfigsResponse extends js.Object {
     var configList: js.UndefOr[ConfigList]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListConfigsResponse {
     @inline
     def apply(
         configList: js.UndefOr[ConfigList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListConfigsResponse = {
       val __obj = js.Dynamic.literal()
       configList.foreach(__v => __obj.updateDynamic("configList")(__v.asInstanceOf[js.Any]))
@@ -1244,10 +1537,10 @@ package object groundstation {
     var endTime: Timestamp
     var startTime: Timestamp
     var statusList: StatusList
-    var groundStation: js.UndefOr[String]
-    var maxResults: js.UndefOr[Int]
+    var groundStation: js.UndefOr[GroundStationName]
+    var maxResults: js.UndefOr[PaginationMaxResults]
     var missionProfileArn: js.UndefOr[MissionProfileArn]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
     var satelliteArn: js.UndefOr[satelliteArn]
   }
 
@@ -1257,10 +1550,10 @@ package object groundstation {
         endTime: Timestamp,
         startTime: Timestamp,
         statusList: StatusList,
-        groundStation: js.UndefOr[String] = js.undefined,
-        maxResults: js.UndefOr[Int] = js.undefined,
+        groundStation: js.UndefOr[GroundStationName] = js.undefined,
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined
     ): ListContactsRequest = {
       val __obj = js.Dynamic.literal(
@@ -1283,14 +1576,14 @@ package object groundstation {
   @js.native
   trait ListContactsResponse extends js.Object {
     var contactList: js.UndefOr[ContactList]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListContactsResponse {
     @inline
     def apply(
         contactList: js.UndefOr[ContactList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListContactsResponse = {
       val __obj = js.Dynamic.literal()
       contactList.foreach(__v => __obj.updateDynamic("contactList")(__v.asInstanceOf[js.Any]))
@@ -1303,15 +1596,15 @@ package object groundstation {
     */
   @js.native
   trait ListDataflowEndpointGroupsRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListDataflowEndpointGroupsRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDataflowEndpointGroupsRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1325,14 +1618,14 @@ package object groundstation {
   @js.native
   trait ListDataflowEndpointGroupsResponse extends js.Object {
     var dataflowEndpointGroupList: js.UndefOr[DataflowEndpointGroupList]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListDataflowEndpointGroupsResponse {
     @inline
     def apply(
         dataflowEndpointGroupList: js.UndefOr[DataflowEndpointGroupList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDataflowEndpointGroupsResponse = {
       val __obj = js.Dynamic.literal()
       dataflowEndpointGroupList.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any]))
@@ -1341,21 +1634,73 @@ package object groundstation {
     }
   }
 
+  @js.native
+  trait ListEphemeridesRequest extends js.Object {
+    var endTime: Timestamp
+    var satelliteId: Uuid
+    var startTime: Timestamp
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+    var statusList: js.UndefOr[EphemerisStatusList]
+  }
+
+  object ListEphemeridesRequest {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        satelliteId: Uuid,
+        startTime: Timestamp,
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        statusList: js.UndefOr[EphemerisStatusList] = js.undefined
+    ): ListEphemeridesRequest = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "satelliteId" -> satelliteId.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      statusList.foreach(__v => __obj.updateDynamic("statusList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEphemeridesRequest]
+    }
+  }
+
+  @js.native
+  trait ListEphemeridesResponse extends js.Object {
+    var ephemerides: js.UndefOr[EphemeridesList]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListEphemeridesResponse {
+    @inline
+    def apply(
+        ephemerides: js.UndefOr[EphemeridesList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListEphemeridesResponse = {
+      val __obj = js.Dynamic.literal()
+      ephemerides.foreach(__v => __obj.updateDynamic("ephemerides")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEphemeridesResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait ListGroundStationsRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
-    var satelliteId: js.UndefOr[String]
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+    var satelliteId: js.UndefOr[Uuid]
   }
 
   object ListGroundStationsRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined,
-        satelliteId: js.UndefOr[String] = js.undefined
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        satelliteId: js.UndefOr[Uuid] = js.undefined
     ): ListGroundStationsRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1370,14 +1715,14 @@ package object groundstation {
   @js.native
   trait ListGroundStationsResponse extends js.Object {
     var groundStationList: js.UndefOr[GroundStationList]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListGroundStationsResponse {
     @inline
     def apply(
         groundStationList: js.UndefOr[GroundStationList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListGroundStationsResponse = {
       val __obj = js.Dynamic.literal()
       groundStationList.foreach(__v => __obj.updateDynamic("groundStationList")(__v.asInstanceOf[js.Any]))
@@ -1390,15 +1735,15 @@ package object groundstation {
     */
   @js.native
   trait ListMissionProfilesRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListMissionProfilesRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMissionProfilesRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1412,14 +1757,14 @@ package object groundstation {
   @js.native
   trait ListMissionProfilesResponse extends js.Object {
     var missionProfileList: js.UndefOr[MissionProfileList]
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListMissionProfilesResponse {
     @inline
     def apply(
         missionProfileList: js.UndefOr[MissionProfileList] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMissionProfilesResponse = {
       val __obj = js.Dynamic.literal()
       missionProfileList.foreach(__v => __obj.updateDynamic("missionProfileList")(__v.asInstanceOf[js.Any]))
@@ -1432,15 +1777,15 @@ package object groundstation {
     */
   @js.native
   trait ListSatellitesRequest extends js.Object {
-    var maxResults: js.UndefOr[Int]
-    var nextToken: js.UndefOr[String]
+    var maxResults: js.UndefOr[PaginationMaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
   }
 
   object ListSatellitesRequest {
     @inline
     def apply(
-        maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        maxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListSatellitesRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1453,14 +1798,14 @@ package object groundstation {
     */
   @js.native
   trait ListSatellitesResponse extends js.Object {
-    var nextToken: js.UndefOr[String]
+    var nextToken: js.UndefOr[PaginationToken]
     var satellites: js.UndefOr[SatelliteList]
   }
 
   object ListSatellitesResponse {
     @inline
     def apply(
-        nextToken: js.UndefOr[String] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
         satellites: js.UndefOr[SatelliteList] = js.undefined
     ): ListSatellitesResponse = {
       val __obj = js.Dynamic.literal()
@@ -1474,13 +1819,13 @@ package object groundstation {
     */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
-    var resourceArn: String
+    var resourceArn: AnyArn
   }
 
   object ListTagsForResourceRequest {
     @inline
     def apply(
-        resourceArn: String
+        resourceArn: AnyArn
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
@@ -1511,13 +1856,13 @@ package object groundstation {
     */
   @js.native
   trait MissionProfileIdResponse extends js.Object {
-    var missionProfileId: js.UndefOr[String]
+    var missionProfileId: js.UndefOr[Uuid]
   }
 
   object MissionProfileIdResponse {
     @inline
     def apply(
-        missionProfileId: js.UndefOr[String] = js.undefined
+        missionProfileId: js.UndefOr[Uuid] = js.undefined
     ): MissionProfileIdResponse = {
       val __obj = js.Dynamic.literal()
       missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
@@ -1530,18 +1875,18 @@ package object groundstation {
   @js.native
   trait MissionProfileListItem extends js.Object {
     var missionProfileArn: js.UndefOr[MissionProfileArn]
-    var missionProfileId: js.UndefOr[String]
-    var name: js.UndefOr[String]
-    var region: js.UndefOr[String]
+    var missionProfileId: js.UndefOr[Uuid]
+    var name: js.UndefOr[SafeName]
+    var region: js.UndefOr[AWSRegion]
   }
 
   object MissionProfileListItem {
     @inline
     def apply(
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
-        missionProfileId: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined,
-        region: js.UndefOr[String] = js.undefined
+        missionProfileId: js.UndefOr[Uuid] = js.undefined,
+        name: js.UndefOr[SafeName] = js.undefined,
+        region: js.UndefOr[AWSRegion] = js.undefined
     ): MissionProfileListItem = {
       val __obj = js.Dynamic.literal()
       missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
@@ -1552,12 +1897,33 @@ package object groundstation {
     }
   }
 
+  /** Ephemeris data in Orbit Ephemeris Message (OEM) format.
+    */
+  @js.native
+  trait OEMEphemeris extends js.Object {
+    var oemData: js.UndefOr[UnboundedString]
+    var s3Object: js.UndefOr[S3Object]
+  }
+
+  object OEMEphemeris {
+    @inline
+    def apply(
+        oemData: js.UndefOr[UnboundedString] = js.undefined,
+        s3Object: js.UndefOr[S3Object] = js.undefined
+    ): OEMEphemeris = {
+      val __obj = js.Dynamic.literal()
+      oemData.foreach(__v => __obj.updateDynamic("oemData")(__v.asInstanceOf[js.Any]))
+      s3Object.foreach(__v => __obj.updateDynamic("s3Object")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OEMEphemeris]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait ReserveContactRequest extends js.Object {
     var endTime: Timestamp
-    var groundStation: String
+    var groundStation: GroundStationName
     var missionProfileArn: MissionProfileArn
     var satelliteArn: satelliteArn
     var startTime: Timestamp
@@ -1568,7 +1934,7 @@ package object groundstation {
     @inline
     def apply(
         endTime: Timestamp,
-        groundStation: String,
+        groundStation: GroundStationName,
         missionProfileArn: MissionProfileArn,
         satelliteArn: satelliteArn,
         startTime: Timestamp,
@@ -1584,6 +1950,30 @@ package object groundstation {
 
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReserveContactRequest]
+    }
+  }
+
+  /** Object stored in S3 containing ephemeris data.
+    */
+  @js.native
+  trait S3Object extends js.Object {
+    var bucket: js.UndefOr[S3BucketName]
+    var key: js.UndefOr[S3ObjectKey]
+    var version: js.UndefOr[S3VersionId]
+  }
+
+  object S3Object {
+    @inline
+    def apply(
+        bucket: js.UndefOr[S3BucketName] = js.undefined,
+        key: js.UndefOr[S3ObjectKey] = js.undefined,
+        version: js.UndefOr[S3VersionId] = js.undefined
+    ): S3Object = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Object]
     }
   }
 
@@ -1638,6 +2028,7 @@ package object groundstation {
     */
   @js.native
   trait SatelliteListItem extends js.Object {
+    var currentEphemeris: js.UndefOr[EphemerisMetaData]
     var groundStations: js.UndefOr[GroundStationIdList]
     var noradSatelliteID: js.UndefOr[noradSatelliteID]
     var satelliteArn: js.UndefOr[satelliteArn]
@@ -1647,12 +2038,14 @@ package object groundstation {
   object SatelliteListItem {
     @inline
     def apply(
+        currentEphemeris: js.UndefOr[EphemerisMetaData] = js.undefined,
         groundStations: js.UndefOr[GroundStationIdList] = js.undefined,
         noradSatelliteID: js.UndefOr[noradSatelliteID] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         satelliteId: js.UndefOr[Uuid] = js.undefined
     ): SatelliteListItem = {
       val __obj = js.Dynamic.literal()
+      currentEphemeris.foreach(__v => __obj.updateDynamic("currentEphemeris")(__v.asInstanceOf[js.Any]))
       groundStations.foreach(__v => __obj.updateDynamic("groundStations")(__v.asInstanceOf[js.Any]))
       noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
       satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
@@ -1761,18 +2154,64 @@ package object groundstation {
     }
   }
 
+  /** Two-line element set (TLE) data.
+    */
+  @js.native
+  trait TLEData extends js.Object {
+    var tleLine1: TleLineOne
+    var tleLine2: TleLineTwo
+    var validTimeRange: TimeRange
+  }
+
+  object TLEData {
+    @inline
+    def apply(
+        tleLine1: TleLineOne,
+        tleLine2: TleLineTwo,
+        validTimeRange: TimeRange
+    ): TLEData = {
+      val __obj = js.Dynamic.literal(
+        "tleLine1" -> tleLine1.asInstanceOf[js.Any],
+        "tleLine2" -> tleLine2.asInstanceOf[js.Any],
+        "validTimeRange" -> validTimeRange.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TLEData]
+    }
+  }
+
+  /** Two-line element set (TLE) ephemeris.
+    */
+  @js.native
+  trait TLEEphemeris extends js.Object {
+    var s3Object: js.UndefOr[S3Object]
+    var tleData: js.UndefOr[TLEDataList]
+  }
+
+  object TLEEphemeris {
+    @inline
+    def apply(
+        s3Object: js.UndefOr[S3Object] = js.undefined,
+        tleData: js.UndefOr[TLEDataList] = js.undefined
+    ): TLEEphemeris = {
+      val __obj = js.Dynamic.literal()
+      s3Object.foreach(__v => __obj.updateDynamic("s3Object")(__v.asInstanceOf[js.Any]))
+      tleData.foreach(__v => __obj.updateDynamic("tleData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TLEEphemeris]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait TagResourceRequest extends js.Object {
-    var resourceArn: String
+    var resourceArn: AnyArn
     var tags: TagsMap
   }
 
   object TagResourceRequest {
     @inline
     def apply(
-        resourceArn: String,
+        resourceArn: AnyArn,
         tags: TagsMap
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1793,6 +2232,28 @@ package object groundstation {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** A time range with a start and end time.
+    */
+  @js.native
+  trait TimeRange extends js.Object {
+    var endTime: Timestamp
+    var startTime: Timestamp
+  }
+
+  object TimeRange {
+    @inline
+    def apply(
+        endTime: Timestamp,
+        startTime: Timestamp
+    ): TimeRange = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TimeRange]
     }
   }
 
@@ -1819,14 +2280,14 @@ package object groundstation {
     */
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var resourceArn: String
+    var resourceArn: AnyArn
     var tagKeys: TagKeys
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
-        resourceArn: String,
+        resourceArn: AnyArn,
         tagKeys: TagKeys
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1855,7 +2316,7 @@ package object groundstation {
   @js.native
   trait UpdateConfigRequest extends js.Object {
     var configData: ConfigTypeData
-    var configId: String
+    var configId: Uuid
     var configType: ConfigCapabilityType
     var name: SafeName
   }
@@ -1864,7 +2325,7 @@ package object groundstation {
     @inline
     def apply(
         configData: ConfigTypeData,
-        configId: String,
+        configId: Uuid,
         configType: ConfigCapabilityType,
         name: SafeName
     ): UpdateConfigRequest = {
@@ -1878,15 +2339,42 @@ package object groundstation {
     }
   }
 
+  @js.native
+  trait UpdateEphemerisRequest extends js.Object {
+    var enabled: Boolean
+    var ephemerisId: Uuid
+    var name: js.UndefOr[SafeName]
+    var priority: js.UndefOr[EphemerisPriority]
+  }
+
+  object UpdateEphemerisRequest {
+    @inline
+    def apply(
+        enabled: Boolean,
+        ephemerisId: Uuid,
+        name: js.UndefOr[SafeName] = js.undefined,
+        priority: js.UndefOr[EphemerisPriority] = js.undefined
+    ): UpdateEphemerisRequest = {
+      val __obj = js.Dynamic.literal(
+        "enabled" -> enabled.asInstanceOf[js.Any],
+        "ephemerisId" -> ephemerisId.asInstanceOf[js.Any]
+      )
+
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEphemerisRequest]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait UpdateMissionProfileRequest extends js.Object {
-    var missionProfileId: String
+    var missionProfileId: Uuid
     var contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds]
     var contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds]
     var dataflowEdges: js.UndefOr[DataflowEdgeList]
-    var minimumViableContactDurationSeconds: js.UndefOr[DurationInSeconds]
+    var minimumViableContactDurationSeconds: js.UndefOr[PositiveDurationInSeconds]
     var name: js.UndefOr[SafeName]
     var trackingConfigArn: js.UndefOr[ConfigArn]
   }
@@ -1894,11 +2382,11 @@ package object groundstation {
   object UpdateMissionProfileRequest {
     @inline
     def apply(
-        missionProfileId: String,
+        missionProfileId: Uuid,
         contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         dataflowEdges: js.UndefOr[DataflowEdgeList] = js.undefined,
-        minimumViableContactDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
+        minimumViableContactDurationSeconds: js.UndefOr[PositiveDurationInSeconds] = js.undefined,
         name: js.UndefOr[SafeName] = js.undefined,
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): UpdateMissionProfileRequest = {

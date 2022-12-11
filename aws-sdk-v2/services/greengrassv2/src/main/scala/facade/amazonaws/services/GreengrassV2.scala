@@ -35,14 +35,21 @@ package object greengrassv2 {
   type DeploymentID = String
   type DeploymentList = js.Array[Deployment]
   type DeploymentName = String
+  type DeploymentNameString = String
   type Description = String
   type DescriptionString = String
   type DisassociateClientDeviceFromCoreDeviceEntryList = js.Array[DisassociateClientDeviceFromCoreDeviceEntry]
   type DisassociateClientDeviceFromCoreDeviceErrorList = js.Array[DisassociateClientDeviceFromCoreDeviceErrorEntry]
+  type EffectiveDeploymentErrorCode = String
+  type EffectiveDeploymentErrorStack = js.Array[EffectiveDeploymentErrorCode]
+  type EffectiveDeploymentErrorType = String
+  type EffectiveDeploymentErrorTypeList = js.Array[EffectiveDeploymentErrorType]
   type EffectiveDeploymentsList = js.Array[EffectiveDeployment]
   type FileSystemPath = String
   type GGCVersion = String
   type GenericV2ARN = String
+  type InstalledComponentLifecycleStatusCode = String
+  type InstalledComponentLifecycleStatusCodeList = js.Array[InstalledComponentLifecycleStatusCode]
   type InstalledComponentList = js.Array[InstalledComponent]
   type IoTJobARN = String
   type IoTJobAbortCriteriaList = js.Array[IoTJobAbortCriteria]
@@ -62,7 +69,6 @@ package object greengrassv2 {
   type LambdaEventSourceList = js.Array[LambdaEventSource]
   type LambdaExecArg = String
   type LambdaExecArgsList = js.Array[LambdaExecArg]
-  type LambdaFunctionARNWithVersionNumber = String
   type LambdaVolumeList = js.Array[LambdaVolumeMount]
   type LifecycleStateDetails = String
   type Memory = Double
@@ -72,6 +78,7 @@ package object greengrassv2 {
   type OptionalBoolean = Boolean
   type OptionalInteger = Int
   type PlatformAttributesMap = js.Dictionary[NonEmptyString]
+  type PortNumberInt = Int
   type PublisherString = String
   type Reason = String
   type RecipeBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -85,9 +92,11 @@ package object greengrassv2 {
   type ThingGroupARN = String
   type Timestamp = js.Date
   type TopicString = String
+  type connectivityInfoList = js.Array[ConnectivityInfo]
 
   final class GreengrassV2Ops(private val service: GreengrassV2) extends AnyVal {
 
+    @inline def associateServiceRoleToAccountFuture(params: AssociateServiceRoleToAccountRequest): Future[AssociateServiceRoleToAccountResponse] = service.associateServiceRoleToAccount(params).promise().toFuture
     @inline def batchAssociateClientDeviceWithCoreDeviceFuture(params: BatchAssociateClientDeviceWithCoreDeviceRequest): Future[BatchAssociateClientDeviceWithCoreDeviceResponse] = service.batchAssociateClientDeviceWithCoreDevice(params).promise().toFuture
     @inline def batchDisassociateClientDeviceFromCoreDeviceFuture(params: BatchDisassociateClientDeviceFromCoreDeviceRequest): Future[BatchDisassociateClientDeviceFromCoreDeviceResponse] = service.batchDisassociateClientDeviceFromCoreDevice(params).promise().toFuture
     @inline def cancelDeploymentFuture(params: CancelDeploymentRequest): Future[CancelDeploymentResponse] = service.cancelDeployment(params).promise().toFuture
@@ -95,11 +104,15 @@ package object greengrassv2 {
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] = service.createDeployment(params).promise().toFuture
     @inline def deleteComponentFuture(params: DeleteComponentRequest): Future[js.Object] = service.deleteComponent(params).promise().toFuture
     @inline def deleteCoreDeviceFuture(params: DeleteCoreDeviceRequest): Future[js.Object] = service.deleteCoreDevice(params).promise().toFuture
+    @inline def deleteDeploymentFuture(params: DeleteDeploymentRequest): Future[js.Object] = service.deleteDeployment(params).promise().toFuture
     @inline def describeComponentFuture(params: DescribeComponentRequest): Future[DescribeComponentResponse] = service.describeComponent(params).promise().toFuture
+    @inline def disassociateServiceRoleFromAccountFuture(params: DisassociateServiceRoleFromAccountRequest): Future[DisassociateServiceRoleFromAccountResponse] = service.disassociateServiceRoleFromAccount(params).promise().toFuture
     @inline def getComponentFuture(params: GetComponentRequest): Future[GetComponentResponse] = service.getComponent(params).promise().toFuture
     @inline def getComponentVersionArtifactFuture(params: GetComponentVersionArtifactRequest): Future[GetComponentVersionArtifactResponse] = service.getComponentVersionArtifact(params).promise().toFuture
+    @inline def getConnectivityInfoFuture(params: GetConnectivityInfoRequest): Future[GetConnectivityInfoResponse] = service.getConnectivityInfo(params).promise().toFuture
     @inline def getCoreDeviceFuture(params: GetCoreDeviceRequest): Future[GetCoreDeviceResponse] = service.getCoreDevice(params).promise().toFuture
     @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[GetDeploymentResponse] = service.getDeployment(params).promise().toFuture
+    @inline def getServiceRoleForAccountFuture(params: GetServiceRoleForAccountRequest): Future[GetServiceRoleForAccountResponse] = service.getServiceRoleForAccount(params).promise().toFuture
     @inline def listClientDevicesAssociatedWithCoreDeviceFuture(params: ListClientDevicesAssociatedWithCoreDeviceRequest): Future[ListClientDevicesAssociatedWithCoreDeviceResponse] = service.listClientDevicesAssociatedWithCoreDevice(params).promise().toFuture
     @inline def listComponentVersionsFuture(params: ListComponentVersionsRequest): Future[ListComponentVersionsResponse] = service.listComponentVersions(params).promise().toFuture
     @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] = service.listComponents(params).promise().toFuture
@@ -111,6 +124,7 @@ package object greengrassv2 {
     @inline def resolveComponentCandidatesFuture(params: ResolveComponentCandidatesRequest): Future[ResolveComponentCandidatesResponse] = service.resolveComponentCandidates(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateConnectivityInfoFuture(params: UpdateConnectivityInfoRequest): Future[UpdateConnectivityInfoResponse] = service.updateConnectivityInfo(params).promise().toFuture
 
   }
 
@@ -119,6 +133,7 @@ package object greengrassv2 {
   class GreengrassV2() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateServiceRoleToAccount(params: AssociateServiceRoleToAccountRequest): Request[AssociateServiceRoleToAccountResponse] = js.native
     def batchAssociateClientDeviceWithCoreDevice(params: BatchAssociateClientDeviceWithCoreDeviceRequest): Request[BatchAssociateClientDeviceWithCoreDeviceResponse] = js.native
     def batchDisassociateClientDeviceFromCoreDevice(params: BatchDisassociateClientDeviceFromCoreDeviceRequest): Request[BatchDisassociateClientDeviceFromCoreDeviceResponse] = js.native
     def cancelDeployment(params: CancelDeploymentRequest): Request[CancelDeploymentResponse] = js.native
@@ -126,11 +141,15 @@ package object greengrassv2 {
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
     def deleteComponent(params: DeleteComponentRequest): Request[js.Object] = js.native
     def deleteCoreDevice(params: DeleteCoreDeviceRequest): Request[js.Object] = js.native
+    def deleteDeployment(params: DeleteDeploymentRequest): Request[js.Object] = js.native
     def describeComponent(params: DescribeComponentRequest): Request[DescribeComponentResponse] = js.native
+    def disassociateServiceRoleFromAccount(params: DisassociateServiceRoleFromAccountRequest): Request[DisassociateServiceRoleFromAccountResponse] = js.native
     def getComponent(params: GetComponentRequest): Request[GetComponentResponse] = js.native
     def getComponentVersionArtifact(params: GetComponentVersionArtifactRequest): Request[GetComponentVersionArtifactResponse] = js.native
+    def getConnectivityInfo(params: GetConnectivityInfoRequest): Request[GetConnectivityInfoResponse] = js.native
     def getCoreDevice(params: GetCoreDeviceRequest): Request[GetCoreDeviceResponse] = js.native
     def getDeployment(params: GetDeploymentRequest): Request[GetDeploymentResponse] = js.native
+    def getServiceRoleForAccount(params: GetServiceRoleForAccountRequest): Request[GetServiceRoleForAccountResponse] = js.native
     def listClientDevicesAssociatedWithCoreDevice(params: ListClientDevicesAssociatedWithCoreDeviceRequest): Request[ListClientDevicesAssociatedWithCoreDeviceResponse] = js.native
     def listComponentVersions(params: ListComponentVersionsRequest): Request[ListComponentVersionsResponse] = js.native
     def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
@@ -142,6 +161,7 @@ package object greengrassv2 {
     def resolveComponentCandidates(params: ResolveComponentCandidatesRequest): Request[ResolveComponentCandidatesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateConnectivityInfo(params: UpdateConnectivityInfoRequest): Request[UpdateConnectivityInfoResponse] = js.native
   }
   object GreengrassV2 {
     @inline implicit def toOps(service: GreengrassV2): GreengrassV2Ops = {
@@ -189,6 +209,39 @@ package object greengrassv2 {
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateClientDeviceWithCoreDeviceErrorEntry]
+    }
+  }
+
+  @js.native
+  trait AssociateServiceRoleToAccountRequest extends js.Object {
+    var roleArn: String
+  }
+
+  object AssociateServiceRoleToAccountRequest {
+    @inline
+    def apply(
+        roleArn: String
+    ): AssociateServiceRoleToAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateServiceRoleToAccountRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateServiceRoleToAccountResponse extends js.Object {
+    var associatedAt: js.UndefOr[String]
+  }
+
+  object AssociateServiceRoleToAccountResponse {
+    @inline
+    def apply(
+        associatedAt: js.UndefOr[String] = js.undefined
+    ): AssociateServiceRoleToAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      associatedAt.foreach(__v => __obj.updateDynamic("associatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateServiceRoleToAccountResponse]
     }
   }
 
@@ -320,13 +373,15 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains the status of a component in the IoT Greengrass service.
+  /** Contains the status of a component version in the IoT Greengrass service.
     */
   @js.native
   trait CloudComponentStatus extends js.Object {
     var componentState: js.UndefOr[CloudComponentState]
     var errors: js.UndefOr[StringMap]
     var message: js.UndefOr[NonEmptyString]
+    var vendorGuidance: js.UndefOr[VendorGuidance]
+    var vendorGuidanceMessage: js.UndefOr[NonEmptyString]
   }
 
   object CloudComponentStatus {
@@ -334,12 +389,16 @@ package object greengrassv2 {
     def apply(
         componentState: js.UndefOr[CloudComponentState] = js.undefined,
         errors: js.UndefOr[StringMap] = js.undefined,
-        message: js.UndefOr[NonEmptyString] = js.undefined
+        message: js.UndefOr[NonEmptyString] = js.undefined,
+        vendorGuidance: js.UndefOr[VendorGuidance] = js.undefined,
+        vendorGuidanceMessage: js.UndefOr[NonEmptyString] = js.undefined
     ): CloudComponentStatus = {
       val __obj = js.Dynamic.literal()
       componentState.foreach(__v => __obj.updateDynamic("componentState")(__v.asInstanceOf[js.Any]))
       errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      vendorGuidance.foreach(__v => __obj.updateDynamic("vendorGuidance")(__v.asInstanceOf[js.Any]))
+      vendorGuidanceMessage.foreach(__v => __obj.updateDynamic("vendorGuidanceMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudComponentStatus]
     }
   }
@@ -560,6 +619,33 @@ package object greengrassv2 {
     }
   }
 
+  /** Contains information about an endpoint and port where client devices can connect to an MQTT broker on a Greengrass core device.
+    */
+  @js.native
+  trait ConnectivityInfo extends js.Object {
+    var hostAddress: js.UndefOr[String]
+    var id: js.UndefOr[String]
+    var metadata: js.UndefOr[String]
+    var portNumber: js.UndefOr[PortNumberInt]
+  }
+
+  object ConnectivityInfo {
+    @inline
+    def apply(
+        hostAddress: js.UndefOr[String] = js.undefined,
+        id: js.UndefOr[String] = js.undefined,
+        metadata: js.UndefOr[String] = js.undefined,
+        portNumber: js.UndefOr[PortNumberInt] = js.undefined
+    ): ConnectivityInfo = {
+      val __obj = js.Dynamic.literal()
+      hostAddress.foreach(__v => __obj.updateDynamic("hostAddress")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
+      portNumber.foreach(__v => __obj.updateDynamic("portNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectivityInfo]
+    }
+  }
+
   /** Contains information about a Greengrass core device, which is an IoT thing that runs the IoT Greengrass Core software.
     */
   @js.native
@@ -644,9 +730,10 @@ package object greengrassv2 {
     var targetArn: TargetARN
     var clientToken: js.UndefOr[ClientTokenString]
     var components: js.UndefOr[ComponentDeploymentSpecifications]
-    var deploymentName: js.UndefOr[NonEmptyString]
+    var deploymentName: js.UndefOr[DeploymentNameString]
     var deploymentPolicies: js.UndefOr[DeploymentPolicies]
     var iotJobConfiguration: js.UndefOr[DeploymentIoTJobConfiguration]
+    var parentTargetArn: js.UndefOr[ThingGroupARN]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -656,9 +743,10 @@ package object greengrassv2 {
         targetArn: TargetARN,
         clientToken: js.UndefOr[ClientTokenString] = js.undefined,
         components: js.UndefOr[ComponentDeploymentSpecifications] = js.undefined,
-        deploymentName: js.UndefOr[NonEmptyString] = js.undefined,
+        deploymentName: js.UndefOr[DeploymentNameString] = js.undefined,
         deploymentPolicies: js.UndefOr[DeploymentPolicies] = js.undefined,
         iotJobConfiguration: js.UndefOr[DeploymentIoTJobConfiguration] = js.undefined,
+        parentTargetArn: js.UndefOr[ThingGroupARN] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDeploymentRequest = {
       val __obj = js.Dynamic.literal(
@@ -670,6 +758,7 @@ package object greengrassv2 {
       deploymentName.foreach(__v => __obj.updateDynamic("deploymentName")(__v.asInstanceOf[js.Any]))
       deploymentPolicies.foreach(__v => __obj.updateDynamic("deploymentPolicies")(__v.asInstanceOf[js.Any]))
       iotJobConfiguration.foreach(__v => __obj.updateDynamic("iotJobConfiguration")(__v.asInstanceOf[js.Any]))
+      parentTargetArn.foreach(__v => __obj.updateDynamic("parentTargetArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
@@ -731,6 +820,23 @@ package object greengrassv2 {
     }
   }
 
+  @js.native
+  trait DeleteDeploymentRequest extends js.Object {
+    var deploymentId: NonEmptyString
+  }
+
+  object DeleteDeploymentRequest {
+    @inline
+    def apply(
+        deploymentId: NonEmptyString
+    ): DeleteDeploymentRequest = {
+      val __obj = js.Dynamic.literal(
+        "deploymentId" -> deploymentId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDeploymentRequest]
+    }
+  }
+
   /** Contains information about a deployment.
     */
   @js.native
@@ -740,6 +846,7 @@ package object greengrassv2 {
     var deploymentName: js.UndefOr[NonEmptyString]
     var deploymentStatus: js.UndefOr[DeploymentStatus]
     var isLatestForTarget: js.UndefOr[IsLatestForTarget]
+    var parentTargetArn: js.UndefOr[ThingGroupARN]
     var revisionId: js.UndefOr[NonEmptyString]
     var targetArn: js.UndefOr[TargetARN]
   }
@@ -752,6 +859,7 @@ package object greengrassv2 {
         deploymentName: js.UndefOr[NonEmptyString] = js.undefined,
         deploymentStatus: js.UndefOr[DeploymentStatus] = js.undefined,
         isLatestForTarget: js.UndefOr[IsLatestForTarget] = js.undefined,
+        parentTargetArn: js.UndefOr[ThingGroupARN] = js.undefined,
         revisionId: js.UndefOr[NonEmptyString] = js.undefined,
         targetArn: js.UndefOr[TargetARN] = js.undefined
     ): Deployment = {
@@ -761,6 +869,7 @@ package object greengrassv2 {
       deploymentName.foreach(__v => __obj.updateDynamic("deploymentName")(__v.asInstanceOf[js.Any]))
       deploymentStatus.foreach(__v => __obj.updateDynamic("deploymentStatus")(__v.asInstanceOf[js.Any]))
       isLatestForTarget.foreach(__v => __obj.updateDynamic("isLatestForTarget")(__v.asInstanceOf[js.Any]))
+      parentTargetArn.foreach(__v => __obj.updateDynamic("parentTargetArn")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
       targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deployment]
@@ -954,6 +1063,33 @@ package object greengrassv2 {
     }
   }
 
+  @js.native
+  trait DisassociateServiceRoleFromAccountRequest extends js.Object
+
+  object DisassociateServiceRoleFromAccountRequest {
+    @inline
+    def apply(): DisassociateServiceRoleFromAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateServiceRoleFromAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateServiceRoleFromAccountResponse extends js.Object {
+    var disassociatedAt: js.UndefOr[String]
+  }
+
+  object DisassociateServiceRoleFromAccountResponse {
+    @inline
+    def apply(
+        disassociatedAt: js.UndefOr[String] = js.undefined
+    ): DisassociateServiceRoleFromAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      disassociatedAt.foreach(__v => __obj.updateDynamic("disassociatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateServiceRoleFromAccountResponse]
+    }
+  }
+
   /** Contains information about a deployment job that IoT Greengrass sends to a Greengrass core device.
     */
   @js.native
@@ -968,6 +1104,7 @@ package object greengrassv2 {
     var iotJobArn: js.UndefOr[IoTJobARN]
     var iotJobId: js.UndefOr[IoTJobId]
     var reason: js.UndefOr[Reason]
+    var statusDetails: js.UndefOr[EffectiveDeploymentStatusDetails]
   }
 
   object EffectiveDeployment {
@@ -982,7 +1119,8 @@ package object greengrassv2 {
         description: js.UndefOr[Description] = js.undefined,
         iotJobArn: js.UndefOr[IoTJobARN] = js.undefined,
         iotJobId: js.UndefOr[IoTJobId] = js.undefined,
-        reason: js.UndefOr[Reason] = js.undefined
+        reason: js.UndefOr[Reason] = js.undefined,
+        statusDetails: js.UndefOr[EffectiveDeploymentStatusDetails] = js.undefined
     ): EffectiveDeployment = {
       val __obj = js.Dynamic.literal(
         "coreDeviceExecutionStatus" -> coreDeviceExecutionStatus.asInstanceOf[js.Any],
@@ -997,7 +1135,31 @@ package object greengrassv2 {
       iotJobArn.foreach(__v => __obj.updateDynamic("iotJobArn")(__v.asInstanceOf[js.Any]))
       iotJobId.foreach(__v => __obj.updateDynamic("iotJobId")(__v.asInstanceOf[js.Any]))
       reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.updateDynamic("statusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EffectiveDeployment]
+    }
+  }
+
+  /** Contains all error-related information for the deployment record. The status details will be null if the deployment is in a success state.
+    *
+    * '''Note:'''Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code> and <code>errorTypes</code> response. This field will not be returned for earlier Greengrass nucleus versions.
+    */
+  @js.native
+  trait EffectiveDeploymentStatusDetails extends js.Object {
+    var errorStack: js.UndefOr[EffectiveDeploymentErrorStack]
+    var errorTypes: js.UndefOr[EffectiveDeploymentErrorTypeList]
+  }
+
+  object EffectiveDeploymentStatusDetails {
+    @inline
+    def apply(
+        errorStack: js.UndefOr[EffectiveDeploymentErrorStack] = js.undefined,
+        errorTypes: js.UndefOr[EffectiveDeploymentErrorTypeList] = js.undefined
+    ): EffectiveDeploymentStatusDetails = {
+      val __obj = js.Dynamic.literal()
+      errorStack.foreach(__v => __obj.updateDynamic("errorStack")(__v.asInstanceOf[js.Any]))
+      errorTypes.foreach(__v => __obj.updateDynamic("errorTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EffectiveDeploymentStatusDetails]
     }
   }
 
@@ -1084,6 +1246,42 @@ package object greengrassv2 {
   }
 
   @js.native
+  trait GetConnectivityInfoRequest extends js.Object {
+    var thingName: CoreDeviceThingName
+  }
+
+  object GetConnectivityInfoRequest {
+    @inline
+    def apply(
+        thingName: CoreDeviceThingName
+    ): GetConnectivityInfoRequest = {
+      val __obj = js.Dynamic.literal(
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetConnectivityInfoRequest]
+    }
+  }
+
+  @js.native
+  trait GetConnectivityInfoResponse extends js.Object {
+    var connectivityInfo: js.UndefOr[connectivityInfoList]
+    var message: js.UndefOr[String]
+  }
+
+  object GetConnectivityInfoResponse {
+    @inline
+    def apply(
+        connectivityInfo: js.UndefOr[connectivityInfoList] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): GetConnectivityInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      connectivityInfo.foreach(__v => __obj.updateDynamic("connectivityInfo")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectivityInfoResponse]
+    }
+  }
+
+  @js.native
   trait GetCoreDeviceRequest extends js.Object {
     var coreDeviceThingName: CoreDeviceThingName
   }
@@ -1163,6 +1361,7 @@ package object greengrassv2 {
     var iotJobConfiguration: js.UndefOr[DeploymentIoTJobConfiguration]
     var iotJobId: js.UndefOr[NullableString]
     var isLatestForTarget: js.UndefOr[IsLatestForTarget]
+    var parentTargetArn: js.UndefOr[ThingGroupARN]
     var revisionId: js.UndefOr[NonEmptyString]
     var tags: js.UndefOr[TagMap]
     var targetArn: js.UndefOr[TargetARN]
@@ -1181,6 +1380,7 @@ package object greengrassv2 {
         iotJobConfiguration: js.UndefOr[DeploymentIoTJobConfiguration] = js.undefined,
         iotJobId: js.UndefOr[NullableString] = js.undefined,
         isLatestForTarget: js.UndefOr[IsLatestForTarget] = js.undefined,
+        parentTargetArn: js.UndefOr[ThingGroupARN] = js.undefined,
         revisionId: js.UndefOr[NonEmptyString] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         targetArn: js.UndefOr[TargetARN] = js.undefined
@@ -1196,10 +1396,41 @@ package object greengrassv2 {
       iotJobConfiguration.foreach(__v => __obj.updateDynamic("iotJobConfiguration")(__v.asInstanceOf[js.Any]))
       iotJobId.foreach(__v => __obj.updateDynamic("iotJobId")(__v.asInstanceOf[js.Any]))
       isLatestForTarget.foreach(__v => __obj.updateDynamic("isLatestForTarget")(__v.asInstanceOf[js.Any]))
+      parentTargetArn.foreach(__v => __obj.updateDynamic("parentTargetArn")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentResponse]
+    }
+  }
+
+  @js.native
+  trait GetServiceRoleForAccountRequest extends js.Object
+
+  object GetServiceRoleForAccountRequest {
+    @inline
+    def apply(): GetServiceRoleForAccountRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetServiceRoleForAccountRequest]
+    }
+  }
+
+  @js.native
+  trait GetServiceRoleForAccountResponse extends js.Object {
+    var associatedAt: js.UndefOr[String]
+    var roleArn: js.UndefOr[String]
+  }
+
+  object GetServiceRoleForAccountResponse {
+    @inline
+    def apply(
+        associatedAt: js.UndefOr[String] = js.undefined,
+        roleArn: js.UndefOr[String] = js.undefined
+    ): GetServiceRoleForAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      associatedAt.foreach(__v => __obj.updateDynamic("associatedAt")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetServiceRoleForAccountResponse]
     }
   }
 
@@ -1210,8 +1441,12 @@ package object greengrassv2 {
     var componentName: js.UndefOr[ComponentNameString]
     var componentVersion: js.UndefOr[ComponentVersionString]
     var isRoot: js.UndefOr[IsRoot]
+    var lastInstallationSource: js.UndefOr[NonEmptyString]
+    var lastReportedTimestamp: js.UndefOr[Timestamp]
+    var lastStatusChangeTimestamp: js.UndefOr[Timestamp]
     var lifecycleState: js.UndefOr[InstalledComponentLifecycleState]
     var lifecycleStateDetails: js.UndefOr[LifecycleStateDetails]
+    var lifecycleStatusCodes: js.UndefOr[InstalledComponentLifecycleStatusCodeList]
   }
 
   object InstalledComponent {
@@ -1220,15 +1455,23 @@ package object greengrassv2 {
         componentName: js.UndefOr[ComponentNameString] = js.undefined,
         componentVersion: js.UndefOr[ComponentVersionString] = js.undefined,
         isRoot: js.UndefOr[IsRoot] = js.undefined,
+        lastInstallationSource: js.UndefOr[NonEmptyString] = js.undefined,
+        lastReportedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        lastStatusChangeTimestamp: js.UndefOr[Timestamp] = js.undefined,
         lifecycleState: js.UndefOr[InstalledComponentLifecycleState] = js.undefined,
-        lifecycleStateDetails: js.UndefOr[LifecycleStateDetails] = js.undefined
+        lifecycleStateDetails: js.UndefOr[LifecycleStateDetails] = js.undefined,
+        lifecycleStatusCodes: js.UndefOr[InstalledComponentLifecycleStatusCodeList] = js.undefined
     ): InstalledComponent = {
       val __obj = js.Dynamic.literal()
       componentName.foreach(__v => __obj.updateDynamic("componentName")(__v.asInstanceOf[js.Any]))
       componentVersion.foreach(__v => __obj.updateDynamic("componentVersion")(__v.asInstanceOf[js.Any]))
       isRoot.foreach(__v => __obj.updateDynamic("isRoot")(__v.asInstanceOf[js.Any]))
+      lastInstallationSource.foreach(__v => __obj.updateDynamic("lastInstallationSource")(__v.asInstanceOf[js.Any]))
+      lastReportedTimestamp.foreach(__v => __obj.updateDynamic("lastReportedTimestamp")(__v.asInstanceOf[js.Any]))
+      lastStatusChangeTimestamp.foreach(__v => __obj.updateDynamic("lastStatusChangeTimestamp")(__v.asInstanceOf[js.Any]))
       lifecycleState.foreach(__v => __obj.updateDynamic("lifecycleState")(__v.asInstanceOf[js.Any]))
       lifecycleStateDetails.foreach(__v => __obj.updateDynamic("lifecycleStateDetails")(__v.asInstanceOf[js.Any]))
+      lifecycleStatusCodes.foreach(__v => __obj.updateDynamic("lifecycleStatusCodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstalledComponent]
     }
   }
@@ -1492,7 +1735,7 @@ package object greengrassv2 {
     */
   @js.native
   trait LambdaFunctionRecipeSource extends js.Object {
-    var lambdaArn: LambdaFunctionARNWithVersionNumber
+    var lambdaArn: NonEmptyString
     var componentDependencies: js.UndefOr[ComponentDependencyMap]
     var componentLambdaParameters: js.UndefOr[LambdaExecutionParameters]
     var componentName: js.UndefOr[ComponentNameString]
@@ -1503,7 +1746,7 @@ package object greengrassv2 {
   object LambdaFunctionRecipeSource {
     @inline
     def apply(
-        lambdaArn: LambdaFunctionARNWithVersionNumber,
+        lambdaArn: NonEmptyString,
         componentDependencies: js.UndefOr[ComponentDependencyMap] = js.undefined,
         componentLambdaParameters: js.UndefOr[LambdaExecutionParameters] = js.undefined,
         componentName: js.UndefOr[ComponentNameString] = js.undefined,
@@ -1749,6 +1992,7 @@ package object greengrassv2 {
     var historyFilter: js.UndefOr[DeploymentHistoryFilter]
     var maxResults: js.UndefOr[DefaultMaxResults]
     var nextToken: js.UndefOr[NextTokenString]
+    var parentTargetArn: js.UndefOr[ThingGroupARN]
     var targetArn: js.UndefOr[TargetARN]
   }
 
@@ -1758,12 +2002,14 @@ package object greengrassv2 {
         historyFilter: js.UndefOr[DeploymentHistoryFilter] = js.undefined,
         maxResults: js.UndefOr[DefaultMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextTokenString] = js.undefined,
+        parentTargetArn: js.UndefOr[ThingGroupARN] = js.undefined,
         targetArn: js.UndefOr[TargetARN] = js.undefined
     ): ListDeploymentsRequest = {
       val __obj = js.Dynamic.literal()
       historyFilter.foreach(__v => __obj.updateDynamic("historyFilter")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      parentTargetArn.foreach(__v => __obj.updateDynamic("parentTargetArn")(__v.asInstanceOf[js.Any]))
       targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsRequest]
     }
@@ -1836,6 +2082,7 @@ package object greengrassv2 {
     var coreDeviceThingName: CoreDeviceThingName
     var maxResults: js.UndefOr[DefaultMaxResults]
     var nextToken: js.UndefOr[NextTokenString]
+    var topologyFilter: js.UndefOr[InstalledComponentTopologyFilter]
   }
 
   object ListInstalledComponentsRequest {
@@ -1843,7 +2090,8 @@ package object greengrassv2 {
     def apply(
         coreDeviceThingName: CoreDeviceThingName,
         maxResults: js.UndefOr[DefaultMaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextTokenString] = js.undefined
+        nextToken: js.UndefOr[NextTokenString] = js.undefined,
+        topologyFilter: js.UndefOr[InstalledComponentTopologyFilter] = js.undefined
     ): ListInstalledComponentsRequest = {
       val __obj = js.Dynamic.literal(
         "coreDeviceThingName" -> coreDeviceThingName.asInstanceOf[js.Any]
@@ -1851,6 +2099,7 @@ package object greengrassv2 {
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      topologyFilter.foreach(__v => __obj.updateDynamic("topologyFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstalledComponentsRequest]
     }
   }
@@ -1909,20 +2158,19 @@ package object greengrassv2 {
 
   @js.native
   trait ResolveComponentCandidatesRequest extends js.Object {
-    var componentCandidates: ComponentCandidateList
-    var platform: ComponentPlatform
+    var componentCandidates: js.UndefOr[ComponentCandidateList]
+    var platform: js.UndefOr[ComponentPlatform]
   }
 
   object ResolveComponentCandidatesRequest {
     @inline
     def apply(
-        componentCandidates: ComponentCandidateList,
-        platform: ComponentPlatform
+        componentCandidates: js.UndefOr[ComponentCandidateList] = js.undefined,
+        platform: js.UndefOr[ComponentPlatform] = js.undefined
     ): ResolveComponentCandidatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "componentCandidates" -> componentCandidates.asInstanceOf[js.Any],
-        "platform" -> platform.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      componentCandidates.foreach(__v => __obj.updateDynamic("componentCandidates")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolveComponentCandidatesRequest]
     }
   }
@@ -1950,7 +2198,9 @@ package object greengrassv2 {
     var arn: js.UndefOr[ComponentVersionARN]
     var componentName: js.UndefOr[ComponentNameString]
     var componentVersion: js.UndefOr[ComponentVersionString]
+    var message: js.UndefOr[NonEmptyString]
     var recipe: js.UndefOr[RecipeBlob]
+    var vendorGuidance: js.UndefOr[VendorGuidance]
   }
 
   object ResolvedComponentVersion {
@@ -1959,13 +2209,17 @@ package object greengrassv2 {
         arn: js.UndefOr[ComponentVersionARN] = js.undefined,
         componentName: js.UndefOr[ComponentNameString] = js.undefined,
         componentVersion: js.UndefOr[ComponentVersionString] = js.undefined,
-        recipe: js.UndefOr[RecipeBlob] = js.undefined
+        message: js.UndefOr[NonEmptyString] = js.undefined,
+        recipe: js.UndefOr[RecipeBlob] = js.undefined,
+        vendorGuidance: js.UndefOr[VendorGuidance] = js.undefined
     ): ResolvedComponentVersion = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       componentName.foreach(__v => __obj.updateDynamic("componentName")(__v.asInstanceOf[js.Any]))
       componentVersion.foreach(__v => __obj.updateDynamic("componentVersion")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       recipe.foreach(__v => __obj.updateDynamic("recipe")(__v.asInstanceOf[js.Any]))
+      vendorGuidance.foreach(__v => __obj.updateDynamic("vendorGuidance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolvedComponentVersion]
     }
   }
@@ -2050,6 +2304,45 @@ package object greengrassv2 {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectivityInfoRequest extends js.Object {
+    var connectivityInfo: connectivityInfoList
+    var thingName: CoreDeviceThingName
+  }
+
+  object UpdateConnectivityInfoRequest {
+    @inline
+    def apply(
+        connectivityInfo: connectivityInfoList,
+        thingName: CoreDeviceThingName
+    ): UpdateConnectivityInfoRequest = {
+      val __obj = js.Dynamic.literal(
+        "connectivityInfo" -> connectivityInfo.asInstanceOf[js.Any],
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateConnectivityInfoRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateConnectivityInfoResponse extends js.Object {
+    var message: js.UndefOr[String]
+    var version: js.UndefOr[String]
+  }
+
+  object UpdateConnectivityInfoResponse {
+    @inline
+    def apply(
+        message: js.UndefOr[String] = js.undefined,
+        version: js.UndefOr[String] = js.undefined
+    ): UpdateConnectivityInfoResponse = {
+      val __obj = js.Dynamic.literal()
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateConnectivityInfoResponse]
     }
   }
 }

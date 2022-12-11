@@ -73,6 +73,15 @@ object CRType {
 }
 
 @js.native
+sealed trait CRUpdateAllocationStrategy extends js.Any
+object CRUpdateAllocationStrategy {
+  val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRUpdateAllocationStrategy]
+  val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRUpdateAllocationStrategy]
+
+  @inline def values: js.Array[CRUpdateAllocationStrategy] = js.Array(BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED)
+}
+
+@js.native
 sealed trait DeviceCgroupPermission extends js.Any
 object DeviceCgroupPermission {
   val READ = "READ".asInstanceOf[DeviceCgroupPermission]
@@ -157,6 +166,15 @@ object LogDriver {
   val splunk = "splunk".asInstanceOf[LogDriver]
 
   @inline def values: js.Array[LogDriver] = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
+}
+
+@js.native
+sealed trait OrchestrationType extends js.Any
+object OrchestrationType {
+  val ECS = "ECS".asInstanceOf[OrchestrationType]
+  val EKS = "EKS".asInstanceOf[OrchestrationType]
+
+  @inline def values: js.Array[OrchestrationType] = js.Array(ECS, EKS)
 }
 
 @js.native

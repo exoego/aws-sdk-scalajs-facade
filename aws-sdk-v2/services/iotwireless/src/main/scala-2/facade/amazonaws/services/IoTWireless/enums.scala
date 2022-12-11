@@ -2,6 +2,14 @@ package facade.amazonaws.services.iotwireless
 
 import scalajs.js
 
+@js.native
+sealed trait ApplicationConfigType extends js.Any
+object ApplicationConfigType {
+  val SemtechGeolocation = "SemtechGeolocation".asInstanceOf[ApplicationConfigType]
+
+  @inline def values: js.Array[ApplicationConfigType] = js.Array(SemtechGeolocation)
+}
+
 /** Sidewalk device battery level.
   */
 @js.native
@@ -47,6 +55,16 @@ object DlClass {
   @inline def values: js.Array[DlClass] = js.Array(ClassB, ClassC)
 }
 
+@js.native
+sealed trait DownlinkMode extends js.Any
+object DownlinkMode {
+  val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[DownlinkMode]
+  val CONCURRENT = "CONCURRENT".asInstanceOf[DownlinkMode]
+  val USING_UPLINK_GATEWAY = "USING_UPLINK_GATEWAY".asInstanceOf[DownlinkMode]
+
+  @inline def values: js.Array[DownlinkMode] = js.Array(SEQUENTIAL, CONCURRENT, USING_UPLINK_GATEWAY)
+}
+
 /** Sidewalk device status notification.
   */
 @js.native
@@ -67,6 +85,16 @@ object EventNotificationPartnerType {
   val Sidewalk = "Sidewalk".asInstanceOf[EventNotificationPartnerType]
 
   @inline def values: js.Array[EventNotificationPartnerType] = js.Array(Sidewalk)
+}
+
+@js.native
+sealed trait EventNotificationResourceType extends js.Any
+object EventNotificationResourceType {
+  val SidewalkAccount = "SidewalkAccount".asInstanceOf[EventNotificationResourceType]
+  val WirelessDevice = "WirelessDevice".asInstanceOf[EventNotificationResourceType]
+  val WirelessGateway = "WirelessGateway".asInstanceOf[EventNotificationResourceType]
+
+  @inline def values: js.Array[EventNotificationResourceType] = js.Array(SidewalkAccount, WirelessDevice, WirelessGateway)
 }
 
 @js.native
@@ -137,11 +165,15 @@ object FuotaTaskStatus {
 sealed trait IdentifierType extends js.Any
 object IdentifierType {
   val PartnerAccountId = "PartnerAccountId".asInstanceOf[IdentifierType]
+  val DevEui = "DevEui".asInstanceOf[IdentifierType]
+  val GatewayEui = "GatewayEui".asInstanceOf[IdentifierType]
+  val WirelessDeviceId = "WirelessDeviceId".asInstanceOf[IdentifierType]
+  val WirelessGatewayId = "WirelessGatewayId".asInstanceOf[IdentifierType]
 
-  @inline def values: js.Array[IdentifierType] = js.Array(PartnerAccountId)
+  @inline def values: js.Array[IdentifierType] = js.Array(PartnerAccountId, DevEui, GatewayEui, WirelessDeviceId, WirelessGatewayId)
 }
 
-/** The log level for a log message.
+/** The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.
   */
 @js.native
 sealed trait LogLevel extends js.Any
@@ -172,6 +204,58 @@ object PartnerType {
   val Sidewalk = "Sidewalk".asInstanceOf[PartnerType]
 
   @inline def values: js.Array[PartnerType] = js.Array(Sidewalk)
+}
+
+@js.native
+sealed trait PositionConfigurationFec extends js.Any
+object PositionConfigurationFec {
+  val ROSE = "ROSE".asInstanceOf[PositionConfigurationFec]
+  val NONE = "NONE".asInstanceOf[PositionConfigurationFec]
+
+  @inline def values: js.Array[PositionConfigurationFec] = js.Array(ROSE, NONE)
+}
+
+@js.native
+sealed trait PositionConfigurationStatus extends js.Any
+object PositionConfigurationStatus {
+  val Enabled = "Enabled".asInstanceOf[PositionConfigurationStatus]
+  val Disabled = "Disabled".asInstanceOf[PositionConfigurationStatus]
+
+  @inline def values: js.Array[PositionConfigurationStatus] = js.Array(Enabled, Disabled)
+}
+
+@js.native
+sealed trait PositionResourceType extends js.Any
+object PositionResourceType {
+  val WirelessDevice = "WirelessDevice".asInstanceOf[PositionResourceType]
+  val WirelessGateway = "WirelessGateway".asInstanceOf[PositionResourceType]
+
+  @inline def values: js.Array[PositionResourceType] = js.Array(WirelessDevice, WirelessGateway)
+}
+
+@js.native
+sealed trait PositionSolverProvider extends js.Any
+object PositionSolverProvider {
+  val Semtech = "Semtech".asInstanceOf[PositionSolverProvider]
+
+  @inline def values: js.Array[PositionSolverProvider] = js.Array(Semtech)
+}
+
+@js.native
+sealed trait PositionSolverType extends js.Any
+object PositionSolverType {
+  val GNSS = "GNSS".asInstanceOf[PositionSolverType]
+
+  @inline def values: js.Array[PositionSolverType] = js.Array(GNSS)
+}
+
+@js.native
+sealed trait PositioningConfigStatus extends js.Any
+object PositioningConfigStatus {
+  val Enabled = "Enabled".asInstanceOf[PositioningConfigStatus]
+  val Disabled = "Disabled".asInstanceOf[PositioningConfigStatus]
+
+  @inline def values: js.Array[PositioningConfigStatus] = js.Array(Enabled, Disabled)
 }
 
 /** The certificate chain algorithm provided by sidewalk.
@@ -212,7 +296,7 @@ object WirelessDeviceEvent {
   @inline def values: js.Array[WirelessDeviceEvent] = js.Array(Join, Rejoin, Uplink_Data, Downlink_Data, Registration)
 }
 
-/** WirelessDevice FrameInfo for trace content.
+/** <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.
   */
 @js.native
 sealed trait WirelessDeviceFrameInfo extends js.Any

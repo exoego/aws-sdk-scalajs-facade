@@ -62,6 +62,14 @@ object FeedbackValue {
 }
 
 @js.native
+sealed trait GroupingType extends js.Any
+object GroupingType {
+  val ACCOUNT_BASED = "ACCOUNT_BASED".asInstanceOf[GroupingType]
+
+  @inline def values: js.Array[GroupingType] = js.Array(ACCOUNT_BASED)
+}
+
+@js.native
 sealed trait LogFilter extends js.Any
 object LogFilter {
   val ERROR = "ERROR".asInstanceOf[LogFilter]
@@ -83,11 +91,12 @@ object OsType {
 @js.native
 sealed trait SeverityLevel extends js.Any
 object SeverityLevel {
+  val Informative = "Informative".asInstanceOf[SeverityLevel]
   val Low = "Low".asInstanceOf[SeverityLevel]
   val Medium = "Medium".asInstanceOf[SeverityLevel]
   val High = "High".asInstanceOf[SeverityLevel]
 
-  @inline def values: js.Array[SeverityLevel] = js.Array(Low, Medium, High)
+  @inline def values: js.Array[SeverityLevel] = js.Array(Informative, Low, Medium, High)
 }
 
 @js.native
@@ -120,6 +129,8 @@ object Tier {
   val SAP_HANA_SINGLE_NODE = "SAP_HANA_SINGLE_NODE".asInstanceOf[Tier]
   val SAP_HANA_HIGH_AVAILABILITY = "SAP_HANA_HIGH_AVAILABILITY".asInstanceOf[Tier]
   val SQL_SERVER_FAILOVER_CLUSTER_INSTANCE = "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE".asInstanceOf[Tier]
+  val SHAREPOINT = "SHAREPOINT".asInstanceOf[Tier]
+  val ACTIVE_DIRECTORY = "ACTIVE_DIRECTORY".asInstanceOf[Tier]
 
   @inline def values: js.Array[Tier] = js.Array(
     CUSTOM,
@@ -137,6 +148,8 @@ object Tier {
     SAP_HANA_MULTI_NODE,
     SAP_HANA_SINGLE_NODE,
     SAP_HANA_HIGH_AVAILABILITY,
-    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE
+    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE,
+    SHAREPOINT,
+    ACTIVE_DIRECTORY
   )
 }

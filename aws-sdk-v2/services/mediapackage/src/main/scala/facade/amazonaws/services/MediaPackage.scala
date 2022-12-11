@@ -142,6 +142,7 @@ package object mediapackage {
   trait CmafEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
     var ConstantInitializationVector: js.UndefOr[__string]
+    var EncryptionMethod: js.UndefOr[CmafEncryptionMethod]
     var KeyRotationIntervalSeconds: js.UndefOr[__integer]
   }
 
@@ -150,6 +151,7 @@ package object mediapackage {
     def apply(
         SpekeKeyProvider: SpekeKeyProvider,
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
+        EncryptionMethod: js.UndefOr[CmafEncryptionMethod] = js.undefined,
         KeyRotationIntervalSeconds: js.UndefOr[__integer] = js.undefined
     ): CmafEncryption = {
       val __obj = js.Dynamic.literal(
@@ -157,6 +159,7 @@ package object mediapackage {
       )
 
       ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
+      EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       KeyRotationIntervalSeconds.foreach(__v => __obj.updateDynamic("KeyRotationIntervalSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryption]
     }
@@ -563,6 +566,7 @@ package object mediapackage {
     var AdTriggers: js.UndefOr[AdTriggers]
     var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var Encryption: js.UndefOr[DashEncryption]
+    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var ManifestLayout: js.UndefOr[ManifestLayout]
     var ManifestWindowSeconds: js.UndefOr[__integer]
     var MinBufferTimeSeconds: js.UndefOr[__integer]
@@ -583,6 +587,7 @@ package object mediapackage {
         AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
         AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
+        IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         ManifestLayout: js.UndefOr[ManifestLayout] = js.undefined,
         ManifestWindowSeconds: js.UndefOr[__integer] = js.undefined,
         MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
@@ -600,6 +605,7 @@ package object mediapackage {
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
       AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       ManifestLayout.foreach(__v => __obj.updateDynamic("ManifestLayout")(__v.asInstanceOf[js.Any]))
       ManifestWindowSeconds.foreach(__v => __obj.updateDynamic("ManifestWindowSeconds")(__v.asInstanceOf[js.Any]))
       MinBufferTimeSeconds.foreach(__v => __obj.updateDynamic("MinBufferTimeSeconds")(__v.asInstanceOf[js.Any]))
@@ -996,6 +1002,8 @@ package object mediapackage {
   trait HlsManifest extends js.Object {
     var Id: __string
     var AdMarkers: js.UndefOr[AdMarkers]
+    var AdTriggers: js.UndefOr[AdTriggers]
+    var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var ManifestName: js.UndefOr[__string]
     var PlaylistType: js.UndefOr[PlaylistType]
@@ -1009,6 +1017,8 @@ package object mediapackage {
     def apply(
         Id: __string,
         AdMarkers: js.UndefOr[AdMarkers] = js.undefined,
+        AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
+        AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         ManifestName: js.UndefOr[__string] = js.undefined,
         PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
@@ -1021,6 +1031,8 @@ package object mediapackage {
       )
 
       AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
+      AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
+      AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.updateDynamic("PlaylistType")(__v.asInstanceOf[js.Any]))

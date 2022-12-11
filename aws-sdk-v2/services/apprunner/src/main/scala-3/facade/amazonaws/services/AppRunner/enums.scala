@@ -50,6 +50,14 @@ object CustomDomainAssociationStatus {
   inline def values: js.Array[CustomDomainAssociationStatus] = js.Array(CREATING, CREATE_FAILED, ACTIVE, DELETING, DELETE_FAILED, PENDING_CERTIFICATE_DNS_VALIDATION, BINDING_CERTIFICATE)
 }
 
+type EgressType = "DEFAULT" | "VPC"
+object EgressType {
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val VPC: "VPC" = "VPC"
+
+  inline def values: js.Array[EgressType] = js.Array(DEFAULT, VPC)
+}
+
 type HealthCheckProtocol = "TCP" | "HTTP"
 object HealthCheckProtocol {
   inline val TCP: "TCP" = "TCP"
@@ -64,6 +72,14 @@ object ImageRepositoryType {
   inline val ECR_PUBLIC: "ECR_PUBLIC" = "ECR_PUBLIC"
 
   inline def values: js.Array[ImageRepositoryType] = js.Array(ECR, ECR_PUBLIC)
+}
+
+type ObservabilityConfigurationStatus = "ACTIVE" | "INACTIVE"
+object ObservabilityConfigurationStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+
+  inline def values: js.Array[ObservabilityConfigurationStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 type OperationStatus = "PENDING" | "IN_PROGRESS" | "FAILED" | "SUCCEEDED" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_FAILED" | "ROLLBACK_SUCCEEDED"
@@ -97,12 +113,20 @@ object ProviderType {
   inline def values: js.Array[ProviderType] = js.Array(GITHUB)
 }
 
-type Runtime = "PYTHON_3" | "NODEJS_12"
+type Runtime = "PYTHON_3" | "NODEJS_12" | "NODEJS_14" | "CORRETTO_8" | "CORRETTO_11" | "NODEJS_16" | "GO_1" | "DOTNET_6" | "PHP_81" | "RUBY_31"
 object Runtime {
   inline val PYTHON_3: "PYTHON_3" = "PYTHON_3"
   inline val NODEJS_12: "NODEJS_12" = "NODEJS_12"
+  inline val NODEJS_14: "NODEJS_14" = "NODEJS_14"
+  inline val CORRETTO_8: "CORRETTO_8" = "CORRETTO_8"
+  inline val CORRETTO_11: "CORRETTO_11" = "CORRETTO_11"
+  inline val NODEJS_16: "NODEJS_16" = "NODEJS_16"
+  inline val GO_1: "GO_1" = "GO_1"
+  inline val DOTNET_6: "DOTNET_6" = "DOTNET_6"
+  inline val PHP_81: "PHP_81" = "PHP_81"
+  inline val RUBY_31: "RUBY_31" = "RUBY_31"
 
-  inline def values: js.Array[Runtime] = js.Array(PYTHON_3, NODEJS_12)
+  inline def values: js.Array[Runtime] = js.Array(PYTHON_3, NODEJS_12, NODEJS_14, CORRETTO_8, CORRETTO_11, NODEJS_16, GO_1, DOTNET_6, PHP_81, RUBY_31)
 }
 
 type ServiceStatus = "CREATE_FAILED" | "RUNNING" | "DELETED" | "DELETE_FAILED" | "PAUSED" | "OPERATION_IN_PROGRESS"
@@ -122,4 +146,33 @@ object SourceCodeVersionType {
   inline val BRANCH: "BRANCH" = "BRANCH"
 
   inline def values: js.Array[SourceCodeVersionType] = js.Array(BRANCH)
+}
+
+type TracingVendor = "AWSXRAY"
+object TracingVendor {
+  inline val AWSXRAY: "AWSXRAY" = "AWSXRAY"
+
+  inline def values: js.Array[TracingVendor] = js.Array(AWSXRAY)
+}
+
+type VpcConnectorStatus = "ACTIVE" | "INACTIVE"
+object VpcConnectorStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+
+  inline def values: js.Array[VpcConnectorStatus] = js.Array(ACTIVE, INACTIVE)
+}
+
+type VpcIngressConnectionStatus = "AVAILABLE" | "PENDING_CREATION" | "PENDING_UPDATE" | "PENDING_DELETION" | "FAILED_CREATION" | "FAILED_UPDATE" | "FAILED_DELETION" | "DELETED"
+object VpcIngressConnectionStatus {
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING_CREATION: "PENDING_CREATION" = "PENDING_CREATION"
+  inline val PENDING_UPDATE: "PENDING_UPDATE" = "PENDING_UPDATE"
+  inline val PENDING_DELETION: "PENDING_DELETION" = "PENDING_DELETION"
+  inline val FAILED_CREATION: "FAILED_CREATION" = "FAILED_CREATION"
+  inline val FAILED_UPDATE: "FAILED_UPDATE" = "FAILED_UPDATE"
+  inline val FAILED_DELETION: "FAILED_DELETION" = "FAILED_DELETION"
+  inline val DELETED: "DELETED" = "DELETED"
+
+  inline def values: js.Array[VpcIngressConnectionStatus] = js.Array(AVAILABLE, PENDING_CREATION, PENDING_UPDATE, PENDING_DELETION, FAILED_CREATION, FAILED_UPDATE, FAILED_DELETION, DELETED)
 }

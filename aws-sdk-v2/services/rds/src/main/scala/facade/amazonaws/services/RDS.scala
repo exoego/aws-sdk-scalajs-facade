@@ -15,10 +15,17 @@ package object rds {
   type AvailabilityZones = js.Array[String]
   type AvailableProcessorFeatureList = js.Array[AvailableProcessorFeature]
   type AwsBackupRecoveryPointArn = String
+  type BlueGreenDeploymentIdentifier = String
+  type BlueGreenDeploymentList = js.Array[BlueGreenDeployment]
+  type BlueGreenDeploymentName = String
+  type BlueGreenDeploymentStatus = String
+  type BlueGreenDeploymentStatusDetails = String
+  type BlueGreenDeploymentTaskList = js.Array[BlueGreenDeploymentTask]
+  type BlueGreenDeploymentTaskName = String
+  type BlueGreenDeploymentTaskStatus = String
   type BooleanOptional = Boolean
   type BucketName = String
   type CertificateList = js.Array[Certificate]
-  type CustomAvailabilityZoneList = js.Array[CustomAvailabilityZone]
   type CustomDBEngineVersionManifest = String
   type CustomEngineName = String
   type CustomEngineVersion = String
@@ -50,6 +57,7 @@ package object rds {
   type DBSnapshotAttributeList = js.Array[DBSnapshotAttribute]
   type DBSnapshotList = js.Array[DBSnapshot]
   type DBSubnetGroups = js.Array[DBSubnetGroup]
+  type DatabaseArn = String
   type DescribeDBLogFilesList = js.Array[DescribeDBLogFilesDetails]
   type Description = String
   type DomainMembershipList = js.Array[DomainMembership]
@@ -69,7 +77,6 @@ package object rds {
   type GlobalClusterList = js.Array[GlobalCluster]
   type GlobalClusterMemberList = js.Array[GlobalClusterMember]
   type IPRangeList = js.Array[IPRange]
-  type InstallationMediaList = js.Array[InstallationMedia]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
   type KmsKeyIdOrArn = String
@@ -106,13 +113,18 @@ package object rds {
   type SourceRegionList = js.Array[SourceRegion]
   type String255 = String
   type StringList = js.Array[String]
-  type StringSensitive = String
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
   type SupportedCharacterSetsList = js.Array[CharacterSet]
   type SupportedTimezonesList = js.Array[Timezone]
+  type SwitchoverDetailList = js.Array[SwitchoverDetail]
+  type SwitchoverDetailStatus = String
+  type SwitchoverTimeout = Int
   type TStamp = js.Date
   type TagList = js.Array[Tag]
+  type TargetDBClusterParameterGroupName = String
+  type TargetDBParameterGroupName = String
+  type TargetEngineVersion = String
   type TargetGroupList = js.Array[DBProxyTargetGroup]
   type TargetList = js.Array[DBProxyTarget]
   type UserAuthConfigInfoList = js.Array[UserAuthConfigInfo]
@@ -137,7 +149,7 @@ package object rds {
     @inline def copyDBParameterGroupFuture(params: CopyDBParameterGroupMessage): Future[CopyDBParameterGroupResult] = service.copyDBParameterGroup(params).promise().toFuture
     @inline def copyDBSnapshotFuture(params: CopyDBSnapshotMessage): Future[CopyDBSnapshotResult] = service.copyDBSnapshot(params).promise().toFuture
     @inline def copyOptionGroupFuture(params: CopyOptionGroupMessage): Future[CopyOptionGroupResult] = service.copyOptionGroup(params).promise().toFuture
-    @inline def createCustomAvailabilityZoneFuture(params: CreateCustomAvailabilityZoneMessage): Future[CreateCustomAvailabilityZoneResult] = service.createCustomAvailabilityZone(params).promise().toFuture
+    @inline def createBlueGreenDeploymentFuture(params: CreateBlueGreenDeploymentRequest): Future[CreateBlueGreenDeploymentResponse] = service.createBlueGreenDeployment(params).promise().toFuture
     @inline def createCustomDBEngineVersionFuture(params: CreateCustomDBEngineVersionMessage): Future[DBEngineVersion] = service.createCustomDBEngineVersion(params).promise().toFuture
     @inline def createDBClusterEndpointFuture(params: CreateDBClusterEndpointMessage): Future[DBClusterEndpoint] = service.createDBClusterEndpoint(params).promise().toFuture
     @inline def createDBClusterFuture(params: CreateDBClusterMessage): Future[CreateDBClusterResult] = service.createDBCluster(params).promise().toFuture
@@ -154,7 +166,7 @@ package object rds {
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
     @inline def createGlobalClusterFuture(params: CreateGlobalClusterMessage): Future[CreateGlobalClusterResult] = service.createGlobalCluster(params).promise().toFuture
     @inline def createOptionGroupFuture(params: CreateOptionGroupMessage): Future[CreateOptionGroupResult] = service.createOptionGroup(params).promise().toFuture
-    @inline def deleteCustomAvailabilityZoneFuture(params: DeleteCustomAvailabilityZoneMessage): Future[DeleteCustomAvailabilityZoneResult] = service.deleteCustomAvailabilityZone(params).promise().toFuture
+    @inline def deleteBlueGreenDeploymentFuture(params: DeleteBlueGreenDeploymentRequest): Future[DeleteBlueGreenDeploymentResponse] = service.deleteBlueGreenDeployment(params).promise().toFuture
     @inline def deleteCustomDBEngineVersionFuture(params: DeleteCustomDBEngineVersionMessage): Future[DBEngineVersion] = service.deleteCustomDBEngineVersion(params).promise().toFuture
     @inline def deleteDBClusterEndpointFuture(params: DeleteDBClusterEndpointMessage): Future[DBClusterEndpoint] = service.deleteDBClusterEndpoint(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
@@ -170,12 +182,11 @@ package object rds {
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
     @inline def deleteGlobalClusterFuture(params: DeleteGlobalClusterMessage): Future[DeleteGlobalClusterResult] = service.deleteGlobalCluster(params).promise().toFuture
-    @inline def deleteInstallationMediaFuture(params: DeleteInstallationMediaMessage): Future[InstallationMedia] = service.deleteInstallationMedia(params).promise().toFuture
     @inline def deleteOptionGroupFuture(params: DeleteOptionGroupMessage): Future[js.Object] = service.deleteOptionGroup(params).promise().toFuture
     @inline def deregisterDBProxyTargetsFuture(params: DeregisterDBProxyTargetsRequest): Future[DeregisterDBProxyTargetsResponse] = service.deregisterDBProxyTargets(params).promise().toFuture
     @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributesMessage] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeBlueGreenDeploymentsFuture(params: DescribeBlueGreenDeploymentsRequest): Future[DescribeBlueGreenDeploymentsResponse] = service.describeBlueGreenDeployments(params).promise().toFuture
     @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] = service.describeCertificates(params).promise().toFuture
-    @inline def describeCustomAvailabilityZonesFuture(params: DescribeCustomAvailabilityZonesMessage): Future[CustomAvailabilityZoneMessage] = service.describeCustomAvailabilityZones(params).promise().toFuture
     @inline def describeDBClusterBacktracksFuture(params: DescribeDBClusterBacktracksMessage): Future[DBClusterBacktrackMessage] = service.describeDBClusterBacktracks(params).promise().toFuture
     @inline def describeDBClusterEndpointsFuture(params: DescribeDBClusterEndpointsMessage): Future[DBClusterEndpointMessage] = service.describeDBClusterEndpoints(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
@@ -204,7 +215,6 @@ package object rds {
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
     @inline def describeExportTasksFuture(params: DescribeExportTasksMessage): Future[ExportTasksMessage] = service.describeExportTasks(params).promise().toFuture
     @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] = service.describeGlobalClusters(params).promise().toFuture
-    @inline def describeInstallationMediaFuture(params: DescribeInstallationMediaMessage): Future[InstallationMediaMessage] = service.describeInstallationMedia(params).promise().toFuture
     @inline def describeOptionGroupOptionsFuture(params: DescribeOptionGroupOptionsMessage): Future[OptionGroupOptionsMessage] = service.describeOptionGroupOptions(params).promise().toFuture
     @inline def describeOptionGroupsFuture(params: DescribeOptionGroupsMessage): Future[OptionGroups] = service.describeOptionGroups(params).promise().toFuture
     @inline def describeOrderableDBInstanceOptionsFuture(params: DescribeOrderableDBInstanceOptionsMessage): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
@@ -216,8 +226,8 @@ package object rds {
     @inline def downloadDBLogFilePortionFuture(params: DownloadDBLogFilePortionMessage): Future[DownloadDBLogFilePortionDetails] = service.downloadDBLogFilePortion(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
     @inline def failoverGlobalClusterFuture(params: FailoverGlobalClusterMessage): Future[FailoverGlobalClusterResult] = service.failoverGlobalCluster(params).promise().toFuture
-    @inline def importInstallationMediaFuture(params: ImportInstallationMediaMessage): Future[InstallationMedia] = service.importInstallationMedia(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceMessage): Future[TagListMessage] = service.listTagsForResource(params).promise().toFuture
+    @inline def modifyActivityStreamFuture(params: ModifyActivityStreamRequest): Future[ModifyActivityStreamResponse] = service.modifyActivityStream(params).promise().toFuture
     @inline def modifyCertificatesFuture(params: ModifyCertificatesMessage): Future[ModifyCertificatesResult] = service.modifyCertificates(params).promise().toFuture
     @inline def modifyCurrentDBClusterCapacityFuture(params: ModifyCurrentDBClusterCapacityMessage): Future[DBClusterCapacityInfo] = service.modifyCurrentDBClusterCapacity(params).promise().toFuture
     @inline def modifyCustomDBEngineVersionFuture(params: ModifyCustomDBEngineVersionMessage): Future[DBEngineVersion] = service.modifyCustomDBEngineVersion(params).promise().toFuture
@@ -265,6 +275,8 @@ package object rds {
     @inline def stopDBClusterFuture(params: StopDBClusterMessage): Future[StopDBClusterResult] = service.stopDBCluster(params).promise().toFuture
     @inline def stopDBInstanceAutomatedBackupsReplicationFuture(params: StopDBInstanceAutomatedBackupsReplicationMessage): Future[StopDBInstanceAutomatedBackupsReplicationResult] = service.stopDBInstanceAutomatedBackupsReplication(params).promise().toFuture
     @inline def stopDBInstanceFuture(params: StopDBInstanceMessage): Future[StopDBInstanceResult] = service.stopDBInstance(params).promise().toFuture
+    @inline def switchoverBlueGreenDeploymentFuture(params: SwitchoverBlueGreenDeploymentRequest): Future[SwitchoverBlueGreenDeploymentResponse] = service.switchoverBlueGreenDeployment(params).promise().toFuture
+    @inline def switchoverReadReplicaFuture(params: SwitchoverReadReplicaMessage): Future[SwitchoverReadReplicaResult] = service.switchoverReadReplica(params).promise().toFuture
 
   }
 
@@ -286,7 +298,7 @@ package object rds {
     def copyDBParameterGroup(params: CopyDBParameterGroupMessage): Request[CopyDBParameterGroupResult] = js.native
     def copyDBSnapshot(params: CopyDBSnapshotMessage): Request[CopyDBSnapshotResult] = js.native
     def copyOptionGroup(params: CopyOptionGroupMessage): Request[CopyOptionGroupResult] = js.native
-    def createCustomAvailabilityZone(params: CreateCustomAvailabilityZoneMessage): Request[CreateCustomAvailabilityZoneResult] = js.native
+    def createBlueGreenDeployment(params: CreateBlueGreenDeploymentRequest): Request[CreateBlueGreenDeploymentResponse] = js.native
     def createCustomDBEngineVersion(params: CreateCustomDBEngineVersionMessage): Request[DBEngineVersion] = js.native
     def createDBCluster(params: CreateDBClusterMessage): Request[CreateDBClusterResult] = js.native
     def createDBClusterEndpoint(params: CreateDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
@@ -303,7 +315,7 @@ package object rds {
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
     def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
     def createOptionGroup(params: CreateOptionGroupMessage): Request[CreateOptionGroupResult] = js.native
-    def deleteCustomAvailabilityZone(params: DeleteCustomAvailabilityZoneMessage): Request[DeleteCustomAvailabilityZoneResult] = js.native
+    def deleteBlueGreenDeployment(params: DeleteBlueGreenDeploymentRequest): Request[DeleteBlueGreenDeploymentResponse] = js.native
     def deleteCustomDBEngineVersion(params: DeleteCustomDBEngineVersionMessage): Request[DBEngineVersion] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterEndpoint(params: DeleteDBClusterEndpointMessage): Request[DBClusterEndpoint] = js.native
@@ -319,12 +331,11 @@ package object rds {
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
     def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
-    def deleteInstallationMedia(params: DeleteInstallationMediaMessage): Request[InstallationMedia] = js.native
     def deleteOptionGroup(params: DeleteOptionGroupMessage): Request[js.Object] = js.native
     def deregisterDBProxyTargets(params: DeregisterDBProxyTargetsRequest): Request[DeregisterDBProxyTargetsResponse] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributesMessage] = js.native
+    def describeBlueGreenDeployments(params: DescribeBlueGreenDeploymentsRequest): Request[DescribeBlueGreenDeploymentsResponse] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
-    def describeCustomAvailabilityZones(params: DescribeCustomAvailabilityZonesMessage): Request[CustomAvailabilityZoneMessage] = js.native
     def describeDBClusterBacktracks(params: DescribeDBClusterBacktracksMessage): Request[DBClusterBacktrackMessage] = js.native
     def describeDBClusterEndpoints(params: DescribeDBClusterEndpointsMessage): Request[DBClusterEndpointMessage] = js.native
     def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
@@ -353,7 +364,6 @@ package object rds {
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
     def describeExportTasks(params: DescribeExportTasksMessage): Request[ExportTasksMessage] = js.native
     def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
-    def describeInstallationMedia(params: DescribeInstallationMediaMessage): Request[InstallationMediaMessage] = js.native
     def describeOptionGroupOptions(params: DescribeOptionGroupOptionsMessage): Request[OptionGroupOptionsMessage] = js.native
     def describeOptionGroups(params: DescribeOptionGroupsMessage): Request[OptionGroups] = js.native
     def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
@@ -365,8 +375,8 @@ package object rds {
     def downloadDBLogFilePortion(params: DownloadDBLogFilePortionMessage): Request[DownloadDBLogFilePortionDetails] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
     def failoverGlobalCluster(params: FailoverGlobalClusterMessage): Request[FailoverGlobalClusterResult] = js.native
-    def importInstallationMedia(params: ImportInstallationMediaMessage): Request[InstallationMedia] = js.native
     def listTagsForResource(params: ListTagsForResourceMessage): Request[TagListMessage] = js.native
+    def modifyActivityStream(params: ModifyActivityStreamRequest): Request[ModifyActivityStreamResponse] = js.native
     def modifyCertificates(params: ModifyCertificatesMessage): Request[ModifyCertificatesResult] = js.native
     def modifyCurrentDBClusterCapacity(params: ModifyCurrentDBClusterCapacityMessage): Request[DBClusterCapacityInfo] = js.native
     def modifyCustomDBEngineVersion(params: ModifyCustomDBEngineVersionMessage): Request[DBEngineVersion] = js.native
@@ -414,6 +424,8 @@ package object rds {
     def stopDBCluster(params: StopDBClusterMessage): Request[StopDBClusterResult] = js.native
     def stopDBInstance(params: StopDBInstanceMessage): Request[StopDBInstanceResult] = js.native
     def stopDBInstanceAutomatedBackupsReplication(params: StopDBInstanceAutomatedBackupsReplicationMessage): Request[StopDBInstanceAutomatedBackupsReplicationResult] = js.native
+    def switchoverBlueGreenDeployment(params: SwitchoverBlueGreenDeploymentRequest): Request[SwitchoverBlueGreenDeploymentResponse] = js.native
+    def switchoverReadReplica(params: SwitchoverReadReplicaMessage): Request[SwitchoverReadReplicaResult] = js.native
   }
   object RDS {
     @inline implicit def toOps(service: RDS): RDSOps = {
@@ -734,6 +746,75 @@ package object rds {
     }
   }
 
+  /** Contains the details about a blue/green deployment. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html|Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html| Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon Aurora User Guide</i>.
+    */
+  @js.native
+  trait BlueGreenDeployment extends js.Object {
+    var BlueGreenDeploymentIdentifier: js.UndefOr[BlueGreenDeploymentIdentifier]
+    var BlueGreenDeploymentName: js.UndefOr[BlueGreenDeploymentName]
+    var CreateTime: js.UndefOr[TStamp]
+    var DeleteTime: js.UndefOr[TStamp]
+    var Source: js.UndefOr[DatabaseArn]
+    var Status: js.UndefOr[BlueGreenDeploymentStatus]
+    var StatusDetails: js.UndefOr[BlueGreenDeploymentStatusDetails]
+    var SwitchoverDetails: js.UndefOr[SwitchoverDetailList]
+    var TagList: js.UndefOr[TagList]
+    var Target: js.UndefOr[DatabaseArn]
+    var Tasks: js.UndefOr[BlueGreenDeploymentTaskList]
+  }
+
+  object BlueGreenDeployment {
+    @inline
+    def apply(
+        BlueGreenDeploymentIdentifier: js.UndefOr[BlueGreenDeploymentIdentifier] = js.undefined,
+        BlueGreenDeploymentName: js.UndefOr[BlueGreenDeploymentName] = js.undefined,
+        CreateTime: js.UndefOr[TStamp] = js.undefined,
+        DeleteTime: js.UndefOr[TStamp] = js.undefined,
+        Source: js.UndefOr[DatabaseArn] = js.undefined,
+        Status: js.UndefOr[BlueGreenDeploymentStatus] = js.undefined,
+        StatusDetails: js.UndefOr[BlueGreenDeploymentStatusDetails] = js.undefined,
+        SwitchoverDetails: js.UndefOr[SwitchoverDetailList] = js.undefined,
+        TagList: js.UndefOr[TagList] = js.undefined,
+        Target: js.UndefOr[DatabaseArn] = js.undefined,
+        Tasks: js.UndefOr[BlueGreenDeploymentTaskList] = js.undefined
+    ): BlueGreenDeployment = {
+      val __obj = js.Dynamic.literal()
+      BlueGreenDeploymentIdentifier.foreach(__v => __obj.updateDynamic("BlueGreenDeploymentIdentifier")(__v.asInstanceOf[js.Any]))
+      BlueGreenDeploymentName.foreach(__v => __obj.updateDynamic("BlueGreenDeploymentName")(__v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      DeleteTime.foreach(__v => __obj.updateDynamic("DeleteTime")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      SwitchoverDetails.foreach(__v => __obj.updateDynamic("SwitchoverDetails")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
+      Tasks.foreach(__v => __obj.updateDynamic("Tasks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlueGreenDeployment]
+    }
+  }
+
+  /** Contains the details about a task for a blue/green deployment. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html|Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html| Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon Aurora User Guide</i>.
+    */
+  @js.native
+  trait BlueGreenDeploymentTask extends js.Object {
+    var Name: js.UndefOr[BlueGreenDeploymentTaskName]
+    var Status: js.UndefOr[BlueGreenDeploymentTaskStatus]
+  }
+
+  object BlueGreenDeploymentTask {
+    @inline
+    def apply(
+        Name: js.UndefOr[BlueGreenDeploymentTaskName] = js.undefined,
+        Status: js.UndefOr[BlueGreenDeploymentTaskStatus] = js.undefined
+    ): BlueGreenDeploymentTask = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlueGreenDeploymentTask]
+    }
+  }
+
   @js.native
   trait CancelExportTaskMessage extends js.Object {
     var ExportTaskIdentifier: String
@@ -857,9 +938,12 @@ package object rds {
     */
   @js.native
   trait ClusterPendingModifiedValues extends js.Object {
+    var AllocatedStorage: js.UndefOr[IntegerOptional]
+    var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var DBClusterIdentifier: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional]
+    var Iops: js.UndefOr[IntegerOptional]
     var MasterUserPassword: js.UndefOr[String]
     var PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports]
   }
@@ -867,16 +951,22 @@ package object rds {
   object ClusterPendingModifiedValues {
     @inline
     def apply(
+        AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
+        BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         IAMDatabaseAuthenticationEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        Iops: js.UndefOr[IntegerOptional] = js.undefined,
         MasterUserPassword: js.UndefOr[String] = js.undefined,
         PendingCloudwatchLogsExports: js.UndefOr[PendingCloudwatchLogsExports] = js.undefined
     ): ClusterPendingModifiedValues = {
       val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       IAMDatabaseAuthenticationEnabled.foreach(__v => __obj.updateDynamic("IAMDatabaseAuthenticationEnabled")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       PendingCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("PendingCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterPendingModifiedValues]
@@ -1190,48 +1280,52 @@ package object rds {
     }
   }
 
-  /** <p/>
-    */
   @js.native
-  trait CreateCustomAvailabilityZoneMessage extends js.Object {
-    var CustomAvailabilityZoneName: String
-    var ExistingVpnId: js.UndefOr[String]
-    var NewVpnTunnelName: js.UndefOr[String]
-    var VpnTunnelOriginatorIP: js.UndefOr[String]
+  trait CreateBlueGreenDeploymentRequest extends js.Object {
+    var BlueGreenDeploymentName: BlueGreenDeploymentName
+    var Source: DatabaseArn
+    var Tags: js.UndefOr[TagList]
+    var TargetDBClusterParameterGroupName: js.UndefOr[TargetDBClusterParameterGroupName]
+    var TargetDBParameterGroupName: js.UndefOr[TargetDBParameterGroupName]
+    var TargetEngineVersion: js.UndefOr[TargetEngineVersion]
   }
 
-  object CreateCustomAvailabilityZoneMessage {
+  object CreateBlueGreenDeploymentRequest {
     @inline
     def apply(
-        CustomAvailabilityZoneName: String,
-        ExistingVpnId: js.UndefOr[String] = js.undefined,
-        NewVpnTunnelName: js.UndefOr[String] = js.undefined,
-        VpnTunnelOriginatorIP: js.UndefOr[String] = js.undefined
-    ): CreateCustomAvailabilityZoneMessage = {
+        BlueGreenDeploymentName: BlueGreenDeploymentName,
+        Source: DatabaseArn,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetDBClusterParameterGroupName: js.UndefOr[TargetDBClusterParameterGroupName] = js.undefined,
+        TargetDBParameterGroupName: js.UndefOr[TargetDBParameterGroupName] = js.undefined,
+        TargetEngineVersion: js.UndefOr[TargetEngineVersion] = js.undefined
+    ): CreateBlueGreenDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "CustomAvailabilityZoneName" -> CustomAvailabilityZoneName.asInstanceOf[js.Any]
+        "BlueGreenDeploymentName" -> BlueGreenDeploymentName.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any]
       )
 
-      ExistingVpnId.foreach(__v => __obj.updateDynamic("ExistingVpnId")(__v.asInstanceOf[js.Any]))
-      NewVpnTunnelName.foreach(__v => __obj.updateDynamic("NewVpnTunnelName")(__v.asInstanceOf[js.Any]))
-      VpnTunnelOriginatorIP.foreach(__v => __obj.updateDynamic("VpnTunnelOriginatorIP")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCustomAvailabilityZoneMessage]
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetDBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("TargetDBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
+      TargetDBParameterGroupName.foreach(__v => __obj.updateDynamic("TargetDBParameterGroupName")(__v.asInstanceOf[js.Any]))
+      TargetEngineVersion.foreach(__v => __obj.updateDynamic("TargetEngineVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBlueGreenDeploymentRequest]
     }
   }
 
   @js.native
-  trait CreateCustomAvailabilityZoneResult extends js.Object {
-    var CustomAvailabilityZone: js.UndefOr[CustomAvailabilityZone]
+  trait CreateBlueGreenDeploymentResponse extends js.Object {
+    var BlueGreenDeployment: js.UndefOr[BlueGreenDeployment]
   }
 
-  object CreateCustomAvailabilityZoneResult {
+  object CreateBlueGreenDeploymentResponse {
     @inline
     def apply(
-        CustomAvailabilityZone: js.UndefOr[CustomAvailabilityZone] = js.undefined
-    ): CreateCustomAvailabilityZoneResult = {
+        BlueGreenDeployment: js.UndefOr[BlueGreenDeployment] = js.undefined
+    ): CreateBlueGreenDeploymentResponse = {
       val __obj = js.Dynamic.literal()
-      CustomAvailabilityZone.foreach(__v => __obj.updateDynamic("CustomAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CreateCustomAvailabilityZoneResult]
+      BlueGreenDeployment.foreach(__v => __obj.updateDynamic("BlueGreenDeployment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBlueGreenDeploymentResponse]
     }
   }
 
@@ -1323,6 +1417,7 @@ package object rds {
     var DBClusterInstanceClass: js.UndefOr[String]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
+    var DBSystemId: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
@@ -1341,6 +1436,7 @@ package object rds {
     var MasterUsername: js.UndefOr[String]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -1351,6 +1447,7 @@ package object rds {
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ReplicationSourceIdentifier: js.UndefOr[String]
     var ScalingConfiguration: js.UndefOr[ScalingConfiguration]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var SourceRegion: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
     var StorageType: js.UndefOr[String]
@@ -1373,6 +1470,7 @@ package object rds {
         DBClusterInstanceClass: js.UndefOr[String] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DBSystemId: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
@@ -1391,6 +1489,7 @@ package object rds {
         MasterUsername: js.UndefOr[String] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1401,6 +1500,7 @@ package object rds {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
         ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         SourceRegion: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
@@ -1422,6 +1522,7 @@ package object rds {
       DBClusterInstanceClass.foreach(__v => __obj.updateDynamic("DBClusterInstanceClass")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DBSystemId.foreach(__v => __obj.updateDynamic("DBSystemId")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
@@ -1440,6 +1541,7 @@ package object rds {
       MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -1450,6 +1552,7 @@ package object rds {
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -1600,6 +1703,7 @@ package object rds {
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
     var NcharCharacterSetName: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -1610,6 +1714,7 @@ package object rds {
     var PromotionTier: js.UndefOr[IntegerOptional]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
@@ -1655,6 +1760,7 @@ package object rds {
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
         NcharCharacterSetName: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1665,6 +1771,7 @@ package object rds {
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
@@ -1709,6 +1816,7 @@ package object rds {
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       NcharCharacterSetName.foreach(__v => __obj.updateDynamic("NcharCharacterSetName")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -1719,6 +1827,7 @@ package object rds {
       PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
@@ -1752,6 +1861,7 @@ package object rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -1761,6 +1871,7 @@ package object rds {
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ReplicaMode: js.UndefOr[ReplicaMode]
     var SourceRegion: js.UndefOr[String]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional]
@@ -1791,6 +1902,7 @@ package object rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1800,6 +1912,7 @@ package object rds {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ReplicaMode: js.UndefOr[ReplicaMode] = js.undefined,
         SourceRegion: js.UndefOr[String] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1829,6 +1942,7 @@ package object rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -1838,6 +1952,7 @@ package object rds {
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicaMode.foreach(__v => __obj.updateDynamic("ReplicaMode")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
@@ -2314,56 +2429,8 @@ package object rds {
     }
   }
 
-  /** A custom Availability Zone (AZ) is an on-premises AZ that is integrated with a VMware vSphere cluster. For more information about RDS on VMware, see the [[https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html| RDS on VMware User Guide.]]
-    */
-  @js.native
-  trait CustomAvailabilityZone extends js.Object {
-    var CustomAvailabilityZoneId: js.UndefOr[String]
-    var CustomAvailabilityZoneName: js.UndefOr[String]
-    var CustomAvailabilityZoneStatus: js.UndefOr[String]
-    var VpnDetails: js.UndefOr[VpnDetails]
-  }
-
-  object CustomAvailabilityZone {
-    @inline
-    def apply(
-        CustomAvailabilityZoneId: js.UndefOr[String] = js.undefined,
-        CustomAvailabilityZoneName: js.UndefOr[String] = js.undefined,
-        CustomAvailabilityZoneStatus: js.UndefOr[String] = js.undefined,
-        VpnDetails: js.UndefOr[VpnDetails] = js.undefined
-    ): CustomAvailabilityZone = {
-      val __obj = js.Dynamic.literal()
-      CustomAvailabilityZoneId.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      CustomAvailabilityZoneName.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneName")(__v.asInstanceOf[js.Any]))
-      CustomAvailabilityZoneStatus.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneStatus")(__v.asInstanceOf[js.Any]))
-      VpnDetails.foreach(__v => __obj.updateDynamic("VpnDetails")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomAvailabilityZone]
-    }
-  }
-
-  @js.native
-  trait CustomAvailabilityZoneMessage extends js.Object {
-    var CustomAvailabilityZones: js.UndefOr[CustomAvailabilityZoneList]
-    var Marker: js.UndefOr[String]
-  }
-
-  object CustomAvailabilityZoneMessage {
-    @inline
-    def apply(
-        CustomAvailabilityZones: js.UndefOr[CustomAvailabilityZoneList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): CustomAvailabilityZoneMessage = {
-      val __obj = js.Dynamic.literal()
-      CustomAvailabilityZones.foreach(__v => __obj.updateDynamic("CustomAvailabilityZones")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[CustomAvailabilityZoneMessage]
-    }
-  }
-
   /** Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster. For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>. For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>. For more information on Amazon Aurora DB clusters, see
     * [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html| What is Amazon Aurora?]] in the <i>Amazon Aurora User Guide.</i> For more information on Multi-AZ DB clusters, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html| Multi-AZ deployments with two readable standby DB instances]] in the <i>Amazon RDS User Guide.</i>
-    *
-    * '''Note:'''The Multi-AZ DB clusters feature is in preview and is subject to change.
     */
   @js.native
   trait DBCluster extends js.Object {
@@ -2393,6 +2460,7 @@ package object rds {
     var DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships]
     var DBClusterParameterGroup: js.UndefOr[String]
     var DBSubnetGroup: js.UndefOr[String]
+    var DBSystemId: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
     var DbClusterResourceId: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
@@ -2416,6 +2484,7 @@ package object rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var PendingModifiedValues: js.UndefOr[ClusterPendingModifiedValues]
     var PercentProgress: js.UndefOr[String]
     var PerformanceInsightsEnabled: js.UndefOr[BooleanOptional]
@@ -2429,6 +2498,7 @@ package object rds {
     var ReaderEndpoint: js.UndefOr[String]
     var ReplicationSourceIdentifier: js.UndefOr[String]
     var ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfigurationInfo]
     var Status: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[Boolean]
     var StorageType: js.UndefOr[String]
@@ -2465,6 +2535,7 @@ package object rds {
         DBClusterOptionGroupMemberships: js.UndefOr[DBClusterOptionGroupMemberships] = js.undefined,
         DBClusterParameterGroup: js.UndefOr[String] = js.undefined,
         DBSubnetGroup: js.UndefOr[String] = js.undefined,
+        DBSystemId: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
         DbClusterResourceId: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2488,6 +2559,7 @@ package object rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         PendingModifiedValues: js.UndefOr[ClusterPendingModifiedValues] = js.undefined,
         PercentProgress: js.UndefOr[String] = js.undefined,
         PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2501,6 +2573,7 @@ package object rds {
         ReaderEndpoint: js.UndefOr[String] = js.undefined,
         ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
         ScalingConfigurationInfo: js.UndefOr[ScalingConfigurationInfo] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfigurationInfo] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
@@ -2534,6 +2607,7 @@ package object rds {
       DBClusterOptionGroupMemberships.foreach(__v => __obj.updateDynamic("DBClusterOptionGroupMemberships")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroup.foreach(__v => __obj.updateDynamic("DBClusterParameterGroup")(__v.asInstanceOf[js.Any]))
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
+      DBSystemId.foreach(__v => __obj.updateDynamic("DBSystemId")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       DbClusterResourceId.foreach(__v => __obj.updateDynamic("DbClusterResourceId")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
@@ -2557,6 +2631,7 @@ package object rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsEnabled.foreach(__v => __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any]))
@@ -2570,6 +2645,7 @@ package object rds {
       ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
       ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
       ScalingConfigurationInfo.foreach(__v => __obj.updateDynamic("ScalingConfigurationInfo")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
@@ -2915,6 +2991,7 @@ package object rds {
     var DBClusterIdentifier: js.UndefOr[String]
     var DBClusterSnapshotArn: js.UndefOr[String]
     var DBClusterSnapshotIdentifier: js.UndefOr[String]
+    var DBSystemId: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineMode: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
@@ -2942,6 +3019,7 @@ package object rds {
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotArn: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
+        DBSystemId: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineMode: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -2966,6 +3044,7 @@ package object rds {
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("DBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
       DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      DBSystemId.foreach(__v => __obj.updateDynamic("DBSystemId")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -3054,6 +3133,7 @@ package object rds {
   @js.native
   trait DBEngineVersion extends js.Object {
     var CreateTime: js.UndefOr[TStamp]
+    var CustomDBEngineVersionManifest: js.UndefOr[CustomDBEngineVersionManifest]
     var DBEngineDescription: js.UndefOr[String]
     var DBEngineVersionArn: js.UndefOr[String]
     var DBEngineVersionDescription: js.UndefOr[String]
@@ -3072,6 +3152,7 @@ package object rds {
     var SupportedFeatureNames: js.UndefOr[FeatureNameList]
     var SupportedNcharCharacterSets: js.UndefOr[SupportedCharacterSetsList]
     var SupportedTimezones: js.UndefOr[SupportedTimezonesList]
+    var SupportsBabelfish: js.UndefOr[Boolean]
     var SupportsGlobalDatabases: js.UndefOr[Boolean]
     var SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean]
     var SupportsParallelQuery: js.UndefOr[Boolean]
@@ -3084,6 +3165,7 @@ package object rds {
     @inline
     def apply(
         CreateTime: js.UndefOr[TStamp] = js.undefined,
+        CustomDBEngineVersionManifest: js.UndefOr[CustomDBEngineVersionManifest] = js.undefined,
         DBEngineDescription: js.UndefOr[String] = js.undefined,
         DBEngineVersionArn: js.UndefOr[String] = js.undefined,
         DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
@@ -3102,6 +3184,7 @@ package object rds {
         SupportedFeatureNames: js.UndefOr[FeatureNameList] = js.undefined,
         SupportedNcharCharacterSets: js.UndefOr[SupportedCharacterSetsList] = js.undefined,
         SupportedTimezones: js.UndefOr[SupportedTimezonesList] = js.undefined,
+        SupportsBabelfish: js.UndefOr[Boolean] = js.undefined,
         SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
         SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
         SupportsParallelQuery: js.UndefOr[Boolean] = js.undefined,
@@ -3111,6 +3194,7 @@ package object rds {
     ): DBEngineVersion = {
       val __obj = js.Dynamic.literal()
       CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      CustomDBEngineVersionManifest.foreach(__v => __obj.updateDynamic("CustomDBEngineVersionManifest")(__v.asInstanceOf[js.Any]))
       DBEngineDescription.foreach(__v => __obj.updateDynamic("DBEngineDescription")(__v.asInstanceOf[js.Any]))
       DBEngineVersionArn.foreach(__v => __obj.updateDynamic("DBEngineVersionArn")(__v.asInstanceOf[js.Any]))
       DBEngineVersionDescription.foreach(__v => __obj.updateDynamic("DBEngineVersionDescription")(__v.asInstanceOf[js.Any]))
@@ -3129,6 +3213,7 @@ package object rds {
       SupportedFeatureNames.foreach(__v => __obj.updateDynamic("SupportedFeatureNames")(__v.asInstanceOf[js.Any]))
       SupportedNcharCharacterSets.foreach(__v => __obj.updateDynamic("SupportedNcharCharacterSets")(__v.asInstanceOf[js.Any]))
       SupportedTimezones.foreach(__v => __obj.updateDynamic("SupportedTimezones")(__v.asInstanceOf[js.Any]))
+      SupportsBabelfish.foreach(__v => __obj.updateDynamic("SupportsBabelfish")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsLogExportsToCloudwatchLogs.foreach(__v => __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any]))
       SupportsParallelQuery.foreach(__v => __obj.updateDynamic("SupportsParallelQuery")(__v.asInstanceOf[js.Any]))
@@ -3168,6 +3253,7 @@ package object rds {
     var ActivityStreamKinesisStreamName: js.UndefOr[String]
     var ActivityStreamKmsKeyId: js.UndefOr[String]
     var ActivityStreamMode: js.UndefOr[ActivityStreamMode]
+    var ActivityStreamPolicyStatus: js.UndefOr[ActivityStreamPolicyStatus]
     var ActivityStreamStatus: js.UndefOr[ActivityStreamStatus]
     var AllocatedStorage: js.UndefOr[Int]
     var AssociatedRoles: js.UndefOr[DBInstanceRoles]
@@ -3193,6 +3279,7 @@ package object rds {
     var DBParameterGroups: js.UndefOr[DBParameterGroupStatusList]
     var DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList]
     var DBSubnetGroup: js.UndefOr[DBSubnetGroup]
+    var DBSystemId: js.UndefOr[String]
     var DbInstancePort: js.UndefOr[Int]
     var DbiResourceId: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[Boolean]
@@ -3215,6 +3302,7 @@ package object rds {
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[Boolean]
     var NcharCharacterSetName: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList]
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
     var PerformanceInsightsEnabled: js.UndefOr[BooleanOptional]
@@ -3233,6 +3321,7 @@ package object rds {
     var SecondaryAvailabilityZone: js.UndefOr[String]
     var StatusInfos: js.UndefOr[DBInstanceStatusInfoList]
     var StorageEncrypted: js.UndefOr[Boolean]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var TagList: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
@@ -3247,6 +3336,7 @@ package object rds {
         ActivityStreamKinesisStreamName: js.UndefOr[String] = js.undefined,
         ActivityStreamKmsKeyId: js.UndefOr[String] = js.undefined,
         ActivityStreamMode: js.UndefOr[ActivityStreamMode] = js.undefined,
+        ActivityStreamPolicyStatus: js.UndefOr[ActivityStreamPolicyStatus] = js.undefined,
         ActivityStreamStatus: js.UndefOr[ActivityStreamStatus] = js.undefined,
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AssociatedRoles: js.UndefOr[DBInstanceRoles] = js.undefined,
@@ -3272,6 +3362,7 @@ package object rds {
         DBParameterGroups: js.UndefOr[DBParameterGroupStatusList] = js.undefined,
         DBSecurityGroups: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined,
+        DBSystemId: js.UndefOr[String] = js.undefined,
         DbInstancePort: js.UndefOr[Int] = js.undefined,
         DbiResourceId: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[Boolean] = js.undefined,
@@ -3294,6 +3385,7 @@ package object rds {
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[Boolean] = js.undefined,
         NcharCharacterSetName: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupMemberships: js.UndefOr[OptionGroupMembershipList] = js.undefined,
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
         PerformanceInsightsEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3312,6 +3404,7 @@ package object rds {
         SecondaryAvailabilityZone: js.UndefOr[String] = js.undefined,
         StatusInfos: js.UndefOr[DBInstanceStatusInfoList] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         TagList: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
@@ -3323,6 +3416,7 @@ package object rds {
       ActivityStreamKinesisStreamName.foreach(__v => __obj.updateDynamic("ActivityStreamKinesisStreamName")(__v.asInstanceOf[js.Any]))
       ActivityStreamKmsKeyId.foreach(__v => __obj.updateDynamic("ActivityStreamKmsKeyId")(__v.asInstanceOf[js.Any]))
       ActivityStreamMode.foreach(__v => __obj.updateDynamic("ActivityStreamMode")(__v.asInstanceOf[js.Any]))
+      ActivityStreamPolicyStatus.foreach(__v => __obj.updateDynamic("ActivityStreamPolicyStatus")(__v.asInstanceOf[js.Any]))
       ActivityStreamStatus.foreach(__v => __obj.updateDynamic("ActivityStreamStatus")(__v.asInstanceOf[js.Any]))
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
@@ -3348,6 +3442,7 @@ package object rds {
       DBParameterGroups.foreach(__v => __obj.updateDynamic("DBParameterGroups")(__v.asInstanceOf[js.Any]))
       DBSecurityGroups.foreach(__v => __obj.updateDynamic("DBSecurityGroups")(__v.asInstanceOf[js.Any]))
       DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
+      DBSystemId.foreach(__v => __obj.updateDynamic("DBSystemId")(__v.asInstanceOf[js.Any]))
       DbInstancePort.foreach(__v => __obj.updateDynamic("DbInstancePort")(__v.asInstanceOf[js.Any]))
       DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
@@ -3370,6 +3465,7 @@ package object rds {
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       NcharCharacterSetName.foreach(__v => __obj.updateDynamic("NcharCharacterSetName")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupMemberships.foreach(__v => __obj.updateDynamic("OptionGroupMemberships")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsEnabled.foreach(__v => __obj.updateDynamic("PerformanceInsightsEnabled")(__v.asInstanceOf[js.Any]))
@@ -3388,6 +3484,7 @@ package object rds {
       SecondaryAvailabilityZone.foreach(__v => __obj.updateDynamic("SecondaryAvailabilityZone")(__v.asInstanceOf[js.Any]))
       StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
@@ -3424,6 +3521,7 @@ package object rds {
     var Region: js.UndefOr[String]
     var RestoreWindow: js.UndefOr[RestoreWindow]
     var Status: js.UndefOr[String]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var TdeCredentialArn: js.UndefOr[String]
     var Timezone: js.UndefOr[String]
@@ -3456,6 +3554,7 @@ package object rds {
         Region: js.UndefOr[String] = js.undefined,
         RestoreWindow: js.UndefOr[RestoreWindow] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
         Timezone: js.UndefOr[String] = js.undefined,
@@ -3485,6 +3584,7 @@ package object rds {
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       RestoreWindow.foreach(__v => __obj.updateDynamic("RestoreWindow")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
@@ -4001,11 +4101,13 @@ package object rds {
     var Port: js.UndefOr[Int]
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var SnapshotCreateTime: js.UndefOr[TStamp]
+    var SnapshotDatabaseTime: js.UndefOr[TStamp]
     var SnapshotTarget: js.UndefOr[String]
     var SnapshotType: js.UndefOr[String]
     var SourceDBSnapshotIdentifier: js.UndefOr[String]
     var SourceRegion: js.UndefOr[String]
     var Status: js.UndefOr[String]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var TagList: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
@@ -4037,11 +4139,13 @@ package object rds {
         Port: js.UndefOr[Int] = js.undefined,
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         SnapshotCreateTime: js.UndefOr[TStamp] = js.undefined,
+        SnapshotDatabaseTime: js.UndefOr[TStamp] = js.undefined,
         SnapshotTarget: js.UndefOr[String] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined,
         SourceDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SourceRegion: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         TagList: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
@@ -4070,11 +4174,13 @@ package object rds {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
+      SnapshotDatabaseTime.foreach(__v => __obj.updateDynamic("SnapshotDatabaseTime")(__v.asInstanceOf[js.Any]))
       SnapshotTarget.foreach(__v => __obj.updateDynamic("SnapshotTarget")(__v.asInstanceOf[js.Any]))
       SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
       SourceDBSnapshotIdentifier.foreach(__v => __obj.updateDynamic("SourceDBSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       SourceRegion.foreach(__v => __obj.updateDynamic("SourceRegion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
@@ -4156,6 +4262,7 @@ package object rds {
     var DBSubnetGroupName: js.UndefOr[String]
     var SubnetGroupStatus: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
+    var SupportedNetworkTypes: js.UndefOr[StringList]
     var VpcId: js.UndefOr[String]
   }
 
@@ -4167,6 +4274,7 @@ package object rds {
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         SubnetGroupStatus: js.UndefOr[String] = js.undefined,
         Subnets: js.UndefOr[SubnetList] = js.undefined,
+        SupportedNetworkTypes: js.UndefOr[StringList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSubnetGroup = {
       val __obj = js.Dynamic.literal()
@@ -4175,6 +4283,7 @@ package object rds {
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      SupportedNetworkTypes.foreach(__v => __obj.updateDynamic("SupportedNetworkTypes")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBSubnetGroup]
     }
@@ -4202,35 +4311,39 @@ package object rds {
   }
 
   @js.native
-  trait DeleteCustomAvailabilityZoneMessage extends js.Object {
-    var CustomAvailabilityZoneId: String
+  trait DeleteBlueGreenDeploymentRequest extends js.Object {
+    var BlueGreenDeploymentIdentifier: BlueGreenDeploymentIdentifier
+    var DeleteTarget: js.UndefOr[BooleanOptional]
   }
 
-  object DeleteCustomAvailabilityZoneMessage {
+  object DeleteBlueGreenDeploymentRequest {
     @inline
     def apply(
-        CustomAvailabilityZoneId: String
-    ): DeleteCustomAvailabilityZoneMessage = {
+        BlueGreenDeploymentIdentifier: BlueGreenDeploymentIdentifier,
+        DeleteTarget: js.UndefOr[BooleanOptional] = js.undefined
+    ): DeleteBlueGreenDeploymentRequest = {
       val __obj = js.Dynamic.literal(
-        "CustomAvailabilityZoneId" -> CustomAvailabilityZoneId.asInstanceOf[js.Any]
+        "BlueGreenDeploymentIdentifier" -> BlueGreenDeploymentIdentifier.asInstanceOf[js.Any]
       )
-      __obj.asInstanceOf[DeleteCustomAvailabilityZoneMessage]
+
+      DeleteTarget.foreach(__v => __obj.updateDynamic("DeleteTarget")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBlueGreenDeploymentRequest]
     }
   }
 
   @js.native
-  trait DeleteCustomAvailabilityZoneResult extends js.Object {
-    var CustomAvailabilityZone: js.UndefOr[CustomAvailabilityZone]
+  trait DeleteBlueGreenDeploymentResponse extends js.Object {
+    var BlueGreenDeployment: js.UndefOr[BlueGreenDeployment]
   }
 
-  object DeleteCustomAvailabilityZoneResult {
+  object DeleteBlueGreenDeploymentResponse {
     @inline
     def apply(
-        CustomAvailabilityZone: js.UndefOr[CustomAvailabilityZone] = js.undefined
-    ): DeleteCustomAvailabilityZoneResult = {
+        BlueGreenDeployment: js.UndefOr[BlueGreenDeployment] = js.undefined
+    ): DeleteBlueGreenDeploymentResponse = {
       val __obj = js.Dynamic.literal()
-      CustomAvailabilityZone.foreach(__v => __obj.updateDynamic("CustomAvailabilityZone")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DeleteCustomAvailabilityZoneResult]
+      BlueGreenDeployment.foreach(__v => __obj.updateDynamic("BlueGreenDeployment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBlueGreenDeploymentResponse]
     }
   }
 
@@ -4675,23 +4788,6 @@ package object rds {
     }
   }
 
-  @js.native
-  trait DeleteInstallationMediaMessage extends js.Object {
-    var InstallationMediaId: String
-  }
-
-  object DeleteInstallationMediaMessage {
-    @inline
-    def apply(
-        InstallationMediaId: String
-    ): DeleteInstallationMediaMessage = {
-      val __obj = js.Dynamic.literal(
-        "InstallationMediaId" -> InstallationMediaId.asInstanceOf[js.Any]
-      )
-      __obj.asInstanceOf[DeleteInstallationMediaMessage]
-    }
-  }
-
   /** <p/>
     */
   @js.native
@@ -4762,6 +4858,50 @@ package object rds {
     }
   }
 
+  @js.native
+  trait DescribeBlueGreenDeploymentsRequest extends js.Object {
+    var BlueGreenDeploymentIdentifier: js.UndefOr[BlueGreenDeploymentIdentifier]
+    var Filters: js.UndefOr[FilterList]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[MaxRecords]
+  }
+
+  object DescribeBlueGreenDeploymentsRequest {
+    @inline
+    def apply(
+        BlueGreenDeploymentIdentifier: js.UndefOr[BlueGreenDeploymentIdentifier] = js.undefined,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[MaxRecords] = js.undefined
+    ): DescribeBlueGreenDeploymentsRequest = {
+      val __obj = js.Dynamic.literal()
+      BlueGreenDeploymentIdentifier.foreach(__v => __obj.updateDynamic("BlueGreenDeploymentIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBlueGreenDeploymentsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBlueGreenDeploymentsResponse extends js.Object {
+    var BlueGreenDeployments: js.UndefOr[BlueGreenDeploymentList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeBlueGreenDeploymentsResponse {
+    @inline
+    def apply(
+        BlueGreenDeployments: js.UndefOr[BlueGreenDeploymentList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeBlueGreenDeploymentsResponse = {
+      val __obj = js.Dynamic.literal()
+      BlueGreenDeployments.foreach(__v => __obj.updateDynamic("BlueGreenDeployments")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBlueGreenDeploymentsResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -4786,31 +4926,6 @@ package object rds {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCertificatesMessage]
-    }
-  }
-
-  @js.native
-  trait DescribeCustomAvailabilityZonesMessage extends js.Object {
-    var CustomAvailabilityZoneId: js.UndefOr[String]
-    var Filters: js.UndefOr[FilterList]
-    var Marker: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-  }
-
-  object DescribeCustomAvailabilityZonesMessage {
-    @inline
-    def apply(
-        CustomAvailabilityZoneId: js.UndefOr[String] = js.undefined,
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeCustomAvailabilityZonesMessage = {
-      val __obj = js.Dynamic.literal()
-      CustomAvailabilityZoneId.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeCustomAvailabilityZonesMessage]
     }
   }
 
@@ -5787,6 +5902,7 @@ package object rds {
     var Marker: js.UndefOr[String]
     var MaxRecords: js.UndefOr[MaxRecords]
     var SourceArn: js.UndefOr[String]
+    var SourceType: js.UndefOr[ExportSourceType]
   }
 
   object DescribeExportTasksMessage {
@@ -5796,7 +5912,8 @@ package object rds {
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
-        SourceArn: js.UndefOr[String] = js.undefined
+        SourceArn: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[ExportSourceType] = js.undefined
     ): DescribeExportTasksMessage = {
       val __obj = js.Dynamic.literal()
       ExportTaskIdentifier.foreach(__v => __obj.updateDynamic("ExportTaskIdentifier")(__v.asInstanceOf[js.Any]))
@@ -5804,6 +5921,7 @@ package object rds {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksMessage]
     }
   }
@@ -5830,31 +5948,6 @@ package object rds {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGlobalClustersMessage]
-    }
-  }
-
-  @js.native
-  trait DescribeInstallationMediaMessage extends js.Object {
-    var Filters: js.UndefOr[FilterList]
-    var InstallationMediaId: js.UndefOr[String]
-    var Marker: js.UndefOr[String]
-    var MaxRecords: js.UndefOr[IntegerOptional]
-  }
-
-  object DescribeInstallationMediaMessage {
-    @inline
-    def apply(
-        Filters: js.UndefOr[FilterList] = js.undefined,
-        InstallationMediaId: js.UndefOr[String] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined,
-        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
-    ): DescribeInstallationMediaMessage = {
-      val __obj = js.Dynamic.literal()
-      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
-      InstallationMediaId.foreach(__v => __obj.updateDynamic("InstallationMediaId")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[DescribeInstallationMediaMessage]
     }
   }
 
@@ -6322,7 +6415,7 @@ package object rds {
     }
   }
 
-  /** This data type is used as a response element in the <code>DescribeEvents</code> action.
+  /** This data type is used as a response element in the [[https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html|DescribeEvents]] action.
     */
   @js.native
   trait Event extends js.Object {
@@ -6355,7 +6448,7 @@ package object rds {
     }
   }
 
-  /** Contains the results of a successful invocation of the <code>DescribeEventCategories</code> operation.
+  /** Contains the results of a successful invocation of the [[https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html|DescribeEventCategories]] operation.
     */
   @js.native
   trait EventCategoriesMap extends js.Object {
@@ -6495,6 +6588,7 @@ package object rds {
     var S3Prefix: js.UndefOr[String]
     var SnapshotTime: js.UndefOr[TStamp]
     var SourceArn: js.UndefOr[String]
+    var SourceType: js.UndefOr[ExportSourceType]
     var Status: js.UndefOr[String]
     var TaskEndTime: js.UndefOr[TStamp]
     var TaskStartTime: js.UndefOr[TStamp]
@@ -6515,6 +6609,7 @@ package object rds {
         S3Prefix: js.UndefOr[String] = js.undefined,
         SnapshotTime: js.UndefOr[TStamp] = js.undefined,
         SourceArn: js.UndefOr[String] = js.undefined,
+        SourceType: js.UndefOr[ExportSourceType] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         TaskEndTime: js.UndefOr[TStamp] = js.undefined,
         TaskStartTime: js.UndefOr[TStamp] = js.undefined,
@@ -6532,6 +6627,7 @@ package object rds {
       S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
       SnapshotTime.foreach(__v => __obj.updateDynamic("SnapshotTime")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TaskEndTime.foreach(__v => __obj.updateDynamic("TaskEndTime")(__v.asInstanceOf[js.Any]))
       TaskStartTime.foreach(__v => __obj.updateDynamic("TaskStartTime")(__v.asInstanceOf[js.Any]))
@@ -6798,111 +6894,6 @@ package object rds {
     }
   }
 
-  @js.native
-  trait ImportInstallationMediaMessage extends js.Object {
-    var CustomAvailabilityZoneId: String
-    var Engine: String
-    var EngineInstallationMediaPath: String
-    var EngineVersion: String
-    var OSInstallationMediaPath: String
-  }
-
-  object ImportInstallationMediaMessage {
-    @inline
-    def apply(
-        CustomAvailabilityZoneId: String,
-        Engine: String,
-        EngineInstallationMediaPath: String,
-        EngineVersion: String,
-        OSInstallationMediaPath: String
-    ): ImportInstallationMediaMessage = {
-      val __obj = js.Dynamic.literal(
-        "CustomAvailabilityZoneId" -> CustomAvailabilityZoneId.asInstanceOf[js.Any],
-        "Engine" -> Engine.asInstanceOf[js.Any],
-        "EngineInstallationMediaPath" -> EngineInstallationMediaPath.asInstanceOf[js.Any],
-        "EngineVersion" -> EngineVersion.asInstanceOf[js.Any],
-        "OSInstallationMediaPath" -> OSInstallationMediaPath.asInstanceOf[js.Any]
-      )
-      __obj.asInstanceOf[ImportInstallationMediaMessage]
-    }
-  }
-
-  /** Contains the installation media for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.
-    */
-  @js.native
-  trait InstallationMedia extends js.Object {
-    var CustomAvailabilityZoneId: js.UndefOr[String]
-    var Engine: js.UndefOr[String]
-    var EngineInstallationMediaPath: js.UndefOr[String]
-    var EngineVersion: js.UndefOr[String]
-    var FailureCause: js.UndefOr[InstallationMediaFailureCause]
-    var InstallationMediaId: js.UndefOr[String]
-    var OSInstallationMediaPath: js.UndefOr[String]
-    var Status: js.UndefOr[String]
-  }
-
-  object InstallationMedia {
-    @inline
-    def apply(
-        CustomAvailabilityZoneId: js.UndefOr[String] = js.undefined,
-        Engine: js.UndefOr[String] = js.undefined,
-        EngineInstallationMediaPath: js.UndefOr[String] = js.undefined,
-        EngineVersion: js.UndefOr[String] = js.undefined,
-        FailureCause: js.UndefOr[InstallationMediaFailureCause] = js.undefined,
-        InstallationMediaId: js.UndefOr[String] = js.undefined,
-        OSInstallationMediaPath: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined
-    ): InstallationMedia = {
-      val __obj = js.Dynamic.literal()
-      CustomAvailabilityZoneId.foreach(__v => __obj.updateDynamic("CustomAvailabilityZoneId")(__v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
-      EngineInstallationMediaPath.foreach(__v => __obj.updateDynamic("EngineInstallationMediaPath")(__v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
-      FailureCause.foreach(__v => __obj.updateDynamic("FailureCause")(__v.asInstanceOf[js.Any]))
-      InstallationMediaId.foreach(__v => __obj.updateDynamic("InstallationMediaId")(__v.asInstanceOf[js.Any]))
-      OSInstallationMediaPath.foreach(__v => __obj.updateDynamic("OSInstallationMediaPath")(__v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstallationMedia]
-    }
-  }
-
-  /** Contains the cause of an installation media failure. Installation media is used for a DB engine that requires an on-premises customer provided license, such as Microsoft SQL Server.
-    */
-  @js.native
-  trait InstallationMediaFailureCause extends js.Object {
-    var Message: js.UndefOr[String]
-  }
-
-  object InstallationMediaFailureCause {
-    @inline
-    def apply(
-        Message: js.UndefOr[String] = js.undefined
-    ): InstallationMediaFailureCause = {
-      val __obj = js.Dynamic.literal()
-      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstallationMediaFailureCause]
-    }
-  }
-
-  @js.native
-  trait InstallationMediaMessage extends js.Object {
-    var InstallationMedia: js.UndefOr[InstallationMediaList]
-    var Marker: js.UndefOr[String]
-  }
-
-  object InstallationMediaMessage {
-    @inline
-    def apply(
-        InstallationMedia: js.UndefOr[InstallationMediaList] = js.undefined,
-        Marker: js.UndefOr[String] = js.undefined
-    ): InstallationMediaMessage = {
-      val __obj = js.Dynamic.literal()
-      InstallationMedia.foreach(__v => __obj.updateDynamic("InstallationMedia")(__v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[InstallationMediaMessage]
-    }
-  }
-
   /** <p/>
     */
   @js.native
@@ -6944,6 +6935,56 @@ package object rds {
       AllowedValue.foreach(__v => __obj.updateDynamic("AllowedValue")(__v.asInstanceOf[js.Any]))
       MinimumEngineVersion.foreach(__v => __obj.updateDynamic("MinimumEngineVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MinimumEngineVersionPerAllowedValue]
+    }
+  }
+
+  @js.native
+  trait ModifyActivityStreamRequest extends js.Object {
+    var AuditPolicyState: js.UndefOr[AuditPolicyState]
+    var ResourceArn: js.UndefOr[String]
+  }
+
+  object ModifyActivityStreamRequest {
+    @inline
+    def apply(
+        AuditPolicyState: js.UndefOr[AuditPolicyState] = js.undefined,
+        ResourceArn: js.UndefOr[String] = js.undefined
+    ): ModifyActivityStreamRequest = {
+      val __obj = js.Dynamic.literal()
+      AuditPolicyState.foreach(__v => __obj.updateDynamic("AuditPolicyState")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyActivityStreamRequest]
+    }
+  }
+
+  @js.native
+  trait ModifyActivityStreamResponse extends js.Object {
+    var EngineNativeAuditFieldsIncluded: js.UndefOr[BooleanOptional]
+    var KinesisStreamName: js.UndefOr[String]
+    var KmsKeyId: js.UndefOr[String]
+    var Mode: js.UndefOr[ActivityStreamMode]
+    var PolicyStatus: js.UndefOr[ActivityStreamPolicyStatus]
+    var Status: js.UndefOr[ActivityStreamStatus]
+  }
+
+  object ModifyActivityStreamResponse {
+    @inline
+    def apply(
+        EngineNativeAuditFieldsIncluded: js.UndefOr[BooleanOptional] = js.undefined,
+        KinesisStreamName: js.UndefOr[String] = js.undefined,
+        KmsKeyId: js.UndefOr[String] = js.undefined,
+        Mode: js.UndefOr[ActivityStreamMode] = js.undefined,
+        PolicyStatus: js.UndefOr[ActivityStreamPolicyStatus] = js.undefined,
+        Status: js.UndefOr[ActivityStreamStatus] = js.undefined
+    ): ModifyActivityStreamResponse = {
+      val __obj = js.Dynamic.literal()
+      EngineNativeAuditFieldsIncluded.foreach(__v => __obj.updateDynamic("EngineNativeAuditFieldsIncluded")(__v.asInstanceOf[js.Any]))
+      KinesisStreamName.foreach(__v => __obj.updateDynamic("KinesisStreamName")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyActivityStreamResponse]
     }
   }
 
@@ -7091,6 +7132,7 @@ package object rds {
     var MasterUserPassword: js.UndefOr[String]
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var NewDBClusterIdentifier: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
@@ -7099,6 +7141,7 @@ package object rds {
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var ScalingConfiguration: js.UndefOr[ScalingConfiguration]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var StorageType: js.UndefOr[String]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
@@ -7130,6 +7173,7 @@ package object rds {
         MasterUserPassword: js.UndefOr[String] = js.undefined,
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         NewDBClusterIdentifier: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
@@ -7138,6 +7182,7 @@ package object rds {
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBClusterMessage = {
@@ -7168,6 +7213,7 @@ package object rds {
       MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NewDBClusterIdentifier.foreach(__v => __obj.updateDynamic("NewDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
@@ -7176,6 +7222,7 @@ package object rds {
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterMessage]
@@ -7300,6 +7347,7 @@ package object rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var NewDBInstanceIdentifier: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
@@ -7311,6 +7359,7 @@ package object rds {
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ReplicaMode: js.UndefOr[ReplicaMode]
     var ResumeFullAutomationModeMinutes: js.UndefOr[IntegerOptional]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var TdeCredentialArn: js.UndefOr[String]
     var TdeCredentialPassword: js.UndefOr[String]
@@ -7352,6 +7401,7 @@ package object rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         NewDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
@@ -7363,6 +7413,7 @@ package object rds {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ReplicaMode: js.UndefOr[ReplicaMode] = js.undefined,
         ResumeFullAutomationModeMinutes: js.UndefOr[IntegerOptional] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
         TdeCredentialPassword: js.UndefOr[String] = js.undefined,
@@ -7403,6 +7454,7 @@ package object rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NewDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("NewDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
@@ -7414,6 +7466,7 @@ package object rds {
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ReplicaMode.foreach(__v => __obj.updateDynamic("ReplicaMode")(__v.asInstanceOf[js.Any]))
       ResumeFullAutomationModeMinutes.foreach(__v => __obj.updateDynamic("ResumeFullAutomationModeMinutes")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
       TdeCredentialPassword.foreach(__v => __obj.updateDynamic("TdeCredentialPassword")(__v.asInstanceOf[js.Any]))
@@ -8221,15 +8274,20 @@ package object rds {
     var MaxIopsPerDbInstance: js.UndefOr[IntegerOptional]
     var MaxIopsPerGib: js.UndefOr[DoubleOptional]
     var MaxStorageSize: js.UndefOr[IntegerOptional]
+    var MaxStorageThroughputPerDbInstance: js.UndefOr[IntegerOptional]
+    var MaxStorageThroughputPerIops: js.UndefOr[DoubleOptional]
     var MinIopsPerDbInstance: js.UndefOr[IntegerOptional]
     var MinIopsPerGib: js.UndefOr[DoubleOptional]
     var MinStorageSize: js.UndefOr[IntegerOptional]
+    var MinStorageThroughputPerDbInstance: js.UndefOr[IntegerOptional]
+    var MinStorageThroughputPerIops: js.UndefOr[DoubleOptional]
     var MultiAZCapable: js.UndefOr[Boolean]
     var OutpostCapable: js.UndefOr[Boolean]
     var ReadReplicaCapable: js.UndefOr[Boolean]
     var StorageType: js.UndefOr[String]
     var SupportedActivityStreamModes: js.UndefOr[ActivityStreamModeList]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
+    var SupportedNetworkTypes: js.UndefOr[StringList]
     var SupportsClusters: js.UndefOr[Boolean]
     var SupportsEnhancedMonitoring: js.UndefOr[Boolean]
     var SupportsGlobalDatabases: js.UndefOr[Boolean]
@@ -8239,6 +8297,7 @@ package object rds {
     var SupportsPerformanceInsights: js.UndefOr[Boolean]
     var SupportsStorageAutoscaling: js.UndefOr[BooleanOptional]
     var SupportsStorageEncryption: js.UndefOr[Boolean]
+    var SupportsStorageThroughput: js.UndefOr[Boolean]
     var Vpc: js.UndefOr[Boolean]
   }
 
@@ -8255,15 +8314,20 @@ package object rds {
         MaxIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
         MaxIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
         MaxStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+        MaxStorageThroughputPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+        MaxStorageThroughputPerIops: js.UndefOr[DoubleOptional] = js.undefined,
         MinIopsPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
         MinIopsPerGib: js.UndefOr[DoubleOptional] = js.undefined,
         MinStorageSize: js.UndefOr[IntegerOptional] = js.undefined,
+        MinStorageThroughputPerDbInstance: js.UndefOr[IntegerOptional] = js.undefined,
+        MinStorageThroughputPerIops: js.UndefOr[DoubleOptional] = js.undefined,
         MultiAZCapable: js.UndefOr[Boolean] = js.undefined,
         OutpostCapable: js.UndefOr[Boolean] = js.undefined,
         ReadReplicaCapable: js.UndefOr[Boolean] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         SupportedActivityStreamModes: js.UndefOr[ActivityStreamModeList] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
+        SupportedNetworkTypes: js.UndefOr[StringList] = js.undefined,
         SupportsClusters: js.UndefOr[Boolean] = js.undefined,
         SupportsEnhancedMonitoring: js.UndefOr[Boolean] = js.undefined,
         SupportsGlobalDatabases: js.UndefOr[Boolean] = js.undefined,
@@ -8273,6 +8337,7 @@ package object rds {
         SupportsPerformanceInsights: js.UndefOr[Boolean] = js.undefined,
         SupportsStorageAutoscaling: js.UndefOr[BooleanOptional] = js.undefined,
         SupportsStorageEncryption: js.UndefOr[Boolean] = js.undefined,
+        SupportsStorageThroughput: js.UndefOr[Boolean] = js.undefined,
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
       val __obj = js.Dynamic.literal()
@@ -8286,15 +8351,20 @@ package object rds {
       MaxIopsPerDbInstance.foreach(__v => __obj.updateDynamic("MaxIopsPerDbInstance")(__v.asInstanceOf[js.Any]))
       MaxIopsPerGib.foreach(__v => __obj.updateDynamic("MaxIopsPerGib")(__v.asInstanceOf[js.Any]))
       MaxStorageSize.foreach(__v => __obj.updateDynamic("MaxStorageSize")(__v.asInstanceOf[js.Any]))
+      MaxStorageThroughputPerDbInstance.foreach(__v => __obj.updateDynamic("MaxStorageThroughputPerDbInstance")(__v.asInstanceOf[js.Any]))
+      MaxStorageThroughputPerIops.foreach(__v => __obj.updateDynamic("MaxStorageThroughputPerIops")(__v.asInstanceOf[js.Any]))
       MinIopsPerDbInstance.foreach(__v => __obj.updateDynamic("MinIopsPerDbInstance")(__v.asInstanceOf[js.Any]))
       MinIopsPerGib.foreach(__v => __obj.updateDynamic("MinIopsPerGib")(__v.asInstanceOf[js.Any]))
       MinStorageSize.foreach(__v => __obj.updateDynamic("MinStorageSize")(__v.asInstanceOf[js.Any]))
+      MinStorageThroughputPerDbInstance.foreach(__v => __obj.updateDynamic("MinStorageThroughputPerDbInstance")(__v.asInstanceOf[js.Any]))
+      MinStorageThroughputPerIops.foreach(__v => __obj.updateDynamic("MinStorageThroughputPerIops")(__v.asInstanceOf[js.Any]))
       MultiAZCapable.foreach(__v => __obj.updateDynamic("MultiAZCapable")(__v.asInstanceOf[js.Any]))
       OutpostCapable.foreach(__v => __obj.updateDynamic("OutpostCapable")(__v.asInstanceOf[js.Any]))
       ReadReplicaCapable.foreach(__v => __obj.updateDynamic("ReadReplicaCapable")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SupportedActivityStreamModes.foreach(__v => __obj.updateDynamic("SupportedActivityStreamModes")(__v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
+      SupportedNetworkTypes.foreach(__v => __obj.updateDynamic("SupportedNetworkTypes")(__v.asInstanceOf[js.Any]))
       SupportsClusters.foreach(__v => __obj.updateDynamic("SupportsClusters")(__v.asInstanceOf[js.Any]))
       SupportsEnhancedMonitoring.foreach(__v => __obj.updateDynamic("SupportsEnhancedMonitoring")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
@@ -8304,6 +8374,7 @@ package object rds {
       SupportsPerformanceInsights.foreach(__v => __obj.updateDynamic("SupportsPerformanceInsights")(__v.asInstanceOf[js.Any]))
       SupportsStorageAutoscaling.foreach(__v => __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any]))
       SupportsStorageEncryption.foreach(__v => __obj.updateDynamic("SupportsStorageEncryption")(__v.asInstanceOf[js.Any]))
+      SupportsStorageThroughput.foreach(__v => __obj.updateDynamic("SupportsStorageThroughput")(__v.asInstanceOf[js.Any]))
       Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableDBInstanceOption]
     }
@@ -8492,6 +8563,7 @@ package object rds {
     var Port: js.UndefOr[IntegerOptional]
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var ResumeFullAutomationModeTime: js.UndefOr[TStamp]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
   }
 
@@ -8515,6 +8587,7 @@ package object rds {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         ResumeFullAutomationModeTime: js.UndefOr[TStamp] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): PendingModifiedValues = {
       val __obj = js.Dynamic.literal()
@@ -8535,6 +8608,7 @@ package object rds {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       ResumeFullAutomationModeTime.foreach(__v => __obj.updateDynamic("ResumeFullAutomationModeTime")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingModifiedValues]
     }
@@ -9234,11 +9308,13 @@ package object rds {
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
     var KmsKeyId: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var S3Prefix: js.UndefOr[String]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
     var Tags: js.UndefOr[TagList]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -9270,11 +9346,13 @@ package object rds {
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         S3Prefix: js.UndefOr[String] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -9305,11 +9383,13 @@ package object rds {
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -9356,10 +9436,12 @@ package object rds {
     var EngineVersion: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
     var KmsKeyId: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var ScalingConfiguration: js.UndefOr[ScalingConfiguration]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
@@ -9387,10 +9469,12 @@ package object rds {
         EngineVersion: js.UndefOr[String] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
@@ -9417,10 +9501,12 @@ package object rds {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
@@ -9463,12 +9549,14 @@ package object rds {
     var EngineMode: js.UndefOr[String]
     var Iops: js.UndefOr[IntegerOptional]
     var KmsKeyId: js.UndefOr[String]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var RestoreToTime: js.UndefOr[TStamp]
     var RestoreType: js.UndefOr[String]
     var ScalingConfiguration: js.UndefOr[ScalingConfiguration]
+    var ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var UseLatestRestorableTime: js.UndefOr[Boolean]
@@ -9493,12 +9581,14 @@ package object rds {
         EngineMode: js.UndefOr[String] = js.undefined,
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         RestoreToTime: js.UndefOr[TStamp] = js.undefined,
         RestoreType: js.UndefOr[String] = js.undefined,
         ScalingConfiguration: js.UndefOr[ScalingConfiguration] = js.undefined,
+        ServerlessV2ScalingConfiguration: js.UndefOr[ServerlessV2ScalingConfiguration] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
@@ -9522,12 +9612,14 @@ package object rds {
       EngineMode.foreach(__v => __obj.updateDynamic("EngineMode")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       RestoreToTime.foreach(__v => __obj.updateDynamic("RestoreToTime")(__v.asInstanceOf[js.Any]))
       RestoreType.foreach(__v => __obj.updateDynamic("RestoreType")(__v.asInstanceOf[js.Any]))
       ScalingConfiguration.foreach(__v => __obj.updateDynamic("ScalingConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerlessV2ScalingConfiguration.foreach(__v => __obj.updateDynamic("ServerlessV2ScalingConfiguration")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
@@ -9557,15 +9649,16 @@ package object rds {
   @js.native
   trait RestoreDBInstanceFromDBSnapshotMessage extends js.Object {
     var DBInstanceIdentifier: String
-    var DBSnapshotIdentifier: String
     var AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional]
     var AvailabilityZone: js.UndefOr[String]
     var BackupTarget: js.UndefOr[String]
     var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var CustomIamInstanceProfile: js.UndefOr[String]
+    var DBClusterSnapshotIdentifier: js.UndefOr[String]
     var DBInstanceClass: js.UndefOr[String]
     var DBName: js.UndefOr[String]
     var DBParameterGroupName: js.UndefOr[String]
+    var DBSnapshotIdentifier: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var Domain: js.UndefOr[String]
@@ -9577,10 +9670,12 @@ package object rds {
     var Iops: js.UndefOr[IntegerOptional]
     var LicenseModel: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
@@ -9593,15 +9688,16 @@ package object rds {
     @inline
     def apply(
         DBInstanceIdentifier: String,
-        DBSnapshotIdentifier: String,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         BackupTarget: js.UndefOr[String] = js.undefined,
         CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         CustomIamInstanceProfile: js.UndefOr[String] = js.undefined,
+        DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         DBName: js.UndefOr[String] = js.undefined,
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         Domain: js.UndefOr[String] = js.undefined,
@@ -9613,10 +9709,12 @@ package object rds {
         Iops: js.UndefOr[IntegerOptional] = js.undefined,
         LicenseModel: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
@@ -9625,8 +9723,7 @@ package object rds {
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBInstanceFromDBSnapshotMessage = {
       val __obj = js.Dynamic.literal(
-        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
-        "DBSnapshotIdentifier" -> DBSnapshotIdentifier.asInstanceOf[js.Any]
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
 
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
@@ -9634,9 +9731,11 @@ package object rds {
       BackupTarget.foreach(__v => __obj.updateDynamic("BackupTarget")(__v.asInstanceOf[js.Any]))
       CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       CustomIamInstanceProfile.foreach(__v => __obj.updateDynamic("CustomIamInstanceProfile")(__v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
       DBParameterGroupName.foreach(__v => __obj.updateDynamic("DBParameterGroupName")(__v.asInstanceOf[js.Any]))
+      DBSnapshotIdentifier.foreach(__v => __obj.updateDynamic("DBSnapshotIdentifier")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
@@ -9648,10 +9747,12 @@ package object rds {
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
@@ -9710,6 +9811,7 @@ package object rds {
     var MonitoringInterval: js.UndefOr[IntegerOptional]
     var MonitoringRoleArn: js.UndefOr[String]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var PerformanceInsightsKMSKeyId: js.UndefOr[String]
     var PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional]
@@ -9720,6 +9822,7 @@ package object rds {
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
     var S3Prefix: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[BooleanOptional]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional]
@@ -9759,6 +9862,7 @@ package object rds {
         MonitoringInterval: js.UndefOr[IntegerOptional] = js.undefined,
         MonitoringRoleArn: js.UndefOr[String] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         PerformanceInsightsKMSKeyId: js.UndefOr[String] = js.undefined,
         PerformanceInsightsRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -9769,6 +9873,7 @@ package object rds {
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
         S3Prefix: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         UseDefaultProcessorFeatures: js.UndefOr[BooleanOptional] = js.undefined,
@@ -9807,6 +9912,7 @@ package object rds {
       MonitoringInterval.foreach(__v => __obj.updateDynamic("MonitoringInterval")(__v.asInstanceOf[js.Any]))
       MonitoringRoleArn.foreach(__v => __obj.updateDynamic("MonitoringRoleArn")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsKMSKeyId.foreach(__v => __obj.updateDynamic("PerformanceInsightsKMSKeyId")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsRetentionPeriod.foreach(__v => __obj.updateDynamic("PerformanceInsightsRetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -9817,6 +9923,7 @@ package object rds {
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
       S3Prefix.foreach(__v => __obj.updateDynamic("S3Prefix")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UseDefaultProcessorFeatures.foreach(__v => __obj.updateDynamic("UseDefaultProcessorFeatures")(__v.asInstanceOf[js.Any]))
@@ -9866,6 +9973,7 @@ package object rds {
     var LicenseModel: js.UndefOr[String]
     var MaxAllocatedStorage: js.UndefOr[IntegerOptional]
     var MultiAZ: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[String]
     var OptionGroupName: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var ProcessorFeatures: js.UndefOr[ProcessorFeatureList]
@@ -9874,6 +9982,7 @@ package object rds {
     var SourceDBInstanceAutomatedBackupsArn: js.UndefOr[String]
     var SourceDBInstanceIdentifier: js.UndefOr[String]
     var SourceDbiResourceId: js.UndefOr[String]
+    var StorageThroughput: js.UndefOr[IntegerOptional]
     var StorageType: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
     var TdeCredentialArn: js.UndefOr[String]
@@ -9907,6 +10016,7 @@ package object rds {
         LicenseModel: js.UndefOr[String] = js.undefined,
         MaxAllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         MultiAZ: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[String] = js.undefined,
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         ProcessorFeatures: js.UndefOr[ProcessorFeatureList] = js.undefined,
@@ -9915,6 +10025,7 @@ package object rds {
         SourceDBInstanceAutomatedBackupsArn: js.UndefOr[String] = js.undefined,
         SourceDBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         SourceDbiResourceId: js.UndefOr[String] = js.undefined,
+        StorageThroughput: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TdeCredentialArn: js.UndefOr[String] = js.undefined,
@@ -9947,6 +10058,7 @@ package object rds {
       LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
       MaxAllocatedStorage.foreach(__v => __obj.updateDynamic("MaxAllocatedStorage")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       OptionGroupName.foreach(__v => __obj.updateDynamic("OptionGroupName")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       ProcessorFeatures.foreach(__v => __obj.updateDynamic("ProcessorFeatures")(__v.asInstanceOf[js.Any]))
@@ -9955,6 +10067,7 @@ package object rds {
       SourceDBInstanceAutomatedBackupsArn.foreach(__v => __obj.updateDynamic("SourceDBInstanceAutomatedBackupsArn")(__v.asInstanceOf[js.Any]))
       SourceDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("SourceDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
       SourceDbiResourceId.foreach(__v => __obj.updateDynamic("SourceDbiResourceId")(__v.asInstanceOf[js.Any]))
+      StorageThroughput.foreach(__v => __obj.updateDynamic("StorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TdeCredentialArn.foreach(__v => __obj.updateDynamic("TdeCredentialArn")(__v.asInstanceOf[js.Any]))
@@ -10051,7 +10164,7 @@ package object rds {
     }
   }
 
-  /** Contains the scaling configuration of an Aurora Serverless DB cluster. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+  /** Contains the scaling configuration of an Aurora Serverless v1 DB cluster. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless v1]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfiguration extends js.Object {
@@ -10084,7 +10197,7 @@ package object rds {
     }
   }
 
-  /** Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless]] in the <i>Amazon Aurora User Guide</i>.
+  /** Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html|Using Amazon Aurora Serverless v1]] in the <i>Amazon Aurora User Guide</i>.
     */
   @js.native
   trait ScalingConfigurationInfo extends js.Object {
@@ -10114,6 +10227,48 @@ package object rds {
       SecondsUntilAutoPause.foreach(__v => __obj.updateDynamic("SecondsUntilAutoPause")(__v.asInstanceOf[js.Any]))
       TimeoutAction.foreach(__v => __obj.updateDynamic("TimeoutAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingConfigurationInfo]
+    }
+  }
+
+  /** Contains the scaling configuration of an Aurora Serverless v2 DB cluster. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html|Using Amazon Aurora Serverless v2]] in the <i>Amazon Aurora User Guide</i>.
+    */
+  @js.native
+  trait ServerlessV2ScalingConfiguration extends js.Object {
+    var MaxCapacity: js.UndefOr[DoubleOptional]
+    var MinCapacity: js.UndefOr[DoubleOptional]
+  }
+
+  object ServerlessV2ScalingConfiguration {
+    @inline
+    def apply(
+        MaxCapacity: js.UndefOr[DoubleOptional] = js.undefined,
+        MinCapacity: js.UndefOr[DoubleOptional] = js.undefined
+    ): ServerlessV2ScalingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerlessV2ScalingConfiguration]
+    }
+  }
+
+  /** Shows the scaling configuration for an Aurora Serverless v2 DB cluster. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html|Using Amazon Aurora Serverless v2]] in the <i>Amazon Aurora User Guide</i>.
+    */
+  @js.native
+  trait ServerlessV2ScalingConfigurationInfo extends js.Object {
+    var MaxCapacity: js.UndefOr[DoubleOptional]
+    var MinCapacity: js.UndefOr[DoubleOptional]
+  }
+
+  object ServerlessV2ScalingConfigurationInfo {
+    @inline
+    def apply(
+        MaxCapacity: js.UndefOr[DoubleOptional] = js.undefined,
+        MinCapacity: js.UndefOr[DoubleOptional] = js.undefined
+    ): ServerlessV2ScalingConfigurationInfo = {
+      val __obj = js.Dynamic.literal()
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MinCapacity.foreach(__v => __obj.updateDynamic("MinCapacity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerlessV2ScalingConfigurationInfo]
     }
   }
 
@@ -10544,7 +10699,101 @@ package object rds {
     }
   }
 
-  /** Metadata assigned to an Amazon RDS resource consisting of a key-value pair.
+  @js.native
+  trait SwitchoverBlueGreenDeploymentRequest extends js.Object {
+    var BlueGreenDeploymentIdentifier: BlueGreenDeploymentIdentifier
+    var SwitchoverTimeout: js.UndefOr[SwitchoverTimeout]
+  }
+
+  object SwitchoverBlueGreenDeploymentRequest {
+    @inline
+    def apply(
+        BlueGreenDeploymentIdentifier: BlueGreenDeploymentIdentifier,
+        SwitchoverTimeout: js.UndefOr[SwitchoverTimeout] = js.undefined
+    ): SwitchoverBlueGreenDeploymentRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueGreenDeploymentIdentifier" -> BlueGreenDeploymentIdentifier.asInstanceOf[js.Any]
+      )
+
+      SwitchoverTimeout.foreach(__v => __obj.updateDynamic("SwitchoverTimeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SwitchoverBlueGreenDeploymentRequest]
+    }
+  }
+
+  @js.native
+  trait SwitchoverBlueGreenDeploymentResponse extends js.Object {
+    var BlueGreenDeployment: js.UndefOr[BlueGreenDeployment]
+  }
+
+  object SwitchoverBlueGreenDeploymentResponse {
+    @inline
+    def apply(
+        BlueGreenDeployment: js.UndefOr[BlueGreenDeployment] = js.undefined
+    ): SwitchoverBlueGreenDeploymentResponse = {
+      val __obj = js.Dynamic.literal()
+      BlueGreenDeployment.foreach(__v => __obj.updateDynamic("BlueGreenDeployment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SwitchoverBlueGreenDeploymentResponse]
+    }
+  }
+
+  /** Contains the details about a blue/green deployment. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html|Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon RDS User Guide</i> and [[https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html| Using Amazon RDS Blue/Green Deployments for database updates]] in the <i>Amazon Aurora User Guide</i>.
+    */
+  @js.native
+  trait SwitchoverDetail extends js.Object {
+    var SourceMember: js.UndefOr[DatabaseArn]
+    var Status: js.UndefOr[SwitchoverDetailStatus]
+    var TargetMember: js.UndefOr[DatabaseArn]
+  }
+
+  object SwitchoverDetail {
+    @inline
+    def apply(
+        SourceMember: js.UndefOr[DatabaseArn] = js.undefined,
+        Status: js.UndefOr[SwitchoverDetailStatus] = js.undefined,
+        TargetMember: js.UndefOr[DatabaseArn] = js.undefined
+    ): SwitchoverDetail = {
+      val __obj = js.Dynamic.literal()
+      SourceMember.foreach(__v => __obj.updateDynamic("SourceMember")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetMember.foreach(__v => __obj.updateDynamic("TargetMember")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SwitchoverDetail]
+    }
+  }
+
+  @js.native
+  trait SwitchoverReadReplicaMessage extends js.Object {
+    var DBInstanceIdentifier: String
+  }
+
+  object SwitchoverReadReplicaMessage {
+    @inline
+    def apply(
+        DBInstanceIdentifier: String
+    ): SwitchoverReadReplicaMessage = {
+      val __obj = js.Dynamic.literal(
+        "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SwitchoverReadReplicaMessage]
+    }
+  }
+
+  @js.native
+  trait SwitchoverReadReplicaResult extends js.Object {
+    var DBInstance: js.UndefOr[DBInstance]
+  }
+
+  object SwitchoverReadReplicaResult {
+    @inline
+    def apply(
+        DBInstance: js.UndefOr[DBInstance] = js.undefined
+    ): SwitchoverReadReplicaResult = {
+      val __obj = js.Dynamic.literal()
+      DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SwitchoverReadReplicaResult]
+    }
+  }
+
+  /** Metadata assigned to an Amazon RDS resource consisting of a key-value pair. For more information, see [[https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html|Tagging Amazon RDS Resources]] in the <i>Amazon RDS User Guide.</i>
     */
   @js.native
   trait Tag extends js.Object {
@@ -10635,6 +10884,7 @@ package object rds {
     var EngineVersion: js.UndefOr[String]
     var IsMajorVersionUpgrade: js.UndefOr[Boolean]
     var SupportedEngineModes: js.UndefOr[EngineModeList]
+    var SupportsBabelfish: js.UndefOr[BooleanOptional]
     var SupportsGlobalDatabases: js.UndefOr[BooleanOptional]
     var SupportsParallelQuery: js.UndefOr[BooleanOptional]
   }
@@ -10648,6 +10898,7 @@ package object rds {
         EngineVersion: js.UndefOr[String] = js.undefined,
         IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         SupportedEngineModes: js.UndefOr[EngineModeList] = js.undefined,
+        SupportsBabelfish: js.UndefOr[BooleanOptional] = js.undefined,
         SupportsGlobalDatabases: js.UndefOr[BooleanOptional] = js.undefined,
         SupportsParallelQuery: js.UndefOr[BooleanOptional] = js.undefined
     ): UpgradeTarget = {
@@ -10658,6 +10909,7 @@ package object rds {
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       IsMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("IsMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       SupportedEngineModes.foreach(__v => __obj.updateDynamic("SupportedEngineModes")(__v.asInstanceOf[js.Any]))
+      SupportsBabelfish.foreach(__v => __obj.updateDynamic("SupportsBabelfish")(__v.asInstanceOf[js.Any]))
       SupportsGlobalDatabases.foreach(__v => __obj.updateDynamic("SupportsGlobalDatabases")(__v.asInstanceOf[js.Any]))
       SupportsParallelQuery.foreach(__v => __obj.updateDynamic("SupportsParallelQuery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeTarget]
@@ -10751,7 +11003,9 @@ package object rds {
   trait ValidStorageOptions extends js.Object {
     var IopsToStorageRatio: js.UndefOr[DoubleRangeList]
     var ProvisionedIops: js.UndefOr[RangeList]
+    var ProvisionedStorageThroughput: js.UndefOr[RangeList]
     var StorageSize: js.UndefOr[RangeList]
+    var StorageThroughputToIopsRatio: js.UndefOr[DoubleRangeList]
     var StorageType: js.UndefOr[String]
     var SupportsStorageAutoscaling: js.UndefOr[Boolean]
   }
@@ -10761,14 +11015,18 @@ package object rds {
     def apply(
         IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
         ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
+        ProvisionedStorageThroughput: js.UndefOr[RangeList] = js.undefined,
         StorageSize: js.UndefOr[RangeList] = js.undefined,
+        StorageThroughputToIopsRatio: js.UndefOr[DoubleRangeList] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined,
         SupportsStorageAutoscaling: js.UndefOr[Boolean] = js.undefined
     ): ValidStorageOptions = {
       val __obj = js.Dynamic.literal()
       IopsToStorageRatio.foreach(__v => __obj.updateDynamic("IopsToStorageRatio")(__v.asInstanceOf[js.Any]))
       ProvisionedIops.foreach(__v => __obj.updateDynamic("ProvisionedIops")(__v.asInstanceOf[js.Any]))
+      ProvisionedStorageThroughput.foreach(__v => __obj.updateDynamic("ProvisionedStorageThroughput")(__v.asInstanceOf[js.Any]))
       StorageSize.foreach(__v => __obj.updateDynamic("StorageSize")(__v.asInstanceOf[js.Any]))
+      StorageThroughputToIopsRatio.foreach(__v => __obj.updateDynamic("StorageThroughputToIopsRatio")(__v.asInstanceOf[js.Any]))
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       SupportsStorageAutoscaling.foreach(__v => __obj.updateDynamic("SupportsStorageAutoscaling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidStorageOptions]
@@ -10793,39 +11051,6 @@ package object rds {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupId.foreach(__v => __obj.updateDynamic("VpcSecurityGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcSecurityGroupMembership]
-    }
-  }
-
-  /** Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services website. For more information about RDS on VMware, see the [[https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html| RDS on VMware User Guide.]]
-    */
-  @js.native
-  trait VpnDetails extends js.Object {
-    var VpnGatewayIp: js.UndefOr[String]
-    var VpnId: js.UndefOr[String]
-    var VpnName: js.UndefOr[String]
-    var VpnPSK: js.UndefOr[StringSensitive]
-    var VpnState: js.UndefOr[String]
-    var VpnTunnelOriginatorIP: js.UndefOr[String]
-  }
-
-  object VpnDetails {
-    @inline
-    def apply(
-        VpnGatewayIp: js.UndefOr[String] = js.undefined,
-        VpnId: js.UndefOr[String] = js.undefined,
-        VpnName: js.UndefOr[String] = js.undefined,
-        VpnPSK: js.UndefOr[StringSensitive] = js.undefined,
-        VpnState: js.UndefOr[String] = js.undefined,
-        VpnTunnelOriginatorIP: js.UndefOr[String] = js.undefined
-    ): VpnDetails = {
-      val __obj = js.Dynamic.literal()
-      VpnGatewayIp.foreach(__v => __obj.updateDynamic("VpnGatewayIp")(__v.asInstanceOf[js.Any]))
-      VpnId.foreach(__v => __obj.updateDynamic("VpnId")(__v.asInstanceOf[js.Any]))
-      VpnName.foreach(__v => __obj.updateDynamic("VpnName")(__v.asInstanceOf[js.Any]))
-      VpnPSK.foreach(__v => __obj.updateDynamic("VpnPSK")(__v.asInstanceOf[js.Any]))
-      VpnState.foreach(__v => __obj.updateDynamic("VpnState")(__v.asInstanceOf[js.Any]))
-      VpnTunnelOriginatorIP.foreach(__v => __obj.updateDynamic("VpnTunnelOriginatorIP")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[VpnDetails]
     }
   }
 }

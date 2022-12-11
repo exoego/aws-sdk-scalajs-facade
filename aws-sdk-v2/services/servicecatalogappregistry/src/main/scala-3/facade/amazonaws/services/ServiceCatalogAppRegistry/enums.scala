@@ -14,11 +14,12 @@ object ResourceGroupState {
   inline def values: js.Array[ResourceGroupState] = js.Array(CREATING, CREATE_COMPLETE, CREATE_FAILED, UPDATING, UPDATE_COMPLETE, UPDATE_FAILED)
 }
 
-type ResourceType = "CFN_STACK"
+type ResourceType = "CFN_STACK" | "RESOURCE_TAG_VALUE"
 object ResourceType {
   inline val CFN_STACK: "CFN_STACK" = "CFN_STACK"
+  inline val RESOURCE_TAG_VALUE: "RESOURCE_TAG_VALUE" = "RESOURCE_TAG_VALUE"
 
-  inline def values: js.Array[ResourceType] = js.Array(CFN_STACK)
+  inline def values: js.Array[ResourceType] = js.Array(CFN_STACK, RESOURCE_TAG_VALUE)
 }
 
 type SyncAction = "START_SYNC" | "NO_ACTION"

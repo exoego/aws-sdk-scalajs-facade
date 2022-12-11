@@ -132,6 +132,7 @@ object LifecycleState {
   val `Warmed:Terminated` = "Warmed:Terminated".asInstanceOf[LifecycleState]
   val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
   val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
+  val `Warmed:Hibernated` = "Warmed:Hibernated".asInstanceOf[LifecycleState]
 
   @inline def values: js.Array[LifecycleState] = js.Array(
     Pending,
@@ -155,7 +156,8 @@ object LifecycleState {
     `Warmed:Terminating:Proceed`,
     `Warmed:Terminated`,
     `Warmed:Stopped`,
-    `Warmed:Running`
+    `Warmed:Running`,
+    `Warmed:Hibernated`
   )
 }
 
@@ -297,8 +299,9 @@ sealed trait WarmPoolState extends js.Any
 object WarmPoolState {
   val Stopped = "Stopped".asInstanceOf[WarmPoolState]
   val Running = "Running".asInstanceOf[WarmPoolState]
+  val Hibernated = "Hibernated".asInstanceOf[WarmPoolState]
 
-  @inline def values: js.Array[WarmPoolState] = js.Array(Stopped, Running)
+  @inline def values: js.Array[WarmPoolState] = js.Array(Stopped, Running, Hibernated)
 }
 
 @js.native

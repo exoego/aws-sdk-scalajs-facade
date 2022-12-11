@@ -65,6 +65,14 @@ object CRType {
   inline def values: js.Array[CRType] = js.Array(EC2, SPOT, FARGATE, FARGATE_SPOT)
 }
 
+type CRUpdateAllocationStrategy = "BEST_FIT_PROGRESSIVE" | "SPOT_CAPACITY_OPTIMIZED"
+object CRUpdateAllocationStrategy {
+  inline val BEST_FIT_PROGRESSIVE: "BEST_FIT_PROGRESSIVE" = "BEST_FIT_PROGRESSIVE"
+  inline val SPOT_CAPACITY_OPTIMIZED: "SPOT_CAPACITY_OPTIMIZED" = "SPOT_CAPACITY_OPTIMIZED"
+
+  inline def values: js.Array[CRUpdateAllocationStrategy] = js.Array(BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED)
+}
+
 type DeviceCgroupPermission = "READ" | "WRITE" | "MKNOD"
 object DeviceCgroupPermission {
   inline val READ: "READ" = "READ"
@@ -142,6 +150,14 @@ object LogDriver {
   inline val splunk: "splunk" = "splunk"
 
   inline def values: js.Array[LogDriver] = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
+}
+
+type OrchestrationType = "ECS" | "EKS"
+object OrchestrationType {
+  inline val ECS: "ECS" = "ECS"
+  inline val EKS: "EKS" = "EKS"
+
+  inline def values: js.Array[OrchestrationType] = js.Array(ECS, EKS)
 }
 
 type PlatformCapability = "EC2" | "FARGATE"

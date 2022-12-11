@@ -24,9 +24,11 @@ package object iotsitewise {
   type AssetModelHierarchyDefinitions = js.Array[AssetModelHierarchyDefinition]
   type AssetModelProperties = js.Array[AssetModelProperty]
   type AssetModelPropertyDefinitions = js.Array[AssetModelPropertyDefinition]
+  type AssetModelPropertySummaries = js.Array[AssetModelPropertySummary]
   type AssetModelSummaries = js.Array[AssetModelSummary]
   type AssetProperties = js.Array[AssetProperty]
   type AssetPropertyAlias = String
+  type AssetPropertySummaries = js.Array[AssetPropertySummary]
   type AssetPropertyValueHistory = js.Array[AssetPropertyValue]
   type AssetPropertyValues = js.Array[AssetPropertyValue]
   type AssetRelationshipSummaries = js.Array[AssetRelationshipSummary]
@@ -34,11 +36,27 @@ package object iotsitewise {
   type AssociatedAssetsSummaries = js.Array[AssociatedAssetsSummary]
   type BatchAssociateProjectAssetsErrors = js.Array[AssetErrorDetails]
   type BatchDisassociateProjectAssetsErrors = js.Array[AssetErrorDetails]
+  type BatchGetAssetPropertyAggregatesEntries = js.Array[BatchGetAssetPropertyAggregatesEntry]
+  type BatchGetAssetPropertyAggregatesErrorEntries = js.Array[BatchGetAssetPropertyAggregatesErrorEntry]
+  type BatchGetAssetPropertyAggregatesMaxResults = Int
+  type BatchGetAssetPropertyAggregatesSkippedEntries = js.Array[BatchGetAssetPropertyAggregatesSkippedEntry]
+  type BatchGetAssetPropertyAggregatesSuccessEntries = js.Array[BatchGetAssetPropertyAggregatesSuccessEntry]
+  type BatchGetAssetPropertyValueEntries = js.Array[BatchGetAssetPropertyValueEntry]
+  type BatchGetAssetPropertyValueErrorEntries = js.Array[BatchGetAssetPropertyValueErrorEntry]
+  type BatchGetAssetPropertyValueHistoryEntries = js.Array[BatchGetAssetPropertyValueHistoryEntry]
+  type BatchGetAssetPropertyValueHistoryErrorEntries = js.Array[BatchGetAssetPropertyValueHistoryErrorEntry]
+  type BatchGetAssetPropertyValueHistoryMaxResults = Int
+  type BatchGetAssetPropertyValueHistorySkippedEntries = js.Array[BatchGetAssetPropertyValueHistorySkippedEntry]
+  type BatchGetAssetPropertyValueHistorySuccessEntries = js.Array[BatchGetAssetPropertyValueHistorySuccessEntry]
+  type BatchGetAssetPropertyValueSkippedEntries = js.Array[BatchGetAssetPropertyValueSkippedEntry]
+  type BatchGetAssetPropertyValueSuccessEntries = js.Array[BatchGetAssetPropertyValueSuccessEntry]
   type BatchPutAssetPropertyErrorEntries = js.Array[BatchPutAssetPropertyErrorEntry]
   type BatchPutAssetPropertyErrors = js.Array[BatchPutAssetPropertyError]
+  type Bucket = String
   type CapabilityConfiguration = String
   type CapabilityNamespace = String
   type ClientToken = String
+  type ColumnNames = js.Array[ColumnName]
   type CoreDeviceThingName = String
   type DashboardDefinition = String
   type DashboardSummaries = js.Array[DashboardSummary]
@@ -49,8 +67,10 @@ package object iotsitewise {
   type Email = String
   type EntryId = String
   type ErrorMessage = String
+  type ExcludeProperties = Boolean
   type Expression = String
   type ExpressionVariables = js.Array[ExpressionVariable]
+  type Files = js.Array[File]
   type GatewayCapabilitySummaries = js.Array[GatewayCapabilitySummary]
   type GatewaySummaries = js.Array[GatewaySummary]
   type ID = String
@@ -62,6 +82,7 @@ package object iotsitewise {
   type Interval = String
   type IntervalInSeconds = Double
   type IntervalWindowInSeconds = Double
+  type JobSummaries = js.Array[JobSummary]
   type KmsKeyId = String
   type Macro = String
   type MaxInterpolatedResults = Int
@@ -105,10 +126,14 @@ package object iotsitewise {
     @inline def associateTimeSeriesToAssetPropertyFuture(params: AssociateTimeSeriesToAssetPropertyRequest): Future[js.Object] = service.associateTimeSeriesToAssetProperty(params).promise().toFuture
     @inline def batchAssociateProjectAssetsFuture(params: BatchAssociateProjectAssetsRequest): Future[BatchAssociateProjectAssetsResponse] = service.batchAssociateProjectAssets(params).promise().toFuture
     @inline def batchDisassociateProjectAssetsFuture(params: BatchDisassociateProjectAssetsRequest): Future[BatchDisassociateProjectAssetsResponse] = service.batchDisassociateProjectAssets(params).promise().toFuture
+    @inline def batchGetAssetPropertyAggregatesFuture(params: BatchGetAssetPropertyAggregatesRequest): Future[BatchGetAssetPropertyAggregatesResponse] = service.batchGetAssetPropertyAggregates(params).promise().toFuture
+    @inline def batchGetAssetPropertyValueFuture(params: BatchGetAssetPropertyValueRequest): Future[BatchGetAssetPropertyValueResponse] = service.batchGetAssetPropertyValue(params).promise().toFuture
+    @inline def batchGetAssetPropertyValueHistoryFuture(params: BatchGetAssetPropertyValueHistoryRequest): Future[BatchGetAssetPropertyValueHistoryResponse] = service.batchGetAssetPropertyValueHistory(params).promise().toFuture
     @inline def batchPutAssetPropertyValueFuture(params: BatchPutAssetPropertyValueRequest): Future[BatchPutAssetPropertyValueResponse] = service.batchPutAssetPropertyValue(params).promise().toFuture
     @inline def createAccessPolicyFuture(params: CreateAccessPolicyRequest): Future[CreateAccessPolicyResponse] = service.createAccessPolicy(params).promise().toFuture
     @inline def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] = service.createAsset(params).promise().toFuture
     @inline def createAssetModelFuture(params: CreateAssetModelRequest): Future[CreateAssetModelResponse] = service.createAssetModel(params).promise().toFuture
+    @inline def createBulkImportJobFuture(params: CreateBulkImportJobRequest): Future[CreateBulkImportJobResponse] = service.createBulkImportJob(params).promise().toFuture
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
     @inline def createGatewayFuture(params: CreateGatewayRequest): Future[CreateGatewayResponse] = service.createGateway(params).promise().toFuture
     @inline def createPortalFuture(params: CreatePortalRequest): Future[CreatePortalResponse] = service.createPortal(params).promise().toFuture
@@ -125,6 +150,7 @@ package object iotsitewise {
     @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] = service.describeAsset(params).promise().toFuture
     @inline def describeAssetModelFuture(params: DescribeAssetModelRequest): Future[DescribeAssetModelResponse] = service.describeAssetModel(params).promise().toFuture
     @inline def describeAssetPropertyFuture(params: DescribeAssetPropertyRequest): Future[DescribeAssetPropertyResponse] = service.describeAssetProperty(params).promise().toFuture
+    @inline def describeBulkImportJobFuture(params: DescribeBulkImportJobRequest): Future[DescribeBulkImportJobResponse] = service.describeBulkImportJob(params).promise().toFuture
     @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] = service.describeDashboard(params).promise().toFuture
     @inline def describeDefaultEncryptionConfigurationFuture(params: DescribeDefaultEncryptionConfigurationRequest): Future[DescribeDefaultEncryptionConfigurationResponse] = service.describeDefaultEncryptionConfiguration(params).promise().toFuture
     @inline def describeGatewayCapabilityConfigurationFuture(params: DescribeGatewayCapabilityConfigurationRequest): Future[DescribeGatewayCapabilityConfigurationResponse] = service.describeGatewayCapabilityConfiguration(params).promise().toFuture
@@ -141,10 +167,13 @@ package object iotsitewise {
     @inline def getAssetPropertyValueHistoryFuture(params: GetAssetPropertyValueHistoryRequest): Future[GetAssetPropertyValueHistoryResponse] = service.getAssetPropertyValueHistory(params).promise().toFuture
     @inline def getInterpolatedAssetPropertyValuesFuture(params: GetInterpolatedAssetPropertyValuesRequest): Future[GetInterpolatedAssetPropertyValuesResponse] = service.getInterpolatedAssetPropertyValues(params).promise().toFuture
     @inline def listAccessPoliciesFuture(params: ListAccessPoliciesRequest): Future[ListAccessPoliciesResponse] = service.listAccessPolicies(params).promise().toFuture
+    @inline def listAssetModelPropertiesFuture(params: ListAssetModelPropertiesRequest): Future[ListAssetModelPropertiesResponse] = service.listAssetModelProperties(params).promise().toFuture
     @inline def listAssetModelsFuture(params: ListAssetModelsRequest): Future[ListAssetModelsResponse] = service.listAssetModels(params).promise().toFuture
+    @inline def listAssetPropertiesFuture(params: ListAssetPropertiesRequest): Future[ListAssetPropertiesResponse] = service.listAssetProperties(params).promise().toFuture
     @inline def listAssetRelationshipsFuture(params: ListAssetRelationshipsRequest): Future[ListAssetRelationshipsResponse] = service.listAssetRelationships(params).promise().toFuture
     @inline def listAssetsFuture(params: ListAssetsRequest): Future[ListAssetsResponse] = service.listAssets(params).promise().toFuture
     @inline def listAssociatedAssetsFuture(params: ListAssociatedAssetsRequest): Future[ListAssociatedAssetsResponse] = service.listAssociatedAssets(params).promise().toFuture
+    @inline def listBulkImportJobsFuture(params: ListBulkImportJobsRequest): Future[ListBulkImportJobsResponse] = service.listBulkImportJobs(params).promise().toFuture
     @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] = service.listDashboards(params).promise().toFuture
     @inline def listGatewaysFuture(params: ListGatewaysRequest): Future[ListGatewaysResponse] = service.listGateways(params).promise().toFuture
     @inline def listPortalsFuture(params: ListPortalsRequest): Future[ListPortalsResponse] = service.listPortals(params).promise().toFuture
@@ -178,10 +207,14 @@ package object iotsitewise {
     def associateTimeSeriesToAssetProperty(params: AssociateTimeSeriesToAssetPropertyRequest): Request[js.Object] = js.native
     def batchAssociateProjectAssets(params: BatchAssociateProjectAssetsRequest): Request[BatchAssociateProjectAssetsResponse] = js.native
     def batchDisassociateProjectAssets(params: BatchDisassociateProjectAssetsRequest): Request[BatchDisassociateProjectAssetsResponse] = js.native
+    def batchGetAssetPropertyAggregates(params: BatchGetAssetPropertyAggregatesRequest): Request[BatchGetAssetPropertyAggregatesResponse] = js.native
+    def batchGetAssetPropertyValue(params: BatchGetAssetPropertyValueRequest): Request[BatchGetAssetPropertyValueResponse] = js.native
+    def batchGetAssetPropertyValueHistory(params: BatchGetAssetPropertyValueHistoryRequest): Request[BatchGetAssetPropertyValueHistoryResponse] = js.native
     def batchPutAssetPropertyValue(params: BatchPutAssetPropertyValueRequest): Request[BatchPutAssetPropertyValueResponse] = js.native
     def createAccessPolicy(params: CreateAccessPolicyRequest): Request[CreateAccessPolicyResponse] = js.native
     def createAsset(params: CreateAssetRequest): Request[CreateAssetResponse] = js.native
     def createAssetModel(params: CreateAssetModelRequest): Request[CreateAssetModelResponse] = js.native
+    def createBulkImportJob(params: CreateBulkImportJobRequest): Request[CreateBulkImportJobResponse] = js.native
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createGateway(params: CreateGatewayRequest): Request[CreateGatewayResponse] = js.native
     def createPortal(params: CreatePortalRequest): Request[CreatePortalResponse] = js.native
@@ -198,6 +231,7 @@ package object iotsitewise {
     def describeAsset(params: DescribeAssetRequest): Request[DescribeAssetResponse] = js.native
     def describeAssetModel(params: DescribeAssetModelRequest): Request[DescribeAssetModelResponse] = js.native
     def describeAssetProperty(params: DescribeAssetPropertyRequest): Request[DescribeAssetPropertyResponse] = js.native
+    def describeBulkImportJob(params: DescribeBulkImportJobRequest): Request[DescribeBulkImportJobResponse] = js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
     def describeDefaultEncryptionConfiguration(params: DescribeDefaultEncryptionConfigurationRequest): Request[DescribeDefaultEncryptionConfigurationResponse] = js.native
     def describeGateway(params: DescribeGatewayRequest): Request[DescribeGatewayResponse] = js.native
@@ -214,10 +248,13 @@ package object iotsitewise {
     def getAssetPropertyValueHistory(params: GetAssetPropertyValueHistoryRequest): Request[GetAssetPropertyValueHistoryResponse] = js.native
     def getInterpolatedAssetPropertyValues(params: GetInterpolatedAssetPropertyValuesRequest): Request[GetInterpolatedAssetPropertyValuesResponse] = js.native
     def listAccessPolicies(params: ListAccessPoliciesRequest): Request[ListAccessPoliciesResponse] = js.native
+    def listAssetModelProperties(params: ListAssetModelPropertiesRequest): Request[ListAssetModelPropertiesResponse] = js.native
     def listAssetModels(params: ListAssetModelsRequest): Request[ListAssetModelsResponse] = js.native
+    def listAssetProperties(params: ListAssetPropertiesRequest): Request[ListAssetPropertiesResponse] = js.native
     def listAssetRelationships(params: ListAssetRelationshipsRequest): Request[ListAssetRelationshipsResponse] = js.native
     def listAssets(params: ListAssetsRequest): Request[ListAssetsResponse] = js.native
     def listAssociatedAssets(params: ListAssociatedAssetsRequest): Request[ListAssociatedAssetsResponse] = js.native
+    def listBulkImportJobs(params: ListBulkImportJobsRequest): Request[ListBulkImportJobsResponse] = js.native
     def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse] = js.native
     def listGateways(params: ListGatewaysRequest): Request[ListGatewaysResponse] = js.native
     def listPortals(params: ListPortalsRequest): Request[ListPortalsResponse] = js.native
@@ -371,6 +408,7 @@ package object iotsitewise {
     var properties: AssetProperties
     var `type`: Name
     var description: js.UndefOr[Description]
+    var id: js.UndefOr[ID]
   }
 
   object AssetCompositeModel {
@@ -379,7 +417,8 @@ package object iotsitewise {
         name: Name,
         properties: AssetProperties,
         `type`: Name,
-        description: js.UndefOr[Description] = js.undefined
+        description: js.UndefOr[Description] = js.undefined,
+        id: js.UndefOr[ID] = js.undefined
     ): AssetCompositeModel = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
@@ -388,6 +427,7 @@ package object iotsitewise {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetCompositeModel]
     }
   }
@@ -468,6 +508,7 @@ package object iotsitewise {
     var name: Name
     var `type`: Name
     var description: js.UndefOr[Description]
+    var id: js.UndefOr[ID]
     var properties: js.UndefOr[AssetModelProperties]
   }
 
@@ -477,6 +518,7 @@ package object iotsitewise {
         name: Name,
         `type`: Name,
         description: js.UndefOr[Description] = js.undefined,
+        id: js.UndefOr[ID] = js.undefined,
         properties: js.UndefOr[AssetModelProperties] = js.undefined
     ): AssetModelCompositeModel = {
       val __obj = js.Dynamic.literal(
@@ -485,6 +527,7 @@ package object iotsitewise {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetModelCompositeModel]
     }
@@ -634,6 +677,44 @@ package object iotsitewise {
     }
   }
 
+  /** Contains a summary of a property associated with a model.
+    */
+  @js.native
+  trait AssetModelPropertySummary extends js.Object {
+    var dataType: PropertyDataType
+    var name: Name
+    var `type`: PropertyType
+    var assetModelCompositeModelId: js.UndefOr[ID]
+    var dataTypeSpec: js.UndefOr[Name]
+    var id: js.UndefOr[ID]
+    var unit: js.UndefOr[PropertyUnit]
+  }
+
+  object AssetModelPropertySummary {
+    @inline
+    def apply(
+        dataType: PropertyDataType,
+        name: Name,
+        `type`: PropertyType,
+        assetModelCompositeModelId: js.UndefOr[ID] = js.undefined,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
+        id: js.UndefOr[ID] = js.undefined,
+        unit: js.UndefOr[PropertyUnit] = js.undefined
+    ): AssetModelPropertySummary = {
+      val __obj = js.Dynamic.literal(
+        "dataType" -> dataType.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      assetModelCompositeModelId.foreach(__v => __obj.updateDynamic("assetModelCompositeModelId")(__v.asInstanceOf[js.Any]))
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetModelPropertySummary]
+    }
+  }
+
   /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
@@ -732,6 +813,36 @@ package object iotsitewise {
     }
   }
 
+  /** Contains a summary of a property associated with an asset.
+    */
+  @js.native
+  trait AssetPropertySummary extends js.Object {
+    var alias: js.UndefOr[PropertyAlias]
+    var assetCompositeModelId: js.UndefOr[ID]
+    var id: js.UndefOr[ID]
+    var notification: js.UndefOr[PropertyNotification]
+    var unit: js.UndefOr[PropertyUnit]
+  }
+
+  object AssetPropertySummary {
+    @inline
+    def apply(
+        alias: js.UndefOr[PropertyAlias] = js.undefined,
+        assetCompositeModelId: js.UndefOr[ID] = js.undefined,
+        id: js.UndefOr[ID] = js.undefined,
+        notification: js.UndefOr[PropertyNotification] = js.undefined,
+        unit: js.UndefOr[PropertyUnit] = js.undefined
+    ): AssetPropertySummary = {
+      val __obj = js.Dynamic.literal()
+      alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      assetCompositeModelId.foreach(__v => __obj.updateDynamic("assetCompositeModelId")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      notification.foreach(__v => __obj.updateDynamic("notification")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetPropertySummary]
+    }
+  }
+
   /** Contains asset property value information.
     */
   @js.native
@@ -816,6 +927,7 @@ package object iotsitewise {
     var lastUpdateDate: Timestamp
     var name: Name
     var status: AssetStatus
+    var description: js.UndefOr[Description]
   }
 
   object AssetSummary {
@@ -828,7 +940,8 @@ package object iotsitewise {
         id: ID,
         lastUpdateDate: Timestamp,
         name: Name,
-        status: AssetStatus
+        status: AssetStatus,
+        description: js.UndefOr[Description] = js.undefined
     ): AssetSummary = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -840,6 +953,8 @@ package object iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetSummary]
     }
   }
@@ -910,6 +1025,7 @@ package object iotsitewise {
     var lastUpdateDate: Timestamp
     var name: Name
     var status: AssetStatus
+    var description: js.UndefOr[Description]
   }
 
   object AssociatedAssetsSummary {
@@ -922,7 +1038,8 @@ package object iotsitewise {
         id: ID,
         lastUpdateDate: Timestamp,
         name: Name,
-        status: AssetStatus
+        status: AssetStatus,
+        description: js.UndefOr[Description] = js.undefined
     ): AssociatedAssetsSummary = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -934,6 +1051,8 @@ package object iotsitewise {
         "name" -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatedAssetsSummary]
     }
   }
@@ -1036,6 +1155,559 @@ package object iotsitewise {
     }
   }
 
+  /** Contains information for an asset property aggregate entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html|BatchGetAssetPropertyAggregates]] API. To identify an asset property, you must specify one of the following: * The <code>assetId</code> and <code>propertyId</code> of an asset property. * A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html|UpdateAssetProperty]].
+    */
+  @js.native
+  trait BatchGetAssetPropertyAggregatesEntry extends js.Object {
+    var aggregateTypes: AggregateTypes
+    var endDate: Timestamp
+    var entryId: EntryId
+    var resolution: Resolution
+    var startDate: Timestamp
+    var assetId: js.UndefOr[ID]
+    var propertyAlias: js.UndefOr[AssetPropertyAlias]
+    var propertyId: js.UndefOr[ID]
+    var qualities: js.UndefOr[Qualities]
+    var timeOrdering: js.UndefOr[TimeOrdering]
+  }
+
+  object BatchGetAssetPropertyAggregatesEntry {
+    @inline
+    def apply(
+        aggregateTypes: AggregateTypes,
+        endDate: Timestamp,
+        entryId: EntryId,
+        resolution: Resolution,
+        startDate: Timestamp,
+        assetId: js.UndefOr[ID] = js.undefined,
+        propertyAlias: js.UndefOr[AssetPropertyAlias] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined,
+        qualities: js.UndefOr[Qualities] = js.undefined,
+        timeOrdering: js.UndefOr[TimeOrdering] = js.undefined
+    ): BatchGetAssetPropertyAggregatesEntry = {
+      val __obj = js.Dynamic.literal(
+        "aggregateTypes" -> aggregateTypes.asInstanceOf[js.Any],
+        "endDate" -> endDate.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any],
+        "resolution" -> resolution.asInstanceOf[js.Any],
+        "startDate" -> startDate.asInstanceOf[js.Any]
+      )
+
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      qualities.foreach(__v => __obj.updateDynamic("qualities")(__v.asInstanceOf[js.Any]))
+      timeOrdering.foreach(__v => __obj.updateDynamic("timeOrdering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesEntry]
+    }
+  }
+
+  /** Contains error information for an asset property aggregate entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html|BatchGetAssetPropertyAggregates]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyAggregatesErrorEntry extends js.Object {
+    var entryId: EntryId
+    var errorCode: BatchGetAssetPropertyAggregatesErrorCode
+    var errorMessage: ErrorMessage
+  }
+
+  object BatchGetAssetPropertyAggregatesErrorEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        errorCode: BatchGetAssetPropertyAggregatesErrorCode,
+        errorMessage: ErrorMessage
+    ): BatchGetAssetPropertyAggregatesErrorEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any],
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorMessage" -> errorMessage.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesErrorEntry]
+    }
+  }
+
+  /** Contains the error code and the timestamp for an asset property aggregate entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html|BatchGetAssetPropertyAggregates]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyAggregatesErrorInfo extends js.Object {
+    var errorCode: BatchGetAssetPropertyAggregatesErrorCode
+    var errorTimestamp: Timestamp
+  }
+
+  object BatchGetAssetPropertyAggregatesErrorInfo {
+    @inline
+    def apply(
+        errorCode: BatchGetAssetPropertyAggregatesErrorCode,
+        errorTimestamp: Timestamp
+    ): BatchGetAssetPropertyAggregatesErrorInfo = {
+      val __obj = js.Dynamic.literal(
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorTimestamp" -> errorTimestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesErrorInfo]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyAggregatesRequest extends js.Object {
+    var entries: BatchGetAssetPropertyAggregatesEntries
+    var maxResults: js.UndefOr[BatchGetAssetPropertyAggregatesMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyAggregatesRequest {
+    @inline
+    def apply(
+        entries: BatchGetAssetPropertyAggregatesEntries,
+        maxResults: js.UndefOr[BatchGetAssetPropertyAggregatesMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyAggregatesRequest = {
+      val __obj = js.Dynamic.literal(
+        "entries" -> entries.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyAggregatesResponse extends js.Object {
+    var errorEntries: BatchGetAssetPropertyAggregatesErrorEntries
+    var skippedEntries: BatchGetAssetPropertyAggregatesSkippedEntries
+    var successEntries: BatchGetAssetPropertyAggregatesSuccessEntries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyAggregatesResponse {
+    @inline
+    def apply(
+        errorEntries: BatchGetAssetPropertyAggregatesErrorEntries,
+        skippedEntries: BatchGetAssetPropertyAggregatesSkippedEntries,
+        successEntries: BatchGetAssetPropertyAggregatesSuccessEntries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyAggregatesResponse = {
+      val __obj = js.Dynamic.literal(
+        "errorEntries" -> errorEntries.asInstanceOf[js.Any],
+        "skippedEntries" -> skippedEntries.asInstanceOf[js.Any],
+        "successEntries" -> successEntries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesResponse]
+    }
+  }
+
+  /** Contains information for an entry that has been processed by the previous [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html|BatchGetAssetPropertyAggregates]] request.
+    */
+  @js.native
+  trait BatchGetAssetPropertyAggregatesSkippedEntry extends js.Object {
+    var completionStatus: BatchEntryCompletionStatus
+    var entryId: EntryId
+    var errorInfo: js.UndefOr[BatchGetAssetPropertyAggregatesErrorInfo]
+  }
+
+  object BatchGetAssetPropertyAggregatesSkippedEntry {
+    @inline
+    def apply(
+        completionStatus: BatchEntryCompletionStatus,
+        entryId: EntryId,
+        errorInfo: js.UndefOr[BatchGetAssetPropertyAggregatesErrorInfo] = js.undefined
+    ): BatchGetAssetPropertyAggregatesSkippedEntry = {
+      val __obj = js.Dynamic.literal(
+        "completionStatus" -> completionStatus.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      errorInfo.foreach(__v => __obj.updateDynamic("errorInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesSkippedEntry]
+    }
+  }
+
+  /** Contains success information for an entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html|BatchGetAssetPropertyAggregates]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyAggregatesSuccessEntry extends js.Object {
+    var aggregatedValues: AggregatedValues
+    var entryId: EntryId
+  }
+
+  object BatchGetAssetPropertyAggregatesSuccessEntry {
+    @inline
+    def apply(
+        aggregatedValues: AggregatedValues,
+        entryId: EntryId
+    ): BatchGetAssetPropertyAggregatesSuccessEntry = {
+      val __obj = js.Dynamic.literal(
+        "aggregatedValues" -> aggregatedValues.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyAggregatesSuccessEntry]
+    }
+  }
+
+  /** Contains information for an asset property value entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValue]] API. To identify an asset property, you must specify one of the following: * The <code>assetId</code> and <code>propertyId</code> of an asset property. * A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html|UpdateAssetProperty]].
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueEntry extends js.Object {
+    var entryId: EntryId
+    var assetId: js.UndefOr[ID]
+    var propertyAlias: js.UndefOr[AssetPropertyAlias]
+    var propertyId: js.UndefOr[ID]
+  }
+
+  object BatchGetAssetPropertyValueEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        assetId: js.UndefOr[ID] = js.undefined,
+        propertyAlias: js.UndefOr[AssetPropertyAlias] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined
+    ): BatchGetAssetPropertyValueEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueEntry]
+    }
+  }
+
+  /** Contains error information for an asset property value entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValue]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueErrorEntry extends js.Object {
+    var entryId: EntryId
+    var errorCode: BatchGetAssetPropertyValueErrorCode
+    var errorMessage: ErrorMessage
+  }
+
+  object BatchGetAssetPropertyValueErrorEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        errorCode: BatchGetAssetPropertyValueErrorCode,
+        errorMessage: ErrorMessage
+    ): BatchGetAssetPropertyValueErrorEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any],
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorMessage" -> errorMessage.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyValueErrorEntry]
+    }
+  }
+
+  /** The error information, such as the error code and the timestamp.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueErrorInfo extends js.Object {
+    var errorCode: BatchGetAssetPropertyValueErrorCode
+    var errorTimestamp: Timestamp
+  }
+
+  object BatchGetAssetPropertyValueErrorInfo {
+    @inline
+    def apply(
+        errorCode: BatchGetAssetPropertyValueErrorCode,
+        errorTimestamp: Timestamp
+    ): BatchGetAssetPropertyValueErrorInfo = {
+      val __obj = js.Dynamic.literal(
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorTimestamp" -> errorTimestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyValueErrorInfo]
+    }
+  }
+
+  /** Contains information for an asset property historical value entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValueHistory]] API. To identify an asset property, you must specify one of the following: * The <code>assetId</code> and <code>propertyId</code> of an asset property. * A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html|UpdateAssetProperty]].
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueHistoryEntry extends js.Object {
+    var entryId: EntryId
+    var assetId: js.UndefOr[ID]
+    var endDate: js.UndefOr[Timestamp]
+    var propertyAlias: js.UndefOr[AssetPropertyAlias]
+    var propertyId: js.UndefOr[ID]
+    var qualities: js.UndefOr[Qualities]
+    var startDate: js.UndefOr[Timestamp]
+    var timeOrdering: js.UndefOr[TimeOrdering]
+  }
+
+  object BatchGetAssetPropertyValueHistoryEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        assetId: js.UndefOr[ID] = js.undefined,
+        endDate: js.UndefOr[Timestamp] = js.undefined,
+        propertyAlias: js.UndefOr[AssetPropertyAlias] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined,
+        qualities: js.UndefOr[Qualities] = js.undefined,
+        startDate: js.UndefOr[Timestamp] = js.undefined,
+        timeOrdering: js.UndefOr[TimeOrdering] = js.undefined
+    ): BatchGetAssetPropertyValueHistoryEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      endDate.foreach(__v => __obj.updateDynamic("endDate")(__v.asInstanceOf[js.Any]))
+      propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      qualities.foreach(__v => __obj.updateDynamic("qualities")(__v.asInstanceOf[js.Any]))
+      startDate.foreach(__v => __obj.updateDynamic("startDate")(__v.asInstanceOf[js.Any]))
+      timeOrdering.foreach(__v => __obj.updateDynamic("timeOrdering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistoryEntry]
+    }
+  }
+
+  /** A list of the errors (if any) associated with the batch request. Each error entry contains the <code>entryId</code> of the entry that failed.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueHistoryErrorEntry extends js.Object {
+    var entryId: EntryId
+    var errorCode: BatchGetAssetPropertyValueHistoryErrorCode
+    var errorMessage: ErrorMessage
+  }
+
+  object BatchGetAssetPropertyValueHistoryErrorEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        errorCode: BatchGetAssetPropertyValueHistoryErrorCode,
+        errorMessage: ErrorMessage
+    ): BatchGetAssetPropertyValueHistoryErrorEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any],
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorMessage" -> errorMessage.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistoryErrorEntry]
+    }
+  }
+
+  /** The error information, such as the error code and the timestamp.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueHistoryErrorInfo extends js.Object {
+    var errorCode: BatchGetAssetPropertyValueHistoryErrorCode
+    var errorTimestamp: Timestamp
+  }
+
+  object BatchGetAssetPropertyValueHistoryErrorInfo {
+    @inline
+    def apply(
+        errorCode: BatchGetAssetPropertyValueHistoryErrorCode,
+        errorTimestamp: Timestamp
+    ): BatchGetAssetPropertyValueHistoryErrorInfo = {
+      val __obj = js.Dynamic.literal(
+        "errorCode" -> errorCode.asInstanceOf[js.Any],
+        "errorTimestamp" -> errorTimestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistoryErrorInfo]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyValueHistoryRequest extends js.Object {
+    var entries: BatchGetAssetPropertyValueHistoryEntries
+    var maxResults: js.UndefOr[BatchGetAssetPropertyValueHistoryMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyValueHistoryRequest {
+    @inline
+    def apply(
+        entries: BatchGetAssetPropertyValueHistoryEntries,
+        maxResults: js.UndefOr[BatchGetAssetPropertyValueHistoryMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyValueHistoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "entries" -> entries.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistoryRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyValueHistoryResponse extends js.Object {
+    var errorEntries: BatchGetAssetPropertyValueHistoryErrorEntries
+    var skippedEntries: BatchGetAssetPropertyValueHistorySkippedEntries
+    var successEntries: BatchGetAssetPropertyValueHistorySuccessEntries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyValueHistoryResponse {
+    @inline
+    def apply(
+        errorEntries: BatchGetAssetPropertyValueHistoryErrorEntries,
+        skippedEntries: BatchGetAssetPropertyValueHistorySkippedEntries,
+        successEntries: BatchGetAssetPropertyValueHistorySuccessEntries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyValueHistoryResponse = {
+      val __obj = js.Dynamic.literal(
+        "errorEntries" -> errorEntries.asInstanceOf[js.Any],
+        "skippedEntries" -> skippedEntries.asInstanceOf[js.Any],
+        "successEntries" -> successEntries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistoryResponse]
+    }
+  }
+
+  /** Contains information for an entry that has been processed by the previous [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValueHistory]] request.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueHistorySkippedEntry extends js.Object {
+    var completionStatus: BatchEntryCompletionStatus
+    var entryId: EntryId
+    var errorInfo: js.UndefOr[BatchGetAssetPropertyValueHistoryErrorInfo]
+  }
+
+  object BatchGetAssetPropertyValueHistorySkippedEntry {
+    @inline
+    def apply(
+        completionStatus: BatchEntryCompletionStatus,
+        entryId: EntryId,
+        errorInfo: js.UndefOr[BatchGetAssetPropertyValueHistoryErrorInfo] = js.undefined
+    ): BatchGetAssetPropertyValueHistorySkippedEntry = {
+      val __obj = js.Dynamic.literal(
+        "completionStatus" -> completionStatus.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      errorInfo.foreach(__v => __obj.updateDynamic("errorInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistorySkippedEntry]
+    }
+  }
+
+  /** Contains success information for an entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValueHistory]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueHistorySuccessEntry extends js.Object {
+    var assetPropertyValueHistory: AssetPropertyValueHistory
+    var entryId: EntryId
+  }
+
+  object BatchGetAssetPropertyValueHistorySuccessEntry {
+    @inline
+    def apply(
+        assetPropertyValueHistory: AssetPropertyValueHistory,
+        entryId: EntryId
+    ): BatchGetAssetPropertyValueHistorySuccessEntry = {
+      val __obj = js.Dynamic.literal(
+        "assetPropertyValueHistory" -> assetPropertyValueHistory.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetAssetPropertyValueHistorySuccessEntry]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyValueRequest extends js.Object {
+    var entries: BatchGetAssetPropertyValueEntries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyValueRequest {
+    @inline
+    def apply(
+        entries: BatchGetAssetPropertyValueEntries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyValueRequest = {
+      val __obj = js.Dynamic.literal(
+        "entries" -> entries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetAssetPropertyValueResponse extends js.Object {
+    var errorEntries: BatchGetAssetPropertyValueErrorEntries
+    var skippedEntries: BatchGetAssetPropertyValueSkippedEntries
+    var successEntries: BatchGetAssetPropertyValueSuccessEntries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object BatchGetAssetPropertyValueResponse {
+    @inline
+    def apply(
+        errorEntries: BatchGetAssetPropertyValueErrorEntries,
+        skippedEntries: BatchGetAssetPropertyValueSkippedEntries,
+        successEntries: BatchGetAssetPropertyValueSuccessEntries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): BatchGetAssetPropertyValueResponse = {
+      val __obj = js.Dynamic.literal(
+        "errorEntries" -> errorEntries.asInstanceOf[js.Any],
+        "skippedEntries" -> skippedEntries.asInstanceOf[js.Any],
+        "successEntries" -> successEntries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueResponse]
+    }
+  }
+
+  /** Contains information for an entry that has been processed by the previous [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValue]] request.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueSkippedEntry extends js.Object {
+    var completionStatus: BatchEntryCompletionStatus
+    var entryId: EntryId
+    var errorInfo: js.UndefOr[BatchGetAssetPropertyValueErrorInfo]
+  }
+
+  object BatchGetAssetPropertyValueSkippedEntry {
+    @inline
+    def apply(
+        completionStatus: BatchEntryCompletionStatus,
+        entryId: EntryId,
+        errorInfo: js.UndefOr[BatchGetAssetPropertyValueErrorInfo] = js.undefined
+    ): BatchGetAssetPropertyValueSkippedEntry = {
+      val __obj = js.Dynamic.literal(
+        "completionStatus" -> completionStatus.asInstanceOf[js.Any],
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      errorInfo.foreach(__v => __obj.updateDynamic("errorInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueSkippedEntry]
+    }
+  }
+
+  /** Contains success information for an entry that is associated with the [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html|BatchGetAssetPropertyValue]] API.
+    */
+  @js.native
+  trait BatchGetAssetPropertyValueSuccessEntry extends js.Object {
+    var entryId: EntryId
+    var assetPropertyValue: js.UndefOr[AssetPropertyValue]
+  }
+
+  object BatchGetAssetPropertyValueSuccessEntry {
+    @inline
+    def apply(
+        entryId: EntryId,
+        assetPropertyValue: js.UndefOr[AssetPropertyValue] = js.undefined
+    ): BatchGetAssetPropertyValueSuccessEntry = {
+      val __obj = js.Dynamic.literal(
+        "entryId" -> entryId.asInstanceOf[js.Any]
+      )
+
+      assetPropertyValue.foreach(__v => __obj.updateDynamic("assetPropertyValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetAssetPropertyValueSuccessEntry]
+    }
+  }
+
   /** Contains error information from updating a batch of asset property values.
     */
   @js.native
@@ -1124,6 +1796,7 @@ package object iotsitewise {
     var assetProperty: Property
     var name: Name
     var `type`: Name
+    var id: js.UndefOr[ID]
   }
 
   object CompositeModelProperty {
@@ -1131,13 +1804,16 @@ package object iotsitewise {
     def apply(
         assetProperty: Property,
         name: Name,
-        `type`: Name
+        `type`: Name,
+        id: js.UndefOr[ID] = js.undefined
     ): CompositeModelProperty = {
       val __obj = js.Dynamic.literal(
         "assetProperty" -> assetProperty.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
+
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompositeModelProperty]
     }
   }
@@ -1300,6 +1976,7 @@ package object iotsitewise {
   trait CreateAssetRequest extends js.Object {
     var assetModelId: ID
     var assetName: Name
+    var assetDescription: js.UndefOr[Description]
     var clientToken: js.UndefOr[ClientToken]
     var tags: js.UndefOr[TagMap]
   }
@@ -1309,6 +1986,7 @@ package object iotsitewise {
     def apply(
         assetModelId: ID,
         assetName: Name,
+        assetDescription: js.UndefOr[Description] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateAssetRequest = {
@@ -1317,6 +1995,7 @@ package object iotsitewise {
         "assetName" -> assetName.asInstanceOf[js.Any]
       )
 
+      assetDescription.foreach(__v => __obj.updateDynamic("assetDescription")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssetRequest]
@@ -1343,6 +2022,58 @@ package object iotsitewise {
         "assetStatus" -> assetStatus.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateAssetResponse]
+    }
+  }
+
+  @js.native
+  trait CreateBulkImportJobRequest extends js.Object {
+    var errorReportLocation: ErrorReportLocation
+    var files: Files
+    var jobConfiguration: JobConfiguration
+    var jobName: Name
+    var jobRoleArn: ARN
+  }
+
+  object CreateBulkImportJobRequest {
+    @inline
+    def apply(
+        errorReportLocation: ErrorReportLocation,
+        files: Files,
+        jobConfiguration: JobConfiguration,
+        jobName: Name,
+        jobRoleArn: ARN
+    ): CreateBulkImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "errorReportLocation" -> errorReportLocation.asInstanceOf[js.Any],
+        "files" -> files.asInstanceOf[js.Any],
+        "jobConfiguration" -> jobConfiguration.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobRoleArn" -> jobRoleArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBulkImportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBulkImportJobResponse extends js.Object {
+    var jobId: ID
+    var jobName: Name
+    var jobStatus: JobStatus
+  }
+
+  object CreateBulkImportJobResponse {
+    @inline
+    def apply(
+        jobId: ID,
+        jobName: Name,
+        jobStatus: JobStatus
+    ): CreateBulkImportJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobStatus" -> jobStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBulkImportJobResponse]
     }
   }
 
@@ -1564,6 +2295,24 @@ package object iotsitewise {
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateProjectResponse]
+    }
+  }
+
+  /** A .csv file.
+    */
+  @js.native
+  trait Csv extends js.Object {
+    var columnNames: js.UndefOr[ColumnNames]
+  }
+
+  object Csv {
+    @inline
+    def apply(
+        columnNames: js.UndefOr[ColumnNames] = js.undefined
+    ): Csv = {
+      val __obj = js.Dynamic.literal()
+      columnNames.foreach(__v => __obj.updateDynamic("columnNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Csv]
     }
   }
 
@@ -1928,16 +2677,20 @@ package object iotsitewise {
   @js.native
   trait DescribeAssetModelRequest extends js.Object {
     var assetModelId: ID
+    var excludeProperties: js.UndefOr[ExcludeProperties]
   }
 
   object DescribeAssetModelRequest {
     @inline
     def apply(
-        assetModelId: ID
+        assetModelId: ID,
+        excludeProperties: js.UndefOr[ExcludeProperties] = js.undefined
     ): DescribeAssetModelRequest = {
       val __obj = js.Dynamic.literal(
         "assetModelId" -> assetModelId.asInstanceOf[js.Any]
       )
+
+      excludeProperties.foreach(__v => __obj.updateDynamic("excludeProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetModelRequest]
     }
   }
@@ -2040,16 +2793,20 @@ package object iotsitewise {
   @js.native
   trait DescribeAssetRequest extends js.Object {
     var assetId: ID
+    var excludeProperties: js.UndefOr[ExcludeProperties]
   }
 
   object DescribeAssetRequest {
     @inline
     def apply(
-        assetId: ID
+        assetId: ID,
+        excludeProperties: js.UndefOr[ExcludeProperties] = js.undefined
     ): DescribeAssetRequest = {
       val __obj = js.Dynamic.literal(
         "assetId" -> assetId.asInstanceOf[js.Any]
       )
+
+      excludeProperties.foreach(__v => __obj.updateDynamic("excludeProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetRequest]
     }
   }
@@ -2066,6 +2823,7 @@ package object iotsitewise {
     var assetProperties: AssetProperties
     var assetStatus: AssetStatus
     var assetCompositeModels: js.UndefOr[AssetCompositeModels]
+    var assetDescription: js.UndefOr[Description]
   }
 
   object DescribeAssetResponse {
@@ -2080,7 +2838,8 @@ package object iotsitewise {
         assetName: Name,
         assetProperties: AssetProperties,
         assetStatus: AssetStatus,
-        assetCompositeModels: js.UndefOr[AssetCompositeModels] = js.undefined
+        assetCompositeModels: js.UndefOr[AssetCompositeModels] = js.undefined,
+        assetDescription: js.UndefOr[Description] = js.undefined
     ): DescribeAssetResponse = {
       val __obj = js.Dynamic.literal(
         "assetArn" -> assetArn.asInstanceOf[js.Any],
@@ -2095,7 +2854,66 @@ package object iotsitewise {
       )
 
       assetCompositeModels.foreach(__v => __obj.updateDynamic("assetCompositeModels")(__v.asInstanceOf[js.Any]))
+      assetDescription.foreach(__v => __obj.updateDynamic("assetDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeBulkImportJobRequest extends js.Object {
+    var jobId: ID
+  }
+
+  object DescribeBulkImportJobRequest {
+    @inline
+    def apply(
+        jobId: ID
+    ): DescribeBulkImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBulkImportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBulkImportJobResponse extends js.Object {
+    var errorReportLocation: ErrorReportLocation
+    var files: Files
+    var jobConfiguration: JobConfiguration
+    var jobCreationDate: Timestamp
+    var jobId: ID
+    var jobLastUpdateDate: Timestamp
+    var jobName: Name
+    var jobRoleArn: ARN
+    var jobStatus: JobStatus
+  }
+
+  object DescribeBulkImportJobResponse {
+    @inline
+    def apply(
+        errorReportLocation: ErrorReportLocation,
+        files: Files,
+        jobConfiguration: JobConfiguration,
+        jobCreationDate: Timestamp,
+        jobId: ID,
+        jobLastUpdateDate: Timestamp,
+        jobName: Name,
+        jobRoleArn: ARN,
+        jobStatus: JobStatus
+    ): DescribeBulkImportJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "errorReportLocation" -> errorReportLocation.asInstanceOf[js.Any],
+        "files" -> files.asInstanceOf[js.Any],
+        "jobConfiguration" -> jobConfiguration.asInstanceOf[js.Any],
+        "jobCreationDate" -> jobCreationDate.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "jobLastUpdateDate" -> jobLastUpdateDate.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobRoleArn" -> jobRoleArn.asInstanceOf[js.Any],
+        "jobStatus" -> jobStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBulkImportJobResponse]
     }
   }
 
@@ -2654,6 +3472,28 @@ package object iotsitewise {
     }
   }
 
+  /** The Amazon S3 destination where errors associated with the job creation request are saved.
+    */
+  @js.native
+  trait ErrorReportLocation extends js.Object {
+    var bucket: Bucket
+    var prefix: String
+  }
+
+  object ErrorReportLocation {
+    @inline
+    def apply(
+        bucket: Bucket,
+        prefix: String
+    ): ErrorReportLocation = {
+      val __obj = js.Dynamic.literal(
+        "bucket" -> bucket.asInstanceOf[js.Any],
+        "prefix" -> prefix.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ErrorReportLocation]
+    }
+  }
+
   /** Contains expression variable information.
     */
   @js.native
@@ -2673,6 +3513,50 @@ package object iotsitewise {
         "value" -> value.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ExpressionVariable]
+    }
+  }
+
+  /** The file in Amazon S3 where your data is saved.
+    */
+  @js.native
+  trait File extends js.Object {
+    var bucket: Bucket
+    var key: String
+    var versionId: js.UndefOr[String]
+  }
+
+  object File {
+    @inline
+    def apply(
+        bucket: Bucket,
+        key: String,
+        versionId: js.UndefOr[String] = js.undefined
+    ): File = {
+      val __obj = js.Dynamic.literal(
+        "bucket" -> bucket.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any]
+      )
+
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[File]
+    }
+  }
+
+  /** The file format of the data.
+    */
+  @js.native
+  trait FileFormat extends js.Object {
+    var csv: js.UndefOr[Csv]
+  }
+
+  object FileFormat {
+    @inline
+    def apply(
+        csv: js.UndefOr[Csv] = js.undefined
+    ): FileFormat = {
+      val __obj = js.Dynamic.literal()
+      csv.foreach(__v => __obj.updateDynamic("csv")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileFormat]
     }
   }
 
@@ -3113,7 +3997,7 @@ package object iotsitewise {
 
   /** Contains an identity that can access an IoT SiteWise Monitor resource.
     *
-    * '''Note:'''Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|Amazon Web Services SSO console]].
+    * '''Note:'''Currently, you can't use Amazon Web Services APIs to retrieve IAM Identity Center identity IDs. You can find the IAM Identity Center identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|IAM Identity Center console]].
     */
   @js.native
   trait Identity extends js.Object {
@@ -3227,6 +4111,50 @@ package object iotsitewise {
     }
   }
 
+  /** Contains the configuration information of a job, such as the file format used to save data in Amazon S3.
+    */
+  @js.native
+  trait JobConfiguration extends js.Object {
+    var fileFormat: FileFormat
+  }
+
+  object JobConfiguration {
+    @inline
+    def apply(
+        fileFormat: FileFormat
+    ): JobConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "fileFormat" -> fileFormat.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JobConfiguration]
+    }
+  }
+
+  /** Contains a job summary information.
+    */
+  @js.native
+  trait JobSummary extends js.Object {
+    var id: ID
+    var name: Name
+    var status: JobStatus
+  }
+
+  object JobSummary {
+    @inline
+    def apply(
+        id: ID,
+        name: Name,
+        status: JobStatus
+    ): JobSummary = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JobSummary]
+    }
+  }
+
   @js.native
   trait ListAccessPoliciesRequest extends js.Object {
     var iamArn: js.UndefOr[ARN]
@@ -3283,6 +4211,54 @@ package object iotsitewise {
   }
 
   @js.native
+  trait ListAssetModelPropertiesRequest extends js.Object {
+    var assetModelId: ID
+    var filter: js.UndefOr[ListAssetModelPropertiesFilter]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetModelPropertiesRequest {
+    @inline
+    def apply(
+        assetModelId: ID,
+        filter: js.UndefOr[ListAssetModelPropertiesFilter] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetModelPropertiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "assetModelId" -> assetModelId.asInstanceOf[js.Any]
+      )
+
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetModelPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssetModelPropertiesResponse extends js.Object {
+    var assetModelPropertySummaries: AssetModelPropertySummaries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetModelPropertiesResponse {
+    @inline
+    def apply(
+        assetModelPropertySummaries: AssetModelPropertySummaries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetModelPropertiesResponse = {
+      val __obj = js.Dynamic.literal(
+        "assetModelPropertySummaries" -> assetModelPropertySummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetModelPropertiesResponse]
+    }
+  }
+
+  @js.native
   trait ListAssetModelsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
@@ -3319,6 +4295,54 @@ package object iotsitewise {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssetModelsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAssetPropertiesRequest extends js.Object {
+    var assetId: ID
+    var filter: js.UndefOr[ListAssetPropertiesFilter]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetPropertiesRequest {
+    @inline
+    def apply(
+        assetId: ID,
+        filter: js.UndefOr[ListAssetPropertiesFilter] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetPropertiesRequest = {
+      val __obj = js.Dynamic.literal(
+        "assetId" -> assetId.asInstanceOf[js.Any]
+      )
+
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetPropertiesRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssetPropertiesResponse extends js.Object {
+    var assetPropertySummaries: AssetPropertySummaries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAssetPropertiesResponse {
+    @inline
+    def apply(
+        assetPropertySummaries: AssetPropertySummaries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAssetPropertiesResponse = {
+      val __obj = js.Dynamic.literal(
+        "assetPropertySummaries" -> assetPropertySummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetPropertiesResponse]
     }
   }
 
@@ -3464,6 +4488,49 @@ package object iotsitewise {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociatedAssetsResponse]
+    }
+  }
+
+  @js.native
+  trait ListBulkImportJobsRequest extends js.Object {
+    var filter: js.UndefOr[ListBulkImportJobsFilter]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBulkImportJobsRequest {
+    @inline
+    def apply(
+        filter: js.UndefOr[ListBulkImportJobsFilter] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBulkImportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBulkImportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBulkImportJobsResponse extends js.Object {
+    var jobSummaries: JobSummaries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBulkImportJobsResponse {
+    @inline
+    def apply(
+        jobSummaries: JobSummaries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBulkImportJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "jobSummaries" -> jobSummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBulkImportJobsResponse]
     }
   }
 
@@ -4648,6 +5715,7 @@ package object iotsitewise {
     var clientToken: js.UndefOr[ClientToken]
     var propertyAlias: js.UndefOr[PropertyAlias]
     var propertyNotificationState: js.UndefOr[PropertyNotificationState]
+    var propertyUnit: js.UndefOr[PropertyUnit]
   }
 
   object UpdateAssetPropertyRequest {
@@ -4657,7 +5725,8 @@ package object iotsitewise {
         propertyId: ID,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         propertyAlias: js.UndefOr[PropertyAlias] = js.undefined,
-        propertyNotificationState: js.UndefOr[PropertyNotificationState] = js.undefined
+        propertyNotificationState: js.UndefOr[PropertyNotificationState] = js.undefined,
+        propertyUnit: js.UndefOr[PropertyUnit] = js.undefined
     ): UpdateAssetPropertyRequest = {
       val __obj = js.Dynamic.literal(
         "assetId" -> assetId.asInstanceOf[js.Any],
@@ -4667,6 +5736,7 @@ package object iotsitewise {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
       propertyNotificationState.foreach(__v => __obj.updateDynamic("propertyNotificationState")(__v.asInstanceOf[js.Any]))
+      propertyUnit.foreach(__v => __obj.updateDynamic("propertyUnit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssetPropertyRequest]
     }
   }
@@ -4675,6 +5745,7 @@ package object iotsitewise {
   trait UpdateAssetRequest extends js.Object {
     var assetId: ID
     var assetName: Name
+    var assetDescription: js.UndefOr[Description]
     var clientToken: js.UndefOr[ClientToken]
   }
 
@@ -4683,6 +5754,7 @@ package object iotsitewise {
     def apply(
         assetId: ID,
         assetName: Name,
+        assetDescription: js.UndefOr[Description] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined
     ): UpdateAssetRequest = {
       val __obj = js.Dynamic.literal(
@@ -4690,6 +5762,7 @@ package object iotsitewise {
         "assetName" -> assetName.asInstanceOf[js.Any]
       )
 
+      assetDescription.foreach(__v => __obj.updateDynamic("assetDescription")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssetRequest]
     }

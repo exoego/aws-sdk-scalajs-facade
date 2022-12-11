@@ -145,6 +145,16 @@ object AcceptHeader {
   inline def values: js.Array[AcceptHeader] = js.Array(`image/jpeg`)
 }
 
+/** Accessibility Type
+  */
+type AccessibilityType = "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES" | "IMPLEMENTS_ACCESSIBILITY_FEATURES"
+object AccessibilityType {
+  inline val DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES: "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES" = "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"
+  inline val IMPLEMENTS_ACCESSIBILITY_FEATURES: "IMPLEMENTS_ACCESSIBILITY_FEATURES" = "IMPLEMENTS_ACCESSIBILITY_FEATURES"
+
+  inline def values: js.Array[AccessibilityType] = js.Array(DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES, IMPLEMENTS_ACCESSIBILITY_FEATURES)
+}
+
 /** Afd Signaling
   */
 type AfdSignaling = "AUTO" | "FIXED" | "NONE"
@@ -412,12 +422,13 @@ object DeviceSettingsSyncState {
 
 /** The status of software on the input device.
   */
-type DeviceUpdateStatus = "UP_TO_DATE" | "NOT_UP_TO_DATE"
+type DeviceUpdateStatus = "UP_TO_DATE" | "NOT_UP_TO_DATE" | "UPDATING"
 object DeviceUpdateStatus {
   inline val UP_TO_DATE: "UP_TO_DATE" = "UP_TO_DATE"
   inline val NOT_UP_TO_DATE: "NOT_UP_TO_DATE" = "NOT_UP_TO_DATE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  inline def values: js.Array[DeviceUpdateStatus] = js.Array(UP_TO_DATE, NOT_UP_TO_DATE)
+  inline def values: js.Array[DeviceUpdateStatus] = js.Array(UP_TO_DATE, NOT_UP_TO_DATE, UPDATING)
 }
 
 /** Dvb Sdt Output Sdt
@@ -515,6 +526,45 @@ object DvbSubOcrLanguage {
   inline val SPA: "SPA" = "SPA"
 
   inline def values: js.Array[DvbSubOcrLanguage] = js.Array(DEU, ENG, FRA, NLD, POR, SPA)
+}
+
+/** Eac3 Atmos Coding Mode
+  */
+type Eac3AtmosCodingMode = "CODING_MODE_5_1_4" | "CODING_MODE_7_1_4" | "CODING_MODE_9_1_6"
+object Eac3AtmosCodingMode {
+  inline val CODING_MODE_5_1_4: "CODING_MODE_5_1_4" = "CODING_MODE_5_1_4"
+  inline val CODING_MODE_7_1_4: "CODING_MODE_7_1_4" = "CODING_MODE_7_1_4"
+  inline val CODING_MODE_9_1_6: "CODING_MODE_9_1_6" = "CODING_MODE_9_1_6"
+
+  inline def values: js.Array[Eac3AtmosCodingMode] = js.Array(CODING_MODE_5_1_4, CODING_MODE_7_1_4, CODING_MODE_9_1_6)
+}
+
+/** Eac3 Atmos Drc Line
+  */
+type Eac3AtmosDrcLine = "FILM_LIGHT" | "FILM_STANDARD" | "MUSIC_LIGHT" | "MUSIC_STANDARD" | "NONE" | "SPEECH"
+object Eac3AtmosDrcLine {
+  inline val FILM_LIGHT: "FILM_LIGHT" = "FILM_LIGHT"
+  inline val FILM_STANDARD: "FILM_STANDARD" = "FILM_STANDARD"
+  inline val MUSIC_LIGHT: "MUSIC_LIGHT" = "MUSIC_LIGHT"
+  inline val MUSIC_STANDARD: "MUSIC_STANDARD" = "MUSIC_STANDARD"
+  inline val NONE: "NONE" = "NONE"
+  inline val SPEECH: "SPEECH" = "SPEECH"
+
+  inline def values: js.Array[Eac3AtmosDrcLine] = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
+}
+
+/** Eac3 Atmos Drc Rf
+  */
+type Eac3AtmosDrcRf = "FILM_LIGHT" | "FILM_STANDARD" | "MUSIC_LIGHT" | "MUSIC_STANDARD" | "NONE" | "SPEECH"
+object Eac3AtmosDrcRf {
+  inline val FILM_LIGHT: "FILM_LIGHT" = "FILM_LIGHT"
+  inline val FILM_STANDARD: "FILM_STANDARD" = "FILM_STANDARD"
+  inline val MUSIC_LIGHT: "MUSIC_LIGHT" = "MUSIC_LIGHT"
+  inline val MUSIC_STANDARD: "MUSIC_STANDARD" = "MUSIC_STANDARD"
+  inline val NONE: "NONE" = "NONE"
+  inline val SPEECH: "SPEECH" = "SPEECH"
+
+  inline def values: js.Array[Eac3AtmosDrcRf] = js.Array(FILM_LIGHT, FILM_STANDARD, MUSIC_LIGHT, MUSIC_STANDARD, NONE, SPEECH)
 }
 
 /** Eac3 Attenuation Control
@@ -1443,6 +1493,16 @@ object HlsProgramDateTime {
   inline def values: js.Array[HlsProgramDateTime] = js.Array(EXCLUDE, INCLUDE)
 }
 
+/** Hls Program Date Time Clock
+  */
+type HlsProgramDateTimeClock = "INITIALIZE_FROM_OUTPUT_TIMECODE" | "SYSTEM_CLOCK"
+object HlsProgramDateTimeClock {
+  inline val INITIALIZE_FROM_OUTPUT_TIMECODE: "INITIALIZE_FROM_OUTPUT_TIMECODE" = "INITIALIZE_FROM_OUTPUT_TIMECODE"
+  inline val SYSTEM_CLOCK: "SYSTEM_CLOCK" = "SYSTEM_CLOCK"
+
+  inline def values: js.Array[HlsProgramDateTimeClock] = js.Array(INITIALIZE_FROM_OUTPUT_TIMECODE, SYSTEM_CLOCK)
+}
+
 /** Hls Redundant Manifest
   */
 type HlsRedundantManifest = "DISABLED" | "ENABLED"
@@ -1638,11 +1698,12 @@ object InputDeviceTransferType {
 
 /** The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose "HD".
   */
-type InputDeviceType = "HD"
+type InputDeviceType = "HD" | "UHD"
 object InputDeviceType {
   inline val HD: "HD" = "HD"
+  inline val UHD: "UHD" = "UHD"
 
-  inline def values: js.Array[InputDeviceType] = js.Array(HD)
+  inline def values: js.Array[InputDeviceType] = js.Array(HD, UHD)
 }
 
 /** Input Filter
@@ -2069,6 +2130,21 @@ object M3u8TimedMetadataBehavior {
   inline def values: js.Array[M3u8TimedMetadataBehavior] = js.Array(NO_PASSTHROUGH, PASSTHROUGH)
 }
 
+/** The currently selected maintenance day.
+  */
+type MaintenanceDay = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY"
+object MaintenanceDay {
+  inline val MONDAY: "MONDAY" = "MONDAY"
+  inline val TUESDAY: "TUESDAY" = "TUESDAY"
+  inline val WEDNESDAY: "WEDNESDAY" = "WEDNESDAY"
+  inline val THURSDAY: "THURSDAY" = "THURSDAY"
+  inline val FRIDAY: "FRIDAY" = "FRIDAY"
+  inline val SATURDAY: "SATURDAY" = "SATURDAY"
+  inline val SUNDAY: "SUNDAY" = "SUNDAY"
+
+  inline def values: js.Array[MaintenanceDay] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+}
+
 /** Motion Graphics Insertion
   */
 type MotionGraphicsInsertion = "DISABLED" | "ENABLED"
@@ -2276,6 +2352,27 @@ object PreferredChannelPipeline {
   inline val PIPELINE_1: "PIPELINE_1" = "PIPELINE_1"
 
   inline def values: js.Array[PreferredChannelPipeline] = js.Array(CURRENTLY_ACTIVE, PIPELINE_0, PIPELINE_1)
+}
+
+/** Whether or not to force reboot the input device.
+  */
+type RebootInputDeviceForce = "NO" | "YES"
+object RebootInputDeviceForce {
+  inline val NO: "NO" = "NO"
+  inline val YES: "YES" = "YES"
+
+  inline def values: js.Array[RebootInputDeviceForce] = js.Array(NO, YES)
+}
+
+/** Automatic Renewal Status for Reservation
+  */
+type ReservationAutomaticRenewal = "DISABLED" | "ENABLED" | "UNAVAILABLE"
+object ReservationAutomaticRenewal {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
+
+  inline def values: js.Array[ReservationAutomaticRenewal] = js.Array(DISABLED, ENABLED, UNAVAILABLE)
 }
 
 /** Codec, 'MPEG2', 'AVC', 'HEVC', or 'AUDIO'
@@ -2487,6 +2584,16 @@ object Scte35DeviceRestrictions {
   inline val RESTRICT_GROUP2: "RESTRICT_GROUP2" = "RESTRICT_GROUP2"
 
   inline def values: js.Array[Scte35DeviceRestrictions] = js.Array(NONE, RESTRICT_GROUP0, RESTRICT_GROUP1, RESTRICT_GROUP2)
+}
+
+/** Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the file.
+  */
+type Scte35InputMode = "FIXED" | "FOLLOW_ACTIVE"
+object Scte35InputMode {
+  inline val FIXED: "FIXED" = "FIXED"
+  inline val FOLLOW_ACTIVE: "FOLLOW_ACTIVE" = "FOLLOW_ACTIVE"
+
+  inline def values: js.Array[Scte35InputMode] = js.Array(FIXED, FOLLOW_ACTIVE)
 }
 
 /** Corresponds to the no_regional_blackout_flag parameter. A value of REGIONAL_BLACKOUT corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.

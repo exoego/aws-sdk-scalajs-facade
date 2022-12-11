@@ -9,10 +9,13 @@ import facade.amazonaws._
 
 package object guardduty {
   type AccountDetails = js.Array[AccountDetail]
+  type AccountFreeTrialInfos = js.Array[AccountFreeTrialInfo]
   type AccountId = String
   type AccountIds = js.Array[AccountId]
   type AdminAccounts = js.Array[AdminAccount]
+  type AffectedResources = js.Dictionary[String]
   type ClientToken = String
+  type Containers = js.Array[Container]
   type CountBySeverity = js.Dictionary[Int]
   type Criterion = js.Dictionary[Condition]
   type DataSourceList = js.Array[DataSource]
@@ -22,6 +25,8 @@ package object guardduty {
   type Email = String
   type Eq = js.Array[String]
   type Equals = js.Array[String]
+  type FilePaths = js.Array[ScanFilePath]
+  type FilterCriterionList = js.Array[FilterCriterion]
   type FilterDescription = String
   type FilterName = String
   type FilterNames = js.Array[FilterName]
@@ -32,24 +37,36 @@ package object guardduty {
   type FindingType = String
   type FindingTypes = js.Array[FindingType]
   type Findings = js.Array[Finding]
+  type Groups = js.Array[String]
   type GuardDutyArn = String
+  type InstanceArn = String
+  type IntegerValueWithMax = Int
   type Invitations = js.Array[Invitation]
   type IpSetIds = js.Array[String]
   type Ipv6Addresses = js.Array[String]
   type Location = String
+  type LongValue = Double
+  type MapEquals = js.Array[ScanConditionPair]
   type MaxResults = Int
   type MemberDataSourceConfigurations = js.Array[MemberDataSourceConfiguration]
   type Members = js.Array[Member]
   type Name = String
   type Neq = js.Array[String]
   type NetworkInterfaces = js.Array[NetworkInterface]
+  type NonEmptyString = String
   type NotEquals = js.Array[String]
   type PortProbeDetails = js.Array[PortProbeDetail]
+  type PositiveLong = Double
   type PrivateIpAddresses = js.Array[PrivateIpAddressDetails]
   type ProductCodes = js.Array[ProductCode]
   type ResourceList = js.Array[String]
   type S3BucketDetails = js.Array[S3BucketDetail]
+  type ScanCriterion = js.Dictionary[ScanCondition]
+  type ScanThreatNames = js.Array[ScanThreatName]
+  type Scans = js.Array[Scan]
   type SecurityGroups = js.Array[SecurityGroup]
+  type SourceIps = js.Array[String]
+  type Sources = js.Array[String]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
@@ -63,10 +80,13 @@ package object guardduty {
   type UsageAccountResultList = js.Array[UsageAccountResult]
   type UsageDataSourceResultList = js.Array[UsageDataSourceResult]
   type UsageResourceResultList = js.Array[UsageResourceResult]
+  type VolumeDetails = js.Array[VolumeDetail]
+  type VolumeMounts = js.Array[VolumeMount]
+  type Volumes = js.Array[Volume]
 
   final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
-    @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
+    @inline def acceptAdministratorInvitationFuture(params: AcceptAdministratorInvitationRequest): Future[AcceptAdministratorInvitationResponse] = service.acceptAdministratorInvitation(params).promise().toFuture
     @inline def archiveFindingsFuture(params: ArchiveFindingsRequest): Future[ArchiveFindingsResponse] = service.archiveFindings(params).promise().toFuture
     @inline def createDetectorFuture(params: CreateDetectorRequest): Future[CreateDetectorResponse] = service.createDetector(params).promise().toFuture
     @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] = service.createFilter(params).promise().toFuture
@@ -83,21 +103,24 @@ package object guardduty {
     @inline def deleteMembersFuture(params: DeleteMembersRequest): Future[DeleteMembersResponse] = service.deleteMembers(params).promise().toFuture
     @inline def deletePublishingDestinationFuture(params: DeletePublishingDestinationRequest): Future[DeletePublishingDestinationResponse] = service.deletePublishingDestination(params).promise().toFuture
     @inline def deleteThreatIntelSetFuture(params: DeleteThreatIntelSetRequest): Future[DeleteThreatIntelSetResponse] = service.deleteThreatIntelSet(params).promise().toFuture
+    @inline def describeMalwareScansFuture(params: DescribeMalwareScansRequest): Future[DescribeMalwareScansResponse] = service.describeMalwareScans(params).promise().toFuture
     @inline def describeOrganizationConfigurationFuture(params: DescribeOrganizationConfigurationRequest): Future[DescribeOrganizationConfigurationResponse] = service.describeOrganizationConfiguration(params).promise().toFuture
     @inline def describePublishingDestinationFuture(params: DescribePublishingDestinationRequest): Future[DescribePublishingDestinationResponse] = service.describePublishingDestination(params).promise().toFuture
     @inline def disableOrganizationAdminAccountFuture(params: DisableOrganizationAdminAccountRequest): Future[DisableOrganizationAdminAccountResponse] = service.disableOrganizationAdminAccount(params).promise().toFuture
-    @inline def disassociateFromMasterAccountFuture(params: DisassociateFromMasterAccountRequest): Future[DisassociateFromMasterAccountResponse] = service.disassociateFromMasterAccount(params).promise().toFuture
+    @inline def disassociateFromAdministratorAccountFuture(params: DisassociateFromAdministratorAccountRequest): Future[DisassociateFromAdministratorAccountResponse] = service.disassociateFromAdministratorAccount(params).promise().toFuture
     @inline def disassociateMembersFuture(params: DisassociateMembersRequest): Future[DisassociateMembersResponse] = service.disassociateMembers(params).promise().toFuture
     @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
+    @inline def getAdministratorAccountFuture(params: GetAdministratorAccountRequest): Future[GetAdministratorAccountResponse] = service.getAdministratorAccount(params).promise().toFuture
     @inline def getDetectorFuture(params: GetDetectorRequest): Future[GetDetectorResponse] = service.getDetector(params).promise().toFuture
     @inline def getFilterFuture(params: GetFilterRequest): Future[GetFilterResponse] = service.getFilter(params).promise().toFuture
     @inline def getFindingsFuture(params: GetFindingsRequest): Future[GetFindingsResponse] = service.getFindings(params).promise().toFuture
     @inline def getFindingsStatisticsFuture(params: GetFindingsStatisticsRequest): Future[GetFindingsStatisticsResponse] = service.getFindingsStatistics(params).promise().toFuture
     @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
     @inline def getInvitationsCountFuture(params: GetInvitationsCountRequest): Future[GetInvitationsCountResponse] = service.getInvitationsCount(params).promise().toFuture
-    @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
+    @inline def getMalwareScanSettingsFuture(params: GetMalwareScanSettingsRequest): Future[GetMalwareScanSettingsResponse] = service.getMalwareScanSettings(params).promise().toFuture
     @inline def getMemberDetectorsFuture(params: GetMemberDetectorsRequest): Future[GetMemberDetectorsResponse] = service.getMemberDetectors(params).promise().toFuture
     @inline def getMembersFuture(params: GetMembersRequest): Future[GetMembersResponse] = service.getMembers(params).promise().toFuture
+    @inline def getRemainingFreeTrialDaysFuture(params: GetRemainingFreeTrialDaysRequest): Future[GetRemainingFreeTrialDaysResponse] = service.getRemainingFreeTrialDays(params).promise().toFuture
     @inline def getThreatIntelSetFuture(params: GetThreatIntelSetRequest): Future[GetThreatIntelSetResponse] = service.getThreatIntelSet(params).promise().toFuture
     @inline def getUsageStatisticsFuture(params: GetUsageStatisticsRequest): Future[GetUsageStatisticsResponse] = service.getUsageStatistics(params).promise().toFuture
     @inline def inviteMembersFuture(params: InviteMembersRequest): Future[InviteMembersResponse] = service.inviteMembers(params).promise().toFuture
@@ -120,6 +143,7 @@ package object guardduty {
     @inline def updateFilterFuture(params: UpdateFilterRequest): Future[UpdateFilterResponse] = service.updateFilter(params).promise().toFuture
     @inline def updateFindingsFeedbackFuture(params: UpdateFindingsFeedbackRequest): Future[UpdateFindingsFeedbackResponse] = service.updateFindingsFeedback(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateMalwareScanSettingsFuture(params: UpdateMalwareScanSettingsRequest): Future[UpdateMalwareScanSettingsResponse] = service.updateMalwareScanSettings(params).promise().toFuture
     @inline def updateMemberDetectorsFuture(params: UpdateMemberDetectorsRequest): Future[UpdateMemberDetectorsResponse] = service.updateMemberDetectors(params).promise().toFuture
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
     @inline def updatePublishingDestinationFuture(params: UpdatePublishingDestinationRequest): Future[UpdatePublishingDestinationResponse] = service.updatePublishingDestination(params).promise().toFuture
@@ -132,7 +156,10 @@ package object guardduty {
   class GuardDuty() extends js.Object {
     def this(config: AWSConfig) = this()
 
-    def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
+    @deprecated("This operation is deprecated, use AcceptAdministratorInvitation instead", "forever") def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
+    @deprecated("This operation is deprecated, use DisassociateFromAdministratorAccount instead", "forever") def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
+    @deprecated("This operation is deprecated, use GetAdministratorAccount instead", "forever") def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def acceptAdministratorInvitation(params: AcceptAdministratorInvitationRequest): Request[AcceptAdministratorInvitationResponse] = js.native
     def archiveFindings(params: ArchiveFindingsRequest): Request[ArchiveFindingsResponse] = js.native
     def createDetector(params: CreateDetectorRequest): Request[CreateDetectorResponse] = js.native
     def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
@@ -149,21 +176,24 @@ package object guardduty {
     def deleteMembers(params: DeleteMembersRequest): Request[DeleteMembersResponse] = js.native
     def deletePublishingDestination(params: DeletePublishingDestinationRequest): Request[DeletePublishingDestinationResponse] = js.native
     def deleteThreatIntelSet(params: DeleteThreatIntelSetRequest): Request[DeleteThreatIntelSetResponse] = js.native
+    def describeMalwareScans(params: DescribeMalwareScansRequest): Request[DescribeMalwareScansResponse] = js.native
     def describeOrganizationConfiguration(params: DescribeOrganizationConfigurationRequest): Request[DescribeOrganizationConfigurationResponse] = js.native
     def describePublishingDestination(params: DescribePublishingDestinationRequest): Request[DescribePublishingDestinationResponse] = js.native
     def disableOrganizationAdminAccount(params: DisableOrganizationAdminAccountRequest): Request[DisableOrganizationAdminAccountResponse] = js.native
-    def disassociateFromMasterAccount(params: DisassociateFromMasterAccountRequest): Request[DisassociateFromMasterAccountResponse] = js.native
+    def disassociateFromAdministratorAccount(params: DisassociateFromAdministratorAccountRequest): Request[DisassociateFromAdministratorAccountResponse] = js.native
     def disassociateMembers(params: DisassociateMembersRequest): Request[DisassociateMembersResponse] = js.native
     def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
+    def getAdministratorAccount(params: GetAdministratorAccountRequest): Request[GetAdministratorAccountResponse] = js.native
     def getDetector(params: GetDetectorRequest): Request[GetDetectorResponse] = js.native
     def getFilter(params: GetFilterRequest): Request[GetFilterResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
     def getFindingsStatistics(params: GetFindingsStatisticsRequest): Request[GetFindingsStatisticsResponse] = js.native
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
     def getInvitationsCount(params: GetInvitationsCountRequest): Request[GetInvitationsCountResponse] = js.native
-    def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
+    def getMalwareScanSettings(params: GetMalwareScanSettingsRequest): Request[GetMalwareScanSettingsResponse] = js.native
     def getMemberDetectors(params: GetMemberDetectorsRequest): Request[GetMemberDetectorsResponse] = js.native
     def getMembers(params: GetMembersRequest): Request[GetMembersResponse] = js.native
+    def getRemainingFreeTrialDays(params: GetRemainingFreeTrialDaysRequest): Request[GetRemainingFreeTrialDaysResponse] = js.native
     def getThreatIntelSet(params: GetThreatIntelSetRequest): Request[GetThreatIntelSetResponse] = js.native
     def getUsageStatistics(params: GetUsageStatisticsRequest): Request[GetUsageStatisticsResponse] = js.native
     def inviteMembers(params: InviteMembersRequest): Request[InviteMembersResponse] = js.native
@@ -186,6 +216,7 @@ package object guardduty {
     def updateFilter(params: UpdateFilterRequest): Request[UpdateFilterResponse] = js.native
     def updateFindingsFeedback(params: UpdateFindingsFeedbackRequest): Request[UpdateFindingsFeedbackResponse] = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updateMalwareScanSettings(params: UpdateMalwareScanSettingsRequest): Request[UpdateMalwareScanSettingsResponse] = js.native
     def updateMemberDetectors(params: UpdateMemberDetectorsRequest): Request[UpdateMemberDetectorsResponse] = js.native
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
     def updatePublishingDestination(params: UpdatePublishingDestinationRequest): Request[UpdatePublishingDestinationResponse] = js.native
@@ -197,6 +228,41 @@ package object guardduty {
     }
   }
 
+  @js.native
+  trait AcceptAdministratorInvitationRequest extends js.Object {
+    var AdministratorId: String
+    var DetectorId: DetectorId
+    var InvitationId: String
+  }
+
+  object AcceptAdministratorInvitationRequest {
+    @inline
+    def apply(
+        AdministratorId: String,
+        DetectorId: DetectorId,
+        InvitationId: String
+    ): AcceptAdministratorInvitationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AdministratorId" -> AdministratorId.asInstanceOf[js.Any],
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any],
+        "InvitationId" -> InvitationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AcceptAdministratorInvitationRequest]
+    }
+  }
+
+  @js.native
+  trait AcceptAdministratorInvitationResponse extends js.Object
+
+  object AcceptAdministratorInvitationResponse {
+    @inline
+    def apply(): AcceptAdministratorInvitationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AcceptAdministratorInvitationResponse]
+    }
+  }
+
+  @deprecated("This input is deprecated, use AcceptAdministratorInvitationRequest instead", "forever")
   @js.native
   trait AcceptInvitationRequest extends js.Object {
     var DetectorId: DetectorId
@@ -220,6 +286,7 @@ package object guardduty {
     }
   }
 
+  @deprecated("This output is deprecated, use AcceptAdministratorInvitationResponse instead", "forever")
   @js.native
   trait AcceptInvitationResponse extends js.Object
 
@@ -301,6 +368,27 @@ package object guardduty {
     }
   }
 
+  /** Provides details of the GuardDuty member account that uses a free trial service.
+    */
+  @js.native
+  trait AccountFreeTrialInfo extends js.Object {
+    var AccountId: js.UndefOr[String]
+    var DataSources: js.UndefOr[DataSourcesFreeTrial]
+  }
+
+  object AccountFreeTrialInfo {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        DataSources: js.UndefOr[DataSourcesFreeTrial] = js.undefined
+    ): AccountFreeTrialInfo = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountFreeTrialInfo]
+    }
+  }
+
   /** Contains information about the account level permissions on the S3 bucket.
     */
   @js.native
@@ -326,6 +414,7 @@ package object guardduty {
     var ActionType: js.UndefOr[String]
     var AwsApiCallAction: js.UndefOr[AwsApiCallAction]
     var DnsRequestAction: js.UndefOr[DnsRequestAction]
+    var KubernetesApiCallAction: js.UndefOr[KubernetesApiCallAction]
     var NetworkConnectionAction: js.UndefOr[NetworkConnectionAction]
     var PortProbeAction: js.UndefOr[PortProbeAction]
   }
@@ -336,6 +425,7 @@ package object guardduty {
         ActionType: js.UndefOr[String] = js.undefined,
         AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
         DnsRequestAction: js.UndefOr[DnsRequestAction] = js.undefined,
+        KubernetesApiCallAction: js.UndefOr[KubernetesApiCallAction] = js.undefined,
         NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
         PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined
     ): Action = {
@@ -343,6 +433,7 @@ package object guardduty {
       ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
       AwsApiCallAction.foreach(__v => __obj.updateDynamic("AwsApiCallAction")(__v.asInstanceOf[js.Any]))
       DnsRequestAction.foreach(__v => __obj.updateDynamic("DnsRequestAction")(__v.asInstanceOf[js.Any]))
+      KubernetesApiCallAction.foreach(__v => __obj.updateDynamic("KubernetesApiCallAction")(__v.asInstanceOf[js.Any]))
       NetworkConnectionAction.foreach(__v => __obj.updateDynamic("NetworkConnectionAction")(__v.asInstanceOf[js.Any]))
       PortProbeAction.foreach(__v => __obj.updateDynamic("PortProbeAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
@@ -367,6 +458,33 @@ package object guardduty {
       AdminAccountId.foreach(__v => __obj.updateDynamic("AdminAccountId")(__v.asInstanceOf[js.Any]))
       AdminStatus.foreach(__v => __obj.updateDynamic("AdminStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminAccount]
+    }
+  }
+
+  /** Contains information about the administrator account and invitation.
+    */
+  @js.native
+  trait Administrator extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var InvitationId: js.UndefOr[String]
+    var InvitedAt: js.UndefOr[String]
+    var RelationshipStatus: js.UndefOr[String]
+  }
+
+  object Administrator {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        InvitationId: js.UndefOr[String] = js.undefined,
+        InvitedAt: js.UndefOr[String] = js.undefined,
+        RelationshipStatus: js.UndefOr[String] = js.undefined
+    ): Administrator = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
+      RelationshipStatus.foreach(__v => __obj.updateDynamic("RelationshipStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Administrator]
     }
   }
 
@@ -405,31 +523,40 @@ package object guardduty {
     */
   @js.native
   trait AwsApiCallAction extends js.Object {
+    var AffectedResources: js.UndefOr[AffectedResources]
     var Api: js.UndefOr[String]
     var CallerType: js.UndefOr[String]
     var DomainDetails: js.UndefOr[DomainDetails]
     var ErrorCode: js.UndefOr[String]
+    var RemoteAccountDetails: js.UndefOr[RemoteAccountDetails]
     var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
     var ServiceName: js.UndefOr[String]
+    var UserAgent: js.UndefOr[String]
   }
 
   object AwsApiCallAction {
     @inline
     def apply(
+        AffectedResources: js.UndefOr[AffectedResources] = js.undefined,
         Api: js.UndefOr[String] = js.undefined,
         CallerType: js.UndefOr[String] = js.undefined,
         DomainDetails: js.UndefOr[DomainDetails] = js.undefined,
         ErrorCode: js.UndefOr[String] = js.undefined,
+        RemoteAccountDetails: js.UndefOr[RemoteAccountDetails] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
-        ServiceName: js.UndefOr[String] = js.undefined
+        ServiceName: js.UndefOr[String] = js.undefined,
+        UserAgent: js.UndefOr[String] = js.undefined
     ): AwsApiCallAction = {
       val __obj = js.Dynamic.literal()
+      AffectedResources.foreach(__v => __obj.updateDynamic("AffectedResources")(__v.asInstanceOf[js.Any]))
       Api.foreach(__v => __obj.updateDynamic("Api")(__v.asInstanceOf[js.Any]))
       CallerType.foreach(__v => __obj.updateDynamic("CallerType")(__v.asInstanceOf[js.Any]))
       DomainDetails.foreach(__v => __obj.updateDynamic("DomainDetails")(__v.asInstanceOf[js.Any]))
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      RemoteAccountDetails.foreach(__v => __obj.updateDynamic("RemoteAccountDetails")(__v.asInstanceOf[js.Any]))
       RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      UserAgent.foreach(__v => __obj.updateDynamic("UserAgent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsApiCallAction]
     }
   }
@@ -594,6 +721,42 @@ package object guardduty {
     }
   }
 
+  /** Details of a container.
+    */
+  @js.native
+  trait Container extends js.Object {
+    var ContainerRuntime: js.UndefOr[String]
+    var Id: js.UndefOr[String]
+    var Image: js.UndefOr[String]
+    var ImagePrefix: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+    var SecurityContext: js.UndefOr[SecurityContext]
+    var VolumeMounts: js.UndefOr[VolumeMounts]
+  }
+
+  object Container {
+    @inline
+    def apply(
+        ContainerRuntime: js.UndefOr[String] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        Image: js.UndefOr[String] = js.undefined,
+        ImagePrefix: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SecurityContext: js.UndefOr[SecurityContext] = js.undefined,
+        VolumeMounts: js.UndefOr[VolumeMounts] = js.undefined
+    ): Container = {
+      val __obj = js.Dynamic.literal()
+      ContainerRuntime.foreach(__v => __obj.updateDynamic("ContainerRuntime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Image.foreach(__v => __obj.updateDynamic("Image")(__v.asInstanceOf[js.Any]))
+      ImagePrefix.foreach(__v => __obj.updateDynamic("ImagePrefix")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityContext.foreach(__v => __obj.updateDynamic("SecurityContext")(__v.asInstanceOf[js.Any]))
+      VolumeMounts.foreach(__v => __obj.updateDynamic("VolumeMounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Container]
+    }
+  }
+
   /** Contains information about the country where the remote IP address is located.
     */
   @js.native
@@ -648,15 +811,18 @@ package object guardduty {
   @js.native
   trait CreateDetectorResponse extends js.Object {
     var DetectorId: js.UndefOr[DetectorId]
+    var UnprocessedDataSources: js.UndefOr[UnprocessedDataSourcesResult]
   }
 
   object CreateDetectorResponse {
     @inline
     def apply(
-        DetectorId: js.UndefOr[DetectorId] = js.undefined
+        DetectorId: js.UndefOr[DetectorId] = js.undefined,
+        UnprocessedDataSources: js.UndefOr[UnprocessedDataSourcesResult] = js.undefined
     ): CreateDetectorResponse = {
       val __obj = js.Dynamic.literal()
       DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
+      UnprocessedDataSources.foreach(__v => __obj.updateDynamic("UnprocessedDataSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorResponse]
     }
   }
@@ -959,15 +1125,21 @@ package object guardduty {
     */
   @js.native
   trait DataSourceConfigurations extends js.Object {
+    var Kubernetes: js.UndefOr[KubernetesConfiguration]
+    var MalwareProtection: js.UndefOr[MalwareProtectionConfiguration]
     var S3Logs: js.UndefOr[S3LogsConfiguration]
   }
 
   object DataSourceConfigurations {
     @inline
     def apply(
+        Kubernetes: js.UndefOr[KubernetesConfiguration] = js.undefined,
+        MalwareProtection: js.UndefOr[MalwareProtectionConfiguration] = js.undefined,
         S3Logs: js.UndefOr[S3LogsConfiguration] = js.undefined
     ): DataSourceConfigurations = {
       val __obj = js.Dynamic.literal()
+      Kubernetes.foreach(__v => __obj.updateDynamic("Kubernetes")(__v.asInstanceOf[js.Any]))
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
       S3Logs.foreach(__v => __obj.updateDynamic("S3Logs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceConfigurations]
     }
@@ -981,6 +1153,8 @@ package object guardduty {
     var DNSLogs: DNSLogsConfigurationResult
     var FlowLogs: FlowLogsConfigurationResult
     var S3Logs: S3LogsConfigurationResult
+    var Kubernetes: js.UndefOr[KubernetesConfigurationResult]
+    var MalwareProtection: js.UndefOr[MalwareProtectionConfigurationResult]
   }
 
   object DataSourceConfigurationsResult {
@@ -989,7 +1163,9 @@ package object guardduty {
         CloudTrail: CloudTrailConfigurationResult,
         DNSLogs: DNSLogsConfigurationResult,
         FlowLogs: FlowLogsConfigurationResult,
-        S3Logs: S3LogsConfigurationResult
+        S3Logs: S3LogsConfigurationResult,
+        Kubernetes: js.UndefOr[KubernetesConfigurationResult] = js.undefined,
+        MalwareProtection: js.UndefOr[MalwareProtectionConfigurationResult] = js.undefined
     ): DataSourceConfigurationsResult = {
       val __obj = js.Dynamic.literal(
         "CloudTrail" -> CloudTrail.asInstanceOf[js.Any],
@@ -997,7 +1173,61 @@ package object guardduty {
         "FlowLogs" -> FlowLogs.asInstanceOf[js.Any],
         "S3Logs" -> S3Logs.asInstanceOf[js.Any]
       )
+
+      Kubernetes.foreach(__v => __obj.updateDynamic("Kubernetes")(__v.asInstanceOf[js.Any]))
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceConfigurationsResult]
+    }
+  }
+
+  /** Contains information about which data sources are enabled for the GuardDuty member account.
+    */
+  @js.native
+  trait DataSourceFreeTrial extends js.Object {
+    var FreeTrialDaysRemaining: js.UndefOr[Int]
+  }
+
+  object DataSourceFreeTrial {
+    @inline
+    def apply(
+        FreeTrialDaysRemaining: js.UndefOr[Int] = js.undefined
+    ): DataSourceFreeTrial = {
+      val __obj = js.Dynamic.literal()
+      FreeTrialDaysRemaining.foreach(__v => __obj.updateDynamic("FreeTrialDaysRemaining")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSourceFreeTrial]
+    }
+  }
+
+  /** Contains information about which data sources are enabled for the GuardDuty member account.
+    */
+  @js.native
+  trait DataSourcesFreeTrial extends js.Object {
+    var CloudTrail: js.UndefOr[DataSourceFreeTrial]
+    var DnsLogs: js.UndefOr[DataSourceFreeTrial]
+    var FlowLogs: js.UndefOr[DataSourceFreeTrial]
+    var Kubernetes: js.UndefOr[KubernetesDataSourceFreeTrial]
+    var MalwareProtection: js.UndefOr[MalwareProtectionDataSourceFreeTrial]
+    var S3Logs: js.UndefOr[DataSourceFreeTrial]
+  }
+
+  object DataSourcesFreeTrial {
+    @inline
+    def apply(
+        CloudTrail: js.UndefOr[DataSourceFreeTrial] = js.undefined,
+        DnsLogs: js.UndefOr[DataSourceFreeTrial] = js.undefined,
+        FlowLogs: js.UndefOr[DataSourceFreeTrial] = js.undefined,
+        Kubernetes: js.UndefOr[KubernetesDataSourceFreeTrial] = js.undefined,
+        MalwareProtection: js.UndefOr[MalwareProtectionDataSourceFreeTrial] = js.undefined,
+        S3Logs: js.UndefOr[DataSourceFreeTrial] = js.undefined
+    ): DataSourcesFreeTrial = {
+      val __obj = js.Dynamic.literal()
+      CloudTrail.foreach(__v => __obj.updateDynamic("CloudTrail")(__v.asInstanceOf[js.Any]))
+      DnsLogs.foreach(__v => __obj.updateDynamic("DnsLogs")(__v.asInstanceOf[js.Any]))
+      FlowLogs.foreach(__v => __obj.updateDynamic("FlowLogs")(__v.asInstanceOf[js.Any]))
+      Kubernetes.foreach(__v => __obj.updateDynamic("Kubernetes")(__v.asInstanceOf[js.Any]))
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
+      S3Logs.foreach(__v => __obj.updateDynamic("S3Logs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSourcesFreeTrial]
     }
   }
 
@@ -1280,6 +1510,57 @@ package object guardduty {
   }
 
   @js.native
+  trait DescribeMalwareScansRequest extends js.Object {
+    var DetectorId: DetectorId
+    var FilterCriteria: js.UndefOr[FilterCriteria]
+    var MaxResults: js.UndefOr[IntegerValueWithMax]
+    var NextToken: js.UndefOr[String]
+    var SortCriteria: js.UndefOr[SortCriteria]
+  }
+
+  object DescribeMalwareScansRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId,
+        FilterCriteria: js.UndefOr[FilterCriteria] = js.undefined,
+        MaxResults: js.UndefOr[IntegerValueWithMax] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        SortCriteria: js.UndefOr[SortCriteria] = js.undefined
+    ): DescribeMalwareScansRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      FilterCriteria.foreach(__v => __obj.updateDynamic("FilterCriteria")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMalwareScansRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeMalwareScansResponse extends js.Object {
+    var Scans: Scans
+    var NextToken: js.UndefOr[String]
+  }
+
+  object DescribeMalwareScansResponse {
+    @inline
+    def apply(
+        Scans: Scans,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): DescribeMalwareScansResponse = {
+      val __obj = js.Dynamic.literal(
+        "Scans" -> Scans.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMalwareScansResponse]
+    }
+  }
+
+  @js.native
   trait DescribeOrganizationConfigurationRequest extends js.Object {
     var DetectorId: DetectorId
   }
@@ -1444,6 +1725,35 @@ package object guardduty {
   }
 
   @js.native
+  trait DisassociateFromAdministratorAccountRequest extends js.Object {
+    var DetectorId: DetectorId
+  }
+
+  object DisassociateFromAdministratorAccountRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId
+    ): DisassociateFromAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateFromAdministratorAccountResponse extends js.Object
+
+  object DisassociateFromAdministratorAccountResponse {
+    @inline
+    def apply(): DisassociateFromAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateFromAdministratorAccountResponse]
+    }
+  }
+
+  @deprecated("This input is deprecated, use DisassociateFromAdministratorAccountRequest instead", "forever")
+  @js.native
   trait DisassociateFromMasterAccountRequest extends js.Object {
     var DetectorId: DetectorId
   }
@@ -1460,6 +1770,7 @@ package object guardduty {
     }
   }
 
+  @deprecated("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead", "forever")
   @js.native
   trait DisassociateFromMasterAccountResponse extends js.Object
 
@@ -1512,16 +1823,22 @@ package object guardduty {
     */
   @js.native
   trait DnsRequestAction extends js.Object {
+    var Blocked: js.UndefOr[Boolean]
     var Domain: js.UndefOr[String]
+    var Protocol: js.UndefOr[String]
   }
 
   object DnsRequestAction {
     @inline
     def apply(
-        Domain: js.UndefOr[String] = js.undefined
+        Blocked: js.UndefOr[Boolean] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        Protocol: js.UndefOr[String] = js.undefined
     ): DnsRequestAction = {
       val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsRequestAction]
     }
   }
@@ -1541,6 +1858,198 @@ package object guardduty {
       val __obj = js.Dynamic.literal()
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDetails]
+    }
+  }
+
+  /** Contains list of scanned and skipped EBS volumes with details.
+    */
+  @js.native
+  trait EbsVolumeDetails extends js.Object {
+    var ScannedVolumeDetails: js.UndefOr[VolumeDetails]
+    var SkippedVolumeDetails: js.UndefOr[VolumeDetails]
+  }
+
+  object EbsVolumeDetails {
+    @inline
+    def apply(
+        ScannedVolumeDetails: js.UndefOr[VolumeDetails] = js.undefined,
+        SkippedVolumeDetails: js.UndefOr[VolumeDetails] = js.undefined
+    ): EbsVolumeDetails = {
+      val __obj = js.Dynamic.literal()
+      ScannedVolumeDetails.foreach(__v => __obj.updateDynamic("ScannedVolumeDetails")(__v.asInstanceOf[js.Any]))
+      SkippedVolumeDetails.foreach(__v => __obj.updateDynamic("SkippedVolumeDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbsVolumeDetails]
+    }
+  }
+
+  /** Contains details from the malware scan that created a finding.
+    */
+  @js.native
+  trait EbsVolumeScanDetails extends js.Object {
+    var ScanCompletedAt: js.UndefOr[Timestamp]
+    var ScanDetections: js.UndefOr[ScanDetections]
+    var ScanId: js.UndefOr[String]
+    var ScanStartedAt: js.UndefOr[Timestamp]
+    var Sources: js.UndefOr[Sources]
+    var TriggerFindingId: js.UndefOr[String]
+  }
+
+  object EbsVolumeScanDetails {
+    @inline
+    def apply(
+        ScanCompletedAt: js.UndefOr[Timestamp] = js.undefined,
+        ScanDetections: js.UndefOr[ScanDetections] = js.undefined,
+        ScanId: js.UndefOr[String] = js.undefined,
+        ScanStartedAt: js.UndefOr[Timestamp] = js.undefined,
+        Sources: js.UndefOr[Sources] = js.undefined,
+        TriggerFindingId: js.UndefOr[String] = js.undefined
+    ): EbsVolumeScanDetails = {
+      val __obj = js.Dynamic.literal()
+      ScanCompletedAt.foreach(__v => __obj.updateDynamic("ScanCompletedAt")(__v.asInstanceOf[js.Any]))
+      ScanDetections.foreach(__v => __obj.updateDynamic("ScanDetections")(__v.asInstanceOf[js.Any]))
+      ScanId.foreach(__v => __obj.updateDynamic("ScanId")(__v.asInstanceOf[js.Any]))
+      ScanStartedAt.foreach(__v => __obj.updateDynamic("ScanStartedAt")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
+      TriggerFindingId.foreach(__v => __obj.updateDynamic("TriggerFindingId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbsVolumeScanDetails]
+    }
+  }
+
+  /** Describes the configuration of scanning EBS volumes as a data source.
+    */
+  @js.native
+  trait EbsVolumesResult extends js.Object {
+    var Reason: js.UndefOr[String]
+    var Status: js.UndefOr[DataSourceStatus]
+  }
+
+  object EbsVolumesResult {
+    @inline
+    def apply(
+        Reason: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[DataSourceStatus] = js.undefined
+    ): EbsVolumesResult = {
+      val __obj = js.Dynamic.literal()
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EbsVolumesResult]
+    }
+  }
+
+  /** Contains information about the details of the ECS Cluster.
+    */
+  @js.native
+  trait EcsClusterDetails extends js.Object {
+    var ActiveServicesCount: js.UndefOr[Int]
+    var Arn: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+    var RegisteredContainerInstancesCount: js.UndefOr[Int]
+    var RunningTasksCount: js.UndefOr[Int]
+    var Status: js.UndefOr[String]
+    var Tags: js.UndefOr[Tags]
+    var TaskDetails: js.UndefOr[EcsTaskDetails]
+  }
+
+  object EcsClusterDetails {
+    @inline
+    def apply(
+        ActiveServicesCount: js.UndefOr[Int] = js.undefined,
+        Arn: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        RegisteredContainerInstancesCount: js.UndefOr[Int] = js.undefined,
+        RunningTasksCount: js.UndefOr[Int] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TaskDetails: js.UndefOr[EcsTaskDetails] = js.undefined
+    ): EcsClusterDetails = {
+      val __obj = js.Dynamic.literal()
+      ActiveServicesCount.foreach(__v => __obj.updateDynamic("ActiveServicesCount")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RegisteredContainerInstancesCount.foreach(__v => __obj.updateDynamic("RegisteredContainerInstancesCount")(__v.asInstanceOf[js.Any]))
+      RunningTasksCount.foreach(__v => __obj.updateDynamic("RunningTasksCount")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TaskDetails.foreach(__v => __obj.updateDynamic("TaskDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EcsClusterDetails]
+    }
+  }
+
+  /** Contains information about the task in an ECS cluster.
+    */
+  @js.native
+  trait EcsTaskDetails extends js.Object {
+    var Arn: js.UndefOr[String]
+    var Containers: js.UndefOr[Containers]
+    var DefinitionArn: js.UndefOr[String]
+    var Group: js.UndefOr[String]
+    var StartedAt: js.UndefOr[Timestamp]
+    var StartedBy: js.UndefOr[String]
+    var Tags: js.UndefOr[Tags]
+    var TaskCreatedAt: js.UndefOr[Timestamp]
+    var Version: js.UndefOr[String]
+    var Volumes: js.UndefOr[Volumes]
+  }
+
+  object EcsTaskDetails {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        Containers: js.UndefOr[Containers] = js.undefined,
+        DefinitionArn: js.UndefOr[String] = js.undefined,
+        Group: js.UndefOr[String] = js.undefined,
+        StartedAt: js.UndefOr[Timestamp] = js.undefined,
+        StartedBy: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TaskCreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined,
+        Volumes: js.UndefOr[Volumes] = js.undefined
+    ): EcsTaskDetails = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
+      DefinitionArn.foreach(__v => __obj.updateDynamic("DefinitionArn")(__v.asInstanceOf[js.Any]))
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      StartedAt.foreach(__v => __obj.updateDynamic("StartedAt")(__v.asInstanceOf[js.Any]))
+      StartedBy.foreach(__v => __obj.updateDynamic("StartedBy")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TaskCreatedAt.foreach(__v => __obj.updateDynamic("TaskCreatedAt")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      Volumes.foreach(__v => __obj.updateDynamic("Volumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EcsTaskDetails]
+    }
+  }
+
+  /** Details about the EKS cluster involved in a Kubernetes finding.
+    */
+  @js.native
+  trait EksClusterDetails extends js.Object {
+    var Arn: js.UndefOr[String]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var Tags: js.UndefOr[Tags]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object EksClusterDetails {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): EksClusterDetails = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksClusterDetails]
     }
   }
 
@@ -1587,6 +2096,69 @@ package object guardduty {
       val __obj = js.Dynamic.literal()
       ThreatIntelligenceDetails.foreach(__v => __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Evidence]
+    }
+  }
+
+  /** Contains information about the condition.
+    */
+  @js.native
+  trait FilterCondition extends js.Object {
+    var EqualsValue: js.UndefOr[NonEmptyString]
+    var GreaterThan: js.UndefOr[LongValue]
+    var LessThan: js.UndefOr[LongValue]
+  }
+
+  object FilterCondition {
+    @inline
+    def apply(
+        EqualsValue: js.UndefOr[NonEmptyString] = js.undefined,
+        GreaterThan: js.UndefOr[LongValue] = js.undefined,
+        LessThan: js.UndefOr[LongValue] = js.undefined
+    ): FilterCondition = {
+      val __obj = js.Dynamic.literal()
+      EqualsValue.foreach(__v => __obj.updateDynamic("EqualsValue")(__v.asInstanceOf[js.Any]))
+      GreaterThan.foreach(__v => __obj.updateDynamic("GreaterThan")(__v.asInstanceOf[js.Any]))
+      LessThan.foreach(__v => __obj.updateDynamic("LessThan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterCondition]
+    }
+  }
+
+  /** Represents the criteria to be used in the filter for describing scan entries.
+    */
+  @js.native
+  trait FilterCriteria extends js.Object {
+    var FilterCriterion: js.UndefOr[FilterCriterionList]
+  }
+
+  object FilterCriteria {
+    @inline
+    def apply(
+        FilterCriterion: js.UndefOr[FilterCriterionList] = js.undefined
+    ): FilterCriteria = {
+      val __obj = js.Dynamic.literal()
+      FilterCriterion.foreach(__v => __obj.updateDynamic("FilterCriterion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterCriteria]
+    }
+  }
+
+  /** Represents a condition that when matched will be added to the response of the operation. Irrespective of using any filter criteria, an administrator account can view the scan entries for all of its member accounts. However, each member account can view the scan entries only for their own account.
+    */
+  @js.native
+  trait FilterCriterion extends js.Object {
+    var CriterionKey: js.UndefOr[CriterionKey]
+    var FilterCondition: js.UndefOr[FilterCondition]
+  }
+
+  object FilterCriterion {
+    @inline
+    def apply(
+        CriterionKey: js.UndefOr[CriterionKey] = js.undefined,
+        FilterCondition: js.UndefOr[FilterCondition] = js.undefined
+    ): FilterCriterion = {
+      val __obj = js.Dynamic.literal()
+      CriterionKey.foreach(__v => __obj.updateDynamic("CriterionKey")(__v.asInstanceOf[js.Any]))
+      FilterCondition.foreach(__v => __obj.updateDynamic("FilterCondition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterCriterion]
     }
   }
 
@@ -1725,6 +2297,40 @@ package object guardduty {
       Lat.foreach(__v => __obj.updateDynamic("Lat")(__v.asInstanceOf[js.Any]))
       Lon.foreach(__v => __obj.updateDynamic("Lon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoLocation]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountRequest extends js.Object {
+    var DetectorId: DetectorId
+  }
+
+  object GetAdministratorAccountRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId
+    ): GetAdministratorAccountRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAdministratorAccountRequest]
+    }
+  }
+
+  @js.native
+  trait GetAdministratorAccountResponse extends js.Object {
+    var Administrator: Administrator
+  }
+
+  object GetAdministratorAccountResponse {
+    @inline
+    def apply(
+        Administrator: Administrator
+    ): GetAdministratorAccountResponse = {
+      val __obj = js.Dynamic.literal(
+        "Administrator" -> Administrator.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAdministratorAccountResponse]
     }
   }
 
@@ -1994,6 +2600,43 @@ package object guardduty {
   }
 
   @js.native
+  trait GetMalwareScanSettingsRequest extends js.Object {
+    var DetectorId: DetectorId
+  }
+
+  object GetMalwareScanSettingsRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId
+    ): GetMalwareScanSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMalwareScanSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait GetMalwareScanSettingsResponse extends js.Object {
+    var EbsSnapshotPreservation: js.UndefOr[EbsSnapshotPreservation]
+    var ScanResourceCriteria: js.UndefOr[ScanResourceCriteria]
+  }
+
+  object GetMalwareScanSettingsResponse {
+    @inline
+    def apply(
+        EbsSnapshotPreservation: js.UndefOr[EbsSnapshotPreservation] = js.undefined,
+        ScanResourceCriteria: js.UndefOr[ScanResourceCriteria] = js.undefined
+    ): GetMalwareScanSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      EbsSnapshotPreservation.foreach(__v => __obj.updateDynamic("EbsSnapshotPreservation")(__v.asInstanceOf[js.Any]))
+      ScanResourceCriteria.foreach(__v => __obj.updateDynamic("ScanResourceCriteria")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMalwareScanSettingsResponse]
+    }
+  }
+
+  @deprecated("This input is deprecated, use GetAdministratorAccountRequest instead", "forever")
+  @js.native
   trait GetMasterAccountRequest extends js.Object {
     var DetectorId: DetectorId
   }
@@ -2010,6 +2653,7 @@ package object guardduty {
     }
   }
 
+  @deprecated("This output is deprecated, use GetAdministratorAccountResponse instead", "forever")
   @js.native
   trait GetMasterAccountResponse extends js.Object {
     var Master: Master
@@ -2104,6 +2748,46 @@ package object guardduty {
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetMembersResponse]
+    }
+  }
+
+  @js.native
+  trait GetRemainingFreeTrialDaysRequest extends js.Object {
+    var DetectorId: DetectorId
+    var AccountIds: js.UndefOr[AccountIds]
+  }
+
+  object GetRemainingFreeTrialDaysRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId,
+        AccountIds: js.UndefOr[AccountIds] = js.undefined
+    ): GetRemainingFreeTrialDaysRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRemainingFreeTrialDaysRequest]
+    }
+  }
+
+  @js.native
+  trait GetRemainingFreeTrialDaysResponse extends js.Object {
+    var Accounts: js.UndefOr[AccountFreeTrialInfos]
+    var UnprocessedAccounts: js.UndefOr[UnprocessedAccounts]
+  }
+
+  object GetRemainingFreeTrialDaysResponse {
+    @inline
+    def apply(
+        Accounts: js.UndefOr[AccountFreeTrialInfos] = js.undefined,
+        UnprocessedAccounts: js.UndefOr[UnprocessedAccounts] = js.undefined
+    ): GetRemainingFreeTrialDaysResponse = {
+      val __obj = js.Dynamic.literal()
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRemainingFreeTrialDaysResponse]
     }
   }
 
@@ -2206,6 +2890,48 @@ package object guardduty {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       UsageStatistics.foreach(__v => __obj.updateDynamic("UsageStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUsageStatisticsResponse]
+    }
+  }
+
+  /** Contains details of the highest severity threat detected during scan and number of infected files.
+    */
+  @js.native
+  trait HighestSeverityThreatDetails extends js.Object {
+    var Count: js.UndefOr[Int]
+    var Severity: js.UndefOr[String]
+    var ThreatName: js.UndefOr[String]
+  }
+
+  object HighestSeverityThreatDetails {
+    @inline
+    def apply(
+        Count: js.UndefOr[Int] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined,
+        ThreatName: js.UndefOr[String] = js.undefined
+    ): HighestSeverityThreatDetails = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      ThreatName.foreach(__v => __obj.updateDynamic("ThreatName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HighestSeverityThreatDetails]
+    }
+  }
+
+  /** Represents a pre-existing file or directory on the host machine that the volume maps to.
+    */
+  @js.native
+  trait HostPath extends js.Object {
+    var Path: js.UndefOr[String]
+  }
+
+  object HostPath {
+    @inline
+    def apply(
+        Path: js.UndefOr[String] = js.undefined
+    ): HostPath = {
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HostPath]
     }
   }
 
@@ -2352,6 +3078,217 @@ package object guardduty {
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[InviteMembersResponse]
+    }
+  }
+
+  /** Information about the Kubernetes API call action described in this finding.
+    */
+  @js.native
+  trait KubernetesApiCallAction extends js.Object {
+    var Parameters: js.UndefOr[String]
+    var RemoteIpDetails: js.UndefOr[RemoteIpDetails]
+    var RequestUri: js.UndefOr[String]
+    var SourceIps: js.UndefOr[SourceIps]
+    var StatusCode: js.UndefOr[Int]
+    var UserAgent: js.UndefOr[String]
+    var Verb: js.UndefOr[String]
+  }
+
+  object KubernetesApiCallAction {
+    @inline
+    def apply(
+        Parameters: js.UndefOr[String] = js.undefined,
+        RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
+        RequestUri: js.UndefOr[String] = js.undefined,
+        SourceIps: js.UndefOr[SourceIps] = js.undefined,
+        StatusCode: js.UndefOr[Int] = js.undefined,
+        UserAgent: js.UndefOr[String] = js.undefined,
+        Verb: js.UndefOr[String] = js.undefined
+    ): KubernetesApiCallAction = {
+      val __obj = js.Dynamic.literal()
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      RequestUri.foreach(__v => __obj.updateDynamic("RequestUri")(__v.asInstanceOf[js.Any]))
+      SourceIps.foreach(__v => __obj.updateDynamic("SourceIps")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      UserAgent.foreach(__v => __obj.updateDynamic("UserAgent")(__v.asInstanceOf[js.Any]))
+      Verb.foreach(__v => __obj.updateDynamic("Verb")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesApiCallAction]
+    }
+  }
+
+  /** Describes whether Kubernetes audit logs are enabled as a data source.
+    */
+  @js.native
+  trait KubernetesAuditLogsConfiguration extends js.Object {
+    var Enable: Boolean
+  }
+
+  object KubernetesAuditLogsConfiguration {
+    @inline
+    def apply(
+        Enable: Boolean
+    ): KubernetesAuditLogsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Enable" -> Enable.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KubernetesAuditLogsConfiguration]
+    }
+  }
+
+  /** Describes whether Kubernetes audit logs are enabled as a data source.
+    */
+  @js.native
+  trait KubernetesAuditLogsConfigurationResult extends js.Object {
+    var Status: DataSourceStatus
+  }
+
+  object KubernetesAuditLogsConfigurationResult {
+    @inline
+    def apply(
+        Status: DataSourceStatus
+    ): KubernetesAuditLogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KubernetesAuditLogsConfigurationResult]
+    }
+  }
+
+  /** Describes whether any Kubernetes data sources are enabled.
+    */
+  @js.native
+  trait KubernetesConfiguration extends js.Object {
+    var AuditLogs: KubernetesAuditLogsConfiguration
+  }
+
+  object KubernetesConfiguration {
+    @inline
+    def apply(
+        AuditLogs: KubernetesAuditLogsConfiguration
+    ): KubernetesConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AuditLogs" -> AuditLogs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KubernetesConfiguration]
+    }
+  }
+
+  /** Describes whether any Kubernetes logs will be enabled as a data source.
+    */
+  @js.native
+  trait KubernetesConfigurationResult extends js.Object {
+    var AuditLogs: KubernetesAuditLogsConfigurationResult
+  }
+
+  object KubernetesConfigurationResult {
+    @inline
+    def apply(
+        AuditLogs: KubernetesAuditLogsConfigurationResult
+    ): KubernetesConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "AuditLogs" -> AuditLogs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[KubernetesConfigurationResult]
+    }
+  }
+
+  /** Provides details about the Kubernetes resources when it is enabled as a data source.
+    */
+  @js.native
+  trait KubernetesDataSourceFreeTrial extends js.Object {
+    var AuditLogs: js.UndefOr[DataSourceFreeTrial]
+  }
+
+  object KubernetesDataSourceFreeTrial {
+    @inline
+    def apply(
+        AuditLogs: js.UndefOr[DataSourceFreeTrial] = js.undefined
+    ): KubernetesDataSourceFreeTrial = {
+      val __obj = js.Dynamic.literal()
+      AuditLogs.foreach(__v => __obj.updateDynamic("AuditLogs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesDataSourceFreeTrial]
+    }
+  }
+
+  /** Details about Kubernetes resources such as a Kubernetes user or workload resource involved in a Kubernetes finding.
+    */
+  @js.native
+  trait KubernetesDetails extends js.Object {
+    var KubernetesUserDetails: js.UndefOr[KubernetesUserDetails]
+    var KubernetesWorkloadDetails: js.UndefOr[KubernetesWorkloadDetails]
+  }
+
+  object KubernetesDetails {
+    @inline
+    def apply(
+        KubernetesUserDetails: js.UndefOr[KubernetesUserDetails] = js.undefined,
+        KubernetesWorkloadDetails: js.UndefOr[KubernetesWorkloadDetails] = js.undefined
+    ): KubernetesDetails = {
+      val __obj = js.Dynamic.literal()
+      KubernetesUserDetails.foreach(__v => __obj.updateDynamic("KubernetesUserDetails")(__v.asInstanceOf[js.Any]))
+      KubernetesWorkloadDetails.foreach(__v => __obj.updateDynamic("KubernetesWorkloadDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesDetails]
+    }
+  }
+
+  /** Details about the Kubernetes user involved in a Kubernetes finding.
+    */
+  @js.native
+  trait KubernetesUserDetails extends js.Object {
+    var Groups: js.UndefOr[Groups]
+    var Uid: js.UndefOr[String]
+    var Username: js.UndefOr[String]
+  }
+
+  object KubernetesUserDetails {
+    @inline
+    def apply(
+        Groups: js.UndefOr[Groups] = js.undefined,
+        Uid: js.UndefOr[String] = js.undefined,
+        Username: js.UndefOr[String] = js.undefined
+    ): KubernetesUserDetails = {
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesUserDetails]
+    }
+  }
+
+  /** Details about the Kubernetes workload involved in a Kubernetes finding.
+    */
+  @js.native
+  trait KubernetesWorkloadDetails extends js.Object {
+    var Containers: js.UndefOr[Containers]
+    var HostNetwork: js.UndefOr[Boolean]
+    var Name: js.UndefOr[String]
+    var Namespace: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+    var Uid: js.UndefOr[String]
+    var Volumes: js.UndefOr[Volumes]
+  }
+
+  object KubernetesWorkloadDetails {
+    @inline
+    def apply(
+        Containers: js.UndefOr[Containers] = js.undefined,
+        HostNetwork: js.UndefOr[Boolean] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Namespace: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined,
+        Uid: js.UndefOr[String] = js.undefined,
+        Volumes: js.UndefOr[Volumes] = js.undefined
+    ): KubernetesWorkloadDetails = {
+      val __obj = js.Dynamic.literal()
+      Containers.foreach(__v => __obj.updateDynamic("Containers")(__v.asInstanceOf[js.Any]))
+      HostNetwork.foreach(__v => __obj.updateDynamic("HostNetwork")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
+      Volumes.foreach(__v => __obj.updateDynamic("Volumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KubernetesWorkloadDetails]
     }
   }
 
@@ -2820,6 +3757,63 @@ package object guardduty {
     }
   }
 
+  /** Describes whether Malware Protection will be enabled as a data source.
+    */
+  @js.native
+  trait MalwareProtectionConfiguration extends js.Object {
+    var ScanEc2InstanceWithFindings: js.UndefOr[ScanEc2InstanceWithFindings]
+  }
+
+  object MalwareProtectionConfiguration {
+    @inline
+    def apply(
+        ScanEc2InstanceWithFindings: js.UndefOr[ScanEc2InstanceWithFindings] = js.undefined
+    ): MalwareProtectionConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ScanEc2InstanceWithFindings.foreach(__v => __obj.updateDynamic("ScanEc2InstanceWithFindings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MalwareProtectionConfiguration]
+    }
+  }
+
+  /** An object that contains information on the status of all Malware Protection data sources.
+    */
+  @js.native
+  trait MalwareProtectionConfigurationResult extends js.Object {
+    var ScanEc2InstanceWithFindings: js.UndefOr[ScanEc2InstanceWithFindingsResult]
+    var ServiceRole: js.UndefOr[String]
+  }
+
+  object MalwareProtectionConfigurationResult {
+    @inline
+    def apply(
+        ScanEc2InstanceWithFindings: js.UndefOr[ScanEc2InstanceWithFindingsResult] = js.undefined,
+        ServiceRole: js.UndefOr[String] = js.undefined
+    ): MalwareProtectionConfigurationResult = {
+      val __obj = js.Dynamic.literal()
+      ScanEc2InstanceWithFindings.foreach(__v => __obj.updateDynamic("ScanEc2InstanceWithFindings")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MalwareProtectionConfigurationResult]
+    }
+  }
+
+  /** Provides details about Malware Protection when it is enabled as a data source.
+    */
+  @js.native
+  trait MalwareProtectionDataSourceFreeTrial extends js.Object {
+    var ScanEc2InstanceWithFindings: js.UndefOr[DataSourceFreeTrial]
+  }
+
+  object MalwareProtectionDataSourceFreeTrial {
+    @inline
+    def apply(
+        ScanEc2InstanceWithFindings: js.UndefOr[DataSourceFreeTrial] = js.undefined
+    ): MalwareProtectionDataSourceFreeTrial = {
+      val __obj = js.Dynamic.literal()
+      ScanEc2InstanceWithFindings.foreach(__v => __obj.updateDynamic("ScanEc2InstanceWithFindings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MalwareProtectionDataSourceFreeTrial]
+    }
+  }
+
   /** Contains information about the administrator account and invitation.
     */
   @js.native
@@ -2856,6 +3850,7 @@ package object guardduty {
     var MasterId: String
     var RelationshipStatus: String
     var UpdatedAt: String
+    var AdministratorId: js.UndefOr[String]
     var DetectorId: js.UndefOr[DetectorId]
     var InvitedAt: js.UndefOr[String]
   }
@@ -2868,6 +3863,7 @@ package object guardduty {
         MasterId: String,
         RelationshipStatus: String,
         UpdatedAt: String,
+        AdministratorId: js.UndefOr[String] = js.undefined,
         DetectorId: js.UndefOr[DetectorId] = js.undefined,
         InvitedAt: js.UndefOr[String] = js.undefined
     ): Member = {
@@ -2879,6 +3875,7 @@ package object guardduty {
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
       )
 
+      AdministratorId.foreach(__v => __obj.updateDynamic("AdministratorId")(__v.asInstanceOf[js.Any]))
       DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
       InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Member]
@@ -3019,15 +4016,21 @@ package object guardduty {
     */
   @js.native
   trait OrganizationDataSourceConfigurations extends js.Object {
+    var Kubernetes: js.UndefOr[OrganizationKubernetesConfiguration]
+    var MalwareProtection: js.UndefOr[OrganizationMalwareProtectionConfiguration]
     var S3Logs: js.UndefOr[OrganizationS3LogsConfiguration]
   }
 
   object OrganizationDataSourceConfigurations {
     @inline
     def apply(
+        Kubernetes: js.UndefOr[OrganizationKubernetesConfiguration] = js.undefined,
+        MalwareProtection: js.UndefOr[OrganizationMalwareProtectionConfiguration] = js.undefined,
         S3Logs: js.UndefOr[OrganizationS3LogsConfiguration] = js.undefined
     ): OrganizationDataSourceConfigurations = {
       val __obj = js.Dynamic.literal()
+      Kubernetes.foreach(__v => __obj.updateDynamic("Kubernetes")(__v.asInstanceOf[js.Any]))
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
       S3Logs.foreach(__v => __obj.updateDynamic("S3Logs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationDataSourceConfigurations]
     }
@@ -3038,17 +4041,172 @@ package object guardduty {
   @js.native
   trait OrganizationDataSourceConfigurationsResult extends js.Object {
     var S3Logs: OrganizationS3LogsConfigurationResult
+    var Kubernetes: js.UndefOr[OrganizationKubernetesConfigurationResult]
+    var MalwareProtection: js.UndefOr[OrganizationMalwareProtectionConfigurationResult]
   }
 
   object OrganizationDataSourceConfigurationsResult {
     @inline
     def apply(
-        S3Logs: OrganizationS3LogsConfigurationResult
+        S3Logs: OrganizationS3LogsConfigurationResult,
+        Kubernetes: js.UndefOr[OrganizationKubernetesConfigurationResult] = js.undefined,
+        MalwareProtection: js.UndefOr[OrganizationMalwareProtectionConfigurationResult] = js.undefined
     ): OrganizationDataSourceConfigurationsResult = {
       val __obj = js.Dynamic.literal(
         "S3Logs" -> S3Logs.asInstanceOf[js.Any]
       )
+
+      Kubernetes.foreach(__v => __obj.updateDynamic("Kubernetes")(__v.asInstanceOf[js.Any]))
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationDataSourceConfigurationsResult]
+    }
+  }
+
+  /** Organization-wide EBS volumes scan configuration.
+    */
+  @js.native
+  trait OrganizationEbsVolumes extends js.Object {
+    var AutoEnable: js.UndefOr[Boolean]
+  }
+
+  object OrganizationEbsVolumes {
+    @inline
+    def apply(
+        AutoEnable: js.UndefOr[Boolean] = js.undefined
+    ): OrganizationEbsVolumes = {
+      val __obj = js.Dynamic.literal()
+      AutoEnable.foreach(__v => __obj.updateDynamic("AutoEnable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEbsVolumes]
+    }
+  }
+
+  /** An object that contains information on the status of whether EBS volumes scanning will be enabled as a data source for an organization.
+    */
+  @js.native
+  trait OrganizationEbsVolumesResult extends js.Object {
+    var AutoEnable: js.UndefOr[Boolean]
+  }
+
+  object OrganizationEbsVolumesResult {
+    @inline
+    def apply(
+        AutoEnable: js.UndefOr[Boolean] = js.undefined
+    ): OrganizationEbsVolumesResult = {
+      val __obj = js.Dynamic.literal()
+      AutoEnable.foreach(__v => __obj.updateDynamic("AutoEnable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationEbsVolumesResult]
+    }
+  }
+
+  /** Organization-wide Kubernetes audit logs configuration.
+    */
+  @js.native
+  trait OrganizationKubernetesAuditLogsConfiguration extends js.Object {
+    var AutoEnable: Boolean
+  }
+
+  object OrganizationKubernetesAuditLogsConfiguration {
+    @inline
+    def apply(
+        AutoEnable: Boolean
+    ): OrganizationKubernetesAuditLogsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OrganizationKubernetesAuditLogsConfiguration]
+    }
+  }
+
+  /** The current configuration of Kubernetes audit logs as a data source for the organization.
+    */
+  @js.native
+  trait OrganizationKubernetesAuditLogsConfigurationResult extends js.Object {
+    var AutoEnable: Boolean
+  }
+
+  object OrganizationKubernetesAuditLogsConfigurationResult {
+    @inline
+    def apply(
+        AutoEnable: Boolean
+    ): OrganizationKubernetesAuditLogsConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OrganizationKubernetesAuditLogsConfigurationResult]
+    }
+  }
+
+  /** Organization-wide Kubernetes data sources configurations.
+    */
+  @js.native
+  trait OrganizationKubernetesConfiguration extends js.Object {
+    var AuditLogs: OrganizationKubernetesAuditLogsConfiguration
+  }
+
+  object OrganizationKubernetesConfiguration {
+    @inline
+    def apply(
+        AuditLogs: OrganizationKubernetesAuditLogsConfiguration
+    ): OrganizationKubernetesConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AuditLogs" -> AuditLogs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OrganizationKubernetesConfiguration]
+    }
+  }
+
+  /** The current configuration of all Kubernetes data sources for the organization.
+    */
+  @js.native
+  trait OrganizationKubernetesConfigurationResult extends js.Object {
+    var AuditLogs: OrganizationKubernetesAuditLogsConfigurationResult
+  }
+
+  object OrganizationKubernetesConfigurationResult {
+    @inline
+    def apply(
+        AuditLogs: OrganizationKubernetesAuditLogsConfigurationResult
+    ): OrganizationKubernetesConfigurationResult = {
+      val __obj = js.Dynamic.literal(
+        "AuditLogs" -> AuditLogs.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OrganizationKubernetesConfigurationResult]
+    }
+  }
+
+  /** Organization-wide Malware Protection configurations.
+    */
+  @js.native
+  trait OrganizationMalwareProtectionConfiguration extends js.Object {
+    var ScanEc2InstanceWithFindings: js.UndefOr[OrganizationScanEc2InstanceWithFindings]
+  }
+
+  object OrganizationMalwareProtectionConfiguration {
+    @inline
+    def apply(
+        ScanEc2InstanceWithFindings: js.UndefOr[OrganizationScanEc2InstanceWithFindings] = js.undefined
+    ): OrganizationMalwareProtectionConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ScanEc2InstanceWithFindings.foreach(__v => __obj.updateDynamic("ScanEc2InstanceWithFindings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationMalwareProtectionConfiguration]
+    }
+  }
+
+  /** An object that contains information on the status of all Malware Protection data source for an organization.
+    */
+  @js.native
+  trait OrganizationMalwareProtectionConfigurationResult extends js.Object {
+    var ScanEc2InstanceWithFindings: js.UndefOr[OrganizationScanEc2InstanceWithFindingsResult]
+  }
+
+  object OrganizationMalwareProtectionConfigurationResult {
+    @inline
+    def apply(
+        ScanEc2InstanceWithFindings: js.UndefOr[OrganizationScanEc2InstanceWithFindingsResult] = js.undefined
+    ): OrganizationMalwareProtectionConfigurationResult = {
+      val __obj = js.Dynamic.literal()
+      ScanEc2InstanceWithFindings.foreach(__v => __obj.updateDynamic("ScanEc2InstanceWithFindings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationMalwareProtectionConfigurationResult]
     }
   }
 
@@ -3087,6 +4245,42 @@ package object guardduty {
         "AutoEnable" -> AutoEnable.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[OrganizationS3LogsConfigurationResult]
+    }
+  }
+
+  /** Organization-wide EC2 instances with findings scan configuration.
+    */
+  @js.native
+  trait OrganizationScanEc2InstanceWithFindings extends js.Object {
+    var EbsVolumes: js.UndefOr[OrganizationEbsVolumes]
+  }
+
+  object OrganizationScanEc2InstanceWithFindings {
+    @inline
+    def apply(
+        EbsVolumes: js.UndefOr[OrganizationEbsVolumes] = js.undefined
+    ): OrganizationScanEc2InstanceWithFindings = {
+      val __obj = js.Dynamic.literal()
+      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationScanEc2InstanceWithFindings]
+    }
+  }
+
+  /** An object that contains information on the status of scanning EC2 instances with findings for an organization.
+    */
+  @js.native
+  trait OrganizationScanEc2InstanceWithFindingsResult extends js.Object {
+    var EbsVolumes: js.UndefOr[OrganizationEbsVolumesResult]
+  }
+
+  object OrganizationScanEc2InstanceWithFindingsResult {
+    @inline
+    def apply(
+        EbsVolumes: js.UndefOr[OrganizationEbsVolumesResult] = js.undefined
+    ): OrganizationScanEc2InstanceWithFindingsResult = {
+      val __obj = js.Dynamic.literal()
+      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationScanEc2InstanceWithFindingsResult]
     }
   }
 
@@ -3237,6 +4431,27 @@ package object guardduty {
     }
   }
 
+  /** Contains details about the remote Amazon Web Services account that made the API call.
+    */
+  @js.native
+  trait RemoteAccountDetails extends js.Object {
+    var AccountId: js.UndefOr[String]
+    var Affiliated: js.UndefOr[Boolean]
+  }
+
+  object RemoteAccountDetails {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        Affiliated: js.UndefOr[Boolean] = js.undefined
+    ): RemoteAccountDetails = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Affiliated.foreach(__v => __obj.updateDynamic("Affiliated")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoteAccountDetails]
+    }
+  }
+
   /** Contains information about the remote IP address of the connection.
     */
   @js.native
@@ -3288,12 +4503,17 @@ package object guardduty {
     }
   }
 
-  /** Contains information about the AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+  /** Contains information about the Amazon Web Services resource associated with the activity that prompted GuardDuty to generate a finding.
     */
   @js.native
   trait Resource extends js.Object {
     var AccessKeyDetails: js.UndefOr[AccessKeyDetails]
+    var ContainerDetails: js.UndefOr[Container]
+    var EbsVolumeDetails: js.UndefOr[EbsVolumeDetails]
+    var EcsClusterDetails: js.UndefOr[EcsClusterDetails]
+    var EksClusterDetails: js.UndefOr[EksClusterDetails]
     var InstanceDetails: js.UndefOr[InstanceDetails]
+    var KubernetesDetails: js.UndefOr[KubernetesDetails]
     var ResourceType: js.UndefOr[String]
     var S3BucketDetails: js.UndefOr[S3BucketDetails]
   }
@@ -3302,16 +4522,44 @@ package object guardduty {
     @inline
     def apply(
         AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
+        ContainerDetails: js.UndefOr[Container] = js.undefined,
+        EbsVolumeDetails: js.UndefOr[EbsVolumeDetails] = js.undefined,
+        EcsClusterDetails: js.UndefOr[EcsClusterDetails] = js.undefined,
+        EksClusterDetails: js.UndefOr[EksClusterDetails] = js.undefined,
         InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
+        KubernetesDetails: js.UndefOr[KubernetesDetails] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined,
         S3BucketDetails: js.UndefOr[S3BucketDetails] = js.undefined
     ): Resource = {
       val __obj = js.Dynamic.literal()
       AccessKeyDetails.foreach(__v => __obj.updateDynamic("AccessKeyDetails")(__v.asInstanceOf[js.Any]))
+      ContainerDetails.foreach(__v => __obj.updateDynamic("ContainerDetails")(__v.asInstanceOf[js.Any]))
+      EbsVolumeDetails.foreach(__v => __obj.updateDynamic("EbsVolumeDetails")(__v.asInstanceOf[js.Any]))
+      EcsClusterDetails.foreach(__v => __obj.updateDynamic("EcsClusterDetails")(__v.asInstanceOf[js.Any]))
+      EksClusterDetails.foreach(__v => __obj.updateDynamic("EksClusterDetails")(__v.asInstanceOf[js.Any]))
       InstanceDetails.foreach(__v => __obj.updateDynamic("InstanceDetails")(__v.asInstanceOf[js.Any]))
+      KubernetesDetails.foreach(__v => __obj.updateDynamic("KubernetesDetails")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       S3BucketDetails.foreach(__v => __obj.updateDynamic("S3BucketDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
+    }
+  }
+
+  /** Represents the resources that were scanned in the scan entry.
+    */
+  @js.native
+  trait ResourceDetails extends js.Object {
+    var InstanceArn: js.UndefOr[InstanceArn]
+  }
+
+  object ResourceDetails {
+    @inline
+    def apply(
+        InstanceArn: js.UndefOr[InstanceArn] = js.undefined
+    ): ResourceDetails = {
+      val __obj = js.Dynamic.literal()
+      InstanceArn.foreach(__v => __obj.updateDynamic("InstanceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDetails]
     }
   }
 
@@ -3392,6 +4640,303 @@ package object guardduty {
     }
   }
 
+  /** Contains information about a malware scan.
+    */
+  @js.native
+  trait Scan extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var AdminDetectorId: js.UndefOr[DetectorId]
+    var AttachedVolumes: js.UndefOr[VolumeDetails]
+    var DetectorId: js.UndefOr[DetectorId]
+    var FailureReason: js.UndefOr[NonEmptyString]
+    var FileCount: js.UndefOr[PositiveLong]
+    var ResourceDetails: js.UndefOr[ResourceDetails]
+    var ScanEndTime: js.UndefOr[Timestamp]
+    var ScanId: js.UndefOr[NonEmptyString]
+    var ScanResultDetails: js.UndefOr[ScanResultDetails]
+    var ScanStartTime: js.UndefOr[Timestamp]
+    var ScanStatus: js.UndefOr[ScanStatus]
+    var TotalBytes: js.UndefOr[PositiveLong]
+    var TriggerDetails: js.UndefOr[TriggerDetails]
+  }
+
+  object Scan {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        AdminDetectorId: js.UndefOr[DetectorId] = js.undefined,
+        AttachedVolumes: js.UndefOr[VolumeDetails] = js.undefined,
+        DetectorId: js.UndefOr[DetectorId] = js.undefined,
+        FailureReason: js.UndefOr[NonEmptyString] = js.undefined,
+        FileCount: js.UndefOr[PositiveLong] = js.undefined,
+        ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined,
+        ScanEndTime: js.UndefOr[Timestamp] = js.undefined,
+        ScanId: js.UndefOr[NonEmptyString] = js.undefined,
+        ScanResultDetails: js.UndefOr[ScanResultDetails] = js.undefined,
+        ScanStartTime: js.UndefOr[Timestamp] = js.undefined,
+        ScanStatus: js.UndefOr[ScanStatus] = js.undefined,
+        TotalBytes: js.UndefOr[PositiveLong] = js.undefined,
+        TriggerDetails: js.UndefOr[TriggerDetails] = js.undefined
+    ): Scan = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      AdminDetectorId.foreach(__v => __obj.updateDynamic("AdminDetectorId")(__v.asInstanceOf[js.Any]))
+      AttachedVolumes.foreach(__v => __obj.updateDynamic("AttachedVolumes")(__v.asInstanceOf[js.Any]))
+      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      FileCount.foreach(__v => __obj.updateDynamic("FileCount")(__v.asInstanceOf[js.Any]))
+      ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
+      ScanEndTime.foreach(__v => __obj.updateDynamic("ScanEndTime")(__v.asInstanceOf[js.Any]))
+      ScanId.foreach(__v => __obj.updateDynamic("ScanId")(__v.asInstanceOf[js.Any]))
+      ScanResultDetails.foreach(__v => __obj.updateDynamic("ScanResultDetails")(__v.asInstanceOf[js.Any]))
+      ScanStartTime.foreach(__v => __obj.updateDynamic("ScanStartTime")(__v.asInstanceOf[js.Any]))
+      ScanStatus.foreach(__v => __obj.updateDynamic("ScanStatus")(__v.asInstanceOf[js.Any]))
+      TotalBytes.foreach(__v => __obj.updateDynamic("TotalBytes")(__v.asInstanceOf[js.Any]))
+      TriggerDetails.foreach(__v => __obj.updateDynamic("TriggerDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scan]
+    }
+  }
+
+  /** Contains information about the condition.
+    */
+  @js.native
+  trait ScanCondition extends js.Object {
+    var MapEquals: MapEquals
+  }
+
+  object ScanCondition {
+    @inline
+    def apply(
+        MapEquals: MapEquals
+    ): ScanCondition = {
+      val __obj = js.Dynamic.literal(
+        "MapEquals" -> MapEquals.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ScanCondition]
+    }
+  }
+
+  /** Represents key, value pair to be matched against given resource property.
+    */
+  @js.native
+  trait ScanConditionPair extends js.Object {
+    var Key: TagKey
+    var Value: js.UndefOr[TagValue]
+  }
+
+  object ScanConditionPair {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: js.UndefOr[TagValue] = js.undefined
+    ): ScanConditionPair = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any]
+      )
+
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanConditionPair]
+    }
+  }
+
+  /** Contains a complete view providing malware scan result details.
+    */
+  @js.native
+  trait ScanDetections extends js.Object {
+    var HighestSeverityThreatDetails: js.UndefOr[HighestSeverityThreatDetails]
+    var ScannedItemCount: js.UndefOr[ScannedItemCount]
+    var ThreatDetectedByName: js.UndefOr[ThreatDetectedByName]
+    var ThreatsDetectedItemCount: js.UndefOr[ThreatsDetectedItemCount]
+  }
+
+  object ScanDetections {
+    @inline
+    def apply(
+        HighestSeverityThreatDetails: js.UndefOr[HighestSeverityThreatDetails] = js.undefined,
+        ScannedItemCount: js.UndefOr[ScannedItemCount] = js.undefined,
+        ThreatDetectedByName: js.UndefOr[ThreatDetectedByName] = js.undefined,
+        ThreatsDetectedItemCount: js.UndefOr[ThreatsDetectedItemCount] = js.undefined
+    ): ScanDetections = {
+      val __obj = js.Dynamic.literal()
+      HighestSeverityThreatDetails.foreach(__v => __obj.updateDynamic("HighestSeverityThreatDetails")(__v.asInstanceOf[js.Any]))
+      ScannedItemCount.foreach(__v => __obj.updateDynamic("ScannedItemCount")(__v.asInstanceOf[js.Any]))
+      ThreatDetectedByName.foreach(__v => __obj.updateDynamic("ThreatDetectedByName")(__v.asInstanceOf[js.Any]))
+      ThreatsDetectedItemCount.foreach(__v => __obj.updateDynamic("ThreatsDetectedItemCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanDetections]
+    }
+  }
+
+  /** Describes whether Malware Protection for EC2 instances with findings will be enabled as a data source.
+    */
+  @js.native
+  trait ScanEc2InstanceWithFindings extends js.Object {
+    var EbsVolumes: js.UndefOr[Boolean]
+  }
+
+  object ScanEc2InstanceWithFindings {
+    @inline
+    def apply(
+        EbsVolumes: js.UndefOr[Boolean] = js.undefined
+    ): ScanEc2InstanceWithFindings = {
+      val __obj = js.Dynamic.literal()
+      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanEc2InstanceWithFindings]
+    }
+  }
+
+  /** An object that contains information on the status of whether Malware Protection for EC2 instances with findings will be enabled as a data source.
+    */
+  @js.native
+  trait ScanEc2InstanceWithFindingsResult extends js.Object {
+    var EbsVolumes: js.UndefOr[EbsVolumesResult]
+  }
+
+  object ScanEc2InstanceWithFindingsResult {
+    @inline
+    def apply(
+        EbsVolumes: js.UndefOr[EbsVolumesResult] = js.undefined
+    ): ScanEc2InstanceWithFindingsResult = {
+      val __obj = js.Dynamic.literal()
+      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanEc2InstanceWithFindingsResult]
+    }
+  }
+
+  /** Contains details of infected file including name, file path and hash.
+    */
+  @js.native
+  trait ScanFilePath extends js.Object {
+    var FileName: js.UndefOr[String]
+    var FilePath: js.UndefOr[String]
+    var Hash: js.UndefOr[String]
+    var VolumeArn: js.UndefOr[String]
+  }
+
+  object ScanFilePath {
+    @inline
+    def apply(
+        FileName: js.UndefOr[String] = js.undefined,
+        FilePath: js.UndefOr[String] = js.undefined,
+        Hash: js.UndefOr[String] = js.undefined,
+        VolumeArn: js.UndefOr[String] = js.undefined
+    ): ScanFilePath = {
+      val __obj = js.Dynamic.literal()
+      FileName.foreach(__v => __obj.updateDynamic("FileName")(__v.asInstanceOf[js.Any]))
+      FilePath.foreach(__v => __obj.updateDynamic("FilePath")(__v.asInstanceOf[js.Any]))
+      Hash.foreach(__v => __obj.updateDynamic("Hash")(__v.asInstanceOf[js.Any]))
+      VolumeArn.foreach(__v => __obj.updateDynamic("VolumeArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanFilePath]
+    }
+  }
+
+  /** Contains information about criteria used to filter resources before triggering malware scan.
+    */
+  @js.native
+  trait ScanResourceCriteria extends js.Object {
+    var Exclude: js.UndefOr[ScanCriterion]
+    var Include: js.UndefOr[ScanCriterion]
+  }
+
+  object ScanResourceCriteria {
+    @inline
+    def apply(
+        Exclude: js.UndefOr[ScanCriterion] = js.undefined,
+        Include: js.UndefOr[ScanCriterion] = js.undefined
+    ): ScanResourceCriteria = {
+      val __obj = js.Dynamic.literal()
+      Exclude.foreach(__v => __obj.updateDynamic("Exclude")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanResourceCriteria]
+    }
+  }
+
+  /** Represents the result of the scan.
+    */
+  @js.native
+  trait ScanResultDetails extends js.Object {
+    var ScanResult: js.UndefOr[ScanResult]
+  }
+
+  object ScanResultDetails {
+    @inline
+    def apply(
+        ScanResult: js.UndefOr[ScanResult] = js.undefined
+    ): ScanResultDetails = {
+      val __obj = js.Dynamic.literal()
+      ScanResult.foreach(__v => __obj.updateDynamic("ScanResult")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanResultDetails]
+    }
+  }
+
+  /** Contains files infected with the given threat providing details of malware name and severity.
+    */
+  @js.native
+  trait ScanThreatName extends js.Object {
+    var FilePaths: js.UndefOr[FilePaths]
+    var ItemCount: js.UndefOr[Int]
+    var Name: js.UndefOr[String]
+    var Severity: js.UndefOr[String]
+  }
+
+  object ScanThreatName {
+    @inline
+    def apply(
+        FilePaths: js.UndefOr[FilePaths] = js.undefined,
+        ItemCount: js.UndefOr[Int] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        Severity: js.UndefOr[String] = js.undefined
+    ): ScanThreatName = {
+      val __obj = js.Dynamic.literal()
+      FilePaths.foreach(__v => __obj.updateDynamic("FilePaths")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScanThreatName]
+    }
+  }
+
+  /** Total number of scanned files.
+    */
+  @js.native
+  trait ScannedItemCount extends js.Object {
+    var Files: js.UndefOr[Int]
+    var TotalGb: js.UndefOr[Int]
+    var Volumes: js.UndefOr[Int]
+  }
+
+  object ScannedItemCount {
+    @inline
+    def apply(
+        Files: js.UndefOr[Int] = js.undefined,
+        TotalGb: js.UndefOr[Int] = js.undefined,
+        Volumes: js.UndefOr[Int] = js.undefined
+    ): ScannedItemCount = {
+      val __obj = js.Dynamic.literal()
+      Files.foreach(__v => __obj.updateDynamic("Files")(__v.asInstanceOf[js.Any]))
+      TotalGb.foreach(__v => __obj.updateDynamic("TotalGb")(__v.asInstanceOf[js.Any]))
+      Volumes.foreach(__v => __obj.updateDynamic("Volumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScannedItemCount]
+    }
+  }
+
+  /** Container security context.
+    */
+  @js.native
+  trait SecurityContext extends js.Object {
+    var Privileged: js.UndefOr[Boolean]
+  }
+
+  object SecurityContext {
+    @inline
+    def apply(
+        Privileged: js.UndefOr[Boolean] = js.undefined
+    ): SecurityContext = {
+      val __obj = js.Dynamic.literal()
+      Privileged.foreach(__v => __obj.updateDynamic("Privileged")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecurityContext]
+    }
+  }
+
   /** Contains information about the security groups associated with the EC2 instance.
     */
   @js.native
@@ -3418,12 +4963,15 @@ package object guardduty {
   @js.native
   trait Service extends js.Object {
     var Action: js.UndefOr[Action]
+    var AdditionalInfo: js.UndefOr[ServiceAdditionalInfo]
     var Archived: js.UndefOr[Boolean]
     var Count: js.UndefOr[Int]
     var DetectorId: js.UndefOr[DetectorId]
+    var EbsVolumeScanDetails: js.UndefOr[EbsVolumeScanDetails]
     var EventFirstSeen: js.UndefOr[String]
     var EventLastSeen: js.UndefOr[String]
     var Evidence: js.UndefOr[Evidence]
+    var FeatureName: js.UndefOr[String]
     var ResourceRole: js.UndefOr[String]
     var ServiceName: js.UndefOr[String]
     var UserFeedback: js.UndefOr[String]
@@ -3433,28 +4981,55 @@ package object guardduty {
     @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
+        AdditionalInfo: js.UndefOr[ServiceAdditionalInfo] = js.undefined,
         Archived: js.UndefOr[Boolean] = js.undefined,
         Count: js.UndefOr[Int] = js.undefined,
         DetectorId: js.UndefOr[DetectorId] = js.undefined,
+        EbsVolumeScanDetails: js.UndefOr[EbsVolumeScanDetails] = js.undefined,
         EventFirstSeen: js.UndefOr[String] = js.undefined,
         EventLastSeen: js.UndefOr[String] = js.undefined,
         Evidence: js.UndefOr[Evidence] = js.undefined,
+        FeatureName: js.UndefOr[String] = js.undefined,
         ResourceRole: js.UndefOr[String] = js.undefined,
         ServiceName: js.UndefOr[String] = js.undefined,
         UserFeedback: js.UndefOr[String] = js.undefined
     ): Service = {
       val __obj = js.Dynamic.literal()
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       Archived.foreach(__v => __obj.updateDynamic("Archived")(__v.asInstanceOf[js.Any]))
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
+      EbsVolumeScanDetails.foreach(__v => __obj.updateDynamic("EbsVolumeScanDetails")(__v.asInstanceOf[js.Any]))
       EventFirstSeen.foreach(__v => __obj.updateDynamic("EventFirstSeen")(__v.asInstanceOf[js.Any]))
       EventLastSeen.foreach(__v => __obj.updateDynamic("EventLastSeen")(__v.asInstanceOf[js.Any]))
       Evidence.foreach(__v => __obj.updateDynamic("Evidence")(__v.asInstanceOf[js.Any]))
+      FeatureName.foreach(__v => __obj.updateDynamic("FeatureName")(__v.asInstanceOf[js.Any]))
       ResourceRole.foreach(__v => __obj.updateDynamic("ResourceRole")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       UserFeedback.foreach(__v => __obj.updateDynamic("UserFeedback")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
+    }
+  }
+
+  /** Additional information about the generated finding.
+    */
+  @js.native
+  trait ServiceAdditionalInfo extends js.Object {
+    var Type: js.UndefOr[String]
+    var Value: js.UndefOr[String]
+  }
+
+  object ServiceAdditionalInfo {
+    @inline
+    def apply(
+        Type: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): ServiceAdditionalInfo = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceAdditionalInfo]
     }
   }
 
@@ -3605,6 +5180,33 @@ package object guardduty {
     }
   }
 
+  /** Contains details about identified threats organized by threat name.
+    */
+  @js.native
+  trait ThreatDetectedByName extends js.Object {
+    var ItemCount: js.UndefOr[Int]
+    var Shortened: js.UndefOr[Boolean]
+    var ThreatNames: js.UndefOr[ScanThreatNames]
+    var UniqueThreatNameCount: js.UndefOr[Int]
+  }
+
+  object ThreatDetectedByName {
+    @inline
+    def apply(
+        ItemCount: js.UndefOr[Int] = js.undefined,
+        Shortened: js.UndefOr[Boolean] = js.undefined,
+        ThreatNames: js.UndefOr[ScanThreatNames] = js.undefined,
+        UniqueThreatNameCount: js.UndefOr[Int] = js.undefined
+    ): ThreatDetectedByName = {
+      val __obj = js.Dynamic.literal()
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      Shortened.foreach(__v => __obj.updateDynamic("Shortened")(__v.asInstanceOf[js.Any]))
+      ThreatNames.foreach(__v => __obj.updateDynamic("ThreatNames")(__v.asInstanceOf[js.Any]))
+      UniqueThreatNameCount.foreach(__v => __obj.updateDynamic("UniqueThreatNameCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThreatDetectedByName]
+    }
+  }
+
   /** An instance of a threat intelligence detail that constitutes evidence for the finding.
     */
   @js.native
@@ -3626,6 +5228,24 @@ package object guardduty {
     }
   }
 
+  /** Contains total number of infected files.
+    */
+  @js.native
+  trait ThreatsDetectedItemCount extends js.Object {
+    var Files: js.UndefOr[Int]
+  }
+
+  object ThreatsDetectedItemCount {
+    @inline
+    def apply(
+        Files: js.UndefOr[Int] = js.undefined
+    ): ThreatsDetectedItemCount = {
+      val __obj = js.Dynamic.literal()
+      Files.foreach(__v => __obj.updateDynamic("Files")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThreatsDetectedItemCount]
+    }
+  }
+
   /** Contains the total usage with the corresponding currency unit for that value.
     */
   @js.native
@@ -3644,6 +5264,27 @@ package object guardduty {
       Amount.foreach(__v => __obj.updateDynamic("Amount")(__v.asInstanceOf[js.Any]))
       Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Total]
+    }
+  }
+
+  /** Represents the reason the scan was triggered.
+    */
+  @js.native
+  trait TriggerDetails extends js.Object {
+    var Description: js.UndefOr[NonEmptyString]
+    var GuardDutyFindingId: js.UndefOr[NonEmptyString]
+  }
+
+  object TriggerDetails {
+    @inline
+    def apply(
+        Description: js.UndefOr[NonEmptyString] = js.undefined,
+        GuardDutyFindingId: js.UndefOr[NonEmptyString] = js.undefined
+    ): TriggerDetails = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GuardDutyFindingId.foreach(__v => __obj.updateDynamic("GuardDutyFindingId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TriggerDetails]
     }
   }
 
@@ -3697,6 +5338,24 @@ package object guardduty {
         "Result" -> Result.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UnprocessedAccount]
+    }
+  }
+
+  /** Specifies the names of the data sources that couldn't be enabled.
+    */
+  @js.native
+  trait UnprocessedDataSourcesResult extends js.Object {
+    var MalwareProtection: js.UndefOr[MalwareProtectionConfigurationResult]
+  }
+
+  object UnprocessedDataSourcesResult {
+    @inline
+    def apply(
+        MalwareProtection: js.UndefOr[MalwareProtectionConfigurationResult] = js.undefined
+    ): UnprocessedDataSourcesResult = {
+      val __obj = js.Dynamic.literal()
+      MalwareProtection.foreach(__v => __obj.updateDynamic("MalwareProtection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnprocessedDataSourcesResult]
     }
   }
 
@@ -3895,6 +5554,41 @@ package object guardduty {
     def apply(): UpdateIPSetResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateIPSetResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateMalwareScanSettingsRequest extends js.Object {
+    var DetectorId: DetectorId
+    var EbsSnapshotPreservation: js.UndefOr[EbsSnapshotPreservation]
+    var ScanResourceCriteria: js.UndefOr[ScanResourceCriteria]
+  }
+
+  object UpdateMalwareScanSettingsRequest {
+    @inline
+    def apply(
+        DetectorId: DetectorId,
+        EbsSnapshotPreservation: js.UndefOr[EbsSnapshotPreservation] = js.undefined,
+        ScanResourceCriteria: js.UndefOr[ScanResourceCriteria] = js.undefined
+    ): UpdateMalwareScanSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DetectorId" -> DetectorId.asInstanceOf[js.Any]
+      )
+
+      EbsSnapshotPreservation.foreach(__v => __obj.updateDynamic("EbsSnapshotPreservation")(__v.asInstanceOf[js.Any]))
+      ScanResourceCriteria.foreach(__v => __obj.updateDynamic("ScanResourceCriteria")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMalwareScanSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMalwareScanSettingsResponse extends js.Object
+
+  object UpdateMalwareScanSettingsResponse {
+    @inline
+    def apply(): UpdateMalwareScanSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateMalwareScanSettingsResponse]
     }
   }
 
@@ -4118,7 +5812,7 @@ package object guardduty {
     }
   }
 
-  /** Contains information on the sum of usage based on an AWS resource.
+  /** Contains information on the sum of usage based on an Amazon Web Services resource.
     */
   @js.native
   trait UsageResourceResult extends js.Object {
@@ -4163,6 +5857,84 @@ package object guardduty {
       SumByResource.foreach(__v => __obj.updateDynamic("SumByResource")(__v.asInstanceOf[js.Any]))
       TopResources.foreach(__v => __obj.updateDynamic("TopResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UsageStatistics]
+    }
+  }
+
+  /** Volume used by the Kubernetes workload.
+    */
+  @js.native
+  trait Volume extends js.Object {
+    var HostPath: js.UndefOr[HostPath]
+    var Name: js.UndefOr[String]
+  }
+
+  object Volume {
+    @inline
+    def apply(
+        HostPath: js.UndefOr[HostPath] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): Volume = {
+      val __obj = js.Dynamic.literal()
+      HostPath.foreach(__v => __obj.updateDynamic("HostPath")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Volume]
+    }
+  }
+
+  /** Contains EBS volume details.
+    */
+  @js.native
+  trait VolumeDetail extends js.Object {
+    var DeviceName: js.UndefOr[String]
+    var EncryptionType: js.UndefOr[String]
+    var KmsKeyArn: js.UndefOr[String]
+    var SnapshotArn: js.UndefOr[String]
+    var VolumeArn: js.UndefOr[String]
+    var VolumeSizeInGB: js.UndefOr[Int]
+    var VolumeType: js.UndefOr[String]
+  }
+
+  object VolumeDetail {
+    @inline
+    def apply(
+        DeviceName: js.UndefOr[String] = js.undefined,
+        EncryptionType: js.UndefOr[String] = js.undefined,
+        KmsKeyArn: js.UndefOr[String] = js.undefined,
+        SnapshotArn: js.UndefOr[String] = js.undefined,
+        VolumeArn: js.UndefOr[String] = js.undefined,
+        VolumeSizeInGB: js.UndefOr[Int] = js.undefined,
+        VolumeType: js.UndefOr[String] = js.undefined
+    ): VolumeDetail = {
+      val __obj = js.Dynamic.literal()
+      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
+      EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      SnapshotArn.foreach(__v => __obj.updateDynamic("SnapshotArn")(__v.asInstanceOf[js.Any]))
+      VolumeArn.foreach(__v => __obj.updateDynamic("VolumeArn")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInGB.foreach(__v => __obj.updateDynamic("VolumeSizeInGB")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeDetail]
+    }
+  }
+
+  /** Container volume mount.
+    */
+  @js.native
+  trait VolumeMount extends js.Object {
+    var MountPath: js.UndefOr[String]
+    var Name: js.UndefOr[String]
+  }
+
+  object VolumeMount {
+    @inline
+    def apply(
+        MountPath: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined
+    ): VolumeMount = {
+      val __obj = js.Dynamic.literal()
+      MountPath.foreach(__v => __obj.updateDynamic("MountPath")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VolumeMount]
     }
   }
 }

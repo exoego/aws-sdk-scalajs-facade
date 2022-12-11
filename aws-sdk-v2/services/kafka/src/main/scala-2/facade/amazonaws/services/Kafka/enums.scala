@@ -95,3 +95,14 @@ object NodeType {
 
   @inline def values: js.Array[NodeType] = js.Array(BROKER)
 }
+
+/** Controls storage mode for various supported storage tiers.
+  */
+@js.native
+sealed trait StorageMode extends js.Any
+object StorageMode {
+  val LOCAL = "LOCAL".asInstanceOf[StorageMode]
+  val TIERED = "TIERED".asInstanceOf[StorageMode]
+
+  @inline def values: js.Array[StorageMode] = js.Array(LOCAL, TIERED)
+}

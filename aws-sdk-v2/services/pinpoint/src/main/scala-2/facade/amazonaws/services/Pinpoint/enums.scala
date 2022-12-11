@@ -81,6 +81,20 @@ object ChannelType {
 }
 
 @js.native
+sealed trait DayOfWeek extends js.Any
+object DayOfWeek {
+  val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
+  val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
+  val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
+  val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
+  val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
+  val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
+  val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
+
+  @inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+}
+
+@js.native
 sealed trait DeliveryStatus extends js.Any
 object DeliveryStatus {
   val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DeliveryStatus]

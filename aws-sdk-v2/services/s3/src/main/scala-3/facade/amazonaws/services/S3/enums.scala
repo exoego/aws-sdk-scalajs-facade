@@ -35,7 +35,7 @@ object BucketCannedACL {
   inline def values: js.Array[BucketCannedACL] = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`)
 }
 
-type BucketLocationConstraint = "af-south-1" | "ap-east-1" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ca-central-1" | "cn-north-1" | "cn-northwest-1" | "EU" | "eu-central-1" | "eu-north-1" | "eu-south-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "me-south-1" | "sa-east-1" | "us-east-2" | "us-gov-east-1" | "us-gov-west-1" | "us-west-1" | "us-west-2"
+type BucketLocationConstraint = "af-south-1" | "ap-east-1" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ca-central-1" | "cn-north-1" | "cn-northwest-1" | "EU" | "eu-central-1" | "eu-north-1" | "eu-south-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "me-south-1" | "sa-east-1" | "us-east-2" | "us-gov-east-1" | "us-gov-west-1" | "us-west-1" | "us-west-2"
 object BucketLocationConstraint {
   inline val `af-south-1`: "af-south-1" = "af-south-1"
   inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
@@ -45,6 +45,7 @@ object BucketLocationConstraint {
   inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
   inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  inline val `ap-southeast-3`: "ap-southeast-3" = "ap-southeast-3"
   inline val `ca-central-1`: "ca-central-1" = "ca-central-1"
   inline val `cn-north-1`: "cn-north-1" = "cn-north-1"
   inline val `cn-northwest-1`: "cn-northwest-1" = "cn-northwest-1"
@@ -72,6 +73,7 @@ object BucketLocationConstraint {
     `ap-south-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ca-central-1`,
     `cn-north-1`,
     `cn-northwest-1`,
@@ -107,6 +109,23 @@ object BucketVersioningStatus {
   inline val Suspended: "Suspended" = "Suspended"
 
   inline def values: js.Array[BucketVersioningStatus] = js.Array(Enabled, Suspended)
+}
+
+type ChecksumAlgorithm = "CRC32" | "CRC32C" | "SHA1" | "SHA256"
+object ChecksumAlgorithm {
+  inline val CRC32: "CRC32" = "CRC32"
+  inline val CRC32C: "CRC32C" = "CRC32C"
+  inline val SHA1: "SHA1" = "SHA1"
+  inline val SHA256: "SHA256" = "SHA256"
+
+  inline def values: js.Array[ChecksumAlgorithm] = js.Array(CRC32, CRC32C, SHA1, SHA256)
+}
+
+type ChecksumMode = "ENABLED"
+object ChecksumMode {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[ChecksumMode] = js.Array(ENABLED)
 }
 
 type CompressionType = "NONE" | "GZIP" | "BZIP2"
@@ -279,7 +298,7 @@ object InventoryIncludedObjectVersions {
   inline def values: js.Array[InventoryIncludedObjectVersions] = js.Array(All, Current)
 }
 
-type InventoryOptionalField = "Size" | "LastModifiedDate" | "StorageClass" | "ETag" | "IsMultipartUploaded" | "ReplicationStatus" | "EncryptionStatus" | "ObjectLockRetainUntilDate" | "ObjectLockMode" | "ObjectLockLegalHoldStatus" | "IntelligentTieringAccessTier" | "BucketKeyStatus"
+type InventoryOptionalField = "Size" | "LastModifiedDate" | "StorageClass" | "ETag" | "IsMultipartUploaded" | "ReplicationStatus" | "EncryptionStatus" | "ObjectLockRetainUntilDate" | "ObjectLockMode" | "ObjectLockLegalHoldStatus" | "IntelligentTieringAccessTier" | "BucketKeyStatus" | "ChecksumAlgorithm"
 object InventoryOptionalField {
   inline val Size: "Size" = "Size"
   inline val LastModifiedDate: "LastModifiedDate" = "LastModifiedDate"
@@ -293,6 +312,7 @@ object InventoryOptionalField {
   inline val ObjectLockLegalHoldStatus: "ObjectLockLegalHoldStatus" = "ObjectLockLegalHoldStatus"
   inline val IntelligentTieringAccessTier: "IntelligentTieringAccessTier" = "IntelligentTieringAccessTier"
   inline val BucketKeyStatus: "BucketKeyStatus" = "BucketKeyStatus"
+  inline val ChecksumAlgorithm: "ChecksumAlgorithm" = "ChecksumAlgorithm"
 
   inline def values: js.Array[InventoryOptionalField] = js.Array(
     Size,
@@ -306,7 +326,8 @@ object InventoryOptionalField {
     ObjectLockMode,
     ObjectLockLegalHoldStatus,
     IntelligentTieringAccessTier,
-    BucketKeyStatus
+    BucketKeyStatus,
+    ChecksumAlgorithm
   )
 }
 
@@ -348,6 +369,17 @@ object MetricsStatus {
   inline val Disabled: "Disabled" = "Disabled"
 
   inline def values: js.Array[MetricsStatus] = js.Array(Enabled, Disabled)
+}
+
+type ObjectAttributes = "ETag" | "Checksum" | "ObjectParts" | "StorageClass" | "ObjectSize"
+object ObjectAttributes {
+  inline val ETag: "ETag" = "ETag"
+  inline val Checksum: "Checksum" = "Checksum"
+  inline val ObjectParts: "ObjectParts" = "ObjectParts"
+  inline val StorageClass: "StorageClass" = "StorageClass"
+  inline val ObjectSize: "ObjectSize" = "ObjectSize"
+
+  inline def values: js.Array[ObjectAttributes] = js.Array(ETag, Checksum, ObjectParts, StorageClass, ObjectSize)
 }
 
 type ObjectCannedACL = "private" | "public-read" | "public-read-write" | "authenticated-read" | "aws-exec-read" | "bucket-owner-read" | "bucket-owner-full-control"
@@ -512,7 +544,7 @@ object RequestCharged {
   inline def values: js.Array[RequestCharged] = js.Array(requester)
 }
 
-/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 User Guide</i>.
+/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requester Pays Buckets]] in the <i>Amazon S3 User Guide</i>.
   */
 type RequestPayer = "requester"
 object RequestPayer {

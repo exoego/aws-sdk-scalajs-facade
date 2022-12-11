@@ -46,8 +46,20 @@ object JobType {
 sealed trait Platform extends js.Any
 object Platform {
   val WEB = "WEB".asInstanceOf[Platform]
+  val WEB_DYNAMIC = "WEB_DYNAMIC".asInstanceOf[Platform]
+  val WEB_COMPUTE = "WEB_COMPUTE".asInstanceOf[Platform]
 
-  @inline def values: js.Array[Platform] = js.Array(WEB)
+  @inline def values: js.Array[Platform] = js.Array(WEB, WEB_DYNAMIC, WEB_COMPUTE)
+}
+
+@js.native
+sealed trait RepositoryCloneMethod extends js.Any
+object RepositoryCloneMethod {
+  val SSH = "SSH".asInstanceOf[RepositoryCloneMethod]
+  val TOKEN = "TOKEN".asInstanceOf[RepositoryCloneMethod]
+  val SIGV4 = "SIGV4".asInstanceOf[RepositoryCloneMethod]
+
+  @inline def values: js.Array[RepositoryCloneMethod] = js.Array(SSH, TOKEN, SIGV4)
 }
 
 @js.native

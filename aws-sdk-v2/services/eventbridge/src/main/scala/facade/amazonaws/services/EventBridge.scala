@@ -37,6 +37,14 @@ package object eventbridge {
   type CreatedBy = String
   type Database = String
   type DbUser = String
+  type EndpointArn = String
+  type EndpointDescription = String
+  type EndpointEventBusList = js.Array[EndpointEventBus]
+  type EndpointId = String
+  type EndpointList = js.Array[Endpoint]
+  type EndpointName = String
+  type EndpointStateReason = String
+  type EndpointUrl = String
   type ErrorCode = String
   type ErrorMessage = String
   type EventBusList = js.Array[EventBus]
@@ -53,7 +61,10 @@ package object eventbridge {
   type HeaderKey = String
   type HeaderParametersMap = js.Dictionary[HeaderValue]
   type HeaderValue = String
+  type HealthCheck = String
+  type HomeRegion = String
   type HttpsEndpoint = String
+  type IamRoleArn = String
   type InputTransformerPathKey = String
   type LimitMax100 = Int
   type LimitMin1 = Int
@@ -62,6 +73,7 @@ package object eventbridge {
   type MaximumRetryAttempts = Int
   type MessageGroupId = String
   type NextToken = String
+  type NonPartnerEventBusArn = String
   type NonPartnerEventBusName = String
   type NonPartnerEventBusNameOrArn = String
   type PartnerEventSourceAccountList = js.Array[PartnerEventSourceAccount]
@@ -94,6 +106,7 @@ package object eventbridge {
   type ResourceArn = String
   type RetentionDays = Int
   type RoleArn = String
+  type Route = String
   type RuleArn = String
   type RuleDescription = String
   type RuleName = String
@@ -135,6 +148,7 @@ package object eventbridge {
     @inline def createApiDestinationFuture(params: CreateApiDestinationRequest): Future[CreateApiDestinationResponse] = service.createApiDestination(params).promise().toFuture
     @inline def createArchiveFuture(params: CreateArchiveRequest): Future[CreateArchiveResponse] = service.createArchive(params).promise().toFuture
     @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
+    @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResponse] = service.createEndpoint(params).promise().toFuture
     @inline def createEventBusFuture(params: CreateEventBusRequest): Future[CreateEventBusResponse] = service.createEventBus(params).promise().toFuture
     @inline def createPartnerEventSourceFuture(params: CreatePartnerEventSourceRequest): Future[CreatePartnerEventSourceResponse] = service.createPartnerEventSource(params).promise().toFuture
     @inline def deactivateEventSourceFuture(params: DeactivateEventSourceRequest): Future[js.Object] = service.deactivateEventSource(params).promise().toFuture
@@ -142,12 +156,14 @@ package object eventbridge {
     @inline def deleteApiDestinationFuture(params: DeleteApiDestinationRequest): Future[DeleteApiDestinationResponse] = service.deleteApiDestination(params).promise().toFuture
     @inline def deleteArchiveFuture(params: DeleteArchiveRequest): Future[DeleteArchiveResponse] = service.deleteArchive(params).promise().toFuture
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
+    @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
     @inline def deleteEventBusFuture(params: DeleteEventBusRequest): Future[js.Object] = service.deleteEventBus(params).promise().toFuture
     @inline def deletePartnerEventSourceFuture(params: DeletePartnerEventSourceRequest): Future[js.Object] = service.deletePartnerEventSource(params).promise().toFuture
     @inline def deleteRuleFuture(params: DeleteRuleRequest): Future[js.Object] = service.deleteRule(params).promise().toFuture
     @inline def describeApiDestinationFuture(params: DescribeApiDestinationRequest): Future[DescribeApiDestinationResponse] = service.describeApiDestination(params).promise().toFuture
     @inline def describeArchiveFuture(params: DescribeArchiveRequest): Future[DescribeArchiveResponse] = service.describeArchive(params).promise().toFuture
     @inline def describeConnectionFuture(params: DescribeConnectionRequest): Future[DescribeConnectionResponse] = service.describeConnection(params).promise().toFuture
+    @inline def describeEndpointFuture(params: DescribeEndpointRequest): Future[DescribeEndpointResponse] = service.describeEndpoint(params).promise().toFuture
     @inline def describeEventBusFuture(params: DescribeEventBusRequest): Future[DescribeEventBusResponse] = service.describeEventBus(params).promise().toFuture
     @inline def describeEventSourceFuture(params: DescribeEventSourceRequest): Future[DescribeEventSourceResponse] = service.describeEventSource(params).promise().toFuture
     @inline def describePartnerEventSourceFuture(params: DescribePartnerEventSourceRequest): Future[DescribePartnerEventSourceResponse] = service.describePartnerEventSource(params).promise().toFuture
@@ -158,6 +174,7 @@ package object eventbridge {
     @inline def listApiDestinationsFuture(params: ListApiDestinationsRequest): Future[ListApiDestinationsResponse] = service.listApiDestinations(params).promise().toFuture
     @inline def listArchivesFuture(params: ListArchivesRequest): Future[ListArchivesResponse] = service.listArchives(params).promise().toFuture
     @inline def listConnectionsFuture(params: ListConnectionsRequest): Future[ListConnectionsResponse] = service.listConnections(params).promise().toFuture
+    @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResponse] = service.listEndpoints(params).promise().toFuture
     @inline def listEventBusesFuture(params: ListEventBusesRequest): Future[ListEventBusesResponse] = service.listEventBuses(params).promise().toFuture
     @inline def listEventSourcesFuture(params: ListEventSourcesRequest): Future[ListEventSourcesResponse] = service.listEventSources(params).promise().toFuture
     @inline def listPartnerEventSourceAccountsFuture(params: ListPartnerEventSourceAccountsRequest): Future[ListPartnerEventSourceAccountsResponse] = service.listPartnerEventSourceAccounts(params).promise().toFuture
@@ -181,6 +198,7 @@ package object eventbridge {
     @inline def updateApiDestinationFuture(params: UpdateApiDestinationRequest): Future[UpdateApiDestinationResponse] = service.updateApiDestination(params).promise().toFuture
     @inline def updateArchiveFuture(params: UpdateArchiveRequest): Future[UpdateArchiveResponse] = service.updateArchive(params).promise().toFuture
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[UpdateConnectionResponse] = service.updateConnection(params).promise().toFuture
+    @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] = service.updateEndpoint(params).promise().toFuture
 
   }
 
@@ -194,6 +212,7 @@ package object eventbridge {
     def createApiDestination(params: CreateApiDestinationRequest): Request[CreateApiDestinationResponse] = js.native
     def createArchive(params: CreateArchiveRequest): Request[CreateArchiveResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
+    def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResponse] = js.native
     def createEventBus(params: CreateEventBusRequest): Request[CreateEventBusResponse] = js.native
     def createPartnerEventSource(params: CreatePartnerEventSourceRequest): Request[CreatePartnerEventSourceResponse] = js.native
     def deactivateEventSource(params: DeactivateEventSourceRequest): Request[js.Object] = js.native
@@ -201,12 +220,14 @@ package object eventbridge {
     def deleteApiDestination(params: DeleteApiDestinationRequest): Request[DeleteApiDestinationResponse] = js.native
     def deleteArchive(params: DeleteArchiveRequest): Request[DeleteArchiveResponse] = js.native
     def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse] = js.native
+    def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
     def deleteEventBus(params: DeleteEventBusRequest): Request[js.Object] = js.native
     def deletePartnerEventSource(params: DeletePartnerEventSourceRequest): Request[js.Object] = js.native
     def deleteRule(params: DeleteRuleRequest): Request[js.Object] = js.native
     def describeApiDestination(params: DescribeApiDestinationRequest): Request[DescribeApiDestinationResponse] = js.native
     def describeArchive(params: DescribeArchiveRequest): Request[DescribeArchiveResponse] = js.native
     def describeConnection(params: DescribeConnectionRequest): Request[DescribeConnectionResponse] = js.native
+    def describeEndpoint(params: DescribeEndpointRequest): Request[DescribeEndpointResponse] = js.native
     def describeEventBus(params: DescribeEventBusRequest): Request[DescribeEventBusResponse] = js.native
     def describeEventSource(params: DescribeEventSourceRequest): Request[DescribeEventSourceResponse] = js.native
     def describePartnerEventSource(params: DescribePartnerEventSourceRequest): Request[DescribePartnerEventSourceResponse] = js.native
@@ -217,6 +238,7 @@ package object eventbridge {
     def listApiDestinations(params: ListApiDestinationsRequest): Request[ListApiDestinationsResponse] = js.native
     def listArchives(params: ListArchivesRequest): Request[ListArchivesResponse] = js.native
     def listConnections(params: ListConnectionsRequest): Request[ListConnectionsResponse] = js.native
+    def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResponse] = js.native
     def listEventBuses(params: ListEventBusesRequest): Request[ListEventBusesResponse] = js.native
     def listEventSources(params: ListEventSourcesRequest): Request[ListEventSourcesResponse] = js.native
     def listPartnerEventSourceAccounts(params: ListPartnerEventSourceAccountsRequest): Request[ListPartnerEventSourceAccountsResponse] = js.native
@@ -240,6 +262,7 @@ package object eventbridge {
     def updateApiDestination(params: UpdateApiDestinationRequest): Request[UpdateApiDestinationResponse] = js.native
     def updateArchive(params: UpdateArchiveRequest): Request[UpdateArchiveResponse] = js.native
     def updateConnection(params: UpdateConnectionRequest): Request[UpdateConnectionResponse] = js.native
+    def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
   }
   object EventBridge {
     @inline implicit def toOps(service: EventBridge): EventBridgeOps = {
@@ -1057,6 +1080,73 @@ package object eventbridge {
   }
 
   @js.native
+  trait CreateEndpointRequest extends js.Object {
+    var EventBuses: EndpointEventBusList
+    var Name: EndpointName
+    var RoutingConfig: RoutingConfig
+    var Description: js.UndefOr[EndpointDescription]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+  }
+
+  object CreateEndpointRequest {
+    @inline
+    def apply(
+        EventBuses: EndpointEventBusList,
+        Name: EndpointName,
+        RoutingConfig: RoutingConfig,
+        Description: js.UndefOr[EndpointDescription] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined
+    ): CreateEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventBuses" -> EventBuses.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "RoutingConfig" -> RoutingConfig.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEndpointResponse extends js.Object {
+    var Arn: js.UndefOr[EndpointArn]
+    var EventBuses: js.UndefOr[EndpointEventBusList]
+    var Name: js.UndefOr[EndpointName]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var RoutingConfig: js.UndefOr[RoutingConfig]
+    var State: js.UndefOr[EndpointState]
+  }
+
+  object CreateEndpointResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[EndpointArn] = js.undefined,
+        EventBuses: js.UndefOr[EndpointEventBusList] = js.undefined,
+        Name: js.UndefOr[EndpointName] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        RoutingConfig: js.UndefOr[RoutingConfig] = js.undefined,
+        State: js.UndefOr[EndpointState] = js.undefined
+    ): CreateEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEndpointResponse]
+    }
+  }
+
+  @js.native
   trait CreateEventBusRequest extends js.Object {
     var Name: EventBusName
     var EventSourceName: js.UndefOr[EventSourceName]
@@ -1314,6 +1404,34 @@ package object eventbridge {
   }
 
   @js.native
+  trait DeleteEndpointRequest extends js.Object {
+    var Name: EndpointName
+  }
+
+  object DeleteEndpointRequest {
+    @inline
+    def apply(
+        Name: EndpointName
+    ): DeleteEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEndpointResponse extends js.Object
+
+  object DeleteEndpointResponse {
+    @inline
+    def apply(): DeleteEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEndpointResponse]
+    }
+  }
+
+  @js.native
   trait DeleteEventBusRequest extends js.Object {
     var Name: EventBusName
   }
@@ -1557,6 +1675,79 @@ package object eventbridge {
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConnectionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointRequest extends js.Object {
+    var Name: EndpointName
+    var HomeRegion: js.UndefOr[HomeRegion]
+  }
+
+  object DescribeEndpointRequest {
+    @inline
+    def apply(
+        Name: EndpointName,
+        HomeRegion: js.UndefOr[HomeRegion] = js.undefined
+    ): DescribeEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEndpointResponse extends js.Object {
+    var Arn: js.UndefOr[EndpointArn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[EndpointDescription]
+    var EndpointId: js.UndefOr[EndpointId]
+    var EndpointUrl: js.UndefOr[EndpointUrl]
+    var EventBuses: js.UndefOr[EndpointEventBusList]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[EndpointName]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var RoutingConfig: js.UndefOr[RoutingConfig]
+    var State: js.UndefOr[EndpointState]
+    var StateReason: js.UndefOr[EndpointStateReason]
+  }
+
+  object DescribeEndpointResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[EndpointArn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[EndpointDescription] = js.undefined,
+        EndpointId: js.UndefOr[EndpointId] = js.undefined,
+        EndpointUrl: js.UndefOr[EndpointUrl] = js.undefined,
+        EventBuses: js.UndefOr[EndpointEventBusList] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[EndpointName] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        RoutingConfig: js.UndefOr[RoutingConfig] = js.undefined,
+        State: js.UndefOr[EndpointState] = js.undefined,
+        StateReason: js.UndefOr[EndpointStateReason] = js.undefined
+    ): DescribeEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
+      EndpointUrl.foreach(__v => __obj.updateDynamic("EndpointUrl")(__v.asInstanceOf[js.Any]))
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEndpointResponse]
     }
   }
 
@@ -1913,6 +2104,79 @@ package object eventbridge {
     }
   }
 
+  /** An global endpoint used to improve your application's availability by making it regional-fault tolerant. For more information about global endpoints, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html|Making applications Regional-fault tolerant with global endpoints and event replication]] in the Amazon EventBridge User Guide..
+    */
+  @js.native
+  trait Endpoint extends js.Object {
+    var Arn: js.UndefOr[EndpointArn]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[EndpointDescription]
+    var EndpointId: js.UndefOr[EndpointId]
+    var EndpointUrl: js.UndefOr[EndpointUrl]
+    var EventBuses: js.UndefOr[EndpointEventBusList]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[EndpointName]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var RoutingConfig: js.UndefOr[RoutingConfig]
+    var State: js.UndefOr[EndpointState]
+    var StateReason: js.UndefOr[EndpointStateReason]
+  }
+
+  object Endpoint {
+    @inline
+    def apply(
+        Arn: js.UndefOr[EndpointArn] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[EndpointDescription] = js.undefined,
+        EndpointId: js.UndefOr[EndpointId] = js.undefined,
+        EndpointUrl: js.UndefOr[EndpointUrl] = js.undefined,
+        EventBuses: js.UndefOr[EndpointEventBusList] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[EndpointName] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        RoutingConfig: js.UndefOr[RoutingConfig] = js.undefined,
+        State: js.UndefOr[EndpointState] = js.undefined,
+        StateReason: js.UndefOr[EndpointStateReason] = js.undefined
+    ): Endpoint = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
+      EndpointUrl.foreach(__v => __obj.updateDynamic("EndpointUrl")(__v.asInstanceOf[js.Any]))
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Endpoint]
+    }
+  }
+
+  /** The event buses the endpoint is associated with.
+    */
+  @js.native
+  trait EndpointEventBus extends js.Object {
+    var EventBusArn: NonPartnerEventBusArn
+  }
+
+  object EndpointEventBus {
+    @inline
+    def apply(
+        EventBusArn: NonPartnerEventBusArn
+    ): EndpointEventBus = {
+      val __obj = js.Dynamic.literal(
+        "EventBusArn" -> EventBusArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EndpointEventBus]
+    }
+  }
+
   /** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event bus can receive events from your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
     */
   @js.native
@@ -1967,6 +2231,28 @@ package object eventbridge {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSource]
+    }
+  }
+
+  /** The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.
+    */
+  @js.native
+  trait FailoverConfig extends js.Object {
+    var Primary: Primary
+    var Secondary: Secondary
+  }
+
+  object FailoverConfig {
+    @inline
+    def apply(
+        Primary: Primary,
+        Secondary: Secondary
+    ): FailoverConfig = {
+      val __obj = js.Dynamic.literal(
+        "Primary" -> Primary.asInstanceOf[js.Any],
+        "Secondary" -> Secondary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FailoverConfig]
     }
   }
 
@@ -2168,6 +2454,50 @@ package object eventbridge {
       Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConnectionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListEndpointsRequest extends js.Object {
+    var HomeRegion: js.UndefOr[HomeRegion]
+    var MaxResults: js.UndefOr[LimitMax100]
+    var NamePrefix: js.UndefOr[EndpointName]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListEndpointsRequest {
+    @inline
+    def apply(
+        HomeRegion: js.UndefOr[HomeRegion] = js.undefined,
+        MaxResults: js.UndefOr[LimitMax100] = js.undefined,
+        NamePrefix: js.UndefOr[EndpointName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListEndpointsRequest = {
+      val __obj = js.Dynamic.literal()
+      HomeRegion.foreach(__v => __obj.updateDynamic("HomeRegion")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEndpointsResponse extends js.Object {
+    var Endpoints: js.UndefOr[EndpointList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListEndpointsResponse {
+    @inline
+    def apply(
+        Endpoints: js.UndefOr[EndpointList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListEndpointsResponse = {
+      val __obj = js.Dynamic.literal()
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEndpointsResponse]
     }
   }
 
@@ -2663,19 +2993,42 @@ package object eventbridge {
     }
   }
 
+  /** The primary Region of the endpoint.
+    */
+  @js.native
+  trait Primary extends js.Object {
+    var HealthCheck: HealthCheck
+  }
+
+  object Primary {
+    @inline
+    def apply(
+        HealthCheck: HealthCheck
+    ): Primary = {
+      val __obj = js.Dynamic.literal(
+        "HealthCheck" -> HealthCheck.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Primary]
+    }
+  }
+
   @js.native
   trait PutEventsRequest extends js.Object {
     var Entries: PutEventsRequestEntryList
+    var EndpointId: js.UndefOr[EndpointId]
   }
 
   object PutEventsRequest {
     @inline
     def apply(
-        Entries: PutEventsRequestEntryList
+        Entries: PutEventsRequestEntryList,
+        EndpointId: js.UndefOr[EndpointId] = js.undefined
     ): PutEventsRequest = {
       val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
+
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsRequest]
     }
   }
@@ -2735,7 +3088,7 @@ package object eventbridge {
     }
   }
 
-  /** Represents an event that failed to be submitted.
+  /** Represents an event that failed to be submitted. For information about the errors that are common to all actions, see [[https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html|Common Errors]].
     */
   @js.native
   trait PutEventsResultEntry extends js.Object {
@@ -3194,6 +3547,24 @@ package object eventbridge {
     }
   }
 
+  /** Endpoints can replicate all events to the secondary Region.
+    */
+  @js.native
+  trait ReplicationConfig extends js.Object {
+    var State: js.UndefOr[ReplicationState]
+  }
+
+  object ReplicationConfig {
+    @inline
+    def apply(
+        State: js.UndefOr[ReplicationState] = js.undefined
+    ): ReplicationConfig = {
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicationConfig]
+    }
+  }
+
   /** A <code>RetryPolicy</code> object that includes information about the retry policy settings.
     */
   @js.native
@@ -3212,6 +3583,25 @@ package object eventbridge {
       MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetryPolicy]
+    }
+  }
+
+  /** The routing configuration of the endpoint.
+    */
+  @js.native
+  trait RoutingConfig extends js.Object {
+    var FailoverConfig: FailoverConfig
+  }
+
+  object RoutingConfig {
+    @inline
+    def apply(
+        FailoverConfig: FailoverConfig
+    ): RoutingConfig = {
+      val __obj = js.Dynamic.literal(
+        "FailoverConfig" -> FailoverConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RoutingConfig]
     }
   }
 
@@ -3335,6 +3725,25 @@ package object eventbridge {
       val __obj = js.Dynamic.literal()
       PipelineParameterList.foreach(__v => __obj.updateDynamic("PipelineParameterList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SageMakerPipelineParameters]
+    }
+  }
+
+  /** The secondary Region that processes events when failover is triggered or replication is enabled.
+    */
+  @js.native
+  trait Secondary extends js.Object {
+    var Route: Route
+  }
+
+  object Secondary {
+    @inline
+    def apply(
+        Route: Route
+    ): Secondary = {
+      val __obj = js.Dynamic.literal(
+        "Route" -> Route.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Secondary]
     }
   }
 
@@ -3878,6 +4287,79 @@ package object eventbridge {
       LastAuthorizedTime.foreach(__v => __obj.updateDynamic("LastAuthorizedTime")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConnectionResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateEndpointRequest extends js.Object {
+    var Name: EndpointName
+    var Description: js.UndefOr[EndpointDescription]
+    var EventBuses: js.UndefOr[EndpointEventBusList]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var RoutingConfig: js.UndefOr[RoutingConfig]
+  }
+
+  object UpdateEndpointRequest {
+    @inline
+    def apply(
+        Name: EndpointName,
+        Description: js.UndefOr[EndpointDescription] = js.undefined,
+        EventBuses: js.UndefOr[EndpointEventBusList] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        RoutingConfig: js.UndefOr[RoutingConfig] = js.undefined
+    ): UpdateEndpointRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEndpointResponse extends js.Object {
+    var Arn: js.UndefOr[EndpointArn]
+    var EndpointId: js.UndefOr[EndpointId]
+    var EndpointUrl: js.UndefOr[EndpointUrl]
+    var EventBuses: js.UndefOr[EndpointEventBusList]
+    var Name: js.UndefOr[EndpointName]
+    var ReplicationConfig: js.UndefOr[ReplicationConfig]
+    var RoleArn: js.UndefOr[IamRoleArn]
+    var RoutingConfig: js.UndefOr[RoutingConfig]
+    var State: js.UndefOr[EndpointState]
+  }
+
+  object UpdateEndpointResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[EndpointArn] = js.undefined,
+        EndpointId: js.UndefOr[EndpointId] = js.undefined,
+        EndpointUrl: js.UndefOr[EndpointUrl] = js.undefined,
+        EventBuses: js.UndefOr[EndpointEventBusList] = js.undefined,
+        Name: js.UndefOr[EndpointName] = js.undefined,
+        ReplicationConfig: js.UndefOr[ReplicationConfig] = js.undefined,
+        RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        RoutingConfig: js.UndefOr[RoutingConfig] = js.undefined,
+        State: js.UndefOr[EndpointState] = js.undefined
+    ): UpdateEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
+      EndpointUrl.foreach(__v => __obj.updateDynamic("EndpointUrl")(__v.asInstanceOf[js.Any]))
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReplicationConfig.foreach(__v => __obj.updateDynamic("ReplicationConfig")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEndpointResponse]
     }
   }
 }

@@ -26,10 +26,11 @@ package object codegurureviewer {
   type JobStates = js.Array[JobState]
   type KMSKeyId = String
   type LineNumber = Int
+  type LinesOfCodeCount = Double
   type ListCodeReviewsMaxResults = Int
+  type ListRecommendationsMaxResults = Int
   type LongDescription = String
   type MaxResults = Int
-  type MeteredLinesOfCodeCount = Double
   type Name = String
   type Names = js.Array[Name]
   type NextToken = String
@@ -155,7 +156,7 @@ package object codegurureviewer {
     }
   }
 
-  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a code diff between a source and destination branch in an associated repository.
+  /** A type of [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType|SourceCodeType]] that specifies a code diff between a source and destination branch in an associated repository.
     */
   @js.native
   trait BranchDiffSourceCodeType extends js.Object {
@@ -226,6 +227,7 @@ package object codegurureviewer {
     var AnalysisTypes: js.UndefOr[AnalysisTypes]
     var AssociationArn: js.UndefOr[AssociationArn]
     var CodeReviewArn: js.UndefOr[Arn]
+    var ConfigFileState: js.UndefOr[ConfigFileState]
     var CreatedTimeStamp: js.UndefOr[TimeStamp]
     var LastUpdatedTimeStamp: js.UndefOr[TimeStamp]
     var Metrics: js.UndefOr[Metrics]
@@ -246,6 +248,7 @@ package object codegurureviewer {
         AnalysisTypes: js.UndefOr[AnalysisTypes] = js.undefined,
         AssociationArn: js.UndefOr[AssociationArn] = js.undefined,
         CodeReviewArn: js.UndefOr[Arn] = js.undefined,
+        ConfigFileState: js.UndefOr[ConfigFileState] = js.undefined,
         CreatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
         LastUpdatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
         Metrics: js.UndefOr[Metrics] = js.undefined,
@@ -263,6 +266,7 @@ package object codegurureviewer {
       AnalysisTypes.foreach(__v => __obj.updateDynamic("AnalysisTypes")(__v.asInstanceOf[js.Any]))
       AssociationArn.foreach(__v => __obj.updateDynamic("AssociationArn")(__v.asInstanceOf[js.Any]))
       CodeReviewArn.foreach(__v => __obj.updateDynamic("CodeReviewArn")(__v.asInstanceOf[js.Any]))
+      ConfigFileState.foreach(__v => __obj.updateDynamic("ConfigFileState")(__v.asInstanceOf[js.Any]))
       CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
       LastUpdatedTimeStamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimeStamp")(__v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
@@ -330,7 +334,7 @@ package object codegurureviewer {
     }
   }
 
-  /** The type of a code review. There are two code review types: * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository. * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+  /** The type of a code review. There are two code review types: * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository. * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview|CreateCodeReview]].
     */
   @js.native
   trait CodeReviewType extends js.Object {
@@ -353,7 +357,7 @@ package object codegurureviewer {
     }
   }
 
-  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
+  /** A type of [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType|SourceCodeType]] that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
     */
   @js.native
   trait CommitDiffSourceCodeType extends js.Object {
@@ -586,7 +590,7 @@ package object codegurureviewer {
     }
   }
 
-  /** An object that contains: * The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>). * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+  /** An object that contains: * The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>). * The ID of the Amazon Web Services KMS key that is associated with a repository association.
     */
   @js.native
   trait KMSKeyDetails extends js.Object {
@@ -711,7 +715,7 @@ package object codegurureviewer {
   @js.native
   trait ListRecommendationsRequest extends js.Object {
     var CodeReviewArn: Arn
-    var MaxResults: js.UndefOr[MaxResults]
+    var MaxResults: js.UndefOr[ListRecommendationsMaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
 
@@ -719,7 +723,7 @@ package object codegurureviewer {
     @inline
     def apply(
         CodeReviewArn: Arn,
-        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        MaxResults: js.UndefOr[ListRecommendationsMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListRecommendationsRequest = {
       val __obj = js.Dynamic.literal(
@@ -839,18 +843,21 @@ package object codegurureviewer {
   @js.native
   trait Metrics extends js.Object {
     var FindingsCount: js.UndefOr[FindingsCount]
-    var MeteredLinesOfCodeCount: js.UndefOr[MeteredLinesOfCodeCount]
+    var MeteredLinesOfCodeCount: js.UndefOr[LinesOfCodeCount]
+    var SuppressedLinesOfCodeCount: js.UndefOr[LinesOfCodeCount]
   }
 
   object Metrics {
     @inline
     def apply(
         FindingsCount: js.UndefOr[FindingsCount] = js.undefined,
-        MeteredLinesOfCodeCount: js.UndefOr[MeteredLinesOfCodeCount] = js.undefined
+        MeteredLinesOfCodeCount: js.UndefOr[LinesOfCodeCount] = js.undefined,
+        SuppressedLinesOfCodeCount: js.UndefOr[LinesOfCodeCount] = js.undefined
     ): Metrics = {
       val __obj = js.Dynamic.literal()
       FindingsCount.foreach(__v => __obj.updateDynamic("FindingsCount")(__v.asInstanceOf[js.Any]))
       MeteredLinesOfCodeCount.foreach(__v => __obj.updateDynamic("MeteredLinesOfCodeCount")(__v.asInstanceOf[js.Any]))
+      SuppressedLinesOfCodeCount.foreach(__v => __obj.updateDynamic("SuppressedLinesOfCodeCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metrics]
     }
   }
@@ -860,18 +867,21 @@ package object codegurureviewer {
   @js.native
   trait MetricsSummary extends js.Object {
     var FindingsCount: js.UndefOr[FindingsCount]
-    var MeteredLinesOfCodeCount: js.UndefOr[MeteredLinesOfCodeCount]
+    var MeteredLinesOfCodeCount: js.UndefOr[LinesOfCodeCount]
+    var SuppressedLinesOfCodeCount: js.UndefOr[LinesOfCodeCount]
   }
 
   object MetricsSummary {
     @inline
     def apply(
         FindingsCount: js.UndefOr[FindingsCount] = js.undefined,
-        MeteredLinesOfCodeCount: js.UndefOr[MeteredLinesOfCodeCount] = js.undefined
+        MeteredLinesOfCodeCount: js.UndefOr[LinesOfCodeCount] = js.undefined,
+        SuppressedLinesOfCodeCount: js.UndefOr[LinesOfCodeCount] = js.undefined
     ): MetricsSummary = {
       val __obj = js.Dynamic.literal()
       FindingsCount.foreach(__v => __obj.updateDynamic("FindingsCount")(__v.asInstanceOf[js.Any]))
       MeteredLinesOfCodeCount.foreach(__v => __obj.updateDynamic("MeteredLinesOfCodeCount")(__v.asInstanceOf[js.Any]))
+      SuppressedLinesOfCodeCount.foreach(__v => __obj.updateDynamic("SuppressedLinesOfCodeCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricsSummary]
     }
   }
@@ -1033,7 +1043,7 @@ package object codegurureviewer {
     }
   }
 
-  /** A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+  /** A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview|CreateCodeReview]].
     */
   @js.native
   trait RepositoryAnalysis extends js.Object {
@@ -1054,7 +1064,7 @@ package object codegurureviewer {
     }
   }
 
-  /** Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html"> <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
+  /** Information about a repository association. The [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html|DescribeRepositoryAssociation]] operation returns a <code>RepositoryAssociation</code> object.
     */
   @js.native
   trait RepositoryAssociation extends js.Object {
@@ -1105,7 +1115,7 @@ package object codegurureviewer {
     }
   }
 
-  /** Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
+  /** Summary information about a repository association. The [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html|ListRepositoryAssociations]] operation returns a list of <code>RepositoryAssociationSummary</code> objects.
     */
   @js.native
   trait RepositoryAssociationSummary extends js.Object {
@@ -1144,7 +1154,7 @@ package object codegurureviewer {
     }
   }
 
-  /** A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated repository.
+  /** A [[https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType|SourceCodeType]] that specifies the tip of a branch in an associated repository.
     */
   @js.native
   trait RepositoryHeadSourceCodeType extends js.Object {

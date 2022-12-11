@@ -60,8 +60,9 @@ object FindingSourceType {
   val POLICY = "POLICY".asInstanceOf[FindingSourceType]
   val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
   val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
+  val S3_ACCESS_POINT_ACCOUNT = "S3_ACCESS_POINT_ACCOUNT".asInstanceOf[FindingSourceType]
 
-  @inline def values: js.Array[FindingSourceType] = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT)
+  @inline def values: js.Array[FindingSourceType] = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT, S3_ACCESS_POINT_ACCOUNT)
 }
 
 @js.native
@@ -198,6 +199,12 @@ object ResourceType {
   val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
   val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
   val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
+  val `AWS::EFS::FileSystem` = "AWS::EFS::FileSystem".asInstanceOf[ResourceType]
+  val `AWS::EC2::Snapshot` = "AWS::EC2::Snapshot".asInstanceOf[ResourceType]
+  val `AWS::ECR::Repository` = "AWS::ECR::Repository".asInstanceOf[ResourceType]
+  val `AWS::RDS::DBSnapshot` = "AWS::RDS::DBSnapshot".asInstanceOf[ResourceType]
+  val `AWS::RDS::DBClusterSnapshot` = "AWS::RDS::DBClusterSnapshot".asInstanceOf[ResourceType]
+  val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
     `AWS::S3::Bucket`,
@@ -206,7 +213,13 @@ object ResourceType {
     `AWS::Lambda::Function`,
     `AWS::Lambda::LayerVersion`,
     `AWS::KMS::Key`,
-    `AWS::SecretsManager::Secret`
+    `AWS::SecretsManager::Secret`,
+    `AWS::EFS::FileSystem`,
+    `AWS::EC2::Snapshot`,
+    `AWS::ECR::Repository`,
+    `AWS::RDS::DBSnapshot`,
+    `AWS::RDS::DBClusterSnapshot`,
+    `AWS::SNS::Topic`
   )
 }
 
@@ -237,6 +250,7 @@ object ValidatePolicyResourceType {
   val `AWS::S3::AccessPoint` = "AWS::S3::AccessPoint".asInstanceOf[ValidatePolicyResourceType]
   val `AWS::S3::MultiRegionAccessPoint` = "AWS::S3::MultiRegionAccessPoint".asInstanceOf[ValidatePolicyResourceType]
   val `AWS::S3ObjectLambda::AccessPoint` = "AWS::S3ObjectLambda::AccessPoint".asInstanceOf[ValidatePolicyResourceType]
+  val `AWS::IAM::AssumeRolePolicyDocument` = "AWS::IAM::AssumeRolePolicyDocument".asInstanceOf[ValidatePolicyResourceType]
 
-  @inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`)
+  @inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`, `AWS::IAM::AssumeRolePolicyDocument`)
 }

@@ -49,13 +49,14 @@ object FindingChangeType {
   inline def values: js.Array[FindingChangeType] = js.Array(CHANGED, NEW, UNCHANGED)
 }
 
-type FindingSourceType = "POLICY" | "BUCKET_ACL" | "S3_ACCESS_POINT"
+type FindingSourceType = "POLICY" | "BUCKET_ACL" | "S3_ACCESS_POINT" | "S3_ACCESS_POINT_ACCOUNT"
 object FindingSourceType {
   inline val POLICY: "POLICY" = "POLICY"
   inline val BUCKET_ACL: "BUCKET_ACL" = "BUCKET_ACL"
   inline val S3_ACCESS_POINT: "S3_ACCESS_POINT" = "S3_ACCESS_POINT"
+  inline val S3_ACCESS_POINT_ACCOUNT: "S3_ACCESS_POINT_ACCOUNT" = "S3_ACCESS_POINT_ACCOUNT"
 
-  inline def values: js.Array[FindingSourceType] = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT)
+  inline def values: js.Array[FindingSourceType] = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT, S3_ACCESS_POINT_ACCOUNT)
 }
 
 type FindingStatus = "ACTIVE" | "ARCHIVED" | "RESOLVED"
@@ -173,7 +174,7 @@ object ReasonCode {
   inline def values: js.Array[ReasonCode] = js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
 }
 
-type ResourceType = "AWS::S3::Bucket" | "AWS::IAM::Role" | "AWS::SQS::Queue" | "AWS::Lambda::Function" | "AWS::Lambda::LayerVersion" | "AWS::KMS::Key" | "AWS::SecretsManager::Secret"
+type ResourceType = "AWS::S3::Bucket" | "AWS::IAM::Role" | "AWS::SQS::Queue" | "AWS::Lambda::Function" | "AWS::Lambda::LayerVersion" | "AWS::KMS::Key" | "AWS::SecretsManager::Secret" | "AWS::EFS::FileSystem" | "AWS::EC2::Snapshot" | "AWS::ECR::Repository" | "AWS::RDS::DBSnapshot" | "AWS::RDS::DBClusterSnapshot" | "AWS::SNS::Topic"
 object ResourceType {
   inline val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
   inline val `AWS::IAM::Role`: "AWS::IAM::Role" = "AWS::IAM::Role"
@@ -182,6 +183,12 @@ object ResourceType {
   inline val `AWS::Lambda::LayerVersion`: "AWS::Lambda::LayerVersion" = "AWS::Lambda::LayerVersion"
   inline val `AWS::KMS::Key`: "AWS::KMS::Key" = "AWS::KMS::Key"
   inline val `AWS::SecretsManager::Secret`: "AWS::SecretsManager::Secret" = "AWS::SecretsManager::Secret"
+  inline val `AWS::EFS::FileSystem`: "AWS::EFS::FileSystem" = "AWS::EFS::FileSystem"
+  inline val `AWS::EC2::Snapshot`: "AWS::EC2::Snapshot" = "AWS::EC2::Snapshot"
+  inline val `AWS::ECR::Repository`: "AWS::ECR::Repository" = "AWS::ECR::Repository"
+  inline val `AWS::RDS::DBSnapshot`: "AWS::RDS::DBSnapshot" = "AWS::RDS::DBSnapshot"
+  inline val `AWS::RDS::DBClusterSnapshot`: "AWS::RDS::DBClusterSnapshot" = "AWS::RDS::DBClusterSnapshot"
+  inline val `AWS::SNS::Topic`: "AWS::SNS::Topic" = "AWS::SNS::Topic"
 
   inline def values: js.Array[ResourceType] = js.Array(
     `AWS::S3::Bucket`,
@@ -190,7 +197,13 @@ object ResourceType {
     `AWS::Lambda::Function`,
     `AWS::Lambda::LayerVersion`,
     `AWS::KMS::Key`,
-    `AWS::SecretsManager::Secret`
+    `AWS::SecretsManager::Secret`,
+    `AWS::EFS::FileSystem`,
+    `AWS::EC2::Snapshot`,
+    `AWS::ECR::Repository`,
+    `AWS::RDS::DBSnapshot`,
+    `AWS::RDS::DBClusterSnapshot`,
+    `AWS::SNS::Topic`
   )
 }
 
@@ -212,12 +225,13 @@ object ValidatePolicyFindingType {
   inline def values: js.Array[ValidatePolicyFindingType] = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }
 
-type ValidatePolicyResourceType = "AWS::S3::Bucket" | "AWS::S3::AccessPoint" | "AWS::S3::MultiRegionAccessPoint" | "AWS::S3ObjectLambda::AccessPoint"
+type ValidatePolicyResourceType = "AWS::S3::Bucket" | "AWS::S3::AccessPoint" | "AWS::S3::MultiRegionAccessPoint" | "AWS::S3ObjectLambda::AccessPoint" | "AWS::IAM::AssumeRolePolicyDocument"
 object ValidatePolicyResourceType {
   inline val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
   inline val `AWS::S3::AccessPoint`: "AWS::S3::AccessPoint" = "AWS::S3::AccessPoint"
   inline val `AWS::S3::MultiRegionAccessPoint`: "AWS::S3::MultiRegionAccessPoint" = "AWS::S3::MultiRegionAccessPoint"
   inline val `AWS::S3ObjectLambda::AccessPoint`: "AWS::S3ObjectLambda::AccessPoint" = "AWS::S3ObjectLambda::AccessPoint"
+  inline val `AWS::IAM::AssumeRolePolicyDocument`: "AWS::IAM::AssumeRolePolicyDocument" = "AWS::IAM::AssumeRolePolicyDocument"
 
-  inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`)
+  inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`, `AWS::IAM::AssumeRolePolicyDocument`)
 }

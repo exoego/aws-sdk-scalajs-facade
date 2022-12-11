@@ -3,6 +3,17 @@ package facade.amazonaws.services.connect
 import scalajs.js
 
 @js.native
+sealed trait ActionType extends js.Any
+object ActionType {
+  val CREATE_TASK = "CREATE_TASK".asInstanceOf[ActionType]
+  val ASSIGN_CONTACT_CATEGORY = "ASSIGN_CONTACT_CATEGORY".asInstanceOf[ActionType]
+  val GENERATE_EVENTBRIDGE_EVENT = "GENERATE_EVENTBRIDGE_EVENT".asInstanceOf[ActionType]
+  val SEND_NOTIFICATION = "SEND_NOTIFICATION".asInstanceOf[ActionType]
+
+  @inline def values: js.Array[ActionType] = js.Array(CREATE_TASK, ASSIGN_CONTACT_CATEGORY, GENERATE_EVENTBRIDGE_EVENT, SEND_NOTIFICATION)
+}
+
+@js.native
 sealed trait AgentStatusState extends js.Any
 object AgentStatusState {
   val ENABLED = "ENABLED".asInstanceOf[AgentStatusState]
@@ -95,6 +106,22 @@ object ContactInitiationMethod {
   @inline def values: js.Array[ContactInitiationMethod] = js.Array(INBOUND, OUTBOUND, TRANSFER, QUEUE_TRANSFER, CALLBACK, API)
 }
 
+@js.native
+sealed trait ContactState extends js.Any
+object ContactState {
+  val INCOMING = "INCOMING".asInstanceOf[ContactState]
+  val PENDING = "PENDING".asInstanceOf[ContactState]
+  val CONNECTING = "CONNECTING".asInstanceOf[ContactState]
+  val CONNECTED = "CONNECTED".asInstanceOf[ContactState]
+  val CONNECTED_ONHOLD = "CONNECTED_ONHOLD".asInstanceOf[ContactState]
+  val MISSED = "MISSED".asInstanceOf[ContactState]
+  val ERROR = "ERROR".asInstanceOf[ContactState]
+  val ENDED = "ENDED".asInstanceOf[ContactState]
+  val REJECTED = "REJECTED".asInstanceOf[ContactState]
+
+  @inline def values: js.Array[ContactState] = js.Array(INCOMING, PENDING, CONNECTING, CONNECTED, CONNECTED_ONHOLD, MISSED, ERROR, ENDED, REJECTED)
+}
+
 /** The current metric names.
   */
 @js.native
@@ -150,12 +177,41 @@ object EncryptionType {
 }
 
 @js.native
+sealed trait EventSourceName extends js.Any
+object EventSourceName {
+  val OnPostCallAnalysisAvailable = "OnPostCallAnalysisAvailable".asInstanceOf[EventSourceName]
+  val OnRealTimeCallAnalysisAvailable = "OnRealTimeCallAnalysisAvailable".asInstanceOf[EventSourceName]
+  val OnPostChatAnalysisAvailable = "OnPostChatAnalysisAvailable".asInstanceOf[EventSourceName]
+  val OnZendeskTicketCreate = "OnZendeskTicketCreate".asInstanceOf[EventSourceName]
+  val OnZendeskTicketStatusUpdate = "OnZendeskTicketStatusUpdate".asInstanceOf[EventSourceName]
+  val OnSalesforceCaseCreate = "OnSalesforceCaseCreate".asInstanceOf[EventSourceName]
+
+  @inline def values: js.Array[EventSourceName] = js.Array(
+    OnPostCallAnalysisAvailable,
+    OnRealTimeCallAnalysisAvailable,
+    OnPostChatAnalysisAvailable,
+    OnZendeskTicketCreate,
+    OnZendeskTicketStatusUpdate,
+    OnSalesforceCaseCreate
+  )
+}
+
+@js.native
 sealed trait Grouping extends js.Any
 object Grouping {
   val QUEUE = "QUEUE".asInstanceOf[Grouping]
   val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
   @inline def values: js.Array[Grouping] = js.Array(QUEUE, CHANNEL)
+}
+
+@js.native
+sealed trait HierarchyGroupMatchType extends js.Any
+object HierarchyGroupMatchType {
+  val EXACT = "EXACT".asInstanceOf[HierarchyGroupMatchType]
+  val WITH_CHILD_GROUPS = "WITH_CHILD_GROUPS".asInstanceOf[HierarchyGroupMatchType]
+
+  @inline def values: js.Array[HierarchyGroupMatchType] = js.Array(EXACT, WITH_CHILD_GROUPS)
 }
 
 /** The historical metric names.
@@ -242,8 +298,22 @@ object InstanceAttributeType {
   val AUTO_RESOLVE_BEST_VOICES = "AUTO_RESOLVE_BEST_VOICES".asInstanceOf[InstanceAttributeType]
   val USE_CUSTOM_TTS_VOICES = "USE_CUSTOM_TTS_VOICES".asInstanceOf[InstanceAttributeType]
   val EARLY_MEDIA = "EARLY_MEDIA".asInstanceOf[InstanceAttributeType]
+  val MULTI_PARTY_CONFERENCE = "MULTI_PARTY_CONFERENCE".asInstanceOf[InstanceAttributeType]
+  val HIGH_VOLUME_OUTBOUND = "HIGH_VOLUME_OUTBOUND".asInstanceOf[InstanceAttributeType]
+  val ENHANCED_CONTACT_MONITORING = "ENHANCED_CONTACT_MONITORING".asInstanceOf[InstanceAttributeType]
 
-  @inline def values: js.Array[InstanceAttributeType] = js.Array(INBOUND_CALLS, OUTBOUND_CALLS, CONTACTFLOW_LOGS, CONTACT_LENS, AUTO_RESOLVE_BEST_VOICES, USE_CUSTOM_TTS_VOICES, EARLY_MEDIA)
+  @inline def values: js.Array[InstanceAttributeType] = js.Array(
+    INBOUND_CALLS,
+    OUTBOUND_CALLS,
+    CONTACTFLOW_LOGS,
+    CONTACT_LENS,
+    AUTO_RESOLVE_BEST_VOICES,
+    USE_CUSTOM_TTS_VOICES,
+    EARLY_MEDIA,
+    MULTI_PARTY_CONFERENCE,
+    HIGH_VOLUME_OUTBOUND,
+    ENHANCED_CONTACT_MONITORING
+  )
 }
 
 @js.native
@@ -265,8 +335,9 @@ object InstanceStorageResourceType {
   val MEDIA_STREAMS = "MEDIA_STREAMS".asInstanceOf[InstanceStorageResourceType]
   val CONTACT_TRACE_RECORDS = "CONTACT_TRACE_RECORDS".asInstanceOf[InstanceStorageResourceType]
   val AGENT_EVENTS = "AGENT_EVENTS".asInstanceOf[InstanceStorageResourceType]
+  val REAL_TIME_CONTACT_ANALYSIS_SEGMENTS = "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS".asInstanceOf[InstanceStorageResourceType]
 
-  @inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
+  @inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS, REAL_TIME_CONTACT_ANALYSIS_SEGMENTS)
 }
 
 @js.native
@@ -277,8 +348,9 @@ object IntegrationType {
   val PINPOINT_APP = "PINPOINT_APP".asInstanceOf[IntegrationType]
   val WISDOM_ASSISTANT = "WISDOM_ASSISTANT".asInstanceOf[IntegrationType]
   val WISDOM_KNOWLEDGE_BASE = "WISDOM_KNOWLEDGE_BASE".asInstanceOf[IntegrationType]
+  val CASES_DOMAIN = "CASES_DOMAIN".asInstanceOf[IntegrationType]
 
-  @inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE)
+  @inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE, CASES_DOMAIN)
 }
 
 @js.native
@@ -288,6 +360,31 @@ object LexVersion {
   val V2 = "V2".asInstanceOf[LexVersion]
 
   @inline def values: js.Array[LexVersion] = js.Array(V1, V2)
+}
+
+@js.native
+sealed trait MonitorCapability extends js.Any
+object MonitorCapability {
+  val SILENT_MONITOR = "SILENT_MONITOR".asInstanceOf[MonitorCapability]
+  val BARGE = "BARGE".asInstanceOf[MonitorCapability]
+
+  @inline def values: js.Array[MonitorCapability] = js.Array(SILENT_MONITOR, BARGE)
+}
+
+@js.native
+sealed trait NotificationContentType extends js.Any
+object NotificationContentType {
+  val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[NotificationContentType]
+
+  @inline def values: js.Array[NotificationContentType] = js.Array(PLAIN_TEXT)
+}
+
+@js.native
+sealed trait NotificationDeliveryType extends js.Any
+object NotificationDeliveryType {
+  val EMAIL = "EMAIL".asInstanceOf[NotificationDeliveryType]
+
+  @inline def values: js.Array[NotificationDeliveryType] = js.Array(EMAIL)
 }
 
 @js.native
@@ -782,6 +879,16 @@ object PhoneNumberType {
 }
 
 @js.native
+sealed trait PhoneNumberWorkflowStatus extends js.Any
+object PhoneNumberWorkflowStatus {
+  val CLAIMED = "CLAIMED".asInstanceOf[PhoneNumberWorkflowStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[PhoneNumberWorkflowStatus]
+  val FAILED = "FAILED".asInstanceOf[PhoneNumberWorkflowStatus]
+
+  @inline def values: js.Array[PhoneNumberWorkflowStatus] = js.Array(CLAIMED, IN_PROGRESS, FAILED)
+}
+
+@js.native
 sealed trait PhoneType extends js.Any
 object PhoneType {
   val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
@@ -832,8 +939,29 @@ sealed trait ReferenceType extends js.Any
 object ReferenceType {
   val URL = "URL".asInstanceOf[ReferenceType]
   val ATTACHMENT = "ATTACHMENT".asInstanceOf[ReferenceType]
+  val NUMBER = "NUMBER".asInstanceOf[ReferenceType]
+  val STRING = "STRING".asInstanceOf[ReferenceType]
+  val DATE = "DATE".asInstanceOf[ReferenceType]
+  val EMAIL = "EMAIL".asInstanceOf[ReferenceType]
 
-  @inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT)
+  @inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT, NUMBER, STRING, DATE, EMAIL)
+}
+
+@js.native
+sealed trait RulePublishStatus extends js.Any
+object RulePublishStatus {
+  val DRAFT = "DRAFT".asInstanceOf[RulePublishStatus]
+  val PUBLISHED = "PUBLISHED".asInstanceOf[RulePublishStatus]
+
+  @inline def values: js.Array[RulePublishStatus] = js.Array(DRAFT, PUBLISHED)
+}
+
+@js.native
+sealed trait SearchableQueueType extends js.Any
+object SearchableQueueType {
+  val STANDARD = "STANDARD".asInstanceOf[SearchableQueueType]
+
+  @inline def values: js.Array[SearchableQueueType] = js.Array(STANDARD)
 }
 
 @js.native
@@ -867,6 +995,57 @@ object StorageType {
 }
 
 @js.native
+sealed trait StringComparisonType extends js.Any
+object StringComparisonType {
+  val STARTS_WITH = "STARTS_WITH".asInstanceOf[StringComparisonType]
+  val CONTAINS = "CONTAINS".asInstanceOf[StringComparisonType]
+  val EXACT = "EXACT".asInstanceOf[StringComparisonType]
+
+  @inline def values: js.Array[StringComparisonType] = js.Array(STARTS_WITH, CONTAINS, EXACT)
+}
+
+@js.native
+sealed trait TaskTemplateFieldType extends js.Any
+object TaskTemplateFieldType {
+  val NAME = "NAME".asInstanceOf[TaskTemplateFieldType]
+  val DESCRIPTION = "DESCRIPTION".asInstanceOf[TaskTemplateFieldType]
+  val SCHEDULED_TIME = "SCHEDULED_TIME".asInstanceOf[TaskTemplateFieldType]
+  val QUICK_CONNECT = "QUICK_CONNECT".asInstanceOf[TaskTemplateFieldType]
+  val URL = "URL".asInstanceOf[TaskTemplateFieldType]
+  val NUMBER = "NUMBER".asInstanceOf[TaskTemplateFieldType]
+  val TEXT = "TEXT".asInstanceOf[TaskTemplateFieldType]
+  val TEXT_AREA = "TEXT_AREA".asInstanceOf[TaskTemplateFieldType]
+  val DATE_TIME = "DATE_TIME".asInstanceOf[TaskTemplateFieldType]
+  val BOOLEAN = "BOOLEAN".asInstanceOf[TaskTemplateFieldType]
+  val SINGLE_SELECT = "SINGLE_SELECT".asInstanceOf[TaskTemplateFieldType]
+  val EMAIL = "EMAIL".asInstanceOf[TaskTemplateFieldType]
+
+  @inline def values: js.Array[TaskTemplateFieldType] = js.Array(NAME, DESCRIPTION, SCHEDULED_TIME, QUICK_CONNECT, URL, NUMBER, TEXT, TEXT_AREA, DATE_TIME, BOOLEAN, SINGLE_SELECT, EMAIL)
+}
+
+@js.native
+sealed trait TaskTemplateStatus extends js.Any
+object TaskTemplateStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[TaskTemplateStatus]
+  val INACTIVE = "INACTIVE".asInstanceOf[TaskTemplateStatus]
+
+  @inline def values: js.Array[TaskTemplateStatus] = js.Array(ACTIVE, INACTIVE)
+}
+
+@js.native
+sealed trait TrafficDistributionGroupStatus extends js.Any
+object TrafficDistributionGroupStatus {
+  val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[TrafficDistributionGroupStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[TrafficDistributionGroupStatus]
+  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[TrafficDistributionGroupStatus]
+  val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[TrafficDistributionGroupStatus]
+  val DELETION_FAILED = "DELETION_FAILED".asInstanceOf[TrafficDistributionGroupStatus]
+  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[TrafficDistributionGroupStatus]
+
+  @inline def values: js.Array[TrafficDistributionGroupStatus] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED, PENDING_DELETION, DELETION_FAILED, UPDATE_IN_PROGRESS)
+}
+
+@js.native
 sealed trait TrafficType extends js.Any
 object TrafficType {
   val GENERAL = "GENERAL".asInstanceOf[TrafficType]
@@ -892,6 +1071,67 @@ object UseCaseType {
   val CONNECT_CAMPAIGNS = "CONNECT_CAMPAIGNS".asInstanceOf[UseCaseType]
 
   @inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION, CONNECT_CAMPAIGNS)
+}
+
+@js.native
+sealed trait VocabularyLanguageCode extends js.Any
+object VocabularyLanguageCode {
+  val `ar-AE` = "ar-AE".asInstanceOf[VocabularyLanguageCode]
+  val `de-CH` = "de-CH".asInstanceOf[VocabularyLanguageCode]
+  val `de-DE` = "de-DE".asInstanceOf[VocabularyLanguageCode]
+  val `en-AB` = "en-AB".asInstanceOf[VocabularyLanguageCode]
+  val `en-AU` = "en-AU".asInstanceOf[VocabularyLanguageCode]
+  val `en-GB` = "en-GB".asInstanceOf[VocabularyLanguageCode]
+  val `en-IE` = "en-IE".asInstanceOf[VocabularyLanguageCode]
+  val `en-IN` = "en-IN".asInstanceOf[VocabularyLanguageCode]
+  val `en-US` = "en-US".asInstanceOf[VocabularyLanguageCode]
+  val `en-WL` = "en-WL".asInstanceOf[VocabularyLanguageCode]
+  val `es-ES` = "es-ES".asInstanceOf[VocabularyLanguageCode]
+  val `es-US` = "es-US".asInstanceOf[VocabularyLanguageCode]
+  val `fr-CA` = "fr-CA".asInstanceOf[VocabularyLanguageCode]
+  val `fr-FR` = "fr-FR".asInstanceOf[VocabularyLanguageCode]
+  val `hi-IN` = "hi-IN".asInstanceOf[VocabularyLanguageCode]
+  val `it-IT` = "it-IT".asInstanceOf[VocabularyLanguageCode]
+  val `ja-JP` = "ja-JP".asInstanceOf[VocabularyLanguageCode]
+  val `ko-KR` = "ko-KR".asInstanceOf[VocabularyLanguageCode]
+  val `pt-BR` = "pt-BR".asInstanceOf[VocabularyLanguageCode]
+  val `pt-PT` = "pt-PT".asInstanceOf[VocabularyLanguageCode]
+  val `zh-CN` = "zh-CN".asInstanceOf[VocabularyLanguageCode]
+
+  @inline def values: js.Array[VocabularyLanguageCode] = js.Array(
+    `ar-AE`,
+    `de-CH`,
+    `de-DE`,
+    `en-AB`,
+    `en-AU`,
+    `en-GB`,
+    `en-IE`,
+    `en-IN`,
+    `en-US`,
+    `en-WL`,
+    `es-ES`,
+    `es-US`,
+    `fr-CA`,
+    `fr-FR`,
+    `hi-IN`,
+    `it-IT`,
+    `ja-JP`,
+    `ko-KR`,
+    `pt-BR`,
+    `pt-PT`,
+    `zh-CN`
+  )
+}
+
+@js.native
+sealed trait VocabularyState extends js.Any
+object VocabularyState {
+  val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[VocabularyState]
+  val ACTIVE = "ACTIVE".asInstanceOf[VocabularyState]
+  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[VocabularyState]
+  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[VocabularyState]
+
+  @inline def values: js.Array[VocabularyState] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED, DELETE_IN_PROGRESS)
 }
 
 @js.native

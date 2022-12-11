@@ -8,14 +8,26 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object route53 {
+  type ARN = String
   type AWSAccountID = String
   type AlarmName = String
   type AliasHealthEnabled = Boolean
   type AssociateVPCComment = String
+  type ChangeId = String
   type Changes = js.Array[Change]
   type CheckerIpRanges = js.Array[IPAddressCidr]
   type ChildHealthCheckList = js.Array[HealthCheckId]
+  type Cidr = String
+  type CidrBlockSummaries = js.Array[CidrBlockSummary]
+  type CidrCollectionChanges = js.Array[CidrCollectionChange]
+  type CidrList = js.Array[Cidr]
+  type CidrLocationNameDefaultAllowed = String
+  type CidrLocationNameDefaultNotAllowed = String
+  type CidrNonce = String
   type CloudWatchLogsLogGroupArn = String
+  type CollectionName = String
+  type CollectionSummaries = js.Array[CollectionSummary]
+  type CollectionVersion = Double
   type DNSName = String
   type DNSRCode = String
   type DelegationSetNameServers = js.Array[DNSName]
@@ -54,6 +66,7 @@ package object route53 {
   type IsPrivateZone = Boolean
   type KeySigningKeys = js.Array[KeySigningKey]
   type LimitValue = Double
+  type LocationSummaries = js.Array[LocationSummary]
   type MaxResults = String
   type MeasureLatency = Boolean
   type Message = String
@@ -118,6 +131,7 @@ package object route53 {
   type TrafficPolicyVersion = Int
   type TrafficPolicyVersionMarker = String
   type TransportProtocol = String
+  type UUID = String
   type UsageCount = Double
   type VPCId = String
   type VPCs = js.Array[VPC]
@@ -126,8 +140,10 @@ package object route53 {
 
     @inline def activateKeySigningKeyFuture(params: ActivateKeySigningKeyRequest): Future[ActivateKeySigningKeyResponse] = service.activateKeySigningKey(params).promise().toFuture
     @inline def associateVPCWithHostedZoneFuture(params: AssociateVPCWithHostedZoneRequest): Future[AssociateVPCWithHostedZoneResponse] = service.associateVPCWithHostedZone(params).promise().toFuture
+    @inline def changeCidrCollectionFuture(params: ChangeCidrCollectionRequest): Future[ChangeCidrCollectionResponse] = service.changeCidrCollection(params).promise().toFuture
     @inline def changeResourceRecordSetsFuture(params: ChangeResourceRecordSetsRequest): Future[ChangeResourceRecordSetsResponse] = service.changeResourceRecordSets(params).promise().toFuture
     @inline def changeTagsForResourceFuture(params: ChangeTagsForResourceRequest): Future[ChangeTagsForResourceResponse] = service.changeTagsForResource(params).promise().toFuture
+    @inline def createCidrCollectionFuture(params: CreateCidrCollectionRequest): Future[CreateCidrCollectionResponse] = service.createCidrCollection(params).promise().toFuture
     @inline def createHealthCheckFuture(params: CreateHealthCheckRequest): Future[CreateHealthCheckResponse] = service.createHealthCheck(params).promise().toFuture
     @inline def createHostedZoneFuture(params: CreateHostedZoneRequest): Future[CreateHostedZoneResponse] = service.createHostedZone(params).promise().toFuture
     @inline def createKeySigningKeyFuture(params: CreateKeySigningKeyRequest): Future[CreateKeySigningKeyResponse] = service.createKeySigningKey(params).promise().toFuture
@@ -138,6 +154,7 @@ package object route53 {
     @inline def createTrafficPolicyVersionFuture(params: CreateTrafficPolicyVersionRequest): Future[CreateTrafficPolicyVersionResponse] = service.createTrafficPolicyVersion(params).promise().toFuture
     @inline def createVPCAssociationAuthorizationFuture(params: CreateVPCAssociationAuthorizationRequest): Future[CreateVPCAssociationAuthorizationResponse] = service.createVPCAssociationAuthorization(params).promise().toFuture
     @inline def deactivateKeySigningKeyFuture(params: DeactivateKeySigningKeyRequest): Future[DeactivateKeySigningKeyResponse] = service.deactivateKeySigningKey(params).promise().toFuture
+    @inline def deleteCidrCollectionFuture(params: DeleteCidrCollectionRequest): Future[DeleteCidrCollectionResponse] = service.deleteCidrCollection(params).promise().toFuture
     @inline def deleteHealthCheckFuture(params: DeleteHealthCheckRequest): Future[DeleteHealthCheckResponse] = service.deleteHealthCheck(params).promise().toFuture
     @inline def deleteHostedZoneFuture(params: DeleteHostedZoneRequest): Future[DeleteHostedZoneResponse] = service.deleteHostedZone(params).promise().toFuture
     @inline def deleteKeySigningKeyFuture(params: DeleteKeySigningKeyRequest): Future[DeleteKeySigningKeyResponse] = service.deleteKeySigningKey(params).promise().toFuture
@@ -167,6 +184,9 @@ package object route53 {
     @inline def getTrafficPolicyFuture(params: GetTrafficPolicyRequest): Future[GetTrafficPolicyResponse] = service.getTrafficPolicy(params).promise().toFuture
     @inline def getTrafficPolicyInstanceCountFuture(params: GetTrafficPolicyInstanceCountRequest): Future[GetTrafficPolicyInstanceCountResponse] = service.getTrafficPolicyInstanceCount(params).promise().toFuture
     @inline def getTrafficPolicyInstanceFuture(params: GetTrafficPolicyInstanceRequest): Future[GetTrafficPolicyInstanceResponse] = service.getTrafficPolicyInstance(params).promise().toFuture
+    @inline def listCidrBlocksFuture(params: ListCidrBlocksRequest): Future[ListCidrBlocksResponse] = service.listCidrBlocks(params).promise().toFuture
+    @inline def listCidrCollectionsFuture(params: ListCidrCollectionsRequest): Future[ListCidrCollectionsResponse] = service.listCidrCollections(params).promise().toFuture
+    @inline def listCidrLocationsFuture(params: ListCidrLocationsRequest): Future[ListCidrLocationsResponse] = service.listCidrLocations(params).promise().toFuture
     @inline def listGeoLocationsFuture(params: ListGeoLocationsRequest): Future[ListGeoLocationsResponse] = service.listGeoLocations(params).promise().toFuture
     @inline def listHealthChecksFuture(params: ListHealthChecksRequest): Future[ListHealthChecksResponse] = service.listHealthChecks(params).promise().toFuture
     @inline def listHostedZonesByNameFuture(params: ListHostedZonesByNameRequest): Future[ListHostedZonesByNameResponse] = service.listHostedZonesByName(params).promise().toFuture
@@ -198,8 +218,10 @@ package object route53 {
 
     def activateKeySigningKey(params: ActivateKeySigningKeyRequest): Request[ActivateKeySigningKeyResponse] = js.native
     def associateVPCWithHostedZone(params: AssociateVPCWithHostedZoneRequest): Request[AssociateVPCWithHostedZoneResponse] = js.native
+    def changeCidrCollection(params: ChangeCidrCollectionRequest): Request[ChangeCidrCollectionResponse] = js.native
     def changeResourceRecordSets(params: ChangeResourceRecordSetsRequest): Request[ChangeResourceRecordSetsResponse] = js.native
     def changeTagsForResource(params: ChangeTagsForResourceRequest): Request[ChangeTagsForResourceResponse] = js.native
+    def createCidrCollection(params: CreateCidrCollectionRequest): Request[CreateCidrCollectionResponse] = js.native
     def createHealthCheck(params: CreateHealthCheckRequest): Request[CreateHealthCheckResponse] = js.native
     def createHostedZone(params: CreateHostedZoneRequest): Request[CreateHostedZoneResponse] = js.native
     def createKeySigningKey(params: CreateKeySigningKeyRequest): Request[CreateKeySigningKeyResponse] = js.native
@@ -210,6 +232,7 @@ package object route53 {
     def createTrafficPolicyVersion(params: CreateTrafficPolicyVersionRequest): Request[CreateTrafficPolicyVersionResponse] = js.native
     def createVPCAssociationAuthorization(params: CreateVPCAssociationAuthorizationRequest): Request[CreateVPCAssociationAuthorizationResponse] = js.native
     def deactivateKeySigningKey(params: DeactivateKeySigningKeyRequest): Request[DeactivateKeySigningKeyResponse] = js.native
+    def deleteCidrCollection(params: DeleteCidrCollectionRequest): Request[DeleteCidrCollectionResponse] = js.native
     def deleteHealthCheck(params: DeleteHealthCheckRequest): Request[DeleteHealthCheckResponse] = js.native
     def deleteHostedZone(params: DeleteHostedZoneRequest): Request[DeleteHostedZoneResponse] = js.native
     def deleteKeySigningKey(params: DeleteKeySigningKeyRequest): Request[DeleteKeySigningKeyResponse] = js.native
@@ -239,6 +262,9 @@ package object route53 {
     def getTrafficPolicy(params: GetTrafficPolicyRequest): Request[GetTrafficPolicyResponse] = js.native
     def getTrafficPolicyInstance(params: GetTrafficPolicyInstanceRequest): Request[GetTrafficPolicyInstanceResponse] = js.native
     def getTrafficPolicyInstanceCount(params: GetTrafficPolicyInstanceCountRequest): Request[GetTrafficPolicyInstanceCountResponse] = js.native
+    def listCidrBlocks(params: ListCidrBlocksRequest): Request[ListCidrBlocksResponse] = js.native
+    def listCidrCollections(params: ListCidrCollectionsRequest): Request[ListCidrCollectionsResponse] = js.native
+    def listCidrLocations(params: ListCidrLocationsRequest): Request[ListCidrLocationsResponse] = js.native
     def listGeoLocations(params: ListGeoLocationsRequest): Request[ListGeoLocationsResponse] = js.native
     def listHealthChecks(params: ListHealthChecksRequest): Request[ListHealthChecksResponse] = js.native
     def listHostedZones(params: ListHostedZonesRequest): Request[ListHostedZonesResponse] = js.native
@@ -348,7 +374,7 @@ package object route53 {
     }
   }
 
-  /** <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. When creating resource record sets for a private hosted zone, note the following: * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported. * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+  /** <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. When creating resource record sets for a private hosted zone, note the following: * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {
@@ -460,6 +486,47 @@ package object route53 {
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeBatch]
+    }
+  }
+
+  @js.native
+  trait ChangeCidrCollectionRequest extends js.Object {
+    var Changes: CidrCollectionChanges
+    var Id: UUID
+    var CollectionVersion: js.UndefOr[CollectionVersion]
+  }
+
+  object ChangeCidrCollectionRequest {
+    @inline
+    def apply(
+        Changes: CidrCollectionChanges,
+        Id: UUID,
+        CollectionVersion: js.UndefOr[CollectionVersion] = js.undefined
+    ): ChangeCidrCollectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Changes" -> Changes.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      CollectionVersion.foreach(__v => __obj.updateDynamic("CollectionVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChangeCidrCollectionRequest]
+    }
+  }
+
+  @js.native
+  trait ChangeCidrCollectionResponse extends js.Object {
+    var Id: ChangeId
+  }
+
+  object ChangeCidrCollectionResponse {
+    @inline
+    def apply(
+        Id: ChangeId
+    ): ChangeCidrCollectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ChangeCidrCollectionResponse]
     }
   }
 
@@ -575,6 +642,101 @@ package object route53 {
     }
   }
 
+  /** A complex type that lists the CIDR blocks.
+    */
+  @js.native
+  trait CidrBlockSummary extends js.Object {
+    var CidrBlock: js.UndefOr[Cidr]
+    var LocationName: js.UndefOr[CidrLocationNameDefaultNotAllowed]
+  }
+
+  object CidrBlockSummary {
+    @inline
+    def apply(
+        CidrBlock: js.UndefOr[Cidr] = js.undefined,
+        LocationName: js.UndefOr[CidrLocationNameDefaultNotAllowed] = js.undefined
+    ): CidrBlockSummary = {
+      val __obj = js.Dynamic.literal()
+      CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
+      LocationName.foreach(__v => __obj.updateDynamic("LocationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CidrBlockSummary]
+    }
+  }
+
+  /** A complex type that identifies a CIDR collection.
+    */
+  @js.native
+  trait CidrCollection extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[UUID]
+    var Name: js.UndefOr[CollectionName]
+    var Version: js.UndefOr[CollectionVersion]
+  }
+
+  object CidrCollection {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[UUID] = js.undefined,
+        Name: js.UndefOr[CollectionName] = js.undefined,
+        Version: js.UndefOr[CollectionVersion] = js.undefined
+    ): CidrCollection = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CidrCollection]
+    }
+  }
+
+  /** A complex type that contains information about the CIDR collection change.
+    */
+  @js.native
+  trait CidrCollectionChange extends js.Object {
+    var Action: CidrCollectionChangeAction
+    var CidrList: CidrList
+    var LocationName: CidrLocationNameDefaultNotAllowed
+  }
+
+  object CidrCollectionChange {
+    @inline
+    def apply(
+        Action: CidrCollectionChangeAction,
+        CidrList: CidrList,
+        LocationName: CidrLocationNameDefaultNotAllowed
+    ): CidrCollectionChange = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "CidrList" -> CidrList.asInstanceOf[js.Any],
+        "LocationName" -> LocationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CidrCollectionChange]
+    }
+  }
+
+  /** The object that is specified in resource record set object when you are linking a resource record set to a CIDR location. A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.
+    */
+  @js.native
+  trait CidrRoutingConfig extends js.Object {
+    var CollectionId: UUID
+    var LocationName: CidrLocationNameDefaultAllowed
+  }
+
+  object CidrRoutingConfig {
+    @inline
+    def apply(
+        CollectionId: UUID,
+        LocationName: CidrLocationNameDefaultAllowed
+    ): CidrRoutingConfig = {
+      val __obj = js.Dynamic.literal(
+        "CollectionId" -> CollectionId.asInstanceOf[js.Any],
+        "LocationName" -> LocationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CidrRoutingConfig]
+    }
+  }
+
   /** A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.
     */
   @js.native
@@ -613,6 +775,72 @@ package object route53 {
 
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchAlarmConfiguration]
+    }
+  }
+
+  /** A complex type that is an entry in an [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html|CidrCollection]] array.
+    */
+  @js.native
+  trait CollectionSummary extends js.Object {
+    var Arn: js.UndefOr[ARN]
+    var Id: js.UndefOr[UUID]
+    var Name: js.UndefOr[CollectionName]
+    var Version: js.UndefOr[CollectionVersion]
+  }
+
+  object CollectionSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ARN] = js.undefined,
+        Id: js.UndefOr[UUID] = js.undefined,
+        Name: js.UndefOr[CollectionName] = js.undefined,
+        Version: js.UndefOr[CollectionVersion] = js.undefined
+    ): CollectionSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CollectionSummary]
+    }
+  }
+
+  @js.native
+  trait CreateCidrCollectionRequest extends js.Object {
+    var CallerReference: CidrNonce
+    var Name: CollectionName
+  }
+
+  object CreateCidrCollectionRequest {
+    @inline
+    def apply(
+        CallerReference: CidrNonce,
+        Name: CollectionName
+    ): CreateCidrCollectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateCidrCollectionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateCidrCollectionResponse extends js.Object {
+    var Collection: js.UndefOr[CidrCollection]
+    var Location: js.UndefOr[ResourceURI]
+  }
+
+  object CreateCidrCollectionResponse {
+    @inline
+    def apply(
+        Collection: js.UndefOr[CidrCollection] = js.undefined,
+        Location: js.UndefOr[ResourceURI] = js.undefined
+    ): CreateCidrCollectionResponse = {
+      val __obj = js.Dynamic.literal()
+      Collection.foreach(__v => __obj.updateDynamic("Collection")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateCidrCollectionResponse]
     }
   }
 
@@ -1134,6 +1362,34 @@ package object route53 {
     }
   }
 
+  @js.native
+  trait DeleteCidrCollectionRequest extends js.Object {
+    var Id: UUID
+  }
+
+  object DeleteCidrCollectionRequest {
+    @inline
+    def apply(
+        Id: UUID
+    ): DeleteCidrCollectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteCidrCollectionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteCidrCollectionResponse extends js.Object
+
+  object DeleteCidrCollectionResponse {
+    @inline
+    def apply(): DeleteCidrCollectionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteCidrCollectionResponse]
+    }
+  }
+
   /** This action deletes a health check.
     */
   @js.native
@@ -1640,13 +1896,13 @@ package object route53 {
     */
   @js.native
   trait GetChangeRequest extends js.Object {
-    var Id: ResourceId
+    var Id: ChangeId
   }
 
   object GetChangeRequest {
     @inline
     def apply(
-        Id: ResourceId
+        Id: ChangeId
     ): GetChangeRequest = {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
@@ -2618,6 +2874,133 @@ package object route53 {
     }
   }
 
+  @js.native
+  trait ListCidrBlocksRequest extends js.Object {
+    var CollectionId: UUID
+    var LocationName: js.UndefOr[CidrLocationNameDefaultNotAllowed]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrBlocksRequest {
+    @inline
+    def apply(
+        CollectionId: UUID,
+        LocationName: js.UndefOr[CidrLocationNameDefaultNotAllowed] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrBlocksRequest = {
+      val __obj = js.Dynamic.literal(
+        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
+      )
+
+      LocationName.foreach(__v => __obj.updateDynamic("LocationName")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrBlocksRequest]
+    }
+  }
+
+  @js.native
+  trait ListCidrBlocksResponse extends js.Object {
+    var CidrBlocks: js.UndefOr[CidrBlockSummaries]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrBlocksResponse {
+    @inline
+    def apply(
+        CidrBlocks: js.UndefOr[CidrBlockSummaries] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrBlocksResponse = {
+      val __obj = js.Dynamic.literal()
+      CidrBlocks.foreach(__v => __obj.updateDynamic("CidrBlocks")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrBlocksResponse]
+    }
+  }
+
+  @js.native
+  trait ListCidrCollectionsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrCollectionsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrCollectionsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrCollectionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCidrCollectionsResponse extends js.Object {
+    var CidrCollections: js.UndefOr[CollectionSummaries]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrCollectionsResponse {
+    @inline
+    def apply(
+        CidrCollections: js.UndefOr[CollectionSummaries] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrCollectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      CidrCollections.foreach(__v => __obj.updateDynamic("CidrCollections")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrCollectionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListCidrLocationsRequest extends js.Object {
+    var CollectionId: UUID
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrLocationsRequest {
+    @inline
+    def apply(
+        CollectionId: UUID,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrLocationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "CollectionId" -> CollectionId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrLocationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListCidrLocationsResponse extends js.Object {
+    var CidrLocations: js.UndefOr[LocationSummaries]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListCidrLocationsResponse {
+    @inline
+    def apply(
+        CidrLocations: js.UndefOr[LocationSummaries] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListCidrLocationsResponse = {
+      val __obj = js.Dynamic.literal()
+      CidrLocations.foreach(__v => __obj.updateDynamic("CidrLocations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListCidrLocationsResponse]
+    }
+  }
+
   /** A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource record sets.
     */
   @js.native
@@ -3495,6 +3878,24 @@ package object route53 {
     }
   }
 
+  /** A complex type that contains information about the CIDR location.
+    */
+  @js.native
+  trait LocationSummary extends js.Object {
+    var LocationName: js.UndefOr[CidrLocationNameDefaultAllowed]
+  }
+
+  object LocationSummary {
+    @inline
+    def apply(
+        LocationName: js.UndefOr[CidrLocationNameDefaultAllowed] = js.undefined
+    ): LocationSummary = {
+      val __obj = js.Dynamic.literal()
+      LocationName.foreach(__v => __obj.updateDynamic("LocationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocationSummary]
+    }
+  }
+
   /** A complex type that contains information about a configuration for DNS query logging.
     */
   @js.native
@@ -3548,6 +3949,7 @@ package object route53 {
     var Name: DNSName
     var Type: RRType
     var AliasTarget: js.UndefOr[AliasTarget]
+    var CidrRoutingConfig: js.UndefOr[CidrRoutingConfig]
     var Failover: js.UndefOr[ResourceRecordSetFailover]
     var GeoLocation: js.UndefOr[GeoLocation]
     var HealthCheckId: js.UndefOr[HealthCheckId]
@@ -3566,6 +3968,7 @@ package object route53 {
         Name: DNSName,
         Type: RRType,
         AliasTarget: js.UndefOr[AliasTarget] = js.undefined,
+        CidrRoutingConfig: js.UndefOr[CidrRoutingConfig] = js.undefined,
         Failover: js.UndefOr[ResourceRecordSetFailover] = js.undefined,
         GeoLocation: js.UndefOr[GeoLocation] = js.undefined,
         HealthCheckId: js.UndefOr[HealthCheckId] = js.undefined,
@@ -3583,6 +3986,7 @@ package object route53 {
       )
 
       AliasTarget.foreach(__v => __obj.updateDynamic("AliasTarget")(__v.asInstanceOf[js.Any]))
+      CidrRoutingConfig.foreach(__v => __obj.updateDynamic("CidrRoutingConfig")(__v.asInstanceOf[js.Any]))
       Failover.foreach(__v => __obj.updateDynamic("Failover")(__v.asInstanceOf[js.Any]))
       GeoLocation.foreach(__v => __obj.updateDynamic("GeoLocation")(__v.asInstanceOf[js.Any]))
       HealthCheckId.foreach(__v => __obj.updateDynamic("HealthCheckId")(__v.asInstanceOf[js.Any]))

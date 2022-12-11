@@ -51,7 +51,7 @@ object OptimizerType {
   inline def values: js.Array[OptimizerType] = js.Array(COMPACTION, GARBAGE_COLLECTION, ALL)
 }
 
-type Permission = "ALL" | "SELECT" | "ALTER" | "DROP" | "DELETE" | "INSERT" | "DESCRIBE" | "CREATE_DATABASE" | "CREATE_TABLE" | "DATA_LOCATION_ACCESS" | "CREATE_TAG" | "ALTER_TAG" | "DELETE_TAG" | "DESCRIBE_TAG" | "ASSOCIATE_TAG"
+type Permission = "ALL" | "SELECT" | "ALTER" | "DROP" | "DELETE" | "INSERT" | "DESCRIBE" | "CREATE_DATABASE" | "CREATE_TABLE" | "DATA_LOCATION_ACCESS" | "CREATE_TAG" | "ASSOCIATE"
 object Permission {
   inline val ALL: "ALL" = "ALL"
   inline val SELECT: "SELECT" = "SELECT"
@@ -64,28 +64,17 @@ object Permission {
   inline val CREATE_TABLE: "CREATE_TABLE" = "CREATE_TABLE"
   inline val DATA_LOCATION_ACCESS: "DATA_LOCATION_ACCESS" = "DATA_LOCATION_ACCESS"
   inline val CREATE_TAG: "CREATE_TAG" = "CREATE_TAG"
-  inline val ALTER_TAG: "ALTER_TAG" = "ALTER_TAG"
-  inline val DELETE_TAG: "DELETE_TAG" = "DELETE_TAG"
-  inline val DESCRIBE_TAG: "DESCRIBE_TAG" = "DESCRIBE_TAG"
-  inline val ASSOCIATE_TAG: "ASSOCIATE_TAG" = "ASSOCIATE_TAG"
+  inline val ASSOCIATE: "ASSOCIATE" = "ASSOCIATE"
 
-  inline def values: js.Array[Permission] = js.Array(
-    ALL,
-    SELECT,
-    ALTER,
-    DROP,
-    DELETE,
-    INSERT,
-    DESCRIBE,
-    CREATE_DATABASE,
-    CREATE_TABLE,
-    DATA_LOCATION_ACCESS,
-    CREATE_TAG,
-    ALTER_TAG,
-    DELETE_TAG,
-    DESCRIBE_TAG,
-    ASSOCIATE_TAG
-  )
+  inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, CREATE_TAG, ASSOCIATE)
+}
+
+type PermissionType = "COLUMN_PERMISSION" | "CELL_FILTER_PERMISSION"
+object PermissionType {
+  inline val COLUMN_PERMISSION: "COLUMN_PERMISSION" = "COLUMN_PERMISSION"
+  inline val CELL_FILTER_PERMISSION: "CELL_FILTER_PERMISSION" = "CELL_FILTER_PERMISSION"
+
+  inline def values: js.Array[PermissionType] = js.Array(COLUMN_PERMISSION, CELL_FILTER_PERMISSION)
 }
 
 type QueryStateString = "PENDING" | "WORKUNITS_AVAILABLE" | "ERROR" | "FINISHED" | "EXPIRED"

@@ -18,6 +18,14 @@ object AuthenticationType {
   inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`)
 }
 
+type DataTieringStatus = "true" | "false"
+object DataTieringStatus {
+  inline val `true`: "true" = "true"
+  inline val `false`: "false" = "false"
+
+  inline def values: js.Array[DataTieringStatus] = js.Array(`true`, `false`)
+}
+
 type InputAuthenticationType = "password"
 object InputAuthenticationType {
   inline val password: "password" = "password"

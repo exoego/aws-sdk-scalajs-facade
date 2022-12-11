@@ -94,6 +94,25 @@ object DelegationStatus {
   inline def values: js.Array[DelegationStatus] = js.Array(IN_PROGRESS, UNDER_REVIEW, COMPLETE)
 }
 
+type EvidenceFinderBackfillStatus = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED"
+object EvidenceFinderBackfillStatus {
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+
+  inline def values: js.Array[EvidenceFinderBackfillStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
+}
+
+type EvidenceFinderEnablementStatus = "ENABLED" | "DISABLED" | "ENABLE_IN_PROGRESS" | "DISABLE_IN_PROGRESS"
+object EvidenceFinderEnablementStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLE_IN_PROGRESS: "ENABLE_IN_PROGRESS" = "ENABLE_IN_PROGRESS"
+  inline val DISABLE_IN_PROGRESS: "DISABLE_IN_PROGRESS" = "DISABLE_IN_PROGRESS"
+
+  inline def values: js.Array[EvidenceFinderEnablementStatus] = js.Array(ENABLED, DISABLED, ENABLE_IN_PROGRESS, DISABLE_IN_PROGRESS)
+}
+
 type FrameworkType = "Standard" | "Custom"
 object FrameworkType {
   inline val Standard: "Standard" = "Standard"
@@ -128,15 +147,16 @@ object RoleType {
   inline def values: js.Array[RoleType] = js.Array(PROCESS_OWNER, RESOURCE_OWNER)
 }
 
-type SettingAttribute = "ALL" | "IS_AWS_ORG_ENABLED" | "SNS_TOPIC" | "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" | "DEFAULT_PROCESS_OWNERS"
+type SettingAttribute = "ALL" | "IS_AWS_ORG_ENABLED" | "SNS_TOPIC" | "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" | "DEFAULT_PROCESS_OWNERS" | "EVIDENCE_FINDER_ENABLEMENT"
 object SettingAttribute {
   inline val ALL: "ALL" = "ALL"
   inline val IS_AWS_ORG_ENABLED: "IS_AWS_ORG_ENABLED" = "IS_AWS_ORG_ENABLED"
   inline val SNS_TOPIC: "SNS_TOPIC" = "SNS_TOPIC"
   inline val DEFAULT_ASSESSMENT_REPORTS_DESTINATION: "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" = "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"
   inline val DEFAULT_PROCESS_OWNERS: "DEFAULT_PROCESS_OWNERS" = "DEFAULT_PROCESS_OWNERS"
+  inline val EVIDENCE_FINDER_ENABLEMENT: "EVIDENCE_FINDER_ENABLEMENT" = "EVIDENCE_FINDER_ENABLEMENT"
 
-  inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
+  inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS, EVIDENCE_FINDER_ENABLEMENT)
 }
 
 type ShareRequestAction = "ACCEPT" | "DECLINE" | "REVOKE"

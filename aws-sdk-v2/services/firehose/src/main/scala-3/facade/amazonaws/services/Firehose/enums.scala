@@ -2,6 +2,14 @@ package facade.amazonaws.services.firehose
 
 import scalajs.js
 
+type AmazonOpenSearchServerlessS3BackupMode = "FailedDocumentsOnly" | "AllDocuments"
+object AmazonOpenSearchServerlessS3BackupMode {
+  inline val FailedDocumentsOnly: "FailedDocumentsOnly" = "FailedDocumentsOnly"
+  inline val AllDocuments: "AllDocuments" = "AllDocuments"
+
+  inline def values: js.Array[AmazonOpenSearchServerlessS3BackupMode] = js.Array(FailedDocumentsOnly, AllDocuments)
+}
+
 type AmazonopensearchserviceIndexRotationPeriod = "NoRotation" | "OneHour" | "OneDay" | "OneWeek" | "OneMonth"
 object AmazonopensearchserviceIndexRotationPeriod {
   inline val NoRotation: "NoRotation" = "NoRotation"

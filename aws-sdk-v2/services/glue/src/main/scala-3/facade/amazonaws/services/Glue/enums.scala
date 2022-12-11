@@ -2,6 +2,27 @@ package facade.amazonaws.services.glue
 
 import scalajs.js
 
+type AggFunction = "avg" | "countDistinct" | "count" | "first" | "last" | "kurtosis" | "max" | "min" | "skewness" | "stddev_samp" | "stddev_pop" | "sum" | "sumDistinct" | "var_samp" | "var_pop"
+object AggFunction {
+  inline val avg: "avg" = "avg"
+  inline val countDistinct: "countDistinct" = "countDistinct"
+  inline val count: "count" = "count"
+  inline val first: "first" = "first"
+  inline val last: "last" = "last"
+  inline val kurtosis: "kurtosis" = "kurtosis"
+  inline val max: "max" = "max"
+  inline val min: "min" = "min"
+  inline val skewness: "skewness" = "skewness"
+  inline val stddev_samp: "stddev_samp" = "stddev_samp"
+  inline val stddev_pop: "stddev_pop" = "stddev_pop"
+  inline val sum: "sum" = "sum"
+  inline val sumDistinct: "sumDistinct" = "sumDistinct"
+  inline val var_samp: "var_samp" = "var_samp"
+  inline val var_pop: "var_pop" = "var_pop"
+
+  inline def values: js.Array[AggFunction] = js.Array(avg, countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop)
+}
+
 type BackfillErrorCode = "ENCRYPTED_PARTITION_ERROR" | "INTERNAL_ERROR" | "INVALID_PARTITION_TYPE_DATA_ERROR" | "MISSING_PARTITION_VALUE_ERROR" | "UNSUPPORTED_PARTITION_CHARACTER_ERROR"
 object BackfillErrorCode {
   inline val ENCRYPTED_PARTITION_ERROR: "ENCRYPTED_PARTITION_ERROR" = "ENCRYPTED_PARTITION_ERROR"
@@ -87,6 +108,14 @@ object Compatibility {
   inline def values: js.Array[Compatibility] = js.Array(NONE, DISABLED, BACKWARD, BACKWARD_ALL, FORWARD, FORWARD_ALL, FULL, FULL_ALL)
 }
 
+type CompressionType = "gzip" | "bzip2"
+object CompressionType {
+  inline val gzip: "gzip" = "gzip"
+  inline val bzip2: "bzip2" = "bzip2"
+
+  inline def values: js.Array[CompressionType] = js.Array(gzip, bzip2)
+}
+
 type ConnectionPropertyKey = "HOST" | "PORT" | "USERNAME" | "PASSWORD" | "ENCRYPTED_PASSWORD" | "JDBC_DRIVER_JAR_URI" | "JDBC_DRIVER_CLASS_NAME" | "JDBC_ENGINE" | "JDBC_ENGINE_VERSION" | "CONFIG_FILES" | "INSTANCE_ID" | "JDBC_CONNECTION_URL" | "JDBC_ENFORCE_SSL" | "CUSTOM_JDBC_CERT" | "SKIP_CUSTOM_JDBC_CERT_VALIDATION" | "CUSTOM_JDBC_CERT_STRING" | "CONNECTION_URL" | "KAFKA_BOOTSTRAP_SERVERS" | "KAFKA_SSL_ENABLED" | "KAFKA_CUSTOM_CERT" | "KAFKA_SKIP_CUSTOM_CERT_VALIDATION" | "KAFKA_CLIENT_KEYSTORE" | "KAFKA_CLIENT_KEYSTORE_PASSWORD" | "KAFKA_CLIENT_KEY_PASSWORD" | "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD" | "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD" | "SECRET_ID" | "CONNECTOR_URL" | "CONNECTOR_TYPE" | "CONNECTOR_CLASS_NAME"
 object ConnectionPropertyKey {
   inline val HOST: "HOST" = "HOST"
@@ -167,15 +196,26 @@ object ConnectionType {
   inline def values: js.Array[ConnectionType] = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK, MARKETPLACE, CUSTOM)
 }
 
-type CrawlState = "RUNNING" | "CANCELLING" | "CANCELLED" | "SUCCEEDED" | "FAILED"
+type CrawlState = "RUNNING" | "CANCELLING" | "CANCELLED" | "SUCCEEDED" | "FAILED" | "ERROR"
 object CrawlState {
   inline val RUNNING: "RUNNING" = "RUNNING"
   inline val CANCELLING: "CANCELLING" = "CANCELLING"
   inline val CANCELLED: "CANCELLED" = "CANCELLED"
   inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
   inline val FAILED: "FAILED" = "FAILED"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  inline def values: js.Array[CrawlState] = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
+  inline def values: js.Array[CrawlState] = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED, ERROR)
+}
+
+type CrawlerHistoryState = "RUNNING" | "COMPLETED" | "FAILED" | "STOPPED"
+object CrawlerHistoryState {
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+
+  inline def values: js.Array[CrawlerHistoryState] = js.Array(RUNNING, COMPLETED, FAILED, STOPPED)
 }
 
 type CrawlerLineageSettings = "ENABLE" | "DISABLE"
@@ -204,12 +244,38 @@ object CsvHeaderOption {
   inline def values: js.Array[CsvHeaderOption] = js.Array(UNKNOWN, PRESENT, ABSENT)
 }
 
-type DataFormat = "AVRO" | "JSON"
+type DQStopJobOnFailureTiming = "Immediate" | "AfterDataLoad"
+object DQStopJobOnFailureTiming {
+  inline val Immediate: "Immediate" = "Immediate"
+  inline val AfterDataLoad: "AfterDataLoad" = "AfterDataLoad"
+
+  inline def values: js.Array[DQStopJobOnFailureTiming] = js.Array(Immediate, AfterDataLoad)
+}
+
+type DQTransformOutput = "PrimaryInput" | "EvaluationResults"
+object DQTransformOutput {
+  inline val PrimaryInput: "PrimaryInput" = "PrimaryInput"
+  inline val EvaluationResults: "EvaluationResults" = "EvaluationResults"
+
+  inline def values: js.Array[DQTransformOutput] = js.Array(PrimaryInput, EvaluationResults)
+}
+
+type DataFormat = "AVRO" | "JSON" | "PROTOBUF"
 object DataFormat {
   inline val AVRO: "AVRO" = "AVRO"
   inline val JSON: "JSON" = "JSON"
+  inline val PROTOBUF: "PROTOBUF" = "PROTOBUF"
 
-  inline def values: js.Array[DataFormat] = js.Array(AVRO, JSON)
+  inline def values: js.Array[DataFormat] = js.Array(AVRO, JSON, PROTOBUF)
+}
+
+type DataQualityRuleResultStatus = "PASS" | "FAIL" | "ERROR"
+object DataQualityRuleResultStatus {
+  inline val PASS: "PASS" = "PASS"
+  inline val FAIL: "FAIL" = "FAIL"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[DataQualityRuleResultStatus] = js.Array(PASS, FAIL, ERROR)
 }
 
 type DeleteBehavior = "LOG" | "DELETE_FROM_DATABASE" | "DEPRECATE_IN_DATABASE"
@@ -229,6 +295,14 @@ object EnableHybridValues {
   inline def values: js.Array[EnableHybridValues] = js.Array(TRUE, FALSE)
 }
 
+type ExecutionClass = "FLEX" | "STANDARD"
+object ExecutionClass {
+  inline val FLEX: "FLEX" = "FLEX"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+
+  inline def values: js.Array[ExecutionClass] = js.Array(FLEX, STANDARD)
+}
+
 type ExistCondition = "MUST_EXIST" | "NOT_EXIST" | "NONE"
 object ExistCondition {
   inline val MUST_EXIST: "MUST_EXIST" = "MUST_EXIST"
@@ -236,6 +310,167 @@ object ExistCondition {
   inline val NONE: "NONE" = "NONE"
 
   inline def values: js.Array[ExistCondition] = js.Array(MUST_EXIST, NOT_EXIST, NONE)
+}
+
+type FieldName = "CRAWL_ID" | "STATE" | "START_TIME" | "END_TIME" | "DPU_HOUR"
+object FieldName {
+  inline val CRAWL_ID: "CRAWL_ID" = "CRAWL_ID"
+  inline val STATE: "STATE" = "STATE"
+  inline val START_TIME: "START_TIME" = "START_TIME"
+  inline val END_TIME: "END_TIME" = "END_TIME"
+  inline val DPU_HOUR: "DPU_HOUR" = "DPU_HOUR"
+
+  inline def values: js.Array[FieldName] = js.Array(CRAWL_ID, STATE, START_TIME, END_TIME, DPU_HOUR)
+}
+
+type FilterLogicalOperator = "AND" | "OR"
+object FilterLogicalOperator {
+  inline val AND: "AND" = "AND"
+  inline val OR: "OR" = "OR"
+
+  inline def values: js.Array[FilterLogicalOperator] = js.Array(AND, OR)
+}
+
+type FilterOperation = "EQ" | "LT" | "GT" | "LTE" | "GTE" | "REGEX" | "ISNULL"
+object FilterOperation {
+  inline val EQ: "EQ" = "EQ"
+  inline val LT: "LT" = "LT"
+  inline val GT: "GT" = "GT"
+  inline val LTE: "LTE" = "LTE"
+  inline val GTE: "GTE" = "GTE"
+  inline val REGEX: "REGEX" = "REGEX"
+  inline val ISNULL: "ISNULL" = "ISNULL"
+
+  inline def values: js.Array[FilterOperation] = js.Array(EQ, LT, GT, LTE, GTE, REGEX, ISNULL)
+}
+
+type FilterOperator = "GT" | "GE" | "LT" | "LE" | "EQ" | "NE"
+object FilterOperator {
+  inline val GT: "GT" = "GT"
+  inline val GE: "GE" = "GE"
+  inline val LT: "LT" = "LT"
+  inline val LE: "LE" = "LE"
+  inline val EQ: "EQ" = "EQ"
+  inline val NE: "NE" = "NE"
+
+  inline def values: js.Array[FilterOperator] = js.Array(GT, GE, LT, LE, EQ, NE)
+}
+
+type FilterValueType = "COLUMNEXTRACTED" | "CONSTANT"
+object FilterValueType {
+  inline val COLUMNEXTRACTED: "COLUMNEXTRACTED" = "COLUMNEXTRACTED"
+  inline val CONSTANT: "CONSTANT" = "CONSTANT"
+
+  inline def values: js.Array[FilterValueType] = js.Array(COLUMNEXTRACTED, CONSTANT)
+}
+
+type GlueRecordType = "DATE" | "STRING" | "TIMESTAMP" | "INT" | "FLOAT" | "LONG" | "BIGDECIMAL" | "BYTE" | "SHORT" | "DOUBLE"
+object GlueRecordType {
+  inline val DATE: "DATE" = "DATE"
+  inline val STRING: "STRING" = "STRING"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
+  inline val INT: "INT" = "INT"
+  inline val FLOAT: "FLOAT" = "FLOAT"
+  inline val LONG: "LONG" = "LONG"
+  inline val BIGDECIMAL: "BIGDECIMAL" = "BIGDECIMAL"
+  inline val BYTE: "BYTE" = "BYTE"
+  inline val SHORT: "SHORT" = "SHORT"
+  inline val DOUBLE: "DOUBLE" = "DOUBLE"
+
+  inline def values: js.Array[GlueRecordType] = js.Array(DATE, STRING, TIMESTAMP, INT, FLOAT, LONG, BIGDECIMAL, BYTE, SHORT, DOUBLE)
+}
+
+type JDBCDataType = "ARRAY" | "BIGINT" | "BINARY" | "BIT" | "BLOB" | "BOOLEAN" | "CHAR" | "CLOB" | "DATALINK" | "DATE" | "DECIMAL" | "DISTINCT" | "DOUBLE" | "FLOAT" | "INTEGER" | "JAVA_OBJECT" | "LONGNVARCHAR" | "LONGVARBINARY" | "LONGVARCHAR" | "NCHAR" | "NCLOB" | "NULL" | "NUMERIC" | "NVARCHAR" | "OTHER" | "REAL" | "REF" | "REF_CURSOR" | "ROWID" | "SMALLINT" | "SQLXML" | "STRUCT" | "TIME" | "TIME_WITH_TIMEZONE" | "TIMESTAMP" | "TIMESTAMP_WITH_TIMEZONE" | "TINYINT" | "VARBINARY" | "VARCHAR"
+object JDBCDataType {
+  inline val ARRAY: "ARRAY" = "ARRAY"
+  inline val BIGINT: "BIGINT" = "BIGINT"
+  inline val BINARY: "BINARY" = "BINARY"
+  inline val BIT: "BIT" = "BIT"
+  inline val BLOB: "BLOB" = "BLOB"
+  inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  inline val CHAR: "CHAR" = "CHAR"
+  inline val CLOB: "CLOB" = "CLOB"
+  inline val DATALINK: "DATALINK" = "DATALINK"
+  inline val DATE: "DATE" = "DATE"
+  inline val DECIMAL: "DECIMAL" = "DECIMAL"
+  inline val DISTINCT: "DISTINCT" = "DISTINCT"
+  inline val DOUBLE: "DOUBLE" = "DOUBLE"
+  inline val FLOAT: "FLOAT" = "FLOAT"
+  inline val INTEGER: "INTEGER" = "INTEGER"
+  inline val JAVA_OBJECT: "JAVA_OBJECT" = "JAVA_OBJECT"
+  inline val LONGNVARCHAR: "LONGNVARCHAR" = "LONGNVARCHAR"
+  inline val LONGVARBINARY: "LONGVARBINARY" = "LONGVARBINARY"
+  inline val LONGVARCHAR: "LONGVARCHAR" = "LONGVARCHAR"
+  inline val NCHAR: "NCHAR" = "NCHAR"
+  inline val NCLOB: "NCLOB" = "NCLOB"
+  inline val NULL: "NULL" = "NULL"
+  inline val NUMERIC: "NUMERIC" = "NUMERIC"
+  inline val NVARCHAR: "NVARCHAR" = "NVARCHAR"
+  inline val OTHER: "OTHER" = "OTHER"
+  inline val REAL: "REAL" = "REAL"
+  inline val REF: "REF" = "REF"
+  inline val REF_CURSOR: "REF_CURSOR" = "REF_CURSOR"
+  inline val ROWID: "ROWID" = "ROWID"
+  inline val SMALLINT: "SMALLINT" = "SMALLINT"
+  inline val SQLXML: "SQLXML" = "SQLXML"
+  inline val STRUCT: "STRUCT" = "STRUCT"
+  inline val TIME: "TIME" = "TIME"
+  inline val TIME_WITH_TIMEZONE: "TIME_WITH_TIMEZONE" = "TIME_WITH_TIMEZONE"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
+  inline val TIMESTAMP_WITH_TIMEZONE: "TIMESTAMP_WITH_TIMEZONE" = "TIMESTAMP_WITH_TIMEZONE"
+  inline val TINYINT: "TINYINT" = "TINYINT"
+  inline val VARBINARY: "VARBINARY" = "VARBINARY"
+  inline val VARCHAR: "VARCHAR" = "VARCHAR"
+
+  inline def values: js.Array[JDBCDataType] = js.Array(
+    ARRAY,
+    BIGINT,
+    BINARY,
+    BIT,
+    BLOB,
+    BOOLEAN,
+    CHAR,
+    CLOB,
+    DATALINK,
+    DATE,
+    DECIMAL,
+    DISTINCT,
+    DOUBLE,
+    FLOAT,
+    INTEGER,
+    JAVA_OBJECT,
+    LONGNVARCHAR,
+    LONGVARBINARY,
+    LONGVARCHAR,
+    NCHAR,
+    NCLOB,
+    NULL,
+    NUMERIC,
+    NVARCHAR,
+    OTHER,
+    REAL,
+    REF,
+    REF_CURSOR,
+    ROWID,
+    SMALLINT,
+    SQLXML,
+    STRUCT,
+    TIME,
+    TIME_WITH_TIMEZONE,
+    TIMESTAMP,
+    TIMESTAMP_WITH_TIMEZONE,
+    TINYINT,
+    VARBINARY,
+    VARCHAR
+  )
+}
+
+type JdbcMetadataEntry = "COMMENTS" | "RAWTYPES"
+object JdbcMetadataEntry {
+  inline val COMMENTS: "COMMENTS" = "COMMENTS"
+  inline val RAWTYPES: "RAWTYPES" = "RAWTYPES"
+
+  inline def values: js.Array[JdbcMetadataEntry] = js.Array(COMMENTS, RAWTYPES)
 }
 
 type JobBookmarksEncryptionMode = "DISABLED" | "CSE-KMS"
@@ -246,7 +481,7 @@ object JobBookmarksEncryptionMode {
   inline def values: js.Array[JobBookmarksEncryptionMode] = js.Array(DISABLED, `CSE-KMS`)
 }
 
-type JobRunState = "STARTING" | "RUNNING" | "STOPPING" | "STOPPED" | "SUCCEEDED" | "FAILED" | "TIMEOUT"
+type JobRunState = "STARTING" | "RUNNING" | "STOPPING" | "STOPPED" | "SUCCEEDED" | "FAILED" | "TIMEOUT" | "ERROR" | "WAITING"
 object JobRunState {
   inline val STARTING: "STARTING" = "STARTING"
   inline val RUNNING: "RUNNING" = "RUNNING"
@@ -255,8 +490,22 @@ object JobRunState {
   inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
   inline val FAILED: "FAILED" = "FAILED"
   inline val TIMEOUT: "TIMEOUT" = "TIMEOUT"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val WAITING: "WAITING" = "WAITING"
 
-  inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT, ERROR, WAITING)
+}
+
+type JoinType = "equijoin" | "left" | "right" | "outer" | "leftsemi" | "leftanti"
+object JoinType {
+  inline val equijoin: "equijoin" = "equijoin"
+  inline val left: "left" = "left"
+  inline val right: "right" = "right"
+  inline val outer: "outer" = "outer"
+  inline val leftsemi: "leftsemi" = "leftsemi"
+  inline val leftanti: "leftanti" = "leftanti"
+
+  inline def values: js.Array[JoinType] = js.Array(equijoin, left, right, outer, leftsemi, leftanti)
 }
 
 type Language = "PYTHON" | "SCALA"
@@ -308,6 +557,30 @@ object NodeType {
   inline def values: js.Array[NodeType] = js.Array(CRAWLER, JOB, TRIGGER)
 }
 
+type ParamType = "str" | "int" | "float" | "complex" | "bool" | "list" | "null"
+object ParamType {
+  inline val str: "str" = "str"
+  inline val int: "int" = "int"
+  inline val float: "float" = "float"
+  inline val complex: "complex" = "complex"
+  inline val bool: "bool" = "bool"
+  inline val list: "list" = "list"
+  inline val `null`: "null" = "null"
+
+  inline def values: js.Array[ParamType] = js.Array(str, int, float, complex, bool, list, `null`)
+}
+
+type ParquetCompressionType = "snappy" | "lzo" | "gzip" | "uncompressed" | "none"
+object ParquetCompressionType {
+  inline val snappy: "snappy" = "snappy"
+  inline val lzo: "lzo" = "lzo"
+  inline val gzip: "gzip" = "gzip"
+  inline val uncompressed: "uncompressed" = "uncompressed"
+  inline val none: "none" = "none"
+
+  inline def values: js.Array[ParquetCompressionType] = js.Array(snappy, lzo, gzip, uncompressed, none)
+}
+
 type PartitionIndexStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED"
 object PartitionIndexStatus {
   inline val CREATING: "CREATING" = "CREATING"
@@ -333,6 +606,24 @@ object Permission {
   inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
 }
 
+type PermissionType = "COLUMN_PERMISSION" | "CELL_FILTER_PERMISSION"
+object PermissionType {
+  inline val COLUMN_PERMISSION: "COLUMN_PERMISSION" = "COLUMN_PERMISSION"
+  inline val CELL_FILTER_PERMISSION: "CELL_FILTER_PERMISSION" = "CELL_FILTER_PERMISSION"
+
+  inline def values: js.Array[PermissionType] = js.Array(COLUMN_PERMISSION, CELL_FILTER_PERMISSION)
+}
+
+type PiiType = "RowAudit" | "RowMasking" | "ColumnAudit" | "ColumnMasking"
+object PiiType {
+  inline val RowAudit: "RowAudit" = "RowAudit"
+  inline val RowMasking: "RowMasking" = "RowMasking"
+  inline val ColumnAudit: "ColumnAudit" = "ColumnAudit"
+  inline val ColumnMasking: "ColumnMasking" = "ColumnMasking"
+
+  inline def values: js.Array[PiiType] = js.Array(RowAudit, RowMasking, ColumnAudit, ColumnMasking)
+}
+
 type PrincipalType = "USER" | "ROLE" | "GROUP"
 object PrincipalType {
   inline val USER: "USER" = "USER"
@@ -340,6 +631,16 @@ object PrincipalType {
   inline val GROUP: "GROUP" = "GROUP"
 
   inline def values: js.Array[PrincipalType] = js.Array(USER, ROLE, GROUP)
+}
+
+type QuoteChar = "quote" | "quillemet" | "single_quote" | "disabled"
+object QuoteChar {
+  inline val quote: "quote" = "quote"
+  inline val quillemet: "quillemet" = "quillemet"
+  inline val single_quote: "single_quote" = "single_quote"
+  inline val disabled: "disabled" = "disabled"
+
+  inline def values: js.Array[QuoteChar] = js.Array(quote, quillemet, single_quote, disabled)
 }
 
 type RecrawlBehavior = "CRAWL_EVERYTHING" | "CRAWL_NEW_FOLDERS_ONLY" | "CRAWL_EVENT_MODE"
@@ -420,6 +721,29 @@ object SchemaVersionStatus {
   inline def values: js.Array[SchemaVersionStatus] = js.Array(AVAILABLE, PENDING, FAILURE, DELETING)
 }
 
+type Separator = "comma" | "ctrla" | "pipe" | "semicolon" | "tab"
+object Separator {
+  inline val comma: "comma" = "comma"
+  inline val ctrla: "ctrla" = "ctrla"
+  inline val pipe: "pipe" = "pipe"
+  inline val semicolon: "semicolon" = "semicolon"
+  inline val tab: "tab" = "tab"
+
+  inline def values: js.Array[Separator] = js.Array(comma, ctrla, pipe, semicolon, tab)
+}
+
+type SessionStatus = "PROVISIONING" | "READY" | "FAILED" | "TIMEOUT" | "STOPPING" | "STOPPED"
+object SessionStatus {
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val READY: "READY" = "READY"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMEOUT: "TIMEOUT" = "TIMEOUT"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+
+  inline def values: js.Array[SessionStatus] = js.Array(PROVISIONING, READY, FAILED, TIMEOUT, STOPPING, STOPPED)
+}
+
 type Sort = "ASC" | "DESC"
 object Sort {
   inline val ASC: "ASC" = "ASC"
@@ -434,6 +758,54 @@ object SortDirectionType {
   inline val ASCENDING: "ASCENDING" = "ASCENDING"
 
   inline def values: js.Array[SortDirectionType] = js.Array(DESCENDING, ASCENDING)
+}
+
+type SourceControlAuthStrategy = "PERSONAL_ACCESS_TOKEN" | "AWS_SECRETS_MANAGER"
+object SourceControlAuthStrategy {
+  inline val PERSONAL_ACCESS_TOKEN: "PERSONAL_ACCESS_TOKEN" = "PERSONAL_ACCESS_TOKEN"
+  inline val AWS_SECRETS_MANAGER: "AWS_SECRETS_MANAGER" = "AWS_SECRETS_MANAGER"
+
+  inline def values: js.Array[SourceControlAuthStrategy] = js.Array(PERSONAL_ACCESS_TOKEN, AWS_SECRETS_MANAGER)
+}
+
+type SourceControlProvider = "GITHUB" | "AWS_CODE_COMMIT"
+object SourceControlProvider {
+  inline val GITHUB: "GITHUB" = "GITHUB"
+  inline val AWS_CODE_COMMIT: "AWS_CODE_COMMIT" = "AWS_CODE_COMMIT"
+
+  inline def values: js.Array[SourceControlProvider] = js.Array(GITHUB, AWS_CODE_COMMIT)
+}
+
+type StartingPosition = "latest" | "trim_horizon" | "earliest"
+object StartingPosition {
+  inline val latest: "latest" = "latest"
+  inline val trim_horizon: "trim_horizon" = "trim_horizon"
+  inline val earliest: "earliest" = "earliest"
+
+  inline def values: js.Array[StartingPosition] = js.Array(latest, trim_horizon, earliest)
+}
+
+type StatementState = "WAITING" | "RUNNING" | "AVAILABLE" | "CANCELLING" | "CANCELLED" | "ERROR"
+object StatementState {
+  inline val WAITING: "WAITING" = "WAITING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[StatementState] = js.Array(WAITING, RUNNING, AVAILABLE, CANCELLING, CANCELLED, ERROR)
+}
+
+type TargetFormat = "json" | "csv" | "avro" | "orc" | "parquet"
+object TargetFormat {
+  inline val json: "json" = "json"
+  inline val csv: "csv" = "csv"
+  inline val avro: "avro" = "avro"
+  inline val orc: "orc" = "orc"
+  inline val parquet: "parquet" = "parquet"
+
+  inline def values: js.Array[TargetFormat] = js.Array(json, csv, avro, orc, parquet)
 }
 
 type TaskRunSortColumnType = "TASK_RUN_TYPE" | "STATUS" | "STARTED"
@@ -520,6 +892,14 @@ object TriggerType {
   inline def values: js.Array[TriggerType] = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND, EVENT)
 }
 
+type UnionType = "ALL" | "DISTINCT"
+object UnionType {
+  inline val ALL: "ALL" = "ALL"
+  inline val DISTINCT: "DISTINCT" = "DISTINCT"
+
+  inline def values: js.Array[UnionType] = js.Array(ALL, DISTINCT)
+}
+
 type UpdateBehavior = "LOG" | "UPDATE_IN_DATABASE"
 object UpdateBehavior {
   inline val LOG: "LOG" = "LOG"
@@ -528,13 +908,22 @@ object UpdateBehavior {
   inline def values: js.Array[UpdateBehavior] = js.Array(LOG, UPDATE_IN_DATABASE)
 }
 
-type WorkerType = "Standard" | "G.1X" | "G.2X"
+type UpdateCatalogBehavior = "UPDATE_IN_DATABASE" | "LOG"
+object UpdateCatalogBehavior {
+  inline val UPDATE_IN_DATABASE: "UPDATE_IN_DATABASE" = "UPDATE_IN_DATABASE"
+  inline val LOG: "LOG" = "LOG"
+
+  inline def values: js.Array[UpdateCatalogBehavior] = js.Array(UPDATE_IN_DATABASE, LOG)
+}
+
+type WorkerType = "Standard" | "G.1X" | "G.2X" | "G.025X"
 object WorkerType {
   inline val Standard: "Standard" = "Standard"
   inline val `G.1X`: "G.1X" = "G.1X"
   inline val `G.2X`: "G.2X" = "G.2X"
+  inline val `G.025X`: "G.025X" = "G.025X"
 
-  inline def values: js.Array[WorkerType] = js.Array(Standard, `G.1X`, `G.2X`)
+  inline def values: js.Array[WorkerType] = js.Array(Standard, `G.1X`, `G.2X`, `G.025X`)
 }
 
 type WorkflowRunStatus = "RUNNING" | "COMPLETED" | "STOPPING" | "STOPPED" | "ERROR"

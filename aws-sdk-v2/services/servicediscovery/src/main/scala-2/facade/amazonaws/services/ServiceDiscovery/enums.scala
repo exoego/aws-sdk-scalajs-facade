@@ -17,8 +17,9 @@ object FilterCondition {
   val EQ = "EQ".asInstanceOf[FilterCondition]
   val IN = "IN".asInstanceOf[FilterCondition]
   val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
+  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[FilterCondition]
 
-  @inline def values: js.Array[FilterCondition] = js.Array(EQ, IN, BETWEEN)
+  @inline def values: js.Array[FilterCondition] = js.Array(EQ, IN, BETWEEN, BEGINS_WITH)
 }
 
 @js.native
@@ -56,8 +57,10 @@ object HealthStatusFilter {
 sealed trait NamespaceFilterName extends js.Any
 object NamespaceFilterName {
   val TYPE = "TYPE".asInstanceOf[NamespaceFilterName]
+  val NAME = "NAME".asInstanceOf[NamespaceFilterName]
+  val HTTP_NAME = "HTTP_NAME".asInstanceOf[NamespaceFilterName]
 
-  @inline def values: js.Array[NamespaceFilterName] = js.Array(TYPE)
+  @inline def values: js.Array[NamespaceFilterName] = js.Array(TYPE, NAME, HTTP_NAME)
 }
 
 @js.native

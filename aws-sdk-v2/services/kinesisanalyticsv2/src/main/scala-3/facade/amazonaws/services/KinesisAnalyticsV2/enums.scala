@@ -97,7 +97,7 @@ object RecordFormatType {
   inline def values: js.Array[RecordFormatType] = js.Array(JSON, CSV)
 }
 
-type RuntimeEnvironment = "SQL-1_0" | "FLINK-1_6" | "FLINK-1_8" | "ZEPPELIN-FLINK-1_0" | "FLINK-1_11" | "FLINK-1_13" | "ZEPPELIN-FLINK-2_0"
+type RuntimeEnvironment = "SQL-1_0" | "FLINK-1_6" | "FLINK-1_8" | "ZEPPELIN-FLINK-1_0" | "FLINK-1_11" | "FLINK-1_13" | "ZEPPELIN-FLINK-2_0" | "FLINK-1_15"
 object RuntimeEnvironment {
   inline val `SQL-1_0`: "SQL-1_0" = "SQL-1_0"
   inline val `FLINK-1_6`: "FLINK-1_6" = "FLINK-1_6"
@@ -106,8 +106,9 @@ object RuntimeEnvironment {
   inline val `FLINK-1_11`: "FLINK-1_11" = "FLINK-1_11"
   inline val `FLINK-1_13`: "FLINK-1_13" = "FLINK-1_13"
   inline val `ZEPPELIN-FLINK-2_0`: "ZEPPELIN-FLINK-2_0" = "ZEPPELIN-FLINK-2_0"
+  inline val `FLINK-1_15`: "FLINK-1_15" = "FLINK-1_15"
 
-  inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `ZEPPELIN-FLINK-1_0`, `FLINK-1_11`, `FLINK-1_13`, `ZEPPELIN-FLINK-2_0`)
+  inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `ZEPPELIN-FLINK-1_0`, `FLINK-1_11`, `FLINK-1_13`, `ZEPPELIN-FLINK-2_0`, `FLINK-1_15`)
 }
 
 type SnapshotStatus = "CREATING" | "READY" | "DELETING" | "FAILED"

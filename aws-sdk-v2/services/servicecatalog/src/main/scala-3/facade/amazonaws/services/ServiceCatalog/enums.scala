@@ -63,6 +63,14 @@ object EvaluationType {
   inline def values: js.Array[EvaluationType] = js.Array(STATIC, DYNAMIC)
 }
 
+type LastSyncStatus = "SUCCEEDED" | "FAILED"
+object LastSyncStatus {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[LastSyncStatus] = js.Array(SUCCEEDED, FAILED)
+}
+
 type OrganizationNodeType = "ORGANIZATION" | "ORGANIZATIONAL_UNIT" | "ACCOUNT"
 object OrganizationNodeType {
   inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
@@ -81,11 +89,12 @@ object PortfolioShareType {
   inline def values: js.Array[PortfolioShareType] = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
 }
 
-type PrincipalType = "IAM"
+type PrincipalType = "IAM" | "IAM_PATTERN"
 object PrincipalType {
   inline val IAM: "IAM" = "IAM"
+  inline val IAM_PATTERN: "IAM_PATTERN" = "IAM_PATTERN"
 
-  inline def values: js.Array[PrincipalType] = js.Array(IAM)
+  inline def values: js.Array[PrincipalType] = js.Array(IAM, IAM_PATTERN)
 }
 
 type ProductSource = "ACCOUNT"
@@ -277,6 +286,13 @@ object SortOrder {
   inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
   inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
+}
+
+type SourceType = "CODESTAR"
+object SourceType {
+  inline val CODESTAR: "CODESTAR" = "CODESTAR"
+
+  inline def values: js.Array[SourceType] = js.Array(CODESTAR)
 }
 
 type StackInstanceStatus = "CURRENT" | "OUTDATED" | "INOPERABLE"

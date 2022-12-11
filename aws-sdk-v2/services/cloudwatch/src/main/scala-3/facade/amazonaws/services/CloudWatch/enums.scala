@@ -2,6 +2,15 @@ package facade.amazonaws.services.cloudwatch
 
 import scalajs.js
 
+type ActionsSuppressedBy = "WaitPeriod" | "ExtensionPeriod" | "Alarm"
+object ActionsSuppressedBy {
+  inline val WaitPeriod: "WaitPeriod" = "WaitPeriod"
+  inline val ExtensionPeriod: "ExtensionPeriod" = "ExtensionPeriod"
+  inline val Alarm: "Alarm" = "Alarm"
+
+  inline def values: js.Array[ActionsSuppressedBy] = js.Array(WaitPeriod, ExtensionPeriod, Alarm)
+}
+
 type AlarmType = "CompositeAlarm" | "MetricAlarm"
 object AlarmType {
   inline val CompositeAlarm: "CompositeAlarm" = "CompositeAlarm"
@@ -161,11 +170,12 @@ object Statistic {
   inline def values: js.Array[Statistic] = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
 }
 
-type StatusCode = "Complete" | "InternalError" | "PartialData"
+type StatusCode = "Complete" | "InternalError" | "PartialData" | "Forbidden"
 object StatusCode {
   inline val Complete: "Complete" = "Complete"
   inline val InternalError: "InternalError" = "InternalError"
   inline val PartialData: "PartialData" = "PartialData"
+  inline val Forbidden: "Forbidden" = "Forbidden"
 
-  inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData)
+  inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData, Forbidden)
 }

@@ -4,13 +4,14 @@ import scalajs.js
 
 /** The region of the S3 bucket that AWS delivers the report into.
   */
-type AWSRegion = "af-south-1" | "ap-east-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-north-1" | "eu-south-1" | "me-south-1" | "sa-east-1" | "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "cn-north-1" | "cn-northwest-1"
+type AWSRegion = "af-south-1" | "ap-east-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-north-1" | "eu-south-1" | "eu-south-2" | "me-central-1" | "me-south-1" | "sa-east-1" | "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "cn-north-1" | "cn-northwest-1"
 object AWSRegion {
   inline val `af-south-1`: "af-south-1" = "af-south-1"
   inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
   inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
   inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  inline val `ap-southeast-3`: "ap-southeast-3" = "ap-southeast-3"
   inline val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
   inline val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
   inline val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
@@ -21,6 +22,8 @@ object AWSRegion {
   inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
   inline val `eu-north-1`: "eu-north-1" = "eu-north-1"
   inline val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  inline val `eu-south-2`: "eu-south-2" = "eu-south-2"
+  inline val `me-central-1`: "me-central-1" = "me-central-1"
   inline val `me-south-1`: "me-south-1" = "me-south-1"
   inline val `sa-east-1`: "sa-east-1" = "sa-east-1"
   inline val `us-east-1`: "us-east-1" = "us-east-1"
@@ -36,6 +39,7 @@ object AWSRegion {
     `ap-south-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -46,6 +50,8 @@ object AWSRegion {
     `eu-west-3`,
     `eu-north-1`,
     `eu-south-1`,
+    `eu-south-2`,
+    `me-central-1`,
     `me-south-1`,
     `sa-east-1`,
     `us-east-1`,

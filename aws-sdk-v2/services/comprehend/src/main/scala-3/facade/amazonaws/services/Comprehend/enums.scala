@@ -10,6 +10,14 @@ object AugmentedManifestsDocumentTypeFormat {
   inline def values: js.Array[AugmentedManifestsDocumentTypeFormat] = js.Array(PLAIN_TEXT_DOCUMENT, SEMI_STRUCTURED_DOCUMENT)
 }
 
+type BlockType = "LINE" | "WORD"
+object BlockType {
+  inline val LINE: "LINE" = "LINE"
+  inline val WORD: "WORD" = "WORD"
+
+  inline def values: js.Array[BlockType] = js.Array(LINE, WORD)
+}
+
 type DocumentClassifierDataFormat = "COMPREHEND_CSV" | "AUGMENTED_MANIFEST"
 object DocumentClassifierDataFormat {
   inline val COMPREHEND_CSV: "COMPREHEND_CSV" = "COMPREHEND_CSV"
@@ -34,7 +42,7 @@ object DocumentReadAction {
   inline def values: js.Array[DocumentReadAction] = js.Array(TEXTRACT_DETECT_DOCUMENT_TEXT, TEXTRACT_ANALYZE_DOCUMENT)
 }
 
-/** A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is expected. * <code>TABLES</code> - Add TABLES to the list to return information about the tables that are detected in the input document. * <code>FORMS</code> - Add FORMS to return detected form data.
+/** Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values: * <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. * <code>FORMS</code> - Returns additional information about any forms that are detected in the input document.
   */
 type DocumentReadFeatureTypes = "TABLES" | "FORMS"
 object DocumentReadFeatureTypes {
@@ -50,6 +58,19 @@ object DocumentReadMode {
   inline val FORCE_DOCUMENT_READ_ACTION: "FORCE_DOCUMENT_READ_ACTION" = "FORCE_DOCUMENT_READ_ACTION"
 
   inline def values: js.Array[DocumentReadMode] = js.Array(SERVICE_DEFAULT, FORCE_DOCUMENT_READ_ACTION)
+}
+
+type DocumentType = "NATIVE_PDF" | "SCANNED_PDF" | "MS_WORD" | "IMAGE" | "PLAIN_TEXT" | "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON" | "TEXTRACT_ANALYZE_DOCUMENT_JSON"
+object DocumentType {
+  inline val NATIVE_PDF: "NATIVE_PDF" = "NATIVE_PDF"
+  inline val SCANNED_PDF: "SCANNED_PDF" = "SCANNED_PDF"
+  inline val MS_WORD: "MS_WORD" = "MS_WORD"
+  inline val IMAGE: "IMAGE" = "IMAGE"
+  inline val PLAIN_TEXT: "PLAIN_TEXT" = "PLAIN_TEXT"
+  inline val TEXTRACT_DETECT_DOCUMENT_TEXT_JSON: "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON" = "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON"
+  inline val TEXTRACT_ANALYZE_DOCUMENT_JSON: "TEXTRACT_ANALYZE_DOCUMENT_JSON" = "TEXTRACT_ANALYZE_DOCUMENT_JSON"
+
+  inline def values: js.Array[DocumentType] = js.Array(NATIVE_PDF, SCANNED_PDF, MS_WORD, IMAGE, PLAIN_TEXT, TEXTRACT_DETECT_DOCUMENT_TEXT_JSON, TEXTRACT_ANALYZE_DOCUMENT_JSON)
 }
 
 type EndpointStatus = "CREATING" | "DELETING" | "FAILED" | "IN_SERVICE" | "UPDATING"
@@ -137,6 +158,17 @@ object ModelStatus {
   inline def values: js.Array[ModelStatus] = js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
 }
 
+type PageBasedErrorCode = "TEXTRACT_BAD_PAGE" | "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" | "PAGE_CHARACTERS_EXCEEDED" | "PAGE_SIZE_EXCEEDED" | "INTERNAL_SERVER_ERROR"
+object PageBasedErrorCode {
+  inline val TEXTRACT_BAD_PAGE: "TEXTRACT_BAD_PAGE" = "TEXTRACT_BAD_PAGE"
+  inline val TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED: "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" = "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"
+  inline val PAGE_CHARACTERS_EXCEEDED: "PAGE_CHARACTERS_EXCEEDED" = "PAGE_CHARACTERS_EXCEEDED"
+  inline val PAGE_SIZE_EXCEEDED: "PAGE_SIZE_EXCEEDED" = "PAGE_SIZE_EXCEEDED"
+  inline val INTERNAL_SERVER_ERROR: "INTERNAL_SERVER_ERROR" = "INTERNAL_SERVER_ERROR"
+
+  inline def values: js.Array[PageBasedErrorCode] = js.Array(TEXTRACT_BAD_PAGE, TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED, PAGE_CHARACTERS_EXCEEDED, PAGE_SIZE_EXCEEDED, INTERNAL_SERVER_ERROR)
+}
+
 type PartOfSpeechTagType = "ADJ" | "ADP" | "ADV" | "AUX" | "CONJ" | "CCONJ" | "DET" | "INTJ" | "NOUN" | "NUM" | "O" | "PART" | "PRON" | "PROPN" | "PUNCT" | "SCONJ" | "SYM" | "VERB"
 object PartOfSpeechTagType {
   inline val ADJ: "ADJ" = "ADJ"
@@ -177,7 +209,7 @@ object PiiEntitiesDetectionMode {
   inline def values: js.Array[PiiEntitiesDetectionMode] = js.Array(ONLY_REDACTION, ONLY_OFFSETS)
 }
 
-type PiiEntityType = "BANK_ACCOUNT_NUMBER" | "BANK_ROUTING" | "CREDIT_DEBIT_NUMBER" | "CREDIT_DEBIT_CVV" | "CREDIT_DEBIT_EXPIRY" | "PIN" | "EMAIL" | "ADDRESS" | "NAME" | "PHONE" | "SSN" | "DATE_TIME" | "PASSPORT_NUMBER" | "DRIVER_ID" | "URL" | "AGE" | "USERNAME" | "PASSWORD" | "AWS_ACCESS_KEY" | "AWS_SECRET_KEY" | "IP_ADDRESS" | "MAC_ADDRESS" | "ALL"
+type PiiEntityType = "BANK_ACCOUNT_NUMBER" | "BANK_ROUTING" | "CREDIT_DEBIT_NUMBER" | "CREDIT_DEBIT_CVV" | "CREDIT_DEBIT_EXPIRY" | "PIN" | "EMAIL" | "ADDRESS" | "NAME" | "PHONE" | "SSN" | "DATE_TIME" | "PASSPORT_NUMBER" | "DRIVER_ID" | "URL" | "AGE" | "USERNAME" | "PASSWORD" | "AWS_ACCESS_KEY" | "AWS_SECRET_KEY" | "IP_ADDRESS" | "MAC_ADDRESS" | "ALL" | "LICENSE_PLATE" | "VEHICLE_IDENTIFICATION_NUMBER" | "UK_NATIONAL_INSURANCE_NUMBER" | "CA_SOCIAL_INSURANCE_NUMBER" | "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" | "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" | "IN_PERMANENT_ACCOUNT_NUMBER" | "IN_NREGA" | "INTERNATIONAL_BANK_ACCOUNT_NUMBER" | "SWIFT_CODE" | "UK_NATIONAL_HEALTH_SERVICE_NUMBER" | "CA_HEALTH_NUMBER" | "IN_AADHAAR" | "IN_VOTER_NUMBER"
 object PiiEntityType {
   inline val BANK_ACCOUNT_NUMBER: "BANK_ACCOUNT_NUMBER" = "BANK_ACCOUNT_NUMBER"
   inline val BANK_ROUTING: "BANK_ROUTING" = "BANK_ROUTING"
@@ -202,6 +234,20 @@ object PiiEntityType {
   inline val IP_ADDRESS: "IP_ADDRESS" = "IP_ADDRESS"
   inline val MAC_ADDRESS: "MAC_ADDRESS" = "MAC_ADDRESS"
   inline val ALL: "ALL" = "ALL"
+  inline val LICENSE_PLATE: "LICENSE_PLATE" = "LICENSE_PLATE"
+  inline val VEHICLE_IDENTIFICATION_NUMBER: "VEHICLE_IDENTIFICATION_NUMBER" = "VEHICLE_IDENTIFICATION_NUMBER"
+  inline val UK_NATIONAL_INSURANCE_NUMBER: "UK_NATIONAL_INSURANCE_NUMBER" = "UK_NATIONAL_INSURANCE_NUMBER"
+  inline val CA_SOCIAL_INSURANCE_NUMBER: "CA_SOCIAL_INSURANCE_NUMBER" = "CA_SOCIAL_INSURANCE_NUMBER"
+  inline val US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER: "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" = "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
+  inline val UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER: "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" = "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER"
+  inline val IN_PERMANENT_ACCOUNT_NUMBER: "IN_PERMANENT_ACCOUNT_NUMBER" = "IN_PERMANENT_ACCOUNT_NUMBER"
+  inline val IN_NREGA: "IN_NREGA" = "IN_NREGA"
+  inline val INTERNATIONAL_BANK_ACCOUNT_NUMBER: "INTERNATIONAL_BANK_ACCOUNT_NUMBER" = "INTERNATIONAL_BANK_ACCOUNT_NUMBER"
+  inline val SWIFT_CODE: "SWIFT_CODE" = "SWIFT_CODE"
+  inline val UK_NATIONAL_HEALTH_SERVICE_NUMBER: "UK_NATIONAL_HEALTH_SERVICE_NUMBER" = "UK_NATIONAL_HEALTH_SERVICE_NUMBER"
+  inline val CA_HEALTH_NUMBER: "CA_HEALTH_NUMBER" = "CA_HEALTH_NUMBER"
+  inline val IN_AADHAAR: "IN_AADHAAR" = "IN_AADHAAR"
+  inline val IN_VOTER_NUMBER: "IN_VOTER_NUMBER" = "IN_VOTER_NUMBER"
 
   inline def values: js.Array[PiiEntityType] = js.Array(
     BANK_ACCOUNT_NUMBER,
@@ -226,8 +272,29 @@ object PiiEntityType {
     AWS_SECRET_KEY,
     IP_ADDRESS,
     MAC_ADDRESS,
-    ALL
+    ALL,
+    LICENSE_PLATE,
+    VEHICLE_IDENTIFICATION_NUMBER,
+    UK_NATIONAL_INSURANCE_NUMBER,
+    CA_SOCIAL_INSURANCE_NUMBER,
+    US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER,
+    UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER,
+    IN_PERMANENT_ACCOUNT_NUMBER,
+    IN_NREGA,
+    INTERNATIONAL_BANK_ACCOUNT_NUMBER,
+    SWIFT_CODE,
+    UK_NATIONAL_HEALTH_SERVICE_NUMBER,
+    CA_HEALTH_NUMBER,
+    IN_AADHAAR,
+    IN_VOTER_NUMBER
   )
+}
+
+type RelationshipType = "CHILD"
+object RelationshipType {
+  inline val CHILD: "CHILD" = "CHILD"
+
+  inline def values: js.Array[RelationshipType] = js.Array(CHILD)
 }
 
 type SentimentType = "POSITIVE" | "NEGATIVE" | "NEUTRAL" | "MIXED"
@@ -258,4 +325,27 @@ object SyntaxLanguageCode {
   inline val pt: "pt" = "pt"
 
   inline def values: js.Array[SyntaxLanguageCode] = js.Array(en, es, fr, de, it, pt)
+}
+
+type TargetedSentimentEntityType = "PERSON" | "LOCATION" | "ORGANIZATION" | "FACILITY" | "BRAND" | "COMMERCIAL_ITEM" | "MOVIE" | "MUSIC" | "BOOK" | "SOFTWARE" | "GAME" | "PERSONAL_TITLE" | "EVENT" | "DATE" | "QUANTITY" | "ATTRIBUTE" | "OTHER"
+object TargetedSentimentEntityType {
+  inline val PERSON: "PERSON" = "PERSON"
+  inline val LOCATION: "LOCATION" = "LOCATION"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
+  inline val FACILITY: "FACILITY" = "FACILITY"
+  inline val BRAND: "BRAND" = "BRAND"
+  inline val COMMERCIAL_ITEM: "COMMERCIAL_ITEM" = "COMMERCIAL_ITEM"
+  inline val MOVIE: "MOVIE" = "MOVIE"
+  inline val MUSIC: "MUSIC" = "MUSIC"
+  inline val BOOK: "BOOK" = "BOOK"
+  inline val SOFTWARE: "SOFTWARE" = "SOFTWARE"
+  inline val GAME: "GAME" = "GAME"
+  inline val PERSONAL_TITLE: "PERSONAL_TITLE" = "PERSONAL_TITLE"
+  inline val EVENT: "EVENT" = "EVENT"
+  inline val DATE: "DATE" = "DATE"
+  inline val QUANTITY: "QUANTITY" = "QUANTITY"
+  inline val ATTRIBUTE: "ATTRIBUTE" = "ATTRIBUTE"
+  inline val OTHER: "OTHER" = "OTHER"
+
+  inline def values: js.Array[TargetedSentimentEntityType] = js.Array(PERSON, LOCATION, ORGANIZATION, FACILITY, BRAND, COMMERCIAL_ITEM, MOVIE, MUSIC, BOOK, SOFTWARE, GAME, PERSONAL_TITLE, EVENT, DATE, QUANTITY, ATTRIBUTE, OTHER)
 }

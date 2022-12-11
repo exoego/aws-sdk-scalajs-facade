@@ -31,9 +31,14 @@ package object marketplacecatalog {
   type MaxResultInteger = Int
   type NextToken = String
   type RequestedChangeList = js.Array[Change]
+  type ResourceARN = String
   type ResourceId = String
   type ResourceIdList = js.Array[ResourceId]
   type SortBy = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type ValueList = js.Array[FilterValueContent]
   type VisibilityValue = String
 
@@ -44,7 +49,10 @@ package object marketplacecatalog {
     @inline def describeEntityFuture(params: DescribeEntityRequest): Future[DescribeEntityResponse] = service.describeEntity(params).promise().toFuture
     @inline def listChangeSetsFuture(params: ListChangeSetsRequest): Future[ListChangeSetsResponse] = service.listChangeSets(params).promise().toFuture
     @inline def listEntitiesFuture(params: ListEntitiesRequest): Future[ListEntitiesResponse] = service.listEntities(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startChangeSetFuture(params: StartChangeSetRequest): Future[StartChangeSetResponse] = service.startChangeSet(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 
@@ -58,7 +66,10 @@ package object marketplacecatalog {
     def describeEntity(params: DescribeEntityRequest): Request[DescribeEntityResponse] = js.native
     def listChangeSets(params: ListChangeSetsRequest): Request[ListChangeSetsResponse] = js.native
     def listEntities(params: ListEntitiesRequest): Request[ListEntitiesResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startChangeSet(params: StartChangeSetRequest): Request[StartChangeSetResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
   object MarketplaceCatalog {
     @inline implicit def toOps(service: MarketplaceCatalog): MarketplaceCatalogOps = {
@@ -113,6 +124,7 @@ package object marketplacecatalog {
     var Details: Json
     var Entity: Entity
     var ChangeName: js.UndefOr[ChangeName]
+    var EntityTags: js.UndefOr[TagList]
   }
 
   object Change {
@@ -121,7 +133,8 @@ package object marketplacecatalog {
         ChangeType: ChangeType,
         Details: Json,
         Entity: Entity,
-        ChangeName: js.UndefOr[ChangeName] = js.undefined
+        ChangeName: js.UndefOr[ChangeName] = js.undefined,
+        EntityTags: js.UndefOr[TagList] = js.undefined
     ): Change = {
       val __obj = js.Dynamic.literal(
         "ChangeType" -> ChangeType.asInstanceOf[js.Any],
@@ -130,6 +143,7 @@ package object marketplacecatalog {
       )
 
       ChangeName.foreach(__v => __obj.updateDynamic("ChangeName")(__v.asInstanceOf[js.Any]))
+      EntityTags.foreach(__v => __obj.updateDynamic("EntityTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Change]
     }
   }
@@ -510,6 +524,42 @@ package object marketplacecatalog {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceARN
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceARN
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var ResourceArn: js.UndefOr[ResourceARN]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        ResourceArn: js.UndefOr[ResourceARN] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
     */
   @js.native
@@ -536,6 +586,7 @@ package object marketplacecatalog {
     var Catalog: Catalog
     var ChangeSet: RequestedChangeList
     var ChangeSetName: js.UndefOr[ChangeSetName]
+    var ChangeSetTags: js.UndefOr[TagList]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
   }
 
@@ -545,6 +596,7 @@ package object marketplacecatalog {
         Catalog: Catalog,
         ChangeSet: RequestedChangeList,
         ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
+        ChangeSetTags: js.UndefOr[TagList] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): StartChangeSetRequest = {
       val __obj = js.Dynamic.literal(
@@ -553,6 +605,7 @@ package object marketplacecatalog {
       )
 
       ChangeSetName.foreach(__v => __obj.updateDynamic("ChangeSetName")(__v.asInstanceOf[js.Any]))
+      ChangeSetTags.foreach(__v => __obj.updateDynamic("ChangeSetTags")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChangeSetRequest]
     }
@@ -574,6 +627,90 @@ package object marketplacecatalog {
       ChangeSetArn.foreach(__v => __obj.updateDynamic("ChangeSetArn")(__v.asInstanceOf[js.Any]))
       ChangeSetId.foreach(__v => __obj.updateDynamic("ChangeSetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChangeSetResponse]
+    }
+  }
+
+  /** A list of objects specifying each key name and value.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceARN
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceARN,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceARN
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceARN,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

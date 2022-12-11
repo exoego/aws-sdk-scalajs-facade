@@ -86,6 +86,17 @@ object HttpScheme {
 }
 
 @js.native
+sealed trait IpPreference extends js.Any
+object IpPreference {
+  val IPv6_PREFERRED = "IPv6_PREFERRED".asInstanceOf[IpPreference]
+  val IPv4_PREFERRED = "IPv4_PREFERRED".asInstanceOf[IpPreference]
+  val IPv4_ONLY = "IPv4_ONLY".asInstanceOf[IpPreference]
+  val IPv6_ONLY = "IPv6_ONLY".asInstanceOf[IpPreference]
+
+  @inline def values: js.Array[IpPreference] = js.Array(IPv6_PREFERRED, IPv4_PREFERRED, IPv4_ONLY, IPv6_ONLY)
+}
+
+@js.native
 sealed trait ListenerTlsMode extends js.Any
 object ListenerTlsMode {
   val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]

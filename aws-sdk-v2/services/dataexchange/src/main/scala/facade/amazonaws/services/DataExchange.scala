@@ -11,29 +11,37 @@ package object dataexchange {
   type ApiDescription = String
   type Arn = String
   type AssetName = String
+  type AwsAccountId = String
   type Description = String
   type Id = String
   type ListOfAssetDestinationEntry = js.Array[AssetDestinationEntry]
   type ListOfAssetEntry = js.Array[AssetEntry]
   type ListOfAssetSourceEntry = js.Array[AssetSourceEntry]
   type ListOfDataSetEntry = js.Array[DataSetEntry]
+  type ListOfDatabaseLFTagPolicyPermissions = js.Array[DatabaseLFTagPolicyPermission]
   type ListOfEventActionEntry = js.Array[EventActionEntry]
   type ListOfJobEntry = js.Array[JobEntry]
   type ListOfJobError = js.Array[JobError]
+  type ListOfLFPermissions = js.Array[LFPermission]
+  type ListOfLFTagValues = js.Array[String]
+  type ListOfLFTags = js.Array[LFTag]
   type ListOfRedshiftDataShareAssetSourceEntry = js.Array[RedshiftDataShareAssetSourceEntry]
   type ListOfRevisionDestinationEntry = js.Array[RevisionDestinationEntry]
   type ListOfRevisionEntry = js.Array[RevisionEntry]
+  type ListOfTableTagPolicyLFPermissions = js.Array[TableTagPolicyLFPermission]
   type ListOf__string = js.Array[__string]
   type MapOf__string = js.Dictionary[__string]
   type MaxResults = Int
   type Name = String
   type NextToken = String
+  type RoleArn = String
   type Timestamp = js.Date
   type __boolean = Boolean
   type __double = Double
   type __doubleMin0 = Double
   type __string = String
   type __stringMin0Max16384 = String
+  type __stringMin10Max512 = String
   type __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093 = String
 
   final class DataExchangeOps(private val service: DataExchange) extends AnyVal {
@@ -58,6 +66,7 @@ package object dataexchange {
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
     @inline def listRevisionAssetsFuture(params: ListRevisionAssetsRequest): Future[ListRevisionAssetsResponse] = service.listRevisionAssets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def revokeRevisionFuture(params: RevokeRevisionRequest): Future[RevokeRevisionResponse] = service.revokeRevision(params).promise().toFuture
     @inline def sendApiAssetFuture(params: SendApiAssetRequest): Future[SendApiAssetResponse] = service.sendApiAsset(params).promise().toFuture
     @inline def startJobFuture(params: StartJobRequest): Future[StartJobResponse] = service.startJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
@@ -94,6 +103,7 @@ package object dataexchange {
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listRevisionAssets(params: ListRevisionAssetsRequest): Request[ListRevisionAssetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def revokeRevision(params: RevokeRevisionRequest): Request[RevokeRevisionResponse] = js.native
     def sendApiAsset(params: SendApiAssetRequest): Request[SendApiAssetResponse] = js.native
     def startJob(params: StartJobRequest): Request[StartJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
@@ -195,12 +205,14 @@ package object dataexchange {
     }
   }
 
-  /** Information about the asset.
+  /** Details about the asset.
     */
   @js.native
   trait AssetDetails extends js.Object {
     var ApiGatewayApiAsset: js.UndefOr[ApiGatewayApiAsset]
+    var LakeFormationDataPermissionAsset: js.UndefOr[LakeFormationDataPermissionAsset]
     var RedshiftDataShareAsset: js.UndefOr[RedshiftDataShareAsset]
+    var S3DataAccessAsset: js.UndefOr[S3DataAccessAsset]
     var S3SnapshotAsset: js.UndefOr[S3SnapshotAsset]
   }
 
@@ -208,18 +220,22 @@ package object dataexchange {
     @inline
     def apply(
         ApiGatewayApiAsset: js.UndefOr[ApiGatewayApiAsset] = js.undefined,
+        LakeFormationDataPermissionAsset: js.UndefOr[LakeFormationDataPermissionAsset] = js.undefined,
         RedshiftDataShareAsset: js.UndefOr[RedshiftDataShareAsset] = js.undefined,
+        S3DataAccessAsset: js.UndefOr[S3DataAccessAsset] = js.undefined,
         S3SnapshotAsset: js.UndefOr[S3SnapshotAsset] = js.undefined
     ): AssetDetails = {
       val __obj = js.Dynamic.literal()
       ApiGatewayApiAsset.foreach(__v => __obj.updateDynamic("ApiGatewayApiAsset")(__v.asInstanceOf[js.Any]))
+      LakeFormationDataPermissionAsset.foreach(__v => __obj.updateDynamic("LakeFormationDataPermissionAsset")(__v.asInstanceOf[js.Any]))
       RedshiftDataShareAsset.foreach(__v => __obj.updateDynamic("RedshiftDataShareAsset")(__v.asInstanceOf[js.Any]))
+      S3DataAccessAsset.foreach(__v => __obj.updateDynamic("S3DataAccessAsset")(__v.asInstanceOf[js.Any]))
       S3SnapshotAsset.foreach(__v => __obj.updateDynamic("S3SnapshotAsset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetDetails]
     }
   }
 
-  /** An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.
+  /** An asset in AWS Data Exchange is a piece of data (Amazon S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API, AWS Lake Formation data permission, or Amazon S3 data access). The asset can be a structured data file, an image file, or some other data file that can be stored as an Amazon S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare, an AWS Lake Formation data permission, or an Amazon S3 data access. When you create an import job for your files, API Gateway APIs, Amazon Redshift datashares, AWS Lake Formation data permission, or Amazon S3 data access, you create an asset in AWS Data Exchange.
     */
   @js.native
   trait AssetEntry extends js.Object {
@@ -351,8 +367,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for CreateDataSet.
-    */
   @js.native
   trait CreateDataSetRequest extends js.Object {
     var AssetType: AssetType
@@ -426,8 +440,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for CreateEventAction.
-    */
   @js.native
   trait CreateEventActionRequest extends js.Object {
     var Action: Action
@@ -479,8 +491,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for CreateJob.
-    */
   @js.native
   trait CreateJobRequest extends js.Object {
     var Details: RequestDetails
@@ -538,8 +548,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for CreateRevision.
-    */
   @js.native
   trait CreateRevisionRequest extends js.Object {
     var DataSetId: __string
@@ -572,6 +580,9 @@ package object dataexchange {
     var DataSetId: js.UndefOr[Id]
     var Finalized: js.UndefOr[__boolean]
     var Id: js.UndefOr[Id]
+    var RevocationComment: js.UndefOr[__stringMin10Max512]
+    var Revoked: js.UndefOr[__boolean]
+    var RevokedAt: js.UndefOr[Timestamp]
     var SourceId: js.UndefOr[Id]
     var Tags: js.UndefOr[MapOf__string]
     var UpdatedAt: js.UndefOr[Timestamp]
@@ -586,6 +597,9 @@ package object dataexchange {
         DataSetId: js.UndefOr[Id] = js.undefined,
         Finalized: js.UndefOr[__boolean] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
+        RevocationComment: js.UndefOr[__stringMin10Max512] = js.undefined,
+        Revoked: js.UndefOr[__boolean] = js.undefined,
+        RevokedAt: js.UndefOr[Timestamp] = js.undefined,
         SourceId: js.UndefOr[Id] = js.undefined,
         Tags: js.UndefOr[MapOf__string] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
@@ -597,10 +611,63 @@ package object dataexchange {
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
       Finalized.foreach(__v => __obj.updateDynamic("Finalized")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RevocationComment.foreach(__v => __obj.updateDynamic("RevocationComment")(__v.asInstanceOf[js.Any]))
+      Revoked.foreach(__v => __obj.updateDynamic("Revoked")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRevisionResponse]
+    }
+  }
+
+  /** Details of the operation to create an Amazon S3 data access from an S3 bucket.
+    */
+  @js.native
+  trait CreateS3DataAccessFromS3BucketRequestDetails extends js.Object {
+    var AssetSource: S3DataAccessAssetSourceEntry
+    var DataSetId: Id
+    var RevisionId: Id
+  }
+
+  object CreateS3DataAccessFromS3BucketRequestDetails {
+    @inline
+    def apply(
+        AssetSource: S3DataAccessAssetSourceEntry,
+        DataSetId: Id,
+        RevisionId: Id
+    ): CreateS3DataAccessFromS3BucketRequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "AssetSource" -> AssetSource.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateS3DataAccessFromS3BucketRequestDetails]
+    }
+  }
+
+  /** Details about the response of the operation to create an S3 data access from an S3 bucket.
+    */
+  @js.native
+  trait CreateS3DataAccessFromS3BucketResponseDetails extends js.Object {
+    var AssetSource: S3DataAccessAssetSourceEntry
+    var DataSetId: Id
+    var RevisionId: Id
+  }
+
+  object CreateS3DataAccessFromS3BucketResponseDetails {
+    @inline
+    def apply(
+        AssetSource: S3DataAccessAssetSourceEntry,
+        DataSetId: Id,
+        RevisionId: Id
+    ): CreateS3DataAccessFromS3BucketResponseDetails = {
+      val __obj = js.Dynamic.literal(
+        "AssetSource" -> AssetSource.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateS3DataAccessFromS3BucketResponseDetails]
     }
   }
 
@@ -648,6 +715,47 @@ package object dataexchange {
       OriginDetails.foreach(__v => __obj.updateDynamic("OriginDetails")(__v.asInstanceOf[js.Any]))
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSetEntry]
+    }
+  }
+
+  /** The LF-tag policy for database resources.
+    */
+  @js.native
+  trait DatabaseLFTagPolicy extends js.Object {
+    var Expression: ListOfLFTags
+  }
+
+  object DatabaseLFTagPolicy {
+    @inline
+    def apply(
+        Expression: ListOfLFTags
+    ): DatabaseLFTagPolicy = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatabaseLFTagPolicy]
+    }
+  }
+
+  /** The LF-tag policy and permissions for database resources.
+    */
+  @js.native
+  trait DatabaseLFTagPolicyAndPermissions extends js.Object {
+    var Expression: ListOfLFTags
+    var Permissions: ListOfDatabaseLFTagPolicyPermissions
+  }
+
+  object DatabaseLFTagPolicyAndPermissions {
+    @inline
+    def apply(
+        Expression: ListOfLFTags,
+        Permissions: ListOfDatabaseLFTagPolicyPermissions
+    ): DatabaseLFTagPolicyAndPermissions = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "Permissions" -> Permissions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatabaseLFTagPolicyAndPermissions]
     }
   }
 
@@ -971,7 +1079,7 @@ package object dataexchange {
     }
   }
 
-  /** Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.
+  /** Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.
     */
   @js.native
   trait ExportServerSideEncryption extends js.Object {
@@ -1253,6 +1361,9 @@ package object dataexchange {
     var DataSetId: js.UndefOr[Id]
     var Finalized: js.UndefOr[__boolean]
     var Id: js.UndefOr[Id]
+    var RevocationComment: js.UndefOr[__stringMin10Max512]
+    var Revoked: js.UndefOr[__boolean]
+    var RevokedAt: js.UndefOr[Timestamp]
     var SourceId: js.UndefOr[Id]
     var Tags: js.UndefOr[MapOf__string]
     var UpdatedAt: js.UndefOr[Timestamp]
@@ -1267,6 +1378,9 @@ package object dataexchange {
         DataSetId: js.UndefOr[Id] = js.undefined,
         Finalized: js.UndefOr[__boolean] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
+        RevocationComment: js.UndefOr[__stringMin10Max512] = js.undefined,
+        Revoked: js.UndefOr[__boolean] = js.undefined,
+        RevokedAt: js.UndefOr[Timestamp] = js.undefined,
         SourceId: js.UndefOr[Id] = js.undefined,
         Tags: js.UndefOr[MapOf__string] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
@@ -1278,6 +1392,9 @@ package object dataexchange {
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
       Finalized.foreach(__v => __obj.updateDynamic("Finalized")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RevocationComment.foreach(__v => __obj.updateDynamic("RevocationComment")(__v.asInstanceOf[js.Any]))
+      Revoked.foreach(__v => __obj.updateDynamic("Revoked")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
@@ -1379,7 +1496,7 @@ package object dataexchange {
     }
   }
 
-  /** Information about the job error.
+  /** Details about the job error.
     */
   @js.native
   trait ImportAssetFromSignedUrlJobErrorDetails extends js.Object {
@@ -1458,6 +1575,76 @@ package object dataexchange {
       SignedUrl.foreach(__v => __obj.updateDynamic("SignedUrl")(__v.asInstanceOf[js.Any]))
       SignedUrlExpiresAt.foreach(__v => __obj.updateDynamic("SignedUrlExpiresAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportAssetFromSignedUrlResponseDetails]
+    }
+  }
+
+  /** Details about the assets imported from an AWS Lake Formation tag policy request.
+    */
+  @js.native
+  trait ImportAssetsFromLakeFormationTagPolicyRequestDetails extends js.Object {
+    var CatalogId: AwsAccountId
+    var DataSetId: Id
+    var RevisionId: Id
+    var RoleArn: RoleArn
+    var Database: js.UndefOr[DatabaseLFTagPolicyAndPermissions]
+    var Table: js.UndefOr[TableLFTagPolicyAndPermissions]
+  }
+
+  object ImportAssetsFromLakeFormationTagPolicyRequestDetails {
+    @inline
+    def apply(
+        CatalogId: AwsAccountId,
+        DataSetId: Id,
+        RevisionId: Id,
+        RoleArn: RoleArn,
+        Database: js.UndefOr[DatabaseLFTagPolicyAndPermissions] = js.undefined,
+        Table: js.UndefOr[TableLFTagPolicyAndPermissions] = js.undefined
+    ): ImportAssetsFromLakeFormationTagPolicyRequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAssetsFromLakeFormationTagPolicyRequestDetails]
+    }
+  }
+
+  /** Details from an import AWS Lake Formation tag policy job response.
+    */
+  @js.native
+  trait ImportAssetsFromLakeFormationTagPolicyResponseDetails extends js.Object {
+    var CatalogId: AwsAccountId
+    var DataSetId: Id
+    var RevisionId: Id
+    var RoleArn: RoleArn
+    var Database: js.UndefOr[DatabaseLFTagPolicyAndPermissions]
+    var Table: js.UndefOr[TableLFTagPolicyAndPermissions]
+  }
+
+  object ImportAssetsFromLakeFormationTagPolicyResponseDetails {
+    @inline
+    def apply(
+        CatalogId: AwsAccountId,
+        DataSetId: Id,
+        RevisionId: Id,
+        RoleArn: RoleArn,
+        Database: js.UndefOr[DatabaseLFTagPolicyAndPermissions] = js.undefined,
+        Table: js.UndefOr[TableLFTagPolicyAndPermissions] = js.undefined
+    ): ImportAssetsFromLakeFormationTagPolicyResponseDetails = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAssetsFromLakeFormationTagPolicyResponseDetails]
     }
   }
 
@@ -1637,6 +1824,121 @@ package object dataexchange {
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobError]
+    }
+  }
+
+  /** Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.
+    */
+  @js.native
+  trait LFResourceDetails extends js.Object {
+    var Database: js.UndefOr[DatabaseLFTagPolicy]
+    var Table: js.UndefOr[TableLFTagPolicy]
+  }
+
+  object LFResourceDetails {
+    @inline
+    def apply(
+        Database: js.UndefOr[DatabaseLFTagPolicy] = js.undefined,
+        Table: js.UndefOr[TableLFTagPolicy] = js.undefined
+    ): LFResourceDetails = {
+      val __obj = js.Dynamic.literal()
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LFResourceDetails]
+    }
+  }
+
+  /** A structure that allows an LF-admin to grant permissions on certain conditions.
+    */
+  @js.native
+  trait LFTag extends js.Object {
+    var TagKey: String
+    var TagValues: ListOfLFTagValues
+  }
+
+  object LFTag {
+    @inline
+    def apply(
+        TagKey: String,
+        TagValues: ListOfLFTagValues
+    ): LFTag = {
+      val __obj = js.Dynamic.literal(
+        "TagKey" -> TagKey.asInstanceOf[js.Any],
+        "TagValues" -> TagValues.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LFTag]
+    }
+  }
+
+  /** Details about the LF-tag policy.
+    */
+  @js.native
+  trait LFTagPolicyDetails extends js.Object {
+    var CatalogId: AwsAccountId
+    var ResourceDetails: LFResourceDetails
+    var ResourceType: LFResourceType
+  }
+
+  object LFTagPolicyDetails {
+    @inline
+    def apply(
+        CatalogId: AwsAccountId,
+        ResourceDetails: LFResourceDetails,
+        ResourceType: LFResourceType
+    ): LFTagPolicyDetails = {
+      val __obj = js.Dynamic.literal(
+        "CatalogId" -> CatalogId.asInstanceOf[js.Any],
+        "ResourceDetails" -> ResourceDetails.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LFTagPolicyDetails]
+    }
+  }
+
+  /** The AWS Lake Formation data permission asset.
+    */
+  @js.native
+  trait LakeFormationDataPermissionAsset extends js.Object {
+    var LakeFormationDataPermissionDetails: LakeFormationDataPermissionDetails
+    var LakeFormationDataPermissionType: LakeFormationDataPermissionType
+    var Permissions: ListOfLFPermissions
+    var RoleArn: js.UndefOr[RoleArn]
+  }
+
+  object LakeFormationDataPermissionAsset {
+    @inline
+    def apply(
+        LakeFormationDataPermissionDetails: LakeFormationDataPermissionDetails,
+        LakeFormationDataPermissionType: LakeFormationDataPermissionType,
+        Permissions: ListOfLFPermissions,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined
+    ): LakeFormationDataPermissionAsset = {
+      val __obj = js.Dynamic.literal(
+        "LakeFormationDataPermissionDetails" -> LakeFormationDataPermissionDetails.asInstanceOf[js.Any],
+        "LakeFormationDataPermissionType" -> LakeFormationDataPermissionType.asInstanceOf[js.Any],
+        "Permissions" -> Permissions.asInstanceOf[js.Any]
+      )
+
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LakeFormationDataPermissionAsset]
+    }
+  }
+
+  /** Details about the AWS Lake Formation data permission.
+    */
+  @js.native
+  trait LakeFormationDataPermissionDetails extends js.Object {
+    var LFTagPolicy: js.UndefOr[LFTagPolicyDetails]
+  }
+
+  object LakeFormationDataPermissionDetails {
+    @inline
+    def apply(
+        LFTagPolicy: js.UndefOr[LFTagPolicyDetails] = js.undefined
+    ): LakeFormationDataPermissionDetails = {
+      val __obj = js.Dynamic.literal()
+      LFTagPolicy.foreach(__v => __obj.updateDynamic("LFTagPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LakeFormationDataPermissionDetails]
     }
   }
 
@@ -1888,7 +2190,7 @@ package object dataexchange {
     }
   }
 
-  /** Information about the origin of the data set.
+  /** Details about the origin of the data set.
     */
   @js.native
   trait OriginDetails extends js.Object {
@@ -1949,11 +2251,13 @@ package object dataexchange {
     */
   @js.native
   trait RequestDetails extends js.Object {
+    var CreateS3DataAccessFromS3Bucket: js.UndefOr[CreateS3DataAccessFromS3BucketRequestDetails]
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails]
     var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails]
     var ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiRequestDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails]
+    var ImportAssetsFromLakeFormationTagPolicy: js.UndefOr[ImportAssetsFromLakeFormationTagPolicyRequestDetails]
     var ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesRequestDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails]
   }
@@ -1961,20 +2265,24 @@ package object dataexchange {
   object RequestDetails {
     @inline
     def apply(
+        CreateS3DataAccessFromS3Bucket: js.UndefOr[CreateS3DataAccessFromS3BucketRequestDetails] = js.undefined,
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails] = js.undefined,
         ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails] = js.undefined,
         ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiRequestDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails] = js.undefined,
+        ImportAssetsFromLakeFormationTagPolicy: js.UndefOr[ImportAssetsFromLakeFormationTagPolicyRequestDetails] = js.undefined,
         ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesRequestDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails] = js.undefined
     ): RequestDetails = {
       val __obj = js.Dynamic.literal()
+      CreateS3DataAccessFromS3Bucket.foreach(__v => __obj.updateDynamic("CreateS3DataAccessFromS3Bucket")(__v.asInstanceOf[js.Any]))
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
       ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
       ImportAssetFromApiGatewayApi.foreach(__v => __obj.updateDynamic("ImportAssetFromApiGatewayApi")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
+      ImportAssetsFromLakeFormationTagPolicy.foreach(__v => __obj.updateDynamic("ImportAssetsFromLakeFormationTagPolicy")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromRedshiftDataShares.foreach(__v => __obj.updateDynamic("ImportAssetsFromRedshiftDataShares")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestDetails]
@@ -1985,11 +2293,13 @@ package object dataexchange {
     */
   @js.native
   trait ResponseDetails extends js.Object {
+    var CreateS3DataAccessFromS3Bucket: js.UndefOr[CreateS3DataAccessFromS3BucketResponseDetails]
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails]
     var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails]
     var ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiResponseDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails]
+    var ImportAssetsFromLakeFormationTagPolicy: js.UndefOr[ImportAssetsFromLakeFormationTagPolicyResponseDetails]
     var ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesResponseDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails]
   }
@@ -1997,20 +2307,24 @@ package object dataexchange {
   object ResponseDetails {
     @inline
     def apply(
+        CreateS3DataAccessFromS3Bucket: js.UndefOr[CreateS3DataAccessFromS3BucketResponseDetails] = js.undefined,
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails] = js.undefined,
         ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails] = js.undefined,
         ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiResponseDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails] = js.undefined,
+        ImportAssetsFromLakeFormationTagPolicy: js.UndefOr[ImportAssetsFromLakeFormationTagPolicyResponseDetails] = js.undefined,
         ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesResponseDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails] = js.undefined
     ): ResponseDetails = {
       val __obj = js.Dynamic.literal()
+      CreateS3DataAccessFromS3Bucket.foreach(__v => __obj.updateDynamic("CreateS3DataAccessFromS3Bucket")(__v.asInstanceOf[js.Any]))
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
       ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
       ImportAssetFromApiGatewayApi.foreach(__v => __obj.updateDynamic("ImportAssetFromApiGatewayApi")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
+      ImportAssetsFromLakeFormationTagPolicy.foreach(__v => __obj.updateDynamic("ImportAssetsFromLakeFormationTagPolicy")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromRedshiftDataShares.foreach(__v => __obj.updateDynamic("ImportAssetsFromRedshiftDataShares")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseDetails]
@@ -2054,6 +2368,9 @@ package object dataexchange {
     var UpdatedAt: Timestamp
     var Comment: js.UndefOr[__stringMin0Max16384]
     var Finalized: js.UndefOr[__boolean]
+    var RevocationComment: js.UndefOr[__stringMin10Max512]
+    var Revoked: js.UndefOr[__boolean]
+    var RevokedAt: js.UndefOr[Timestamp]
     var SourceId: js.UndefOr[Id]
   }
 
@@ -2067,6 +2384,9 @@ package object dataexchange {
         UpdatedAt: Timestamp,
         Comment: js.UndefOr[__stringMin0Max16384] = js.undefined,
         Finalized: js.UndefOr[__boolean] = js.undefined,
+        RevocationComment: js.UndefOr[__stringMin10Max512] = js.undefined,
+        Revoked: js.UndefOr[__boolean] = js.undefined,
+        RevokedAt: js.UndefOr[Timestamp] = js.undefined,
         SourceId: js.UndefOr[Id] = js.undefined
     ): RevisionEntry = {
       val __obj = js.Dynamic.literal(
@@ -2079,6 +2399,9 @@ package object dataexchange {
 
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       Finalized.foreach(__v => __obj.updateDynamic("Finalized")(__v.asInstanceOf[js.Any]))
+      RevocationComment.foreach(__v => __obj.updateDynamic("RevocationComment")(__v.asInstanceOf[js.Any]))
+      Revoked.foreach(__v => __obj.updateDynamic("Revoked")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevisionEntry]
     }
@@ -2103,7 +2426,134 @@ package object dataexchange {
     }
   }
 
-  /** The S3 object that is the asset.
+  @js.native
+  trait RevokeRevisionRequest extends js.Object {
+    var DataSetId: __string
+    var RevisionId: __string
+    var RevocationComment: __stringMin10Max512
+  }
+
+  object RevokeRevisionRequest {
+    @inline
+    def apply(
+        DataSetId: __string,
+        RevisionId: __string,
+        RevocationComment: __stringMin10Max512
+    ): RevokeRevisionRequest = {
+      val __obj = js.Dynamic.literal(
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "RevocationComment" -> RevocationComment.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RevokeRevisionRequest]
+    }
+  }
+
+  @js.native
+  trait RevokeRevisionResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Comment: js.UndefOr[__stringMin0Max16384]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DataSetId: js.UndefOr[Id]
+    var Finalized: js.UndefOr[__boolean]
+    var Id: js.UndefOr[Id]
+    var RevocationComment: js.UndefOr[__stringMin10Max512]
+    var Revoked: js.UndefOr[__boolean]
+    var RevokedAt: js.UndefOr[Timestamp]
+    var SourceId: js.UndefOr[Id]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object RevokeRevisionResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Comment: js.UndefOr[__stringMin0Max16384] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        DataSetId: js.UndefOr[Id] = js.undefined,
+        Finalized: js.UndefOr[__boolean] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        RevocationComment: js.UndefOr[__stringMin10Max512] = js.undefined,
+        Revoked: js.UndefOr[__boolean] = js.undefined,
+        RevokedAt: js.UndefOr[Timestamp] = js.undefined,
+        SourceId: js.UndefOr[Id] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): RevokeRevisionResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
+      Finalized.foreach(__v => __obj.updateDynamic("Finalized")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RevocationComment.foreach(__v => __obj.updateDynamic("RevocationComment")(__v.asInstanceOf[js.Any]))
+      Revoked.foreach(__v => __obj.updateDynamic("Revoked")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
+      SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeRevisionResponse]
+    }
+  }
+
+  /** The Amazon S3 data access that is the asset.
+    */
+  @js.native
+  trait S3DataAccessAsset extends js.Object {
+    var Bucket: __string
+    var KeyPrefixes: js.UndefOr[ListOf__string]
+    var Keys: js.UndefOr[ListOf__string]
+    var S3AccessPointAlias: js.UndefOr[__string]
+    var S3AccessPointArn: js.UndefOr[__string]
+  }
+
+  object S3DataAccessAsset {
+    @inline
+    def apply(
+        Bucket: __string,
+        KeyPrefixes: js.UndefOr[ListOf__string] = js.undefined,
+        Keys: js.UndefOr[ListOf__string] = js.undefined,
+        S3AccessPointAlias: js.UndefOr[__string] = js.undefined,
+        S3AccessPointArn: js.UndefOr[__string] = js.undefined
+    ): S3DataAccessAsset = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      KeyPrefixes.foreach(__v => __obj.updateDynamic("KeyPrefixes")(__v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      S3AccessPointAlias.foreach(__v => __obj.updateDynamic("S3AccessPointAlias")(__v.asInstanceOf[js.Any]))
+      S3AccessPointArn.foreach(__v => __obj.updateDynamic("S3AccessPointArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DataAccessAsset]
+    }
+  }
+
+  /** Source details for an Amazon S3 data access asset.
+    */
+  @js.native
+  trait S3DataAccessAssetSourceEntry extends js.Object {
+    var Bucket: __string
+    var KeyPrefixes: js.UndefOr[ListOf__string]
+    var Keys: js.UndefOr[ListOf__string]
+  }
+
+  object S3DataAccessAssetSourceEntry {
+    @inline
+    def apply(
+        Bucket: __string,
+        KeyPrefixes: js.UndefOr[ListOf__string] = js.undefined,
+        Keys: js.UndefOr[ListOf__string] = js.undefined
+    ): S3DataAccessAssetSourceEntry = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      KeyPrefixes.foreach(__v => __obj.updateDynamic("KeyPrefixes")(__v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3DataAccessAssetSourceEntry]
+    }
+  }
+
+  /** The Amazon S3 object that is the asset.
     */
   @js.native
   trait S3SnapshotAsset extends js.Object {
@@ -2122,8 +2572,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for SendApiAsset.
-    */
   @js.native
   trait SendApiAssetRequest extends js.Object {
     var AssetId: __string
@@ -2210,8 +2658,47 @@ package object dataexchange {
     }
   }
 
-  /** The request body for TagResource.
+  /** The LF-tag policy for a table resource.
     */
+  @js.native
+  trait TableLFTagPolicy extends js.Object {
+    var Expression: ListOfLFTags
+  }
+
+  object TableLFTagPolicy {
+    @inline
+    def apply(
+        Expression: ListOfLFTags
+    ): TableLFTagPolicy = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TableLFTagPolicy]
+    }
+  }
+
+  /** The LF-tag policy and permissions that apply to table resources.
+    */
+  @js.native
+  trait TableLFTagPolicyAndPermissions extends js.Object {
+    var Expression: ListOfLFTags
+    var Permissions: ListOfTableTagPolicyLFPermissions
+  }
+
+  object TableLFTagPolicyAndPermissions {
+    @inline
+    def apply(
+        Expression: ListOfLFTags,
+        Permissions: ListOfTableTagPolicyLFPermissions
+    ): TableLFTagPolicyAndPermissions = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "Permissions" -> Permissions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TableLFTagPolicyAndPermissions]
+    }
+  }
+
   @js.native
   trait TagResourceRequest extends js.Object {
     var ResourceArn: __string
@@ -2252,8 +2739,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for UpdateAsset.
-    */
   @js.native
   trait UpdateAssetRequest extends js.Object {
     var AssetId: __string
@@ -2323,8 +2808,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for UpdateDataSet.
-    */
   @js.native
   trait UpdateDataSetRequest extends js.Object {
     var DataSetId: __string
@@ -2392,8 +2875,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for UpdateEventAction.
-    */
   @js.native
   trait UpdateEventActionRequest extends js.Object {
     var EventActionId: __string
@@ -2446,8 +2927,6 @@ package object dataexchange {
     }
   }
 
-  /** The request body for UpdateRevision.
-    */
   @js.native
   trait UpdateRevisionRequest extends js.Object {
     var DataSetId: __string
@@ -2483,6 +2962,9 @@ package object dataexchange {
     var DataSetId: js.UndefOr[Id]
     var Finalized: js.UndefOr[__boolean]
     var Id: js.UndefOr[Id]
+    var RevocationComment: js.UndefOr[__stringMin10Max512]
+    var Revoked: js.UndefOr[__boolean]
+    var RevokedAt: js.UndefOr[Timestamp]
     var SourceId: js.UndefOr[Id]
     var UpdatedAt: js.UndefOr[Timestamp]
   }
@@ -2496,6 +2978,9 @@ package object dataexchange {
         DataSetId: js.UndefOr[Id] = js.undefined,
         Finalized: js.UndefOr[__boolean] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
+        RevocationComment: js.UndefOr[__stringMin10Max512] = js.undefined,
+        Revoked: js.UndefOr[__boolean] = js.undefined,
+        RevokedAt: js.UndefOr[Timestamp] = js.undefined,
         SourceId: js.UndefOr[Id] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): UpdateRevisionResponse = {
@@ -2506,6 +2991,9 @@ package object dataexchange {
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
       Finalized.foreach(__v => __obj.updateDynamic("Finalized")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RevocationComment.foreach(__v => __obj.updateDynamic("RevocationComment")(__v.asInstanceOf[js.Any]))
+      Revoked.foreach(__v => __obj.updateDynamic("Revoked")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRevisionResponse]

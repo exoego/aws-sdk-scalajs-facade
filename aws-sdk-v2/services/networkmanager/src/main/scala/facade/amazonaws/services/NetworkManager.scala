@@ -9,6 +9,9 @@ import facade.amazonaws._
 
 package object networkmanager {
   type AWSAccountId = String
+  type AccountId = String
+  type AccountStatusList = js.Array[AccountStatus]
+  type Action = String
   type AttachmentId = String
   type AttachmentList = js.Array[Attachment]
   type ClientToken = String
@@ -24,6 +27,7 @@ package object networkmanager {
   type ConstrainedString = String
   type ConstrainedStringList = js.Array[ConstrainedString]
   type CoreNetworkArn = String
+  type CoreNetworkChangeEventList = js.Array[CoreNetworkChangeEvent]
   type CoreNetworkChangeList = js.Array[CoreNetworkChange]
   type CoreNetworkEdgeList = js.Array[CoreNetworkEdge]
   type CoreNetworkId = String
@@ -64,7 +68,11 @@ package object networkmanager {
   type NetworkRouteList = js.Array[NetworkRoute]
   type NetworkTelemetryList = js.Array[NetworkTelemetry]
   type NextToken = String
+  type OrganizationAwsServiceAccessStatus = String
+  type OrganizationId = String
   type PathComponentList = js.Array[PathComponent]
+  type PeeringId = String
+  type PeeringList = js.Array[Peering]
   type ReasonContextKey = String
   type ReasonContextMap = js.Dictionary[ReasonContextValue]
   type ReasonContextValue = String
@@ -73,6 +81,7 @@ package object networkmanager {
   type ResourcePolicyDocument = String
   type RouteStateList = js.Array[RouteState]
   type RouteTypeList = js.Array[RouteType]
+  type SLRDeploymentStatus = String
   type ServerSideString = String
   type SiteArn = String
   type SiteId = String
@@ -91,6 +100,7 @@ package object networkmanager {
   type TransitGatewayConnectPeerArn = String
   type TransitGatewayConnectPeerArnList = js.Array[TransitGatewayConnectPeerArn]
   type TransitGatewayConnectPeerAssociationList = js.Array[TransitGatewayConnectPeerAssociation]
+  type TransitGatewayPeeringAttachmentId = String
   type TransitGatewayRegistrationList = js.Array[TransitGatewayRegistration]
   type TransitGatewayRouteTableArn = String
   type VpcArn = String
@@ -112,6 +122,8 @@ package object networkmanager {
     @inline def createLinkFuture(params: CreateLinkRequest): Future[CreateLinkResponse] = service.createLink(params).promise().toFuture
     @inline def createSiteFuture(params: CreateSiteRequest): Future[CreateSiteResponse] = service.createSite(params).promise().toFuture
     @inline def createSiteToSiteVpnAttachmentFuture(params: CreateSiteToSiteVpnAttachmentRequest): Future[CreateSiteToSiteVpnAttachmentResponse] = service.createSiteToSiteVpnAttachment(params).promise().toFuture
+    @inline def createTransitGatewayPeeringFuture(params: CreateTransitGatewayPeeringRequest): Future[CreateTransitGatewayPeeringResponse] = service.createTransitGatewayPeering(params).promise().toFuture
+    @inline def createTransitGatewayRouteTableAttachmentFuture(params: CreateTransitGatewayRouteTableAttachmentRequest): Future[CreateTransitGatewayRouteTableAttachmentResponse] = service.createTransitGatewayRouteTableAttachment(params).promise().toFuture
     @inline def createVpcAttachmentFuture(params: CreateVpcAttachmentRequest): Future[CreateVpcAttachmentResponse] = service.createVpcAttachment(params).promise().toFuture
     @inline def deleteAttachmentFuture(params: DeleteAttachmentRequest): Future[DeleteAttachmentResponse] = service.deleteAttachment(params).promise().toFuture
     @inline def deleteConnectPeerFuture(params: DeleteConnectPeerRequest): Future[DeleteConnectPeerResponse] = service.deleteConnectPeer(params).promise().toFuture
@@ -121,6 +133,7 @@ package object networkmanager {
     @inline def deleteDeviceFuture(params: DeleteDeviceRequest): Future[DeleteDeviceResponse] = service.deleteDevice(params).promise().toFuture
     @inline def deleteGlobalNetworkFuture(params: DeleteGlobalNetworkRequest): Future[DeleteGlobalNetworkResponse] = service.deleteGlobalNetwork(params).promise().toFuture
     @inline def deleteLinkFuture(params: DeleteLinkRequest): Future[DeleteLinkResponse] = service.deleteLink(params).promise().toFuture
+    @inline def deletePeeringFuture(params: DeletePeeringRequest): Future[DeletePeeringResponse] = service.deletePeering(params).promise().toFuture
     @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def deleteSiteFuture(params: DeleteSiteRequest): Future[DeleteSiteResponse] = service.deleteSite(params).promise().toFuture
     @inline def deregisterTransitGatewayFuture(params: DeregisterTransitGatewayRequest): Future[DeregisterTransitGatewayResponse] = service.deregisterTransitGateway(params).promise().toFuture
@@ -134,6 +147,7 @@ package object networkmanager {
     @inline def getConnectPeerAssociationsFuture(params: GetConnectPeerAssociationsRequest): Future[GetConnectPeerAssociationsResponse] = service.getConnectPeerAssociations(params).promise().toFuture
     @inline def getConnectPeerFuture(params: GetConnectPeerRequest): Future[GetConnectPeerResponse] = service.getConnectPeer(params).promise().toFuture
     @inline def getConnectionsFuture(params: GetConnectionsRequest): Future[GetConnectionsResponse] = service.getConnections(params).promise().toFuture
+    @inline def getCoreNetworkChangeEventsFuture(params: GetCoreNetworkChangeEventsRequest): Future[GetCoreNetworkChangeEventsResponse] = service.getCoreNetworkChangeEvents(params).promise().toFuture
     @inline def getCoreNetworkChangeSetFuture(params: GetCoreNetworkChangeSetRequest): Future[GetCoreNetworkChangeSetResponse] = service.getCoreNetworkChangeSet(params).promise().toFuture
     @inline def getCoreNetworkFuture(params: GetCoreNetworkRequest): Future[GetCoreNetworkResponse] = service.getCoreNetwork(params).promise().toFuture
     @inline def getCoreNetworkPolicyFuture(params: GetCoreNetworkPolicyRequest): Future[GetCoreNetworkPolicyResponse] = service.getCoreNetworkPolicy(params).promise().toFuture
@@ -151,18 +165,23 @@ package object networkmanager {
     @inline def getSiteToSiteVpnAttachmentFuture(params: GetSiteToSiteVpnAttachmentRequest): Future[GetSiteToSiteVpnAttachmentResponse] = service.getSiteToSiteVpnAttachment(params).promise().toFuture
     @inline def getSitesFuture(params: GetSitesRequest): Future[GetSitesResponse] = service.getSites(params).promise().toFuture
     @inline def getTransitGatewayConnectPeerAssociationsFuture(params: GetTransitGatewayConnectPeerAssociationsRequest): Future[GetTransitGatewayConnectPeerAssociationsResponse] = service.getTransitGatewayConnectPeerAssociations(params).promise().toFuture
+    @inline def getTransitGatewayPeeringFuture(params: GetTransitGatewayPeeringRequest): Future[GetTransitGatewayPeeringResponse] = service.getTransitGatewayPeering(params).promise().toFuture
     @inline def getTransitGatewayRegistrationsFuture(params: GetTransitGatewayRegistrationsRequest): Future[GetTransitGatewayRegistrationsResponse] = service.getTransitGatewayRegistrations(params).promise().toFuture
+    @inline def getTransitGatewayRouteTableAttachmentFuture(params: GetTransitGatewayRouteTableAttachmentRequest): Future[GetTransitGatewayRouteTableAttachmentResponse] = service.getTransitGatewayRouteTableAttachment(params).promise().toFuture
     @inline def getVpcAttachmentFuture(params: GetVpcAttachmentRequest): Future[GetVpcAttachmentResponse] = service.getVpcAttachment(params).promise().toFuture
     @inline def listAttachmentsFuture(params: ListAttachmentsRequest): Future[ListAttachmentsResponse] = service.listAttachments(params).promise().toFuture
     @inline def listConnectPeersFuture(params: ListConnectPeersRequest): Future[ListConnectPeersResponse] = service.listConnectPeers(params).promise().toFuture
     @inline def listCoreNetworkPolicyVersionsFuture(params: ListCoreNetworkPolicyVersionsRequest): Future[ListCoreNetworkPolicyVersionsResponse] = service.listCoreNetworkPolicyVersions(params).promise().toFuture
     @inline def listCoreNetworksFuture(params: ListCoreNetworksRequest): Future[ListCoreNetworksResponse] = service.listCoreNetworks(params).promise().toFuture
+    @inline def listOrganizationServiceAccessStatusFuture(params: ListOrganizationServiceAccessStatusRequest): Future[ListOrganizationServiceAccessStatusResponse] = service.listOrganizationServiceAccessStatus(params).promise().toFuture
+    @inline def listPeeringsFuture(params: ListPeeringsRequest): Future[ListPeeringsResponse] = service.listPeerings(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putCoreNetworkPolicyFuture(params: PutCoreNetworkPolicyRequest): Future[PutCoreNetworkPolicyResponse] = service.putCoreNetworkPolicy(params).promise().toFuture
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def registerTransitGatewayFuture(params: RegisterTransitGatewayRequest): Future[RegisterTransitGatewayResponse] = service.registerTransitGateway(params).promise().toFuture
     @inline def rejectAttachmentFuture(params: RejectAttachmentRequest): Future[RejectAttachmentResponse] = service.rejectAttachment(params).promise().toFuture
     @inline def restoreCoreNetworkPolicyVersionFuture(params: RestoreCoreNetworkPolicyVersionRequest): Future[RestoreCoreNetworkPolicyVersionResponse] = service.restoreCoreNetworkPolicyVersion(params).promise().toFuture
+    @inline def startOrganizationServiceAccessUpdateFuture(params: StartOrganizationServiceAccessUpdateRequest): Future[StartOrganizationServiceAccessUpdateResponse] = service.startOrganizationServiceAccessUpdate(params).promise().toFuture
     @inline def startRouteAnalysisFuture(params: StartRouteAnalysisRequest): Future[StartRouteAnalysisResponse] = service.startRouteAnalysis(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -196,6 +215,8 @@ package object networkmanager {
     def createLink(params: CreateLinkRequest): Request[CreateLinkResponse] = js.native
     def createSite(params: CreateSiteRequest): Request[CreateSiteResponse] = js.native
     def createSiteToSiteVpnAttachment(params: CreateSiteToSiteVpnAttachmentRequest): Request[CreateSiteToSiteVpnAttachmentResponse] = js.native
+    def createTransitGatewayPeering(params: CreateTransitGatewayPeeringRequest): Request[CreateTransitGatewayPeeringResponse] = js.native
+    def createTransitGatewayRouteTableAttachment(params: CreateTransitGatewayRouteTableAttachmentRequest): Request[CreateTransitGatewayRouteTableAttachmentResponse] = js.native
     def createVpcAttachment(params: CreateVpcAttachmentRequest): Request[CreateVpcAttachmentResponse] = js.native
     def deleteAttachment(params: DeleteAttachmentRequest): Request[DeleteAttachmentResponse] = js.native
     def deleteConnectPeer(params: DeleteConnectPeerRequest): Request[DeleteConnectPeerResponse] = js.native
@@ -205,6 +226,7 @@ package object networkmanager {
     def deleteDevice(params: DeleteDeviceRequest): Request[DeleteDeviceResponse] = js.native
     def deleteGlobalNetwork(params: DeleteGlobalNetworkRequest): Request[DeleteGlobalNetworkResponse] = js.native
     def deleteLink(params: DeleteLinkRequest): Request[DeleteLinkResponse] = js.native
+    def deletePeering(params: DeletePeeringRequest): Request[DeletePeeringResponse] = js.native
     def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
     def deleteSite(params: DeleteSiteRequest): Request[DeleteSiteResponse] = js.native
     def deregisterTransitGateway(params: DeregisterTransitGatewayRequest): Request[DeregisterTransitGatewayResponse] = js.native
@@ -219,6 +241,7 @@ package object networkmanager {
     def getConnectPeerAssociations(params: GetConnectPeerAssociationsRequest): Request[GetConnectPeerAssociationsResponse] = js.native
     def getConnections(params: GetConnectionsRequest): Request[GetConnectionsResponse] = js.native
     def getCoreNetwork(params: GetCoreNetworkRequest): Request[GetCoreNetworkResponse] = js.native
+    def getCoreNetworkChangeEvents(params: GetCoreNetworkChangeEventsRequest): Request[GetCoreNetworkChangeEventsResponse] = js.native
     def getCoreNetworkChangeSet(params: GetCoreNetworkChangeSetRequest): Request[GetCoreNetworkChangeSetResponse] = js.native
     def getCoreNetworkPolicy(params: GetCoreNetworkPolicyRequest): Request[GetCoreNetworkPolicyResponse] = js.native
     def getCustomerGatewayAssociations(params: GetCustomerGatewayAssociationsRequest): Request[GetCustomerGatewayAssociationsResponse] = js.native
@@ -235,18 +258,23 @@ package object networkmanager {
     def getSiteToSiteVpnAttachment(params: GetSiteToSiteVpnAttachmentRequest): Request[GetSiteToSiteVpnAttachmentResponse] = js.native
     def getSites(params: GetSitesRequest): Request[GetSitesResponse] = js.native
     def getTransitGatewayConnectPeerAssociations(params: GetTransitGatewayConnectPeerAssociationsRequest): Request[GetTransitGatewayConnectPeerAssociationsResponse] = js.native
+    def getTransitGatewayPeering(params: GetTransitGatewayPeeringRequest): Request[GetTransitGatewayPeeringResponse] = js.native
     def getTransitGatewayRegistrations(params: GetTransitGatewayRegistrationsRequest): Request[GetTransitGatewayRegistrationsResponse] = js.native
+    def getTransitGatewayRouteTableAttachment(params: GetTransitGatewayRouteTableAttachmentRequest): Request[GetTransitGatewayRouteTableAttachmentResponse] = js.native
     def getVpcAttachment(params: GetVpcAttachmentRequest): Request[GetVpcAttachmentResponse] = js.native
     def listAttachments(params: ListAttachmentsRequest): Request[ListAttachmentsResponse] = js.native
     def listConnectPeers(params: ListConnectPeersRequest): Request[ListConnectPeersResponse] = js.native
     def listCoreNetworkPolicyVersions(params: ListCoreNetworkPolicyVersionsRequest): Request[ListCoreNetworkPolicyVersionsResponse] = js.native
     def listCoreNetworks(params: ListCoreNetworksRequest): Request[ListCoreNetworksResponse] = js.native
+    def listOrganizationServiceAccessStatus(params: ListOrganizationServiceAccessStatusRequest): Request[ListOrganizationServiceAccessStatusResponse] = js.native
+    def listPeerings(params: ListPeeringsRequest): Request[ListPeeringsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putCoreNetworkPolicy(params: PutCoreNetworkPolicyRequest): Request[PutCoreNetworkPolicyResponse] = js.native
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def registerTransitGateway(params: RegisterTransitGatewayRequest): Request[RegisterTransitGatewayResponse] = js.native
     def rejectAttachment(params: RejectAttachmentRequest): Request[RejectAttachmentResponse] = js.native
     def restoreCoreNetworkPolicyVersion(params: RestoreCoreNetworkPolicyVersionRequest): Request[RestoreCoreNetworkPolicyVersionResponse] = js.native
+    def startOrganizationServiceAccessUpdate(params: StartOrganizationServiceAccessUpdateRequest): Request[StartOrganizationServiceAccessUpdateResponse] = js.native
     def startRouteAnalysis(params: StartRouteAnalysisRequest): Request[StartRouteAnalysisResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -316,6 +344,27 @@ package object networkmanager {
       val __obj = js.Dynamic.literal()
       Attachment.foreach(__v => __obj.updateDynamic("Attachment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptAttachmentResponse]
+    }
+  }
+
+  /** Describes the current status of an account within an Amazon Web Services Organization, including service-linked roles (SLRs).
+    */
+  @js.native
+  trait AccountStatus extends js.Object {
+    var AccountId: js.UndefOr[AccountId]
+    var SLRDeploymentStatus: js.UndefOr[SLRDeploymentStatus]
+  }
+
+  object AccountStatus {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        SLRDeploymentStatus: js.UndefOr[SLRDeploymentStatus] = js.undefined
+    ): AccountStatus = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      SLRDeploymentStatus.foreach(__v => __obj.updateDynamic("SLRDeploymentStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountStatus]
     }
   }
 
@@ -907,6 +956,7 @@ package object networkmanager {
   trait CoreNetworkChange extends js.Object {
     var Action: js.UndefOr[ChangeAction]
     var Identifier: js.UndefOr[ConstrainedString]
+    var IdentifierPath: js.UndefOr[ConstrainedString]
     var NewValues: js.UndefOr[CoreNetworkChangeValues]
     var PreviousValues: js.UndefOr[CoreNetworkChangeValues]
     var Type: js.UndefOr[ChangeType]
@@ -917,6 +967,7 @@ package object networkmanager {
     def apply(
         Action: js.UndefOr[ChangeAction] = js.undefined,
         Identifier: js.UndefOr[ConstrainedString] = js.undefined,
+        IdentifierPath: js.UndefOr[ConstrainedString] = js.undefined,
         NewValues: js.UndefOr[CoreNetworkChangeValues] = js.undefined,
         PreviousValues: js.UndefOr[CoreNetworkChangeValues] = js.undefined,
         Type: js.UndefOr[ChangeType] = js.undefined
@@ -924,10 +975,71 @@ package object networkmanager {
       val __obj = js.Dynamic.literal()
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
       Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      IdentifierPath.foreach(__v => __obj.updateDynamic("IdentifierPath")(__v.asInstanceOf[js.Any]))
       NewValues.foreach(__v => __obj.updateDynamic("NewValues")(__v.asInstanceOf[js.Any]))
       PreviousValues.foreach(__v => __obj.updateDynamic("PreviousValues")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CoreNetworkChange]
+    }
+  }
+
+  /** Describes a core network change event. This can be a change to a segment, attachment, route, etc.
+    */
+  @js.native
+  trait CoreNetworkChangeEvent extends js.Object {
+    var Action: js.UndefOr[ChangeAction]
+    var EventTime: js.UndefOr[DateTime]
+    var IdentifierPath: js.UndefOr[ConstrainedString]
+    var Status: js.UndefOr[ChangeStatus]
+    var Type: js.UndefOr[ChangeType]
+    var Values: js.UndefOr[CoreNetworkChangeEventValues]
+  }
+
+  object CoreNetworkChangeEvent {
+    @inline
+    def apply(
+        Action: js.UndefOr[ChangeAction] = js.undefined,
+        EventTime: js.UndefOr[DateTime] = js.undefined,
+        IdentifierPath: js.UndefOr[ConstrainedString] = js.undefined,
+        Status: js.UndefOr[ChangeStatus] = js.undefined,
+        Type: js.UndefOr[ChangeType] = js.undefined,
+        Values: js.UndefOr[CoreNetworkChangeEventValues] = js.undefined
+    ): CoreNetworkChangeEvent = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      EventTime.foreach(__v => __obj.updateDynamic("EventTime")(__v.asInstanceOf[js.Any]))
+      IdentifierPath.foreach(__v => __obj.updateDynamic("IdentifierPath")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CoreNetworkChangeEvent]
+    }
+  }
+
+  /** Describes a core network change event.
+    */
+  @js.native
+  trait CoreNetworkChangeEventValues extends js.Object {
+    var AttachmentId: js.UndefOr[AttachmentId]
+    var Cidr: js.UndefOr[ConstrainedString]
+    var EdgeLocation: js.UndefOr[ExternalRegionCode]
+    var SegmentName: js.UndefOr[ConstrainedString]
+  }
+
+  object CoreNetworkChangeEventValues {
+    @inline
+    def apply(
+        AttachmentId: js.UndefOr[AttachmentId] = js.undefined,
+        Cidr: js.UndefOr[ConstrainedString] = js.undefined,
+        EdgeLocation: js.UndefOr[ExternalRegionCode] = js.undefined,
+        SegmentName: js.UndefOr[ConstrainedString] = js.undefined
+    ): CoreNetworkChangeEventValues = {
+      val __obj = js.Dynamic.literal()
+      AttachmentId.foreach(__v => __obj.updateDynamic("AttachmentId")(__v.asInstanceOf[js.Any]))
+      Cidr.foreach(__v => __obj.updateDynamic("Cidr")(__v.asInstanceOf[js.Any]))
+      EdgeLocation.foreach(__v => __obj.updateDynamic("EdgeLocation")(__v.asInstanceOf[js.Any]))
+      SegmentName.foreach(__v => __obj.updateDynamic("SegmentName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CoreNetworkChangeEventValues]
     }
   }
 
@@ -1607,6 +1719,92 @@ package object networkmanager {
   }
 
   @js.native
+  trait CreateTransitGatewayPeeringRequest extends js.Object {
+    var CoreNetworkId: CoreNetworkId
+    var TransitGatewayArn: TransitGatewayArn
+    var ClientToken: js.UndefOr[ClientToken]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateTransitGatewayPeeringRequest {
+    @inline
+    def apply(
+        CoreNetworkId: CoreNetworkId,
+        TransitGatewayArn: TransitGatewayArn,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateTransitGatewayPeeringRequest = {
+      val __obj = js.Dynamic.literal(
+        "CoreNetworkId" -> CoreNetworkId.asInstanceOf[js.Any],
+        "TransitGatewayArn" -> TransitGatewayArn.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayPeeringRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayPeeringResponse extends js.Object {
+    var TransitGatewayPeering: js.UndefOr[TransitGatewayPeering]
+  }
+
+  object CreateTransitGatewayPeeringResponse {
+    @inline
+    def apply(
+        TransitGatewayPeering: js.UndefOr[TransitGatewayPeering] = js.undefined
+    ): CreateTransitGatewayPeeringResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeering.foreach(__v => __obj.updateDynamic("TransitGatewayPeering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayPeeringResponse]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteTableAttachmentRequest extends js.Object {
+    var PeeringId: PeeringId
+    var TransitGatewayRouteTableArn: TransitGatewayRouteTableArn
+    var ClientToken: js.UndefOr[ClientToken]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateTransitGatewayRouteTableAttachmentRequest {
+    @inline
+    def apply(
+        PeeringId: PeeringId,
+        TransitGatewayRouteTableArn: TransitGatewayRouteTableArn,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateTransitGatewayRouteTableAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "PeeringId" -> PeeringId.asInstanceOf[js.Any],
+        "TransitGatewayRouteTableArn" -> TransitGatewayRouteTableArn.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayRouteTableAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait CreateTransitGatewayRouteTableAttachmentResponse extends js.Object {
+    var TransitGatewayRouteTableAttachment: js.UndefOr[TransitGatewayRouteTableAttachment]
+  }
+
+  object CreateTransitGatewayRouteTableAttachmentResponse {
+    @inline
+    def apply(
+        TransitGatewayRouteTableAttachment: js.UndefOr[TransitGatewayRouteTableAttachment] = js.undefined
+    ): CreateTransitGatewayRouteTableAttachmentResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayRouteTableAttachment.foreach(__v => __obj.updateDynamic("TransitGatewayRouteTableAttachment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateTransitGatewayRouteTableAttachmentResponse]
+    }
+  }
+
+  @js.native
   trait CreateVpcAttachmentRequest extends js.Object {
     var CoreNetworkId: CoreNetworkId
     var SubnetArns: SubnetArnList
@@ -1958,6 +2156,39 @@ package object networkmanager {
       val __obj = js.Dynamic.literal()
       Link.foreach(__v => __obj.updateDynamic("Link")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLinkResponse]
+    }
+  }
+
+  @js.native
+  trait DeletePeeringRequest extends js.Object {
+    var PeeringId: PeeringId
+  }
+
+  object DeletePeeringRequest {
+    @inline
+    def apply(
+        PeeringId: PeeringId
+    ): DeletePeeringRequest = {
+      val __obj = js.Dynamic.literal(
+        "PeeringId" -> PeeringId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePeeringRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePeeringResponse extends js.Object {
+    var Peering: js.UndefOr[Peering]
+  }
+
+  object DeletePeeringResponse {
+    @inline
+    def apply(
+        Peering: js.UndefOr[Peering] = js.undefined
+    ): DeletePeeringResponse = {
+      val __obj = js.Dynamic.literal()
+      Peering.foreach(__v => __obj.updateDynamic("Peering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePeeringResponse]
     }
   }
 
@@ -2495,6 +2726,52 @@ package object networkmanager {
       Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionsResponse]
+    }
+  }
+
+  @js.native
+  trait GetCoreNetworkChangeEventsRequest extends js.Object {
+    var CoreNetworkId: CoreNetworkId
+    var PolicyVersionId: Int
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetCoreNetworkChangeEventsRequest {
+    @inline
+    def apply(
+        CoreNetworkId: CoreNetworkId,
+        PolicyVersionId: Int,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCoreNetworkChangeEventsRequest = {
+      val __obj = js.Dynamic.literal(
+        "CoreNetworkId" -> CoreNetworkId.asInstanceOf[js.Any],
+        "PolicyVersionId" -> PolicyVersionId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCoreNetworkChangeEventsRequest]
+    }
+  }
+
+  @js.native
+  trait GetCoreNetworkChangeEventsResponse extends js.Object {
+    var CoreNetworkChangeEvents: js.UndefOr[CoreNetworkChangeEventList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetCoreNetworkChangeEventsResponse {
+    @inline
+    def apply(
+        CoreNetworkChangeEvents: js.UndefOr[CoreNetworkChangeEventList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetCoreNetworkChangeEventsResponse = {
+      val __obj = js.Dynamic.literal()
+      CoreNetworkChangeEvents.foreach(__v => __obj.updateDynamic("CoreNetworkChangeEvents")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCoreNetworkChangeEventsResponse]
     }
   }
 
@@ -3313,6 +3590,39 @@ package object networkmanager {
   }
 
   @js.native
+  trait GetTransitGatewayPeeringRequest extends js.Object {
+    var PeeringId: PeeringId
+  }
+
+  object GetTransitGatewayPeeringRequest {
+    @inline
+    def apply(
+        PeeringId: PeeringId
+    ): GetTransitGatewayPeeringRequest = {
+      val __obj = js.Dynamic.literal(
+        "PeeringId" -> PeeringId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetTransitGatewayPeeringRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayPeeringResponse extends js.Object {
+    var TransitGatewayPeering: js.UndefOr[TransitGatewayPeering]
+  }
+
+  object GetTransitGatewayPeeringResponse {
+    @inline
+    def apply(
+        TransitGatewayPeering: js.UndefOr[TransitGatewayPeering] = js.undefined
+    ): GetTransitGatewayPeeringResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayPeering.foreach(__v => __obj.updateDynamic("TransitGatewayPeering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTransitGatewayPeeringResponse]
+    }
+  }
+
+  @js.native
   trait GetTransitGatewayRegistrationsRequest extends js.Object {
     var GlobalNetworkId: GlobalNetworkId
     var MaxResults: js.UndefOr[MaxResults]
@@ -3359,6 +3669,39 @@ package object networkmanager {
   }
 
   @js.native
+  trait GetTransitGatewayRouteTableAttachmentRequest extends js.Object {
+    var AttachmentId: AttachmentId
+  }
+
+  object GetTransitGatewayRouteTableAttachmentRequest {
+    @inline
+    def apply(
+        AttachmentId: AttachmentId
+    ): GetTransitGatewayRouteTableAttachmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "AttachmentId" -> AttachmentId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetTransitGatewayRouteTableAttachmentRequest]
+    }
+  }
+
+  @js.native
+  trait GetTransitGatewayRouteTableAttachmentResponse extends js.Object {
+    var TransitGatewayRouteTableAttachment: js.UndefOr[TransitGatewayRouteTableAttachment]
+  }
+
+  object GetTransitGatewayRouteTableAttachmentResponse {
+    @inline
+    def apply(
+        TransitGatewayRouteTableAttachment: js.UndefOr[TransitGatewayRouteTableAttachment] = js.undefined
+    ): GetTransitGatewayRouteTableAttachmentResponse = {
+      val __obj = js.Dynamic.literal()
+      TransitGatewayRouteTableAttachment.foreach(__v => __obj.updateDynamic("TransitGatewayRouteTableAttachment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTransitGatewayRouteTableAttachmentResponse]
+    }
+  }
+
+  @js.native
   trait GetVpcAttachmentRequest extends js.Object {
     var AttachmentId: AttachmentId
   }
@@ -3391,7 +3734,7 @@ package object networkmanager {
     }
   }
 
-  /** Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-manged Core Network.
+  /** Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-managed Core Network.
     */
   @js.native
   trait GlobalNetwork extends js.Object {
@@ -3675,6 +4018,94 @@ package object networkmanager {
   }
 
   @js.native
+  trait ListOrganizationServiceAccessStatusRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListOrganizationServiceAccessStatusRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListOrganizationServiceAccessStatusRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOrganizationServiceAccessStatusRequest]
+    }
+  }
+
+  @js.native
+  trait ListOrganizationServiceAccessStatusResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var OrganizationStatus: js.UndefOr[OrganizationStatus]
+  }
+
+  object ListOrganizationServiceAccessStatusResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        OrganizationStatus: js.UndefOr[OrganizationStatus] = js.undefined
+    ): ListOrganizationServiceAccessStatusResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationStatus.foreach(__v => __obj.updateDynamic("OrganizationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOrganizationServiceAccessStatusResponse]
+    }
+  }
+
+  @js.native
+  trait ListPeeringsRequest extends js.Object {
+    var CoreNetworkId: js.UndefOr[CoreNetworkId]
+    var EdgeLocation: js.UndefOr[ExternalRegionCode]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var PeeringType: js.UndefOr[PeeringType]
+    var State: js.UndefOr[PeeringState]
+  }
+
+  object ListPeeringsRequest {
+    @inline
+    def apply(
+        CoreNetworkId: js.UndefOr[CoreNetworkId] = js.undefined,
+        EdgeLocation: js.UndefOr[ExternalRegionCode] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PeeringType: js.UndefOr[PeeringType] = js.undefined,
+        State: js.UndefOr[PeeringState] = js.undefined
+    ): ListPeeringsRequest = {
+      val __obj = js.Dynamic.literal()
+      CoreNetworkId.foreach(__v => __obj.updateDynamic("CoreNetworkId")(__v.asInstanceOf[js.Any]))
+      EdgeLocation.foreach(__v => __obj.updateDynamic("EdgeLocation")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PeeringType.foreach(__v => __obj.updateDynamic("PeeringType")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPeeringsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPeeringsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Peerings: js.UndefOr[PeeringList]
+  }
+
+  object ListPeeringsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Peerings: js.UndefOr[PeeringList] = js.undefined
+    ): ListPeeringsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Peerings.foreach(__v => __obj.updateDynamic("Peerings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPeeringsResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
@@ -3938,6 +4369,33 @@ package object networkmanager {
     }
   }
 
+  /** The status of an Amazon Web Services Organization and the accounts within that organization.
+    */
+  @js.native
+  trait OrganizationStatus extends js.Object {
+    var AccountStatusList: js.UndefOr[AccountStatusList]
+    var OrganizationAwsServiceAccessStatus: js.UndefOr[OrganizationAwsServiceAccessStatus]
+    var OrganizationId: js.UndefOr[OrganizationId]
+    var SLRDeploymentStatus: js.UndefOr[SLRDeploymentStatus]
+  }
+
+  object OrganizationStatus {
+    @inline
+    def apply(
+        AccountStatusList: js.UndefOr[AccountStatusList] = js.undefined,
+        OrganizationAwsServiceAccessStatus: js.UndefOr[OrganizationAwsServiceAccessStatus] = js.undefined,
+        OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
+        SLRDeploymentStatus: js.UndefOr[SLRDeploymentStatus] = js.undefined
+    ): OrganizationStatus = {
+      val __obj = js.Dynamic.literal()
+      AccountStatusList.foreach(__v => __obj.updateDynamic("AccountStatusList")(__v.asInstanceOf[js.Any]))
+      OrganizationAwsServiceAccessStatus.foreach(__v => __obj.updateDynamic("OrganizationAwsServiceAccessStatus")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      SLRDeploymentStatus.foreach(__v => __obj.updateDynamic("SLRDeploymentStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationStatus]
+    }
+  }
+
   /** Describes a path component.
     */
   @js.native
@@ -3959,6 +4417,51 @@ package object networkmanager {
       Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
       Sequence.foreach(__v => __obj.updateDynamic("Sequence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PathComponent]
+    }
+  }
+
+  /** Describes a peering connection.
+    */
+  @js.native
+  trait Peering extends js.Object {
+    var CoreNetworkArn: js.UndefOr[CoreNetworkArn]
+    var CoreNetworkId: js.UndefOr[CoreNetworkId]
+    var CreatedAt: js.UndefOr[DateTime]
+    var EdgeLocation: js.UndefOr[ExternalRegionCode]
+    var OwnerAccountId: js.UndefOr[AWSAccountId]
+    var PeeringId: js.UndefOr[PeeringId]
+    var PeeringType: js.UndefOr[PeeringType]
+    var ResourceArn: js.UndefOr[ResourceArn]
+    var State: js.UndefOr[PeeringState]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object Peering {
+    @inline
+    def apply(
+        CoreNetworkArn: js.UndefOr[CoreNetworkArn] = js.undefined,
+        CoreNetworkId: js.UndefOr[CoreNetworkId] = js.undefined,
+        CreatedAt: js.UndefOr[DateTime] = js.undefined,
+        EdgeLocation: js.UndefOr[ExternalRegionCode] = js.undefined,
+        OwnerAccountId: js.UndefOr[AWSAccountId] = js.undefined,
+        PeeringId: js.UndefOr[PeeringId] = js.undefined,
+        PeeringType: js.UndefOr[PeeringType] = js.undefined,
+        ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
+        State: js.UndefOr[PeeringState] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): Peering = {
+      val __obj = js.Dynamic.literal()
+      CoreNetworkArn.foreach(__v => __obj.updateDynamic("CoreNetworkArn")(__v.asInstanceOf[js.Any]))
+      CoreNetworkId.foreach(__v => __obj.updateDynamic("CoreNetworkId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      EdgeLocation.foreach(__v => __obj.updateDynamic("EdgeLocation")(__v.asInstanceOf[js.Any]))
+      OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
+      PeeringId.foreach(__v => __obj.updateDynamic("PeeringId")(__v.asInstanceOf[js.Any]))
+      PeeringType.foreach(__v => __obj.updateDynamic("PeeringType")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Peering]
     }
   }
 
@@ -4409,6 +4912,39 @@ package object networkmanager {
   }
 
   @js.native
+  trait StartOrganizationServiceAccessUpdateRequest extends js.Object {
+    var Action: Action
+  }
+
+  object StartOrganizationServiceAccessUpdateRequest {
+    @inline
+    def apply(
+        Action: Action
+    ): StartOrganizationServiceAccessUpdateRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartOrganizationServiceAccessUpdateRequest]
+    }
+  }
+
+  @js.native
+  trait StartOrganizationServiceAccessUpdateResponse extends js.Object {
+    var OrganizationStatus: js.UndefOr[OrganizationStatus]
+  }
+
+  object StartOrganizationServiceAccessUpdateResponse {
+    @inline
+    def apply(
+        OrganizationStatus: js.UndefOr[OrganizationStatus] = js.undefined
+    ): StartOrganizationServiceAccessUpdateResponse = {
+      val __obj = js.Dynamic.literal()
+      OrganizationStatus.foreach(__v => __obj.updateDynamic("OrganizationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartOrganizationServiceAccessUpdateResponse]
+    }
+  }
+
+  @js.native
   trait StartRouteAnalysisRequest extends js.Object {
     var Destination: RouteAnalysisEndpointOptionsSpecification
     var GlobalNetworkId: GlobalNetworkId
@@ -4536,6 +5072,30 @@ package object networkmanager {
     }
   }
 
+  /** Describes a transit gateway peering attachment.
+    */
+  @js.native
+  trait TransitGatewayPeering extends js.Object {
+    var Peering: js.UndefOr[Peering]
+    var TransitGatewayArn: js.UndefOr[TransitGatewayArn]
+    var TransitGatewayPeeringAttachmentId: js.UndefOr[TransitGatewayPeeringAttachmentId]
+  }
+
+  object TransitGatewayPeering {
+    @inline
+    def apply(
+        Peering: js.UndefOr[Peering] = js.undefined,
+        TransitGatewayArn: js.UndefOr[TransitGatewayArn] = js.undefined,
+        TransitGatewayPeeringAttachmentId: js.UndefOr[TransitGatewayPeeringAttachmentId] = js.undefined
+    ): TransitGatewayPeering = {
+      val __obj = js.Dynamic.literal()
+      Peering.foreach(__v => __obj.updateDynamic("Peering")(__v.asInstanceOf[js.Any]))
+      TransitGatewayArn.foreach(__v => __obj.updateDynamic("TransitGatewayArn")(__v.asInstanceOf[js.Any]))
+      TransitGatewayPeeringAttachmentId.foreach(__v => __obj.updateDynamic("TransitGatewayPeeringAttachmentId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransitGatewayPeering]
+    }
+  }
+
   /** Describes the registration of a transit gateway to a global network.
     */
   @js.native
@@ -4578,6 +5138,30 @@ package object networkmanager {
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitGatewayRegistrationStateReason]
+    }
+  }
+
+  /** Describes a transit gateway route table attachment.
+    */
+  @js.native
+  trait TransitGatewayRouteTableAttachment extends js.Object {
+    var Attachment: js.UndefOr[Attachment]
+    var PeeringId: js.UndefOr[PeeringId]
+    var TransitGatewayRouteTableArn: js.UndefOr[TransitGatewayRouteTableArn]
+  }
+
+  object TransitGatewayRouteTableAttachment {
+    @inline
+    def apply(
+        Attachment: js.UndefOr[Attachment] = js.undefined,
+        PeeringId: js.UndefOr[PeeringId] = js.undefined,
+        TransitGatewayRouteTableArn: js.UndefOr[TransitGatewayRouteTableArn] = js.undefined
+    ): TransitGatewayRouteTableAttachment = {
+      val __obj = js.Dynamic.literal()
+      Attachment.foreach(__v => __obj.updateDynamic("Attachment")(__v.asInstanceOf[js.Any]))
+      PeeringId.foreach(__v => __obj.updateDynamic("PeeringId")(__v.asInstanceOf[js.Any]))
+      TransitGatewayRouteTableArn.foreach(__v => __obj.updateDynamic("TransitGatewayRouteTableArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransitGatewayRouteTableAttachment]
     }
   }
 

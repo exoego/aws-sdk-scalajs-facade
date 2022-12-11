@@ -107,7 +107,7 @@ object ShippingOption {
   inline def values: js.Array[ShippingOption] = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
 }
 
-type SnowballCapacity = "T50" | "T80" | "T100" | "T42" | "T98" | "T8" | "T14" | "NoPreference"
+type SnowballCapacity = "T50" | "T80" | "T100" | "T42" | "T98" | "T8" | "T14" | "NoPreference" | "T32"
 object SnowballCapacity {
   inline val T50: "T50" = "T50"
   inline val T80: "T80" = "T80"
@@ -117,11 +117,12 @@ object SnowballCapacity {
   inline val T8: "T8" = "T8"
   inline val T14: "T14" = "T14"
   inline val NoPreference: "NoPreference" = "NoPreference"
+  inline val T32: "T32" = "T32"
 
-  inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference)
+  inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference, T32)
 }
 
-type SnowballType = "STANDARD" | "EDGE" | "EDGE_C" | "EDGE_CG" | "EDGE_S" | "SNC1_HDD" | "SNC1_SSD"
+type SnowballType = "STANDARD" | "EDGE" | "EDGE_C" | "EDGE_CG" | "EDGE_S" | "SNC1_HDD" | "SNC1_SSD" | "V3_5C"
 object SnowballType {
   inline val STANDARD: "STANDARD" = "STANDARD"
   inline val EDGE: "EDGE" = "EDGE"
@@ -130,8 +131,9 @@ object SnowballType {
   inline val EDGE_S: "EDGE_S" = "EDGE_S"
   inline val SNC1_HDD: "SNC1_HDD" = "SNC1_HDD"
   inline val SNC1_SSD: "SNC1_SSD" = "SNC1_SSD"
+  inline val V3_5C: "V3_5C" = "V3_5C"
 
-  inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD)
+  inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD, V3_5C)
 }
 
 type StorageUnit = "TB"

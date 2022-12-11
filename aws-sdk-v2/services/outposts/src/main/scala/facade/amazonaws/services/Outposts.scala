@@ -13,35 +13,49 @@ package object outposts {
   type AddressLine2 = String
   type AddressLine3 = String
   type Arn = String
+  type AssetId = String
+  type AssetListDefinition = js.Array[AssetInfo]
   type AvailabilityZone = String
   type AvailabilityZoneId = String
   type AvailabilityZoneIdList = js.Array[AvailabilityZoneId]
   type AvailabilityZoneList = js.Array[AvailabilityZone]
+  type CIDR = String
+  type CIDRList = js.Array[CIDR]
   type CatalogItemClassList = js.Array[CatalogItemClass]
   type CatalogItemListDefinition = js.Array[CatalogItem]
   type CatalogItemPowerKva = Float
   type CatalogItemWeightLbs = Int
   type City = String
+  type CityList = js.Array[City]
+  type ConnectionId = String
   type ContactName = String
   type ContactPhoneNumber = String
   type CountryCode = String
+  type CountryCodeList = js.Array[CountryCode]
+  type DeviceSerialNumber = String
   type DistrictOrCounty = String
   type EC2CapacityListDefinition = js.Array[EC2Capacity]
   type EC2FamilyList = js.Array[Family]
   type Family = String
+  type HostId = String
+  type HostIdList = js.Array[HostId]
   type ISO8601Timestamp = js.Date
   type InstanceType = String
   type InstanceTypeListDefinition = js.Array[InstanceTypeItem]
   type LifeCycleStatus = String
   type LifeCycleStatusList = js.Array[LifeCycleStatus]
+  type LineItemAssetInformationList = js.Array[LineItemAssetInformation]
   type LineItemId = String
   type LineItemListDefinition = js.Array[LineItem]
   type LineItemQuantity = Int
   type LineItemRequestListDefinition = js.Array[LineItemRequest]
   type LineItemStatusCounts = js.Dictionary[LineItemQuantity]
+  type MacAddress = String
+  type MacAddressList = js.Array[MacAddress]
   type MaxResults1000 = Int
   type MaxSize = String
   type Municipality = String
+  type NetworkInterfaceDeviceIndex = Int
   type OrderId = String
   type OrderSummaryListDefinition = js.Array[OrderSummary]
   type OutpostArn = String
@@ -53,6 +67,9 @@ package object outposts {
   type OwnerId = String
   type PostalCode = String
   type Quantity = String
+  type RackElevation = Float
+  type RackId = String
+  type ServerEndpoint = String
   type SiteArn = String
   type SiteDescription = String
   type SiteId = String
@@ -60,6 +77,8 @@ package object outposts {
   type SiteNotes = String
   type SkuCode = String
   type StateOrRegion = String
+  type StateOrRegionList = js.Array[StateOrRegion]
+  type StatusList = js.Array[AssetState]
   type SupportedStorageList = js.Array[SupportedStorageEnum]
   type SupportedUplinkGbps = Int
   type SupportedUplinkGbpsListDefinition = js.Array[SupportedUplinkGbps]
@@ -68,6 +87,9 @@ package object outposts {
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type Token = String
+  type TrackingId = String
+  type UnderlayIpAddress = String
+  type WireGuardPublicKey = String
   type outpostListDefinition = js.Array[Outpost]
   type siteListDefinition = js.Array[Site]
 
@@ -80,16 +102,19 @@ package object outposts {
     @inline def deleteOutpostFuture(params: DeleteOutpostInput): Future[DeleteOutpostOutput] = service.deleteOutpost(params).promise().toFuture
     @inline def deleteSiteFuture(params: DeleteSiteInput): Future[DeleteSiteOutput] = service.deleteSite(params).promise().toFuture
     @inline def getCatalogItemFuture(params: GetCatalogItemInput): Future[GetCatalogItemOutput] = service.getCatalogItem(params).promise().toFuture
+    @inline def getConnectionFuture(params: GetConnectionRequest): Future[GetConnectionResponse] = service.getConnection(params).promise().toFuture
     @inline def getOrderFuture(params: GetOrderInput): Future[GetOrderOutput] = service.getOrder(params).promise().toFuture
     @inline def getOutpostFuture(params: GetOutpostInput): Future[GetOutpostOutput] = service.getOutpost(params).promise().toFuture
     @inline def getOutpostInstanceTypesFuture(params: GetOutpostInstanceTypesInput): Future[GetOutpostInstanceTypesOutput] = service.getOutpostInstanceTypes(params).promise().toFuture
     @inline def getSiteAddressFuture(params: GetSiteAddressInput): Future[GetSiteAddressOutput] = service.getSiteAddress(params).promise().toFuture
     @inline def getSiteFuture(params: GetSiteInput): Future[GetSiteOutput] = service.getSite(params).promise().toFuture
+    @inline def listAssetsFuture(params: ListAssetsInput): Future[ListAssetsOutput] = service.listAssets(params).promise().toFuture
     @inline def listCatalogItemsFuture(params: ListCatalogItemsInput): Future[ListCatalogItemsOutput] = service.listCatalogItems(params).promise().toFuture
     @inline def listOrdersFuture(params: ListOrdersInput): Future[ListOrdersOutput] = service.listOrders(params).promise().toFuture
     @inline def listOutpostsFuture(params: ListOutpostsInput): Future[ListOutpostsOutput] = service.listOutposts(params).promise().toFuture
     @inline def listSitesFuture(params: ListSitesInput): Future[ListSitesOutput] = service.listSites(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startConnectionFuture(params: StartConnectionRequest): Future[StartConnectionResponse] = service.startConnection(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateOutpostFuture(params: UpdateOutpostInput): Future[UpdateOutpostOutput] = service.updateOutpost(params).promise().toFuture
@@ -111,16 +136,19 @@ package object outposts {
     def deleteOutpost(params: DeleteOutpostInput): Request[DeleteOutpostOutput] = js.native
     def deleteSite(params: DeleteSiteInput): Request[DeleteSiteOutput] = js.native
     def getCatalogItem(params: GetCatalogItemInput): Request[GetCatalogItemOutput] = js.native
+    def getConnection(params: GetConnectionRequest): Request[GetConnectionResponse] = js.native
     def getOrder(params: GetOrderInput): Request[GetOrderOutput] = js.native
     def getOutpost(params: GetOutpostInput): Request[GetOutpostOutput] = js.native
     def getOutpostInstanceTypes(params: GetOutpostInstanceTypesInput): Request[GetOutpostInstanceTypesOutput] = js.native
     def getSite(params: GetSiteInput): Request[GetSiteOutput] = js.native
     def getSiteAddress(params: GetSiteAddressInput): Request[GetSiteAddressOutput] = js.native
+    def listAssets(params: ListAssetsInput): Request[ListAssetsOutput] = js.native
     def listCatalogItems(params: ListCatalogItemsInput): Request[ListCatalogItemsOutput] = js.native
     def listOrders(params: ListOrdersInput): Request[ListOrdersOutput] = js.native
     def listOutposts(params: ListOutpostsInput): Request[ListOutpostsOutput] = js.native
     def listSites(params: ListSitesInput): Request[ListSitesOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startConnection(params: StartConnectionRequest): Request[StartConnectionResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateOutpost(params: UpdateOutpostInput): Request[UpdateOutpostOutput] = js.native
@@ -181,6 +209,54 @@ package object outposts {
       DistrictOrCounty.foreach(__v => __obj.updateDynamic("DistrictOrCounty")(__v.asInstanceOf[js.Any]))
       Municipality.foreach(__v => __obj.updateDynamic("Municipality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Address]
+    }
+  }
+
+  /** Information about hardware assets.
+    */
+  @js.native
+  trait AssetInfo extends js.Object {
+    var AssetId: js.UndefOr[AssetId]
+    var AssetLocation: js.UndefOr[AssetLocation]
+    var AssetType: js.UndefOr[AssetType]
+    var ComputeAttributes: js.UndefOr[ComputeAttributes]
+    var RackId: js.UndefOr[RackId]
+  }
+
+  object AssetInfo {
+    @inline
+    def apply(
+        AssetId: js.UndefOr[AssetId] = js.undefined,
+        AssetLocation: js.UndefOr[AssetLocation] = js.undefined,
+        AssetType: js.UndefOr[AssetType] = js.undefined,
+        ComputeAttributes: js.UndefOr[ComputeAttributes] = js.undefined,
+        RackId: js.UndefOr[RackId] = js.undefined
+    ): AssetInfo = {
+      val __obj = js.Dynamic.literal()
+      AssetId.foreach(__v => __obj.updateDynamic("AssetId")(__v.asInstanceOf[js.Any]))
+      AssetLocation.foreach(__v => __obj.updateDynamic("AssetLocation")(__v.asInstanceOf[js.Any]))
+      AssetType.foreach(__v => __obj.updateDynamic("AssetType")(__v.asInstanceOf[js.Any]))
+      ComputeAttributes.foreach(__v => __obj.updateDynamic("ComputeAttributes")(__v.asInstanceOf[js.Any]))
+      RackId.foreach(__v => __obj.updateDynamic("RackId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetInfo]
+    }
+  }
+
+  /** Information about the position of the asset in a rack.
+    */
+  @js.native
+  trait AssetLocation extends js.Object {
+    var RackElevation: js.UndefOr[RackElevation]
+  }
+
+  object AssetLocation {
+    @inline
+    def apply(
+        RackElevation: js.UndefOr[RackElevation] = js.undefined
+    ): AssetLocation = {
+      val __obj = js.Dynamic.literal()
+      RackElevation.foreach(__v => __obj.updateDynamic("RackElevation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssetLocation]
     }
   }
 
@@ -245,6 +321,60 @@ package object outposts {
       SupportedUplinkGbps.foreach(__v => __obj.updateDynamic("SupportedUplinkGbps")(__v.asInstanceOf[js.Any]))
       WeightLbs.foreach(__v => __obj.updateDynamic("WeightLbs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CatalogItem]
+    }
+  }
+
+  /** Information about compute hardware assets.
+    */
+  @js.native
+  trait ComputeAttributes extends js.Object {
+    var HostId: js.UndefOr[HostId]
+    var State: js.UndefOr[ComputeAssetState]
+  }
+
+  object ComputeAttributes {
+    @inline
+    def apply(
+        HostId: js.UndefOr[HostId] = js.undefined,
+        State: js.UndefOr[ComputeAssetState] = js.undefined
+    ): ComputeAttributes = {
+      val __obj = js.Dynamic.literal()
+      HostId.foreach(__v => __obj.updateDynamic("HostId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComputeAttributes]
+    }
+  }
+
+  /** Information about a connection.
+    */
+  @js.native
+  trait ConnectionDetails extends js.Object {
+    var AllowedIps: js.UndefOr[CIDRList]
+    var ClientPublicKey: js.UndefOr[WireGuardPublicKey]
+    var ClientTunnelAddress: js.UndefOr[CIDR]
+    var ServerEndpoint: js.UndefOr[ServerEndpoint]
+    var ServerPublicKey: js.UndefOr[WireGuardPublicKey]
+    var ServerTunnelAddress: js.UndefOr[CIDR]
+  }
+
+  object ConnectionDetails {
+    @inline
+    def apply(
+        AllowedIps: js.UndefOr[CIDRList] = js.undefined,
+        ClientPublicKey: js.UndefOr[WireGuardPublicKey] = js.undefined,
+        ClientTunnelAddress: js.UndefOr[CIDR] = js.undefined,
+        ServerEndpoint: js.UndefOr[ServerEndpoint] = js.undefined,
+        ServerPublicKey: js.UndefOr[WireGuardPublicKey] = js.undefined,
+        ServerTunnelAddress: js.UndefOr[CIDR] = js.undefined
+    ): ConnectionDetails = {
+      val __obj = js.Dynamic.literal()
+      AllowedIps.foreach(__v => __obj.updateDynamic("AllowedIps")(__v.asInstanceOf[js.Any]))
+      ClientPublicKey.foreach(__v => __obj.updateDynamic("ClientPublicKey")(__v.asInstanceOf[js.Any]))
+      ClientTunnelAddress.foreach(__v => __obj.updateDynamic("ClientTunnelAddress")(__v.asInstanceOf[js.Any]))
+      ServerEndpoint.foreach(__v => __obj.updateDynamic("ServerEndpoint")(__v.asInstanceOf[js.Any]))
+      ServerPublicKey.foreach(__v => __obj.updateDynamic("ServerPublicKey")(__v.asInstanceOf[js.Any]))
+      ServerTunnelAddress.foreach(__v => __obj.updateDynamic("ServerTunnelAddress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConnectionDetails]
     }
   }
 
@@ -509,6 +639,42 @@ package object outposts {
   }
 
   @js.native
+  trait GetConnectionRequest extends js.Object {
+    var ConnectionId: ConnectionId
+  }
+
+  object GetConnectionRequest {
+    @inline
+    def apply(
+        ConnectionId: ConnectionId
+    ): GetConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionId" -> ConnectionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait GetConnectionResponse extends js.Object {
+    var ConnectionDetails: js.UndefOr[ConnectionDetails]
+    var ConnectionId: js.UndefOr[ConnectionId]
+  }
+
+  object GetConnectionResponse {
+    @inline
+    def apply(
+        ConnectionDetails: js.UndefOr[ConnectionDetails] = js.undefined,
+        ConnectionId: js.UndefOr[ConnectionId] = js.undefined
+    ): GetConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionDetails.foreach(__v => __obj.updateDynamic("ConnectionDetails")(__v.asInstanceOf[js.Any]))
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConnectionResponse]
+    }
+  }
+
+  @js.native
   trait GetOrderInput extends js.Object {
     var OrderId: OrderId
   }
@@ -720,26 +886,53 @@ package object outposts {
     */
   @js.native
   trait LineItem extends js.Object {
+    var AssetInformationList: js.UndefOr[LineItemAssetInformationList]
     var CatalogItemId: js.UndefOr[SkuCode]
     var LineItemId: js.UndefOr[LineItemId]
     var Quantity: js.UndefOr[LineItemQuantity]
+    var ShipmentInformation: js.UndefOr[ShipmentInformation]
     var Status: js.UndefOr[LineItemStatus]
   }
 
   object LineItem {
     @inline
     def apply(
+        AssetInformationList: js.UndefOr[LineItemAssetInformationList] = js.undefined,
         CatalogItemId: js.UndefOr[SkuCode] = js.undefined,
         LineItemId: js.UndefOr[LineItemId] = js.undefined,
         Quantity: js.UndefOr[LineItemQuantity] = js.undefined,
+        ShipmentInformation: js.UndefOr[ShipmentInformation] = js.undefined,
         Status: js.UndefOr[LineItemStatus] = js.undefined
     ): LineItem = {
       val __obj = js.Dynamic.literal()
+      AssetInformationList.foreach(__v => __obj.updateDynamic("AssetInformationList")(__v.asInstanceOf[js.Any]))
       CatalogItemId.foreach(__v => __obj.updateDynamic("CatalogItemId")(__v.asInstanceOf[js.Any]))
       LineItemId.foreach(__v => __obj.updateDynamic("LineItemId")(__v.asInstanceOf[js.Any]))
       Quantity.foreach(__v => __obj.updateDynamic("Quantity")(__v.asInstanceOf[js.Any]))
+      ShipmentInformation.foreach(__v => __obj.updateDynamic("ShipmentInformation")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LineItem]
+    }
+  }
+
+  /** Information about a line item asset.
+    */
+  @js.native
+  trait LineItemAssetInformation extends js.Object {
+    var AssetId: js.UndefOr[AssetId]
+    var MacAddressList: js.UndefOr[MacAddressList]
+  }
+
+  object LineItemAssetInformation {
+    @inline
+    def apply(
+        AssetId: js.UndefOr[AssetId] = js.undefined,
+        MacAddressList: js.UndefOr[MacAddressList] = js.undefined
+    ): LineItemAssetInformation = {
+      val __obj = js.Dynamic.literal()
+      AssetId.foreach(__v => __obj.updateDynamic("AssetId")(__v.asInstanceOf[js.Any]))
+      MacAddressList.foreach(__v => __obj.updateDynamic("MacAddressList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineItemAssetInformation]
     }
   }
 
@@ -761,6 +954,55 @@ package object outposts {
       CatalogItemId.foreach(__v => __obj.updateDynamic("CatalogItemId")(__v.asInstanceOf[js.Any]))
       Quantity.foreach(__v => __obj.updateDynamic("Quantity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LineItemRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssetsInput extends js.Object {
+    var OutpostIdentifier: OutpostIdentifier
+    var HostIdFilter: js.UndefOr[HostIdList]
+    var MaxResults: js.UndefOr[MaxResults1000]
+    var NextToken: js.UndefOr[Token]
+    var StatusFilter: js.UndefOr[StatusList]
+  }
+
+  object ListAssetsInput {
+    @inline
+    def apply(
+        OutpostIdentifier: OutpostIdentifier,
+        HostIdFilter: js.UndefOr[HostIdList] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults1000] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined,
+        StatusFilter: js.UndefOr[StatusList] = js.undefined
+    ): ListAssetsInput = {
+      val __obj = js.Dynamic.literal(
+        "OutpostIdentifier" -> OutpostIdentifier.asInstanceOf[js.Any]
+      )
+
+      HostIdFilter.foreach(__v => __obj.updateDynamic("HostIdFilter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusFilter.foreach(__v => __obj.updateDynamic("StatusFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetsInput]
+    }
+  }
+
+  @js.native
+  trait ListAssetsOutput extends js.Object {
+    var Assets: js.UndefOr[AssetListDefinition]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListAssetsOutput {
+    @inline
+    def apply(
+        Assets: js.UndefOr[AssetListDefinition] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListAssetsOutput = {
+      val __obj = js.Dynamic.literal()
+      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssetsOutput]
     }
   }
 
@@ -903,17 +1145,26 @@ package object outposts {
   trait ListSitesInput extends js.Object {
     var MaxResults: js.UndefOr[MaxResults1000]
     var NextToken: js.UndefOr[Token]
+    var OperatingAddressCityFilter: js.UndefOr[CityList]
+    var OperatingAddressCountryCodeFilter: js.UndefOr[CountryCodeList]
+    var OperatingAddressStateOrRegionFilter: js.UndefOr[StateOrRegionList]
   }
 
   object ListSitesInput {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults1000] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
+        NextToken: js.UndefOr[Token] = js.undefined,
+        OperatingAddressCityFilter: js.UndefOr[CityList] = js.undefined,
+        OperatingAddressCountryCodeFilter: js.UndefOr[CountryCodeList] = js.undefined,
+        OperatingAddressStateOrRegionFilter: js.UndefOr[StateOrRegionList] = js.undefined
     ): ListSitesInput = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OperatingAddressCityFilter.foreach(__v => __obj.updateDynamic("OperatingAddressCityFilter")(__v.asInstanceOf[js.Any]))
+      OperatingAddressCountryCodeFilter.foreach(__v => __obj.updateDynamic("OperatingAddressCountryCodeFilter")(__v.asInstanceOf[js.Any]))
+      OperatingAddressStateOrRegionFilter.foreach(__v => __obj.updateDynamic("OperatingAddressStateOrRegionFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSitesInput]
     }
   }
@@ -1135,6 +1386,27 @@ package object outposts {
     }
   }
 
+  /** Information about a line item shipment.
+    */
+  @js.native
+  trait ShipmentInformation extends js.Object {
+    var ShipmentCarrier: js.UndefOr[ShipmentCarrier]
+    var ShipmentTrackingNumber: js.UndefOr[TrackingId]
+  }
+
+  object ShipmentInformation {
+    @inline
+    def apply(
+        ShipmentCarrier: js.UndefOr[ShipmentCarrier] = js.undefined,
+        ShipmentTrackingNumber: js.UndefOr[TrackingId] = js.undefined
+    ): ShipmentInformation = {
+      val __obj = js.Dynamic.literal()
+      ShipmentCarrier.foreach(__v => __obj.updateDynamic("ShipmentCarrier")(__v.asInstanceOf[js.Any]))
+      ShipmentTrackingNumber.foreach(__v => __obj.updateDynamic("ShipmentTrackingNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShipmentInformation]
+    }
+  }
+
   /** Information about a site.
     */
   @js.native
@@ -1180,6 +1452,51 @@ package object outposts {
       SiteId.foreach(__v => __obj.updateDynamic("SiteId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Site]
+    }
+  }
+
+  @js.native
+  trait StartConnectionRequest extends js.Object {
+    var AssetId: AssetId
+    var ClientPublicKey: WireGuardPublicKey
+    var DeviceSerialNumber: DeviceSerialNumber
+    var NetworkInterfaceDeviceIndex: NetworkInterfaceDeviceIndex
+  }
+
+  object StartConnectionRequest {
+    @inline
+    def apply(
+        AssetId: AssetId,
+        ClientPublicKey: WireGuardPublicKey,
+        DeviceSerialNumber: DeviceSerialNumber,
+        NetworkInterfaceDeviceIndex: NetworkInterfaceDeviceIndex
+    ): StartConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "ClientPublicKey" -> ClientPublicKey.asInstanceOf[js.Any],
+        "DeviceSerialNumber" -> DeviceSerialNumber.asInstanceOf[js.Any],
+        "NetworkInterfaceDeviceIndex" -> NetworkInterfaceDeviceIndex.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait StartConnectionResponse extends js.Object {
+    var ConnectionId: js.UndefOr[ConnectionId]
+    var UnderlayIpAddress: js.UndefOr[UnderlayIpAddress]
+  }
+
+  object StartConnectionResponse {
+    @inline
+    def apply(
+        ConnectionId: js.UndefOr[ConnectionId] = js.undefined,
+        UnderlayIpAddress: js.UndefOr[UnderlayIpAddress] = js.undefined
+    ): StartConnectionResponse = {
+      val __obj = js.Dynamic.literal()
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      UnderlayIpAddress.foreach(__v => __obj.updateDynamic("UnderlayIpAddress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartConnectionResponse]
     }
   }
 

@@ -42,6 +42,24 @@ object Context {
 }
 
 @js.native
+sealed trait CostAllocationTagStatus extends js.Any
+object CostAllocationTagStatus {
+  val Active = "Active".asInstanceOf[CostAllocationTagStatus]
+  val Inactive = "Inactive".asInstanceOf[CostAllocationTagStatus]
+
+  @inline def values: js.Array[CostAllocationTagStatus] = js.Array(Active, Inactive)
+}
+
+@js.native
+sealed trait CostAllocationTagType extends js.Any
+object CostAllocationTagType {
+  val AWSGenerated = "AWSGenerated".asInstanceOf[CostAllocationTagType]
+  val UserDefined = "UserDefined".asInstanceOf[CostAllocationTagType]
+
+  @inline def values: js.Array[CostAllocationTagType] = js.Array(AWSGenerated, UserDefined)
+}
+
+@js.native
 sealed trait CostCategoryInheritedValueDimensionName extends js.Any
 object CostCategoryInheritedValueDimensionName {
   val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[CostCategoryInheritedValueDimensionName]
@@ -138,6 +156,7 @@ object Dimension {
   val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
   val AGREEMENT_END_DATE_TIME_AFTER = "AGREEMENT_END_DATE_TIME_AFTER".asInstanceOf[Dimension]
   val AGREEMENT_END_DATE_TIME_BEFORE = "AGREEMENT_END_DATE_TIME_BEFORE".asInstanceOf[Dimension]
+  val INVOICING_ENTITY = "INVOICING_ENTITY".asInstanceOf[Dimension]
 
   @inline def values: js.Array[Dimension] = js.Array(
     AZ,
@@ -170,7 +189,8 @@ object Dimension {
     SAVINGS_PLAN_ARN,
     PAYMENT_OPTION,
     AGREEMENT_END_DATE_TIME_AFTER,
-    AGREEMENT_END_DATE_TIME_BEFORE
+    AGREEMENT_END_DATE_TIME_BEFORE,
+    INVOICING_ENTITY
   )
 }
 
@@ -212,6 +232,16 @@ object FindingReasonCode {
     DISK_THROUGHPUT_OVER_PROVISIONED,
     DISK_THROUGHPUT_UNDER_PROVISIONED
   )
+}
+
+@js.native
+sealed trait GenerationStatus extends js.Any
+object GenerationStatus {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[GenerationStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[GenerationStatus]
+  val FAILED = "FAILED".asInstanceOf[GenerationStatus]
+
+  @inline def values: js.Array[GenerationStatus] = js.Array(SUCCEEDED, PROCESSING, FAILED)
 }
 
 @js.native

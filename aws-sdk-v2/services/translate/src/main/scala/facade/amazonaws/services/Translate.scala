@@ -19,13 +19,20 @@ package object translate {
   type JobName = String
   type LanguageCodeString = String
   type LanguageCodeStringList = js.Array[LanguageCodeString]
+  type LanguagesList = js.Array[Language]
+  type LocalizedNameString = String
   type MaxResultsInteger = Int
   type NextToken = String
   type ParallelDataArn = String
   type ParallelDataPropertiesList = js.Array[ParallelDataProperties]
+  type ResourceArn = String
   type ResourceName = String
   type ResourceNameList = js.Array[ResourceName]
   type S3Uri = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type TargetLanguageCodeStringList = js.Array[LanguageCodeString]
   type TermList = js.Array[Term]
   type TerminologyArn = String
@@ -44,12 +51,16 @@ package object translate {
     @inline def getParallelDataFuture(params: GetParallelDataRequest): Future[GetParallelDataResponse] = service.getParallelData(params).promise().toFuture
     @inline def getTerminologyFuture(params: GetTerminologyRequest): Future[GetTerminologyResponse] = service.getTerminology(params).promise().toFuture
     @inline def importTerminologyFuture(params: ImportTerminologyRequest): Future[ImportTerminologyResponse] = service.importTerminology(params).promise().toFuture
+    @inline def listLanguagesFuture(params: ListLanguagesRequest): Future[ListLanguagesResponse] = service.listLanguages(params).promise().toFuture
     @inline def listParallelDataFuture(params: ListParallelDataRequest): Future[ListParallelDataResponse] = service.listParallelData(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTerminologiesFuture(params: ListTerminologiesRequest): Future[ListTerminologiesResponse] = service.listTerminologies(params).promise().toFuture
     @inline def listTextTranslationJobsFuture(params: ListTextTranslationJobsRequest): Future[ListTextTranslationJobsResponse] = service.listTextTranslationJobs(params).promise().toFuture
     @inline def startTextTranslationJobFuture(params: StartTextTranslationJobRequest): Future[StartTextTranslationJobResponse] = service.startTextTranslationJob(params).promise().toFuture
     @inline def stopTextTranslationJobFuture(params: StopTextTranslationJobRequest): Future[StopTextTranslationJobResponse] = service.stopTextTranslationJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def translateTextFuture(params: TranslateTextRequest): Future[TranslateTextResponse] = service.translateText(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateParallelDataFuture(params: UpdateParallelDataRequest): Future[UpdateParallelDataResponse] = service.updateParallelData(params).promise().toFuture
 
   }
@@ -66,12 +77,16 @@ package object translate {
     def getParallelData(params: GetParallelDataRequest): Request[GetParallelDataResponse] = js.native
     def getTerminology(params: GetTerminologyRequest): Request[GetTerminologyResponse] = js.native
     def importTerminology(params: ImportTerminologyRequest): Request[ImportTerminologyResponse] = js.native
+    def listLanguages(params: ListLanguagesRequest): Request[ListLanguagesResponse] = js.native
     def listParallelData(params: ListParallelDataRequest): Request[ListParallelDataResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTerminologies(params: ListTerminologiesRequest): Request[ListTerminologiesResponse] = js.native
     def listTextTranslationJobs(params: ListTextTranslationJobsRequest): Request[ListTextTranslationJobsResponse] = js.native
     def startTextTranslationJob(params: StartTextTranslationJobRequest): Request[StartTextTranslationJobResponse] = js.native
     def stopTextTranslationJob(params: StopTextTranslationJobRequest): Request[StopTextTranslationJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def translateText(params: TranslateTextRequest): Request[TranslateTextResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateParallelData(params: UpdateParallelDataRequest): Request[UpdateParallelDataResponse] = js.native
   }
   object Translate {
@@ -108,6 +123,7 @@ package object translate {
     var ParallelDataConfig: ParallelDataConfig
     var Description: js.UndefOr[Description]
     var EncryptionKey: js.UndefOr[EncryptionKey]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateParallelDataRequest {
@@ -117,7 +133,8 @@ package object translate {
         Name: ResourceName,
         ParallelDataConfig: ParallelDataConfig,
         Description: js.UndefOr[Description] = js.undefined,
-        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateParallelDataRequest = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
@@ -127,6 +144,7 @@ package object translate {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateParallelDataRequest]
     }
   }
@@ -350,6 +368,7 @@ package object translate {
     var TerminologyData: TerminologyData
     var Description: js.UndefOr[Description]
     var EncryptionKey: js.UndefOr[EncryptionKey]
+    var Tags: js.UndefOr[TagList]
   }
 
   object ImportTerminologyRequest {
@@ -359,7 +378,8 @@ package object translate {
         Name: ResourceName,
         TerminologyData: TerminologyData,
         Description: js.UndefOr[Description] = js.undefined,
-        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): ImportTerminologyRequest = {
       val __obj = js.Dynamic.literal(
         "MergeStrategy" -> MergeStrategy.asInstanceOf[js.Any],
@@ -369,6 +389,7 @@ package object translate {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportTerminologyRequest]
     }
   }
@@ -438,6 +459,72 @@ package object translate {
     }
   }
 
+  /** A supported language.
+    */
+  @js.native
+  trait Language extends js.Object {
+    var LanguageCode: LanguageCodeString
+    var LanguageName: LocalizedNameString
+  }
+
+  object Language {
+    @inline
+    def apply(
+        LanguageCode: LanguageCodeString,
+        LanguageName: LocalizedNameString
+    ): Language = {
+      val __obj = js.Dynamic.literal(
+        "LanguageCode" -> LanguageCode.asInstanceOf[js.Any],
+        "LanguageName" -> LanguageName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Language]
+    }
+  }
+
+  @js.native
+  trait ListLanguagesRequest extends js.Object {
+    var DisplayLanguageCode: js.UndefOr[DisplayLanguageCode]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLanguagesRequest {
+    @inline
+    def apply(
+        DisplayLanguageCode: js.UndefOr[DisplayLanguageCode] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLanguagesRequest = {
+      val __obj = js.Dynamic.literal()
+      DisplayLanguageCode.foreach(__v => __obj.updateDynamic("DisplayLanguageCode")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLanguagesRequest]
+    }
+  }
+
+  @js.native
+  trait ListLanguagesResponse extends js.Object {
+    var DisplayLanguageCode: js.UndefOr[DisplayLanguageCode]
+    var Languages: js.UndefOr[LanguagesList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLanguagesResponse {
+    @inline
+    def apply(
+        DisplayLanguageCode: js.UndefOr[DisplayLanguageCode] = js.undefined,
+        Languages: js.UndefOr[LanguagesList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLanguagesResponse = {
+      val __obj = js.Dynamic.literal()
+      DisplayLanguageCode.foreach(__v => __obj.updateDynamic("DisplayLanguageCode")(__v.asInstanceOf[js.Any]))
+      Languages.foreach(__v => __obj.updateDynamic("Languages")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLanguagesResponse]
+    }
+  }
+
   @js.native
   trait ListParallelDataRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResultsInteger]
@@ -473,6 +560,39 @@ package object translate {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ParallelDataPropertiesList.foreach(__v => __obj.updateDynamic("ParallelDataPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListParallelDataResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -788,6 +908,59 @@ package object translate {
     }
   }
 
+  /** A key-value pair that adds as a metadata to a resource used by Amazon Translate.
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
   /** The term being translated by the custom terminology.
     */
   @js.native
@@ -809,7 +982,7 @@ package object translate {
     }
   }
 
-  /** The data associated with the custom terminology.
+  /** The data associated with the custom terminology. For information about the custom terminology file, see [[https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html| Creating a Custom Terminology]].
     */
   @js.native
   trait TerminologyData extends js.Object {
@@ -1061,21 +1234,55 @@ package object translate {
     }
   }
 
-  /** Settings that configure the translation output.
+  /** Optional settings that configure the translation output. Use these settings for real time translations and asynchronous translation jobs.
     */
   @js.native
   trait TranslationSettings extends js.Object {
+    var Formality: js.UndefOr[Formality]
     var Profanity: js.UndefOr[Profanity]
   }
 
   object TranslationSettings {
     @inline
     def apply(
+        Formality: js.UndefOr[Formality] = js.undefined,
         Profanity: js.UndefOr[Profanity] = js.undefined
     ): TranslationSettings = {
       val __obj = js.Dynamic.literal()
+      Formality.foreach(__v => __obj.updateDynamic("Formality")(__v.asInstanceOf[js.Any]))
       Profanity.foreach(__v => __obj.updateDynamic("Profanity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TranslationSettings]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 

@@ -57,6 +57,15 @@ object PersistentAppUI {
 }
 
 @js.native
+sealed trait TemplateParameterDataType extends js.Any
+object TemplateParameterDataType {
+  val NUMBER = "NUMBER".asInstanceOf[TemplateParameterDataType]
+  val STRING = "STRING".asInstanceOf[TemplateParameterDataType]
+
+  @inline def values: js.Array[TemplateParameterDataType] = js.Array(NUMBER, STRING)
+}
+
+@js.native
 sealed trait VirtualClusterState extends js.Any
 object VirtualClusterState {
   val RUNNING = "RUNNING".asInstanceOf[VirtualClusterState]

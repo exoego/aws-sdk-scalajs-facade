@@ -16,6 +16,16 @@ object AgentUpdateStatus {
 }
 
 @js.native
+sealed trait ApplicationProtocol extends js.Any
+object ApplicationProtocol {
+  val http = "http".asInstanceOf[ApplicationProtocol]
+  val http2 = "http2".asInstanceOf[ApplicationProtocol]
+  val grpc = "grpc".asInstanceOf[ApplicationProtocol]
+
+  @inline def values: js.Array[ApplicationProtocol] = js.Array(http, http2, grpc)
+}
+
+@js.native
 sealed trait AssignPublicIp extends js.Any
 object AssignPublicIp {
   val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
@@ -385,8 +395,9 @@ sealed trait PropagateTags extends js.Any
 object PropagateTags {
   val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
   val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
+  val NONE = "NONE".asInstanceOf[PropagateTags]
 
-  @inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE)
+  @inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE, NONE)
 }
 
 @js.native
@@ -535,8 +546,11 @@ object TaskStopCode {
   val TaskFailedToStart = "TaskFailedToStart".asInstanceOf[TaskStopCode]
   val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
   val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
+  val ServiceSchedulerInitiated = "ServiceSchedulerInitiated".asInstanceOf[TaskStopCode]
+  val SpotInterruption = "SpotInterruption".asInstanceOf[TaskStopCode]
+  val TerminationNotice = "TerminationNotice".asInstanceOf[TaskStopCode]
 
-  @inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
+  @inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated, ServiceSchedulerInitiated, SpotInterruption, TerminationNotice)
 }
 
 @js.native

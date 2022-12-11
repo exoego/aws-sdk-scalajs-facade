@@ -84,6 +84,32 @@ object KnowledgeBaseType {
 }
 
 @js.native
+sealed trait RecommendationSourceType extends js.Any
+object RecommendationSourceType {
+  val ISSUE_DETECTION = "ISSUE_DETECTION".asInstanceOf[RecommendationSourceType]
+  val RULE_EVALUATION = "RULE_EVALUATION".asInstanceOf[RecommendationSourceType]
+  val OTHER = "OTHER".asInstanceOf[RecommendationSourceType]
+
+  @inline def values: js.Array[RecommendationSourceType] = js.Array(ISSUE_DETECTION, RULE_EVALUATION, OTHER)
+}
+
+@js.native
+sealed trait RecommendationTriggerType extends js.Any
+object RecommendationTriggerType {
+  val QUERY = "QUERY".asInstanceOf[RecommendationTriggerType]
+
+  @inline def values: js.Array[RecommendationTriggerType] = js.Array(QUERY)
+}
+
+@js.native
+sealed trait RecommendationType extends js.Any
+object RecommendationType {
+  val KNOWLEDGE_CONTENT = "KNOWLEDGE_CONTENT".asInstanceOf[RecommendationType]
+
+  @inline def values: js.Array[RecommendationType] = js.Array(KNOWLEDGE_CONTENT)
+}
+
+@js.native
 sealed trait RelevanceLevel extends js.Any
 object RelevanceLevel {
   val HIGH = "HIGH".asInstanceOf[RelevanceLevel]

@@ -21,6 +21,16 @@ object AutoMLOverrideStrategy {
   inline def values: js.Array[AutoMLOverrideStrategy] = js.Array(LatencyOptimized, AccuracyOptimized)
 }
 
+type Condition = "EQUALS" | "NOT_EQUALS" | "LESS_THAN" | "GREATER_THAN"
+object Condition {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val NOT_EQUALS: "NOT_EQUALS" = "NOT_EQUALS"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+
+  inline def values: js.Array[Condition] = js.Array(EQUALS, NOT_EQUALS, LESS_THAN, GREATER_THAN)
+}
+
 type DatasetType = "TARGET_TIME_SERIES" | "RELATED_TIME_SERIES" | "ITEM_METADATA"
 object DatasetType {
   inline val TARGET_TIME_SERIES: "TARGET_TIME_SERIES" = "TARGET_TIME_SERIES"
@@ -28,6 +38,19 @@ object DatasetType {
   inline val ITEM_METADATA: "ITEM_METADATA" = "ITEM_METADATA"
 
   inline def values: js.Array[DatasetType] = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
+}
+
+type DayOfWeek = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY"
+object DayOfWeek {
+  inline val MONDAY: "MONDAY" = "MONDAY"
+  inline val TUESDAY: "TUESDAY" = "TUESDAY"
+  inline val WEDNESDAY: "WEDNESDAY" = "WEDNESDAY"
+  inline val THURSDAY: "THURSDAY" = "THURSDAY"
+  inline val FRIDAY: "FRIDAY" = "FRIDAY"
+  inline val SATURDAY: "SATURDAY" = "SATURDAY"
+  inline val SUNDAY: "SUNDAY" = "SUNDAY"
+
+  inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 }
 
 type Domain = "RETAIL" | "CUSTOM" | "INVENTORY_PLANNING" | "EC2_CAPACITY" | "WORK_FORCE" | "WEB_TRAFFIC" | "METRICS"
@@ -64,6 +87,34 @@ object FilterConditionString {
   inline val IS_NOT: "IS_NOT" = "IS_NOT"
 
   inline def values: js.Array[FilterConditionString] = js.Array(IS, IS_NOT)
+}
+
+type Month = "JANUARY" | "FEBRUARY" | "MARCH" | "APRIL" | "MAY" | "JUNE" | "JULY" | "AUGUST" | "SEPTEMBER" | "OCTOBER" | "NOVEMBER" | "DECEMBER"
+object Month {
+  inline val JANUARY: "JANUARY" = "JANUARY"
+  inline val FEBRUARY: "FEBRUARY" = "FEBRUARY"
+  inline val MARCH: "MARCH" = "MARCH"
+  inline val APRIL: "APRIL" = "APRIL"
+  inline val MAY: "MAY" = "MAY"
+  inline val JUNE: "JUNE" = "JUNE"
+  inline val JULY: "JULY" = "JULY"
+  inline val AUGUST: "AUGUST" = "AUGUST"
+  inline val SEPTEMBER: "SEPTEMBER" = "SEPTEMBER"
+  inline val OCTOBER: "OCTOBER" = "OCTOBER"
+  inline val NOVEMBER: "NOVEMBER" = "NOVEMBER"
+  inline val DECEMBER: "DECEMBER" = "DECEMBER"
+
+  inline def values: js.Array[Month] = js.Array(JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER)
+}
+
+type Operation = "ADD" | "SUBTRACT" | "MULTIPLY" | "DIVIDE"
+object Operation {
+  inline val ADD: "ADD" = "ADD"
+  inline val SUBTRACT: "SUBTRACT" = "SUBTRACT"
+  inline val MULTIPLY: "MULTIPLY" = "MULTIPLY"
+  inline val DIVIDE: "DIVIDE" = "DIVIDE"
+
+  inline def values: js.Array[Operation] = js.Array(ADD, SUBTRACT, MULTIPLY, DIVIDE)
 }
 
 type OptimizationMetric = "WAPE" | "RMSE" | "AverageWeightedQuantileLoss" | "MASE" | "MAPE"

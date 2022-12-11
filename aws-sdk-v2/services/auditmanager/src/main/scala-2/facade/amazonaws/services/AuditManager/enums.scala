@@ -105,6 +105,27 @@ object DelegationStatus {
 }
 
 @js.native
+sealed trait EvidenceFinderBackfillStatus extends js.Any
+object EvidenceFinderBackfillStatus {
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[EvidenceFinderBackfillStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[EvidenceFinderBackfillStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[EvidenceFinderBackfillStatus]
+
+  @inline def values: js.Array[EvidenceFinderBackfillStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
+}
+
+@js.native
+sealed trait EvidenceFinderEnablementStatus extends js.Any
+object EvidenceFinderEnablementStatus {
+  val ENABLED = "ENABLED".asInstanceOf[EvidenceFinderEnablementStatus]
+  val DISABLED = "DISABLED".asInstanceOf[EvidenceFinderEnablementStatus]
+  val ENABLE_IN_PROGRESS = "ENABLE_IN_PROGRESS".asInstanceOf[EvidenceFinderEnablementStatus]
+  val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[EvidenceFinderEnablementStatus]
+
+  @inline def values: js.Array[EvidenceFinderEnablementStatus] = js.Array(ENABLED, DISABLED, ENABLE_IN_PROGRESS, DISABLE_IN_PROGRESS)
+}
+
+@js.native
 sealed trait FrameworkType extends js.Any
 object FrameworkType {
   val Standard = "Standard".asInstanceOf[FrameworkType]
@@ -150,8 +171,9 @@ object SettingAttribute {
   val SNS_TOPIC = "SNS_TOPIC".asInstanceOf[SettingAttribute]
   val DEFAULT_ASSESSMENT_REPORTS_DESTINATION = "DEFAULT_ASSESSMENT_REPORTS_DESTINATION".asInstanceOf[SettingAttribute]
   val DEFAULT_PROCESS_OWNERS = "DEFAULT_PROCESS_OWNERS".asInstanceOf[SettingAttribute]
+  val EVIDENCE_FINDER_ENABLEMENT = "EVIDENCE_FINDER_ENABLEMENT".asInstanceOf[SettingAttribute]
 
-  @inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
+  @inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS, EVIDENCE_FINDER_ENABLEMENT)
 }
 
 @js.native

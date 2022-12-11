@@ -130,6 +130,9 @@ object ExportableAutoScalingGroupField {
   val RecommendationOptionsEstimatedMonthlySavingsValue = "RecommendationOptionsEstimatedMonthlySavingsValue".asInstanceOf[ExportableAutoScalingGroupField]
   val EffectiveRecommendationPreferencesCpuVendorArchitectures = "EffectiveRecommendationPreferencesCpuVendorArchitectures".asInstanceOf[ExportableAutoScalingGroupField]
   val EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics".asInstanceOf[ExportableAutoScalingGroupField]
+  val EffectiveRecommendationPreferencesInferredWorkloadTypes = "EffectiveRecommendationPreferencesInferredWorkloadTypes".asInstanceOf[ExportableAutoScalingGroupField]
+  val InferredWorkloadTypes = "InferredWorkloadTypes".asInstanceOf[ExportableAutoScalingGroupField]
+  val RecommendationOptionsMigrationEffort = "RecommendationOptionsMigrationEffort".asInstanceOf[ExportableAutoScalingGroupField]
 
   @inline def values: js.Array[ExportableAutoScalingGroupField] = js.Array(
     AccountId,
@@ -182,7 +185,10 @@ object ExportableAutoScalingGroupField {
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
-    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort
   )
 }
 
@@ -238,6 +244,10 @@ object ExportableInstanceField {
   val RecommendationOptionsEstimatedMonthlySavingsValue = "RecommendationOptionsEstimatedMonthlySavingsValue".asInstanceOf[ExportableInstanceField]
   val EffectiveRecommendationPreferencesCpuVendorArchitectures = "EffectiveRecommendationPreferencesCpuVendorArchitectures".asInstanceOf[ExportableInstanceField]
   val EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics = "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics".asInstanceOf[ExportableInstanceField]
+  val EffectiveRecommendationPreferencesInferredWorkloadTypes = "EffectiveRecommendationPreferencesInferredWorkloadTypes".asInstanceOf[ExportableInstanceField]
+  val InferredWorkloadTypes = "InferredWorkloadTypes".asInstanceOf[ExportableInstanceField]
+  val RecommendationOptionsMigrationEffort = "RecommendationOptionsMigrationEffort".asInstanceOf[ExportableInstanceField]
+  val EffectiveRecommendationPreferencesExternalMetricsSource = "EffectiveRecommendationPreferencesExternalMetricsSource".asInstanceOf[ExportableInstanceField]
 
   @inline def values: js.Array[ExportableInstanceField] = js.Array(
     AccountId,
@@ -288,7 +298,11 @@ object ExportableInstanceField {
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     RecommendationOptionsEstimatedMonthlySavingsValue,
     EffectiveRecommendationPreferencesCpuVendorArchitectures,
-    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort,
+    EffectiveRecommendationPreferencesExternalMetricsSource
   )
 }
 
@@ -417,6 +431,17 @@ object ExportableVolumeField {
 }
 
 @js.native
+sealed trait ExternalMetricsSource extends js.Any
+object ExternalMetricsSource {
+  val Datadog = "Datadog".asInstanceOf[ExternalMetricsSource]
+  val Dynatrace = "Dynatrace".asInstanceOf[ExternalMetricsSource]
+  val NewRelic = "NewRelic".asInstanceOf[ExternalMetricsSource]
+  val Instana = "Instana".asInstanceOf[ExternalMetricsSource]
+
+  @inline def values: js.Array[ExternalMetricsSource] = js.Array(Datadog, Dynatrace, NewRelic, Instana)
+}
+
+@js.native
 sealed trait FileFormat extends js.Any
 object FileFormat {
   val Csv = "Csv".asInstanceOf[FileFormat]
@@ -452,6 +477,29 @@ object FindingReasonCode {
   val MemoryUnderprovisioned = "MemoryUnderprovisioned".asInstanceOf[FindingReasonCode]
 
   @inline def values: js.Array[FindingReasonCode] = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned)
+}
+
+@js.native
+sealed trait InferredWorkloadType extends js.Any
+object InferredWorkloadType {
+  val AmazonEmr = "AmazonEmr".asInstanceOf[InferredWorkloadType]
+  val ApacheCassandra = "ApacheCassandra".asInstanceOf[InferredWorkloadType]
+  val ApacheHadoop = "ApacheHadoop".asInstanceOf[InferredWorkloadType]
+  val Memcached = "Memcached".asInstanceOf[InferredWorkloadType]
+  val Nginx = "Nginx".asInstanceOf[InferredWorkloadType]
+  val PostgreSql = "PostgreSql".asInstanceOf[InferredWorkloadType]
+  val Redis = "Redis".asInstanceOf[InferredWorkloadType]
+
+  @inline def values: js.Array[InferredWorkloadType] = js.Array(AmazonEmr, ApacheCassandra, ApacheHadoop, Memcached, Nginx, PostgreSql, Redis)
+}
+
+@js.native
+sealed trait InferredWorkloadTypesPreference extends js.Any
+object InferredWorkloadTypesPreference {
+  val Active = "Active".asInstanceOf[InferredWorkloadTypesPreference]
+  val Inactive = "Inactive".asInstanceOf[InferredWorkloadTypesPreference]
+
+  @inline def values: js.Array[InferredWorkloadTypesPreference] = js.Array(Active, Inactive)
 }
 
 @js.native
@@ -626,6 +674,17 @@ object MetricStatistic {
 }
 
 @js.native
+sealed trait MigrationEffort extends js.Any
+object MigrationEffort {
+  val VeryLow = "VeryLow".asInstanceOf[MigrationEffort]
+  val Low = "Low".asInstanceOf[MigrationEffort]
+  val Medium = "Medium".asInstanceOf[MigrationEffort]
+  val High = "High".asInstanceOf[MigrationEffort]
+
+  @inline def values: js.Array[MigrationEffort] = js.Array(VeryLow, Low, Medium, High)
+}
+
+@js.native
 sealed trait PlatformDifference extends js.Any
 object PlatformDifference {
   val Hypervisor = "Hypervisor".asInstanceOf[PlatformDifference]
@@ -642,8 +701,10 @@ object PlatformDifference {
 sealed trait RecommendationPreferenceName extends js.Any
 object RecommendationPreferenceName {
   val EnhancedInfrastructureMetrics = "EnhancedInfrastructureMetrics".asInstanceOf[RecommendationPreferenceName]
+  val InferredWorkloadTypes = "InferredWorkloadTypes".asInstanceOf[RecommendationPreferenceName]
+  val ExternalMetricsPreference = "ExternalMetricsPreference".asInstanceOf[RecommendationPreferenceName]
 
-  @inline def values: js.Array[RecommendationPreferenceName] = js.Array(EnhancedInfrastructureMetrics)
+  @inline def values: js.Array[RecommendationPreferenceName] = js.Array(EnhancedInfrastructureMetrics, InferredWorkloadTypes, ExternalMetricsPreference)
 }
 
 @js.native
@@ -664,8 +725,9 @@ object ResourceType {
   val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
   val EbsVolume = "EbsVolume".asInstanceOf[ResourceType]
   val LambdaFunction = "LambdaFunction".asInstanceOf[ResourceType]
+  val NotApplicable = "NotApplicable".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
+  @inline def values: js.Array[ResourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction, NotApplicable)
 }
 
 @js.native

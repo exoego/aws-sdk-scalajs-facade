@@ -103,8 +103,9 @@ sealed trait ModelTypeEnum extends js.Any
 object ModelTypeEnum {
   val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
   val TRANSACTION_FRAUD_INSIGHTS = "TRANSACTION_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
+  val ACCOUNT_TAKEOVER_INSIGHTS = "ACCOUNT_TAKEOVER_INSIGHTS".asInstanceOf[ModelTypeEnum]
 
-  @inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS, TRANSACTION_FRAUD_INSIGHTS)
+  @inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS, TRANSACTION_FRAUD_INSIGHTS, ACCOUNT_TAKEOVER_INSIGHTS)
 }
 
 @js.native

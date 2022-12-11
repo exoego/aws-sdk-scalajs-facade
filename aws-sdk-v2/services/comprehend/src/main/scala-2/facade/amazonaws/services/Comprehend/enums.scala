@@ -12,6 +12,15 @@ object AugmentedManifestsDocumentTypeFormat {
 }
 
 @js.native
+sealed trait BlockType extends js.Any
+object BlockType {
+  val LINE = "LINE".asInstanceOf[BlockType]
+  val WORD = "WORD".asInstanceOf[BlockType]
+
+  @inline def values: js.Array[BlockType] = js.Array(LINE, WORD)
+}
+
+@js.native
 sealed trait DocumentClassifierDataFormat extends js.Any
 object DocumentClassifierDataFormat {
   val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[DocumentClassifierDataFormat]
@@ -38,7 +47,7 @@ object DocumentReadAction {
   @inline def values: js.Array[DocumentReadAction] = js.Array(TEXTRACT_DETECT_DOCUMENT_TEXT, TEXTRACT_ANALYZE_DOCUMENT)
 }
 
-/** A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is expected. * <code>TABLES</code> - Add TABLES to the list to return information about the tables that are detected in the input document. * <code>FORMS</code> - Add FORMS to return detected form data.
+/** Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values: * <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. * <code>FORMS</code> - Returns additional information about any forms that are detected in the input document.
   */
 @js.native
 sealed trait DocumentReadFeatureTypes extends js.Any
@@ -56,6 +65,20 @@ object DocumentReadMode {
   val FORCE_DOCUMENT_READ_ACTION = "FORCE_DOCUMENT_READ_ACTION".asInstanceOf[DocumentReadMode]
 
   @inline def values: js.Array[DocumentReadMode] = js.Array(SERVICE_DEFAULT, FORCE_DOCUMENT_READ_ACTION)
+}
+
+@js.native
+sealed trait DocumentType extends js.Any
+object DocumentType {
+  val NATIVE_PDF = "NATIVE_PDF".asInstanceOf[DocumentType]
+  val SCANNED_PDF = "SCANNED_PDF".asInstanceOf[DocumentType]
+  val MS_WORD = "MS_WORD".asInstanceOf[DocumentType]
+  val IMAGE = "IMAGE".asInstanceOf[DocumentType]
+  val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[DocumentType]
+  val TEXTRACT_DETECT_DOCUMENT_TEXT_JSON = "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON".asInstanceOf[DocumentType]
+  val TEXTRACT_ANALYZE_DOCUMENT_JSON = "TEXTRACT_ANALYZE_DOCUMENT_JSON".asInstanceOf[DocumentType]
+
+  @inline def values: js.Array[DocumentType] = js.Array(NATIVE_PDF, SCANNED_PDF, MS_WORD, IMAGE, PLAIN_TEXT, TEXTRACT_DETECT_DOCUMENT_TEXT_JSON, TEXTRACT_ANALYZE_DOCUMENT_JSON)
 }
 
 @js.native
@@ -151,6 +174,18 @@ object ModelStatus {
 }
 
 @js.native
+sealed trait PageBasedErrorCode extends js.Any
+object PageBasedErrorCode {
+  val TEXTRACT_BAD_PAGE = "TEXTRACT_BAD_PAGE".asInstanceOf[PageBasedErrorCode]
+  val TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED = "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED".asInstanceOf[PageBasedErrorCode]
+  val PAGE_CHARACTERS_EXCEEDED = "PAGE_CHARACTERS_EXCEEDED".asInstanceOf[PageBasedErrorCode]
+  val PAGE_SIZE_EXCEEDED = "PAGE_SIZE_EXCEEDED".asInstanceOf[PageBasedErrorCode]
+  val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[PageBasedErrorCode]
+
+  @inline def values: js.Array[PageBasedErrorCode] = js.Array(TEXTRACT_BAD_PAGE, TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED, PAGE_CHARACTERS_EXCEEDED, PAGE_SIZE_EXCEEDED, INTERNAL_SERVER_ERROR)
+}
+
+@js.native
 sealed trait PartOfSpeechTagType extends js.Any
 object PartOfSpeechTagType {
   val ADJ = "ADJ".asInstanceOf[PartOfSpeechTagType]
@@ -219,6 +254,20 @@ object PiiEntityType {
   val IP_ADDRESS = "IP_ADDRESS".asInstanceOf[PiiEntityType]
   val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[PiiEntityType]
   val ALL = "ALL".asInstanceOf[PiiEntityType]
+  val LICENSE_PLATE = "LICENSE_PLATE".asInstanceOf[PiiEntityType]
+  val VEHICLE_IDENTIFICATION_NUMBER = "VEHICLE_IDENTIFICATION_NUMBER".asInstanceOf[PiiEntityType]
+  val UK_NATIONAL_INSURANCE_NUMBER = "UK_NATIONAL_INSURANCE_NUMBER".asInstanceOf[PiiEntityType]
+  val CA_SOCIAL_INSURANCE_NUMBER = "CA_SOCIAL_INSURANCE_NUMBER".asInstanceOf[PiiEntityType]
+  val US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER".asInstanceOf[PiiEntityType]
+  val UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER".asInstanceOf[PiiEntityType]
+  val IN_PERMANENT_ACCOUNT_NUMBER = "IN_PERMANENT_ACCOUNT_NUMBER".asInstanceOf[PiiEntityType]
+  val IN_NREGA = "IN_NREGA".asInstanceOf[PiiEntityType]
+  val INTERNATIONAL_BANK_ACCOUNT_NUMBER = "INTERNATIONAL_BANK_ACCOUNT_NUMBER".asInstanceOf[PiiEntityType]
+  val SWIFT_CODE = "SWIFT_CODE".asInstanceOf[PiiEntityType]
+  val UK_NATIONAL_HEALTH_SERVICE_NUMBER = "UK_NATIONAL_HEALTH_SERVICE_NUMBER".asInstanceOf[PiiEntityType]
+  val CA_HEALTH_NUMBER = "CA_HEALTH_NUMBER".asInstanceOf[PiiEntityType]
+  val IN_AADHAAR = "IN_AADHAAR".asInstanceOf[PiiEntityType]
+  val IN_VOTER_NUMBER = "IN_VOTER_NUMBER".asInstanceOf[PiiEntityType]
 
   @inline def values: js.Array[PiiEntityType] = js.Array(
     BANK_ACCOUNT_NUMBER,
@@ -243,8 +292,30 @@ object PiiEntityType {
     AWS_SECRET_KEY,
     IP_ADDRESS,
     MAC_ADDRESS,
-    ALL
+    ALL,
+    LICENSE_PLATE,
+    VEHICLE_IDENTIFICATION_NUMBER,
+    UK_NATIONAL_INSURANCE_NUMBER,
+    CA_SOCIAL_INSURANCE_NUMBER,
+    US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER,
+    UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER,
+    IN_PERMANENT_ACCOUNT_NUMBER,
+    IN_NREGA,
+    INTERNATIONAL_BANK_ACCOUNT_NUMBER,
+    SWIFT_CODE,
+    UK_NATIONAL_HEALTH_SERVICE_NUMBER,
+    CA_HEALTH_NUMBER,
+    IN_AADHAAR,
+    IN_VOTER_NUMBER
   )
+}
+
+@js.native
+sealed trait RelationshipType extends js.Any
+object RelationshipType {
+  val CHILD = "CHILD".asInstanceOf[RelationshipType]
+
+  @inline def values: js.Array[RelationshipType] = js.Array(CHILD)
 }
 
 @js.native
@@ -278,4 +349,28 @@ object SyntaxLanguageCode {
   val pt = "pt".asInstanceOf[SyntaxLanguageCode]
 
   @inline def values: js.Array[SyntaxLanguageCode] = js.Array(en, es, fr, de, it, pt)
+}
+
+@js.native
+sealed trait TargetedSentimentEntityType extends js.Any
+object TargetedSentimentEntityType {
+  val PERSON = "PERSON".asInstanceOf[TargetedSentimentEntityType]
+  val LOCATION = "LOCATION".asInstanceOf[TargetedSentimentEntityType]
+  val ORGANIZATION = "ORGANIZATION".asInstanceOf[TargetedSentimentEntityType]
+  val FACILITY = "FACILITY".asInstanceOf[TargetedSentimentEntityType]
+  val BRAND = "BRAND".asInstanceOf[TargetedSentimentEntityType]
+  val COMMERCIAL_ITEM = "COMMERCIAL_ITEM".asInstanceOf[TargetedSentimentEntityType]
+  val MOVIE = "MOVIE".asInstanceOf[TargetedSentimentEntityType]
+  val MUSIC = "MUSIC".asInstanceOf[TargetedSentimentEntityType]
+  val BOOK = "BOOK".asInstanceOf[TargetedSentimentEntityType]
+  val SOFTWARE = "SOFTWARE".asInstanceOf[TargetedSentimentEntityType]
+  val GAME = "GAME".asInstanceOf[TargetedSentimentEntityType]
+  val PERSONAL_TITLE = "PERSONAL_TITLE".asInstanceOf[TargetedSentimentEntityType]
+  val EVENT = "EVENT".asInstanceOf[TargetedSentimentEntityType]
+  val DATE = "DATE".asInstanceOf[TargetedSentimentEntityType]
+  val QUANTITY = "QUANTITY".asInstanceOf[TargetedSentimentEntityType]
+  val ATTRIBUTE = "ATTRIBUTE".asInstanceOf[TargetedSentimentEntityType]
+  val OTHER = "OTHER".asInstanceOf[TargetedSentimentEntityType]
+
+  @inline def values: js.Array[TargetedSentimentEntityType] = js.Array(PERSON, LOCATION, ORGANIZATION, FACILITY, BRAND, COMMERCIAL_ITEM, MOVIE, MUSIC, BOOK, SOFTWARE, GAME, PERSONAL_TITLE, EVENT, DATE, QUANTITY, ATTRIBUTE, OTHER)
 }

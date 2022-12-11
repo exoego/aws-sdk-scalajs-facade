@@ -69,28 +69,18 @@ object Permission {
   val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
   val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
   val CREATE_TAG = "CREATE_TAG".asInstanceOf[Permission]
-  val ALTER_TAG = "ALTER_TAG".asInstanceOf[Permission]
-  val DELETE_TAG = "DELETE_TAG".asInstanceOf[Permission]
-  val DESCRIBE_TAG = "DESCRIBE_TAG".asInstanceOf[Permission]
-  val ASSOCIATE_TAG = "ASSOCIATE_TAG".asInstanceOf[Permission]
+  val ASSOCIATE = "ASSOCIATE".asInstanceOf[Permission]
 
-  @inline def values: js.Array[Permission] = js.Array(
-    ALL,
-    SELECT,
-    ALTER,
-    DROP,
-    DELETE,
-    INSERT,
-    DESCRIBE,
-    CREATE_DATABASE,
-    CREATE_TABLE,
-    DATA_LOCATION_ACCESS,
-    CREATE_TAG,
-    ALTER_TAG,
-    DELETE_TAG,
-    DESCRIBE_TAG,
-    ASSOCIATE_TAG
-  )
+  @inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, CREATE_TAG, ASSOCIATE)
+}
+
+@js.native
+sealed trait PermissionType extends js.Any
+object PermissionType {
+  val COLUMN_PERMISSION = "COLUMN_PERMISSION".asInstanceOf[PermissionType]
+  val CELL_FILTER_PERMISSION = "CELL_FILTER_PERMISSION".asInstanceOf[PermissionType]
+
+  @inline def values: js.Array[PermissionType] = js.Array(COLUMN_PERMISSION, CELL_FILTER_PERMISSION)
 }
 
 @js.native

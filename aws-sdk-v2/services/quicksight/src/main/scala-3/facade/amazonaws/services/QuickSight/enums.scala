@@ -29,11 +29,51 @@ object AnalysisErrorType {
   )
 }
 
-type AnalysisFilterAttribute = "QUICKSIGHT_USER"
+type AnalysisFilterAttribute = "QUICKSIGHT_USER" | "QUICKSIGHT_VIEWER_OR_OWNER" | "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" | "QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_SOLE_OWNER" | "ANALYSIS_NAME"
 object AnalysisFilterAttribute {
   inline val QUICKSIGHT_USER: "QUICKSIGHT_USER" = "QUICKSIGHT_USER"
+  inline val QUICKSIGHT_VIEWER_OR_OWNER: "QUICKSIGHT_VIEWER_OR_OWNER" = "QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val DIRECT_QUICKSIGHT_VIEWER_OR_OWNER: "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val QUICKSIGHT_OWNER: "QUICKSIGHT_OWNER" = "QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_OWNER: "DIRECT_QUICKSIGHT_OWNER" = "DIRECT_QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_SOLE_OWNER: "DIRECT_QUICKSIGHT_SOLE_OWNER" = "DIRECT_QUICKSIGHT_SOLE_OWNER"
+  inline val ANALYSIS_NAME: "ANALYSIS_NAME" = "ANALYSIS_NAME"
 
-  inline def values: js.Array[AnalysisFilterAttribute] = js.Array(QUICKSIGHT_USER)
+  inline def values: js.Array[AnalysisFilterAttribute] = js.Array(
+    QUICKSIGHT_USER,
+    QUICKSIGHT_VIEWER_OR_OWNER,
+    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+    QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_SOLE_OWNER,
+    ANALYSIS_NAME
+  )
+}
+
+type AnchorOption = "NOW"
+object AnchorOption {
+  inline val NOW: "NOW" = "NOW"
+
+  inline def values: js.Array[AnchorOption] = js.Array(NOW)
+}
+
+type ArcThickness = "SMALL" | "MEDIUM" | "LARGE" | "WHOLE"
+object ArcThickness {
+  inline val SMALL: "SMALL" = "SMALL"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LARGE: "LARGE" = "LARGE"
+  inline val WHOLE: "WHOLE" = "WHOLE"
+
+  inline def values: js.Array[ArcThickness] = js.Array(SMALL, MEDIUM, LARGE, WHOLE)
+}
+
+type ArcThicknessOptions = "SMALL" | "MEDIUM" | "LARGE"
+object ArcThicknessOptions {
+  inline val SMALL: "SMALL" = "SMALL"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LARGE: "LARGE" = "LARGE"
+
+  inline def values: js.Array[ArcThicknessOptions] = js.Array(SMALL, MEDIUM, LARGE)
 }
 
 type AssignmentStatus = "ENABLED" | "DRAFT" | "DISABLED"
@@ -43,6 +83,93 @@ object AssignmentStatus {
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[AssignmentStatus] = js.Array(ENABLED, DRAFT, DISABLED)
+}
+
+type AuthenticationMethodOption = "IAM_AND_QUICKSIGHT" | "IAM_ONLY" | "ACTIVE_DIRECTORY"
+object AuthenticationMethodOption {
+  inline val IAM_AND_QUICKSIGHT: "IAM_AND_QUICKSIGHT" = "IAM_AND_QUICKSIGHT"
+  inline val IAM_ONLY: "IAM_ONLY" = "IAM_ONLY"
+  inline val ACTIVE_DIRECTORY: "ACTIVE_DIRECTORY" = "ACTIVE_DIRECTORY"
+
+  inline def values: js.Array[AuthenticationMethodOption] = js.Array(IAM_AND_QUICKSIGHT, IAM_ONLY, ACTIVE_DIRECTORY)
+}
+
+type AxisBinding = "PRIMARY_YAXIS" | "SECONDARY_YAXIS"
+object AxisBinding {
+  inline val PRIMARY_YAXIS: "PRIMARY_YAXIS" = "PRIMARY_YAXIS"
+  inline val SECONDARY_YAXIS: "SECONDARY_YAXIS" = "SECONDARY_YAXIS"
+
+  inline def values: js.Array[AxisBinding] = js.Array(PRIMARY_YAXIS, SECONDARY_YAXIS)
+}
+
+type BarChartOrientation = "HORIZONTAL" | "VERTICAL"
+object BarChartOrientation {
+  inline val HORIZONTAL: "HORIZONTAL" = "HORIZONTAL"
+  inline val VERTICAL: "VERTICAL" = "VERTICAL"
+
+  inline def values: js.Array[BarChartOrientation] = js.Array(HORIZONTAL, VERTICAL)
+}
+
+type BarsArrangement = "CLUSTERED" | "STACKED" | "STACKED_PERCENT"
+object BarsArrangement {
+  inline val CLUSTERED: "CLUSTERED" = "CLUSTERED"
+  inline val STACKED: "STACKED" = "STACKED"
+  inline val STACKED_PERCENT: "STACKED_PERCENT" = "STACKED_PERCENT"
+
+  inline def values: js.Array[BarsArrangement] = js.Array(CLUSTERED, STACKED, STACKED_PERCENT)
+}
+
+type BaseMapStyleType = "LIGHT_GRAY" | "DARK_GRAY" | "STREET" | "IMAGERY"
+object BaseMapStyleType {
+  inline val LIGHT_GRAY: "LIGHT_GRAY" = "LIGHT_GRAY"
+  inline val DARK_GRAY: "DARK_GRAY" = "DARK_GRAY"
+  inline val STREET: "STREET" = "STREET"
+  inline val IMAGERY: "IMAGERY" = "IMAGERY"
+
+  inline def values: js.Array[BaseMapStyleType] = js.Array(LIGHT_GRAY, DARK_GRAY, STREET, IMAGERY)
+}
+
+type BoxPlotFillStyle = "SOLID" | "TRANSPARENT"
+object BoxPlotFillStyle {
+  inline val SOLID: "SOLID" = "SOLID"
+  inline val TRANSPARENT: "TRANSPARENT" = "TRANSPARENT"
+
+  inline def values: js.Array[BoxPlotFillStyle] = js.Array(SOLID, TRANSPARENT)
+}
+
+type CategoricalAggregationFunction = "COUNT" | "DISTINCT_COUNT"
+object CategoricalAggregationFunction {
+  inline val COUNT: "COUNT" = "COUNT"
+  inline val DISTINCT_COUNT: "DISTINCT_COUNT" = "DISTINCT_COUNT"
+
+  inline def values: js.Array[CategoricalAggregationFunction] = js.Array(COUNT, DISTINCT_COUNT)
+}
+
+type CategoryFilterMatchOperator = "EQUALS" | "DOES_NOT_EQUAL" | "CONTAINS" | "DOES_NOT_CONTAIN" | "STARTS_WITH" | "ENDS_WITH"
+object CategoryFilterMatchOperator {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val DOES_NOT_EQUAL: "DOES_NOT_EQUAL" = "DOES_NOT_EQUAL"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val DOES_NOT_CONTAIN: "DOES_NOT_CONTAIN" = "DOES_NOT_CONTAIN"
+  inline val STARTS_WITH: "STARTS_WITH" = "STARTS_WITH"
+  inline val ENDS_WITH: "ENDS_WITH" = "ENDS_WITH"
+
+  inline def values: js.Array[CategoryFilterMatchOperator] = js.Array(EQUALS, DOES_NOT_EQUAL, CONTAINS, DOES_NOT_CONTAIN, STARTS_WITH, ENDS_WITH)
+}
+
+type CategoryFilterSelectAllOptions = "FILTER_ALL_VALUES"
+object CategoryFilterSelectAllOptions {
+  inline val FILTER_ALL_VALUES: "FILTER_ALL_VALUES" = "FILTER_ALL_VALUES"
+
+  inline def values: js.Array[CategoryFilterSelectAllOptions] = js.Array(FILTER_ALL_VALUES)
+}
+
+type ColorFillType = "DISCRETE" | "GRADIENT"
+object ColorFillType {
+  inline val DISCRETE: "DISCRETE" = "DISCRETE"
+  inline val GRADIENT: "GRADIENT" = "GRADIENT"
+
+  inline def values: js.Array[ColorFillType] = js.Array(DISCRETE, GRADIENT)
 }
 
 type ColumnDataType = "STRING" | "INTEGER" | "DECIMAL" | "DATETIME"
@@ -55,12 +182,79 @@ object ColumnDataType {
   inline def values: js.Array[ColumnDataType] = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
 }
 
+type ColumnRole = "DIMENSION" | "MEASURE"
+object ColumnRole {
+  inline val DIMENSION: "DIMENSION" = "DIMENSION"
+  inline val MEASURE: "MEASURE" = "MEASURE"
+
+  inline def values: js.Array[ColumnRole] = js.Array(DIMENSION, MEASURE)
+}
+
 type ColumnTagName = "COLUMN_GEOGRAPHIC_ROLE" | "COLUMN_DESCRIPTION"
 object ColumnTagName {
   inline val COLUMN_GEOGRAPHIC_ROLE: "COLUMN_GEOGRAPHIC_ROLE" = "COLUMN_GEOGRAPHIC_ROLE"
   inline val COLUMN_DESCRIPTION: "COLUMN_DESCRIPTION" = "COLUMN_DESCRIPTION"
 
   inline def values: js.Array[ColumnTagName] = js.Array(COLUMN_GEOGRAPHIC_ROLE, COLUMN_DESCRIPTION)
+}
+
+type ComparisonMethod = "DIFFERENCE" | "PERCENT_DIFFERENCE" | "PERCENT"
+object ComparisonMethod {
+  inline val DIFFERENCE: "DIFFERENCE" = "DIFFERENCE"
+  inline val PERCENT_DIFFERENCE: "PERCENT_DIFFERENCE" = "PERCENT_DIFFERENCE"
+  inline val PERCENT: "PERCENT" = "PERCENT"
+
+  inline def values: js.Array[ComparisonMethod] = js.Array(DIFFERENCE, PERCENT_DIFFERENCE, PERCENT)
+}
+
+type ConditionalFormattingIconDisplayOption = "ICON_ONLY"
+object ConditionalFormattingIconDisplayOption {
+  inline val ICON_ONLY: "ICON_ONLY" = "ICON_ONLY"
+
+  inline def values: js.Array[ConditionalFormattingIconDisplayOption] = js.Array(ICON_ONLY)
+}
+
+type ConditionalFormattingIconSetType = "PLUS_MINUS" | "CHECK_X" | "THREE_COLOR_ARROW" | "THREE_GRAY_ARROW" | "CARET_UP_MINUS_DOWN" | "THREE_SHAPE" | "THREE_CIRCLE" | "FLAGS" | "BARS" | "FOUR_COLOR_ARROW" | "FOUR_GRAY_ARROW"
+object ConditionalFormattingIconSetType {
+  inline val PLUS_MINUS: "PLUS_MINUS" = "PLUS_MINUS"
+  inline val CHECK_X: "CHECK_X" = "CHECK_X"
+  inline val THREE_COLOR_ARROW: "THREE_COLOR_ARROW" = "THREE_COLOR_ARROW"
+  inline val THREE_GRAY_ARROW: "THREE_GRAY_ARROW" = "THREE_GRAY_ARROW"
+  inline val CARET_UP_MINUS_DOWN: "CARET_UP_MINUS_DOWN" = "CARET_UP_MINUS_DOWN"
+  inline val THREE_SHAPE: "THREE_SHAPE" = "THREE_SHAPE"
+  inline val THREE_CIRCLE: "THREE_CIRCLE" = "THREE_CIRCLE"
+  inline val FLAGS: "FLAGS" = "FLAGS"
+  inline val BARS: "BARS" = "BARS"
+  inline val FOUR_COLOR_ARROW: "FOUR_COLOR_ARROW" = "FOUR_COLOR_ARROW"
+  inline val FOUR_GRAY_ARROW: "FOUR_GRAY_ARROW" = "FOUR_GRAY_ARROW"
+
+  inline def values: js.Array[ConditionalFormattingIconSetType] = js.Array(PLUS_MINUS, CHECK_X, THREE_COLOR_ARROW, THREE_GRAY_ARROW, CARET_UP_MINUS_DOWN, THREE_SHAPE, THREE_CIRCLE, FLAGS, BARS, FOUR_COLOR_ARROW, FOUR_GRAY_ARROW)
+}
+
+type CrossDatasetTypes = "ALL_DATASETS" | "SINGLE_DATASET"
+object CrossDatasetTypes {
+  inline val ALL_DATASETS: "ALL_DATASETS" = "ALL_DATASETS"
+  inline val SINGLE_DATASET: "SINGLE_DATASET" = "SINGLE_DATASET"
+
+  inline def values: js.Array[CrossDatasetTypes] = js.Array(ALL_DATASETS, SINGLE_DATASET)
+}
+
+type CustomContentImageScalingConfiguration = "FIT_TO_HEIGHT" | "FIT_TO_WIDTH" | "DO_NOT_SCALE" | "SCALE_TO_VISUAL"
+object CustomContentImageScalingConfiguration {
+  inline val FIT_TO_HEIGHT: "FIT_TO_HEIGHT" = "FIT_TO_HEIGHT"
+  inline val FIT_TO_WIDTH: "FIT_TO_WIDTH" = "FIT_TO_WIDTH"
+  inline val DO_NOT_SCALE: "DO_NOT_SCALE" = "DO_NOT_SCALE"
+  inline val SCALE_TO_VISUAL: "SCALE_TO_VISUAL" = "SCALE_TO_VISUAL"
+
+  inline def values: js.Array[CustomContentImageScalingConfiguration] = js.Array(FIT_TO_HEIGHT, FIT_TO_WIDTH, DO_NOT_SCALE, SCALE_TO_VISUAL)
+}
+
+type CustomContentType = "IMAGE" | "OTHER_EMBEDDED_CONTENT"
+object CustomContentType {
+  inline val IMAGE: "IMAGE" = "IMAGE"
+  inline val OTHER_EMBEDDED_CONTENT: "OTHER_EMBEDDED_CONTENT" = "OTHER_EMBEDDED_CONTENT"
+
+  inline def values: js.Array[CustomContentType] = js.Array(IMAGE, OTHER_EMBEDDED_CONTENT)
 }
 
 type DashboardBehavior = "ENABLED" | "DISABLED"
@@ -98,11 +292,25 @@ object DashboardErrorType {
   )
 }
 
-type DashboardFilterAttribute = "QUICKSIGHT_USER"
+type DashboardFilterAttribute = "QUICKSIGHT_USER" | "QUICKSIGHT_VIEWER_OR_OWNER" | "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" | "QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_SOLE_OWNER" | "DASHBOARD_NAME"
 object DashboardFilterAttribute {
   inline val QUICKSIGHT_USER: "QUICKSIGHT_USER" = "QUICKSIGHT_USER"
+  inline val QUICKSIGHT_VIEWER_OR_OWNER: "QUICKSIGHT_VIEWER_OR_OWNER" = "QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val DIRECT_QUICKSIGHT_VIEWER_OR_OWNER: "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val QUICKSIGHT_OWNER: "QUICKSIGHT_OWNER" = "QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_OWNER: "DIRECT_QUICKSIGHT_OWNER" = "DIRECT_QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_SOLE_OWNER: "DIRECT_QUICKSIGHT_SOLE_OWNER" = "DIRECT_QUICKSIGHT_SOLE_OWNER"
+  inline val DASHBOARD_NAME: "DASHBOARD_NAME" = "DASHBOARD_NAME"
 
-  inline def values: js.Array[DashboardFilterAttribute] = js.Array(QUICKSIGHT_USER)
+  inline def values: js.Array[DashboardFilterAttribute] = js.Array(
+    QUICKSIGHT_USER,
+    QUICKSIGHT_VIEWER_OR_OWNER,
+    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+    QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_SOLE_OWNER,
+    DASHBOARD_NAME
+  )
 }
 
 type DashboardUIState = "EXPANDED" | "COLLAPSED"
@@ -111,6 +319,47 @@ object DashboardUIState {
   inline val COLLAPSED: "COLLAPSED" = "COLLAPSED"
 
   inline def values: js.Array[DashboardUIState] = js.Array(EXPANDED, COLLAPSED)
+}
+
+type DataLabelContent = "VALUE" | "PERCENT" | "VALUE_AND_PERCENT"
+object DataLabelContent {
+  inline val VALUE: "VALUE" = "VALUE"
+  inline val PERCENT: "PERCENT" = "PERCENT"
+  inline val VALUE_AND_PERCENT: "VALUE_AND_PERCENT" = "VALUE_AND_PERCENT"
+
+  inline def values: js.Array[DataLabelContent] = js.Array(VALUE, PERCENT, VALUE_AND_PERCENT)
+}
+
+type DataLabelOverlap = "DISABLE_OVERLAP" | "ENABLE_OVERLAP"
+object DataLabelOverlap {
+  inline val DISABLE_OVERLAP: "DISABLE_OVERLAP" = "DISABLE_OVERLAP"
+  inline val ENABLE_OVERLAP: "ENABLE_OVERLAP" = "ENABLE_OVERLAP"
+
+  inline def values: js.Array[DataLabelOverlap] = js.Array(DISABLE_OVERLAP, ENABLE_OVERLAP)
+}
+
+type DataLabelPosition = "INSIDE" | "OUTSIDE" | "LEFT" | "TOP" | "BOTTOM" | "RIGHT"
+object DataLabelPosition {
+  inline val INSIDE: "INSIDE" = "INSIDE"
+  inline val OUTSIDE: "OUTSIDE" = "OUTSIDE"
+  inline val LEFT: "LEFT" = "LEFT"
+  inline val TOP: "TOP" = "TOP"
+  inline val BOTTOM: "BOTTOM" = "BOTTOM"
+  inline val RIGHT: "RIGHT" = "RIGHT"
+
+  inline def values: js.Array[DataLabelPosition] = js.Array(INSIDE, OUTSIDE, LEFT, TOP, BOTTOM, RIGHT)
+}
+
+type DataSetFilterAttribute = "QUICKSIGHT_VIEWER_OR_OWNER" | "QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" | "DIRECT_QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_SOLE_OWNER" | "DATASET_NAME"
+object DataSetFilterAttribute {
+  inline val QUICKSIGHT_VIEWER_OR_OWNER: "QUICKSIGHT_VIEWER_OR_OWNER" = "QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val QUICKSIGHT_OWNER: "QUICKSIGHT_OWNER" = "QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_VIEWER_OR_OWNER: "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val DIRECT_QUICKSIGHT_OWNER: "DIRECT_QUICKSIGHT_OWNER" = "DIRECT_QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_SOLE_OWNER: "DIRECT_QUICKSIGHT_SOLE_OWNER" = "DIRECT_QUICKSIGHT_SOLE_OWNER"
+  inline val DATASET_NAME: "DATASET_NAME" = "DATASET_NAME"
+
+  inline def values: js.Array[DataSetFilterAttribute] = js.Array(QUICKSIGHT_VIEWER_OR_OWNER, QUICKSIGHT_OWNER, DIRECT_QUICKSIGHT_VIEWER_OR_OWNER, DIRECT_QUICKSIGHT_OWNER, DIRECT_QUICKSIGHT_SOLE_OWNER, DATASET_NAME)
 }
 
 type DataSetImportMode = "SPICE" | "DIRECT_QUERY"
@@ -135,7 +384,17 @@ object DataSourceErrorInfoType {
   inline def values: js.Array[DataSourceErrorInfoType] = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
 }
 
-type DataSourceType = "ADOBE_ANALYTICS" | "AMAZON_ELASTICSEARCH" | "ATHENA" | "AURORA" | "AURORA_POSTGRESQL" | "AWS_IOT_ANALYTICS" | "GITHUB" | "JIRA" | "MARIADB" | "MYSQL" | "ORACLE" | "POSTGRESQL" | "PRESTO" | "REDSHIFT" | "S3" | "SALESFORCE" | "SERVICENOW" | "SNOWFLAKE" | "SPARK" | "SQLSERVER" | "TERADATA" | "TWITTER" | "TIMESTREAM" | "AMAZON_OPENSEARCH" | "EXASOL"
+type DataSourceFilterAttribute = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" | "DIRECT_QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_SOLE_OWNER" | "DATASOURCE_NAME"
+object DataSourceFilterAttribute {
+  inline val DIRECT_QUICKSIGHT_VIEWER_OR_OWNER: "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val DIRECT_QUICKSIGHT_OWNER: "DIRECT_QUICKSIGHT_OWNER" = "DIRECT_QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_SOLE_OWNER: "DIRECT_QUICKSIGHT_SOLE_OWNER" = "DIRECT_QUICKSIGHT_SOLE_OWNER"
+  inline val DATASOURCE_NAME: "DATASOURCE_NAME" = "DATASOURCE_NAME"
+
+  inline def values: js.Array[DataSourceFilterAttribute] = js.Array(DIRECT_QUICKSIGHT_VIEWER_OR_OWNER, DIRECT_QUICKSIGHT_OWNER, DIRECT_QUICKSIGHT_SOLE_OWNER, DATASOURCE_NAME)
+}
+
+type DataSourceType = "ADOBE_ANALYTICS" | "AMAZON_ELASTICSEARCH" | "ATHENA" | "AURORA" | "AURORA_POSTGRESQL" | "AWS_IOT_ANALYTICS" | "GITHUB" | "JIRA" | "MARIADB" | "MYSQL" | "ORACLE" | "POSTGRESQL" | "PRESTO" | "REDSHIFT" | "S3" | "SALESFORCE" | "SERVICENOW" | "SNOWFLAKE" | "SPARK" | "SQLSERVER" | "TERADATA" | "TWITTER" | "TIMESTREAM" | "AMAZON_OPENSEARCH" | "EXASOL" | "DATABRICKS"
 object DataSourceType {
   inline val ADOBE_ANALYTICS: "ADOBE_ANALYTICS" = "ADOBE_ANALYTICS"
   inline val AMAZON_ELASTICSEARCH: "AMAZON_ELASTICSEARCH" = "AMAZON_ELASTICSEARCH"
@@ -162,6 +421,7 @@ object DataSourceType {
   inline val TIMESTREAM: "TIMESTREAM" = "TIMESTREAM"
   inline val AMAZON_OPENSEARCH: "AMAZON_OPENSEARCH" = "AMAZON_OPENSEARCH"
   inline val EXASOL: "EXASOL" = "EXASOL"
+  inline val DATABRICKS: "DATABRICKS" = "DATABRICKS"
 
   inline def values: js.Array[DataSourceType] = js.Array(
     ADOBE_ANALYTICS,
@@ -188,16 +448,28 @@ object DataSourceType {
     TWITTER,
     TIMESTREAM,
     AMAZON_OPENSEARCH,
-    EXASOL
+    EXASOL,
+    DATABRICKS
   )
 }
 
-type Edition = "STANDARD" | "ENTERPRISE"
+type DateAggregationFunction = "COUNT" | "DISTINCT_COUNT" | "MIN" | "MAX"
+object DateAggregationFunction {
+  inline val COUNT: "COUNT" = "COUNT"
+  inline val DISTINCT_COUNT: "DISTINCT_COUNT" = "DISTINCT_COUNT"
+  inline val MIN: "MIN" = "MIN"
+  inline val MAX: "MAX" = "MAX"
+
+  inline def values: js.Array[DateAggregationFunction] = js.Array(COUNT, DISTINCT_COUNT, MIN, MAX)
+}
+
+type Edition = "STANDARD" | "ENTERPRISE" | "ENTERPRISE_AND_Q"
 object Edition {
   inline val STANDARD: "STANDARD" = "STANDARD"
   inline val ENTERPRISE: "ENTERPRISE" = "ENTERPRISE"
+  inline val ENTERPRISE_AND_Q: "ENTERPRISE_AND_Q" = "ENTERPRISE_AND_Q"
 
-  inline def values: js.Array[Edition] = js.Array(STANDARD, ENTERPRISE)
+  inline def values: js.Array[Edition] = js.Array(STANDARD, ENTERPRISE, ENTERPRISE_AND_Q)
 }
 
 type EmbeddingIdentityType = "IAM" | "QUICKSIGHT" | "ANONYMOUS"
@@ -221,18 +493,50 @@ object FileFormat {
   inline def values: js.Array[FileFormat] = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
 }
 
-type FilterOperator = "StringEquals"
-object FilterOperator {
-  inline val StringEquals: "StringEquals" = "StringEquals"
+type FilterNullOption = "ALL_VALUES" | "NULLS_ONLY" | "NON_NULLS_ONLY"
+object FilterNullOption {
+  inline val ALL_VALUES: "ALL_VALUES" = "ALL_VALUES"
+  inline val NULLS_ONLY: "NULLS_ONLY" = "NULLS_ONLY"
+  inline val NON_NULLS_ONLY: "NON_NULLS_ONLY" = "NON_NULLS_ONLY"
 
-  inline def values: js.Array[FilterOperator] = js.Array(StringEquals)
+  inline def values: js.Array[FilterNullOption] = js.Array(ALL_VALUES, NULLS_ONLY, NON_NULLS_ONLY)
 }
 
-type FolderFilterAttribute = "PARENT_FOLDER_ARN"
+type FilterOperator = "StringEquals" | "StringLike"
+object FilterOperator {
+  inline val StringEquals: "StringEquals" = "StringEquals"
+  inline val StringLike: "StringLike" = "StringLike"
+
+  inline def values: js.Array[FilterOperator] = js.Array(StringEquals, StringLike)
+}
+
+type FilterVisualScope = "ALL_VISUALS" | "SELECTED_VISUALS"
+object FilterVisualScope {
+  inline val ALL_VISUALS: "ALL_VISUALS" = "ALL_VISUALS"
+  inline val SELECTED_VISUALS: "SELECTED_VISUALS" = "SELECTED_VISUALS"
+
+  inline def values: js.Array[FilterVisualScope] = js.Array(ALL_VISUALS, SELECTED_VISUALS)
+}
+
+type FolderFilterAttribute = "PARENT_FOLDER_ARN" | "DIRECT_QUICKSIGHT_OWNER" | "DIRECT_QUICKSIGHT_SOLE_OWNER" | "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" | "QUICKSIGHT_OWNER" | "QUICKSIGHT_VIEWER_OR_OWNER" | "FOLDER_NAME"
 object FolderFilterAttribute {
   inline val PARENT_FOLDER_ARN: "PARENT_FOLDER_ARN" = "PARENT_FOLDER_ARN"
+  inline val DIRECT_QUICKSIGHT_OWNER: "DIRECT_QUICKSIGHT_OWNER" = "DIRECT_QUICKSIGHT_OWNER"
+  inline val DIRECT_QUICKSIGHT_SOLE_OWNER: "DIRECT_QUICKSIGHT_SOLE_OWNER" = "DIRECT_QUICKSIGHT_SOLE_OWNER"
+  inline val DIRECT_QUICKSIGHT_VIEWER_OR_OWNER: "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER" = "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val QUICKSIGHT_OWNER: "QUICKSIGHT_OWNER" = "QUICKSIGHT_OWNER"
+  inline val QUICKSIGHT_VIEWER_OR_OWNER: "QUICKSIGHT_VIEWER_OR_OWNER" = "QUICKSIGHT_VIEWER_OR_OWNER"
+  inline val FOLDER_NAME: "FOLDER_NAME" = "FOLDER_NAME"
 
-  inline def values: js.Array[FolderFilterAttribute] = js.Array(PARENT_FOLDER_ARN)
+  inline def values: js.Array[FolderFilterAttribute] = js.Array(
+    PARENT_FOLDER_ARN,
+    DIRECT_QUICKSIGHT_OWNER,
+    DIRECT_QUICKSIGHT_SOLE_OWNER,
+    DIRECT_QUICKSIGHT_VIEWER_OR_OWNER,
+    QUICKSIGHT_OWNER,
+    QUICKSIGHT_VIEWER_OR_OWNER,
+    FOLDER_NAME
+  )
 }
 
 type FolderType = "SHARED"
@@ -240,6 +544,49 @@ object FolderType {
   inline val SHARED: "SHARED" = "SHARED"
 
   inline def values: js.Array[FolderType] = js.Array(SHARED)
+}
+
+type FontDecoration = "UNDERLINE" | "NONE"
+object FontDecoration {
+  inline val UNDERLINE: "UNDERLINE" = "UNDERLINE"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[FontDecoration] = js.Array(UNDERLINE, NONE)
+}
+
+type FontStyle = "NORMAL" | "ITALIC"
+object FontStyle {
+  inline val NORMAL: "NORMAL" = "NORMAL"
+  inline val ITALIC: "ITALIC" = "ITALIC"
+
+  inline def values: js.Array[FontStyle] = js.Array(NORMAL, ITALIC)
+}
+
+type FontWeightName = "NORMAL" | "BOLD"
+object FontWeightName {
+  inline val NORMAL: "NORMAL" = "NORMAL"
+  inline val BOLD: "BOLD" = "BOLD"
+
+  inline def values: js.Array[FontWeightName] = js.Array(NORMAL, BOLD)
+}
+
+type ForecastComputationSeasonality = "AUTOMATIC" | "CUSTOM"
+object ForecastComputationSeasonality {
+  inline val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+
+  inline def values: js.Array[ForecastComputationSeasonality] = js.Array(AUTOMATIC, CUSTOM)
+}
+
+type FunnelChartMeasureDataLabelStyle = "VALUE_ONLY" | "PERCENTAGE_BY_FIRST_STAGE" | "PERCENTAGE_BY_PREVIOUS_STAGE" | "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" | "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE"
+object FunnelChartMeasureDataLabelStyle {
+  inline val VALUE_ONLY: "VALUE_ONLY" = "VALUE_ONLY"
+  inline val PERCENTAGE_BY_FIRST_STAGE: "PERCENTAGE_BY_FIRST_STAGE" = "PERCENTAGE_BY_FIRST_STAGE"
+  inline val PERCENTAGE_BY_PREVIOUS_STAGE: "PERCENTAGE_BY_PREVIOUS_STAGE" = "PERCENTAGE_BY_PREVIOUS_STAGE"
+  inline val VALUE_AND_PERCENTAGE_BY_FIRST_STAGE: "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" = "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE"
+  inline val VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE: "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" = "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE"
+
+  inline def values: js.Array[FunnelChartMeasureDataLabelStyle] = js.Array(VALUE_ONLY, PERCENTAGE_BY_FIRST_STAGE, PERCENTAGE_BY_PREVIOUS_STAGE, VALUE_AND_PERCENTAGE_BY_FIRST_STAGE, VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE)
 }
 
 type GeoSpatialCountryCode = "US"
@@ -262,6 +609,105 @@ object GeoSpatialDataRole {
   inline def values: js.Array[GeoSpatialDataRole] = js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
 }
 
+type GeospatialSelectedPointStyle = "POINT" | "CLUSTER"
+object GeospatialSelectedPointStyle {
+  inline val POINT: "POINT" = "POINT"
+  inline val CLUSTER: "CLUSTER" = "CLUSTER"
+
+  inline def values: js.Array[GeospatialSelectedPointStyle] = js.Array(POINT, CLUSTER)
+}
+
+type GroupFilterAttribute = "GROUP_NAME"
+object GroupFilterAttribute {
+  inline val GROUP_NAME: "GROUP_NAME" = "GROUP_NAME"
+
+  inline def values: js.Array[GroupFilterAttribute] = js.Array(GROUP_NAME)
+}
+
+type GroupFilterOperator = "StartsWith"
+object GroupFilterOperator {
+  inline val StartsWith: "StartsWith" = "StartsWith"
+
+  inline def values: js.Array[GroupFilterOperator] = js.Array(StartsWith)
+}
+
+type HistogramBinType = "BIN_COUNT" | "BIN_WIDTH"
+object HistogramBinType {
+  inline val BIN_COUNT: "BIN_COUNT" = "BIN_COUNT"
+  inline val BIN_WIDTH: "BIN_WIDTH" = "BIN_WIDTH"
+
+  inline def values: js.Array[HistogramBinType] = js.Array(BIN_COUNT, BIN_WIDTH)
+}
+
+type HorizontalTextAlignment = "LEFT" | "CENTER" | "RIGHT" | "AUTO"
+object HorizontalTextAlignment {
+  inline val LEFT: "LEFT" = "LEFT"
+  inline val CENTER: "CENTER" = "CENTER"
+  inline val RIGHT: "RIGHT" = "RIGHT"
+  inline val AUTO: "AUTO" = "AUTO"
+
+  inline def values: js.Array[HorizontalTextAlignment] = js.Array(LEFT, CENTER, RIGHT, AUTO)
+}
+
+type Icon = "CARET_UP" | "CARET_DOWN" | "PLUS" | "MINUS" | "ARROW_UP" | "ARROW_DOWN" | "ARROW_LEFT" | "ARROW_UP_LEFT" | "ARROW_DOWN_LEFT" | "ARROW_RIGHT" | "ARROW_UP_RIGHT" | "ARROW_DOWN_RIGHT" | "FACE_UP" | "FACE_DOWN" | "FACE_FLAT" | "ONE_BAR" | "TWO_BAR" | "THREE_BAR" | "CIRCLE" | "TRIANGLE" | "SQUARE" | "FLAG" | "THUMBS_UP" | "THUMBS_DOWN" | "CHECKMARK" | "X"
+object Icon {
+  inline val CARET_UP: "CARET_UP" = "CARET_UP"
+  inline val CARET_DOWN: "CARET_DOWN" = "CARET_DOWN"
+  inline val PLUS: "PLUS" = "PLUS"
+  inline val MINUS: "MINUS" = "MINUS"
+  inline val ARROW_UP: "ARROW_UP" = "ARROW_UP"
+  inline val ARROW_DOWN: "ARROW_DOWN" = "ARROW_DOWN"
+  inline val ARROW_LEFT: "ARROW_LEFT" = "ARROW_LEFT"
+  inline val ARROW_UP_LEFT: "ARROW_UP_LEFT" = "ARROW_UP_LEFT"
+  inline val ARROW_DOWN_LEFT: "ARROW_DOWN_LEFT" = "ARROW_DOWN_LEFT"
+  inline val ARROW_RIGHT: "ARROW_RIGHT" = "ARROW_RIGHT"
+  inline val ARROW_UP_RIGHT: "ARROW_UP_RIGHT" = "ARROW_UP_RIGHT"
+  inline val ARROW_DOWN_RIGHT: "ARROW_DOWN_RIGHT" = "ARROW_DOWN_RIGHT"
+  inline val FACE_UP: "FACE_UP" = "FACE_UP"
+  inline val FACE_DOWN: "FACE_DOWN" = "FACE_DOWN"
+  inline val FACE_FLAT: "FACE_FLAT" = "FACE_FLAT"
+  inline val ONE_BAR: "ONE_BAR" = "ONE_BAR"
+  inline val TWO_BAR: "TWO_BAR" = "TWO_BAR"
+  inline val THREE_BAR: "THREE_BAR" = "THREE_BAR"
+  inline val CIRCLE: "CIRCLE" = "CIRCLE"
+  inline val TRIANGLE: "TRIANGLE" = "TRIANGLE"
+  inline val SQUARE: "SQUARE" = "SQUARE"
+  inline val FLAG: "FLAG" = "FLAG"
+  inline val THUMBS_UP: "THUMBS_UP" = "THUMBS_UP"
+  inline val THUMBS_DOWN: "THUMBS_DOWN" = "THUMBS_DOWN"
+  inline val CHECKMARK: "CHECKMARK" = "CHECKMARK"
+  inline val X: "X" = "X"
+
+  inline def values: js.Array[Icon] = js.Array(
+    CARET_UP,
+    CARET_DOWN,
+    PLUS,
+    MINUS,
+    ARROW_UP,
+    ARROW_DOWN,
+    ARROW_LEFT,
+    ARROW_UP_LEFT,
+    ARROW_DOWN_LEFT,
+    ARROW_RIGHT,
+    ARROW_UP_RIGHT,
+    ARROW_DOWN_RIGHT,
+    FACE_UP,
+    FACE_DOWN,
+    FACE_FLAT,
+    ONE_BAR,
+    TWO_BAR,
+    THREE_BAR,
+    CIRCLE,
+    TRIANGLE,
+    SQUARE,
+    FLAG,
+    THUMBS_UP,
+    THUMBS_DOWN,
+    CHECKMARK,
+    X
+  )
+}
+
 type IdentityStore = "QUICKSIGHT"
 object IdentityStore {
   inline val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
@@ -277,8 +723,8 @@ object IdentityType {
   inline def values: js.Array[IdentityType] = js.Array(IAM, QUICKSIGHT)
 }
 
-type IngestionErrorType = "FAILURE_TO_ASSUME_ROLE" | "INGESTION_SUPERSEDED" | "INGESTION_CANCELED" | "DATA_SET_DELETED" | "DATA_SET_NOT_SPICE" | "S3_UPLOADED_FILE_DELETED" | "S3_MANIFEST_ERROR" | "DATA_TOLERANCE_EXCEPTION" | "SPICE_TABLE_NOT_FOUND" | "DATA_SET_SIZE_LIMIT_EXCEEDED" | "ROW_SIZE_LIMIT_EXCEEDED" | "ACCOUNT_CAPACITY_LIMIT_EXCEEDED" | "CUSTOMER_ERROR" | "DATA_SOURCE_NOT_FOUND" | "IAM_ROLE_NOT_AVAILABLE" | "CONNECTION_FAILURE" | "SQL_TABLE_NOT_FOUND" | "PERMISSION_DENIED" | "SSL_CERTIFICATE_VALIDATION_FAILURE" | "OAUTH_TOKEN_FAILURE" | "SOURCE_API_LIMIT_EXCEEDED_FAILURE" | "PASSWORD_AUTHENTICATION_FAILURE" | "SQL_SCHEMA_MISMATCH_ERROR" | "INVALID_DATE_FORMAT" | "INVALID_DATAPREP_SYNTAX" | "SOURCE_RESOURCE_LIMIT_EXCEEDED" | "SQL_INVALID_PARAMETER_VALUE" | "QUERY_TIMEOUT" | "SQL_NUMERIC_OVERFLOW" | "UNRESOLVABLE_HOST" | "UNROUTABLE_HOST" | "SQL_EXCEPTION" | "S3_FILE_INACCESSIBLE" | "IOT_FILE_NOT_FOUND" | "IOT_DATA_SET_FILE_EMPTY" | "INVALID_DATA_SOURCE_CONFIG" |
-  "DATA_SOURCE_AUTH_FAILED" | "DATA_SOURCE_CONNECTION_FAILED" | "FAILURE_TO_PROCESS_JSON_FILE" | "INTERNAL_SERVICE_ERROR" | "REFRESH_SUPPRESSED_BY_EDIT" | "PERMISSION_NOT_FOUND" | "ELASTICSEARCH_CURSOR_NOT_ENABLED" | "CURSOR_NOT_ENABLED"
+type IngestionErrorType =
+  "FAILURE_TO_ASSUME_ROLE" | "INGESTION_SUPERSEDED" | "INGESTION_CANCELED" | "DATA_SET_DELETED" | "DATA_SET_NOT_SPICE" | "S3_UPLOADED_FILE_DELETED" | "S3_MANIFEST_ERROR" | "DATA_TOLERANCE_EXCEPTION" | "SPICE_TABLE_NOT_FOUND" | "DATA_SET_SIZE_LIMIT_EXCEEDED" | "ROW_SIZE_LIMIT_EXCEEDED" | "ACCOUNT_CAPACITY_LIMIT_EXCEEDED" | "CUSTOMER_ERROR" | "DATA_SOURCE_NOT_FOUND" | "IAM_ROLE_NOT_AVAILABLE" | "CONNECTION_FAILURE" | "SQL_TABLE_NOT_FOUND" | "PERMISSION_DENIED" | "SSL_CERTIFICATE_VALIDATION_FAILURE" | "OAUTH_TOKEN_FAILURE" | "SOURCE_API_LIMIT_EXCEEDED_FAILURE" | "PASSWORD_AUTHENTICATION_FAILURE" | "SQL_SCHEMA_MISMATCH_ERROR" | "INVALID_DATE_FORMAT" | "INVALID_DATAPREP_SYNTAX" | "SOURCE_RESOURCE_LIMIT_EXCEEDED" | "SQL_INVALID_PARAMETER_VALUE" | "QUERY_TIMEOUT" | "SQL_NUMERIC_OVERFLOW" | "UNRESOLVABLE_HOST" | "UNROUTABLE_HOST" | "SQL_EXCEPTION" | "S3_FILE_INACCESSIBLE" | "IOT_FILE_NOT_FOUND" | "IOT_DATA_SET_FILE_EMPTY" | "INVALID_DATA_SOURCE_CONFIG" | "DATA_SOURCE_AUTH_FAILED" | "DATA_SOURCE_CONNECTION_FAILED" | "FAILURE_TO_PROCESS_JSON_FILE" | "INTERNAL_SERVICE_ERROR" | "REFRESH_SUPPRESSED_BY_EDIT" | "PERMISSION_NOT_FOUND" | "ELASTICSEARCH_CURSOR_NOT_ENABLED" | "CURSOR_NOT_ENABLED"
 object IngestionErrorType {
   inline val FAILURE_TO_ASSUME_ROLE: "FAILURE_TO_ASSUME_ROLE" = "FAILURE_TO_ASSUME_ROLE"
   inline val INGESTION_SUPERSEDED: "INGESTION_SUPERSEDED" = "INGESTION_SUPERSEDED"
@@ -438,6 +884,80 @@ object JoinType {
   inline def values: js.Array[JoinType] = js.Array(INNER, OUTER, LEFT, RIGHT)
 }
 
+type LayoutElementType = "VISUAL" | "FILTER_CONTROL" | "PARAMETER_CONTROL" | "TEXT_BOX"
+object LayoutElementType {
+  inline val VISUAL: "VISUAL" = "VISUAL"
+  inline val FILTER_CONTROL: "FILTER_CONTROL" = "FILTER_CONTROL"
+  inline val PARAMETER_CONTROL: "PARAMETER_CONTROL" = "PARAMETER_CONTROL"
+  inline val TEXT_BOX: "TEXT_BOX" = "TEXT_BOX"
+
+  inline def values: js.Array[LayoutElementType] = js.Array(VISUAL, FILTER_CONTROL, PARAMETER_CONTROL, TEXT_BOX)
+}
+
+type LegendPosition = "AUTO" | "RIGHT" | "BOTTOM" | "TOP"
+object LegendPosition {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val RIGHT: "RIGHT" = "RIGHT"
+  inline val BOTTOM: "BOTTOM" = "BOTTOM"
+  inline val TOP: "TOP" = "TOP"
+
+  inline def values: js.Array[LegendPosition] = js.Array(AUTO, RIGHT, BOTTOM, TOP)
+}
+
+type LineChartLineStyle = "SOLID" | "DOTTED" | "DASHED"
+object LineChartLineStyle {
+  inline val SOLID: "SOLID" = "SOLID"
+  inline val DOTTED: "DOTTED" = "DOTTED"
+  inline val DASHED: "DASHED" = "DASHED"
+
+  inline def values: js.Array[LineChartLineStyle] = js.Array(SOLID, DOTTED, DASHED)
+}
+
+type LineChartMarkerShape = "CIRCLE" | "TRIANGLE" | "SQUARE" | "DIAMOND" | "ROUNDED_SQUARE"
+object LineChartMarkerShape {
+  inline val CIRCLE: "CIRCLE" = "CIRCLE"
+  inline val TRIANGLE: "TRIANGLE" = "TRIANGLE"
+  inline val SQUARE: "SQUARE" = "SQUARE"
+  inline val DIAMOND: "DIAMOND" = "DIAMOND"
+  inline val ROUNDED_SQUARE: "ROUNDED_SQUARE" = "ROUNDED_SQUARE"
+
+  inline def values: js.Array[LineChartMarkerShape] = js.Array(CIRCLE, TRIANGLE, SQUARE, DIAMOND, ROUNDED_SQUARE)
+}
+
+type LineChartType = "LINE" | "AREA" | "STACKED_AREA"
+object LineChartType {
+  inline val LINE: "LINE" = "LINE"
+  inline val AREA: "AREA" = "AREA"
+  inline val STACKED_AREA: "STACKED_AREA" = "STACKED_AREA"
+
+  inline def values: js.Array[LineChartType] = js.Array(LINE, AREA, STACKED_AREA)
+}
+
+type LineInterpolation = "LINEAR" | "SMOOTH" | "STEPPED"
+object LineInterpolation {
+  inline val LINEAR: "LINEAR" = "LINEAR"
+  inline val SMOOTH: "SMOOTH" = "SMOOTH"
+  inline val STEPPED: "STEPPED" = "STEPPED"
+
+  inline def values: js.Array[LineInterpolation] = js.Array(LINEAR, SMOOTH, STEPPED)
+}
+
+type MapZoomMode = "AUTO" | "MANUAL"
+object MapZoomMode {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val MANUAL: "MANUAL" = "MANUAL"
+
+  inline def values: js.Array[MapZoomMode] = js.Array(AUTO, MANUAL)
+}
+
+type MaximumMinimumComputationType = "MAXIMUM" | "MINIMUM"
+object MaximumMinimumComputationType {
+  inline val MAXIMUM: "MAXIMUM" = "MAXIMUM"
+  inline val MINIMUM: "MINIMUM" = "MINIMUM"
+
+  inline def values: js.Array[MaximumMinimumComputationType] = js.Array(MAXIMUM, MINIMUM)
+}
+
 type MemberType = "DASHBOARD" | "ANALYSIS" | "DATASET"
 object MemberType {
   inline val DASHBOARD: "DASHBOARD" = "DASHBOARD"
@@ -445,6 +965,15 @@ object MemberType {
   inline val DATASET: "DATASET" = "DATASET"
 
   inline def values: js.Array[MemberType] = js.Array(DASHBOARD, ANALYSIS, DATASET)
+}
+
+type MissingDataTreatmentOption = "INTERPOLATE" | "SHOW_AS_ZERO" | "SHOW_AS_BLANK"
+object MissingDataTreatmentOption {
+  inline val INTERPOLATE: "INTERPOLATE" = "INTERPOLATE"
+  inline val SHOW_AS_ZERO: "SHOW_AS_ZERO" = "SHOW_AS_ZERO"
+  inline val SHOW_AS_BLANK: "SHOW_AS_BLANK" = "SHOW_AS_BLANK"
+
+  inline def values: js.Array[MissingDataTreatmentOption] = js.Array(INTERPOLATE, SHOW_AS_ZERO, SHOW_AS_BLANK)
 }
 
 type NamespaceErrorType = "PERMISSION_DENIED" | "INTERNAL_SERVICE_ERROR"
@@ -464,6 +993,199 @@ object NamespaceStatus {
   inline val NON_RETRYABLE_FAILURE: "NON_RETRYABLE_FAILURE" = "NON_RETRYABLE_FAILURE"
 
   inline def values: js.Array[NamespaceStatus] = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
+}
+
+type NegativeValueDisplayMode = "POSITIVE" | "NEGATIVE"
+object NegativeValueDisplayMode {
+  inline val POSITIVE: "POSITIVE" = "POSITIVE"
+  inline val NEGATIVE: "NEGATIVE" = "NEGATIVE"
+
+  inline def values: js.Array[NegativeValueDisplayMode] = js.Array(POSITIVE, NEGATIVE)
+}
+
+type NumberScale = "NONE" | "AUTO" | "THOUSANDS" | "MILLIONS" | "BILLIONS" | "TRILLIONS"
+object NumberScale {
+  inline val NONE: "NONE" = "NONE"
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val THOUSANDS: "THOUSANDS" = "THOUSANDS"
+  inline val MILLIONS: "MILLIONS" = "MILLIONS"
+  inline val BILLIONS: "BILLIONS" = "BILLIONS"
+  inline val TRILLIONS: "TRILLIONS" = "TRILLIONS"
+
+  inline def values: js.Array[NumberScale] = js.Array(NONE, AUTO, THOUSANDS, MILLIONS, BILLIONS, TRILLIONS)
+}
+
+type NumericEqualityMatchOperator = "EQUALS" | "DOES_NOT_EQUAL"
+object NumericEqualityMatchOperator {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val DOES_NOT_EQUAL: "DOES_NOT_EQUAL" = "DOES_NOT_EQUAL"
+
+  inline def values: js.Array[NumericEqualityMatchOperator] = js.Array(EQUALS, DOES_NOT_EQUAL)
+}
+
+type NumericFilterSelectAllOptions = "FILTER_ALL_VALUES"
+object NumericFilterSelectAllOptions {
+  inline val FILTER_ALL_VALUES: "FILTER_ALL_VALUES" = "FILTER_ALL_VALUES"
+
+  inline def values: js.Array[NumericFilterSelectAllOptions] = js.Array(FILTER_ALL_VALUES)
+}
+
+type NumericSeparatorSymbol = "COMMA" | "DOT" | "SPACE"
+object NumericSeparatorSymbol {
+  inline val COMMA: "COMMA" = "COMMA"
+  inline val DOT: "DOT" = "DOT"
+  inline val SPACE: "SPACE" = "SPACE"
+
+  inline def values: js.Array[NumericSeparatorSymbol] = js.Array(COMMA, DOT, SPACE)
+}
+
+type OtherCategories = "INCLUDE" | "EXCLUDE"
+object OtherCategories {
+  inline val INCLUDE: "INCLUDE" = "INCLUDE"
+  inline val EXCLUDE: "EXCLUDE" = "EXCLUDE"
+
+  inline def values: js.Array[OtherCategories] = js.Array(INCLUDE, EXCLUDE)
+}
+
+type PanelBorderStyle = "SOLID" | "DASHED" | "DOTTED"
+object PanelBorderStyle {
+  inline val SOLID: "SOLID" = "SOLID"
+  inline val DASHED: "DASHED" = "DASHED"
+  inline val DOTTED: "DOTTED" = "DOTTED"
+
+  inline def values: js.Array[PanelBorderStyle] = js.Array(SOLID, DASHED, DOTTED)
+}
+
+type PaperOrientation = "PORTRAIT" | "LANDSCAPE"
+object PaperOrientation {
+  inline val PORTRAIT: "PORTRAIT" = "PORTRAIT"
+  inline val LANDSCAPE: "LANDSCAPE" = "LANDSCAPE"
+
+  inline def values: js.Array[PaperOrientation] = js.Array(PORTRAIT, LANDSCAPE)
+}
+
+type PaperSize = "US_LETTER" | "US_LEGAL" | "US_TABLOID_LEDGER" | "A0" | "A1" | "A2" | "A3" | "A4" | "A5" | "JIS_B4" | "JIS_B5"
+object PaperSize {
+  inline val US_LETTER: "US_LETTER" = "US_LETTER"
+  inline val US_LEGAL: "US_LEGAL" = "US_LEGAL"
+  inline val US_TABLOID_LEDGER: "US_TABLOID_LEDGER" = "US_TABLOID_LEDGER"
+  inline val A0: "A0" = "A0"
+  inline val A1: "A1" = "A1"
+  inline val A2: "A2" = "A2"
+  inline val A3: "A3" = "A3"
+  inline val A4: "A4" = "A4"
+  inline val A5: "A5" = "A5"
+  inline val JIS_B4: "JIS_B4" = "JIS_B4"
+  inline val JIS_B5: "JIS_B5" = "JIS_B5"
+
+  inline def values: js.Array[PaperSize] = js.Array(US_LETTER, US_LEGAL, US_TABLOID_LEDGER, A0, A1, A2, A3, A4, A5, JIS_B4, JIS_B5)
+}
+
+type ParameterValueType = "MULTI_VALUED" | "SINGLE_VALUED"
+object ParameterValueType {
+  inline val MULTI_VALUED: "MULTI_VALUED" = "MULTI_VALUED"
+  inline val SINGLE_VALUED: "SINGLE_VALUED" = "SINGLE_VALUED"
+
+  inline def values: js.Array[ParameterValueType] = js.Array(MULTI_VALUED, SINGLE_VALUED)
+}
+
+type PivotTableConditionalFormattingScopeRole = "FIELD" | "FIELD_TOTAL" | "GRAND_TOTAL"
+object PivotTableConditionalFormattingScopeRole {
+  inline val FIELD: "FIELD" = "FIELD"
+  inline val FIELD_TOTAL: "FIELD_TOTAL" = "FIELD_TOTAL"
+  inline val GRAND_TOTAL: "GRAND_TOTAL" = "GRAND_TOTAL"
+
+  inline def values: js.Array[PivotTableConditionalFormattingScopeRole] = js.Array(FIELD, FIELD_TOTAL, GRAND_TOTAL)
+}
+
+type PivotTableMetricPlacement = "ROW" | "COLUMN"
+object PivotTableMetricPlacement {
+  inline val ROW: "ROW" = "ROW"
+  inline val COLUMN: "COLUMN" = "COLUMN"
+
+  inline def values: js.Array[PivotTableMetricPlacement] = js.Array(ROW, COLUMN)
+}
+
+type PivotTableSubtotalLevel = "ALL" | "CUSTOM" | "LAST"
+object PivotTableSubtotalLevel {
+  inline val ALL: "ALL" = "ALL"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val LAST: "LAST" = "LAST"
+
+  inline def values: js.Array[PivotTableSubtotalLevel] = js.Array(ALL, CUSTOM, LAST)
+}
+
+type PrimaryValueDisplayType = "HIDDEN" | "COMPARISON" | "ACTUAL"
+object PrimaryValueDisplayType {
+  inline val HIDDEN: "HIDDEN" = "HIDDEN"
+  inline val COMPARISON: "COMPARISON" = "COMPARISON"
+  inline val ACTUAL: "ACTUAL" = "ACTUAL"
+
+  inline def values: js.Array[PrimaryValueDisplayType] = js.Array(HIDDEN, COMPARISON, ACTUAL)
+}
+
+type ReferenceLineLabelHorizontalPosition = "LEFT" | "CENTER" | "RIGHT"
+object ReferenceLineLabelHorizontalPosition {
+  inline val LEFT: "LEFT" = "LEFT"
+  inline val CENTER: "CENTER" = "CENTER"
+  inline val RIGHT: "RIGHT" = "RIGHT"
+
+  inline def values: js.Array[ReferenceLineLabelHorizontalPosition] = js.Array(LEFT, CENTER, RIGHT)
+}
+
+type ReferenceLineLabelVerticalPosition = "ABOVE" | "BELOW"
+object ReferenceLineLabelVerticalPosition {
+  inline val ABOVE: "ABOVE" = "ABOVE"
+  inline val BELOW: "BELOW" = "BELOW"
+
+  inline def values: js.Array[ReferenceLineLabelVerticalPosition] = js.Array(ABOVE, BELOW)
+}
+
+type ReferenceLinePatternType = "SOLID" | "DASHED" | "DOTTED"
+object ReferenceLinePatternType {
+  inline val SOLID: "SOLID" = "SOLID"
+  inline val DASHED: "DASHED" = "DASHED"
+  inline val DOTTED: "DOTTED" = "DOTTED"
+
+  inline def values: js.Array[ReferenceLinePatternType] = js.Array(SOLID, DASHED, DOTTED)
+}
+
+type ReferenceLineValueLabelRelativePosition = "BEFORE_CUSTOM_LABEL" | "AFTER_CUSTOM_LABEL"
+object ReferenceLineValueLabelRelativePosition {
+  inline val BEFORE_CUSTOM_LABEL: "BEFORE_CUSTOM_LABEL" = "BEFORE_CUSTOM_LABEL"
+  inline val AFTER_CUSTOM_LABEL: "AFTER_CUSTOM_LABEL" = "AFTER_CUSTOM_LABEL"
+
+  inline def values: js.Array[ReferenceLineValueLabelRelativePosition] = js.Array(BEFORE_CUSTOM_LABEL, AFTER_CUSTOM_LABEL)
+}
+
+type RelativeDateType = "PREVIOUS" | "THIS" | "LAST" | "NOW" | "NEXT"
+object RelativeDateType {
+  inline val PREVIOUS: "PREVIOUS" = "PREVIOUS"
+  inline val THIS: "THIS" = "THIS"
+  inline val LAST: "LAST" = "LAST"
+  inline val NOW: "NOW" = "NOW"
+  inline val NEXT: "NEXT" = "NEXT"
+
+  inline def values: js.Array[RelativeDateType] = js.Array(PREVIOUS, THIS, LAST, NOW, NEXT)
+}
+
+type RelativeFontSize = "EXTRA_SMALL" | "SMALL" | "MEDIUM" | "LARGE" | "EXTRA_LARGE"
+object RelativeFontSize {
+  inline val EXTRA_SMALL: "EXTRA_SMALL" = "EXTRA_SMALL"
+  inline val SMALL: "SMALL" = "SMALL"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LARGE: "LARGE" = "LARGE"
+  inline val EXTRA_LARGE: "EXTRA_LARGE" = "EXTRA_LARGE"
+
+  inline def values: js.Array[RelativeFontSize] = js.Array(EXTRA_SMALL, SMALL, MEDIUM, LARGE, EXTRA_LARGE)
+}
+
+type ResizeOption = "FIXED" | "RESPONSIVE"
+object ResizeOption {
+  inline val FIXED: "FIXED" = "FIXED"
+  inline val RESPONSIVE: "RESPONSIVE" = "RESPONSIVE"
+
+  inline def values: js.Array[ResizeOption] = js.Array(FIXED, RESPONSIVE)
 }
 
 type ResourceStatus = "CREATION_IN_PROGRESS" | "CREATION_SUCCESSFUL" | "CREATION_FAILED" | "UPDATE_IN_PROGRESS" | "UPDATE_SUCCESSFUL" | "UPDATE_FAILED" | "DELETED"
@@ -495,12 +1217,154 @@ object RowLevelPermissionPolicy {
   inline def values: js.Array[RowLevelPermissionPolicy] = js.Array(GRANT_ACCESS, DENY_ACCESS)
 }
 
+type SectionPageBreakStatus = "ENABLED" | "DISABLED"
+object SectionPageBreakStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[SectionPageBreakStatus] = js.Array(ENABLED, DISABLED)
+}
+
+type SelectAllValueOptions = "ALL_VALUES"
+object SelectAllValueOptions {
+  inline val ALL_VALUES: "ALL_VALUES" = "ALL_VALUES"
+
+  inline def values: js.Array[SelectAllValueOptions] = js.Array(ALL_VALUES)
+}
+
+type SelectedFieldOptions = "ALL_FIELDS"
+object SelectedFieldOptions {
+  inline val ALL_FIELDS: "ALL_FIELDS" = "ALL_FIELDS"
+
+  inline def values: js.Array[SelectedFieldOptions] = js.Array(ALL_FIELDS)
+}
+
+type SelectedTooltipType = "BASIC" | "DETAILED"
+object SelectedTooltipType {
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val DETAILED: "DETAILED" = "DETAILED"
+
+  inline def values: js.Array[SelectedTooltipType] = js.Array(BASIC, DETAILED)
+}
+
+type SheetContentType = "PAGINATED" | "INTERACTIVE"
+object SheetContentType {
+  inline val PAGINATED: "PAGINATED" = "PAGINATED"
+  inline val INTERACTIVE: "INTERACTIVE" = "INTERACTIVE"
+
+  inline def values: js.Array[SheetContentType] = js.Array(PAGINATED, INTERACTIVE)
+}
+
+type SheetControlDateTimePickerType = "SINGLE_VALUED" | "DATE_RANGE"
+object SheetControlDateTimePickerType {
+  inline val SINGLE_VALUED: "SINGLE_VALUED" = "SINGLE_VALUED"
+  inline val DATE_RANGE: "DATE_RANGE" = "DATE_RANGE"
+
+  inline def values: js.Array[SheetControlDateTimePickerType] = js.Array(SINGLE_VALUED, DATE_RANGE)
+}
+
+type SheetControlListType = "MULTI_SELECT" | "SINGLE_SELECT"
+object SheetControlListType {
+  inline val MULTI_SELECT: "MULTI_SELECT" = "MULTI_SELECT"
+  inline val SINGLE_SELECT: "SINGLE_SELECT" = "SINGLE_SELECT"
+
+  inline def values: js.Array[SheetControlListType] = js.Array(MULTI_SELECT, SINGLE_SELECT)
+}
+
+type SheetControlSliderType = "SINGLE_POINT" | "RANGE"
+object SheetControlSliderType {
+  inline val SINGLE_POINT: "SINGLE_POINT" = "SINGLE_POINT"
+  inline val RANGE: "RANGE" = "RANGE"
+
+  inline def values: js.Array[SheetControlSliderType] = js.Array(SINGLE_POINT, RANGE)
+}
+
+type SimpleNumericalAggregationFunction = "SUM" | "AVERAGE" | "MIN" | "MAX" | "COUNT" | "DISTINCT_COUNT" | "VAR" | "VARP" | "STDEV" | "STDEVP" | "MEDIAN"
+object SimpleNumericalAggregationFunction {
+  inline val SUM: "SUM" = "SUM"
+  inline val AVERAGE: "AVERAGE" = "AVERAGE"
+  inline val MIN: "MIN" = "MIN"
+  inline val MAX: "MAX" = "MAX"
+  inline val COUNT: "COUNT" = "COUNT"
+  inline val DISTINCT_COUNT: "DISTINCT_COUNT" = "DISTINCT_COUNT"
+  inline val VAR: "VAR" = "VAR"
+  inline val VARP: "VARP" = "VARP"
+  inline val STDEV: "STDEV" = "STDEV"
+  inline val STDEVP: "STDEVP" = "STDEVP"
+  inline val MEDIAN: "MEDIAN" = "MEDIAN"
+
+  inline def values: js.Array[SimpleNumericalAggregationFunction] = js.Array(SUM, AVERAGE, MIN, MAX, COUNT, DISTINCT_COUNT, VAR, VARP, STDEV, STDEVP, MEDIAN)
+}
+
+type SortDirection = "ASC" | "DESC"
+object SortDirection {
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
+
+  inline def values: js.Array[SortDirection] = js.Array(ASC, DESC)
+}
+
 type Status = "ENABLED" | "DISABLED"
 object Status {
   inline val ENABLED: "ENABLED" = "ENABLED"
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[Status] = js.Array(ENABLED, DISABLED)
+}
+
+type TableBorderStyle = "NONE" | "SOLID"
+object TableBorderStyle {
+  inline val NONE: "NONE" = "NONE"
+  inline val SOLID: "SOLID" = "SOLID"
+
+  inline def values: js.Array[TableBorderStyle] = js.Array(NONE, SOLID)
+}
+
+type TableCellImageScalingConfiguration = "FIT_TO_CELL_HEIGHT" | "FIT_TO_CELL_WIDTH" | "DO_NOT_SCALE"
+object TableCellImageScalingConfiguration {
+  inline val FIT_TO_CELL_HEIGHT: "FIT_TO_CELL_HEIGHT" = "FIT_TO_CELL_HEIGHT"
+  inline val FIT_TO_CELL_WIDTH: "FIT_TO_CELL_WIDTH" = "FIT_TO_CELL_WIDTH"
+  inline val DO_NOT_SCALE: "DO_NOT_SCALE" = "DO_NOT_SCALE"
+
+  inline def values: js.Array[TableCellImageScalingConfiguration] = js.Array(FIT_TO_CELL_HEIGHT, FIT_TO_CELL_WIDTH, DO_NOT_SCALE)
+}
+
+type TableFieldIconSetType = "LINK"
+object TableFieldIconSetType {
+  inline val LINK: "LINK" = "LINK"
+
+  inline def values: js.Array[TableFieldIconSetType] = js.Array(LINK)
+}
+
+type TableOrientation = "VERTICAL" | "HORIZONTAL"
+object TableOrientation {
+  inline val VERTICAL: "VERTICAL" = "VERTICAL"
+  inline val HORIZONTAL: "HORIZONTAL" = "HORIZONTAL"
+
+  inline def values: js.Array[TableOrientation] = js.Array(VERTICAL, HORIZONTAL)
+}
+
+type TableTotalsPlacement = "START" | "END"
+object TableTotalsPlacement {
+  inline val START: "START" = "START"
+  inline val END: "END" = "END"
+
+  inline def values: js.Array[TableTotalsPlacement] = js.Array(START, END)
+}
+
+type TableTotalsScrollStatus = "PINNED" | "SCROLLED"
+object TableTotalsScrollStatus {
+  inline val PINNED: "PINNED" = "PINNED"
+  inline val SCROLLED: "SCROLLED" = "SCROLLED"
+
+  inline def values: js.Array[TableTotalsScrollStatus] = js.Array(PINNED, SCROLLED)
+}
+
+type TargetVisualOptions = "ALL_VISUALS"
+object TargetVisualOptions {
+  inline val ALL_VISUALS: "ALL_VISUALS" = "ALL_VISUALS"
+
+  inline def values: js.Array[TargetVisualOptions] = js.Array(ALL_VISUALS)
 }
 
 type TemplateErrorType = "SOURCE_NOT_FOUND" | "DATA_SET_NOT_FOUND" | "INTERNAL_FAILURE" | "ACCESS_DENIED"
@@ -521,6 +1385,14 @@ object TextQualifier {
   inline def values: js.Array[TextQualifier] = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
 }
 
+type TextWrap = "NONE" | "WRAP"
+object TextWrap {
+  inline val NONE: "NONE" = "NONE"
+  inline val WRAP: "WRAP" = "WRAP"
+
+  inline def values: js.Array[TextWrap] = js.Array(NONE, WRAP)
+}
+
 type ThemeErrorType = "INTERNAL_FAILURE"
 object ThemeErrorType {
   inline val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
@@ -537,6 +1409,54 @@ object ThemeType {
   inline def values: js.Array[ThemeType] = js.Array(QUICKSIGHT, CUSTOM, ALL)
 }
 
+type TimeGranularity = "YEAR" | "QUARTER" | "MONTH" | "WEEK" | "DAY" | "HOUR" | "MINUTE" | "SECOND" | "MILLISECOND"
+object TimeGranularity {
+  inline val YEAR: "YEAR" = "YEAR"
+  inline val QUARTER: "QUARTER" = "QUARTER"
+  inline val MONTH: "MONTH" = "MONTH"
+  inline val WEEK: "WEEK" = "WEEK"
+  inline val DAY: "DAY" = "DAY"
+  inline val HOUR: "HOUR" = "HOUR"
+  inline val MINUTE: "MINUTE" = "MINUTE"
+  inline val SECOND: "SECOND" = "SECOND"
+  inline val MILLISECOND: "MILLISECOND" = "MILLISECOND"
+
+  inline def values: js.Array[TimeGranularity] = js.Array(YEAR, QUARTER, MONTH, WEEK, DAY, HOUR, MINUTE, SECOND, MILLISECOND)
+}
+
+type TooltipTitleType = "NONE" | "PRIMARY_VALUE"
+object TooltipTitleType {
+  inline val NONE: "NONE" = "NONE"
+  inline val PRIMARY_VALUE: "PRIMARY_VALUE" = "PRIMARY_VALUE"
+
+  inline def values: js.Array[TooltipTitleType] = js.Array(NONE, PRIMARY_VALUE)
+}
+
+type TopBottomComputationType = "TOP" | "BOTTOM"
+object TopBottomComputationType {
+  inline val TOP: "TOP" = "TOP"
+  inline val BOTTOM: "BOTTOM" = "BOTTOM"
+
+  inline def values: js.Array[TopBottomComputationType] = js.Array(TOP, BOTTOM)
+}
+
+type TopBottomSortOrder = "PERCENT_DIFFERENCE" | "ABSOLUTE_DIFFERENCE"
+object TopBottomSortOrder {
+  inline val PERCENT_DIFFERENCE: "PERCENT_DIFFERENCE" = "PERCENT_DIFFERENCE"
+  inline val ABSOLUTE_DIFFERENCE: "ABSOLUTE_DIFFERENCE" = "ABSOLUTE_DIFFERENCE"
+
+  inline def values: js.Array[TopBottomSortOrder] = js.Array(PERCENT_DIFFERENCE, ABSOLUTE_DIFFERENCE)
+}
+
+type URLTargetConfiguration = "NEW_TAB" | "NEW_WINDOW" | "SAME_TAB"
+object URLTargetConfiguration {
+  inline val NEW_TAB: "NEW_TAB" = "NEW_TAB"
+  inline val NEW_WINDOW: "NEW_WINDOW" = "NEW_WINDOW"
+  inline val SAME_TAB: "SAME_TAB" = "SAME_TAB"
+
+  inline def values: js.Array[URLTargetConfiguration] = js.Array(NEW_TAB, NEW_WINDOW, SAME_TAB)
+}
+
 type UserRole = "ADMIN" | "AUTHOR" | "READER" | "RESTRICTED_AUTHOR" | "RESTRICTED_READER"
 object UserRole {
   inline val ADMIN: "ADMIN" = "ADMIN"
@@ -546,4 +1466,87 @@ object UserRole {
   inline val RESTRICTED_READER: "RESTRICTED_READER" = "RESTRICTED_READER"
 
   inline def values: js.Array[UserRole] = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
+}
+
+type ValueWhenUnsetOption = "RECOMMENDED_VALUE" | "NULL"
+object ValueWhenUnsetOption {
+  inline val RECOMMENDED_VALUE: "RECOMMENDED_VALUE" = "RECOMMENDED_VALUE"
+  inline val NULL: "NULL" = "NULL"
+
+  inline def values: js.Array[ValueWhenUnsetOption] = js.Array(RECOMMENDED_VALUE, NULL)
+}
+
+type VerticalTextAlignment = "TOP" | "MIDDLE" | "BOTTOM"
+object VerticalTextAlignment {
+  inline val TOP: "TOP" = "TOP"
+  inline val MIDDLE: "MIDDLE" = "MIDDLE"
+  inline val BOTTOM: "BOTTOM" = "BOTTOM"
+
+  inline def values: js.Array[VerticalTextAlignment] = js.Array(TOP, MIDDLE, BOTTOM)
+}
+
+type Visibility = "HIDDEN" | "VISIBLE"
+object Visibility {
+  inline val HIDDEN: "HIDDEN" = "HIDDEN"
+  inline val VISIBLE: "VISIBLE" = "VISIBLE"
+
+  inline def values: js.Array[Visibility] = js.Array(HIDDEN, VISIBLE)
+}
+
+type VisualCustomActionTrigger = "DATA_POINT_CLICK" | "DATA_POINT_MENU"
+object VisualCustomActionTrigger {
+  inline val DATA_POINT_CLICK: "DATA_POINT_CLICK" = "DATA_POINT_CLICK"
+  inline val DATA_POINT_MENU: "DATA_POINT_MENU" = "DATA_POINT_MENU"
+
+  inline def values: js.Array[VisualCustomActionTrigger] = js.Array(DATA_POINT_CLICK, DATA_POINT_MENU)
+}
+
+type WidgetStatus = "ENABLED" | "DISABLED"
+object WidgetStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[WidgetStatus] = js.Array(ENABLED, DISABLED)
+}
+
+type WordCloudCloudLayout = "FLUID" | "NORMAL"
+object WordCloudCloudLayout {
+  inline val FLUID: "FLUID" = "FLUID"
+  inline val NORMAL: "NORMAL" = "NORMAL"
+
+  inline def values: js.Array[WordCloudCloudLayout] = js.Array(FLUID, NORMAL)
+}
+
+type WordCloudWordCasing = "LOWER_CASE" | "EXISTING_CASE"
+object WordCloudWordCasing {
+  inline val LOWER_CASE: "LOWER_CASE" = "LOWER_CASE"
+  inline val EXISTING_CASE: "EXISTING_CASE" = "EXISTING_CASE"
+
+  inline def values: js.Array[WordCloudWordCasing] = js.Array(LOWER_CASE, EXISTING_CASE)
+}
+
+type WordCloudWordOrientation = "HORIZONTAL" | "HORIZONTAL_AND_VERTICAL"
+object WordCloudWordOrientation {
+  inline val HORIZONTAL: "HORIZONTAL" = "HORIZONTAL"
+  inline val HORIZONTAL_AND_VERTICAL: "HORIZONTAL_AND_VERTICAL" = "HORIZONTAL_AND_VERTICAL"
+
+  inline def values: js.Array[WordCloudWordOrientation] = js.Array(HORIZONTAL, HORIZONTAL_AND_VERTICAL)
+}
+
+type WordCloudWordPadding = "NONE" | "SMALL" | "MEDIUM" | "LARGE"
+object WordCloudWordPadding {
+  inline val NONE: "NONE" = "NONE"
+  inline val SMALL: "SMALL" = "SMALL"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LARGE: "LARGE" = "LARGE"
+
+  inline def values: js.Array[WordCloudWordPadding] = js.Array(NONE, SMALL, MEDIUM, LARGE)
+}
+
+type WordCloudWordScaling = "EMPHASIZE" | "NORMAL"
+object WordCloudWordScaling {
+  inline val EMPHASIZE: "EMPHASIZE" = "EMPHASIZE"
+  inline val NORMAL: "NORMAL" = "NORMAL"
+
+  inline def values: js.Array[WordCloudWordScaling] = js.Array(EMPHASIZE, NORMAL)
 }

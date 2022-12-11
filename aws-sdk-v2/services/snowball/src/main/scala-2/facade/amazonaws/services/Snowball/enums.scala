@@ -127,8 +127,9 @@ object SnowballCapacity {
   val T8 = "T8".asInstanceOf[SnowballCapacity]
   val T14 = "T14".asInstanceOf[SnowballCapacity]
   val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
+  val T32 = "T32".asInstanceOf[SnowballCapacity]
 
-  @inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference)
+  @inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference, T32)
 }
 
 @js.native
@@ -141,8 +142,9 @@ object SnowballType {
   val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
   val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
   val SNC1_SSD = "SNC1_SSD".asInstanceOf[SnowballType]
+  val V3_5C = "V3_5C".asInstanceOf[SnowballType]
 
-  @inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD)
+  @inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD, V3_5C)
 }
 
 @js.native

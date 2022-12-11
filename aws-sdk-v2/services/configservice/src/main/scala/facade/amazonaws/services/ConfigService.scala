@@ -31,9 +31,11 @@ package object configservice {
   type BaseConfigurationItems = js.Array[BaseConfigurationItem]
   type BaseResourceId = String
   type ChannelName = String
+  type ClientToken = String
   type ComplianceByConfigRules = js.Array[ComplianceByConfigRule]
   type ComplianceByResources = js.Array[ComplianceByResource]
   type ComplianceResourceTypes = js.Array[StringWithCharLimit256]
+  type ComplianceScore = String
   type ComplianceSummariesByResourceType = js.Array[ComplianceSummaryByResourceType]
   type ComplianceTypes = js.Array[ComplianceType]
   type ConfigRuleEvaluationStatusList = js.Array[ConfigRuleEvaluationStatus]
@@ -54,12 +56,14 @@ package object configservice {
   type ConfigurationStateId = String
   type ConformancePackArn = String
   type ConformancePackComplianceResourceIds = js.Array[StringWithCharLimit256]
+  type ConformancePackComplianceScores = js.Array[ConformancePackComplianceScore]
   type ConformancePackComplianceSummaryList = js.Array[ConformancePackComplianceSummary]
   type ConformancePackConfigRuleNames = js.Array[StringWithCharLimit64]
   type ConformancePackDetailList = js.Array[ConformancePackDetail]
   type ConformancePackId = String
   type ConformancePackInputParameters = js.Array[ConformancePackInputParameter]
   type ConformancePackName = String
+  type ConformancePackNameFilter = js.Array[ConformancePackName]
   type ConformancePackNamesList = js.Array[ConformancePackName]
   type ConformancePackNamesToSummarizeList = js.Array[ConformancePackName]
   type ConformancePackRuleComplianceList = js.Array[ConformancePackRuleCompliance]
@@ -69,6 +73,7 @@ package object configservice {
   type ControlsList = js.Array[StringWithCharLimit128]
   type CosmosPageLimit = Int
   type Date = js.Date
+  type DebugLogDeliveryAccounts = js.Array[AccountId]
   type DeliveryChannelList = js.Array[DeliveryChannel]
   type DeliveryChannelNameList = js.Array[ChannelName]
   type DeliveryChannelStatusList = js.Array[DeliveryChannelStatus]
@@ -79,7 +84,10 @@ package object configservice {
   type DiscoveredResourceIdentifierList = js.Array[AggregateResourceIdentifier]
   type EarlierTime = js.Date
   type EmptiableStringWithCharLimit256 = String
+  type EvaluationContextIdentifier = String
+  type EvaluationModes = js.Array[EvaluationModeConfiguration]
   type EvaluationResults = js.Array[EvaluationResult]
+  type EvaluationTimeout = Int
   type Evaluations = js.Array[Evaluation]
   type ExcludedAccounts = js.Array[AccountId]
   type Expression = String
@@ -92,8 +100,10 @@ package object configservice {
   type GroupByAPILimit = Int
   type GroupedResourceCountList = js.Array[GroupedResourceCount]
   type IncludeGlobalResourceTypes = Boolean
+  type LastUpdatedTime = js.Date
   type LaterTime = js.Date
   type Limit = Int
+  type ListResourceEvaluationsPageItemLimit = Int
   type Name = String
   type NextToken = String
   type OrderingTimestamp = js.Date
@@ -101,6 +111,7 @@ package object configservice {
   type OrganizationConfigRuleName = String
   type OrganizationConfigRuleNames = js.Array[StringWithCharLimit64]
   type OrganizationConfigRuleStatuses = js.Array[OrganizationConfigRuleStatus]
+  type OrganizationConfigRuleTriggerTypeNoSNs = js.Array[OrganizationConfigRuleTriggerTypeNoSN]
   type OrganizationConfigRuleTriggerTypes = js.Array[OrganizationConfigRuleTriggerType]
   type OrganizationConfigRules = js.Array[OrganizationConfigRule]
   type OrganizationConformancePackDetailedStatuses = js.Array[OrganizationConformancePackDetailedStatus]
@@ -113,6 +124,8 @@ package object configservice {
   type ParameterValue = String
   type PendingAggregationRequestList = js.Array[PendingAggregationRequest]
   type Percentage = Int
+  type PolicyRuntime = String
+  type PolicyText = String
   type QueryArn = String
   type QueryDescription = String
   type QueryExpression = String
@@ -130,9 +143,12 @@ package object configservice {
   type RemediationExecutionStatuses = js.Array[RemediationExecutionStatus]
   type RemediationExecutionSteps = js.Array[RemediationExecutionStep]
   type RemediationParameters = js.Dictionary[RemediationParameterValue]
+  type ResourceConfiguration = String
   type ResourceCounts = js.Array[ResourceCount]
   type ResourceCreationTime = js.Date
   type ResourceDeletionTime = js.Date
+  type ResourceEvaluationId = String
+  type ResourceEvaluations = js.Array[ResourceEvaluation]
   type ResourceId = String
   type ResourceIdList = js.Array[ResourceId]
   type ResourceIdentifierList = js.Array[ResourceIdentifier]
@@ -149,6 +165,8 @@ package object configservice {
   type RetentionConfigurationNameList = js.Array[RetentionConfigurationName]
   type RetentionPeriodInDays = Int
   type RuleLimit = Int
+  type SSMDocumentName = String
+  type SSMDocumentVersion = String
   type SchemaVersionId = String
   type SourceDetails = js.Array[SourceDetail]
   type StackArn = String
@@ -232,13 +250,18 @@ package object configservice {
     @inline def getComplianceSummaryByResourceTypeFuture(params: GetComplianceSummaryByResourceTypeRequest): Future[GetComplianceSummaryByResourceTypeResponse] = service.getComplianceSummaryByResourceType(params).promise().toFuture
     @inline def getConformancePackComplianceDetailsFuture(params: GetConformancePackComplianceDetailsRequest): Future[GetConformancePackComplianceDetailsResponse] = service.getConformancePackComplianceDetails(params).promise().toFuture
     @inline def getConformancePackComplianceSummaryFuture(params: GetConformancePackComplianceSummaryRequest): Future[GetConformancePackComplianceSummaryResponse] = service.getConformancePackComplianceSummary(params).promise().toFuture
+    @inline def getCustomRulePolicyFuture(params: GetCustomRulePolicyRequest): Future[GetCustomRulePolicyResponse] = service.getCustomRulePolicy(params).promise().toFuture
     @inline def getDiscoveredResourceCountsFuture(params: GetDiscoveredResourceCountsRequest): Future[GetDiscoveredResourceCountsResponse] = service.getDiscoveredResourceCounts(params).promise().toFuture
     @inline def getOrganizationConfigRuleDetailedStatusFuture(params: GetOrganizationConfigRuleDetailedStatusRequest): Future[GetOrganizationConfigRuleDetailedStatusResponse] = service.getOrganizationConfigRuleDetailedStatus(params).promise().toFuture
     @inline def getOrganizationConformancePackDetailedStatusFuture(params: GetOrganizationConformancePackDetailedStatusRequest): Future[GetOrganizationConformancePackDetailedStatusResponse] = service.getOrganizationConformancePackDetailedStatus(params).promise().toFuture
+    @inline def getOrganizationCustomRulePolicyFuture(params: GetOrganizationCustomRulePolicyRequest): Future[GetOrganizationCustomRulePolicyResponse] = service.getOrganizationCustomRulePolicy(params).promise().toFuture
     @inline def getResourceConfigHistoryFuture(params: GetResourceConfigHistoryRequest): Future[GetResourceConfigHistoryResponse] = service.getResourceConfigHistory(params).promise().toFuture
+    @inline def getResourceEvaluationSummaryFuture(params: GetResourceEvaluationSummaryRequest): Future[GetResourceEvaluationSummaryResponse] = service.getResourceEvaluationSummary(params).promise().toFuture
     @inline def getStoredQueryFuture(params: GetStoredQueryRequest): Future[GetStoredQueryResponse] = service.getStoredQuery(params).promise().toFuture
     @inline def listAggregateDiscoveredResourcesFuture(params: ListAggregateDiscoveredResourcesRequest): Future[ListAggregateDiscoveredResourcesResponse] = service.listAggregateDiscoveredResources(params).promise().toFuture
+    @inline def listConformancePackComplianceScoresFuture(params: ListConformancePackComplianceScoresRequest): Future[ListConformancePackComplianceScoresResponse] = service.listConformancePackComplianceScores(params).promise().toFuture
     @inline def listDiscoveredResourcesFuture(params: ListDiscoveredResourcesRequest): Future[ListDiscoveredResourcesResponse] = service.listDiscoveredResources(params).promise().toFuture
+    @inline def listResourceEvaluationsFuture(params: ListResourceEvaluationsRequest): Future[ListResourceEvaluationsResponse] = service.listResourceEvaluations(params).promise().toFuture
     @inline def listStoredQueriesFuture(params: ListStoredQueriesRequest): Future[ListStoredQueriesResponse] = service.listStoredQueries(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putAggregationAuthorizationFuture(params: PutAggregationAuthorizationRequest): Future[PutAggregationAuthorizationResponse] = service.putAggregationAuthorization(params).promise().toFuture
@@ -261,6 +284,7 @@ package object configservice {
     @inline def startConfigRulesEvaluationFuture(params: StartConfigRulesEvaluationRequest): Future[StartConfigRulesEvaluationResponse] = service.startConfigRulesEvaluation(params).promise().toFuture
     @inline def startConfigurationRecorderFuture(params: StartConfigurationRecorderRequest): Future[js.Object] = service.startConfigurationRecorder(params).promise().toFuture
     @inline def startRemediationExecutionFuture(params: StartRemediationExecutionRequest): Future[StartRemediationExecutionResponse] = service.startRemediationExecution(params).promise().toFuture
+    @inline def startResourceEvaluationFuture(params: StartResourceEvaluationRequest): Future[StartResourceEvaluationResponse] = service.startResourceEvaluation(params).promise().toFuture
     @inline def stopConfigurationRecorderFuture(params: StopConfigurationRecorderRequest): Future[js.Object] = service.stopConfigurationRecorder(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
@@ -326,13 +350,18 @@ package object configservice {
     def getComplianceSummaryByResourceType(params: GetComplianceSummaryByResourceTypeRequest): Request[GetComplianceSummaryByResourceTypeResponse] = js.native
     def getConformancePackComplianceDetails(params: GetConformancePackComplianceDetailsRequest): Request[GetConformancePackComplianceDetailsResponse] = js.native
     def getConformancePackComplianceSummary(params: GetConformancePackComplianceSummaryRequest): Request[GetConformancePackComplianceSummaryResponse] = js.native
+    def getCustomRulePolicy(params: GetCustomRulePolicyRequest): Request[GetCustomRulePolicyResponse] = js.native
     def getDiscoveredResourceCounts(params: GetDiscoveredResourceCountsRequest): Request[GetDiscoveredResourceCountsResponse] = js.native
     def getOrganizationConfigRuleDetailedStatus(params: GetOrganizationConfigRuleDetailedStatusRequest): Request[GetOrganizationConfigRuleDetailedStatusResponse] = js.native
     def getOrganizationConformancePackDetailedStatus(params: GetOrganizationConformancePackDetailedStatusRequest): Request[GetOrganizationConformancePackDetailedStatusResponse] = js.native
+    def getOrganizationCustomRulePolicy(params: GetOrganizationCustomRulePolicyRequest): Request[GetOrganizationCustomRulePolicyResponse] = js.native
     def getResourceConfigHistory(params: GetResourceConfigHistoryRequest): Request[GetResourceConfigHistoryResponse] = js.native
+    def getResourceEvaluationSummary(params: GetResourceEvaluationSummaryRequest): Request[GetResourceEvaluationSummaryResponse] = js.native
     def getStoredQuery(params: GetStoredQueryRequest): Request[GetStoredQueryResponse] = js.native
     def listAggregateDiscoveredResources(params: ListAggregateDiscoveredResourcesRequest): Request[ListAggregateDiscoveredResourcesResponse] = js.native
+    def listConformancePackComplianceScores(params: ListConformancePackComplianceScoresRequest): Request[ListConformancePackComplianceScoresResponse] = js.native
     def listDiscoveredResources(params: ListDiscoveredResourcesRequest): Request[ListDiscoveredResourcesResponse] = js.native
+    def listResourceEvaluations(params: ListResourceEvaluationsRequest): Request[ListResourceEvaluationsResponse] = js.native
     def listStoredQueries(params: ListStoredQueriesRequest): Request[ListStoredQueriesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAggregationAuthorization(params: PutAggregationAuthorizationRequest): Request[PutAggregationAuthorizationResponse] = js.native
@@ -355,6 +384,7 @@ package object configservice {
     def startConfigRulesEvaluation(params: StartConfigRulesEvaluationRequest): Request[StartConfigRulesEvaluationResponse] = js.native
     def startConfigurationRecorder(params: StartConfigurationRecorderRequest): Request[js.Object] = js.native
     def startRemediationExecution(params: StartRemediationExecutionRequest): Request[StartRemediationExecutionResponse] = js.native
+    def startResourceEvaluation(params: StartResourceEvaluationRequest): Request[StartResourceEvaluationResponse] = js.native
     def stopConfigurationRecorder(params: StopConfigurationRecorderRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
@@ -1011,9 +1041,10 @@ package object configservice {
     }
   }
 
-  /** An Config rule represents an Lambda function that you create for a custom rule or a predefined function for an Config managed rule. The function evaluates configuration items to assess whether your Amazon Web Services resources comply with your desired configurations. This function can run when Config detects a configuration change to an Amazon Web Services resource and at a periodic frequency that you choose (for example, every 24 hours).
+  /** Config rules evaluate the configuration settings of your Amazon Web Services resources. A rule can run when Config detects a configuration change to an Amazon Web Services resource or at a periodic frequency that you choose (for example, every 24 hours). There are two types of rules: Config Managed Rules and Config Custom Rules. Managed rules are predefined, customizable rules created by Config. For a list of managed rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html|List of Config Managed Rules]]. Custom rules are rules that you can create using either Guard or Lambda functions. Guard ([[https://github.com/aws-cloudformation/cloudformation-guard|Guard GitHub Repository]]) is a policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda uses custom code that you upload to evaluate a custom rule. It is invoked by events that are published to it by an event source, which Config
+    * invokes when the custom rule is initiated. For more information about developing and using Config rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html|Evaluating Amazon Web Services resource Configurations with Config]] in the <i>Config Developer Guide</i>.
     *
-    * '''Note:'''You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>. For more information about developing and using Config rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html|Evaluating Amazon Web Services resource Configurations with Config]] in the <i>Config Developer Guide</i>.
+    * '''Note:'''You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
     */
   @js.native
   trait ConfigRule extends js.Object {
@@ -1024,6 +1055,7 @@ package object configservice {
     var ConfigRuleState: js.UndefOr[ConfigRuleState]
     var CreatedBy: js.UndefOr[StringWithCharLimit256]
     var Description: js.UndefOr[EmptiableStringWithCharLimit256]
+    var EvaluationModes: js.UndefOr[EvaluationModes]
     var InputParameters: js.UndefOr[StringWithCharLimit1024]
     var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
     var Scope: js.UndefOr[Scope]
@@ -1039,6 +1071,7 @@ package object configservice {
         ConfigRuleState: js.UndefOr[ConfigRuleState] = js.undefined,
         CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
         Description: js.UndefOr[EmptiableStringWithCharLimit256] = js.undefined,
+        EvaluationModes: js.UndefOr[EvaluationModes] = js.undefined,
         InputParameters: js.UndefOr[StringWithCharLimit1024] = js.undefined,
         MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
         Scope: js.UndefOr[Scope] = js.undefined
@@ -1053,6 +1086,7 @@ package object configservice {
       ConfigRuleState.foreach(__v => __obj.updateDynamic("ConfigRuleState")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EvaluationModes.foreach(__v => __obj.updateDynamic("EvaluationModes")(__v.asInstanceOf[js.Any]))
       InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
       MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
@@ -1108,7 +1142,7 @@ package object configservice {
     }
   }
 
-  /** Status information for your Config managed rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure. This action does not return status information about custom Config rules.
+  /** Status information for your Config Managed rules and Config Custom Policy rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure. This action does not return status information about Config Custom Lambda rules.
     */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
@@ -1118,6 +1152,9 @@ package object configservice {
     var FirstActivatedTime: js.UndefOr[Date]
     var FirstEvaluationStarted: js.UndefOr[Boolean]
     var LastDeactivatedTime: js.UndefOr[Date]
+    var LastDebugLogDeliveryStatus: js.UndefOr[String]
+    var LastDebugLogDeliveryStatusReason: js.UndefOr[String]
+    var LastDebugLogDeliveryTime: js.UndefOr[Date]
     var LastErrorCode: js.UndefOr[String]
     var LastErrorMessage: js.UndefOr[String]
     var LastFailedEvaluationTime: js.UndefOr[Date]
@@ -1135,6 +1172,9 @@ package object configservice {
         FirstActivatedTime: js.UndefOr[Date] = js.undefined,
         FirstEvaluationStarted: js.UndefOr[Boolean] = js.undefined,
         LastDeactivatedTime: js.UndefOr[Date] = js.undefined,
+        LastDebugLogDeliveryStatus: js.UndefOr[String] = js.undefined,
+        LastDebugLogDeliveryStatusReason: js.UndefOr[String] = js.undefined,
+        LastDebugLogDeliveryTime: js.UndefOr[Date] = js.undefined,
         LastErrorCode: js.UndefOr[String] = js.undefined,
         LastErrorMessage: js.UndefOr[String] = js.undefined,
         LastFailedEvaluationTime: js.UndefOr[Date] = js.undefined,
@@ -1149,6 +1189,9 @@ package object configservice {
       FirstActivatedTime.foreach(__v => __obj.updateDynamic("FirstActivatedTime")(__v.asInstanceOf[js.Any]))
       FirstEvaluationStarted.foreach(__v => __obj.updateDynamic("FirstEvaluationStarted")(__v.asInstanceOf[js.Any]))
       LastDeactivatedTime.foreach(__v => __obj.updateDynamic("LastDeactivatedTime")(__v.asInstanceOf[js.Any]))
+      LastDebugLogDeliveryStatus.foreach(__v => __obj.updateDynamic("LastDebugLogDeliveryStatus")(__v.asInstanceOf[js.Any]))
+      LastDebugLogDeliveryStatusReason.foreach(__v => __obj.updateDynamic("LastDebugLogDeliveryStatusReason")(__v.asInstanceOf[js.Any]))
+      LastDebugLogDeliveryTime.foreach(__v => __obj.updateDynamic("LastDebugLogDeliveryTime")(__v.asInstanceOf[js.Any]))
       LastErrorCode.foreach(__v => __obj.updateDynamic("LastErrorCode")(__v.asInstanceOf[js.Any]))
       LastErrorMessage.foreach(__v => __obj.updateDynamic("LastErrorMessage")(__v.asInstanceOf[js.Any]))
       LastFailedEvaluationTime.foreach(__v => __obj.updateDynamic("LastFailedEvaluationTime")(__v.asInstanceOf[js.Any]))
@@ -1394,6 +1437,49 @@ package object configservice {
     }
   }
 
+  /** A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.
+    */
+  @js.native
+  trait ConformancePackComplianceScore extends js.Object {
+    var ConformancePackName: js.UndefOr[ConformancePackName]
+    var LastUpdatedTime: js.UndefOr[LastUpdatedTime]
+    var Score: js.UndefOr[ComplianceScore]
+  }
+
+  object ConformancePackComplianceScore {
+    @inline
+    def apply(
+        ConformancePackName: js.UndefOr[ConformancePackName] = js.undefined,
+        LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        Score: js.UndefOr[ComplianceScore] = js.undefined
+    ): ConformancePackComplianceScore = {
+      val __obj = js.Dynamic.literal()
+      ConformancePackName.foreach(__v => __obj.updateDynamic("ConformancePackName")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConformancePackComplianceScore]
+    }
+  }
+
+  /** A list of filters to apply to the conformance pack compliance score result set.
+    */
+  @js.native
+  trait ConformancePackComplianceScoresFilters extends js.Object {
+    var ConformancePackNames: ConformancePackNameFilter
+  }
+
+  object ConformancePackComplianceScoresFilters {
+    @inline
+    def apply(
+        ConformancePackNames: ConformancePackNameFilter
+    ): ConformancePackComplianceScoresFilters = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackNames" -> ConformancePackNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConformancePackComplianceScoresFilters]
+    }
+  }
+
   /** Summary includes the name and status of the conformance pack.
     */
   @js.native
@@ -1428,6 +1514,7 @@ package object configservice {
     var DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket]
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var LastUpdateRequestedTime: js.UndefOr[Date]
+    var TemplateSSMDocumentDetails: js.UndefOr[TemplateSSMDocumentDetails]
   }
 
   object ConformancePackDetail {
@@ -1440,7 +1527,8 @@ package object configservice {
         CreatedBy: js.UndefOr[StringWithCharLimit256] = js.undefined,
         DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
-        LastUpdateRequestedTime: js.UndefOr[Date] = js.undefined
+        LastUpdateRequestedTime: js.UndefOr[Date] = js.undefined,
+        TemplateSSMDocumentDetails: js.UndefOr[TemplateSSMDocumentDetails] = js.undefined
     ): ConformancePackDetail = {
       val __obj = js.Dynamic.literal(
         "ConformancePackArn" -> ConformancePackArn.asInstanceOf[js.Any],
@@ -1453,6 +1541,7 @@ package object configservice {
       DeliveryS3Bucket.foreach(__v => __obj.updateDynamic("DeliveryS3Bucket")(__v.asInstanceOf[js.Any]))
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       LastUpdateRequestedTime.foreach(__v => __obj.updateDynamic("LastUpdateRequestedTime")(__v.asInstanceOf[js.Any]))
+      TemplateSSMDocumentDetails.foreach(__v => __obj.updateDynamic("TemplateSSMDocumentDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConformancePackDetail]
     }
   }
@@ -1600,6 +1689,32 @@ package object configservice {
       ConformancePackStatusReason.foreach(__v => __obj.updateDynamic("ConformancePackStatusReason")(__v.asInstanceOf[js.Any]))
       LastUpdateCompletedTime.foreach(__v => __obj.updateDynamic("LastUpdateCompletedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConformancePackStatusDetail]
+    }
+  }
+
+  /** Provides the runtime system, policy definition, and whether debug logging enabled. You can specify the following CustomPolicyDetails parameter values only for Config Custom Policy rules.
+    */
+  @js.native
+  trait CustomPolicyDetails extends js.Object {
+    var PolicyRuntime: PolicyRuntime
+    var PolicyText: PolicyText
+    var EnableDebugLogDelivery: js.UndefOr[Boolean]
+  }
+
+  object CustomPolicyDetails {
+    @inline
+    def apply(
+        PolicyRuntime: PolicyRuntime,
+        PolicyText: PolicyText,
+        EnableDebugLogDelivery: js.UndefOr[Boolean] = js.undefined
+    ): CustomPolicyDetails = {
+      val __obj = js.Dynamic.literal(
+        "PolicyRuntime" -> PolicyRuntime.asInstanceOf[js.Any],
+        "PolicyText" -> PolicyText.asInstanceOf[js.Any]
+      )
+
+      EnableDebugLogDelivery.foreach(__v => __obj.updateDynamic("EnableDebugLogDelivery")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomPolicyDetails]
     }
   }
 
@@ -2301,11 +2416,30 @@ package object configservice {
     }
   }
 
+  /** Returns a filtered list of Detective or Proactive Config rules. By default, if the filter is not defined, this API returns an unfiltered list.
+    */
+  @js.native
+  trait DescribeConfigRulesFilters extends js.Object {
+    var EvaluationMode: js.UndefOr[EvaluationMode]
+  }
+
+  object DescribeConfigRulesFilters {
+    @inline
+    def apply(
+        EvaluationMode: js.UndefOr[EvaluationMode] = js.undefined
+    ): DescribeConfigRulesFilters = {
+      val __obj = js.Dynamic.literal()
+      EvaluationMode.foreach(__v => __obj.updateDynamic("EvaluationMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeConfigRulesFilters]
+    }
+  }
+
   /** <p/>
     */
   @js.native
   trait DescribeConfigRulesRequest extends js.Object {
     var ConfigRuleNames: js.UndefOr[ConfigRuleNames]
+    var Filters: js.UndefOr[DescribeConfigRulesFilters]
     var NextToken: js.UndefOr[String]
   }
 
@@ -2313,10 +2447,12 @@ package object configservice {
     @inline
     def apply(
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
+        Filters: js.UndefOr[DescribeConfigRulesFilters] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeConfigRulesRequest = {
       val __obj = js.Dynamic.literal()
       ConfigRuleNames.foreach(__v => __obj.updateDynamic("ConfigRuleNames")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigRulesRequest]
     }
@@ -3104,6 +3240,42 @@ package object configservice {
     }
   }
 
+  /** Use EvaluationContext to group independently initiated proactive resource evaluations. For example, CFN Stack. If you want to check just a resource definition, you do not need to provide evaluation context.
+    */
+  @js.native
+  trait EvaluationContext extends js.Object {
+    var EvaluationContextIdentifier: js.UndefOr[EvaluationContextIdentifier]
+  }
+
+  object EvaluationContext {
+    @inline
+    def apply(
+        EvaluationContextIdentifier: js.UndefOr[EvaluationContextIdentifier] = js.undefined
+    ): EvaluationContext = {
+      val __obj = js.Dynamic.literal()
+      EvaluationContextIdentifier.foreach(__v => __obj.updateDynamic("EvaluationContextIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationContext]
+    }
+  }
+
+  /** The configuration object for Config rule evaluation mode. The Supported valid values are Detective or Proactive.
+    */
+  @js.native
+  trait EvaluationModeConfiguration extends js.Object {
+    var Mode: js.UndefOr[EvaluationMode]
+  }
+
+  object EvaluationModeConfiguration {
+    @inline
+    def apply(
+        Mode: js.UndefOr[EvaluationMode] = js.undefined
+    ): EvaluationModeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationModeConfiguration]
+    }
+  }
+
   /** The details of an Config evaluation. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
     */
   @js.native
@@ -3143,17 +3315,20 @@ package object configservice {
   trait EvaluationResultIdentifier extends js.Object {
     var EvaluationResultQualifier: js.UndefOr[EvaluationResultQualifier]
     var OrderingTimestamp: js.UndefOr[Date]
+    var ResourceEvaluationId: js.UndefOr[ResourceEvaluationId]
   }
 
   object EvaluationResultIdentifier {
     @inline
     def apply(
         EvaluationResultQualifier: js.UndefOr[EvaluationResultQualifier] = js.undefined,
-        OrderingTimestamp: js.UndefOr[Date] = js.undefined
+        OrderingTimestamp: js.UndefOr[Date] = js.undefined,
+        ResourceEvaluationId: js.UndefOr[ResourceEvaluationId] = js.undefined
     ): EvaluationResultIdentifier = {
       val __obj = js.Dynamic.literal()
       EvaluationResultQualifier.foreach(__v => __obj.updateDynamic("EvaluationResultQualifier")(__v.asInstanceOf[js.Any]))
       OrderingTimestamp.foreach(__v => __obj.updateDynamic("OrderingTimestamp")(__v.asInstanceOf[js.Any]))
+      ResourceEvaluationId.foreach(__v => __obj.updateDynamic("ResourceEvaluationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResultIdentifier]
     }
   }
@@ -3163,6 +3338,7 @@ package object configservice {
   @js.native
   trait EvaluationResultQualifier extends js.Object {
     var ConfigRuleName: js.UndefOr[ConfigRuleName]
+    var EvaluationMode: js.UndefOr[EvaluationMode]
     var ResourceId: js.UndefOr[BaseResourceId]
     var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
@@ -3171,14 +3347,39 @@ package object configservice {
     @inline
     def apply(
         ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined,
+        EvaluationMode: js.UndefOr[EvaluationMode] = js.undefined,
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): EvaluationResultQualifier = {
       val __obj = js.Dynamic.literal()
       ConfigRuleName.foreach(__v => __obj.updateDynamic("ConfigRuleName")(__v.asInstanceOf[js.Any]))
+      EvaluationMode.foreach(__v => __obj.updateDynamic("EvaluationMode")(__v.asInstanceOf[js.Any]))
       ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResultQualifier]
+    }
+  }
+
+  /** Returns status details of an evaluation.
+    */
+  @js.native
+  trait EvaluationStatus extends js.Object {
+    var Status: ResourceEvaluationStatus
+    var FailureReason: js.UndefOr[StringWithCharLimit1024]
+  }
+
+  object EvaluationStatus {
+    @inline
+    def apply(
+        Status: ResourceEvaluationStatus,
+        FailureReason: js.UndefOr[StringWithCharLimit1024] = js.undefined
+    ): EvaluationStatus = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluationStatus]
     }
   }
 
@@ -3619,27 +3820,28 @@ package object configservice {
     */
   @js.native
   trait GetComplianceDetailsByResourceRequest extends js.Object {
-    var ResourceId: BaseResourceId
-    var ResourceType: StringWithCharLimit256
     var ComplianceTypes: js.UndefOr[ComplianceTypes]
     var NextToken: js.UndefOr[String]
+    var ResourceEvaluationId: js.UndefOr[ResourceEvaluationId]
+    var ResourceId: js.UndefOr[BaseResourceId]
+    var ResourceType: js.UndefOr[StringWithCharLimit256]
   }
 
   object GetComplianceDetailsByResourceRequest {
     @inline
     def apply(
-        ResourceId: BaseResourceId,
-        ResourceType: StringWithCharLimit256,
         ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
+        NextToken: js.UndefOr[String] = js.undefined,
+        ResourceEvaluationId: js.UndefOr[ResourceEvaluationId] = js.undefined,
+        ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
+        ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): GetComplianceDetailsByResourceRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
-        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       ComplianceTypes.foreach(__v => __obj.updateDynamic("ComplianceTypes")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceEvaluationId.foreach(__v => __obj.updateDynamic("ResourceEvaluationId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetComplianceDetailsByResourceRequest]
     }
   }
@@ -3814,6 +4016,38 @@ package object configservice {
   }
 
   @js.native
+  trait GetCustomRulePolicyRequest extends js.Object {
+    var ConfigRuleName: js.UndefOr[ConfigRuleName]
+  }
+
+  object GetCustomRulePolicyRequest {
+    @inline
+    def apply(
+        ConfigRuleName: js.UndefOr[ConfigRuleName] = js.undefined
+    ): GetCustomRulePolicyRequest = {
+      val __obj = js.Dynamic.literal()
+      ConfigRuleName.foreach(__v => __obj.updateDynamic("ConfigRuleName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCustomRulePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetCustomRulePolicyResponse extends js.Object {
+    var PolicyText: js.UndefOr[PolicyText]
+  }
+
+  object GetCustomRulePolicyResponse {
+    @inline
+    def apply(
+        PolicyText: js.UndefOr[PolicyText] = js.undefined
+    ): GetCustomRulePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyText.foreach(__v => __obj.updateDynamic("PolicyText")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetCustomRulePolicyResponse]
+    }
+  }
+
+  @js.native
   trait GetDiscoveredResourceCountsRequest extends js.Object {
     var limit: js.UndefOr[Limit]
     var nextToken: js.UndefOr[NextToken]
@@ -3949,6 +4183,39 @@ package object configservice {
     }
   }
 
+  @js.native
+  trait GetOrganizationCustomRulePolicyRequest extends js.Object {
+    var OrganizationConfigRuleName: OrganizationConfigRuleName
+  }
+
+  object GetOrganizationCustomRulePolicyRequest {
+    @inline
+    def apply(
+        OrganizationConfigRuleName: OrganizationConfigRuleName
+    ): GetOrganizationCustomRulePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationConfigRuleName" -> OrganizationConfigRuleName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetOrganizationCustomRulePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetOrganizationCustomRulePolicyResponse extends js.Object {
+    var PolicyText: js.UndefOr[PolicyText]
+  }
+
+  object GetOrganizationCustomRulePolicyResponse {
+    @inline
+    def apply(
+        PolicyText: js.UndefOr[PolicyText] = js.undefined
+    ): GetOrganizationCustomRulePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyText.foreach(__v => __obj.updateDynamic("PolicyText")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOrganizationCustomRulePolicyResponse]
+    }
+  }
+
   /** The input for the <a>GetResourceConfigHistory</a> action.
     */
   @js.native
@@ -4005,6 +4272,57 @@ package object configservice {
       configurationItems.foreach(__v => __obj.updateDynamic("configurationItems")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceConfigHistoryResponse]
+    }
+  }
+
+  @js.native
+  trait GetResourceEvaluationSummaryRequest extends js.Object {
+    var ResourceEvaluationId: ResourceEvaluationId
+  }
+
+  object GetResourceEvaluationSummaryRequest {
+    @inline
+    def apply(
+        ResourceEvaluationId: ResourceEvaluationId
+    ): GetResourceEvaluationSummaryRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceEvaluationId" -> ResourceEvaluationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResourceEvaluationSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourceEvaluationSummaryResponse extends js.Object {
+    var Compliance: js.UndefOr[ComplianceType]
+    var EvaluationContext: js.UndefOr[EvaluationContext]
+    var EvaluationMode: js.UndefOr[EvaluationMode]
+    var EvaluationStartTimestamp: js.UndefOr[Date]
+    var EvaluationStatus: js.UndefOr[EvaluationStatus]
+    var ResourceDetails: js.UndefOr[ResourceDetails]
+    var ResourceEvaluationId: js.UndefOr[ResourceEvaluationId]
+  }
+
+  object GetResourceEvaluationSummaryResponse {
+    @inline
+    def apply(
+        Compliance: js.UndefOr[ComplianceType] = js.undefined,
+        EvaluationContext: js.UndefOr[EvaluationContext] = js.undefined,
+        EvaluationMode: js.UndefOr[EvaluationMode] = js.undefined,
+        EvaluationStartTimestamp: js.UndefOr[Date] = js.undefined,
+        EvaluationStatus: js.UndefOr[EvaluationStatus] = js.undefined,
+        ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined,
+        ResourceEvaluationId: js.UndefOr[ResourceEvaluationId] = js.undefined
+    ): GetResourceEvaluationSummaryResponse = {
+      val __obj = js.Dynamic.literal()
+      Compliance.foreach(__v => __obj.updateDynamic("Compliance")(__v.asInstanceOf[js.Any]))
+      EvaluationContext.foreach(__v => __obj.updateDynamic("EvaluationContext")(__v.asInstanceOf[js.Any]))
+      EvaluationMode.foreach(__v => __obj.updateDynamic("EvaluationMode")(__v.asInstanceOf[js.Any]))
+      EvaluationStartTimestamp.foreach(__v => __obj.updateDynamic("EvaluationStartTimestamp")(__v.asInstanceOf[js.Any]))
+      EvaluationStatus.foreach(__v => __obj.updateDynamic("EvaluationStatus")(__v.asInstanceOf[js.Any]))
+      ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
+      ResourceEvaluationId.foreach(__v => __obj.updateDynamic("ResourceEvaluationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceEvaluationSummaryResponse]
     }
   }
 
@@ -4112,6 +4430,55 @@ package object configservice {
     }
   }
 
+  @js.native
+  trait ListConformancePackComplianceScoresRequest extends js.Object {
+    var Filters: js.UndefOr[ConformancePackComplianceScoresFilters]
+    var Limit: js.UndefOr[PageSizeLimit]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[SortBy]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListConformancePackComplianceScoresRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[ConformancePackComplianceScoresFilters] = js.undefined,
+        Limit: js.UndefOr[PageSizeLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[SortBy] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListConformancePackComplianceScoresRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConformancePackComplianceScoresRequest]
+    }
+  }
+
+  @js.native
+  trait ListConformancePackComplianceScoresResponse extends js.Object {
+    var ConformancePackComplianceScores: ConformancePackComplianceScores
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListConformancePackComplianceScoresResponse {
+    @inline
+    def apply(
+        ConformancePackComplianceScores: ConformancePackComplianceScores,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListConformancePackComplianceScoresResponse = {
+      val __obj = js.Dynamic.literal(
+        "ConformancePackComplianceScores" -> ConformancePackComplianceScores.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConformancePackComplianceScoresResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -4165,6 +4532,47 @@ package object configservice {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       resourceIdentifiers.foreach(__v => __obj.updateDynamic("resourceIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDiscoveredResourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListResourceEvaluationsRequest extends js.Object {
+    var Filters: js.UndefOr[ResourceEvaluationFilters]
+    var Limit: js.UndefOr[ListResourceEvaluationsPageItemLimit]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListResourceEvaluationsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[ResourceEvaluationFilters] = js.undefined,
+        Limit: js.UndefOr[ListResourceEvaluationsPageItemLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListResourceEvaluationsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceEvaluationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceEvaluationsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ResourceEvaluations: js.UndefOr[ResourceEvaluations]
+  }
+
+  object ListResourceEvaluationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ResourceEvaluations: js.UndefOr[ResourceEvaluations] = js.undefined
+    ): ListResourceEvaluationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceEvaluations.foreach(__v => __obj.updateDynamic("ResourceEvaluations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceEvaluationsResponse]
     }
   }
 
@@ -4249,7 +4657,7 @@ package object configservice {
     }
   }
 
-  /** Organization config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
+  /** Organization Config rule creation or deletion status in each member account. This includes the name of the rule, the status, error code and error message when the rule creation or deletion failed.
     */
   @js.native
   trait MemberAccountStatus extends js.Object {
@@ -4310,7 +4718,7 @@ package object configservice {
     }
   }
 
-  /** An organization config rule that has information about config rules that Config creates in member accounts.
+  /** An organization Config rule that has information about Config rules that Config creates in member accounts.
     */
   @js.native
   trait OrganizationConfigRule extends js.Object {
@@ -4318,6 +4726,7 @@ package object configservice {
     var OrganizationConfigRuleName: OrganizationConfigRuleName
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
     var LastUpdateTime: js.UndefOr[Date]
+    var OrganizationCustomPolicyRuleMetadata: js.UndefOr[OrganizationCustomPolicyRuleMetadataNoPolicy]
     var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
     var OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata]
   }
@@ -4329,6 +4738,7 @@ package object configservice {
         OrganizationConfigRuleName: OrganizationConfigRuleName,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
         LastUpdateTime: js.UndefOr[Date] = js.undefined,
+        OrganizationCustomPolicyRuleMetadata: js.UndefOr[OrganizationCustomPolicyRuleMetadataNoPolicy] = js.undefined,
         OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
         OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata] = js.undefined
     ): OrganizationConfigRule = {
@@ -4339,13 +4749,14 @@ package object configservice {
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
+      OrganizationCustomPolicyRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomPolicyRuleMetadata")(__v.asInstanceOf[js.Any]))
       OrganizationCustomRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any]))
       OrganizationManagedRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationConfigRule]
     }
   }
 
-  /** Returns the status for an organization config rule in an organization.
+  /** Returns the status for an organization Config rule in an organization.
     */
   @js.native
   trait OrganizationConfigRuleStatus extends js.Object {
@@ -4479,6 +4890,101 @@ package object configservice {
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       LastUpdateTime.foreach(__v => __obj.updateDynamic("LastUpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationConformancePackStatus]
+    }
+  }
+
+  /** An object that specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.
+    */
+  @js.native
+  trait OrganizationCustomPolicyRuleMetadata extends js.Object {
+    var PolicyRuntime: PolicyRuntime
+    var PolicyText: PolicyText
+    var DebugLogDeliveryAccounts: js.UndefOr[DebugLogDeliveryAccounts]
+    var Description: js.UndefOr[StringWithCharLimit256Min0]
+    var InputParameters: js.UndefOr[StringWithCharLimit2048]
+    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var OrganizationConfigRuleTriggerTypes: js.UndefOr[OrganizationConfigRuleTriggerTypeNoSNs]
+    var ResourceIdScope: js.UndefOr[StringWithCharLimit768]
+    var ResourceTypesScope: js.UndefOr[ResourceTypesScope]
+    var TagKeyScope: js.UndefOr[StringWithCharLimit128]
+    var TagValueScope: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object OrganizationCustomPolicyRuleMetadata {
+    @inline
+    def apply(
+        PolicyRuntime: PolicyRuntime,
+        PolicyText: PolicyText,
+        DebugLogDeliveryAccounts: js.UndefOr[DebugLogDeliveryAccounts] = js.undefined,
+        Description: js.UndefOr[StringWithCharLimit256Min0] = js.undefined,
+        InputParameters: js.UndefOr[StringWithCharLimit2048] = js.undefined,
+        MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
+        OrganizationConfigRuleTriggerTypes: js.UndefOr[OrganizationConfigRuleTriggerTypeNoSNs] = js.undefined,
+        ResourceIdScope: js.UndefOr[StringWithCharLimit768] = js.undefined,
+        ResourceTypesScope: js.UndefOr[ResourceTypesScope] = js.undefined,
+        TagKeyScope: js.UndefOr[StringWithCharLimit128] = js.undefined,
+        TagValueScope: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): OrganizationCustomPolicyRuleMetadata = {
+      val __obj = js.Dynamic.literal(
+        "PolicyRuntime" -> PolicyRuntime.asInstanceOf[js.Any],
+        "PolicyText" -> PolicyText.asInstanceOf[js.Any]
+      )
+
+      DebugLogDeliveryAccounts.foreach(__v => __obj.updateDynamic("DebugLogDeliveryAccounts")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleTriggerTypes.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleTriggerTypes")(__v.asInstanceOf[js.Any]))
+      ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
+      ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
+      TagKeyScope.foreach(__v => __obj.updateDynamic("TagKeyScope")(__v.asInstanceOf[js.Any]))
+      TagValueScope.foreach(__v => __obj.updateDynamic("TagValueScope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationCustomPolicyRuleMetadata]
+    }
+  }
+
+  /** An object that specifies metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a rule.
+    */
+  @js.native
+  trait OrganizationCustomPolicyRuleMetadataNoPolicy extends js.Object {
+    var DebugLogDeliveryAccounts: js.UndefOr[DebugLogDeliveryAccounts]
+    var Description: js.UndefOr[StringWithCharLimit256Min0]
+    var InputParameters: js.UndefOr[StringWithCharLimit2048]
+    var MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency]
+    var OrganizationConfigRuleTriggerTypes: js.UndefOr[OrganizationConfigRuleTriggerTypeNoSNs]
+    var PolicyRuntime: js.UndefOr[PolicyRuntime]
+    var ResourceIdScope: js.UndefOr[StringWithCharLimit768]
+    var ResourceTypesScope: js.UndefOr[ResourceTypesScope]
+    var TagKeyScope: js.UndefOr[StringWithCharLimit128]
+    var TagValueScope: js.UndefOr[StringWithCharLimit256]
+  }
+
+  object OrganizationCustomPolicyRuleMetadataNoPolicy {
+    @inline
+    def apply(
+        DebugLogDeliveryAccounts: js.UndefOr[DebugLogDeliveryAccounts] = js.undefined,
+        Description: js.UndefOr[StringWithCharLimit256Min0] = js.undefined,
+        InputParameters: js.UndefOr[StringWithCharLimit2048] = js.undefined,
+        MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
+        OrganizationConfigRuleTriggerTypes: js.UndefOr[OrganizationConfigRuleTriggerTypeNoSNs] = js.undefined,
+        PolicyRuntime: js.UndefOr[PolicyRuntime] = js.undefined,
+        ResourceIdScope: js.UndefOr[StringWithCharLimit768] = js.undefined,
+        ResourceTypesScope: js.UndefOr[ResourceTypesScope] = js.undefined,
+        TagKeyScope: js.UndefOr[StringWithCharLimit128] = js.undefined,
+        TagValueScope: js.UndefOr[StringWithCharLimit256] = js.undefined
+    ): OrganizationCustomPolicyRuleMetadataNoPolicy = {
+      val __obj = js.Dynamic.literal()
+      DebugLogDeliveryAccounts.foreach(__v => __obj.updateDynamic("DebugLogDeliveryAccounts")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InputParameters.foreach(__v => __obj.updateDynamic("InputParameters")(__v.asInstanceOf[js.Any]))
+      MaximumExecutionFrequency.foreach(__v => __obj.updateDynamic("MaximumExecutionFrequency")(__v.asInstanceOf[js.Any]))
+      OrganizationConfigRuleTriggerTypes.foreach(__v => __obj.updateDynamic("OrganizationConfigRuleTriggerTypes")(__v.asInstanceOf[js.Any]))
+      PolicyRuntime.foreach(__v => __obj.updateDynamic("PolicyRuntime")(__v.asInstanceOf[js.Any]))
+      ResourceIdScope.foreach(__v => __obj.updateDynamic("ResourceIdScope")(__v.asInstanceOf[js.Any]))
+      ResourceTypesScope.foreach(__v => __obj.updateDynamic("ResourceTypesScope")(__v.asInstanceOf[js.Any]))
+      TagKeyScope.foreach(__v => __obj.updateDynamic("TagKeyScope")(__v.asInstanceOf[js.Any]))
+      TagValueScope.foreach(__v => __obj.updateDynamic("TagValueScope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrganizationCustomPolicyRuleMetadataNoPolicy]
     }
   }
 
@@ -4740,6 +5246,7 @@ package object configservice {
     var DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix]
     var TemplateBody: js.UndefOr[TemplateBody]
     var TemplateS3Uri: js.UndefOr[TemplateS3Uri]
+    var TemplateSSMDocumentDetails: js.UndefOr[TemplateSSMDocumentDetails]
   }
 
   object PutConformancePackRequest {
@@ -4750,7 +5257,8 @@ package object configservice {
         DeliveryS3Bucket: js.UndefOr[DeliveryS3Bucket] = js.undefined,
         DeliveryS3KeyPrefix: js.UndefOr[DeliveryS3KeyPrefix] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
-        TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined
+        TemplateS3Uri: js.UndefOr[TemplateS3Uri] = js.undefined,
+        TemplateSSMDocumentDetails: js.UndefOr[TemplateSSMDocumentDetails] = js.undefined
     ): PutConformancePackRequest = {
       val __obj = js.Dynamic.literal(
         "ConformancePackName" -> ConformancePackName.asInstanceOf[js.Any]
@@ -4761,6 +5269,7 @@ package object configservice {
       DeliveryS3KeyPrefix.foreach(__v => __obj.updateDynamic("DeliveryS3KeyPrefix")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       TemplateS3Uri.foreach(__v => __obj.updateDynamic("TemplateS3Uri")(__v.asInstanceOf[js.Any]))
+      TemplateSSMDocumentDetails.foreach(__v => __obj.updateDynamic("TemplateSSMDocumentDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConformancePackRequest]
     }
   }
@@ -4879,6 +5388,7 @@ package object configservice {
   trait PutOrganizationConfigRuleRequest extends js.Object {
     var OrganizationConfigRuleName: OrganizationConfigRuleName
     var ExcludedAccounts: js.UndefOr[ExcludedAccounts]
+    var OrganizationCustomPolicyRuleMetadata: js.UndefOr[OrganizationCustomPolicyRuleMetadata]
     var OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata]
     var OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata]
   }
@@ -4888,6 +5398,7 @@ package object configservice {
     def apply(
         OrganizationConfigRuleName: OrganizationConfigRuleName,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
+        OrganizationCustomPolicyRuleMetadata: js.UndefOr[OrganizationCustomPolicyRuleMetadata] = js.undefined,
         OrganizationCustomRuleMetadata: js.UndefOr[OrganizationCustomRuleMetadata] = js.undefined,
         OrganizationManagedRuleMetadata: js.UndefOr[OrganizationManagedRuleMetadata] = js.undefined
     ): PutOrganizationConfigRuleRequest = {
@@ -4896,6 +5407,7 @@ package object configservice {
       )
 
       ExcludedAccounts.foreach(__v => __obj.updateDynamic("ExcludedAccounts")(__v.asInstanceOf[js.Any]))
+      OrganizationCustomPolicyRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomPolicyRuleMetadata")(__v.asInstanceOf[js.Any]))
       OrganizationCustomRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationCustomRuleMetadata")(__v.asInstanceOf[js.Any]))
       OrganizationManagedRuleMetadata.foreach(__v => __obj.updateDynamic("OrganizationManagedRuleMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutOrganizationConfigRuleRequest]
@@ -5167,8 +5679,9 @@ package object configservice {
     }
   }
 
-  /** Specifies the types of Amazon Web Services resource for which Config records configuration changes. In the recording group, you specify whether all supported types or specific types of resources are recorded. By default, Config records configuration changes for all supported types of regional resources that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes. You can also have Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions. <important> The configuration details for any global resource are the same in all regions. If you customize Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each
-    * region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions. </important> If you don't want Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter. For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]]. For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources Config Records]].
+  /** Specifies which Amazon Web Services resource types Config records for configuration changes. In the recording group, you specify whether you want to record all supported resource types or only specific types of resources. By default, Config records the configuration changes for all supported types of <i>regional resources</i> that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes. You can also have Config record supported types of <i>global resources</i>. Global resources are not tied to a specific region and can be used in all regions. The global resource types that Config supports include IAM users, groups, roles, and customer managed policies. <important> Global resource types onboarded to Config recording after February 2022 will only be recorded in the service's home region for the commercial partition and Amazon Web Services
+    * GovCloud (US) West for the GovCloud partition. You can view the Configuration Items for these new global resource types only in their home region and Amazon Web Services GovCloud (US) West. Supported global resource types onboarded before February 2022 such as <code>AWS::IAM::Group</code>, <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, <code>AWS::IAM::User</code> remain unchanged, and they will continue to deliver Configuration Items in all supported regions in Config. The change will only affect new global resource types onboarded after February 2022. To record global resource types onboarded after February 2022, enable All Supported Resource Types in the home region of the global resource type you want to record. </important> If you don't want Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter. For a list of supported resource types, see
+    * [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]]. For more information and a table of the Home Regions for Global Resource Types Onboarded after February 2022, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources Config Records]].
     */
   @js.native
   trait RecordingGroup extends js.Object {
@@ -5451,6 +5964,83 @@ package object configservice {
     }
   }
 
+  /** Returns information about the resource being evaluated.
+    */
+  @js.native
+  trait ResourceDetails extends js.Object {
+    var ResourceConfiguration: ResourceConfiguration
+    var ResourceId: BaseResourceId
+    var ResourceType: StringWithCharLimit256
+    var ResourceConfigurationSchemaType: js.UndefOr[ResourceConfigurationSchemaType]
+  }
+
+  object ResourceDetails {
+    @inline
+    def apply(
+        ResourceConfiguration: ResourceConfiguration,
+        ResourceId: BaseResourceId,
+        ResourceType: StringWithCharLimit256,
+        ResourceConfigurationSchemaType: js.UndefOr[ResourceConfigurationSchemaType] = js.undefined
+    ): ResourceDetails = {
+      val __obj = js.Dynamic.literal(
+        "ResourceConfiguration" -> ResourceConfiguration.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+
+      ResourceConfigurationSchemaType.foreach(__v => __obj.updateDynamic("ResourceConfigurationSchemaType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDetails]
+    }
+  }
+
+  /** Returns details of a resource evaluation.
+    */
+  @js.native
+  trait ResourceEvaluation extends js.Object {
+    var EvaluationMode: js.UndefOr[EvaluationMode]
+    var EvaluationStartTimestamp: js.UndefOr[Date]
+    var ResourceEvaluationId: js.UndefOr[ResourceEvaluationId]
+  }
+
+  object ResourceEvaluation {
+    @inline
+    def apply(
+        EvaluationMode: js.UndefOr[EvaluationMode] = js.undefined,
+        EvaluationStartTimestamp: js.UndefOr[Date] = js.undefined,
+        ResourceEvaluationId: js.UndefOr[ResourceEvaluationId] = js.undefined
+    ): ResourceEvaluation = {
+      val __obj = js.Dynamic.literal()
+      EvaluationMode.foreach(__v => __obj.updateDynamic("EvaluationMode")(__v.asInstanceOf[js.Any]))
+      EvaluationStartTimestamp.foreach(__v => __obj.updateDynamic("EvaluationStartTimestamp")(__v.asInstanceOf[js.Any]))
+      ResourceEvaluationId.foreach(__v => __obj.updateDynamic("ResourceEvaluationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceEvaluation]
+    }
+  }
+
+  /** Returns details of a resource evaluation based on the selected filter.
+    */
+  @js.native
+  trait ResourceEvaluationFilters extends js.Object {
+    var EvaluationContextIdentifier: js.UndefOr[EvaluationContextIdentifier]
+    var EvaluationMode: js.UndefOr[EvaluationMode]
+    var TimeWindow: js.UndefOr[TimeWindow]
+  }
+
+  object ResourceEvaluationFilters {
+    @inline
+    def apply(
+        EvaluationContextIdentifier: js.UndefOr[EvaluationContextIdentifier] = js.undefined,
+        EvaluationMode: js.UndefOr[EvaluationMode] = js.undefined,
+        TimeWindow: js.UndefOr[TimeWindow] = js.undefined
+    ): ResourceEvaluationFilters = {
+      val __obj = js.Dynamic.literal()
+      EvaluationContextIdentifier.foreach(__v => __obj.updateDynamic("EvaluationContextIdentifier")(__v.asInstanceOf[js.Any]))
+      EvaluationMode.foreach(__v => __obj.updateDynamic("EvaluationMode")(__v.asInstanceOf[js.Any]))
+      TimeWindow.foreach(__v => __obj.updateDynamic("TimeWindow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceEvaluationFilters]
+    }
+  }
+
   /** Filters the results by resource account ID, region, resource ID, and resource name.
     */
   @js.native
@@ -5693,28 +6283,31 @@ package object configservice {
     }
   }
 
-  /** Provides the Config rule owner (Amazon Web Services or customer), the rule identifier, and the events that trigger the evaluation of your Amazon Web Services resources.
+  /** Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule identifier, and the events that cause the evaluation of your Amazon Web Services resources.
     */
   @js.native
   trait Source extends js.Object {
     var Owner: Owner
-    var SourceIdentifier: StringWithCharLimit256
+    var CustomPolicyDetails: js.UndefOr[CustomPolicyDetails]
     var SourceDetails: js.UndefOr[SourceDetails]
+    var SourceIdentifier: js.UndefOr[StringWithCharLimit256]
   }
 
   object Source {
     @inline
     def apply(
         Owner: Owner,
-        SourceIdentifier: StringWithCharLimit256,
-        SourceDetails: js.UndefOr[SourceDetails] = js.undefined
+        CustomPolicyDetails: js.UndefOr[CustomPolicyDetails] = js.undefined,
+        SourceDetails: js.UndefOr[SourceDetails] = js.undefined,
+        SourceIdentifier: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): Source = {
       val __obj = js.Dynamic.literal(
-        "Owner" -> Owner.asInstanceOf[js.Any],
-        "SourceIdentifier" -> SourceIdentifier.asInstanceOf[js.Any]
+        "Owner" -> Owner.asInstanceOf[js.Any]
       )
 
+      CustomPolicyDetails.foreach(__v => __obj.updateDynamic("CustomPolicyDetails")(__v.asInstanceOf[js.Any]))
       SourceDetails.foreach(__v => __obj.updateDynamic("SourceDetails")(__v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.updateDynamic("SourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Source]
     }
   }
@@ -5853,6 +6446,52 @@ package object configservice {
     }
   }
 
+  @js.native
+  trait StartResourceEvaluationRequest extends js.Object {
+    var EvaluationMode: EvaluationMode
+    var ResourceDetails: ResourceDetails
+    var ClientToken: js.UndefOr[ClientToken]
+    var EvaluationContext: js.UndefOr[EvaluationContext]
+    var EvaluationTimeout: js.UndefOr[EvaluationTimeout]
+  }
+
+  object StartResourceEvaluationRequest {
+    @inline
+    def apply(
+        EvaluationMode: EvaluationMode,
+        ResourceDetails: ResourceDetails,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        EvaluationContext: js.UndefOr[EvaluationContext] = js.undefined,
+        EvaluationTimeout: js.UndefOr[EvaluationTimeout] = js.undefined
+    ): StartResourceEvaluationRequest = {
+      val __obj = js.Dynamic.literal(
+        "EvaluationMode" -> EvaluationMode.asInstanceOf[js.Any],
+        "ResourceDetails" -> ResourceDetails.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      EvaluationContext.foreach(__v => __obj.updateDynamic("EvaluationContext")(__v.asInstanceOf[js.Any]))
+      EvaluationTimeout.foreach(__v => __obj.updateDynamic("EvaluationTimeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartResourceEvaluationRequest]
+    }
+  }
+
+  @js.native
+  trait StartResourceEvaluationResponse extends js.Object {
+    var ResourceEvaluationId: js.UndefOr[ResourceEvaluationId]
+  }
+
+  object StartResourceEvaluationResponse {
+    @inline
+    def apply(
+        ResourceEvaluationId: js.UndefOr[ResourceEvaluationId] = js.undefined
+    ): StartResourceEvaluationResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourceEvaluationId.foreach(__v => __obj.updateDynamic("ResourceEvaluationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartResourceEvaluationResponse]
+    }
+  }
+
   /** The static value of the resource.
     */
   @js.native
@@ -5872,7 +6511,7 @@ package object configservice {
     }
   }
 
-  /** Status filter object to filter results based on specific member account ID or status type for an organization config rule.
+  /** Status filter object to filter results based on specific member account ID or status type for an organization Config rule.
     */
   @js.native
   trait StatusDetailFilters extends js.Object {
@@ -6011,6 +6650,50 @@ package object configservice {
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  /** This API allows you to create a conformance pack template with an Amazon Web Services Systems Manager document (SSM document). To deploy a conformance pack using an SSM document, first create an SSM document with conformance pack content, and then provide the <code>DocumentName</code> in the [[https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html|PutConformancePack API]]. You can also provide the <code>DocumentVersion</code>. The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document and the version of the SSM document.
+    */
+  @js.native
+  trait TemplateSSMDocumentDetails extends js.Object {
+    var DocumentName: SSMDocumentName
+    var DocumentVersion: js.UndefOr[SSMDocumentVersion]
+  }
+
+  object TemplateSSMDocumentDetails {
+    @inline
+    def apply(
+        DocumentName: SSMDocumentName,
+        DocumentVersion: js.UndefOr[SSMDocumentVersion] = js.undefined
+    ): TemplateSSMDocumentDetails = {
+      val __obj = js.Dynamic.literal(
+        "DocumentName" -> DocumentName.asInstanceOf[js.Any]
+      )
+
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateSSMDocumentDetails]
+    }
+  }
+
+  /** Filters evaluation results based on start and end times.
+    */
+  @js.native
+  trait TimeWindow extends js.Object {
+    var EndTime: js.UndefOr[Date]
+    var StartTime: js.UndefOr[Date]
+  }
+
+  object TimeWindow {
+    @inline
+    def apply(
+        EndTime: js.UndefOr[Date] = js.undefined,
+        StartTime: js.UndefOr[Date] = js.undefined
+    ): TimeWindow = {
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeWindow]
     }
   }
 

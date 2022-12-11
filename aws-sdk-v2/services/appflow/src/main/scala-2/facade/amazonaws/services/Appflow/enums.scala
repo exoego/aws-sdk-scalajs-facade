@@ -20,12 +20,41 @@ object AmplitudeConnectorOperator {
 }
 
 @js.native
+sealed trait AuthenticationType extends js.Any
+object AuthenticationType {
+  val OAUTH2 = "OAUTH2".asInstanceOf[AuthenticationType]
+  val APIKEY = "APIKEY".asInstanceOf[AuthenticationType]
+  val BASIC = "BASIC".asInstanceOf[AuthenticationType]
+  val CUSTOM = "CUSTOM".asInstanceOf[AuthenticationType]
+
+  @inline def values: js.Array[AuthenticationType] = js.Array(OAUTH2, APIKEY, BASIC, CUSTOM)
+}
+
+@js.native
+sealed trait CatalogType extends js.Any
+object CatalogType {
+  val GLUE = "GLUE".asInstanceOf[CatalogType]
+
+  @inline def values: js.Array[CatalogType] = js.Array(GLUE)
+}
+
+@js.native
 sealed trait ConnectionMode extends js.Any
 object ConnectionMode {
   val Public = "Public".asInstanceOf[ConnectionMode]
   val Private = "Private".asInstanceOf[ConnectionMode]
 
   @inline def values: js.Array[ConnectionMode] = js.Array(Public, Private)
+}
+
+/** The type of provisioning that the connector supports, such as Lambda.
+  */
+@js.native
+sealed trait ConnectorProvisioningType extends js.Any
+object ConnectorProvisioningType {
+  val LAMBDA = "LAMBDA".asInstanceOf[ConnectorProvisioningType]
+
+  @inline def values: js.Array[ConnectorProvisioningType] = js.Array(LAMBDA)
 }
 
 @js.native
@@ -53,6 +82,7 @@ object ConnectorType {
   val Honeycode = "Honeycode".asInstanceOf[ConnectorType]
   val CustomerProfiles = "CustomerProfiles".asInstanceOf[ConnectorType]
   val SAPOData = "SAPOData".asInstanceOf[ConnectorType]
+  val CustomConnector = "CustomConnector".asInstanceOf[ConnectorType]
 
   @inline def values: js.Array[ConnectorType] = js.Array(
     Salesforce,
@@ -76,7 +106,8 @@ object ConnectorType {
     Upsolver,
     Honeycode,
     CustomerProfiles,
-    SAPOData
+    SAPOData,
+    CustomConnector
   )
 }
 
@@ -286,6 +317,24 @@ object MarketoConnectorOperator {
 }
 
 @js.native
+sealed trait OAuth2CustomPropType extends js.Any
+object OAuth2CustomPropType {
+  val TOKEN_URL = "TOKEN_URL".asInstanceOf[OAuth2CustomPropType]
+  val AUTH_URL = "AUTH_URL".asInstanceOf[OAuth2CustomPropType]
+
+  @inline def values: js.Array[OAuth2CustomPropType] = js.Array(TOKEN_URL, AUTH_URL)
+}
+
+@js.native
+sealed trait OAuth2GrantType extends js.Any
+object OAuth2GrantType {
+  val CLIENT_CREDENTIALS = "CLIENT_CREDENTIALS".asInstanceOf[OAuth2GrantType]
+  val AUTHORIZATION_CODE = "AUTHORIZATION_CODE".asInstanceOf[OAuth2GrantType]
+
+  @inline def values: js.Array[OAuth2GrantType] = js.Array(CLIENT_CREDENTIALS, AUTHORIZATION_CODE)
+}
+
+@js.native
 sealed trait Operator extends js.Any
 object Operator {
   val PROJECTION = "PROJECTION".asInstanceOf[Operator]
@@ -353,6 +402,8 @@ object OperatorPropertiesKeys {
   val CONCAT_FORMAT = "CONCAT_FORMAT".asInstanceOf[OperatorPropertiesKeys]
   val SUBFIELD_CATEGORY_MAP = "SUBFIELD_CATEGORY_MAP".asInstanceOf[OperatorPropertiesKeys]
   val EXCLUDE_SOURCE_FIELDS_LIST = "EXCLUDE_SOURCE_FIELDS_LIST".asInstanceOf[OperatorPropertiesKeys]
+  val INCLUDE_NEW_FIELDS = "INCLUDE_NEW_FIELDS".asInstanceOf[OperatorPropertiesKeys]
+  val ORDERED_PARTITION_KEYS_LIST = "ORDERED_PARTITION_KEYS_LIST".asInstanceOf[OperatorPropertiesKeys]
 
   @inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
     VALUE,
@@ -369,8 +420,69 @@ object OperatorPropertiesKeys {
     MATH_OPERATION_FIELDS_ORDER,
     CONCAT_FORMAT,
     SUBFIELD_CATEGORY_MAP,
-    EXCLUDE_SOURCE_FIELDS_LIST
+    EXCLUDE_SOURCE_FIELDS_LIST,
+    INCLUDE_NEW_FIELDS,
+    ORDERED_PARTITION_KEYS_LIST
   )
+}
+
+@js.native
+sealed trait Operators extends js.Any
+object Operators {
+  val PROJECTION = "PROJECTION".asInstanceOf[Operators]
+  val LESS_THAN = "LESS_THAN".asInstanceOf[Operators]
+  val GREATER_THAN = "GREATER_THAN".asInstanceOf[Operators]
+  val CONTAINS = "CONTAINS".asInstanceOf[Operators]
+  val BETWEEN = "BETWEEN".asInstanceOf[Operators]
+  val LESS_THAN_OR_EQUAL_TO = "LESS_THAN_OR_EQUAL_TO".asInstanceOf[Operators]
+  val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[Operators]
+  val EQUAL_TO = "EQUAL_TO".asInstanceOf[Operators]
+  val NOT_EQUAL_TO = "NOT_EQUAL_TO".asInstanceOf[Operators]
+  val ADDITION = "ADDITION".asInstanceOf[Operators]
+  val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[Operators]
+  val DIVISION = "DIVISION".asInstanceOf[Operators]
+  val SUBTRACTION = "SUBTRACTION".asInstanceOf[Operators]
+  val MASK_ALL = "MASK_ALL".asInstanceOf[Operators]
+  val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[Operators]
+  val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[Operators]
+  val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[Operators]
+  val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[Operators]
+  val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[Operators]
+  val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[Operators]
+  val NO_OP = "NO_OP".asInstanceOf[Operators]
+
+  @inline def values: js.Array[Operators] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    GREATER_THAN,
+    CONTAINS,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
+}
+
+@js.native
+sealed trait PathPrefix extends js.Any
+object PathPrefix {
+  val EXECUTION_ID = "EXECUTION_ID".asInstanceOf[PathPrefix]
+  val SCHEMA_VERSION = "SCHEMA_VERSION".asInstanceOf[PathPrefix]
+
+  @inline def values: js.Array[PathPrefix] = js.Array(EXECUTION_ID, SCHEMA_VERSION)
 }
 
 @js.native
@@ -575,6 +687,16 @@ object SalesforceConnectorOperator {
 }
 
 @js.native
+sealed trait SalesforceDataTransferApi extends js.Any
+object SalesforceDataTransferApi {
+  val AUTOMATIC = "AUTOMATIC".asInstanceOf[SalesforceDataTransferApi]
+  val BULKV2 = "BULKV2".asInstanceOf[SalesforceDataTransferApi]
+  val REST_SYNC = "REST_SYNC".asInstanceOf[SalesforceDataTransferApi]
+
+  @inline def values: js.Array[SalesforceDataTransferApi] = js.Array(AUTOMATIC, BULKV2, REST_SYNC)
+}
+
+@js.native
 sealed trait ScheduleFrequencyType extends js.Any
 object ScheduleFrequencyType {
   val BYMINUTE = "BYMINUTE".asInstanceOf[ScheduleFrequencyType]
@@ -728,10 +850,12 @@ object TaskType {
   val Map_all = "Map_all".asInstanceOf[TaskType]
   val Mask = "Mask".asInstanceOf[TaskType]
   val Merge = "Merge".asInstanceOf[TaskType]
+  val Passthrough = "Passthrough".asInstanceOf[TaskType]
   val Truncate = "Truncate".asInstanceOf[TaskType]
   val Validate = "Validate".asInstanceOf[TaskType]
+  val Partition = "Partition".asInstanceOf[TaskType]
 
-  @inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Truncate, Validate)
+  @inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Passthrough, Truncate, Validate, Partition)
 }
 
 @js.native
@@ -838,8 +962,9 @@ object WriteOperationType {
   val INSERT = "INSERT".asInstanceOf[WriteOperationType]
   val UPSERT = "UPSERT".asInstanceOf[WriteOperationType]
   val UPDATE = "UPDATE".asInstanceOf[WriteOperationType]
+  val DELETE = "DELETE".asInstanceOf[WriteOperationType]
 
-  @inline def values: js.Array[WriteOperationType] = js.Array(INSERT, UPSERT, UPDATE)
+  @inline def values: js.Array[WriteOperationType] = js.Array(INSERT, UPSERT, UPDATE, DELETE)
 }
 
 @js.native

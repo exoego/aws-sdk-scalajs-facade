@@ -47,6 +47,15 @@ object CharLengthSemantics {
 }
 
 @js.native
+sealed trait CollectorStatus extends js.Any
+object CollectorStatus {
+  val UNREGISTERED = "UNREGISTERED".asInstanceOf[CollectorStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[CollectorStatus]
+
+  @inline def values: js.Array[CollectorStatus] = js.Array(UNREGISTERED, ACTIVE)
+}
+
+@js.native
 sealed trait CompressionTypeValue extends js.Any
 object CompressionTypeValue {
   val none = "none".asInstanceOf[CompressionTypeValue]
@@ -276,4 +285,14 @@ object TargetDbType {
   val `multiple-databases` = "multiple-databases".asInstanceOf[TargetDbType]
 
   @inline def values: js.Array[TargetDbType] = js.Array(`specific-database`, `multiple-databases`)
+}
+
+@js.native
+sealed trait VersionStatus extends js.Any
+object VersionStatus {
+  val UP_TO_DATE = "UP_TO_DATE".asInstanceOf[VersionStatus]
+  val OUTDATED = "OUTDATED".asInstanceOf[VersionStatus]
+  val UNSUPPORTED = "UNSUPPORTED".asInstanceOf[VersionStatus]
+
+  @inline def values: js.Array[VersionStatus] = js.Array(UP_TO_DATE, OUTDATED, UNSUPPORTED)
 }

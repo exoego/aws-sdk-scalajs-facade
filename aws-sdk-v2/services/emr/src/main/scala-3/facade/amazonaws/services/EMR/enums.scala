@@ -298,6 +298,14 @@ object PlacementGroupStrategy {
   inline def values: js.Array[PlacementGroupStrategy] = js.Array(SPREAD, PARTITION, CLUSTER, NONE)
 }
 
+type ReconfigurationType = "OVERWRITE" | "MERGE"
+object ReconfigurationType {
+  inline val OVERWRITE: "OVERWRITE" = "OVERWRITE"
+  inline val MERGE: "MERGE" = "MERGE"
+
+  inline def values: js.Array[ReconfigurationType] = js.Array(OVERWRITE, MERGE)
+}
+
 type RepoUpgradeOnBoot = "SECURITY" | "NONE"
 object RepoUpgradeOnBoot {
   inline val SECURITY: "SECURITY" = "SECURITY"

@@ -139,6 +139,15 @@ object DefaultEmailOptionType {
 }
 
 @js.native
+sealed trait DeletionProtectionType extends js.Any
+object DeletionProtectionType {
+  val ACTIVE = "ACTIVE".asInstanceOf[DeletionProtectionType]
+  val INACTIVE = "INACTIVE".asInstanceOf[DeletionProtectionType]
+
+  @inline def values: js.Array[DeletionProtectionType] = js.Array(ACTIVE, INACTIVE)
+}
+
+@js.native
 sealed trait DeliveryMediumType extends js.Any
 object DeliveryMediumType {
   val SMS = "SMS".asInstanceOf[DeliveryMediumType]
@@ -190,10 +199,11 @@ object EventFilterType {
 @js.native
 sealed trait EventResponseType extends js.Any
 object EventResponseType {
-  val Success = "Success".asInstanceOf[EventResponseType]
-  val Failure = "Failure".asInstanceOf[EventResponseType]
+  val Pass = "Pass".asInstanceOf[EventResponseType]
+  val Fail = "Fail".asInstanceOf[EventResponseType]
+  val InProgress = "InProgress".asInstanceOf[EventResponseType]
 
-  @inline def values: js.Array[EventResponseType] = js.Array(Success, Failure)
+  @inline def values: js.Array[EventResponseType] = js.Array(Pass, Fail, InProgress)
 }
 
 @js.native
@@ -202,8 +212,10 @@ object EventType {
   val SignIn = "SignIn".asInstanceOf[EventType]
   val SignUp = "SignUp".asInstanceOf[EventType]
   val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
+  val PasswordChange = "PasswordChange".asInstanceOf[EventType]
+  val ResendCode = "ResendCode".asInstanceOf[EventType]
 
-  @inline def values: js.Array[EventType] = js.Array(SignIn, SignUp, ForgotPassword)
+  @inline def values: js.Array[EventType] = js.Array(SignIn, SignUp, ForgotPassword, PasswordChange, ResendCode)
 }
 
 @js.native

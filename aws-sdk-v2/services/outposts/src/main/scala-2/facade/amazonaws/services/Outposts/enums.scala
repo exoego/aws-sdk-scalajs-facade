@@ -12,6 +12,23 @@ object AddressType {
 }
 
 @js.native
+sealed trait AssetState extends js.Any
+object AssetState {
+  val ACTIVE = "ACTIVE".asInstanceOf[AssetState]
+  val RETIRING = "RETIRING".asInstanceOf[AssetState]
+
+  @inline def values: js.Array[AssetState] = js.Array(ACTIVE, RETIRING)
+}
+
+@js.native
+sealed trait AssetType extends js.Any
+object AssetType {
+  val COMPUTE = "COMPUTE".asInstanceOf[AssetType]
+
+  @inline def values: js.Array[AssetType] = js.Array(COMPUTE)
+}
+
+@js.native
 sealed trait CatalogItemClass extends js.Any
 object CatalogItemClass {
   val RACK = "RACK".asInstanceOf[CatalogItemClass]
@@ -27,6 +44,16 @@ object CatalogItemStatus {
   val DISCONTINUED = "DISCONTINUED".asInstanceOf[CatalogItemStatus]
 
   @inline def values: js.Array[CatalogItemStatus] = js.Array(AVAILABLE, DISCONTINUED)
+}
+
+@js.native
+sealed trait ComputeAssetState extends js.Any
+object ComputeAssetState {
+  val ACTIVE = "ACTIVE".asInstanceOf[ComputeAssetState]
+  val ISOLATED = "ISOLATED".asInstanceOf[ComputeAssetState]
+  val RETIRING = "RETIRING".asInstanceOf[ComputeAssetState]
+
+  @inline def values: js.Array[ComputeAssetState] = js.Array(ACTIVE, ISOLATED, RETIRING)
 }
 
 @js.native
@@ -139,8 +166,9 @@ object PaymentOption {
 sealed trait PaymentTerm extends js.Any
 object PaymentTerm {
   val THREE_YEARS = "THREE_YEARS".asInstanceOf[PaymentTerm]
+  val ONE_YEAR = "ONE_YEAR".asInstanceOf[PaymentTerm]
 
-  @inline def values: js.Array[PaymentTerm] = js.Array(THREE_YEARS)
+  @inline def values: js.Array[PaymentTerm] = js.Array(THREE_YEARS, ONE_YEAR)
 }
 
 @js.native
@@ -180,6 +208,17 @@ object PowerPhase {
   val THREE_PHASE = "THREE_PHASE".asInstanceOf[PowerPhase]
 
   @inline def values: js.Array[PowerPhase] = js.Array(SINGLE_PHASE, THREE_PHASE)
+}
+
+@js.native
+sealed trait ShipmentCarrier extends js.Any
+object ShipmentCarrier {
+  val DHL = "DHL".asInstanceOf[ShipmentCarrier]
+  val DBS = "DBS".asInstanceOf[ShipmentCarrier]
+  val FEDEX = "FEDEX".asInstanceOf[ShipmentCarrier]
+  val UPS = "UPS".asInstanceOf[ShipmentCarrier]
+
+  @inline def values: js.Array[ShipmentCarrier] = js.Array(DHL, DBS, FEDEX, UPS)
 }
 
 @js.native

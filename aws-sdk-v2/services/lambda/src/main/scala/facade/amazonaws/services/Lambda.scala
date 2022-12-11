@@ -13,6 +13,9 @@ package object lambda {
   type AdditionalVersionWeights = js.Dictionary[Weight]
   type Alias = String
   type AliasList = js.Array[AliasConfiguration]
+  type AllowCredentials = Boolean
+  type AllowMethodsList = js.Array[Method]
+  type AllowOriginsList = js.Array[Origin]
   type ArchitecturesList = js.Array[Architecture]
   type Arn = String
   type BatchSize = Int
@@ -34,6 +37,7 @@ package object lambda {
   type EnvironmentVariableName = String
   type EnvironmentVariableValue = String
   type EnvironmentVariables = js.Dictionary[EnvironmentVariableValue]
+  type EphemeralStorageSize = Int
   type EventSourceMappingsList = js.Array[EventSourceMappingConfiguration]
   type EventSourceToken = String
   type FileSystemArn = String
@@ -45,7 +49,12 @@ package object lambda {
   type FunctionList = js.Array[FunctionConfiguration]
   type FunctionName = String
   type FunctionResponseTypeList = js.Array[FunctionResponseType]
+  type FunctionUrl = String
+  type FunctionUrlConfigList = js.Array[FunctionUrlConfig]
+  type FunctionUrlQualifier = String
   type Handler = String
+  type Header = String
+  type HeadersList = js.Array[Header]
   type HttpStatus = Int
   type KMSKeyArn = String
   type LastUpdateStatusReason = String
@@ -62,7 +71,9 @@ package object lambda {
   type LicenseInfo = String
   type LocalMountPath = String
   type MasterRegion = String
+  type MaxAge = Int
   type MaxFunctionEventInvokeConfigListItems = Int
+  type MaxItems = Int
   type MaxLayerListItems = Int
   type MaxListItems = Int
   type MaxProvisionedConcurrencyConfigListItems = Int
@@ -72,15 +83,18 @@ package object lambda {
   type MaximumRetryAttempts = Int
   type MaximumRetryAttemptsEventSourceMapping = Int
   type MemorySize = Int
+  type Method = String
   type NameSpacedFunctionArn = String
   type NamespacedFunctionName = String
   type NamespacedStatementId = String
   type NonNegativeInteger = Int
   type OrganizationId = String
+  type Origin = String
   type ParallelizationFactor = Int
   type Pattern = String
   type PositiveInteger = Int
   type Principal = String
+  type PrincipalOrgID = String
   type ProvisionedConcurrencyConfigList = js.Array[ProvisionedConcurrencyConfigListItem]
   type Qualifier = String
   type Queue = String
@@ -126,6 +140,7 @@ package object lambda {
     @inline def createCodeSigningConfigFuture(params: CreateCodeSigningConfigRequest): Future[CreateCodeSigningConfigResponse] = service.createCodeSigningConfig(params).promise().toFuture
     @inline def createEventSourceMappingFuture(params: CreateEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.createEventSourceMapping(params).promise().toFuture
     @inline def createFunctionFuture(params: CreateFunctionRequest): Future[FunctionConfiguration] = service.createFunction(params).promise().toFuture
+    @inline def createFunctionUrlConfigFuture(params: CreateFunctionUrlConfigRequest): Future[CreateFunctionUrlConfigResponse] = service.createFunctionUrlConfig(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[js.Object] = service.deleteAlias(params).promise().toFuture
     @inline def deleteCodeSigningConfigFuture(params: DeleteCodeSigningConfigRequest): Future[DeleteCodeSigningConfigResponse] = service.deleteCodeSigningConfig(params).promise().toFuture
     @inline def deleteEventSourceMappingFuture(params: DeleteEventSourceMappingRequest): Future[EventSourceMappingConfiguration] = service.deleteEventSourceMapping(params).promise().toFuture
@@ -133,6 +148,7 @@ package object lambda {
     @inline def deleteFunctionConcurrencyFuture(params: DeleteFunctionConcurrencyRequest): Future[js.Object] = service.deleteFunctionConcurrency(params).promise().toFuture
     @inline def deleteFunctionEventInvokeConfigFuture(params: DeleteFunctionEventInvokeConfigRequest): Future[js.Object] = service.deleteFunctionEventInvokeConfig(params).promise().toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] = service.deleteFunction(params).promise().toFuture
+    @inline def deleteFunctionUrlConfigFuture(params: DeleteFunctionUrlConfigRequest): Future[js.Object] = service.deleteFunctionUrlConfig(params).promise().toFuture
     @inline def deleteLayerVersionFuture(params: DeleteLayerVersionRequest): Future[js.Object] = service.deleteLayerVersion(params).promise().toFuture
     @inline def deleteProvisionedConcurrencyConfigFuture(params: DeleteProvisionedConcurrencyConfigRequest): Future[js.Object] = service.deleteProvisionedConcurrencyConfig(params).promise().toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsRequest): Future[GetAccountSettingsResponse] = service.getAccountSettings(params).promise().toFuture
@@ -144,6 +160,7 @@ package object lambda {
     @inline def getFunctionConfigurationFuture(params: GetFunctionConfigurationRequest): Future[FunctionConfiguration] = service.getFunctionConfiguration(params).promise().toFuture
     @inline def getFunctionEventInvokeConfigFuture(params: GetFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.getFunctionEventInvokeConfig(params).promise().toFuture
     @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] = service.getFunction(params).promise().toFuture
+    @inline def getFunctionUrlConfigFuture(params: GetFunctionUrlConfigRequest): Future[GetFunctionUrlConfigResponse] = service.getFunctionUrlConfig(params).promise().toFuture
     @inline def getLayerVersionByArnFuture(params: GetLayerVersionByArnRequest): Future[GetLayerVersionResponse] = service.getLayerVersionByArn(params).promise().toFuture
     @inline def getLayerVersionFuture(params: GetLayerVersionRequest): Future[GetLayerVersionResponse] = service.getLayerVersion(params).promise().toFuture
     @inline def getLayerVersionPolicyFuture(params: GetLayerVersionPolicyRequest): Future[GetLayerVersionPolicyResponse] = service.getLayerVersionPolicy(params).promise().toFuture
@@ -154,6 +171,7 @@ package object lambda {
     @inline def listCodeSigningConfigsFuture(params: ListCodeSigningConfigsRequest): Future[ListCodeSigningConfigsResponse] = service.listCodeSigningConfigs(params).promise().toFuture
     @inline def listEventSourceMappingsFuture(params: ListEventSourceMappingsRequest): Future[ListEventSourceMappingsResponse] = service.listEventSourceMappings(params).promise().toFuture
     @inline def listFunctionEventInvokeConfigsFuture(params: ListFunctionEventInvokeConfigsRequest): Future[ListFunctionEventInvokeConfigsResponse] = service.listFunctionEventInvokeConfigs(params).promise().toFuture
+    @inline def listFunctionUrlConfigsFuture(params: ListFunctionUrlConfigsRequest): Future[ListFunctionUrlConfigsResponse] = service.listFunctionUrlConfigs(params).promise().toFuture
     @inline def listFunctionsByCodeSigningConfigFuture(params: ListFunctionsByCodeSigningConfigRequest): Future[ListFunctionsByCodeSigningConfigResponse] = service.listFunctionsByCodeSigningConfig(params).promise().toFuture
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] = service.listFunctions(params).promise().toFuture
     @inline def listLayerVersionsFuture(params: ListLayerVersionsRequest): Future[ListLayerVersionsResponse] = service.listLayerVersions(params).promise().toFuture
@@ -177,6 +195,7 @@ package object lambda {
     @inline def updateFunctionCodeFuture(params: UpdateFunctionCodeRequest): Future[FunctionConfiguration] = service.updateFunctionCode(params).promise().toFuture
     @inline def updateFunctionConfigurationFuture(params: UpdateFunctionConfigurationRequest): Future[FunctionConfiguration] = service.updateFunctionConfiguration(params).promise().toFuture
     @inline def updateFunctionEventInvokeConfigFuture(params: UpdateFunctionEventInvokeConfigRequest): Future[FunctionEventInvokeConfig] = service.updateFunctionEventInvokeConfig(params).promise().toFuture
+    @inline def updateFunctionUrlConfigFuture(params: UpdateFunctionUrlConfigRequest): Future[UpdateFunctionUrlConfigResponse] = service.updateFunctionUrlConfig(params).promise().toFuture
 
   }
 
@@ -192,6 +211,7 @@ package object lambda {
     def createCodeSigningConfig(params: CreateCodeSigningConfigRequest): Request[CreateCodeSigningConfigResponse] = js.native
     def createEventSourceMapping(params: CreateEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
     def createFunction(params: CreateFunctionRequest): Request[FunctionConfiguration] = js.native
+    def createFunctionUrlConfig(params: CreateFunctionUrlConfigRequest): Request[CreateFunctionUrlConfigResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[js.Object] = js.native
     def deleteCodeSigningConfig(params: DeleteCodeSigningConfigRequest): Request[DeleteCodeSigningConfigResponse] = js.native
     def deleteEventSourceMapping(params: DeleteEventSourceMappingRequest): Request[EventSourceMappingConfiguration] = js.native
@@ -199,6 +219,7 @@ package object lambda {
     def deleteFunctionCodeSigningConfig(params: DeleteFunctionCodeSigningConfigRequest): Request[js.Object] = js.native
     def deleteFunctionConcurrency(params: DeleteFunctionConcurrencyRequest): Request[js.Object] = js.native
     def deleteFunctionEventInvokeConfig(params: DeleteFunctionEventInvokeConfigRequest): Request[js.Object] = js.native
+    def deleteFunctionUrlConfig(params: DeleteFunctionUrlConfigRequest): Request[js.Object] = js.native
     def deleteLayerVersion(params: DeleteLayerVersionRequest): Request[js.Object] = js.native
     def deleteProvisionedConcurrencyConfig(params: DeleteProvisionedConcurrencyConfigRequest): Request[js.Object] = js.native
     def getAccountSettings(params: GetAccountSettingsRequest): Request[GetAccountSettingsResponse] = js.native
@@ -210,6 +231,7 @@ package object lambda {
     def getFunctionConcurrency(params: GetFunctionConcurrencyRequest): Request[GetFunctionConcurrencyResponse] = js.native
     def getFunctionConfiguration(params: GetFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def getFunctionEventInvokeConfig(params: GetFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
+    def getFunctionUrlConfig(params: GetFunctionUrlConfigRequest): Request[GetFunctionUrlConfigResponse] = js.native
     def getLayerVersion(params: GetLayerVersionRequest): Request[GetLayerVersionResponse] = js.native
     def getLayerVersionByArn(params: GetLayerVersionByArnRequest): Request[GetLayerVersionResponse] = js.native
     def getLayerVersionPolicy(params: GetLayerVersionPolicyRequest): Request[GetLayerVersionPolicyResponse] = js.native
@@ -220,6 +242,7 @@ package object lambda {
     def listCodeSigningConfigs(params: ListCodeSigningConfigsRequest): Request[ListCodeSigningConfigsResponse] = js.native
     def listEventSourceMappings(params: ListEventSourceMappingsRequest): Request[ListEventSourceMappingsResponse] = js.native
     def listFunctionEventInvokeConfigs(params: ListFunctionEventInvokeConfigsRequest): Request[ListFunctionEventInvokeConfigsResponse] = js.native
+    def listFunctionUrlConfigs(params: ListFunctionUrlConfigsRequest): Request[ListFunctionUrlConfigsResponse] = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listFunctionsByCodeSigningConfig(params: ListFunctionsByCodeSigningConfigRequest): Request[ListFunctionsByCodeSigningConfigResponse] = js.native
     def listLayerVersions(params: ListLayerVersionsRequest): Request[ListLayerVersionsResponse] = js.native
@@ -243,6 +266,7 @@ package object lambda {
     def updateFunctionCode(params: UpdateFunctionCodeRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionConfiguration(params: UpdateFunctionConfigurationRequest): Request[FunctionConfiguration] = js.native
     def updateFunctionEventInvokeConfig(params: UpdateFunctionEventInvokeConfigRequest): Request[FunctionEventInvokeConfig] = js.native
+    def updateFunctionUrlConfig(params: UpdateFunctionUrlConfigRequest): Request[UpdateFunctionUrlConfigResponse] = js.native
   }
   object Lambda {
     @inline implicit def toOps(service: Lambda): LambdaOps = {
@@ -363,6 +387,8 @@ package object lambda {
     var Principal: Principal
     var StatementId: StatementId
     var EventSourceToken: js.UndefOr[EventSourceToken]
+    var FunctionUrlAuthType: js.UndefOr[FunctionUrlAuthType]
+    var PrincipalOrgID: js.UndefOr[PrincipalOrgID]
     var Qualifier: js.UndefOr[Qualifier]
     var RevisionId: js.UndefOr[String]
     var SourceAccount: js.UndefOr[SourceOwner]
@@ -377,6 +403,8 @@ package object lambda {
         Principal: Principal,
         StatementId: StatementId,
         EventSourceToken: js.UndefOr[EventSourceToken] = js.undefined,
+        FunctionUrlAuthType: js.UndefOr[FunctionUrlAuthType] = js.undefined,
+        PrincipalOrgID: js.UndefOr[PrincipalOrgID] = js.undefined,
         Qualifier: js.UndefOr[Qualifier] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined,
         SourceAccount: js.UndefOr[SourceOwner] = js.undefined,
@@ -390,6 +418,8 @@ package object lambda {
       )
 
       EventSourceToken.foreach(__v => __obj.updateDynamic("EventSourceToken")(__v.asInstanceOf[js.Any]))
+      FunctionUrlAuthType.foreach(__v => __obj.updateDynamic("FunctionUrlAuthType")(__v.asInstanceOf[js.Any]))
+      PrincipalOrgID.foreach(__v => __obj.updateDynamic("PrincipalOrgID")(__v.asInstanceOf[js.Any]))
       Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
@@ -484,6 +514,24 @@ package object lambda {
     }
   }
 
+  /** Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.
+    */
+  @js.native
+  trait AmazonManagedKafkaEventSourceConfig extends js.Object {
+    var ConsumerGroupId: js.UndefOr[URI]
+  }
+
+  object AmazonManagedKafkaEventSourceConfig {
+    @inline
+    def apply(
+        ConsumerGroupId: js.UndefOr[URI] = js.undefined
+    ): AmazonManagedKafkaEventSourceConfig = {
+      val __obj = js.Dynamic.literal()
+      ConsumerGroupId.foreach(__v => __obj.updateDynamic("ConsumerGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonManagedKafkaEventSourceConfig]
+    }
+  }
+
   /** Details about a [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html|Code signing configuration]].
     */
   @js.native
@@ -550,6 +598,39 @@ package object lambda {
       val __obj = js.Dynamic.literal()
       ReservedConcurrentExecutions.foreach(__v => __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Concurrency]
+    }
+  }
+
+  /** The [[https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS|cross-origin resource sharing (CORS)]] settings for your Lambda function URL. Use CORS to grant access to your function URL from any origin. You can also use CORS to control access for specific HTTP headers and methods in requests to your function URL.
+    */
+  @js.native
+  trait Cors extends js.Object {
+    var AllowCredentials: js.UndefOr[AllowCredentials]
+    var AllowHeaders: js.UndefOr[HeadersList]
+    var AllowMethods: js.UndefOr[AllowMethodsList]
+    var AllowOrigins: js.UndefOr[AllowOriginsList]
+    var ExposeHeaders: js.UndefOr[HeadersList]
+    var MaxAge: js.UndefOr[MaxAge]
+  }
+
+  object Cors {
+    @inline
+    def apply(
+        AllowCredentials: js.UndefOr[AllowCredentials] = js.undefined,
+        AllowHeaders: js.UndefOr[HeadersList] = js.undefined,
+        AllowMethods: js.UndefOr[AllowMethodsList] = js.undefined,
+        AllowOrigins: js.UndefOr[AllowOriginsList] = js.undefined,
+        ExposeHeaders: js.UndefOr[HeadersList] = js.undefined,
+        MaxAge: js.UndefOr[MaxAge] = js.undefined
+    ): Cors = {
+      val __obj = js.Dynamic.literal()
+      AllowCredentials.foreach(__v => __obj.updateDynamic("AllowCredentials")(__v.asInstanceOf[js.Any]))
+      AllowHeaders.foreach(__v => __obj.updateDynamic("AllowHeaders")(__v.asInstanceOf[js.Any]))
+      AllowMethods.foreach(__v => __obj.updateDynamic("AllowMethods")(__v.asInstanceOf[js.Any]))
+      AllowOrigins.foreach(__v => __obj.updateDynamic("AllowOrigins")(__v.asInstanceOf[js.Any]))
+      ExposeHeaders.foreach(__v => __obj.updateDynamic("ExposeHeaders")(__v.asInstanceOf[js.Any]))
+      MaxAge.foreach(__v => __obj.updateDynamic("MaxAge")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Cors]
     }
   }
 
@@ -627,6 +708,7 @@ package object lambda {
   @js.native
   trait CreateEventSourceMappingRequest extends js.Object {
     var FunctionName: FunctionName
+    var AmazonManagedKafkaEventSourceConfig: js.UndefOr[AmazonManagedKafkaEventSourceConfig]
     var BatchSize: js.UndefOr[BatchSize]
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
     var DestinationConfig: js.UndefOr[DestinationConfig]
@@ -640,6 +722,7 @@ package object lambda {
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var Queues: js.UndefOr[Queues]
     var SelfManagedEventSource: js.UndefOr[SelfManagedEventSource]
+    var SelfManagedKafkaEventSourceConfig: js.UndefOr[SelfManagedKafkaEventSourceConfig]
     var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
@@ -651,6 +734,7 @@ package object lambda {
     @inline
     def apply(
         FunctionName: FunctionName,
+        AmazonManagedKafkaEventSourceConfig: js.UndefOr[AmazonManagedKafkaEventSourceConfig] = js.undefined,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
@@ -664,6 +748,7 @@ package object lambda {
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined,
         SelfManagedEventSource: js.UndefOr[SelfManagedEventSource] = js.undefined,
+        SelfManagedKafkaEventSourceConfig: js.UndefOr[SelfManagedKafkaEventSourceConfig] = js.undefined,
         SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
@@ -674,6 +759,7 @@ package object lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
+      AmazonManagedKafkaEventSourceConfig.foreach(__v => __obj.updateDynamic("AmazonManagedKafkaEventSourceConfig")(__v.asInstanceOf[js.Any]))
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
@@ -687,6 +773,7 @@ package object lambda {
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
       SelfManagedEventSource.foreach(__v => __obj.updateDynamic("SelfManagedEventSource")(__v.asInstanceOf[js.Any]))
+      SelfManagedKafkaEventSourceConfig.foreach(__v => __obj.updateDynamic("SelfManagedKafkaEventSourceConfig")(__v.asInstanceOf[js.Any]))
       SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
@@ -706,6 +793,7 @@ package object lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var EphemeralStorage: js.UndefOr[EphemeralStorage]
     var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var Handler: js.UndefOr[Handler]
     var ImageConfig: js.UndefOr[ImageConfig]
@@ -715,6 +803,7 @@ package object lambda {
     var PackageType: js.UndefOr[PackageType]
     var Publish: js.UndefOr[Boolean]
     var Runtime: js.UndefOr[Runtime]
+    var SnapStart: js.UndefOr[SnapStart]
     var Tags: js.UndefOr[Tags]
     var Timeout: js.UndefOr[Timeout]
     var TracingConfig: js.UndefOr[TracingConfig]
@@ -732,6 +821,7 @@ package object lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        EphemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
         ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
@@ -741,6 +831,7 @@ package object lambda {
         PackageType: js.UndefOr[PackageType] = js.undefined,
         Publish: js.UndefOr[Boolean] = js.undefined,
         Runtime: js.UndefOr[Runtime] = js.undefined,
+        SnapStart: js.UndefOr[SnapStart] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
@@ -757,6 +848,7 @@ package object lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      EphemeralStorage.foreach(__v => __obj.updateDynamic("EphemeralStorage")(__v.asInstanceOf[js.Any]))
       FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
       ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
@@ -766,11 +858,69 @@ package object lambda {
       PackageType.foreach(__v => __obj.updateDynamic("PackageType")(__v.asInstanceOf[js.Any]))
       Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      SnapStart.foreach(__v => __obj.updateDynamic("SnapStart")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFunctionUrlConfigRequest extends js.Object {
+    var AuthType: FunctionUrlAuthType
+    var FunctionName: FunctionName
+    var Cors: js.UndefOr[Cors]
+    var Qualifier: js.UndefOr[FunctionUrlQualifier]
+  }
+
+  object CreateFunctionUrlConfigRequest {
+    @inline
+    def apply(
+        AuthType: FunctionUrlAuthType,
+        FunctionName: FunctionName,
+        Cors: js.UndefOr[Cors] = js.undefined,
+        Qualifier: js.UndefOr[FunctionUrlQualifier] = js.undefined
+    ): CreateFunctionUrlConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AuthType" -> AuthType.asInstanceOf[js.Any],
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFunctionUrlConfigRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFunctionUrlConfigResponse extends js.Object {
+    var AuthType: FunctionUrlAuthType
+    var CreationTime: Timestamp
+    var FunctionArn: FunctionArn
+    var FunctionUrl: FunctionUrl
+    var Cors: js.UndefOr[Cors]
+  }
+
+  object CreateFunctionUrlConfigResponse {
+    @inline
+    def apply(
+        AuthType: FunctionUrlAuthType,
+        CreationTime: Timestamp,
+        FunctionArn: FunctionArn,
+        FunctionUrl: FunctionUrl,
+        Cors: js.UndefOr[Cors] = js.undefined
+    ): CreateFunctionUrlConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthType" -> AuthType.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "FunctionUrl" -> FunctionUrl.asInstanceOf[js.Any]
+      )
+
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFunctionUrlConfigResponse]
     }
   }
 
@@ -934,6 +1084,27 @@ package object lambda {
   }
 
   @js.native
+  trait DeleteFunctionUrlConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: js.UndefOr[FunctionUrlQualifier]
+  }
+
+  object DeleteFunctionUrlConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: js.UndefOr[FunctionUrlQualifier] = js.undefined
+    ): DeleteFunctionUrlConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFunctionUrlConfigRequest]
+    }
+  }
+
+  @js.native
   trait DeleteLayerVersionRequest extends js.Object {
     var LayerName: LayerName
     var VersionNumber: LayerVersionNumber
@@ -1033,7 +1204,7 @@ package object lambda {
     }
   }
 
-  /** The results of an operation to update or read environment variables. If the operation is successful, the response contains the environment variables. If it failed, the response contains details about the error.
+  /** The results of an operation to update or read environment variables. If the operation succeeds, the response contains the environment variables. If it fails, the response contains details about the error.
     */
   @js.native
   trait EnvironmentResponse extends js.Object {
@@ -1054,10 +1225,30 @@ package object lambda {
     }
   }
 
+  /** The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.
+    */
+  @js.native
+  trait EphemeralStorage extends js.Object {
+    var Size: EphemeralStorageSize
+  }
+
+  object EphemeralStorage {
+    @inline
+    def apply(
+        Size: EphemeralStorageSize
+    ): EphemeralStorage = {
+      val __obj = js.Dynamic.literal(
+        "Size" -> Size.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EphemeralStorage]
+    }
+  }
+
   /** A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.
     */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
+    var AmazonManagedKafkaEventSourceConfig: js.UndefOr[AmazonManagedKafkaEventSourceConfig]
     var BatchSize: js.UndefOr[BatchSize]
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
     var DestinationConfig: js.UndefOr[DestinationConfig]
@@ -1073,6 +1264,7 @@ package object lambda {
     var ParallelizationFactor: js.UndefOr[ParallelizationFactor]
     var Queues: js.UndefOr[Queues]
     var SelfManagedEventSource: js.UndefOr[SelfManagedEventSource]
+    var SelfManagedKafkaEventSourceConfig: js.UndefOr[SelfManagedKafkaEventSourceConfig]
     var SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations]
     var StartingPosition: js.UndefOr[EventSourcePosition]
     var StartingPositionTimestamp: js.UndefOr[Date]
@@ -1086,6 +1278,7 @@ package object lambda {
   object EventSourceMappingConfiguration {
     @inline
     def apply(
+        AmazonManagedKafkaEventSourceConfig: js.UndefOr[AmazonManagedKafkaEventSourceConfig] = js.undefined,
         BatchSize: js.UndefOr[BatchSize] = js.undefined,
         BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
@@ -1101,6 +1294,7 @@ package object lambda {
         ParallelizationFactor: js.UndefOr[ParallelizationFactor] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined,
         SelfManagedEventSource: js.UndefOr[SelfManagedEventSource] = js.undefined,
+        SelfManagedKafkaEventSourceConfig: js.UndefOr[SelfManagedKafkaEventSourceConfig] = js.undefined,
         SourceAccessConfigurations: js.UndefOr[SourceAccessConfigurations] = js.undefined,
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined,
@@ -1111,6 +1305,7 @@ package object lambda {
         UUID: js.UndefOr[String] = js.undefined
     ): EventSourceMappingConfiguration = {
       val __obj = js.Dynamic.literal()
+      AmazonManagedKafkaEventSourceConfig.foreach(__v => __obj.updateDynamic("AmazonManagedKafkaEventSourceConfig")(__v.asInstanceOf[js.Any]))
       BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
       BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
@@ -1126,6 +1321,7 @@ package object lambda {
       ParallelizationFactor.foreach(__v => __obj.updateDynamic("ParallelizationFactor")(__v.asInstanceOf[js.Any]))
       Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
       SelfManagedEventSource.foreach(__v => __obj.updateDynamic("SelfManagedEventSource")(__v.asInstanceOf[js.Any]))
+      SelfManagedKafkaEventSourceConfig.foreach(__v => __obj.updateDynamic("SelfManagedKafkaEventSourceConfig")(__v.asInstanceOf[js.Any]))
       SourceAccessConfigurations.foreach(__v => __obj.updateDynamic("SourceAccessConfigurations")(__v.asInstanceOf[js.Any]))
       StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
       StartingPositionTimestamp.foreach(__v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any]))
@@ -1196,7 +1392,7 @@ package object lambda {
     }
   }
 
-  /** The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.
+  /** The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive deployment package directly, or specify the URI of a container image.
     */
   @js.native
   trait FunctionCode extends js.Object {
@@ -1263,6 +1459,7 @@ package object lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[EnvironmentResponse]
+    var EphemeralStorage: js.UndefOr[EphemeralStorage]
     var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var FunctionArn: js.UndefOr[NameSpacedFunctionArn]
     var FunctionName: js.UndefOr[NamespacedFunctionName]
@@ -1282,6 +1479,7 @@ package object lambda {
     var Runtime: js.UndefOr[Runtime]
     var SigningJobArn: js.UndefOr[Arn]
     var SigningProfileVersionArn: js.UndefOr[Arn]
+    var SnapStart: js.UndefOr[SnapStartResponse]
     var State: js.UndefOr[State]
     var StateReason: js.UndefOr[StateReason]
     var StateReasonCode: js.UndefOr[StateReasonCode]
@@ -1300,6 +1498,7 @@ package object lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[EnvironmentResponse] = js.undefined,
+        EphemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         FunctionArn: js.UndefOr[NameSpacedFunctionArn] = js.undefined,
         FunctionName: js.UndefOr[NamespacedFunctionName] = js.undefined,
@@ -1319,6 +1518,7 @@ package object lambda {
         Runtime: js.UndefOr[Runtime] = js.undefined,
         SigningJobArn: js.UndefOr[Arn] = js.undefined,
         SigningProfileVersionArn: js.UndefOr[Arn] = js.undefined,
+        SnapStart: js.UndefOr[SnapStartResponse] = js.undefined,
         State: js.UndefOr[State] = js.undefined,
         StateReason: js.UndefOr[StateReason] = js.undefined,
         StateReasonCode: js.UndefOr[StateReasonCode] = js.undefined,
@@ -1334,6 +1534,7 @@ package object lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      EphemeralStorage.foreach(__v => __obj.updateDynamic("EphemeralStorage")(__v.asInstanceOf[js.Any]))
       FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
@@ -1353,6 +1554,7 @@ package object lambda {
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
       SigningJobArn.foreach(__v => __obj.updateDynamic("SigningJobArn")(__v.asInstanceOf[js.Any]))
       SigningProfileVersionArn.foreach(__v => __obj.updateDynamic("SigningProfileVersionArn")(__v.asInstanceOf[js.Any]))
+      SnapStart.foreach(__v => __obj.updateDynamic("SnapStart")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       StateReasonCode.foreach(__v => __obj.updateDynamic("StateReasonCode")(__v.asInstanceOf[js.Any]))
@@ -1389,6 +1591,41 @@ package object lambda {
       MaximumEventAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumEventAgeInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRetryAttempts.foreach(__v => __obj.updateDynamic("MaximumRetryAttempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionEventInvokeConfig]
+    }
+  }
+
+  /** Details about a Lambda function URL.
+    */
+  @js.native
+  trait FunctionUrlConfig extends js.Object {
+    var AuthType: FunctionUrlAuthType
+    var CreationTime: Timestamp
+    var FunctionArn: FunctionArn
+    var FunctionUrl: FunctionUrl
+    var LastModifiedTime: Timestamp
+    var Cors: js.UndefOr[Cors]
+  }
+
+  object FunctionUrlConfig {
+    @inline
+    def apply(
+        AuthType: FunctionUrlAuthType,
+        CreationTime: Timestamp,
+        FunctionArn: FunctionArn,
+        FunctionUrl: FunctionUrl,
+        LastModifiedTime: Timestamp,
+        Cors: js.UndefOr[Cors] = js.undefined
+    ): FunctionUrlConfig = {
+      val __obj = js.Dynamic.literal(
+        "AuthType" -> AuthType.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "FunctionUrl" -> FunctionUrl.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionUrlConfig]
     }
   }
 
@@ -1652,6 +1889,60 @@ package object lambda {
   }
 
   @js.native
+  trait GetFunctionUrlConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Qualifier: js.UndefOr[FunctionUrlQualifier]
+  }
+
+  object GetFunctionUrlConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Qualifier: js.UndefOr[FunctionUrlQualifier] = js.undefined
+    ): GetFunctionUrlConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFunctionUrlConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionUrlConfigResponse extends js.Object {
+    var AuthType: FunctionUrlAuthType
+    var CreationTime: Timestamp
+    var FunctionArn: FunctionArn
+    var FunctionUrl: FunctionUrl
+    var LastModifiedTime: Timestamp
+    var Cors: js.UndefOr[Cors]
+  }
+
+  object GetFunctionUrlConfigResponse {
+    @inline
+    def apply(
+        AuthType: FunctionUrlAuthType,
+        CreationTime: Timestamp,
+        FunctionArn: FunctionArn,
+        FunctionUrl: FunctionUrl,
+        LastModifiedTime: Timestamp,
+        Cors: js.UndefOr[Cors] = js.undefined
+    ): GetFunctionUrlConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthType" -> AuthType.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "FunctionUrl" -> FunctionUrl.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFunctionUrlConfigResponse]
+    }
+  }
+
+  @js.native
   trait GetLayerVersionByArnRequest extends js.Object {
     var Arn: LayerVersionArn
   }
@@ -1858,7 +2149,7 @@ package object lambda {
     }
   }
 
-  /** Configuration values that override the container image Dockerfile settings. See [[https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms|Container settings]].
+  /** Configuration values that override the container image Dockerfile settings. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms|Container image settings]].
     */
   @js.native
   trait ImageConfig extends js.Object {
@@ -1882,7 +2173,7 @@ package object lambda {
     }
   }
 
-  /** Error response to GetFunctionConfiguration.
+  /** Error response to <code>GetFunctionConfiguration</code>.
     */
   @js.native
   trait ImageConfigError extends js.Object {
@@ -1903,7 +2194,7 @@ package object lambda {
     }
   }
 
-  /** Response to GetFunctionConfiguration request.
+  /** Response to a <code>GetFunctionConfiguration</code> request.
     */
   @js.native
   trait ImageConfigResponse extends js.Object {
@@ -2337,6 +2628,51 @@ package object lambda {
       FunctionEventInvokeConfigs.foreach(__v => __obj.updateDynamic("FunctionEventInvokeConfigs")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionEventInvokeConfigsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFunctionUrlConfigsRequest extends js.Object {
+    var FunctionName: FunctionName
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[MaxItems]
+  }
+
+  object ListFunctionUrlConfigsRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[MaxItems] = js.undefined
+    ): ListFunctionUrlConfigsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionUrlConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFunctionUrlConfigsResponse extends js.Object {
+    var FunctionUrlConfigs: FunctionUrlConfigList
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ListFunctionUrlConfigsResponse {
+    @inline
+    def apply(
+        FunctionUrlConfigs: FunctionUrlConfigList,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ListFunctionUrlConfigsResponse = {
+      val __obj = js.Dynamic.literal(
+        "FunctionUrlConfigs" -> FunctionUrlConfigs.asInstanceOf[js.Any]
+      )
+
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionUrlConfigsResponse]
     }
   }
 
@@ -3029,6 +3365,63 @@ package object lambda {
     }
   }
 
+  /** Specific configuration settings for a self-managed Apache Kafka event source.
+    */
+  @js.native
+  trait SelfManagedKafkaEventSourceConfig extends js.Object {
+    var ConsumerGroupId: js.UndefOr[URI]
+  }
+
+  object SelfManagedKafkaEventSourceConfig {
+    @inline
+    def apply(
+        ConsumerGroupId: js.UndefOr[URI] = js.undefined
+    ): SelfManagedKafkaEventSourceConfig = {
+      val __obj = js.Dynamic.literal()
+      ConsumerGroupId.foreach(__v => __obj.updateDynamic("ConsumerGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelfManagedKafkaEventSourceConfig]
+    }
+  }
+
+  /** The function's SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html|Reducing startup time with Lambda SnapStart]].
+    */
+  @js.native
+  trait SnapStart extends js.Object {
+    var ApplyOn: js.UndefOr[SnapStartApplyOn]
+  }
+
+  object SnapStart {
+    @inline
+    def apply(
+        ApplyOn: js.UndefOr[SnapStartApplyOn] = js.undefined
+    ): SnapStart = {
+      val __obj = js.Dynamic.literal()
+      ApplyOn.foreach(__v => __obj.updateDynamic("ApplyOn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapStart]
+    }
+  }
+
+  /** The function's [[https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html|SnapStart]] setting.
+    */
+  @js.native
+  trait SnapStartResponse extends js.Object {
+    var ApplyOn: js.UndefOr[SnapStartApplyOn]
+    var OptimizationStatus: js.UndefOr[SnapStartOptimizationStatus]
+  }
+
+  object SnapStartResponse {
+    @inline
+    def apply(
+        ApplyOn: js.UndefOr[SnapStartApplyOn] = js.undefined,
+        OptimizationStatus: js.UndefOr[SnapStartOptimizationStatus] = js.undefined
+    ): SnapStartResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplyOn.foreach(__v => __obj.updateDynamic("ApplyOn")(__v.asInstanceOf[js.Any]))
+      OptimizationStatus.foreach(__v => __obj.updateDynamic("OptimizationStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SnapStartResponse]
+    }
+  }
+
   /** To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.
     */
   @js.native
@@ -3311,6 +3704,7 @@ package object lambda {
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
     var Environment: js.UndefOr[Environment]
+    var EphemeralStorage: js.UndefOr[EphemeralStorage]
     var FileSystemConfigs: js.UndefOr[FileSystemConfigList]
     var Handler: js.UndefOr[Handler]
     var ImageConfig: js.UndefOr[ImageConfig]
@@ -3320,6 +3714,7 @@ package object lambda {
     var RevisionId: js.UndefOr[String]
     var Role: js.UndefOr[RoleArn]
     var Runtime: js.UndefOr[Runtime]
+    var SnapStart: js.UndefOr[SnapStart]
     var Timeout: js.UndefOr[Timeout]
     var TracingConfig: js.UndefOr[TracingConfig]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -3332,6 +3727,7 @@ package object lambda {
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         Environment: js.UndefOr[Environment] = js.undefined,
+        EphemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         FileSystemConfigs: js.UndefOr[FileSystemConfigList] = js.undefined,
         Handler: js.UndefOr[Handler] = js.undefined,
         ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
@@ -3341,6 +3737,7 @@ package object lambda {
         RevisionId: js.UndefOr[String] = js.undefined,
         Role: js.UndefOr[RoleArn] = js.undefined,
         Runtime: js.UndefOr[Runtime] = js.undefined,
+        SnapStart: js.UndefOr[SnapStart] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
         TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -3352,6 +3749,7 @@ package object lambda {
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      EphemeralStorage.foreach(__v => __obj.updateDynamic("EphemeralStorage")(__v.asInstanceOf[js.Any]))
       FileSystemConfigs.foreach(__v => __obj.updateDynamic("FileSystemConfigs")(__v.asInstanceOf[js.Any]))
       Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
       ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
@@ -3361,6 +3759,7 @@ package object lambda {
       RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      SnapStart.foreach(__v => __obj.updateDynamic("SnapStart")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -3398,7 +3797,67 @@ package object lambda {
     }
   }
 
-  /** The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|VPC Settings]].
+  @js.native
+  trait UpdateFunctionUrlConfigRequest extends js.Object {
+    var FunctionName: FunctionName
+    var AuthType: js.UndefOr[FunctionUrlAuthType]
+    var Cors: js.UndefOr[Cors]
+    var Qualifier: js.UndefOr[FunctionUrlQualifier]
+  }
+
+  object UpdateFunctionUrlConfigRequest {
+    @inline
+    def apply(
+        FunctionName: FunctionName,
+        AuthType: js.UndefOr[FunctionUrlAuthType] = js.undefined,
+        Cors: js.UndefOr[Cors] = js.undefined,
+        Qualifier: js.UndefOr[FunctionUrlQualifier] = js.undefined
+    ): UpdateFunctionUrlConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionName" -> FunctionName.asInstanceOf[js.Any]
+      )
+
+      AuthType.foreach(__v => __obj.updateDynamic("AuthType")(__v.asInstanceOf[js.Any]))
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFunctionUrlConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFunctionUrlConfigResponse extends js.Object {
+    var AuthType: FunctionUrlAuthType
+    var CreationTime: Timestamp
+    var FunctionArn: FunctionArn
+    var FunctionUrl: FunctionUrl
+    var LastModifiedTime: Timestamp
+    var Cors: js.UndefOr[Cors]
+  }
+
+  object UpdateFunctionUrlConfigResponse {
+    @inline
+    def apply(
+        AuthType: FunctionUrlAuthType,
+        CreationTime: Timestamp,
+        FunctionArn: FunctionArn,
+        FunctionUrl: FunctionUrl,
+        LastModifiedTime: Timestamp,
+        Cors: js.UndefOr[Cors] = js.undefined
+    ): UpdateFunctionUrlConfigResponse = {
+      val __obj = js.Dynamic.literal(
+        "AuthType" -> AuthType.asInstanceOf[js.Any],
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "FunctionArn" -> FunctionArn.asInstanceOf[js.Any],
+        "FunctionUrl" -> FunctionUrl.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+
+      Cors.foreach(__v => __obj.updateDynamic("Cors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFunctionUrlConfigResponse]
+    }
+  }
+
+  /** The VPC security groups and subnets that are attached to a Lambda function. For more information, see [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html|Configuring a Lambda function to access resources in a VPC]].
     */
   @js.native
   trait VpcConfig extends js.Object {

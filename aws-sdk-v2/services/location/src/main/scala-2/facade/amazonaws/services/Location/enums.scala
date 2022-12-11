@@ -63,6 +63,19 @@ object PricingPlan {
 }
 
 @js.native
+sealed trait RouteMatrixErrorCode extends js.Any
+object RouteMatrixErrorCode {
+  val RouteNotFound = "RouteNotFound".asInstanceOf[RouteMatrixErrorCode]
+  val RouteTooLong = "RouteTooLong".asInstanceOf[RouteMatrixErrorCode]
+  val PositionsNotFound = "PositionsNotFound".asInstanceOf[RouteMatrixErrorCode]
+  val DestinationPositionNotFound = "DestinationPositionNotFound".asInstanceOf[RouteMatrixErrorCode]
+  val DeparturePositionNotFound = "DeparturePositionNotFound".asInstanceOf[RouteMatrixErrorCode]
+  val OtherValidationError = "OtherValidationError".asInstanceOf[RouteMatrixErrorCode]
+
+  @inline def values: js.Array[RouteMatrixErrorCode] = js.Array(RouteNotFound, RouteTooLong, PositionsNotFound, DestinationPositionNotFound, DeparturePositionNotFound, OtherValidationError)
+}
+
+@js.native
 sealed trait TravelMode extends js.Any
 object TravelMode {
   val Car = "Car".asInstanceOf[TravelMode]

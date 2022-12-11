@@ -129,6 +129,14 @@ object ProjectStatus {
   inline def values: js.Array[ProjectStatus] = js.Array(AVAILABLE, UPDATING)
 }
 
+type SegmentReferenceResourceType = "EXPERIMENT" | "LAUNCH"
+object SegmentReferenceResourceType {
+  inline val EXPERIMENT: "EXPERIMENT" = "EXPERIMENT"
+  inline val LAUNCH: "LAUNCH" = "LAUNCH"
+
+  inline def values: js.Array[SegmentReferenceResourceType] = js.Array(EXPERIMENT, LAUNCH)
+}
+
 type VariationValueType = "STRING" | "LONG" | "DOUBLE" | "BOOLEAN"
 object VariationValueType {
   inline val STRING: "STRING" = "STRING"

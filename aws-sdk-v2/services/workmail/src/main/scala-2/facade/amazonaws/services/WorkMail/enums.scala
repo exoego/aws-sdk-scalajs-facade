@@ -12,6 +12,24 @@ object AccessControlRuleEffect {
 }
 
 @js.native
+sealed trait AccessEffect extends js.Any
+object AccessEffect {
+  val ALLOW = "ALLOW".asInstanceOf[AccessEffect]
+  val DENY = "DENY".asInstanceOf[AccessEffect]
+
+  @inline def values: js.Array[AccessEffect] = js.Array(ALLOW, DENY)
+}
+
+@js.native
+sealed trait AvailabilityProviderType extends js.Any
+object AvailabilityProviderType {
+  val EWS = "EWS".asInstanceOf[AvailabilityProviderType]
+  val LAMBDA = "LAMBDA".asInstanceOf[AvailabilityProviderType]
+
+  @inline def values: js.Array[AvailabilityProviderType] = js.Array(EWS, LAMBDA)
+}
+
+@js.native
 sealed trait DnsRecordVerificationStatus extends js.Any
 object DnsRecordVerificationStatus {
   val PENDING = "PENDING".asInstanceOf[DnsRecordVerificationStatus]
@@ -41,6 +59,15 @@ object FolderName {
   val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
 
   @inline def values: js.Array[FolderName] = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
+}
+
+@js.native
+sealed trait ImpersonationRoleType extends js.Any
+object ImpersonationRoleType {
+  val FULL_ACCESS = "FULL_ACCESS".asInstanceOf[ImpersonationRoleType]
+  val READ_ONLY = "READ_ONLY".asInstanceOf[ImpersonationRoleType]
+
+  @inline def values: js.Array[ImpersonationRoleType] = js.Array(FULL_ACCESS, READ_ONLY)
 }
 
 @js.native

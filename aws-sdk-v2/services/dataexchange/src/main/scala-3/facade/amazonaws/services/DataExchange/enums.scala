@@ -2,15 +2,15 @@ package facade.amazonaws.services.dataexchange
 
 import scalajs.js
 
-/** The type of asset that is added to a data set.
-  */
-type AssetType = "S3_SNAPSHOT" | "REDSHIFT_DATA_SHARE" | "API_GATEWAY_API"
+type AssetType = "S3_SNAPSHOT" | "REDSHIFT_DATA_SHARE" | "API_GATEWAY_API" | "S3_DATA_ACCESS" | "LAKE_FORMATION_DATA_PERMISSION"
 object AssetType {
   inline val S3_SNAPSHOT: "S3_SNAPSHOT" = "S3_SNAPSHOT"
   inline val REDSHIFT_DATA_SHARE: "REDSHIFT_DATA_SHARE" = "REDSHIFT_DATA_SHARE"
   inline val API_GATEWAY_API: "API_GATEWAY_API" = "API_GATEWAY_API"
+  inline val S3_DATA_ACCESS: "S3_DATA_ACCESS" = "S3_DATA_ACCESS"
+  inline val LAKE_FORMATION_DATA_PERMISSION: "LAKE_FORMATION_DATA_PERMISSION" = "LAKE_FORMATION_DATA_PERMISSION"
 
-  inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT, REDSHIFT_DATA_SHARE, API_GATEWAY_API)
+  inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT, REDSHIFT_DATA_SHARE, API_GATEWAY_API, S3_DATA_ACCESS, LAKE_FORMATION_DATA_PERMISSION)
 }
 
 type Code = "ACCESS_DENIED_EXCEPTION" | "INTERNAL_SERVER_EXCEPTION" | "MALWARE_DETECTED" | "RESOURCE_NOT_FOUND_EXCEPTION" | "SERVICE_QUOTA_EXCEEDED_EXCEPTION" | "VALIDATION_EXCEPTION" | "MALWARE_SCAN_ENCRYPTED_FILE"
@@ -34,19 +34,30 @@ object Code {
   )
 }
 
-/** The name of the limit that was reached.
-  */
-type JobErrorLimitName = "Assets per revision" | "Asset size in GB" | "Amazon Redshift datashare assets per revision"
+type DatabaseLFTagPolicyPermission = "DESCRIBE"
+object DatabaseLFTagPolicyPermission {
+  inline val DESCRIBE: "DESCRIBE" = "DESCRIBE"
+
+  inline def values: js.Array[DatabaseLFTagPolicyPermission] = js.Array(DESCRIBE)
+}
+
+type JobErrorLimitName = "Assets per revision" | "Asset size in GB" | "Amazon Redshift datashare assets per revision" | "AWS Lake Formation data permission assets per revision" | "Amazon S3 data access assets per revision"
 object JobErrorLimitName {
   inline val `Assets per revision`: "Assets per revision" = "Assets per revision"
   inline val `Asset size in GB`: "Asset size in GB" = "Asset size in GB"
   inline val `Amazon Redshift datashare assets per revision`: "Amazon Redshift datashare assets per revision" = "Amazon Redshift datashare assets per revision"
+  inline val `AWS Lake Formation data permission assets per revision`: "AWS Lake Formation data permission assets per revision" = "AWS Lake Formation data permission assets per revision"
+  inline val `Amazon S3 data access assets per revision`: "Amazon S3 data access assets per revision" = "Amazon S3 data access assets per revision"
 
-  inline def values: js.Array[JobErrorLimitName] = js.Array(`Assets per revision`, `Asset size in GB`, `Amazon Redshift datashare assets per revision`)
+  inline def values: js.Array[JobErrorLimitName] = js.Array(
+    `Assets per revision`,
+    `Asset size in GB`,
+    `Amazon Redshift datashare assets per revision`,
+    `AWS Lake Formation data permission assets per revision`,
+    `Amazon S3 data access assets per revision`
+  )
 }
 
-/** The types of resource which the job error can apply to.
-  */
 type JobErrorResourceTypes = "REVISION" | "ASSET" | "DATA_SET"
 object JobErrorResourceTypes {
   inline val REVISION: "REVISION" = "REVISION"
@@ -56,8 +67,29 @@ object JobErrorResourceTypes {
   inline def values: js.Array[JobErrorResourceTypes] = js.Array(REVISION, ASSET, DATA_SET)
 }
 
-/** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
-  */
+type LFPermission = "DESCRIBE" | "SELECT"
+object LFPermission {
+  inline val DESCRIBE: "DESCRIBE" = "DESCRIBE"
+  inline val SELECT: "SELECT" = "SELECT"
+
+  inline def values: js.Array[LFPermission] = js.Array(DESCRIBE, SELECT)
+}
+
+type LFResourceType = "TABLE" | "DATABASE"
+object LFResourceType {
+  inline val TABLE: "TABLE" = "TABLE"
+  inline val DATABASE: "DATABASE" = "DATABASE"
+
+  inline def values: js.Array[LFResourceType] = js.Array(TABLE, DATABASE)
+}
+
+type LakeFormationDataPermissionType = "LFTagPolicy"
+object LakeFormationDataPermissionType {
+  inline val LFTagPolicy: "LFTagPolicy" = "LFTagPolicy"
+
+  inline def values: js.Array[LakeFormationDataPermissionType] = js.Array(LFTagPolicy)
+}
+
 type Origin = "OWNED" | "ENTITLED"
 object Origin {
   inline val OWNED: "OWNED" = "OWNED"
@@ -73,8 +105,6 @@ object ProtocolType {
   inline def values: js.Array[ProtocolType] = js.Array(REST)
 }
 
-/** The types of encryption supported in export jobs to Amazon S3.
-  */
 type ServerSideEncryptionTypes = "aws:kms" | "AES256"
 object ServerSideEncryptionTypes {
   inline val `aws:kms`: "aws:kms" = "aws:kms"
@@ -95,7 +125,15 @@ object State {
   inline def values: js.Array[State] = js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT)
 }
 
-type Type = "IMPORT_ASSETS_FROM_S3" | "IMPORT_ASSET_FROM_SIGNED_URL" | "EXPORT_ASSETS_TO_S3" | "EXPORT_ASSET_TO_SIGNED_URL" | "EXPORT_REVISIONS_TO_S3" | "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" | "IMPORT_ASSET_FROM_API_GATEWAY_API"
+type TableTagPolicyLFPermission = "DESCRIBE" | "SELECT"
+object TableTagPolicyLFPermission {
+  inline val DESCRIBE: "DESCRIBE" = "DESCRIBE"
+  inline val SELECT: "SELECT" = "SELECT"
+
+  inline def values: js.Array[TableTagPolicyLFPermission] = js.Array(DESCRIBE, SELECT)
+}
+
+type Type = "IMPORT_ASSETS_FROM_S3" | "IMPORT_ASSET_FROM_SIGNED_URL" | "EXPORT_ASSETS_TO_S3" | "EXPORT_ASSET_TO_SIGNED_URL" | "EXPORT_REVISIONS_TO_S3" | "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" | "IMPORT_ASSET_FROM_API_GATEWAY_API" | "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" | "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"
 object Type {
   inline val IMPORT_ASSETS_FROM_S3: "IMPORT_ASSETS_FROM_S3" = "IMPORT_ASSETS_FROM_S3"
   inline val IMPORT_ASSET_FROM_SIGNED_URL: "IMPORT_ASSET_FROM_SIGNED_URL" = "IMPORT_ASSET_FROM_SIGNED_URL"
@@ -104,6 +142,8 @@ object Type {
   inline val EXPORT_REVISIONS_TO_S3: "EXPORT_REVISIONS_TO_S3" = "EXPORT_REVISIONS_TO_S3"
   inline val IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES: "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES" = "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"
   inline val IMPORT_ASSET_FROM_API_GATEWAY_API: "IMPORT_ASSET_FROM_API_GATEWAY_API" = "IMPORT_ASSET_FROM_API_GATEWAY_API"
+  inline val CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET: "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET" = "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET"
+  inline val IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY: "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY" = "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"
 
   inline def values: js.Array[Type] = js.Array(
     IMPORT_ASSETS_FROM_S3,
@@ -112,6 +152,8 @@ object Type {
     EXPORT_ASSET_TO_SIGNED_URL,
     EXPORT_REVISIONS_TO_S3,
     IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES,
-    IMPORT_ASSET_FROM_API_GATEWAY_API
+    IMPORT_ASSET_FROM_API_GATEWAY_API,
+    CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET,
+    IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY
   )
 }

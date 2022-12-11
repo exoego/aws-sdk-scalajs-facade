@@ -32,6 +32,7 @@ package object auditmanager {
   type BatchDeleteDelegationByAssessmentErrors = js.Array[BatchDeleteDelegationByAssessmentError]
   type BatchImportEvidenceToAssessmentControlErrors = js.Array[BatchImportEvidenceToAssessmentControlError]
   type ChangeLogs = js.Array[ChangeLog]
+  type CloudTrailArn = String
   type ComplianceType = String
   type ControlCommentBody = String
   type ControlComments = js.Array[ControlComment]
@@ -85,6 +86,7 @@ package object auditmanager {
   type NonEmptyString = String
   type Notifications = js.Array[Notification]
   type NullableInteger = Int
+  type QueryStatement = String
   type Region = String
   type Resources = js.Array[Resource]
   type Roles = js.Array[Role]
@@ -736,7 +738,7 @@ package object auditmanager {
     }
   }
 
-  /** An error entity for the <code>AssessmentReportEvidence</code> API. This is used to provide more meaningful errors than a simple string message.
+  /** An error entity for assessment report evidence errors. This is used to provide more meaningful errors than a simple string message.
     */
   @js.native
   trait AssessmentReportEvidenceError extends js.Object {
@@ -1428,16 +1430,17 @@ package object auditmanager {
     */
   @js.native
   trait CreateAssessmentFrameworkControl extends js.Object {
-    var id: js.UndefOr[UUID]
+    var id: UUID
   }
 
   object CreateAssessmentFrameworkControl {
     @inline
     def apply(
-        id: js.UndefOr[UUID] = js.undefined
+        id: UUID
     ): CreateAssessmentFrameworkControl = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[CreateAssessmentFrameworkControl]
     }
   }
@@ -1516,6 +1519,7 @@ package object auditmanager {
     var assessmentId: UUID
     var name: AssessmentReportName
     var description: js.UndefOr[AssessmentReportDescription]
+    var queryStatement: js.UndefOr[QueryStatement]
   }
 
   object CreateAssessmentReportRequest {
@@ -1523,7 +1527,8 @@ package object auditmanager {
     def apply(
         assessmentId: UUID,
         name: AssessmentReportName,
-        description: js.UndefOr[AssessmentReportDescription] = js.undefined
+        description: js.UndefOr[AssessmentReportDescription] = js.undefined,
+        queryStatement: js.UndefOr[QueryStatement] = js.undefined
     ): CreateAssessmentReportRequest = {
       val __obj = js.Dynamic.literal(
         "assessmentId" -> assessmentId.asInstanceOf[js.Any],
@@ -1531,6 +1536,7 @@ package object auditmanager {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      queryStatement.foreach(__v => __obj.updateDynamic("queryStatement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssessmentReportRequest]
     }
   }
@@ -2090,6 +2096,33 @@ package object auditmanager {
       resourcesIncluded.foreach(__v => __obj.updateDynamic("resourcesIncluded")(__v.asInstanceOf[js.Any]))
       time.foreach(__v => __obj.updateDynamic("time")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Evidence]
+    }
+  }
+
+  /** The settings object that specifies whether evidence finder is enabled. This object also describes the related event data store, and the backfill status for populating the event data store with evidence data.
+    */
+  @js.native
+  trait EvidenceFinderEnablement extends js.Object {
+    var backfillStatus: js.UndefOr[EvidenceFinderBackfillStatus]
+    var enablementStatus: js.UndefOr[EvidenceFinderEnablementStatus]
+    var error: js.UndefOr[ErrorMessage]
+    var eventDataStoreArn: js.UndefOr[CloudTrailArn]
+  }
+
+  object EvidenceFinderEnablement {
+    @inline
+    def apply(
+        backfillStatus: js.UndefOr[EvidenceFinderBackfillStatus] = js.undefined,
+        enablementStatus: js.UndefOr[EvidenceFinderEnablementStatus] = js.undefined,
+        error: js.UndefOr[ErrorMessage] = js.undefined,
+        eventDataStoreArn: js.UndefOr[CloudTrailArn] = js.undefined
+    ): EvidenceFinderEnablement = {
+      val __obj = js.Dynamic.literal()
+      backfillStatus.foreach(__v => __obj.updateDynamic("backfillStatus")(__v.asInstanceOf[js.Any]))
+      enablementStatus.foreach(__v => __obj.updateDynamic("enablementStatus")(__v.asInstanceOf[js.Any]))
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      eventDataStoreArn.foreach(__v => __obj.updateDynamic("eventDataStoreArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvidenceFinderEnablement]
     }
   }
 
@@ -3523,6 +3556,7 @@ package object auditmanager {
   @js.native
   trait Resource extends js.Object {
     var arn: js.UndefOr[GenericArn]
+    var complianceCheck: js.UndefOr[String]
     var value: js.UndefOr[String]
   }
 
@@ -3530,10 +3564,12 @@ package object auditmanager {
     @inline
     def apply(
         arn: js.UndefOr[GenericArn] = js.undefined,
+        complianceCheck: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): Resource = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      complianceCheck.foreach(__v => __obj.updateDynamic("complianceCheck")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
@@ -3543,19 +3579,20 @@ package object auditmanager {
     */
   @js.native
   trait Role extends js.Object {
-    var roleArn: js.UndefOr[IamArn]
-    var roleType: js.UndefOr[RoleType]
+    var roleArn: IamArn
+    var roleType: RoleType
   }
 
   object Role {
     @inline
     def apply(
-        roleArn: js.UndefOr[IamArn] = js.undefined,
-        roleType: js.UndefOr[RoleType] = js.undefined
+        roleArn: IamArn,
+        roleType: RoleType
     ): Role = {
-      val __obj = js.Dynamic.literal()
-      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
-      roleType.foreach(__v => __obj.updateDynamic("roleType")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "roleType" -> roleType.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[Role]
     }
   }
@@ -3614,6 +3651,7 @@ package object auditmanager {
   trait Settings extends js.Object {
     var defaultAssessmentReportsDestination: js.UndefOr[AssessmentReportsDestination]
     var defaultProcessOwners: js.UndefOr[Roles]
+    var evidenceFinderEnablement: js.UndefOr[EvidenceFinderEnablement]
     var isAwsOrgEnabled: js.UndefOr[Boolean]
     var kmsKey: js.UndefOr[KmsKey]
     var snsTopic: js.UndefOr[SNSTopic]
@@ -3624,6 +3662,7 @@ package object auditmanager {
     def apply(
         defaultAssessmentReportsDestination: js.UndefOr[AssessmentReportsDestination] = js.undefined,
         defaultProcessOwners: js.UndefOr[Roles] = js.undefined,
+        evidenceFinderEnablement: js.UndefOr[EvidenceFinderEnablement] = js.undefined,
         isAwsOrgEnabled: js.UndefOr[Boolean] = js.undefined,
         kmsKey: js.UndefOr[KmsKey] = js.undefined,
         snsTopic: js.UndefOr[SNSTopic] = js.undefined
@@ -3631,6 +3670,7 @@ package object auditmanager {
       val __obj = js.Dynamic.literal()
       defaultAssessmentReportsDestination.foreach(__v => __obj.updateDynamic("defaultAssessmentReportsDestination")(__v.asInstanceOf[js.Any]))
       defaultProcessOwners.foreach(__v => __obj.updateDynamic("defaultProcessOwners")(__v.asInstanceOf[js.Any]))
+      evidenceFinderEnablement.foreach(__v => __obj.updateDynamic("evidenceFinderEnablement")(__v.asInstanceOf[js.Any]))
       isAwsOrgEnabled.foreach(__v => __obj.updateDynamic("isAwsOrgEnabled")(__v.asInstanceOf[js.Any]))
       kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
       snsTopic.foreach(__v => __obj.updateDynamic("snsTopic")(__v.asInstanceOf[js.Any]))
@@ -3638,7 +3678,7 @@ package object auditmanager {
     }
   }
 
-  /** The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
+  /** The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. To learn more about the supported keywords that you can use when mapping a control data source, see the following pages in the <i>Audit Manager User Guide</i>: * [[https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html|Config rules supported by Audit Manager]] * [[https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html|Security Hub controls supported by Audit Manager]] * [[https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html|API calls supported by Audit Manager]] * [[https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html|CloudTrail event names supported by Audit Manager]]
     */
   @js.native
   trait SourceKeyword extends js.Object {
@@ -3877,23 +3917,23 @@ package object auditmanager {
     */
   @js.native
   trait UpdateAssessmentFrameworkControlSet extends js.Object {
+    var controls: CreateAssessmentFrameworkControls
     var name: ControlSetName
-    var controls: js.UndefOr[CreateAssessmentFrameworkControls]
     var id: js.UndefOr[ControlSetName]
   }
 
   object UpdateAssessmentFrameworkControlSet {
     @inline
     def apply(
+        controls: CreateAssessmentFrameworkControls,
         name: ControlSetName,
-        controls: js.UndefOr[CreateAssessmentFrameworkControls] = js.undefined,
         id: js.UndefOr[ControlSetName] = js.undefined
     ): UpdateAssessmentFrameworkControlSet = {
       val __obj = js.Dynamic.literal(
+        "controls" -> controls.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      controls.foreach(__v => __obj.updateDynamic("controls")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssessmentFrameworkControlSet]
     }
@@ -4125,6 +4165,7 @@ package object auditmanager {
   trait UpdateSettingsRequest extends js.Object {
     var defaultAssessmentReportsDestination: js.UndefOr[AssessmentReportsDestination]
     var defaultProcessOwners: js.UndefOr[Roles]
+    var evidenceFinderEnabled: js.UndefOr[Boolean]
     var kmsKey: js.UndefOr[KmsKey]
     var snsTopic: js.UndefOr[SnsArn]
   }
@@ -4134,12 +4175,14 @@ package object auditmanager {
     def apply(
         defaultAssessmentReportsDestination: js.UndefOr[AssessmentReportsDestination] = js.undefined,
         defaultProcessOwners: js.UndefOr[Roles] = js.undefined,
+        evidenceFinderEnabled: js.UndefOr[Boolean] = js.undefined,
         kmsKey: js.UndefOr[KmsKey] = js.undefined,
         snsTopic: js.UndefOr[SnsArn] = js.undefined
     ): UpdateSettingsRequest = {
       val __obj = js.Dynamic.literal()
       defaultAssessmentReportsDestination.foreach(__v => __obj.updateDynamic("defaultAssessmentReportsDestination")(__v.asInstanceOf[js.Any]))
       defaultProcessOwners.foreach(__v => __obj.updateDynamic("defaultProcessOwners")(__v.asInstanceOf[js.Any]))
+      evidenceFinderEnabled.foreach(__v => __obj.updateDynamic("evidenceFinderEnabled")(__v.asInstanceOf[js.Any]))
       kmsKey.foreach(__v => __obj.updateDynamic("kmsKey")(__v.asInstanceOf[js.Any]))
       snsTopic.foreach(__v => __obj.updateDynamic("snsTopic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSettingsRequest]

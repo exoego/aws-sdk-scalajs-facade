@@ -9,7 +9,13 @@ import facade.amazonaws._
 
 package object drs {
   type ARN = String
+  type AccountID = String
+  type AccountIDs = js.Array[AccountID]
+  type Accounts = js.Array[Account]
+  type AwsAvailabilityZone = String
+  type AwsRegion = String
   type BoundedString = String
+  type ConversionMap = js.Dictionary[ebsSnapshot]
   type Cpus = js.Array[CPU]
   type DataReplicationInfoReplicatedDisks = js.Array[DataReplicationInfoReplicatedDisk]
   type DataReplicationInitiationSteps = js.Array[DataReplicationInitiationStep]
@@ -23,10 +29,13 @@ package object drs {
   type EbsVolumeID = String
   type IPsList = js.Array[BoundedString]
   type ISO8601DatetimeString = String
+  type ISO8601DurationString = String
   type JobID = String
   type JobLogs = js.Array[JobLog]
   type JobsList = js.Array[Job]
   type LargeBoundedString = String
+  type ListStagingAccountsRequestMaxResultsInteger = Int
+  type MaxResultsReplicatingSourceServers = Int
   type NetworkInterfaces = js.Array[NetworkInterface]
   type PITPolicy = js.Array[PITPolicyRule]
   type PaginationToken = String
@@ -47,9 +56,11 @@ package object drs {
   type ReplicationServersSecurityGroupsIDs = js.Array[SecurityGroupID]
   type SecurityGroupID = String
   type SmallBoundedString = String
+  type SourceServerARN = String
   type SourceServerID = String
   type SourceServerIDs = js.Array[SourceServerID]
   type SourceServersList = js.Array[SourceServer]
+  type StagingSourceServersList = js.Array[StagingSourceServer]
   type StartFailbackRequestRecoveryInstanceIDs = js.Array[RecoveryInstanceID]
   type StartRecoveryRequestSourceServers = js.Array[StartRecoveryRequestSourceServer]
   type StrictlyPositiveInteger = Int
@@ -58,10 +69,13 @@ package object drs {
   type TagKeys = js.Array[TagKey]
   type TagValue = String
   type TagsMap = js.Dictionary[TagValue]
+  type VolumeToConversionMap = js.Dictionary[ConversionMap]
+  type VolumeToSizeMap = js.Dictionary[PositiveInteger]
   type ebsSnapshot = String
 
   final class DRSOps(private val service: DRS) extends AnyVal {
 
+    @inline def createExtendedSourceServerFuture(params: CreateExtendedSourceServerRequest): Future[CreateExtendedSourceServerResponse] = service.createExtendedSourceServer(params).promise().toFuture
     @inline def createReplicationConfigurationTemplateFuture(params: CreateReplicationConfigurationTemplateRequest): Future[ReplicationConfigurationTemplate] = service.createReplicationConfigurationTemplate(params).promise().toFuture
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
     @inline def deleteRecoveryInstanceFuture(params: DeleteRecoveryInstanceRequest): Future[js.Object] = service.deleteRecoveryInstance(params).promise().toFuture
@@ -79,11 +93,16 @@ package object drs {
     @inline def getLaunchConfigurationFuture(params: GetLaunchConfigurationRequest): Future[LaunchConfiguration] = service.getLaunchConfiguration(params).promise().toFuture
     @inline def getReplicationConfigurationFuture(params: GetReplicationConfigurationRequest): Future[ReplicationConfiguration] = service.getReplicationConfiguration(params).promise().toFuture
     @inline def initializeServiceFuture(params: InitializeServiceRequest): Future[InitializeServiceResponse] = service.initializeService(params).promise().toFuture
+    @inline def listExtensibleSourceServersFuture(params: ListExtensibleSourceServersRequest): Future[ListExtensibleSourceServersResponse] = service.listExtensibleSourceServers(params).promise().toFuture
+    @inline def listStagingAccountsFuture(params: ListStagingAccountsRequest): Future[ListStagingAccountsResponse] = service.listStagingAccounts(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def retryDataReplicationFuture(params: RetryDataReplicationRequest): Future[SourceServer] = service.retryDataReplication(params).promise().toFuture
+    @inline def reverseReplicationFuture(params: ReverseReplicationRequest): Future[ReverseReplicationResponse] = service.reverseReplication(params).promise().toFuture
     @inline def startFailbackLaunchFuture(params: StartFailbackLaunchRequest): Future[StartFailbackLaunchResponse] = service.startFailbackLaunch(params).promise().toFuture
     @inline def startRecoveryFuture(params: StartRecoveryRequest): Future[StartRecoveryResponse] = service.startRecovery(params).promise().toFuture
+    @inline def startReplicationFuture(params: StartReplicationRequest): Future[StartReplicationResponse] = service.startReplication(params).promise().toFuture
     @inline def stopFailbackFuture(params: StopFailbackRequest): Future[js.Object] = service.stopFailback(params).promise().toFuture
+    @inline def stopReplicationFuture(params: StopReplicationRequest): Future[StopReplicationResponse] = service.stopReplication(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def terminateRecoveryInstancesFuture(params: TerminateRecoveryInstancesRequest): Future[TerminateRecoveryInstancesResponse] = service.terminateRecoveryInstances(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
@@ -99,6 +118,7 @@ package object drs {
   class DRS() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createExtendedSourceServer(params: CreateExtendedSourceServerRequest): Request[CreateExtendedSourceServerResponse] = js.native
     def createReplicationConfigurationTemplate(params: CreateReplicationConfigurationTemplateRequest): Request[ReplicationConfigurationTemplate] = js.native
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
     def deleteRecoveryInstance(params: DeleteRecoveryInstanceRequest): Request[js.Object] = js.native
@@ -116,11 +136,16 @@ package object drs {
     def getLaunchConfiguration(params: GetLaunchConfigurationRequest): Request[LaunchConfiguration] = js.native
     def getReplicationConfiguration(params: GetReplicationConfigurationRequest): Request[ReplicationConfiguration] = js.native
     def initializeService(params: InitializeServiceRequest): Request[InitializeServiceResponse] = js.native
+    def listExtensibleSourceServers(params: ListExtensibleSourceServersRequest): Request[ListExtensibleSourceServersResponse] = js.native
+    def listStagingAccounts(params: ListStagingAccountsRequest): Request[ListStagingAccountsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def retryDataReplication(params: RetryDataReplicationRequest): Request[SourceServer] = js.native
+    def reverseReplication(params: ReverseReplicationRequest): Request[ReverseReplicationResponse] = js.native
     def startFailbackLaunch(params: StartFailbackLaunchRequest): Request[StartFailbackLaunchResponse] = js.native
     def startRecovery(params: StartRecoveryRequest): Request[StartRecoveryResponse] = js.native
+    def startReplication(params: StartReplicationRequest): Request[StartReplicationResponse] = js.native
     def stopFailback(params: StopFailbackRequest): Request[js.Object] = js.native
+    def stopReplication(params: StopReplicationRequest): Request[StopReplicationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def terminateRecoveryInstances(params: TerminateRecoveryInstancesRequest): Request[TerminateRecoveryInstancesResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
@@ -132,6 +157,24 @@ package object drs {
   object DRS {
     @inline implicit def toOps(service: DRS): DRSOps = {
       new DRSOps(service)
+    }
+  }
+
+  /** AWS account.
+    */
+  @js.native
+  trait Account extends js.Object {
+    var accountID: js.UndefOr[AccountID]
+  }
+
+  object Account {
+    @inline
+    def apply(
+        accountID: js.UndefOr[AccountID] = js.undefined
+    ): Account = {
+      val __obj = js.Dynamic.literal()
+      accountID.foreach(__v => __obj.updateDynamic("accountID")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Account]
     }
   }
 
@@ -153,6 +196,73 @@ package object drs {
       cores.foreach(__v => __obj.updateDynamic("cores")(__v.asInstanceOf[js.Any]))
       modelName.foreach(__v => __obj.updateDynamic("modelName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CPU]
+    }
+  }
+
+  /** Properties of a conversion job
+    */
+  @js.native
+  trait ConversionProperties extends js.Object {
+    var dataTimestamp: js.UndefOr[LargeBoundedString]
+    var forceUefi: js.UndefOr[Boolean]
+    var rootVolumeName: js.UndefOr[LargeBoundedString]
+    var volumeToConversionMap: js.UndefOr[VolumeToConversionMap]
+    var volumeToVolumeSize: js.UndefOr[VolumeToSizeMap]
+  }
+
+  object ConversionProperties {
+    @inline
+    def apply(
+        dataTimestamp: js.UndefOr[LargeBoundedString] = js.undefined,
+        forceUefi: js.UndefOr[Boolean] = js.undefined,
+        rootVolumeName: js.UndefOr[LargeBoundedString] = js.undefined,
+        volumeToConversionMap: js.UndefOr[VolumeToConversionMap] = js.undefined,
+        volumeToVolumeSize: js.UndefOr[VolumeToSizeMap] = js.undefined
+    ): ConversionProperties = {
+      val __obj = js.Dynamic.literal()
+      dataTimestamp.foreach(__v => __obj.updateDynamic("dataTimestamp")(__v.asInstanceOf[js.Any]))
+      forceUefi.foreach(__v => __obj.updateDynamic("forceUefi")(__v.asInstanceOf[js.Any]))
+      rootVolumeName.foreach(__v => __obj.updateDynamic("rootVolumeName")(__v.asInstanceOf[js.Any]))
+      volumeToConversionMap.foreach(__v => __obj.updateDynamic("volumeToConversionMap")(__v.asInstanceOf[js.Any]))
+      volumeToVolumeSize.foreach(__v => __obj.updateDynamic("volumeToVolumeSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConversionProperties]
+    }
+  }
+
+  @js.native
+  trait CreateExtendedSourceServerRequest extends js.Object {
+    var sourceServerArn: SourceServerARN
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateExtendedSourceServerRequest {
+    @inline
+    def apply(
+        sourceServerArn: SourceServerARN,
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateExtendedSourceServerRequest = {
+      val __obj = js.Dynamic.literal(
+        "sourceServerArn" -> sourceServerArn.asInstanceOf[js.Any]
+      )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExtendedSourceServerRequest]
+    }
+  }
+
+  @js.native
+  trait CreateExtendedSourceServerResponse extends js.Object {
+    var sourceServer: js.UndefOr[SourceServer]
+  }
+
+  object CreateExtendedSourceServerResponse {
+    @inline
+    def apply(
+        sourceServer: js.UndefOr[SourceServer] = js.undefined
+    ): CreateExtendedSourceServerResponse = {
+      val __obj = js.Dynamic.literal()
+      sourceServer.foreach(__v => __obj.updateDynamic("sourceServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExtendedSourceServerResponse]
     }
   }
 
@@ -242,7 +352,7 @@ package object drs {
     var dataReplicationInitiation: js.UndefOr[DataReplicationInitiation]
     var dataReplicationState: js.UndefOr[DataReplicationState]
     var etaDateTime: js.UndefOr[ISO8601DatetimeString]
-    var lagDuration: js.UndefOr[ISO8601DatetimeString]
+    var lagDuration: js.UndefOr[ISO8601DurationString]
     var replicatedDisks: js.UndefOr[DataReplicationInfoReplicatedDisks]
   }
 
@@ -253,7 +363,7 @@ package object drs {
         dataReplicationInitiation: js.UndefOr[DataReplicationInitiation] = js.undefined,
         dataReplicationState: js.UndefOr[DataReplicationState] = js.undefined,
         etaDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
-        lagDuration: js.UndefOr[ISO8601DatetimeString] = js.undefined,
+        lagDuration: js.UndefOr[ISO8601DurationString] = js.undefined,
         replicatedDisks: js.UndefOr[DataReplicationInfoReplicatedDisks] = js.undefined
     ): DataReplicationInfo = {
       val __obj = js.Dynamic.literal()
@@ -488,7 +598,7 @@ package object drs {
 
   @js.native
   trait DescribeJobsRequest extends js.Object {
-    var filters: DescribeJobsRequestFilters
+    var filters: js.UndefOr[DescribeJobsRequestFilters]
     var maxResults: js.UndefOr[StrictlyPositiveInteger]
     var nextToken: js.UndefOr[PaginationToken]
   }
@@ -496,14 +606,12 @@ package object drs {
   object DescribeJobsRequest {
     @inline
     def apply(
-        filters: DescribeJobsRequestFilters,
+        filters: js.UndefOr[DescribeJobsRequestFilters] = js.undefined,
         maxResults: js.UndefOr[StrictlyPositiveInteger] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeJobsRequest = {
-      val __obj = js.Dynamic.literal(
-        "filters" -> filters.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobsRequest]
@@ -555,7 +663,7 @@ package object drs {
 
   @js.native
   trait DescribeRecoveryInstancesRequest extends js.Object {
-    var filters: DescribeRecoveryInstancesRequestFilters
+    var filters: js.UndefOr[DescribeRecoveryInstancesRequestFilters]
     var maxResults: js.UndefOr[StrictlyPositiveInteger]
     var nextToken: js.UndefOr[PaginationToken]
   }
@@ -563,14 +671,12 @@ package object drs {
   object DescribeRecoveryInstancesRequest {
     @inline
     def apply(
-        filters: DescribeRecoveryInstancesRequestFilters,
+        filters: js.UndefOr[DescribeRecoveryInstancesRequestFilters] = js.undefined,
         maxResults: js.UndefOr[StrictlyPositiveInteger] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeRecoveryInstancesRequest = {
-      val __obj = js.Dynamic.literal(
-        "filters" -> filters.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecoveryInstancesRequest]
@@ -689,24 +795,22 @@ package object drs {
 
   @js.native
   trait DescribeReplicationConfigurationTemplatesRequest extends js.Object {
-    var replicationConfigurationTemplateIDs: ReplicationConfigurationTemplateIDs
     var maxResults: js.UndefOr[StrictlyPositiveInteger]
     var nextToken: js.UndefOr[PaginationToken]
+    var replicationConfigurationTemplateIDs: js.UndefOr[ReplicationConfigurationTemplateIDs]
   }
 
   object DescribeReplicationConfigurationTemplatesRequest {
     @inline
     def apply(
-        replicationConfigurationTemplateIDs: ReplicationConfigurationTemplateIDs,
         maxResults: js.UndefOr[StrictlyPositiveInteger] = js.undefined,
-        nextToken: js.UndefOr[PaginationToken] = js.undefined
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        replicationConfigurationTemplateIDs: js.UndefOr[ReplicationConfigurationTemplateIDs] = js.undefined
     ): DescribeReplicationConfigurationTemplatesRequest = {
-      val __obj = js.Dynamic.literal(
-        "replicationConfigurationTemplateIDs" -> replicationConfigurationTemplateIDs.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      replicationConfigurationTemplateIDs.foreach(__v => __obj.updateDynamic("replicationConfigurationTemplateIDs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReplicationConfigurationTemplatesRequest]
     }
   }
@@ -732,7 +836,7 @@ package object drs {
 
   @js.native
   trait DescribeSourceServersRequest extends js.Object {
-    var filters: DescribeSourceServersRequestFilters
+    var filters: js.UndefOr[DescribeSourceServersRequestFilters]
     var maxResults: js.UndefOr[StrictlyPositiveInteger]
     var nextToken: js.UndefOr[PaginationToken]
   }
@@ -740,14 +844,12 @@ package object drs {
   object DescribeSourceServersRequest {
     @inline
     def apply(
-        filters: DescribeSourceServersRequestFilters,
+        filters: js.UndefOr[DescribeSourceServersRequestFilters] = js.undefined,
         maxResults: js.UndefOr[StrictlyPositiveInteger] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeSourceServersRequest = {
-      val __obj = js.Dynamic.literal(
-        "filters" -> filters.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSourceServersRequest]
@@ -760,17 +862,20 @@ package object drs {
   trait DescribeSourceServersRequestFilters extends js.Object {
     var hardwareId: js.UndefOr[BoundedString]
     var sourceServerIDs: js.UndefOr[DescribeSourceServersRequestFiltersIDs]
+    var stagingAccountIDs: js.UndefOr[AccountIDs]
   }
 
   object DescribeSourceServersRequestFilters {
     @inline
     def apply(
         hardwareId: js.UndefOr[BoundedString] = js.undefined,
-        sourceServerIDs: js.UndefOr[DescribeSourceServersRequestFiltersIDs] = js.undefined
+        sourceServerIDs: js.UndefOr[DescribeSourceServersRequestFiltersIDs] = js.undefined,
+        stagingAccountIDs: js.UndefOr[AccountIDs] = js.undefined
     ): DescribeSourceServersRequestFilters = {
       val __obj = js.Dynamic.literal()
       hardwareId.foreach(__v => __obj.updateDynamic("hardwareId")(__v.asInstanceOf[js.Any]))
       sourceServerIDs.foreach(__v => __obj.updateDynamic("sourceServerIDs")(__v.asInstanceOf[js.Any]))
+      stagingAccountIDs.foreach(__v => __obj.updateDynamic("stagingAccountIDs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSourceServersRequestFilters]
     }
   }
@@ -1048,6 +1153,7 @@ package object drs {
     */
   @js.native
   trait JobLogEventData extends js.Object {
+    var conversionProperties: js.UndefOr[ConversionProperties]
     var conversionServerID: js.UndefOr[EC2InstanceID]
     var rawError: js.UndefOr[LargeBoundedString]
     var sourceServerID: js.UndefOr[SourceServerID]
@@ -1057,12 +1163,14 @@ package object drs {
   object JobLogEventData {
     @inline
     def apply(
+        conversionProperties: js.UndefOr[ConversionProperties] = js.undefined,
         conversionServerID: js.UndefOr[EC2InstanceID] = js.undefined,
         rawError: js.UndefOr[LargeBoundedString] = js.undefined,
         sourceServerID: js.UndefOr[SourceServerID] = js.undefined,
         targetInstanceID: js.UndefOr[EC2InstanceID] = js.undefined
     ): JobLogEventData = {
       val __obj = js.Dynamic.literal()
+      conversionProperties.foreach(__v => __obj.updateDynamic("conversionProperties")(__v.asInstanceOf[js.Any]))
       conversionServerID.foreach(__v => __obj.updateDynamic("conversionServerID")(__v.asInstanceOf[js.Any]))
       rawError.foreach(__v => __obj.updateDynamic("rawError")(__v.asInstanceOf[js.Any]))
       sourceServerID.foreach(__v => __obj.updateDynamic("sourceServerID")(__v.asInstanceOf[js.Any]))
@@ -1131,7 +1239,7 @@ package object drs {
   @js.native
   trait LifeCycle extends js.Object {
     var addedToServiceDateTime: js.UndefOr[ISO8601DatetimeString]
-    var elapsedReplicationDuration: js.UndefOr[ISO8601DatetimeString]
+    var elapsedReplicationDuration: js.UndefOr[ISO8601DurationString]
     var firstByteDateTime: js.UndefOr[ISO8601DatetimeString]
     var lastLaunch: js.UndefOr[LifeCycleLastLaunch]
     var lastSeenByServiceDateTime: js.UndefOr[ISO8601DatetimeString]
@@ -1141,7 +1249,7 @@ package object drs {
     @inline
     def apply(
         addedToServiceDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
-        elapsedReplicationDuration: js.UndefOr[ISO8601DatetimeString] = js.undefined,
+        elapsedReplicationDuration: js.UndefOr[ISO8601DurationString] = js.undefined,
         firstByteDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         lastLaunch: js.UndefOr[LifeCycleLastLaunch] = js.undefined,
         lastSeenByServiceDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined
@@ -1195,6 +1303,87 @@ package object drs {
       jobID.foreach(__v => __obj.updateDynamic("jobID")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifeCycleLastLaunchInitiated]
+    }
+  }
+
+  @js.native
+  trait ListExtensibleSourceServersRequest extends js.Object {
+    var stagingAccountID: AccountID
+    var maxResults: js.UndefOr[MaxResultsReplicatingSourceServers]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListExtensibleSourceServersRequest {
+    @inline
+    def apply(
+        stagingAccountID: AccountID,
+        maxResults: js.UndefOr[MaxResultsReplicatingSourceServers] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListExtensibleSourceServersRequest = {
+      val __obj = js.Dynamic.literal(
+        "stagingAccountID" -> stagingAccountID.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExtensibleSourceServersRequest]
+    }
+  }
+
+  @js.native
+  trait ListExtensibleSourceServersResponse extends js.Object {
+    var items: js.UndefOr[StagingSourceServersList]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListExtensibleSourceServersResponse {
+    @inline
+    def apply(
+        items: js.UndefOr[StagingSourceServersList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListExtensibleSourceServersResponse = {
+      val __obj = js.Dynamic.literal()
+      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExtensibleSourceServersResponse]
+    }
+  }
+
+  @js.native
+  trait ListStagingAccountsRequest extends js.Object {
+    var maxResults: js.UndefOr[ListStagingAccountsRequestMaxResultsInteger]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListStagingAccountsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[ListStagingAccountsRequestMaxResultsInteger] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListStagingAccountsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStagingAccountsRequest]
+    }
+  }
+
+  @js.native
+  trait ListStagingAccountsResponse extends js.Object {
+    var accounts: js.UndefOr[Accounts]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListStagingAccountsResponse {
+    @inline
+    def apply(
+        accounts: js.UndefOr[Accounts] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListStagingAccountsResponse = {
+      val __obj = js.Dynamic.literal()
+      accounts.foreach(__v => __obj.updateDynamic("accounts")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStagingAccountsResponse]
     }
   }
 
@@ -1340,6 +1529,7 @@ package object drs {
     var failback: js.UndefOr[RecoveryInstanceFailback]
     var isDrill: js.UndefOr[Boolean]
     var jobID: js.UndefOr[JobID]
+    var originEnvironment: js.UndefOr[OriginEnvironment]
     var pointInTimeSnapshotDateTime: js.UndefOr[ISO8601DatetimeString]
     var recoveryInstanceID: js.UndefOr[RecoveryInstanceID]
     var recoveryInstanceProperties: js.UndefOr[RecoveryInstanceProperties]
@@ -1357,6 +1547,7 @@ package object drs {
         failback: js.UndefOr[RecoveryInstanceFailback] = js.undefined,
         isDrill: js.UndefOr[Boolean] = js.undefined,
         jobID: js.UndefOr[JobID] = js.undefined,
+        originEnvironment: js.UndefOr[OriginEnvironment] = js.undefined,
         pointInTimeSnapshotDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         recoveryInstanceID: js.UndefOr[RecoveryInstanceID] = js.undefined,
         recoveryInstanceProperties: js.UndefOr[RecoveryInstanceProperties] = js.undefined,
@@ -1371,6 +1562,7 @@ package object drs {
       failback.foreach(__v => __obj.updateDynamic("failback")(__v.asInstanceOf[js.Any]))
       isDrill.foreach(__v => __obj.updateDynamic("isDrill")(__v.asInstanceOf[js.Any]))
       jobID.foreach(__v => __obj.updateDynamic("jobID")(__v.asInstanceOf[js.Any]))
+      originEnvironment.foreach(__v => __obj.updateDynamic("originEnvironment")(__v.asInstanceOf[js.Any]))
       pointInTimeSnapshotDateTime.foreach(__v => __obj.updateDynamic("pointInTimeSnapshotDateTime")(__v.asInstanceOf[js.Any]))
       recoveryInstanceID.foreach(__v => __obj.updateDynamic("recoveryInstanceID")(__v.asInstanceOf[js.Any]))
       recoveryInstanceProperties.foreach(__v => __obj.updateDynamic("recoveryInstanceProperties")(__v.asInstanceOf[js.Any]))
@@ -1540,6 +1732,7 @@ package object drs {
     var failbackClientLastSeenByServiceDateTime: js.UndefOr[ISO8601DatetimeString]
     var failbackInitiationTime: js.UndefOr[ISO8601DatetimeString]
     var failbackJobID: js.UndefOr[JobID]
+    var failbackLaunchType: js.UndefOr[FailbackLaunchType]
     var failbackToOriginalServer: js.UndefOr[Boolean]
     var firstByteDateTime: js.UndefOr[ISO8601DatetimeString]
     var state: js.UndefOr[FailbackState]
@@ -1554,6 +1747,7 @@ package object drs {
         failbackClientLastSeenByServiceDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         failbackInitiationTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         failbackJobID: js.UndefOr[JobID] = js.undefined,
+        failbackLaunchType: js.UndefOr[FailbackLaunchType] = js.undefined,
         failbackToOriginalServer: js.UndefOr[Boolean] = js.undefined,
         firstByteDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         state: js.UndefOr[FailbackState] = js.undefined
@@ -1565,6 +1759,7 @@ package object drs {
       failbackClientLastSeenByServiceDateTime.foreach(__v => __obj.updateDynamic("failbackClientLastSeenByServiceDateTime")(__v.asInstanceOf[js.Any]))
       failbackInitiationTime.foreach(__v => __obj.updateDynamic("failbackInitiationTime")(__v.asInstanceOf[js.Any]))
       failbackJobID.foreach(__v => __obj.updateDynamic("failbackJobID")(__v.asInstanceOf[js.Any]))
+      failbackLaunchType.foreach(__v => __obj.updateDynamic("failbackLaunchType")(__v.asInstanceOf[js.Any]))
       failbackToOriginalServer.foreach(__v => __obj.updateDynamic("failbackToOriginalServer")(__v.asInstanceOf[js.Any]))
       firstByteDateTime.foreach(__v => __obj.updateDynamic("firstByteDateTime")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
@@ -1708,6 +1903,7 @@ package object drs {
     var deviceName: js.UndefOr[BoundedString]
     var iops: js.UndefOr[PositiveInteger]
     var isBootDisk: js.UndefOr[Boolean]
+    var optimizedStagingDiskType: js.UndefOr[ReplicationConfigurationReplicatedDiskStagingDiskType]
     var stagingDiskType: js.UndefOr[ReplicationConfigurationReplicatedDiskStagingDiskType]
     var throughput: js.UndefOr[PositiveInteger]
   }
@@ -1718,6 +1914,7 @@ package object drs {
         deviceName: js.UndefOr[BoundedString] = js.undefined,
         iops: js.UndefOr[PositiveInteger] = js.undefined,
         isBootDisk: js.UndefOr[Boolean] = js.undefined,
+        optimizedStagingDiskType: js.UndefOr[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.undefined,
         stagingDiskType: js.UndefOr[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.undefined,
         throughput: js.UndefOr[PositiveInteger] = js.undefined
     ): ReplicationConfigurationReplicatedDisk = {
@@ -1725,6 +1922,7 @@ package object drs {
       deviceName.foreach(__v => __obj.updateDynamic("deviceName")(__v.asInstanceOf[js.Any]))
       iops.foreach(__v => __obj.updateDynamic("iops")(__v.asInstanceOf[js.Any]))
       isBootDisk.foreach(__v => __obj.updateDynamic("isBootDisk")(__v.asInstanceOf[js.Any]))
+      optimizedStagingDiskType.foreach(__v => __obj.updateDynamic("optimizedStagingDiskType")(__v.asInstanceOf[js.Any]))
       stagingDiskType.foreach(__v => __obj.updateDynamic("stagingDiskType")(__v.asInstanceOf[js.Any]))
       throughput.foreach(__v => __obj.updateDynamic("throughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationConfigurationReplicatedDisk]
@@ -1811,6 +2009,63 @@ package object drs {
     }
   }
 
+  @js.native
+  trait ReverseReplicationRequest extends js.Object {
+    var recoveryInstanceID: RecoveryInstanceID
+  }
+
+  object ReverseReplicationRequest {
+    @inline
+    def apply(
+        recoveryInstanceID: RecoveryInstanceID
+    ): ReverseReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "recoveryInstanceID" -> recoveryInstanceID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReverseReplicationRequest]
+    }
+  }
+
+  @js.native
+  trait ReverseReplicationResponse extends js.Object {
+    var reversedDirectionSourceServerArn: js.UndefOr[SourceServerARN]
+  }
+
+  object ReverseReplicationResponse {
+    @inline
+    def apply(
+        reversedDirectionSourceServerArn: js.UndefOr[SourceServerARN] = js.undefined
+    ): ReverseReplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      reversedDirectionSourceServerArn.foreach(__v => __obj.updateDynamic("reversedDirectionSourceServerArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReverseReplicationResponse]
+    }
+  }
+
+  /** Properties of the cloud environment where this Source Server originated from.
+    */
+  @js.native
+  trait SourceCloudProperties extends js.Object {
+    var originAccountID: js.UndefOr[AccountID]
+    var originAvailabilityZone: js.UndefOr[AwsAvailabilityZone]
+    var originRegion: js.UndefOr[AwsRegion]
+  }
+
+  object SourceCloudProperties {
+    @inline
+    def apply(
+        originAccountID: js.UndefOr[AccountID] = js.undefined,
+        originAvailabilityZone: js.UndefOr[AwsAvailabilityZone] = js.undefined,
+        originRegion: js.UndefOr[AwsRegion] = js.undefined
+    ): SourceCloudProperties = {
+      val __obj = js.Dynamic.literal()
+      originAccountID.foreach(__v => __obj.updateDynamic("originAccountID")(__v.asInstanceOf[js.Any]))
+      originAvailabilityZone.foreach(__v => __obj.updateDynamic("originAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      originRegion.foreach(__v => __obj.updateDynamic("originRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceCloudProperties]
+    }
+  }
+
   /** Properties of the Source Server machine.
     */
   @js.native
@@ -1857,8 +2112,12 @@ package object drs {
     var lastLaunchResult: js.UndefOr[LastLaunchResult]
     var lifeCycle: js.UndefOr[LifeCycle]
     var recoveryInstanceId: js.UndefOr[RecoveryInstanceID]
+    var replicationDirection: js.UndefOr[ReplicationDirection]
+    var reversedDirectionSourceServerArn: js.UndefOr[SourceServerARN]
+    var sourceCloudProperties: js.UndefOr[SourceCloudProperties]
     var sourceProperties: js.UndefOr[SourceProperties]
     var sourceServerID: js.UndefOr[SourceServerID]
+    var stagingArea: js.UndefOr[StagingArea]
     var tags: js.UndefOr[TagsMap]
   }
 
@@ -1870,8 +2129,12 @@ package object drs {
         lastLaunchResult: js.UndefOr[LastLaunchResult] = js.undefined,
         lifeCycle: js.UndefOr[LifeCycle] = js.undefined,
         recoveryInstanceId: js.UndefOr[RecoveryInstanceID] = js.undefined,
+        replicationDirection: js.UndefOr[ReplicationDirection] = js.undefined,
+        reversedDirectionSourceServerArn: js.UndefOr[SourceServerARN] = js.undefined,
+        sourceCloudProperties: js.UndefOr[SourceCloudProperties] = js.undefined,
         sourceProperties: js.UndefOr[SourceProperties] = js.undefined,
         sourceServerID: js.UndefOr[SourceServerID] = js.undefined,
+        stagingArea: js.UndefOr[StagingArea] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): SourceServer = {
       val __obj = js.Dynamic.literal()
@@ -1880,10 +2143,65 @@ package object drs {
       lastLaunchResult.foreach(__v => __obj.updateDynamic("lastLaunchResult")(__v.asInstanceOf[js.Any]))
       lifeCycle.foreach(__v => __obj.updateDynamic("lifeCycle")(__v.asInstanceOf[js.Any]))
       recoveryInstanceId.foreach(__v => __obj.updateDynamic("recoveryInstanceId")(__v.asInstanceOf[js.Any]))
+      replicationDirection.foreach(__v => __obj.updateDynamic("replicationDirection")(__v.asInstanceOf[js.Any]))
+      reversedDirectionSourceServerArn.foreach(__v => __obj.updateDynamic("reversedDirectionSourceServerArn")(__v.asInstanceOf[js.Any]))
+      sourceCloudProperties.foreach(__v => __obj.updateDynamic("sourceCloudProperties")(__v.asInstanceOf[js.Any]))
       sourceProperties.foreach(__v => __obj.updateDynamic("sourceProperties")(__v.asInstanceOf[js.Any]))
       sourceServerID.foreach(__v => __obj.updateDynamic("sourceServerID")(__v.asInstanceOf[js.Any]))
+      stagingArea.foreach(__v => __obj.updateDynamic("stagingArea")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceServer]
+    }
+  }
+
+  /** Staging information related to source server.
+    */
+  @js.native
+  trait StagingArea extends js.Object {
+    var errorMessage: js.UndefOr[LargeBoundedString]
+    var stagingAccountID: js.UndefOr[AccountID]
+    var stagingSourceServerArn: js.UndefOr[ARN]
+    var status: js.UndefOr[ExtensionStatus]
+  }
+
+  object StagingArea {
+    @inline
+    def apply(
+        errorMessage: js.UndefOr[LargeBoundedString] = js.undefined,
+        stagingAccountID: js.UndefOr[AccountID] = js.undefined,
+        stagingSourceServerArn: js.UndefOr[ARN] = js.undefined,
+        status: js.UndefOr[ExtensionStatus] = js.undefined
+    ): StagingArea = {
+      val __obj = js.Dynamic.literal()
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      stagingAccountID.foreach(__v => __obj.updateDynamic("stagingAccountID")(__v.asInstanceOf[js.Any]))
+      stagingSourceServerArn.foreach(__v => __obj.updateDynamic("stagingSourceServerArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StagingArea]
+    }
+  }
+
+  /** Source server in staging account that extended source server connected to.
+    */
+  @js.native
+  trait StagingSourceServer extends js.Object {
+    var arn: js.UndefOr[SourceServerARN]
+    var hostname: js.UndefOr[BoundedString]
+    var tags: js.UndefOr[TagsMap]
+  }
+
+  object StagingSourceServer {
+    @inline
+    def apply(
+        arn: js.UndefOr[SourceServerARN] = js.undefined,
+        hostname: js.UndefOr[BoundedString] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined
+    ): StagingSourceServer = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StagingSourceServer]
     }
   }
 
@@ -1988,6 +2306,39 @@ package object drs {
   }
 
   @js.native
+  trait StartReplicationRequest extends js.Object {
+    var sourceServerID: SourceServerID
+  }
+
+  object StartReplicationRequest {
+    @inline
+    def apply(
+        sourceServerID: SourceServerID
+    ): StartReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "sourceServerID" -> sourceServerID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartReplicationRequest]
+    }
+  }
+
+  @js.native
+  trait StartReplicationResponse extends js.Object {
+    var sourceServer: js.UndefOr[SourceServer]
+  }
+
+  object StartReplicationResponse {
+    @inline
+    def apply(
+        sourceServer: js.UndefOr[SourceServer] = js.undefined
+    ): StartReplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      sourceServer.foreach(__v => __obj.updateDynamic("sourceServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartReplicationResponse]
+    }
+  }
+
+  @js.native
   trait StopFailbackRequest extends js.Object {
     var recoveryInstanceID: RecoveryInstanceID
   }
@@ -2001,6 +2352,39 @@ package object drs {
         "recoveryInstanceID" -> recoveryInstanceID.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[StopFailbackRequest]
+    }
+  }
+
+  @js.native
+  trait StopReplicationRequest extends js.Object {
+    var sourceServerID: SourceServerID
+  }
+
+  object StopReplicationRequest {
+    @inline
+    def apply(
+        sourceServerID: SourceServerID
+    ): StopReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "sourceServerID" -> sourceServerID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopReplicationRequest]
+    }
+  }
+
+  @js.native
+  trait StopReplicationResponse extends js.Object {
+    var sourceServer: js.UndefOr[SourceServer]
+  }
+
+  object StopReplicationResponse {
+    @inline
+    def apply(
+        sourceServer: js.UndefOr[SourceServer] = js.undefined
+    ): StopReplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      sourceServer.foreach(__v => __obj.updateDynamic("sourceServer")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopReplicationResponse]
     }
   }
 

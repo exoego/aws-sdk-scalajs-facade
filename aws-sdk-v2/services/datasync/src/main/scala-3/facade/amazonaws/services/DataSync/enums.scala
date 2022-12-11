@@ -18,6 +18,14 @@ object Atime {
   inline def values: js.Array[Atime] = js.Array(NONE, BEST_EFFORT)
 }
 
+type EfsInTransitEncryption = "NONE" | "TLS1_2"
+object EfsInTransitEncryption {
+  inline val NONE: "NONE" = "NONE"
+  inline val TLS1_2: "TLS1_2" = "TLS1_2"
+
+  inline def values: js.Array[EfsInTransitEncryption] = js.Array(NONE, TLS1_2)
+}
+
 type EndpointType = "PUBLIC" | "PRIVATE_LINK" | "FIPS"
 object EndpointType {
   inline val PUBLIC: "PUBLIC" = "PUBLIC"
@@ -114,6 +122,14 @@ object ObjectStorageServerProtocol {
   inline val HTTP: "HTTP" = "HTTP"
 
   inline def values: js.Array[ObjectStorageServerProtocol] = js.Array(HTTPS, HTTP)
+}
+
+type ObjectTags = "PRESERVE" | "NONE"
+object ObjectTags {
+  inline val PRESERVE: "PRESERVE" = "PRESERVE"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[ObjectTags] = js.Array(PRESERVE, NONE)
 }
 
 type Operator = "Equals" | "NotEquals" | "In" | "LessThanOrEqual" | "LessThan" | "GreaterThanOrEqual" | "GreaterThan" | "Contains" | "NotContains" | "BeginsWith"

@@ -38,6 +38,9 @@ package object appmesh {
   type HttpRetryPolicyEvent = String
   type HttpRetryPolicyEvents = js.Array[HttpRetryPolicyEvent]
   type HttpRouteHeaders = js.Array[HttpRouteHeader]
+  type JsonFormat = js.Array[JsonFormatRef]
+  type JsonKey = String
+  type JsonValue = String
   type ListGatewayRoutesLimit = Int
   type ListMeshesLimit = Int
   type ListRoutesLimit = Int
@@ -45,6 +48,7 @@ package object appmesh {
   type ListVirtualNodesLimit = Int
   type ListVirtualRoutersLimit = Int
   type ListVirtualServicesLimit = Int
+  type ListenerPort = Int
   type Listeners = js.Array[Listener]
   type MaxConnections = Int
   type MaxPendingRequests = Int
@@ -72,6 +76,7 @@ package object appmesh {
   type TagValue = String
   type TagsLimit = Int
   type TcpRetryPolicyEvents = js.Array[TcpRetryPolicyEvent]
+  type TextFormat = String
   type Timestamp = js.Date
   type VirtualGatewayCertificateAuthorityArns = js.Array[Arn]
   type VirtualGatewayHealthCheckIntervalMillis = Double
@@ -199,7 +204,7 @@ package object appmesh {
 
   /** An object that represents the Cloud Map attribute information for your virtual node.
     *
-    * '''Note:'''AWS Cloud Map is not available in the eu-south-1 Region.
+    * '''Note:'''Cloud Map is not available in the eu-south-1 Region.
     */
   @js.native
   trait AwsCloudMapInstanceAttribute extends js.Object {
@@ -230,6 +235,7 @@ package object appmesh {
     var namespaceName: AwsCloudMapName
     var serviceName: AwsCloudMapName
     var attributes: js.UndefOr[AwsCloudMapInstanceAttributes]
+    var ipPreference: js.UndefOr[IpPreference]
   }
 
   object AwsCloudMapServiceDiscovery {
@@ -237,7 +243,8 @@ package object appmesh {
     def apply(
         namespaceName: AwsCloudMapName,
         serviceName: AwsCloudMapName,
-        attributes: js.UndefOr[AwsCloudMapInstanceAttributes] = js.undefined
+        attributes: js.UndefOr[AwsCloudMapInstanceAttributes] = js.undefined,
+        ipPreference: js.UndefOr[IpPreference] = js.undefined
     ): AwsCloudMapServiceDiscovery = {
       val __obj = js.Dynamic.literal(
         "namespaceName" -> namespaceName.asInstanceOf[js.Any],
@@ -245,6 +252,7 @@ package object appmesh {
       )
 
       attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      ipPreference.foreach(__v => __obj.updateDynamic("ipPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsCloudMapServiceDiscovery]
     }
   }
@@ -1344,6 +1352,7 @@ package object appmesh {
   @js.native
   trait DnsServiceDiscovery extends js.Object {
     var hostname: Hostname
+    var ipPreference: js.UndefOr[IpPreference]
     var responseType: js.UndefOr[DnsResponseType]
   }
 
@@ -1351,12 +1360,14 @@ package object appmesh {
     @inline
     def apply(
         hostname: Hostname,
+        ipPreference: js.UndefOr[IpPreference] = js.undefined,
         responseType: js.UndefOr[DnsResponseType] = js.undefined
     ): DnsServiceDiscovery = {
       val __obj = js.Dynamic.literal(
         "hostname" -> hostname.asInstanceOf[js.Any]
       )
 
+      ipPreference.foreach(__v => __obj.updateDynamic("ipPreference")(__v.asInstanceOf[js.Any]))
       responseType.foreach(__v => __obj.updateDynamic("responseType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsServiceDiscovery]
     }
@@ -1407,16 +1418,20 @@ package object appmesh {
   @js.native
   trait FileAccessLog extends js.Object {
     var path: FilePath
+    var format: js.UndefOr[LoggingFormat]
   }
 
   object FileAccessLog {
     @inline
     def apply(
-        path: FilePath
+        path: FilePath,
+        format: js.UndefOr[LoggingFormat] = js.undefined
     ): FileAccessLog = {
       val __obj = js.Dynamic.literal(
         "path" -> path.asInstanceOf[js.Any]
       )
+
+      format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileAccessLog]
     }
   }
@@ -1588,16 +1603,20 @@ package object appmesh {
   @js.native
   trait GatewayRouteTarget extends js.Object {
     var virtualService: GatewayRouteVirtualService
+    var port: js.UndefOr[ListenerPort]
   }
 
   object GatewayRouteTarget {
     @inline
     def apply(
-        virtualService: GatewayRouteVirtualService
+        virtualService: GatewayRouteVirtualService,
+        port: js.UndefOr[ListenerPort] = js.undefined
     ): GatewayRouteTarget = {
       val __obj = js.Dynamic.literal(
         "virtualService" -> virtualService.asInstanceOf[js.Any]
       )
+
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayRouteTarget]
     }
   }
@@ -1672,6 +1691,7 @@ package object appmesh {
   trait GrpcGatewayRouteMatch extends js.Object {
     var hostname: js.UndefOr[GatewayRouteHostnameMatch]
     var metadata: js.UndefOr[GrpcGatewayRouteMetadataList]
+    var port: js.UndefOr[ListenerPort]
     var serviceName: js.UndefOr[ServiceName]
   }
 
@@ -1680,11 +1700,13 @@ package object appmesh {
     def apply(
         hostname: js.UndefOr[GatewayRouteHostnameMatch] = js.undefined,
         metadata: js.UndefOr[GrpcGatewayRouteMetadataList] = js.undefined,
+        port: js.UndefOr[ListenerPort] = js.undefined,
         serviceName: js.UndefOr[ServiceName] = js.undefined
     ): GrpcGatewayRouteMatch = {
       val __obj = js.Dynamic.literal()
       hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
       metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrpcGatewayRouteMatch]
     }
@@ -1850,6 +1872,7 @@ package object appmesh {
   trait GrpcRouteMatch extends js.Object {
     var metadata: js.UndefOr[GrpcRouteMetadataList]
     var methodName: js.UndefOr[MethodName]
+    var port: js.UndefOr[ListenerPort]
     var serviceName: js.UndefOr[ServiceName]
   }
 
@@ -1858,11 +1881,13 @@ package object appmesh {
     def apply(
         metadata: js.UndefOr[GrpcRouteMetadataList] = js.undefined,
         methodName: js.UndefOr[MethodName] = js.undefined,
+        port: js.UndefOr[ListenerPort] = js.undefined,
         serviceName: js.UndefOr[ServiceName] = js.undefined
     ): GrpcRouteMatch = {
       val __obj = js.Dynamic.literal()
       metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
       methodName.foreach(__v => __obj.updateDynamic("methodName")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrpcRouteMatch]
     }
@@ -2092,6 +2117,7 @@ package object appmesh {
     var hostname: js.UndefOr[GatewayRouteHostnameMatch]
     var method: js.UndefOr[HttpMethod]
     var path: js.UndefOr[HttpPathMatch]
+    var port: js.UndefOr[ListenerPort]
     var prefix: js.UndefOr[String]
     var queryParameters: js.UndefOr[HttpQueryParameters]
   }
@@ -2103,6 +2129,7 @@ package object appmesh {
         hostname: js.UndefOr[GatewayRouteHostnameMatch] = js.undefined,
         method: js.UndefOr[HttpMethod] = js.undefined,
         path: js.UndefOr[HttpPathMatch] = js.undefined,
+        port: js.UndefOr[ListenerPort] = js.undefined,
         prefix: js.UndefOr[String] = js.undefined,
         queryParameters: js.UndefOr[HttpQueryParameters] = js.undefined
     ): HttpGatewayRouteMatch = {
@@ -2111,6 +2138,7 @@ package object appmesh {
       hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
       method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
       path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
       queryParameters.foreach(__v => __obj.updateDynamic("queryParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpGatewayRouteMatch]
@@ -2334,6 +2362,7 @@ package object appmesh {
     var headers: js.UndefOr[HttpRouteHeaders]
     var method: js.UndefOr[HttpMethod]
     var path: js.UndefOr[HttpPathMatch]
+    var port: js.UndefOr[ListenerPort]
     var prefix: js.UndefOr[String]
     var queryParameters: js.UndefOr[HttpQueryParameters]
     var scheme: js.UndefOr[HttpScheme]
@@ -2345,6 +2374,7 @@ package object appmesh {
         headers: js.UndefOr[HttpRouteHeaders] = js.undefined,
         method: js.UndefOr[HttpMethod] = js.undefined,
         path: js.UndefOr[HttpPathMatch] = js.undefined,
+        port: js.UndefOr[ListenerPort] = js.undefined,
         prefix: js.UndefOr[String] = js.undefined,
         queryParameters: js.UndefOr[HttpQueryParameters] = js.undefined,
         scheme: js.UndefOr[HttpScheme] = js.undefined
@@ -2353,6 +2383,7 @@ package object appmesh {
       headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
       method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
       path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
       queryParameters.foreach(__v => __obj.updateDynamic("queryParameters")(__v.asInstanceOf[js.Any]))
       scheme.foreach(__v => __obj.updateDynamic("scheme")(__v.asInstanceOf[js.Any]))
@@ -2378,6 +2409,28 @@ package object appmesh {
       idle.foreach(__v => __obj.updateDynamic("idle")(__v.asInstanceOf[js.Any]))
       perRequest.foreach(__v => __obj.updateDynamic("perRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpTimeout]
+    }
+  }
+
+  /** An object that represents the key value pairs for the JSON.
+    */
+  @js.native
+  trait JsonFormatRef extends js.Object {
+    var key: JsonKey
+    var value: JsonValue
+  }
+
+  object JsonFormatRef {
+    @inline
+    def apply(
+        key: JsonKey,
+        value: JsonValue
+    ): JsonFormatRef = {
+      val __obj = js.Dynamic.literal(
+        "key" -> key.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JsonFormatRef]
     }
   }
 
@@ -2872,7 +2925,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents an Certificate Manager certificate.
     */
   @js.native
   trait ListenerTlsAcmCertificate extends js.Object {
@@ -3018,6 +3071,27 @@ package object appmesh {
     }
   }
 
+  /** An object that represents the format for the logs.
+    */
+  @js.native
+  trait LoggingFormat extends js.Object {
+    var json: js.UndefOr[JsonFormat]
+    var text: js.UndefOr[TextFormat]
+  }
+
+  object LoggingFormat {
+    @inline
+    def apply(
+        json: js.UndefOr[JsonFormat] = js.undefined,
+        text: js.UndefOr[TextFormat] = js.undefined
+    ): LoggingFormat = {
+      val __obj = js.Dynamic.literal()
+      json.foreach(__v => __obj.updateDynamic("json")(__v.asInstanceOf[js.Any]))
+      text.foreach(__v => __obj.updateDynamic("text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoggingFormat]
+    }
+  }
+
   /** An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.
     */
   @js.native
@@ -3105,20 +3179,41 @@ package object appmesh {
     }
   }
 
+  /** An object that represents the service discovery information for a service mesh.
+    */
+  @js.native
+  trait MeshServiceDiscovery extends js.Object {
+    var ipPreference: js.UndefOr[IpPreference]
+  }
+
+  object MeshServiceDiscovery {
+    @inline
+    def apply(
+        ipPreference: js.UndefOr[IpPreference] = js.undefined
+    ): MeshServiceDiscovery = {
+      val __obj = js.Dynamic.literal()
+      ipPreference.foreach(__v => __obj.updateDynamic("ipPreference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MeshServiceDiscovery]
+    }
+  }
+
   /** An object that represents the specification of a service mesh.
     */
   @js.native
   trait MeshSpec extends js.Object {
     var egressFilter: js.UndefOr[EgressFilter]
+    var serviceDiscovery: js.UndefOr[MeshServiceDiscovery]
   }
 
   object MeshSpec {
     @inline
     def apply(
-        egressFilter: js.UndefOr[EgressFilter] = js.undefined
+        egressFilter: js.UndefOr[EgressFilter] = js.undefined,
+        serviceDiscovery: js.UndefOr[MeshServiceDiscovery] = js.undefined
     ): MeshSpec = {
       val __obj = js.Dynamic.literal()
       egressFilter.foreach(__v => __obj.updateDynamic("egressFilter")(__v.asInstanceOf[js.Any]))
+      serviceDiscovery.foreach(__v => __obj.updateDynamic("serviceDiscovery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MeshSpec]
     }
   }
@@ -3493,6 +3588,7 @@ package object appmesh {
   @js.native
   trait TcpRoute extends js.Object {
     var action: TcpRouteAction
+    var `match`: js.UndefOr[TcpRouteMatch]
     var timeout: js.UndefOr[TcpTimeout]
   }
 
@@ -3500,12 +3596,14 @@ package object appmesh {
     @inline
     def apply(
         action: TcpRouteAction,
+        `match`: js.UndefOr[TcpRouteMatch] = js.undefined,
         timeout: js.UndefOr[TcpTimeout] = js.undefined
     ): TcpRoute = {
       val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any]
       )
 
+      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TcpRoute]
     }
@@ -3527,6 +3625,24 @@ package object appmesh {
         "weightedTargets" -> weightedTargets.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TcpRouteAction]
+    }
+  }
+
+  /** An object representing the TCP route to match.
+    */
+  @js.native
+  trait TcpRouteMatch extends js.Object {
+    var port: js.UndefOr[ListenerPort]
+  }
+
+  object TcpRouteMatch {
+    @inline
+    def apply(
+        port: js.UndefOr[ListenerPort] = js.undefined
+    ): TcpRouteMatch = {
+      val __obj = js.Dynamic.literal()
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TcpRouteMatch]
     }
   }
 
@@ -4200,16 +4316,20 @@ package object appmesh {
   @js.native
   trait VirtualGatewayFileAccessLog extends js.Object {
     var path: FilePath
+    var format: js.UndefOr[LoggingFormat]
   }
 
   object VirtualGatewayFileAccessLog {
     @inline
     def apply(
-        path: FilePath
+        path: FilePath,
+        format: js.UndefOr[LoggingFormat] = js.undefined
     ): VirtualGatewayFileAccessLog = {
       val __obj = js.Dynamic.literal(
         "path" -> path.asInstanceOf[js.Any]
       )
+
+      format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualGatewayFileAccessLog]
     }
   }
@@ -5275,18 +5395,22 @@ package object appmesh {
   trait WeightedTarget extends js.Object {
     var virtualNode: ResourceName
     var weight: PercentInt
+    var port: js.UndefOr[ListenerPort]
   }
 
   object WeightedTarget {
     @inline
     def apply(
         virtualNode: ResourceName,
-        weight: PercentInt
+        weight: PercentInt,
+        port: js.UndefOr[ListenerPort] = js.undefined
     ): WeightedTarget = {
       val __obj = js.Dynamic.literal(
         "virtualNode" -> virtualNode.asInstanceOf[js.Any],
         "weight" -> weight.asInstanceOf[js.Any]
       )
+
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WeightedTarget]
     }
   }

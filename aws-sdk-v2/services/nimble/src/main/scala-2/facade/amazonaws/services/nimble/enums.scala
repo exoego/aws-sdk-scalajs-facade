@@ -50,6 +50,8 @@ object LaunchProfileStatusCode {
   val ENCRYPTION_KEY_ACCESS_DENIED = "ENCRYPTION_KEY_ACCESS_DENIED".asInstanceOf[LaunchProfileStatusCode]
   val ENCRYPTION_KEY_NOT_FOUND = "ENCRYPTION_KEY_NOT_FOUND".asInstanceOf[LaunchProfileStatusCode]
   val INVALID_SUBNETS_PROVIDED = "INVALID_SUBNETS_PROVIDED".asInstanceOf[LaunchProfileStatusCode]
+  val INVALID_INSTANCE_TYPES_PROVIDED = "INVALID_INSTANCE_TYPES_PROVIDED".asInstanceOf[LaunchProfileStatusCode]
+  val INVALID_SUBNETS_COMBINATION = "INVALID_SUBNETS_COMBINATION".asInstanceOf[LaunchProfileStatusCode]
 
   @inline def values: js.Array[LaunchProfileStatusCode] = js.Array(
     LAUNCH_PROFILE_CREATED,
@@ -64,8 +66,59 @@ object LaunchProfileStatusCode {
     LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED,
     ENCRYPTION_KEY_ACCESS_DENIED,
     ENCRYPTION_KEY_NOT_FOUND,
-    INVALID_SUBNETS_PROVIDED
+    INVALID_SUBNETS_PROVIDED,
+    INVALID_INSTANCE_TYPES_PROVIDED,
+    INVALID_SUBNETS_COMBINATION
   )
+}
+
+@js.native
+sealed trait LaunchProfileValidationState extends js.Any
+object LaunchProfileValidationState {
+  val VALIDATION_NOT_STARTED = "VALIDATION_NOT_STARTED".asInstanceOf[LaunchProfileValidationState]
+  val VALIDATION_IN_PROGRESS = "VALIDATION_IN_PROGRESS".asInstanceOf[LaunchProfileValidationState]
+  val VALIDATION_SUCCESS = "VALIDATION_SUCCESS".asInstanceOf[LaunchProfileValidationState]
+  val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[LaunchProfileValidationState]
+  val VALIDATION_FAILED_INTERNAL_SERVER_ERROR = "VALIDATION_FAILED_INTERNAL_SERVER_ERROR".asInstanceOf[LaunchProfileValidationState]
+
+  @inline def values: js.Array[LaunchProfileValidationState] = js.Array(VALIDATION_NOT_STARTED, VALIDATION_IN_PROGRESS, VALIDATION_SUCCESS, VALIDATION_FAILED, VALIDATION_FAILED_INTERNAL_SERVER_ERROR)
+}
+
+@js.native
+sealed trait LaunchProfileValidationStatusCode extends js.Any
+object LaunchProfileValidationStatusCode {
+  val VALIDATION_NOT_STARTED = "VALIDATION_NOT_STARTED".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_IN_PROGRESS = "VALIDATION_IN_PROGRESS".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_SUCCESS = "VALIDATION_SUCCESS".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION = "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_SUBNET_NOT_FOUND = "VALIDATION_FAILED_SUBNET_NOT_FOUND".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION = "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY = "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_UNAUTHORIZED = "VALIDATION_FAILED_UNAUTHORIZED".asInstanceOf[LaunchProfileValidationStatusCode]
+  val VALIDATION_FAILED_INTERNAL_SERVER_ERROR = "VALIDATION_FAILED_INTERNAL_SERVER_ERROR".asInstanceOf[LaunchProfileValidationStatusCode]
+
+  @inline def values: js.Array[LaunchProfileValidationStatusCode] = js.Array(
+    VALIDATION_NOT_STARTED,
+    VALIDATION_IN_PROGRESS,
+    VALIDATION_SUCCESS,
+    VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION,
+    VALIDATION_FAILED_SUBNET_NOT_FOUND,
+    VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION,
+    VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY,
+    VALIDATION_FAILED_UNAUTHORIZED,
+    VALIDATION_FAILED_INTERNAL_SERVER_ERROR
+  )
+}
+
+@js.native
+sealed trait LaunchProfileValidationType extends js.Any
+object LaunchProfileValidationType {
+  val VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT = "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT".asInstanceOf[LaunchProfileValidationType]
+  val VALIDATE_SUBNET_ASSOCIATION = "VALIDATE_SUBNET_ASSOCIATION".asInstanceOf[LaunchProfileValidationType]
+  val VALIDATE_NETWORK_ACL_ASSOCIATION = "VALIDATE_NETWORK_ACL_ASSOCIATION".asInstanceOf[LaunchProfileValidationType]
+  val VALIDATE_SECURITY_GROUP_ASSOCIATION = "VALIDATE_SECURITY_GROUP_ASSOCIATION".asInstanceOf[LaunchProfileValidationType]
+
+  @inline def values: js.Array[LaunchProfileValidationType] = js.Array(VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT, VALIDATE_SUBNET_ASSOCIATION, VALIDATE_NETWORK_ACL_ASSOCIATION, VALIDATE_SECURITY_GROUP_ASSOCIATION)
 }
 
 @js.native
@@ -133,8 +186,29 @@ object StreamingInstanceType {
   val `g4dn.8xlarge` = "g4dn.8xlarge".asInstanceOf[StreamingInstanceType]
   val `g4dn.12xlarge` = "g4dn.12xlarge".asInstanceOf[StreamingInstanceType]
   val `g4dn.16xlarge` = "g4dn.16xlarge".asInstanceOf[StreamingInstanceType]
+  val `g3.4xlarge` = "g3.4xlarge".asInstanceOf[StreamingInstanceType]
+  val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[StreamingInstanceType]
+  val `g5.xlarge` = "g5.xlarge".asInstanceOf[StreamingInstanceType]
+  val `g5.2xlarge` = "g5.2xlarge".asInstanceOf[StreamingInstanceType]
+  val `g5.4xlarge` = "g5.4xlarge".asInstanceOf[StreamingInstanceType]
+  val `g5.8xlarge` = "g5.8xlarge".asInstanceOf[StreamingInstanceType]
+  val `g5.16xlarge` = "g5.16xlarge".asInstanceOf[StreamingInstanceType]
 
-  @inline def values: js.Array[StreamingInstanceType] = js.Array(`g4dn.xlarge`, `g4dn.2xlarge`, `g4dn.4xlarge`, `g4dn.8xlarge`, `g4dn.12xlarge`, `g4dn.16xlarge`)
+  @inline def values: js.Array[StreamingInstanceType] = js.Array(
+    `g4dn.xlarge`,
+    `g4dn.2xlarge`,
+    `g4dn.4xlarge`,
+    `g4dn.8xlarge`,
+    `g4dn.12xlarge`,
+    `g4dn.16xlarge`,
+    `g3.4xlarge`,
+    `g3s.xlarge`,
+    `g5.xlarge`,
+    `g5.2xlarge`,
+    `g5.4xlarge`,
+    `g5.8xlarge`,
+    `g5.16xlarge`
+  )
 }
 
 /** The streaming session state.
@@ -175,6 +249,7 @@ object StreamingSessionStatusCode {
   val STREAMING_SESSION_STARTED = "STREAMING_SESSION_STARTED".asInstanceOf[StreamingSessionStatusCode]
   val STREAMING_SESSION_STOP_IN_PROGRESS = "STREAMING_SESSION_STOP_IN_PROGRESS".asInstanceOf[StreamingSessionStatusCode]
   val STREAMING_SESSION_START_IN_PROGRESS = "STREAMING_SESSION_START_IN_PROGRESS".asInstanceOf[StreamingSessionStatusCode]
+  val AMI_VALIDATION_ERROR = "AMI_VALIDATION_ERROR".asInstanceOf[StreamingSessionStatusCode]
 
   @inline def values: js.Array[StreamingSessionStatusCode] = js.Array(
     STREAMING_SESSION_READY,
@@ -191,7 +266,8 @@ object StreamingSessionStatusCode {
     STREAMING_SESSION_STOPPED,
     STREAMING_SESSION_STARTED,
     STREAMING_SESSION_STOP_IN_PROGRESS,
-    STREAMING_SESSION_START_IN_PROGRESS
+    STREAMING_SESSION_START_IN_PROGRESS,
+    AMI_VALIDATION_ERROR
   )
 }
 

@@ -113,7 +113,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A Cell and its properties
+  /** Information about a cell.
     */
   @js.native
   trait CellOutput extends js.Object {
@@ -145,8 +145,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The Cell to create
-    */
   @js.native
   trait CreateCellRequest extends js.Object {
     var CellName: __string
@@ -199,8 +197,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The cross account authorization
-    */
   @js.native
   trait CreateCrossAccountAuthorizationRequest extends js.Object {
     var CrossAccountAuthorization: CrossAccountAuthorization
@@ -234,8 +230,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The ReadinessCheck to create
-    */
   @js.native
   trait CreateReadinessCheckRequest extends js.Object {
     var ReadinessCheckName: __string
@@ -285,8 +279,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The RecoveryGroup to create
-    */
   @js.native
   trait CreateRecoveryGroupRequest extends js.Object {
     var RecoveryGroupName: __string
@@ -336,8 +328,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The ResourceSet to create
-    */
   @js.native
   trait CreateResourceSetRequest extends js.Object {
     var ResourceSetName: __string
@@ -393,7 +383,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A component for DNS/Routing Control Readiness Checks
+  /** A component for DNS/routing control readiness checks and architecture checks.
     */
   @js.native
   trait DNSTargetResource extends js.Object {
@@ -1119,7 +1109,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A collection of rules used in a readiness check
+  /** Readiness rule information, including the resource type, rule ID, and rule description.
     */
   @js.native
   trait ListRulesOutput extends js.Object {
@@ -1218,7 +1208,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Information relating to readiness check status
+  /** Information relating to readiness check status.
     */
   @js.native
   trait Message extends js.Object {
@@ -1236,7 +1226,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The NLB resource a DNS Target Resource points to
+  /** The Network Load Balancer resource that a DNS target resource points to.
     */
   @js.native
   trait NLBResource extends js.Object {
@@ -1254,7 +1244,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The Route 53 resource a DNS Target Resource record points to
+  /** The Route 53 resource that a DNS target resource record points to.
     */
   @js.native
   trait R53ResourceRecord extends js.Object {
@@ -1275,7 +1265,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A resource used for checking the readiness of a Resource Set
+  /** A readiness check.
     */
   @js.native
   trait ReadinessCheckOutput extends js.Object {
@@ -1304,7 +1294,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Summary of ReadinessCheck status, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary
+  /** Summary of all readiness check statuses in a recovery group, paginated in GetRecoveryGroupReadinessSummary and GetCellReadinessSummary.
     */
   @js.native
   trait ReadinessCheckSummary extends js.Object {
@@ -1325,7 +1315,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Guidance for improving Recovery Group resilliancy
+  /** Recommendations that are provided to make an application more recovery resilient.
     */
   @js.native
   trait Recommendation extends js.Object {
@@ -1344,7 +1334,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A Recovery Group generally containing multiple Cells
+  /** A representation of the application, typically containing multiple cells.
     */
   @js.native
   trait RecoveryGroupOutput extends js.Object {
@@ -1373,7 +1363,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The resource element of a ResourceSet
+  /** The resource element of a resource set.
     */
   @js.native
   trait Resource extends js.Object {
@@ -1400,7 +1390,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Result with status for an individual resource.
+  /** The result of a successful Resource request, with status for an individual resource.
     */
   @js.native
   trait ResourceResult extends js.Object {
@@ -1429,7 +1419,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** A collection of resources of the same type
+  /** A collection of resources of the same type.
     */
   @js.native
   trait ResourceSetOutput extends js.Object {
@@ -1461,7 +1451,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Result with status for an individual rule..
+  /** The result of a successful Rule request, with status for an individual rule.
     */
   @js.native
   trait RuleResult extends js.Object {
@@ -1520,7 +1510,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The target resource the R53 record points to
+  /** The target resource that the Route 53 record points to.
     */
   @js.native
   trait TargetResource extends js.Object {
@@ -1561,8 +1551,6 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Parameters to update for the Cell
-    */
   @js.native
   trait UpdateCellRequest extends js.Object {
     var CellName: __string
@@ -1611,7 +1599,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** The new Readiness Check values
+  /** Name of a readiness check to describe.
     */
   @js.native
   trait UpdateReadinessCheckRequest extends js.Object {
@@ -1658,7 +1646,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** Parameters to update for the RecoveryGroup
+  /** Name of a recovery group.
     */
   @js.native
   trait UpdateRecoveryGroupRequest extends js.Object {
@@ -1705,7 +1693,7 @@ package object route53recoveryreadiness {
     }
   }
 
-  /** configuration for the desired
+  /** Name of a resource set.
     */
   @js.native
   trait UpdateResourceSetRequest extends js.Object {

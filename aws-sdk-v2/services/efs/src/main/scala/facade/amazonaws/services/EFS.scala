@@ -18,6 +18,8 @@ package object efs {
   type BypassPolicyLockoutSafetyCheck = Boolean
   type ClientToken = String
   type CreationToken = String
+  type Destinations = js.Array[Destination]
+  type DestinationsToCreate = js.Array[DestinationToCreate]
   type Encrypted = Boolean
   type FileSystemArn = String
   type FileSystemDescriptions = js.Array[FileSystemDescription]
@@ -42,6 +44,8 @@ package object efs {
   type Permissions = String
   type Policy = String
   type ProvisionedThroughputInMibps = Double
+  type RegionName = String
+  type ReplicationConfigurationDescriptions = js.Array[ReplicationConfigurationDescription]
   type ResourceId = String
   type Resources = js.Array[Resource]
   type SecondaryGids = js.Array[Gid]
@@ -62,10 +66,12 @@ package object efs {
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[AccessPointDescription] = service.createAccessPoint(params).promise().toFuture
     @inline def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] = service.createFileSystem(params).promise().toFuture
     @inline def createMountTargetFuture(params: CreateMountTargetRequest): Future[MountTargetDescription] = service.createMountTarget(params).promise().toFuture
+    @inline def createReplicationConfigurationFuture(params: CreateReplicationConfigurationRequest): Future[ReplicationConfigurationDescription] = service.createReplicationConfiguration(params).promise().toFuture
     @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
     @inline def deleteFileSystemFuture(params: DeleteFileSystemRequest): Future[js.Object] = service.deleteFileSystem(params).promise().toFuture
     @inline def deleteFileSystemPolicyFuture(params: DeleteFileSystemPolicyRequest): Future[js.Object] = service.deleteFileSystemPolicy(params).promise().toFuture
     @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] = service.deleteMountTarget(params).promise().toFuture
+    @inline def deleteReplicationConfigurationFuture(params: DeleteReplicationConfigurationRequest): Future[js.Object] = service.deleteReplicationConfiguration(params).promise().toFuture
     @inline def describeAccessPointsFuture(params: DescribeAccessPointsRequest): Future[DescribeAccessPointsResponse] = service.describeAccessPoints(params).promise().toFuture
     @inline def describeAccountPreferencesFuture(params: DescribeAccountPreferencesRequest): Future[DescribeAccountPreferencesResponse] = service.describeAccountPreferences(params).promise().toFuture
     @inline def describeBackupPolicyFuture(params: DescribeBackupPolicyRequest): Future[BackupPolicyDescription] = service.describeBackupPolicy(params).promise().toFuture
@@ -74,6 +80,7 @@ package object efs {
     @inline def describeLifecycleConfigurationFuture(params: DescribeLifecycleConfigurationRequest): Future[LifecycleConfigurationDescription] = service.describeLifecycleConfiguration(params).promise().toFuture
     @inline def describeMountTargetSecurityGroupsFuture(params: DescribeMountTargetSecurityGroupsRequest): Future[DescribeMountTargetSecurityGroupsResponse] = service.describeMountTargetSecurityGroups(params).promise().toFuture
     @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] = service.describeMountTargets(params).promise().toFuture
+    @inline def describeReplicationConfigurationsFuture(params: DescribeReplicationConfigurationsRequest): Future[DescribeReplicationConfigurationsResponse] = service.describeReplicationConfigurations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def modifyMountTargetSecurityGroupsFuture(params: ModifyMountTargetSecurityGroupsRequest): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise().toFuture
     @inline def putAccountPreferencesFuture(params: PutAccountPreferencesRequest): Future[PutAccountPreferencesResponse] = service.putAccountPreferences(params).promise().toFuture
@@ -97,10 +104,12 @@ package object efs {
     def createAccessPoint(params: CreateAccessPointRequest): Request[AccessPointDescription] = js.native
     def createFileSystem(params: CreateFileSystemRequest): Request[FileSystemDescription] = js.native
     def createMountTarget(params: CreateMountTargetRequest): Request[MountTargetDescription] = js.native
+    def createReplicationConfiguration(params: CreateReplicationConfigurationRequest): Request[ReplicationConfigurationDescription] = js.native
     def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object] = js.native
     def deleteFileSystem(params: DeleteFileSystemRequest): Request[js.Object] = js.native
     def deleteFileSystemPolicy(params: DeleteFileSystemPolicyRequest): Request[js.Object] = js.native
     def deleteMountTarget(params: DeleteMountTargetRequest): Request[js.Object] = js.native
+    def deleteReplicationConfiguration(params: DeleteReplicationConfigurationRequest): Request[js.Object] = js.native
     def describeAccessPoints(params: DescribeAccessPointsRequest): Request[DescribeAccessPointsResponse] = js.native
     def describeAccountPreferences(params: DescribeAccountPreferencesRequest): Request[DescribeAccountPreferencesResponse] = js.native
     def describeBackupPolicy(params: DescribeBackupPolicyRequest): Request[BackupPolicyDescription] = js.native
@@ -109,6 +118,7 @@ package object efs {
     def describeLifecycleConfiguration(params: DescribeLifecycleConfigurationRequest): Request[LifecycleConfigurationDescription] = js.native
     def describeMountTargetSecurityGroups(params: DescribeMountTargetSecurityGroupsRequest): Request[DescribeMountTargetSecurityGroupsResponse] = js.native
     def describeMountTargets(params: DescribeMountTargetsRequest): Request[DescribeMountTargetsResponse] = js.native
+    def describeReplicationConfigurations(params: DescribeReplicationConfigurationsRequest): Request[DescribeReplicationConfigurationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def modifyMountTargetSecurityGroups(params: ModifyMountTargetSecurityGroupsRequest): Request[js.Object] = js.native
     def putAccountPreferences(params: PutAccountPreferencesRequest): Request[PutAccountPreferencesResponse] = js.native
@@ -306,6 +316,26 @@ package object efs {
     }
   }
 
+  @js.native
+  trait CreateReplicationConfigurationRequest extends js.Object {
+    var Destinations: DestinationsToCreate
+    var SourceFileSystemId: FileSystemId
+  }
+
+  object CreateReplicationConfigurationRequest {
+    @inline
+    def apply(
+        Destinations: DestinationsToCreate,
+        SourceFileSystemId: FileSystemId
+    ): CreateReplicationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Destinations" -> Destinations.asInstanceOf[js.Any],
+        "SourceFileSystemId" -> SourceFileSystemId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateReplicationConfigurationRequest]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -422,6 +452,23 @@ package object efs {
         "MountTargetId" -> MountTargetId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteMountTargetRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteReplicationConfigurationRequest extends js.Object {
+    var SourceFileSystemId: FileSystemId
+  }
+
+  object DeleteReplicationConfigurationRequest {
+    @inline
+    def apply(
+        SourceFileSystemId: FileSystemId
+    ): DeleteReplicationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "SourceFileSystemId" -> SourceFileSystemId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteReplicationConfigurationRequest]
     }
   }
 
@@ -719,6 +766,47 @@ package object efs {
     }
   }
 
+  @js.native
+  trait DescribeReplicationConfigurationsRequest extends js.Object {
+    var FileSystemId: js.UndefOr[FileSystemId]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object DescribeReplicationConfigurationsRequest {
+    @inline
+    def apply(
+        FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): DescribeReplicationConfigurationsRequest = {
+      val __obj = js.Dynamic.literal()
+      FileSystemId.foreach(__v => __obj.updateDynamic("FileSystemId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReplicationConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeReplicationConfigurationsResponse extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var Replications: js.UndefOr[ReplicationConfigurationDescriptions]
+  }
+
+  object DescribeReplicationConfigurationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        Replications: js.UndefOr[ReplicationConfigurationDescriptions] = js.undefined
+    ): DescribeReplicationConfigurationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Replications.foreach(__v => __obj.updateDynamic("Replications")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReplicationConfigurationsResponse]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -768,6 +856,59 @@ package object efs {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsResponse]
+    }
+  }
+
+  /** Describes the destination file system in the replication configuration.
+    */
+  @js.native
+  trait Destination extends js.Object {
+    var FileSystemId: FileSystemId
+    var Region: RegionName
+    var Status: ReplicationStatus
+    var LastReplicatedTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object Destination {
+    @inline
+    def apply(
+        FileSystemId: FileSystemId,
+        Region: RegionName,
+        Status: ReplicationStatus,
+        LastReplicatedTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): Destination = {
+      val __obj = js.Dynamic.literal(
+        "FileSystemId" -> FileSystemId.asInstanceOf[js.Any],
+        "Region" -> Region.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      LastReplicatedTimestamp.foreach(__v => __obj.updateDynamic("LastReplicatedTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Destination]
+    }
+  }
+
+  /** Describes the destination file system to create in the replication configuration.
+    */
+  @js.native
+  trait DestinationToCreate extends js.Object {
+    var AvailabilityZoneName: js.UndefOr[AvailabilityZoneName]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var Region: js.UndefOr[RegionName]
+  }
+
+  object DestinationToCreate {
+    @inline
+    def apply(
+        AvailabilityZoneName: js.UndefOr[AvailabilityZoneName] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Region: js.UndefOr[RegionName] = js.undefined
+    ): DestinationToCreate = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityZoneName.foreach(__v => __obj.updateDynamic("AvailabilityZoneName")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationToCreate]
     }
   }
 
@@ -903,9 +1044,9 @@ package object efs {
     }
   }
 
-  /** Describes a policy used by EFS lifecycle management and EFS intelligent tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html|EFS Intelligent‐Tiering and EFS Lifecycle Management]].
+  /** Describes a policy used by EFS lifecycle management and EFS Intelligent-Tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html|EFS Intelligent‐Tiering and EFS Lifecycle Management]].
     *
-    * '''Note:'''When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <a>PutLifecycleConfiguration</a>.
+    * '''Note:'''When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> must be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <a>PutLifecycleConfiguration</a>.
     */
   @js.native
   trait LifecyclePolicy extends js.Object {
@@ -1159,6 +1300,38 @@ package object efs {
         "LifecyclePolicies" -> LifecyclePolicies.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PutLifecycleConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait ReplicationConfigurationDescription extends js.Object {
+    var CreationTime: Timestamp
+    var Destinations: Destinations
+    var OriginalSourceFileSystemArn: FileSystemArn
+    var SourceFileSystemArn: FileSystemArn
+    var SourceFileSystemId: FileSystemId
+    var SourceFileSystemRegion: RegionName
+  }
+
+  object ReplicationConfigurationDescription {
+    @inline
+    def apply(
+        CreationTime: Timestamp,
+        Destinations: Destinations,
+        OriginalSourceFileSystemArn: FileSystemArn,
+        SourceFileSystemArn: FileSystemArn,
+        SourceFileSystemId: FileSystemId,
+        SourceFileSystemRegion: RegionName
+    ): ReplicationConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "Destinations" -> Destinations.asInstanceOf[js.Any],
+        "OriginalSourceFileSystemArn" -> OriginalSourceFileSystemArn.asInstanceOf[js.Any],
+        "SourceFileSystemArn" -> SourceFileSystemArn.asInstanceOf[js.Any],
+        "SourceFileSystemId" -> SourceFileSystemId.asInstanceOf[js.Any],
+        "SourceFileSystemRegion" -> SourceFileSystemRegion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReplicationConfigurationDescription]
     }
   }
 

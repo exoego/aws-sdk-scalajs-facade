@@ -66,6 +66,7 @@ lazy val awsCloudFrontSigner = defineAwsProject("CloudFrontSigner")
 lazy val awsACM = defineAwsProject("ACM")
 lazy val awsACMPCA = defineAwsProject("ACMPCA")
 lazy val awsAPIGateway = defineAwsProject("APIGateway")
+lazy val awsARCZonalShift = defineAwsProject("ARCZonalShift")
 lazy val awsAccessAnalyzer = defineAwsProject("AccessAnalyzer")
 lazy val awsAccount = defineAwsProject("Account")
 lazy val awsAlexaForBusiness = defineAwsProject("AlexaForBusiness")
@@ -94,14 +95,18 @@ lazy val awsAutoScaling = defineAwsProject("AutoScaling")
 lazy val awsAutoScalingPlans = defineAwsProject("AutoScalingPlans")
 lazy val awsBackup = defineAwsProject("Backup")
 lazy val awsBackupGateway = defineAwsProject("BackupGateway")
+lazy val awsBackupStorage = defineAwsProject("BackupStorage")
 lazy val awsBatch = defineAwsProject("Batch")
+lazy val awsBillingConductor = defineAwsProject("BillingConductor")
 lazy val awsBraket = defineAwsProject("Braket")
 lazy val awsBudgetsService = defineAwsProject("BudgetsService")
 lazy val awsCUR = defineAwsProject("CUR")
 lazy val awsChime = defineAwsProject("Chime")
 lazy val awsChimeSDKIdentity = defineAwsProject("ChimeSDKIdentity")
+lazy val awsChimeSDKMediaPipelines = defineAwsProject("ChimeSDKMediaPipelines")
 lazy val awsChimeSDKMeetings = defineAwsProject("ChimeSDKMeetings")
 lazy val awsChimeSDKMessaging = defineAwsProject("ChimeSDKMessaging")
+lazy val awsChimeSDKVoice = defineAwsProject("ChimeSDKVoice")
 lazy val awsCloud9 = defineAwsProject("Cloud9")
 lazy val awsCloudControl = defineAwsProject("CloudControl")
 lazy val awsCloudDirectory = defineAwsProject("CloudDirectory")
@@ -117,6 +122,7 @@ lazy val awsCloudWatchEvents = defineAwsProject("CloudWatchEvents")
 lazy val awsCloudWatchLogs = defineAwsProject("CloudWatchLogs")
 lazy val awsCodeArtifact = defineAwsProject("CodeArtifact")
 lazy val awsCodeBuild = defineAwsProject("CodeBuild")
+lazy val awsCodeCatalyst = defineAwsProject("CodeCatalyst")
 lazy val awsCodeCommit = defineAwsProject("CodeCommit")
 lazy val awsCodeDeploy = defineAwsProject("CodeDeploy")
 lazy val awsCodeGuruProfiler = defineAwsProject("CodeGuruProfiler")
@@ -133,8 +139,11 @@ lazy val awsComprehendMedical = defineAwsProject("ComprehendMedical")
 lazy val awsComputeOptimizer = defineAwsProject("ComputeOptimizer")
 lazy val awsConfigService = defineAwsProject("ConfigService")
 lazy val awsConnect = defineAwsProject("Connect")
+lazy val awsConnectCampaigns = defineAwsProject("ConnectCampaigns")
+lazy val awsConnectCases = defineAwsProject("ConnectCases")
 lazy val awsConnectContactLens = defineAwsProject("ConnectContactLens")
 lazy val awsConnectParticipant = defineAwsProject("ConnectParticipant")
+lazy val awsControlTower = defineAwsProject("ControlTower")
 lazy val awsCostExplorer = defineAwsProject("CostExplorer")
 lazy val awsCustomerProfiles = defineAwsProject("CustomerProfiles")
 lazy val awsDAX = defineAwsProject("DAX")
@@ -151,6 +160,7 @@ lazy val awsDeviceFarm = defineAwsProject("DeviceFarm")
 lazy val awsDirectConnect = defineAwsProject("DirectConnect")
 lazy val awsDirectoryService = defineAwsProject("DirectoryService")
 lazy val awsDocDB = defineAwsProject("DocDB")
+lazy val awsDocDBElastic = defineAwsProject("DocDBElastic")
 lazy val awsEBS = defineAwsProject("EBS")
 lazy val awsEC2 = defineAwsProject("EC2")
 lazy val awsEC2InstanceConnect = defineAwsProject("EC2InstanceConnect")
@@ -162,6 +172,7 @@ lazy val awsEKS = defineAwsProject("EKS")
 lazy val awsELB = defineAwsProject("ELB")
 lazy val awsELBv2 = defineAwsProject("ELBv2")
 lazy val awsEMR = defineAwsProject("EMR")
+lazy val awsEMRServerless = defineAwsProject("EMRServerless")
 lazy val awsEMRcontainers = defineAwsProject("EMRcontainers")
 lazy val awsES = defineAwsProject("ES")
 lazy val awsElastiCache = defineAwsProject("ElastiCache")
@@ -180,6 +191,7 @@ lazy val awsForecast = defineAwsProject("Forecast")
 lazy val awsForecastQuery = defineAwsProject("ForecastQuery")
 lazy val awsFraudDetector = defineAwsProject("FraudDetector")
 lazy val awsGameLift = defineAwsProject("GameLift")
+lazy val awsGameSparks = defineAwsProject("GameSparks")
 lazy val awsGlacier = defineAwsProject("Glacier")
 lazy val awsGlobalAccelerator = defineAwsProject("GlobalAccelerator")
 lazy val awsGlue = defineAwsProject("Glue")
@@ -193,6 +205,7 @@ lazy val awsHealthLake = defineAwsProject("HealthLake")
 lazy val awsHoneycode = defineAwsProject("Honeycode")
 lazy val awsIAM = defineAwsProject("IAM")
 lazy val awsIVS = defineAwsProject("IVS")
+lazy val awsIVSChat = defineAwsProject("IVSChat")
 lazy val awsIdentityStore = defineAwsProject("IdentityStore")
 lazy val awsImagebuilder = defineAwsProject("Imagebuilder")
 lazy val awsImportExport = defineAwsProject("ImportExport")
@@ -204,7 +217,9 @@ lazy val awsIoTAnalytics = defineAwsProject("IoTAnalytics")
 lazy val awsIoTEvents = defineAwsProject("IoTEvents")
 lazy val awsIoTEventsData = defineAwsProject("IoTEventsData")
 lazy val awsIoTFleetHub = defineAwsProject("IoTFleetHub")
+lazy val awsIoTFleetWise = defineAwsProject("IoTFleetWise")
 lazy val awsIoTJobsDataPlane = defineAwsProject("IoTJobsDataPlane")
+lazy val awsIoTRoboRunner = defineAwsProject("IoTRoboRunner")
 lazy val awsIoTSecureTunneling = defineAwsProject("IoTSecureTunneling")
 lazy val awsIoTSiteWise = defineAwsProject("IoTSiteWise")
 lazy val awsIoTThingsGraph = defineAwsProject("IoTThingsGraph")
@@ -217,6 +232,7 @@ lazy val awsKMS = defineAwsProject("KMS")
 lazy val awsKafka = defineAwsProject("Kafka")
 lazy val awsKafkaConnect = defineAwsProject("KafkaConnect")
 lazy val awsKendra = defineAwsProject("Kendra")
+lazy val awsKeyspaces = defineAwsProject("Keyspaces")
 lazy val awsKinesis = defineAwsProject("Kinesis")
 lazy val awsKinesisAnalytics = defineAwsProject("KinesisAnalytics")
 lazy val awsKinesisAnalyticsV2 = defineAwsProject("KinesisAnalyticsV2")
@@ -231,11 +247,13 @@ lazy val awsLexModelsV2 = defineAwsProject("LexModelsV2")
 lazy val awsLexRuntime = defineAwsProject("LexRuntime")
 lazy val awsLexRuntimeV2 = defineAwsProject("LexRuntimeV2")
 lazy val awsLicenseManager = defineAwsProject("LicenseManager")
+lazy val awsLicenseManagerUserSubscriptions = defineAwsProject("LicenseManagerUserSubscriptions")
 lazy val awsLightsail = defineAwsProject("Lightsail")
 lazy val awsLocation = defineAwsProject("Location")
 lazy val awsLookoutEquipment = defineAwsProject("LookoutEquipment")
 lazy val awsLookoutMetrics = defineAwsProject("LookoutMetrics")
 lazy val awsLookoutVision = defineAwsProject("LookoutVision")
+lazy val awsM2 = defineAwsProject("M2")
 lazy val awsMQ = defineAwsProject("MQ")
 lazy val awsMTurk = defineAwsProject("MTurk")
 lazy val awsMWAA = defineAwsProject("MWAA")
@@ -259,6 +277,7 @@ lazy val awsMemoryDB = defineAwsProject("MemoryDB")
 lazy val awsMgn = defineAwsProject("Mgn")
 lazy val awsMigrationHub = defineAwsProject("MigrationHub")
 lazy val awsMigrationHubConfig = defineAwsProject("MigrationHubConfig")
+lazy val awsMigrationHubOrchestrator = defineAwsProject("MigrationHubOrchestrator")
 lazy val awsMigrationHubRefactorSpaces = defineAwsProject("MigrationHubRefactorSpaces")
 lazy val awsMigrationHubStrategy = defineAwsProject("MigrationHubStrategy")
 lazy val awsMobile = defineAwsProject("Mobile")
@@ -267,7 +286,10 @@ lazy val awsNeptune = defineAwsProject("Neptune")
 lazy val awsNetworkFirewall = defineAwsProject("NetworkFirewall")
 lazy val awsNetworkManager = defineAwsProject("NetworkManager")
 lazy val awsNimble = defineAwsProject("Nimble")
+lazy val awsOAM = defineAwsProject("OAM")
+lazy val awsOmics = defineAwsProject("Omics")
 lazy val awsOpenSearch = defineAwsProject("OpenSearch")
+lazy val awsOpenSearchServerless = defineAwsProject("OpenSearchServerless")
 lazy val awsOpsWorks = defineAwsProject("OpsWorks")
 lazy val awsOpsWorksCM = defineAwsProject("OpsWorksCM")
 lazy val awsOrganizations = defineAwsProject("Organizations")
@@ -280,8 +302,11 @@ lazy val awsPersonalizeRuntime = defineAwsProject("PersonalizeRuntime")
 lazy val awsPinpoint = defineAwsProject("Pinpoint")
 lazy val awsPinpointEmail = defineAwsProject("PinpointEmail")
 lazy val awsPinpointSMSVoice = defineAwsProject("PinpointSMSVoice")
+lazy val awsPinpointSMSVoiceV2 = defineAwsProject("PinpointSMSVoiceV2")
+lazy val awsPipes = defineAwsProject("Pipes")
 lazy val awsPolly = defineAwsProject("Polly")
 lazy val awsPricing = defineAwsProject("Pricing")
+lazy val awsPrivateNetworks = defineAwsProject("PrivateNetworks")
 lazy val awsProton = defineAwsProject("Proton")
 lazy val awsQLDB = defineAwsProject("QLDB")
 lazy val awsQLDBSession = defineAwsProject("QLDBSession")
@@ -293,11 +318,14 @@ lazy val awsRDSDataService = defineAwsProject("RDSDataService")
 lazy val awsRUM = defineAwsProject("RUM")
 lazy val awsRedshift = defineAwsProject("Redshift")
 lazy val awsRedshiftData = defineAwsProject("RedshiftData")
+lazy val awsRedshiftServerless = defineAwsProject("RedshiftServerless")
 lazy val awsRekognition = defineAwsProject("Rekognition")
 lazy val awsResilienceHub = defineAwsProject("ResilienceHub")
+lazy val awsResourceExplorer2 = defineAwsProject("ResourceExplorer2")
 lazy val awsResourceGroups = defineAwsProject("ResourceGroups")
 lazy val awsResourceGroupsTaggingAPI = defineAwsProject("ResourceGroupsTaggingAPI")
 lazy val awsRoboMaker = defineAwsProject("RoboMaker")
+lazy val awsRolesAnywhere = defineAwsProject("RolesAnywhere")
 lazy val awsRoute53 = defineAwsProject("Route53")
 lazy val awsRoute53Domains = defineAwsProject("Route53Domains")
 lazy val awsRoute53RecoveryCluster = defineAwsProject("Route53RecoveryCluster")
@@ -322,12 +350,15 @@ lazy val awsSTS = defineAwsProject("STS")
 lazy val awsSWF = defineAwsProject("SWF")
 lazy val awsSageMaker = defineAwsProject("SageMaker")
 lazy val awsSageMakerFeatureStoreRuntime = defineAwsProject("SageMakerFeatureStoreRuntime")
+lazy val awsSageMakerGeospatial = defineAwsProject("SageMakerGeospatial")
 lazy val awsSageMakerRuntime = defineAwsProject("SageMakerRuntime")
 lazy val awsSagemakerEdge = defineAwsProject("SagemakerEdge")
 lazy val awsSavingsPlans = defineAwsProject("SavingsPlans")
+lazy val awsScheduler = defineAwsProject("Scheduler")
 lazy val awsSchemas = defineAwsProject("Schemas")
 lazy val awsSecretsManager = defineAwsProject("SecretsManager")
 lazy val awsSecurityHub = defineAwsProject("SecurityHub")
+lazy val awsSecurityLake = defineAwsProject("SecurityLake")
 lazy val awsServerlessApplicationRepository = defineAwsProject("ServerlessApplicationRepository")
 lazy val awsServiceCatalog = defineAwsProject("ServiceCatalog")
 lazy val awsServiceCatalogAppRegistry = defineAwsProject("ServiceCatalogAppRegistry")
@@ -335,12 +366,15 @@ lazy val awsServiceDiscovery = defineAwsProject("ServiceDiscovery")
 lazy val awsServiceQuotas = defineAwsProject("ServiceQuotas")
 lazy val awsShield = defineAwsProject("Shield")
 lazy val awsSigner = defineAwsProject("Signer")
+lazy val awsSimSpaceWeaver = defineAwsProject("SimSpaceWeaver")
 lazy val awsSimpleDB = defineAwsProject("SimpleDB")
 lazy val awsSnowDeviceManagement = defineAwsProject("SnowDeviceManagement")
 lazy val awsSnowball = defineAwsProject("Snowball")
+lazy val awsSsmSap = defineAwsProject("SsmSap")
 lazy val awsStepFunctions = defineAwsProject("StepFunctions")
 lazy val awsStorageGateway = defineAwsProject("StorageGateway")
 lazy val awsSupport = defineAwsProject("Support")
+lazy val awsSupportApp = defineAwsProject("SupportApp")
 lazy val awsSynthetics = defineAwsProject("Synthetics")
 lazy val awsTextract = defineAwsProject("Textract")
 lazy val awsTimestreamQuery = defineAwsProject("TimestreamQuery")
@@ -367,6 +401,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsACM,
   awsACMPCA,
   awsAPIGateway,
+  awsARCZonalShift,
   awsAccessAnalyzer,
   awsAccount,
   awsAlexaForBusiness,
@@ -395,14 +430,18 @@ lazy val subProjects: Seq[Project] = Seq(
   awsAutoScalingPlans,
   awsBackup,
   awsBackupGateway,
+  awsBackupStorage,
   awsBatch,
+  awsBillingConductor,
   awsBraket,
   awsBudgetsService,
   awsCUR,
   awsChime,
   awsChimeSDKIdentity,
+  awsChimeSDKMediaPipelines,
   awsChimeSDKMeetings,
   awsChimeSDKMessaging,
+  awsChimeSDKVoice,
   awsCloud9,
   awsCloudControl,
   awsCloudDirectory,
@@ -418,6 +457,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsCloudWatchLogs,
   awsCodeArtifact,
   awsCodeBuild,
+  awsCodeCatalyst,
   awsCodeCommit,
   awsCodeDeploy,
   awsCodeGuruProfiler,
@@ -434,8 +474,11 @@ lazy val subProjects: Seq[Project] = Seq(
   awsComputeOptimizer,
   awsConfigService,
   awsConnect,
+  awsConnectCampaigns,
+  awsConnectCases,
   awsConnectContactLens,
   awsConnectParticipant,
+  awsControlTower,
   awsCostExplorer,
   awsCustomerProfiles,
   awsDAX,
@@ -452,6 +495,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsDirectConnect,
   awsDirectoryService,
   awsDocDB,
+  awsDocDBElastic,
   awsDynamoDB,
   awsDynamoDBStreams,
   awsEBS,
@@ -465,6 +509,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsELB,
   awsELBv2,
   awsEMR,
+  awsEMRServerless,
   awsEMRcontainers,
   awsES,
   awsElastiCache,
@@ -483,6 +528,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsForecastQuery,
   awsFraudDetector,
   awsGameLift,
+  awsGameSparks,
   awsGlacier,
   awsGlobalAccelerator,
   awsGlue,
@@ -496,6 +542,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsHoneycode,
   awsIAM,
   awsIVS,
+  awsIVSChat,
   awsIdentityStore,
   awsImagebuilder,
   awsImportExport,
@@ -507,7 +554,9 @@ lazy val subProjects: Seq[Project] = Seq(
   awsIoTEvents,
   awsIoTEventsData,
   awsIoTFleetHub,
+  awsIoTFleetWise,
   awsIoTJobsDataPlane,
+  awsIoTRoboRunner,
   awsIoTSecureTunneling,
   awsIoTSiteWise,
   awsIoTThingsGraph,
@@ -520,6 +569,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsKafka,
   awsKafkaConnect,
   awsKendra,
+  awsKeyspaces,
   awsKinesis,
   awsKinesisAnalytics,
   awsKinesisAnalyticsV2,
@@ -534,11 +584,13 @@ lazy val subProjects: Seq[Project] = Seq(
   awsLexRuntime,
   awsLexRuntimeV2,
   awsLicenseManager,
+  awsLicenseManagerUserSubscriptions,
   awsLightsail,
   awsLocation,
   awsLookoutEquipment,
   awsLookoutMetrics,
   awsLookoutVision,
+  awsM2,
   awsMQ,
   awsMTurk,
   awsMWAA,
@@ -562,6 +614,7 @@ lazy val subProjects: Seq[Project] = Seq(
   awsMgn,
   awsMigrationHub,
   awsMigrationHubConfig,
+  awsMigrationHubOrchestrator,
   awsMigrationHubRefactorSpaces,
   awsMigrationHubStrategy,
   awsMobile,
@@ -570,7 +623,10 @@ lazy val subProjects: Seq[Project] = Seq(
   awsNetworkFirewall,
   awsNetworkManager,
   awsNimble,
+  awsOAM,
+  awsOmics,
   awsOpenSearch,
+  awsOpenSearchServerless,
   awsOpsWorks,
   awsOpsWorksCM,
   awsOrganizations,
@@ -583,8 +639,11 @@ lazy val subProjects: Seq[Project] = Seq(
   awsPinpoint,
   awsPinpointEmail,
   awsPinpointSMSVoice,
+  awsPinpointSMSVoiceV2,
+  awsPipes,
   awsPolly,
   awsPricing,
+  awsPrivateNetworks,
   awsProton,
   awsQLDB,
   awsQLDBSession,
@@ -596,11 +655,14 @@ lazy val subProjects: Seq[Project] = Seq(
   awsRUM,
   awsRedshift,
   awsRedshiftData,
+  awsRedshiftServerless,
   awsRekognition,
   awsResilienceHub,
+  awsResourceExplorer2,
   awsResourceGroups,
   awsResourceGroupsTaggingAPI,
   awsRoboMaker,
+  awsRolesAnywhere,
   awsRoute53,
   awsRoute53Domains,
   awsRoute53RecoveryCluster,
@@ -625,12 +687,15 @@ lazy val subProjects: Seq[Project] = Seq(
   awsSWF,
   awsSageMaker,
   awsSageMakerFeatureStoreRuntime,
+  awsSageMakerGeospatial,
   awsSageMakerRuntime,
   awsSagemakerEdge,
   awsSavingsPlans,
+  awsScheduler,
   awsSchemas,
   awsSecretsManager,
   awsSecurityHub,
+  awsSecurityLake,
   awsServerlessApplicationRepository,
   awsServiceCatalog,
   awsServiceCatalogAppRegistry,
@@ -638,12 +703,15 @@ lazy val subProjects: Seq[Project] = Seq(
   awsServiceQuotas,
   awsShield,
   awsSigner,
+  awsSimSpaceWeaver,
   awsSimpleDB,
   awsSnowDeviceManagement,
   awsSnowball,
+  awsSsmSap,
   awsStepFunctions,
   awsStorageGateway,
   awsSupport,
+  awsSupportApp,
   awsSynthetics,
   awsTextract,
   awsTimestreamQuery,

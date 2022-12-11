@@ -74,6 +74,14 @@ object DatasetType {
   inline def values: js.Array[DatasetType] = js.Array(TRAIN, TEST)
 }
 
+type DetectLabelsFeatureName = "GENERAL_LABELS" | "IMAGE_PROPERTIES"
+object DetectLabelsFeatureName {
+  inline val GENERAL_LABELS: "GENERAL_LABELS" = "GENERAL_LABELS"
+  inline val IMAGE_PROPERTIES: "IMAGE_PROPERTIES" = "IMAGE_PROPERTIES"
+
+  inline def values: js.Array[DetectLabelsFeatureName] = js.Array(GENERAL_LABELS, IMAGE_PROPERTIES)
+}
+
 type EmotionName = "HAPPY" | "SAD" | "ANGRY" | "CONFUSED" | "DISGUSTED" | "SURPRISED" | "CALM" | "UNKNOWN" | "FEAR"
 object EmotionName {
   inline val HAPPY: "HAPPY" = "HAPPY"
@@ -227,7 +235,7 @@ object ProjectStatus {
   inline def values: js.Array[ProjectStatus] = js.Array(CREATING, CREATED, DELETING)
 }
 
-type ProjectVersionStatus = "TRAINING_IN_PROGRESS" | "TRAINING_COMPLETED" | "TRAINING_FAILED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING" | "STOPPED" | "DELETING"
+type ProjectVersionStatus = "TRAINING_IN_PROGRESS" | "TRAINING_COMPLETED" | "TRAINING_FAILED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING" | "STOPPED" | "DELETING" | "COPYING_IN_PROGRESS" | "COPYING_COMPLETED" | "COPYING_FAILED"
 object ProjectVersionStatus {
   inline val TRAINING_IN_PROGRESS: "TRAINING_IN_PROGRESS" = "TRAINING_IN_PROGRESS"
   inline val TRAINING_COMPLETED: "TRAINING_COMPLETED" = "TRAINING_COMPLETED"
@@ -238,8 +246,24 @@ object ProjectVersionStatus {
   inline val STOPPING: "STOPPING" = "STOPPING"
   inline val STOPPED: "STOPPED" = "STOPPED"
   inline val DELETING: "DELETING" = "DELETING"
+  inline val COPYING_IN_PROGRESS: "COPYING_IN_PROGRESS" = "COPYING_IN_PROGRESS"
+  inline val COPYING_COMPLETED: "COPYING_COMPLETED" = "COPYING_COMPLETED"
+  inline val COPYING_FAILED: "COPYING_FAILED" = "COPYING_FAILED"
 
-  inline def values: js.Array[ProjectVersionStatus] = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
+  inline def values: js.Array[ProjectVersionStatus] = js.Array(
+    TRAINING_IN_PROGRESS,
+    TRAINING_COMPLETED,
+    TRAINING_FAILED,
+    STARTING,
+    RUNNING,
+    FAILED,
+    STOPPING,
+    STOPPED,
+    DELETING,
+    COPYING_IN_PROGRESS,
+    COPYING_COMPLETED,
+    COPYING_FAILED
+  )
 }
 
 type ProtectiveEquipmentType = "FACE_COVER" | "HAND_COVER" | "HEAD_COVER"
@@ -283,15 +307,24 @@ object SegmentType {
   inline def values: js.Array[SegmentType] = js.Array(TECHNICAL_CUE, SHOT)
 }
 
-type StreamProcessorStatus = "STOPPED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING"
+type StreamProcessorParameterToDelete = "ConnectedHomeMinConfidence" | "RegionsOfInterest"
+object StreamProcessorParameterToDelete {
+  inline val ConnectedHomeMinConfidence: "ConnectedHomeMinConfidence" = "ConnectedHomeMinConfidence"
+  inline val RegionsOfInterest: "RegionsOfInterest" = "RegionsOfInterest"
+
+  inline def values: js.Array[StreamProcessorParameterToDelete] = js.Array(ConnectedHomeMinConfidence, RegionsOfInterest)
+}
+
+type StreamProcessorStatus = "STOPPED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING" | "UPDATING"
 object StreamProcessorStatus {
   inline val STOPPED: "STOPPED" = "STOPPED"
   inline val STARTING: "STARTING" = "STARTING"
   inline val RUNNING: "RUNNING" = "RUNNING"
   inline val FAILED: "FAILED" = "FAILED"
   inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
+  inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING, UPDATING)
 }
 
 type TechnicalCueType = "ColorBars" | "EndCredits" | "BlackFrames" | "OpeningCredits" | "StudioLogo" | "Slate" | "Content"

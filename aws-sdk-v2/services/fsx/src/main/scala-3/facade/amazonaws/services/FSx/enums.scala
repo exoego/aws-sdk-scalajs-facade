@@ -2,11 +2,11 @@ package facade.amazonaws.services.fsx
 
 import scalajs.js
 
-/** Describes the type of administrative action, as follows: * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>). * <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. <li> For Windows, storage optimization is the process of migrating the file system data to the new, larger disks. * For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers. * For OpenZFS, storage optimization consists of migrating data from the older smaller disks to the newer larger disks. You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent
-  * <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing storage capacity]] in the <i>Amazon FSx for Windows File Server User Guide</i>, [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html|Managing storage and throughput capacity]] in the <i>Amazon FSx for Lustre User Guide</i>, and [[https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html|Managing storage capacity]] in the <i>Amazon FSx for OpenZFS User Guide</i>. </li> * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see [[https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html| AssociateFileSystemAliases]]. * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to
-  * disassociate a DNS alias from the file system. For more information, see [[https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html|DisassociateFileSystemAliases]]. * <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>). * <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>). * <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.
+/** Describes the type of administrative action, as follows: * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>). * <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. <li> For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks. * For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers. You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see
+  * [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing storage capacity]] in the <i>Amazon FSx for Windows File Server User Guide</i>, [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html|Managing storage and throughput capacity]] in the <i>Amazon FSx for Lustre User Guide</i>, and [[https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html|Managing storage capacity and provisioned IOPS]] in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. </li> * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see [[https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html| AssociateFileSystemAliases]]. * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see
+  * [[https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html|DisassociateFileSystemAliases]]. * <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>). * <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>). * <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>). * <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.
   */
-type AdministrativeActionType = "FILE_SYSTEM_UPDATE" | "STORAGE_OPTIMIZATION" | "FILE_SYSTEM_ALIAS_ASSOCIATION" | "FILE_SYSTEM_ALIAS_DISASSOCIATION" | "VOLUME_UPDATE" | "SNAPSHOT_UPDATE" | "RELEASE_NFS_V3_LOCKS"
+type AdministrativeActionType = "FILE_SYSTEM_UPDATE" | "STORAGE_OPTIMIZATION" | "FILE_SYSTEM_ALIAS_ASSOCIATION" | "FILE_SYSTEM_ALIAS_DISASSOCIATION" | "VOLUME_UPDATE" | "SNAPSHOT_UPDATE" | "RELEASE_NFS_V3_LOCKS" | "VOLUME_RESTORE"
 object AdministrativeActionType {
   inline val FILE_SYSTEM_UPDATE: "FILE_SYSTEM_UPDATE" = "FILE_SYSTEM_UPDATE"
   inline val STORAGE_OPTIMIZATION: "STORAGE_OPTIMIZATION" = "STORAGE_OPTIMIZATION"
@@ -15,6 +15,7 @@ object AdministrativeActionType {
   inline val VOLUME_UPDATE: "VOLUME_UPDATE" = "VOLUME_UPDATE"
   inline val SNAPSHOT_UPDATE: "SNAPSHOT_UPDATE" = "SNAPSHOT_UPDATE"
   inline val RELEASE_NFS_V3_LOCKS: "RELEASE_NFS_V3_LOCKS" = "RELEASE_NFS_V3_LOCKS"
+  inline val VOLUME_RESTORE: "VOLUME_RESTORE" = "VOLUME_RESTORE"
 
   inline def values: js.Array[AdministrativeActionType] = js.Array(
     FILE_SYSTEM_UPDATE,
@@ -23,7 +24,8 @@ object AdministrativeActionType {
     FILE_SYSTEM_ALIAS_DISASSOCIATION,
     VOLUME_UPDATE,
     SNAPSHOT_UPDATE,
-    RELEASE_NFS_V3_LOCKS
+    RELEASE_NFS_V3_LOCKS,
+    VOLUME_RESTORE
   )
 }
 
@@ -94,13 +96,14 @@ object DataRepositoryLifecycle {
   inline def values: js.Array[DataRepositoryLifecycle] = js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING, FAILED)
 }
 
-type DataRepositoryTaskFilterName = "file-system-id" | "task-lifecycle" | "data-repository-association-id"
+type DataRepositoryTaskFilterName = "file-system-id" | "task-lifecycle" | "data-repository-association-id" | "file-cache-id"
 object DataRepositoryTaskFilterName {
   inline val `file-system-id`: "file-system-id" = "file-system-id"
   inline val `task-lifecycle`: "task-lifecycle" = "task-lifecycle"
   inline val `data-repository-association-id`: "data-repository-association-id" = "data-repository-association-id"
+  inline val `file-cache-id`: "file-cache-id" = "file-cache-id"
 
-  inline def values: js.Array[DataRepositoryTaskFilterName] = js.Array(`file-system-id`, `task-lifecycle`, `data-repository-association-id`)
+  inline def values: js.Array[DataRepositoryTaskFilterName] = js.Array(`file-system-id`, `task-lifecycle`, `data-repository-association-id`, `file-cache-id`)
 }
 
 type DataRepositoryTaskLifecycle = "PENDING" | "EXECUTING" | "FAILED" | "SUCCEEDED" | "CANCELED" | "CANCELING"
@@ -115,12 +118,21 @@ object DataRepositoryTaskLifecycle {
   inline def values: js.Array[DataRepositoryTaskLifecycle] = js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING)
 }
 
-type DataRepositoryTaskType = "EXPORT_TO_REPOSITORY" | "IMPORT_METADATA_FROM_REPOSITORY"
+type DataRepositoryTaskType = "EXPORT_TO_REPOSITORY" | "IMPORT_METADATA_FROM_REPOSITORY" | "RELEASE_DATA_FROM_FILESYSTEM" | "AUTO_RELEASE_DATA"
 object DataRepositoryTaskType {
   inline val EXPORT_TO_REPOSITORY: "EXPORT_TO_REPOSITORY" = "EXPORT_TO_REPOSITORY"
   inline val IMPORT_METADATA_FROM_REPOSITORY: "IMPORT_METADATA_FROM_REPOSITORY" = "IMPORT_METADATA_FROM_REPOSITORY"
+  inline val RELEASE_DATA_FROM_FILESYSTEM: "RELEASE_DATA_FROM_FILESYSTEM" = "RELEASE_DATA_FROM_FILESYSTEM"
+  inline val AUTO_RELEASE_DATA: "AUTO_RELEASE_DATA" = "AUTO_RELEASE_DATA"
 
-  inline def values: js.Array[DataRepositoryTaskType] = js.Array(EXPORT_TO_REPOSITORY, IMPORT_METADATA_FROM_REPOSITORY)
+  inline def values: js.Array[DataRepositoryTaskType] = js.Array(EXPORT_TO_REPOSITORY, IMPORT_METADATA_FROM_REPOSITORY, RELEASE_DATA_FROM_FILESYSTEM, AUTO_RELEASE_DATA)
+}
+
+type DeleteFileSystemOpenZFSOption = "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"
+object DeleteFileSystemOpenZFSOption {
+  inline val DELETE_CHILD_VOLUMES_AND_SNAPSHOTS: "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS" = "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"
+
+  inline def values: js.Array[DeleteFileSystemOpenZFSOption] = js.Array(DELETE_CHILD_VOLUMES_AND_SNAPSHOTS)
 }
 
 type DeleteOpenZFSVolumeOption = "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS"
@@ -155,9 +167,34 @@ object EventType {
   inline def values: js.Array[EventType] = js.Array(NEW, CHANGED, DELETED)
 }
 
+type FileCacheLifecycle = "AVAILABLE" | "CREATING" | "DELETING" | "UPDATING" | "FAILED"
+object FileCacheLifecycle {
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[FileCacheLifecycle] = js.Array(AVAILABLE, CREATING, DELETING, UPDATING, FAILED)
+}
+
+type FileCacheLustreDeploymentType = "CACHE_1"
+object FileCacheLustreDeploymentType {
+  inline val CACHE_1: "CACHE_1" = "CACHE_1"
+
+  inline def values: js.Array[FileCacheLustreDeploymentType] = js.Array(CACHE_1)
+}
+
+type FileCacheType = "LUSTRE"
+object FileCacheType {
+  inline val LUSTRE: "LUSTRE" = "LUSTRE"
+
+  inline def values: js.Array[FileCacheType] = js.Array(LUSTRE)
+}
+
 /** The lifecycle status of the file system.
   */
-type FileSystemLifecycle = "AVAILABLE" | "CREATING" | "FAILED" | "DELETING" | "MISCONFIGURED" | "UPDATING"
+type FileSystemLifecycle = "AVAILABLE" | "CREATING" | "FAILED" | "DELETING" | "MISCONFIGURED" | "UPDATING" | "MISCONFIGURED_UNAVAILABLE"
 object FileSystemLifecycle {
   inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
   inline val CREATING: "CREATING" = "CREATING"
@@ -165,8 +202,9 @@ object FileSystemLifecycle {
   inline val DELETING: "DELETING" = "DELETING"
   inline val MISCONFIGURED: "MISCONFIGURED" = "MISCONFIGURED"
   inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val MISCONFIGURED_UNAVAILABLE: "MISCONFIGURED_UNAVAILABLE" = "MISCONFIGURED_UNAVAILABLE"
 
-  inline def values: js.Array[FileSystemLifecycle] = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
+  inline def values: js.Array[FileSystemLifecycle] = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING, MISCONFIGURED_UNAVAILABLE)
 }
 
 /** An enumeration specifying the currently ongoing maintenance operation.
@@ -193,15 +231,17 @@ object FileSystemType {
 
 /** The name for a filter.
   */
-type FilterName = "file-system-id" | "backup-type" | "file-system-type" | "volume-id" | "data-repository-type"
+type FilterName = "file-system-id" | "backup-type" | "file-system-type" | "volume-id" | "data-repository-type" | "file-cache-id" | "file-cache-type"
 object FilterName {
   inline val `file-system-id`: "file-system-id" = "file-system-id"
   inline val `backup-type`: "backup-type" = "backup-type"
   inline val `file-system-type`: "file-system-type" = "file-system-type"
   inline val `volume-id`: "volume-id" = "volume-id"
   inline val `data-repository-type`: "data-repository-type" = "data-repository-type"
+  inline val `file-cache-id`: "file-cache-id" = "file-cache-id"
+  inline val `file-cache-type`: "file-cache-type" = "file-cache-type"
 
-  inline def values: js.Array[FilterName] = js.Array(`file-system-id`, `backup-type`, `file-system-type`, `volume-id`, `data-repository-type`)
+  inline def values: js.Array[FilterName] = js.Array(`file-system-id`, `backup-type`, `file-system-type`, `volume-id`, `data-repository-type`, `file-cache-id`, `file-cache-type`)
 }
 
 type FlexCacheEndpointType = "NONE" | "ORIGIN" | "CACHE"
@@ -211,6 +251,14 @@ object FlexCacheEndpointType {
   inline val CACHE: "CACHE" = "CACHE"
 
   inline def values: js.Array[FlexCacheEndpointType] = js.Array(NONE, ORIGIN, CACHE)
+}
+
+type InputOntapVolumeType = "RW" | "DP"
+object InputOntapVolumeType {
+  inline val RW: "RW" = "RW"
+  inline val DP: "DP" = "DP"
+
+  inline def values: js.Array[InputOntapVolumeType] = js.Array(RW, DP)
 }
 
 type LustreAccessAuditLogLevel = "DISABLED" | "WARN_ONLY" | "ERROR_ONLY" | "WARN_ERROR"
@@ -233,11 +281,19 @@ object LustreDeploymentType {
   inline def values: js.Array[LustreDeploymentType] = js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1, PERSISTENT_2)
 }
 
-type OntapDeploymentType = "MULTI_AZ_1"
+type NfsVersion = "NFS3"
+object NfsVersion {
+  inline val NFS3: "NFS3" = "NFS3"
+
+  inline def values: js.Array[NfsVersion] = js.Array(NFS3)
+}
+
+type OntapDeploymentType = "MULTI_AZ_1" | "SINGLE_AZ_1"
 object OntapDeploymentType {
   inline val MULTI_AZ_1: "MULTI_AZ_1" = "MULTI_AZ_1"
+  inline val SINGLE_AZ_1: "SINGLE_AZ_1" = "SINGLE_AZ_1"
 
-  inline def values: js.Array[OntapDeploymentType] = js.Array(MULTI_AZ_1)
+  inline def values: js.Array[OntapDeploymentType] = js.Array(MULTI_AZ_1, SINGLE_AZ_1)
 }
 
 type OntapVolumeType = "RW" | "DP" | "LS"
@@ -257,19 +313,21 @@ object OpenZFSCopyStrategy {
   inline def values: js.Array[OpenZFSCopyStrategy] = js.Array(CLONE, FULL_COPY)
 }
 
-type OpenZFSDataCompressionType = "NONE" | "ZSTD"
+type OpenZFSDataCompressionType = "NONE" | "ZSTD" | "LZ4"
 object OpenZFSDataCompressionType {
   inline val NONE: "NONE" = "NONE"
   inline val ZSTD: "ZSTD" = "ZSTD"
+  inline val LZ4: "LZ4" = "LZ4"
 
-  inline def values: js.Array[OpenZFSDataCompressionType] = js.Array(NONE, ZSTD)
+  inline def values: js.Array[OpenZFSDataCompressionType] = js.Array(NONE, ZSTD, LZ4)
 }
 
-type OpenZFSDeploymentType = "SINGLE_AZ_1"
+type OpenZFSDeploymentType = "SINGLE_AZ_1" | "SINGLE_AZ_2"
 object OpenZFSDeploymentType {
   inline val SINGLE_AZ_1: "SINGLE_AZ_1" = "SINGLE_AZ_1"
+  inline val SINGLE_AZ_2: "SINGLE_AZ_2" = "SINGLE_AZ_2"
 
-  inline def values: js.Array[OpenZFSDeploymentType] = js.Array(SINGLE_AZ_1)
+  inline def values: js.Array[OpenZFSDeploymentType] = js.Array(SINGLE_AZ_1, SINGLE_AZ_2)
 }
 
 type OpenZFSQuotaType = "USER" | "GROUP"
@@ -384,16 +442,6 @@ object StorageVirtualMachineRootVolumeSecurityStyle {
   inline val MIXED: "MIXED" = "MIXED"
 
   inline def values: js.Array[StorageVirtualMachineRootVolumeSecurityStyle] = js.Array(UNIX, NTFS, MIXED)
-}
-
-type StorageVirtualMachineSubtype = "DEFAULT" | "DP_DESTINATION" | "SYNC_DESTINATION" | "SYNC_SOURCE"
-object StorageVirtualMachineSubtype {
-  inline val DEFAULT: "DEFAULT" = "DEFAULT"
-  inline val DP_DESTINATION: "DP_DESTINATION" = "DP_DESTINATION"
-  inline val SYNC_DESTINATION: "SYNC_DESTINATION" = "SYNC_DESTINATION"
-  inline val SYNC_SOURCE: "SYNC_SOURCE" = "SYNC_SOURCE"
-
-  inline def values: js.Array[StorageVirtualMachineSubtype] = js.Array(DEFAULT, DP_DESTINATION, SYNC_DESTINATION, SYNC_SOURCE)
 }
 
 type TieringPolicyName = "SNAPSHOT_ONLY" | "AUTO" | "ALL" | "NONE"

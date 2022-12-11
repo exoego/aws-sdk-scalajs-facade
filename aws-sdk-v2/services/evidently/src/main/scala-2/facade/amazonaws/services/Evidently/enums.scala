@@ -145,6 +145,15 @@ object ProjectStatus {
 }
 
 @js.native
+sealed trait SegmentReferenceResourceType extends js.Any
+object SegmentReferenceResourceType {
+  val EXPERIMENT = "EXPERIMENT".asInstanceOf[SegmentReferenceResourceType]
+  val LAUNCH = "LAUNCH".asInstanceOf[SegmentReferenceResourceType]
+
+  @inline def values: js.Array[SegmentReferenceResourceType] = js.Array(EXPERIMENT, LAUNCH)
+}
+
+@js.native
 sealed trait VariationValueType extends js.Any
 object VariationValueType {
   val STRING = "STRING".asInstanceOf[VariationValueType]

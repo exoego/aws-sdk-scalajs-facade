@@ -13,7 +13,7 @@ object AutoTuneDesiredState {
   @inline def values: js.Array[AutoTuneDesiredState] = js.Array(ENABLED, DISABLED)
 }
 
-/** The Auto-Tune state for the domain. For valid states see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service</a>.
+/** The Auto-Tune state for the domain. For valid states see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html| Auto-Tune for Amazon OpenSearch Service]].
   */
 @js.native
 sealed trait AutoTuneState extends js.Any
@@ -109,7 +109,7 @@ object InboundConnectionStatusCode {
   @inline def values: js.Array[InboundConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, APPROVED, PROVISIONING, ACTIVE, REJECTING, REJECTED, DELETING, DELETED)
 }
 
-/** <p>Type of log file. Can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute. * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute. * ES_APPLICATION_LOGS: OpenSearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain. </p>
+/** The type of log file. Can be one of the following: * ```INDEX_SLOW_LOGS``` - Index slow logs contain insert requests that took more time than the configured index query log threshold to execute. * ```SEARCH_SLOW_LOGS``` - Search slow logs contain search queries that took more time than the configured search query log threshold to execute. * ```ES_APPLICATION_LOGS``` - OpenSearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * ```AUDIT_LOGS``` - Audit logs contain records of user requests for access to the domain.
   */
 @js.native
 sealed trait LogType extends js.Any
@@ -330,7 +330,7 @@ object OpenSearchWarmPartitionInstanceType {
   @inline def values: js.Array[OpenSearchWarmPartitionInstanceType] = js.Array(`ultrawarm1.medium.search`, `ultrawarm1.large.search`, `ultrawarm1.xlarge.search`)
 }
 
-/** The state of a requested change. One of the following: * Processing: The request change is still in progress. * Active: The request change is processed and deployed to the domain.
+/** The state of a requested domain configuration change. Can be one of the following: * ```Processing``` - The requested change is still in progress. * ```Active``` - The requested change is processed and deployed to the domain.
   */
 @js.native
 sealed trait OptionState extends js.Any
@@ -359,6 +359,19 @@ object OutboundConnectionStatusCode {
   @inline def values: js.Array[OutboundConnectionStatusCode] = js.Array(VALIDATING, VALIDATION_FAILED, PENDING_ACCEPTANCE, APPROVED, PROVISIONING, ACTIVE, REJECTING, REJECTED, DELETING, DELETED)
 }
 
+/** The overall status value of the domain configuration change.
+  */
+@js.native
+sealed trait OverallChangeStatus extends js.Any
+object OverallChangeStatus {
+  val PENDING = "PENDING".asInstanceOf[OverallChangeStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[OverallChangeStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[OverallChangeStatus]
+  val FAILED = "FAILED".asInstanceOf[OverallChangeStatus]
+
+  @inline def values: js.Array[OverallChangeStatus] = js.Array(PENDING, PROCESSING, COMPLETED, FAILED)
+}
+
 @js.native
 sealed trait PackageStatus extends js.Any
 object PackageStatus {
@@ -383,6 +396,15 @@ object PackageType {
 }
 
 @js.native
+sealed trait PrincipalType extends js.Any
+object PrincipalType {
+  val AWS_ACCOUNT = "AWS_ACCOUNT".asInstanceOf[PrincipalType]
+  val AWS_SERVICE = "AWS_SERVICE".asInstanceOf[PrincipalType]
+
+  @inline def values: js.Array[PrincipalType] = js.Array(AWS_ACCOUNT, AWS_SERVICE)
+}
+
+@js.native
 sealed trait ReservedInstancePaymentOption extends js.Any
 object ReservedInstancePaymentOption {
   val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[ReservedInstancePaymentOption]
@@ -392,7 +414,7 @@ object ReservedInstancePaymentOption {
   @inline def values: js.Array[ReservedInstancePaymentOption] = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
 }
 
-/** The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+/** The rollback state while disabling Auto-Tune for the domain.
   */
 @js.native
 sealed trait RollbackOnDisable extends js.Any
@@ -403,7 +425,7 @@ object RollbackOnDisable {
   @inline def values: js.Array[RollbackOnDisable] = js.Array(NO_ROLLBACK, DEFAULT_ROLLBACK)
 }
 
-/** The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING, and JVM_YOUNG_GEN_TUNING.
+/** The Auto-Tune action type.
   */
 @js.native
 sealed trait ScheduledAutoTuneActionType extends js.Any
@@ -414,7 +436,7 @@ object ScheduledAutoTuneActionType {
   @inline def values: js.Array[ScheduledAutoTuneActionType] = js.Array(JVM_HEAP_SIZE_TUNING, JVM_YOUNG_GEN_TUNING)
 }
 
-/** The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+/** The Auto-Tune action severity.
   */
 @js.native
 sealed trait ScheduledAutoTuneSeverityType extends js.Any
@@ -435,7 +457,7 @@ object TLSSecurityPolicy {
   @inline def values: js.Array[TLSSecurityPolicy] = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
 }
 
-/** The unit of a maintenance schedule duration. Valid value is HOUR. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+/** The unit of a maintenance schedule duration. Valid value is <code>HOUR</code>.
   */
 @js.native
 sealed trait TimeUnit extends js.Any
@@ -466,7 +488,7 @@ object UpgradeStep {
   @inline def values: js.Array[UpgradeStep] = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
 }
 
-/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.
+/** The type of EBS volume that a domain uses. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs|Configuring EBS-based storage]].
   */
 @js.native
 sealed trait VolumeType extends js.Any
@@ -474,6 +496,30 @@ object VolumeType {
   val standard = "standard".asInstanceOf[VolumeType]
   val gp2 = "gp2".asInstanceOf[VolumeType]
   val io1 = "io1".asInstanceOf[VolumeType]
+  val gp3 = "gp3".asInstanceOf[VolumeType]
 
-  @inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1)
+  @inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1, gp3)
+}
+
+@js.native
+sealed trait VpcEndpointErrorCode extends js.Any
+object VpcEndpointErrorCode {
+  val ENDPOINT_NOT_FOUND = "ENDPOINT_NOT_FOUND".asInstanceOf[VpcEndpointErrorCode]
+  val SERVER_ERROR = "SERVER_ERROR".asInstanceOf[VpcEndpointErrorCode]
+
+  @inline def values: js.Array[VpcEndpointErrorCode] = js.Array(ENDPOINT_NOT_FOUND, SERVER_ERROR)
+}
+
+@js.native
+sealed trait VpcEndpointStatus extends js.Any
+object VpcEndpointStatus {
+  val CREATING = "CREATING".asInstanceOf[VpcEndpointStatus]
+  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[VpcEndpointStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[VpcEndpointStatus]
+  val UPDATING = "UPDATING".asInstanceOf[VpcEndpointStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[VpcEndpointStatus]
+  val DELETING = "DELETING".asInstanceOf[VpcEndpointStatus]
+  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[VpcEndpointStatus]
+
+  @inline def values: js.Array[VpcEndpointStatus] = js.Array(CREATING, CREATE_FAILED, ACTIVE, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
 }

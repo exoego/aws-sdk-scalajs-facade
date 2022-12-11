@@ -68,6 +68,7 @@ package object codeartifact {
     @inline def deleteRepositoryFuture(params: DeleteRepositoryRequest): Future[DeleteRepositoryResult] = service.deleteRepository(params).promise().toFuture
     @inline def deleteRepositoryPermissionsPolicyFuture(params: DeleteRepositoryPermissionsPolicyRequest): Future[DeleteRepositoryPermissionsPolicyResult] = service.deleteRepositoryPermissionsPolicy(params).promise().toFuture
     @inline def describeDomainFuture(params: DescribeDomainRequest): Future[DescribeDomainResult] = service.describeDomain(params).promise().toFuture
+    @inline def describePackageFuture(params: DescribePackageRequest): Future[DescribePackageResult] = service.describePackage(params).promise().toFuture
     @inline def describePackageVersionFuture(params: DescribePackageVersionRequest): Future[DescribePackageVersionResult] = service.describePackageVersion(params).promise().toFuture
     @inline def describeRepositoryFuture(params: DescribeRepositoryRequest): Future[DescribeRepositoryResult] = service.describeRepository(params).promise().toFuture
     @inline def disassociateExternalConnectionFuture(params: DisassociateExternalConnectionRequest): Future[DisassociateExternalConnectionResult] = service.disassociateExternalConnection(params).promise().toFuture
@@ -87,6 +88,7 @@ package object codeartifact {
     @inline def listRepositoriesInDomainFuture(params: ListRepositoriesInDomainRequest): Future[ListRepositoriesInDomainResult] = service.listRepositoriesInDomain(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
     @inline def putDomainPermissionsPolicyFuture(params: PutDomainPermissionsPolicyRequest): Future[PutDomainPermissionsPolicyResult] = service.putDomainPermissionsPolicy(params).promise().toFuture
+    @inline def putPackageOriginConfigurationFuture(params: PutPackageOriginConfigurationRequest): Future[PutPackageOriginConfigurationResult] = service.putPackageOriginConfiguration(params).promise().toFuture
     @inline def putRepositoryPermissionsPolicyFuture(params: PutRepositoryPermissionsPolicyRequest): Future[PutRepositoryPermissionsPolicyResult] = service.putRepositoryPermissionsPolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
@@ -110,6 +112,7 @@ package object codeartifact {
     def deleteRepository(params: DeleteRepositoryRequest): Request[DeleteRepositoryResult] = js.native
     def deleteRepositoryPermissionsPolicy(params: DeleteRepositoryPermissionsPolicyRequest): Request[DeleteRepositoryPermissionsPolicyResult] = js.native
     def describeDomain(params: DescribeDomainRequest): Request[DescribeDomainResult] = js.native
+    def describePackage(params: DescribePackageRequest): Request[DescribePackageResult] = js.native
     def describePackageVersion(params: DescribePackageVersionRequest): Request[DescribePackageVersionResult] = js.native
     def describeRepository(params: DescribeRepositoryRequest): Request[DescribeRepositoryResult] = js.native
     def disassociateExternalConnection(params: DisassociateExternalConnectionRequest): Request[DisassociateExternalConnectionResult] = js.native
@@ -129,6 +132,7 @@ package object codeartifact {
     def listRepositoriesInDomain(params: ListRepositoriesInDomainRequest): Request[ListRepositoriesInDomainResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def putDomainPermissionsPolicy(params: PutDomainPermissionsPolicyRequest): Request[PutDomainPermissionsPolicyResult] = js.native
+    def putPackageOriginConfiguration(params: PutPackageOriginConfigurationRequest): Request[PutPackageOriginConfigurationResult] = js.native
     def putRepositoryPermissionsPolicy(params: PutRepositoryPermissionsPolicyRequest): Request[PutRepositoryPermissionsPolicyResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
@@ -622,6 +626,56 @@ package object codeartifact {
   }
 
   @js.native
+  trait DescribePackageRequest extends js.Object {
+    var domain: DomainName
+    var format: PackageFormat
+    var `package`: PackageName
+    var repository: RepositoryName
+    var domainOwner: js.UndefOr[AccountId]
+    var namespace: js.UndefOr[PackageNamespace]
+  }
+
+  object DescribePackageRequest {
+    @inline
+    def apply(
+        domain: DomainName,
+        format: PackageFormat,
+        `package`: PackageName,
+        repository: RepositoryName,
+        domainOwner: js.UndefOr[AccountId] = js.undefined,
+        namespace: js.UndefOr[PackageNamespace] = js.undefined
+    ): DescribePackageRequest = {
+      val __obj = js.Dynamic.literal(
+        "domain" -> domain.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
+        "package" -> `package`.asInstanceOf[js.Any],
+        "repository" -> repository.asInstanceOf[js.Any]
+      )
+
+      domainOwner.foreach(__v => __obj.updateDynamic("domainOwner")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePackageRequest]
+    }
+  }
+
+  @js.native
+  trait DescribePackageResult extends js.Object {
+    var `package`: PackageDescription
+  }
+
+  object DescribePackageResult {
+    @inline
+    def apply(
+        `package`: PackageDescription
+    ): DescribePackageResult = {
+      val __obj = js.Dynamic.literal(
+        "package" -> `package`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribePackageResult]
+    }
+  }
+
+  @js.native
   trait DescribePackageVersionRequest extends js.Object {
     var domain: DomainName
     var format: PackageFormat
@@ -857,6 +911,27 @@ package object codeartifact {
       s3BucketArn.foreach(__v => __obj.updateDynamic("s3BucketArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDescription]
+    }
+  }
+
+  /** Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.
+    */
+  @js.native
+  trait DomainEntryPoint extends js.Object {
+    var externalConnectionName: js.UndefOr[ExternalConnectionName]
+    var repositoryName: js.UndefOr[RepositoryName]
+  }
+
+  object DomainEntryPoint {
+    @inline
+    def apply(
+        externalConnectionName: js.UndefOr[ExternalConnectionName] = js.undefined,
+        repositoryName: js.UndefOr[RepositoryName] = js.undefined
+    ): DomainEntryPoint = {
+      val __obj = js.Dynamic.literal()
+      externalConnectionName.foreach(__v => __obj.updateDynamic("externalConnectionName")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainEntryPoint]
     }
   }
 
@@ -1408,6 +1483,7 @@ package object codeartifact {
     var maxResults: js.UndefOr[ListPackageVersionsMaxResults]
     var namespace: js.UndefOr[PackageNamespace]
     var nextToken: js.UndefOr[PaginationToken]
+    var originType: js.UndefOr[PackageVersionOriginType]
     var sortBy: js.UndefOr[PackageVersionSortType]
     var status: js.UndefOr[PackageVersionStatus]
   }
@@ -1423,6 +1499,7 @@ package object codeartifact {
         maxResults: js.UndefOr[ListPackageVersionsMaxResults] = js.undefined,
         namespace: js.UndefOr[PackageNamespace] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        originType: js.UndefOr[PackageVersionOriginType] = js.undefined,
         sortBy: js.UndefOr[PackageVersionSortType] = js.undefined,
         status: js.UndefOr[PackageVersionStatus] = js.undefined
     ): ListPackageVersionsRequest = {
@@ -1437,6 +1514,7 @@ package object codeartifact {
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      originType.foreach(__v => __obj.updateDynamic("originType")(__v.asInstanceOf[js.Any]))
       sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackageVersionsRequest]
@@ -1484,6 +1562,8 @@ package object codeartifact {
     var namespace: js.UndefOr[PackageNamespace]
     var nextToken: js.UndefOr[PaginationToken]
     var packagePrefix: js.UndefOr[PackageName]
+    var publish: js.UndefOr[AllowPublish]
+    var upstream: js.UndefOr[AllowUpstream]
   }
 
   object ListPackagesRequest {
@@ -1496,7 +1576,9 @@ package object codeartifact {
         maxResults: js.UndefOr[ListPackagesMaxResults] = js.undefined,
         namespace: js.UndefOr[PackageNamespace] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
-        packagePrefix: js.UndefOr[PackageName] = js.undefined
+        packagePrefix: js.UndefOr[PackageName] = js.undefined,
+        publish: js.UndefOr[AllowPublish] = js.undefined,
+        upstream: js.UndefOr[AllowUpstream] = js.undefined
     ): ListPackagesRequest = {
       val __obj = js.Dynamic.literal(
         "domain" -> domain.asInstanceOf[js.Any],
@@ -1509,6 +1591,8 @@ package object codeartifact {
       namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       packagePrefix.foreach(__v => __obj.updateDynamic("packagePrefix")(__v.asInstanceOf[js.Any]))
+      publish.foreach(__v => __obj.updateDynamic("publish")(__v.asInstanceOf[js.Any]))
+      upstream.foreach(__v => __obj.updateDynamic("upstream")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackagesRequest]
     }
   }
@@ -1685,12 +1769,80 @@ package object codeartifact {
     }
   }
 
+  /** Details about a package.
+    */
+  @js.native
+  trait PackageDescription extends js.Object {
+    var format: js.UndefOr[PackageFormat]
+    var name: js.UndefOr[PackageName]
+    var namespace: js.UndefOr[PackageNamespace]
+    var originConfiguration: js.UndefOr[PackageOriginConfiguration]
+  }
+
+  object PackageDescription {
+    @inline
+    def apply(
+        format: js.UndefOr[PackageFormat] = js.undefined,
+        name: js.UndefOr[PackageName] = js.undefined,
+        namespace: js.UndefOr[PackageNamespace] = js.undefined,
+        originConfiguration: js.UndefOr[PackageOriginConfiguration] = js.undefined
+    ): PackageDescription = {
+      val __obj = js.Dynamic.literal()
+      format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      originConfiguration.foreach(__v => __obj.updateDynamic("originConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageDescription]
+    }
+  }
+
+  /** Details about the package origin configuration of a package.
+    */
+  @js.native
+  trait PackageOriginConfiguration extends js.Object {
+    var restrictions: js.UndefOr[PackageOriginRestrictions]
+  }
+
+  object PackageOriginConfiguration {
+    @inline
+    def apply(
+        restrictions: js.UndefOr[PackageOriginRestrictions] = js.undefined
+    ): PackageOriginConfiguration = {
+      val __obj = js.Dynamic.literal()
+      restrictions.foreach(__v => __obj.updateDynamic("restrictions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageOriginConfiguration]
+    }
+  }
+
+  /** Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.
+    */
+  @js.native
+  trait PackageOriginRestrictions extends js.Object {
+    var publish: AllowPublish
+    var upstream: AllowUpstream
+  }
+
+  object PackageOriginRestrictions {
+    @inline
+    def apply(
+        publish: AllowPublish,
+        upstream: AllowUpstream
+    ): PackageOriginRestrictions = {
+      val __obj = js.Dynamic.literal(
+        "publish" -> publish.asInstanceOf[js.Any],
+        "upstream" -> upstream.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PackageOriginRestrictions]
+    }
+  }
+
   /** Details about a package, including its format, namespace, and name. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html|ListPackages]] operation returns a list of <code>PackageSummary</code> objects.
     */
   @js.native
   trait PackageSummary extends js.Object {
     var format: js.UndefOr[PackageFormat]
     var namespace: js.UndefOr[PackageNamespace]
+    var originConfiguration: js.UndefOr[PackageOriginConfiguration]
     var `package`: js.UndefOr[PackageName]
   }
 
@@ -1699,11 +1851,13 @@ package object codeartifact {
     def apply(
         format: js.UndefOr[PackageFormat] = js.undefined,
         namespace: js.UndefOr[PackageNamespace] = js.undefined,
+        originConfiguration: js.UndefOr[PackageOriginConfiguration] = js.undefined,
         `package`: js.UndefOr[PackageName] = js.undefined
     ): PackageSummary = {
       val __obj = js.Dynamic.literal()
       format.foreach(__v => __obj.updateDynamic("format")(__v.asInstanceOf[js.Any]))
       namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      originConfiguration.foreach(__v => __obj.updateDynamic("originConfiguration")(__v.asInstanceOf[js.Any]))
       `package`.foreach(__v => __obj.updateDynamic("package")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackageSummary]
     }
@@ -1718,6 +1872,7 @@ package object codeartifact {
     var homePage: js.UndefOr[String]
     var licenses: js.UndefOr[LicenseInfoList]
     var namespace: js.UndefOr[PackageNamespace]
+    var origin: js.UndefOr[PackageVersionOrigin]
     var packageName: js.UndefOr[PackageName]
     var publishedTime: js.UndefOr[Timestamp]
     var revision: js.UndefOr[PackageVersionRevision]
@@ -1735,6 +1890,7 @@ package object codeartifact {
         homePage: js.UndefOr[String] = js.undefined,
         licenses: js.UndefOr[LicenseInfoList] = js.undefined,
         namespace: js.UndefOr[PackageNamespace] = js.undefined,
+        origin: js.UndefOr[PackageVersionOrigin] = js.undefined,
         packageName: js.UndefOr[PackageName] = js.undefined,
         publishedTime: js.UndefOr[Timestamp] = js.undefined,
         revision: js.UndefOr[PackageVersionRevision] = js.undefined,
@@ -1749,6 +1905,7 @@ package object codeartifact {
       homePage.foreach(__v => __obj.updateDynamic("homePage")(__v.asInstanceOf[js.Any]))
       licenses.foreach(__v => __obj.updateDynamic("licenses")(__v.asInstanceOf[js.Any]))
       namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      origin.foreach(__v => __obj.updateDynamic("origin")(__v.asInstanceOf[js.Any]))
       packageName.foreach(__v => __obj.updateDynamic("packageName")(__v.asInstanceOf[js.Any]))
       publishedTime.foreach(__v => __obj.updateDynamic("publishedTime")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
@@ -1760,7 +1917,7 @@ package object codeartifact {
     }
   }
 
-  /** An error associated with package.
+  /** l An error associated with package.
     */
   @js.native
   trait PackageVersionError extends js.Object {
@@ -1781,12 +1938,34 @@ package object codeartifact {
     }
   }
 
+  /** Information about how a package version was added to a repository.
+    */
+  @js.native
+  trait PackageVersionOrigin extends js.Object {
+    var domainEntryPoint: js.UndefOr[DomainEntryPoint]
+    var originType: js.UndefOr[PackageVersionOriginType]
+  }
+
+  object PackageVersionOrigin {
+    @inline
+    def apply(
+        domainEntryPoint: js.UndefOr[DomainEntryPoint] = js.undefined,
+        originType: js.UndefOr[PackageVersionOriginType] = js.undefined
+    ): PackageVersionOrigin = {
+      val __obj = js.Dynamic.literal()
+      domainEntryPoint.foreach(__v => __obj.updateDynamic("domainEntryPoint")(__v.asInstanceOf[js.Any]))
+      originType.foreach(__v => __obj.updateDynamic("originType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PackageVersionOrigin]
+    }
+  }
+
   /** Details about a package version, including its status, version, and revision. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html|ListPackageVersions]] operation returns a list of <code>PackageVersionSummary</code> objects.
     */
   @js.native
   trait PackageVersionSummary extends js.Object {
     var status: PackageVersionStatus
     var version: PackageVersion
+    var origin: js.UndefOr[PackageVersionOrigin]
     var revision: js.UndefOr[PackageVersionRevision]
   }
 
@@ -1795,6 +1974,7 @@ package object codeartifact {
     def apply(
         status: PackageVersionStatus,
         version: PackageVersion,
+        origin: js.UndefOr[PackageVersionOrigin] = js.undefined,
         revision: js.UndefOr[PackageVersionRevision] = js.undefined
     ): PackageVersionSummary = {
       val __obj = js.Dynamic.literal(
@@ -1802,6 +1982,7 @@ package object codeartifact {
         "version" -> version.asInstanceOf[js.Any]
       )
 
+      origin.foreach(__v => __obj.updateDynamic("origin")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackageVersionSummary]
     }
@@ -1851,6 +2032,58 @@ package object codeartifact {
   }
 
   @js.native
+  trait PutPackageOriginConfigurationRequest extends js.Object {
+    var domain: DomainName
+    var format: PackageFormat
+    var `package`: PackageName
+    var repository: RepositoryName
+    var restrictions: PackageOriginRestrictions
+    var domainOwner: js.UndefOr[AccountId]
+    var namespace: js.UndefOr[PackageNamespace]
+  }
+
+  object PutPackageOriginConfigurationRequest {
+    @inline
+    def apply(
+        domain: DomainName,
+        format: PackageFormat,
+        `package`: PackageName,
+        repository: RepositoryName,
+        restrictions: PackageOriginRestrictions,
+        domainOwner: js.UndefOr[AccountId] = js.undefined,
+        namespace: js.UndefOr[PackageNamespace] = js.undefined
+    ): PutPackageOriginConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "domain" -> domain.asInstanceOf[js.Any],
+        "format" -> format.asInstanceOf[js.Any],
+        "package" -> `package`.asInstanceOf[js.Any],
+        "repository" -> repository.asInstanceOf[js.Any],
+        "restrictions" -> restrictions.asInstanceOf[js.Any]
+      )
+
+      domainOwner.foreach(__v => __obj.updateDynamic("domainOwner")(__v.asInstanceOf[js.Any]))
+      namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPackageOriginConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutPackageOriginConfigurationResult extends js.Object {
+    var originConfiguration: js.UndefOr[PackageOriginConfiguration]
+  }
+
+  object PutPackageOriginConfigurationResult {
+    @inline
+    def apply(
+        originConfiguration: js.UndefOr[PackageOriginConfiguration] = js.undefined
+    ): PutPackageOriginConfigurationResult = {
+      val __obj = js.Dynamic.literal()
+      originConfiguration.foreach(__v => __obj.updateDynamic("originConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutPackageOriginConfigurationResult]
+    }
+  }
+
+  @js.native
   trait PutRepositoryPermissionsPolicyRequest extends js.Object {
     var domain: DomainName
     var policyDocument: PolicyDocument
@@ -1896,7 +2129,7 @@ package object codeartifact {
     }
   }
 
-  /** The details of a repository stored in AWS CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per AWS account.
+  /** The details of a repository stored in CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per Amazon Web Services account.
     */
   @js.native
   trait RepositoryDescription extends js.Object {
@@ -1992,7 +2225,7 @@ package object codeartifact {
     }
   }
 
-  /** An AWS CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
+  /** An CodeArtifact resource policy that contains a resource ARN, document details, and a revision.
     */
   @js.native
   trait ResourcePolicy extends js.Object {
@@ -2037,7 +2270,7 @@ package object codeartifact {
     }
   }
 
-  /** A tag is a key-value pair that can be used to manage, search for, or filter resources in AWS CodeArtifact.
+  /** A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact.
     */
   @js.native
   trait Tag extends js.Object {

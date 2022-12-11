@@ -15,6 +15,7 @@ package object servicecatalogappregistry {
   type Arn = String
   type AssociationCount = Int
   type AttributeGroupArn = String
+  type AttributeGroupDetailsList = js.Array[AttributeGroupDetails]
   type AttributeGroupId = String
   type AttributeGroupIds = js.Array[AttributeGroupId]
   type AttributeGroupSpecifier = String
@@ -29,6 +30,7 @@ package object servicecatalogappregistry {
   type Resources = js.Array[ResourceInfo]
   type StackArn = String
   type TagKey = String
+  type TagKeyConfig = String
   type TagKeys = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
@@ -47,11 +49,14 @@ package object servicecatalogappregistry {
     @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] = service.getApplication(params).promise().toFuture
     @inline def getAssociatedResourceFuture(params: GetAssociatedResourceRequest): Future[GetAssociatedResourceResponse] = service.getAssociatedResource(params).promise().toFuture
     @inline def getAttributeGroupFuture(params: GetAttributeGroupRequest): Future[GetAttributeGroupResponse] = service.getAttributeGroup(params).promise().toFuture
+    @inline def getConfigurationFuture(): Future[GetConfigurationResponse] = service.getConfiguration().promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
     @inline def listAssociatedAttributeGroupsFuture(params: ListAssociatedAttributeGroupsRequest): Future[ListAssociatedAttributeGroupsResponse] = service.listAssociatedAttributeGroups(params).promise().toFuture
     @inline def listAssociatedResourcesFuture(params: ListAssociatedResourcesRequest): Future[ListAssociatedResourcesResponse] = service.listAssociatedResources(params).promise().toFuture
+    @inline def listAttributeGroupsForApplicationFuture(params: ListAttributeGroupsForApplicationRequest): Future[ListAttributeGroupsForApplicationResponse] = service.listAttributeGroupsForApplication(params).promise().toFuture
     @inline def listAttributeGroupsFuture(params: ListAttributeGroupsRequest): Future[ListAttributeGroupsResponse] = service.listAttributeGroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putConfigurationFuture(params: PutConfigurationRequest): Future[js.Object] = service.putConfiguration(params).promise().toFuture
     @inline def syncResourceFuture(params: SyncResourceRequest): Future[SyncResourceResponse] = service.syncResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -76,11 +81,14 @@ package object servicecatalogappregistry {
     def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse] = js.native
     def getAssociatedResource(params: GetAssociatedResourceRequest): Request[GetAssociatedResourceResponse] = js.native
     def getAttributeGroup(params: GetAttributeGroupRequest): Request[GetAttributeGroupResponse] = js.native
+    def getConfiguration(): Request[GetConfigurationResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def listAssociatedAttributeGroups(params: ListAssociatedAttributeGroupsRequest): Request[ListAssociatedAttributeGroupsResponse] = js.native
     def listAssociatedResources(params: ListAssociatedResourcesRequest): Request[ListAssociatedResourcesResponse] = js.native
     def listAttributeGroups(params: ListAttributeGroupsRequest): Request[ListAttributeGroupsResponse] = js.native
+    def listAttributeGroupsForApplication(params: ListAttributeGroupsForApplicationRequest): Request[ListAttributeGroupsForApplicationResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putConfiguration(params: PutConfigurationRequest): Request[js.Object] = js.native
     def syncResource(params: SyncResourceRequest): Request[SyncResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -90,6 +98,24 @@ package object servicecatalogappregistry {
   object ServiceCatalogAppRegistry {
     @inline implicit def toOps(service: ServiceCatalogAppRegistry): ServiceCatalogAppRegistryOps = {
       new ServiceCatalogAppRegistryOps(service)
+    }
+  }
+
+  /** Includes all of the Service Catalog AppRegistry settings.
+    */
+  @js.native
+  trait AppRegistryConfiguration extends js.Object {
+    var tagQueryConfiguration: js.UndefOr[TagQueryConfiguration]
+  }
+
+  object AppRegistryConfiguration {
+    @inline
+    def apply(
+        tagQueryConfiguration: js.UndefOr[TagQueryConfiguration] = js.undefined
+    ): AppRegistryConfiguration = {
+      val __obj = js.Dynamic.literal()
+      tagQueryConfiguration.foreach(__v => __obj.updateDynamic("tagQueryConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AppRegistryConfiguration]
     }
   }
 
@@ -276,6 +302,30 @@ package object servicecatalogappregistry {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeGroup]
+    }
+  }
+
+  /** The details related to a specific AttributeGroup.
+    */
+  @js.native
+  trait AttributeGroupDetails extends js.Object {
+    var arn: js.UndefOr[AttributeGroupArn]
+    var id: js.UndefOr[AttributeGroupId]
+    var name: js.UndefOr[Name]
+  }
+
+  object AttributeGroupDetails {
+    @inline
+    def apply(
+        arn: js.UndefOr[AttributeGroupArn] = js.undefined,
+        id: js.UndefOr[AttributeGroupId] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined
+    ): AttributeGroupDetails = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AttributeGroupDetails]
     }
   }
 
@@ -698,6 +748,22 @@ package object servicecatalogappregistry {
     }
   }
 
+  @js.native
+  trait GetConfigurationResponse extends js.Object {
+    var configuration: js.UndefOr[AppRegistryConfiguration]
+  }
+
+  object GetConfigurationResponse {
+    @inline
+    def apply(
+        configuration: js.UndefOr[AppRegistryConfiguration] = js.undefined
+    ): GetConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetConfigurationResponse]
+    }
+  }
+
   /** The information about the service integration.
     */
   @js.native
@@ -841,6 +907,49 @@ package object servicecatalogappregistry {
   }
 
   @js.native
+  trait ListAttributeGroupsForApplicationRequest extends js.Object {
+    var application: ApplicationSpecifier
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAttributeGroupsForApplicationRequest {
+    @inline
+    def apply(
+        application: ApplicationSpecifier,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAttributeGroupsForApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "application" -> application.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAttributeGroupsForApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait ListAttributeGroupsForApplicationResponse extends js.Object {
+    var attributeGroupsDetails: js.UndefOr[AttributeGroupDetailsList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAttributeGroupsForApplicationResponse {
+    @inline
+    def apply(
+        attributeGroupsDetails: js.UndefOr[AttributeGroupDetailsList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAttributeGroupsForApplicationResponse = {
+      val __obj = js.Dynamic.literal()
+      attributeGroupsDetails.foreach(__v => __obj.updateDynamic("attributeGroupsDetails")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAttributeGroupsForApplicationResponse]
+    }
+  }
+
+  @js.native
   trait ListAttributeGroupsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
@@ -911,6 +1020,23 @@ package object servicecatalogappregistry {
     }
   }
 
+  @js.native
+  trait PutConfigurationRequest extends js.Object {
+    var configuration: AppRegistryConfiguration
+  }
+
+  object PutConfigurationRequest {
+    @inline
+    def apply(
+        configuration: AppRegistryConfiguration
+    ): PutConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "configuration" -> configuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutConfigurationRequest]
+    }
+  }
+
   /** The information about the resource.
     */
   @js.native
@@ -935,6 +1061,24 @@ package object servicecatalogappregistry {
       integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
+    }
+  }
+
+  /** The details related to the resource.
+    */
+  @js.native
+  trait ResourceDetails extends js.Object {
+    var tagValue: js.UndefOr[TagValue]
+  }
+
+  object ResourceDetails {
+    @inline
+    def apply(
+        tagValue: js.UndefOr[TagValue] = js.undefined
+    ): ResourceDetails = {
+      val __obj = js.Dynamic.literal()
+      tagValue.foreach(__v => __obj.updateDynamic("tagValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceDetails]
     }
   }
 
@@ -966,19 +1110,25 @@ package object servicecatalogappregistry {
     */
   @js.native
   trait ResourceInfo extends js.Object {
-    var arn: js.UndefOr[StackArn]
+    var arn: js.UndefOr[Arn]
     var name: js.UndefOr[ResourceSpecifier]
+    var resourceDetails: js.UndefOr[ResourceDetails]
+    var resourceType: js.UndefOr[ResourceType]
   }
 
   object ResourceInfo {
     @inline
     def apply(
-        arn: js.UndefOr[StackArn] = js.undefined,
-        name: js.UndefOr[ResourceSpecifier] = js.undefined
+        arn: js.UndefOr[Arn] = js.undefined,
+        name: js.UndefOr[ResourceSpecifier] = js.undefined,
+        resourceDetails: js.UndefOr[ResourceDetails] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceInfo = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceDetails.foreach(__v => __obj.updateDynamic("resourceDetails")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceInfo]
     }
   }
@@ -1040,6 +1190,24 @@ package object servicecatalogappregistry {
       applicationArn.foreach(__v => __obj.updateDynamic("applicationArn")(__v.asInstanceOf[js.Any]))
       resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SyncResourceResponse]
+    }
+  }
+
+  /** The definition of <code>tagQuery</code>. Specifies which resources are associated with an application.
+    */
+  @js.native
+  trait TagQueryConfiguration extends js.Object {
+    var tagKey: js.UndefOr[TagKeyConfig]
+  }
+
+  object TagQueryConfiguration {
+    @inline
+    def apply(
+        tagKey: js.UndefOr[TagKeyConfig] = js.undefined
+    ): TagQueryConfiguration = {
+      val __obj = js.Dynamic.literal()
+      tagKey.foreach(__v => __obj.updateDynamic("tagKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TagQueryConfiguration]
     }
   }
 

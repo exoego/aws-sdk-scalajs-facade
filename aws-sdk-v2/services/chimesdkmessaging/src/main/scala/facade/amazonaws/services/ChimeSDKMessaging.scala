@@ -14,10 +14,13 @@ package object chimesdkmessaging {
   type ChannelBanSummaryList = js.Array[ChannelBanSummary]
   type ChannelFlowExecutionOrder = Int
   type ChannelFlowSummaryList = js.Array[ChannelFlowSummary]
+  type ChannelId = String
+  type ChannelMemberArns = js.Array[ChimeArn]
   type ChannelMembershipForAppInstanceUserSummaryList = js.Array[ChannelMembershipForAppInstanceUserSummary]
   type ChannelMembershipSummaryList = js.Array[ChannelMembershipSummary]
   type ChannelMessageSummaryList = js.Array[ChannelMessageSummary]
   type ChannelModeratedByAppInstanceUserSummaryList = js.Array[ChannelModeratedByAppInstanceUserSummary]
+  type ChannelModeratorArns = js.Array[ChimeArn]
   type ChannelModeratorSummaryList = js.Array[ChannelModeratorSummary]
   type ChannelSummaryList = js.Array[ChannelSummary]
   type ChimeArn = String
@@ -26,14 +29,17 @@ package object chimesdkmessaging {
   type FilterRule = String
   type LambdaFunctionArn = String
   type MaxResults = Int
+  type MaximumSubChannels = Int
   type MemberArns = js.Array[ChimeArn]
   type Members = js.Array[Identity]
+  type MembershipCount = Int
   type MessageAttributeMap = js.Dictionary[MessageAttributeValue]
   type MessageAttributeName = String
   type MessageAttributeStringValue = String
   type MessageAttributeStringValues = js.Array[MessageAttributeStringValue]
   type MessageId = String
   type Metadata = String
+  type MinimumMembershipPercentage = Int
   type NextToken = String
   type NonEmptyContent = String
   type NonEmptyResourceName = String
@@ -42,11 +48,17 @@ package object chimesdkmessaging {
   type PushNotificationBody = String
   type PushNotificationTitle = String
   type ResourceName = String
+  type SearchFieldValue = String
+  type SearchFieldValues = js.Array[SearchFieldValue]
+  type SearchFields = js.Array[SearchField]
   type StatusDetail = String
+  type SubChannelId = String
+  type SubChannelSummaryList = js.Array[SubChannelSummary]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TargetMembershipsPerSubChannel = Int
   type Timestamp = js.Date
   type UrlType = String
 
@@ -87,9 +99,11 @@ package object chimesdkmessaging {
     @inline def listChannelsAssociatedWithChannelFlowFuture(params: ListChannelsAssociatedWithChannelFlowRequest): Future[ListChannelsAssociatedWithChannelFlowResponse] = service.listChannelsAssociatedWithChannelFlow(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
     @inline def listChannelsModeratedByAppInstanceUserFuture(params: ListChannelsModeratedByAppInstanceUserRequest): Future[ListChannelsModeratedByAppInstanceUserResponse] = service.listChannelsModeratedByAppInstanceUser(params).promise().toFuture
+    @inline def listSubChannelsFuture(params: ListSubChannelsRequest): Future[ListSubChannelsResponse] = service.listSubChannels(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putChannelMembershipPreferencesFuture(params: PutChannelMembershipPreferencesRequest): Future[PutChannelMembershipPreferencesResponse] = service.putChannelMembershipPreferences(params).promise().toFuture
     @inline def redactChannelMessageFuture(params: RedactChannelMessageRequest): Future[RedactChannelMessageResponse] = service.redactChannelMessage(params).promise().toFuture
+    @inline def searchChannelsFuture(params: SearchChannelsRequest): Future[SearchChannelsResponse] = service.searchChannels(params).promise().toFuture
     @inline def sendChannelMessageFuture(params: SendChannelMessageRequest): Future[SendChannelMessageResponse] = service.sendChannelMessage(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
@@ -140,9 +154,11 @@ package object chimesdkmessaging {
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listChannelsAssociatedWithChannelFlow(params: ListChannelsAssociatedWithChannelFlowRequest): Request[ListChannelsAssociatedWithChannelFlowResponse] = js.native
     def listChannelsModeratedByAppInstanceUser(params: ListChannelsModeratedByAppInstanceUserRequest): Request[ListChannelsModeratedByAppInstanceUserResponse] = js.native
+    def listSubChannels(params: ListSubChannelsRequest): Request[ListSubChannelsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putChannelMembershipPreferences(params: PutChannelMembershipPreferencesRequest): Request[PutChannelMembershipPreferencesResponse] = js.native
     def redactChannelMessage(params: RedactChannelMessageRequest): Request[RedactChannelMessageResponse] = js.native
+    def searchChannels(params: SearchChannelsRequest): Request[SearchChannelsResponse] = js.native
     def sendChannelMessage(params: SendChannelMessageRequest): Request[SendChannelMessageResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
@@ -162,6 +178,7 @@ package object chimesdkmessaging {
   @js.native
   trait AppInstanceUserMembershipSummary extends js.Object {
     var ReadMarkerTimestamp: js.UndefOr[Timestamp]
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMembershipType]
   }
 
@@ -169,10 +186,12 @@ package object chimesdkmessaging {
     @inline
     def apply(
         ReadMarkerTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
     ): AppInstanceUserMembershipSummary = {
       val __obj = js.Dynamic.literal()
       ReadMarkerTimestamp.foreach(__v => __obj.updateDynamic("ReadMarkerTimestamp")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppInstanceUserMembershipSummary]
     }
@@ -208,6 +227,7 @@ package object chimesdkmessaging {
     var ChannelArn: js.UndefOr[ChimeArn]
     var InvitedBy: js.UndefOr[Identity]
     var Members: js.UndefOr[Members]
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMembershipType]
   }
 
@@ -217,12 +237,14 @@ package object chimesdkmessaging {
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
         InvitedBy: js.UndefOr[Identity] = js.undefined,
         Members: js.UndefOr[Members] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
     ): BatchChannelMemberships = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       InvitedBy.foreach(__v => __obj.updateDynamic("InvitedBy")(__v.asInstanceOf[js.Any]))
       Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchChannelMemberships]
     }
@@ -257,6 +279,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MemberArns: MemberArns
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMembershipType]
   }
 
@@ -266,6 +289,7 @@ package object chimesdkmessaging {
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
         MemberArns: MemberArns,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
     ): BatchCreateChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
@@ -274,6 +298,7 @@ package object chimesdkmessaging {
         "MemberArns" -> MemberArns.asInstanceOf[js.Any]
       )
 
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateChannelMembershipRequest]
     }
@@ -306,6 +331,7 @@ package object chimesdkmessaging {
     var ChannelFlowArn: js.UndefOr[ChimeArn]
     var CreatedBy: js.UndefOr[Identity]
     var CreatedTimestamp: js.UndefOr[Timestamp]
+    var ElasticChannelConfiguration: js.UndefOr[ElasticChannelConfiguration]
     var LastMessageTimestamp: js.UndefOr[Timestamp]
     var LastUpdatedTimestamp: js.UndefOr[Timestamp]
     var Metadata: js.UndefOr[Metadata]
@@ -321,6 +347,7 @@ package object chimesdkmessaging {
         ChannelFlowArn: js.UndefOr[ChimeArn] = js.undefined,
         CreatedBy: js.UndefOr[Identity] = js.undefined,
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ElasticChannelConfiguration: js.UndefOr[ElasticChannelConfiguration] = js.undefined,
         LastMessageTimestamp: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
@@ -333,6 +360,7 @@ package object chimesdkmessaging {
       ChannelFlowArn.foreach(__v => __obj.updateDynamic("ChannelFlowArn")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ElasticChannelConfiguration.foreach(__v => __obj.updateDynamic("ElasticChannelConfiguration")(__v.asInstanceOf[js.Any]))
       LastMessageTimestamp.foreach(__v => __obj.updateDynamic("LastMessageTimestamp")(__v.asInstanceOf[js.Any]))
       LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
@@ -527,6 +555,7 @@ package object chimesdkmessaging {
     var InvitedBy: js.UndefOr[Identity]
     var LastUpdatedTimestamp: js.UndefOr[Timestamp]
     var Member: js.UndefOr[Identity]
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMembershipType]
   }
 
@@ -538,6 +567,7 @@ package object chimesdkmessaging {
         InvitedBy: js.UndefOr[Identity] = js.undefined,
         LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Member: js.UndefOr[Identity] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
     ): ChannelMembership = {
       val __obj = js.Dynamic.literal()
@@ -546,6 +576,7 @@ package object chimesdkmessaging {
       InvitedBy.foreach(__v => __obj.updateDynamic("InvitedBy")(__v.asInstanceOf[js.Any]))
       LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelMembership]
     }
@@ -624,6 +655,7 @@ package object chimesdkmessaging {
     var Redacted: js.UndefOr[NonNullableBoolean]
     var Sender: js.UndefOr[Identity]
     var Status: js.UndefOr[ChannelMessageStatusStructure]
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMessageType]
   }
 
@@ -642,6 +674,7 @@ package object chimesdkmessaging {
         Redacted: js.UndefOr[NonNullableBoolean] = js.undefined,
         Sender: js.UndefOr[Identity] = js.undefined,
         Status: js.UndefOr[ChannelMessageStatusStructure] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMessageType] = js.undefined
     ): ChannelMessage = {
       val __obj = js.Dynamic.literal()
@@ -657,6 +690,7 @@ package object chimesdkmessaging {
       Redacted.foreach(__v => __obj.updateDynamic("Redacted")(__v.asInstanceOf[js.Any]))
       Sender.foreach(__v => __obj.updateDynamic("Sender")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelMessage]
     }
@@ -671,6 +705,7 @@ package object chimesdkmessaging {
     var MessageAttributes: js.UndefOr[MessageAttributeMap]
     var Metadata: js.UndefOr[Metadata]
     var PushNotification: js.UndefOr[PushNotificationConfiguration]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object ChannelMessageCallback {
@@ -680,7 +715,8 @@ package object chimesdkmessaging {
         Content: js.UndefOr[NonEmptyContent] = js.undefined,
         MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
-        PushNotification: js.UndefOr[PushNotificationConfiguration] = js.undefined
+        PushNotification: js.UndefOr[PushNotificationConfiguration] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): ChannelMessageCallback = {
       val __obj = js.Dynamic.literal(
         "MessageId" -> MessageId.asInstanceOf[js.Any]
@@ -690,6 +726,7 @@ package object chimesdkmessaging {
       MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       PushNotification.foreach(__v => __obj.updateDynamic("PushNotification")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelMessageCallback]
     }
   }
@@ -953,6 +990,7 @@ package object chimesdkmessaging {
     var ChimeBearer: ChimeArn
     var MemberArn: ChimeArn
     var Type: ChannelMembershipType
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object CreateChannelMembershipRequest {
@@ -961,7 +999,8 @@ package object chimesdkmessaging {
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
         MemberArn: ChimeArn,
-        Type: ChannelMembershipType
+        Type: ChannelMembershipType,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): CreateChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
@@ -969,6 +1008,8 @@ package object chimesdkmessaging {
         "MemberArn" -> MemberArn.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelMembershipRequest]
     }
   }
@@ -977,17 +1018,20 @@ package object chimesdkmessaging {
   trait CreateChannelMembershipResponse extends js.Object {
     var ChannelArn: js.UndefOr[ChimeArn]
     var Member: js.UndefOr[Identity]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object CreateChannelMembershipResponse {
     @inline
     def apply(
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
-        Member: js.UndefOr[Identity] = js.undefined
+        Member: js.UndefOr[Identity] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): CreateChannelMembershipResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       Member.foreach(__v => __obj.updateDynamic("Member")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelMembershipResponse]
     }
   }
@@ -1040,8 +1084,12 @@ package object chimesdkmessaging {
     var ChimeBearer: ChimeArn
     var ClientRequestToken: ClientRequestToken
     var Name: NonEmptyResourceName
+    var ChannelId: js.UndefOr[ChannelId]
+    var ElasticChannelConfiguration: js.UndefOr[ElasticChannelConfiguration]
+    var MemberArns: js.UndefOr[ChannelMemberArns]
     var Metadata: js.UndefOr[Metadata]
     var Mode: js.UndefOr[ChannelMode]
+    var ModeratorArns: js.UndefOr[ChannelModeratorArns]
     var Privacy: js.UndefOr[ChannelPrivacy]
     var Tags: js.UndefOr[TagList]
   }
@@ -1053,8 +1101,12 @@ package object chimesdkmessaging {
         ChimeBearer: ChimeArn,
         ClientRequestToken: ClientRequestToken,
         Name: NonEmptyResourceName,
+        ChannelId: js.UndefOr[ChannelId] = js.undefined,
+        ElasticChannelConfiguration: js.UndefOr[ElasticChannelConfiguration] = js.undefined,
+        MemberArns: js.UndefOr[ChannelMemberArns] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
         Mode: js.UndefOr[ChannelMode] = js.undefined,
+        ModeratorArns: js.UndefOr[ChannelModeratorArns] = js.undefined,
         Privacy: js.UndefOr[ChannelPrivacy] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateChannelRequest = {
@@ -1065,8 +1117,12 @@ package object chimesdkmessaging {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ChannelId.foreach(__v => __obj.updateDynamic("ChannelId")(__v.asInstanceOf[js.Any]))
+      ElasticChannelConfiguration.foreach(__v => __obj.updateDynamic("ElasticChannelConfiguration")(__v.asInstanceOf[js.Any]))
+      MemberArns.foreach(__v => __obj.updateDynamic("MemberArns")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      ModeratorArns.foreach(__v => __obj.updateDynamic("ModeratorArns")(__v.asInstanceOf[js.Any]))
       Privacy.foreach(__v => __obj.updateDynamic("Privacy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelRequest]
@@ -1134,6 +1190,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MemberArn: ChimeArn
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object DeleteChannelMembershipRequest {
@@ -1141,13 +1198,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): DeleteChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelMembershipRequest]
     }
   }
@@ -1157,6 +1217,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MessageId: MessageId
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object DeleteChannelMessageRequest {
@@ -1164,13 +1225,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): DeleteChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelMessageRequest]
     }
   }
@@ -1202,18 +1266,22 @@ package object chimesdkmessaging {
   trait DeleteChannelRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object DeleteChannelRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        ChimeBearer: ChimeArn
+        ChimeBearer: ChimeArn,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): DeleteChannelRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChannelRequest]
     }
   }
@@ -1334,6 +1402,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MemberArn: ChimeArn
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object DescribeChannelMembershipRequest {
@@ -1341,13 +1410,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MemberArn: ChimeArn
+        MemberArn: ChimeArn,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): DescribeChannelMembershipRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MemberArn" -> MemberArn.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelMembershipRequest]
     }
   }
@@ -1505,6 +1577,31 @@ package object chimesdkmessaging {
     }
   }
 
+  /** The attributes required to configure and create an elastic channel. An elastic channel can support a maximum of 1-million members.
+    */
+  @js.native
+  trait ElasticChannelConfiguration extends js.Object {
+    var MaximumSubChannels: MaximumSubChannels
+    var MinimumMembershipPercentage: MinimumMembershipPercentage
+    var TargetMembershipsPerSubChannel: TargetMembershipsPerSubChannel
+  }
+
+  object ElasticChannelConfiguration {
+    @inline
+    def apply(
+        MaximumSubChannels: MaximumSubChannels,
+        MinimumMembershipPercentage: MinimumMembershipPercentage,
+        TargetMembershipsPerSubChannel: TargetMembershipsPerSubChannel
+    ): ElasticChannelConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MaximumSubChannels" -> MaximumSubChannels.asInstanceOf[js.Any],
+        "MinimumMembershipPercentage" -> MinimumMembershipPercentage.asInstanceOf[js.Any],
+        "TargetMembershipsPerSubChannel" -> TargetMembershipsPerSubChannel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ElasticChannelConfiguration]
+    }
+  }
+
   @js.native
   trait GetChannelMembershipPreferencesRequest extends js.Object {
     var ChannelArn: ChimeArn
@@ -1555,6 +1652,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MessageId: MessageId
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object GetChannelMessageRequest {
@@ -1562,13 +1660,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): GetChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChannelMessageRequest]
     }
   }
@@ -1594,6 +1695,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MessageId: MessageId
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object GetChannelMessageStatusRequest {
@@ -1601,13 +1703,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): GetChannelMessageStatusRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChannelMessageStatusRequest]
     }
   }
@@ -1842,6 +1947,7 @@ package object chimesdkmessaging {
     var ChimeBearer: ChimeArn
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var SubChannelId: js.UndefOr[SubChannelId]
     var Type: js.UndefOr[ChannelMembershipType]
   }
 
@@ -1852,6 +1958,7 @@ package object chimesdkmessaging {
         ChimeBearer: ChimeArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined,
         Type: js.UndefOr[ChannelMembershipType] = js.undefined
     ): ListChannelMembershipsRequest = {
       val __obj = js.Dynamic.literal(
@@ -1861,6 +1968,7 @@ package object chimesdkmessaging {
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelMembershipsRequest]
     }
@@ -1897,6 +2005,7 @@ package object chimesdkmessaging {
     var NotAfter: js.UndefOr[Timestamp]
     var NotBefore: js.UndefOr[Timestamp]
     var SortOrder: js.UndefOr[SortOrder]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object ListChannelMessagesRequest {
@@ -1908,7 +2017,8 @@ package object chimesdkmessaging {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         NotAfter: js.UndefOr[Timestamp] = js.undefined,
         NotBefore: js.UndefOr[Timestamp] = js.undefined,
-        SortOrder: js.UndefOr[SortOrder] = js.undefined
+        SortOrder: js.UndefOr[SortOrder] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): ListChannelMessagesRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
@@ -1920,6 +2030,7 @@ package object chimesdkmessaging {
       NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
       NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
       SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelMessagesRequest]
     }
   }
@@ -1929,6 +2040,7 @@ package object chimesdkmessaging {
     var ChannelArn: js.UndefOr[ChimeArn]
     var ChannelMessages: js.UndefOr[ChannelMessageSummaryList]
     var NextToken: js.UndefOr[NextToken]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object ListChannelMessagesResponse {
@@ -1936,12 +2048,14 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
         ChannelMessages: js.UndefOr[ChannelMessageSummaryList] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): ListChannelMessagesResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       ChannelMessages.foreach(__v => __obj.updateDynamic("ChannelMessages")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelMessagesResponse]
     }
   }
@@ -2130,6 +2244,55 @@ package object chimesdkmessaging {
       Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSubChannelsRequest extends js.Object {
+    var ChannelArn: ChimeArn
+    var ChimeBearer: ChimeArn
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSubChannelsRequest {
+    @inline
+    def apply(
+        ChannelArn: ChimeArn,
+        ChimeBearer: ChimeArn,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSubChannelsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
+        "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSubChannelsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSubChannelsResponse extends js.Object {
+    var ChannelArn: js.UndefOr[ChimeArn]
+    var NextToken: js.UndefOr[NextToken]
+    var SubChannels: js.UndefOr[SubChannelSummaryList]
+  }
+
+  object ListSubChannelsResponse {
+    @inline
+    def apply(
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubChannels: js.UndefOr[SubChannelSummaryList] = js.undefined
+    ): ListSubChannelsResponse = {
+      val __obj = js.Dynamic.literal()
+      ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubChannels.foreach(__v => __obj.updateDynamic("SubChannels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSubChannelsResponse]
     }
   }
 
@@ -2349,6 +2512,7 @@ package object chimesdkmessaging {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
     var MessageId: MessageId
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object RedactChannelMessageRequest {
@@ -2356,13 +2520,16 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        MessageId: MessageId
+        MessageId: MessageId,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): RedactChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedactChannelMessageRequest]
     }
   }
@@ -2371,18 +2538,92 @@ package object chimesdkmessaging {
   trait RedactChannelMessageResponse extends js.Object {
     var ChannelArn: js.UndefOr[ChimeArn]
     var MessageId: js.UndefOr[MessageId]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object RedactChannelMessageResponse {
     @inline
     def apply(
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
-        MessageId: js.UndefOr[MessageId] = js.undefined
+        MessageId: js.UndefOr[MessageId] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): RedactChannelMessageResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedactChannelMessageResponse]
+    }
+  }
+
+  @js.native
+  trait SearchChannelsRequest extends js.Object {
+    var Fields: SearchFields
+    var ChimeBearer: js.UndefOr[ChimeArn]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object SearchChannelsRequest {
+    @inline
+    def apply(
+        Fields: SearchFields,
+        ChimeBearer: js.UndefOr[ChimeArn] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): SearchChannelsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Fields" -> Fields.asInstanceOf[js.Any]
+      )
+
+      ChimeBearer.foreach(__v => __obj.updateDynamic("ChimeBearer")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchChannelsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchChannelsResponse extends js.Object {
+    var Channels: js.UndefOr[ChannelSummaryList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object SearchChannelsResponse {
+    @inline
+    def apply(
+        Channels: js.UndefOr[ChannelSummaryList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): SearchChannelsResponse = {
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchChannelsResponse]
+    }
+  }
+
+  /** A <code>Field</code> of the channel that you want to search.
+    */
+  @js.native
+  trait SearchField extends js.Object {
+    var Key: SearchFieldKey
+    var Operator: SearchFieldOperator
+    var Values: SearchFieldValues
+  }
+
+  object SearchField {
+    @inline
+    def apply(
+        Key: SearchFieldKey,
+        Operator: SearchFieldOperator,
+        Values: SearchFieldValues
+    ): SearchField = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SearchField]
     }
   }
 
@@ -2397,6 +2638,7 @@ package object chimesdkmessaging {
     var MessageAttributes: js.UndefOr[MessageAttributeMap]
     var Metadata: js.UndefOr[Metadata]
     var PushNotification: js.UndefOr[PushNotificationConfiguration]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object SendChannelMessageRequest {
@@ -2410,7 +2652,8 @@ package object chimesdkmessaging {
         Type: ChannelMessageType,
         MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
         Metadata: js.UndefOr[Metadata] = js.undefined,
-        PushNotification: js.UndefOr[PushNotificationConfiguration] = js.undefined
+        PushNotification: js.UndefOr[PushNotificationConfiguration] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): SendChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
@@ -2424,6 +2667,7 @@ package object chimesdkmessaging {
       MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       PushNotification.foreach(__v => __obj.updateDynamic("PushNotification")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendChannelMessageRequest]
     }
   }
@@ -2433,6 +2677,7 @@ package object chimesdkmessaging {
     var ChannelArn: js.UndefOr[ChimeArn]
     var MessageId: js.UndefOr[MessageId]
     var Status: js.UndefOr[ChannelMessageStatusStructure]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object SendChannelMessageResponse {
@@ -2440,13 +2685,36 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
         MessageId: js.UndefOr[MessageId] = js.undefined,
-        Status: js.UndefOr[ChannelMessageStatusStructure] = js.undefined
+        Status: js.UndefOr[ChannelMessageStatusStructure] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): SendChannelMessageResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendChannelMessageResponse]
+    }
+  }
+
+  /** Summary of the sub-channels associated with the elastic channel.
+    */
+  @js.native
+  trait SubChannelSummary extends js.Object {
+    var MembershipCount: js.UndefOr[MembershipCount]
+    var SubChannelId: js.UndefOr[SubChannelId]
+  }
+
+  object SubChannelSummary {
+    @inline
+    def apply(
+        MembershipCount: js.UndefOr[MembershipCount] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
+    ): SubChannelSummary = {
+      val __obj = js.Dynamic.literal()
+      MembershipCount.foreach(__v => __obj.updateDynamic("MembershipCount")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubChannelSummary]
     }
   }
 
@@ -2558,6 +2826,7 @@ package object chimesdkmessaging {
     var MessageId: MessageId
     var Content: js.UndefOr[Content]
     var Metadata: js.UndefOr[Metadata]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object UpdateChannelMessageRequest {
@@ -2567,7 +2836,8 @@ package object chimesdkmessaging {
         ChimeBearer: ChimeArn,
         MessageId: MessageId,
         Content: js.UndefOr[Content] = js.undefined,
-        Metadata: js.UndefOr[Metadata] = js.undefined
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): UpdateChannelMessageRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
@@ -2577,6 +2847,7 @@ package object chimesdkmessaging {
 
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelMessageRequest]
     }
   }
@@ -2586,6 +2857,7 @@ package object chimesdkmessaging {
     var ChannelArn: js.UndefOr[ChimeArn]
     var MessageId: js.UndefOr[MessageId]
     var Status: js.UndefOr[ChannelMessageStatusStructure]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object UpdateChannelMessageResponse {
@@ -2593,12 +2865,14 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
         MessageId: js.UndefOr[MessageId] = js.undefined,
-        Status: js.UndefOr[ChannelMessageStatusStructure] = js.undefined
+        Status: js.UndefOr[ChannelMessageStatusStructure] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): UpdateChannelMessageResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelMessageResponse]
     }
   }
@@ -2607,18 +2881,22 @@ package object chimesdkmessaging {
   trait UpdateChannelReadMarkerRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object UpdateChannelReadMarkerRequest {
     @inline
     def apply(
         ChannelArn: ChimeArn,
-        ChimeBearer: ChimeArn
+        ChimeBearer: ChimeArn,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): UpdateChannelReadMarkerRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
         "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any]
       )
+
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelReadMarkerRequest]
     }
   }
@@ -2626,15 +2904,18 @@ package object chimesdkmessaging {
   @js.native
   trait UpdateChannelReadMarkerResponse extends js.Object {
     var ChannelArn: js.UndefOr[ChimeArn]
+    var SubChannelId: js.UndefOr[SubChannelId]
   }
 
   object UpdateChannelReadMarkerResponse {
     @inline
     def apply(
-        ChannelArn: js.UndefOr[ChimeArn] = js.undefined
+        ChannelArn: js.UndefOr[ChimeArn] = js.undefined,
+        SubChannelId: js.UndefOr[SubChannelId] = js.undefined
     ): UpdateChannelReadMarkerResponse = {
       val __obj = js.Dynamic.literal()
       ChannelArn.foreach(__v => __obj.updateDynamic("ChannelArn")(__v.asInstanceOf[js.Any]))
+      SubChannelId.foreach(__v => __obj.updateDynamic("SubChannelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelReadMarkerResponse]
     }
   }
@@ -2643,9 +2924,9 @@ package object chimesdkmessaging {
   trait UpdateChannelRequest extends js.Object {
     var ChannelArn: ChimeArn
     var ChimeBearer: ChimeArn
-    var Mode: ChannelMode
-    var Name: NonEmptyResourceName
     var Metadata: js.UndefOr[Metadata]
+    var Mode: js.UndefOr[ChannelMode]
+    var Name: js.UndefOr[NonEmptyResourceName]
   }
 
   object UpdateChannelRequest {
@@ -2653,18 +2934,18 @@ package object chimesdkmessaging {
     def apply(
         ChannelArn: ChimeArn,
         ChimeBearer: ChimeArn,
-        Mode: ChannelMode,
-        Name: NonEmptyResourceName,
-        Metadata: js.UndefOr[Metadata] = js.undefined
+        Metadata: js.UndefOr[Metadata] = js.undefined,
+        Mode: js.UndefOr[ChannelMode] = js.undefined,
+        Name: js.UndefOr[NonEmptyResourceName] = js.undefined
     ): UpdateChannelRequest = {
       val __obj = js.Dynamic.literal(
         "ChannelArn" -> ChannelArn.asInstanceOf[js.Any],
-        "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any],
-        "Mode" -> Mode.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any]
+        "ChimeBearer" -> ChimeBearer.asInstanceOf[js.Any]
       )
 
       Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
     }
   }

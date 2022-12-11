@@ -2,6 +2,27 @@ package facade.amazonaws.services.finspacedata
 
 import scalajs.js
 
+type ApiAccess = "ENABLED" | "DISABLED"
+object ApiAccess {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[ApiAccess] = js.Array(ENABLED, DISABLED)
+}
+
+type ApplicationPermission = "CreateDataset" | "ManageClusters" | "ManageUsersAndGroups" | "ManageAttributeSets" | "ViewAuditData" | "AccessNotebooks" | "GetTemporaryCredentials"
+object ApplicationPermission {
+  inline val CreateDataset: "CreateDataset" = "CreateDataset"
+  inline val ManageClusters: "ManageClusters" = "ManageClusters"
+  inline val ManageUsersAndGroups: "ManageUsersAndGroups" = "ManageUsersAndGroups"
+  inline val ManageAttributeSets: "ManageAttributeSets" = "ManageAttributeSets"
+  inline val ViewAuditData: "ViewAuditData" = "ViewAuditData"
+  inline val AccessNotebooks: "AccessNotebooks" = "AccessNotebooks"
+  inline val GetTemporaryCredentials: "GetTemporaryCredentials" = "GetTemporaryCredentials"
+
+  inline def values: js.Array[ApplicationPermission] = js.Array(CreateDataset, ManageClusters, ManageUsersAndGroups, ManageAttributeSets, ViewAuditData, AccessNotebooks, GetTemporaryCredentials)
+}
+
 /** Indicates how the given change will be applied to the dataset.
   */
 type ChangeType = "REPLACE" | "APPEND" | "MODIFY"
@@ -108,6 +129,32 @@ object IngestionStatus {
   inline val STOP_REQUESTED: "STOP_REQUESTED" = "STOP_REQUESTED"
 
   inline def values: js.Array[IngestionStatus] = js.Array(PENDING, FAILED, SUCCESS, RUNNING, STOP_REQUESTED)
+}
+
+type PermissionGroupMembershipStatus = "ADDITION_IN_PROGRESS" | "ADDITION_SUCCESS" | "REMOVAL_IN_PROGRESS"
+object PermissionGroupMembershipStatus {
+  inline val ADDITION_IN_PROGRESS: "ADDITION_IN_PROGRESS" = "ADDITION_IN_PROGRESS"
+  inline val ADDITION_SUCCESS: "ADDITION_SUCCESS" = "ADDITION_SUCCESS"
+  inline val REMOVAL_IN_PROGRESS: "REMOVAL_IN_PROGRESS" = "REMOVAL_IN_PROGRESS"
+
+  inline def values: js.Array[PermissionGroupMembershipStatus] = js.Array(ADDITION_IN_PROGRESS, ADDITION_SUCCESS, REMOVAL_IN_PROGRESS)
+}
+
+type UserStatus = "CREATING" | "ENABLED" | "DISABLED"
+object UserStatus {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[UserStatus] = js.Array(CREATING, ENABLED, DISABLED)
+}
+
+type UserType = "SUPER_USER" | "APP_USER"
+object UserType {
+  inline val SUPER_USER: "SUPER_USER" = "SUPER_USER"
+  inline val APP_USER: "APP_USER" = "APP_USER"
+
+  inline def values: js.Array[UserType] = js.Array(SUPER_USER, APP_USER)
 }
 
 type locationType = "INGESTION" | "SAGEMAKER"

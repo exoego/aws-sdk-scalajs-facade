@@ -12,6 +12,24 @@ object DecimalReturnType {
 }
 
 @js.native
+sealed trait LongReturnType extends js.Any
+object LongReturnType {
+  val STRING = "STRING".asInstanceOf[LongReturnType]
+  val LONG = "LONG".asInstanceOf[LongReturnType]
+
+  @inline def values: js.Array[LongReturnType] = js.Array(STRING, LONG)
+}
+
+@js.native
+sealed trait RecordsFormatType extends js.Any
+object RecordsFormatType {
+  val NONE = "NONE".asInstanceOf[RecordsFormatType]
+  val JSON = "JSON".asInstanceOf[RecordsFormatType]
+
+  @inline def values: js.Array[RecordsFormatType] = js.Array(NONE, JSON)
+}
+
+@js.native
 sealed trait TypeHint extends js.Any
 object TypeHint {
   val JSON = "JSON".asInstanceOf[TypeHint]

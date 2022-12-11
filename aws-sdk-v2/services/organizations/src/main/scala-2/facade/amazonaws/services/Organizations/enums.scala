@@ -16,8 +16,9 @@ sealed trait AccountStatus extends js.Any
 object AccountStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
   val SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
+  val PENDING_CLOSURE = "PENDING_CLOSURE".asInstanceOf[AccountStatus]
 
-  @inline def values: js.Array[AccountStatus] = js.Array(ACTIVE, SUSPENDED)
+  @inline def values: js.Array[AccountStatus] = js.Array(ACTIVE, SUSPENDED, PENDING_CLOSURE)
 }
 
 @js.native
@@ -56,6 +57,8 @@ object CreateAccountFailureReason {
   val INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
   val UNKNOWN_BUSINESS_VALIDATION = "UNKNOWN_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
   val MISSING_PAYMENT_INSTRUMENT = "MISSING_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
+  val INVALID_PAYMENT_INSTRUMENT = "INVALID_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
+  val UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED = "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED".asInstanceOf[CreateAccountFailureReason]
 
   @inline def values: js.Array[CreateAccountFailureReason] = js.Array(
     ACCOUNT_LIMIT_EXCEEDED,
@@ -70,7 +73,9 @@ object CreateAccountFailureReason {
     PENDING_BUSINESS_VALIDATION,
     INVALID_IDENTITY_FOR_BUSINESS_VALIDATION,
     UNKNOWN_BUSINESS_VALIDATION,
-    MISSING_PAYMENT_INSTRUMENT
+    MISSING_PAYMENT_INSTRUMENT,
+    INVALID_PAYMENT_INSTRUMENT,
+    UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED
   )
 }
 

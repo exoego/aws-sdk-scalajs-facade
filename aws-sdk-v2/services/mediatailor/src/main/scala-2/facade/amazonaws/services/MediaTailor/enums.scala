@@ -24,8 +24,9 @@ object ChannelState {
 sealed trait MessageType extends js.Any
 object MessageType {
   val SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[MessageType]
+  val TIME_SIGNAL = "TIME_SIGNAL".asInstanceOf[MessageType]
 
-  @inline def values: js.Array[MessageType] = js.Array(SPLICE_INSERT)
+  @inline def values: js.Array[MessageType] = js.Array(SPLICE_INSERT, TIME_SIGNAL)
 }
 
 @js.native
@@ -79,6 +80,15 @@ object ScheduleEntryType {
   val FILLER_SLATE = "FILLER_SLATE".asInstanceOf[ScheduleEntryType]
 
   @inline def values: js.Array[ScheduleEntryType] = js.Array(PROGRAM, FILLER_SLATE)
+}
+
+@js.native
+sealed trait Tier extends js.Any
+object Tier {
+  val BASIC = "BASIC".asInstanceOf[Tier]
+  val STANDARD = "STANDARD".asInstanceOf[Tier]
+
+  @inline def values: js.Array[Tier] = js.Array(BASIC, STANDARD)
 }
 
 @js.native

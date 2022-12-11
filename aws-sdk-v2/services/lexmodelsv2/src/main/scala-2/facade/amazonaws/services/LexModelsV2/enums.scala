@@ -38,6 +38,14 @@ object AssociatedTranscriptFilterName {
 }
 
 @js.native
+sealed trait AudioRecognitionStrategy extends js.Any
+object AudioRecognitionStrategy {
+  val UseSlotValuesAsCustomVocabulary = "UseSlotValuesAsCustomVocabulary".asInstanceOf[AudioRecognitionStrategy]
+
+  @inline def values: js.Array[AudioRecognitionStrategy] = js.Array(UseSlotValuesAsCustomVocabulary)
+}
+
+@js.native
 sealed trait BotAliasStatus extends js.Any
 object BotAliasStatus {
   val Creating = "Creating".asInstanceOf[BotAliasStatus]
@@ -116,8 +124,10 @@ object BotRecommendationStatus {
   val Updating = "Updating".asInstanceOf[BotRecommendationStatus]
   val Available = "Available".asInstanceOf[BotRecommendationStatus]
   val Failed = "Failed".asInstanceOf[BotRecommendationStatus]
+  val Stopping = "Stopping".asInstanceOf[BotRecommendationStatus]
+  val Stopped = "Stopped".asInstanceOf[BotRecommendationStatus]
 
-  @inline def values: js.Array[BotRecommendationStatus] = js.Array(Processing, Deleting, Deleted, Downloading, Updating, Available, Failed)
+  @inline def values: js.Array[BotRecommendationStatus] = js.Array(Processing, Deleting, Deleted, Downloading, Updating, Available, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -167,12 +177,51 @@ object BuiltInSlotTypeSortAttribute {
 }
 
 @js.native
+sealed trait CustomVocabularyStatus extends js.Any
+object CustomVocabularyStatus {
+  val Ready = "Ready".asInstanceOf[CustomVocabularyStatus]
+  val Deleting = "Deleting".asInstanceOf[CustomVocabularyStatus]
+  val Exporting = "Exporting".asInstanceOf[CustomVocabularyStatus]
+  val Importing = "Importing".asInstanceOf[CustomVocabularyStatus]
+  val Creating = "Creating".asInstanceOf[CustomVocabularyStatus]
+
+  @inline def values: js.Array[CustomVocabularyStatus] = js.Array(Ready, Deleting, Exporting, Importing, Creating)
+}
+
+@js.native
+sealed trait DialogActionType extends js.Any
+object DialogActionType {
+  val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
+  val StartIntent = "StartIntent".asInstanceOf[DialogActionType]
+  val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
+  val EvaluateConditional = "EvaluateConditional".asInstanceOf[DialogActionType]
+  val InvokeDialogCodeHook = "InvokeDialogCodeHook".asInstanceOf[DialogActionType]
+  val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
+  val FulfillIntent = "FulfillIntent".asInstanceOf[DialogActionType]
+  val CloseIntent = "CloseIntent".asInstanceOf[DialogActionType]
+  val EndConversation = "EndConversation".asInstanceOf[DialogActionType]
+
+  @inline def values: js.Array[DialogActionType] = js.Array(ElicitIntent, StartIntent, ElicitSlot, EvaluateConditional, InvokeDialogCodeHook, ConfirmIntent, FulfillIntent, CloseIntent, EndConversation)
+}
+
+@js.native
 sealed trait Effect extends js.Any
 object Effect {
   val Allow = "Allow".asInstanceOf[Effect]
   val Deny = "Deny".asInstanceOf[Effect]
 
   @inline def values: js.Array[Effect] = js.Array(Allow, Deny)
+}
+
+@js.native
+sealed trait ErrorCode extends js.Any
+object ErrorCode {
+  val DUPLICATE_INPUT = "DUPLICATE_INPUT".asInstanceOf[ErrorCode]
+  val RESOURCE_DOES_NOT_EXIST = "RESOURCE_DOES_NOT_EXIST".asInstanceOf[ErrorCode]
+  val RESOURCE_ALREADY_EXISTS = "RESOURCE_ALREADY_EXISTS".asInstanceOf[ErrorCode]
+  val INTERNAL_SERVER_FAILURE = "INTERNAL_SERVER_FAILURE".asInstanceOf[ErrorCode]
+
+  @inline def values: js.Array[ErrorCode] = js.Array(DUPLICATE_INPUT, RESOURCE_DOES_NOT_EXIST, RESOURCE_ALREADY_EXISTS, INTERNAL_SERVER_FAILURE)
 }
 
 @js.native
@@ -215,8 +264,9 @@ object ExportStatus {
 sealed trait ImportExportFileFormat extends js.Any
 object ImportExportFileFormat {
   val LexJson = "LexJson".asInstanceOf[ImportExportFileFormat]
+  val TSV = "TSV".asInstanceOf[ImportExportFileFormat]
 
-  @inline def values: js.Array[ImportExportFileFormat] = js.Array(LexJson)
+  @inline def values: js.Array[ImportExportFileFormat] = js.Array(LexJson, TSV)
 }
 
 @js.native
@@ -234,6 +284,16 @@ object ImportFilterOperator {
   val EQ = "EQ".asInstanceOf[ImportFilterOperator]
 
   @inline def values: js.Array[ImportFilterOperator] = js.Array(CO, EQ)
+}
+
+@js.native
+sealed trait ImportResourceType extends js.Any
+object ImportResourceType {
+  val Bot = "Bot".asInstanceOf[ImportResourceType]
+  val BotLocale = "BotLocale".asInstanceOf[ImportResourceType]
+  val CustomVocabulary = "CustomVocabulary".asInstanceOf[ImportResourceType]
+
+  @inline def values: js.Array[ImportResourceType] = js.Array(Bot, BotLocale, CustomVocabulary)
 }
 
 @js.native
@@ -292,12 +352,36 @@ object MergeStrategy {
 }
 
 @js.native
+sealed trait MessageSelectionStrategy extends js.Any
+object MessageSelectionStrategy {
+  val Random = "Random".asInstanceOf[MessageSelectionStrategy]
+  val Ordered = "Ordered".asInstanceOf[MessageSelectionStrategy]
+
+  @inline def values: js.Array[MessageSelectionStrategy] = js.Array(Random, Ordered)
+}
+
+@js.native
 sealed trait ObfuscationSettingType extends js.Any
 object ObfuscationSettingType {
   val None = "None".asInstanceOf[ObfuscationSettingType]
   val DefaultObfuscation = "DefaultObfuscation".asInstanceOf[ObfuscationSettingType]
 
   @inline def values: js.Array[ObfuscationSettingType] = js.Array(None, DefaultObfuscation)
+}
+
+/** The attempt name of attempts of a prompt.
+  */
+@js.native
+sealed trait PromptAttempt extends js.Any
+object PromptAttempt {
+  val Initial = "Initial".asInstanceOf[PromptAttempt]
+  val Retry1 = "Retry1".asInstanceOf[PromptAttempt]
+  val Retry2 = "Retry2".asInstanceOf[PromptAttempt]
+  val Retry3 = "Retry3".asInstanceOf[PromptAttempt]
+  val Retry4 = "Retry4".asInstanceOf[PromptAttempt]
+  val Retry5 = "Retry5".asInstanceOf[PromptAttempt]
+
+  @inline def values: js.Array[PromptAttempt] = js.Array(Initial, Retry1, Retry2, Retry3, Retry4, Retry5)
 }
 
 @js.native
@@ -336,6 +420,15 @@ object SlotFilterOperator {
 }
 
 @js.native
+sealed trait SlotShape extends js.Any
+object SlotShape {
+  val Scalar = "Scalar".asInstanceOf[SlotShape]
+  val List = "List".asInstanceOf[SlotShape]
+
+  @inline def values: js.Array[SlotShape] = js.Array(Scalar, List)
+}
+
+@js.native
 sealed trait SlotSortAttribute extends js.Any
 object SlotSortAttribute {
   val SlotName = "SlotName".asInstanceOf[SlotSortAttribute]
@@ -350,8 +443,9 @@ object SlotTypeCategory {
   val Custom = "Custom".asInstanceOf[SlotTypeCategory]
   val Extended = "Extended".asInstanceOf[SlotTypeCategory]
   val ExternalGrammar = "ExternalGrammar".asInstanceOf[SlotTypeCategory]
+  val Composite = "Composite".asInstanceOf[SlotTypeCategory]
 
-  @inline def values: js.Array[SlotTypeCategory] = js.Array(Custom, Extended, ExternalGrammar)
+  @inline def values: js.Array[SlotTypeCategory] = js.Array(Custom, Extended, ExternalGrammar, Composite)
 }
 
 @js.native
@@ -386,8 +480,9 @@ sealed trait SlotValueResolutionStrategy extends js.Any
 object SlotValueResolutionStrategy {
   val OriginalValue = "OriginalValue".asInstanceOf[SlotValueResolutionStrategy]
   val TopResolution = "TopResolution".asInstanceOf[SlotValueResolutionStrategy]
+  val Concatenation = "Concatenation".asInstanceOf[SlotValueResolutionStrategy]
 
-  @inline def values: js.Array[SlotValueResolutionStrategy] = js.Array(OriginalValue, TopResolution)
+  @inline def values: js.Array[SlotValueResolutionStrategy] = js.Array(OriginalValue, TopResolution, Concatenation)
 }
 
 @js.native

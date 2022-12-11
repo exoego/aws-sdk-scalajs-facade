@@ -27,14 +27,20 @@ package object shield {
   type MaxResults = Int
   type MitigationList = js.Array[Mitigation]
   type PhoneNumber = String
+  type ProtectedResourceTypeFilters = js.Array[ProtectedResourceType]
+  type ProtectionGroupAggregationFilters = js.Array[ProtectionGroupAggregation]
   type ProtectionGroupId = String
+  type ProtectionGroupIdFilters = js.Array[ProtectionGroupId]
   type ProtectionGroupMembers = js.Array[ResourceArn]
+  type ProtectionGroupPatternFilters = js.Array[ProtectionGroupPattern]
   type ProtectionGroups = js.Array[ProtectionGroup]
   type ProtectionId = String
   type ProtectionName = String
+  type ProtectionNameFilters = js.Array[ProtectionName]
   type Protections = js.Array[Protection]
   type ResourceArn = String
   type ResourceArnFilterList = js.Array[ResourceArn]
+  type ResourceArnFilters = js.Array[ResourceArn]
   type ResourceArnList = js.Array[ResourceArn]
   type RoleArn = String
   type SubResourceSummaryList = js.Array[SubResourceSummary]
@@ -1145,6 +1151,57 @@ package object shield {
     }
   }
 
+  /** Narrows the set of protections that the call retrieves. You can retrieve a single protection by providing its name or the ARN (Amazon Resource Name) of its protected resource. You can also retrieve all protections for a specific resource type. You can provide up to one criteria per filter type. Shield Advanced returns protections that exactly match all of the filter criteria that you provide.
+    */
+  @js.native
+  trait InclusionProtectionFilters extends js.Object {
+    var ProtectionNames: js.UndefOr[ProtectionNameFilters]
+    var ResourceArns: js.UndefOr[ResourceArnFilters]
+    var ResourceTypes: js.UndefOr[ProtectedResourceTypeFilters]
+  }
+
+  object InclusionProtectionFilters {
+    @inline
+    def apply(
+        ProtectionNames: js.UndefOr[ProtectionNameFilters] = js.undefined,
+        ResourceArns: js.UndefOr[ResourceArnFilters] = js.undefined,
+        ResourceTypes: js.UndefOr[ProtectedResourceTypeFilters] = js.undefined
+    ): InclusionProtectionFilters = {
+      val __obj = js.Dynamic.literal()
+      ProtectionNames.foreach(__v => __obj.updateDynamic("ProtectionNames")(__v.asInstanceOf[js.Any]))
+      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
+      ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InclusionProtectionFilters]
+    }
+  }
+
+  /** Narrows the set of protection groups that the call retrieves. You can retrieve a single protection group by its name and you can retrieve all protection groups that are configured with a specific pattern, aggregation, or resource type. You can provide up to one criteria per filter type. Shield Advanced returns the protection groups that exactly match all of the search criteria that you provide.
+    */
+  @js.native
+  trait InclusionProtectionGroupFilters extends js.Object {
+    var Aggregations: js.UndefOr[ProtectionGroupAggregationFilters]
+    var Patterns: js.UndefOr[ProtectionGroupPatternFilters]
+    var ProtectionGroupIds: js.UndefOr[ProtectionGroupIdFilters]
+    var ResourceTypes: js.UndefOr[ProtectedResourceTypeFilters]
+  }
+
+  object InclusionProtectionGroupFilters {
+    @inline
+    def apply(
+        Aggregations: js.UndefOr[ProtectionGroupAggregationFilters] = js.undefined,
+        Patterns: js.UndefOr[ProtectionGroupPatternFilters] = js.undefined,
+        ProtectionGroupIds: js.UndefOr[ProtectionGroupIdFilters] = js.undefined,
+        ResourceTypes: js.UndefOr[ProtectedResourceTypeFilters] = js.undefined
+    ): InclusionProtectionGroupFilters = {
+      val __obj = js.Dynamic.literal()
+      Aggregations.foreach(__v => __obj.updateDynamic("Aggregations")(__v.asInstanceOf[js.Any]))
+      Patterns.foreach(__v => __obj.updateDynamic("Patterns")(__v.asInstanceOf[js.Any]))
+      ProtectionGroupIds.foreach(__v => __obj.updateDynamic("ProtectionGroupIds")(__v.asInstanceOf[js.Any]))
+      ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InclusionProtectionGroupFilters]
+    }
+  }
+
   /** Specifies how many protections of a given type you can create.
     */
   @js.native
@@ -1215,6 +1272,7 @@ package object shield {
 
   @js.native
   trait ListProtectionGroupsRequest extends js.Object {
+    var InclusionFilters: js.UndefOr[InclusionProtectionGroupFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
   }
@@ -1222,10 +1280,12 @@ package object shield {
   object ListProtectionGroupsRequest {
     @inline
     def apply(
+        InclusionFilters: js.UndefOr[InclusionProtectionGroupFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListProtectionGroupsRequest = {
       val __obj = js.Dynamic.literal()
+      InclusionFilters.foreach(__v => __obj.updateDynamic("InclusionFilters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectionGroupsRequest]
@@ -1255,6 +1315,7 @@ package object shield {
 
   @js.native
   trait ListProtectionsRequest extends js.Object {
+    var InclusionFilters: js.UndefOr[InclusionProtectionFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[Token]
   }
@@ -1262,10 +1323,12 @@ package object shield {
   object ListProtectionsRequest {
     @inline
     def apply(
+        InclusionFilters: js.UndefOr[InclusionProtectionFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListProtectionsRequest = {
       val __obj = js.Dynamic.literal()
+      InclusionFilters.foreach(__v => __obj.updateDynamic("InclusionFilters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectionsRequest]

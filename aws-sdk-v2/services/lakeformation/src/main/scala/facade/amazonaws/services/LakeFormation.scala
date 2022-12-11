@@ -8,12 +8,16 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object lakeformation {
+  type AccessKeyIdString = String
+  type AuditContextString = String
+  type AuthorizedSessionTagValueList = js.Array[NameString]
   type BatchPermissionsFailureList = js.Array[BatchPermissionsFailureEntry]
   type BatchPermissionsRequestEntryList = js.Array[BatchPermissionsRequestEntry]
   type BooleanNullable = Boolean
   type CatalogIdString = String
   type ColumnLFTagsList = js.Array[ColumnLFTag]
   type ColumnNames = js.Array[NameString]
+  type CredentialTimeoutDurationSecondInteger = Int
   type DataCellsFilterList = js.Array[DataCellsFilter]
   type DataLakePrincipalList = js.Array[DataLakePrincipal]
   type DataLakePrincipalString = String
@@ -22,6 +26,7 @@ package object lakeformation {
   type DescriptionString = String
   type ETagString = String
   type ErrorMessageString = String
+  type ExpirationTimestamp = js.Date
   type Expression = js.Array[LFTag]
   type FilterConditionList = js.Array[FilterCondition]
   type GetQueryStateRequestQueryIdString = String
@@ -30,7 +35,9 @@ package object lakeformation {
   type GetWorkUnitResultsRequestWorkUnitIdLong = Double
   type GetWorkUnitsRequestQueryIdString = String
   type IAMRoleArn = String
+  type IAMSAMLProviderArn = String
   type Identifier = String
+  type KeyString = String
   type LFTagErrors = js.Array[LFTagError]
   type LFTagKey = String
   type LFTagValue = String
@@ -44,10 +51,13 @@ package object lakeformation {
   type NumberOfMilliseconds = Double
   type ObjectSize = Double
   type PageSize = Int
+  type ParametersMap = js.Dictionary[ParametersMapValue]
+  type ParametersMapValue = String
   type PartitionValueString = String
   type PartitionValuesList = js.Array[PartitionValueString]
   type PartitionedTableObjectsList = js.Array[PartitionObjects]
   type PermissionList = js.Array[Permission]
+  type PermissionTypeList = js.Array[PermissionType]
   type PredicateString = String
   type PrincipalPermissionsList = js.Array[PrincipalPermissions]
   type PrincipalResourcePermissionsList = js.Array[PrincipalResourcePermissions]
@@ -60,6 +70,10 @@ package object lakeformation {
   type ResourceShareList = js.Array[RAMResourceShareArn]
   type Result = String
   type ResultStream = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type SAMLAssertionString = String
+  type SearchPageSize = Int
+  type SecretAccessKeyString = String
+  type SessionTokenString = String
   type StorageOptimizerConfig = js.Dictionary[StorageOptimizerConfigValue]
   type StorageOptimizerConfigKey = String
   type StorageOptimizerConfigMap = js.Dictionary[StorageOptimizerConfig]
@@ -80,6 +94,8 @@ package object lakeformation {
   type TrueFalseString = String
   type TrustedResourceOwners = js.Array[CatalogIdString]
   type URI = String
+  type ValueString = String
+  type ValueStringList = js.Array[ValueString]
   type VirtualObjectList = js.Array[VirtualObject]
   type WorkUnitIdLong = Double
   type WorkUnitRangeList = js.Array[WorkUnitRange]
@@ -89,6 +105,7 @@ package object lakeformation {
   final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
     @inline def addLFTagsToResourceFuture(params: AddLFTagsToResourceRequest): Future[AddLFTagsToResourceResponse] = service.addLFTagsToResource(params).promise().toFuture
+    @inline def assumeDecoratedRoleWithSAMLFuture(params: AssumeDecoratedRoleWithSAMLRequest): Future[AssumeDecoratedRoleWithSAMLResponse] = service.assumeDecoratedRoleWithSAML(params).promise().toFuture
     @inline def batchGrantPermissionsFuture(params: BatchGrantPermissionsRequest): Future[BatchGrantPermissionsResponse] = service.batchGrantPermissions(params).promise().toFuture
     @inline def batchRevokePermissionsFuture(params: BatchRevokePermissionsRequest): Future[BatchRevokePermissionsResponse] = service.batchRevokePermissions(params).promise().toFuture
     @inline def cancelTransactionFuture(params: CancelTransactionRequest): Future[CancelTransactionResponse] = service.cancelTransaction(params).promise().toFuture
@@ -109,6 +126,8 @@ package object lakeformation {
     @inline def getQueryStatisticsFuture(params: GetQueryStatisticsRequest): Future[GetQueryStatisticsResponse] = service.getQueryStatistics(params).promise().toFuture
     @inline def getResourceLFTagsFuture(params: GetResourceLFTagsRequest): Future[GetResourceLFTagsResponse] = service.getResourceLFTags(params).promise().toFuture
     @inline def getTableObjectsFuture(params: GetTableObjectsRequest): Future[GetTableObjectsResponse] = service.getTableObjects(params).promise().toFuture
+    @inline def getTemporaryGluePartitionCredentialsFuture(params: GetTemporaryGluePartitionCredentialsRequest): Future[GetTemporaryGluePartitionCredentialsResponse] = service.getTemporaryGluePartitionCredentials(params).promise().toFuture
+    @inline def getTemporaryGlueTableCredentialsFuture(params: GetTemporaryGlueTableCredentialsRequest): Future[GetTemporaryGlueTableCredentialsResponse] = service.getTemporaryGlueTableCredentials(params).promise().toFuture
     @inline def getWorkUnitResultsFuture(params: GetWorkUnitResultsRequest): Future[GetWorkUnitResultsResponse] = service.getWorkUnitResults(params).promise().toFuture
     @inline def getWorkUnitsFuture(params: GetWorkUnitsRequest): Future[GetWorkUnitsResponse] = service.getWorkUnits(params).promise().toFuture
     @inline def grantPermissionsFuture(params: GrantPermissionsRequest): Future[GrantPermissionsResponse] = service.grantPermissions(params).promise().toFuture
@@ -139,6 +158,7 @@ package object lakeformation {
     def this(config: AWSConfig) = this()
 
     def addLFTagsToResource(params: AddLFTagsToResourceRequest): Request[AddLFTagsToResourceResponse] = js.native
+    def assumeDecoratedRoleWithSAML(params: AssumeDecoratedRoleWithSAMLRequest): Request[AssumeDecoratedRoleWithSAMLResponse] = js.native
     def batchGrantPermissions(params: BatchGrantPermissionsRequest): Request[BatchGrantPermissionsResponse] = js.native
     def batchRevokePermissions(params: BatchRevokePermissionsRequest): Request[BatchRevokePermissionsResponse] = js.native
     def cancelTransaction(params: CancelTransactionRequest): Request[CancelTransactionResponse] = js.native
@@ -159,6 +179,8 @@ package object lakeformation {
     def getQueryStatistics(params: GetQueryStatisticsRequest): Request[GetQueryStatisticsResponse] = js.native
     def getResourceLFTags(params: GetResourceLFTagsRequest): Request[GetResourceLFTagsResponse] = js.native
     def getTableObjects(params: GetTableObjectsRequest): Request[GetTableObjectsResponse] = js.native
+    def getTemporaryGluePartitionCredentials(params: GetTemporaryGluePartitionCredentialsRequest): Request[GetTemporaryGluePartitionCredentialsResponse] = js.native
+    def getTemporaryGlueTableCredentials(params: GetTemporaryGlueTableCredentialsRequest): Request[GetTemporaryGlueTableCredentialsResponse] = js.native
     def getWorkUnitResults(params: GetWorkUnitResultsRequest): Request[GetWorkUnitResultsResponse] = js.native
     def getWorkUnits(params: GetWorkUnitsRequest): Request[GetWorkUnitsResponse] = js.native
     def grantPermissions(params: GrantPermissionsRequest): Request[GrantPermissionsResponse] = js.native
@@ -266,6 +288,76 @@ package object lakeformation {
     def apply(): AllRowsWildcard = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AllRowsWildcard]
+    }
+  }
+
+  @js.native
+  trait AssumeDecoratedRoleWithSAMLRequest extends js.Object {
+    var PrincipalArn: IAMSAMLProviderArn
+    var RoleArn: IAMRoleArn
+    var SAMLAssertion: SAMLAssertionString
+    var DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger]
+  }
+
+  object AssumeDecoratedRoleWithSAMLRequest {
+    @inline
+    def apply(
+        PrincipalArn: IAMSAMLProviderArn,
+        RoleArn: IAMRoleArn,
+        SAMLAssertion: SAMLAssertionString,
+        DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger] = js.undefined
+    ): AssumeDecoratedRoleWithSAMLRequest = {
+      val __obj = js.Dynamic.literal(
+        "PrincipalArn" -> PrincipalArn.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any]
+      )
+
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeDecoratedRoleWithSAMLRequest]
+    }
+  }
+
+  @js.native
+  trait AssumeDecoratedRoleWithSAMLResponse extends js.Object {
+    var AccessKeyId: js.UndefOr[AccessKeyIdString]
+    var Expiration: js.UndefOr[ExpirationTimestamp]
+    var SecretAccessKey: js.UndefOr[SecretAccessKeyString]
+    var SessionToken: js.UndefOr[SessionTokenString]
+  }
+
+  object AssumeDecoratedRoleWithSAMLResponse {
+    @inline
+    def apply(
+        AccessKeyId: js.UndefOr[AccessKeyIdString] = js.undefined,
+        Expiration: js.UndefOr[ExpirationTimestamp] = js.undefined,
+        SecretAccessKey: js.UndefOr[SecretAccessKeyString] = js.undefined,
+        SessionToken: js.UndefOr[SessionTokenString] = js.undefined
+    ): AssumeDecoratedRoleWithSAMLResponse = {
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      SecretAccessKey.foreach(__v => __obj.updateDynamic("SecretAccessKey")(__v.asInstanceOf[js.Any]))
+      SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeDecoratedRoleWithSAMLResponse]
+    }
+  }
+
+  /** A structure used to include auditing information on the privileged API.
+    */
+  @js.native
+  trait AuditContext extends js.Object {
+    var AdditionalAuditContext: js.UndefOr[AuditContextString]
+  }
+
+  object AuditContext {
+    @inline
+    def apply(
+        AdditionalAuditContext: js.UndefOr[AuditContextString] = js.undefined
+    ): AuditContext = {
+      val __obj = js.Dynamic.literal()
+      AdditionalAuditContext.foreach(__v => __obj.updateDynamic("AdditionalAuditContext")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuditContext]
     }
   }
 
@@ -637,7 +729,7 @@ package object lakeformation {
     }
   }
 
-  /** The AWS Lake Formation principal. Supported principals are IAM users or IAM roles.
+  /** The Lake Formation principal. Supported principals are IAM users or IAM roles.
     */
   @js.native
   trait DataLakePrincipal extends js.Object {
@@ -659,24 +751,36 @@ package object lakeformation {
     */
   @js.native
   trait DataLakeSettings extends js.Object {
+    var AllowExternalDataFiltering: js.UndefOr[NullableBoolean]
+    var AuthorizedSessionTagValueList: js.UndefOr[AuthorizedSessionTagValueList]
     var CreateDatabaseDefaultPermissions: js.UndefOr[PrincipalPermissionsList]
     var CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList]
     var DataLakeAdmins: js.UndefOr[DataLakePrincipalList]
+    var ExternalDataFilteringAllowList: js.UndefOr[DataLakePrincipalList]
+    var Parameters: js.UndefOr[ParametersMap]
     var TrustedResourceOwners: js.UndefOr[TrustedResourceOwners]
   }
 
   object DataLakeSettings {
     @inline
     def apply(
+        AllowExternalDataFiltering: js.UndefOr[NullableBoolean] = js.undefined,
+        AuthorizedSessionTagValueList: js.UndefOr[AuthorizedSessionTagValueList] = js.undefined,
         CreateDatabaseDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         DataLakeAdmins: js.UndefOr[DataLakePrincipalList] = js.undefined,
+        ExternalDataFilteringAllowList: js.UndefOr[DataLakePrincipalList] = js.undefined,
+        Parameters: js.UndefOr[ParametersMap] = js.undefined,
         TrustedResourceOwners: js.UndefOr[TrustedResourceOwners] = js.undefined
     ): DataLakeSettings = {
       val __obj = js.Dynamic.literal()
+      AllowExternalDataFiltering.foreach(__v => __obj.updateDynamic("AllowExternalDataFiltering")(__v.asInstanceOf[js.Any]))
+      AuthorizedSessionTagValueList.foreach(__v => __obj.updateDynamic("AuthorizedSessionTagValueList")(__v.asInstanceOf[js.Any]))
       CreateDatabaseDefaultPermissions.foreach(__v => __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any]))
       CreateTableDefaultPermissions.foreach(__v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any]))
       DataLakeAdmins.foreach(__v => __obj.updateDynamic("DataLakeAdmins")(__v.asInstanceOf[js.Any]))
+      ExternalDataFilteringAllowList.foreach(__v => __obj.updateDynamic("ExternalDataFilteringAllowList")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       TrustedResourceOwners.foreach(__v => __obj.updateDynamic("TrustedResourceOwners")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakeSettings]
     }
@@ -1376,6 +1480,119 @@ package object lakeformation {
   }
 
   @js.native
+  trait GetTemporaryGluePartitionCredentialsRequest extends js.Object {
+    var Partition: PartitionValueList
+    var SupportedPermissionTypes: PermissionTypeList
+    var TableArn: ResourceArnString
+    var AuditContext: js.UndefOr[AuditContext]
+    var DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger]
+    var Permissions: js.UndefOr[PermissionList]
+  }
+
+  object GetTemporaryGluePartitionCredentialsRequest {
+    @inline
+    def apply(
+        Partition: PartitionValueList,
+        SupportedPermissionTypes: PermissionTypeList,
+        TableArn: ResourceArnString,
+        AuditContext: js.UndefOr[AuditContext] = js.undefined,
+        DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger] = js.undefined,
+        Permissions: js.UndefOr[PermissionList] = js.undefined
+    ): GetTemporaryGluePartitionCredentialsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Partition" -> Partition.asInstanceOf[js.Any],
+        "SupportedPermissionTypes" -> SupportedPermissionTypes.asInstanceOf[js.Any],
+        "TableArn" -> TableArn.asInstanceOf[js.Any]
+      )
+
+      AuditContext.foreach(__v => __obj.updateDynamic("AuditContext")(__v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTemporaryGluePartitionCredentialsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTemporaryGluePartitionCredentialsResponse extends js.Object {
+    var AccessKeyId: js.UndefOr[AccessKeyIdString]
+    var Expiration: js.UndefOr[ExpirationTimestamp]
+    var SecretAccessKey: js.UndefOr[SecretAccessKeyString]
+    var SessionToken: js.UndefOr[SessionTokenString]
+  }
+
+  object GetTemporaryGluePartitionCredentialsResponse {
+    @inline
+    def apply(
+        AccessKeyId: js.UndefOr[AccessKeyIdString] = js.undefined,
+        Expiration: js.UndefOr[ExpirationTimestamp] = js.undefined,
+        SecretAccessKey: js.UndefOr[SecretAccessKeyString] = js.undefined,
+        SessionToken: js.UndefOr[SessionTokenString] = js.undefined
+    ): GetTemporaryGluePartitionCredentialsResponse = {
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      SecretAccessKey.foreach(__v => __obj.updateDynamic("SecretAccessKey")(__v.asInstanceOf[js.Any]))
+      SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTemporaryGluePartitionCredentialsResponse]
+    }
+  }
+
+  @js.native
+  trait GetTemporaryGlueTableCredentialsRequest extends js.Object {
+    var SupportedPermissionTypes: PermissionTypeList
+    var TableArn: ResourceArnString
+    var AuditContext: js.UndefOr[AuditContext]
+    var DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger]
+    var Permissions: js.UndefOr[PermissionList]
+  }
+
+  object GetTemporaryGlueTableCredentialsRequest {
+    @inline
+    def apply(
+        SupportedPermissionTypes: PermissionTypeList,
+        TableArn: ResourceArnString,
+        AuditContext: js.UndefOr[AuditContext] = js.undefined,
+        DurationSeconds: js.UndefOr[CredentialTimeoutDurationSecondInteger] = js.undefined,
+        Permissions: js.UndefOr[PermissionList] = js.undefined
+    ): GetTemporaryGlueTableCredentialsRequest = {
+      val __obj = js.Dynamic.literal(
+        "SupportedPermissionTypes" -> SupportedPermissionTypes.asInstanceOf[js.Any],
+        "TableArn" -> TableArn.asInstanceOf[js.Any]
+      )
+
+      AuditContext.foreach(__v => __obj.updateDynamic("AuditContext")(__v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTemporaryGlueTableCredentialsRequest]
+    }
+  }
+
+  @js.native
+  trait GetTemporaryGlueTableCredentialsResponse extends js.Object {
+    var AccessKeyId: js.UndefOr[AccessKeyIdString]
+    var Expiration: js.UndefOr[ExpirationTimestamp]
+    var SecretAccessKey: js.UndefOr[SecretAccessKeyString]
+    var SessionToken: js.UndefOr[SessionTokenString]
+  }
+
+  object GetTemporaryGlueTableCredentialsResponse {
+    @inline
+    def apply(
+        AccessKeyId: js.UndefOr[AccessKeyIdString] = js.undefined,
+        Expiration: js.UndefOr[ExpirationTimestamp] = js.undefined,
+        SecretAccessKey: js.UndefOr[SecretAccessKeyString] = js.undefined,
+        SessionToken: js.UndefOr[SessionTokenString] = js.undefined
+    ): GetTemporaryGlueTableCredentialsResponse = {
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      SecretAccessKey.foreach(__v => __obj.updateDynamic("SecretAccessKey")(__v.asInstanceOf[js.Any]))
+      SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetTemporaryGlueTableCredentialsResponse]
+    }
+  }
+
+  @js.native
   trait GetWorkUnitResultsRequest extends js.Object {
     var QueryId: GetWorkUnitResultsRequestQueryIdString
     var WorkUnitId: GetWorkUnitResultsRequestWorkUnitIdLong
@@ -1924,6 +2141,25 @@ package object lakeformation {
     }
   }
 
+  /** Contains a list of values defining partitions.
+    */
+  @js.native
+  trait PartitionValueList extends js.Object {
+    var Values: ValueStringList
+  }
+
+  object PartitionValueList {
+    @inline
+    def apply(
+        Values: ValueStringList
+    ): PartitionValueList = {
+      val __obj = js.Dynamic.literal(
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PartitionValueList]
+    }
+  }
+
   /** Statistics related to the processing of a query statement.
     */
   @js.native
@@ -2270,7 +2506,7 @@ package object lakeformation {
   trait SearchDatabasesByLFTagsRequest extends js.Object {
     var Expression: Expression
     var CatalogId: js.UndefOr[CatalogIdString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[SearchPageSize]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -2279,7 +2515,7 @@ package object lakeformation {
     def apply(
         Expression: Expression,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[SearchPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): SearchDatabasesByLFTagsRequest = {
       val __obj = js.Dynamic.literal(
@@ -2316,7 +2552,7 @@ package object lakeformation {
   trait SearchTablesByLFTagsRequest extends js.Object {
     var Expression: Expression
     var CatalogId: js.UndefOr[CatalogIdString]
-    var MaxResults: js.UndefOr[PageSize]
+    var MaxResults: js.UndefOr[SearchPageSize]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -2325,7 +2561,7 @@ package object lakeformation {
     def apply(
         Expression: Expression,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        MaxResults: js.UndefOr[SearchPageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): SearchTablesByLFTagsRequest = {
       val __obj = js.Dynamic.literal(
@@ -2705,9 +2941,9 @@ package object lakeformation {
   trait UpdateTableObjectsRequest extends js.Object {
     var DatabaseName: NameString
     var TableName: NameString
-    var TransactionId: TransactionIdString
     var WriteOperations: WriteOperationList
     var CatalogId: js.UndefOr[CatalogIdString]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object UpdateTableObjectsRequest {
@@ -2715,18 +2951,18 @@ package object lakeformation {
     def apply(
         DatabaseName: NameString,
         TableName: NameString,
-        TransactionId: TransactionIdString,
         WriteOperations: WriteOperationList,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): UpdateTableObjectsRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any],
-        "TransactionId" -> TransactionId.asInstanceOf[js.Any],
         "WriteOperations" -> WriteOperations.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableObjectsRequest]
     }
   }

@@ -3,6 +3,15 @@ package facade.amazonaws.services.proton
 import scalajs.js
 
 @js.native
+sealed trait ComponentDeploymentUpdateType extends js.Any
+object ComponentDeploymentUpdateType {
+  val NONE = "NONE".asInstanceOf[ComponentDeploymentUpdateType]
+  val CURRENT_VERSION = "CURRENT_VERSION".asInstanceOf[ComponentDeploymentUpdateType]
+
+  @inline def values: js.Array[ComponentDeploymentUpdateType] = js.Array(NONE, CURRENT_VERSION)
+}
+
+@js.native
 sealed trait DeploymentStatus extends js.Any
 object DeploymentStatus {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentStatus]
@@ -45,6 +54,48 @@ object EnvironmentAccountConnectionStatus {
   val REJECTED = "REJECTED".asInstanceOf[EnvironmentAccountConnectionStatus]
 
   @inline def values: js.Array[EnvironmentAccountConnectionStatus] = js.Array(PENDING, CONNECTED, REJECTED)
+}
+
+@js.native
+sealed trait ListServiceInstancesFilterBy extends js.Any
+object ListServiceInstancesFilterBy {
+  val name = "name".asInstanceOf[ListServiceInstancesFilterBy]
+  val deploymentStatus = "deploymentStatus".asInstanceOf[ListServiceInstancesFilterBy]
+  val templateName = "templateName".asInstanceOf[ListServiceInstancesFilterBy]
+  val serviceName = "serviceName".asInstanceOf[ListServiceInstancesFilterBy]
+  val deployedTemplateVersionStatus = "deployedTemplateVersionStatus".asInstanceOf[ListServiceInstancesFilterBy]
+  val environmentName = "environmentName".asInstanceOf[ListServiceInstancesFilterBy]
+  val lastDeploymentAttemptedAtBefore = "lastDeploymentAttemptedAtBefore".asInstanceOf[ListServiceInstancesFilterBy]
+  val lastDeploymentAttemptedAtAfter = "lastDeploymentAttemptedAtAfter".asInstanceOf[ListServiceInstancesFilterBy]
+  val createdAtBefore = "createdAtBefore".asInstanceOf[ListServiceInstancesFilterBy]
+  val createdAtAfter = "createdAtAfter".asInstanceOf[ListServiceInstancesFilterBy]
+
+  @inline def values: js.Array[ListServiceInstancesFilterBy] = js.Array(
+    name,
+    deploymentStatus,
+    templateName,
+    serviceName,
+    deployedTemplateVersionStatus,
+    environmentName,
+    lastDeploymentAttemptedAtBefore,
+    lastDeploymentAttemptedAtAfter,
+    createdAtBefore,
+    createdAtAfter
+  )
+}
+
+@js.native
+sealed trait ListServiceInstancesSortBy extends js.Any
+object ListServiceInstancesSortBy {
+  val name = "name".asInstanceOf[ListServiceInstancesSortBy]
+  val deploymentStatus = "deploymentStatus".asInstanceOf[ListServiceInstancesSortBy]
+  val templateName = "templateName".asInstanceOf[ListServiceInstancesSortBy]
+  val serviceName = "serviceName".asInstanceOf[ListServiceInstancesSortBy]
+  val environmentName = "environmentName".asInstanceOf[ListServiceInstancesSortBy]
+  val lastDeploymentAttemptedAt = "lastDeploymentAttemptedAt".asInstanceOf[ListServiceInstancesSortBy]
+  val createdAt = "createdAt".asInstanceOf[ListServiceInstancesSortBy]
+
+  @inline def values: js.Array[ListServiceInstancesSortBy] = js.Array(name, deploymentStatus, templateName, serviceName, environmentName, lastDeploymentAttemptedAt, createdAt)
 }
 
 /** List of provisioning engines
@@ -145,6 +196,23 @@ object ServiceStatus {
     UPDATE_FAILED,
     UPDATE_COMPLETE_CLEANUP_FAILED
   )
+}
+
+@js.native
+sealed trait ServiceTemplateSupportedComponentSourceType extends js.Any
+object ServiceTemplateSupportedComponentSourceType {
+  val DIRECTLY_DEFINED = "DIRECTLY_DEFINED".asInstanceOf[ServiceTemplateSupportedComponentSourceType]
+
+  @inline def values: js.Array[ServiceTemplateSupportedComponentSourceType] = js.Array(DIRECTLY_DEFINED)
+}
+
+@js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native

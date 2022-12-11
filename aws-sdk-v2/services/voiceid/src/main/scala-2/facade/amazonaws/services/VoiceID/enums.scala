@@ -11,8 +11,9 @@ object AuthenticationDecision {
   val SPEAKER_NOT_ENROLLED = "SPEAKER_NOT_ENROLLED".asInstanceOf[AuthenticationDecision]
   val SPEAKER_OPTED_OUT = "SPEAKER_OPTED_OUT".asInstanceOf[AuthenticationDecision]
   val SPEAKER_ID_NOT_PROVIDED = "SPEAKER_ID_NOT_PROVIDED".asInstanceOf[AuthenticationDecision]
+  val SPEAKER_EXPIRED = "SPEAKER_EXPIRED".asInstanceOf[AuthenticationDecision]
 
-  @inline def values: js.Array[AuthenticationDecision] = js.Array(ACCEPT, REJECT, NOT_ENOUGH_SPEECH, SPEAKER_NOT_ENROLLED, SPEAKER_OPTED_OUT, SPEAKER_ID_NOT_PROVIDED)
+  @inline def values: js.Array[AuthenticationDecision] = js.Array(ACCEPT, REJECT, NOT_ENOUGH_SPEECH, SPEAKER_NOT_ENROLLED, SPEAKER_OPTED_OUT, SPEAKER_ID_NOT_PROVIDED, SPEAKER_EXPIRED)
 }
 
 @js.native
@@ -66,8 +67,9 @@ object FraudDetectionDecision {
 sealed trait FraudDetectionReason extends js.Any
 object FraudDetectionReason {
   val KNOWN_FRAUDSTER = "KNOWN_FRAUDSTER".asInstanceOf[FraudDetectionReason]
+  val VOICE_SPOOFING = "VOICE_SPOOFING".asInstanceOf[FraudDetectionReason]
 
-  @inline def values: js.Array[FraudDetectionReason] = js.Array(KNOWN_FRAUDSTER)
+  @inline def values: js.Array[FraudDetectionReason] = js.Array(KNOWN_FRAUDSTER, VOICE_SPOOFING)
 }
 
 @js.native
@@ -80,6 +82,16 @@ object FraudsterRegistrationJobStatus {
   val FAILED = "FAILED".asInstanceOf[FraudsterRegistrationJobStatus]
 
   @inline def values: js.Array[FraudsterRegistrationJobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, FAILED)
+}
+
+@js.native
+sealed trait ServerSideEncryptionUpdateStatus extends js.Any
+object ServerSideEncryptionUpdateStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ServerSideEncryptionUpdateStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[ServerSideEncryptionUpdateStatus]
+  val FAILED = "FAILED".asInstanceOf[ServerSideEncryptionUpdateStatus]
+
+  @inline def values: js.Array[ServerSideEncryptionUpdateStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
 }
 
 @js.native

@@ -32,6 +32,7 @@ package object ivs {
   type RecordingConfigurationArn = String
   type RecordingConfigurationList = js.Array[RecordingConfigurationSummary]
   type RecordingConfigurationName = String
+  type RecordingReconnectWindowSeconds = Int
   type ResourceArn = String
   type S3DestinationBucketName = String
   type StreamEvents = js.Array[StreamEvent]
@@ -50,6 +51,7 @@ package object ivs {
   type TagKeyList = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
+  type TargetIntervalSeconds = Double
   type Time = js.Date
   type errorCode = String
   type errorMessage = String
@@ -127,7 +129,7 @@ package object ivs {
     }
   }
 
-  /** Object specifying a stream’s audio configuration.
+  /** Object specifying a stream’s audio configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.
     */
   @js.native
   trait AudioConfiguration extends js.Object {
@@ -379,7 +381,9 @@ package object ivs {
   trait CreateRecordingConfigurationRequest extends js.Object {
     var destinationConfiguration: DestinationConfiguration
     var name: js.UndefOr[RecordingConfigurationName]
+    var recordingReconnectWindowSeconds: js.UndefOr[RecordingReconnectWindowSeconds]
     var tags: js.UndefOr[Tags]
+    var thumbnailConfiguration: js.UndefOr[ThumbnailConfiguration]
   }
 
   object CreateRecordingConfigurationRequest {
@@ -387,14 +391,18 @@ package object ivs {
     def apply(
         destinationConfiguration: DestinationConfiguration,
         name: js.UndefOr[RecordingConfigurationName] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
+        recordingReconnectWindowSeconds: js.UndefOr[RecordingReconnectWindowSeconds] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined,
+        thumbnailConfiguration: js.UndefOr[ThumbnailConfiguration] = js.undefined
     ): CreateRecordingConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "destinationConfiguration" -> destinationConfiguration.asInstanceOf[js.Any]
       )
 
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recordingReconnectWindowSeconds.foreach(__v => __obj.updateDynamic("recordingReconnectWindowSeconds")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thumbnailConfiguration.foreach(__v => __obj.updateDynamic("thumbnailConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRecordingConfigurationRequest]
     }
   }
@@ -1184,7 +1192,9 @@ package object ivs {
     var destinationConfiguration: DestinationConfiguration
     var state: RecordingConfigurationState
     var name: js.UndefOr[RecordingConfigurationName]
+    var recordingReconnectWindowSeconds: js.UndefOr[RecordingReconnectWindowSeconds]
     var tags: js.UndefOr[Tags]
+    var thumbnailConfiguration: js.UndefOr[ThumbnailConfiguration]
   }
 
   object RecordingConfiguration {
@@ -1194,7 +1204,9 @@ package object ivs {
         destinationConfiguration: DestinationConfiguration,
         state: RecordingConfigurationState,
         name: js.UndefOr[RecordingConfigurationName] = js.undefined,
-        tags: js.UndefOr[Tags] = js.undefined
+        recordingReconnectWindowSeconds: js.UndefOr[RecordingReconnectWindowSeconds] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined,
+        thumbnailConfiguration: js.UndefOr[ThumbnailConfiguration] = js.undefined
     ): RecordingConfiguration = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -1203,7 +1215,9 @@ package object ivs {
       )
 
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recordingReconnectWindowSeconds.foreach(__v => __obj.updateDynamic("recordingReconnectWindowSeconds")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thumbnailConfiguration.foreach(__v => __obj.updateDynamic("thumbnailConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordingConfiguration]
     }
   }
@@ -1543,6 +1557,27 @@ package object ivs {
     }
   }
 
+  /** An object representing a configuration of thumbnails for recorded video.
+    */
+  @js.native
+  trait ThumbnailConfiguration extends js.Object {
+    var recordingMode: js.UndefOr[RecordingMode]
+    var targetIntervalSeconds: js.UndefOr[TargetIntervalSeconds]
+  }
+
+  object ThumbnailConfiguration {
+    @inline
+    def apply(
+        recordingMode: js.UndefOr[RecordingMode] = js.undefined,
+        targetIntervalSeconds: js.UndefOr[TargetIntervalSeconds] = js.undefined
+    ): ThumbnailConfiguration = {
+      val __obj = js.Dynamic.literal()
+      recordingMode.foreach(__v => __obj.updateDynamic("recordingMode")(__v.asInstanceOf[js.Any]))
+      targetIntervalSeconds.foreach(__v => __obj.updateDynamic("targetIntervalSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThumbnailConfiguration]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var resourceArn: ResourceArn
@@ -1623,7 +1658,7 @@ package object ivs {
     }
   }
 
-  /** Object specifying a stream’s video configuration.
+  /** Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <a>IngestConfiguration</a> object and used for monitoring stream health.
     */
   @js.native
   trait VideoConfiguration extends js.Object {

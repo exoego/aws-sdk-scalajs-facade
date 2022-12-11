@@ -65,8 +65,9 @@ sealed trait Shape extends js.Any
 object Shape {
   val Scalar = "Scalar".asInstanceOf[Shape]
   val List = "List".asInstanceOf[Shape]
+  val Composite = "Composite".asInstanceOf[Shape]
 
-  @inline def values: js.Array[Shape] = js.Array(Scalar, List)
+  @inline def values: js.Array[Shape] = js.Array(Scalar, List, Composite)
 }
 
 @js.native

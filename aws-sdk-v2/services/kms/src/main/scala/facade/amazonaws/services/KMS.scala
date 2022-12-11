@@ -34,6 +34,7 @@ package object kms {
   type KeyList = js.Array[KeyListEntry]
   type KeyStorePasswordType = String
   type LimitType = Int
+  type MacAlgorithmSpecList = js.Array[MacAlgorithmSpec]
   type MarkerType = String
   type MultiRegionKeyList = js.Array[MultiRegionKey]
   type NullableBooleanType = Boolean
@@ -52,6 +53,12 @@ package object kms {
   type TagList = js.Array[Tag]
   type TagValueType = String
   type TrustAnchorCertificateType = String
+  type XksKeyIdType = String
+  type XksProxyAuthenticationAccessKeyIdType = String
+  type XksProxyAuthenticationRawSecretAccessKeyType = String
+  type XksProxyUriEndpointType = String
+  type XksProxyUriPathType = String
+  type XksProxyVpcEndpointServiceNameType = String
 
   final class KMSOps(private val service: KMS) extends AnyVal {
 
@@ -77,6 +84,7 @@ package object kms {
     @inline def generateDataKeyPairFuture(params: GenerateDataKeyPairRequest): Future[GenerateDataKeyPairResponse] = service.generateDataKeyPair(params).promise().toFuture
     @inline def generateDataKeyPairWithoutPlaintextFuture(params: GenerateDataKeyPairWithoutPlaintextRequest): Future[GenerateDataKeyPairWithoutPlaintextResponse] = service.generateDataKeyPairWithoutPlaintext(params).promise().toFuture
     @inline def generateDataKeyWithoutPlaintextFuture(params: GenerateDataKeyWithoutPlaintextRequest): Future[GenerateDataKeyWithoutPlaintextResponse] = service.generateDataKeyWithoutPlaintext(params).promise().toFuture
+    @inline def generateMacFuture(params: GenerateMacRequest): Future[GenerateMacResponse] = service.generateMac(params).promise().toFuture
     @inline def generateRandomFuture(params: GenerateRandomRequest): Future[GenerateRandomResponse] = service.generateRandom(params).promise().toFuture
     @inline def getKeyPolicyFuture(params: GetKeyPolicyRequest): Future[GetKeyPolicyResponse] = service.getKeyPolicy(params).promise().toFuture
     @inline def getKeyRotationStatusFuture(params: GetKeyRotationStatusRequest): Future[GetKeyRotationStatusResponse] = service.getKeyRotationStatus(params).promise().toFuture
@@ -103,6 +111,7 @@ package object kms {
     @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] = service.updateKeyDescription(params).promise().toFuture
     @inline def updatePrimaryRegionFuture(params: UpdatePrimaryRegionRequest): Future[js.Object] = service.updatePrimaryRegion(params).promise().toFuture
     @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise().toFuture
+    @inline def verifyMacFuture(params: VerifyMacRequest): Future[VerifyMacResponse] = service.verifyMac(params).promise().toFuture
 
   }
 
@@ -133,6 +142,7 @@ package object kms {
     def generateDataKeyPair(params: GenerateDataKeyPairRequest): Request[GenerateDataKeyPairResponse] = js.native
     def generateDataKeyPairWithoutPlaintext(params: GenerateDataKeyPairWithoutPlaintextRequest): Request[GenerateDataKeyPairWithoutPlaintextResponse] = js.native
     def generateDataKeyWithoutPlaintext(params: GenerateDataKeyWithoutPlaintextRequest): Request[GenerateDataKeyWithoutPlaintextResponse] = js.native
+    def generateMac(params: GenerateMacRequest): Request[GenerateMacResponse] = js.native
     def generateRandom(params: GenerateRandomRequest): Request[GenerateRandomResponse] = js.native
     def getKeyPolicy(params: GetKeyPolicyRequest): Request[GetKeyPolicyResponse] = js.native
     def getKeyRotationStatus(params: GetKeyRotationStatusRequest): Request[GetKeyRotationStatusResponse] = js.native
@@ -159,6 +169,7 @@ package object kms {
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object] = js.native
     def updatePrimaryRegion(params: UpdatePrimaryRegionRequest): Request[js.Object] = js.native
     def verify(params: VerifyRequest): Request[VerifyResponse] = js.native
+    def verifyMac(params: VerifyMacRequest): Request[VerifyMacResponse] = js.native
   }
   object KMS {
     @inline implicit def toOps(service: KMS): KMSOps = {
@@ -279,26 +290,45 @@ package object kms {
 
   @js.native
   trait CreateCustomKeyStoreRequest extends js.Object {
-    var CloudHsmClusterId: CloudHsmClusterIdType
     var CustomKeyStoreName: CustomKeyStoreNameType
-    var KeyStorePassword: KeyStorePasswordType
-    var TrustAnchorCertificate: TrustAnchorCertificateType
+    var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
+    var CustomKeyStoreType: js.UndefOr[CustomKeyStoreType]
+    var KeyStorePassword: js.UndefOr[KeyStorePasswordType]
+    var TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType]
+    var XksProxyAuthenticationCredential: js.UndefOr[XksProxyAuthenticationCredentialType]
+    var XksProxyConnectivity: js.UndefOr[XksProxyConnectivityType]
+    var XksProxyUriEndpoint: js.UndefOr[XksProxyUriEndpointType]
+    var XksProxyUriPath: js.UndefOr[XksProxyUriPathType]
+    var XksProxyVpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType]
   }
 
   object CreateCustomKeyStoreRequest {
     @inline
     def apply(
-        CloudHsmClusterId: CloudHsmClusterIdType,
         CustomKeyStoreName: CustomKeyStoreNameType,
-        KeyStorePassword: KeyStorePasswordType,
-        TrustAnchorCertificate: TrustAnchorCertificateType
+        CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
+        CustomKeyStoreType: js.UndefOr[CustomKeyStoreType] = js.undefined,
+        KeyStorePassword: js.UndefOr[KeyStorePasswordType] = js.undefined,
+        TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined,
+        XksProxyAuthenticationCredential: js.UndefOr[XksProxyAuthenticationCredentialType] = js.undefined,
+        XksProxyConnectivity: js.UndefOr[XksProxyConnectivityType] = js.undefined,
+        XksProxyUriEndpoint: js.UndefOr[XksProxyUriEndpointType] = js.undefined,
+        XksProxyUriPath: js.UndefOr[XksProxyUriPathType] = js.undefined,
+        XksProxyVpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType] = js.undefined
     ): CreateCustomKeyStoreRequest = {
       val __obj = js.Dynamic.literal(
-        "CloudHsmClusterId" -> CloudHsmClusterId.asInstanceOf[js.Any],
-        "CustomKeyStoreName" -> CustomKeyStoreName.asInstanceOf[js.Any],
-        "KeyStorePassword" -> KeyStorePassword.asInstanceOf[js.Any],
-        "TrustAnchorCertificate" -> TrustAnchorCertificate.asInstanceOf[js.Any]
+        "CustomKeyStoreName" -> CustomKeyStoreName.asInstanceOf[js.Any]
       )
+
+      CloudHsmClusterId.foreach(__v => __obj.updateDynamic("CloudHsmClusterId")(__v.asInstanceOf[js.Any]))
+      CustomKeyStoreType.foreach(__v => __obj.updateDynamic("CustomKeyStoreType")(__v.asInstanceOf[js.Any]))
+      KeyStorePassword.foreach(__v => __obj.updateDynamic("KeyStorePassword")(__v.asInstanceOf[js.Any]))
+      TrustAnchorCertificate.foreach(__v => __obj.updateDynamic("TrustAnchorCertificate")(__v.asInstanceOf[js.Any]))
+      XksProxyAuthenticationCredential.foreach(__v => __obj.updateDynamic("XksProxyAuthenticationCredential")(__v.asInstanceOf[js.Any]))
+      XksProxyConnectivity.foreach(__v => __obj.updateDynamic("XksProxyConnectivity")(__v.asInstanceOf[js.Any]))
+      XksProxyUriEndpoint.foreach(__v => __obj.updateDynamic("XksProxyUriEndpoint")(__v.asInstanceOf[js.Any]))
+      XksProxyUriPath.foreach(__v => __obj.updateDynamic("XksProxyUriPath")(__v.asInstanceOf[js.Any]))
+      XksProxyVpcEndpointServiceName.foreach(__v => __obj.updateDynamic("XksProxyVpcEndpointServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomKeyStoreRequest]
     }
   }
@@ -386,6 +416,7 @@ package object kms {
     var Origin: js.UndefOr[OriginType]
     var Policy: js.UndefOr[PolicyType]
     var Tags: js.UndefOr[TagList]
+    var XksKeyId: js.UndefOr[XksKeyIdType]
   }
 
   object CreateKeyRequest {
@@ -400,7 +431,8 @@ package object kms {
         MultiRegion: js.UndefOr[NullableBooleanType] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
         Policy: js.UndefOr[PolicyType] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        XksKeyId: js.UndefOr[XksKeyIdType] = js.undefined
     ): CreateKeyRequest = {
       val __obj = js.Dynamic.literal()
       BypassPolicyLockoutSafetyCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any]))
@@ -413,6 +445,7 @@ package object kms {
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      XksKeyId.foreach(__v => __obj.updateDynamic("XksKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateKeyRequest]
     }
   }
@@ -443,7 +476,9 @@ package object kms {
     var CreationDate: js.UndefOr[DateType]
     var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
     var CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var CustomKeyStoreType: js.UndefOr[CustomKeyStoreType]
     var TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType]
+    var XksProxyConfiguration: js.UndefOr[XksProxyConfigurationType]
   }
 
   object CustomKeyStoresListEntry {
@@ -455,7 +490,9 @@ package object kms {
         CreationDate: js.UndefOr[DateType] = js.undefined,
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
         CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
-        TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined
+        CustomKeyStoreType: js.UndefOr[CustomKeyStoreType] = js.undefined,
+        TrustAnchorCertificate: js.UndefOr[TrustAnchorCertificateType] = js.undefined,
+        XksProxyConfiguration: js.UndefOr[XksProxyConfigurationType] = js.undefined
     ): CustomKeyStoresListEntry = {
       val __obj = js.Dynamic.literal()
       CloudHsmClusterId.foreach(__v => __obj.updateDynamic("CloudHsmClusterId")(__v.asInstanceOf[js.Any]))
@@ -464,7 +501,9 @@ package object kms {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
       CustomKeyStoreName.foreach(__v => __obj.updateDynamic("CustomKeyStoreName")(__v.asInstanceOf[js.Any]))
+      CustomKeyStoreType.foreach(__v => __obj.updateDynamic("CustomKeyStoreType")(__v.asInstanceOf[js.Any]))
       TrustAnchorCertificate.foreach(__v => __obj.updateDynamic("TrustAnchorCertificate")(__v.asInstanceOf[js.Any]))
+      XksProxyConfiguration.foreach(__v => __obj.updateDynamic("XksProxyConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomKeyStoresListEntry]
     }
   }
@@ -1024,6 +1063,55 @@ package object kms {
   }
 
   @js.native
+  trait GenerateMacRequest extends js.Object {
+    var KeyId: KeyIdType
+    var MacAlgorithm: MacAlgorithmSpec
+    var Message: PlaintextType
+    var GrantTokens: js.UndefOr[GrantTokenList]
+  }
+
+  object GenerateMacRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        MacAlgorithm: MacAlgorithmSpec,
+        Message: PlaintextType,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+    ): GenerateMacRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "MacAlgorithm" -> MacAlgorithm.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]
+      )
+
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateMacRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateMacResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var Mac: js.UndefOr[CiphertextType]
+    var MacAlgorithm: js.UndefOr[MacAlgorithmSpec]
+  }
+
+  object GenerateMacResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        Mac: js.UndefOr[CiphertextType] = js.undefined,
+        MacAlgorithm: js.UndefOr[MacAlgorithmSpec] = js.undefined
+    ): GenerateMacResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      Mac.foreach(__v => __obj.updateDynamic("Mac")(__v.asInstanceOf[js.Any]))
+      MacAlgorithm.foreach(__v => __obj.updateDynamic("MacAlgorithm")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateMacResponse]
+    }
+  }
+
+  @js.native
   trait GenerateRandomRequest extends js.Object {
     var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
     var NumberOfBytes: js.UndefOr[NumberOfBytesType]
@@ -1356,7 +1444,7 @@ package object kms {
     }
   }
 
-  /** Contains metadata about a KMS key. This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
+  /** Contains metadata about a KMS key. This data type is used as a response element for the <a>CreateKey</a>, <a>DescribeKey</a>, and <a>ReplicateKey</a> operations.
     */
   @js.native
   trait KeyMetadata extends js.Object {
@@ -1376,12 +1464,14 @@ package object kms {
     var KeySpec: js.UndefOr[KeySpec]
     var KeyState: js.UndefOr[KeyState]
     var KeyUsage: js.UndefOr[KeyUsageType]
+    var MacAlgorithms: js.UndefOr[MacAlgorithmSpecList]
     var MultiRegion: js.UndefOr[NullableBooleanType]
     var MultiRegionConfiguration: js.UndefOr[MultiRegionConfiguration]
     var Origin: js.UndefOr[OriginType]
     var PendingDeletionWindowInDays: js.UndefOr[PendingWindowInDaysType]
     var SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList]
     var ValidTo: js.UndefOr[DateType]
+    var XksKeyConfiguration: js.UndefOr[XksKeyConfigurationType]
   }
 
   object KeyMetadata {
@@ -1403,12 +1493,14 @@ package object kms {
         KeySpec: js.UndefOr[KeySpec] = js.undefined,
         KeyState: js.UndefOr[KeyState] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
+        MacAlgorithms: js.UndefOr[MacAlgorithmSpecList] = js.undefined,
         MultiRegion: js.UndefOr[NullableBooleanType] = js.undefined,
         MultiRegionConfiguration: js.UndefOr[MultiRegionConfiguration] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
         PendingDeletionWindowInDays: js.UndefOr[PendingWindowInDaysType] = js.undefined,
         SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList] = js.undefined,
-        ValidTo: js.UndefOr[DateType] = js.undefined
+        ValidTo: js.UndefOr[DateType] = js.undefined,
+        XksKeyConfiguration: js.UndefOr[XksKeyConfigurationType] = js.undefined
     ): KeyMetadata = {
       val __obj = js.Dynamic.literal(
         "KeyId" -> KeyId.asInstanceOf[js.Any]
@@ -1429,12 +1521,14 @@ package object kms {
       KeySpec.foreach(__v => __obj.updateDynamic("KeySpec")(__v.asInstanceOf[js.Any]))
       KeyState.foreach(__v => __obj.updateDynamic("KeyState")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      MacAlgorithms.foreach(__v => __obj.updateDynamic("MacAlgorithms")(__v.asInstanceOf[js.Any]))
       MultiRegion.foreach(__v => __obj.updateDynamic("MultiRegion")(__v.asInstanceOf[js.Any]))
       MultiRegionConfiguration.foreach(__v => __obj.updateDynamic("MultiRegionConfiguration")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
       PendingDeletionWindowInDays.foreach(__v => __obj.updateDynamic("PendingDeletionWindowInDays")(__v.asInstanceOf[js.Any]))
       SigningAlgorithms.foreach(__v => __obj.updateDynamic("SigningAlgorithms")(__v.asInstanceOf[js.Any]))
       ValidTo.foreach(__v => __obj.updateDynamic("ValidTo")(__v.asInstanceOf[js.Any]))
+      XksKeyConfiguration.foreach(__v => __obj.updateDynamic("XksKeyConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyMetadata]
     }
   }
@@ -2114,6 +2208,11 @@ package object kms {
     var CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType]
     var KeyStorePassword: js.UndefOr[KeyStorePasswordType]
     var NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType]
+    var XksProxyAuthenticationCredential: js.UndefOr[XksProxyAuthenticationCredentialType]
+    var XksProxyConnectivity: js.UndefOr[XksProxyConnectivityType]
+    var XksProxyUriEndpoint: js.UndefOr[XksProxyUriEndpointType]
+    var XksProxyUriPath: js.UndefOr[XksProxyUriPathType]
+    var XksProxyVpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType]
   }
 
   object UpdateCustomKeyStoreRequest {
@@ -2122,7 +2221,12 @@ package object kms {
         CustomKeyStoreId: CustomKeyStoreIdType,
         CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
         KeyStorePassword: js.UndefOr[KeyStorePasswordType] = js.undefined,
-        NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined
+        NewCustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
+        XksProxyAuthenticationCredential: js.UndefOr[XksProxyAuthenticationCredentialType] = js.undefined,
+        XksProxyConnectivity: js.UndefOr[XksProxyConnectivityType] = js.undefined,
+        XksProxyUriEndpoint: js.UndefOr[XksProxyUriEndpointType] = js.undefined,
+        XksProxyUriPath: js.UndefOr[XksProxyUriPathType] = js.undefined,
+        XksProxyVpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType] = js.undefined
     ): UpdateCustomKeyStoreRequest = {
       val __obj = js.Dynamic.literal(
         "CustomKeyStoreId" -> CustomKeyStoreId.asInstanceOf[js.Any]
@@ -2131,6 +2235,11 @@ package object kms {
       CloudHsmClusterId.foreach(__v => __obj.updateDynamic("CloudHsmClusterId")(__v.asInstanceOf[js.Any]))
       KeyStorePassword.foreach(__v => __obj.updateDynamic("KeyStorePassword")(__v.asInstanceOf[js.Any]))
       NewCustomKeyStoreName.foreach(__v => __obj.updateDynamic("NewCustomKeyStoreName")(__v.asInstanceOf[js.Any]))
+      XksProxyAuthenticationCredential.foreach(__v => __obj.updateDynamic("XksProxyAuthenticationCredential")(__v.asInstanceOf[js.Any]))
+      XksProxyConnectivity.foreach(__v => __obj.updateDynamic("XksProxyConnectivity")(__v.asInstanceOf[js.Any]))
+      XksProxyUriEndpoint.foreach(__v => __obj.updateDynamic("XksProxyUriEndpoint")(__v.asInstanceOf[js.Any]))
+      XksProxyUriPath.foreach(__v => __obj.updateDynamic("XksProxyUriPath")(__v.asInstanceOf[js.Any]))
+      XksProxyVpcEndpointServiceName.foreach(__v => __obj.updateDynamic("XksProxyVpcEndpointServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCustomKeyStoreRequest]
     }
   }
@@ -2187,6 +2296,58 @@ package object kms {
   }
 
   @js.native
+  trait VerifyMacRequest extends js.Object {
+    var KeyId: KeyIdType
+    var Mac: CiphertextType
+    var MacAlgorithm: MacAlgorithmSpec
+    var Message: PlaintextType
+    var GrantTokens: js.UndefOr[GrantTokenList]
+  }
+
+  object VerifyMacRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        Mac: CiphertextType,
+        MacAlgorithm: MacAlgorithmSpec,
+        Message: PlaintextType,
+        GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
+    ): VerifyMacRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "Mac" -> Mac.asInstanceOf[js.Any],
+        "MacAlgorithm" -> MacAlgorithm.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]
+      )
+
+      GrantTokens.foreach(__v => __obj.updateDynamic("GrantTokens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VerifyMacRequest]
+    }
+  }
+
+  @js.native
+  trait VerifyMacResponse extends js.Object {
+    var KeyId: js.UndefOr[KeyIdType]
+    var MacAlgorithm: js.UndefOr[MacAlgorithmSpec]
+    var MacValid: js.UndefOr[BooleanType]
+  }
+
+  object VerifyMacResponse {
+    @inline
+    def apply(
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        MacAlgorithm: js.UndefOr[MacAlgorithmSpec] = js.undefined,
+        MacValid: js.UndefOr[BooleanType] = js.undefined
+    ): VerifyMacResponse = {
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      MacAlgorithm.foreach(__v => __obj.updateDynamic("MacAlgorithm")(__v.asInstanceOf[js.Any]))
+      MacValid.foreach(__v => __obj.updateDynamic("MacValid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VerifyMacResponse]
+    }
+  }
+
+  @js.native
   trait VerifyRequest extends js.Object {
     var KeyId: KeyIdType
     var Message: PlaintextType
@@ -2238,6 +2399,76 @@ package object kms {
       SignatureValid.foreach(__v => __obj.updateDynamic("SignatureValid")(__v.asInstanceOf[js.Any]))
       SigningAlgorithm.foreach(__v => __obj.updateDynamic("SigningAlgorithm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VerifyResponse]
+    }
+  }
+
+  /** Information about the [[https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key|external key]]that is associated with a KMS key in an external key store. This element appears in a <a>CreateKey</a> or <a>DescribeKey</a> response only for a KMS key in an external key store. The <i>external key</i> is a symmetric encryption key that is hosted by an external key manager outside of Amazon Web Services. When you use the KMS key in an external key store in a cryptographic operation, the cryptographic operation is performed in the external key manager using the specified external key. For more information, see [[https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html#concept-external-key|External key]] in the <i>Key Management Service Developer Guide</i>.
+    */
+  @js.native
+  trait XksKeyConfigurationType extends js.Object {
+    var Id: js.UndefOr[XksKeyIdType]
+  }
+
+  object XksKeyConfigurationType {
+    @inline
+    def apply(
+        Id: js.UndefOr[XksKeyIdType] = js.undefined
+    ): XksKeyConfigurationType = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[XksKeyConfigurationType]
+    }
+  }
+
+  /** KMS uses the authentication credential to sign requests that it sends to the external key store proxy (XKS proxy) on your behalf. You establish these credentials on your external key store proxy and report them to KMS. The <code>XksProxyAuthenticationCredential</code> includes two required elements.
+    */
+  @js.native
+  trait XksProxyAuthenticationCredentialType extends js.Object {
+    var AccessKeyId: XksProxyAuthenticationAccessKeyIdType
+    var RawSecretAccessKey: XksProxyAuthenticationRawSecretAccessKeyType
+  }
+
+  object XksProxyAuthenticationCredentialType {
+    @inline
+    def apply(
+        AccessKeyId: XksProxyAuthenticationAccessKeyIdType,
+        RawSecretAccessKey: XksProxyAuthenticationRawSecretAccessKeyType
+    ): XksProxyAuthenticationCredentialType = {
+      val __obj = js.Dynamic.literal(
+        "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
+        "RawSecretAccessKey" -> RawSecretAccessKey.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[XksProxyAuthenticationCredentialType]
+    }
+  }
+
+  /** Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <a>DescribeCustomKeyStores</a> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.
+    */
+  @js.native
+  trait XksProxyConfigurationType extends js.Object {
+    var AccessKeyId: js.UndefOr[XksProxyAuthenticationAccessKeyIdType]
+    var Connectivity: js.UndefOr[XksProxyConnectivityType]
+    var UriEndpoint: js.UndefOr[XksProxyUriEndpointType]
+    var UriPath: js.UndefOr[XksProxyUriPathType]
+    var VpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType]
+  }
+
+  object XksProxyConfigurationType {
+    @inline
+    def apply(
+        AccessKeyId: js.UndefOr[XksProxyAuthenticationAccessKeyIdType] = js.undefined,
+        Connectivity: js.UndefOr[XksProxyConnectivityType] = js.undefined,
+        UriEndpoint: js.UndefOr[XksProxyUriEndpointType] = js.undefined,
+        UriPath: js.UndefOr[XksProxyUriPathType] = js.undefined,
+        VpcEndpointServiceName: js.UndefOr[XksProxyVpcEndpointServiceNameType] = js.undefined
+    ): XksProxyConfigurationType = {
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      Connectivity.foreach(__v => __obj.updateDynamic("Connectivity")(__v.asInstanceOf[js.Any]))
+      UriEndpoint.foreach(__v => __obj.updateDynamic("UriEndpoint")(__v.asInstanceOf[js.Any]))
+      UriPath.foreach(__v => __obj.updateDynamic("UriPath")(__v.asInstanceOf[js.Any]))
+      VpcEndpointServiceName.foreach(__v => __obj.updateDynamic("VpcEndpointServiceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[XksProxyConfigurationType]
     }
   }
 }

@@ -2,6 +2,16 @@ package facade.amazonaws.services.cloudwatchlogs
 
 import scalajs.js
 
+type DataProtectionStatus = "ACTIVATED" | "DELETED" | "ARCHIVED" | "DISABLED"
+object DataProtectionStatus {
+  inline val ACTIVATED: "ACTIVATED" = "ACTIVATED"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[DataProtectionStatus] = js.Array(ACTIVATED, DELETED, ARCHIVED, DISABLED)
+}
+
 /** The method used to distribute log data to the destination, which can be either random or grouped by log stream.
   */
 type Distribution = "Random" | "ByLogStream"

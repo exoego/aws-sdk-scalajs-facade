@@ -17,6 +17,23 @@ object AmplitudeConnectorOperator {
   inline def values: js.Array[AmplitudeConnectorOperator] = js.Array(BETWEEN)
 }
 
+type AuthenticationType = "OAUTH2" | "APIKEY" | "BASIC" | "CUSTOM"
+object AuthenticationType {
+  inline val OAUTH2: "OAUTH2" = "OAUTH2"
+  inline val APIKEY: "APIKEY" = "APIKEY"
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+
+  inline def values: js.Array[AuthenticationType] = js.Array(OAUTH2, APIKEY, BASIC, CUSTOM)
+}
+
+type CatalogType = "GLUE"
+object CatalogType {
+  inline val GLUE: "GLUE" = "GLUE"
+
+  inline def values: js.Array[CatalogType] = js.Array(GLUE)
+}
+
 type ConnectionMode = "Public" | "Private"
 object ConnectionMode {
   inline val Public: "Public" = "Public"
@@ -25,7 +42,16 @@ object ConnectionMode {
   inline def values: js.Array[ConnectionMode] = js.Array(Public, Private)
 }
 
-type ConnectorType = "Salesforce" | "Singular" | "Slack" | "Redshift" | "S3" | "Marketo" | "Googleanalytics" | "Zendesk" | "Servicenow" | "Datadog" | "Trendmicro" | "Snowflake" | "Dynatrace" | "Infornexus" | "Amplitude" | "Veeva" | "EventBridge" | "LookoutMetrics" | "Upsolver" | "Honeycode" | "CustomerProfiles" | "SAPOData"
+/** The type of provisioning that the connector supports, such as Lambda.
+  */
+type ConnectorProvisioningType = "LAMBDA"
+object ConnectorProvisioningType {
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
+
+  inline def values: js.Array[ConnectorProvisioningType] = js.Array(LAMBDA)
+}
+
+type ConnectorType = "Salesforce" | "Singular" | "Slack" | "Redshift" | "S3" | "Marketo" | "Googleanalytics" | "Zendesk" | "Servicenow" | "Datadog" | "Trendmicro" | "Snowflake" | "Dynatrace" | "Infornexus" | "Amplitude" | "Veeva" | "EventBridge" | "LookoutMetrics" | "Upsolver" | "Honeycode" | "CustomerProfiles" | "SAPOData" | "CustomConnector"
 object ConnectorType {
   inline val Salesforce: "Salesforce" = "Salesforce"
   inline val Singular: "Singular" = "Singular"
@@ -49,6 +75,7 @@ object ConnectorType {
   inline val Honeycode: "Honeycode" = "Honeycode"
   inline val CustomerProfiles: "CustomerProfiles" = "CustomerProfiles"
   inline val SAPOData: "SAPOData" = "SAPOData"
+  inline val CustomConnector: "CustomConnector" = "CustomConnector"
 
   inline def values: js.Array[ConnectorType] = js.Array(
     Salesforce,
@@ -72,7 +99,8 @@ object ConnectorType {
     Upsolver,
     Honeycode,
     CustomerProfiles,
-    SAPOData
+    SAPOData,
+    CustomConnector
   )
 }
 
@@ -272,6 +300,22 @@ object MarketoConnectorOperator {
   )
 }
 
+type OAuth2CustomPropType = "TOKEN_URL" | "AUTH_URL"
+object OAuth2CustomPropType {
+  inline val TOKEN_URL: "TOKEN_URL" = "TOKEN_URL"
+  inline val AUTH_URL: "AUTH_URL" = "AUTH_URL"
+
+  inline def values: js.Array[OAuth2CustomPropType] = js.Array(TOKEN_URL, AUTH_URL)
+}
+
+type OAuth2GrantType = "CLIENT_CREDENTIALS" | "AUTHORIZATION_CODE"
+object OAuth2GrantType {
+  inline val CLIENT_CREDENTIALS: "CLIENT_CREDENTIALS" = "CLIENT_CREDENTIALS"
+  inline val AUTHORIZATION_CODE: "AUTHORIZATION_CODE" = "AUTHORIZATION_CODE"
+
+  inline def values: js.Array[OAuth2GrantType] = js.Array(CLIENT_CREDENTIALS, AUTHORIZATION_CODE)
+}
+
 type Operator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "CONTAINS" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object Operator {
   inline val PROJECTION: "PROJECTION" = "PROJECTION"
@@ -321,7 +365,7 @@ object Operator {
   )
 }
 
-type OperatorPropertiesKeys = "VALUE" | "VALUES" | "DATA_TYPE" | "UPPER_BOUND" | "LOWER_BOUND" | "SOURCE_DATA_TYPE" | "DESTINATION_DATA_TYPE" | "VALIDATION_ACTION" | "MASK_VALUE" | "MASK_LENGTH" | "TRUNCATE_LENGTH" | "MATH_OPERATION_FIELDS_ORDER" | "CONCAT_FORMAT" | "SUBFIELD_CATEGORY_MAP" | "EXCLUDE_SOURCE_FIELDS_LIST"
+type OperatorPropertiesKeys = "VALUE" | "VALUES" | "DATA_TYPE" | "UPPER_BOUND" | "LOWER_BOUND" | "SOURCE_DATA_TYPE" | "DESTINATION_DATA_TYPE" | "VALIDATION_ACTION" | "MASK_VALUE" | "MASK_LENGTH" | "TRUNCATE_LENGTH" | "MATH_OPERATION_FIELDS_ORDER" | "CONCAT_FORMAT" | "SUBFIELD_CATEGORY_MAP" | "EXCLUDE_SOURCE_FIELDS_LIST" | "INCLUDE_NEW_FIELDS" | "ORDERED_PARTITION_KEYS_LIST"
 object OperatorPropertiesKeys {
   inline val VALUE: "VALUE" = "VALUE"
   inline val VALUES: "VALUES" = "VALUES"
@@ -338,6 +382,8 @@ object OperatorPropertiesKeys {
   inline val CONCAT_FORMAT: "CONCAT_FORMAT" = "CONCAT_FORMAT"
   inline val SUBFIELD_CATEGORY_MAP: "SUBFIELD_CATEGORY_MAP" = "SUBFIELD_CATEGORY_MAP"
   inline val EXCLUDE_SOURCE_FIELDS_LIST: "EXCLUDE_SOURCE_FIELDS_LIST" = "EXCLUDE_SOURCE_FIELDS_LIST"
+  inline val INCLUDE_NEW_FIELDS: "INCLUDE_NEW_FIELDS" = "INCLUDE_NEW_FIELDS"
+  inline val ORDERED_PARTITION_KEYS_LIST: "ORDERED_PARTITION_KEYS_LIST" = "ORDERED_PARTITION_KEYS_LIST"
 
   inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
     VALUE,
@@ -354,8 +400,67 @@ object OperatorPropertiesKeys {
     MATH_OPERATION_FIELDS_ORDER,
     CONCAT_FORMAT,
     SUBFIELD_CATEGORY_MAP,
-    EXCLUDE_SOURCE_FIELDS_LIST
+    EXCLUDE_SOURCE_FIELDS_LIST,
+    INCLUDE_NEW_FIELDS,
+    ORDERED_PARTITION_KEYS_LIST
   )
+}
+
+type Operators = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "CONTAINS" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
+object Operators {
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
+
+  inline def values: js.Array[Operators] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    GREATER_THAN,
+    CONTAINS,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
+}
+
+type PathPrefix = "EXECUTION_ID" | "SCHEMA_VERSION"
+object PathPrefix {
+  inline val EXECUTION_ID: "EXECUTION_ID" = "EXECUTION_ID"
+  inline val SCHEMA_VERSION: "SCHEMA_VERSION" = "SCHEMA_VERSION"
+
+  inline def values: js.Array[PathPrefix] = js.Array(EXECUTION_ID, SCHEMA_VERSION)
 }
 
 type PrefixFormat = "YEAR" | "MONTH" | "DAY" | "HOUR" | "MINUTE"
@@ -551,6 +656,15 @@ object SalesforceConnectorOperator {
   )
 }
 
+type SalesforceDataTransferApi = "AUTOMATIC" | "BULKV2" | "REST_SYNC"
+object SalesforceDataTransferApi {
+  inline val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
+  inline val BULKV2: "BULKV2" = "BULKV2"
+  inline val REST_SYNC: "REST_SYNC" = "REST_SYNC"
+
+  inline def values: js.Array[SalesforceDataTransferApi] = js.Array(AUTOMATIC, BULKV2, REST_SYNC)
+}
+
 type ScheduleFrequencyType = "BYMINUTE" | "HOURLY" | "DAILY" | "WEEKLY" | "MONTHLY" | "ONCE"
 object ScheduleFrequencyType {
   inline val BYMINUTE: "BYMINUTE" = "BYMINUTE"
@@ -692,7 +806,7 @@ object SlackConnectorOperator {
   )
 }
 
-type TaskType = "Arithmetic" | "Filter" | "Map" | "Map_all" | "Mask" | "Merge" | "Truncate" | "Validate"
+type TaskType = "Arithmetic" | "Filter" | "Map" | "Map_all" | "Mask" | "Merge" | "Passthrough" | "Truncate" | "Validate" | "Partition"
 object TaskType {
   inline val Arithmetic: "Arithmetic" = "Arithmetic"
   inline val Filter: "Filter" = "Filter"
@@ -700,10 +814,12 @@ object TaskType {
   inline val Map_all: "Map_all" = "Map_all"
   inline val Mask: "Mask" = "Mask"
   inline val Merge: "Merge" = "Merge"
+  inline val Passthrough: "Passthrough" = "Passthrough"
   inline val Truncate: "Truncate" = "Truncate"
   inline val Validate: "Validate" = "Validate"
+  inline val Partition: "Partition" = "Partition"
 
-  inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Truncate, Validate)
+  inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Passthrough, Truncate, Validate, Partition)
 }
 
 type TrendmicroConnectorOperator = "PROJECTION" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
@@ -801,13 +917,14 @@ object VeevaConnectorOperator {
 
 /** The possible write operations in the destination connector. When this value is not provided, this defaults to the <code>INSERT</code> operation.
   */
-type WriteOperationType = "INSERT" | "UPSERT" | "UPDATE"
+type WriteOperationType = "INSERT" | "UPSERT" | "UPDATE" | "DELETE"
 object WriteOperationType {
   inline val INSERT: "INSERT" = "INSERT"
   inline val UPSERT: "UPSERT" = "UPSERT"
   inline val UPDATE: "UPDATE" = "UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
 
-  inline def values: js.Array[WriteOperationType] = js.Array(INSERT, UPSERT, UPDATE)
+  inline def values: js.Array[WriteOperationType] = js.Array(INSERT, UPSERT, UPDATE, DELETE)
 }
 
 type ZendeskConnectorOperator = "PROJECTION" | "GREATER_THAN" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"

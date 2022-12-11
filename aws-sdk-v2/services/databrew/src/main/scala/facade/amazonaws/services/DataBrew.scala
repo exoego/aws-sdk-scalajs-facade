@@ -15,6 +15,7 @@ package object databrew {
   type AssumeControl = Boolean
   type Attempt = Int
   type Bucket = String
+  type BucketOwner = String
   type CatalogId = String
   type ClientSessionId = String
   type ColumnName = String
@@ -60,6 +61,7 @@ package object databrew {
   type LogGroupName = String
   type MaxCapacity = Int
   type MaxFiles = Int
+  type MaxOutputFiles = Int
   type MaxResults100 = Int
   type MaxRetries = Int
   type MultiLine = Boolean
@@ -979,7 +981,7 @@ package object databrew {
     }
   }
 
-  /** Represents a dataset paramater that defines type and conditions for a parameter in the Amazon S3 path of the dataset.
+  /** Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.
     */
   @js.native
   trait DatasetParameter extends js.Object {
@@ -2528,6 +2530,7 @@ package object databrew {
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var Format: js.UndefOr[OutputFormat]
     var FormatOptions: js.UndefOr[OutputFormatOptions]
+    var MaxOutputFiles: js.UndefOr[MaxOutputFiles]
     var Overwrite: js.UndefOr[OverwriteOutput]
     var PartitionColumns: js.UndefOr[ColumnNameList]
   }
@@ -2539,6 +2542,7 @@ package object databrew {
         CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
         Format: js.UndefOr[OutputFormat] = js.undefined,
         FormatOptions: js.UndefOr[OutputFormatOptions] = js.undefined,
+        MaxOutputFiles: js.UndefOr[MaxOutputFiles] = js.undefined,
         Overwrite: js.UndefOr[OverwriteOutput] = js.undefined,
         PartitionColumns: js.UndefOr[ColumnNameList] = js.undefined
     ): Output = {
@@ -2549,6 +2553,7 @@ package object databrew {
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FormatOptions.foreach(__v => __obj.updateDynamic("FormatOptions")(__v.asInstanceOf[js.Any]))
+      MaxOutputFiles.foreach(__v => __obj.updateDynamic("MaxOutputFiles")(__v.asInstanceOf[js.Any]))
       Overwrite.foreach(__v => __obj.updateDynamic("Overwrite")(__v.asInstanceOf[js.Any]))
       PartitionColumns.foreach(__v => __obj.updateDynamic("PartitionColumns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Output]
@@ -2955,11 +2960,12 @@ package object databrew {
     }
   }
 
-  /** Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.
+  /** Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.
     */
   @js.native
   trait S3Location extends js.Object {
     var Bucket: Bucket
+    var BucketOwner: js.UndefOr[BucketOwner]
     var Key: js.UndefOr[Key]
   }
 
@@ -2967,12 +2973,14 @@ package object databrew {
     @inline
     def apply(
         Bucket: Bucket,
+        BucketOwner: js.UndefOr[BucketOwner] = js.undefined,
         Key: js.UndefOr[Key] = js.undefined
     ): S3Location = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
       )
 
+      BucketOwner.foreach(__v => __obj.updateDynamic("BucketOwner")(__v.asInstanceOf[js.Any]))
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }

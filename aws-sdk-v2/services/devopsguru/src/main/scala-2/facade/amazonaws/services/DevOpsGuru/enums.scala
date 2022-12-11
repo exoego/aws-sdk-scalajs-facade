@@ -95,6 +95,15 @@ object EventDataSource {
 }
 
 @js.native
+sealed trait EventSourceOptInStatus extends js.Any
+object EventSourceOptInStatus {
+  val ENABLED = "ENABLED".asInstanceOf[EventSourceOptInStatus]
+  val DISABLED = "DISABLED".asInstanceOf[EventSourceOptInStatus]
+
+  @inline def values: js.Array[EventSourceOptInStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
 sealed trait InsightFeedbackOption extends js.Any
 object InsightFeedbackOption {
   val VALID_COLLECTION = "VALID_COLLECTION".asInstanceOf[InsightFeedbackOption]
@@ -152,6 +161,33 @@ object Locale {
   @inline def values: js.Array[Locale] = js.Array(DE_DE, EN_US, EN_GB, ES_ES, FR_FR, IT_IT, JA_JP, KO_KR, PT_BR, ZH_CN, ZH_TW)
 }
 
+@js.native
+sealed trait LogAnomalyType extends js.Any
+object LogAnomalyType {
+  val KEYWORD = "KEYWORD".asInstanceOf[LogAnomalyType]
+  val KEYWORD_TOKEN = "KEYWORD_TOKEN".asInstanceOf[LogAnomalyType]
+  val FORMAT = "FORMAT".asInstanceOf[LogAnomalyType]
+  val HTTP_CODE = "HTTP_CODE".asInstanceOf[LogAnomalyType]
+  val BLOCK_FORMAT = "BLOCK_FORMAT".asInstanceOf[LogAnomalyType]
+  val NUMERICAL_POINT = "NUMERICAL_POINT".asInstanceOf[LogAnomalyType]
+  val NUMERICAL_NAN = "NUMERICAL_NAN".asInstanceOf[LogAnomalyType]
+  val NEW_FIELD_NAME = "NEW_FIELD_NAME".asInstanceOf[LogAnomalyType]
+
+  @inline def values: js.Array[LogAnomalyType] = js.Array(KEYWORD, KEYWORD_TOKEN, FORMAT, HTTP_CODE, BLOCK_FORMAT, NUMERICAL_POINT, NUMERICAL_NAN, NEW_FIELD_NAME)
+}
+
+@js.native
+sealed trait NotificationMessageType extends js.Any
+object NotificationMessageType {
+  val NEW_INSIGHT = "NEW_INSIGHT".asInstanceOf[NotificationMessageType]
+  val CLOSED_INSIGHT = "CLOSED_INSIGHT".asInstanceOf[NotificationMessageType]
+  val NEW_ASSOCIATION = "NEW_ASSOCIATION".asInstanceOf[NotificationMessageType]
+  val SEVERITY_UPGRADED = "SEVERITY_UPGRADED".asInstanceOf[NotificationMessageType]
+  val NEW_RECOMMENDATION = "NEW_RECOMMENDATION".asInstanceOf[NotificationMessageType]
+
+  @inline def values: js.Array[NotificationMessageType] = js.Array(NEW_INSIGHT, CLOSED_INSIGHT, NEW_ASSOCIATION, SEVERITY_UPGRADED, NEW_RECOMMENDATION)
+}
+
 /** Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight.
   */
 @js.native
@@ -182,6 +218,77 @@ object ResourceCollectionType {
   val AWS_TAGS = "AWS_TAGS".asInstanceOf[ResourceCollectionType]
 
   @inline def values: js.Array[ResourceCollectionType] = js.Array(AWS_CLOUD_FORMATION, AWS_SERVICE, AWS_TAGS)
+}
+
+@js.native
+sealed trait ResourcePermission extends js.Any
+object ResourcePermission {
+  val FULL_PERMISSION = "FULL_PERMISSION".asInstanceOf[ResourcePermission]
+  val MISSING_PERMISSION = "MISSING_PERMISSION".asInstanceOf[ResourcePermission]
+
+  @inline def values: js.Array[ResourcePermission] = js.Array(FULL_PERMISSION, MISSING_PERMISSION)
+}
+
+@js.native
+sealed trait ResourceTypeFilter extends js.Any
+object ResourceTypeFilter {
+  val LOG_GROUPS = "LOG_GROUPS".asInstanceOf[ResourceTypeFilter]
+  val CLOUDFRONT_DISTRIBUTION = "CLOUDFRONT_DISTRIBUTION".asInstanceOf[ResourceTypeFilter]
+  val DYNAMODB_TABLE = "DYNAMODB_TABLE".asInstanceOf[ResourceTypeFilter]
+  val EC2_NAT_GATEWAY = "EC2_NAT_GATEWAY".asInstanceOf[ResourceTypeFilter]
+  val ECS_CLUSTER = "ECS_CLUSTER".asInstanceOf[ResourceTypeFilter]
+  val ECS_SERVICE = "ECS_SERVICE".asInstanceOf[ResourceTypeFilter]
+  val EKS_CLUSTER = "EKS_CLUSTER".asInstanceOf[ResourceTypeFilter]
+  val ELASTIC_BEANSTALK_ENVIRONMENT = "ELASTIC_BEANSTALK_ENVIRONMENT".asInstanceOf[ResourceTypeFilter]
+  val ELASTIC_LOAD_BALANCER_LOAD_BALANCER = "ELASTIC_LOAD_BALANCER_LOAD_BALANCER".asInstanceOf[ResourceTypeFilter]
+  val ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER = "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER".asInstanceOf[ResourceTypeFilter]
+  val ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP = "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP".asInstanceOf[ResourceTypeFilter]
+  val ELASTICACHE_CACHE_CLUSTER = "ELASTICACHE_CACHE_CLUSTER".asInstanceOf[ResourceTypeFilter]
+  val ELASTICSEARCH_DOMAIN = "ELASTICSEARCH_DOMAIN".asInstanceOf[ResourceTypeFilter]
+  val KINESIS_STREAM = "KINESIS_STREAM".asInstanceOf[ResourceTypeFilter]
+  val LAMBDA_FUNCTION = "LAMBDA_FUNCTION".asInstanceOf[ResourceTypeFilter]
+  val OPEN_SEARCH_SERVICE_DOMAIN = "OPEN_SEARCH_SERVICE_DOMAIN".asInstanceOf[ResourceTypeFilter]
+  val RDS_DB_INSTANCE = "RDS_DB_INSTANCE".asInstanceOf[ResourceTypeFilter]
+  val RDS_DB_CLUSTER = "RDS_DB_CLUSTER".asInstanceOf[ResourceTypeFilter]
+  val REDSHIFT_CLUSTER = "REDSHIFT_CLUSTER".asInstanceOf[ResourceTypeFilter]
+  val ROUTE53_HOSTED_ZONE = "ROUTE53_HOSTED_ZONE".asInstanceOf[ResourceTypeFilter]
+  val ROUTE53_HEALTH_CHECK = "ROUTE53_HEALTH_CHECK".asInstanceOf[ResourceTypeFilter]
+  val S3_BUCKET = "S3_BUCKET".asInstanceOf[ResourceTypeFilter]
+  val SAGEMAKER_ENDPOINT = "SAGEMAKER_ENDPOINT".asInstanceOf[ResourceTypeFilter]
+  val SNS_TOPIC = "SNS_TOPIC".asInstanceOf[ResourceTypeFilter]
+  val SQS_QUEUE = "SQS_QUEUE".asInstanceOf[ResourceTypeFilter]
+  val STEP_FUNCTIONS_ACTIVITY = "STEP_FUNCTIONS_ACTIVITY".asInstanceOf[ResourceTypeFilter]
+  val STEP_FUNCTIONS_STATE_MACHINE = "STEP_FUNCTIONS_STATE_MACHINE".asInstanceOf[ResourceTypeFilter]
+
+  @inline def values: js.Array[ResourceTypeFilter] = js.Array(
+    LOG_GROUPS,
+    CLOUDFRONT_DISTRIBUTION,
+    DYNAMODB_TABLE,
+    EC2_NAT_GATEWAY,
+    ECS_CLUSTER,
+    ECS_SERVICE,
+    EKS_CLUSTER,
+    ELASTIC_BEANSTALK_ENVIRONMENT,
+    ELASTIC_LOAD_BALANCER_LOAD_BALANCER,
+    ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER,
+    ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP,
+    ELASTICACHE_CACHE_CLUSTER,
+    ELASTICSEARCH_DOMAIN,
+    KINESIS_STREAM,
+    LAMBDA_FUNCTION,
+    OPEN_SEARCH_SERVICE_DOMAIN,
+    RDS_DB_INSTANCE,
+    RDS_DB_CLUSTER,
+    REDSHIFT_CLUSTER,
+    ROUTE53_HOSTED_ZONE,
+    ROUTE53_HEALTH_CHECK,
+    S3_BUCKET,
+    SAGEMAKER_ENDPOINT,
+    SNS_TOPIC,
+    SQS_QUEUE,
+    STEP_FUNCTIONS_ACTIVITY,
+    STEP_FUNCTIONS_STATE_MACHINE
+  )
 }
 
 @js.native

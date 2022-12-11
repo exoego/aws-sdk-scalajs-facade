@@ -66,6 +66,45 @@ object AuthMode {
 }
 
 @js.native
+sealed trait BatchEntryCompletionStatus extends js.Any
+object BatchEntryCompletionStatus {
+  val SUCCESS = "SUCCESS".asInstanceOf[BatchEntryCompletionStatus]
+  val ERROR = "ERROR".asInstanceOf[BatchEntryCompletionStatus]
+
+  @inline def values: js.Array[BatchEntryCompletionStatus] = js.Array(SUCCESS, ERROR)
+}
+
+@js.native
+sealed trait BatchGetAssetPropertyAggregatesErrorCode extends js.Any
+object BatchGetAssetPropertyAggregatesErrorCode {
+  val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchGetAssetPropertyAggregatesErrorCode]
+  val InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchGetAssetPropertyAggregatesErrorCode]
+  val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchGetAssetPropertyAggregatesErrorCode]
+
+  @inline def values: js.Array[BatchGetAssetPropertyAggregatesErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
+@js.native
+sealed trait BatchGetAssetPropertyValueErrorCode extends js.Any
+object BatchGetAssetPropertyValueErrorCode {
+  val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchGetAssetPropertyValueErrorCode]
+  val InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchGetAssetPropertyValueErrorCode]
+  val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchGetAssetPropertyValueErrorCode]
+
+  @inline def values: js.Array[BatchGetAssetPropertyValueErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
+@js.native
+sealed trait BatchGetAssetPropertyValueHistoryErrorCode extends js.Any
+object BatchGetAssetPropertyValueHistoryErrorCode {
+  val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchGetAssetPropertyValueHistoryErrorCode]
+  val InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchGetAssetPropertyValueHistoryErrorCode]
+  val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchGetAssetPropertyValueHistoryErrorCode]
+
+  @inline def values: js.Array[BatchGetAssetPropertyValueHistoryErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, AccessDeniedException)
+}
+
+@js.native
 sealed trait BatchPutAssetPropertyValueErrorCode extends js.Any
 object BatchPutAssetPropertyValueErrorCode {
   val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
@@ -100,6 +139,21 @@ object CapabilitySyncStatus {
   val UNKNOWN = "UNKNOWN".asInstanceOf[CapabilitySyncStatus]
 
   @inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED, UNKNOWN)
+}
+
+@js.native
+sealed trait ColumnName extends js.Any
+object ColumnName {
+  val ALIAS = "ALIAS".asInstanceOf[ColumnName]
+  val ASSET_ID = "ASSET_ID".asInstanceOf[ColumnName]
+  val PROPERTY_ID = "PROPERTY_ID".asInstanceOf[ColumnName]
+  val DATA_TYPE = "DATA_TYPE".asInstanceOf[ColumnName]
+  val TIMESTAMP_SECONDS = "TIMESTAMP_SECONDS".asInstanceOf[ColumnName]
+  val TIMESTAMP_NANO_OFFSET = "TIMESTAMP_NANO_OFFSET".asInstanceOf[ColumnName]
+  val QUALITY = "QUALITY".asInstanceOf[ColumnName]
+  val VALUE = "VALUE".asInstanceOf[ColumnName]
+
+  @inline def values: js.Array[ColumnName] = js.Array(ALIAS, ASSET_ID, PROPERTY_ID, DATA_TYPE, TIMESTAMP_SECONDS, TIMESTAMP_NANO_OFFSET, QUALITY, VALUE)
 }
 
 @js.native
@@ -185,12 +239,57 @@ object ImageFileType {
 }
 
 @js.native
+sealed trait JobStatus extends js.Any
+object JobStatus {
+  val PENDING = "PENDING".asInstanceOf[JobStatus]
+  val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
+  val RUNNING = "RUNNING".asInstanceOf[JobStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+  val FAILED = "FAILED".asInstanceOf[JobStatus]
+  val COMPLETED_WITH_FAILURES = "COMPLETED_WITH_FAILURES".asInstanceOf[JobStatus]
+
+  @inline def values: js.Array[JobStatus] = js.Array(PENDING, CANCELLED, RUNNING, COMPLETED, FAILED, COMPLETED_WITH_FAILURES)
+}
+
+@js.native
+sealed trait ListAssetModelPropertiesFilter extends js.Any
+object ListAssetModelPropertiesFilter {
+  val ALL = "ALL".asInstanceOf[ListAssetModelPropertiesFilter]
+  val BASE = "BASE".asInstanceOf[ListAssetModelPropertiesFilter]
+
+  @inline def values: js.Array[ListAssetModelPropertiesFilter] = js.Array(ALL, BASE)
+}
+
+@js.native
+sealed trait ListAssetPropertiesFilter extends js.Any
+object ListAssetPropertiesFilter {
+  val ALL = "ALL".asInstanceOf[ListAssetPropertiesFilter]
+  val BASE = "BASE".asInstanceOf[ListAssetPropertiesFilter]
+
+  @inline def values: js.Array[ListAssetPropertiesFilter] = js.Array(ALL, BASE)
+}
+
+@js.native
 sealed trait ListAssetsFilter extends js.Any
 object ListAssetsFilter {
   val ALL = "ALL".asInstanceOf[ListAssetsFilter]
   val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
 
   @inline def values: js.Array[ListAssetsFilter] = js.Array(ALL, TOP_LEVEL)
+}
+
+@js.native
+sealed trait ListBulkImportJobsFilter extends js.Any
+object ListBulkImportJobsFilter {
+  val ALL = "ALL".asInstanceOf[ListBulkImportJobsFilter]
+  val PENDING = "PENDING".asInstanceOf[ListBulkImportJobsFilter]
+  val RUNNING = "RUNNING".asInstanceOf[ListBulkImportJobsFilter]
+  val CANCELLED = "CANCELLED".asInstanceOf[ListBulkImportJobsFilter]
+  val FAILED = "FAILED".asInstanceOf[ListBulkImportJobsFilter]
+  val COMPLETED_WITH_FAILURES = "COMPLETED_WITH_FAILURES".asInstanceOf[ListBulkImportJobsFilter]
+  val COMPLETED = "COMPLETED".asInstanceOf[ListBulkImportJobsFilter]
+
+  @inline def values: js.Array[ListBulkImportJobsFilter] = js.Array(ALL, PENDING, RUNNING, CANCELLED, FAILED, COMPLETED_WITH_FAILURES, COMPLETED)
 }
 
 @js.native

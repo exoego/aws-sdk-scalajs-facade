@@ -13,6 +13,7 @@ package object forecastquery {
   type AttributeValue = String
   type DateTime = String
   type Filters = js.Dictionary[AttributeValue]
+  type LongArn = String
   type NextToken = String
   type Predictions = js.Dictionary[TimeSeries]
   type Statistic = String
@@ -22,6 +23,7 @@ package object forecastquery {
   final class ForecastQueryOps(private val service: ForecastQuery) extends AnyVal {
 
     @inline def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] = service.queryForecast(params).promise().toFuture
+    @inline def queryWhatIfForecastFuture(params: QueryWhatIfForecastRequest): Future[QueryWhatIfForecastResponse] = service.queryWhatIfForecast(params).promise().toFuture
 
   }
 
@@ -31,6 +33,7 @@ package object forecastquery {
     def this(config: AWSConfig) = this()
 
     def queryForecast(params: QueryForecastRequest): Request[QueryForecastResponse] = js.native
+    def queryWhatIfForecast(params: QueryWhatIfForecastRequest): Request[QueryWhatIfForecastResponse] = js.native
   }
   object ForecastQuery {
     @inline implicit def toOps(service: ForecastQuery): ForecastQueryOps = {
@@ -120,6 +123,52 @@ package object forecastquery {
       val __obj = js.Dynamic.literal()
       Forecast.foreach(__v => __obj.updateDynamic("Forecast")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryForecastResponse]
+    }
+  }
+
+  @js.native
+  trait QueryWhatIfForecastRequest extends js.Object {
+    var Filters: Filters
+    var WhatIfForecastArn: LongArn
+    var EndDate: js.UndefOr[DateTime]
+    var NextToken: js.UndefOr[NextToken]
+    var StartDate: js.UndefOr[DateTime]
+  }
+
+  object QueryWhatIfForecastRequest {
+    @inline
+    def apply(
+        Filters: Filters,
+        WhatIfForecastArn: LongArn,
+        EndDate: js.UndefOr[DateTime] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StartDate: js.UndefOr[DateTime] = js.undefined
+    ): QueryWhatIfForecastRequest = {
+      val __obj = js.Dynamic.literal(
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "WhatIfForecastArn" -> WhatIfForecastArn.asInstanceOf[js.Any]
+      )
+
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryWhatIfForecastRequest]
+    }
+  }
+
+  @js.native
+  trait QueryWhatIfForecastResponse extends js.Object {
+    var Forecast: js.UndefOr[Forecast]
+  }
+
+  object QueryWhatIfForecastResponse {
+    @inline
+    def apply(
+        Forecast: js.UndefOr[Forecast] = js.undefined
+    ): QueryWhatIfForecastResponse = {
+      val __obj = js.Dynamic.literal()
+      Forecast.foreach(__v => __obj.updateDynamic("Forecast")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryWhatIfForecastResponse]
     }
   }
 }

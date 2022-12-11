@@ -10,6 +10,15 @@ object AnalysisType {
   inline def values: js.Array[AnalysisType] = js.Array(Security, CodeQuality)
 }
 
+type ConfigFileState = "Present" | "Absent" | "PresentWithErrors"
+object ConfigFileState {
+  inline val Present: "Present" = "Present"
+  inline val Absent: "Absent" = "Absent"
+  inline val PresentWithErrors: "PresentWithErrors" = "PresentWithErrors"
+
+  inline def values: js.Array[ConfigFileState] = js.Array(Present, Absent, PresentWithErrors)
+}
+
 type EncryptionOption = "AWS_OWNED_CMK" | "CUSTOMER_MANAGED_CMK"
 object EncryptionOption {
   inline val AWS_OWNED_CMK: "AWS_OWNED_CMK" = "AWS_OWNED_CMK"

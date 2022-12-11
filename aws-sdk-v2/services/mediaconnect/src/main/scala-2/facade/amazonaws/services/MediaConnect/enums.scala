@@ -83,6 +83,20 @@ object KeyType {
 }
 
 @js.native
+sealed trait MaintenanceDay extends js.Any
+object MaintenanceDay {
+  val Monday = "Monday".asInstanceOf[MaintenanceDay]
+  val Tuesday = "Tuesday".asInstanceOf[MaintenanceDay]
+  val Wednesday = "Wednesday".asInstanceOf[MaintenanceDay]
+  val Thursday = "Thursday".asInstanceOf[MaintenanceDay]
+  val Friday = "Friday".asInstanceOf[MaintenanceDay]
+  val Saturday = "Saturday".asInstanceOf[MaintenanceDay]
+  val Sunday = "Sunday".asInstanceOf[MaintenanceDay]
+
+  @inline def values: js.Array[MaintenanceDay] = js.Array(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+}
+
+@js.native
 sealed trait MediaStreamType extends js.Any
 object MediaStreamType {
   val video = "video".asInstanceOf[MediaStreamType]
@@ -120,9 +134,10 @@ object Protocol {
   val `st2110-jpegxs` = "st2110-jpegxs".asInstanceOf[Protocol]
   val cdi = "cdi".asInstanceOf[Protocol]
   val `srt-listener` = "srt-listener".asInstanceOf[Protocol]
+  val `srt-caller` = "srt-caller".asInstanceOf[Protocol]
   val `fujitsu-qos` = "fujitsu-qos".asInstanceOf[Protocol]
 
-  @inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `st2110-jpegxs`, cdi, `srt-listener`, `fujitsu-qos`)
+  @inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `st2110-jpegxs`, cdi, `srt-listener`, `srt-caller`, `fujitsu-qos`)
 }
 
 @js.native

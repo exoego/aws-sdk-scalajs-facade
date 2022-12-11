@@ -3,6 +3,16 @@ package facade.amazonaws.services.cloudwatch
 import scalajs.js
 
 @js.native
+sealed trait ActionsSuppressedBy extends js.Any
+object ActionsSuppressedBy {
+  val WaitPeriod = "WaitPeriod".asInstanceOf[ActionsSuppressedBy]
+  val ExtensionPeriod = "ExtensionPeriod".asInstanceOf[ActionsSuppressedBy]
+  val Alarm = "Alarm".asInstanceOf[ActionsSuppressedBy]
+
+  @inline def values: js.Array[ActionsSuppressedBy] = js.Array(WaitPeriod, ExtensionPeriod, Alarm)
+}
+
+@js.native
 sealed trait AlarmType extends js.Any
 object AlarmType {
   val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
@@ -178,6 +188,7 @@ object StatusCode {
   val Complete = "Complete".asInstanceOf[StatusCode]
   val InternalError = "InternalError".asInstanceOf[StatusCode]
   val PartialData = "PartialData".asInstanceOf[StatusCode]
+  val Forbidden = "Forbidden".asInstanceOf[StatusCode]
 
-  @inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData)
+  @inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData, Forbidden)
 }

@@ -21,14 +21,18 @@ package object acm {
   type DomainValidationOptionList = js.Array[DomainValidationOption]
   type ExtendedKeyUsageFilterList = js.Array[ExtendedKeyUsageName]
   type ExtendedKeyUsageList = js.Array[ExtendedKeyUsage]
+  type ExtendedKeyUsageNames = js.Array[ExtendedKeyUsageName]
   type IdempotencyToken = String
   type InUseList = js.Array[String]
   type KeyAlgorithmList = js.Array[KeyAlgorithm]
   type KeyUsageFilterList = js.Array[KeyUsageName]
   type KeyUsageList = js.Array[KeyUsage]
+  type KeyUsageNames = js.Array[KeyUsageName]
   type MaxItems = Int
   type NextToken = String
+  type NullableBoolean = Boolean
   type PassphraseBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PcaArn = String
   type PositiveInteger = Int
   type PrivateKey = String
   type PrivateKeyBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -221,18 +225,66 @@ package object acm {
   @js.native
   trait CertificateSummary extends js.Object {
     var CertificateArn: js.UndefOr[Arn]
+    var CreatedAt: js.UndefOr[TStamp]
     var DomainName: js.UndefOr[DomainNameString]
+    var Exported: js.UndefOr[NullableBoolean]
+    var ExtendedKeyUsages: js.UndefOr[ExtendedKeyUsageNames]
+    var HasAdditionalSubjectAlternativeNames: js.UndefOr[NullableBoolean]
+    var ImportedAt: js.UndefOr[TStamp]
+    var InUse: js.UndefOr[NullableBoolean]
+    var IssuedAt: js.UndefOr[TStamp]
+    var KeyAlgorithm: js.UndefOr[KeyAlgorithm]
+    var KeyUsages: js.UndefOr[KeyUsageNames]
+    var NotAfter: js.UndefOr[TStamp]
+    var NotBefore: js.UndefOr[TStamp]
+    var RenewalEligibility: js.UndefOr[RenewalEligibility]
+    var RevokedAt: js.UndefOr[TStamp]
+    var Status: js.UndefOr[CertificateStatus]
+    var SubjectAlternativeNameSummaries: js.UndefOr[DomainList]
+    var Type: js.UndefOr[CertificateType]
   }
 
   object CertificateSummary {
     @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined,
-        DomainName: js.UndefOr[DomainNameString] = js.undefined
+        CreatedAt: js.UndefOr[TStamp] = js.undefined,
+        DomainName: js.UndefOr[DomainNameString] = js.undefined,
+        Exported: js.UndefOr[NullableBoolean] = js.undefined,
+        ExtendedKeyUsages: js.UndefOr[ExtendedKeyUsageNames] = js.undefined,
+        HasAdditionalSubjectAlternativeNames: js.UndefOr[NullableBoolean] = js.undefined,
+        ImportedAt: js.UndefOr[TStamp] = js.undefined,
+        InUse: js.UndefOr[NullableBoolean] = js.undefined,
+        IssuedAt: js.UndefOr[TStamp] = js.undefined,
+        KeyAlgorithm: js.UndefOr[KeyAlgorithm] = js.undefined,
+        KeyUsages: js.UndefOr[KeyUsageNames] = js.undefined,
+        NotAfter: js.UndefOr[TStamp] = js.undefined,
+        NotBefore: js.UndefOr[TStamp] = js.undefined,
+        RenewalEligibility: js.UndefOr[RenewalEligibility] = js.undefined,
+        RevokedAt: js.UndefOr[TStamp] = js.undefined,
+        Status: js.UndefOr[CertificateStatus] = js.undefined,
+        SubjectAlternativeNameSummaries: js.UndefOr[DomainList] = js.undefined,
+        Type: js.UndefOr[CertificateType] = js.undefined
     ): CertificateSummary = {
       val __obj = js.Dynamic.literal()
       CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      Exported.foreach(__v => __obj.updateDynamic("Exported")(__v.asInstanceOf[js.Any]))
+      ExtendedKeyUsages.foreach(__v => __obj.updateDynamic("ExtendedKeyUsages")(__v.asInstanceOf[js.Any]))
+      HasAdditionalSubjectAlternativeNames.foreach(__v => __obj.updateDynamic("HasAdditionalSubjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      ImportedAt.foreach(__v => __obj.updateDynamic("ImportedAt")(__v.asInstanceOf[js.Any]))
+      InUse.foreach(__v => __obj.updateDynamic("InUse")(__v.asInstanceOf[js.Any]))
+      IssuedAt.foreach(__v => __obj.updateDynamic("IssuedAt")(__v.asInstanceOf[js.Any]))
+      KeyAlgorithm.foreach(__v => __obj.updateDynamic("KeyAlgorithm")(__v.asInstanceOf[js.Any]))
+      KeyUsages.foreach(__v => __obj.updateDynamic("KeyUsages")(__v.asInstanceOf[js.Any]))
+      NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
+      NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
+      RenewalEligibility.foreach(__v => __obj.updateDynamic("RenewalEligibility")(__v.asInstanceOf[js.Any]))
+      RevokedAt.foreach(__v => __obj.updateDynamic("RevokedAt")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubjectAlternativeNameSummaries.foreach(__v => __obj.updateDynamic("SubjectAlternativeNameSummaries")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateSummary]
     }
   }
@@ -571,6 +623,8 @@ package object acm {
     var Includes: js.UndefOr[Filters]
     var MaxItems: js.UndefOr[MaxItems]
     var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[SortBy]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object ListCertificatesRequest {
@@ -579,13 +633,17 @@ package object acm {
         CertificateStatuses: js.UndefOr[CertificateStatuses] = js.undefined,
         Includes: js.UndefOr[Filters] = js.undefined,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[SortBy] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): ListCertificatesRequest = {
       val __obj = js.Dynamic.literal()
       CertificateStatuses.foreach(__v => __obj.updateDynamic("CertificateStatuses")(__v.asInstanceOf[js.Any]))
       Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesRequest]
     }
   }
@@ -732,9 +790,10 @@ package object acm {
   @js.native
   trait RequestCertificateRequest extends js.Object {
     var DomainName: DomainNameString
-    var CertificateAuthorityArn: js.UndefOr[Arn]
+    var CertificateAuthorityArn: js.UndefOr[PcaArn]
     var DomainValidationOptions: js.UndefOr[DomainValidationOptionList]
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
+    var KeyAlgorithm: js.UndefOr[KeyAlgorithm]
     var Options: js.UndefOr[CertificateOptions]
     var SubjectAlternativeNames: js.UndefOr[DomainList]
     var Tags: js.UndefOr[TagList]
@@ -745,9 +804,10 @@ package object acm {
     @inline
     def apply(
         DomainName: DomainNameString,
-        CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
+        CertificateAuthorityArn: js.UndefOr[PcaArn] = js.undefined,
         DomainValidationOptions: js.UndefOr[DomainValidationOptionList] = js.undefined,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        KeyAlgorithm: js.UndefOr[KeyAlgorithm] = js.undefined,
         Options: js.UndefOr[CertificateOptions] = js.undefined,
         SubjectAlternativeNames: js.UndefOr[DomainList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -760,6 +820,7 @@ package object acm {
       CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
       DomainValidationOptions.foreach(__v => __obj.updateDynamic("DomainValidationOptions")(__v.asInstanceOf[js.Any]))
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      KeyAlgorithm.foreach(__v => __obj.updateDynamic("KeyAlgorithm")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       SubjectAlternativeNames.foreach(__v => __obj.updateDynamic("SubjectAlternativeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))

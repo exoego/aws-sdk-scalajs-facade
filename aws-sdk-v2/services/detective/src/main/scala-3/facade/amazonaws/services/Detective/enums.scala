@@ -2,6 +2,31 @@ package facade.amazonaws.services.detective
 
 import scalajs.js
 
+type DatasourcePackage = "DETECTIVE_CORE" | "EKS_AUDIT"
+object DatasourcePackage {
+  inline val DETECTIVE_CORE: "DETECTIVE_CORE" = "DETECTIVE_CORE"
+  inline val EKS_AUDIT: "EKS_AUDIT" = "EKS_AUDIT"
+
+  inline def values: js.Array[DatasourcePackage] = js.Array(DETECTIVE_CORE, EKS_AUDIT)
+}
+
+type DatasourcePackageIngestState = "STARTED" | "STOPPED" | "DISABLED"
+object DatasourcePackageIngestState {
+  inline val STARTED: "STARTED" = "STARTED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[DatasourcePackageIngestState] = js.Array(STARTED, STOPPED, DISABLED)
+}
+
+type InvitationType = "INVITATION" | "ORGANIZATION"
+object InvitationType {
+  inline val INVITATION: "INVITATION" = "INVITATION"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
+
+  inline def values: js.Array[InvitationType] = js.Array(INVITATION, ORGANIZATION)
+}
+
 type MemberDisabledReason = "VOLUME_TOO_HIGH" | "VOLUME_UNKNOWN"
 object MemberDisabledReason {
   inline val VOLUME_TOO_HIGH: "VOLUME_TOO_HIGH" = "VOLUME_TOO_HIGH"

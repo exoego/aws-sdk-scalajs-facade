@@ -11,7 +11,7 @@ object AntipatternReportStatus {
   inline def values: js.Array[AntipatternReportStatus] = js.Array(FAILED, IN_PROGRESS, SUCCESS)
 }
 
-type AppType = "DotNetFramework" | "Java" | "SQLServer" | "IIS" | "Oracle" | "Other"
+type AppType = "DotNetFramework" | "Java" | "SQLServer" | "IIS" | "Oracle" | "Other" | "Tomcat" | "JBoss" | "Spring" | "Mongo DB" | "DB2" | "Maria DB" | "MySQL" | "Sybase" | "PostgreSQLServer" | "Cassandra" | "IBM WebSphere" | "Oracle WebLogic" | "Visual Basic" | "Unknown" | "DotnetCore" | "Dotnet"
 object AppType {
   inline val DotNetFramework: "DotNetFramework" = "DotNetFramework"
   inline val Java: "Java" = "Java"
@@ -19,11 +19,61 @@ object AppType {
   inline val IIS: "IIS" = "IIS"
   inline val Oracle: "Oracle" = "Oracle"
   inline val Other: "Other" = "Other"
+  inline val Tomcat: "Tomcat" = "Tomcat"
+  inline val JBoss: "JBoss" = "JBoss"
+  inline val Spring: "Spring" = "Spring"
+  inline val `Mongo DB`: "Mongo DB" = "Mongo DB"
+  inline val DB2: "DB2" = "DB2"
+  inline val `Maria DB`: "Maria DB" = "Maria DB"
+  inline val MySQL: "MySQL" = "MySQL"
+  inline val Sybase: "Sybase" = "Sybase"
+  inline val PostgreSQLServer: "PostgreSQLServer" = "PostgreSQLServer"
+  inline val Cassandra: "Cassandra" = "Cassandra"
+  inline val `IBM WebSphere`: "IBM WebSphere" = "IBM WebSphere"
+  inline val `Oracle WebLogic`: "Oracle WebLogic" = "Oracle WebLogic"
+  inline val `Visual Basic`: "Visual Basic" = "Visual Basic"
+  inline val Unknown: "Unknown" = "Unknown"
+  inline val DotnetCore: "DotnetCore" = "DotnetCore"
+  inline val Dotnet: "Dotnet" = "Dotnet"
 
-  inline def values: js.Array[AppType] = js.Array(DotNetFramework, Java, SQLServer, IIS, Oracle, Other)
+  inline def values: js.Array[AppType] = js.Array(
+    DotNetFramework,
+    Java,
+    SQLServer,
+    IIS,
+    Oracle,
+    Other,
+    Tomcat,
+    JBoss,
+    Spring,
+    `Mongo DB`,
+    DB2,
+    `Maria DB`,
+    MySQL,
+    Sybase,
+    PostgreSQLServer,
+    Cassandra,
+    `IBM WebSphere`,
+    `Oracle WebLogic`,
+    `Visual Basic`,
+    Unknown,
+    DotnetCore,
+    Dotnet
+  )
 }
 
-type ApplicationComponentCriteria = "NOT_DEFINED" | "APP_NAME" | "SERVER_ID" | "APP_TYPE" | "STRATEGY" | "DESTINATION"
+type AppUnitErrorCategory = "CREDENTIAL_ERROR" | "CONNECTIVITY_ERROR" | "PERMISSION_ERROR" | "UNSUPPORTED_ERROR" | "OTHER_ERROR"
+object AppUnitErrorCategory {
+  inline val CREDENTIAL_ERROR: "CREDENTIAL_ERROR" = "CREDENTIAL_ERROR"
+  inline val CONNECTIVITY_ERROR: "CONNECTIVITY_ERROR" = "CONNECTIVITY_ERROR"
+  inline val PERMISSION_ERROR: "PERMISSION_ERROR" = "PERMISSION_ERROR"
+  inline val UNSUPPORTED_ERROR: "UNSUPPORTED_ERROR" = "UNSUPPORTED_ERROR"
+  inline val OTHER_ERROR: "OTHER_ERROR" = "OTHER_ERROR"
+
+  inline def values: js.Array[AppUnitErrorCategory] = js.Array(CREDENTIAL_ERROR, CONNECTIVITY_ERROR, PERMISSION_ERROR, UNSUPPORTED_ERROR, OTHER_ERROR)
+}
+
+type ApplicationComponentCriteria = "NOT_DEFINED" | "APP_NAME" | "SERVER_ID" | "APP_TYPE" | "STRATEGY" | "DESTINATION" | "ANALYSIS_STATUS" | "ERROR_CATEGORY"
 object ApplicationComponentCriteria {
   inline val NOT_DEFINED: "NOT_DEFINED" = "NOT_DEFINED"
   inline val APP_NAME: "APP_NAME" = "APP_NAME"
@@ -31,8 +81,19 @@ object ApplicationComponentCriteria {
   inline val APP_TYPE: "APP_TYPE" = "APP_TYPE"
   inline val STRATEGY: "STRATEGY" = "STRATEGY"
   inline val DESTINATION: "DESTINATION" = "DESTINATION"
+  inline val ANALYSIS_STATUS: "ANALYSIS_STATUS" = "ANALYSIS_STATUS"
+  inline val ERROR_CATEGORY: "ERROR_CATEGORY" = "ERROR_CATEGORY"
 
-  inline def values: js.Array[ApplicationComponentCriteria] = js.Array(NOT_DEFINED, APP_NAME, SERVER_ID, APP_TYPE, STRATEGY, DESTINATION)
+  inline def values: js.Array[ApplicationComponentCriteria] = js.Array(NOT_DEFINED, APP_NAME, SERVER_ID, APP_TYPE, STRATEGY, DESTINATION, ANALYSIS_STATUS, ERROR_CATEGORY)
+}
+
+type ApplicationMode = "ALL" | "KNOWN" | "UNKNOWN"
+object ApplicationMode {
+  inline val ALL: "ALL" = "ALL"
+  inline val KNOWN: "KNOWN" = "KNOWN"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+
+  inline def values: js.Array[ApplicationMode] = js.Array(ALL, KNOWN, UNKNOWN)
 }
 
 type AssessmentStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED" | "STOPPED"
@@ -43,6 +104,15 @@ object AssessmentStatus {
   inline val STOPPED: "STOPPED" = "STOPPED"
 
   inline def values: js.Array[AssessmentStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED, STOPPED)
+}
+
+type AuthType = "NTLM" | "SSH" | "CERT"
+object AuthType {
+  inline val NTLM: "NTLM" = "NTLM"
+  inline val SSH: "SSH" = "SSH"
+  inline val CERT: "CERT" = "CERT"
+
+  inline def values: js.Array[AuthType] = js.Array(NTLM, SSH, CERT)
 }
 
 type AwsManagedTargetDestination = "None specified" | "AWS Elastic BeanStalk" | "AWS Fargate"
@@ -60,6 +130,16 @@ object CollectorHealth {
   inline val COLLECTOR_UNHEALTHY: "COLLECTOR_UNHEALTHY" = "COLLECTOR_UNHEALTHY"
 
   inline def values: js.Array[CollectorHealth] = js.Array(COLLECTOR_HEALTHY, COLLECTOR_UNHEALTHY)
+}
+
+type Condition = "EQUALS" | "NOT_EQUALS" | "CONTAINS" | "NOT_CONTAINS"
+object Condition {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val NOT_EQUALS: "NOT_EQUALS" = "NOT_EQUALS"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val NOT_CONTAINS: "NOT_CONTAINS" = "NOT_CONTAINS"
+
+  inline def values: js.Array[Condition] = js.Array(EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS)
 }
 
 type DataSourceType = "ApplicationDiscoveryService" | "MPA"
@@ -166,6 +246,13 @@ object OutputFormat {
   inline def values: js.Array[OutputFormat] = js.Array(Excel, Json)
 }
 
+type PipelineType = "AZURE_DEVOPS"
+object PipelineType {
+  inline val AZURE_DEVOPS: "AZURE_DEVOPS" = "AZURE_DEVOPS"
+
+  inline def values: js.Array[PipelineType] = js.Array(AZURE_DEVOPS)
+}
+
 type RecommendationReportStatus = "FAILED" | "IN_PROGRESS" | "SUCCESS"
 object RecommendationReportStatus {
   inline val FAILED: "FAILED" = "FAILED"
@@ -205,6 +292,16 @@ object RunTimeAssessmentStatus {
   )
 }
 
+type RuntimeAnalysisStatus = "ANALYSIS_TO_BE_SCHEDULED" | "ANALYSIS_STARTED" | "ANALYSIS_SUCCESS" | "ANALYSIS_FAILED"
+object RuntimeAnalysisStatus {
+  inline val ANALYSIS_TO_BE_SCHEDULED: "ANALYSIS_TO_BE_SCHEDULED" = "ANALYSIS_TO_BE_SCHEDULED"
+  inline val ANALYSIS_STARTED: "ANALYSIS_STARTED" = "ANALYSIS_STARTED"
+  inline val ANALYSIS_SUCCESS: "ANALYSIS_SUCCESS" = "ANALYSIS_SUCCESS"
+  inline val ANALYSIS_FAILED: "ANALYSIS_FAILED" = "ANALYSIS_FAILED"
+
+  inline def values: js.Array[RuntimeAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED)
+}
+
 type SelfManageTargetDestination = "None specified" | "Amazon Elastic Cloud Compute (EC2)" | "Amazon Elastic Container Service (ECS)" | "Amazon Elastic Kubernetes Service (EKS)"
 object SelfManageTargetDestination {
   inline val `None specified`: "None specified" = "None specified"
@@ -215,15 +312,28 @@ object SelfManageTargetDestination {
   inline def values: js.Array[SelfManageTargetDestination] = js.Array(`None specified`, `Amazon Elastic Cloud Compute (EC2)`, `Amazon Elastic Container Service (ECS)`, `Amazon Elastic Kubernetes Service (EKS)`)
 }
 
-type ServerCriteria = "NOT_DEFINED" | "OS_NAME" | "STRATEGY" | "DESTINATION" | "SERVER_ID"
+type ServerCriteria = "NOT_DEFINED" | "OS_NAME" | "STRATEGY" | "DESTINATION" | "SERVER_ID" | "ANALYSIS_STATUS" | "ERROR_CATEGORY"
 object ServerCriteria {
   inline val NOT_DEFINED: "NOT_DEFINED" = "NOT_DEFINED"
   inline val OS_NAME: "OS_NAME" = "OS_NAME"
   inline val STRATEGY: "STRATEGY" = "STRATEGY"
   inline val DESTINATION: "DESTINATION" = "DESTINATION"
   inline val SERVER_ID: "SERVER_ID" = "SERVER_ID"
+  inline val ANALYSIS_STATUS: "ANALYSIS_STATUS" = "ANALYSIS_STATUS"
+  inline val ERROR_CATEGORY: "ERROR_CATEGORY" = "ERROR_CATEGORY"
 
-  inline def values: js.Array[ServerCriteria] = js.Array(NOT_DEFINED, OS_NAME, STRATEGY, DESTINATION, SERVER_ID)
+  inline def values: js.Array[ServerCriteria] = js.Array(NOT_DEFINED, OS_NAME, STRATEGY, DESTINATION, SERVER_ID, ANALYSIS_STATUS, ERROR_CATEGORY)
+}
+
+type ServerErrorCategory = "CONNECTIVITY_ERROR" | "CREDENTIAL_ERROR" | "PERMISSION_ERROR" | "ARCHITECTURE_ERROR" | "OTHER_ERROR"
+object ServerErrorCategory {
+  inline val CONNECTIVITY_ERROR: "CONNECTIVITY_ERROR" = "CONNECTIVITY_ERROR"
+  inline val CREDENTIAL_ERROR: "CREDENTIAL_ERROR" = "CREDENTIAL_ERROR"
+  inline val PERMISSION_ERROR: "PERMISSION_ERROR" = "PERMISSION_ERROR"
+  inline val ARCHITECTURE_ERROR: "ARCHITECTURE_ERROR" = "ARCHITECTURE_ERROR"
+  inline val OTHER_ERROR: "OTHER_ERROR" = "OTHER_ERROR"
+
+  inline def values: js.Array[ServerErrorCategory] = js.Array(CONNECTIVITY_ERROR, CREDENTIAL_ERROR, PERMISSION_ERROR, ARCHITECTURE_ERROR, OTHER_ERROR)
 }
 
 type ServerOsType = "WindowsServer" | "AmazonLinux" | "EndOfSupportWindowsServer" | "Redhat" | "Other"
@@ -254,14 +364,17 @@ object SortOrder {
   inline def values: js.Array[SortOrder] = js.Array(ASC, DESC)
 }
 
-type SrcCodeOrDbAnalysisStatus = "ANALYSIS_TO_BE_SCHEDULED" | "ANALYSIS_STARTED" | "ANALYSIS_SUCCESS" | "ANALYSIS_FAILED"
+type SrcCodeOrDbAnalysisStatus = "ANALYSIS_TO_BE_SCHEDULED" | "ANALYSIS_STARTED" | "ANALYSIS_SUCCESS" | "ANALYSIS_FAILED" | "ANALYSIS_PARTIAL_SUCCESS" | "UNCONFIGURED" | "CONFIGURED"
 object SrcCodeOrDbAnalysisStatus {
   inline val ANALYSIS_TO_BE_SCHEDULED: "ANALYSIS_TO_BE_SCHEDULED" = "ANALYSIS_TO_BE_SCHEDULED"
   inline val ANALYSIS_STARTED: "ANALYSIS_STARTED" = "ANALYSIS_STARTED"
   inline val ANALYSIS_SUCCESS: "ANALYSIS_SUCCESS" = "ANALYSIS_SUCCESS"
   inline val ANALYSIS_FAILED: "ANALYSIS_FAILED" = "ANALYSIS_FAILED"
+  inline val ANALYSIS_PARTIAL_SUCCESS: "ANALYSIS_PARTIAL_SUCCESS" = "ANALYSIS_PARTIAL_SUCCESS"
+  inline val UNCONFIGURED: "UNCONFIGURED" = "UNCONFIGURED"
+  inline val CONFIGURED: "CONFIGURED" = "CONFIGURED"
 
-  inline def values: js.Array[SrcCodeOrDbAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED)
+  inline def values: js.Array[SrcCodeOrDbAnalysisStatus] = js.Array(ANALYSIS_TO_BE_SCHEDULED, ANALYSIS_STARTED, ANALYSIS_SUCCESS, ANALYSIS_FAILED, ANALYSIS_PARTIAL_SUCCESS, UNCONFIGURED, CONFIGURED)
 }
 
 type Strategy = "Rehost" | "Retirement" | "Refactor" | "Replatform" | "Retain" | "Relocate" | "Repurchase"
@@ -277,13 +390,14 @@ object Strategy {
   inline def values: js.Array[Strategy] = js.Array(Rehost, Retirement, Refactor, Replatform, Retain, Relocate, Repurchase)
 }
 
-type StrategyRecommendation = "recommended" | "viableOption" | "notRecommended"
+type StrategyRecommendation = "recommended" | "viableOption" | "notRecommended" | "potential"
 object StrategyRecommendation {
   inline val recommended: "recommended" = "recommended"
   inline val viableOption: "viableOption" = "viableOption"
   inline val notRecommended: "notRecommended" = "notRecommended"
+  inline val potential: "potential" = "potential"
 
-  inline def values: js.Array[StrategyRecommendation] = js.Array(recommended, viableOption, notRecommended)
+  inline def values: js.Array[StrategyRecommendation] = js.Array(recommended, viableOption, notRecommended, potential)
 }
 
 type TargetDatabaseEngine = "None specified" | "Amazon Aurora" | "AWS PostgreSQL" | "MySQL" | "Microsoft SQL Server" | "Oracle Database" | "MariaDB" | "SAP" | "Db2 LUW" | "MongoDB"
@@ -302,7 +416,7 @@ object TargetDatabaseEngine {
   inline def values: js.Array[TargetDatabaseEngine] = js.Array(`None specified`, `Amazon Aurora`, `AWS PostgreSQL`, MySQL, `Microsoft SQL Server`, `Oracle Database`, MariaDB, SAP, `Db2 LUW`, MongoDB)
 }
 
-type TargetDestination = "None specified" | "AWS Elastic BeanStalk" | "AWS Fargate" | "Amazon Elastic Cloud Compute (EC2)" | "Amazon Elastic Container Service (ECS)" | "Amazon Elastic Kubernetes Service (EKS)" | "Aurora MySQL" | "Aurora PostgreSQL" | "Amazon Relational Database Service on MySQL" | "Amazon Relational Database Service on PostgreSQL" | "Amazon DocumentDB" | "Amazon DynamoDB" | "Amazon Relational Database Service"
+type TargetDestination = "None specified" | "AWS Elastic BeanStalk" | "AWS Fargate" | "Amazon Elastic Cloud Compute (EC2)" | "Amazon Elastic Container Service (ECS)" | "Amazon Elastic Kubernetes Service (EKS)" | "Aurora MySQL" | "Aurora PostgreSQL" | "Amazon Relational Database Service on MySQL" | "Amazon Relational Database Service on PostgreSQL" | "Amazon DocumentDB" | "Amazon DynamoDB" | "Amazon Relational Database Service" | "Babelfish for Aurora PostgreSQL"
 object TargetDestination {
   inline val `None specified`: "None specified" = "None specified"
   inline val `AWS Elastic BeanStalk`: "AWS Elastic BeanStalk" = "AWS Elastic BeanStalk"
@@ -317,6 +431,7 @@ object TargetDestination {
   inline val `Amazon DocumentDB`: "Amazon DocumentDB" = "Amazon DocumentDB"
   inline val `Amazon DynamoDB`: "Amazon DynamoDB" = "Amazon DynamoDB"
   inline val `Amazon Relational Database Service`: "Amazon Relational Database Service" = "Amazon Relational Database Service"
+  inline val `Babelfish for Aurora PostgreSQL`: "Babelfish for Aurora PostgreSQL" = "Babelfish for Aurora PostgreSQL"
 
   inline def values: js.Array[TargetDestination] = js.Array(
     `None specified`,
@@ -331,7 +446,8 @@ object TargetDestination {
     `Amazon Relational Database Service on PostgreSQL`,
     `Amazon DocumentDB`,
     `Amazon DynamoDB`,
-    `Amazon Relational Database Service`
+    `Amazon Relational Database Service`,
+    `Babelfish for Aurora PostgreSQL`
   )
 }
 
@@ -362,10 +478,20 @@ object TransformationToolName {
   )
 }
 
-type VersionControl = "GITHUB" | "GITHUB_ENTERPRISE"
+type VersionControl = "GITHUB" | "GITHUB_ENTERPRISE" | "AZURE_DEVOPS_GIT"
 object VersionControl {
   inline val GITHUB: "GITHUB" = "GITHUB"
   inline val GITHUB_ENTERPRISE: "GITHUB_ENTERPRISE" = "GITHUB_ENTERPRISE"
+  inline val AZURE_DEVOPS_GIT: "AZURE_DEVOPS_GIT" = "AZURE_DEVOPS_GIT"
 
-  inline def values: js.Array[VersionControl] = js.Array(GITHUB, GITHUB_ENTERPRISE)
+  inline def values: js.Array[VersionControl] = js.Array(GITHUB, GITHUB_ENTERPRISE, AZURE_DEVOPS_GIT)
+}
+
+type VersionControlType = "GITHUB" | "GITHUB_ENTERPRISE" | "AZURE_DEVOPS_GIT"
+object VersionControlType {
+  inline val GITHUB: "GITHUB" = "GITHUB"
+  inline val GITHUB_ENTERPRISE: "GITHUB_ENTERPRISE" = "GITHUB_ENTERPRISE"
+  inline val AZURE_DEVOPS_GIT: "AZURE_DEVOPS_GIT" = "AZURE_DEVOPS_GIT"
+
+  inline def values: js.Array[VersionControlType] = js.Array(GITHUB, GITHUB_ENTERPRISE, AZURE_DEVOPS_GIT)
 }

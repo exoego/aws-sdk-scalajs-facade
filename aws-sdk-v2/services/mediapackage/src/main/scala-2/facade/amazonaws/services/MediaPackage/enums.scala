@@ -26,6 +26,17 @@ object AdsOnDeliveryRestrictions {
   @inline def values: js.Array[AdsOnDeliveryRestrictions] = js.Array(NONE, RESTRICTED, UNRESTRICTED, BOTH)
 }
 
+/** The encryption method to use.
+  */
+@js.native
+sealed trait CmafEncryptionMethod extends js.Any
+object CmafEncryptionMethod {
+  val SAMPLE_AES = "SAMPLE_AES".asInstanceOf[CmafEncryptionMethod]
+  val AES_CTR = "AES_CTR".asInstanceOf[CmafEncryptionMethod]
+
+  @inline def values: js.Array[CmafEncryptionMethod] = js.Array(SAMPLE_AES, AES_CTR)
+}
+
 @js.native
 sealed trait EncryptionMethod extends js.Any
 object EncryptionMethod {
@@ -67,16 +78,40 @@ object PlaylistType {
 sealed trait PresetSpeke20Audio extends js.Any
 object PresetSpeke20Audio {
   val `PRESET-AUDIO-1` = "PRESET-AUDIO-1".asInstanceOf[PresetSpeke20Audio]
+  val `PRESET-AUDIO-2` = "PRESET-AUDIO-2".asInstanceOf[PresetSpeke20Audio]
+  val `PRESET-AUDIO-3` = "PRESET-AUDIO-3".asInstanceOf[PresetSpeke20Audio]
+  val SHARED = "SHARED".asInstanceOf[PresetSpeke20Audio]
+  val UNENCRYPTED = "UNENCRYPTED".asInstanceOf[PresetSpeke20Audio]
 
-  @inline def values: js.Array[PresetSpeke20Audio] = js.Array(`PRESET-AUDIO-1`)
+  @inline def values: js.Array[PresetSpeke20Audio] = js.Array(`PRESET-AUDIO-1`, `PRESET-AUDIO-2`, `PRESET-AUDIO-3`, SHARED, UNENCRYPTED)
 }
 
 @js.native
 sealed trait PresetSpeke20Video extends js.Any
 object PresetSpeke20Video {
   val `PRESET-VIDEO-1` = "PRESET-VIDEO-1".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-2` = "PRESET-VIDEO-2".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-3` = "PRESET-VIDEO-3".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-4` = "PRESET-VIDEO-4".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-5` = "PRESET-VIDEO-5".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-6` = "PRESET-VIDEO-6".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-7` = "PRESET-VIDEO-7".asInstanceOf[PresetSpeke20Video]
+  val `PRESET-VIDEO-8` = "PRESET-VIDEO-8".asInstanceOf[PresetSpeke20Video]
+  val SHARED = "SHARED".asInstanceOf[PresetSpeke20Video]
+  val UNENCRYPTED = "UNENCRYPTED".asInstanceOf[PresetSpeke20Video]
 
-  @inline def values: js.Array[PresetSpeke20Video] = js.Array(`PRESET-VIDEO-1`)
+  @inline def values: js.Array[PresetSpeke20Video] = js.Array(
+    `PRESET-VIDEO-1`,
+    `PRESET-VIDEO-2`,
+    `PRESET-VIDEO-3`,
+    `PRESET-VIDEO-4`,
+    `PRESET-VIDEO-5`,
+    `PRESET-VIDEO-6`,
+    `PRESET-VIDEO-7`,
+    `PRESET-VIDEO-8`,
+    SHARED,
+    UNENCRYPTED
+  )
 }
 
 @js.native
@@ -84,8 +119,10 @@ sealed trait Profile extends js.Any
 object Profile {
   val NONE = "NONE".asInstanceOf[Profile]
   val HBBTV_1_5 = "HBBTV_1_5".asInstanceOf[Profile]
+  val HYBRIDCAST = "HYBRIDCAST".asInstanceOf[Profile]
+  val DVB_DASH_2014 = "DVB_DASH_2014".asInstanceOf[Profile]
 
-  @inline def values: js.Array[Profile] = js.Array(NONE, HBBTV_1_5)
+  @inline def values: js.Array[Profile] = js.Array(NONE, HBBTV_1_5, HYBRIDCAST, DVB_DASH_2014)
 }
 
 @js.native
@@ -124,8 +161,9 @@ object UtcTiming {
   val NONE = "NONE".asInstanceOf[UtcTiming]
   val `HTTP-HEAD` = "HTTP-HEAD".asInstanceOf[UtcTiming]
   val `HTTP-ISO` = "HTTP-ISO".asInstanceOf[UtcTiming]
+  val `HTTP-XSDATE` = "HTTP-XSDATE".asInstanceOf[UtcTiming]
 
-  @inline def values: js.Array[UtcTiming] = js.Array(NONE, `HTTP-HEAD`, `HTTP-ISO`)
+  @inline def values: js.Array[UtcTiming] = js.Array(NONE, `HTTP-HEAD`, `HTTP-ISO`, `HTTP-XSDATE`)
 }
 
 @js.native

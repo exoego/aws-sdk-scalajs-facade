@@ -8,7 +8,13 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object iottwinmaker {
+  type BundleName = String
+  type ColumnDescriptions = js.Array[ColumnDescription]
+  type ColumnName = String
+  type ComponentPropertyGroupRequests = js.Dictionary[ComponentPropertyGroupRequest]
+  type ComponentPropertyGroupResponses = js.Dictionary[ComponentPropertyGroupResponse]
   type ComponentTypeId = String
+  type ComponentTypeName = String
   type ComponentTypeSummaries = js.Array[ComponentTypeSummary]
   type ComponentUpdatesMapRequest = js.Dictionary[ComponentUpdateRequest]
   type ComponentsMap = js.Dictionary[ComponentResponse]
@@ -38,27 +44,45 @@ package object iottwinmaker {
   type MaxResults = Int
   type Name = String
   type NextToken = String
+  type OrderByList = js.Array[OrderBy]
   type ParentEntityId = String
+  type PricingBundles = js.Array[BundleName]
   type PropertyDefinitionsRequest = js.Dictionary[PropertyDefinitionRequest]
   type PropertyDefinitionsResponse = js.Dictionary[PropertyDefinitionResponse]
+  type PropertyDisplayName = String
   type PropertyFilters = js.Array[PropertyFilter]
+  type PropertyGroupsRequest = js.Dictionary[PropertyGroupRequest]
+  type PropertyGroupsResponse = js.Dictionary[PropertyGroupResponse]
   type PropertyLatestValueMap = js.Dictionary[PropertyLatestValue]
+  type PropertyNames = js.Array[Name]
   type PropertyRequests = js.Dictionary[PropertyRequest]
   type PropertyResponses = js.Dictionary[PropertyResponse]
+  type PropertyTableValue = js.Dictionary[DataValue]
   type PropertyValueList = js.Array[PropertyValueHistory]
   type PropertyValues = js.Array[PropertyValue]
+  type QueryServiceMaxResults = Int
+  type QueryStatement = String
   type RequiredProperties = js.Array[Name]
   type RoleArn = String
+  type RowData = js.Array[QueryResultValue]
+  type Rows = js.Array[Row]
   type S3Location = String
   type S3Url = String
   type SceneCapabilities = js.Array[SceneCapability]
   type SceneCapability = String
   type SceneSummaries = js.Array[SceneSummary]
   type SelectedPropertyList = js.Array[String]
+  type SyncJobSummaries = js.Array[SyncJobSummary]
+  type SyncResourceFilters = js.Array[SyncResourceFilter]
+  type SyncResourceSummaries = js.Array[SyncResourceSummary]
+  type SyncSource = String
+  type TabularPropertyValue = js.Array[PropertyTableValue]
+  type TabularPropertyValues = js.Array[TabularPropertyValue]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
+  type Time = String
   type Timestamp = js.Date
   type TwinMakerArn = String
   type Value = String
@@ -71,26 +95,34 @@ package object iottwinmaker {
     @inline def createComponentTypeFuture(params: CreateComponentTypeRequest): Future[CreateComponentTypeResponse] = service.createComponentType(params).promise().toFuture
     @inline def createEntityFuture(params: CreateEntityRequest): Future[CreateEntityResponse] = service.createEntity(params).promise().toFuture
     @inline def createSceneFuture(params: CreateSceneRequest): Future[CreateSceneResponse] = service.createScene(params).promise().toFuture
+    @inline def createSyncJobFuture(params: CreateSyncJobRequest): Future[CreateSyncJobResponse] = service.createSyncJob(params).promise().toFuture
     @inline def createWorkspaceFuture(params: CreateWorkspaceRequest): Future[CreateWorkspaceResponse] = service.createWorkspace(params).promise().toFuture
     @inline def deleteComponentTypeFuture(params: DeleteComponentTypeRequest): Future[DeleteComponentTypeResponse] = service.deleteComponentType(params).promise().toFuture
     @inline def deleteEntityFuture(params: DeleteEntityRequest): Future[DeleteEntityResponse] = service.deleteEntity(params).promise().toFuture
     @inline def deleteSceneFuture(params: DeleteSceneRequest): Future[DeleteSceneResponse] = service.deleteScene(params).promise().toFuture
+    @inline def deleteSyncJobFuture(params: DeleteSyncJobRequest): Future[DeleteSyncJobResponse] = service.deleteSyncJob(params).promise().toFuture
     @inline def deleteWorkspaceFuture(params: DeleteWorkspaceRequest): Future[DeleteWorkspaceResponse] = service.deleteWorkspace(params).promise().toFuture
+    @inline def executeQueryFuture(params: ExecuteQueryRequest): Future[ExecuteQueryResponse] = service.executeQuery(params).promise().toFuture
     @inline def getComponentTypeFuture(params: GetComponentTypeRequest): Future[GetComponentTypeResponse] = service.getComponentType(params).promise().toFuture
     @inline def getEntityFuture(params: GetEntityRequest): Future[GetEntityResponse] = service.getEntity(params).promise().toFuture
+    @inline def getPricingPlanFuture(params: GetPricingPlanRequest): Future[GetPricingPlanResponse] = service.getPricingPlan(params).promise().toFuture
     @inline def getPropertyValueFuture(params: GetPropertyValueRequest): Future[GetPropertyValueResponse] = service.getPropertyValue(params).promise().toFuture
     @inline def getPropertyValueHistoryFuture(params: GetPropertyValueHistoryRequest): Future[GetPropertyValueHistoryResponse] = service.getPropertyValueHistory(params).promise().toFuture
     @inline def getSceneFuture(params: GetSceneRequest): Future[GetSceneResponse] = service.getScene(params).promise().toFuture
+    @inline def getSyncJobFuture(params: GetSyncJobRequest): Future[GetSyncJobResponse] = service.getSyncJob(params).promise().toFuture
     @inline def getWorkspaceFuture(params: GetWorkspaceRequest): Future[GetWorkspaceResponse] = service.getWorkspace(params).promise().toFuture
     @inline def listComponentTypesFuture(params: ListComponentTypesRequest): Future[ListComponentTypesResponse] = service.listComponentTypes(params).promise().toFuture
     @inline def listEntitiesFuture(params: ListEntitiesRequest): Future[ListEntitiesResponse] = service.listEntities(params).promise().toFuture
     @inline def listScenesFuture(params: ListScenesRequest): Future[ListScenesResponse] = service.listScenes(params).promise().toFuture
+    @inline def listSyncJobsFuture(params: ListSyncJobsRequest): Future[ListSyncJobsResponse] = service.listSyncJobs(params).promise().toFuture
+    @inline def listSyncResourcesFuture(params: ListSyncResourcesRequest): Future[ListSyncResourcesResponse] = service.listSyncResources(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listWorkspacesFuture(params: ListWorkspacesRequest): Future[ListWorkspacesResponse] = service.listWorkspaces(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateComponentTypeFuture(params: UpdateComponentTypeRequest): Future[UpdateComponentTypeResponse] = service.updateComponentType(params).promise().toFuture
     @inline def updateEntityFuture(params: UpdateEntityRequest): Future[UpdateEntityResponse] = service.updateEntity(params).promise().toFuture
+    @inline def updatePricingPlanFuture(params: UpdatePricingPlanRequest): Future[UpdatePricingPlanResponse] = service.updatePricingPlan(params).promise().toFuture
     @inline def updateSceneFuture(params: UpdateSceneRequest): Future[UpdateSceneResponse] = service.updateScene(params).promise().toFuture
     @inline def updateWorkspaceFuture(params: UpdateWorkspaceRequest): Future[UpdateWorkspaceResponse] = service.updateWorkspace(params).promise().toFuture
 
@@ -105,26 +137,34 @@ package object iottwinmaker {
     def createComponentType(params: CreateComponentTypeRequest): Request[CreateComponentTypeResponse] = js.native
     def createEntity(params: CreateEntityRequest): Request[CreateEntityResponse] = js.native
     def createScene(params: CreateSceneRequest): Request[CreateSceneResponse] = js.native
+    def createSyncJob(params: CreateSyncJobRequest): Request[CreateSyncJobResponse] = js.native
     def createWorkspace(params: CreateWorkspaceRequest): Request[CreateWorkspaceResponse] = js.native
     def deleteComponentType(params: DeleteComponentTypeRequest): Request[DeleteComponentTypeResponse] = js.native
     def deleteEntity(params: DeleteEntityRequest): Request[DeleteEntityResponse] = js.native
     def deleteScene(params: DeleteSceneRequest): Request[DeleteSceneResponse] = js.native
+    def deleteSyncJob(params: DeleteSyncJobRequest): Request[DeleteSyncJobResponse] = js.native
     def deleteWorkspace(params: DeleteWorkspaceRequest): Request[DeleteWorkspaceResponse] = js.native
+    def executeQuery(params: ExecuteQueryRequest): Request[ExecuteQueryResponse] = js.native
     def getComponentType(params: GetComponentTypeRequest): Request[GetComponentTypeResponse] = js.native
     def getEntity(params: GetEntityRequest): Request[GetEntityResponse] = js.native
+    def getPricingPlan(params: GetPricingPlanRequest): Request[GetPricingPlanResponse] = js.native
     def getPropertyValue(params: GetPropertyValueRequest): Request[GetPropertyValueResponse] = js.native
     def getPropertyValueHistory(params: GetPropertyValueHistoryRequest): Request[GetPropertyValueHistoryResponse] = js.native
     def getScene(params: GetSceneRequest): Request[GetSceneResponse] = js.native
+    def getSyncJob(params: GetSyncJobRequest): Request[GetSyncJobResponse] = js.native
     def getWorkspace(params: GetWorkspaceRequest): Request[GetWorkspaceResponse] = js.native
     def listComponentTypes(params: ListComponentTypesRequest): Request[ListComponentTypesResponse] = js.native
     def listEntities(params: ListEntitiesRequest): Request[ListEntitiesResponse] = js.native
     def listScenes(params: ListScenesRequest): Request[ListScenesResponse] = js.native
+    def listSyncJobs(params: ListSyncJobsRequest): Request[ListSyncJobsResponse] = js.native
+    def listSyncResources(params: ListSyncResourcesRequest): Request[ListSyncResourcesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWorkspaces(params: ListWorkspacesRequest): Request[ListWorkspacesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateComponentType(params: UpdateComponentTypeRequest): Request[UpdateComponentTypeResponse] = js.native
     def updateEntity(params: UpdateEntityRequest): Request[UpdateEntityResponse] = js.native
+    def updatePricingPlan(params: UpdatePricingPlanRequest): Request[UpdatePricingPlanResponse] = js.native
     def updateScene(params: UpdateSceneRequest): Request[UpdateSceneResponse] = js.native
     def updateWorkspace(params: UpdateWorkspaceRequest): Request[UpdateWorkspaceResponse] = js.native
   }
@@ -215,6 +255,99 @@ package object iottwinmaker {
     }
   }
 
+  /** Information about pricing bundle.
+    */
+  @js.native
+  trait BundleInformation extends js.Object {
+    var bundleNames: PricingBundles
+    var pricingTier: js.UndefOr[PricingTier]
+  }
+
+  object BundleInformation {
+    @inline
+    def apply(
+        bundleNames: PricingBundles,
+        pricingTier: js.UndefOr[PricingTier] = js.undefined
+    ): BundleInformation = {
+      val __obj = js.Dynamic.literal(
+        "bundleNames" -> bundleNames.asInstanceOf[js.Any]
+      )
+
+      pricingTier.foreach(__v => __obj.updateDynamic("pricingTier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BundleInformation]
+    }
+  }
+
+  /** A description of the column in the query results.
+    */
+  @js.native
+  trait ColumnDescription extends js.Object {
+    var name: js.UndefOr[ColumnName]
+    var `type`: js.UndefOr[ColumnType]
+  }
+
+  object ColumnDescription {
+    @inline
+    def apply(
+        name: js.UndefOr[ColumnName] = js.undefined,
+        `type`: js.UndefOr[ColumnType] = js.undefined
+    ): ColumnDescription = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnDescription]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait ComponentPropertyGroupRequest extends js.Object {
+    var groupType: js.UndefOr[GroupType]
+    var propertyNames: js.UndefOr[PropertyNames]
+    var updateType: js.UndefOr[PropertyGroupUpdateType]
+  }
+
+  object ComponentPropertyGroupRequest {
+    @inline
+    def apply(
+        groupType: js.UndefOr[GroupType] = js.undefined,
+        propertyNames: js.UndefOr[PropertyNames] = js.undefined,
+        updateType: js.UndefOr[PropertyGroupUpdateType] = js.undefined
+    ): ComponentPropertyGroupRequest = {
+      val __obj = js.Dynamic.literal()
+      groupType.foreach(__v => __obj.updateDynamic("groupType")(__v.asInstanceOf[js.Any]))
+      propertyNames.foreach(__v => __obj.updateDynamic("propertyNames")(__v.asInstanceOf[js.Any]))
+      updateType.foreach(__v => __obj.updateDynamic("updateType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComponentPropertyGroupRequest]
+    }
+  }
+
+  /** The component property group response.
+    */
+  @js.native
+  trait ComponentPropertyGroupResponse extends js.Object {
+    var groupType: GroupType
+    var isInherited: Boolean
+    var propertyNames: PropertyNames
+  }
+
+  object ComponentPropertyGroupResponse {
+    @inline
+    def apply(
+        groupType: GroupType,
+        isInherited: Boolean,
+        propertyNames: PropertyNames
+    ): ComponentPropertyGroupResponse = {
+      val __obj = js.Dynamic.literal(
+        "groupType" -> groupType.asInstanceOf[js.Any],
+        "isInherited" -> isInherited.asInstanceOf[js.Any],
+        "propertyNames" -> propertyNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ComponentPropertyGroupResponse]
+    }
+  }
+
   /** An object that sets information about a component type create or update request.
     */
   @js.native
@@ -222,6 +355,7 @@ package object iottwinmaker {
     var componentTypeId: js.UndefOr[ComponentTypeId]
     var description: js.UndefOr[Description]
     var properties: js.UndefOr[PropertyRequests]
+    var propertyGroups: js.UndefOr[ComponentPropertyGroupRequests]
   }
 
   object ComponentRequest {
@@ -229,12 +363,14 @@ package object iottwinmaker {
     def apply(
         componentTypeId: js.UndefOr[ComponentTypeId] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
-        properties: js.UndefOr[PropertyRequests] = js.undefined
+        properties: js.UndefOr[PropertyRequests] = js.undefined,
+        propertyGroups: js.UndefOr[ComponentPropertyGroupRequests] = js.undefined
     ): ComponentRequest = {
       val __obj = js.Dynamic.literal()
       componentTypeId.foreach(__v => __obj.updateDynamic("componentTypeId")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      propertyGroups.foreach(__v => __obj.updateDynamic("propertyGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentRequest]
     }
   }
@@ -248,7 +384,9 @@ package object iottwinmaker {
     var definedIn: js.UndefOr[String]
     var description: js.UndefOr[Description]
     var properties: js.UndefOr[PropertyResponses]
+    var propertyGroups: js.UndefOr[ComponentPropertyGroupResponses]
     var status: js.UndefOr[Status]
+    var syncSource: js.UndefOr[SyncSource]
   }
 
   object ComponentResponse {
@@ -259,7 +397,9 @@ package object iottwinmaker {
         definedIn: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         properties: js.UndefOr[PropertyResponses] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined
+        propertyGroups: js.UndefOr[ComponentPropertyGroupResponses] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined,
+        syncSource: js.UndefOr[SyncSource] = js.undefined
     ): ComponentResponse = {
       val __obj = js.Dynamic.literal()
       componentName.foreach(__v => __obj.updateDynamic("componentName")(__v.asInstanceOf[js.Any]))
@@ -267,7 +407,9 @@ package object iottwinmaker {
       definedIn.foreach(__v => __obj.updateDynamic("definedIn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
+      propertyGroups.foreach(__v => __obj.updateDynamic("propertyGroups")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      syncSource.foreach(__v => __obj.updateDynamic("syncSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentResponse]
     }
   }
@@ -280,6 +422,7 @@ package object iottwinmaker {
     var componentTypeId: ComponentTypeId
     var creationDateTime: Timestamp
     var updateDateTime: Timestamp
+    var componentTypeName: js.UndefOr[ComponentTypeName]
     var description: js.UndefOr[Description]
     var status: js.UndefOr[Status]
   }
@@ -291,6 +434,7 @@ package object iottwinmaker {
         componentTypeId: ComponentTypeId,
         creationDateTime: Timestamp,
         updateDateTime: Timestamp,
+        componentTypeName: js.UndefOr[ComponentTypeName] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): ComponentTypeSummary = {
@@ -301,6 +445,7 @@ package object iottwinmaker {
         "updateDateTime" -> updateDateTime.asInstanceOf[js.Any]
       )
 
+      componentTypeName.foreach(__v => __obj.updateDynamic("componentTypeName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentTypeSummary]
@@ -313,6 +458,7 @@ package object iottwinmaker {
   trait ComponentUpdateRequest extends js.Object {
     var componentTypeId: js.UndefOr[ComponentTypeId]
     var description: js.UndefOr[Description]
+    var propertyGroupUpdates: js.UndefOr[ComponentPropertyGroupRequests]
     var propertyUpdates: js.UndefOr[PropertyRequests]
     var updateType: js.UndefOr[ComponentUpdateType]
   }
@@ -322,12 +468,14 @@ package object iottwinmaker {
     def apply(
         componentTypeId: js.UndefOr[ComponentTypeId] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
+        propertyGroupUpdates: js.UndefOr[ComponentPropertyGroupRequests] = js.undefined,
         propertyUpdates: js.UndefOr[PropertyRequests] = js.undefined,
         updateType: js.UndefOr[ComponentUpdateType] = js.undefined
     ): ComponentUpdateRequest = {
       val __obj = js.Dynamic.literal()
       componentTypeId.foreach(__v => __obj.updateDynamic("componentTypeId")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      propertyGroupUpdates.foreach(__v => __obj.updateDynamic("propertyGroupUpdates")(__v.asInstanceOf[js.Any]))
       propertyUpdates.foreach(__v => __obj.updateDynamic("propertyUpdates")(__v.asInstanceOf[js.Any]))
       updateType.foreach(__v => __obj.updateDynamic("updateType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentUpdateRequest]
@@ -338,11 +486,13 @@ package object iottwinmaker {
   trait CreateComponentTypeRequest extends js.Object {
     var componentTypeId: ComponentTypeId
     var workspaceId: Id
+    var componentTypeName: js.UndefOr[ComponentTypeName]
     var description: js.UndefOr[Description]
     var extendsFrom: js.UndefOr[ExtendsFrom]
     var functions: js.UndefOr[FunctionsRequest]
     var isSingleton: js.UndefOr[Boolean]
     var propertyDefinitions: js.UndefOr[PropertyDefinitionsRequest]
+    var propertyGroups: js.UndefOr[PropertyGroupsRequest]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -351,11 +501,13 @@ package object iottwinmaker {
     def apply(
         componentTypeId: ComponentTypeId,
         workspaceId: Id,
+        componentTypeName: js.UndefOr[ComponentTypeName] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         extendsFrom: js.UndefOr[ExtendsFrom] = js.undefined,
         functions: js.UndefOr[FunctionsRequest] = js.undefined,
         isSingleton: js.UndefOr[Boolean] = js.undefined,
         propertyDefinitions: js.UndefOr[PropertyDefinitionsRequest] = js.undefined,
+        propertyGroups: js.UndefOr[PropertyGroupsRequest] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateComponentTypeRequest = {
       val __obj = js.Dynamic.literal(
@@ -363,11 +515,13 @@ package object iottwinmaker {
         "workspaceId" -> workspaceId.asInstanceOf[js.Any]
       )
 
+      componentTypeName.foreach(__v => __obj.updateDynamic("componentTypeName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       extendsFrom.foreach(__v => __obj.updateDynamic("extendsFrom")(__v.asInstanceOf[js.Any]))
       functions.foreach(__v => __obj.updateDynamic("functions")(__v.asInstanceOf[js.Any]))
       isSingleton.foreach(__v => __obj.updateDynamic("isSingleton")(__v.asInstanceOf[js.Any]))
       propertyDefinitions.foreach(__v => __obj.updateDynamic("propertyDefinitions")(__v.asInstanceOf[js.Any]))
+      propertyGroups.foreach(__v => __obj.updateDynamic("propertyGroups")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComponentTypeRequest]
     }
@@ -508,6 +662,56 @@ package object iottwinmaker {
         "creationDateTime" -> creationDateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateSceneResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSyncJobRequest extends js.Object {
+    var syncRole: RoleArn
+    var syncSource: SyncSource
+    var workspaceId: Id
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateSyncJobRequest {
+    @inline
+    def apply(
+        syncRole: RoleArn,
+        syncSource: SyncSource,
+        workspaceId: Id,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateSyncJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "syncRole" -> syncRole.asInstanceOf[js.Any],
+        "syncSource" -> syncSource.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSyncJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSyncJobResponse extends js.Object {
+    var arn: TwinMakerArn
+    var creationDateTime: Timestamp
+    var state: SyncJobState
+  }
+
+  object CreateSyncJobResponse {
+    @inline
+    def apply(
+        arn: TwinMakerArn,
+        creationDateTime: Timestamp,
+        state: SyncJobState
+    ): CreateSyncJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "creationDateTime" -> creationDateTime.asInstanceOf[js.Any],
+        "state" -> state.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateSyncJobResponse]
     }
   }
 
@@ -766,6 +970,43 @@ package object iottwinmaker {
   }
 
   @js.native
+  trait DeleteSyncJobRequest extends js.Object {
+    var syncSource: SyncSource
+    var workspaceId: Id
+  }
+
+  object DeleteSyncJobRequest {
+    @inline
+    def apply(
+        syncSource: SyncSource,
+        workspaceId: Id
+    ): DeleteSyncJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "syncSource" -> syncSource.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSyncJobRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSyncJobResponse extends js.Object {
+    var state: SyncJobState
+  }
+
+  object DeleteSyncJobResponse {
+    @inline
+    def apply(
+        state: SyncJobState
+    ): DeleteSyncJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "state" -> state.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSyncJobResponse]
+    }
+  }
+
+  @js.native
   trait DeleteWorkspaceRequest extends js.Object {
     var workspaceId: Id
   }
@@ -887,6 +1128,55 @@ package object iottwinmaker {
     }
   }
 
+  @js.native
+  trait ExecuteQueryRequest extends js.Object {
+    var queryStatement: QueryStatement
+    var workspaceId: Id
+    var maxResults: js.UndefOr[QueryServiceMaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ExecuteQueryRequest {
+    @inline
+    def apply(
+        queryStatement: QueryStatement,
+        workspaceId: Id,
+        maxResults: js.UndefOr[QueryServiceMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ExecuteQueryRequest = {
+      val __obj = js.Dynamic.literal(
+        "queryStatement" -> queryStatement.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteQueryRequest]
+    }
+  }
+
+  @js.native
+  trait ExecuteQueryResponse extends js.Object {
+    var columnDescriptions: js.UndefOr[ColumnDescriptions]
+    var nextToken: js.UndefOr[NextToken]
+    var rows: js.UndefOr[Rows]
+  }
+
+  object ExecuteQueryResponse {
+    @inline
+    def apply(
+        columnDescriptions: js.UndefOr[ColumnDescriptions] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        rows: js.UndefOr[Rows] = js.undefined
+    ): ExecuteQueryResponse = {
+      val __obj = js.Dynamic.literal()
+      columnDescriptions.foreach(__v => __obj.updateDynamic("columnDescriptions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      rows.foreach(__v => __obj.updateDynamic("rows")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExecuteQueryResponse]
+    }
+  }
+
   /** The function request body.
     */
   @js.native
@@ -965,6 +1255,7 @@ package object iottwinmaker {
     var creationDateTime: Timestamp
     var updateDateTime: Timestamp
     var workspaceId: Id
+    var componentTypeName: js.UndefOr[ComponentTypeName]
     var description: js.UndefOr[Description]
     var extendsFrom: js.UndefOr[ExtendsFrom]
     var functions: js.UndefOr[FunctionsResponse]
@@ -972,7 +1263,9 @@ package object iottwinmaker {
     var isSchemaInitialized: js.UndefOr[Boolean]
     var isSingleton: js.UndefOr[Boolean]
     var propertyDefinitions: js.UndefOr[PropertyDefinitionsResponse]
+    var propertyGroups: js.UndefOr[PropertyGroupsResponse]
     var status: js.UndefOr[Status]
+    var syncSource: js.UndefOr[SyncSource]
   }
 
   object GetComponentTypeResponse {
@@ -983,6 +1276,7 @@ package object iottwinmaker {
         creationDateTime: Timestamp,
         updateDateTime: Timestamp,
         workspaceId: Id,
+        componentTypeName: js.UndefOr[ComponentTypeName] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         extendsFrom: js.UndefOr[ExtendsFrom] = js.undefined,
         functions: js.UndefOr[FunctionsResponse] = js.undefined,
@@ -990,7 +1284,9 @@ package object iottwinmaker {
         isSchemaInitialized: js.UndefOr[Boolean] = js.undefined,
         isSingleton: js.UndefOr[Boolean] = js.undefined,
         propertyDefinitions: js.UndefOr[PropertyDefinitionsResponse] = js.undefined,
-        status: js.UndefOr[Status] = js.undefined
+        propertyGroups: js.UndefOr[PropertyGroupsResponse] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined,
+        syncSource: js.UndefOr[SyncSource] = js.undefined
     ): GetComponentTypeResponse = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -1000,6 +1296,7 @@ package object iottwinmaker {
         "workspaceId" -> workspaceId.asInstanceOf[js.Any]
       )
 
+      componentTypeName.foreach(__v => __obj.updateDynamic("componentTypeName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       extendsFrom.foreach(__v => __obj.updateDynamic("extendsFrom")(__v.asInstanceOf[js.Any]))
       functions.foreach(__v => __obj.updateDynamic("functions")(__v.asInstanceOf[js.Any]))
@@ -1007,7 +1304,9 @@ package object iottwinmaker {
       isSchemaInitialized.foreach(__v => __obj.updateDynamic("isSchemaInitialized")(__v.asInstanceOf[js.Any]))
       isSingleton.foreach(__v => __obj.updateDynamic("isSingleton")(__v.asInstanceOf[js.Any]))
       propertyDefinitions.foreach(__v => __obj.updateDynamic("propertyDefinitions")(__v.asInstanceOf[js.Any]))
+      propertyGroups.foreach(__v => __obj.updateDynamic("propertyGroups")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      syncSource.foreach(__v => __obj.updateDynamic("syncSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetComponentTypeResponse]
     }
   }
@@ -1045,6 +1344,7 @@ package object iottwinmaker {
     var workspaceId: Id
     var components: js.UndefOr[ComponentsMap]
     var description: js.UndefOr[Description]
+    var syncSource: js.UndefOr[SyncSource]
   }
 
   object GetEntityResponse {
@@ -1060,7 +1360,8 @@ package object iottwinmaker {
         updateDateTime: Timestamp,
         workspaceId: Id,
         components: js.UndefOr[ComponentsMap] = js.undefined,
-        description: js.UndefOr[Description] = js.undefined
+        description: js.UndefOr[Description] = js.undefined,
+        syncSource: js.UndefOr[SyncSource] = js.undefined
     ): GetEntityResponse = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -1076,57 +1377,96 @@ package object iottwinmaker {
 
       components.foreach(__v => __obj.updateDynamic("components")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      syncSource.foreach(__v => __obj.updateDynamic("syncSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntityResponse]
     }
   }
 
   @js.native
+  trait GetPricingPlanRequest extends js.Object
+
+  object GetPricingPlanRequest {
+    @inline
+    def apply(): GetPricingPlanRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetPricingPlanRequest]
+    }
+  }
+
+  @js.native
+  trait GetPricingPlanResponse extends js.Object {
+    var currentPricingPlan: PricingPlan
+    var pendingPricingPlan: js.UndefOr[PricingPlan]
+  }
+
+  object GetPricingPlanResponse {
+    @inline
+    def apply(
+        currentPricingPlan: PricingPlan,
+        pendingPricingPlan: js.UndefOr[PricingPlan] = js.undefined
+    ): GetPricingPlanResponse = {
+      val __obj = js.Dynamic.literal(
+        "currentPricingPlan" -> currentPricingPlan.asInstanceOf[js.Any]
+      )
+
+      pendingPricingPlan.foreach(__v => __obj.updateDynamic("pendingPricingPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPricingPlanResponse]
+    }
+  }
+
+  @js.native
   trait GetPropertyValueHistoryRequest extends js.Object {
-    var endDateTime: Timestamp
     var selectedProperties: SelectedPropertyList
-    var startDateTime: Timestamp
     var workspaceId: Id
     var componentName: js.UndefOr[Name]
     var componentTypeId: js.UndefOr[ComponentTypeId]
+    var endDateTime: js.UndefOr[Timestamp]
+    var endTime: js.UndefOr[Time]
     var entityId: js.UndefOr[EntityId]
     var interpolation: js.UndefOr[InterpolationParameters]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var orderByTime: js.UndefOr[OrderByTime]
     var propertyFilters: js.UndefOr[PropertyFilters]
+    var startDateTime: js.UndefOr[Timestamp]
+    var startTime: js.UndefOr[Time]
   }
 
   object GetPropertyValueHistoryRequest {
     @inline
     def apply(
-        endDateTime: Timestamp,
         selectedProperties: SelectedPropertyList,
-        startDateTime: Timestamp,
         workspaceId: Id,
         componentName: js.UndefOr[Name] = js.undefined,
         componentTypeId: js.UndefOr[ComponentTypeId] = js.undefined,
+        endDateTime: js.UndefOr[Timestamp] = js.undefined,
+        endTime: js.UndefOr[Time] = js.undefined,
         entityId: js.UndefOr[EntityId] = js.undefined,
         interpolation: js.UndefOr[InterpolationParameters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         orderByTime: js.UndefOr[OrderByTime] = js.undefined,
-        propertyFilters: js.UndefOr[PropertyFilters] = js.undefined
+        propertyFilters: js.UndefOr[PropertyFilters] = js.undefined,
+        startDateTime: js.UndefOr[Timestamp] = js.undefined,
+        startTime: js.UndefOr[Time] = js.undefined
     ): GetPropertyValueHistoryRequest = {
       val __obj = js.Dynamic.literal(
-        "endDateTime" -> endDateTime.asInstanceOf[js.Any],
         "selectedProperties" -> selectedProperties.asInstanceOf[js.Any],
-        "startDateTime" -> startDateTime.asInstanceOf[js.Any],
         "workspaceId" -> workspaceId.asInstanceOf[js.Any]
       )
 
       componentName.foreach(__v => __obj.updateDynamic("componentName")(__v.asInstanceOf[js.Any]))
       componentTypeId.foreach(__v => __obj.updateDynamic("componentTypeId")(__v.asInstanceOf[js.Any]))
+      endDateTime.foreach(__v => __obj.updateDynamic("endDateTime")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       entityId.foreach(__v => __obj.updateDynamic("entityId")(__v.asInstanceOf[js.Any]))
       interpolation.foreach(__v => __obj.updateDynamic("interpolation")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       orderByTime.foreach(__v => __obj.updateDynamic("orderByTime")(__v.asInstanceOf[js.Any]))
       propertyFilters.foreach(__v => __obj.updateDynamic("propertyFilters")(__v.asInstanceOf[js.Any]))
+      startDateTime.foreach(__v => __obj.updateDynamic("startDateTime")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPropertyValueHistoryRequest]
     }
   }
@@ -1159,6 +1499,10 @@ package object iottwinmaker {
     var componentName: js.UndefOr[Name]
     var componentTypeId: js.UndefOr[ComponentTypeId]
     var entityId: js.UndefOr[EntityId]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var propertyGroupName: js.UndefOr[Name]
+    var tabularConditions: js.UndefOr[TabularConditions]
   }
 
   object GetPropertyValueRequest {
@@ -1168,7 +1512,11 @@ package object iottwinmaker {
         workspaceId: Id,
         componentName: js.UndefOr[Name] = js.undefined,
         componentTypeId: js.UndefOr[ComponentTypeId] = js.undefined,
-        entityId: js.UndefOr[EntityId] = js.undefined
+        entityId: js.UndefOr[EntityId] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        propertyGroupName: js.UndefOr[Name] = js.undefined,
+        tabularConditions: js.UndefOr[TabularConditions] = js.undefined
     ): GetPropertyValueRequest = {
       val __obj = js.Dynamic.literal(
         "selectedProperties" -> selectedProperties.asInstanceOf[js.Any],
@@ -1178,23 +1526,32 @@ package object iottwinmaker {
       componentName.foreach(__v => __obj.updateDynamic("componentName")(__v.asInstanceOf[js.Any]))
       componentTypeId.foreach(__v => __obj.updateDynamic("componentTypeId")(__v.asInstanceOf[js.Any]))
       entityId.foreach(__v => __obj.updateDynamic("entityId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      propertyGroupName.foreach(__v => __obj.updateDynamic("propertyGroupName")(__v.asInstanceOf[js.Any]))
+      tabularConditions.foreach(__v => __obj.updateDynamic("tabularConditions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPropertyValueRequest]
     }
   }
 
   @js.native
   trait GetPropertyValueResponse extends js.Object {
-    var propertyValues: PropertyLatestValueMap
+    var nextToken: js.UndefOr[NextToken]
+    var propertyValues: js.UndefOr[PropertyLatestValueMap]
+    var tabularPropertyValues: js.UndefOr[TabularPropertyValues]
   }
 
   object GetPropertyValueResponse {
     @inline
     def apply(
-        propertyValues: PropertyLatestValueMap
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        propertyValues: js.UndefOr[PropertyLatestValueMap] = js.undefined,
+        tabularPropertyValues: js.UndefOr[TabularPropertyValues] = js.undefined
     ): GetPropertyValueResponse = {
-      val __obj = js.Dynamic.literal(
-        "propertyValues" -> propertyValues.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      propertyValues.foreach(__v => __obj.updateDynamic("propertyValues")(__v.asInstanceOf[js.Any]))
+      tabularPropertyValues.foreach(__v => __obj.updateDynamic("tabularPropertyValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPropertyValueResponse]
     }
   }
@@ -1255,6 +1612,62 @@ package object iottwinmaker {
       capabilities.foreach(__v => __obj.updateDynamic("capabilities")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSceneResponse]
+    }
+  }
+
+  @js.native
+  trait GetSyncJobRequest extends js.Object {
+    var syncSource: SyncSource
+    var workspaceId: js.UndefOr[Id]
+  }
+
+  object GetSyncJobRequest {
+    @inline
+    def apply(
+        syncSource: SyncSource,
+        workspaceId: js.UndefOr[Id] = js.undefined
+    ): GetSyncJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "syncSource" -> syncSource.asInstanceOf[js.Any]
+      )
+
+      workspaceId.foreach(__v => __obj.updateDynamic("workspaceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSyncJobRequest]
+    }
+  }
+
+  @js.native
+  trait GetSyncJobResponse extends js.Object {
+    var arn: TwinMakerArn
+    var creationDateTime: Timestamp
+    var status: SyncJobStatus
+    var syncRole: RoleArn
+    var syncSource: SyncSource
+    var updateDateTime: Timestamp
+    var workspaceId: Id
+  }
+
+  object GetSyncJobResponse {
+    @inline
+    def apply(
+        arn: TwinMakerArn,
+        creationDateTime: Timestamp,
+        status: SyncJobStatus,
+        syncRole: RoleArn,
+        syncSource: SyncSource,
+        updateDateTime: Timestamp,
+        workspaceId: Id
+    ): GetSyncJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "creationDateTime" -> creationDateTime.asInstanceOf[js.Any],
+        "status" -> status.asInstanceOf[js.Any],
+        "syncRole" -> syncRole.asInstanceOf[js.Any],
+        "syncSource" -> syncSource.asInstanceOf[js.Any],
+        "updateDateTime" -> updateDateTime.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSyncJobResponse]
     }
   }
 
@@ -1352,6 +1765,8 @@ package object iottwinmaker {
   }
 
   /** An object that filters items in a list of component types.
+    *
+    * '''Note:'''Only one object is accepted as a valid input.
     */
   @js.native
   trait ListComponentTypesFilter extends js.Object {
@@ -1434,6 +1849,7 @@ package object iottwinmaker {
   @js.native
   trait ListEntitiesFilter extends js.Object {
     var componentTypeId: js.UndefOr[ComponentTypeId]
+    var externalId: js.UndefOr[String]
     var parentEntityId: js.UndefOr[ParentEntityId]
   }
 
@@ -1441,10 +1857,12 @@ package object iottwinmaker {
     @inline
     def apply(
         componentTypeId: js.UndefOr[ComponentTypeId] = js.undefined,
+        externalId: js.UndefOr[String] = js.undefined,
         parentEntityId: js.UndefOr[ParentEntityId] = js.undefined
     ): ListEntitiesFilter = {
       val __obj = js.Dynamic.literal()
       componentTypeId.foreach(__v => __obj.updateDynamic("componentTypeId")(__v.asInstanceOf[js.Any]))
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
       parentEntityId.foreach(__v => __obj.updateDynamic("parentEntityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesFilter]
     }
@@ -1540,6 +1958,98 @@ package object iottwinmaker {
   }
 
   @js.native
+  trait ListSyncJobsRequest extends js.Object {
+    var workspaceId: Id
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSyncJobsRequest {
+    @inline
+    def apply(
+        workspaceId: Id,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSyncJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSyncJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSyncJobsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var syncJobSummaries: js.UndefOr[SyncJobSummaries]
+  }
+
+  object ListSyncJobsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        syncJobSummaries: js.UndefOr[SyncJobSummaries] = js.undefined
+    ): ListSyncJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      syncJobSummaries.foreach(__v => __obj.updateDynamic("syncJobSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSyncJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSyncResourcesRequest extends js.Object {
+    var syncSource: SyncSource
+    var workspaceId: Id
+    var filters: js.UndefOr[SyncResourceFilters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSyncResourcesRequest {
+    @inline
+    def apply(
+        syncSource: SyncSource,
+        workspaceId: Id,
+        filters: js.UndefOr[SyncResourceFilters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSyncResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "syncSource" -> syncSource.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSyncResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSyncResourcesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var syncResources: js.UndefOr[SyncResourceSummaries]
+  }
+
+  object ListSyncResourcesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        syncResources: js.UndefOr[SyncResourceSummaries] = js.undefined
+    ): ListSyncResourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      syncResources.foreach(__v => __obj.updateDynamic("syncResources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSyncResourcesResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var resourceARN: TwinMakerArn
     var maxResults: js.UndefOr[MaxResults]
@@ -1620,6 +2130,29 @@ package object iottwinmaker {
     }
   }
 
+  /** Filter criteria that orders the return output. It can be sorted in ascending or descending order.
+    */
+  @js.native
+  trait OrderBy extends js.Object {
+    var propertyName: String
+    var order: js.UndefOr[Order]
+  }
+
+  object OrderBy {
+    @inline
+    def apply(
+        propertyName: String,
+        order: js.UndefOr[Order] = js.undefined
+    ): OrderBy = {
+      val __obj = js.Dynamic.literal(
+        "propertyName" -> propertyName.asInstanceOf[js.Any]
+      )
+
+      order.foreach(__v => __obj.updateDynamic("order")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OrderBy]
+    }
+  }
+
   /** The parent entity update request.
     */
   @js.native
@@ -1643,6 +2176,41 @@ package object iottwinmaker {
     }
   }
 
+  /** The pricing plan.
+    */
+  @js.native
+  trait PricingPlan extends js.Object {
+    var effectiveDateTime: Timestamp
+    var pricingMode: PricingMode
+    var updateDateTime: Timestamp
+    var updateReason: UpdateReason
+    var billableEntityCount: js.UndefOr[Double]
+    var bundleInformation: js.UndefOr[BundleInformation]
+  }
+
+  object PricingPlan {
+    @inline
+    def apply(
+        effectiveDateTime: Timestamp,
+        pricingMode: PricingMode,
+        updateDateTime: Timestamp,
+        updateReason: UpdateReason,
+        billableEntityCount: js.UndefOr[Double] = js.undefined,
+        bundleInformation: js.UndefOr[BundleInformation] = js.undefined
+    ): PricingPlan = {
+      val __obj = js.Dynamic.literal(
+        "effectiveDateTime" -> effectiveDateTime.asInstanceOf[js.Any],
+        "pricingMode" -> pricingMode.asInstanceOf[js.Any],
+        "updateDateTime" -> updateDateTime.asInstanceOf[js.Any],
+        "updateReason" -> updateReason.asInstanceOf[js.Any]
+      )
+
+      billableEntityCount.foreach(__v => __obj.updateDynamic("billableEntityCount")(__v.asInstanceOf[js.Any]))
+      bundleInformation.foreach(__v => __obj.updateDynamic("bundleInformation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PricingPlan]
+    }
+  }
+
   /** An object that sets information about a property.
     */
   @js.native
@@ -1650,6 +2218,7 @@ package object iottwinmaker {
     var configuration: js.UndefOr[Configuration]
     var dataType: js.UndefOr[DataType]
     var defaultValue: js.UndefOr[DataValue]
+    var displayName: js.UndefOr[PropertyDisplayName]
     var isExternalId: js.UndefOr[Boolean]
     var isRequiredInEntity: js.UndefOr[Boolean]
     var isStoredExternally: js.UndefOr[Boolean]
@@ -1662,6 +2231,7 @@ package object iottwinmaker {
         configuration: js.UndefOr[Configuration] = js.undefined,
         dataType: js.UndefOr[DataType] = js.undefined,
         defaultValue: js.UndefOr[DataValue] = js.undefined,
+        displayName: js.UndefOr[PropertyDisplayName] = js.undefined,
         isExternalId: js.UndefOr[Boolean] = js.undefined,
         isRequiredInEntity: js.UndefOr[Boolean] = js.undefined,
         isStoredExternally: js.UndefOr[Boolean] = js.undefined,
@@ -1671,6 +2241,7 @@ package object iottwinmaker {
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       dataType.foreach(__v => __obj.updateDynamic("dataType")(__v.asInstanceOf[js.Any]))
       defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       isExternalId.foreach(__v => __obj.updateDynamic("isExternalId")(__v.asInstanceOf[js.Any]))
       isRequiredInEntity.foreach(__v => __obj.updateDynamic("isRequiredInEntity")(__v.asInstanceOf[js.Any]))
       isStoredExternally.foreach(__v => __obj.updateDynamic("isStoredExternally")(__v.asInstanceOf[js.Any]))
@@ -1693,6 +2264,7 @@ package object iottwinmaker {
     var isTimeSeries: Boolean
     var configuration: js.UndefOr[Configuration]
     var defaultValue: js.UndefOr[DataValue]
+    var displayName: js.UndefOr[PropertyDisplayName]
   }
 
   object PropertyDefinitionResponse {
@@ -1707,7 +2279,8 @@ package object iottwinmaker {
         isStoredExternally: Boolean,
         isTimeSeries: Boolean,
         configuration: js.UndefOr[Configuration] = js.undefined,
-        defaultValue: js.UndefOr[DataValue] = js.undefined
+        defaultValue: js.UndefOr[DataValue] = js.undefined,
+        displayName: js.UndefOr[PropertyDisplayName] = js.undefined
     ): PropertyDefinitionResponse = {
       val __obj = js.Dynamic.literal(
         "dataType" -> dataType.asInstanceOf[js.Any],
@@ -1722,6 +2295,7 @@ package object iottwinmaker {
 
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PropertyDefinitionResponse]
     }
   }
@@ -1747,6 +2321,52 @@ package object iottwinmaker {
       propertyName.foreach(__v => __obj.updateDynamic("propertyName")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PropertyFilter]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait PropertyGroupRequest extends js.Object {
+    var groupType: js.UndefOr[GroupType]
+    var propertyNames: js.UndefOr[PropertyNames]
+  }
+
+  object PropertyGroupRequest {
+    @inline
+    def apply(
+        groupType: js.UndefOr[GroupType] = js.undefined,
+        propertyNames: js.UndefOr[PropertyNames] = js.undefined
+    ): PropertyGroupRequest = {
+      val __obj = js.Dynamic.literal()
+      groupType.foreach(__v => __obj.updateDynamic("groupType")(__v.asInstanceOf[js.Any]))
+      propertyNames.foreach(__v => __obj.updateDynamic("propertyNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PropertyGroupRequest]
+    }
+  }
+
+  /** The property group response
+    */
+  @js.native
+  trait PropertyGroupResponse extends js.Object {
+    var groupType: GroupType
+    var isInherited: Boolean
+    var propertyNames: PropertyNames
+  }
+
+  object PropertyGroupResponse {
+    @inline
+    def apply(
+        groupType: GroupType,
+        isInherited: Boolean,
+        propertyNames: PropertyNames
+    ): PropertyGroupResponse = {
+      val __obj = js.Dynamic.literal(
+        "groupType" -> groupType.asInstanceOf[js.Any],
+        "isInherited" -> isInherited.asInstanceOf[js.Any],
+        "propertyNames" -> propertyNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PropertyGroupResponse]
     }
   }
 
@@ -1822,25 +2442,29 @@ package object iottwinmaker {
     */
   @js.native
   trait PropertyValue extends js.Object {
-    var timestamp: Timestamp
     var value: DataValue
+    var time: js.UndefOr[Time]
+    var timestamp: js.UndefOr[Timestamp]
   }
 
   object PropertyValue {
     @inline
     def apply(
-        timestamp: Timestamp,
-        value: DataValue
+        value: DataValue,
+        time: js.UndefOr[Time] = js.undefined,
+        timestamp: js.UndefOr[Timestamp] = js.undefined
     ): PropertyValue = {
       val __obj = js.Dynamic.literal(
-        "timestamp" -> timestamp.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
+
+      time.foreach(__v => __obj.updateDynamic("time")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PropertyValue]
     }
   }
 
-  /** An object that specifies information about time series property values.
+  /** An object that specifies information about time series property values. This object is used and consumed by the [[https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_BatchPutPropertyValues.html|BatchPutPropertyValues]] action.
     */
   @js.native
   trait PropertyValueEntry extends js.Object {
@@ -1886,6 +2510,17 @@ package object iottwinmaker {
     }
   }
 
+  @js.native
+  trait QueryResultValue extends js.Object
+
+  object QueryResultValue {
+    @inline
+    def apply(): QueryResultValue = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[QueryResultValue]
+    }
+  }
+
   /** An object that specifies a relationship with another component type.
     */
   @js.native
@@ -1925,6 +2560,24 @@ package object iottwinmaker {
       targetComponentName.foreach(__v => __obj.updateDynamic("targetComponentName")(__v.asInstanceOf[js.Any]))
       targetEntityId.foreach(__v => __obj.updateDynamic("targetEntityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationshipValue]
+    }
+  }
+
+  /** Represents a single row in the query results.
+    */
+  @js.native
+  trait Row extends js.Object {
+    var rowData: js.UndefOr[RowData]
+  }
+
+  object Row {
+    @inline
+    def apply(
+        rowData: js.UndefOr[RowData] = js.undefined
+    ): Row = {
+      val __obj = js.Dynamic.literal()
+      rowData.foreach(__v => __obj.updateDynamic("rowData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Row]
     }
   }
 
@@ -1981,6 +2634,159 @@ package object iottwinmaker {
       error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Status]
+    }
+  }
+
+  /** The SyncJob status.
+    */
+  @js.native
+  trait SyncJobStatus extends js.Object {
+    var error: js.UndefOr[ErrorDetails]
+    var state: js.UndefOr[SyncJobState]
+  }
+
+  object SyncJobStatus {
+    @inline
+    def apply(
+        error: js.UndefOr[ErrorDetails] = js.undefined,
+        state: js.UndefOr[SyncJobState] = js.undefined
+    ): SyncJobStatus = {
+      val __obj = js.Dynamic.literal()
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncJobStatus]
+    }
+  }
+
+  /** The SyncJob summary.
+    */
+  @js.native
+  trait SyncJobSummary extends js.Object {
+    var arn: js.UndefOr[TwinMakerArn]
+    var creationDateTime: js.UndefOr[Timestamp]
+    var status: js.UndefOr[SyncJobStatus]
+    var syncSource: js.UndefOr[SyncSource]
+    var updateDateTime: js.UndefOr[Timestamp]
+    var workspaceId: js.UndefOr[Id]
+  }
+
+  object SyncJobSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[TwinMakerArn] = js.undefined,
+        creationDateTime: js.UndefOr[Timestamp] = js.undefined,
+        status: js.UndefOr[SyncJobStatus] = js.undefined,
+        syncSource: js.UndefOr[SyncSource] = js.undefined,
+        updateDateTime: js.UndefOr[Timestamp] = js.undefined,
+        workspaceId: js.UndefOr[Id] = js.undefined
+    ): SyncJobSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      syncSource.foreach(__v => __obj.updateDynamic("syncSource")(__v.asInstanceOf[js.Any]))
+      updateDateTime.foreach(__v => __obj.updateDynamic("updateDateTime")(__v.asInstanceOf[js.Any]))
+      workspaceId.foreach(__v => __obj.updateDynamic("workspaceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncJobSummary]
+    }
+  }
+
+  /** The sync resource filter.
+    */
+  @js.native
+  trait SyncResourceFilter extends js.Object {
+    var externalId: js.UndefOr[Id]
+    var resourceId: js.UndefOr[Id]
+    var resourceType: js.UndefOr[SyncResourceType]
+    var state: js.UndefOr[SyncResourceState]
+  }
+
+  object SyncResourceFilter {
+    @inline
+    def apply(
+        externalId: js.UndefOr[Id] = js.undefined,
+        resourceId: js.UndefOr[Id] = js.undefined,
+        resourceType: js.UndefOr[SyncResourceType] = js.undefined,
+        state: js.UndefOr[SyncResourceState] = js.undefined
+    ): SyncResourceFilter = {
+      val __obj = js.Dynamic.literal()
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncResourceFilter]
+    }
+  }
+
+  /** The sync resource status.
+    */
+  @js.native
+  trait SyncResourceStatus extends js.Object {
+    var error: js.UndefOr[ErrorDetails]
+    var state: js.UndefOr[SyncResourceState]
+  }
+
+  object SyncResourceStatus {
+    @inline
+    def apply(
+        error: js.UndefOr[ErrorDetails] = js.undefined,
+        state: js.UndefOr[SyncResourceState] = js.undefined
+    ): SyncResourceStatus = {
+      val __obj = js.Dynamic.literal()
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncResourceStatus]
+    }
+  }
+
+  /** The sync resource summary.
+    */
+  @js.native
+  trait SyncResourceSummary extends js.Object {
+    var externalId: js.UndefOr[Id]
+    var resourceId: js.UndefOr[Id]
+    var resourceType: js.UndefOr[SyncResourceType]
+    var status: js.UndefOr[SyncResourceStatus]
+    var updateDateTime: js.UndefOr[Timestamp]
+  }
+
+  object SyncResourceSummary {
+    @inline
+    def apply(
+        externalId: js.UndefOr[Id] = js.undefined,
+        resourceId: js.UndefOr[Id] = js.undefined,
+        resourceType: js.UndefOr[SyncResourceType] = js.undefined,
+        status: js.UndefOr[SyncResourceStatus] = js.undefined,
+        updateDateTime: js.UndefOr[Timestamp] = js.undefined
+    ): SyncResourceSummary = {
+      val __obj = js.Dynamic.literal()
+      externalId.foreach(__v => __obj.updateDynamic("externalId")(__v.asInstanceOf[js.Any]))
+      resourceId.foreach(__v => __obj.updateDynamic("resourceId")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      updateDateTime.foreach(__v => __obj.updateDynamic("updateDateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SyncResourceSummary]
+    }
+  }
+
+  /** The tabular conditions.
+    */
+  @js.native
+  trait TabularConditions extends js.Object {
+    var orderBy: js.UndefOr[OrderByList]
+    var propertyFilters: js.UndefOr[PropertyFilters]
+  }
+
+  object TabularConditions {
+    @inline
+    def apply(
+        orderBy: js.UndefOr[OrderByList] = js.undefined,
+        propertyFilters: js.UndefOr[PropertyFilters] = js.undefined
+    ): TabularConditions = {
+      val __obj = js.Dynamic.literal()
+      orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
+      propertyFilters.foreach(__v => __obj.updateDynamic("propertyFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TabularConditions]
     }
   }
 
@@ -2050,11 +2856,13 @@ package object iottwinmaker {
   trait UpdateComponentTypeRequest extends js.Object {
     var componentTypeId: ComponentTypeId
     var workspaceId: Id
+    var componentTypeName: js.UndefOr[ComponentTypeName]
     var description: js.UndefOr[Description]
     var extendsFrom: js.UndefOr[ExtendsFrom]
     var functions: js.UndefOr[FunctionsRequest]
     var isSingleton: js.UndefOr[Boolean]
     var propertyDefinitions: js.UndefOr[PropertyDefinitionsRequest]
+    var propertyGroups: js.UndefOr[PropertyGroupsRequest]
   }
 
   object UpdateComponentTypeRequest {
@@ -2062,22 +2870,26 @@ package object iottwinmaker {
     def apply(
         componentTypeId: ComponentTypeId,
         workspaceId: Id,
+        componentTypeName: js.UndefOr[ComponentTypeName] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         extendsFrom: js.UndefOr[ExtendsFrom] = js.undefined,
         functions: js.UndefOr[FunctionsRequest] = js.undefined,
         isSingleton: js.UndefOr[Boolean] = js.undefined,
-        propertyDefinitions: js.UndefOr[PropertyDefinitionsRequest] = js.undefined
+        propertyDefinitions: js.UndefOr[PropertyDefinitionsRequest] = js.undefined,
+        propertyGroups: js.UndefOr[PropertyGroupsRequest] = js.undefined
     ): UpdateComponentTypeRequest = {
       val __obj = js.Dynamic.literal(
         "componentTypeId" -> componentTypeId.asInstanceOf[js.Any],
         "workspaceId" -> workspaceId.asInstanceOf[js.Any]
       )
 
+      componentTypeName.foreach(__v => __obj.updateDynamic("componentTypeName")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       extendsFrom.foreach(__v => __obj.updateDynamic("extendsFrom")(__v.asInstanceOf[js.Any]))
       functions.foreach(__v => __obj.updateDynamic("functions")(__v.asInstanceOf[js.Any]))
       isSingleton.foreach(__v => __obj.updateDynamic("isSingleton")(__v.asInstanceOf[js.Any]))
       propertyDefinitions.foreach(__v => __obj.updateDynamic("propertyDefinitions")(__v.asInstanceOf[js.Any]))
+      propertyGroups.foreach(__v => __obj.updateDynamic("propertyGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateComponentTypeRequest]
     }
   }
@@ -2158,6 +2970,48 @@ package object iottwinmaker {
         "updateDateTime" -> updateDateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateEntityResponse]
+    }
+  }
+
+  @js.native
+  trait UpdatePricingPlanRequest extends js.Object {
+    var pricingMode: PricingMode
+    var bundleNames: js.UndefOr[PricingBundles]
+  }
+
+  object UpdatePricingPlanRequest {
+    @inline
+    def apply(
+        pricingMode: PricingMode,
+        bundleNames: js.UndefOr[PricingBundles] = js.undefined
+    ): UpdatePricingPlanRequest = {
+      val __obj = js.Dynamic.literal(
+        "pricingMode" -> pricingMode.asInstanceOf[js.Any]
+      )
+
+      bundleNames.foreach(__v => __obj.updateDynamic("bundleNames")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePricingPlanRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePricingPlanResponse extends js.Object {
+    var currentPricingPlan: PricingPlan
+    var pendingPricingPlan: js.UndefOr[PricingPlan]
+  }
+
+  object UpdatePricingPlanResponse {
+    @inline
+    def apply(
+        currentPricingPlan: PricingPlan,
+        pendingPricingPlan: js.UndefOr[PricingPlan] = js.undefined
+    ): UpdatePricingPlanResponse = {
+      val __obj = js.Dynamic.literal(
+        "currentPricingPlan" -> currentPricingPlan.asInstanceOf[js.Any]
+      )
+
+      pendingPricingPlan.foreach(__v => __obj.updateDynamic("pendingPricingPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePricingPlanResponse]
     }
   }
 

@@ -61,6 +61,25 @@ object ComparisonOperatorType {
 }
 
 @js.native
+sealed trait ComputeStatus extends js.Any
+object ComputeStatus {
+  val PENDING = "PENDING".asInstanceOf[ComputeStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[ComputeStatus]
+  val TERMINATING = "TERMINATING".asInstanceOf[ComputeStatus]
+
+  @inline def values: js.Array[ComputeStatus] = js.Array(PENDING, ACTIVE, TERMINATING)
+}
+
+@js.native
+sealed trait ComputeType extends js.Any
+object ComputeType {
+  val EC2 = "EC2".asInstanceOf[ComputeType]
+  val ANYWHERE = "ANYWHERE".asInstanceOf[ComputeType]
+
+  @inline def values: js.Array[ComputeType] = js.Array(EC2, ANYWHERE)
+}
+
+@js.native
 sealed trait EC2InstanceType extends js.Any
 object EC2InstanceType {
   val `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
@@ -145,6 +164,38 @@ object EC2InstanceType {
   val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[EC2InstanceType]
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.large` = "c5d.large".asInstanceOf[EC2InstanceType]
+  val `c5d.xlarge` = "c5d.xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.2xlarge` = "c5d.2xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.4xlarge` = "c5d.4xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.9xlarge` = "c5d.9xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.12xlarge` = "c5d.12xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.18xlarge` = "c5d.18xlarge".asInstanceOf[EC2InstanceType]
+  val `c5d.24xlarge` = "c5d.24xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.large` = "c6a.large".asInstanceOf[EC2InstanceType]
+  val `c6a.xlarge` = "c6a.xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.2xlarge` = "c6a.2xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.4xlarge` = "c6a.4xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.8xlarge` = "c6a.8xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.12xlarge` = "c6a.12xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.16xlarge` = "c6a.16xlarge".asInstanceOf[EC2InstanceType]
+  val `c6a.24xlarge` = "c6a.24xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.large` = "c6i.large".asInstanceOf[EC2InstanceType]
+  val `c6i.xlarge` = "c6i.xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.2xlarge` = "c6i.2xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.4xlarge` = "c6i.4xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.8xlarge` = "c6i.8xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.12xlarge` = "c6i.12xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.16xlarge` = "c6i.16xlarge".asInstanceOf[EC2InstanceType]
+  val `c6i.24xlarge` = "c6i.24xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.large` = "r5d.large".asInstanceOf[EC2InstanceType]
+  val `r5d.xlarge` = "r5d.xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.2xlarge` = "r5d.2xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.4xlarge` = "r5d.4xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.8xlarge` = "r5d.8xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.12xlarge` = "r5d.12xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.16xlarge` = "r5d.16xlarge".asInstanceOf[EC2InstanceType]
+  val `r5d.24xlarge` = "r5d.24xlarge".asInstanceOf[EC2InstanceType]
 
   @inline def values: js.Array[EC2InstanceType] = js.Array(
     `t2.micro`,
@@ -228,7 +279,39 @@ object EC2InstanceType {
     `m5a.8xlarge`,
     `m5a.12xlarge`,
     `m5a.16xlarge`,
-    `m5a.24xlarge`
+    `m5a.24xlarge`,
+    `c5d.large`,
+    `c5d.xlarge`,
+    `c5d.2xlarge`,
+    `c5d.4xlarge`,
+    `c5d.9xlarge`,
+    `c5d.12xlarge`,
+    `c5d.18xlarge`,
+    `c5d.24xlarge`,
+    `c6a.large`,
+    `c6a.xlarge`,
+    `c6a.2xlarge`,
+    `c6a.4xlarge`,
+    `c6a.8xlarge`,
+    `c6a.12xlarge`,
+    `c6a.16xlarge`,
+    `c6a.24xlarge`,
+    `c6i.large`,
+    `c6i.xlarge`,
+    `c6i.2xlarge`,
+    `c6i.4xlarge`,
+    `c6i.8xlarge`,
+    `c6i.12xlarge`,
+    `c6i.16xlarge`,
+    `c6i.24xlarge`,
+    `r5d.large`,
+    `r5d.xlarge`,
+    `r5d.2xlarge`,
+    `r5d.4xlarge`,
+    `r5d.8xlarge`,
+    `r5d.12xlarge`,
+    `r5d.16xlarge`,
+    `r5d.24xlarge`
   )
 }
 
@@ -268,6 +351,7 @@ object EventCode {
   val FLEET_VPC_PEERING_FAILED = "FLEET_VPC_PEERING_FAILED".asInstanceOf[EventCode]
   val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
   val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
+  val INSTANCE_RECYCLED = "INSTANCE_RECYCLED".asInstanceOf[EventCode]
 
   @inline def values: js.Array[EventCode] = js.Array(
     GENERIC_EVENT,
@@ -302,7 +386,8 @@ object EventCode {
     FLEET_VPC_PEERING_SUCCEEDED,
     FLEET_VPC_PEERING_FAILED,
     FLEET_VPC_PEERING_DELETED,
-    INSTANCE_INTERRUPTED
+    INSTANCE_INTERRUPTED,
+    INSTANCE_RECYCLED
   )
 }
 
@@ -326,8 +411,9 @@ object FleetStatus {
   val DELETING = "DELETING".asInstanceOf[FleetStatus]
   val ERROR = "ERROR".asInstanceOf[FleetStatus]
   val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
+  val NOT_FOUND = "NOT_FOUND".asInstanceOf[FleetStatus]
 
-  @inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+  @inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED, NOT_FOUND)
 }
 
 @js.native
@@ -660,6 +746,15 @@ object IpProtocol {
 }
 
 @js.native
+sealed trait LocationFilter extends js.Any
+object LocationFilter {
+  val AWS = "AWS".asInstanceOf[LocationFilter]
+  val CUSTOM = "CUSTOM".asInstanceOf[LocationFilter]
+
+  @inline def values: js.Array[LocationFilter] = js.Array(AWS, CUSTOM)
+}
+
+@js.native
 sealed trait LocationUpdateStatus extends js.Any
 object LocationUpdateStatus {
   val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[LocationUpdateStatus]
@@ -696,6 +791,7 @@ object MetricName {
   val PercentIdleInstances = "PercentIdleInstances".asInstanceOf[MetricName]
   val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
   val WaitTime = "WaitTime".asInstanceOf[MetricName]
+  val ConcurrentActivatableGameSessions = "ConcurrentActivatableGameSessions".asInstanceOf[MetricName]
 
   @inline def values: js.Array[MetricName] = js.Array(
     ActivatingGameSessions,
@@ -708,7 +804,8 @@ object MetricName {
     PercentAvailableGameSessions,
     PercentIdleInstances,
     QueueDepth,
-    WaitTime
+    WaitTime,
+    ConcurrentActivatableGameSessions
   )
 }
 

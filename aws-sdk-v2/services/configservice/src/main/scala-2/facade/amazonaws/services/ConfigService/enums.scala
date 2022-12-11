@@ -115,6 +115,15 @@ object DeliveryStatus {
 }
 
 @js.native
+sealed trait EvaluationMode extends js.Any
+object EvaluationMode {
+  val DETECTIVE = "DETECTIVE".asInstanceOf[EvaluationMode]
+  val PROACTIVE = "PROACTIVE".asInstanceOf[EvaluationMode]
+
+  @inline def values: js.Array[EvaluationMode] = js.Array(DETECTIVE, PROACTIVE)
+}
+
+@js.native
 sealed trait EventSource extends js.Any
 object EventSource {
   val `aws.config` = "aws.config".asInstanceOf[EventSource]
@@ -179,6 +188,15 @@ object OrganizationConfigRuleTriggerType {
   val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
   @inline def values: js.Array[OrganizationConfigRuleTriggerType] = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
+}
+
+@js.native
+sealed trait OrganizationConfigRuleTriggerTypeNoSN extends js.Any
+object OrganizationConfigRuleTriggerTypeNoSN {
+  val ConfigurationItemChangeNotification = "ConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerTypeNoSN]
+  val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerTypeNoSN]
+
+  @inline def values: js.Array[OrganizationConfigRuleTriggerTypeNoSN] = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification)
 }
 
 @js.native
@@ -264,8 +282,9 @@ sealed trait Owner extends js.Any
 object Owner {
   val CUSTOM_LAMBDA = "CUSTOM_LAMBDA".asInstanceOf[Owner]
   val AWS = "AWS".asInstanceOf[Owner]
+  val CUSTOM_POLICY = "CUSTOM_POLICY".asInstanceOf[Owner]
 
-  @inline def values: js.Array[Owner] = js.Array(CUSTOM_LAMBDA, AWS)
+  @inline def values: js.Array[Owner] = js.Array(CUSTOM_LAMBDA, AWS, CUSTOM_POLICY)
 }
 
 @js.native
@@ -308,6 +327,14 @@ object RemediationTargetType {
 }
 
 @js.native
+sealed trait ResourceConfigurationSchemaType extends js.Any
+object ResourceConfigurationSchemaType {
+  val CFN_RESOURCE_SCHEMA = "CFN_RESOURCE_SCHEMA".asInstanceOf[ResourceConfigurationSchemaType]
+
+  @inline def values: js.Array[ResourceConfigurationSchemaType] = js.Array(CFN_RESOURCE_SCHEMA)
+}
+
+@js.native
 sealed trait ResourceCountGroupKey extends js.Any
 object ResourceCountGroupKey {
   val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ResourceCountGroupKey]
@@ -315,6 +342,16 @@ object ResourceCountGroupKey {
   val AWS_REGION = "AWS_REGION".asInstanceOf[ResourceCountGroupKey]
 
   @inline def values: js.Array[ResourceCountGroupKey] = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
+}
+
+@js.native
+sealed trait ResourceEvaluationStatus extends js.Any
+object ResourceEvaluationStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ResourceEvaluationStatus]
+  val FAILED = "FAILED".asInstanceOf[ResourceEvaluationStatus]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ResourceEvaluationStatus]
+
+  @inline def values: js.Array[ResourceEvaluationStatus] = js.Array(IN_PROGRESS, FAILED, SUCCEEDED)
 }
 
 @js.native
@@ -429,6 +466,61 @@ object ResourceType {
   val `AWS::EFS::FileSystem` = "AWS::EFS::FileSystem".asInstanceOf[ResourceType]
   val `AWS::EKS::Cluster` = "AWS::EKS::Cluster".asInstanceOf[ResourceType]
   val `AWS::OpenSearch::Domain` = "AWS::OpenSearch::Domain".asInstanceOf[ResourceType]
+  val `AWS::EC2::TransitGateway` = "AWS::EC2::TransitGateway".asInstanceOf[ResourceType]
+  val `AWS::Kinesis::Stream` = "AWS::Kinesis::Stream".asInstanceOf[ResourceType]
+  val `AWS::Kinesis::StreamConsumer` = "AWS::Kinesis::StreamConsumer".asInstanceOf[ResourceType]
+  val `AWS::CodeDeploy::Application` = "AWS::CodeDeploy::Application".asInstanceOf[ResourceType]
+  val `AWS::CodeDeploy::DeploymentConfig` = "AWS::CodeDeploy::DeploymentConfig".asInstanceOf[ResourceType]
+  val `AWS::CodeDeploy::DeploymentGroup` = "AWS::CodeDeploy::DeploymentGroup".asInstanceOf[ResourceType]
+  val `AWS::EC2::LaunchTemplate` = "AWS::EC2::LaunchTemplate".asInstanceOf[ResourceType]
+  val `AWS::ECR::PublicRepository` = "AWS::ECR::PublicRepository".asInstanceOf[ResourceType]
+  val `AWS::GuardDuty::Detector` = "AWS::GuardDuty::Detector".asInstanceOf[ResourceType]
+  val `AWS::EMR::SecurityConfiguration` = "AWS::EMR::SecurityConfiguration".asInstanceOf[ResourceType]
+  val `AWS::SageMaker::CodeRepository` = "AWS::SageMaker::CodeRepository".asInstanceOf[ResourceType]
+  val `AWS::Route53Resolver::ResolverEndpoint` = "AWS::Route53Resolver::ResolverEndpoint".asInstanceOf[ResourceType]
+  val `AWS::Route53Resolver::ResolverRule` = "AWS::Route53Resolver::ResolverRule".asInstanceOf[ResourceType]
+  val `AWS::Route53Resolver::ResolverRuleAssociation` = "AWS::Route53Resolver::ResolverRuleAssociation".asInstanceOf[ResourceType]
+  val `AWS::DMS::ReplicationSubnetGroup` = "AWS::DMS::ReplicationSubnetGroup".asInstanceOf[ResourceType]
+  val `AWS::DMS::EventSubscription` = "AWS::DMS::EventSubscription".asInstanceOf[ResourceType]
+  val `AWS::MSK::Cluster` = "AWS::MSK::Cluster".asInstanceOf[ResourceType]
+  val `AWS::StepFunctions::Activity` = "AWS::StepFunctions::Activity".asInstanceOf[ResourceType]
+  val `AWS::WorkSpaces::Workspace` = "AWS::WorkSpaces::Workspace".asInstanceOf[ResourceType]
+  val `AWS::WorkSpaces::ConnectionAlias` = "AWS::WorkSpaces::ConnectionAlias".asInstanceOf[ResourceType]
+  val `AWS::SageMaker::Model` = "AWS::SageMaker::Model".asInstanceOf[ResourceType]
+  val `AWS::ElasticLoadBalancingV2::Listener` = "AWS::ElasticLoadBalancingV2::Listener".asInstanceOf[ResourceType]
+  val `AWS::StepFunctions::StateMachine` = "AWS::StepFunctions::StateMachine".asInstanceOf[ResourceType]
+  val `AWS::Batch::JobQueue` = "AWS::Batch::JobQueue".asInstanceOf[ResourceType]
+  val `AWS::Batch::ComputeEnvironment` = "AWS::Batch::ComputeEnvironment".asInstanceOf[ResourceType]
+  val `AWS::AccessAnalyzer::Analyzer` = "AWS::AccessAnalyzer::Analyzer".asInstanceOf[ResourceType]
+  val `AWS::Athena::WorkGroup` = "AWS::Athena::WorkGroup".asInstanceOf[ResourceType]
+  val `AWS::Athena::DataCatalog` = "AWS::Athena::DataCatalog".asInstanceOf[ResourceType]
+  val `AWS::Detective::Graph` = "AWS::Detective::Graph".asInstanceOf[ResourceType]
+  val `AWS::GlobalAccelerator::Accelerator` = "AWS::GlobalAccelerator::Accelerator".asInstanceOf[ResourceType]
+  val `AWS::GlobalAccelerator::EndpointGroup` = "AWS::GlobalAccelerator::EndpointGroup".asInstanceOf[ResourceType]
+  val `AWS::GlobalAccelerator::Listener` = "AWS::GlobalAccelerator::Listener".asInstanceOf[ResourceType]
+  val `AWS::EC2::TransitGatewayAttachment` = "AWS::EC2::TransitGatewayAttachment".asInstanceOf[ResourceType]
+  val `AWS::EC2::TransitGatewayRouteTable` = "AWS::EC2::TransitGatewayRouteTable".asInstanceOf[ResourceType]
+  val `AWS::DMS::Certificate` = "AWS::DMS::Certificate".asInstanceOf[ResourceType]
+  val `AWS::AppConfig::Application` = "AWS::AppConfig::Application".asInstanceOf[ResourceType]
+  val `AWS::AppSync::GraphQLApi` = "AWS::AppSync::GraphQLApi".asInstanceOf[ResourceType]
+  val `AWS::DataSync::LocationSMB` = "AWS::DataSync::LocationSMB".asInstanceOf[ResourceType]
+  val `AWS::DataSync::LocationFSxLustre` = "AWS::DataSync::LocationFSxLustre".asInstanceOf[ResourceType]
+  val `AWS::DataSync::LocationS3` = "AWS::DataSync::LocationS3".asInstanceOf[ResourceType]
+  val `AWS::DataSync::LocationEFS` = "AWS::DataSync::LocationEFS".asInstanceOf[ResourceType]
+  val `AWS::DataSync::Task` = "AWS::DataSync::Task".asInstanceOf[ResourceType]
+  val `AWS::DataSync::LocationNFS` = "AWS::DataSync::LocationNFS".asInstanceOf[ResourceType]
+  val `AWS::EC2::NetworkInsightsAccessScopeAnalysis` = "AWS::EC2::NetworkInsightsAccessScopeAnalysis".asInstanceOf[ResourceType]
+  val `AWS::EKS::FargateProfile` = "AWS::EKS::FargateProfile".asInstanceOf[ResourceType]
+  val `AWS::Glue::Job` = "AWS::Glue::Job".asInstanceOf[ResourceType]
+  val `AWS::GuardDuty::ThreatIntelSet` = "AWS::GuardDuty::ThreatIntelSet".asInstanceOf[ResourceType]
+  val `AWS::GuardDuty::IPSet` = "AWS::GuardDuty::IPSet".asInstanceOf[ResourceType]
+  val `AWS::SageMaker::Workteam` = "AWS::SageMaker::Workteam".asInstanceOf[ResourceType]
+  val `AWS::SageMaker::NotebookInstanceLifecycleConfig` = "AWS::SageMaker::NotebookInstanceLifecycleConfig".asInstanceOf[ResourceType]
+  val `AWS::ServiceDiscovery::Service` = "AWS::ServiceDiscovery::Service".asInstanceOf[ResourceType]
+  val `AWS::ServiceDiscovery::PublicDnsNamespace` = "AWS::ServiceDiscovery::PublicDnsNamespace".asInstanceOf[ResourceType]
+  val `AWS::SES::ContactList` = "AWS::SES::ContactList".asInstanceOf[ResourceType]
+  val `AWS::SES::ConfigurationSet` = "AWS::SES::ConfigurationSet".asInstanceOf[ResourceType]
+  val `AWS::Route53::HostedZone` = "AWS::Route53::HostedZone".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
     `AWS::EC2::CustomerGateway`,
@@ -539,7 +631,62 @@ object ResourceType {
     `AWS::EFS::AccessPoint`,
     `AWS::EFS::FileSystem`,
     `AWS::EKS::Cluster`,
-    `AWS::OpenSearch::Domain`
+    `AWS::OpenSearch::Domain`,
+    `AWS::EC2::TransitGateway`,
+    `AWS::Kinesis::Stream`,
+    `AWS::Kinesis::StreamConsumer`,
+    `AWS::CodeDeploy::Application`,
+    `AWS::CodeDeploy::DeploymentConfig`,
+    `AWS::CodeDeploy::DeploymentGroup`,
+    `AWS::EC2::LaunchTemplate`,
+    `AWS::ECR::PublicRepository`,
+    `AWS::GuardDuty::Detector`,
+    `AWS::EMR::SecurityConfiguration`,
+    `AWS::SageMaker::CodeRepository`,
+    `AWS::Route53Resolver::ResolverEndpoint`,
+    `AWS::Route53Resolver::ResolverRule`,
+    `AWS::Route53Resolver::ResolverRuleAssociation`,
+    `AWS::DMS::ReplicationSubnetGroup`,
+    `AWS::DMS::EventSubscription`,
+    `AWS::MSK::Cluster`,
+    `AWS::StepFunctions::Activity`,
+    `AWS::WorkSpaces::Workspace`,
+    `AWS::WorkSpaces::ConnectionAlias`,
+    `AWS::SageMaker::Model`,
+    `AWS::ElasticLoadBalancingV2::Listener`,
+    `AWS::StepFunctions::StateMachine`,
+    `AWS::Batch::JobQueue`,
+    `AWS::Batch::ComputeEnvironment`,
+    `AWS::AccessAnalyzer::Analyzer`,
+    `AWS::Athena::WorkGroup`,
+    `AWS::Athena::DataCatalog`,
+    `AWS::Detective::Graph`,
+    `AWS::GlobalAccelerator::Accelerator`,
+    `AWS::GlobalAccelerator::EndpointGroup`,
+    `AWS::GlobalAccelerator::Listener`,
+    `AWS::EC2::TransitGatewayAttachment`,
+    `AWS::EC2::TransitGatewayRouteTable`,
+    `AWS::DMS::Certificate`,
+    `AWS::AppConfig::Application`,
+    `AWS::AppSync::GraphQLApi`,
+    `AWS::DataSync::LocationSMB`,
+    `AWS::DataSync::LocationFSxLustre`,
+    `AWS::DataSync::LocationS3`,
+    `AWS::DataSync::LocationEFS`,
+    `AWS::DataSync::Task`,
+    `AWS::DataSync::LocationNFS`,
+    `AWS::EC2::NetworkInsightsAccessScopeAnalysis`,
+    `AWS::EKS::FargateProfile`,
+    `AWS::Glue::Job`,
+    `AWS::GuardDuty::ThreatIntelSet`,
+    `AWS::GuardDuty::IPSet`,
+    `AWS::SageMaker::Workteam`,
+    `AWS::SageMaker::NotebookInstanceLifecycleConfig`,
+    `AWS::ServiceDiscovery::Service`,
+    `AWS::ServiceDiscovery::PublicDnsNamespace`,
+    `AWS::SES::ContactList`,
+    `AWS::SES::ConfigurationSet`,
+    `AWS::Route53::HostedZone`
   )
 }
 
@@ -549,4 +696,21 @@ object ResourceValueType {
   val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[ResourceValueType]
 
   @inline def values: js.Array[ResourceValueType] = js.Array(RESOURCE_ID)
+}
+
+@js.native
+sealed trait SortBy extends js.Any
+object SortBy {
+  val SCORE = "SCORE".asInstanceOf[SortBy]
+
+  @inline def values: js.Array[SortBy] = js.Array(SCORE)
+}
+
+@js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }

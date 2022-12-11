@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object evidently {
+  type AppConfigResourceId = String
   type Arn = String
   type CwDimensionSafeName = String
   type CwLogGroupSafeName = String
@@ -45,6 +46,8 @@ package object evidently {
   type MaxFeatures = Int
   type MaxLaunches = Int
   type MaxProjects = Int
+  type MaxReferences = Int
+  type MaxSegments = Int
   type MetricDefinitionConfigEventPatternString = String
   type MetricGoalConfigList = js.Array[MetricGoalConfig]
   type MetricGoalsList = js.Array[MetricGoal]
@@ -53,12 +56,14 @@ package object evidently {
   type MetricNameList = js.Array[CwDimensionSafeName]
   type MetricUnitLabel = String
   type NextToken = String
+  type PrimitiveBoolean = Boolean
   type ProjectArn = String
   type ProjectName = String
   type ProjectRef = String
   type ProjectSummariesList = js.Array[ProjectSummary]
   type PutProjectEventsResultEntryList = js.Array[PutProjectEventsResultEntry]
   type RandomizationSalt = String
+  type RefResourceList = js.Array[RefResource]
   type ResultsPeriod = Double
   type RuleName = String
   type RuleType = String
@@ -66,6 +71,12 @@ package object evidently {
   type S3PrefixSafeName = String
   type ScheduledSplitConfigList = js.Array[ScheduledSplitConfig]
   type ScheduledStepList = js.Array[ScheduledSplit]
+  type SegmentArn = String
+  type SegmentList = js.Array[Segment]
+  type SegmentName = String
+  type SegmentOverridesList = js.Array[SegmentOverride]
+  type SegmentPattern = String
+  type SegmentRef = String
   type SplitWeight = Double
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -93,20 +104,25 @@ package object evidently {
     @inline def createFeatureFuture(params: CreateFeatureRequest): Future[CreateFeatureResponse] = service.createFeature(params).promise().toFuture
     @inline def createLaunchFuture(params: CreateLaunchRequest): Future[CreateLaunchResponse] = service.createLaunch(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
+    @inline def createSegmentFuture(params: CreateSegmentRequest): Future[CreateSegmentResponse] = service.createSegment(params).promise().toFuture
     @inline def deleteExperimentFuture(params: DeleteExperimentRequest): Future[DeleteExperimentResponse] = service.deleteExperiment(params).promise().toFuture
     @inline def deleteFeatureFuture(params: DeleteFeatureRequest): Future[DeleteFeatureResponse] = service.deleteFeature(params).promise().toFuture
     @inline def deleteLaunchFuture(params: DeleteLaunchRequest): Future[DeleteLaunchResponse] = service.deleteLaunch(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def deleteSegmentFuture(params: DeleteSegmentRequest): Future[DeleteSegmentResponse] = service.deleteSegment(params).promise().toFuture
     @inline def evaluateFeatureFuture(params: EvaluateFeatureRequest): Future[EvaluateFeatureResponse] = service.evaluateFeature(params).promise().toFuture
     @inline def getExperimentFuture(params: GetExperimentRequest): Future[GetExperimentResponse] = service.getExperiment(params).promise().toFuture
     @inline def getExperimentResultsFuture(params: GetExperimentResultsRequest): Future[GetExperimentResultsResponse] = service.getExperimentResults(params).promise().toFuture
     @inline def getFeatureFuture(params: GetFeatureRequest): Future[GetFeatureResponse] = service.getFeature(params).promise().toFuture
     @inline def getLaunchFuture(params: GetLaunchRequest): Future[GetLaunchResponse] = service.getLaunch(params).promise().toFuture
     @inline def getProjectFuture(params: GetProjectRequest): Future[GetProjectResponse] = service.getProject(params).promise().toFuture
+    @inline def getSegmentFuture(params: GetSegmentRequest): Future[GetSegmentResponse] = service.getSegment(params).promise().toFuture
     @inline def listExperimentsFuture(params: ListExperimentsRequest): Future[ListExperimentsResponse] = service.listExperiments(params).promise().toFuture
     @inline def listFeaturesFuture(params: ListFeaturesRequest): Future[ListFeaturesResponse] = service.listFeatures(params).promise().toFuture
     @inline def listLaunchesFuture(params: ListLaunchesRequest): Future[ListLaunchesResponse] = service.listLaunches(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
+    @inline def listSegmentReferencesFuture(params: ListSegmentReferencesRequest): Future[ListSegmentReferencesResponse] = service.listSegmentReferences(params).promise().toFuture
+    @inline def listSegmentsFuture(params: ListSegmentsRequest): Future[ListSegmentsResponse] = service.listSegments(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putProjectEventsFuture(params: PutProjectEventsRequest): Future[PutProjectEventsResponse] = service.putProjectEvents(params).promise().toFuture
     @inline def startExperimentFuture(params: StartExperimentRequest): Future[StartExperimentResponse] = service.startExperiment(params).promise().toFuture
@@ -114,6 +130,7 @@ package object evidently {
     @inline def stopExperimentFuture(params: StopExperimentRequest): Future[StopExperimentResponse] = service.stopExperiment(params).promise().toFuture
     @inline def stopLaunchFuture(params: StopLaunchRequest): Future[StopLaunchResponse] = service.stopLaunch(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def testSegmentPatternFuture(params: TestSegmentPatternRequest): Future[TestSegmentPatternResponse] = service.testSegmentPattern(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateExperimentFuture(params: UpdateExperimentRequest): Future[UpdateExperimentResponse] = service.updateExperiment(params).promise().toFuture
     @inline def updateFeatureFuture(params: UpdateFeatureRequest): Future[UpdateFeatureResponse] = service.updateFeature(params).promise().toFuture
@@ -133,20 +150,25 @@ package object evidently {
     def createFeature(params: CreateFeatureRequest): Request[CreateFeatureResponse] = js.native
     def createLaunch(params: CreateLaunchRequest): Request[CreateLaunchResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
+    def createSegment(params: CreateSegmentRequest): Request[CreateSegmentResponse] = js.native
     def deleteExperiment(params: DeleteExperimentRequest): Request[DeleteExperimentResponse] = js.native
     def deleteFeature(params: DeleteFeatureRequest): Request[DeleteFeatureResponse] = js.native
     def deleteLaunch(params: DeleteLaunchRequest): Request[DeleteLaunchResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
+    def deleteSegment(params: DeleteSegmentRequest): Request[DeleteSegmentResponse] = js.native
     def evaluateFeature(params: EvaluateFeatureRequest): Request[EvaluateFeatureResponse] = js.native
     def getExperiment(params: GetExperimentRequest): Request[GetExperimentResponse] = js.native
     def getExperimentResults(params: GetExperimentResultsRequest): Request[GetExperimentResultsResponse] = js.native
     def getFeature(params: GetFeatureRequest): Request[GetFeatureResponse] = js.native
     def getLaunch(params: GetLaunchRequest): Request[GetLaunchResponse] = js.native
     def getProject(params: GetProjectRequest): Request[GetProjectResponse] = js.native
+    def getSegment(params: GetSegmentRequest): Request[GetSegmentResponse] = js.native
     def listExperiments(params: ListExperimentsRequest): Request[ListExperimentsResponse] = js.native
     def listFeatures(params: ListFeaturesRequest): Request[ListFeaturesResponse] = js.native
     def listLaunches(params: ListLaunchesRequest): Request[ListLaunchesResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
+    def listSegmentReferences(params: ListSegmentReferencesRequest): Request[ListSegmentReferencesResponse] = js.native
+    def listSegments(params: ListSegmentsRequest): Request[ListSegmentsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putProjectEvents(params: PutProjectEventsRequest): Request[PutProjectEventsResponse] = js.native
     def startExperiment(params: StartExperimentRequest): Request[StartExperimentResponse] = js.native
@@ -154,6 +176,7 @@ package object evidently {
     def stopExperiment(params: StopExperimentRequest): Request[StopExperimentResponse] = js.native
     def stopLaunch(params: StopLaunchRequest): Request[StopLaunchResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def testSegmentPattern(params: TestSegmentPatternRequest): Request[TestSegmentPatternResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateExperiment(params: UpdateExperimentRequest): Request[UpdateExperimentResponse] = js.native
     def updateFeature(params: UpdateFeatureRequest): Request[UpdateFeatureResponse] = js.native
@@ -249,6 +272,7 @@ package object evidently {
     var onlineAbConfig: js.UndefOr[OnlineAbConfig]
     var randomizationSalt: js.UndefOr[RandomizationSalt]
     var samplingRate: js.UndefOr[SplitWeight]
+    var segment: js.UndefOr[SegmentRef]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -263,6 +287,7 @@ package object evidently {
         onlineAbConfig: js.UndefOr[OnlineAbConfig] = js.undefined,
         randomizationSalt: js.UndefOr[RandomizationSalt] = js.undefined,
         samplingRate: js.UndefOr[SplitWeight] = js.undefined,
+        segment: js.UndefOr[SegmentRef] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateExperimentRequest = {
       val __obj = js.Dynamic.literal(
@@ -276,6 +301,7 @@ package object evidently {
       onlineAbConfig.foreach(__v => __obj.updateDynamic("onlineAbConfig")(__v.asInstanceOf[js.Any]))
       randomizationSalt.foreach(__v => __obj.updateDynamic("randomizationSalt")(__v.asInstanceOf[js.Any]))
       samplingRate.foreach(__v => __obj.updateDynamic("samplingRate")(__v.asInstanceOf[js.Any]))
+      segment.foreach(__v => __obj.updateDynamic("segment")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExperimentRequest]
     }
@@ -412,6 +438,7 @@ package object evidently {
   @js.native
   trait CreateProjectRequest extends js.Object {
     var name: ProjectName
+    var appConfigResource: js.UndefOr[ProjectAppConfigResourceConfig]
     var dataDelivery: js.UndefOr[ProjectDataDeliveryConfig]
     var description: js.UndefOr[Description]
     var tags: js.UndefOr[TagMap]
@@ -421,6 +448,7 @@ package object evidently {
     @inline
     def apply(
         name: ProjectName,
+        appConfigResource: js.UndefOr[ProjectAppConfigResourceConfig] = js.undefined,
         dataDelivery: js.UndefOr[ProjectDataDeliveryConfig] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -429,6 +457,7 @@ package object evidently {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      appConfigResource.foreach(__v => __obj.updateDynamic("appConfigResource")(__v.asInstanceOf[js.Any]))
       dataDelivery.foreach(__v => __obj.updateDynamic("dataDelivery")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -450,6 +479,50 @@ package object evidently {
         "project" -> project.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateProjectResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSegmentRequest extends js.Object {
+    var name: SegmentName
+    var pattern: SegmentPattern
+    var description: js.UndefOr[Description]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateSegmentRequest {
+    @inline
+    def apply(
+        name: SegmentName,
+        pattern: SegmentPattern,
+        description: js.UndefOr[Description] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateSegmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "pattern" -> pattern.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSegmentRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSegmentResponse extends js.Object {
+    var segment: Segment
+  }
+
+  object CreateSegmentResponse {
+    @inline
+    def apply(
+        segment: Segment
+    ): CreateSegmentResponse = {
+      val __obj = js.Dynamic.literal(
+        "segment" -> segment.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateSegmentResponse]
     }
   }
 
@@ -571,6 +644,34 @@ package object evidently {
     def apply(): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProjectResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteSegmentRequest extends js.Object {
+    var segment: SegmentRef
+  }
+
+  object DeleteSegmentRequest {
+    @inline
+    def apply(
+        segment: SegmentRef
+    ): DeleteSegmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "segment" -> segment.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSegmentRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSegmentResponse extends js.Object
+
+  object DeleteSegmentResponse {
+    @inline
+    def apply(): DeleteSegmentResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteSegmentResponse]
     }
   }
 
@@ -756,6 +857,7 @@ package object evidently {
     var randomizationSalt: js.UndefOr[RandomizationSalt]
     var samplingRate: js.UndefOr[SplitWeight]
     var schedule: js.UndefOr[ExperimentSchedule]
+    var segment: js.UndefOr[SegmentArn]
     var statusReason: js.UndefOr[Description]
     var tags: js.UndefOr[TagMap]
     var treatments: js.UndefOr[TreatmentList]
@@ -778,6 +880,7 @@ package object evidently {
         randomizationSalt: js.UndefOr[RandomizationSalt] = js.undefined,
         samplingRate: js.UndefOr[SplitWeight] = js.undefined,
         schedule: js.UndefOr[ExperimentSchedule] = js.undefined,
+        segment: js.UndefOr[SegmentArn] = js.undefined,
         statusReason: js.UndefOr[Description] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         treatments: js.UndefOr[TreatmentList] = js.undefined
@@ -799,6 +902,7 @@ package object evidently {
       randomizationSalt.foreach(__v => __obj.updateDynamic("randomizationSalt")(__v.asInstanceOf[js.Any]))
       samplingRate.foreach(__v => __obj.updateDynamic("samplingRate")(__v.asInstanceOf[js.Any]))
       schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
+      segment.foreach(__v => __obj.updateDynamic("segment")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       treatments.foreach(__v => __obj.updateDynamic("treatments")(__v.asInstanceOf[js.Any]))
@@ -1088,6 +1192,7 @@ package object evidently {
 
   @js.native
   trait GetExperimentResultsResponse extends js.Object {
+    var details: js.UndefOr[String]
     var reports: js.UndefOr[ExperimentReportList]
     var resultsData: js.UndefOr[ExperimentResultsDataList]
     var timestamps: js.UndefOr[TimestampList]
@@ -1096,11 +1201,13 @@ package object evidently {
   object GetExperimentResultsResponse {
     @inline
     def apply(
+        details: js.UndefOr[String] = js.undefined,
         reports: js.UndefOr[ExperimentReportList] = js.undefined,
         resultsData: js.UndefOr[ExperimentResultsDataList] = js.undefined,
         timestamps: js.UndefOr[TimestampList] = js.undefined
     ): GetExperimentResultsResponse = {
       val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       reports.foreach(__v => __obj.updateDynamic("reports")(__v.asInstanceOf[js.Any]))
       resultsData.foreach(__v => __obj.updateDynamic("resultsData")(__v.asInstanceOf[js.Any]))
       timestamps.foreach(__v => __obj.updateDynamic("timestamps")(__v.asInstanceOf[js.Any]))
@@ -1212,6 +1319,40 @@ package object evidently {
         "project" -> project.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[GetProjectResponse]
+    }
+  }
+
+  @js.native
+  trait GetSegmentRequest extends js.Object {
+    var segment: SegmentRef
+  }
+
+  object GetSegmentRequest {
+    @inline
+    def apply(
+        segment: SegmentRef
+    ): GetSegmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "segment" -> segment.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSegmentRequest]
+    }
+  }
+
+  @js.native
+  trait GetSegmentResponse extends js.Object {
+    var segment: Segment
+  }
+
+  object GetSegmentResponse {
+    @inline
+    def apply(
+        segment: Segment
+    ): GetSegmentResponse = {
+      val __obj = js.Dynamic.literal(
+        "segment" -> segment.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSegmentResponse]
     }
   }
 
@@ -1358,6 +1499,7 @@ package object evidently {
     var project: ProjectRef
     var maxResults: js.UndefOr[MaxExperiments]
     var nextToken: js.UndefOr[NextToken]
+    var status: js.UndefOr[ExperimentStatus]
   }
 
   object ListExperimentsRequest {
@@ -1365,7 +1507,8 @@ package object evidently {
     def apply(
         project: ProjectRef,
         maxResults: js.UndefOr[MaxExperiments] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[ExperimentStatus] = js.undefined
     ): ListExperimentsRequest = {
       val __obj = js.Dynamic.literal(
         "project" -> project.asInstanceOf[js.Any]
@@ -1373,6 +1516,7 @@ package object evidently {
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExperimentsRequest]
     }
   }
@@ -1444,6 +1588,7 @@ package object evidently {
     var project: ProjectRef
     var maxResults: js.UndefOr[MaxLaunches]
     var nextToken: js.UndefOr[NextToken]
+    var status: js.UndefOr[LaunchStatus]
   }
 
   object ListLaunchesRequest {
@@ -1451,7 +1596,8 @@ package object evidently {
     def apply(
         project: ProjectRef,
         maxResults: js.UndefOr[MaxLaunches] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        status: js.UndefOr[LaunchStatus] = js.undefined
     ): ListLaunchesRequest = {
       val __obj = js.Dynamic.literal(
         "project" -> project.asInstanceOf[js.Any]
@@ -1459,6 +1605,7 @@ package object evidently {
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLaunchesRequest]
     }
   }
@@ -1517,6 +1664,90 @@ package object evidently {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProjectsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSegmentReferencesRequest extends js.Object {
+    var segment: SegmentRef
+    var `type`: SegmentReferenceResourceType
+    var maxResults: js.UndefOr[MaxReferences]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSegmentReferencesRequest {
+    @inline
+    def apply(
+        segment: SegmentRef,
+        `type`: SegmentReferenceResourceType,
+        maxResults: js.UndefOr[MaxReferences] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSegmentReferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "segment" -> segment.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSegmentReferencesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSegmentReferencesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var referencedBy: js.UndefOr[RefResourceList]
+  }
+
+  object ListSegmentReferencesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        referencedBy: js.UndefOr[RefResourceList] = js.undefined
+    ): ListSegmentReferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      referencedBy.foreach(__v => __obj.updateDynamic("referencedBy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSegmentReferencesResponse]
+    }
+  }
+
+  @js.native
+  trait ListSegmentsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxSegments]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSegmentsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxSegments] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSegmentsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSegmentsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSegmentsResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var segments: js.UndefOr[SegmentList]
+  }
+
+  object ListSegmentsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        segments: js.UndefOr[SegmentList] = js.undefined
+    ): ListSegmentsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      segments.foreach(__v => __obj.updateDynamic("segments")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSegmentsResponse]
     }
   }
 
@@ -1587,28 +1818,30 @@ package object evidently {
     */
   @js.native
   trait MetricDefinitionConfig extends js.Object {
-    var entityIdKey: js.UndefOr[JsonPath]
+    var entityIdKey: JsonPath
+    var name: CwDimensionSafeName
+    var valueKey: JsonPath
     var eventPattern: js.UndefOr[MetricDefinitionConfigEventPatternString]
-    var name: js.UndefOr[CwDimensionSafeName]
     var unitLabel: js.UndefOr[MetricUnitLabel]
-    var valueKey: js.UndefOr[JsonPath]
   }
 
   object MetricDefinitionConfig {
     @inline
     def apply(
-        entityIdKey: js.UndefOr[JsonPath] = js.undefined,
+        entityIdKey: JsonPath,
+        name: CwDimensionSafeName,
+        valueKey: JsonPath,
         eventPattern: js.UndefOr[MetricDefinitionConfigEventPatternString] = js.undefined,
-        name: js.UndefOr[CwDimensionSafeName] = js.undefined,
-        unitLabel: js.UndefOr[MetricUnitLabel] = js.undefined,
-        valueKey: js.UndefOr[JsonPath] = js.undefined
+        unitLabel: js.UndefOr[MetricUnitLabel] = js.undefined
     ): MetricDefinitionConfig = {
-      val __obj = js.Dynamic.literal()
-      entityIdKey.foreach(__v => __obj.updateDynamic("entityIdKey")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "entityIdKey" -> entityIdKey.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "valueKey" -> valueKey.asInstanceOf[js.Any]
+      )
+
       eventPattern.foreach(__v => __obj.updateDynamic("eventPattern")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       unitLabel.foreach(__v => __obj.updateDynamic("unitLabel")(__v.asInstanceOf[js.Any]))
-      valueKey.foreach(__v => __obj.updateDynamic("valueKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDefinitionConfig]
     }
   }
@@ -1750,6 +1983,7 @@ package object evidently {
     var status: ProjectStatus
     var activeExperimentCount: js.UndefOr[Double]
     var activeLaunchCount: js.UndefOr[Double]
+    var appConfigResource: js.UndefOr[ProjectAppConfigResource]
     var dataDelivery: js.UndefOr[ProjectDataDelivery]
     var description: js.UndefOr[Description]
     var experimentCount: js.UndefOr[Double]
@@ -1768,6 +2002,7 @@ package object evidently {
         status: ProjectStatus,
         activeExperimentCount: js.UndefOr[Double] = js.undefined,
         activeLaunchCount: js.UndefOr[Double] = js.undefined,
+        appConfigResource: js.UndefOr[ProjectAppConfigResource] = js.undefined,
         dataDelivery: js.UndefOr[ProjectDataDelivery] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         experimentCount: js.UndefOr[Double] = js.undefined,
@@ -1785,6 +2020,7 @@ package object evidently {
 
       activeExperimentCount.foreach(__v => __obj.updateDynamic("activeExperimentCount")(__v.asInstanceOf[js.Any]))
       activeLaunchCount.foreach(__v => __obj.updateDynamic("activeLaunchCount")(__v.asInstanceOf[js.Any]))
+      appConfigResource.foreach(__v => __obj.updateDynamic("appConfigResource")(__v.asInstanceOf[js.Any]))
       dataDelivery.foreach(__v => __obj.updateDynamic("dataDelivery")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       experimentCount.foreach(__v => __obj.updateDynamic("experimentCount")(__v.asInstanceOf[js.Any]))
@@ -1792,6 +2028,52 @@ package object evidently {
       launchCount.foreach(__v => __obj.updateDynamic("launchCount")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Project]
+    }
+  }
+
+  /** This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.
+    */
+  @js.native
+  trait ProjectAppConfigResource extends js.Object {
+    var applicationId: AppConfigResourceId
+    var configurationProfileId: AppConfigResourceId
+    var environmentId: AppConfigResourceId
+  }
+
+  object ProjectAppConfigResource {
+    @inline
+    def apply(
+        applicationId: AppConfigResourceId,
+        configurationProfileId: AppConfigResourceId,
+        environmentId: AppConfigResourceId
+    ): ProjectAppConfigResource = {
+      val __obj = js.Dynamic.literal(
+        "applicationId" -> applicationId.asInstanceOf[js.Any],
+        "configurationProfileId" -> configurationProfileId.asInstanceOf[js.Any],
+        "environmentId" -> environmentId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProjectAppConfigResource]
+    }
+  }
+
+  /** Use this parameter to configure client-side evaluation for your project. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the [[https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html|EvaluateFeature]] operation to assign the variations. This mitigates the latency and availability risks that come with an API call. <code>ProjectAppConfigResource</code> is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.
+    */
+  @js.native
+  trait ProjectAppConfigResourceConfig extends js.Object {
+    var applicationId: js.UndefOr[AppConfigResourceId]
+    var environmentId: js.UndefOr[AppConfigResourceId]
+  }
+
+  object ProjectAppConfigResourceConfig {
+    @inline
+    def apply(
+        applicationId: js.UndefOr[AppConfigResourceId] = js.undefined,
+        environmentId: js.UndefOr[AppConfigResourceId] = js.undefined
+    ): ProjectAppConfigResourceConfig = {
+      val __obj = js.Dynamic.literal()
+      applicationId.foreach(__v => __obj.updateDynamic("applicationId")(__v.asInstanceOf[js.Any]))
+      environmentId.foreach(__v => __obj.updateDynamic("environmentId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProjectAppConfigResourceConfig]
     }
   }
 
@@ -1953,6 +2235,44 @@ package object evidently {
     }
   }
 
+  /** A structure that contains information about one experiment or launch that uses the specified segment.
+    */
+  @js.native
+  trait RefResource extends js.Object {
+    var name: String
+    var `type`: String
+    var arn: js.UndefOr[String]
+    var endTime: js.UndefOr[String]
+    var lastUpdatedOn: js.UndefOr[String]
+    var startTime: js.UndefOr[String]
+    var status: js.UndefOr[String]
+  }
+
+  object RefResource {
+    @inline
+    def apply(
+        name: String,
+        `type`: String,
+        arn: js.UndefOr[String] = js.undefined,
+        endTime: js.UndefOr[String] = js.undefined,
+        lastUpdatedOn: js.UndefOr[String] = js.undefined,
+        startTime: js.UndefOr[String] = js.undefined,
+        status: js.UndefOr[String] = js.undefined
+    ): RefResource = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedOn.foreach(__v => __obj.updateDynamic("lastUpdatedOn")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RefResource]
+    }
+  }
+
   /** If the project stores evaluation events in an Amazon S3 bucket, this structure stores the bucket name and bucket prefix.
     */
   @js.native
@@ -2001,19 +2321,22 @@ package object evidently {
   trait ScheduledSplit extends js.Object {
     var startTime: Timestamp
     var groupWeights: js.UndefOr[GroupToWeightMap]
+    var segmentOverrides: js.UndefOr[SegmentOverridesList]
   }
 
   object ScheduledSplit {
     @inline
     def apply(
         startTime: Timestamp,
-        groupWeights: js.UndefOr[GroupToWeightMap] = js.undefined
+        groupWeights: js.UndefOr[GroupToWeightMap] = js.undefined,
+        segmentOverrides: js.UndefOr[SegmentOverridesList] = js.undefined
     ): ScheduledSplit = {
       val __obj = js.Dynamic.literal(
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
       groupWeights.foreach(__v => __obj.updateDynamic("groupWeights")(__v.asInstanceOf[js.Any]))
+      segmentOverrides.foreach(__v => __obj.updateDynamic("segmentOverrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledSplit]
     }
   }
@@ -2024,18 +2347,22 @@ package object evidently {
   trait ScheduledSplitConfig extends js.Object {
     var groupWeights: GroupToWeightMap
     var startTime: Timestamp
+    var segmentOverrides: js.UndefOr[SegmentOverridesList]
   }
 
   object ScheduledSplitConfig {
     @inline
     def apply(
         groupWeights: GroupToWeightMap,
-        startTime: Timestamp
+        startTime: Timestamp,
+        segmentOverrides: js.UndefOr[SegmentOverridesList] = js.undefined
     ): ScheduledSplitConfig = {
       val __obj = js.Dynamic.literal(
         "groupWeights" -> groupWeights.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
+
+      segmentOverrides.foreach(__v => __obj.updateDynamic("segmentOverrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledSplitConfig]
     }
   }
@@ -2074,6 +2401,75 @@ package object evidently {
       val __obj = js.Dynamic.literal()
       steps.foreach(__v => __obj.updateDynamic("steps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledSplitsLaunchDefinition]
+    }
+  }
+
+  /** This structure contains information about one audience <i>segment</i>. You can use segments in your experiments and launches to narrow the user sessions used for experiment or launch to only the user sessions that match one or more criteria.
+    */
+  @js.native
+  trait Segment extends js.Object {
+    var arn: SegmentArn
+    var createdTime: Timestamp
+    var lastUpdatedTime: Timestamp
+    var name: SegmentName
+    var pattern: SegmentPattern
+    var description: js.UndefOr[Description]
+    var experimentCount: js.UndefOr[Double]
+    var launchCount: js.UndefOr[Double]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object Segment {
+    @inline
+    def apply(
+        arn: SegmentArn,
+        createdTime: Timestamp,
+        lastUpdatedTime: Timestamp,
+        name: SegmentName,
+        pattern: SegmentPattern,
+        description: js.UndefOr[Description] = js.undefined,
+        experimentCount: js.UndefOr[Double] = js.undefined,
+        launchCount: js.UndefOr[Double] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): Segment = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdTime" -> createdTime.asInstanceOf[js.Any],
+        "lastUpdatedTime" -> lastUpdatedTime.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "pattern" -> pattern.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      experimentCount.foreach(__v => __obj.updateDynamic("experimentCount")(__v.asInstanceOf[js.Any]))
+      launchCount.foreach(__v => __obj.updateDynamic("launchCount")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Segment]
+    }
+  }
+
+  /** This structure specifies a segment that you have already created, and defines the traffic split for that segment to be used in a launch.
+    */
+  @js.native
+  trait SegmentOverride extends js.Object {
+    var evaluationOrder: Double
+    var segment: SegmentRef
+    var weights: GroupToWeightMap
+  }
+
+  object SegmentOverride {
+    @inline
+    def apply(
+        evaluationOrder: Double,
+        segment: SegmentRef,
+        weights: GroupToWeightMap
+    ): SegmentOverride = {
+      val __obj = js.Dynamic.literal(
+        "evaluationOrder" -> evaluationOrder.asInstanceOf[js.Any],
+        "segment" -> segment.asInstanceOf[js.Any],
+        "weights" -> weights.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SegmentOverride]
     }
   }
 
@@ -2270,6 +2666,43 @@ package object evidently {
     }
   }
 
+  @js.native
+  trait TestSegmentPatternRequest extends js.Object {
+    var pattern: SegmentPattern
+    var payload: JsonValue
+  }
+
+  object TestSegmentPatternRequest {
+    @inline
+    def apply(
+        pattern: SegmentPattern,
+        payload: JsonValue
+    ): TestSegmentPatternRequest = {
+      val __obj = js.Dynamic.literal(
+        "pattern" -> pattern.asInstanceOf[js.Any],
+        "payload" -> payload.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TestSegmentPatternRequest]
+    }
+  }
+
+  @js.native
+  trait TestSegmentPatternResponse extends js.Object {
+    var `match`: Boolean
+  }
+
+  object TestSegmentPatternResponse {
+    @inline
+    def apply(
+        `match`: Boolean
+    ): TestSegmentPatternResponse = {
+      val __obj = js.Dynamic.literal(
+        "match" -> `match`.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TestSegmentPatternResponse]
+    }
+  }
+
   /** A structure that defines one treatment in an experiment. A treatment is a variation of the feature that you are including in the experiment.
     */
   @js.native
@@ -2364,7 +2797,9 @@ package object evidently {
     var metricGoals: js.UndefOr[MetricGoalConfigList]
     var onlineAbConfig: js.UndefOr[OnlineAbConfig]
     var randomizationSalt: js.UndefOr[RandomizationSalt]
+    var removeSegment: js.UndefOr[PrimitiveBoolean]
     var samplingRate: js.UndefOr[SplitWeight]
+    var segment: js.UndefOr[SegmentRef]
     var treatments: js.UndefOr[TreatmentConfigList]
   }
 
@@ -2377,7 +2812,9 @@ package object evidently {
         metricGoals: js.UndefOr[MetricGoalConfigList] = js.undefined,
         onlineAbConfig: js.UndefOr[OnlineAbConfig] = js.undefined,
         randomizationSalt: js.UndefOr[RandomizationSalt] = js.undefined,
+        removeSegment: js.UndefOr[PrimitiveBoolean] = js.undefined,
         samplingRate: js.UndefOr[SplitWeight] = js.undefined,
+        segment: js.UndefOr[SegmentRef] = js.undefined,
         treatments: js.UndefOr[TreatmentConfigList] = js.undefined
     ): UpdateExperimentRequest = {
       val __obj = js.Dynamic.literal(
@@ -2389,7 +2826,9 @@ package object evidently {
       metricGoals.foreach(__v => __obj.updateDynamic("metricGoals")(__v.asInstanceOf[js.Any]))
       onlineAbConfig.foreach(__v => __obj.updateDynamic("onlineAbConfig")(__v.asInstanceOf[js.Any]))
       randomizationSalt.foreach(__v => __obj.updateDynamic("randomizationSalt")(__v.asInstanceOf[js.Any]))
+      removeSegment.foreach(__v => __obj.updateDynamic("removeSegment")(__v.asInstanceOf[js.Any]))
       samplingRate.foreach(__v => __obj.updateDynamic("samplingRate")(__v.asInstanceOf[js.Any]))
+      segment.foreach(__v => __obj.updateDynamic("segment")(__v.asInstanceOf[js.Any]))
       treatments.foreach(__v => __obj.updateDynamic("treatments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateExperimentRequest]
     }
@@ -2565,6 +3004,7 @@ package object evidently {
   @js.native
   trait UpdateProjectRequest extends js.Object {
     var project: ProjectRef
+    var appConfigResource: js.UndefOr[ProjectAppConfigResourceConfig]
     var description: js.UndefOr[Description]
   }
 
@@ -2572,12 +3012,14 @@ package object evidently {
     @inline
     def apply(
         project: ProjectRef,
+        appConfigResource: js.UndefOr[ProjectAppConfigResourceConfig] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): UpdateProjectRequest = {
       val __obj = js.Dynamic.literal(
         "project" -> project.asInstanceOf[js.Any]
       )
 
+      appConfigResource.foreach(__v => __obj.updateDynamic("appConfigResource")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectRequest]
     }

@@ -106,7 +106,7 @@ package object macie {
     }
   }
 
-  /** The classification type that Amazon Macie Classic applies to the associated S3 resources.
+  /** (Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources.
     */
   @js.native
   trait ClassificationType extends js.Object {
@@ -128,7 +128,7 @@ package object macie {
     }
   }
 
-  /** The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (oneTime or continuous) must be specified.
+  /** (Discontinued) The classification type that Amazon Macie Classic applies to the associated S3 resources. At least one of the classification types (<code>oneTime</code> or <code>continuous</code>) must be specified.
     */
   @js.native
   trait ClassificationTypeUpdate extends js.Object {
@@ -203,7 +203,7 @@ package object macie {
     }
   }
 
-  /** Includes details about the failed S3 resources.
+  /** (Discontinued) Includes details about the failed S3 resources.
     */
   @js.native
   trait FailedS3Resource extends js.Object {
@@ -306,7 +306,7 @@ package object macie {
     }
   }
 
-  /** Contains information about the Amazon Macie Classic member account.
+  /** (Discontinued) Contains information about the Amazon Macie Classic member account.
     */
   @js.native
   trait MemberAccount extends js.Object {
@@ -324,7 +324,7 @@ package object macie {
     }
   }
 
-  /** Contains information about the S3 resource. This data type is used as a request parameter in the DisassociateS3Resources action and can be used as a response parameter in the AssociateS3Resources and UpdateS3Resources actions.
+  /** (Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions.
     */
   @js.native
   trait S3Resource extends js.Object {
@@ -347,7 +347,7 @@ package object macie {
     }
   }
 
-  /** The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the AssociateS3Resources action and a response parameter in the ListS3Resources action.
+  /** (Discontinued) The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. This data type is used as a request parameter in the <code>AssociateS3Resources</code> action and a response parameter in the <code>ListS3Resources</code> action.
     */
   @js.native
   trait S3ResourceClassification extends js.Object {
@@ -373,7 +373,7 @@ package object macie {
     }
   }
 
-  /** The S3 resources whose classification types you want to update. This data type is used as a request parameter in the UpdateS3Resources action.
+  /** (Discontinued) The S3 resources whose classification types you want to update. This data type is used as a request parameter in the <code>UpdateS3Resources</code> action.
     */
   @js.native
   trait S3ResourceClassificationUpdate extends js.Object {

@@ -440,7 +440,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes the forgot password policy for authenticating into the Amplify app.
+  /** \```(DEPRECATED)``` Describes the forgot password policy for authenticating into the Amplify app.
     */
   @js.native
   trait CreateBackendAuthForgotPasswordConfig extends js.Object {
@@ -668,6 +668,7 @@ package object amplifybackend {
     var Mfa: js.UndefOr[CreateBackendAuthMFAConfig]
     var OAuth: js.UndefOr[CreateBackendAuthOAuthConfig]
     var PasswordPolicy: js.UndefOr[CreateBackendAuthPasswordPolicyConfig]
+    var VerificationMessage: js.UndefOr[CreateBackendAuthVerificationMessageConfig]
   }
 
   object CreateBackendAuthUserPoolConfig {
@@ -679,7 +680,8 @@ package object amplifybackend {
         ForgotPassword: js.UndefOr[CreateBackendAuthForgotPasswordConfig] = js.undefined,
         Mfa: js.UndefOr[CreateBackendAuthMFAConfig] = js.undefined,
         OAuth: js.UndefOr[CreateBackendAuthOAuthConfig] = js.undefined,
-        PasswordPolicy: js.UndefOr[CreateBackendAuthPasswordPolicyConfig] = js.undefined
+        PasswordPolicy: js.UndefOr[CreateBackendAuthPasswordPolicyConfig] = js.undefined,
+        VerificationMessage: js.UndefOr[CreateBackendAuthVerificationMessageConfig] = js.undefined
     ): CreateBackendAuthUserPoolConfig = {
       val __obj = js.Dynamic.literal(
         "RequiredSignUpAttributes" -> RequiredSignUpAttributes.asInstanceOf[js.Any],
@@ -691,7 +693,34 @@ package object amplifybackend {
       Mfa.foreach(__v => __obj.updateDynamic("Mfa")(__v.asInstanceOf[js.Any]))
       OAuth.foreach(__v => __obj.updateDynamic("OAuth")(__v.asInstanceOf[js.Any]))
       PasswordPolicy.foreach(__v => __obj.updateDynamic("PasswordPolicy")(__v.asInstanceOf[js.Any]))
+      VerificationMessage.foreach(__v => __obj.updateDynamic("VerificationMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackendAuthUserPoolConfig]
+    }
+  }
+
+  /** Creates an email or SMS verification message for the auth resource configured for your Amplify project.
+    */
+  @js.native
+  trait CreateBackendAuthVerificationMessageConfig extends js.Object {
+    var DeliveryMethod: DeliveryMethod
+    var EmailSettings: js.UndefOr[EmailSettings]
+    var SmsSettings: js.UndefOr[SmsSettings]
+  }
+
+  object CreateBackendAuthVerificationMessageConfig {
+    @inline
+    def apply(
+        DeliveryMethod: DeliveryMethod,
+        EmailSettings: js.UndefOr[EmailSettings] = js.undefined,
+        SmsSettings: js.UndefOr[SmsSettings] = js.undefined
+    ): CreateBackendAuthVerificationMessageConfig = {
+      val __obj = js.Dynamic.literal(
+        "DeliveryMethod" -> DeliveryMethod.asInstanceOf[js.Any]
+      )
+
+      EmailSettings.foreach(__v => __obj.updateDynamic("EmailSettings")(__v.asInstanceOf[js.Any]))
+      SmsSettings.foreach(__v => __obj.updateDynamic("SmsSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBackendAuthVerificationMessageConfig]
     }
   }
 
@@ -2140,7 +2169,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes the forgot password policy for authenticating into the Amplify app.
+  /** \```(DEPRECATED)``` Describes the forgot password policy for authenticating into the Amplify app.
     */
   @js.native
   trait UpdateBackendAuthForgotPasswordConfig extends js.Object {
@@ -2353,6 +2382,7 @@ package object amplifybackend {
     var Mfa: js.UndefOr[UpdateBackendAuthMFAConfig]
     var OAuth: js.UndefOr[UpdateBackendAuthOAuthConfig]
     var PasswordPolicy: js.UndefOr[UpdateBackendAuthPasswordPolicyConfig]
+    var VerificationMessage: js.UndefOr[UpdateBackendAuthVerificationMessageConfig]
   }
 
   object UpdateBackendAuthUserPoolConfig {
@@ -2361,14 +2391,42 @@ package object amplifybackend {
         ForgotPassword: js.UndefOr[UpdateBackendAuthForgotPasswordConfig] = js.undefined,
         Mfa: js.UndefOr[UpdateBackendAuthMFAConfig] = js.undefined,
         OAuth: js.UndefOr[UpdateBackendAuthOAuthConfig] = js.undefined,
-        PasswordPolicy: js.UndefOr[UpdateBackendAuthPasswordPolicyConfig] = js.undefined
+        PasswordPolicy: js.UndefOr[UpdateBackendAuthPasswordPolicyConfig] = js.undefined,
+        VerificationMessage: js.UndefOr[UpdateBackendAuthVerificationMessageConfig] = js.undefined
     ): UpdateBackendAuthUserPoolConfig = {
       val __obj = js.Dynamic.literal()
       ForgotPassword.foreach(__v => __obj.updateDynamic("ForgotPassword")(__v.asInstanceOf[js.Any]))
       Mfa.foreach(__v => __obj.updateDynamic("Mfa")(__v.asInstanceOf[js.Any]))
       OAuth.foreach(__v => __obj.updateDynamic("OAuth")(__v.asInstanceOf[js.Any]))
       PasswordPolicy.foreach(__v => __obj.updateDynamic("PasswordPolicy")(__v.asInstanceOf[js.Any]))
+      VerificationMessage.foreach(__v => __obj.updateDynamic("VerificationMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBackendAuthUserPoolConfig]
+    }
+  }
+
+  /** Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.
+    */
+  @js.native
+  trait UpdateBackendAuthVerificationMessageConfig extends js.Object {
+    var DeliveryMethod: DeliveryMethod
+    var EmailSettings: js.UndefOr[EmailSettings]
+    var SmsSettings: js.UndefOr[SmsSettings]
+  }
+
+  object UpdateBackendAuthVerificationMessageConfig {
+    @inline
+    def apply(
+        DeliveryMethod: DeliveryMethod,
+        EmailSettings: js.UndefOr[EmailSettings] = js.undefined,
+        SmsSettings: js.UndefOr[SmsSettings] = js.undefined
+    ): UpdateBackendAuthVerificationMessageConfig = {
+      val __obj = js.Dynamic.literal(
+        "DeliveryMethod" -> DeliveryMethod.asInstanceOf[js.Any]
+      )
+
+      EmailSettings.foreach(__v => __obj.updateDynamic("EmailSettings")(__v.asInstanceOf[js.Any]))
+      SmsSettings.foreach(__v => __obj.updateDynamic("SmsSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBackendAuthVerificationMessageConfig]
     }
   }
 

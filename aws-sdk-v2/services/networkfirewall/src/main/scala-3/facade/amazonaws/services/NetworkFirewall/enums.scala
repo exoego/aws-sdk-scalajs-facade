@@ -12,12 +12,21 @@ object AttachmentStatus {
   inline def values: js.Array[AttachmentStatus] = js.Array(CREATING, DELETING, SCALING, READY)
 }
 
-type ConfigurationSyncState = "PENDING" | "IN_SYNC"
+type ConfigurationSyncState = "PENDING" | "IN_SYNC" | "CAPACITY_CONSTRAINED"
 object ConfigurationSyncState {
   inline val PENDING: "PENDING" = "PENDING"
   inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  inline val CAPACITY_CONSTRAINED: "CAPACITY_CONSTRAINED" = "CAPACITY_CONSTRAINED"
 
-  inline def values: js.Array[ConfigurationSyncState] = js.Array(PENDING, IN_SYNC)
+  inline def values: js.Array[ConfigurationSyncState] = js.Array(PENDING, IN_SYNC, CAPACITY_CONSTRAINED)
+}
+
+type EncryptionType = "CUSTOMER_KMS" | "AWS_OWNED_KMS_KEY"
+object EncryptionType {
+  inline val CUSTOMER_KMS: "CUSTOMER_KMS" = "CUSTOMER_KMS"
+  inline val AWS_OWNED_KMS_KEY: "AWS_OWNED_KMS_KEY" = "AWS_OWNED_KMS_KEY"
+
+  inline def values: js.Array[EncryptionType] = js.Array(CUSTOMER_KMS, AWS_OWNED_KMS_KEY)
 }
 
 type FirewallStatusValue = "PROVISIONING" | "DELETING" | "READY"
@@ -61,12 +70,13 @@ object OverrideAction {
   inline def values: js.Array[OverrideAction] = js.Array(DROP_TO_ALERT)
 }
 
-type PerObjectSyncStatus = "PENDING" | "IN_SYNC"
+type PerObjectSyncStatus = "PENDING" | "IN_SYNC" | "CAPACITY_CONSTRAINED"
 object PerObjectSyncStatus {
   inline val PENDING: "PENDING" = "PENDING"
   inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  inline val CAPACITY_CONSTRAINED: "CAPACITY_CONSTRAINED" = "CAPACITY_CONSTRAINED"
 
-  inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC)
+  inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC, CAPACITY_CONSTRAINED)
 }
 
 type ResourceManagedStatus = "MANAGED" | "ACCOUNT"
@@ -75,6 +85,14 @@ object ResourceManagedStatus {
   inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
 
   inline def values: js.Array[ResourceManagedStatus] = js.Array(MANAGED, ACCOUNT)
+}
+
+type ResourceManagedType = "AWS_MANAGED_THREAT_SIGNATURES" | "AWS_MANAGED_DOMAIN_LISTS"
+object ResourceManagedType {
+  inline val AWS_MANAGED_THREAT_SIGNATURES: "AWS_MANAGED_THREAT_SIGNATURES" = "AWS_MANAGED_THREAT_SIGNATURES"
+  inline val AWS_MANAGED_DOMAIN_LISTS: "AWS_MANAGED_DOMAIN_LISTS" = "AWS_MANAGED_DOMAIN_LISTS"
+
+  inline def values: js.Array[ResourceManagedType] = js.Array(AWS_MANAGED_THREAT_SIGNATURES, AWS_MANAGED_DOMAIN_LISTS)
 }
 
 type ResourceStatus = "ACTIVE" | "DELETING"
@@ -141,6 +159,14 @@ object StatefulRuleProtocol {
   inline val DHCP: "DHCP" = "DHCP"
 
   inline def values: js.Array[StatefulRuleProtocol] = js.Array(IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
+}
+
+type StreamExceptionPolicy = "DROP" | "CONTINUE"
+object StreamExceptionPolicy {
+  inline val DROP: "DROP" = "DROP"
+  inline val CONTINUE: "CONTINUE" = "CONTINUE"
+
+  inline def values: js.Array[StreamExceptionPolicy] = js.Array(DROP, CONTINUE)
 }
 
 type TCPFlag = "FIN" | "SYN" | "RST" | "PSH" | "ACK" | "URG" | "ECE" | "CWR"

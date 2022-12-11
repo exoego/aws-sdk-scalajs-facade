@@ -18,6 +18,16 @@ object AccessType {
   inline def values: js.Array[AccessType] = js.Array(`public`, `private`)
 }
 
+type AccountLevelBpaSyncStatus = "InSync" | "Failed" | "NeverSynced" | "Defaulted"
+object AccountLevelBpaSyncStatus {
+  inline val InSync: "InSync" = "InSync"
+  inline val Failed: "Failed" = "Failed"
+  inline val NeverSynced: "NeverSynced" = "NeverSynced"
+  inline val Defaulted: "Defaulted" = "Defaulted"
+
+  inline def values: js.Array[AccountLevelBpaSyncStatus] = js.Array(InSync, Failed, NeverSynced, Defaulted)
+}
+
 type AddOnType = "AutoSnapshot"
 object AddOnType {
   inline val AutoSnapshot: "AutoSnapshot" = "AutoSnapshot"
@@ -44,6 +54,16 @@ object AutoSnapshotStatus {
   inline def values: js.Array[AutoSnapshotStatus] = js.Array(Success, Failed, InProgress, NotFound)
 }
 
+type BPAStatusMessage = "DEFAULTED_FOR_SLR_MISSING" | "SYNC_ON_HOLD" | "DEFAULTED_FOR_SLR_MISSING_ON_HOLD" | "Unknown"
+object BPAStatusMessage {
+  inline val DEFAULTED_FOR_SLR_MISSING: "DEFAULTED_FOR_SLR_MISSING" = "DEFAULTED_FOR_SLR_MISSING"
+  inline val SYNC_ON_HOLD: "SYNC_ON_HOLD" = "SYNC_ON_HOLD"
+  inline val DEFAULTED_FOR_SLR_MISSING_ON_HOLD: "DEFAULTED_FOR_SLR_MISSING_ON_HOLD" = "DEFAULTED_FOR_SLR_MISSING_ON_HOLD"
+  inline val Unknown: "Unknown" = "Unknown"
+
+  inline def values: js.Array[BPAStatusMessage] = js.Array(DEFAULTED_FOR_SLR_MISSING, SYNC_ON_HOLD, DEFAULTED_FOR_SLR_MISSING_ON_HOLD, Unknown)
+}
+
 type BehaviorEnum = "dont-cache" | "cache"
 object BehaviorEnum {
   inline val `dont-cache`: "dont-cache" = "dont-cache"
@@ -66,6 +86,15 @@ object BucketMetricName {
   inline val NumberOfObjects: "NumberOfObjects" = "NumberOfObjects"
 
   inline def values: js.Array[BucketMetricName] = js.Array(BucketSizeBytes, NumberOfObjects)
+}
+
+type CertificateDomainValidationStatus = "PENDING_VALIDATION" | "FAILED" | "SUCCESS"
+object CertificateDomainValidationStatus {
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+
+  inline def values: js.Array[CertificateDomainValidationStatus] = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
 }
 
 type CertificateStatus = "PENDING_VALIDATION" | "ISSUED" | "INACTIVE" | "EXPIRED" | "VALIDATION_TIMED_OUT" | "REVOKED" | "FAILED"
@@ -233,6 +262,15 @@ object DistributionMetricName {
   inline def values: js.Array[DistributionMetricName] = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
 }
 
+type DnsRecordCreationStateCode = "SUCCEEDED" | "STARTED" | "FAILED"
+object DnsRecordCreationStateCode {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val STARTED: "STARTED" = "STARTED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[DnsRecordCreationStateCode] = js.Array(SUCCEEDED, STARTED, FAILED)
+}
+
 type ExportSnapshotRecordSourceType = "InstanceSnapshot" | "DiskSnapshot"
 object ExportSnapshotRecordSourceType {
   inline val InstanceSnapshot: "InstanceSnapshot" = "InstanceSnapshot"
@@ -287,6 +325,30 @@ object HeaderEnum {
   )
 }
 
+type HttpEndpoint = "disabled" | "enabled"
+object HttpEndpoint {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[HttpEndpoint] = js.Array(disabled, enabled)
+}
+
+type HttpProtocolIpv6 = "disabled" | "enabled"
+object HttpProtocolIpv6 {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[HttpProtocolIpv6] = js.Array(disabled, enabled)
+}
+
+type HttpTokens = "optional" | "required"
+object HttpTokens {
+  inline val optional: "optional" = "optional"
+  inline val required: "required" = "required"
+
+  inline def values: js.Array[HttpTokens] = js.Array(optional, required)
+}
+
 type InstanceAccessProtocol = "ssh" | "rdp"
 object InstanceAccessProtocol {
   inline val ssh: "ssh" = "ssh"
@@ -336,7 +398,15 @@ object InstanceHealthState {
   inline def values: js.Array[InstanceHealthState] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
-type InstanceMetricName = "CPUUtilization" | "NetworkIn" | "NetworkOut" | "StatusCheckFailed" | "StatusCheckFailed_Instance" | "StatusCheckFailed_System" | "BurstCapacityTime" | "BurstCapacityPercentage"
+type InstanceMetadataState = "pending" | "applied"
+object InstanceMetadataState {
+  inline val pending: "pending" = "pending"
+  inline val applied: "applied" = "applied"
+
+  inline def values: js.Array[InstanceMetadataState] = js.Array(pending, applied)
+}
+
+type InstanceMetricName = "CPUUtilization" | "NetworkIn" | "NetworkOut" | "StatusCheckFailed" | "StatusCheckFailed_Instance" | "StatusCheckFailed_System" | "BurstCapacityTime" | "BurstCapacityPercentage" | "MetadataNoToken"
 object InstanceMetricName {
   inline val CPUUtilization: "CPUUtilization" = "CPUUtilization"
   inline val NetworkIn: "NetworkIn" = "NetworkIn"
@@ -346,8 +416,19 @@ object InstanceMetricName {
   inline val StatusCheckFailed_System: "StatusCheckFailed_System" = "StatusCheckFailed_System"
   inline val BurstCapacityTime: "BurstCapacityTime" = "BurstCapacityTime"
   inline val BurstCapacityPercentage: "BurstCapacityPercentage" = "BurstCapacityPercentage"
+  inline val MetadataNoToken: "MetadataNoToken" = "MetadataNoToken"
 
-  inline def values: js.Array[InstanceMetricName] = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
+  inline def values: js.Array[InstanceMetricName] = js.Array(
+    CPUUtilization,
+    NetworkIn,
+    NetworkOut,
+    StatusCheckFailed,
+    StatusCheckFailed_Instance,
+    StatusCheckFailed_System,
+    BurstCapacityTime,
+    BurstCapacityPercentage,
+    MetadataNoToken
+  )
 }
 
 type InstancePlatform = "LINUX_UNIX" | "WINDOWS"
@@ -375,13 +456,15 @@ object IpAddressType {
   inline def values: js.Array[IpAddressType] = js.Array(dualstack, ipv4)
 }
 
-type LoadBalancerAttributeName = "HealthCheckPath" | "SessionStickinessEnabled" | "SessionStickiness_LB_CookieDurationSeconds"
+type LoadBalancerAttributeName = "HealthCheckPath" | "SessionStickinessEnabled" | "SessionStickiness_LB_CookieDurationSeconds" | "HttpsRedirectionEnabled" | "TlsPolicyName"
 object LoadBalancerAttributeName {
   inline val HealthCheckPath: "HealthCheckPath" = "HealthCheckPath"
   inline val SessionStickinessEnabled: "SessionStickinessEnabled" = "SessionStickinessEnabled"
   inline val SessionStickiness_LB_CookieDurationSeconds: "SessionStickiness_LB_CookieDurationSeconds" = "SessionStickiness_LB_CookieDurationSeconds"
+  inline val HttpsRedirectionEnabled: "HttpsRedirectionEnabled" = "HttpsRedirectionEnabled"
+  inline val TlsPolicyName: "TlsPolicyName" = "TlsPolicyName"
 
-  inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
+  inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds, HttpsRedirectionEnabled, TlsPolicyName)
 }
 
 type LoadBalancerMetricName = "ClientTLSNegotiationErrorCount" | "HealthyHostCount" | "UnhealthyHostCount" | "HTTPCode_LB_4XX_Count" | "HTTPCode_LB_5XX_Count" | "HTTPCode_Instance_2XX_Count" | "HTTPCode_Instance_3XX_Count" | "HTTPCode_Instance_4XX_Count" | "HTTPCode_Instance_5XX_Count" | "InstanceResponseTime" | "RejectedConnectionCount" | "RequestCount"
@@ -432,6 +515,15 @@ object LoadBalancerState {
   inline val unknown: "unknown" = "unknown"
 
   inline def values: js.Array[LoadBalancerState] = js.Array(active, provisioning, active_impaired, failed, unknown)
+}
+
+type LoadBalancerTlsCertificateDnsRecordCreationStateCode = "SUCCEEDED" | "STARTED" | "FAILED"
+object LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val STARTED: "STARTED" = "STARTED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[LoadBalancerTlsCertificateDnsRecordCreationStateCode] = js.Array(SUCCEEDED, STARTED, FAILED)
 }
 
 type LoadBalancerTlsCertificateDomainStatus = "PENDING_VALIDATION" | "FAILED" | "SUCCESS"
@@ -634,6 +726,16 @@ object MetricUnit {
   )
 }
 
+type NameServersUpdateStateCode = "SUCCEEDED" | "PENDING" | "FAILED" | "STARTED"
+object NameServersUpdateStateCode {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STARTED: "STARTED" = "STARTED"
+
+  inline def values: js.Array[NameServersUpdateStateCode] = js.Array(SUCCEEDED, PENDING, FAILED, STARTED)
+}
+
 type NetworkProtocol = "tcp" | "all" | "udp" | "icmp"
 object NetworkProtocol {
   inline val tcp: "tcp" = "tcp"
@@ -655,9 +757,8 @@ object OperationStatus {
   inline def values: js.Array[OperationStatus] = js.Array(NotStarted, Started, Failed, Completed, Succeeded)
 }
 
-type OperationType = "DeleteKnownHostKeys" | "DeleteInstance" | "CreateInstance" | "StopInstance" | "StartInstance" | "RebootInstance" | "OpenInstancePublicPorts" | "PutInstancePublicPorts" | "CloseInstancePublicPorts" | "AllocateStaticIp" | "ReleaseStaticIp" | "AttachStaticIp" | "DetachStaticIp" | "UpdateDomainEntry" | "DeleteDomainEntry" | "CreateDomain" | "DeleteDomain" | "CreateInstanceSnapshot" | "DeleteInstanceSnapshot" | "CreateInstancesFromSnapshot" | "CreateLoadBalancer" | "DeleteLoadBalancer" | "AttachInstancesToLoadBalancer" | "DetachInstancesFromLoadBalancer" | "UpdateLoadBalancerAttribute" | "CreateLoadBalancerTlsCertificate" | "DeleteLoadBalancerTlsCertificate" | "AttachLoadBalancerTlsCertificate" | "CreateDisk" | "DeleteDisk" | "AttachDisk" | "DetachDisk" | "CreateDiskSnapshot" | "DeleteDiskSnapshot" | "CreateDiskFromSnapshot" | "CreateRelationalDatabase" | "UpdateRelationalDatabase" | "DeleteRelationalDatabase" | "CreateRelationalDatabaseFromSnapshot" |
-  "CreateRelationalDatabaseSnapshot" | "DeleteRelationalDatabaseSnapshot" | "UpdateRelationalDatabaseParameters" | "StartRelationalDatabase" | "RebootRelationalDatabase" | "StopRelationalDatabase" | "EnableAddOn" | "DisableAddOn" | "PutAlarm" | "GetAlarms" | "DeleteAlarm" | "TestAlarm" | "CreateContactMethod" | "GetContactMethods" | "SendContactMethodVerification" | "DeleteContactMethod" | "CreateDistribution" | "UpdateDistribution" | "DeleteDistribution" | "ResetDistributionCache" | "AttachCertificateToDistribution" | "DetachCertificateFromDistribution" | "UpdateDistributionBundle" | "SetIpAddressType" | "CreateCertificate" | "DeleteCertificate" | "CreateContainerService" | "UpdateContainerService" | "DeleteContainerService" | "CreateContainerServiceDeployment" | "CreateContainerServiceRegistryLogin" | "RegisterContainerImage" | "DeleteContainerImage" | "CreateBucket" | "DeleteBucket" | "CreateBucketAccessKey" | "DeleteBucketAccessKey" | "UpdateBucketBundle" | "UpdateBucket" |
-  "SetResourceAccessForBucket"
+type OperationType =
+  "DeleteKnownHostKeys" | "DeleteInstance" | "CreateInstance" | "StopInstance" | "StartInstance" | "RebootInstance" | "OpenInstancePublicPorts" | "PutInstancePublicPorts" | "CloseInstancePublicPorts" | "AllocateStaticIp" | "ReleaseStaticIp" | "AttachStaticIp" | "DetachStaticIp" | "UpdateDomainEntry" | "DeleteDomainEntry" | "CreateDomain" | "DeleteDomain" | "CreateInstanceSnapshot" | "DeleteInstanceSnapshot" | "CreateInstancesFromSnapshot" | "CreateLoadBalancer" | "DeleteLoadBalancer" | "AttachInstancesToLoadBalancer" | "DetachInstancesFromLoadBalancer" | "UpdateLoadBalancerAttribute" | "CreateLoadBalancerTlsCertificate" | "DeleteLoadBalancerTlsCertificate" | "AttachLoadBalancerTlsCertificate" | "CreateDisk" | "DeleteDisk" | "AttachDisk" | "DetachDisk" | "CreateDiskSnapshot" | "DeleteDiskSnapshot" | "CreateDiskFromSnapshot" | "CreateRelationalDatabase" | "UpdateRelationalDatabase" | "DeleteRelationalDatabase" | "CreateRelationalDatabaseFromSnapshot" | "CreateRelationalDatabaseSnapshot" | "DeleteRelationalDatabaseSnapshot" | "UpdateRelationalDatabaseParameters" | "StartRelationalDatabase" | "RebootRelationalDatabase" | "StopRelationalDatabase" | "EnableAddOn" | "DisableAddOn" | "PutAlarm" | "GetAlarms" | "DeleteAlarm" | "TestAlarm" | "CreateContactMethod" | "GetContactMethods" | "SendContactMethodVerification" | "DeleteContactMethod" | "CreateDistribution" | "UpdateDistribution" | "DeleteDistribution" | "ResetDistributionCache" | "AttachCertificateToDistribution" | "DetachCertificateFromDistribution" | "UpdateDistributionBundle" | "SetIpAddressType" | "CreateCertificate" | "DeleteCertificate" | "CreateContainerService" | "UpdateContainerService" | "DeleteContainerService" | "CreateContainerServiceDeployment" | "CreateContainerServiceRegistryLogin" | "RegisterContainerImage" | "DeleteContainerImage" | "CreateBucket" | "DeleteBucket" | "CreateBucketAccessKey" | "DeleteBucketAccessKey" | "UpdateBucketBundle" | "UpdateBucket" | "SetResourceAccessForBucket" | "UpdateInstanceMetadataOptions"
 object OperationType {
   inline val DeleteKnownHostKeys: "DeleteKnownHostKeys" = "DeleteKnownHostKeys"
   inline val DeleteInstance: "DeleteInstance" = "DeleteInstance"
@@ -738,6 +839,7 @@ object OperationType {
   inline val UpdateBucketBundle: "UpdateBucketBundle" = "UpdateBucketBundle"
   inline val UpdateBucket: "UpdateBucket" = "UpdateBucket"
   inline val SetResourceAccessForBucket: "SetResourceAccessForBucket" = "SetResourceAccessForBucket"
+  inline val UpdateInstanceMetadataOptions: "UpdateInstanceMetadataOptions" = "UpdateInstanceMetadataOptions"
 
   inline def values: js.Array[OperationType] = js.Array(
     DeleteKnownHostKeys,
@@ -818,7 +920,8 @@ object OperationType {
     DeleteBucketAccessKey,
     UpdateBucketBundle,
     UpdateBucket,
-    SetResourceAccessForBucket
+    SetResourceAccessForBucket,
+    UpdateInstanceMetadataOptions
   )
 }
 
@@ -854,6 +957,16 @@ object PortState {
   inline val closed: "closed" = "closed"
 
   inline def values: js.Array[PortState] = js.Array(open, closed)
+}
+
+type R53HostedZoneDeletionStateCode = "SUCCEEDED" | "PENDING" | "FAILED" | "STARTED"
+object R53HostedZoneDeletionStateCode {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STARTED: "STARTED" = "STARTED"
+
+  inline def values: js.Array[R53HostedZoneDeletionStateCode] = js.Array(SUCCEEDED, PENDING, FAILED, STARTED)
 }
 
 type RecordState = "Started" | "Succeeded" | "Failed"

@@ -89,11 +89,20 @@ object HealthState {
   inline def values: js.Array[HealthState] = js.Array(INITIAL, HEALTHY, UNHEALTHY)
 }
 
-type IpAddressType = "IPV4"
+type IpAddressFamily = "IPv4" | "IPv6"
+object IpAddressFamily {
+  inline val IPv4: "IPv4" = "IPv4"
+  inline val IPv6: "IPv6" = "IPv6"
+
+  inline def values: js.Array[IpAddressFamily] = js.Array(IPv4, IPv6)
+}
+
+type IpAddressType = "IPV4" | "DUAL_STACK"
 object IpAddressType {
   inline val IPV4: "IPV4" = "IPV4"
+  inline val DUAL_STACK: "DUAL_STACK" = "DUAL_STACK"
 
-  inline def values: js.Array[IpAddressType] = js.Array(IPV4)
+  inline def values: js.Array[IpAddressType] = js.Array(IPV4, DUAL_STACK)
 }
 
 type Protocol = "TCP" | "UDP"

@@ -18,6 +18,7 @@ package object datasync {
   type Ec2SecurityGroupArn = String
   type Ec2SecurityGroupArnList = js.Array[Ec2SecurityGroupArn]
   type Ec2SubnetArn = String
+  type EfsAccessPointArn = String
   type EfsFilesystemArn = String
   type EfsSubdirectory = String
   type Endpoint = String
@@ -27,6 +28,8 @@ package object datasync {
   type FilterValues = js.Array[FilterAttributeValue]
   type FsxFilesystemArn = String
   type FsxLustreSubdirectory = String
+  type FsxOntapSubdirectory = String
+  type FsxOpenZfsSubdirectory = String
   type FsxWindowsSubdirectory = String
   type HdfsBlockSize = Int
   type HdfsNameNodeList = js.Array[HdfsNameNode]
@@ -52,6 +55,7 @@ package object datasync {
   type NfsSubdirectory = String
   type ObjectStorageAccessKey = String
   type ObjectStorageBucketName = String
+  type ObjectStorageCertificate = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ObjectStorageSecretKey = String
   type ObjectStorageServerPort = Int
   type OutputTagList = js.Array[TagListEntry]
@@ -66,6 +70,7 @@ package object datasync {
   type SmbSubdirectory = String
   type SmbUser = String
   type SourceNetworkInterfaceArns = js.Array[NetworkInterfaceArn]
+  type StorageVirtualMachineArn = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagValue = String
@@ -84,6 +89,8 @@ package object datasync {
     @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] = service.createAgent(params).promise().toFuture
     @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] = service.createLocationEfs(params).promise().toFuture
     @inline def createLocationFsxLustreFuture(params: CreateLocationFsxLustreRequest): Future[CreateLocationFsxLustreResponse] = service.createLocationFsxLustre(params).promise().toFuture
+    @inline def createLocationFsxOntapFuture(params: CreateLocationFsxOntapRequest): Future[CreateLocationFsxOntapResponse] = service.createLocationFsxOntap(params).promise().toFuture
+    @inline def createLocationFsxOpenZfsFuture(params: CreateLocationFsxOpenZfsRequest): Future[CreateLocationFsxOpenZfsResponse] = service.createLocationFsxOpenZfs(params).promise().toFuture
     @inline def createLocationFsxWindowsFuture(params: CreateLocationFsxWindowsRequest): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise().toFuture
     @inline def createLocationHdfsFuture(params: CreateLocationHdfsRequest): Future[CreateLocationHdfsResponse] = service.createLocationHdfs(params).promise().toFuture
     @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] = service.createLocationNfs(params).promise().toFuture
@@ -97,6 +104,8 @@ package object datasync {
     @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] = service.describeAgent(params).promise().toFuture
     @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] = service.describeLocationEfs(params).promise().toFuture
     @inline def describeLocationFsxLustreFuture(params: DescribeLocationFsxLustreRequest): Future[DescribeLocationFsxLustreResponse] = service.describeLocationFsxLustre(params).promise().toFuture
+    @inline def describeLocationFsxOntapFuture(params: DescribeLocationFsxOntapRequest): Future[DescribeLocationFsxOntapResponse] = service.describeLocationFsxOntap(params).promise().toFuture
+    @inline def describeLocationFsxOpenZfsFuture(params: DescribeLocationFsxOpenZfsRequest): Future[DescribeLocationFsxOpenZfsResponse] = service.describeLocationFsxOpenZfs(params).promise().toFuture
     @inline def describeLocationFsxWindowsFuture(params: DescribeLocationFsxWindowsRequest): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise().toFuture
     @inline def describeLocationHdfsFuture(params: DescribeLocationHdfsRequest): Future[DescribeLocationHdfsResponse] = service.describeLocationHdfs(params).promise().toFuture
     @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] = service.describeLocationNfs(params).promise().toFuture
@@ -132,6 +141,8 @@ package object datasync {
     def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
     def createLocationFsxLustre(params: CreateLocationFsxLustreRequest): Request[CreateLocationFsxLustreResponse] = js.native
+    def createLocationFsxOntap(params: CreateLocationFsxOntapRequest): Request[CreateLocationFsxOntapResponse] = js.native
+    def createLocationFsxOpenZfs(params: CreateLocationFsxOpenZfsRequest): Request[CreateLocationFsxOpenZfsResponse] = js.native
     def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] = js.native
     def createLocationHdfs(params: CreateLocationHdfsRequest): Request[CreateLocationHdfsResponse] = js.native
     def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse] = js.native
@@ -145,6 +156,8 @@ package object datasync {
     def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse] = js.native
     def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse] = js.native
     def describeLocationFsxLustre(params: DescribeLocationFsxLustreRequest): Request[DescribeLocationFsxLustreResponse] = js.native
+    def describeLocationFsxOntap(params: DescribeLocationFsxOntapRequest): Request[DescribeLocationFsxOntapResponse] = js.native
+    def describeLocationFsxOpenZfs(params: DescribeLocationFsxOpenZfsRequest): Request[DescribeLocationFsxOpenZfsResponse] = js.native
     def describeLocationFsxWindows(params: DescribeLocationFsxWindowsRequest): Request[DescribeLocationFsxWindowsResponse] = js.native
     def describeLocationHdfs(params: DescribeLocationHdfsRequest): Request[DescribeLocationHdfsResponse] = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse] = js.native
@@ -280,6 +293,9 @@ package object datasync {
   trait CreateLocationEfsRequest extends js.Object {
     var Ec2Config: Ec2Config
     var EfsFilesystemArn: EfsFilesystemArn
+    var AccessPointArn: js.UndefOr[EfsAccessPointArn]
+    var FileSystemAccessRoleArn: js.UndefOr[IamRoleArn]
+    var InTransitEncryption: js.UndefOr[EfsInTransitEncryption]
     var Subdirectory: js.UndefOr[EfsSubdirectory]
     var Tags: js.UndefOr[InputTagList]
   }
@@ -289,6 +305,9 @@ package object datasync {
     def apply(
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
+        AccessPointArn: js.UndefOr[EfsAccessPointArn] = js.undefined,
+        FileSystemAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        InTransitEncryption: js.UndefOr[EfsInTransitEncryption] = js.undefined,
         Subdirectory: js.UndefOr[EfsSubdirectory] = js.undefined,
         Tags: js.UndefOr[InputTagList] = js.undefined
     ): CreateLocationEfsRequest = {
@@ -297,6 +316,9 @@ package object datasync {
         "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any]
       )
 
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
+      FileSystemAccessRoleArn.foreach(__v => __obj.updateDynamic("FileSystemAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      InTransitEncryption.foreach(__v => __obj.updateDynamic("InTransitEncryption")(__v.asInstanceOf[js.Any]))
       Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationEfsRequest]
@@ -361,6 +383,98 @@ package object datasync {
       val __obj = js.Dynamic.literal()
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationFsxLustreResponse]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxOntapRequest extends js.Object {
+    var Protocol: FsxProtocol
+    var SecurityGroupArns: Ec2SecurityGroupArnList
+    var StorageVirtualMachineArn: StorageVirtualMachineArn
+    var Subdirectory: js.UndefOr[FsxOntapSubdirectory]
+    var Tags: js.UndefOr[InputTagList]
+  }
+
+  object CreateLocationFsxOntapRequest {
+    @inline
+    def apply(
+        Protocol: FsxProtocol,
+        SecurityGroupArns: Ec2SecurityGroupArnList,
+        StorageVirtualMachineArn: StorageVirtualMachineArn,
+        Subdirectory: js.UndefOr[FsxOntapSubdirectory] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined
+    ): CreateLocationFsxOntapRequest = {
+      val __obj = js.Dynamic.literal(
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
+        "StorageVirtualMachineArn" -> StorageVirtualMachineArn.asInstanceOf[js.Any]
+      )
+
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxOntapRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxOntapResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationFsxOntapResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationFsxOntapResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxOntapResponse]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxOpenZfsRequest extends js.Object {
+    var FsxFilesystemArn: FsxFilesystemArn
+    var Protocol: FsxProtocol
+    var SecurityGroupArns: Ec2SecurityGroupArnList
+    var Subdirectory: js.UndefOr[FsxOpenZfsSubdirectory]
+    var Tags: js.UndefOr[InputTagList]
+  }
+
+  object CreateLocationFsxOpenZfsRequest {
+    @inline
+    def apply(
+        FsxFilesystemArn: FsxFilesystemArn,
+        Protocol: FsxProtocol,
+        SecurityGroupArns: Ec2SecurityGroupArnList,
+        Subdirectory: js.UndefOr[FsxOpenZfsSubdirectory] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined
+    ): CreateLocationFsxOpenZfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FsxFilesystemArn" -> FsxFilesystemArn.asInstanceOf[js.Any],
+        "Protocol" -> Protocol.asInstanceOf[js.Any],
+        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any]
+      )
+
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxOpenZfsRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxOpenZfsResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationFsxOpenZfsResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationFsxOpenZfsResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxOpenZfsResponse]
     }
   }
 
@@ -539,6 +653,7 @@ package object datasync {
     var ServerHostname: ServerHostname
     var AccessKey: js.UndefOr[ObjectStorageAccessKey]
     var SecretKey: js.UndefOr[ObjectStorageSecretKey]
+    var ServerCertificate: js.UndefOr[ObjectStorageCertificate]
     var ServerPort: js.UndefOr[ObjectStorageServerPort]
     var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
     var Subdirectory: js.UndefOr[S3Subdirectory]
@@ -553,6 +668,7 @@ package object datasync {
         ServerHostname: ServerHostname,
         AccessKey: js.UndefOr[ObjectStorageAccessKey] = js.undefined,
         SecretKey: js.UndefOr[ObjectStorageSecretKey] = js.undefined,
+        ServerCertificate: js.UndefOr[ObjectStorageCertificate] = js.undefined,
         ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
         ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined,
         Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined,
@@ -566,6 +682,7 @@ package object datasync {
 
       AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
       SecretKey.foreach(__v => __obj.updateDynamic("SecretKey")(__v.asInstanceOf[js.Any]))
+      ServerCertificate.foreach(__v => __obj.updateDynamic("ServerCertificate")(__v.asInstanceOf[js.Any]))
       ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
       ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
       Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
@@ -912,8 +1029,11 @@ package object datasync {
 
   @js.native
   trait DescribeLocationEfsResponse extends js.Object {
+    var AccessPointArn: js.UndefOr[EfsAccessPointArn]
     var CreationTime: js.UndefOr[Time]
     var Ec2Config: js.UndefOr[Ec2Config]
+    var FileSystemAccessRoleArn: js.UndefOr[IamRoleArn]
+    var InTransitEncryption: js.UndefOr[EfsInTransitEncryption]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
   }
@@ -921,14 +1041,20 @@ package object datasync {
   object DescribeLocationEfsResponse {
     @inline
     def apply(
+        AccessPointArn: js.UndefOr[EfsAccessPointArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
         Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
+        FileSystemAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
+        InTransitEncryption: js.UndefOr[EfsInTransitEncryption] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined
     ): DescribeLocationEfsResponse = {
       val __obj = js.Dynamic.literal()
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Ec2Config.foreach(__v => __obj.updateDynamic("Ec2Config")(__v.asInstanceOf[js.Any]))
+      FileSystemAccessRoleArn.foreach(__v => __obj.updateDynamic("FileSystemAccessRoleArn")(__v.asInstanceOf[js.Any]))
+      InTransitEncryption.foreach(__v => __obj.updateDynamic("InTransitEncryption")(__v.asInstanceOf[js.Any]))
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationEfsResponse]
@@ -974,6 +1100,102 @@ package object datasync {
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationFsxLustreResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxOntapRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationFsxOntapRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationFsxOntapRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLocationFsxOntapRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxOntapResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
+    var FsxFilesystemArn: js.UndefOr[FsxFilesystemArn]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var Protocol: js.UndefOr[FsxProtocol]
+    var SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList]
+    var StorageVirtualMachineArn: js.UndefOr[StorageVirtualMachineArn]
+  }
+
+  object DescribeLocationFsxOntapResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        FsxFilesystemArn: js.UndefOr[FsxFilesystemArn] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        Protocol: js.UndefOr[FsxProtocol] = js.undefined,
+        SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined,
+        StorageVirtualMachineArn: js.UndefOr[StorageVirtualMachineArn] = js.undefined
+    ): DescribeLocationFsxOntapResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FsxFilesystemArn.foreach(__v => __obj.updateDynamic("FsxFilesystemArn")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      StorageVirtualMachineArn.foreach(__v => __obj.updateDynamic("StorageVirtualMachineArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationFsxOntapResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxOpenZfsRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationFsxOpenZfsRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationFsxOpenZfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLocationFsxOpenZfsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxOpenZfsResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var Protocol: js.UndefOr[FsxProtocol]
+    var SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList]
+  }
+
+  object DescribeLocationFsxOpenZfsResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        Protocol: js.UndefOr[FsxProtocol] = js.undefined,
+        SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined
+    ): DescribeLocationFsxOpenZfsResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationFsxOpenZfsResponse]
     }
   }
 
@@ -1160,6 +1382,7 @@ package object datasync {
     var CreationTime: js.UndefOr[Time]
     var LocationArn: js.UndefOr[LocationArn]
     var LocationUri: js.UndefOr[LocationUri]
+    var ServerCertificate: js.UndefOr[ObjectStorageCertificate]
     var ServerPort: js.UndefOr[ObjectStorageServerPort]
     var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
   }
@@ -1172,6 +1395,7 @@ package object datasync {
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        ServerCertificate: js.UndefOr[ObjectStorageCertificate] = js.undefined,
         ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
         ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined
     ): DescribeLocationObjectStorageResponse = {
@@ -1181,6 +1405,7 @@ package object datasync {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      ServerCertificate.foreach(__v => __obj.updateDynamic("ServerCertificate")(__v.asInstanceOf[js.Any]))
       ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
       ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationObjectStorageResponse]
@@ -1305,6 +1530,7 @@ package object datasync {
 
   @js.native
   trait DescribeTaskExecutionResponse extends js.Object {
+    var BytesCompressed: js.UndefOr[Double]
     var BytesTransferred: js.UndefOr[Double]
     var BytesWritten: js.UndefOr[Double]
     var EstimatedBytesToTransfer: js.UndefOr[Double]
@@ -1322,6 +1548,7 @@ package object datasync {
   object DescribeTaskExecutionResponse {
     @inline
     def apply(
+        BytesCompressed: js.UndefOr[Double] = js.undefined,
         BytesTransferred: js.UndefOr[Double] = js.undefined,
         BytesWritten: js.UndefOr[Double] = js.undefined,
         EstimatedBytesToTransfer: js.UndefOr[Double] = js.undefined,
@@ -1336,6 +1563,7 @@ package object datasync {
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): DescribeTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
+      BytesCompressed.foreach(__v => __obj.updateDynamic("BytesCompressed")(__v.asInstanceOf[js.Any]))
       BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
       BytesWritten.foreach(__v => __obj.updateDynamic("BytesWritten")(__v.asInstanceOf[js.Any]))
       EstimatedBytesToTransfer.foreach(__v => __obj.updateDynamic("EstimatedBytesToTransfer")(__v.asInstanceOf[js.Any]))
@@ -1430,7 +1658,7 @@ package object datasync {
     }
   }
 
-  /** The subnet and the security group that DataSync uses to access target EFS file system. The subnet must have at least one mount target for that file system. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.
+  /** The subnet and security groups that DataSync uses to access your Amazon EFS file system.
     */
   @js.native
   trait Ec2Config extends js.Object {
@@ -1470,6 +1698,74 @@ package object datasync {
       FilterType.foreach(__v => __obj.updateDynamic("FilterType")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterRule]
+    }
+  }
+
+  /** Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.
+    */
+  @js.native
+  trait FsxProtocol extends js.Object {
+    var NFS: js.UndefOr[FsxProtocolNfs]
+    var SMB: js.UndefOr[FsxProtocolSmb]
+  }
+
+  object FsxProtocol {
+    @inline
+    def apply(
+        NFS: js.UndefOr[FsxProtocolNfs] = js.undefined,
+        SMB: js.UndefOr[FsxProtocolSmb] = js.undefined
+    ): FsxProtocol = {
+      val __obj = js.Dynamic.literal()
+      NFS.foreach(__v => __obj.updateDynamic("NFS")(__v.asInstanceOf[js.Any]))
+      SMB.foreach(__v => __obj.updateDynamic("SMB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FsxProtocol]
+    }
+  }
+
+  /** Specifies the Network File System (NFS) protocol configuration that DataSync uses to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.
+    */
+  @js.native
+  trait FsxProtocolNfs extends js.Object {
+    var MountOptions: js.UndefOr[NfsMountOptions]
+  }
+
+  object FsxProtocolNfs {
+    @inline
+    def apply(
+        MountOptions: js.UndefOr[NfsMountOptions] = js.undefined
+    ): FsxProtocolNfs = {
+      val __obj = js.Dynamic.literal()
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FsxProtocolNfs]
+    }
+  }
+
+  /** Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see [[https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access|Accessing FSx for ONTAP file systems]].
+    */
+  @js.native
+  trait FsxProtocolSmb extends js.Object {
+    var Password: SmbPassword
+    var User: SmbUser
+    var Domain: js.UndefOr[SmbDomain]
+    var MountOptions: js.UndefOr[SmbMountOptions]
+  }
+
+  object FsxProtocolSmb {
+    @inline
+    def apply(
+        Password: SmbPassword,
+        User: SmbUser,
+        Domain: js.UndefOr[SmbDomain] = js.undefined,
+        MountOptions: js.UndefOr[SmbMountOptions] = js.undefined
+    ): FsxProtocolSmb = {
+      val __obj = js.Dynamic.literal(
+        "Password" -> Password.asInstanceOf[js.Any],
+        "User" -> User.asInstanceOf[js.Any]
+      )
+
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FsxProtocolSmb]
     }
   }
 
@@ -1701,7 +1997,7 @@ package object datasync {
     }
   }
 
-  /** You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all your Amazon S3 locations, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
+  /** Narrow down the list of resources returned by <code>ListLocations</code>. For example, to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>, <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>. For more information, see [[https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html|filtering resources]].
     */
   @js.native
   trait LocationFilter extends js.Object {
@@ -1747,7 +2043,7 @@ package object datasync {
     }
   }
 
-  /** Represents the mount options that are available for DataSync to access an NFS location.
+  /** Specifies how DataSync can access a location using the NFS protocol.
     */
   @js.native
   trait NfsMountOptions extends js.Object {
@@ -1793,6 +2089,7 @@ package object datasync {
     var Gid: js.UndefOr[Gid]
     var LogLevel: js.UndefOr[LogLevel]
     var Mtime: js.UndefOr[Mtime]
+    var ObjectTags: js.UndefOr[ObjectTags]
     var OverwriteMode: js.UndefOr[OverwriteMode]
     var PosixPermissions: js.UndefOr[PosixPermissions]
     var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
@@ -1812,6 +2109,7 @@ package object datasync {
         Gid: js.UndefOr[Gid] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         Mtime: js.UndefOr[Mtime] = js.undefined,
+        ObjectTags: js.UndefOr[ObjectTags] = js.undefined,
         OverwriteMode: js.UndefOr[OverwriteMode] = js.undefined,
         PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
         PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
@@ -1828,6 +2126,7 @@ package object datasync {
       Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
       Mtime.foreach(__v => __obj.updateDynamic("Mtime")(__v.asInstanceOf[js.Any]))
+      ObjectTags.foreach(__v => __obj.updateDynamic("ObjectTags")(__v.asInstanceOf[js.Any]))
       OverwriteMode.foreach(__v => __obj.updateDynamic("OverwriteMode")(__v.asInstanceOf[js.Any]))
       PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))
       PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
@@ -1889,7 +2188,7 @@ package object datasync {
     }
   }
 
-  /** The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.
+  /** The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket. For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1908,7 +2207,7 @@ package object datasync {
     }
   }
 
-  /** Represents the mount options that are available for DataSync to access an SMB location.
+  /** Specifies how DataSync can access a location using the SMB protocol.
     */
   @js.native
   trait SmbMountOptions extends js.Object {
@@ -2086,7 +2385,7 @@ package object datasync {
     }
   }
 
-  /** You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+  /** You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location. For more information, see [[https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html|filtering DataSync resources]].
     */
   @js.native
   trait TaskFilter extends js.Object {
@@ -2326,6 +2625,7 @@ package object datasync {
     var AccessKey: js.UndefOr[ObjectStorageAccessKey]
     var AgentArns: js.UndefOr[AgentArnList]
     var SecretKey: js.UndefOr[ObjectStorageSecretKey]
+    var ServerCertificate: js.UndefOr[ObjectStorageCertificate]
     var ServerPort: js.UndefOr[ObjectStorageServerPort]
     var ServerProtocol: js.UndefOr[ObjectStorageServerProtocol]
     var Subdirectory: js.UndefOr[S3Subdirectory]
@@ -2338,6 +2638,7 @@ package object datasync {
         AccessKey: js.UndefOr[ObjectStorageAccessKey] = js.undefined,
         AgentArns: js.UndefOr[AgentArnList] = js.undefined,
         SecretKey: js.UndefOr[ObjectStorageSecretKey] = js.undefined,
+        ServerCertificate: js.UndefOr[ObjectStorageCertificate] = js.undefined,
         ServerPort: js.UndefOr[ObjectStorageServerPort] = js.undefined,
         ServerProtocol: js.UndefOr[ObjectStorageServerProtocol] = js.undefined,
         Subdirectory: js.UndefOr[S3Subdirectory] = js.undefined
@@ -2349,6 +2650,7 @@ package object datasync {
       AccessKey.foreach(__v => __obj.updateDynamic("AccessKey")(__v.asInstanceOf[js.Any]))
       AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
       SecretKey.foreach(__v => __obj.updateDynamic("SecretKey")(__v.asInstanceOf[js.Any]))
+      ServerCertificate.foreach(__v => __obj.updateDynamic("ServerCertificate")(__v.asInstanceOf[js.Any]))
       ServerPort.foreach(__v => __obj.updateDynamic("ServerPort")(__v.asInstanceOf[js.Any]))
       ServerProtocol.foreach(__v => __obj.updateDynamic("ServerProtocol")(__v.asInstanceOf[js.Any]))
       Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))

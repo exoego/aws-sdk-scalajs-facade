@@ -12,6 +12,16 @@ object AnalysisType {
 }
 
 @js.native
+sealed trait ConfigFileState extends js.Any
+object ConfigFileState {
+  val Present = "Present".asInstanceOf[ConfigFileState]
+  val Absent = "Absent".asInstanceOf[ConfigFileState]
+  val PresentWithErrors = "PresentWithErrors".asInstanceOf[ConfigFileState]
+
+  @inline def values: js.Array[ConfigFileState] = js.Array(Present, Absent, PresentWithErrors)
+}
+
+@js.native
 sealed trait EncryptionOption extends js.Any
 object EncryptionOption {
   val AWS_OWNED_CMK = "AWS_OWNED_CMK".asInstanceOf[EncryptionOption]

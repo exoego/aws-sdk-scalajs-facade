@@ -12,6 +12,7 @@ package object sesv2 {
   type AdditionalContactEmailAddresses = js.Array[AdditionalContactEmailAddress]
   type AmazonResourceName = String
   type AttributesData = String
+  type BatchGetMetricDataQueries = js.Array[BatchGetMetricDataQuery]
   type BlacklistEntries = js.Array[BlacklistEntry]
   type BlacklistItemName = String
   type BlacklistItemNames = js.Array[BlacklistItemName]
@@ -26,6 +27,7 @@ package object sesv2 {
   type ConfigurationSetName = String
   type ConfigurationSetNameList = js.Array[ConfigurationSetName]
   type ContactListName = String
+  type Counter = Double
   type CustomRedirectDomain = String
   type CustomVerificationEmailTemplatesList = js.Array[CustomVerificationEmailTemplateMetadata]
   type DailyVolumes = js.Array[DailyVolume]
@@ -35,6 +37,7 @@ package object sesv2 {
   type DeliverabilityTestSubject = String
   type Description = String
   type DimensionName = String
+  type Dimensions = js.Dictionary[MetricDimensionValue]
   type DisplayName = String
   type DnsToken = String
   type DnsTokenList = js.Array[DnsToken]
@@ -77,6 +80,8 @@ package object sesv2 {
   type ListOfContactLists = js.Array[ContactList]
   type ListOfContacts = js.Array[Contact]
   type ListOfDedicatedIpPools = js.Array[PoolName]
+  type ListRecommendationFilterValue = String
+  type ListRecommendationsFilter = js.Dictionary[ListRecommendationFilterValue]
   type MailFromDomainName = String
   type Max24HourSend = Double
   type MaxItems = Int
@@ -86,6 +91,10 @@ package object sesv2 {
   type MessageTagList = js.Array[MessageTag]
   type MessageTagName = String
   type MessageTagValue = String
+  type MetricDataErrorList = js.Array[MetricDataError]
+  type MetricDataResultList = js.Array[MetricDataResult]
+  type MetricDimensionValue = String
+  type MetricValueList = js.Array[Counter]
   type NextToken = String
   type OutboundMessageId = String
   type Percentage = Double
@@ -96,8 +105,12 @@ package object sesv2 {
   type PoolName = String
   type PrivateKey = String
   type ProcessedRecordsCount = Int
+  type QueryErrorMessage = String
+  type QueryIdentifier = String
   type RawMessageData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type RblName = String
+  type RecommendationDescription = String
+  type RecommendationsList = js.Array[Recommendation]
   type RenderedEmailTemplate = String
   type ReportId = String
   type ReportName = String
@@ -115,6 +128,7 @@ package object sesv2 {
   type TagValue = String
   type TemplateContent = String
   type Timestamp = js.Date
+  type TimestampList = js.Array[Timestamp]
   type TopicName = String
   type TopicPreferenceList = js.Array[TopicPreference]
   type Topics = js.Array[Topic]
@@ -126,6 +140,7 @@ package object sesv2 {
 
   final class SESv2Ops(private val service: SESv2) extends AnyVal {
 
+    @inline def batchGetMetricDataFuture(params: BatchGetMetricDataRequest): Future[BatchGetMetricDataResponse] = service.batchGetMetricData(params).promise().toFuture
     @inline def createConfigurationSetEventDestinationFuture(params: CreateConfigurationSetEventDestinationRequest): Future[CreateConfigurationSetEventDestinationResponse] = service.createConfigurationSetEventDestination(params).promise().toFuture
     @inline def createConfigurationSetFuture(params: CreateConfigurationSetRequest): Future[CreateConfigurationSetResponse] = service.createConfigurationSet(params).promise().toFuture
     @inline def createContactFuture(params: CreateContactRequest): Future[CreateContactResponse] = service.createContact(params).promise().toFuture
@@ -155,6 +170,7 @@ package object sesv2 {
     @inline def getContactListFuture(params: GetContactListRequest): Future[GetContactListResponse] = service.getContactList(params).promise().toFuture
     @inline def getCustomVerificationEmailTemplateFuture(params: GetCustomVerificationEmailTemplateRequest): Future[GetCustomVerificationEmailTemplateResponse] = service.getCustomVerificationEmailTemplate(params).promise().toFuture
     @inline def getDedicatedIpFuture(params: GetDedicatedIpRequest): Future[GetDedicatedIpResponse] = service.getDedicatedIp(params).promise().toFuture
+    @inline def getDedicatedIpPoolFuture(params: GetDedicatedIpPoolRequest): Future[GetDedicatedIpPoolResponse] = service.getDedicatedIpPool(params).promise().toFuture
     @inline def getDedicatedIpsFuture(params: GetDedicatedIpsRequest): Future[GetDedicatedIpsResponse] = service.getDedicatedIps(params).promise().toFuture
     @inline def getDeliverabilityDashboardOptionsFuture(params: GetDeliverabilityDashboardOptionsRequest): Future[GetDeliverabilityDashboardOptionsResponse] = service.getDeliverabilityDashboardOptions(params).promise().toFuture
     @inline def getDeliverabilityTestReportFuture(params: GetDeliverabilityTestReportRequest): Future[GetDeliverabilityTestReportResponse] = service.getDeliverabilityTestReport(params).promise().toFuture
@@ -175,17 +191,20 @@ package object sesv2 {
     @inline def listEmailIdentitiesFuture(params: ListEmailIdentitiesRequest): Future[ListEmailIdentitiesResponse] = service.listEmailIdentities(params).promise().toFuture
     @inline def listEmailTemplatesFuture(params: ListEmailTemplatesRequest): Future[ListEmailTemplatesResponse] = service.listEmailTemplates(params).promise().toFuture
     @inline def listImportJobsFuture(params: ListImportJobsRequest): Future[ListImportJobsResponse] = service.listImportJobs(params).promise().toFuture
+    @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] = service.listRecommendations(params).promise().toFuture
     @inline def listSuppressedDestinationsFuture(params: ListSuppressedDestinationsRequest): Future[ListSuppressedDestinationsResponse] = service.listSuppressedDestinations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putAccountDedicatedIpWarmupAttributesFuture(params: PutAccountDedicatedIpWarmupAttributesRequest): Future[PutAccountDedicatedIpWarmupAttributesResponse] = service.putAccountDedicatedIpWarmupAttributes(params).promise().toFuture
     @inline def putAccountDetailsFuture(params: PutAccountDetailsRequest): Future[PutAccountDetailsResponse] = service.putAccountDetails(params).promise().toFuture
     @inline def putAccountSendingAttributesFuture(params: PutAccountSendingAttributesRequest): Future[PutAccountSendingAttributesResponse] = service.putAccountSendingAttributes(params).promise().toFuture
     @inline def putAccountSuppressionAttributesFuture(params: PutAccountSuppressionAttributesRequest): Future[PutAccountSuppressionAttributesResponse] = service.putAccountSuppressionAttributes(params).promise().toFuture
+    @inline def putAccountVdmAttributesFuture(params: PutAccountVdmAttributesRequest): Future[PutAccountVdmAttributesResponse] = service.putAccountVdmAttributes(params).promise().toFuture
     @inline def putConfigurationSetDeliveryOptionsFuture(params: PutConfigurationSetDeliveryOptionsRequest): Future[PutConfigurationSetDeliveryOptionsResponse] = service.putConfigurationSetDeliveryOptions(params).promise().toFuture
     @inline def putConfigurationSetReputationOptionsFuture(params: PutConfigurationSetReputationOptionsRequest): Future[PutConfigurationSetReputationOptionsResponse] = service.putConfigurationSetReputationOptions(params).promise().toFuture
     @inline def putConfigurationSetSendingOptionsFuture(params: PutConfigurationSetSendingOptionsRequest): Future[PutConfigurationSetSendingOptionsResponse] = service.putConfigurationSetSendingOptions(params).promise().toFuture
     @inline def putConfigurationSetSuppressionOptionsFuture(params: PutConfigurationSetSuppressionOptionsRequest): Future[PutConfigurationSetSuppressionOptionsResponse] = service.putConfigurationSetSuppressionOptions(params).promise().toFuture
     @inline def putConfigurationSetTrackingOptionsFuture(params: PutConfigurationSetTrackingOptionsRequest): Future[PutConfigurationSetTrackingOptionsResponse] = service.putConfigurationSetTrackingOptions(params).promise().toFuture
+    @inline def putConfigurationSetVdmOptionsFuture(params: PutConfigurationSetVdmOptionsRequest): Future[PutConfigurationSetVdmOptionsResponse] = service.putConfigurationSetVdmOptions(params).promise().toFuture
     @inline def putDedicatedIpInPoolFuture(params: PutDedicatedIpInPoolRequest): Future[PutDedicatedIpInPoolResponse] = service.putDedicatedIpInPool(params).promise().toFuture
     @inline def putDedicatedIpWarmupAttributesFuture(params: PutDedicatedIpWarmupAttributesRequest): Future[PutDedicatedIpWarmupAttributesResponse] = service.putDedicatedIpWarmupAttributes(params).promise().toFuture
     @inline def putDeliverabilityDashboardOptionFuture(params: PutDeliverabilityDashboardOptionRequest): Future[PutDeliverabilityDashboardOptionResponse] = service.putDeliverabilityDashboardOption(params).promise().toFuture
@@ -215,6 +234,7 @@ package object sesv2 {
   class SESv2() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchGetMetricData(params: BatchGetMetricDataRequest): Request[BatchGetMetricDataResponse] = js.native
     def createConfigurationSet(params: CreateConfigurationSetRequest): Request[CreateConfigurationSetResponse] = js.native
     def createConfigurationSetEventDestination(params: CreateConfigurationSetEventDestinationRequest): Request[CreateConfigurationSetEventDestinationResponse] = js.native
     def createContact(params: CreateContactRequest): Request[CreateContactResponse] = js.native
@@ -244,6 +264,7 @@ package object sesv2 {
     def getContactList(params: GetContactListRequest): Request[GetContactListResponse] = js.native
     def getCustomVerificationEmailTemplate(params: GetCustomVerificationEmailTemplateRequest): Request[GetCustomVerificationEmailTemplateResponse] = js.native
     def getDedicatedIp(params: GetDedicatedIpRequest): Request[GetDedicatedIpResponse] = js.native
+    def getDedicatedIpPool(params: GetDedicatedIpPoolRequest): Request[GetDedicatedIpPoolResponse] = js.native
     def getDedicatedIps(params: GetDedicatedIpsRequest): Request[GetDedicatedIpsResponse] = js.native
     def getDeliverabilityDashboardOptions(params: GetDeliverabilityDashboardOptionsRequest): Request[GetDeliverabilityDashboardOptionsResponse] = js.native
     def getDeliverabilityTestReport(params: GetDeliverabilityTestReportRequest): Request[GetDeliverabilityTestReportResponse] = js.native
@@ -264,17 +285,20 @@ package object sesv2 {
     def listEmailIdentities(params: ListEmailIdentitiesRequest): Request[ListEmailIdentitiesResponse] = js.native
     def listEmailTemplates(params: ListEmailTemplatesRequest): Request[ListEmailTemplatesResponse] = js.native
     def listImportJobs(params: ListImportJobsRequest): Request[ListImportJobsResponse] = js.native
+    def listRecommendations(params: ListRecommendationsRequest): Request[ListRecommendationsResponse] = js.native
     def listSuppressedDestinations(params: ListSuppressedDestinationsRequest): Request[ListSuppressedDestinationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putAccountDedicatedIpWarmupAttributes(params: PutAccountDedicatedIpWarmupAttributesRequest): Request[PutAccountDedicatedIpWarmupAttributesResponse] = js.native
     def putAccountDetails(params: PutAccountDetailsRequest): Request[PutAccountDetailsResponse] = js.native
     def putAccountSendingAttributes(params: PutAccountSendingAttributesRequest): Request[PutAccountSendingAttributesResponse] = js.native
     def putAccountSuppressionAttributes(params: PutAccountSuppressionAttributesRequest): Request[PutAccountSuppressionAttributesResponse] = js.native
+    def putAccountVdmAttributes(params: PutAccountVdmAttributesRequest): Request[PutAccountVdmAttributesResponse] = js.native
     def putConfigurationSetDeliveryOptions(params: PutConfigurationSetDeliveryOptionsRequest): Request[PutConfigurationSetDeliveryOptionsResponse] = js.native
     def putConfigurationSetReputationOptions(params: PutConfigurationSetReputationOptionsRequest): Request[PutConfigurationSetReputationOptionsResponse] = js.native
     def putConfigurationSetSendingOptions(params: PutConfigurationSetSendingOptionsRequest): Request[PutConfigurationSetSendingOptionsResponse] = js.native
     def putConfigurationSetSuppressionOptions(params: PutConfigurationSetSuppressionOptionsRequest): Request[PutConfigurationSetSuppressionOptionsResponse] = js.native
     def putConfigurationSetTrackingOptions(params: PutConfigurationSetTrackingOptionsRequest): Request[PutConfigurationSetTrackingOptionsResponse] = js.native
+    def putConfigurationSetVdmOptions(params: PutConfigurationSetVdmOptionsRequest): Request[PutConfigurationSetVdmOptionsResponse] = js.native
     def putDedicatedIpInPool(params: PutDedicatedIpInPoolRequest): Request[PutDedicatedIpInPoolResponse] = js.native
     def putDedicatedIpWarmupAttributes(params: PutDedicatedIpWarmupAttributesRequest): Request[PutDedicatedIpWarmupAttributesResponse] = js.native
     def putDeliverabilityDashboardOption(params: PutDeliverabilityDashboardOptionRequest): Request[PutDeliverabilityDashboardOptionResponse] = js.native
@@ -333,6 +357,81 @@ package object sesv2 {
       UseCaseDescription.foreach(__v => __obj.updateDynamic("UseCaseDescription")(__v.asInstanceOf[js.Any]))
       WebsiteURL.foreach(__v => __obj.updateDynamic("WebsiteURL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountDetails]
+    }
+  }
+
+  /** Represents a single metric data query to include in a batch.
+    */
+  @js.native
+  trait BatchGetMetricDataQuery extends js.Object {
+    var EndDate: Timestamp
+    var Id: QueryIdentifier
+    var Metric: Metric
+    var Namespace: MetricNamespace
+    var StartDate: Timestamp
+    var Dimensions: js.UndefOr[Dimensions]
+  }
+
+  object BatchGetMetricDataQuery {
+    @inline
+    def apply(
+        EndDate: Timestamp,
+        Id: QueryIdentifier,
+        Metric: Metric,
+        Namespace: MetricNamespace,
+        StartDate: Timestamp,
+        Dimensions: js.UndefOr[Dimensions] = js.undefined
+    ): BatchGetMetricDataQuery = {
+      val __obj = js.Dynamic.literal(
+        "EndDate" -> EndDate.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any],
+        "StartDate" -> StartDate.asInstanceOf[js.Any]
+      )
+
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetMetricDataQuery]
+    }
+  }
+
+  /** Represents a request to retrieve a batch of metric data.
+    */
+  @js.native
+  trait BatchGetMetricDataRequest extends js.Object {
+    var Queries: BatchGetMetricDataQueries
+  }
+
+  object BatchGetMetricDataRequest {
+    @inline
+    def apply(
+        Queries: BatchGetMetricDataQueries
+    ): BatchGetMetricDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "Queries" -> Queries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchGetMetricDataRequest]
+    }
+  }
+
+  /** Represents the result of processing your metric data batch request
+    */
+  @js.native
+  trait BatchGetMetricDataResponse extends js.Object {
+    var Errors: js.UndefOr[MetricDataErrorList]
+    var Results: js.UndefOr[MetricDataResultList]
+  }
+
+  object BatchGetMetricDataResponse {
+    @inline
+    def apply(
+        Errors: js.UndefOr[MetricDataErrorList] = js.undefined,
+        Results: js.UndefOr[MetricDataResultList] = js.undefined
+    ): BatchGetMetricDataResponse = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetMetricDataResponse]
     }
   }
 
@@ -636,6 +735,7 @@ package object sesv2 {
     var SuppressionOptions: js.UndefOr[SuppressionOptions]
     var Tags: js.UndefOr[TagList]
     var TrackingOptions: js.UndefOr[TrackingOptions]
+    var VdmOptions: js.UndefOr[VdmOptions]
   }
 
   object CreateConfigurationSetRequest {
@@ -647,7 +747,8 @@ package object sesv2 {
         SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
         SuppressionOptions: js.UndefOr[SuppressionOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
+        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined,
+        VdmOptions: js.UndefOr[VdmOptions] = js.undefined
     ): CreateConfigurationSetRequest = {
       val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
@@ -659,6 +760,7 @@ package object sesv2 {
       SuppressionOptions.foreach(__v => __obj.updateDynamic("SuppressionOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
+      VdmOptions.foreach(__v => __obj.updateDynamic("VdmOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationSetRequest]
     }
   }
@@ -807,6 +909,7 @@ package object sesv2 {
   @js.native
   trait CreateDedicatedIpPoolRequest extends js.Object {
     var PoolName: PoolName
+    var ScalingMode: js.UndefOr[ScalingMode]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -814,12 +917,14 @@ package object sesv2 {
     @inline
     def apply(
         PoolName: PoolName,
+        ScalingMode: js.UndefOr[ScalingMode] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDedicatedIpPoolRequest = {
       val __obj = js.Dynamic.literal(
         "PoolName" -> PoolName.asInstanceOf[js.Any]
       )
 
+      ScalingMode.foreach(__v => __obj.updateDynamic("ScalingMode")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDedicatedIpPoolRequest]
     }
@@ -1109,6 +1214,42 @@ package object sesv2 {
     }
   }
 
+  /** An object containing additional settings for your VDM configuration as applicable to the Dashboard.
+    */
+  @js.native
+  trait DashboardAttributes extends js.Object {
+    var EngagementMetrics: js.UndefOr[FeatureStatus]
+  }
+
+  object DashboardAttributes {
+    @inline
+    def apply(
+        EngagementMetrics: js.UndefOr[FeatureStatus] = js.undefined
+    ): DashboardAttributes = {
+      val __obj = js.Dynamic.literal()
+      EngagementMetrics.foreach(__v => __obj.updateDynamic("EngagementMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashboardAttributes]
+    }
+  }
+
+  /** An object containing additional settings for your VDM configuration as applicable to the Dashboard.
+    */
+  @js.native
+  trait DashboardOptions extends js.Object {
+    var EngagementMetrics: js.UndefOr[FeatureStatus]
+  }
+
+  object DashboardOptions {
+    @inline
+    def apply(
+        EngagementMetrics: js.UndefOr[FeatureStatus] = js.undefined
+    ): DashboardOptions = {
+      val __obj = js.Dynamic.literal()
+      EngagementMetrics.foreach(__v => __obj.updateDynamic("EngagementMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashboardOptions]
+    }
+  }
+
   /** Contains information about a dedicated IP address that is associated with your Amazon SES account. To learn more about requesting dedicated IP addresses, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html|Requesting and Relinquishing Dedicated IP Addresses]] in the <i>Amazon SES Developer Guide</i>.
     */
   @js.native
@@ -1135,6 +1276,28 @@ package object sesv2 {
 
       PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DedicatedIp]
+    }
+  }
+
+  /** Contains information about a dedicated IP pool.
+    */
+  @js.native
+  trait DedicatedIpPool extends js.Object {
+    var PoolName: PoolName
+    var ScalingMode: ScalingMode
+  }
+
+  object DedicatedIpPool {
+    @inline
+    def apply(
+        PoolName: PoolName,
+        ScalingMode: ScalingMode
+    ): DedicatedIpPool = {
+      val __obj = js.Dynamic.literal(
+        "PoolName" -> PoolName.asInstanceOf[js.Any],
+        "ScalingMode" -> ScalingMode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DedicatedIpPool]
     }
   }
 
@@ -1895,6 +2058,7 @@ package object sesv2 {
     var SendQuota: js.UndefOr[SendQuota]
     var SendingEnabled: js.UndefOr[Enabled]
     var SuppressionAttributes: js.UndefOr[SuppressionAttributes]
+    var VdmAttributes: js.UndefOr[VdmAttributes]
   }
 
   object GetAccountResponse {
@@ -1906,7 +2070,8 @@ package object sesv2 {
         ProductionAccessEnabled: js.UndefOr[Enabled] = js.undefined,
         SendQuota: js.UndefOr[SendQuota] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined,
-        SuppressionAttributes: js.UndefOr[SuppressionAttributes] = js.undefined
+        SuppressionAttributes: js.UndefOr[SuppressionAttributes] = js.undefined,
+        VdmAttributes: js.UndefOr[VdmAttributes] = js.undefined
     ): GetAccountResponse = {
       val __obj = js.Dynamic.literal()
       DedicatedIpAutoWarmupEnabled.foreach(__v => __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any]))
@@ -1916,6 +2081,7 @@ package object sesv2 {
       SendQuota.foreach(__v => __obj.updateDynamic("SendQuota")(__v.asInstanceOf[js.Any]))
       SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       SuppressionAttributes.foreach(__v => __obj.updateDynamic("SuppressionAttributes")(__v.asInstanceOf[js.Any]))
+      VdmAttributes.foreach(__v => __obj.updateDynamic("VdmAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountResponse]
     }
   }
@@ -2025,6 +2191,7 @@ package object sesv2 {
     var SuppressionOptions: js.UndefOr[SuppressionOptions]
     var Tags: js.UndefOr[TagList]
     var TrackingOptions: js.UndefOr[TrackingOptions]
+    var VdmOptions: js.UndefOr[VdmOptions]
   }
 
   object GetConfigurationSetResponse {
@@ -2036,7 +2203,8 @@ package object sesv2 {
         SendingOptions: js.UndefOr[SendingOptions] = js.undefined,
         SuppressionOptions: js.UndefOr[SuppressionOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
-        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
+        TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined,
+        VdmOptions: js.UndefOr[VdmOptions] = js.undefined
     ): GetConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
       ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
@@ -2046,6 +2214,7 @@ package object sesv2 {
       SuppressionOptions.foreach(__v => __obj.updateDynamic("SuppressionOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
+      VdmOptions.foreach(__v => __obj.updateDynamic("VdmOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetResponse]
     }
   }
@@ -2204,6 +2373,43 @@ package object sesv2 {
       TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCustomVerificationEmailTemplateResponse]
+    }
+  }
+
+  /** A request to obtain more information about a dedicated IP pool.
+    */
+  @js.native
+  trait GetDedicatedIpPoolRequest extends js.Object {
+    var PoolName: PoolName
+  }
+
+  object GetDedicatedIpPoolRequest {
+    @inline
+    def apply(
+        PoolName: PoolName
+    ): GetDedicatedIpPoolRequest = {
+      val __obj = js.Dynamic.literal(
+        "PoolName" -> PoolName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDedicatedIpPoolRequest]
+    }
+  }
+
+  /** The following element is returned by the service.
+    */
+  @js.native
+  trait GetDedicatedIpPoolResponse extends js.Object {
+    var DedicatedIpPool: js.UndefOr[DedicatedIpPool]
+  }
+
+  object GetDedicatedIpPoolResponse {
+    @inline
+    def apply(
+        DedicatedIpPool: js.UndefOr[DedicatedIpPool] = js.undefined
+    ): GetDedicatedIpPoolResponse = {
+      val __obj = js.Dynamic.literal()
+      DedicatedIpPool.foreach(__v => __obj.updateDynamic("DedicatedIpPool")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDedicatedIpPoolResponse]
     }
   }
 
@@ -2537,6 +2743,7 @@ package object sesv2 {
     var MailFromAttributes: js.UndefOr[MailFromAttributes]
     var Policies: js.UndefOr[PolicyMap]
     var Tags: js.UndefOr[TagList]
+    var VerificationStatus: js.UndefOr[VerificationStatus]
     var VerifiedForSendingStatus: js.UndefOr[Enabled]
   }
 
@@ -2550,6 +2757,7 @@ package object sesv2 {
         MailFromAttributes: js.UndefOr[MailFromAttributes] = js.undefined,
         Policies: js.UndefOr[PolicyMap] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        VerificationStatus: js.UndefOr[VerificationStatus] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
@@ -2560,6 +2768,7 @@ package object sesv2 {
       MailFromAttributes.foreach(__v => __obj.updateDynamic("MailFromAttributes")(__v.asInstanceOf[js.Any]))
       Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VerificationStatus.foreach(__v => __obj.updateDynamic("VerificationStatus")(__v.asInstanceOf[js.Any]))
       VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEmailIdentityResponse]
     }
@@ -2705,6 +2914,42 @@ package object sesv2 {
     }
   }
 
+  /** An object containing additional settings for your VDM configuration as applicable to the Guardian.
+    */
+  @js.native
+  trait GuardianAttributes extends js.Object {
+    var OptimizedSharedDelivery: js.UndefOr[FeatureStatus]
+  }
+
+  object GuardianAttributes {
+    @inline
+    def apply(
+        OptimizedSharedDelivery: js.UndefOr[FeatureStatus] = js.undefined
+    ): GuardianAttributes = {
+      val __obj = js.Dynamic.literal()
+      OptimizedSharedDelivery.foreach(__v => __obj.updateDynamic("OptimizedSharedDelivery")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GuardianAttributes]
+    }
+  }
+
+  /** An object containing additional settings for your VDM configuration as applicable to the Guardian.
+    */
+  @js.native
+  trait GuardianOptions extends js.Object {
+    var OptimizedSharedDelivery: js.UndefOr[FeatureStatus]
+  }
+
+  object GuardianOptions {
+    @inline
+    def apply(
+        OptimizedSharedDelivery: js.UndefOr[FeatureStatus] = js.undefined
+    ): GuardianOptions = {
+      val __obj = js.Dynamic.literal()
+      OptimizedSharedDelivery.foreach(__v => __obj.updateDynamic("OptimizedSharedDelivery")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GuardianOptions]
+    }
+  }
+
   /** Information about an email identity.
     */
   @js.native
@@ -2712,6 +2957,7 @@ package object sesv2 {
     var IdentityName: js.UndefOr[Identity]
     var IdentityType: js.UndefOr[IdentityType]
     var SendingEnabled: js.UndefOr[Enabled]
+    var VerificationStatus: js.UndefOr[VerificationStatus]
   }
 
   object IdentityInfo {
@@ -2719,12 +2965,14 @@ package object sesv2 {
     def apply(
         IdentityName: js.UndefOr[Identity] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
-        SendingEnabled: js.UndefOr[Enabled] = js.undefined
+        SendingEnabled: js.UndefOr[Enabled] = js.undefined,
+        VerificationStatus: js.UndefOr[VerificationStatus] = js.undefined
     ): IdentityInfo = {
       val __obj = js.Dynamic.literal()
       IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
       SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
+      VerificationStatus.foreach(__v => __obj.updateDynamic("VerificationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityInfo]
     }
   }
@@ -2777,24 +3025,30 @@ package object sesv2 {
   @js.native
   trait ImportJobSummary extends js.Object {
     var CreatedTimestamp: js.UndefOr[Timestamp]
+    var FailedRecordsCount: js.UndefOr[FailedRecordsCount]
     var ImportDestination: js.UndefOr[ImportDestination]
     var JobId: js.UndefOr[JobId]
     var JobStatus: js.UndefOr[JobStatus]
+    var ProcessedRecordsCount: js.UndefOr[ProcessedRecordsCount]
   }
 
   object ImportJobSummary {
     @inline
     def apply(
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        FailedRecordsCount: js.UndefOr[FailedRecordsCount] = js.undefined,
         ImportDestination: js.UndefOr[ImportDestination] = js.undefined,
         JobId: js.UndefOr[JobId] = js.undefined,
-        JobStatus: js.UndefOr[JobStatus] = js.undefined
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        ProcessedRecordsCount: js.UndefOr[ProcessedRecordsCount] = js.undefined
     ): ImportJobSummary = {
       val __obj = js.Dynamic.literal()
       CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      FailedRecordsCount.foreach(__v => __obj.updateDynamic("FailedRecordsCount")(__v.asInstanceOf[js.Any]))
       ImportDestination.foreach(__v => __obj.updateDynamic("ImportDestination")(__v.asInstanceOf[js.Any]))
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      ProcessedRecordsCount.foreach(__v => __obj.updateDynamic("ProcessedRecordsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobSummary]
     }
   }
@@ -3345,6 +3599,51 @@ package object sesv2 {
     }
   }
 
+  /** Represents a request to list the existing recommendations for your account.
+    */
+  @js.native
+  trait ListRecommendationsRequest extends js.Object {
+    var Filter: js.UndefOr[ListRecommendationsFilter]
+    var NextToken: js.UndefOr[NextToken]
+    var PageSize: js.UndefOr[MaxItems]
+  }
+
+  object ListRecommendationsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[ListRecommendationsFilter] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PageSize: js.UndefOr[MaxItems] = js.undefined
+    ): ListRecommendationsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecommendationsRequest]
+    }
+  }
+
+  /** Contains the response to your request to retrieve the list of recommendations for your account.
+    */
+  @js.native
+  trait ListRecommendationsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Recommendations: js.UndefOr[RecommendationsList]
+  }
+
+  object ListRecommendationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Recommendations: js.UndefOr[RecommendationsList] = js.undefined
+    ): ListRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Recommendations.foreach(__v => __obj.updateDynamic("Recommendations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecommendationsResponse]
+    }
+  }
+
   /** A request to obtain a list of email destinations that are on the suppression list for your account.
     */
   @js.native
@@ -3496,6 +3795,54 @@ package object sesv2 {
         "Value" -> Value.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[MessageTag]
+    }
+  }
+
+  /** An error corresponding to the unsuccessful processing of a single metric data query.
+    */
+  @js.native
+  trait MetricDataError extends js.Object {
+    var Code: js.UndefOr[QueryErrorCode]
+    var Id: js.UndefOr[QueryIdentifier]
+    var Message: js.UndefOr[QueryErrorMessage]
+  }
+
+  object MetricDataError {
+    @inline
+    def apply(
+        Code: js.UndefOr[QueryErrorCode] = js.undefined,
+        Id: js.UndefOr[QueryIdentifier] = js.undefined,
+        Message: js.UndefOr[QueryErrorMessage] = js.undefined
+    ): MetricDataError = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDataError]
+    }
+  }
+
+  /** The result of a single metric data query.
+    */
+  @js.native
+  trait MetricDataResult extends js.Object {
+    var Id: js.UndefOr[QueryIdentifier]
+    var Timestamps: js.UndefOr[TimestampList]
+    var Values: js.UndefOr[MetricValueList]
+  }
+
+  object MetricDataResult {
+    @inline
+    def apply(
+        Id: js.UndefOr[QueryIdentifier] = js.undefined,
+        Timestamps: js.UndefOr[TimestampList] = js.undefined,
+        Values: js.UndefOr[MetricValueList] = js.undefined
+    ): MetricDataResult = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Timestamps.foreach(__v => __obj.updateDynamic("Timestamps")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDataResult]
     }
   }
 
@@ -3712,6 +4059,36 @@ package object sesv2 {
     }
   }
 
+  /** A request to submit new account VDM attributes.
+    */
+  @js.native
+  trait PutAccountVdmAttributesRequest extends js.Object {
+    var VdmAttributes: VdmAttributes
+  }
+
+  object PutAccountVdmAttributesRequest {
+    @inline
+    def apply(
+        VdmAttributes: VdmAttributes
+    ): PutAccountVdmAttributesRequest = {
+      val __obj = js.Dynamic.literal(
+        "VdmAttributes" -> VdmAttributes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAccountVdmAttributesRequest]
+    }
+  }
+
+  @js.native
+  trait PutAccountVdmAttributesResponse extends js.Object
+
+  object PutAccountVdmAttributesResponse {
+    @inline
+    def apply(): PutAccountVdmAttributesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutAccountVdmAttributesResponse]
+    }
+  }
+
   /** A request to associate a configuration set with a dedicated IP pool.
     */
   @js.native
@@ -3892,6 +4269,42 @@ package object sesv2 {
     def apply(): PutConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
+    }
+  }
+
+  /** A request to add specific VDM settings to a configuration set.
+    */
+  @js.native
+  trait PutConfigurationSetVdmOptionsRequest extends js.Object {
+    var ConfigurationSetName: ConfigurationSetName
+    var VdmOptions: js.UndefOr[VdmOptions]
+  }
+
+  object PutConfigurationSetVdmOptionsRequest {
+    @inline
+    def apply(
+        ConfigurationSetName: ConfigurationSetName,
+        VdmOptions: js.UndefOr[VdmOptions] = js.undefined
+    ): PutConfigurationSetVdmOptionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
+      )
+
+      VdmOptions.foreach(__v => __obj.updateDynamic("VdmOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutConfigurationSetVdmOptionsRequest]
+    }
+  }
+
+  /** An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    */
+  @js.native
+  trait PutConfigurationSetVdmOptionsResponse extends js.Object
+
+  object PutConfigurationSetVdmOptionsResponse {
+    @inline
+    def apply(): PutConfigurationSetVdmOptionsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutConfigurationSetVdmOptionsResponse]
     }
   }
 
@@ -4246,6 +4659,42 @@ package object sesv2 {
         "Data" -> Data.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[RawMessage]
+    }
+  }
+
+  /** A recommendation generated for your account.
+    */
+  @js.native
+  trait Recommendation extends js.Object {
+    var CreatedTimestamp: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[RecommendationDescription]
+    var Impact: js.UndefOr[RecommendationImpact]
+    var LastUpdatedTimestamp: js.UndefOr[Timestamp]
+    var ResourceArn: js.UndefOr[AmazonResourceName]
+    var Status: js.UndefOr[RecommendationStatus]
+    var Type: js.UndefOr[RecommendationType]
+  }
+
+  object Recommendation {
+    @inline
+    def apply(
+        CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[RecommendationDescription] = js.undefined,
+        Impact: js.UndefOr[RecommendationImpact] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ResourceArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        Status: js.UndefOr[RecommendationStatus] = js.undefined,
+        Type: js.UndefOr[RecommendationType] = js.undefined
+    ): Recommendation = {
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Impact.foreach(__v => __obj.updateDynamic("Impact")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Recommendation]
     }
   }
 
@@ -5162,6 +5611,53 @@ package object sesv2 {
     def apply(): UpdateEmailTemplateResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateEmailTemplateResponse]
+    }
+  }
+
+  /** The VDM attributes that apply to your Amazon SES account.
+    */
+  @js.native
+  trait VdmAttributes extends js.Object {
+    var VdmEnabled: FeatureStatus
+    var DashboardAttributes: js.UndefOr[DashboardAttributes]
+    var GuardianAttributes: js.UndefOr[GuardianAttributes]
+  }
+
+  object VdmAttributes {
+    @inline
+    def apply(
+        VdmEnabled: FeatureStatus,
+        DashboardAttributes: js.UndefOr[DashboardAttributes] = js.undefined,
+        GuardianAttributes: js.UndefOr[GuardianAttributes] = js.undefined
+    ): VdmAttributes = {
+      val __obj = js.Dynamic.literal(
+        "VdmEnabled" -> VdmEnabled.asInstanceOf[js.Any]
+      )
+
+      DashboardAttributes.foreach(__v => __obj.updateDynamic("DashboardAttributes")(__v.asInstanceOf[js.Any]))
+      GuardianAttributes.foreach(__v => __obj.updateDynamic("GuardianAttributes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VdmAttributes]
+    }
+  }
+
+  /** An object that defines the VDM settings that apply to emails that you send using the configuration set.
+    */
+  @js.native
+  trait VdmOptions extends js.Object {
+    var DashboardOptions: js.UndefOr[DashboardOptions]
+    var GuardianOptions: js.UndefOr[GuardianOptions]
+  }
+
+  object VdmOptions {
+    @inline
+    def apply(
+        DashboardOptions: js.UndefOr[DashboardOptions] = js.undefined,
+        GuardianOptions: js.UndefOr[GuardianOptions] = js.undefined
+    ): VdmOptions = {
+      val __obj = js.Dynamic.literal()
+      DashboardOptions.foreach(__v => __obj.updateDynamic("DashboardOptions")(__v.asInstanceOf[js.Any]))
+      GuardianOptions.foreach(__v => __obj.updateDynamic("GuardianOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VdmOptions]
     }
   }
 

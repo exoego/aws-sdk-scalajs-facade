@@ -479,6 +479,7 @@ package object mediapackagevod {
     var ManifestName: js.UndefOr[__string]
     var MinBufferTimeSeconds: js.UndefOr[__integer]
     var Profile: js.UndefOr[Profile]
+    var ScteMarkersSource: js.UndefOr[ScteMarkersSource]
     var StreamSelection: js.UndefOr[StreamSelection]
   }
 
@@ -489,6 +490,7 @@ package object mediapackagevod {
         ManifestName: js.UndefOr[__string] = js.undefined,
         MinBufferTimeSeconds: js.UndefOr[__integer] = js.undefined,
         Profile: js.UndefOr[Profile] = js.undefined,
+        ScteMarkersSource: js.UndefOr[ScteMarkersSource] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
     ): DashManifest = {
       val __obj = js.Dynamic.literal()
@@ -496,6 +498,7 @@ package object mediapackagevod {
       ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       MinBufferTimeSeconds.foreach(__v => __obj.updateDynamic("MinBufferTimeSeconds")(__v.asInstanceOf[js.Any]))
       Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      ScteMarkersSource.foreach(__v => __obj.updateDynamic("ScteMarkersSource")(__v.asInstanceOf[js.Any]))
       StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashManifest]
     }
@@ -508,6 +511,7 @@ package object mediapackagevod {
     var DashManifests: __listOfDashManifest
     var Encryption: js.UndefOr[DashEncryption]
     var IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean]
+    var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement]
     var SegmentDurationSeconds: js.UndefOr[__integer]
     var SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat]
@@ -519,6 +523,7 @@ package object mediapackagevod {
         DashManifests: __listOfDashManifest,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
         IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean] = js.undefined,
+        IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
         SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat] = js.undefined
@@ -529,6 +534,7 @@ package object mediapackagevod {
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       IncludeEncoderConfigurationInSegments.foreach(__v => __obj.updateDynamic("IncludeEncoderConfigurationInSegments")(__v.asInstanceOf[js.Any]))
+      IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       PeriodTriggers.foreach(__v => __obj.updateDynamic("PeriodTriggers")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
@@ -750,6 +756,7 @@ package object mediapackagevod {
 
   @js.native
   trait DescribePackagingGroupResponse extends js.Object {
+    var ApproximateAssetCount: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
@@ -761,6 +768,7 @@ package object mediapackagevod {
   object DescribePackagingGroupResponse {
     @inline
     def apply(
+        ApproximateAssetCount: js.UndefOr[__integer] = js.undefined,
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
@@ -769,6 +777,7 @@ package object mediapackagevod {
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
+      ApproximateAssetCount.foreach(__v => __obj.updateDynamic("ApproximateAssetCount")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
@@ -818,6 +827,28 @@ package object mediapackagevod {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EgressEndpoint]
+    }
+  }
+
+  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+    */
+  @js.native
+  trait EncryptionContractConfiguration extends js.Object {
+    var PresetSpeke20Audio: PresetSpeke20Audio
+    var PresetSpeke20Video: PresetSpeke20Video
+  }
+
+  object EncryptionContractConfiguration {
+    @inline
+    def apply(
+        PresetSpeke20Audio: PresetSpeke20Audio,
+        PresetSpeke20Video: PresetSpeke20Video
+    ): EncryptionContractConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "PresetSpeke20Audio" -> PresetSpeke20Audio.asInstanceOf[js.Any],
+        "PresetSpeke20Video" -> PresetSpeke20Video.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EncryptionContractConfiguration]
     }
   }
 
@@ -1174,6 +1205,7 @@ package object mediapackagevod {
     */
   @js.native
   trait PackagingGroup extends js.Object {
+    var ApproximateAssetCount: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
@@ -1185,6 +1217,7 @@ package object mediapackagevod {
   object PackagingGroup {
     @inline
     def apply(
+        ApproximateAssetCount: js.UndefOr[__integer] = js.undefined,
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
@@ -1193,6 +1226,7 @@ package object mediapackagevod {
         Tags: js.UndefOr[Tags] = js.undefined
     ): PackagingGroup = {
       val __obj = js.Dynamic.literal()
+      ApproximateAssetCount.foreach(__v => __obj.updateDynamic("ApproximateAssetCount")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
@@ -1210,6 +1244,7 @@ package object mediapackagevod {
     var RoleArn: __string
     var SystemIds: __listOf__string
     var Url: __string
+    var EncryptionContractConfiguration: js.UndefOr[EncryptionContractConfiguration]
   }
 
   object SpekeKeyProvider {
@@ -1217,13 +1252,16 @@ package object mediapackagevod {
     def apply(
         RoleArn: __string,
         SystemIds: __listOf__string,
-        Url: __string
+        Url: __string,
+        EncryptionContractConfiguration: js.UndefOr[EncryptionContractConfiguration] = js.undefined
     ): SpekeKeyProvider = {
       val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SystemIds" -> SystemIds.asInstanceOf[js.Any],
         "Url" -> Url.asInstanceOf[js.Any]
       )
+
+      EncryptionContractConfiguration.foreach(__v => __obj.updateDynamic("EncryptionContractConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
@@ -1317,6 +1355,7 @@ package object mediapackagevod {
 
   @js.native
   trait UpdatePackagingGroupResponse extends js.Object {
+    var ApproximateAssetCount: js.UndefOr[__integer]
     var Arn: js.UndefOr[__string]
     var Authorization: js.UndefOr[Authorization]
     var DomainName: js.UndefOr[__string]
@@ -1328,6 +1367,7 @@ package object mediapackagevod {
   object UpdatePackagingGroupResponse {
     @inline
     def apply(
+        ApproximateAssetCount: js.UndefOr[__integer] = js.undefined,
         Arn: js.UndefOr[__string] = js.undefined,
         Authorization: js.UndefOr[Authorization] = js.undefined,
         DomainName: js.UndefOr[__string] = js.undefined,
@@ -1336,6 +1376,7 @@ package object mediapackagevod {
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdatePackagingGroupResponse = {
       val __obj = js.Dynamic.literal()
+      ApproximateAssetCount.foreach(__v => __obj.updateDynamic("ApproximateAssetCount")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Authorization.foreach(__v => __obj.updateDynamic("Authorization")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))

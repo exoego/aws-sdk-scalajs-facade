@@ -23,8 +23,9 @@ object BrokerState {
   val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
   val RUNNING = "RUNNING".asInstanceOf[BrokerState]
   val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
+  val CRITICAL_ACTION_REQUIRED = "CRITICAL_ACTION_REQUIRED".asInstanceOf[BrokerState]
 
-  @inline def values: js.Array[BrokerState] = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
+  @inline def values: js.Array[BrokerState] = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS, CRITICAL_ACTION_REQUIRED)
 }
 
 /** The broker's storage type. <important>EFS is not supported for RabbitMQ engine type. </important>

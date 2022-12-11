@@ -29,8 +29,11 @@ object DataSourceType {
   val XRAY = "XRAY".asInstanceOf[DataSourceType]
   val TIMESTREAM = "TIMESTREAM".asInstanceOf[DataSourceType]
   val SITEWISE = "SITEWISE".asInstanceOf[DataSourceType]
+  val ATHENA = "ATHENA".asInstanceOf[DataSourceType]
+  val REDSHIFT = "REDSHIFT".asInstanceOf[DataSourceType]
+  val TWINMAKER = "TWINMAKER".asInstanceOf[DataSourceType]
 
-  @inline def values: js.Array[DataSourceType] = js.Array(AMAZON_OPENSEARCH_SERVICE, CLOUDWATCH, PROMETHEUS, XRAY, TIMESTREAM, SITEWISE)
+  @inline def values: js.Array[DataSourceType] = js.Array(AMAZON_OPENSEARCH_SERVICE, CLOUDWATCH, PROMETHEUS, XRAY, TIMESTREAM, SITEWISE, ATHENA, REDSHIFT, TWINMAKER)
 }
 
 @js.native
@@ -64,8 +67,9 @@ sealed trait Role extends js.Any
 object Role {
   val ADMIN = "ADMIN".asInstanceOf[Role]
   val EDITOR = "EDITOR".asInstanceOf[Role]
+  val VIEWER = "VIEWER".asInstanceOf[Role]
 
-  @inline def values: js.Array[Role] = js.Array(ADMIN, EDITOR)
+  @inline def values: js.Array[Role] = js.Array(ADMIN, EDITOR, VIEWER)
 }
 
 @js.native

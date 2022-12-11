@@ -10,9 +10,12 @@ import facade.amazonaws._
 package object grafana {
   type AllowedOrganization = String
   type AllowedOrganizations = js.Array[AllowedOrganization]
+  type ApiKeyName = String
+  type ApiKeyToken = String
   type AssertionAttribute = String
   type AuthenticationProviders = js.Array[AuthenticationProviderTypes]
   type ClientToken = String
+  type CreateWorkspaceApiKeyRequestSecondsToLiveInteger = Int
   type DataSourceTypesList = js.Array[DataSourceType]
   type Description = String
   type Endpoint = String
@@ -26,13 +29,22 @@ package object grafana {
   type OrganizationRoleName = String
   type OrganizationalUnit = String
   type OrganizationalUnitList = js.Array[OrganizationalUnit]
+  type OverridableConfigurationJson = String
   type PaginationToken = String
   type PermissionEntryList = js.Array[PermissionEntry]
   type RoleValue = String
   type RoleValueList = js.Array[RoleValue]
   type SSOClientId = String
+  type SecurityGroupId = String
+  type SecurityGroupIds = js.Array[SecurityGroupId]
   type SsoId = String
   type StackSetName = String
+  type SubnetId = String
+  type SubnetIds = js.Array[SubnetId]
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Timestamp = js.Date
   type UpdateErrorCodeInteger = Int
   type UpdateErrorList = js.Array[UpdateError]
@@ -45,15 +57,22 @@ package object grafana {
   final class GrafanaOps(private val service: Grafana) extends AnyVal {
 
     @inline def associateLicenseFuture(params: AssociateLicenseRequest): Future[AssociateLicenseResponse] = service.associateLicense(params).promise().toFuture
+    @inline def createWorkspaceApiKeyFuture(params: CreateWorkspaceApiKeyRequest): Future[CreateWorkspaceApiKeyResponse] = service.createWorkspaceApiKey(params).promise().toFuture
     @inline def createWorkspaceFuture(params: CreateWorkspaceRequest): Future[CreateWorkspaceResponse] = service.createWorkspace(params).promise().toFuture
+    @inline def deleteWorkspaceApiKeyFuture(params: DeleteWorkspaceApiKeyRequest): Future[DeleteWorkspaceApiKeyResponse] = service.deleteWorkspaceApiKey(params).promise().toFuture
     @inline def deleteWorkspaceFuture(params: DeleteWorkspaceRequest): Future[DeleteWorkspaceResponse] = service.deleteWorkspace(params).promise().toFuture
     @inline def describeWorkspaceAuthenticationFuture(params: DescribeWorkspaceAuthenticationRequest): Future[DescribeWorkspaceAuthenticationResponse] = service.describeWorkspaceAuthentication(params).promise().toFuture
+    @inline def describeWorkspaceConfigurationFuture(params: DescribeWorkspaceConfigurationRequest): Future[DescribeWorkspaceConfigurationResponse] = service.describeWorkspaceConfiguration(params).promise().toFuture
     @inline def describeWorkspaceFuture(params: DescribeWorkspaceRequest): Future[DescribeWorkspaceResponse] = service.describeWorkspace(params).promise().toFuture
     @inline def disassociateLicenseFuture(params: DisassociateLicenseRequest): Future[DisassociateLicenseResponse] = service.disassociateLicense(params).promise().toFuture
     @inline def listPermissionsFuture(params: ListPermissionsRequest): Future[ListPermissionsResponse] = service.listPermissions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listWorkspacesFuture(params: ListWorkspacesRequest): Future[ListWorkspacesResponse] = service.listWorkspaces(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updatePermissionsFuture(params: UpdatePermissionsRequest): Future[UpdatePermissionsResponse] = service.updatePermissions(params).promise().toFuture
     @inline def updateWorkspaceAuthenticationFuture(params: UpdateWorkspaceAuthenticationRequest): Future[UpdateWorkspaceAuthenticationResponse] = service.updateWorkspaceAuthentication(params).promise().toFuture
+    @inline def updateWorkspaceConfigurationFuture(params: UpdateWorkspaceConfigurationRequest): Future[UpdateWorkspaceConfigurationResponse] = service.updateWorkspaceConfiguration(params).promise().toFuture
     @inline def updateWorkspaceFuture(params: UpdateWorkspaceRequest): Future[UpdateWorkspaceResponse] = service.updateWorkspace(params).promise().toFuture
 
   }
@@ -65,15 +84,22 @@ package object grafana {
 
     def associateLicense(params: AssociateLicenseRequest): Request[AssociateLicenseResponse] = js.native
     def createWorkspace(params: CreateWorkspaceRequest): Request[CreateWorkspaceResponse] = js.native
+    def createWorkspaceApiKey(params: CreateWorkspaceApiKeyRequest): Request[CreateWorkspaceApiKeyResponse] = js.native
     def deleteWorkspace(params: DeleteWorkspaceRequest): Request[DeleteWorkspaceResponse] = js.native
+    def deleteWorkspaceApiKey(params: DeleteWorkspaceApiKeyRequest): Request[DeleteWorkspaceApiKeyResponse] = js.native
     def describeWorkspace(params: DescribeWorkspaceRequest): Request[DescribeWorkspaceResponse] = js.native
     def describeWorkspaceAuthentication(params: DescribeWorkspaceAuthenticationRequest): Request[DescribeWorkspaceAuthenticationResponse] = js.native
+    def describeWorkspaceConfiguration(params: DescribeWorkspaceConfigurationRequest): Request[DescribeWorkspaceConfigurationResponse] = js.native
     def disassociateLicense(params: DisassociateLicenseRequest): Request[DisassociateLicenseResponse] = js.native
     def listPermissions(params: ListPermissionsRequest): Request[ListPermissionsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWorkspaces(params: ListWorkspacesRequest): Request[ListWorkspacesResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updatePermissions(params: UpdatePermissionsRequest): Request[UpdatePermissionsResponse] = js.native
     def updateWorkspace(params: UpdateWorkspaceRequest): Request[UpdateWorkspaceResponse] = js.native
     def updateWorkspaceAuthentication(params: UpdateWorkspaceAuthenticationRequest): Request[UpdateWorkspaceAuthenticationResponse] = js.native
+    def updateWorkspaceConfiguration(params: UpdateWorkspaceConfigurationRequest): Request[UpdateWorkspaceConfigurationResponse] = js.native
   }
   object Grafana {
     @inline implicit def toOps(service: Grafana): GrafanaOps = {
@@ -177,7 +203,7 @@ package object grafana {
     }
   }
 
-  /** A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication, and whether that authentication is fully configured.
+  /** A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication, and whether that authentication is fully configured.
     */
   @js.native
   trait AuthenticationSummary extends js.Object {
@@ -200,7 +226,7 @@ package object grafana {
     }
   }
 
-  /** A structure containing information about how this workspace works with Amazon Web Services SSO.
+  /** A structure containing information about how this workspace works with IAM Identity Center.
     */
   @js.native
   trait AwsSsoAuthentication extends js.Object {
@@ -219,13 +245,65 @@ package object grafana {
   }
 
   @js.native
+  trait CreateWorkspaceApiKeyRequest extends js.Object {
+    var keyName: ApiKeyName
+    var keyRole: String
+    var secondsToLive: CreateWorkspaceApiKeyRequestSecondsToLiveInteger
+    var workspaceId: WorkspaceId
+  }
+
+  object CreateWorkspaceApiKeyRequest {
+    @inline
+    def apply(
+        keyName: ApiKeyName,
+        keyRole: String,
+        secondsToLive: CreateWorkspaceApiKeyRequestSecondsToLiveInteger,
+        workspaceId: WorkspaceId
+    ): CreateWorkspaceApiKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "keyName" -> keyName.asInstanceOf[js.Any],
+        "keyRole" -> keyRole.asInstanceOf[js.Any],
+        "secondsToLive" -> secondsToLive.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateWorkspaceApiKeyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWorkspaceApiKeyResponse extends js.Object {
+    var key: ApiKeyToken
+    var keyName: ApiKeyName
+    var workspaceId: WorkspaceId
+  }
+
+  object CreateWorkspaceApiKeyResponse {
+    @inline
+    def apply(
+        key: ApiKeyToken,
+        keyName: ApiKeyName,
+        workspaceId: WorkspaceId
+    ): CreateWorkspaceApiKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "key" -> key.asInstanceOf[js.Any],
+        "keyName" -> keyName.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateWorkspaceApiKeyResponse]
+    }
+  }
+
+  @js.native
   trait CreateWorkspaceRequest extends js.Object {
     var accountAccessType: AccountAccessType
     var authenticationProviders: AuthenticationProviders
     var permissionType: PermissionType
     var clientToken: js.UndefOr[ClientToken]
+    var configuration: js.UndefOr[OverridableConfigurationJson]
     var organizationRoleName: js.UndefOr[OrganizationRoleName]
     var stackSetName: js.UndefOr[StackSetName]
+    var tags: js.UndefOr[TagMap]
+    var vpcConfiguration: js.UndefOr[VpcConfiguration]
     var workspaceDataSources: js.UndefOr[DataSourceTypesList]
     var workspaceDescription: js.UndefOr[Description]
     var workspaceName: js.UndefOr[WorkspaceName]
@@ -241,8 +319,11 @@ package object grafana {
         authenticationProviders: AuthenticationProviders,
         permissionType: PermissionType,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        configuration: js.UndefOr[OverridableConfigurationJson] = js.undefined,
         organizationRoleName: js.UndefOr[OrganizationRoleName] = js.undefined,
         stackSetName: js.UndefOr[StackSetName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        vpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined,
         workspaceDataSources: js.UndefOr[DataSourceTypesList] = js.undefined,
         workspaceDescription: js.UndefOr[Description] = js.undefined,
         workspaceName: js.UndefOr[WorkspaceName] = js.undefined,
@@ -257,8 +338,11 @@ package object grafana {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       organizationRoleName.foreach(__v => __obj.updateDynamic("organizationRoleName")(__v.asInstanceOf[js.Any]))
       stackSetName.foreach(__v => __obj.updateDynamic("stackSetName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfiguration.foreach(__v => __obj.updateDynamic("vpcConfiguration")(__v.asInstanceOf[js.Any]))
       workspaceDataSources.foreach(__v => __obj.updateDynamic("workspaceDataSources")(__v.asInstanceOf[js.Any]))
       workspaceDescription.foreach(__v => __obj.updateDynamic("workspaceDescription")(__v.asInstanceOf[js.Any]))
       workspaceName.foreach(__v => __obj.updateDynamic("workspaceName")(__v.asInstanceOf[js.Any]))
@@ -283,6 +367,46 @@ package object grafana {
         "workspace" -> workspace.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateWorkspaceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkspaceApiKeyRequest extends js.Object {
+    var keyName: ApiKeyName
+    var workspaceId: WorkspaceId
+  }
+
+  object DeleteWorkspaceApiKeyRequest {
+    @inline
+    def apply(
+        keyName: ApiKeyName,
+        workspaceId: WorkspaceId
+    ): DeleteWorkspaceApiKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "keyName" -> keyName.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWorkspaceApiKeyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWorkspaceApiKeyResponse extends js.Object {
+    var keyName: ApiKeyName
+    var workspaceId: WorkspaceId
+  }
+
+  object DeleteWorkspaceApiKeyResponse {
+    @inline
+    def apply(
+        keyName: ApiKeyName,
+        workspaceId: WorkspaceId
+    ): DeleteWorkspaceApiKeyResponse = {
+      val __obj = js.Dynamic.literal(
+        "keyName" -> keyName.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWorkspaceApiKeyResponse]
     }
   }
 
@@ -351,6 +475,40 @@ package object grafana {
         "authentication" -> authentication.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribeWorkspaceAuthenticationResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWorkspaceConfigurationRequest extends js.Object {
+    var workspaceId: WorkspaceId
+  }
+
+  object DescribeWorkspaceConfigurationRequest {
+    @inline
+    def apply(
+        workspaceId: WorkspaceId
+    ): DescribeWorkspaceConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeWorkspaceConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWorkspaceConfigurationResponse extends js.Object {
+    var configuration: OverridableConfigurationJson
+  }
+
+  object DescribeWorkspaceConfigurationResponse {
+    @inline
+    def apply(
+        configuration: OverridableConfigurationJson
+    ): DescribeWorkspaceConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "configuration" -> configuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeWorkspaceConfigurationResponse]
     }
   }
 
@@ -425,7 +583,7 @@ package object grafana {
     }
   }
 
-  /** A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter.
+  /** A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter, or by specifying the full metadata in XML format in the <code>xml</code> parameter. Specifying both will cause an error.
     */
   @js.native
   trait IdpMetadata extends js.Object {
@@ -501,6 +659,39 @@ package object grafana {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: String
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
   trait ListWorkspacesRequest extends js.Object {
     var maxResults: js.UndefOr[ListWorkspacesRequestMaxResultsInteger]
     var nextToken: js.UndefOr[PaginationToken]
@@ -540,7 +731,7 @@ package object grafana {
     }
   }
 
-  /** A structure containing the identity of one user or group and the <code>Admin</code> or <code>Editor</code> role that they have.
+  /** A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role that they have.
     */
   @js.native
   trait PermissionEntry extends js.Object {
@@ -562,7 +753,7 @@ package object grafana {
     }
   }
 
-  /** This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.
+  /** This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.
     */
   @js.native
   trait RoleValues extends js.Object {
@@ -635,6 +826,68 @@ package object grafana {
       loginValidityDuration.foreach(__v => __obj.updateDynamic("loginValidityDuration")(__v.asInstanceOf[js.Any]))
       roleValues.foreach(__v => __obj.updateDynamic("roleValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamlConfiguration]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: String
+    var tagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: String,
+        tagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -767,12 +1020,45 @@ package object grafana {
   }
 
   @js.native
+  trait UpdateWorkspaceConfigurationRequest extends js.Object {
+    var configuration: OverridableConfigurationJson
+    var workspaceId: WorkspaceId
+  }
+
+  object UpdateWorkspaceConfigurationRequest {
+    @inline
+    def apply(
+        configuration: OverridableConfigurationJson,
+        workspaceId: WorkspaceId
+    ): UpdateWorkspaceConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "configuration" -> configuration.asInstanceOf[js.Any],
+        "workspaceId" -> workspaceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateWorkspaceConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateWorkspaceConfigurationResponse extends js.Object
+
+  object UpdateWorkspaceConfigurationResponse {
+    @inline
+    def apply(): UpdateWorkspaceConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateWorkspaceConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateWorkspaceRequest extends js.Object {
     var workspaceId: WorkspaceId
     var accountAccessType: js.UndefOr[AccountAccessType]
     var organizationRoleName: js.UndefOr[OrganizationRoleName]
     var permissionType: js.UndefOr[PermissionType]
+    var removeVpcConfiguration: js.UndefOr[Boolean]
     var stackSetName: js.UndefOr[StackSetName]
+    var vpcConfiguration: js.UndefOr[VpcConfiguration]
     var workspaceDataSources: js.UndefOr[DataSourceTypesList]
     var workspaceDescription: js.UndefOr[Description]
     var workspaceName: js.UndefOr[WorkspaceName]
@@ -788,7 +1074,9 @@ package object grafana {
         accountAccessType: js.UndefOr[AccountAccessType] = js.undefined,
         organizationRoleName: js.UndefOr[OrganizationRoleName] = js.undefined,
         permissionType: js.UndefOr[PermissionType] = js.undefined,
+        removeVpcConfiguration: js.UndefOr[Boolean] = js.undefined,
         stackSetName: js.UndefOr[StackSetName] = js.undefined,
+        vpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined,
         workspaceDataSources: js.UndefOr[DataSourceTypesList] = js.undefined,
         workspaceDescription: js.UndefOr[Description] = js.undefined,
         workspaceName: js.UndefOr[WorkspaceName] = js.undefined,
@@ -803,7 +1091,9 @@ package object grafana {
       accountAccessType.foreach(__v => __obj.updateDynamic("accountAccessType")(__v.asInstanceOf[js.Any]))
       organizationRoleName.foreach(__v => __obj.updateDynamic("organizationRoleName")(__v.asInstanceOf[js.Any]))
       permissionType.foreach(__v => __obj.updateDynamic("permissionType")(__v.asInstanceOf[js.Any]))
+      removeVpcConfiguration.foreach(__v => __obj.updateDynamic("removeVpcConfiguration")(__v.asInstanceOf[js.Any]))
       stackSetName.foreach(__v => __obj.updateDynamic("stackSetName")(__v.asInstanceOf[js.Any]))
+      vpcConfiguration.foreach(__v => __obj.updateDynamic("vpcConfiguration")(__v.asInstanceOf[js.Any]))
       workspaceDataSources.foreach(__v => __obj.updateDynamic("workspaceDataSources")(__v.asInstanceOf[js.Any]))
       workspaceDescription.foreach(__v => __obj.updateDynamic("workspaceDescription")(__v.asInstanceOf[js.Any]))
       workspaceName.foreach(__v => __obj.updateDynamic("workspaceName")(__v.asInstanceOf[js.Any]))
@@ -853,6 +1143,28 @@ package object grafana {
     }
   }
 
+  /** The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+    */
+  @js.native
+  trait VpcConfiguration extends js.Object {
+    var securityGroupIds: SecurityGroupIds
+    var subnetIds: SubnetIds
+  }
+
+  object VpcConfiguration {
+    @inline
+    def apply(
+        securityGroupIds: SecurityGroupIds,
+        subnetIds: SubnetIds
+    ): VpcConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VpcConfiguration]
+    }
+  }
+
   /** A structure containing information about an Amazon Managed Grafana workspace in your account.
     */
   @js.native
@@ -877,6 +1189,8 @@ package object grafana {
     var organizationalUnits: js.UndefOr[OrganizationalUnitList]
     var permissionType: js.UndefOr[PermissionType]
     var stackSetName: js.UndefOr[StackSetName]
+    var tags: js.UndefOr[TagMap]
+    var vpcConfiguration: js.UndefOr[VpcConfiguration]
     var workspaceRoleArn: js.UndefOr[IamRoleArn]
   }
 
@@ -903,6 +1217,8 @@ package object grafana {
         organizationalUnits: js.UndefOr[OrganizationalUnitList] = js.undefined,
         permissionType: js.UndefOr[PermissionType] = js.undefined,
         stackSetName: js.UndefOr[StackSetName] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        vpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined,
         workspaceRoleArn: js.UndefOr[IamRoleArn] = js.undefined
     ): WorkspaceDescription = {
       val __obj = js.Dynamic.literal(
@@ -928,6 +1244,8 @@ package object grafana {
       organizationalUnits.foreach(__v => __obj.updateDynamic("organizationalUnits")(__v.asInstanceOf[js.Any]))
       permissionType.foreach(__v => __obj.updateDynamic("permissionType")(__v.asInstanceOf[js.Any]))
       stackSetName.foreach(__v => __obj.updateDynamic("stackSetName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfiguration.foreach(__v => __obj.updateDynamic("vpcConfiguration")(__v.asInstanceOf[js.Any]))
       workspaceRoleArn.foreach(__v => __obj.updateDynamic("workspaceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceDescription]
     }
@@ -947,6 +1265,7 @@ package object grafana {
     var description: js.UndefOr[Description]
     var name: js.UndefOr[WorkspaceName]
     var notificationDestinations: js.UndefOr[NotificationDestinationsList]
+    var tags: js.UndefOr[TagMap]
   }
 
   object WorkspaceSummary {
@@ -961,7 +1280,8 @@ package object grafana {
         status: WorkspaceStatus,
         description: js.UndefOr[Description] = js.undefined,
         name: js.UndefOr[WorkspaceName] = js.undefined,
-        notificationDestinations: js.UndefOr[NotificationDestinationsList] = js.undefined
+        notificationDestinations: js.UndefOr[NotificationDestinationsList] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): WorkspaceSummary = {
       val __obj = js.Dynamic.literal(
         "authentication" -> authentication.asInstanceOf[js.Any],
@@ -976,6 +1296,7 @@ package object grafana {
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       notificationDestinations.foreach(__v => __obj.updateDynamic("notificationDestinations")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceSummary]
     }
   }

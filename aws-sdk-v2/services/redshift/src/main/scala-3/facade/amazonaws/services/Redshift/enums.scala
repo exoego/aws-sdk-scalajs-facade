@@ -68,6 +68,14 @@ object DataShareStatusForProducer {
   inline def values: js.Array[DataShareStatusForProducer] = js.Array(ACTIVE, AUTHORIZED, PENDING_AUTHORIZATION, DEAUTHORIZED, REJECTED)
 }
 
+type LogDestinationType = "s3" | "cloudwatch"
+object LogDestinationType {
+  inline val s3: "s3" = "s3"
+  inline val cloudwatch: "cloudwatch" = "cloudwatch"
+
+  inline def values: js.Array[LogDestinationType] = js.Array(s3, cloudwatch)
+}
+
 type Mode = "standard" | "high-performance"
 object Mode {
   inline val standard: "standard" = "standard"
@@ -227,12 +235,13 @@ object UsageLimitBreachAction {
   inline def values: js.Array[UsageLimitBreachAction] = js.Array(log, `emit-metric`, disable)
 }
 
-type UsageLimitFeatureType = "spectrum" | "concurrency-scaling"
+type UsageLimitFeatureType = "spectrum" | "concurrency-scaling" | "cross-region-datasharing"
 object UsageLimitFeatureType {
   inline val spectrum: "spectrum" = "spectrum"
   inline val `concurrency-scaling`: "concurrency-scaling" = "concurrency-scaling"
+  inline val `cross-region-datasharing`: "cross-region-datasharing" = "cross-region-datasharing"
 
-  inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`)
+  inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`, `cross-region-datasharing`)
 }
 
 type UsageLimitLimitType = "time" | "data-scanned"

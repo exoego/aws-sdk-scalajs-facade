@@ -56,6 +56,18 @@ object PricingPlan {
   inline def values: js.Array[PricingPlan] = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }
 
+type RouteMatrixErrorCode = "RouteNotFound" | "RouteTooLong" | "PositionsNotFound" | "DestinationPositionNotFound" | "DeparturePositionNotFound" | "OtherValidationError"
+object RouteMatrixErrorCode {
+  inline val RouteNotFound: "RouteNotFound" = "RouteNotFound"
+  inline val RouteTooLong: "RouteTooLong" = "RouteTooLong"
+  inline val PositionsNotFound: "PositionsNotFound" = "PositionsNotFound"
+  inline val DestinationPositionNotFound: "DestinationPositionNotFound" = "DestinationPositionNotFound"
+  inline val DeparturePositionNotFound: "DeparturePositionNotFound" = "DeparturePositionNotFound"
+  inline val OtherValidationError: "OtherValidationError" = "OtherValidationError"
+
+  inline def values: js.Array[RouteMatrixErrorCode] = js.Array(RouteNotFound, RouteTooLong, PositionsNotFound, DestinationPositionNotFound, DeparturePositionNotFound, OtherValidationError)
+}
+
 type TravelMode = "Car" | "Truck" | "Walking"
 object TravelMode {
   inline val Car: "Car" = "Car"

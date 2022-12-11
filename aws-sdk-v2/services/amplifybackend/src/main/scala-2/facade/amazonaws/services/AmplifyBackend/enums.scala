@@ -32,6 +32,8 @@ object AuthenticatedElement {
   @inline def values: js.Array[AuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
 }
 
+/** The type of verification message to send.
+  */
 @js.native
 sealed trait DeliveryMethod extends js.Any
 object DeliveryMethod {

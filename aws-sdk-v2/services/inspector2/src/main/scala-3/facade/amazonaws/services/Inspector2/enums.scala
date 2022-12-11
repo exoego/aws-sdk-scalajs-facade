@@ -19,15 +19,16 @@ object AggregationFindingType {
   inline def values: js.Array[AggregationFindingType] = js.Array(NETWORK_REACHABILITY, PACKAGE_VULNERABILITY)
 }
 
-type AggregationResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE"
+type AggregationResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE" | "AWS_LAMBDA_FUNCTION"
 object AggregationResourceType {
   inline val AWS_EC2_INSTANCE: "AWS_EC2_INSTANCE" = "AWS_EC2_INSTANCE"
   inline val AWS_ECR_CONTAINER_IMAGE: "AWS_ECR_CONTAINER_IMAGE" = "AWS_ECR_CONTAINER_IMAGE"
+  inline val AWS_LAMBDA_FUNCTION: "AWS_LAMBDA_FUNCTION" = "AWS_LAMBDA_FUNCTION"
 
-  inline def values: js.Array[AggregationResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE)
+  inline def values: js.Array[AggregationResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_LAMBDA_FUNCTION)
 }
 
-type AggregationType = "FINDING_TYPE" | "PACKAGE" | "TITLE" | "REPOSITORY" | "AMI" | "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER" | "IMAGE_LAYER" | "ACCOUNT"
+type AggregationType = "FINDING_TYPE" | "PACKAGE" | "TITLE" | "REPOSITORY" | "AMI" | "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER" | "IMAGE_LAYER" | "ACCOUNT" | "AWS_LAMBDA_FUNCTION" | "LAMBDA_LAYER"
 object AggregationType {
   inline val FINDING_TYPE: "FINDING_TYPE" = "FINDING_TYPE"
   inline val PACKAGE: "PACKAGE" = "PACKAGE"
@@ -38,8 +39,10 @@ object AggregationType {
   inline val AWS_ECR_CONTAINER: "AWS_ECR_CONTAINER" = "AWS_ECR_CONTAINER"
   inline val IMAGE_LAYER: "IMAGE_LAYER" = "IMAGE_LAYER"
   inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val AWS_LAMBDA_FUNCTION: "AWS_LAMBDA_FUNCTION" = "AWS_LAMBDA_FUNCTION"
+  inline val LAMBDA_LAYER: "LAMBDA_LAYER" = "LAMBDA_LAYER"
 
-  inline def values: js.Array[AggregationType] = js.Array(FINDING_TYPE, PACKAGE, TITLE, REPOSITORY, AMI, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER, IMAGE_LAYER, ACCOUNT)
+  inline def values: js.Array[AggregationType] = js.Array(FINDING_TYPE, PACKAGE, TITLE, REPOSITORY, AMI, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER, IMAGE_LAYER, ACCOUNT, AWS_LAMBDA_FUNCTION, LAMBDA_LAYER)
 }
 
 type AmiSortBy = "CRITICAL" | "HIGH" | "ALL" | "AFFECTED_INSTANCES"
@@ -50,6 +53,14 @@ object AmiSortBy {
   inline val AFFECTED_INSTANCES: "AFFECTED_INSTANCES" = "AFFECTED_INSTANCES"
 
   inline def values: js.Array[AmiSortBy] = js.Array(CRITICAL, HIGH, ALL, AFFECTED_INSTANCES)
+}
+
+type Architecture = "X86_64" | "ARM64"
+object Architecture {
+  inline val X86_64: "X86_64" = "X86_64"
+  inline val ARM64: "ARM64" = "ARM64"
+
+  inline def values: js.Array[Architecture] = js.Array(X86_64, ARM64)
 }
 
 type AwsEcrContainerSortBy = "CRITICAL" | "HIGH" | "ALL"
@@ -68,13 +79,14 @@ object CoverageMapComparison {
   inline def values: js.Array[CoverageMapComparison] = js.Array(EQUALS)
 }
 
-type CoverageResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE" | "AWS_ECR_REPOSITORY"
+type CoverageResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE" | "AWS_ECR_REPOSITORY" | "AWS_LAMBDA_FUNCTION"
 object CoverageResourceType {
   inline val AWS_EC2_INSTANCE: "AWS_EC2_INSTANCE" = "AWS_EC2_INSTANCE"
   inline val AWS_ECR_CONTAINER_IMAGE: "AWS_ECR_CONTAINER_IMAGE" = "AWS_ECR_CONTAINER_IMAGE"
   inline val AWS_ECR_REPOSITORY: "AWS_ECR_REPOSITORY" = "AWS_ECR_REPOSITORY"
+  inline val AWS_LAMBDA_FUNCTION: "AWS_LAMBDA_FUNCTION" = "AWS_LAMBDA_FUNCTION"
 
-  inline def values: js.Array[CoverageResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY)
+  inline def values: js.Array[CoverageResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY, AWS_LAMBDA_FUNCTION)
 }
 
 type CoverageStringComparison = "EQUALS" | "NOT_EQUALS"
@@ -119,6 +131,24 @@ object Ec2Platform {
   inline def values: js.Array[Ec2Platform] = js.Array(WINDOWS, LINUX, UNKNOWN)
 }
 
+type EcrRescanDuration = "LIFETIME" | "DAYS_30" | "DAYS_180"
+object EcrRescanDuration {
+  inline val LIFETIME: "LIFETIME" = "LIFETIME"
+  inline val DAYS_30: "DAYS_30" = "DAYS_30"
+  inline val DAYS_180: "DAYS_180" = "DAYS_180"
+
+  inline def values: js.Array[EcrRescanDuration] = js.Array(LIFETIME, DAYS_30, DAYS_180)
+}
+
+type EcrRescanDurationStatus = "SUCCESS" | "PENDING" | "FAILED"
+object EcrRescanDurationStatus {
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[EcrRescanDurationStatus] = js.Array(SUCCESS, PENDING, FAILED)
+}
+
 type EcrScanFrequency = "MANUAL" | "SCAN_ON_PUSH" | "CONTINUOUS_SCAN"
 object EcrScanFrequency {
   inline val MANUAL: "MANUAL" = "MANUAL"
@@ -128,7 +158,7 @@ object EcrScanFrequency {
   inline def values: js.Array[EcrScanFrequency] = js.Array(MANUAL, SCAN_ON_PUSH, CONTINUOUS_SCAN)
 }
 
-type ErrorCode = "ALREADY_ENABLED" | "ENABLE_IN_PROGRESS" | "DISABLE_IN_PROGRESS" | "SUSPEND_IN_PROGRESS" | "RESOURCE_NOT_FOUND" | "ACCESS_DENIED" | "INTERNAL_ERROR" | "SSM_UNAVAILABLE" | "SSM_THROTTLED" | "EVENTBRIDGE_UNAVAILABLE" | "EVENTBRIDGE_THROTTLED" | "RESOURCE_SCAN_NOT_DISABLED" | "DISASSOCIATE_ALL_MEMBERS"
+type ErrorCode = "ALREADY_ENABLED" | "ENABLE_IN_PROGRESS" | "DISABLE_IN_PROGRESS" | "SUSPEND_IN_PROGRESS" | "RESOURCE_NOT_FOUND" | "ACCESS_DENIED" | "INTERNAL_ERROR" | "SSM_UNAVAILABLE" | "SSM_THROTTLED" | "EVENTBRIDGE_UNAVAILABLE" | "EVENTBRIDGE_THROTTLED" | "RESOURCE_SCAN_NOT_DISABLED" | "DISASSOCIATE_ALL_MEMBERS" | "ACCOUNT_IS_ISOLATED"
 object ErrorCode {
   inline val ALREADY_ENABLED: "ALREADY_ENABLED" = "ALREADY_ENABLED"
   inline val ENABLE_IN_PROGRESS: "ENABLE_IN_PROGRESS" = "ENABLE_IN_PROGRESS"
@@ -143,6 +173,7 @@ object ErrorCode {
   inline val EVENTBRIDGE_THROTTLED: "EVENTBRIDGE_THROTTLED" = "EVENTBRIDGE_THROTTLED"
   inline val RESOURCE_SCAN_NOT_DISABLED: "RESOURCE_SCAN_NOT_DISABLED" = "RESOURCE_SCAN_NOT_DISABLED"
   inline val DISASSOCIATE_ALL_MEMBERS: "DISASSOCIATE_ALL_MEMBERS" = "DISASSOCIATE_ALL_MEMBERS"
+  inline val ACCOUNT_IS_ISOLATED: "ACCOUNT_IS_ISOLATED" = "ACCOUNT_IS_ISOLATED"
 
   inline def values: js.Array[ErrorCode] = js.Array(
     ALREADY_ENABLED,
@@ -157,8 +188,17 @@ object ErrorCode {
     EVENTBRIDGE_UNAVAILABLE,
     EVENTBRIDGE_THROTTLED,
     RESOURCE_SCAN_NOT_DISABLED,
-    DISASSOCIATE_ALL_MEMBERS
+    DISASSOCIATE_ALL_MEMBERS,
+    ACCOUNT_IS_ISOLATED
   )
+}
+
+type ExploitAvailable = "YES" | "NO"
+object ExploitAvailable {
+  inline val YES: "YES" = "YES"
+  inline val NO: "NO" = "NO"
+
+  inline def values: js.Array[ExploitAvailable] = js.Array(YES, NO)
 }
 
 type ExternalReportStatus = "SUCCEEDED" | "IN_PROGRESS" | "CANCELLED" | "FAILED"
@@ -205,6 +245,15 @@ object FindingTypeSortBy {
   inline def values: js.Array[FindingTypeSortBy] = js.Array(CRITICAL, HIGH, ALL)
 }
 
+type FixAvailable = "YES" | "NO" | "PARTIAL"
+object FixAvailable {
+  inline val YES: "YES" = "YES"
+  inline val NO: "NO" = "NO"
+  inline val PARTIAL: "PARTIAL" = "PARTIAL"
+
+  inline def values: js.Array[FixAvailable] = js.Array(YES, NO, PARTIAL)
+}
+
 type FreeTrialInfoErrorCode = "ACCESS_DENIED" | "INTERNAL_ERROR"
 object FreeTrialInfoErrorCode {
   inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
@@ -221,12 +270,13 @@ object FreeTrialStatus {
   inline def values: js.Array[FreeTrialStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
-type FreeTrialType = "EC2" | "ECR"
+type FreeTrialType = "EC2" | "ECR" | "LAMBDA"
 object FreeTrialType {
   inline val EC2: "EC2" = "EC2"
   inline val ECR: "ECR" = "ECR"
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  inline def values: js.Array[FreeTrialType] = js.Array(EC2, ECR)
+  inline def values: js.Array[FreeTrialType] = js.Array(EC2, ECR, LAMBDA)
 }
 
 type GroupKey = "SCAN_STATUS_CODE" | "SCAN_STATUS_REASON" | "ACCOUNT_ID" | "RESOURCE_TYPE" | "ECR_REPOSITORY_NAME"
@@ -247,6 +297,24 @@ object ImageLayerSortBy {
   inline val ALL: "ALL" = "ALL"
 
   inline def values: js.Array[ImageLayerSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+type LambdaFunctionSortBy = "CRITICAL" | "HIGH" | "ALL"
+object LambdaFunctionSortBy {
+  inline val CRITICAL: "CRITICAL" = "CRITICAL"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[LambdaFunctionSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+type LambdaLayerSortBy = "CRITICAL" | "HIGH" | "ALL"
+object LambdaLayerSortBy {
+  inline val CRITICAL: "CRITICAL" = "CRITICAL"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[LambdaLayerSortBy] = js.Array(CRITICAL, HIGH, ALL)
 }
 
 type MapComparison = "EQUALS"
@@ -274,7 +342,7 @@ object Operation {
   inline def values: js.Array[Operation] = js.Array(ENABLE_SCANNING, DISABLE_SCANNING, ENABLE_REPOSITORY, DISABLE_REPOSITORY)
 }
 
-type PackageManager = "BUNDLER" | "CARGO" | "COMPOSER" | "NPM" | "NUGET" | "PIPENV" | "POETRY" | "YARN" | "GOBINARY" | "GOMOD" | "JAR" | "OS"
+type PackageManager = "BUNDLER" | "CARGO" | "COMPOSER" | "NPM" | "NUGET" | "PIPENV" | "POETRY" | "YARN" | "GOBINARY" | "GOMOD" | "JAR" | "OS" | "PIP" | "PYTHONPKG" | "NODEPKG" | "POM"
 object PackageManager {
   inline val BUNDLER: "BUNDLER" = "BUNDLER"
   inline val CARGO: "CARGO" = "CARGO"
@@ -288,8 +356,12 @@ object PackageManager {
   inline val GOMOD: "GOMOD" = "GOMOD"
   inline val JAR: "JAR" = "JAR"
   inline val OS: "OS" = "OS"
+  inline val PIP: "PIP" = "PIP"
+  inline val PYTHONPKG: "PYTHONPKG" = "PYTHONPKG"
+  inline val NODEPKG: "NODEPKG" = "NODEPKG"
+  inline val POM: "POM" = "POM"
 
-  inline def values: js.Array[PackageManager] = js.Array(BUNDLER, CARGO, COMPOSER, NPM, NUGET, PIPENV, POETRY, YARN, GOBINARY, GOMOD, JAR, OS)
+  inline def values: js.Array[PackageManager] = js.Array(BUNDLER, CARGO, COMPOSER, NPM, NUGET, PIPENV, POETRY, YARN, GOBINARY, GOMOD, JAR, OS, PIP, PYTHONPKG, NODEPKG, POM)
 }
 
 type PackageSortBy = "CRITICAL" | "HIGH" | "ALL"
@@ -299,6 +371,14 @@ object PackageSortBy {
   inline val ALL: "ALL" = "ALL"
 
   inline def values: js.Array[PackageSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+type PackageType = "IMAGE" | "ZIP"
+object PackageType {
+  inline val IMAGE: "IMAGE" = "IMAGE"
+  inline val ZIP: "ZIP" = "ZIP"
+
+  inline def values: js.Array[PackageType] = js.Array(IMAGE, ZIP)
 }
 
 type RelationshipStatus = "CREATED" | "INVITED" | "DISABLED" | "ENABLED" | "REMOVED" | "RESIGNED" | "DELETED" | "EMAIL_VERIFICATION_IN_PROGRESS" | "EMAIL_VERIFICATION_FAILED" | "REGION_DISABLED" | "ACCOUNT_SUSPENDED" | "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"
@@ -340,12 +420,16 @@ object ReportFormat {
   inline def values: js.Array[ReportFormat] = js.Array(CSV, JSON)
 }
 
-type ReportingErrorCode = "INTERNAL_ERROR" | "INVALID_PERMISSIONS"
+type ReportingErrorCode = "INTERNAL_ERROR" | "INVALID_PERMISSIONS" | "NO_FINDINGS_FOUND" | "BUCKET_NOT_FOUND" | "INCOMPATIBLE_BUCKET_REGION" | "MALFORMED_KMS_KEY"
 object ReportingErrorCode {
   inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
   inline val INVALID_PERMISSIONS: "INVALID_PERMISSIONS" = "INVALID_PERMISSIONS"
+  inline val NO_FINDINGS_FOUND: "NO_FINDINGS_FOUND" = "NO_FINDINGS_FOUND"
+  inline val BUCKET_NOT_FOUND: "BUCKET_NOT_FOUND" = "BUCKET_NOT_FOUND"
+  inline val INCOMPATIBLE_BUCKET_REGION: "INCOMPATIBLE_BUCKET_REGION" = "INCOMPATIBLE_BUCKET_REGION"
+  inline val MALFORMED_KMS_KEY: "MALFORMED_KMS_KEY" = "MALFORMED_KMS_KEY"
 
-  inline def values: js.Array[ReportingErrorCode] = js.Array(INTERNAL_ERROR, INVALID_PERMISSIONS)
+  inline def values: js.Array[ReportingErrorCode] = js.Array(INTERNAL_ERROR, INVALID_PERMISSIONS, NO_FINDINGS_FOUND, BUCKET_NOT_FOUND, INCOMPATIBLE_BUCKET_REGION, MALFORMED_KMS_KEY)
 }
 
 type RepositorySortBy = "CRITICAL" | "HIGH" | "ALL" | "AFFECTED_IMAGES"
@@ -358,21 +442,40 @@ object RepositorySortBy {
   inline def values: js.Array[RepositorySortBy] = js.Array(CRITICAL, HIGH, ALL, AFFECTED_IMAGES)
 }
 
-type ResourceScanType = "EC2" | "ECR"
+type ResourceScanType = "EC2" | "ECR" | "LAMBDA"
 object ResourceScanType {
   inline val EC2: "EC2" = "EC2"
   inline val ECR: "ECR" = "ECR"
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  inline def values: js.Array[ResourceScanType] = js.Array(EC2, ECR)
+  inline def values: js.Array[ResourceScanType] = js.Array(EC2, ECR, LAMBDA)
 }
 
-type ResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE" | "AWS_ECR_REPOSITORY"
+type ResourceType = "AWS_EC2_INSTANCE" | "AWS_ECR_CONTAINER_IMAGE" | "AWS_ECR_REPOSITORY" | "AWS_LAMBDA_FUNCTION"
 object ResourceType {
   inline val AWS_EC2_INSTANCE: "AWS_EC2_INSTANCE" = "AWS_EC2_INSTANCE"
   inline val AWS_ECR_CONTAINER_IMAGE: "AWS_ECR_CONTAINER_IMAGE" = "AWS_ECR_CONTAINER_IMAGE"
   inline val AWS_ECR_REPOSITORY: "AWS_ECR_REPOSITORY" = "AWS_ECR_REPOSITORY"
+  inline val AWS_LAMBDA_FUNCTION: "AWS_LAMBDA_FUNCTION" = "AWS_LAMBDA_FUNCTION"
 
-  inline def values: js.Array[ResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY)
+  inline def values: js.Array[ResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY, AWS_LAMBDA_FUNCTION)
+}
+
+type Runtime = "NODEJS" | "NODEJS_12_X" | "NODEJS_14_X" | "NODEJS_16_X" | "JAVA_8" | "JAVA_8_AL2" | "JAVA_11" | "PYTHON_3_7" | "PYTHON_3_8" | "PYTHON_3_9" | "UNSUPPORTED"
+object Runtime {
+  inline val NODEJS: "NODEJS" = "NODEJS"
+  inline val NODEJS_12_X: "NODEJS_12_X" = "NODEJS_12_X"
+  inline val NODEJS_14_X: "NODEJS_14_X" = "NODEJS_14_X"
+  inline val NODEJS_16_X: "NODEJS_16_X" = "NODEJS_16_X"
+  inline val JAVA_8: "JAVA_8" = "JAVA_8"
+  inline val JAVA_8_AL2: "JAVA_8_AL2" = "JAVA_8_AL2"
+  inline val JAVA_11: "JAVA_11" = "JAVA_11"
+  inline val PYTHON_3_7: "PYTHON_3_7" = "PYTHON_3_7"
+  inline val PYTHON_3_8: "PYTHON_3_8" = "PYTHON_3_8"
+  inline val PYTHON_3_9: "PYTHON_3_9" = "PYTHON_3_9"
+  inline val UNSUPPORTED: "UNSUPPORTED" = "UNSUPPORTED"
+
+  inline def values: js.Array[Runtime] = js.Array(NODEJS, NODEJS_12_X, NODEJS_14_X, NODEJS_16_X, JAVA_8, JAVA_8_AL2, JAVA_11, PYTHON_3_7, PYTHON_3_8, PYTHON_3_9, UNSUPPORTED)
 }
 
 type ScanStatusCode = "ACTIVE" | "INACTIVE"
@@ -383,7 +486,7 @@ object ScanStatusCode {
   inline def values: js.Array[ScanStatusCode] = js.Array(ACTIVE, INACTIVE)
 }
 
-type ScanStatusReason = "PENDING_INITIAL_SCAN" | "ACCESS_DENIED" | "INTERNAL_ERROR" | "UNMANAGED_EC2_INSTANCE" | "UNSUPPORTED_OS" | "SCAN_ELIGIBILITY_EXPIRED" | "RESOURCE_TERMINATED" | "SUCCESSFUL" | "NO_RESOURCES_FOUND" | "IMAGE_SIZE_EXCEEDED" | "SCAN_FREQUENCY_MANUAL" | "SCAN_FREQUENCY_SCAN_ON_PUSH" | "EC2_INSTANCE_STOPPED"
+type ScanStatusReason = "PENDING_INITIAL_SCAN" | "ACCESS_DENIED" | "INTERNAL_ERROR" | "UNMANAGED_EC2_INSTANCE" | "UNSUPPORTED_OS" | "SCAN_ELIGIBILITY_EXPIRED" | "RESOURCE_TERMINATED" | "SUCCESSFUL" | "NO_RESOURCES_FOUND" | "IMAGE_SIZE_EXCEEDED" | "SCAN_FREQUENCY_MANUAL" | "SCAN_FREQUENCY_SCAN_ON_PUSH" | "EC2_INSTANCE_STOPPED" | "PENDING_DISABLE" | "NO_INVENTORY" | "STALE_INVENTORY" | "EXCLUDED_BY_TAG" | "UNSUPPORTED_RUNTIME"
 object ScanStatusReason {
   inline val PENDING_INITIAL_SCAN: "PENDING_INITIAL_SCAN" = "PENDING_INITIAL_SCAN"
   inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
@@ -398,6 +501,11 @@ object ScanStatusReason {
   inline val SCAN_FREQUENCY_MANUAL: "SCAN_FREQUENCY_MANUAL" = "SCAN_FREQUENCY_MANUAL"
   inline val SCAN_FREQUENCY_SCAN_ON_PUSH: "SCAN_FREQUENCY_SCAN_ON_PUSH" = "SCAN_FREQUENCY_SCAN_ON_PUSH"
   inline val EC2_INSTANCE_STOPPED: "EC2_INSTANCE_STOPPED" = "EC2_INSTANCE_STOPPED"
+  inline val PENDING_DISABLE: "PENDING_DISABLE" = "PENDING_DISABLE"
+  inline val NO_INVENTORY: "NO_INVENTORY" = "NO_INVENTORY"
+  inline val STALE_INVENTORY: "STALE_INVENTORY" = "STALE_INVENTORY"
+  inline val EXCLUDED_BY_TAG: "EXCLUDED_BY_TAG" = "EXCLUDED_BY_TAG"
+  inline val UNSUPPORTED_RUNTIME: "UNSUPPORTED_RUNTIME" = "UNSUPPORTED_RUNTIME"
 
   inline def values: js.Array[ScanStatusReason] = js.Array(
     PENDING_INITIAL_SCAN,
@@ -412,7 +520,12 @@ object ScanStatusReason {
     IMAGE_SIZE_EXCEEDED,
     SCAN_FREQUENCY_MANUAL,
     SCAN_FREQUENCY_SCAN_ON_PUSH,
-    EC2_INSTANCE_STOPPED
+    EC2_INSTANCE_STOPPED,
+    PENDING_DISABLE,
+    NO_INVENTORY,
+    STALE_INVENTORY,
+    EXCLUDED_BY_TAG,
+    UNSUPPORTED_RUNTIME
   )
 }
 
@@ -424,12 +537,13 @@ object ScanType {
   inline def values: js.Array[ScanType] = js.Array(NETWORK, PACKAGE)
 }
 
-type Service = "EC2" | "ECR"
+type Service = "EC2" | "ECR" | "LAMBDA"
 object Service {
   inline val EC2: "EC2" = "EC2"
   inline val ECR: "ECR" = "ECR"
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  inline def values: js.Array[Service] = js.Array(EC2, ECR)
+  inline def values: js.Array[Service] = js.Array(EC2, ECR, LAMBDA)
 }
 
 type Severity = "INFORMATIONAL" | "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" | "UNTRIAGED"
@@ -521,11 +635,12 @@ object TitleSortBy {
   inline def values: js.Array[TitleSortBy] = js.Array(CRITICAL, HIGH, ALL)
 }
 
-type UsageType = "EC2_INSTANCE_HOURS" | "ECR_INITIAL_SCAN" | "ECR_RESCAN"
+type UsageType = "EC2_INSTANCE_HOURS" | "ECR_INITIAL_SCAN" | "ECR_RESCAN" | "LAMBDA_FUNCTION_HOURS"
 object UsageType {
   inline val EC2_INSTANCE_HOURS: "EC2_INSTANCE_HOURS" = "EC2_INSTANCE_HOURS"
   inline val ECR_INITIAL_SCAN: "ECR_INITIAL_SCAN" = "ECR_INITIAL_SCAN"
   inline val ECR_RESCAN: "ECR_RESCAN" = "ECR_RESCAN"
+  inline val LAMBDA_FUNCTION_HOURS: "LAMBDA_FUNCTION_HOURS" = "LAMBDA_FUNCTION_HOURS"
 
-  inline def values: js.Array[UsageType] = js.Array(EC2_INSTANCE_HOURS, ECR_INITIAL_SCAN, ECR_RESCAN)
+  inline def values: js.Array[UsageType] = js.Array(EC2_INSTANCE_HOURS, ECR_INITIAL_SCAN, ECR_RESCAN, LAMBDA_FUNCTION_HOURS)
 }

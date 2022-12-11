@@ -24,6 +24,17 @@ object AutoMLOverrideStrategy {
 }
 
 @js.native
+sealed trait Condition extends js.Any
+object Condition {
+  val EQUALS = "EQUALS".asInstanceOf[Condition]
+  val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[Condition]
+  val LESS_THAN = "LESS_THAN".asInstanceOf[Condition]
+  val GREATER_THAN = "GREATER_THAN".asInstanceOf[Condition]
+
+  @inline def values: js.Array[Condition] = js.Array(EQUALS, NOT_EQUALS, LESS_THAN, GREATER_THAN)
+}
+
+@js.native
 sealed trait DatasetType extends js.Any
 object DatasetType {
   val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
@@ -31,6 +42,20 @@ object DatasetType {
   val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
 
   @inline def values: js.Array[DatasetType] = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
+}
+
+@js.native
+sealed trait DayOfWeek extends js.Any
+object DayOfWeek {
+  val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
+  val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
+  val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
+  val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
+  val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
+  val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
+  val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
+
+  @inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 }
 
 @js.native
@@ -71,6 +96,36 @@ object FilterConditionString {
   val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
   @inline def values: js.Array[FilterConditionString] = js.Array(IS, IS_NOT)
+}
+
+@js.native
+sealed trait Month extends js.Any
+object Month {
+  val JANUARY = "JANUARY".asInstanceOf[Month]
+  val FEBRUARY = "FEBRUARY".asInstanceOf[Month]
+  val MARCH = "MARCH".asInstanceOf[Month]
+  val APRIL = "APRIL".asInstanceOf[Month]
+  val MAY = "MAY".asInstanceOf[Month]
+  val JUNE = "JUNE".asInstanceOf[Month]
+  val JULY = "JULY".asInstanceOf[Month]
+  val AUGUST = "AUGUST".asInstanceOf[Month]
+  val SEPTEMBER = "SEPTEMBER".asInstanceOf[Month]
+  val OCTOBER = "OCTOBER".asInstanceOf[Month]
+  val NOVEMBER = "NOVEMBER".asInstanceOf[Month]
+  val DECEMBER = "DECEMBER".asInstanceOf[Month]
+
+  @inline def values: js.Array[Month] = js.Array(JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER)
+}
+
+@js.native
+sealed trait Operation extends js.Any
+object Operation {
+  val ADD = "ADD".asInstanceOf[Operation]
+  val SUBTRACT = "SUBTRACT".asInstanceOf[Operation]
+  val MULTIPLY = "MULTIPLY".asInstanceOf[Operation]
+  val DIVIDE = "DIVIDE".asInstanceOf[Operation]
+
+  @inline def values: js.Array[Operation] = js.Array(ADD, SUBTRACT, MULTIPLY, DIVIDE)
 }
 
 @js.native

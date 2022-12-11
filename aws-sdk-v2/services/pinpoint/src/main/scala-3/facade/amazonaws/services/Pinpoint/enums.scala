@@ -74,6 +74,19 @@ object ChannelType {
   inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM, IN_APP)
 }
 
+type DayOfWeek = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY"
+object DayOfWeek {
+  inline val MONDAY: "MONDAY" = "MONDAY"
+  inline val TUESDAY: "TUESDAY" = "TUESDAY"
+  inline val WEDNESDAY: "WEDNESDAY" = "WEDNESDAY"
+  inline val THURSDAY: "THURSDAY" = "THURSDAY"
+  inline val FRIDAY: "FRIDAY" = "FRIDAY"
+  inline val SATURDAY: "SATURDAY" = "SATURDAY"
+  inline val SUNDAY: "SUNDAY" = "SUNDAY"
+
+  inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+}
+
 type DeliveryStatus = "SUCCESSFUL" | "THROTTLED" | "TEMPORARY_FAILURE" | "PERMANENT_FAILURE" | "UNKNOWN_FAILURE" | "OPT_OUT" | "DUPLICATE"
 object DeliveryStatus {
   inline val SUCCESSFUL: "SUCCESSFUL" = "SUCCESSFUL"

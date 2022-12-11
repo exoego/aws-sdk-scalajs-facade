@@ -17,22 +17,33 @@ package object synthetics {
   type CanaryArn = String
   type CanaryName = String
   type CanaryRuns = js.Array[CanaryRun]
+  type CodeHandler = String
+  type DescribeCanariesLastRunNameFilter = js.Array[CanaryName]
+  type DescribeCanariesNameFilter = js.Array[CanaryName]
   type EnvironmentVariableName = String
   type EnvironmentVariableValue = String
   type EnvironmentVariablesMap = js.Dictionary[EnvironmentVariableValue]
   type FunctionArn = String
+  type GroupArn = String
+  type GroupIdentifier = String
+  type GroupName = String
+  type GroupSummaryList = js.Array[GroupSummary]
   type KmsKeyArn = String
   type MaxCanaryResults = Int
   type MaxFifteenMinutesInSeconds = Int
+  type MaxGroupResults = Int
   type MaxOneYearInSeconds = Double
   type MaxSize100 = Int
   type MaxSize1024 = Int
   type MaxSize3008 = Int
   type NullableBoolean = Boolean
+  type PaginationToken = String
+  type ResourceArn = String
   type RoleArn = String
   type RuntimeVersionList = js.Array[RuntimeVersion]
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
+  type StringList = js.Array[String]
   type SubnetId = String
   type SubnetIds = js.Array[SubnetId]
   type TagKey = String
@@ -46,13 +57,21 @@ package object synthetics {
 
   final class SyntheticsOps(private val service: Synthetics) extends AnyVal {
 
+    @inline def associateResourceFuture(params: AssociateResourceRequest): Future[AssociateResourceResponse] = service.associateResource(params).promise().toFuture
     @inline def createCanaryFuture(params: CreateCanaryRequest): Future[CreateCanaryResponse] = service.createCanary(params).promise().toFuture
+    @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
     @inline def deleteCanaryFuture(params: DeleteCanaryRequest): Future[DeleteCanaryResponse] = service.deleteCanary(params).promise().toFuture
+    @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
     @inline def describeCanariesFuture(params: DescribeCanariesRequest): Future[DescribeCanariesResponse] = service.describeCanaries(params).promise().toFuture
     @inline def describeCanariesLastRunFuture(params: DescribeCanariesLastRunRequest): Future[DescribeCanariesLastRunResponse] = service.describeCanariesLastRun(params).promise().toFuture
     @inline def describeRuntimeVersionsFuture(params: DescribeRuntimeVersionsRequest): Future[DescribeRuntimeVersionsResponse] = service.describeRuntimeVersions(params).promise().toFuture
+    @inline def disassociateResourceFuture(params: DisassociateResourceRequest): Future[DisassociateResourceResponse] = service.disassociateResource(params).promise().toFuture
     @inline def getCanaryFuture(params: GetCanaryRequest): Future[GetCanaryResponse] = service.getCanary(params).promise().toFuture
     @inline def getCanaryRunsFuture(params: GetCanaryRunsRequest): Future[GetCanaryRunsResponse] = service.getCanaryRuns(params).promise().toFuture
+    @inline def getGroupFuture(params: GetGroupRequest): Future[GetGroupResponse] = service.getGroup(params).promise().toFuture
+    @inline def listAssociatedGroupsFuture(params: ListAssociatedGroupsRequest): Future[ListAssociatedGroupsResponse] = service.listAssociatedGroups(params).promise().toFuture
+    @inline def listGroupResourcesFuture(params: ListGroupResourcesRequest): Future[ListGroupResourcesResponse] = service.listGroupResources(params).promise().toFuture
+    @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startCanaryFuture(params: StartCanaryRequest): Future[StartCanaryResponse] = service.startCanary(params).promise().toFuture
     @inline def stopCanaryFuture(params: StopCanaryRequest): Future[StopCanaryResponse] = service.stopCanary(params).promise().toFuture
@@ -67,13 +86,21 @@ package object synthetics {
   class Synthetics() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateResource(params: AssociateResourceRequest): Request[AssociateResourceResponse] = js.native
     def createCanary(params: CreateCanaryRequest): Request[CreateCanaryResponse] = js.native
+    def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def deleteCanary(params: DeleteCanaryRequest): Request[DeleteCanaryResponse] = js.native
+    def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def describeCanaries(params: DescribeCanariesRequest): Request[DescribeCanariesResponse] = js.native
     def describeCanariesLastRun(params: DescribeCanariesLastRunRequest): Request[DescribeCanariesLastRunResponse] = js.native
     def describeRuntimeVersions(params: DescribeRuntimeVersionsRequest): Request[DescribeRuntimeVersionsResponse] = js.native
+    def disassociateResource(params: DisassociateResourceRequest): Request[DisassociateResourceResponse] = js.native
     def getCanary(params: GetCanaryRequest): Request[GetCanaryResponse] = js.native
     def getCanaryRuns(params: GetCanaryRunsRequest): Request[GetCanaryRunsResponse] = js.native
+    def getGroup(params: GetGroupRequest): Request[GetGroupResponse] = js.native
+    def listAssociatedGroups(params: ListAssociatedGroupsRequest): Request[ListAssociatedGroupsResponse] = js.native
+    def listGroupResources(params: ListGroupResourcesRequest): Request[ListGroupResourcesResponse] = js.native
+    def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startCanary(params: StartCanaryRequest): Request[StartCanaryResponse] = js.native
     def stopCanary(params: StopCanaryRequest): Request[StopCanaryResponse] = js.native
@@ -120,6 +147,37 @@ package object synthetics {
       val __obj = js.Dynamic.literal()
       S3Encryption.foreach(__v => __obj.updateDynamic("S3Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArtifactConfigOutput]
+    }
+  }
+
+  @js.native
+  trait AssociateResourceRequest extends js.Object {
+    var GroupIdentifier: GroupIdentifier
+    var ResourceArn: CanaryArn
+  }
+
+  object AssociateResourceRequest {
+    @inline
+    def apply(
+        GroupIdentifier: GroupIdentifier,
+        ResourceArn: CanaryArn
+    ): AssociateResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateResourceRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateResourceResponse extends js.Object
+
+  object AssociateResourceResponse {
+    @inline
+    def apply(): AssociateResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AssociateResourceResponse]
     }
   }
 
@@ -216,7 +274,7 @@ package object synthetics {
     */
   @js.native
   trait CanaryCodeInput extends js.Object {
-    var Handler: String
+    var Handler: CodeHandler
     var S3Bucket: js.UndefOr[String]
     var S3Key: js.UndefOr[String]
     var S3Version: js.UndefOr[String]
@@ -226,7 +284,7 @@ package object synthetics {
   object CanaryCodeInput {
     @inline
     def apply(
-        Handler: String,
+        Handler: CodeHandler,
         S3Bucket: js.UndefOr[String] = js.undefined,
         S3Key: js.UndefOr[String] = js.undefined,
         S3Version: js.UndefOr[String] = js.undefined,
@@ -575,18 +633,59 @@ package object synthetics {
   }
 
   @js.native
+  trait CreateGroupRequest extends js.Object {
+    var Name: GroupName
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateGroupRequest {
+    @inline
+    def apply(
+        Name: GroupName,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateGroupResponse extends js.Object {
+    var Group: js.UndefOr[Group]
+  }
+
+  object CreateGroupResponse {
+    @inline
+    def apply(
+        Group: js.UndefOr[Group] = js.undefined
+    ): CreateGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGroupResponse]
+    }
+  }
+
+  @js.native
   trait DeleteCanaryRequest extends js.Object {
     var Name: CanaryName
+    var DeleteLambda: js.UndefOr[Boolean]
   }
 
   object DeleteCanaryRequest {
     @inline
     def apply(
-        Name: CanaryName
+        Name: CanaryName,
+        DeleteLambda: js.UndefOr[Boolean] = js.undefined
     ): DeleteCanaryRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
+
+      DeleteLambda.foreach(__v => __obj.updateDynamic("DeleteLambda")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCanaryRequest]
     }
   }
@@ -603,8 +702,37 @@ package object synthetics {
   }
 
   @js.native
+  trait DeleteGroupRequest extends js.Object {
+    var GroupIdentifier: GroupIdentifier
+  }
+
+  object DeleteGroupRequest {
+    @inline
+    def apply(
+        GroupIdentifier: GroupIdentifier
+    ): DeleteGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteGroupResponse extends js.Object
+
+  object DeleteGroupResponse {
+    @inline
+    def apply(): DeleteGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteGroupResponse]
+    }
+  }
+
+  @js.native
   trait DescribeCanariesLastRunRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxSize100]
+    var Names: js.UndefOr[DescribeCanariesLastRunNameFilter]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -612,10 +740,12 @@ package object synthetics {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxSize100] = js.undefined,
+        Names: js.UndefOr[DescribeCanariesLastRunNameFilter] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): DescribeCanariesLastRunRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCanariesLastRunRequest]
     }
@@ -643,6 +773,7 @@ package object synthetics {
   @js.native
   trait DescribeCanariesRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxCanaryResults]
+    var Names: js.UndefOr[DescribeCanariesNameFilter]
     var NextToken: js.UndefOr[Token]
   }
 
@@ -650,10 +781,12 @@ package object synthetics {
     @inline
     def apply(
         MaxResults: js.UndefOr[MaxCanaryResults] = js.undefined,
+        Names: js.UndefOr[DescribeCanariesNameFilter] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): DescribeCanariesRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCanariesRequest]
     }
@@ -713,6 +846,37 @@ package object synthetics {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RuntimeVersions.foreach(__v => __obj.updateDynamic("RuntimeVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRuntimeVersionsResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateResourceRequest extends js.Object {
+    var GroupIdentifier: GroupIdentifier
+    var ResourceArn: CanaryArn
+  }
+
+  object DisassociateResourceRequest {
+    @inline
+    def apply(
+        GroupIdentifier: GroupIdentifier,
+        ResourceArn: CanaryArn
+    ): DisassociateResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateResourceRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateResourceResponse extends js.Object
+
+  object DisassociateResourceResponse {
+    @inline
+    def apply(): DisassociateResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateResourceResponse]
     }
   }
 
@@ -793,14 +957,228 @@ package object synthetics {
   }
 
   @js.native
-  trait ListTagsForResourceRequest extends js.Object {
+  trait GetGroupRequest extends js.Object {
+    var GroupIdentifier: GroupIdentifier
+  }
+
+  object GetGroupRequest {
+    @inline
+    def apply(
+        GroupIdentifier: GroupIdentifier
+    ): GetGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetGroupResponse extends js.Object {
+    var Group: js.UndefOr[Group]
+  }
+
+  object GetGroupResponse {
+    @inline
+    def apply(
+        Group: js.UndefOr[Group] = js.undefined
+    ): GetGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGroupResponse]
+    }
+  }
+
+  /** This structure contains information about one group.
+    */
+  @js.native
+  trait Group extends js.Object {
+    var Arn: js.UndefOr[GroupArn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var Id: js.UndefOr[String]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[GroupName]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object Group {
+    @inline
+    def apply(
+        Arn: js.UndefOr[GroupArn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[GroupName] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): Group = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Group]
+    }
+  }
+
+  /** A structure containing some information about a group.
+    */
+  @js.native
+  trait GroupSummary extends js.Object {
+    var Arn: js.UndefOr[GroupArn]
+    var Id: js.UndefOr[String]
+    var Name: js.UndefOr[GroupName]
+  }
+
+  object GroupSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[GroupArn] = js.undefined,
+        Id: js.UndefOr[String] = js.undefined,
+        Name: js.UndefOr[GroupName] = js.undefined
+    ): GroupSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GroupSummary]
+    }
+  }
+
+  @js.native
+  trait ListAssociatedGroupsRequest extends js.Object {
     var ResourceArn: CanaryArn
+    var MaxResults: js.UndefOr[MaxGroupResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAssociatedGroupsRequest {
+    @inline
+    def apply(
+        ResourceArn: CanaryArn,
+        MaxResults: js.UndefOr[MaxGroupResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAssociatedGroupsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssociatedGroupsResponse extends js.Object {
+    var Groups: js.UndefOr[GroupSummaryList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListAssociatedGroupsResponse {
+    @inline
+    def apply(
+        Groups: js.UndefOr[GroupSummaryList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListAssociatedGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssociatedGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListGroupResourcesRequest extends js.Object {
+    var GroupIdentifier: GroupIdentifier
+    var MaxResults: js.UndefOr[MaxGroupResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListGroupResourcesRequest {
+    @inline
+    def apply(
+        GroupIdentifier: GroupIdentifier,
+        MaxResults: js.UndefOr[MaxGroupResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListGroupResourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListGroupResourcesResponse extends js.Object {
+    var NextToken: js.UndefOr[PaginationToken]
+    var Resources: js.UndefOr[StringList]
+  }
+
+  object ListGroupResourcesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Resources: js.UndefOr[StringList] = js.undefined
+    ): ListGroupResourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupResourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListGroupsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxGroupResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListGroupsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxGroupResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListGroupsResponse extends js.Object {
+    var Groups: js.UndefOr[GroupSummaryList]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListGroupsResponse {
+    @inline
+    def apply(
+        Groups: js.UndefOr[GroupSummaryList] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: ResourceArn
   }
 
   object ListTagsForResourceRequest {
     @inline
     def apply(
-        ResourceArn: CanaryArn
+        ResourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
@@ -931,14 +1309,14 @@ package object synthetics {
 
   @js.native
   trait TagResourceRequest extends js.Object {
-    var ResourceArn: CanaryArn
+    var ResourceArn: ResourceArn
     var Tags: TagMap
   }
 
   object TagResourceRequest {
     @inline
     def apply(
-        ResourceArn: CanaryArn,
+        ResourceArn: ResourceArn,
         Tags: TagMap
     ): TagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -962,14 +1340,14 @@ package object synthetics {
 
   @js.native
   trait UntagResourceRequest extends js.Object {
-    var ResourceArn: CanaryArn
+    var ResourceArn: ResourceArn
     var TagKeys: TagKeyList
   }
 
   object UntagResourceRequest {
     @inline
     def apply(
-        ResourceArn: CanaryArn,
+        ResourceArn: ResourceArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1053,7 +1431,7 @@ package object synthetics {
     }
   }
 
-  /** An object that specifies what screenshots to use as a baseline for visual monitoring by this canary, and optionally the parts of the screenshots to ignore during the visual monitoring comparison. Visual monitoring is supported only on canaries running the ```syn-puppeteer-node-3.2``` runtime or later. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html| Visual monitoring]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html| Visual monitoring blueprint]]
+  /** An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison. Visual monitoring is supported only on canaries running the ```syn-puppeteer-node-3.2``` runtime or later. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html| Visual monitoring]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html| Visual monitoring blueprint]]
     */
   @js.native
   trait VisualReferenceInput extends js.Object {

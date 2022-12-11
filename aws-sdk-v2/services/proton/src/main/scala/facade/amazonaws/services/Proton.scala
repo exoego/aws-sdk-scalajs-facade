@@ -13,6 +13,8 @@ package object proton {
   type ClientToken = String
   type CompatibleEnvironmentTemplateInputList = js.Array[CompatibleEnvironmentTemplateInput]
   type CompatibleEnvironmentTemplateList = js.Array[CompatibleEnvironmentTemplate]
+  type ComponentArn = String
+  type ComponentSummaryList = js.Array[ComponentSummary]
   type DeploymentId = String
   type Description = String
   type DisplayName = String
@@ -30,13 +32,15 @@ package object proton {
   type EnvironmentTemplateVersionSummaryList = js.Array[EnvironmentTemplateVersionSummary]
   type FullTemplateVersionNumber = String
   type GitBranchName = String
+  type ListServiceInstancesFilterList = js.Array[ListServiceInstancesFilter]
+  type ListServiceInstancesFilterValue = String
   type MaxPageResults = Int
   type NextToken = String
   type NotifyResourceDeploymentStatusChangeInputOutputsList = js.Array[Output]
+  type NotifyResourceDeploymentStatusChangeInputStatusMessageString = String
   type OutputKey = String
   type OutputValueString = String
   type OutputsList = js.Array[Output]
-  type PipelineRoleArn = String
   type ProvisionedResourceIdentifier = String
   type ProvisionedResourceList = js.Array[ProvisionedResource]
   type ProvisionedResourceName = String
@@ -47,7 +51,10 @@ package object proton {
   type RepositorySyncDefinitionList = js.Array[RepositorySyncDefinition]
   type RepositorySyncEvents = js.Array[RepositorySyncEvent]
   type ResourceName = String
+  type ResourceNameOrEmpty = String
   type ResourceSyncEvents = js.Array[ResourceSyncEvent]
+  type RoleArn = String
+  type RoleArnOrEmptyString = String
   type S3Bucket = String
   type S3Key = String
   type SHA = String
@@ -57,16 +64,18 @@ package object proton {
   type ServiceSummaryList = js.Array[ServiceSummary]
   type ServiceTemplateArn = String
   type ServiceTemplateSummaryList = js.Array[ServiceTemplateSummary]
+  type ServiceTemplateSupportedComponentSourceInputList = js.Array[ServiceTemplateSupportedComponentSourceType]
   type ServiceTemplateVersionArn = String
   type ServiceTemplateVersionSummaryList = js.Array[ServiceTemplateVersionSummary]
   type SpecContents = String
   type StatusMessage = String
   type Subdirectory = String
-  type SyntheticNotifyResourceDeploymentStatusChangeInputString = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TemplateFileContents = String
+  type TemplateManifestContents = String
   type TemplateSchema = String
   type TemplateVersionPart = String
   type Timestamp = js.Date
@@ -74,9 +83,11 @@ package object proton {
   final class ProtonOps(private val service: Proton) extends AnyVal {
 
     @inline def acceptEnvironmentAccountConnectionFuture(params: AcceptEnvironmentAccountConnectionInput): Future[AcceptEnvironmentAccountConnectionOutput] = service.acceptEnvironmentAccountConnection(params).promise().toFuture
+    @inline def cancelComponentDeploymentFuture(params: CancelComponentDeploymentInput): Future[CancelComponentDeploymentOutput] = service.cancelComponentDeployment(params).promise().toFuture
     @inline def cancelEnvironmentDeploymentFuture(params: CancelEnvironmentDeploymentInput): Future[CancelEnvironmentDeploymentOutput] = service.cancelEnvironmentDeployment(params).promise().toFuture
     @inline def cancelServiceInstanceDeploymentFuture(params: CancelServiceInstanceDeploymentInput): Future[CancelServiceInstanceDeploymentOutput] = service.cancelServiceInstanceDeployment(params).promise().toFuture
     @inline def cancelServicePipelineDeploymentFuture(params: CancelServicePipelineDeploymentInput): Future[CancelServicePipelineDeploymentOutput] = service.cancelServicePipelineDeployment(params).promise().toFuture
+    @inline def createComponentFuture(params: CreateComponentInput): Future[CreateComponentOutput] = service.createComponent(params).promise().toFuture
     @inline def createEnvironmentAccountConnectionFuture(params: CreateEnvironmentAccountConnectionInput): Future[CreateEnvironmentAccountConnectionOutput] = service.createEnvironmentAccountConnection(params).promise().toFuture
     @inline def createEnvironmentFuture(params: CreateEnvironmentInput): Future[CreateEnvironmentOutput] = service.createEnvironment(params).promise().toFuture
     @inline def createEnvironmentTemplateFuture(params: CreateEnvironmentTemplateInput): Future[CreateEnvironmentTemplateOutput] = service.createEnvironmentTemplate(params).promise().toFuture
@@ -86,6 +97,7 @@ package object proton {
     @inline def createServiceTemplateFuture(params: CreateServiceTemplateInput): Future[CreateServiceTemplateOutput] = service.createServiceTemplate(params).promise().toFuture
     @inline def createServiceTemplateVersionFuture(params: CreateServiceTemplateVersionInput): Future[CreateServiceTemplateVersionOutput] = service.createServiceTemplateVersion(params).promise().toFuture
     @inline def createTemplateSyncConfigFuture(params: CreateTemplateSyncConfigInput): Future[CreateTemplateSyncConfigOutput] = service.createTemplateSyncConfig(params).promise().toFuture
+    @inline def deleteComponentFuture(params: DeleteComponentInput): Future[DeleteComponentOutput] = service.deleteComponent(params).promise().toFuture
     @inline def deleteEnvironmentAccountConnectionFuture(params: DeleteEnvironmentAccountConnectionInput): Future[DeleteEnvironmentAccountConnectionOutput] = service.deleteEnvironmentAccountConnection(params).promise().toFuture
     @inline def deleteEnvironmentFuture(params: DeleteEnvironmentInput): Future[DeleteEnvironmentOutput] = service.deleteEnvironment(params).promise().toFuture
     @inline def deleteEnvironmentTemplateFuture(params: DeleteEnvironmentTemplateInput): Future[DeleteEnvironmentTemplateOutput] = service.deleteEnvironmentTemplate(params).promise().toFuture
@@ -96,6 +108,7 @@ package object proton {
     @inline def deleteServiceTemplateVersionFuture(params: DeleteServiceTemplateVersionInput): Future[DeleteServiceTemplateVersionOutput] = service.deleteServiceTemplateVersion(params).promise().toFuture
     @inline def deleteTemplateSyncConfigFuture(params: DeleteTemplateSyncConfigInput): Future[DeleteTemplateSyncConfigOutput] = service.deleteTemplateSyncConfig(params).promise().toFuture
     @inline def getAccountSettingsFuture(params: GetAccountSettingsInput): Future[GetAccountSettingsOutput] = service.getAccountSettings(params).promise().toFuture
+    @inline def getComponentFuture(params: GetComponentInput): Future[GetComponentOutput] = service.getComponent(params).promise().toFuture
     @inline def getEnvironmentAccountConnectionFuture(params: GetEnvironmentAccountConnectionInput): Future[GetEnvironmentAccountConnectionOutput] = service.getEnvironmentAccountConnection(params).promise().toFuture
     @inline def getEnvironmentFuture(params: GetEnvironmentInput): Future[GetEnvironmentOutput] = service.getEnvironment(params).promise().toFuture
     @inline def getEnvironmentTemplateFuture(params: GetEnvironmentTemplateInput): Future[GetEnvironmentTemplateOutput] = service.getEnvironmentTemplate(params).promise().toFuture
@@ -108,6 +121,9 @@ package object proton {
     @inline def getServiceTemplateVersionFuture(params: GetServiceTemplateVersionInput): Future[GetServiceTemplateVersionOutput] = service.getServiceTemplateVersion(params).promise().toFuture
     @inline def getTemplateSyncConfigFuture(params: GetTemplateSyncConfigInput): Future[GetTemplateSyncConfigOutput] = service.getTemplateSyncConfig(params).promise().toFuture
     @inline def getTemplateSyncStatusFuture(params: GetTemplateSyncStatusInput): Future[GetTemplateSyncStatusOutput] = service.getTemplateSyncStatus(params).promise().toFuture
+    @inline def listComponentOutputsFuture(params: ListComponentOutputsInput): Future[ListComponentOutputsOutput] = service.listComponentOutputs(params).promise().toFuture
+    @inline def listComponentProvisionedResourcesFuture(params: ListComponentProvisionedResourcesInput): Future[ListComponentProvisionedResourcesOutput] = service.listComponentProvisionedResources(params).promise().toFuture
+    @inline def listComponentsFuture(params: ListComponentsInput): Future[ListComponentsOutput] = service.listComponents(params).promise().toFuture
     @inline def listEnvironmentAccountConnectionsFuture(params: ListEnvironmentAccountConnectionsInput): Future[ListEnvironmentAccountConnectionsOutput] = service.listEnvironmentAccountConnections(params).promise().toFuture
     @inline def listEnvironmentOutputsFuture(params: ListEnvironmentOutputsInput): Future[ListEnvironmentOutputsOutput] = service.listEnvironmentOutputs(params).promise().toFuture
     @inline def listEnvironmentProvisionedResourcesFuture(params: ListEnvironmentProvisionedResourcesInput): Future[ListEnvironmentProvisionedResourcesOutput] = service.listEnvironmentProvisionedResources(params).promise().toFuture
@@ -130,6 +146,7 @@ package object proton {
     @inline def tagResourceFuture(params: TagResourceInput): Future[TagResourceOutput] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateAccountSettingsFuture(params: UpdateAccountSettingsInput): Future[UpdateAccountSettingsOutput] = service.updateAccountSettings(params).promise().toFuture
+    @inline def updateComponentFuture(params: UpdateComponentInput): Future[UpdateComponentOutput] = service.updateComponent(params).promise().toFuture
     @inline def updateEnvironmentAccountConnectionFuture(params: UpdateEnvironmentAccountConnectionInput): Future[UpdateEnvironmentAccountConnectionOutput] = service.updateEnvironmentAccountConnection(params).promise().toFuture
     @inline def updateEnvironmentFuture(params: UpdateEnvironmentInput): Future[UpdateEnvironmentOutput] = service.updateEnvironment(params).promise().toFuture
     @inline def updateEnvironmentTemplateFuture(params: UpdateEnvironmentTemplateInput): Future[UpdateEnvironmentTemplateOutput] = service.updateEnvironmentTemplate(params).promise().toFuture
@@ -149,9 +166,11 @@ package object proton {
     def this(config: AWSConfig) = this()
 
     def acceptEnvironmentAccountConnection(params: AcceptEnvironmentAccountConnectionInput): Request[AcceptEnvironmentAccountConnectionOutput] = js.native
+    def cancelComponentDeployment(params: CancelComponentDeploymentInput): Request[CancelComponentDeploymentOutput] = js.native
     def cancelEnvironmentDeployment(params: CancelEnvironmentDeploymentInput): Request[CancelEnvironmentDeploymentOutput] = js.native
     def cancelServiceInstanceDeployment(params: CancelServiceInstanceDeploymentInput): Request[CancelServiceInstanceDeploymentOutput] = js.native
     def cancelServicePipelineDeployment(params: CancelServicePipelineDeploymentInput): Request[CancelServicePipelineDeploymentOutput] = js.native
+    def createComponent(params: CreateComponentInput): Request[CreateComponentOutput] = js.native
     def createEnvironment(params: CreateEnvironmentInput): Request[CreateEnvironmentOutput] = js.native
     def createEnvironmentAccountConnection(params: CreateEnvironmentAccountConnectionInput): Request[CreateEnvironmentAccountConnectionOutput] = js.native
     def createEnvironmentTemplate(params: CreateEnvironmentTemplateInput): Request[CreateEnvironmentTemplateOutput] = js.native
@@ -161,6 +180,7 @@ package object proton {
     def createServiceTemplate(params: CreateServiceTemplateInput): Request[CreateServiceTemplateOutput] = js.native
     def createServiceTemplateVersion(params: CreateServiceTemplateVersionInput): Request[CreateServiceTemplateVersionOutput] = js.native
     def createTemplateSyncConfig(params: CreateTemplateSyncConfigInput): Request[CreateTemplateSyncConfigOutput] = js.native
+    def deleteComponent(params: DeleteComponentInput): Request[DeleteComponentOutput] = js.native
     def deleteEnvironment(params: DeleteEnvironmentInput): Request[DeleteEnvironmentOutput] = js.native
     def deleteEnvironmentAccountConnection(params: DeleteEnvironmentAccountConnectionInput): Request[DeleteEnvironmentAccountConnectionOutput] = js.native
     def deleteEnvironmentTemplate(params: DeleteEnvironmentTemplateInput): Request[DeleteEnvironmentTemplateOutput] = js.native
@@ -171,6 +191,7 @@ package object proton {
     def deleteServiceTemplateVersion(params: DeleteServiceTemplateVersionInput): Request[DeleteServiceTemplateVersionOutput] = js.native
     def deleteTemplateSyncConfig(params: DeleteTemplateSyncConfigInput): Request[DeleteTemplateSyncConfigOutput] = js.native
     def getAccountSettings(params: GetAccountSettingsInput): Request[GetAccountSettingsOutput] = js.native
+    def getComponent(params: GetComponentInput): Request[GetComponentOutput] = js.native
     def getEnvironment(params: GetEnvironmentInput): Request[GetEnvironmentOutput] = js.native
     def getEnvironmentAccountConnection(params: GetEnvironmentAccountConnectionInput): Request[GetEnvironmentAccountConnectionOutput] = js.native
     def getEnvironmentTemplate(params: GetEnvironmentTemplateInput): Request[GetEnvironmentTemplateOutput] = js.native
@@ -183,6 +204,9 @@ package object proton {
     def getServiceTemplateVersion(params: GetServiceTemplateVersionInput): Request[GetServiceTemplateVersionOutput] = js.native
     def getTemplateSyncConfig(params: GetTemplateSyncConfigInput): Request[GetTemplateSyncConfigOutput] = js.native
     def getTemplateSyncStatus(params: GetTemplateSyncStatusInput): Request[GetTemplateSyncStatusOutput] = js.native
+    def listComponentOutputs(params: ListComponentOutputsInput): Request[ListComponentOutputsOutput] = js.native
+    def listComponentProvisionedResources(params: ListComponentProvisionedResourcesInput): Request[ListComponentProvisionedResourcesOutput] = js.native
+    def listComponents(params: ListComponentsInput): Request[ListComponentsOutput] = js.native
     def listEnvironmentAccountConnections(params: ListEnvironmentAccountConnectionsInput): Request[ListEnvironmentAccountConnectionsOutput] = js.native
     def listEnvironmentOutputs(params: ListEnvironmentOutputsInput): Request[ListEnvironmentOutputsOutput] = js.native
     def listEnvironmentProvisionedResources(params: ListEnvironmentProvisionedResourcesInput): Request[ListEnvironmentProvisionedResourcesOutput] = js.native
@@ -205,6 +229,7 @@ package object proton {
     def tagResource(params: TagResourceInput): Request[TagResourceOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateAccountSettings(params: UpdateAccountSettingsInput): Request[UpdateAccountSettingsOutput] = js.native
+    def updateComponent(params: UpdateComponentInput): Request[UpdateComponentOutput] = js.native
     def updateEnvironment(params: UpdateEnvironmentInput): Request[UpdateEnvironmentOutput] = js.native
     def updateEnvironmentAccountConnection(params: UpdateEnvironmentAccountConnectionInput): Request[UpdateEnvironmentAccountConnectionOutput] = js.native
     def updateEnvironmentTemplate(params: UpdateEnvironmentTemplateInput): Request[UpdateEnvironmentTemplateOutput] = js.native
@@ -256,24 +281,61 @@ package object proton {
     }
   }
 
-  /** The Proton pipeline service role and repository data.
+  /** Proton settings that are used for multiple services in the Amazon Web Services account.
     */
   @js.native
   trait AccountSettings extends js.Object {
+    var pipelineCodebuildRoleArn: js.UndefOr[RoleArnOrEmptyString]
     var pipelineProvisioningRepository: js.UndefOr[RepositoryBranch]
-    var pipelineServiceRoleArn: js.UndefOr[PipelineRoleArn]
+    var pipelineServiceRoleArn: js.UndefOr[RoleArnOrEmptyString]
   }
 
   object AccountSettings {
     @inline
     def apply(
+        pipelineCodebuildRoleArn: js.UndefOr[RoleArnOrEmptyString] = js.undefined,
         pipelineProvisioningRepository: js.UndefOr[RepositoryBranch] = js.undefined,
-        pipelineServiceRoleArn: js.UndefOr[PipelineRoleArn] = js.undefined
+        pipelineServiceRoleArn: js.UndefOr[RoleArnOrEmptyString] = js.undefined
     ): AccountSettings = {
       val __obj = js.Dynamic.literal()
+      pipelineCodebuildRoleArn.foreach(__v => __obj.updateDynamic("pipelineCodebuildRoleArn")(__v.asInstanceOf[js.Any]))
       pipelineProvisioningRepository.foreach(__v => __obj.updateDynamic("pipelineProvisioningRepository")(__v.asInstanceOf[js.Any]))
       pipelineServiceRoleArn.foreach(__v => __obj.updateDynamic("pipelineServiceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountSettings]
+    }
+  }
+
+  @js.native
+  trait CancelComponentDeploymentInput extends js.Object {
+    var componentName: ResourceName
+  }
+
+  object CancelComponentDeploymentInput {
+    @inline
+    def apply(
+        componentName: ResourceName
+    ): CancelComponentDeploymentInput = {
+      val __obj = js.Dynamic.literal(
+        "componentName" -> componentName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelComponentDeploymentInput]
+    }
+  }
+
+  @js.native
+  trait CancelComponentDeploymentOutput extends js.Object {
+    var component: Component
+  }
+
+  object CancelComponentDeploymentOutput {
+    @inline
+    def apply(
+        component: Component
+    ): CancelComponentDeploymentOutput = {
+      val __obj = js.Dynamic.literal(
+        "component" -> component.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelComponentDeploymentOutput]
     }
   }
 
@@ -426,12 +488,179 @@ package object proton {
     }
   }
 
+  /** Detailed data of an Proton component resource. For more information about components, see [[https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html|Proton components]] in the <i>Proton User Guide</i>.
+    */
+  @js.native
+  trait Component extends js.Object {
+    var arn: ComponentArn
+    var createdAt: Timestamp
+    var deploymentStatus: DeploymentStatus
+    var environmentName: ResourceName
+    var lastModifiedAt: Timestamp
+    var name: ResourceName
+    var deploymentStatusMessage: js.UndefOr[StatusMessage]
+    var description: js.UndefOr[Description]
+    var lastDeploymentAttemptedAt: js.UndefOr[Timestamp]
+    var lastDeploymentSucceededAt: js.UndefOr[Timestamp]
+    var serviceInstanceName: js.UndefOr[ResourceName]
+    var serviceName: js.UndefOr[ResourceName]
+    var serviceSpec: js.UndefOr[SpecContents]
+  }
+
+  object Component {
+    @inline
+    def apply(
+        arn: ComponentArn,
+        createdAt: Timestamp,
+        deploymentStatus: DeploymentStatus,
+        environmentName: ResourceName,
+        lastModifiedAt: Timestamp,
+        name: ResourceName,
+        deploymentStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        lastDeploymentAttemptedAt: js.UndefOr[Timestamp] = js.undefined,
+        lastDeploymentSucceededAt: js.UndefOr[Timestamp] = js.undefined,
+        serviceInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceSpec: js.UndefOr[SpecContents] = js.undefined
+    ): Component = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "deploymentStatus" -> deploymentStatus.asInstanceOf[js.Any],
+        "environmentName" -> environmentName.asInstanceOf[js.Any],
+        "lastModifiedAt" -> lastModifiedAt.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      deploymentStatusMessage.foreach(__v => __obj.updateDynamic("deploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastDeploymentAttemptedAt.foreach(__v => __obj.updateDynamic("lastDeploymentAttemptedAt")(__v.asInstanceOf[js.Any]))
+      lastDeploymentSucceededAt.foreach(__v => __obj.updateDynamic("lastDeploymentSucceededAt")(__v.asInstanceOf[js.Any]))
+      serviceInstanceName.foreach(__v => __obj.updateDynamic("serviceInstanceName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      serviceSpec.foreach(__v => __obj.updateDynamic("serviceSpec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Component]
+    }
+  }
+
+  /** Summary data of an Proton component resource. For more information about components, see [[https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html|Proton components]] in the <i>Proton User Guide</i>.
+    */
+  @js.native
+  trait ComponentSummary extends js.Object {
+    var arn: ComponentArn
+    var createdAt: Timestamp
+    var deploymentStatus: DeploymentStatus
+    var environmentName: ResourceName
+    var lastModifiedAt: Timestamp
+    var name: ResourceName
+    var deploymentStatusMessage: js.UndefOr[StatusMessage]
+    var lastDeploymentAttemptedAt: js.UndefOr[Timestamp]
+    var lastDeploymentSucceededAt: js.UndefOr[Timestamp]
+    var serviceInstanceName: js.UndefOr[ResourceName]
+    var serviceName: js.UndefOr[ResourceName]
+  }
+
+  object ComponentSummary {
+    @inline
+    def apply(
+        arn: ComponentArn,
+        createdAt: Timestamp,
+        deploymentStatus: DeploymentStatus,
+        environmentName: ResourceName,
+        lastModifiedAt: Timestamp,
+        name: ResourceName,
+        deploymentStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        lastDeploymentAttemptedAt: js.UndefOr[Timestamp] = js.undefined,
+        lastDeploymentSucceededAt: js.UndefOr[Timestamp] = js.undefined,
+        serviceInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceName: js.UndefOr[ResourceName] = js.undefined
+    ): ComponentSummary = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "createdAt" -> createdAt.asInstanceOf[js.Any],
+        "deploymentStatus" -> deploymentStatus.asInstanceOf[js.Any],
+        "environmentName" -> environmentName.asInstanceOf[js.Any],
+        "lastModifiedAt" -> lastModifiedAt.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      deploymentStatusMessage.foreach(__v => __obj.updateDynamic("deploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      lastDeploymentAttemptedAt.foreach(__v => __obj.updateDynamic("lastDeploymentAttemptedAt")(__v.asInstanceOf[js.Any]))
+      lastDeploymentSucceededAt.foreach(__v => __obj.updateDynamic("lastDeploymentSucceededAt")(__v.asInstanceOf[js.Any]))
+      serviceInstanceName.foreach(__v => __obj.updateDynamic("serviceInstanceName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComponentSummary]
+    }
+  }
+
+  @js.native
+  trait CreateComponentInput extends js.Object {
+    var manifest: TemplateManifestContents
+    var name: ResourceName
+    var templateFile: TemplateFileContents
+    var description: js.UndefOr[Description]
+    var environmentName: js.UndefOr[ResourceName]
+    var serviceInstanceName: js.UndefOr[ResourceName]
+    var serviceName: js.UndefOr[ResourceName]
+    var serviceSpec: js.UndefOr[SpecContents]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateComponentInput {
+    @inline
+    def apply(
+        manifest: TemplateManifestContents,
+        name: ResourceName,
+        templateFile: TemplateFileContents,
+        description: js.UndefOr[Description] = js.undefined,
+        environmentName: js.UndefOr[ResourceName] = js.undefined,
+        serviceInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceSpec: js.UndefOr[SpecContents] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateComponentInput = {
+      val __obj = js.Dynamic.literal(
+        "manifest" -> manifest.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "templateFile" -> templateFile.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      environmentName.foreach(__v => __obj.updateDynamic("environmentName")(__v.asInstanceOf[js.Any]))
+      serviceInstanceName.foreach(__v => __obj.updateDynamic("serviceInstanceName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      serviceSpec.foreach(__v => __obj.updateDynamic("serviceSpec")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateComponentInput]
+    }
+  }
+
+  @js.native
+  trait CreateComponentOutput extends js.Object {
+    var component: Component
+  }
+
+  object CreateComponentOutput {
+    @inline
+    def apply(
+        component: Component
+    ): CreateComponentOutput = {
+      val __obj = js.Dynamic.literal(
+        "component" -> component.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateComponentOutput]
+    }
+  }
+
   @js.native
   trait CreateEnvironmentAccountConnectionInput extends js.Object {
     var environmentName: ResourceName
     var managementAccountId: AwsAccountId
-    var roleArn: Arn
     var clientToken: js.UndefOr[ClientToken]
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
+    var roleArn: js.UndefOr[RoleArn]
     var tags: js.UndefOr[TagList]
   }
 
@@ -440,17 +669,21 @@ package object proton {
     def apply(
         environmentName: ResourceName,
         managementAccountId: AwsAccountId,
-        roleArn: Arn,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateEnvironmentAccountConnectionInput = {
       val __obj = js.Dynamic.literal(
         "environmentName" -> environmentName.asInstanceOf[js.Any],
-        "managementAccountId" -> managementAccountId.asInstanceOf[js.Any],
-        "roleArn" -> roleArn.asInstanceOf[js.Any]
+        "managementAccountId" -> managementAccountId.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentAccountConnectionInput]
     }
@@ -479,6 +712,8 @@ package object proton {
     var spec: SpecContents
     var templateMajorVersion: TemplateVersionPart
     var templateName: ResourceName
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
     var description: js.UndefOr[Description]
     var environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId]
     var protonServiceRoleArn: js.UndefOr[Arn]
@@ -494,6 +729,8 @@ package object proton {
         spec: SpecContents,
         templateMajorVersion: TemplateVersionPart,
         templateName: ResourceName,
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId] = js.undefined,
         protonServiceRoleArn: js.UndefOr[Arn] = js.undefined,
@@ -508,6 +745,8 @@ package object proton {
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
 
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       environmentAccountConnectionId.foreach(__v => __obj.updateDynamic("environmentAccountConnectionId")(__v.asInstanceOf[js.Any]))
       protonServiceRoleArn.foreach(__v => __obj.updateDynamic("protonServiceRoleArn")(__v.asInstanceOf[js.Any]))
@@ -641,6 +880,7 @@ package object proton {
     var name: RepositoryName
     var provider: RepositoryProvider
     var encryptionKey: js.UndefOr[Arn]
+    var tags: js.UndefOr[TagList]
   }
 
   object CreateRepositoryInput {
@@ -649,7 +889,8 @@ package object proton {
         connectionArn: Arn,
         name: RepositoryName,
         provider: RepositoryProvider,
-        encryptionKey: js.UndefOr[Arn] = js.undefined
+        encryptionKey: js.UndefOr[Arn] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
     ): CreateRepositoryInput = {
       val __obj = js.Dynamic.literal(
         "connectionArn" -> connectionArn.asInstanceOf[js.Any],
@@ -658,6 +899,7 @@ package object proton {
       )
 
       encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryInput]
     }
   }
@@ -799,6 +1041,7 @@ package object proton {
     var clientToken: js.UndefOr[ClientToken]
     var description: js.UndefOr[Description]
     var majorVersion: js.UndefOr[TemplateVersionPart]
+    var supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList]
     var tags: js.UndefOr[TagList]
   }
 
@@ -811,6 +1054,7 @@ package object proton {
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         majorVersion: js.UndefOr[TemplateVersionPart] = js.undefined,
+        supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateServiceTemplateVersionInput = {
       val __obj = js.Dynamic.literal(
@@ -822,6 +1066,7 @@ package object proton {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       majorVersion.foreach(__v => __obj.updateDynamic("majorVersion")(__v.asInstanceOf[js.Any]))
+      supportedComponentSources.foreach(__v => __obj.updateDynamic("supportedComponentSources")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceTemplateVersionInput]
     }
@@ -890,6 +1135,39 @@ package object proton {
       val __obj = js.Dynamic.literal()
       templateSyncConfig.foreach(__v => __obj.updateDynamic("templateSyncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTemplateSyncConfigOutput]
+    }
+  }
+
+  @js.native
+  trait DeleteComponentInput extends js.Object {
+    var name: ResourceName
+  }
+
+  object DeleteComponentInput {
+    @inline
+    def apply(
+        name: ResourceName
+    ): DeleteComponentInput = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteComponentInput]
+    }
+  }
+
+  @js.native
+  trait DeleteComponentOutput extends js.Object {
+    var component: js.UndefOr[Component]
+  }
+
+  object DeleteComponentOutput {
+    @inline
+    def apply(
+        component: js.UndefOr[Component] = js.undefined
+    ): DeleteComponentOutput = {
+      val __obj = js.Dynamic.literal()
+      component.foreach(__v => __obj.updateDynamic("component")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteComponentOutput]
     }
   }
 
@@ -1208,7 +1486,7 @@ package object proton {
     }
   }
 
-  /** The environment detail data. An Proton environment is a set resources shared across an Proton service.
+  /** Detailed data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.
     */
   @js.native
   trait Environment extends js.Object {
@@ -1221,6 +1499,8 @@ package object proton {
     var templateMajorVersion: TemplateVersionPart
     var templateMinorVersion: TemplateVersionPart
     var templateName: ResourceName
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
     var deploymentStatusMessage: js.UndefOr[StatusMessage]
     var description: js.UndefOr[Description]
     var environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId]
@@ -1243,6 +1523,8 @@ package object proton {
         templateMajorVersion: TemplateVersionPart,
         templateMinorVersion: TemplateVersionPart,
         templateName: ResourceName,
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined,
         deploymentStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId] = js.undefined,
@@ -1264,6 +1546,8 @@ package object proton {
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
 
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       deploymentStatusMessage.foreach(__v => __obj.updateDynamic("deploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       environmentAccountConnectionId.foreach(__v => __obj.updateDynamic("environmentAccountConnectionId")(__v.asInstanceOf[js.Any]))
@@ -1276,7 +1560,7 @@ package object proton {
     }
   }
 
-  /** The environment account connection detail data.
+  /** Detailed data of an Proton environment account connection resource.
     */
   @js.native
   trait EnvironmentAccountConnection extends js.Object {
@@ -1289,6 +1573,8 @@ package object proton {
     var requestedAt: Timestamp
     var roleArn: Arn
     var status: EnvironmentAccountConnectionStatus
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
   }
 
   object EnvironmentAccountConnection {
@@ -1302,7 +1588,9 @@ package object proton {
         managementAccountId: AwsAccountId,
         requestedAt: Timestamp,
         roleArn: Arn,
-        status: EnvironmentAccountConnectionStatus
+        status: EnvironmentAccountConnectionStatus,
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): EnvironmentAccountConnection = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -1315,11 +1603,14 @@ package object proton {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
+
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentAccountConnection]
     }
   }
 
-  /** A summary of the environment account connection detail data.
+  /** Summary data of an Proton environment account connection resource.
     */
   @js.native
   trait EnvironmentAccountConnectionSummary extends js.Object {
@@ -1332,6 +1623,7 @@ package object proton {
     var requestedAt: Timestamp
     var roleArn: Arn
     var status: EnvironmentAccountConnectionStatus
+    var componentRoleArn: js.UndefOr[Arn]
   }
 
   object EnvironmentAccountConnectionSummary {
@@ -1345,7 +1637,8 @@ package object proton {
         managementAccountId: AwsAccountId,
         requestedAt: Timestamp,
         roleArn: Arn,
-        status: EnvironmentAccountConnectionStatus
+        status: EnvironmentAccountConnectionStatus,
+        componentRoleArn: js.UndefOr[Arn] = js.undefined
     ): EnvironmentAccountConnectionSummary = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -1358,11 +1651,13 @@ package object proton {
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
+
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentAccountConnectionSummary]
     }
   }
 
-  /** A summary of the environment detail data.
+  /** Summary data of an Proton environment resource. An Proton environment is a set of resources shared across Proton services.
     */
   @js.native
   trait EnvironmentSummary extends js.Object {
@@ -1375,6 +1670,7 @@ package object proton {
     var templateMajorVersion: TemplateVersionPart
     var templateMinorVersion: TemplateVersionPart
     var templateName: ResourceName
+    var componentRoleArn: js.UndefOr[Arn]
     var deploymentStatusMessage: js.UndefOr[StatusMessage]
     var description: js.UndefOr[Description]
     var environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId]
@@ -1395,6 +1691,7 @@ package object proton {
         templateMajorVersion: TemplateVersionPart,
         templateMinorVersion: TemplateVersionPart,
         templateName: ResourceName,
+        componentRoleArn: js.UndefOr[Arn] = js.undefined,
         deploymentStatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId] = js.undefined,
@@ -1414,6 +1711,7 @@ package object proton {
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
 
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       deploymentStatusMessage.foreach(__v => __obj.updateDynamic("deploymentStatusMessage")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       environmentAccountConnectionId.foreach(__v => __obj.updateDynamic("environmentAccountConnectionId")(__v.asInstanceOf[js.Any]))
@@ -1652,6 +1950,39 @@ package object proton {
       val __obj = js.Dynamic.literal()
       accountSettings.foreach(__v => __obj.updateDynamic("accountSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSettingsOutput]
+    }
+  }
+
+  @js.native
+  trait GetComponentInput extends js.Object {
+    var name: ResourceName
+  }
+
+  object GetComponentInput {
+    @inline
+    def apply(
+        name: ResourceName
+    ): GetComponentInput = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetComponentInput]
+    }
+  }
+
+  @js.native
+  trait GetComponentOutput extends js.Object {
+    var component: js.UndefOr[Component]
+  }
+
+  object GetComponentOutput {
+    @inline
+    def apply(
+        component: js.UndefOr[Component] = js.undefined
+    ): GetComponentOutput = {
+      val __obj = js.Dynamic.literal()
+      component.foreach(__v => __obj.updateDynamic("component")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComponentOutput]
     }
   }
 
@@ -2102,6 +2433,139 @@ package object proton {
   }
 
   @js.native
+  trait ListComponentOutputsInput extends js.Object {
+    var componentName: ResourceName
+    var nextToken: js.UndefOr[EmptyNextToken]
+  }
+
+  object ListComponentOutputsInput {
+    @inline
+    def apply(
+        componentName: ResourceName,
+        nextToken: js.UndefOr[EmptyNextToken] = js.undefined
+    ): ListComponentOutputsInput = {
+      val __obj = js.Dynamic.literal(
+        "componentName" -> componentName.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentOutputsInput]
+    }
+  }
+
+  @js.native
+  trait ListComponentOutputsOutput extends js.Object {
+    var outputs: OutputsList
+    var nextToken: js.UndefOr[EmptyNextToken]
+  }
+
+  object ListComponentOutputsOutput {
+    @inline
+    def apply(
+        outputs: OutputsList,
+        nextToken: js.UndefOr[EmptyNextToken] = js.undefined
+    ): ListComponentOutputsOutput = {
+      val __obj = js.Dynamic.literal(
+        "outputs" -> outputs.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentOutputsOutput]
+    }
+  }
+
+  @js.native
+  trait ListComponentProvisionedResourcesInput extends js.Object {
+    var componentName: ResourceName
+    var nextToken: js.UndefOr[EmptyNextToken]
+  }
+
+  object ListComponentProvisionedResourcesInput {
+    @inline
+    def apply(
+        componentName: ResourceName,
+        nextToken: js.UndefOr[EmptyNextToken] = js.undefined
+    ): ListComponentProvisionedResourcesInput = {
+      val __obj = js.Dynamic.literal(
+        "componentName" -> componentName.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentProvisionedResourcesInput]
+    }
+  }
+
+  @js.native
+  trait ListComponentProvisionedResourcesOutput extends js.Object {
+    var provisionedResources: ProvisionedResourceList
+    var nextToken: js.UndefOr[EmptyNextToken]
+  }
+
+  object ListComponentProvisionedResourcesOutput {
+    @inline
+    def apply(
+        provisionedResources: ProvisionedResourceList,
+        nextToken: js.UndefOr[EmptyNextToken] = js.undefined
+    ): ListComponentProvisionedResourcesOutput = {
+      val __obj = js.Dynamic.literal(
+        "provisionedResources" -> provisionedResources.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentProvisionedResourcesOutput]
+    }
+  }
+
+  @js.native
+  trait ListComponentsInput extends js.Object {
+    var environmentName: js.UndefOr[ResourceName]
+    var maxResults: js.UndefOr[MaxPageResults]
+    var nextToken: js.UndefOr[NextToken]
+    var serviceInstanceName: js.UndefOr[ResourceName]
+    var serviceName: js.UndefOr[ResourceName]
+  }
+
+  object ListComponentsInput {
+    @inline
+    def apply(
+        environmentName: js.UndefOr[ResourceName] = js.undefined,
+        maxResults: js.UndefOr[MaxPageResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        serviceInstanceName: js.UndefOr[ResourceName] = js.undefined,
+        serviceName: js.UndefOr[ResourceName] = js.undefined
+    ): ListComponentsInput = {
+      val __obj = js.Dynamic.literal()
+      environmentName.foreach(__v => __obj.updateDynamic("environmentName")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      serviceInstanceName.foreach(__v => __obj.updateDynamic("serviceInstanceName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentsInput]
+    }
+  }
+
+  @js.native
+  trait ListComponentsOutput extends js.Object {
+    var components: ComponentSummaryList
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListComponentsOutput {
+    @inline
+    def apply(
+        components: ComponentSummaryList,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListComponentsOutput = {
+      val __obj = js.Dynamic.literal(
+        "components" -> components.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComponentsOutput]
+    }
+  }
+
+  @js.native
   trait ListEnvironmentAccountConnectionsInput extends js.Object {
     var requestedBy: EnvironmentAccountConnectionRequesterAccountType
     var environmentName: js.UndefOr[ResourceName]
@@ -2545,24 +3009,54 @@ package object proton {
     }
   }
 
+  /** A filtering criterion to scope down the result list of the <a>ListServiceInstances</a> action.
+    */
+  @js.native
+  trait ListServiceInstancesFilter extends js.Object {
+    var key: js.UndefOr[ListServiceInstancesFilterBy]
+    var value: js.UndefOr[ListServiceInstancesFilterValue]
+  }
+
+  object ListServiceInstancesFilter {
+    @inline
+    def apply(
+        key: js.UndefOr[ListServiceInstancesFilterBy] = js.undefined,
+        value: js.UndefOr[ListServiceInstancesFilterValue] = js.undefined
+    ): ListServiceInstancesFilter = {
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListServiceInstancesFilter]
+    }
+  }
+
   @js.native
   trait ListServiceInstancesInput extends js.Object {
+    var filters: js.UndefOr[ListServiceInstancesFilterList]
     var maxResults: js.UndefOr[MaxPageResults]
     var nextToken: js.UndefOr[NextToken]
     var serviceName: js.UndefOr[ResourceName]
+    var sortBy: js.UndefOr[ListServiceInstancesSortBy]
+    var sortOrder: js.UndefOr[SortOrder]
   }
 
   object ListServiceInstancesInput {
     @inline
     def apply(
+        filters: js.UndefOr[ListServiceInstancesFilterList] = js.undefined,
         maxResults: js.UndefOr[MaxPageResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
-        serviceName: js.UndefOr[ResourceName] = js.undefined
+        serviceName: js.UndefOr[ResourceName] = js.undefined,
+        sortBy: js.UndefOr[ListServiceInstancesSortBy] = js.undefined,
+        sortOrder: js.UndefOr[SortOrder] = js.undefined
     ): ListServiceInstancesInput = {
       val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceInstancesInput]
     }
   }
@@ -2848,28 +3342,28 @@ package object proton {
   @js.native
   trait NotifyResourceDeploymentStatusChangeInput extends js.Object {
     var resourceArn: Arn
-    var status: ResourceDeploymentStatus
     var deploymentId: js.UndefOr[DeploymentId]
     var outputs: js.UndefOr[NotifyResourceDeploymentStatusChangeInputOutputsList]
-    var statusMessage: js.UndefOr[SyntheticNotifyResourceDeploymentStatusChangeInputString]
+    var status: js.UndefOr[ResourceDeploymentStatus]
+    var statusMessage: js.UndefOr[NotifyResourceDeploymentStatusChangeInputStatusMessageString]
   }
 
   object NotifyResourceDeploymentStatusChangeInput {
     @inline
     def apply(
         resourceArn: Arn,
-        status: ResourceDeploymentStatus,
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         outputs: js.UndefOr[NotifyResourceDeploymentStatusChangeInputOutputsList] = js.undefined,
-        statusMessage: js.UndefOr[SyntheticNotifyResourceDeploymentStatusChangeInputString] = js.undefined
+        status: js.UndefOr[ResourceDeploymentStatus] = js.undefined,
+        statusMessage: js.UndefOr[NotifyResourceDeploymentStatusChangeInputStatusMessageString] = js.undefined
     ): NotifyResourceDeploymentStatusChangeInput = {
       val __obj = js.Dynamic.literal(
-        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
-        "status" -> status.asInstanceOf[js.Any]
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
       deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
       outputs.foreach(__v => __obj.updateDynamic("outputs")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyResourceDeploymentStatusChangeInput]
     }
@@ -2965,7 +3459,7 @@ package object proton {
     }
   }
 
-  /** Detail date for a repository that has been registered with Proton.
+  /** Detailed data of a linked repository—a repository that has been registered with Proton.
     */
   @js.native
   trait Repository extends js.Object {
@@ -2997,7 +3491,7 @@ package object proton {
     }
   }
 
-  /** Detail data for a repository branch. <important> Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about [[https://aws.amazon.com/service-terms|Amazon Web Services Feature Preview terms]], see section 2 on Beta and Previews. </important>
+  /** Detail data for a linked repository branch.
     */
   @js.native
   trait RepositoryBranch extends js.Object {
@@ -3025,7 +3519,7 @@ package object proton {
     }
   }
 
-  /** Detail input data for a repository branch. <important> Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about [[https://aws.amazon.com/service-terms|Amazon Web Services Feature Preview terms]], see section 2 on Beta and Previews. </important>
+  /** Detail input data for a linked repository branch.
     */
   @js.native
   trait RepositoryBranchInput extends js.Object {
@@ -3050,7 +3544,7 @@ package object proton {
     }
   }
 
-  /** A summary of detail data for a registered repository.
+  /** Summary data of a linked repository—a repository that has been registered with Proton.
     */
   @js.native
   trait RepositorySummary extends js.Object {
@@ -3100,7 +3594,7 @@ package object proton {
     }
   }
 
-  /** The repository sync definition.
+  /** A repository sync definition.
     */
   @js.native
   trait RepositorySyncDefinition extends js.Object {
@@ -3273,7 +3767,7 @@ package object proton {
     }
   }
 
-  /** The service detail data.
+  /** Detailed data of an Proton service resource.
     */
   @js.native
   trait Service extends js.Object {
@@ -3329,7 +3823,7 @@ package object proton {
     }
   }
 
-  /** The service instance detail data.
+  /** Detailed data of an Proton service instance resource.
     */
   @js.native
   trait ServiceInstance extends js.Object {
@@ -3385,7 +3879,7 @@ package object proton {
     }
   }
 
-  /** A summary of the service instance detail data.
+  /** Summary data of an Proton service instance resource.
     */
   @js.native
   trait ServiceInstanceSummary extends js.Object {
@@ -3438,7 +3932,7 @@ package object proton {
     }
   }
 
-  /** The service pipeline detail data.
+  /** Detailed data of an Proton service instance pipeline resource.
     */
   @js.native
   trait ServicePipeline extends js.Object {
@@ -3485,7 +3979,7 @@ package object proton {
     }
   }
 
-  /** A summary of the service detail data.
+  /** Summary data of an Proton service resource.
     */
   @js.native
   trait ServiceSummary extends js.Object {
@@ -3526,7 +4020,7 @@ package object proton {
     }
   }
 
-  /** The service template detail data.
+  /** Detailed data of an Proton service template resource.
     */
   @js.native
   trait ServiceTemplate extends js.Object {
@@ -3570,7 +4064,7 @@ package object proton {
     }
   }
 
-  /** The service template summary data.
+  /** Summary data of an Proton service template resource.
     */
   @js.native
   trait ServiceTemplateSummary extends js.Object {
@@ -3611,7 +4105,7 @@ package object proton {
     }
   }
 
-  /** The version of a service template detail data.
+  /** Detailed data of an Proton service template version resource.
     */
   @js.native
   trait ServiceTemplateVersion extends js.Object {
@@ -3627,6 +4121,7 @@ package object proton {
     var recommendedMinorVersion: js.UndefOr[TemplateVersionPart]
     var schema: js.UndefOr[TemplateSchema]
     var statusMessage: js.UndefOr[StatusMessage]
+    var supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList]
   }
 
   object ServiceTemplateVersion {
@@ -3643,7 +4138,8 @@ package object proton {
         description: js.UndefOr[Description] = js.undefined,
         recommendedMinorVersion: js.UndefOr[TemplateVersionPart] = js.undefined,
         schema: js.UndefOr[TemplateSchema] = js.undefined,
-        statusMessage: js.UndefOr[StatusMessage] = js.undefined
+        statusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList] = js.undefined
     ): ServiceTemplateVersion = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -3660,11 +4156,12 @@ package object proton {
       recommendedMinorVersion.foreach(__v => __obj.updateDynamic("recommendedMinorVersion")(__v.asInstanceOf[js.Any]))
       schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      supportedComponentSources.foreach(__v => __obj.updateDynamic("supportedComponentSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceTemplateVersion]
     }
   }
 
-  /** A summary of the service template version detail data.
+  /** Summary data of an Proton service template version resource.
     */
   @js.native
   trait ServiceTemplateVersionSummary extends js.Object {
@@ -3850,17 +4347,23 @@ package object proton {
 
   @js.native
   trait UpdateAccountSettingsInput extends js.Object {
+    var deletePipelineProvisioningRepository: js.UndefOr[Boolean]
+    var pipelineCodebuildRoleArn: js.UndefOr[RoleArnOrEmptyString]
     var pipelineProvisioningRepository: js.UndefOr[RepositoryBranchInput]
-    var pipelineServiceRoleArn: js.UndefOr[PipelineRoleArn]
+    var pipelineServiceRoleArn: js.UndefOr[RoleArnOrEmptyString]
   }
 
   object UpdateAccountSettingsInput {
     @inline
     def apply(
+        deletePipelineProvisioningRepository: js.UndefOr[Boolean] = js.undefined,
+        pipelineCodebuildRoleArn: js.UndefOr[RoleArnOrEmptyString] = js.undefined,
         pipelineProvisioningRepository: js.UndefOr[RepositoryBranchInput] = js.undefined,
-        pipelineServiceRoleArn: js.UndefOr[PipelineRoleArn] = js.undefined
+        pipelineServiceRoleArn: js.UndefOr[RoleArnOrEmptyString] = js.undefined
     ): UpdateAccountSettingsInput = {
       val __obj = js.Dynamic.literal()
+      deletePipelineProvisioningRepository.foreach(__v => __obj.updateDynamic("deletePipelineProvisioningRepository")(__v.asInstanceOf[js.Any]))
+      pipelineCodebuildRoleArn.foreach(__v => __obj.updateDynamic("pipelineCodebuildRoleArn")(__v.asInstanceOf[js.Any]))
       pipelineProvisioningRepository.foreach(__v => __obj.updateDynamic("pipelineProvisioningRepository")(__v.asInstanceOf[js.Any]))
       pipelineServiceRoleArn.foreach(__v => __obj.updateDynamic("pipelineServiceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountSettingsInput]
@@ -3885,21 +4388,81 @@ package object proton {
   }
 
   @js.native
+  trait UpdateComponentInput extends js.Object {
+    var deploymentType: ComponentDeploymentUpdateType
+    var name: ResourceName
+    var description: js.UndefOr[Description]
+    var serviceInstanceName: js.UndefOr[ResourceNameOrEmpty]
+    var serviceName: js.UndefOr[ResourceNameOrEmpty]
+    var serviceSpec: js.UndefOr[SpecContents]
+    var templateFile: js.UndefOr[TemplateFileContents]
+  }
+
+  object UpdateComponentInput {
+    @inline
+    def apply(
+        deploymentType: ComponentDeploymentUpdateType,
+        name: ResourceName,
+        description: js.UndefOr[Description] = js.undefined,
+        serviceInstanceName: js.UndefOr[ResourceNameOrEmpty] = js.undefined,
+        serviceName: js.UndefOr[ResourceNameOrEmpty] = js.undefined,
+        serviceSpec: js.UndefOr[SpecContents] = js.undefined,
+        templateFile: js.UndefOr[TemplateFileContents] = js.undefined
+    ): UpdateComponentInput = {
+      val __obj = js.Dynamic.literal(
+        "deploymentType" -> deploymentType.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      serviceInstanceName.foreach(__v => __obj.updateDynamic("serviceInstanceName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      serviceSpec.foreach(__v => __obj.updateDynamic("serviceSpec")(__v.asInstanceOf[js.Any]))
+      templateFile.foreach(__v => __obj.updateDynamic("templateFile")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateComponentInput]
+    }
+  }
+
+  @js.native
+  trait UpdateComponentOutput extends js.Object {
+    var component: Component
+  }
+
+  object UpdateComponentOutput {
+    @inline
+    def apply(
+        component: Component
+    ): UpdateComponentOutput = {
+      val __obj = js.Dynamic.literal(
+        "component" -> component.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateComponentOutput]
+    }
+  }
+
+  @js.native
   trait UpdateEnvironmentAccountConnectionInput extends js.Object {
     var id: EnvironmentAccountConnectionId
-    var roleArn: Arn
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
+    var roleArn: js.UndefOr[RoleArn]
   }
 
   object UpdateEnvironmentAccountConnectionInput {
     @inline
     def apply(
         id: EnvironmentAccountConnectionId,
-        roleArn: Arn
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateEnvironmentAccountConnectionInput = {
       val __obj = js.Dynamic.literal(
-        "id" -> id.asInstanceOf[js.Any],
-        "roleArn" -> roleArn.asInstanceOf[js.Any]
+        "id" -> id.asInstanceOf[js.Any]
       )
+
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEnvironmentAccountConnectionInput]
     }
   }
@@ -3925,6 +4488,8 @@ package object proton {
   trait UpdateEnvironmentInput extends js.Object {
     var deploymentType: DeploymentUpdateType
     var name: ResourceName
+    var codebuildRoleArn: js.UndefOr[RoleArn]
+    var componentRoleArn: js.UndefOr[RoleArn]
     var description: js.UndefOr[Description]
     var environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId]
     var protonServiceRoleArn: js.UndefOr[Arn]
@@ -3939,6 +4504,8 @@ package object proton {
     def apply(
         deploymentType: DeploymentUpdateType,
         name: ResourceName,
+        codebuildRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        componentRoleArn: js.UndefOr[RoleArn] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         environmentAccountConnectionId: js.UndefOr[EnvironmentAccountConnectionId] = js.undefined,
         protonServiceRoleArn: js.UndefOr[Arn] = js.undefined,
@@ -3952,6 +4519,8 @@ package object proton {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      codebuildRoleArn.foreach(__v => __obj.updateDynamic("codebuildRoleArn")(__v.asInstanceOf[js.Any]))
+      componentRoleArn.foreach(__v => __obj.updateDynamic("componentRoleArn")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       environmentAccountConnectionId.foreach(__v => __obj.updateDynamic("environmentAccountConnectionId")(__v.asInstanceOf[js.Any]))
       protonServiceRoleArn.foreach(__v => __obj.updateDynamic("protonServiceRoleArn")(__v.asInstanceOf[js.Any]))
@@ -4255,6 +4824,7 @@ package object proton {
     var compatibleEnvironmentTemplates: js.UndefOr[CompatibleEnvironmentTemplateInputList]
     var description: js.UndefOr[Description]
     var status: js.UndefOr[TemplateVersionStatus]
+    var supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList]
   }
 
   object UpdateServiceTemplateVersionInput {
@@ -4265,7 +4835,8 @@ package object proton {
         templateName: ResourceName,
         compatibleEnvironmentTemplates: js.UndefOr[CompatibleEnvironmentTemplateInputList] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
-        status: js.UndefOr[TemplateVersionStatus] = js.undefined
+        status: js.UndefOr[TemplateVersionStatus] = js.undefined,
+        supportedComponentSources: js.UndefOr[ServiceTemplateSupportedComponentSourceInputList] = js.undefined
     ): UpdateServiceTemplateVersionInput = {
       val __obj = js.Dynamic.literal(
         "majorVersion" -> majorVersion.asInstanceOf[js.Any],
@@ -4276,6 +4847,7 @@ package object proton {
       compatibleEnvironmentTemplates.foreach(__v => __obj.updateDynamic("compatibleEnvironmentTemplates")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      supportedComponentSources.foreach(__v => __obj.updateDynamic("supportedComponentSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceTemplateVersionInput]
     }
   }

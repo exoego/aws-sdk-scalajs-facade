@@ -50,6 +50,23 @@ object IngestionJobStatus {
   inline def values: js.Array[IngestionJobStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
 }
 
+type LabelRating = "ANOMALY" | "NO_ANOMALY" | "NEUTRAL"
+object LabelRating {
+  inline val ANOMALY: "ANOMALY" = "ANOMALY"
+  inline val NO_ANOMALY: "NO_ANOMALY" = "NO_ANOMALY"
+  inline val NEUTRAL: "NEUTRAL" = "NEUTRAL"
+
+  inline def values: js.Array[LabelRating] = js.Array(ANOMALY, NO_ANOMALY, NEUTRAL)
+}
+
+type LatestInferenceResult = "ANOMALOUS" | "NORMAL"
+object LatestInferenceResult {
+  inline val ANOMALOUS: "ANOMALOUS" = "ANOMALOUS"
+  inline val NORMAL: "NORMAL" = "NORMAL"
+
+  inline def values: js.Array[LatestInferenceResult] = js.Array(ANOMALOUS, NORMAL)
+}
+
 type ModelStatus = "IN_PROGRESS" | "SUCCESS" | "FAILED"
 object ModelStatus {
   inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
@@ -57,6 +74,23 @@ object ModelStatus {
   inline val FAILED: "FAILED" = "FAILED"
 
   inline def values: js.Array[ModelStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+}
+
+type Monotonicity = "DECREASING" | "INCREASING" | "STATIC"
+object Monotonicity {
+  inline val DECREASING: "DECREASING" = "DECREASING"
+  inline val INCREASING: "INCREASING" = "INCREASING"
+  inline val STATIC: "STATIC" = "STATIC"
+
+  inline def values: js.Array[Monotonicity] = js.Array(DECREASING, INCREASING, STATIC)
+}
+
+type StatisticalIssueStatus = "POTENTIAL_ISSUE_DETECTED" | "NO_ISSUE_DETECTED"
+object StatisticalIssueStatus {
+  inline val POTENTIAL_ISSUE_DETECTED: "POTENTIAL_ISSUE_DETECTED" = "POTENTIAL_ISSUE_DETECTED"
+  inline val NO_ISSUE_DETECTED: "NO_ISSUE_DETECTED" = "NO_ISSUE_DETECTED"
+
+  inline def values: js.Array[StatisticalIssueStatus] = js.Array(POTENTIAL_ISSUE_DETECTED, NO_ISSUE_DETECTED)
 }
 
 type TargetSamplingRate = "PT1S" | "PT5S" | "PT10S" | "PT15S" | "PT30S" | "PT1M" | "PT5M" | "PT10M" | "PT15M" | "PT30M" | "PT1H"

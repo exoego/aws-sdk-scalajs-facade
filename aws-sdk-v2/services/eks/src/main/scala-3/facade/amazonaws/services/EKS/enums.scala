@@ -2,7 +2,7 @@ package facade.amazonaws.services.eks
 
 import scalajs.js
 
-type AMITypes = "AL2_x86_64" | "AL2_x86_64_GPU" | "AL2_ARM_64" | "CUSTOM" | "BOTTLEROCKET_ARM_64" | "BOTTLEROCKET_x86_64"
+type AMITypes = "AL2_x86_64" | "AL2_x86_64_GPU" | "AL2_ARM_64" | "CUSTOM" | "BOTTLEROCKET_ARM_64" | "BOTTLEROCKET_x86_64" | "BOTTLEROCKET_ARM_64_NVIDIA" | "BOTTLEROCKET_x86_64_NVIDIA"
 object AMITypes {
   inline val AL2_x86_64: "AL2_x86_64" = "AL2_x86_64"
   inline val AL2_x86_64_GPU: "AL2_x86_64_GPU" = "AL2_x86_64_GPU"
@@ -10,8 +10,10 @@ object AMITypes {
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
   inline val BOTTLEROCKET_ARM_64: "BOTTLEROCKET_ARM_64" = "BOTTLEROCKET_ARM_64"
   inline val BOTTLEROCKET_x86_64: "BOTTLEROCKET_x86_64" = "BOTTLEROCKET_x86_64"
+  inline val BOTTLEROCKET_ARM_64_NVIDIA: "BOTTLEROCKET_ARM_64_NVIDIA" = "BOTTLEROCKET_ARM_64_NVIDIA"
+  inline val BOTTLEROCKET_x86_64_NVIDIA: "BOTTLEROCKET_x86_64_NVIDIA" = "BOTTLEROCKET_x86_64_NVIDIA"
 
-  inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64)
+  inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64, BOTTLEROCKET_ARM_64_NVIDIA, BOTTLEROCKET_x86_64_NVIDIA)
 }
 
 type AddonIssueCode = "AccessDenied" | "InternalFailure" | "ClusterUnreachable" | "InsufficientNumberOfReplicas" | "ConfigurationConflict" | "AdmissionRequestDenied" | "UnsupportedAddonModification" | "K8sResourceNotFound"
@@ -37,7 +39,7 @@ object AddonIssueCode {
   )
 }
 
-type AddonStatus = "CREATING" | "ACTIVE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETE_FAILED" | "DEGRADED"
+type AddonStatus = "CREATING" | "ACTIVE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETE_FAILED" | "DEGRADED" | "UPDATE_FAILED"
 object AddonStatus {
   inline val CREATING: "CREATING" = "CREATING"
   inline val ACTIVE: "ACTIVE" = "ACTIVE"
@@ -46,8 +48,9 @@ object AddonStatus {
   inline val DELETING: "DELETING" = "DELETING"
   inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
   inline val DEGRADED: "DEGRADED" = "DEGRADED"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
 
-  inline def values: js.Array[AddonStatus] = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED)
+  inline def values: js.Array[AddonStatus] = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED, UPDATE_FAILED)
 }
 
 type CapacityTypes = "ON_DEMAND" | "SPOT"
@@ -56,6 +59,18 @@ object CapacityTypes {
   inline val SPOT: "SPOT" = "SPOT"
 
   inline def values: js.Array[CapacityTypes] = js.Array(ON_DEMAND, SPOT)
+}
+
+type ClusterIssueCode = "AccessDenied" | "ClusterUnreachable" | "ConfigurationConflict" | "InternalFailure" | "ResourceLimitExceeded" | "ResourceNotFound"
+object ClusterIssueCode {
+  inline val AccessDenied: "AccessDenied" = "AccessDenied"
+  inline val ClusterUnreachable: "ClusterUnreachable" = "ClusterUnreachable"
+  inline val ConfigurationConflict: "ConfigurationConflict" = "ConfigurationConflict"
+  inline val InternalFailure: "InternalFailure" = "InternalFailure"
+  inline val ResourceLimitExceeded: "ResourceLimitExceeded" = "ResourceLimitExceeded"
+  inline val ResourceNotFound: "ResourceNotFound" = "ResourceNotFound"
+
+  inline def values: js.Array[ClusterIssueCode] = js.Array(AccessDenied, ClusterUnreachable, ConfigurationConflict, InternalFailure, ResourceLimitExceeded, ResourceNotFound)
 }
 
 type ClusterStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED" | "UPDATING" | "PENDING"
@@ -137,6 +152,14 @@ object FargateProfileStatus {
   inline def values: js.Array[FargateProfileStatus] = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
 }
 
+type IpFamily = "ipv4" | "ipv6"
+object IpFamily {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[IpFamily] = js.Array(ipv4, ipv6)
+}
+
 type LogType = "api" | "audit" | "authenticator" | "controllerManager" | "scheduler"
 object LogType {
   inline val api: "api" = "api"
@@ -148,7 +171,7 @@ object LogType {
   inline def values: js.Array[LogType] = js.Array(api, audit, authenticator, controllerManager, scheduler)
 }
 
-type NodegroupIssueCode = "AutoScalingGroupNotFound" | "AutoScalingGroupInvalidConfiguration" | "Ec2SecurityGroupNotFound" | "Ec2SecurityGroupDeletionFailure" | "Ec2LaunchTemplateNotFound" | "Ec2LaunchTemplateVersionMismatch" | "Ec2SubnetNotFound" | "Ec2SubnetInvalidConfiguration" | "IamInstanceProfileNotFound" | "IamLimitExceeded" | "IamNodeRoleNotFound" | "NodeCreationFailure" | "AsgInstanceLaunchFailures" | "InstanceLimitExceeded" | "InsufficientFreeAddresses" | "AccessDenied" | "InternalFailure" | "ClusterUnreachable"
+type NodegroupIssueCode = "AutoScalingGroupNotFound" | "AutoScalingGroupInvalidConfiguration" | "Ec2SecurityGroupNotFound" | "Ec2SecurityGroupDeletionFailure" | "Ec2LaunchTemplateNotFound" | "Ec2LaunchTemplateVersionMismatch" | "Ec2SubnetNotFound" | "Ec2SubnetInvalidConfiguration" | "IamInstanceProfileNotFound" | "IamLimitExceeded" | "IamNodeRoleNotFound" | "NodeCreationFailure" | "AsgInstanceLaunchFailures" | "InstanceLimitExceeded" | "InsufficientFreeAddresses" | "AccessDenied" | "InternalFailure" | "ClusterUnreachable" | "Ec2SubnetMissingIpv6Assignment"
 object NodegroupIssueCode {
   inline val AutoScalingGroupNotFound: "AutoScalingGroupNotFound" = "AutoScalingGroupNotFound"
   inline val AutoScalingGroupInvalidConfiguration: "AutoScalingGroupInvalidConfiguration" = "AutoScalingGroupInvalidConfiguration"
@@ -168,6 +191,7 @@ object NodegroupIssueCode {
   inline val AccessDenied: "AccessDenied" = "AccessDenied"
   inline val InternalFailure: "InternalFailure" = "InternalFailure"
   inline val ClusterUnreachable: "ClusterUnreachable" = "ClusterUnreachable"
+  inline val Ec2SubnetMissingIpv6Assignment: "Ec2SubnetMissingIpv6Assignment" = "Ec2SubnetMissingIpv6Assignment"
 
   inline def values: js.Array[NodegroupIssueCode] = js.Array(
     AutoScalingGroupNotFound,
@@ -187,7 +211,8 @@ object NodegroupIssueCode {
     InsufficientFreeAddresses,
     AccessDenied,
     InternalFailure,
-    ClusterUnreachable
+    ClusterUnreachable,
+    Ec2SubnetMissingIpv6Assignment
   )
 }
 
@@ -204,12 +229,13 @@ object NodegroupStatus {
   inline def values: js.Array[NodegroupStatus] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
 }
 
-type ResolveConflicts = "OVERWRITE" | "NONE"
+type ResolveConflicts = "OVERWRITE" | "NONE" | "PRESERVE"
 object ResolveConflicts {
   inline val OVERWRITE: "OVERWRITE" = "OVERWRITE"
   inline val NONE: "NONE" = "NONE"
+  inline val PRESERVE: "PRESERVE" = "PRESERVE"
 
-  inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE)
+  inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE, PRESERVE)
 }
 
 type TaintEffect = "NO_SCHEDULE" | "NO_EXECUTE" | "PREFER_NO_SCHEDULE"

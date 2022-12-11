@@ -33,6 +33,7 @@ package object backupgateway {
   type Time = js.Date
   type Username = String
   type VirtualMachines = js.Array[VirtualMachine]
+  type VpcEndpoint = String
 
   final class BackupGatewayOps(private val service: BackupGateway) extends AnyVal {
 
@@ -41,6 +42,8 @@ package object backupgateway {
     @inline def deleteGatewayFuture(params: DeleteGatewayInput): Future[DeleteGatewayOutput] = service.deleteGateway(params).promise().toFuture
     @inline def deleteHypervisorFuture(params: DeleteHypervisorInput): Future[DeleteHypervisorOutput] = service.deleteHypervisor(params).promise().toFuture
     @inline def disassociateGatewayFromServerFuture(params: DisassociateGatewayFromServerInput): Future[DisassociateGatewayFromServerOutput] = service.disassociateGatewayFromServer(params).promise().toFuture
+    @inline def getGatewayFuture(params: GetGatewayInput): Future[GetGatewayOutput] = service.getGateway(params).promise().toFuture
+    @inline def getVirtualMachineFuture(params: GetVirtualMachineInput): Future[GetVirtualMachineOutput] = service.getVirtualMachine(params).promise().toFuture
     @inline def importHypervisorConfigurationFuture(params: ImportHypervisorConfigurationInput): Future[ImportHypervisorConfigurationOutput] = service.importHypervisorConfiguration(params).promise().toFuture
     @inline def listGatewaysFuture(params: ListGatewaysInput): Future[ListGatewaysOutput] = service.listGateways(params).promise().toFuture
     @inline def listHypervisorsFuture(params: ListHypervisorsInput): Future[ListHypervisorsOutput] = service.listHypervisors(params).promise().toFuture
@@ -51,6 +54,7 @@ package object backupgateway {
     @inline def testHypervisorConfigurationFuture(params: TestHypervisorConfigurationInput): Future[TestHypervisorConfigurationOutput] = service.testHypervisorConfiguration(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def updateGatewayInformationFuture(params: UpdateGatewayInformationInput): Future[UpdateGatewayInformationOutput] = service.updateGatewayInformation(params).promise().toFuture
+    @inline def updateGatewaySoftwareNowFuture(params: UpdateGatewaySoftwareNowInput): Future[UpdateGatewaySoftwareNowOutput] = service.updateGatewaySoftwareNow(params).promise().toFuture
     @inline def updateHypervisorFuture(params: UpdateHypervisorInput): Future[UpdateHypervisorOutput] = service.updateHypervisor(params).promise().toFuture
 
   }
@@ -65,6 +69,8 @@ package object backupgateway {
     def deleteGateway(params: DeleteGatewayInput): Request[DeleteGatewayOutput] = js.native
     def deleteHypervisor(params: DeleteHypervisorInput): Request[DeleteHypervisorOutput] = js.native
     def disassociateGatewayFromServer(params: DisassociateGatewayFromServerInput): Request[DisassociateGatewayFromServerOutput] = js.native
+    def getGateway(params: GetGatewayInput): Request[GetGatewayOutput] = js.native
+    def getVirtualMachine(params: GetVirtualMachineInput): Request[GetVirtualMachineOutput] = js.native
     def importHypervisorConfiguration(params: ImportHypervisorConfigurationInput): Request[ImportHypervisorConfigurationOutput] = js.native
     def listGateways(params: ListGatewaysInput): Request[ListGatewaysOutput] = js.native
     def listHypervisors(params: ListHypervisorsInput): Request[ListHypervisorsOutput] = js.native
@@ -75,6 +81,7 @@ package object backupgateway {
     def testHypervisorConfiguration(params: TestHypervisorConfigurationInput): Request[TestHypervisorConfigurationOutput] = js.native
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def updateGatewayInformation(params: UpdateGatewayInformationInput): Request[UpdateGatewayInformationOutput] = js.native
+    def updateGatewaySoftwareNow(params: UpdateGatewaySoftwareNowInput): Request[UpdateGatewaySoftwareNowOutput] = js.native
     def updateHypervisor(params: UpdateHypervisorInput): Request[UpdateHypervisorOutput] = js.native
   }
   object BackupGateway {
@@ -291,6 +298,111 @@ package object backupgateway {
     }
   }
 
+  /** The details of gateway.
+    */
+  @js.native
+  trait GatewayDetails extends js.Object {
+    var GatewayArn: js.UndefOr[GatewayArn]
+    var GatewayDisplayName: js.UndefOr[Name]
+    var GatewayType: js.UndefOr[GatewayType]
+    var HypervisorId: js.UndefOr[HypervisorId]
+    var LastSeenTime: js.UndefOr[Time]
+    var MaintenanceStartTime: js.UndefOr[MaintenanceStartTime]
+    var NextUpdateAvailabilityTime: js.UndefOr[Time]
+    var VpcEndpoint: js.UndefOr[VpcEndpoint]
+  }
+
+  object GatewayDetails {
+    @inline
+    def apply(
+        GatewayArn: js.UndefOr[GatewayArn] = js.undefined,
+        GatewayDisplayName: js.UndefOr[Name] = js.undefined,
+        GatewayType: js.UndefOr[GatewayType] = js.undefined,
+        HypervisorId: js.UndefOr[HypervisorId] = js.undefined,
+        LastSeenTime: js.UndefOr[Time] = js.undefined,
+        MaintenanceStartTime: js.UndefOr[MaintenanceStartTime] = js.undefined,
+        NextUpdateAvailabilityTime: js.UndefOr[Time] = js.undefined,
+        VpcEndpoint: js.UndefOr[VpcEndpoint] = js.undefined
+    ): GatewayDetails = {
+      val __obj = js.Dynamic.literal()
+      GatewayArn.foreach(__v => __obj.updateDynamic("GatewayArn")(__v.asInstanceOf[js.Any]))
+      GatewayDisplayName.foreach(__v => __obj.updateDynamic("GatewayDisplayName")(__v.asInstanceOf[js.Any]))
+      GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
+      HypervisorId.foreach(__v => __obj.updateDynamic("HypervisorId")(__v.asInstanceOf[js.Any]))
+      LastSeenTime.foreach(__v => __obj.updateDynamic("LastSeenTime")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartTime.foreach(__v => __obj.updateDynamic("MaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      NextUpdateAvailabilityTime.foreach(__v => __obj.updateDynamic("NextUpdateAvailabilityTime")(__v.asInstanceOf[js.Any]))
+      VpcEndpoint.foreach(__v => __obj.updateDynamic("VpcEndpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayDetails]
+    }
+  }
+
+  @js.native
+  trait GetGatewayInput extends js.Object {
+    var GatewayArn: GatewayArn
+  }
+
+  object GetGatewayInput {
+    @inline
+    def apply(
+        GatewayArn: GatewayArn
+    ): GetGatewayInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetGatewayInput]
+    }
+  }
+
+  @js.native
+  trait GetGatewayOutput extends js.Object {
+    var Gateway: js.UndefOr[GatewayDetails]
+  }
+
+  object GetGatewayOutput {
+    @inline
+    def apply(
+        Gateway: js.UndefOr[GatewayDetails] = js.undefined
+    ): GetGatewayOutput = {
+      val __obj = js.Dynamic.literal()
+      Gateway.foreach(__v => __obj.updateDynamic("Gateway")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetGatewayOutput]
+    }
+  }
+
+  @js.native
+  trait GetVirtualMachineInput extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object GetVirtualMachineInput {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): GetVirtualMachineInput = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetVirtualMachineInput]
+    }
+  }
+
+  @js.native
+  trait GetVirtualMachineOutput extends js.Object {
+    var VirtualMachine: js.UndefOr[VirtualMachineDetails]
+  }
+
+  object GetVirtualMachineOutput {
+    @inline
+    def apply(
+        VirtualMachine: js.UndefOr[VirtualMachineDetails] = js.undefined
+    ): GetVirtualMachineOutput = {
+      val __obj = js.Dynamic.literal()
+      VirtualMachine.foreach(__v => __obj.updateDynamic("VirtualMachine")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetVirtualMachineOutput]
+    }
+  }
+
   /** Represents the hypervisor's permissions to which the gateway will connect. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.
     */
   @js.native
@@ -484,6 +596,7 @@ package object backupgateway {
 
   @js.native
   trait ListVirtualMachinesInput extends js.Object {
+    var HypervisorArn: js.UndefOr[ServerArn]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -491,10 +604,12 @@ package object backupgateway {
   object ListVirtualMachinesInput {
     @inline
     def apply(
+        HypervisorArn: js.UndefOr[ServerArn] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListVirtualMachinesInput = {
       val __obj = js.Dynamic.literal()
+      HypervisorArn.foreach(__v => __obj.updateDynamic("HypervisorArn")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVirtualMachinesInput]
@@ -517,6 +632,35 @@ package object backupgateway {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       VirtualMachines.foreach(__v => __obj.updateDynamic("VirtualMachines")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVirtualMachinesOutput]
+    }
+  }
+
+  /** This is your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone. Can be weekly or monthly.
+    */
+  @js.native
+  trait MaintenanceStartTime extends js.Object {
+    var HourOfDay: HourOfDay
+    var MinuteOfHour: MinuteOfHour
+    var DayOfMonth: js.UndefOr[DayOfMonth]
+    var DayOfWeek: js.UndefOr[DayOfWeek]
+  }
+
+  object MaintenanceStartTime {
+    @inline
+    def apply(
+        HourOfDay: HourOfDay,
+        MinuteOfHour: MinuteOfHour,
+        DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined
+    ): MaintenanceStartTime = {
+      val __obj = js.Dynamic.literal(
+        "HourOfDay" -> HourOfDay.asInstanceOf[js.Any],
+        "MinuteOfHour" -> MinuteOfHour.asInstanceOf[js.Any]
+      )
+
+      DayOfMonth.foreach(__v => __obj.updateDynamic("DayOfMonth")(__v.asInstanceOf[js.Any]))
+      DayOfWeek.foreach(__v => __obj.updateDynamic("DayOfWeek")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaintenanceStartTime]
     }
   }
 
@@ -736,9 +880,43 @@ package object backupgateway {
   }
 
   @js.native
+  trait UpdateGatewaySoftwareNowInput extends js.Object {
+    var GatewayArn: GatewayArn
+  }
+
+  object UpdateGatewaySoftwareNowInput {
+    @inline
+    def apply(
+        GatewayArn: GatewayArn
+    ): UpdateGatewaySoftwareNowInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayArn" -> GatewayArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateGatewaySoftwareNowInput]
+    }
+  }
+
+  @js.native
+  trait UpdateGatewaySoftwareNowOutput extends js.Object {
+    var GatewayArn: js.UndefOr[GatewayArn]
+  }
+
+  object UpdateGatewaySoftwareNowOutput {
+    @inline
+    def apply(
+        GatewayArn: js.UndefOr[GatewayArn] = js.undefined
+    ): UpdateGatewaySoftwareNowOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayArn.foreach(__v => __obj.updateDynamic("GatewayArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGatewaySoftwareNowOutput]
+    }
+  }
+
+  @js.native
   trait UpdateHypervisorInput extends js.Object {
     var HypervisorArn: ServerArn
     var Host: js.UndefOr[Host]
+    var Name: js.UndefOr[Name]
     var Password: js.UndefOr[Password]
     var Username: js.UndefOr[Username]
   }
@@ -748,6 +926,7 @@ package object backupgateway {
     def apply(
         HypervisorArn: ServerArn,
         Host: js.UndefOr[Host] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
         Password: js.UndefOr[Password] = js.undefined,
         Username: js.UndefOr[Username] = js.undefined
     ): UpdateHypervisorInput = {
@@ -756,6 +935,7 @@ package object backupgateway {
       )
 
       Host.foreach(__v => __obj.updateDynamic("Host")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateHypervisorInput]
@@ -808,6 +988,39 @@ package object backupgateway {
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualMachine]
+    }
+  }
+
+  /** Your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).
+    */
+  @js.native
+  trait VirtualMachineDetails extends js.Object {
+    var HostName: js.UndefOr[Name]
+    var HypervisorId: js.UndefOr[String]
+    var LastBackupDate: js.UndefOr[Time]
+    var Name: js.UndefOr[Name]
+    var Path: js.UndefOr[Path]
+    var ResourceArn: js.UndefOr[ResourceArn]
+  }
+
+  object VirtualMachineDetails {
+    @inline
+    def apply(
+        HostName: js.UndefOr[Name] = js.undefined,
+        HypervisorId: js.UndefOr[String] = js.undefined,
+        LastBackupDate: js.UndefOr[Time] = js.undefined,
+        Name: js.UndefOr[Name] = js.undefined,
+        Path: js.UndefOr[Path] = js.undefined,
+        ResourceArn: js.UndefOr[ResourceArn] = js.undefined
+    ): VirtualMachineDetails = {
+      val __obj = js.Dynamic.literal()
+      HostName.foreach(__v => __obj.updateDynamic("HostName")(__v.asInstanceOf[js.Any]))
+      HypervisorId.foreach(__v => __obj.updateDynamic("HypervisorId")(__v.asInstanceOf[js.Any]))
+      LastBackupDate.foreach(__v => __obj.updateDynamic("LastBackupDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VirtualMachineDetails]
     }
   }
 }

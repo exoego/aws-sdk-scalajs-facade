@@ -38,16 +38,14 @@ package object mwaa {
   type SecurityGroupList = js.Array[SecurityGroupId]
   type SubnetId = String
   type SubnetList = js.Array[SubnetId]
-  type SyntheticCreateCliTokenResponseToken = String
-  type SyntheticCreateEnvironmentInputAirflowConfigurationOptions = js.Dictionary[ConfigValue]
-  type SyntheticCreateWebLoginTokenResponseToken = String
-  type SyntheticUpdateEnvironmentInputAirflowConfigurationOptions = js.Dictionary[ConfigValue]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type Timestamp = js.Date
+  type Token = String
   type UpdateCreatedAt = js.Date
+  type UpdateSource = String
   type WebserverUrl = String
   type WeeklyMaintenanceWindowStart = String
 
@@ -109,14 +107,14 @@ package object mwaa {
 
   @js.native
   trait CreateCliTokenResponse extends js.Object {
-    var CliToken: js.UndefOr[SyntheticCreateCliTokenResponseToken]
+    var CliToken: js.UndefOr[Token]
     var WebServerHostname: js.UndefOr[Hostname]
   }
 
   object CreateCliTokenResponse {
     @inline
     def apply(
-        CliToken: js.UndefOr[SyntheticCreateCliTokenResponseToken] = js.undefined,
+        CliToken: js.UndefOr[Token] = js.undefined,
         WebServerHostname: js.UndefOr[Hostname] = js.undefined
     ): CreateCliTokenResponse = {
       val __obj = js.Dynamic.literal()
@@ -135,7 +133,7 @@ package object mwaa {
     var Name: EnvironmentName
     var NetworkConfiguration: NetworkConfiguration
     var SourceBucketArn: S3BucketArn
-    var AirflowConfigurationOptions: js.UndefOr[SyntheticCreateEnvironmentInputAirflowConfigurationOptions]
+    var AirflowConfigurationOptions: js.UndefOr[AirflowConfigurationOptions]
     var AirflowVersion: js.UndefOr[AirflowVersion]
     var EnvironmentClass: js.UndefOr[EnvironmentClass]
     var KmsKey: js.UndefOr[KmsKey]
@@ -160,7 +158,7 @@ package object mwaa {
         Name: EnvironmentName,
         NetworkConfiguration: NetworkConfiguration,
         SourceBucketArn: S3BucketArn,
-        AirflowConfigurationOptions: js.UndefOr[SyntheticCreateEnvironmentInputAirflowConfigurationOptions] = js.undefined,
+        AirflowConfigurationOptions: js.UndefOr[AirflowConfigurationOptions] = js.undefined,
         AirflowVersion: js.UndefOr[AirflowVersion] = js.undefined,
         EnvironmentClass: js.UndefOr[EnvironmentClass] = js.undefined,
         KmsKey: js.UndefOr[KmsKey] = js.undefined,
@@ -239,14 +237,14 @@ package object mwaa {
   @js.native
   trait CreateWebLoginTokenResponse extends js.Object {
     var WebServerHostname: js.UndefOr[Hostname]
-    var WebToken: js.UndefOr[SyntheticCreateWebLoginTokenResponseToken]
+    var WebToken: js.UndefOr[Token]
   }
 
   object CreateWebLoginTokenResponse {
     @inline
     def apply(
         WebServerHostname: js.UndefOr[Hostname] = js.undefined,
-        WebToken: js.UndefOr[SyntheticCreateWebLoginTokenResponseToken] = js.undefined
+        WebToken: js.UndefOr[Token] = js.undefined
     ): CreateWebLoginTokenResponse = {
       val __obj = js.Dynamic.literal()
       WebServerHostname.foreach(__v => __obj.updateDynamic("WebServerHostname")(__v.asInstanceOf[js.Any]))
@@ -283,7 +281,7 @@ package object mwaa {
     }
   }
 
-  /** Internal only API.
+  /** \```Internal only```. Represents the dimensions of a metric. To learn more about the metrics published to Amazon CloudWatch, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html|Amazon MWAA performance metrics in Amazon CloudWatch]].
     */
   @js.native
   trait Dimension extends js.Object {
@@ -305,7 +303,7 @@ package object mwaa {
     }
   }
 
-  /** The Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+  /** Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
     */
   @js.native
   trait Environment extends js.Object {
@@ -431,12 +429,13 @@ package object mwaa {
     }
   }
 
-  /** The status of the last update on the environment, and any errors that were encountered.
+  /** Describes the status of the last update on the environment, and any errors that were encountered.
     */
   @js.native
   trait LastUpdate extends js.Object {
     var CreatedAt: js.UndefOr[UpdateCreatedAt]
     var Error: js.UndefOr[UpdateError]
+    var Source: js.UndefOr[UpdateSource]
     var Status: js.UndefOr[UpdateStatus]
   }
 
@@ -445,11 +444,13 @@ package object mwaa {
     def apply(
         CreatedAt: js.UndefOr[UpdateCreatedAt] = js.undefined,
         Error: js.UndefOr[UpdateError] = js.undefined,
+        Source: js.UndefOr[UpdateSource] = js.undefined,
         Status: js.UndefOr[UpdateStatus] = js.undefined
     ): LastUpdate = {
       val __obj = js.Dynamic.literal()
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LastUpdate]
     }
@@ -528,7 +529,7 @@ package object mwaa {
     }
   }
 
-  /** Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
+  /** Describes the Apache Airflow log types that are published to CloudWatch Logs.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -558,7 +559,7 @@ package object mwaa {
     }
   }
 
-  /** Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
+  /** Defines the Apache Airflow log types to send to CloudWatch Logs.
     */
   @js.native
   trait LoggingConfigurationInput extends js.Object {
@@ -588,7 +589,7 @@ package object mwaa {
     }
   }
 
-  /** Internal only API.
+  /** \```Internal only```. Collects Apache Airflow metrics. To learn more about the metrics published to Amazon CloudWatch, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html|Amazon MWAA performance metrics in Amazon CloudWatch]].
     */
   @js.native
   trait MetricDatum extends js.Object {
@@ -623,7 +624,7 @@ package object mwaa {
     }
   }
 
-  /** Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
+  /** Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).
     */
   @js.native
   trait ModuleLoggingConfiguration extends js.Object {
@@ -647,7 +648,7 @@ package object mwaa {
     }
   }
 
-  /** Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
+  /** Enables the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) and defines the log level to send to CloudWatch Logs (e.g. <code>INFO</code>).
     */
   @js.native
   trait ModuleLoggingConfigurationInput extends js.Object {
@@ -669,7 +670,7 @@ package object mwaa {
     }
   }
 
-  /** The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
+  /** Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
     */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -721,7 +722,7 @@ package object mwaa {
     }
   }
 
-  /** Internal only API.
+  /** \```Internal only```. Represents a set of statistics that describe a specific metric. To learn more about the metrics published to Amazon CloudWatch, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html|Amazon MWAA performance metrics in Amazon CloudWatch]].
     */
   @js.native
   trait StatisticSet extends js.Object {
@@ -813,7 +814,7 @@ package object mwaa {
   @js.native
   trait UpdateEnvironmentInput extends js.Object {
     var Name: EnvironmentName
-    var AirflowConfigurationOptions: js.UndefOr[SyntheticUpdateEnvironmentInputAirflowConfigurationOptions]
+    var AirflowConfigurationOptions: js.UndefOr[AirflowConfigurationOptions]
     var AirflowVersion: js.UndefOr[AirflowVersion]
     var DagS3Path: js.UndefOr[RelativePath]
     var EnvironmentClass: js.UndefOr[EnvironmentClass]
@@ -836,7 +837,7 @@ package object mwaa {
     @inline
     def apply(
         Name: EnvironmentName,
-        AirflowConfigurationOptions: js.UndefOr[SyntheticUpdateEnvironmentInputAirflowConfigurationOptions] = js.undefined,
+        AirflowConfigurationOptions: js.UndefOr[AirflowConfigurationOptions] = js.undefined,
         AirflowVersion: js.UndefOr[AirflowVersion] = js.undefined,
         DagS3Path: js.UndefOr[RelativePath] = js.undefined,
         EnvironmentClass: js.UndefOr[EnvironmentClass] = js.undefined,
@@ -895,7 +896,7 @@ package object mwaa {
     }
   }
 
-  /** An object containing the error encountered with the last update: <code>ErrorCode</code>, <code>ErrorMessage</code>.
+  /** Describes the error(s) encountered with the last update of the environment.
     */
   @js.native
   trait UpdateError extends js.Object {
@@ -916,7 +917,7 @@ package object mwaa {
     }
   }
 
-  /** The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
+  /** Defines the VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
     */
   @js.native
   trait UpdateNetworkConfigurationInput extends js.Object {

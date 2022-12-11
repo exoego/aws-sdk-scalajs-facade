@@ -42,7 +42,8 @@ object AppImageConfigSortKey {
   inline def values: js.Array[AppImageConfigSortKey] = js.Array(CreationTime, LastModifiedTime, Name)
 }
 
-type AppInstanceType = "system" | "ml.t3.micro" | "ml.t3.small" | "ml.t3.medium" | "ml.t3.large" | "ml.t3.xlarge" | "ml.t3.2xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.8xlarge" | "ml.m5.12xlarge" | "ml.m5.16xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.8xlarge" | "ml.m5d.12xlarge" | "ml.m5d.16xlarge" | "ml.m5d.24xlarge" | "ml.c5.large" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.12xlarge" | "ml.c5.18xlarge" | "ml.c5.24xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.r5.large" | "ml.r5.xlarge" | "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.8xlarge" | "ml.r5.12xlarge" | "ml.r5.16xlarge" | "ml.r5.24xlarge"
+type AppInstanceType =
+  "system" | "ml.t3.micro" | "ml.t3.small" | "ml.t3.medium" | "ml.t3.large" | "ml.t3.xlarge" | "ml.t3.2xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.8xlarge" | "ml.m5.12xlarge" | "ml.m5.16xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.8xlarge" | "ml.m5d.12xlarge" | "ml.m5d.16xlarge" | "ml.m5d.24xlarge" | "ml.c5.large" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.12xlarge" | "ml.c5.18xlarge" | "ml.c5.24xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.r5.large" | "ml.r5.xlarge" | "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.8xlarge" | "ml.r5.12xlarge" | "ml.r5.16xlarge" | "ml.r5.24xlarge" | "ml.g5.xlarge" | "ml.g5.2xlarge" | "ml.g5.4xlarge" | "ml.g5.8xlarge" | "ml.g5.16xlarge" | "ml.g5.12xlarge" | "ml.g5.24xlarge" | "ml.g5.48xlarge"
 object AppInstanceType {
   inline val system: "system" = "system"
   inline val `ml.t3.micro`: "ml.t3.micro" = "ml.t3.micro"
@@ -93,6 +94,14 @@ object AppInstanceType {
   inline val `ml.r5.12xlarge`: "ml.r5.12xlarge" = "ml.r5.12xlarge"
   inline val `ml.r5.16xlarge`: "ml.r5.16xlarge" = "ml.r5.16xlarge"
   inline val `ml.r5.24xlarge`: "ml.r5.24xlarge" = "ml.r5.24xlarge"
+  inline val `ml.g5.xlarge`: "ml.g5.xlarge" = "ml.g5.xlarge"
+  inline val `ml.g5.2xlarge`: "ml.g5.2xlarge" = "ml.g5.2xlarge"
+  inline val `ml.g5.4xlarge`: "ml.g5.4xlarge" = "ml.g5.4xlarge"
+  inline val `ml.g5.8xlarge`: "ml.g5.8xlarge" = "ml.g5.8xlarge"
+  inline val `ml.g5.16xlarge`: "ml.g5.16xlarge" = "ml.g5.16xlarge"
+  inline val `ml.g5.12xlarge`: "ml.g5.12xlarge" = "ml.g5.12xlarge"
+  inline val `ml.g5.24xlarge`: "ml.g5.24xlarge" = "ml.g5.24xlarge"
+  inline val `ml.g5.48xlarge`: "ml.g5.48xlarge" = "ml.g5.48xlarge"
 
   inline def values: js.Array[AppInstanceType] = js.Array(
     system,
@@ -143,7 +152,15 @@ object AppInstanceType {
     `ml.r5.8xlarge`,
     `ml.r5.12xlarge`,
     `ml.r5.16xlarge`,
-    `ml.r5.24xlarge`
+    `ml.r5.24xlarge`,
+    `ml.g5.xlarge`,
+    `ml.g5.2xlarge`,
+    `ml.g5.4xlarge`,
+    `ml.g5.8xlarge`,
+    `ml.g5.16xlarge`,
+    `ml.g5.12xlarge`,
+    `ml.g5.24xlarge`,
+    `ml.g5.48xlarge`
   )
 }
 
@@ -252,6 +269,14 @@ object AuthMode {
   inline def values: js.Array[AuthMode] = js.Array(SSO, IAM)
 }
 
+type AutoMLChannelType = "training" | "validation"
+object AutoMLChannelType {
+  inline val training: "training" = "training"
+  inline val validation: "validation" = "validation"
+
+  inline def values: js.Array[AutoMLChannelType] = js.Array(training, validation)
+}
+
 type AutoMLJobObjectiveType = "Maximize" | "Minimize"
 object AutoMLJobObjectiveType {
   inline val Maximize: "Maximize" = "Maximize"
@@ -260,7 +285,7 @@ object AutoMLJobObjectiveType {
   inline def values: js.Array[AutoMLJobObjectiveType] = js.Array(Maximize, Minimize)
 }
 
-type AutoMLJobSecondaryStatus = "Starting" | "AnalyzingData" | "FeatureEngineering" | "ModelTuning" | "MaxCandidatesReached" | "Failed" | "Stopped" | "MaxAutoMLJobRuntimeReached" | "Stopping" | "CandidateDefinitionsGenerated" | "GeneratingExplainabilityReport" | "Completed" | "ExplainabilityError" | "DeployingModel" | "ModelDeploymentError"
+type AutoMLJobSecondaryStatus = "Starting" | "AnalyzingData" | "FeatureEngineering" | "ModelTuning" | "MaxCandidatesReached" | "Failed" | "Stopped" | "MaxAutoMLJobRuntimeReached" | "Stopping" | "CandidateDefinitionsGenerated" | "GeneratingExplainabilityReport" | "Completed" | "ExplainabilityError" | "DeployingModel" | "ModelDeploymentError" | "GeneratingModelInsightsReport" | "ModelInsightsError"
 object AutoMLJobSecondaryStatus {
   inline val Starting: "Starting" = "Starting"
   inline val AnalyzingData: "AnalyzingData" = "AnalyzingData"
@@ -277,6 +302,8 @@ object AutoMLJobSecondaryStatus {
   inline val ExplainabilityError: "ExplainabilityError" = "ExplainabilityError"
   inline val DeployingModel: "DeployingModel" = "DeployingModel"
   inline val ModelDeploymentError: "ModelDeploymentError" = "ModelDeploymentError"
+  inline val GeneratingModelInsightsReport: "GeneratingModelInsightsReport" = "GeneratingModelInsightsReport"
+  inline val ModelInsightsError: "ModelInsightsError" = "ModelInsightsError"
 
   inline def values: js.Array[AutoMLJobSecondaryStatus] = js.Array(
     Starting,
@@ -293,7 +320,9 @@ object AutoMLJobSecondaryStatus {
     Completed,
     ExplainabilityError,
     DeployingModel,
-    ModelDeploymentError
+    ModelDeploymentError,
+    GeneratingModelInsightsReport,
+    ModelInsightsError
   )
 }
 
@@ -317,6 +346,36 @@ object AutoMLMetricEnum {
   inline val AUC: "AUC" = "AUC"
 
   inline def values: js.Array[AutoMLMetricEnum] = js.Array(Accuracy, MSE, F1, F1macro, AUC)
+}
+
+type AutoMLMetricExtendedEnum = "Accuracy" | "MSE" | "F1" | "F1macro" | "AUC" | "RMSE" | "MAE" | "R2" | "BalancedAccuracy" | "Precision" | "PrecisionMacro" | "Recall" | "RecallMacro" | "LogLoss" | "InferenceLatency"
+object AutoMLMetricExtendedEnum {
+  inline val Accuracy: "Accuracy" = "Accuracy"
+  inline val MSE: "MSE" = "MSE"
+  inline val F1: "F1" = "F1"
+  inline val F1macro: "F1macro" = "F1macro"
+  inline val AUC: "AUC" = "AUC"
+  inline val RMSE: "RMSE" = "RMSE"
+  inline val MAE: "MAE" = "MAE"
+  inline val R2: "R2" = "R2"
+  inline val BalancedAccuracy: "BalancedAccuracy" = "BalancedAccuracy"
+  inline val Precision: "Precision" = "Precision"
+  inline val PrecisionMacro: "PrecisionMacro" = "PrecisionMacro"
+  inline val Recall: "Recall" = "Recall"
+  inline val RecallMacro: "RecallMacro" = "RecallMacro"
+  inline val LogLoss: "LogLoss" = "LogLoss"
+  inline val InferenceLatency: "InferenceLatency" = "InferenceLatency"
+
+  inline def values: js.Array[AutoMLMetricExtendedEnum] = js.Array(Accuracy, MSE, F1, F1macro, AUC, RMSE, MAE, R2, BalancedAccuracy, Precision, PrecisionMacro, Recall, RecallMacro, LogLoss, InferenceLatency)
+}
+
+type AutoMLMode = "AUTO" | "ENSEMBLING" | "HYPERPARAMETER_TUNING"
+object AutoMLMode {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val ENSEMBLING: "ENSEMBLING" = "ENSEMBLING"
+  inline val HYPERPARAMETER_TUNING: "HYPERPARAMETER_TUNING" = "HYPERPARAMETER_TUNING"
+
+  inline def values: js.Array[AutoMLMode] = js.Array(AUTO, ENSEMBLING, HYPERPARAMETER_TUNING)
 }
 
 type AutoMLS3DataType = "ManifestFile" | "S3Prefix"
@@ -421,6 +480,151 @@ object CaptureStatus {
   inline def values: js.Array[CaptureStatus] = js.Array(Started, Stopped)
 }
 
+type ClarifyFeatureType = "numerical" | "categorical" | "text"
+object ClarifyFeatureType {
+  inline val numerical: "numerical" = "numerical"
+  inline val categorical: "categorical" = "categorical"
+  inline val text: "text" = "text"
+
+  inline def values: js.Array[ClarifyFeatureType] = js.Array(numerical, categorical, text)
+}
+
+type ClarifyTextGranularity = "token" | "sentence" | "paragraph"
+object ClarifyTextGranularity {
+  inline val token: "token" = "token"
+  inline val sentence: "sentence" = "sentence"
+  inline val paragraph: "paragraph" = "paragraph"
+
+  inline def values: js.Array[ClarifyTextGranularity] = js.Array(token, sentence, paragraph)
+}
+
+type ClarifyTextLanguage = "af" | "sq" | "ar" | "hy" | "eu" | "bn" | "bg" | "ca" | "zh" | "hr" | "cs" | "da" | "nl" | "en" | "et" | "fi" | "fr" | "de" | "el" | "gu" | "he" | "hi" | "hu" | "is" | "id" | "ga" | "it" | "kn" | "ky" | "lv" | "lt" | "lb" | "mk" | "ml" | "mr" | "ne" | "nb" | "fa" | "pl" | "pt" | "ro" | "ru" | "sa" | "sr" | "tn" | "si" | "sk" | "sl" | "es" | "sv" | "tl" | "ta" | "tt" | "te" | "tr" | "uk" | "ur" | "yo" | "lij" | "xx"
+object ClarifyTextLanguage {
+  inline val af: "af" = "af"
+  inline val sq: "sq" = "sq"
+  inline val ar: "ar" = "ar"
+  inline val hy: "hy" = "hy"
+  inline val eu: "eu" = "eu"
+  inline val bn: "bn" = "bn"
+  inline val bg: "bg" = "bg"
+  inline val ca: "ca" = "ca"
+  inline val zh: "zh" = "zh"
+  inline val hr: "hr" = "hr"
+  inline val cs: "cs" = "cs"
+  inline val da: "da" = "da"
+  inline val nl: "nl" = "nl"
+  inline val en: "en" = "en"
+  inline val et: "et" = "et"
+  inline val fi: "fi" = "fi"
+  inline val fr: "fr" = "fr"
+  inline val de: "de" = "de"
+  inline val el: "el" = "el"
+  inline val gu: "gu" = "gu"
+  inline val he: "he" = "he"
+  inline val hi: "hi" = "hi"
+  inline val hu: "hu" = "hu"
+  inline val is: "is" = "is"
+  inline val id: "id" = "id"
+  inline val ga: "ga" = "ga"
+  inline val it: "it" = "it"
+  inline val kn: "kn" = "kn"
+  inline val ky: "ky" = "ky"
+  inline val lv: "lv" = "lv"
+  inline val lt: "lt" = "lt"
+  inline val lb: "lb" = "lb"
+  inline val mk: "mk" = "mk"
+  inline val ml: "ml" = "ml"
+  inline val mr: "mr" = "mr"
+  inline val ne: "ne" = "ne"
+  inline val nb: "nb" = "nb"
+  inline val fa: "fa" = "fa"
+  inline val pl: "pl" = "pl"
+  inline val pt: "pt" = "pt"
+  inline val ro: "ro" = "ro"
+  inline val ru: "ru" = "ru"
+  inline val sa: "sa" = "sa"
+  inline val sr: "sr" = "sr"
+  inline val tn: "tn" = "tn"
+  inline val si: "si" = "si"
+  inline val sk: "sk" = "sk"
+  inline val sl: "sl" = "sl"
+  inline val es: "es" = "es"
+  inline val sv: "sv" = "sv"
+  inline val tl: "tl" = "tl"
+  inline val ta: "ta" = "ta"
+  inline val tt: "tt" = "tt"
+  inline val te: "te" = "te"
+  inline val tr: "tr" = "tr"
+  inline val uk: "uk" = "uk"
+  inline val ur: "ur" = "ur"
+  inline val yo: "yo" = "yo"
+  inline val lij: "lij" = "lij"
+  inline val xx: "xx" = "xx"
+
+  inline def values: js.Array[ClarifyTextLanguage] = js.Array(
+    af,
+    sq,
+    ar,
+    hy,
+    eu,
+    bn,
+    bg,
+    ca,
+    zh,
+    hr,
+    cs,
+    da,
+    nl,
+    en,
+    et,
+    fi,
+    fr,
+    de,
+    el,
+    gu,
+    he,
+    hi,
+    hu,
+    is,
+    id,
+    ga,
+    it,
+    kn,
+    ky,
+    lv,
+    lt,
+    lb,
+    mk,
+    ml,
+    mr,
+    ne,
+    nb,
+    fa,
+    pl,
+    pt,
+    ro,
+    ru,
+    sa,
+    sr,
+    tn,
+    si,
+    sk,
+    sl,
+    es,
+    sv,
+    tl,
+    ta,
+    tt,
+    te,
+    tr,
+    uk,
+    ur,
+    yo,
+    lij,
+    xx
+  )
+}
+
 type CodeRepositorySortBy = "Name" | "CreationTime" | "LastModifiedTime"
 object CodeRepositorySortBy {
   inline val Name: "Name" = "Name"
@@ -508,6 +712,27 @@ object DetailedModelPackageStatus {
   inline val Failed: "Failed" = "Failed"
 
   inline def values: js.Array[DetailedModelPackageStatus] = js.Array(NotStarted, InProgress, Completed, Failed)
+}
+
+type DeviceDeploymentStatus = "READYTODEPLOY" | "INPROGRESS" | "DEPLOYED" | "FAILED" | "STOPPING" | "STOPPED"
+object DeviceDeploymentStatus {
+  inline val READYTODEPLOY: "READYTODEPLOY" = "READYTODEPLOY"
+  inline val INPROGRESS: "INPROGRESS" = "INPROGRESS"
+  inline val DEPLOYED: "DEPLOYED" = "DEPLOYED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+
+  inline def values: js.Array[DeviceDeploymentStatus] = js.Array(READYTODEPLOY, INPROGRESS, DEPLOYED, FAILED, STOPPING, STOPPED)
+}
+
+type DeviceSubsetType = "PERCENTAGE" | "SELECTION" | "NAMECONTAINS"
+object DeviceSubsetType {
+  inline val PERCENTAGE: "PERCENTAGE" = "PERCENTAGE"
+  inline val SELECTION: "SELECTION" = "SELECTION"
+  inline val NAMECONTAINS: "NAMECONTAINS" = "NAMECONTAINS"
+
+  inline def values: js.Array[DeviceSubsetType] = js.Array(PERCENTAGE, SELECTION, NAMECONTAINS)
 }
 
 type DirectInternetAccess = "Enabled" | "Disabled"
@@ -598,6 +823,14 @@ object EndpointStatus {
   inline def values: js.Array[EndpointStatus] = js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
 }
 
+type ExecutionRoleIdentityConfig = "USER_PROFILE_NAME" | "DISABLED"
+object ExecutionRoleIdentityConfig {
+  inline val USER_PROFILE_NAME: "USER_PROFILE_NAME" = "USER_PROFILE_NAME"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[ExecutionRoleIdentityConfig] = js.Array(USER_PROFILE_NAME, DISABLED)
+}
+
 type ExecutionStatus = "Pending" | "Completed" | "CompletedWithViolations" | "InProgress" | "Failed" | "Stopping" | "Stopped"
 object ExecutionStatus {
   inline val Pending: "Pending" = "Pending"
@@ -609,6 +842,14 @@ object ExecutionStatus {
   inline val Stopped: "Stopped" = "Stopped"
 
   inline def values: js.Array[ExecutionStatus] = js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped)
+}
+
+type FailureHandlingPolicy = "ROLLBACK_ON_FAILURE" | "DO_NOTHING"
+object FailureHandlingPolicy {
+  inline val ROLLBACK_ON_FAILURE: "ROLLBACK_ON_FAILURE" = "ROLLBACK_ON_FAILURE"
+  inline val DO_NOTHING: "DO_NOTHING" = "DO_NOTHING"
+
+  inline def values: js.Array[FailureHandlingPolicy] = js.Array(ROLLBACK_ON_FAILURE, DO_NOTHING)
 }
 
 type FeatureGroupSortBy = "Name" | "FeatureGroupStatus" | "OfflineStoreStatus" | "CreationTime"
@@ -638,6 +879,14 @@ object FeatureGroupStatus {
   inline val DeleteFailed: "DeleteFailed" = "DeleteFailed"
 
   inline def values: js.Array[FeatureGroupStatus] = js.Array(Creating, Created, CreateFailed, Deleting, DeleteFailed)
+}
+
+type FeatureStatus = "ENABLED" | "DISABLED"
+object FeatureStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[FeatureStatus] = js.Array(ENABLED, DISABLED)
 }
 
 type FeatureType = "Integral" | "Fractional" | "String"
@@ -690,6 +939,57 @@ object Framework {
   inline def values: js.Array[Framework] = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE, DARKNET, SKLEARN)
 }
 
+type HubContentSortBy = "HubContentName" | "CreationTime" | "HubContentStatus"
+object HubContentSortBy {
+  inline val HubContentName: "HubContentName" = "HubContentName"
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val HubContentStatus: "HubContentStatus" = "HubContentStatus"
+
+  inline def values: js.Array[HubContentSortBy] = js.Array(HubContentName, CreationTime, HubContentStatus)
+}
+
+type HubContentStatus = "Available" | "Importing" | "Deleting" | "ImportFailed" | "DeleteFailed"
+object HubContentStatus {
+  inline val Available: "Available" = "Available"
+  inline val Importing: "Importing" = "Importing"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val ImportFailed: "ImportFailed" = "ImportFailed"
+  inline val DeleteFailed: "DeleteFailed" = "DeleteFailed"
+
+  inline def values: js.Array[HubContentStatus] = js.Array(Available, Importing, Deleting, ImportFailed, DeleteFailed)
+}
+
+type HubContentType = "Model" | "Notebook"
+object HubContentType {
+  inline val Model: "Model" = "Model"
+  inline val Notebook: "Notebook" = "Notebook"
+
+  inline def values: js.Array[HubContentType] = js.Array(Model, Notebook)
+}
+
+type HubSortBy = "HubName" | "CreationTime" | "HubStatus" | "AccountIdOwner"
+object HubSortBy {
+  inline val HubName: "HubName" = "HubName"
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val HubStatus: "HubStatus" = "HubStatus"
+  inline val AccountIdOwner: "AccountIdOwner" = "AccountIdOwner"
+
+  inline def values: js.Array[HubSortBy] = js.Array(HubName, CreationTime, HubStatus, AccountIdOwner)
+}
+
+type HubStatus = "InService" | "Creating" | "Updating" | "Deleting" | "CreateFailed" | "UpdateFailed" | "DeleteFailed"
+object HubStatus {
+  inline val InService: "InService" = "InService"
+  inline val Creating: "Creating" = "Creating"
+  inline val Updating: "Updating" = "Updating"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val CreateFailed: "CreateFailed" = "CreateFailed"
+  inline val UpdateFailed: "UpdateFailed" = "UpdateFailed"
+  inline val DeleteFailed: "DeleteFailed" = "DeleteFailed"
+
+  inline def values: js.Array[HubStatus] = js.Array(InService, Creating, Updating, Deleting, CreateFailed, UpdateFailed, DeleteFailed)
+}
+
 type HumanTaskUiStatus = "Active" | "Deleting"
 object HumanTaskUiStatus {
   inline val Active: "Active" = "Active"
@@ -706,6 +1006,13 @@ object HyperParameterScalingType {
   inline val ReverseLogarithmic: "ReverseLogarithmic" = "ReverseLogarithmic"
 
   inline def values: js.Array[HyperParameterScalingType] = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+}
+
+type HyperParameterTuningAllocationStrategy = "Prioritized"
+object HyperParameterTuningAllocationStrategy {
+  inline val Prioritized: "Prioritized" = "Prioritized"
+
+  inline def values: js.Array[HyperParameterTuningAllocationStrategy] = js.Array(Prioritized)
 }
 
 type HyperParameterTuningJobObjectiveType = "Maximize" | "Minimize"
@@ -738,12 +1045,14 @@ object HyperParameterTuningJobStatus {
 
 /** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
   */
-type HyperParameterTuningJobStrategyType = "Bayesian" | "Random"
+type HyperParameterTuningJobStrategyType = "Bayesian" | "Random" | "Hyperband" | "Grid"
 object HyperParameterTuningJobStrategyType {
   inline val Bayesian: "Bayesian" = "Bayesian"
   inline val Random: "Random" = "Random"
+  inline val Hyperband: "Hyperband" = "Hyperband"
+  inline val Grid: "Grid" = "Grid"
 
-  inline def values: js.Array[HyperParameterTuningJobStrategyType] = js.Array(Bayesian, Random)
+  inline def values: js.Array[HyperParameterTuningJobStrategyType] = js.Array(Bayesian, Random, Hyperband, Grid)
 }
 
 type HyperParameterTuningJobWarmStartType = "IdenticalDataAndAlgorithm" | "TransferLearning"
@@ -820,6 +1129,35 @@ object InferenceExecutionMode {
   inline def values: js.Array[InferenceExecutionMode] = js.Array(Serial, Direct)
 }
 
+type InferenceExperimentStatus = "Creating" | "Created" | "Updating" | "Running" | "Starting" | "Stopping" | "Completed" | "Cancelled"
+object InferenceExperimentStatus {
+  inline val Creating: "Creating" = "Creating"
+  inline val Created: "Created" = "Created"
+  inline val Updating: "Updating" = "Updating"
+  inline val Running: "Running" = "Running"
+  inline val Starting: "Starting" = "Starting"
+  inline val Stopping: "Stopping" = "Stopping"
+  inline val Completed: "Completed" = "Completed"
+  inline val Cancelled: "Cancelled" = "Cancelled"
+
+  inline def values: js.Array[InferenceExperimentStatus] = js.Array(Creating, Created, Updating, Running, Starting, Stopping, Completed, Cancelled)
+}
+
+type InferenceExperimentStopDesiredState = "Completed" | "Cancelled"
+object InferenceExperimentStopDesiredState {
+  inline val Completed: "Completed" = "Completed"
+  inline val Cancelled: "Cancelled" = "Cancelled"
+
+  inline def values: js.Array[InferenceExperimentStopDesiredState] = js.Array(Completed, Cancelled)
+}
+
+type InferenceExperimentType = "ShadowMode"
+object InferenceExperimentType {
+  inline val ShadowMode: "ShadowMode" = "ShadowMode"
+
+  inline def values: js.Array[InferenceExperimentType] = js.Array(ShadowMode)
+}
+
 type InputMode = "Pipe" | "File"
 object InputMode {
   inline val Pipe: "Pipe" = "Pipe"
@@ -828,8 +1166,8 @@ object InputMode {
   inline def values: js.Array[InputMode] = js.Array(Pipe, File)
 }
 
-type InstanceType = "ml.t2.medium" | "ml.t2.large" | "ml.t2.xlarge" | "ml.t2.2xlarge" | "ml.t3.medium" | "ml.t3.large" | "ml.t3.xlarge" | "ml.t3.2xlarge" | "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.8xlarge" | "ml.m5d.12xlarge" | "ml.m5d.16xlarge" | "ml.m5d.24xlarge" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5d.xlarge" | "ml.c5d.2xlarge" | "ml.c5d.4xlarge" | "ml.c5d.9xlarge" | "ml.c5d.18xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" |
-  "ml.r5.large" | "ml.r5.xlarge" | "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.8xlarge" | "ml.r5.12xlarge" | "ml.r5.16xlarge" | "ml.r5.24xlarge"
+type InstanceType =
+  "ml.t2.medium" | "ml.t2.large" | "ml.t2.xlarge" | "ml.t2.2xlarge" | "ml.t3.medium" | "ml.t3.large" | "ml.t3.xlarge" | "ml.t3.2xlarge" | "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.8xlarge" | "ml.m5d.12xlarge" | "ml.m5d.16xlarge" | "ml.m5d.24xlarge" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5d.xlarge" | "ml.c5d.2xlarge" | "ml.c5d.4xlarge" | "ml.c5d.9xlarge" | "ml.c5d.18xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.r5.large" | "ml.r5.xlarge" | "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.8xlarge" | "ml.r5.12xlarge" | "ml.r5.16xlarge" | "ml.r5.24xlarge" | "ml.g5.xlarge" | "ml.g5.2xlarge" | "ml.g5.4xlarge" | "ml.g5.8xlarge" | "ml.g5.16xlarge" | "ml.g5.12xlarge" | "ml.g5.24xlarge" | "ml.g5.48xlarge"
 object InstanceType {
   inline val `ml.t2.medium`: "ml.t2.medium" = "ml.t2.medium"
   inline val `ml.t2.large`: "ml.t2.large" = "ml.t2.large"
@@ -892,6 +1230,14 @@ object InstanceType {
   inline val `ml.r5.12xlarge`: "ml.r5.12xlarge" = "ml.r5.12xlarge"
   inline val `ml.r5.16xlarge`: "ml.r5.16xlarge" = "ml.r5.16xlarge"
   inline val `ml.r5.24xlarge`: "ml.r5.24xlarge" = "ml.r5.24xlarge"
+  inline val `ml.g5.xlarge`: "ml.g5.xlarge" = "ml.g5.xlarge"
+  inline val `ml.g5.2xlarge`: "ml.g5.2xlarge" = "ml.g5.2xlarge"
+  inline val `ml.g5.4xlarge`: "ml.g5.4xlarge" = "ml.g5.4xlarge"
+  inline val `ml.g5.8xlarge`: "ml.g5.8xlarge" = "ml.g5.8xlarge"
+  inline val `ml.g5.16xlarge`: "ml.g5.16xlarge" = "ml.g5.16xlarge"
+  inline val `ml.g5.12xlarge`: "ml.g5.12xlarge" = "ml.g5.12xlarge"
+  inline val `ml.g5.24xlarge`: "ml.g5.24xlarge" = "ml.g5.24xlarge"
+  inline val `ml.g5.48xlarge`: "ml.g5.48xlarge" = "ml.g5.48xlarge"
 
   inline def values: js.Array[InstanceType] = js.Array(
     `ml.t2.medium`,
@@ -954,7 +1300,15 @@ object InstanceType {
     `ml.r5.8xlarge`,
     `ml.r5.12xlarge`,
     `ml.r5.16xlarge`,
-    `ml.r5.24xlarge`
+    `ml.r5.24xlarge`,
+    `ml.g5.xlarge`,
+    `ml.g5.2xlarge`,
+    `ml.g5.4xlarge`,
+    `ml.g5.8xlarge`,
+    `ml.g5.16xlarge`,
+    `ml.g5.12xlarge`,
+    `ml.g5.24xlarge`,
+    `ml.g5.48xlarge`
   )
 }
 
@@ -976,6 +1330,15 @@ object LabelingJobStatus {
   inline val Stopped: "Stopped" = "Stopped"
 
   inline def values: js.Array[LabelingJobStatus] = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
+}
+
+type LastUpdateStatusValue = "Successful" | "Failed" | "InProgress"
+object LastUpdateStatusValue {
+  inline val Successful: "Successful" = "Successful"
+  inline val Failed: "Failed" = "Failed"
+  inline val InProgress: "InProgress" = "InProgress"
+
+  inline def values: js.Array[LastUpdateStatusValue] = js.Array(Successful, Failed, InProgress)
 }
 
 type LineageType = "TrialComponent" | "Artifact" | "Context" | "Action"
@@ -1004,6 +1367,16 @@ object ListDeviceFleetsSortBy {
   inline val LAST_MODIFIED_TIME: "LAST_MODIFIED_TIME" = "LAST_MODIFIED_TIME"
 
   inline def values: js.Array[ListDeviceFleetsSortBy] = js.Array(NAME, CREATION_TIME, LAST_MODIFIED_TIME)
+}
+
+type ListEdgeDeploymentPlansSortBy = "NAME" | "DEVICE_FLEET_NAME" | "CREATION_TIME" | "LAST_MODIFIED_TIME"
+object ListEdgeDeploymentPlansSortBy {
+  inline val NAME: "NAME" = "NAME"
+  inline val DEVICE_FLEET_NAME: "DEVICE_FLEET_NAME" = "DEVICE_FLEET_NAME"
+  inline val CREATION_TIME: "CREATION_TIME" = "CREATION_TIME"
+  inline val LAST_MODIFIED_TIME: "LAST_MODIFIED_TIME" = "LAST_MODIFIED_TIME"
+
+  inline def values: js.Array[ListEdgeDeploymentPlansSortBy] = js.Array(NAME, DEVICE_FLEET_NAME, CREATION_TIME, LAST_MODIFIED_TIME)
 }
 
 type ListEdgePackagingJobsSortBy = "NAME" | "MODEL_NAME" | "CREATION_TIME" | "LAST_MODIFIED_TIME" | "STATUS"
@@ -1075,6 +1448,86 @@ object ModelCacheSetting {
   inline def values: js.Array[ModelCacheSetting] = js.Array(Enabled, Disabled)
 }
 
+/** Attribute by which to sort returned export jobs.
+  */
+type ModelCardExportJobSortBy = "Name" | "CreationTime" | "Status"
+object ModelCardExportJobSortBy {
+  inline val Name: "Name" = "Name"
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val Status: "Status" = "Status"
+
+  inline def values: js.Array[ModelCardExportJobSortBy] = js.Array(Name, CreationTime, Status)
+}
+
+type ModelCardExportJobSortOrder = "Ascending" | "Descending"
+object ModelCardExportJobSortOrder {
+  inline val Ascending: "Ascending" = "Ascending"
+  inline val Descending: "Descending" = "Descending"
+
+  inline def values: js.Array[ModelCardExportJobSortOrder] = js.Array(Ascending, Descending)
+}
+
+type ModelCardExportJobStatus = "InProgress" | "Completed" | "Failed"
+object ModelCardExportJobStatus {
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Completed: "Completed" = "Completed"
+  inline val Failed: "Failed" = "Failed"
+
+  inline def values: js.Array[ModelCardExportJobStatus] = js.Array(InProgress, Completed, Failed)
+}
+
+type ModelCardProcessingStatus = "DeleteInProgress" | "DeletePending" | "ContentDeleted" | "ExportJobsDeleted" | "DeleteCompleted" | "DeleteFailed"
+object ModelCardProcessingStatus {
+  inline val DeleteInProgress: "DeleteInProgress" = "DeleteInProgress"
+  inline val DeletePending: "DeletePending" = "DeletePending"
+  inline val ContentDeleted: "ContentDeleted" = "ContentDeleted"
+  inline val ExportJobsDeleted: "ExportJobsDeleted" = "ExportJobsDeleted"
+  inline val DeleteCompleted: "DeleteCompleted" = "DeleteCompleted"
+  inline val DeleteFailed: "DeleteFailed" = "DeleteFailed"
+
+  inline def values: js.Array[ModelCardProcessingStatus] = js.Array(DeleteInProgress, DeletePending, ContentDeleted, ExportJobsDeleted, DeleteCompleted, DeleteFailed)
+}
+
+type ModelCardSortBy = "Name" | "CreationTime"
+object ModelCardSortBy {
+  inline val Name: "Name" = "Name"
+  inline val CreationTime: "CreationTime" = "CreationTime"
+
+  inline def values: js.Array[ModelCardSortBy] = js.Array(Name, CreationTime)
+}
+
+type ModelCardSortOrder = "Ascending" | "Descending"
+object ModelCardSortOrder {
+  inline val Ascending: "Ascending" = "Ascending"
+  inline val Descending: "Descending" = "Descending"
+
+  inline def values: js.Array[ModelCardSortOrder] = js.Array(Ascending, Descending)
+}
+
+type ModelCardStatus = "Draft" | "PendingReview" | "Approved" | "Archived"
+object ModelCardStatus {
+  inline val Draft: "Draft" = "Draft"
+  inline val PendingReview: "PendingReview" = "PendingReview"
+  inline val Approved: "Approved" = "Approved"
+  inline val Archived: "Archived" = "Archived"
+
+  inline def values: js.Array[ModelCardStatus] = js.Array(Draft, PendingReview, Approved, Archived)
+}
+
+type ModelCardVersionSortBy = "Version"
+object ModelCardVersionSortBy {
+  inline val Version: "Version" = "Version"
+
+  inline def values: js.Array[ModelCardVersionSortBy] = js.Array(Version)
+}
+
+type ModelInfrastructureType = "RealTimeInference"
+object ModelInfrastructureType {
+  inline val RealTimeInference: "RealTimeInference" = "RealTimeInference"
+
+  inline def values: js.Array[ModelInfrastructureType] = js.Array(RealTimeInference)
+}
+
 type ModelMetadataFilterType = "Domain" | "Framework" | "Task" | "FrameworkVersion"
 object ModelMetadataFilterType {
   inline val Domain: "Domain" = "Domain"
@@ -1139,6 +1592,42 @@ object ModelSortKey {
   inline val CreationTime: "CreationTime" = "CreationTime"
 
   inline def values: js.Array[ModelSortKey] = js.Array(Name, CreationTime)
+}
+
+type ModelVariantAction = "Retain" | "Remove" | "Promote"
+object ModelVariantAction {
+  inline val Retain: "Retain" = "Retain"
+  inline val Remove: "Remove" = "Remove"
+  inline val Promote: "Promote" = "Promote"
+
+  inline def values: js.Array[ModelVariantAction] = js.Array(Retain, Remove, Promote)
+}
+
+type ModelVariantStatus = "Creating" | "Updating" | "InService" | "Deleting" | "Deleted"
+object ModelVariantStatus {
+  inline val Creating: "Creating" = "Creating"
+  inline val Updating: "Updating" = "Updating"
+  inline val InService: "InService" = "InService"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Deleted: "Deleted" = "Deleted"
+
+  inline def values: js.Array[ModelVariantStatus] = js.Array(Creating, Updating, InService, Deleting, Deleted)
+}
+
+type MonitoringAlertHistorySortKey = "CreationTime" | "Status"
+object MonitoringAlertHistorySortKey {
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val Status: "Status" = "Status"
+
+  inline def values: js.Array[MonitoringAlertHistorySortKey] = js.Array(CreationTime, Status)
+}
+
+type MonitoringAlertStatus = "InAlert" | "OK"
+object MonitoringAlertStatus {
+  inline val InAlert: "InAlert" = "InAlert"
+  inline val OK: "OK" = "OK"
+
+  inline def values: js.Array[MonitoringAlertStatus] = js.Array(InAlert, OK)
 }
 
 type MonitoringExecutionSortKey = "CreationTime" | "ScheduledTime" | "Status"
@@ -1490,8 +1979,8 @@ object ProductionVariantAcceleratorType {
   inline def values: js.Array[ProductionVariantAcceleratorType] = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
 }
 
-type ProductionVariantInstanceType = "ml.t2.medium" | "ml.t2.large" | "ml.t2.xlarge" | "ml.t2.2xlarge" | "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.12xlarge" | "ml.m5d.24xlarge" | "ml.c4.large" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.c5.large" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5d.large" | "ml.c5d.xlarge" | "ml.c5d.2xlarge" | "ml.c5d.4xlarge" | "ml.c5d.9xlarge" | "ml.c5d.18xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.r5.large" | "ml.r5.xlarge" |
-  "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.12xlarge" | "ml.r5.24xlarge" | "ml.r5d.large" | "ml.r5d.xlarge" | "ml.r5d.2xlarge" | "ml.r5d.4xlarge" | "ml.r5d.12xlarge" | "ml.r5d.24xlarge" | "ml.inf1.xlarge" | "ml.inf1.2xlarge" | "ml.inf1.6xlarge" | "ml.inf1.24xlarge"
+type ProductionVariantInstanceType =
+  "ml.t2.medium" | "ml.t2.large" | "ml.t2.xlarge" | "ml.t2.2xlarge" | "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.m5d.large" | "ml.m5d.xlarge" | "ml.m5d.2xlarge" | "ml.m5d.4xlarge" | "ml.m5d.12xlarge" | "ml.m5d.24xlarge" | "ml.c4.large" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.c5.large" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5d.large" | "ml.c5d.xlarge" | "ml.c5d.2xlarge" | "ml.c5d.4xlarge" | "ml.c5d.9xlarge" | "ml.c5d.18xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.r5.large" | "ml.r5.xlarge" | "ml.r5.2xlarge" | "ml.r5.4xlarge" | "ml.r5.12xlarge" | "ml.r5.24xlarge" | "ml.r5d.large" | "ml.r5d.xlarge" | "ml.r5d.2xlarge" | "ml.r5d.4xlarge" | "ml.r5d.12xlarge" | "ml.r5d.24xlarge" | "ml.inf1.xlarge" | "ml.inf1.2xlarge" | "ml.inf1.6xlarge" | "ml.inf1.24xlarge" | "ml.c6i.large" | "ml.c6i.xlarge" | "ml.c6i.2xlarge" | "ml.c6i.4xlarge" | "ml.c6i.8xlarge" | "ml.c6i.12xlarge" | "ml.c6i.16xlarge" | "ml.c6i.24xlarge" | "ml.c6i.32xlarge" | "ml.g5.xlarge" | "ml.g5.2xlarge" | "ml.g5.4xlarge" | "ml.g5.8xlarge" | "ml.g5.12xlarge" | "ml.g5.16xlarge" | "ml.g5.24xlarge" | "ml.g5.48xlarge" | "ml.p4d.24xlarge" | "ml.c7g.large" | "ml.c7g.xlarge" | "ml.c7g.2xlarge" | "ml.c7g.4xlarge" | "ml.c7g.8xlarge" | "ml.c7g.12xlarge" | "ml.c7g.16xlarge" | "ml.m6g.large" | "ml.m6g.xlarge" | "ml.m6g.2xlarge" | "ml.m6g.4xlarge" | "ml.m6g.8xlarge" | "ml.m6g.12xlarge" | "ml.m6g.16xlarge" | "ml.m6gd.large" | "ml.m6gd.xlarge" | "ml.m6gd.2xlarge" | "ml.m6gd.4xlarge" | "ml.m6gd.8xlarge" | "ml.m6gd.12xlarge" | "ml.m6gd.16xlarge" | "ml.c6g.large" | "ml.c6g.xlarge" | "ml.c6g.2xlarge" | "ml.c6g.4xlarge" | "ml.c6g.8xlarge" | "ml.c6g.12xlarge" | "ml.c6g.16xlarge" | "ml.c6gd.large" | "ml.c6gd.xlarge" | "ml.c6gd.2xlarge" | "ml.c6gd.4xlarge" | "ml.c6gd.8xlarge" | "ml.c6gd.12xlarge" | "ml.c6gd.16xlarge" | "ml.c6gn.large" | "ml.c6gn.xlarge" | "ml.c6gn.2xlarge" | "ml.c6gn.4xlarge" | "ml.c6gn.8xlarge" | "ml.c6gn.12xlarge" | "ml.c6gn.16xlarge" | "ml.r6g.large" | "ml.r6g.xlarge" | "ml.r6g.2xlarge" | "ml.r6g.4xlarge" | "ml.r6g.8xlarge" | "ml.r6g.12xlarge" | "ml.r6g.16xlarge" | "ml.r6gd.large" | "ml.r6gd.xlarge" | "ml.r6gd.2xlarge" | "ml.r6gd.4xlarge" | "ml.r6gd.8xlarge" | "ml.r6gd.12xlarge" | "ml.r6gd.16xlarge"
 object ProductionVariantInstanceType {
   inline val `ml.t2.medium`: "ml.t2.medium" = "ml.t2.medium"
   inline val `ml.t2.large`: "ml.t2.large" = "ml.t2.large"
@@ -1559,6 +2048,80 @@ object ProductionVariantInstanceType {
   inline val `ml.inf1.2xlarge`: "ml.inf1.2xlarge" = "ml.inf1.2xlarge"
   inline val `ml.inf1.6xlarge`: "ml.inf1.6xlarge" = "ml.inf1.6xlarge"
   inline val `ml.inf1.24xlarge`: "ml.inf1.24xlarge" = "ml.inf1.24xlarge"
+  inline val `ml.c6i.large`: "ml.c6i.large" = "ml.c6i.large"
+  inline val `ml.c6i.xlarge`: "ml.c6i.xlarge" = "ml.c6i.xlarge"
+  inline val `ml.c6i.2xlarge`: "ml.c6i.2xlarge" = "ml.c6i.2xlarge"
+  inline val `ml.c6i.4xlarge`: "ml.c6i.4xlarge" = "ml.c6i.4xlarge"
+  inline val `ml.c6i.8xlarge`: "ml.c6i.8xlarge" = "ml.c6i.8xlarge"
+  inline val `ml.c6i.12xlarge`: "ml.c6i.12xlarge" = "ml.c6i.12xlarge"
+  inline val `ml.c6i.16xlarge`: "ml.c6i.16xlarge" = "ml.c6i.16xlarge"
+  inline val `ml.c6i.24xlarge`: "ml.c6i.24xlarge" = "ml.c6i.24xlarge"
+  inline val `ml.c6i.32xlarge`: "ml.c6i.32xlarge" = "ml.c6i.32xlarge"
+  inline val `ml.g5.xlarge`: "ml.g5.xlarge" = "ml.g5.xlarge"
+  inline val `ml.g5.2xlarge`: "ml.g5.2xlarge" = "ml.g5.2xlarge"
+  inline val `ml.g5.4xlarge`: "ml.g5.4xlarge" = "ml.g5.4xlarge"
+  inline val `ml.g5.8xlarge`: "ml.g5.8xlarge" = "ml.g5.8xlarge"
+  inline val `ml.g5.12xlarge`: "ml.g5.12xlarge" = "ml.g5.12xlarge"
+  inline val `ml.g5.16xlarge`: "ml.g5.16xlarge" = "ml.g5.16xlarge"
+  inline val `ml.g5.24xlarge`: "ml.g5.24xlarge" = "ml.g5.24xlarge"
+  inline val `ml.g5.48xlarge`: "ml.g5.48xlarge" = "ml.g5.48xlarge"
+  inline val `ml.p4d.24xlarge`: "ml.p4d.24xlarge" = "ml.p4d.24xlarge"
+  inline val `ml.c7g.large`: "ml.c7g.large" = "ml.c7g.large"
+  inline val `ml.c7g.xlarge`: "ml.c7g.xlarge" = "ml.c7g.xlarge"
+  inline val `ml.c7g.2xlarge`: "ml.c7g.2xlarge" = "ml.c7g.2xlarge"
+  inline val `ml.c7g.4xlarge`: "ml.c7g.4xlarge" = "ml.c7g.4xlarge"
+  inline val `ml.c7g.8xlarge`: "ml.c7g.8xlarge" = "ml.c7g.8xlarge"
+  inline val `ml.c7g.12xlarge`: "ml.c7g.12xlarge" = "ml.c7g.12xlarge"
+  inline val `ml.c7g.16xlarge`: "ml.c7g.16xlarge" = "ml.c7g.16xlarge"
+  inline val `ml.m6g.large`: "ml.m6g.large" = "ml.m6g.large"
+  inline val `ml.m6g.xlarge`: "ml.m6g.xlarge" = "ml.m6g.xlarge"
+  inline val `ml.m6g.2xlarge`: "ml.m6g.2xlarge" = "ml.m6g.2xlarge"
+  inline val `ml.m6g.4xlarge`: "ml.m6g.4xlarge" = "ml.m6g.4xlarge"
+  inline val `ml.m6g.8xlarge`: "ml.m6g.8xlarge" = "ml.m6g.8xlarge"
+  inline val `ml.m6g.12xlarge`: "ml.m6g.12xlarge" = "ml.m6g.12xlarge"
+  inline val `ml.m6g.16xlarge`: "ml.m6g.16xlarge" = "ml.m6g.16xlarge"
+  inline val `ml.m6gd.large`: "ml.m6gd.large" = "ml.m6gd.large"
+  inline val `ml.m6gd.xlarge`: "ml.m6gd.xlarge" = "ml.m6gd.xlarge"
+  inline val `ml.m6gd.2xlarge`: "ml.m6gd.2xlarge" = "ml.m6gd.2xlarge"
+  inline val `ml.m6gd.4xlarge`: "ml.m6gd.4xlarge" = "ml.m6gd.4xlarge"
+  inline val `ml.m6gd.8xlarge`: "ml.m6gd.8xlarge" = "ml.m6gd.8xlarge"
+  inline val `ml.m6gd.12xlarge`: "ml.m6gd.12xlarge" = "ml.m6gd.12xlarge"
+  inline val `ml.m6gd.16xlarge`: "ml.m6gd.16xlarge" = "ml.m6gd.16xlarge"
+  inline val `ml.c6g.large`: "ml.c6g.large" = "ml.c6g.large"
+  inline val `ml.c6g.xlarge`: "ml.c6g.xlarge" = "ml.c6g.xlarge"
+  inline val `ml.c6g.2xlarge`: "ml.c6g.2xlarge" = "ml.c6g.2xlarge"
+  inline val `ml.c6g.4xlarge`: "ml.c6g.4xlarge" = "ml.c6g.4xlarge"
+  inline val `ml.c6g.8xlarge`: "ml.c6g.8xlarge" = "ml.c6g.8xlarge"
+  inline val `ml.c6g.12xlarge`: "ml.c6g.12xlarge" = "ml.c6g.12xlarge"
+  inline val `ml.c6g.16xlarge`: "ml.c6g.16xlarge" = "ml.c6g.16xlarge"
+  inline val `ml.c6gd.large`: "ml.c6gd.large" = "ml.c6gd.large"
+  inline val `ml.c6gd.xlarge`: "ml.c6gd.xlarge" = "ml.c6gd.xlarge"
+  inline val `ml.c6gd.2xlarge`: "ml.c6gd.2xlarge" = "ml.c6gd.2xlarge"
+  inline val `ml.c6gd.4xlarge`: "ml.c6gd.4xlarge" = "ml.c6gd.4xlarge"
+  inline val `ml.c6gd.8xlarge`: "ml.c6gd.8xlarge" = "ml.c6gd.8xlarge"
+  inline val `ml.c6gd.12xlarge`: "ml.c6gd.12xlarge" = "ml.c6gd.12xlarge"
+  inline val `ml.c6gd.16xlarge`: "ml.c6gd.16xlarge" = "ml.c6gd.16xlarge"
+  inline val `ml.c6gn.large`: "ml.c6gn.large" = "ml.c6gn.large"
+  inline val `ml.c6gn.xlarge`: "ml.c6gn.xlarge" = "ml.c6gn.xlarge"
+  inline val `ml.c6gn.2xlarge`: "ml.c6gn.2xlarge" = "ml.c6gn.2xlarge"
+  inline val `ml.c6gn.4xlarge`: "ml.c6gn.4xlarge" = "ml.c6gn.4xlarge"
+  inline val `ml.c6gn.8xlarge`: "ml.c6gn.8xlarge" = "ml.c6gn.8xlarge"
+  inline val `ml.c6gn.12xlarge`: "ml.c6gn.12xlarge" = "ml.c6gn.12xlarge"
+  inline val `ml.c6gn.16xlarge`: "ml.c6gn.16xlarge" = "ml.c6gn.16xlarge"
+  inline val `ml.r6g.large`: "ml.r6g.large" = "ml.r6g.large"
+  inline val `ml.r6g.xlarge`: "ml.r6g.xlarge" = "ml.r6g.xlarge"
+  inline val `ml.r6g.2xlarge`: "ml.r6g.2xlarge" = "ml.r6g.2xlarge"
+  inline val `ml.r6g.4xlarge`: "ml.r6g.4xlarge" = "ml.r6g.4xlarge"
+  inline val `ml.r6g.8xlarge`: "ml.r6g.8xlarge" = "ml.r6g.8xlarge"
+  inline val `ml.r6g.12xlarge`: "ml.r6g.12xlarge" = "ml.r6g.12xlarge"
+  inline val `ml.r6g.16xlarge`: "ml.r6g.16xlarge" = "ml.r6g.16xlarge"
+  inline val `ml.r6gd.large`: "ml.r6gd.large" = "ml.r6gd.large"
+  inline val `ml.r6gd.xlarge`: "ml.r6gd.xlarge" = "ml.r6gd.xlarge"
+  inline val `ml.r6gd.2xlarge`: "ml.r6gd.2xlarge" = "ml.r6gd.2xlarge"
+  inline val `ml.r6gd.4xlarge`: "ml.r6gd.4xlarge" = "ml.r6gd.4xlarge"
+  inline val `ml.r6gd.8xlarge`: "ml.r6gd.8xlarge" = "ml.r6gd.8xlarge"
+  inline val `ml.r6gd.12xlarge`: "ml.r6gd.12xlarge" = "ml.r6gd.12xlarge"
+  inline val `ml.r6gd.16xlarge`: "ml.r6gd.16xlarge" = "ml.r6gd.16xlarge"
 
   inline def values: js.Array[ProductionVariantInstanceType] = js.Array(
     `ml.t2.medium`,
@@ -1626,7 +2189,81 @@ object ProductionVariantInstanceType {
     `ml.inf1.xlarge`,
     `ml.inf1.2xlarge`,
     `ml.inf1.6xlarge`,
-    `ml.inf1.24xlarge`
+    `ml.inf1.24xlarge`,
+    `ml.c6i.large`,
+    `ml.c6i.xlarge`,
+    `ml.c6i.2xlarge`,
+    `ml.c6i.4xlarge`,
+    `ml.c6i.8xlarge`,
+    `ml.c6i.12xlarge`,
+    `ml.c6i.16xlarge`,
+    `ml.c6i.24xlarge`,
+    `ml.c6i.32xlarge`,
+    `ml.g5.xlarge`,
+    `ml.g5.2xlarge`,
+    `ml.g5.4xlarge`,
+    `ml.g5.8xlarge`,
+    `ml.g5.12xlarge`,
+    `ml.g5.16xlarge`,
+    `ml.g5.24xlarge`,
+    `ml.g5.48xlarge`,
+    `ml.p4d.24xlarge`,
+    `ml.c7g.large`,
+    `ml.c7g.xlarge`,
+    `ml.c7g.2xlarge`,
+    `ml.c7g.4xlarge`,
+    `ml.c7g.8xlarge`,
+    `ml.c7g.12xlarge`,
+    `ml.c7g.16xlarge`,
+    `ml.m6g.large`,
+    `ml.m6g.xlarge`,
+    `ml.m6g.2xlarge`,
+    `ml.m6g.4xlarge`,
+    `ml.m6g.8xlarge`,
+    `ml.m6g.12xlarge`,
+    `ml.m6g.16xlarge`,
+    `ml.m6gd.large`,
+    `ml.m6gd.xlarge`,
+    `ml.m6gd.2xlarge`,
+    `ml.m6gd.4xlarge`,
+    `ml.m6gd.8xlarge`,
+    `ml.m6gd.12xlarge`,
+    `ml.m6gd.16xlarge`,
+    `ml.c6g.large`,
+    `ml.c6g.xlarge`,
+    `ml.c6g.2xlarge`,
+    `ml.c6g.4xlarge`,
+    `ml.c6g.8xlarge`,
+    `ml.c6g.12xlarge`,
+    `ml.c6g.16xlarge`,
+    `ml.c6gd.large`,
+    `ml.c6gd.xlarge`,
+    `ml.c6gd.2xlarge`,
+    `ml.c6gd.4xlarge`,
+    `ml.c6gd.8xlarge`,
+    `ml.c6gd.12xlarge`,
+    `ml.c6gd.16xlarge`,
+    `ml.c6gn.large`,
+    `ml.c6gn.xlarge`,
+    `ml.c6gn.2xlarge`,
+    `ml.c6gn.4xlarge`,
+    `ml.c6gn.8xlarge`,
+    `ml.c6gn.12xlarge`,
+    `ml.c6gn.16xlarge`,
+    `ml.r6g.large`,
+    `ml.r6g.xlarge`,
+    `ml.r6g.2xlarge`,
+    `ml.r6g.4xlarge`,
+    `ml.r6g.8xlarge`,
+    `ml.r6g.12xlarge`,
+    `ml.r6g.16xlarge`,
+    `ml.r6gd.large`,
+    `ml.r6gd.xlarge`,
+    `ml.r6gd.2xlarge`,
+    `ml.r6gd.4xlarge`,
+    `ml.r6gd.8xlarge`,
+    `ml.r6gd.12xlarge`,
+    `ml.r6gd.16xlarge`
   )
 }
 
@@ -1706,6 +2343,13 @@ object RecommendationJobType {
   inline def values: js.Array[RecommendationJobType] = js.Array(Default, Advanced)
 }
 
+type RecommendationStepType = "BENCHMARK"
+object RecommendationStepType {
+  inline val BENCHMARK: "BENCHMARK" = "BENCHMARK"
+
+  inline def values: js.Array[RecommendationStepType] = js.Array(BENCHMARK)
+}
+
 type RecordWrapper = "None" | "RecordIO"
 object RecordWrapper {
   inline val None: "None" = "None"
@@ -1745,7 +2389,7 @@ object RepositoryAccessMode {
   inline def values: js.Array[RepositoryAccessMode] = js.Array(Platform, Vpc)
 }
 
-type ResourceType = "TrainingJob" | "Experiment" | "ExperimentTrial" | "ExperimentTrialComponent" | "Endpoint" | "ModelPackage" | "ModelPackageGroup" | "Pipeline" | "PipelineExecution" | "FeatureGroup" | "Project"
+type ResourceType = "TrainingJob" | "Experiment" | "ExperimentTrial" | "ExperimentTrialComponent" | "Endpoint" | "ModelPackage" | "ModelPackageGroup" | "Pipeline" | "PipelineExecution" | "FeatureGroup" | "Project" | "FeatureMetadata" | "HyperParameterTuningJob" | "ModelCard" | "Model"
 object ResourceType {
   inline val TrainingJob: "TrainingJob" = "TrainingJob"
   inline val Experiment: "Experiment" = "Experiment"
@@ -1758,6 +2402,10 @@ object ResourceType {
   inline val PipelineExecution: "PipelineExecution" = "PipelineExecution"
   inline val FeatureGroup: "FeatureGroup" = "FeatureGroup"
   inline val Project: "Project" = "Project"
+  inline val FeatureMetadata: "FeatureMetadata" = "FeatureMetadata"
+  inline val HyperParameterTuningJob: "HyperParameterTuningJob" = "HyperParameterTuningJob"
+  inline val ModelCard: "ModelCard" = "ModelCard"
+  inline val Model: "Model" = "Model"
 
   inline def values: js.Array[ResourceType] = js.Array(
     TrainingJob,
@@ -1770,7 +2418,11 @@ object ResourceType {
     Pipeline,
     PipelineExecution,
     FeatureGroup,
-    Project
+    Project,
+    FeatureMetadata,
+    HyperParameterTuningJob,
+    ModelCard,
+    Model
   )
 }
 
@@ -1935,6 +2587,15 @@ object SortExperimentsBy {
   inline def values: js.Array[SortExperimentsBy] = js.Array(Name, CreationTime)
 }
 
+type SortInferenceExperimentsBy = "Name" | "CreationTime" | "Status"
+object SortInferenceExperimentsBy {
+  inline val Name: "Name" = "Name"
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val Status: "Status" = "Status"
+
+  inline def values: js.Array[SortInferenceExperimentsBy] = js.Array(Name, CreationTime, Status)
+}
+
 type SortLineageGroupsBy = "Name" | "CreationTime"
 object SortLineageGroupsBy {
   inline val Name: "Name" = "Name"
@@ -1983,6 +2644,27 @@ object SortTrialsBy {
   inline def values: js.Array[SortTrialsBy] = js.Array(Name, CreationTime)
 }
 
+type SpaceSortKey = "CreationTime" | "LastModifiedTime"
+object SpaceSortKey {
+  inline val CreationTime: "CreationTime" = "CreationTime"
+  inline val LastModifiedTime: "LastModifiedTime" = "LastModifiedTime"
+
+  inline def values: js.Array[SpaceSortKey] = js.Array(CreationTime, LastModifiedTime)
+}
+
+type SpaceStatus = "Deleting" | "Failed" | "InService" | "Pending" | "Updating" | "Update_Failed" | "Delete_Failed"
+object SpaceStatus {
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Failed: "Failed" = "Failed"
+  inline val InService: "InService" = "InService"
+  inline val Pending: "Pending" = "Pending"
+  inline val Updating: "Updating" = "Updating"
+  inline val Update_Failed: "Update_Failed" = "Update_Failed"
+  inline val Delete_Failed: "Delete_Failed" = "Delete_Failed"
+
+  inline def values: js.Array[SpaceStatus] = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
+}
+
 type SplitType = "None" | "Line" | "RecordIO" | "TFRecord"
 object SplitType {
   inline val None: "None" = "None"
@@ -1991,6 +2673,20 @@ object SplitType {
   inline val TFRecord: "TFRecord" = "TFRecord"
 
   inline def values: js.Array[SplitType] = js.Array(None, Line, RecordIO, TFRecord)
+}
+
+type StageStatus = "CREATING" | "READYTODEPLOY" | "STARTING" | "INPROGRESS" | "DEPLOYED" | "FAILED" | "STOPPING" | "STOPPED"
+object StageStatus {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val READYTODEPLOY: "READYTODEPLOY" = "READYTODEPLOY"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val INPROGRESS: "INPROGRESS" = "INPROGRESS"
+  inline val DEPLOYED: "DEPLOYED" = "DEPLOYED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+
+  inline def values: js.Array[StageStatus] = js.Array(CREATING, READYTODEPLOY, STARTING, INPROGRESS, DEPLOYED, FAILED, STOPPING, STOPPED)
 }
 
 type StepStatus = "Starting" | "Executing" | "Stopping" | "Stopped" | "Failed" | "Succeeded"
@@ -2020,6 +2716,14 @@ object StudioLifecycleConfigSortKey {
   inline val Name: "Name" = "Name"
 
   inline def values: js.Array[StudioLifecycleConfigSortKey] = js.Array(CreationTime, LastModifiedTime, Name)
+}
+
+type TableFormat = "Glue" | "Iceberg"
+object TableFormat {
+  inline val Glue: "Glue" = "Glue"
+  inline val Iceberg: "Iceberg" = "Iceberg"
+
+  inline def values: js.Array[TableFormat] = js.Array(Glue, Iceberg)
 }
 
 type TargetDevice = "lambda" | "ml_m4" | "ml_m5" | "ml_c4" | "ml_c5" | "ml_p2" | "ml_p3" | "ml_g4dn" | "ml_inf1" | "ml_eia2" | "jetson_tx1" | "jetson_tx2" | "jetson_nano" | "jetson_xavier" | "rasp3b" | "imx8qm" | "deeplens" | "rk3399" | "rk3288" | "aisage" | "sbe_c" | "qcs605" | "qcs603" | "sitara_am57x" | "amba_cv2" | "amba_cv22" | "amba_cv25" | "x86_win32" | "x86_win64" | "coreml" | "jacinto_tda4vm" | "imx8mplus"
@@ -2093,13 +2797,14 @@ object TargetDevice {
   )
 }
 
-type TargetPlatformAccelerator = "INTEL_GRAPHICS" | "MALI" | "NVIDIA"
+type TargetPlatformAccelerator = "INTEL_GRAPHICS" | "MALI" | "NVIDIA" | "NNA"
 object TargetPlatformAccelerator {
   inline val INTEL_GRAPHICS: "INTEL_GRAPHICS" = "INTEL_GRAPHICS"
   inline val MALI: "MALI" = "MALI"
   inline val NVIDIA: "NVIDIA" = "NVIDIA"
+  inline val NNA: "NNA" = "NNA"
 
-  inline def values: js.Array[TargetPlatformAccelerator] = js.Array(INTEL_GRAPHICS, MALI, NVIDIA)
+  inline def values: js.Array[TargetPlatformAccelerator] = js.Array(INTEL_GRAPHICS, MALI, NVIDIA, NNA)
 }
 
 type TargetPlatformArch = "X86_64" | "X86" | "ARM64" | "ARM_EABI" | "ARM_EABIHF"
@@ -2149,7 +2854,7 @@ object TrainingInputMode {
   inline def values: js.Array[TrainingInputMode] = js.Array(Pipe, File, FastFile)
 }
 
-type TrainingInstanceType = "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.p4d.24xlarge" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5n.xlarge" | "ml.c5n.2xlarge" | "ml.c5n.4xlarge" | "ml.c5n.9xlarge" | "ml.c5n.18xlarge"
+type TrainingInstanceType = "ml.m4.xlarge" | "ml.m4.2xlarge" | "ml.m4.4xlarge" | "ml.m4.10xlarge" | "ml.m4.16xlarge" | "ml.g4dn.xlarge" | "ml.g4dn.2xlarge" | "ml.g4dn.4xlarge" | "ml.g4dn.8xlarge" | "ml.g4dn.12xlarge" | "ml.g4dn.16xlarge" | "ml.m5.large" | "ml.m5.xlarge" | "ml.m5.2xlarge" | "ml.m5.4xlarge" | "ml.m5.12xlarge" | "ml.m5.24xlarge" | "ml.c4.xlarge" | "ml.c4.2xlarge" | "ml.c4.4xlarge" | "ml.c4.8xlarge" | "ml.p2.xlarge" | "ml.p2.8xlarge" | "ml.p2.16xlarge" | "ml.p3.2xlarge" | "ml.p3.8xlarge" | "ml.p3.16xlarge" | "ml.p3dn.24xlarge" | "ml.p4d.24xlarge" | "ml.c5.xlarge" | "ml.c5.2xlarge" | "ml.c5.4xlarge" | "ml.c5.9xlarge" | "ml.c5.18xlarge" | "ml.c5n.xlarge" | "ml.c5n.2xlarge" | "ml.c5n.4xlarge" | "ml.c5n.9xlarge" | "ml.c5n.18xlarge" | "ml.g5.xlarge" | "ml.g5.2xlarge" | "ml.g5.4xlarge" | "ml.g5.8xlarge" | "ml.g5.16xlarge" | "ml.g5.12xlarge" | "ml.g5.24xlarge" | "ml.g5.48xlarge" | "ml.trn1.2xlarge" | "ml.trn1.32xlarge"
 object TrainingInstanceType {
   inline val `ml.m4.xlarge`: "ml.m4.xlarge" = "ml.m4.xlarge"
   inline val `ml.m4.2xlarge`: "ml.m4.2xlarge" = "ml.m4.2xlarge"
@@ -2190,6 +2895,16 @@ object TrainingInstanceType {
   inline val `ml.c5n.4xlarge`: "ml.c5n.4xlarge" = "ml.c5n.4xlarge"
   inline val `ml.c5n.9xlarge`: "ml.c5n.9xlarge" = "ml.c5n.9xlarge"
   inline val `ml.c5n.18xlarge`: "ml.c5n.18xlarge" = "ml.c5n.18xlarge"
+  inline val `ml.g5.xlarge`: "ml.g5.xlarge" = "ml.g5.xlarge"
+  inline val `ml.g5.2xlarge`: "ml.g5.2xlarge" = "ml.g5.2xlarge"
+  inline val `ml.g5.4xlarge`: "ml.g5.4xlarge" = "ml.g5.4xlarge"
+  inline val `ml.g5.8xlarge`: "ml.g5.8xlarge" = "ml.g5.8xlarge"
+  inline val `ml.g5.16xlarge`: "ml.g5.16xlarge" = "ml.g5.16xlarge"
+  inline val `ml.g5.12xlarge`: "ml.g5.12xlarge" = "ml.g5.12xlarge"
+  inline val `ml.g5.24xlarge`: "ml.g5.24xlarge" = "ml.g5.24xlarge"
+  inline val `ml.g5.48xlarge`: "ml.g5.48xlarge" = "ml.g5.48xlarge"
+  inline val `ml.trn1.2xlarge`: "ml.trn1.2xlarge" = "ml.trn1.2xlarge"
+  inline val `ml.trn1.32xlarge`: "ml.trn1.32xlarge" = "ml.trn1.32xlarge"
 
   inline def values: js.Array[TrainingInstanceType] = js.Array(
     `ml.m4.xlarge`,
@@ -2230,7 +2945,17 @@ object TrainingInstanceType {
     `ml.c5n.2xlarge`,
     `ml.c5n.4xlarge`,
     `ml.c5n.9xlarge`,
-    `ml.c5n.18xlarge`
+    `ml.c5n.18xlarge`,
+    `ml.g5.xlarge`,
+    `ml.g5.2xlarge`,
+    `ml.g5.4xlarge`,
+    `ml.g5.8xlarge`,
+    `ml.g5.16xlarge`,
+    `ml.g5.12xlarge`,
+    `ml.g5.24xlarge`,
+    `ml.g5.48xlarge`,
+    `ml.trn1.2xlarge`,
+    `ml.trn1.32xlarge`
   )
 }
 
@@ -2395,4 +3120,25 @@ object VariantStatus {
   inline val Baking: "Baking" = "Baking"
 
   inline def values: js.Array[VariantStatus] = js.Array(Creating, Updating, Deleting, ActivatingTraffic, Baking)
+}
+
+type WarmPoolResourceStatus = "Available" | "Terminated" | "Reused" | "InUse"
+object WarmPoolResourceStatus {
+  inline val Available: "Available" = "Available"
+  inline val Terminated: "Terminated" = "Terminated"
+  inline val Reused: "Reused" = "Reused"
+  inline val InUse: "InUse" = "InUse"
+
+  inline def values: js.Array[WarmPoolResourceStatus] = js.Array(Available, Terminated, Reused, InUse)
+}
+
+type WorkforceStatus = "Initializing" | "Updating" | "Deleting" | "Failed" | "Active"
+object WorkforceStatus {
+  inline val Initializing: "Initializing" = "Initializing"
+  inline val Updating: "Updating" = "Updating"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Failed: "Failed" = "Failed"
+  inline val Active: "Active" = "Active"
+
+  inline def values: js.Array[WorkforceStatus] = js.Array(Initializing, Updating, Deleting, Failed, Active)
 }

@@ -11,11 +11,15 @@ package object textract {
   type BlockList = js.Array[Block]
   type ClientRequestToken = String
   type ContentClassifiers = js.Array[ContentClassifier]
+  type DetectedSignatureList = js.Array[DetectedSignature]
+  type DocumentGroupList = js.Array[DocumentGroup]
   type DocumentPages = js.Array[Document]
   type EntityTypes = js.Array[EntityType]
   type ErrorCode = String
   type ExpenseDocumentList = js.Array[ExpenseDocument]
   type ExpenseFieldList = js.Array[ExpenseField]
+  type ExpenseGroupPropertyList = js.Array[ExpenseGroupProperty]
+  type ExtractionList = js.Array[Extraction]
   type FeatureTypes = js.Array[FeatureType]
   type FlowDefinitionArn = String
   type HumanLoopActivationConditionsEvaluationResults = String
@@ -30,22 +34,36 @@ package object textract {
   type JobId = String
   type JobTag = String
   type KMSKeyId = String
+  type LendingDetectionList = js.Array[LendingDetection]
+  type LendingFieldList = js.Array[LendingField]
+  type LendingResultList = js.Array[LendingResult]
   type LineItemGroupList = js.Array[LineItemGroup]
   type LineItemList = js.Array[LineItemFields]
   type MaxResults = Int
   type NonEmptyString = String
+  type PageList = js.Array[UInteger]
   type Pages = js.Array[UInteger]
   type PaginationToken = String
   type Percent = Float
   type Polygon = js.Array[Point]
+  type PredictionList = js.Array[Prediction]
+  type Queries = js.Array[Query]
+  type QueryInput = String
+  type QueryPage = String
+  type QueryPages = js.Array[QueryPage]
   type RelationshipList = js.Array[Relationship]
   type RoleArn = String
   type S3Bucket = String
   type S3ObjectName = String
   type S3ObjectVersion = String
   type SNSTopicArn = String
+  type SignatureDetectionList = js.Array[SignatureDetection]
+  type SplitDocumentList = js.Array[SplitDocument]
   type StatusMessage = String
+  type StringList = js.Array[String]
   type UInteger = Int
+  type UndetectedDocumentTypeList = js.Array[NonEmptyString]
+  type UndetectedSignatureList = js.Array[UndetectedSignature]
   type Warnings = js.Array[Warning]
 
   final class TextractOps(private val service: Textract) extends AnyVal {
@@ -57,9 +75,12 @@ package object textract {
     @inline def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] = service.getDocumentAnalysis(params).promise().toFuture
     @inline def getDocumentTextDetectionFuture(params: GetDocumentTextDetectionRequest): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise().toFuture
     @inline def getExpenseAnalysisFuture(params: GetExpenseAnalysisRequest): Future[GetExpenseAnalysisResponse] = service.getExpenseAnalysis(params).promise().toFuture
+    @inline def getLendingAnalysisFuture(params: GetLendingAnalysisRequest): Future[GetLendingAnalysisResponse] = service.getLendingAnalysis(params).promise().toFuture
+    @inline def getLendingAnalysisSummaryFuture(params: GetLendingAnalysisSummaryRequest): Future[GetLendingAnalysisSummaryResponse] = service.getLendingAnalysisSummary(params).promise().toFuture
     @inline def startDocumentAnalysisFuture(params: StartDocumentAnalysisRequest): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise().toFuture
     @inline def startDocumentTextDetectionFuture(params: StartDocumentTextDetectionRequest): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
     @inline def startExpenseAnalysisFuture(params: StartExpenseAnalysisRequest): Future[StartExpenseAnalysisResponse] = service.startExpenseAnalysis(params).promise().toFuture
+    @inline def startLendingAnalysisFuture(params: StartLendingAnalysisRequest): Future[StartLendingAnalysisResponse] = service.startLendingAnalysis(params).promise().toFuture
 
   }
 
@@ -75,9 +96,12 @@ package object textract {
     def getDocumentAnalysis(params: GetDocumentAnalysisRequest): Request[GetDocumentAnalysisResponse] = js.native
     def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] = js.native
     def getExpenseAnalysis(params: GetExpenseAnalysisRequest): Request[GetExpenseAnalysisResponse] = js.native
+    def getLendingAnalysis(params: GetLendingAnalysisRequest): Request[GetLendingAnalysisResponse] = js.native
+    def getLendingAnalysisSummary(params: GetLendingAnalysisSummaryRequest): Request[GetLendingAnalysisSummaryResponse] = js.native
     def startDocumentAnalysis(params: StartDocumentAnalysisRequest): Request[StartDocumentAnalysisResponse] = js.native
     def startDocumentTextDetection(params: StartDocumentTextDetectionRequest): Request[StartDocumentTextDetectionResponse] = js.native
     def startExpenseAnalysis(params: StartExpenseAnalysisRequest): Request[StartExpenseAnalysisResponse] = js.native
+    def startLendingAnalysis(params: StartLendingAnalysisRequest): Request[StartLendingAnalysisResponse] = js.native
   }
   object Textract {
     @inline implicit def toOps(service: Textract): TextractOps = {
@@ -90,6 +114,7 @@ package object textract {
     var Document: Document
     var FeatureTypes: FeatureTypes
     var HumanLoopConfig: js.UndefOr[HumanLoopConfig]
+    var QueriesConfig: js.UndefOr[QueriesConfig]
   }
 
   object AnalyzeDocumentRequest {
@@ -97,7 +122,8 @@ package object textract {
     def apply(
         Document: Document,
         FeatureTypes: FeatureTypes,
-        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined
+        HumanLoopConfig: js.UndefOr[HumanLoopConfig] = js.undefined,
+        QueriesConfig: js.UndefOr[QueriesConfig] = js.undefined
     ): AnalyzeDocumentRequest = {
       val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
@@ -105,6 +131,7 @@ package object textract {
       )
 
       HumanLoopConfig.foreach(__v => __obj.updateDynamic("HumanLoopConfig")(__v.asInstanceOf[js.Any]))
+      QueriesConfig.foreach(__v => __obj.updateDynamic("QueriesConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzeDocumentRequest]
     }
   }
@@ -247,6 +274,7 @@ package object textract {
     var Geometry: js.UndefOr[Geometry]
     var Id: js.UndefOr[NonEmptyString]
     var Page: js.UndefOr[UInteger]
+    var Query: js.UndefOr[Query]
     var Relationships: js.UndefOr[RelationshipList]
     var RowIndex: js.UndefOr[UInteger]
     var RowSpan: js.UndefOr[UInteger]
@@ -266,6 +294,7 @@ package object textract {
         Geometry: js.UndefOr[Geometry] = js.undefined,
         Id: js.UndefOr[NonEmptyString] = js.undefined,
         Page: js.UndefOr[UInteger] = js.undefined,
+        Query: js.UndefOr[Query] = js.undefined,
         Relationships: js.UndefOr[RelationshipList] = js.undefined,
         RowIndex: js.UndefOr[UInteger] = js.undefined,
         RowSpan: js.UndefOr[UInteger] = js.undefined,
@@ -282,6 +311,7 @@ package object textract {
       Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
       Relationships.foreach(__v => __obj.updateDynamic("Relationships")(__v.asInstanceOf[js.Any]))
       RowIndex.foreach(__v => __obj.updateDynamic("RowIndex")(__v.asInstanceOf[js.Any]))
       RowSpan.foreach(__v => __obj.updateDynamic("RowSpan")(__v.asInstanceOf[js.Any]))
@@ -358,6 +388,24 @@ package object textract {
     }
   }
 
+  /** A structure that holds information regarding a detected signature on a page.
+    */
+  @js.native
+  trait DetectedSignature extends js.Object {
+    var Page: js.UndefOr[UInteger]
+  }
+
+  object DetectedSignature {
+    @inline
+    def apply(
+        Page: js.UndefOr[UInteger] = js.undefined
+    ): DetectedSignature = {
+      val __obj = js.Dynamic.literal()
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DetectedSignature]
+    }
+  }
+
   /** The input document, either as bytes or as an S3 object. You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass a document loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations. You pass images stored in an S3 bucket to an Amazon Textract API operation by using the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64 encoded. The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations. If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the
     * operation using the S3Object property. For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.
     */
@@ -380,7 +428,34 @@ package object textract {
     }
   }
 
-  /** The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations such as <a>StartDocumentTextDetection</a>. The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.
+  /** Summary information about documents grouped by the same document type.
+    */
+  @js.native
+  trait DocumentGroup extends js.Object {
+    var DetectedSignatures: js.UndefOr[DetectedSignatureList]
+    var SplitDocuments: js.UndefOr[SplitDocumentList]
+    var Type: js.UndefOr[NonEmptyString]
+    var UndetectedSignatures: js.UndefOr[UndetectedSignatureList]
+  }
+
+  object DocumentGroup {
+    @inline
+    def apply(
+        DetectedSignatures: js.UndefOr[DetectedSignatureList] = js.undefined,
+        SplitDocuments: js.UndefOr[SplitDocumentList] = js.undefined,
+        Type: js.UndefOr[NonEmptyString] = js.undefined,
+        UndetectedSignatures: js.UndefOr[UndetectedSignatureList] = js.undefined
+    ): DocumentGroup = {
+      val __obj = js.Dynamic.literal()
+      DetectedSignatures.foreach(__v => __obj.updateDynamic("DetectedSignatures")(__v.asInstanceOf[js.Any]))
+      SplitDocuments.foreach(__v => __obj.updateDynamic("SplitDocuments")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UndetectedSignatures.foreach(__v => __obj.updateDynamic("UndetectedSignatures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DocumentGroup]
+    }
+  }
+
+  /** The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations. The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.
     */
   @js.native
   trait DocumentLocation extends js.Object {
@@ -416,6 +491,27 @@ package object textract {
     }
   }
 
+  /** Returns the kind of currency detected.
+    */
+  @js.native
+  trait ExpenseCurrency extends js.Object {
+    var Code: js.UndefOr[String]
+    var Confidence: js.UndefOr[Percent]
+  }
+
+  object ExpenseCurrency {
+    @inline
+    def apply(
+        Code: js.UndefOr[String] = js.undefined,
+        Confidence: js.UndefOr[Percent] = js.undefined
+    ): ExpenseCurrency = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseCurrency]
+    }
+  }
+
   /** An object used to store information about the Value or Label detected by Amazon Textract.
     */
   @js.native
@@ -444,6 +540,7 @@ package object textract {
     */
   @js.native
   trait ExpenseDocument extends js.Object {
+    var Blocks: js.UndefOr[BlockList]
     var ExpenseIndex: js.UndefOr[UInteger]
     var LineItemGroups: js.UndefOr[LineItemGroupList]
     var SummaryFields: js.UndefOr[ExpenseFieldList]
@@ -452,11 +549,13 @@ package object textract {
   object ExpenseDocument {
     @inline
     def apply(
+        Blocks: js.UndefOr[BlockList] = js.undefined,
         ExpenseIndex: js.UndefOr[UInteger] = js.undefined,
         LineItemGroups: js.UndefOr[LineItemGroupList] = js.undefined,
         SummaryFields: js.UndefOr[ExpenseFieldList] = js.undefined
     ): ExpenseDocument = {
       val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       ExpenseIndex.foreach(__v => __obj.updateDynamic("ExpenseIndex")(__v.asInstanceOf[js.Any]))
       LineItemGroups.foreach(__v => __obj.updateDynamic("LineItemGroups")(__v.asInstanceOf[js.Any]))
       SummaryFields.foreach(__v => __obj.updateDynamic("SummaryFields")(__v.asInstanceOf[js.Any]))
@@ -468,6 +567,8 @@ package object textract {
     */
   @js.native
   trait ExpenseField extends js.Object {
+    var Currency: js.UndefOr[ExpenseCurrency]
+    var GroupProperties: js.UndefOr[ExpenseGroupPropertyList]
     var LabelDetection: js.UndefOr[ExpenseDetection]
     var PageNumber: js.UndefOr[UInteger]
     var Type: js.UndefOr[ExpenseType]
@@ -477,17 +578,42 @@ package object textract {
   object ExpenseField {
     @inline
     def apply(
+        Currency: js.UndefOr[ExpenseCurrency] = js.undefined,
+        GroupProperties: js.UndefOr[ExpenseGroupPropertyList] = js.undefined,
         LabelDetection: js.UndefOr[ExpenseDetection] = js.undefined,
         PageNumber: js.UndefOr[UInteger] = js.undefined,
         Type: js.UndefOr[ExpenseType] = js.undefined,
         ValueDetection: js.UndefOr[ExpenseDetection] = js.undefined
     ): ExpenseField = {
       val __obj = js.Dynamic.literal()
+      Currency.foreach(__v => __obj.updateDynamic("Currency")(__v.asInstanceOf[js.Any]))
+      GroupProperties.foreach(__v => __obj.updateDynamic("GroupProperties")(__v.asInstanceOf[js.Any]))
       LabelDetection.foreach(__v => __obj.updateDynamic("LabelDetection")(__v.asInstanceOf[js.Any]))
       PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValueDetection.foreach(__v => __obj.updateDynamic("ValueDetection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExpenseField]
+    }
+  }
+
+  /** Shows the group that a certain key belongs to. This helps differentiate between names and addresses for different organizations, that can be hard to determine via JSON response.
+    */
+  @js.native
+  trait ExpenseGroupProperty extends js.Object {
+    var Id: js.UndefOr[String]
+    var Types: js.UndefOr[StringList]
+  }
+
+  object ExpenseGroupProperty {
+    @inline
+    def apply(
+        Id: js.UndefOr[String] = js.undefined,
+        Types: js.UndefOr[StringList] = js.undefined
+    ): ExpenseGroupProperty = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Types.foreach(__v => __obj.updateDynamic("Types")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseGroupProperty]
     }
   }
 
@@ -509,6 +635,30 @@ package object textract {
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExpenseType]
+    }
+  }
+
+  /** Contains information extracted by an analysis operation after using StartLendingAnalysis.
+    */
+  @js.native
+  trait Extraction extends js.Object {
+    var ExpenseDocument: js.UndefOr[ExpenseDocument]
+    var IdentityDocument: js.UndefOr[IdentityDocument]
+    var LendingDocument: js.UndefOr[LendingDocument]
+  }
+
+  object Extraction {
+    @inline
+    def apply(
+        ExpenseDocument: js.UndefOr[ExpenseDocument] = js.undefined,
+        IdentityDocument: js.UndefOr[IdentityDocument] = js.undefined,
+        LendingDocument: js.UndefOr[LendingDocument] = js.undefined
+    ): Extraction = {
+      val __obj = js.Dynamic.literal()
+      ExpenseDocument.foreach(__v => __obj.updateDynamic("ExpenseDocument")(__v.asInstanceOf[js.Any]))
+      IdentityDocument.foreach(__v => __obj.updateDynamic("IdentityDocument")(__v.asInstanceOf[js.Any]))
+      LendingDocument.foreach(__v => __obj.updateDynamic("LendingDocument")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Extraction]
     }
   }
 
@@ -707,6 +857,112 @@ package object textract {
     }
   }
 
+  @js.native
+  trait GetLendingAnalysisRequest extends js.Object {
+    var JobId: JobId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object GetLendingAnalysisRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetLendingAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLendingAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait GetLendingAnalysisResponse extends js.Object {
+    var AnalyzeLendingModelVersion: js.UndefOr[String]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var JobStatus: js.UndefOr[JobStatus]
+    var NextToken: js.UndefOr[PaginationToken]
+    var Results: js.UndefOr[LendingResultList]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var Warnings: js.UndefOr[Warnings]
+  }
+
+  object GetLendingAnalysisResponse {
+    @inline
+    def apply(
+        AnalyzeLendingModelVersion: js.UndefOr[String] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        Results: js.UndefOr[LendingResultList] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        Warnings: js.UndefOr[Warnings] = js.undefined
+    ): GetLendingAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      AnalyzeLendingModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeLendingModelVersion")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLendingAnalysisResponse]
+    }
+  }
+
+  @js.native
+  trait GetLendingAnalysisSummaryRequest extends js.Object {
+    var JobId: JobId
+  }
+
+  object GetLendingAnalysisSummaryRequest {
+    @inline
+    def apply(
+        JobId: JobId
+    ): GetLendingAnalysisSummaryRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetLendingAnalysisSummaryRequest]
+    }
+  }
+
+  @js.native
+  trait GetLendingAnalysisSummaryResponse extends js.Object {
+    var AnalyzeLendingModelVersion: js.UndefOr[String]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var JobStatus: js.UndefOr[JobStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var Summary: js.UndefOr[LendingSummary]
+    var Warnings: js.UndefOr[Warnings]
+  }
+
+  object GetLendingAnalysisSummaryResponse {
+    @inline
+    def apply(
+        AnalyzeLendingModelVersion: js.UndefOr[String] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        Summary: js.UndefOr[LendingSummary] = js.undefined,
+        Warnings: js.UndefOr[Warnings] = js.undefined
+    ): GetLendingAnalysisSummaryResponse = {
+      val __obj = js.Dynamic.literal()
+      AnalyzeLendingModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeLendingModelVersion")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Summary.foreach(__v => __obj.updateDynamic("Summary")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLendingAnalysisSummaryResponse]
+    }
+  }
+
   /** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
     */
   @js.native
@@ -779,6 +1035,7 @@ package object textract {
     */
   @js.native
   trait IdentityDocument extends js.Object {
+    var Blocks: js.UndefOr[BlockList]
     var DocumentIndex: js.UndefOr[UInteger]
     var IdentityDocumentFields: js.UndefOr[IdentityDocumentFieldList]
   }
@@ -786,10 +1043,12 @@ package object textract {
   object IdentityDocument {
     @inline
     def apply(
+        Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentIndex: js.UndefOr[UInteger] = js.undefined,
         IdentityDocumentFields: js.UndefOr[IdentityDocumentFieldList] = js.undefined
     ): IdentityDocument = {
       val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
       DocumentIndex.foreach(__v => __obj.updateDynamic("DocumentIndex")(__v.asInstanceOf[js.Any]))
       IdentityDocumentFields.foreach(__v => __obj.updateDynamic("IdentityDocumentFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityDocument]
@@ -814,6 +1073,123 @@ package object textract {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValueDetection.foreach(__v => __obj.updateDynamic("ValueDetection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityDocumentField]
+    }
+  }
+
+  /** The results extracted for a lending document.
+    */
+  @js.native
+  trait LendingDetection extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Geometry: js.UndefOr[Geometry]
+    var SelectionStatus: js.UndefOr[SelectionStatus]
+    var Text: js.UndefOr[String]
+  }
+
+  object LendingDetection {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Geometry: js.UndefOr[Geometry] = js.undefined,
+        SelectionStatus: js.UndefOr[SelectionStatus] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined
+    ): LendingDetection = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      SelectionStatus.foreach(__v => __obj.updateDynamic("SelectionStatus")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LendingDetection]
+    }
+  }
+
+  /** Holds the structured data returned by AnalyzeDocument for lending documents.
+    */
+  @js.native
+  trait LendingDocument extends js.Object {
+    var LendingFields: js.UndefOr[LendingFieldList]
+    var SignatureDetections: js.UndefOr[SignatureDetectionList]
+  }
+
+  object LendingDocument {
+    @inline
+    def apply(
+        LendingFields: js.UndefOr[LendingFieldList] = js.undefined,
+        SignatureDetections: js.UndefOr[SignatureDetectionList] = js.undefined
+    ): LendingDocument = {
+      val __obj = js.Dynamic.literal()
+      LendingFields.foreach(__v => __obj.updateDynamic("LendingFields")(__v.asInstanceOf[js.Any]))
+      SignatureDetections.foreach(__v => __obj.updateDynamic("SignatureDetections")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LendingDocument]
+    }
+  }
+
+  /** Holds the normalized key-value pairs returned by AnalyzeDocument, including the document type, detected text, and geometry.
+    */
+  @js.native
+  trait LendingField extends js.Object {
+    var KeyDetection: js.UndefOr[LendingDetection]
+    var Type: js.UndefOr[String]
+    var ValueDetections: js.UndefOr[LendingDetectionList]
+  }
+
+  object LendingField {
+    @inline
+    def apply(
+        KeyDetection: js.UndefOr[LendingDetection] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined,
+        ValueDetections: js.UndefOr[LendingDetectionList] = js.undefined
+    ): LendingField = {
+      val __obj = js.Dynamic.literal()
+      KeyDetection.foreach(__v => __obj.updateDynamic("KeyDetection")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ValueDetections.foreach(__v => __obj.updateDynamic("ValueDetections")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LendingField]
+    }
+  }
+
+  /** Contains the detections for each page analyzed through the Analyze Lending API.
+    */
+  @js.native
+  trait LendingResult extends js.Object {
+    var Extractions: js.UndefOr[ExtractionList]
+    var Page: js.UndefOr[UInteger]
+    var PageClassification: js.UndefOr[PageClassification]
+  }
+
+  object LendingResult {
+    @inline
+    def apply(
+        Extractions: js.UndefOr[ExtractionList] = js.undefined,
+        Page: js.UndefOr[UInteger] = js.undefined,
+        PageClassification: js.UndefOr[PageClassification] = js.undefined
+    ): LendingResult = {
+      val __obj = js.Dynamic.literal()
+      Extractions.foreach(__v => __obj.updateDynamic("Extractions")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      PageClassification.foreach(__v => __obj.updateDynamic("PageClassification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LendingResult]
+    }
+  }
+
+  /** Contains information regarding DocumentGroups and UndetectedDocumentTypes.
+    */
+  @js.native
+  trait LendingSummary extends js.Object {
+    var DocumentGroups: js.UndefOr[DocumentGroupList]
+    var UndetectedDocumentTypes: js.UndefOr[UndetectedDocumentTypeList]
+  }
+
+  object LendingSummary {
+    @inline
+    def apply(
+        DocumentGroups: js.UndefOr[DocumentGroupList] = js.undefined,
+        UndetectedDocumentTypes: js.UndefOr[UndetectedDocumentTypeList] = js.undefined
+    ): LendingSummary = {
+      val __obj = js.Dynamic.literal()
+      DocumentGroups.foreach(__v => __obj.updateDynamic("DocumentGroups")(__v.asInstanceOf[js.Any]))
+      UndetectedDocumentTypes.foreach(__v => __obj.updateDynamic("UndetectedDocumentTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LendingSummary]
     }
   }
 
@@ -877,7 +1253,7 @@ package object textract {
     }
   }
 
-  /** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
+  /** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation.
     */
   @js.native
   trait NotificationChannel extends js.Object {
@@ -899,8 +1275,8 @@ package object textract {
     }
   }
 
-  /** Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file. <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With OutputConfig enabled, you can set the name of the bucket the output will be sent to and the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3. Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the
-    * Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see [[https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html| Managing AI services opt-out policy.]] For more information on data privacy, see the [[https://aws.amazon.com/compliance/data-privacy-faq/|Data Privacy FAQ]].
+  /** Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file. <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3. Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted
+    * after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see [[https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html| Managing AI services opt-out policy.]] For more information on data privacy, see the [[https://aws.amazon.com/compliance/data-privacy-faq/|Data Privacy FAQ]].
     */
   @js.native
   trait OutputConfig extends js.Object {
@@ -923,6 +1299,28 @@ package object textract {
     }
   }
 
+  /** The class assigned to a Page object detected in an input document. Contains information regarding the predicted type/class of a document's page and the page number that the Page object was detected on.
+    */
+  @js.native
+  trait PageClassification extends js.Object {
+    var PageNumber: PredictionList
+    var PageType: PredictionList
+  }
+
+  object PageClassification {
+    @inline
+    def apply(
+        PageNumber: PredictionList,
+        PageType: PredictionList
+    ): PageClassification = {
+      val __obj = js.Dynamic.literal(
+        "PageNumber" -> PageNumber.asInstanceOf[js.Any],
+        "PageType" -> PageType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PageClassification]
+    }
+  }
+
   /** The X and Y coordinates of a point on a document page. The X and Y values that are returned are ratios of the overall document page size. For example, if the input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the document page. An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained polygon around detected text. For more information, see Geometry in the Amazon Textract Developer Guide.
     */
   @js.native
@@ -941,6 +1339,72 @@ package object textract {
       X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
       Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Point]
+    }
+  }
+
+  /** Contains information regarding predicted values returned by Amazon Textract operations, including the predicted value and the confidence in the predicted value.
+    */
+  @js.native
+  trait Prediction extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Value: js.UndefOr[NonEmptyString]
+  }
+
+  object Prediction {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Value: js.UndefOr[NonEmptyString] = js.undefined
+    ): Prediction = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Prediction]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait QueriesConfig extends js.Object {
+    var Queries: Queries
+  }
+
+  object QueriesConfig {
+    @inline
+    def apply(
+        Queries: Queries
+    ): QueriesConfig = {
+      val __obj = js.Dynamic.literal(
+        "Queries" -> Queries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[QueriesConfig]
+    }
+  }
+
+  /** Each query contains the question you want to ask in the Text and the alias you want to associate.
+    */
+  @js.native
+  trait Query extends js.Object {
+    var Text: QueryInput
+    var Alias: js.UndefOr[QueryInput]
+    var Pages: js.UndefOr[QueryPages]
+  }
+
+  object Query {
+    @inline
+    def apply(
+        Text: QueryInput,
+        Alias: js.UndefOr[QueryInput] = js.undefined,
+        Pages: js.UndefOr[QueryPages] = js.undefined
+    ): Query = {
+      val __obj = js.Dynamic.literal(
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Query]
     }
   }
 
@@ -989,6 +1453,48 @@ package object textract {
     }
   }
 
+  /** Information regarding a detected signature on a page.
+    */
+  @js.native
+  trait SignatureDetection extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Geometry: js.UndefOr[Geometry]
+  }
+
+  object SignatureDetection {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Geometry: js.UndefOr[Geometry] = js.undefined
+    ): SignatureDetection = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SignatureDetection]
+    }
+  }
+
+  /** Contains information about the pages of a document, defined by logical boundary.
+    */
+  @js.native
+  trait SplitDocument extends js.Object {
+    var Index: js.UndefOr[UInteger]
+    var Pages: js.UndefOr[PageList]
+  }
+
+  object SplitDocument {
+    @inline
+    def apply(
+        Index: js.UndefOr[UInteger] = js.undefined,
+        Pages: js.UndefOr[PageList] = js.undefined
+    ): SplitDocument = {
+      val __obj = js.Dynamic.literal()
+      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SplitDocument]
+    }
+  }
+
   @js.native
   trait StartDocumentAnalysisRequest extends js.Object {
     var DocumentLocation: DocumentLocation
@@ -998,6 +1504,7 @@ package object textract {
     var KMSKeyId: js.UndefOr[KMSKeyId]
     var NotificationChannel: js.UndefOr[NotificationChannel]
     var OutputConfig: js.UndefOr[OutputConfig]
+    var QueriesConfig: js.UndefOr[QueriesConfig]
   }
 
   object StartDocumentAnalysisRequest {
@@ -1009,7 +1516,8 @@ package object textract {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined,
-        OutputConfig: js.UndefOr[OutputConfig] = js.undefined
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
+        QueriesConfig: js.UndefOr[QueriesConfig] = js.undefined
     ): StartDocumentAnalysisRequest = {
       val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any],
@@ -1021,6 +1529,7 @@ package object textract {
       KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
       NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
+      QueriesConfig.foreach(__v => __obj.updateDynamic("QueriesConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentAnalysisRequest]
     }
   }
@@ -1136,6 +1645,73 @@ package object textract {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartExpenseAnalysisResponse]
+    }
+  }
+
+  @js.native
+  trait StartLendingAnalysisRequest extends js.Object {
+    var DocumentLocation: DocumentLocation
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var JobTag: js.UndefOr[JobTag]
+    var KMSKeyId: js.UndefOr[KMSKeyId]
+    var NotificationChannel: js.UndefOr[NotificationChannel]
+    var OutputConfig: js.UndefOr[OutputConfig]
+  }
+
+  object StartLendingAnalysisRequest {
+    @inline
+    def apply(
+        DocumentLocation: DocumentLocation,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        JobTag: js.UndefOr[JobTag] = js.undefined,
+        KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined,
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined
+    ): StartLendingAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartLendingAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait StartLendingAnalysisResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartLendingAnalysisResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartLendingAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartLendingAnalysisResponse]
+    }
+  }
+
+  /** A structure containing information about an undetected signature on a page where it was expected but not found.
+    */
+  @js.native
+  trait UndetectedSignature extends js.Object {
+    var Page: js.UndefOr[UInteger]
+  }
+
+  object UndetectedSignature {
+    @inline
+    def apply(
+        Page: js.UndefOr[UInteger] = js.undefined
+    ): UndetectedSignature = {
+      val __obj = js.Dynamic.literal()
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UndetectedSignature]
     }
   }
 

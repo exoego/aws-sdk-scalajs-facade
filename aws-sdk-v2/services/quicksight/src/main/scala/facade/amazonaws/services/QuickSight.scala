@@ -10,7 +10,8 @@ import facade.amazonaws._
 package object quicksight {
   type ActionList = js.Array[String]
   type ActiveIAMPolicyAssignmentList = js.Array[ActiveIAMPolicyAssignment]
-  type AdditionalDashboardIdList = js.Array[RestrictiveResourceId]
+  type AdditionalDashboardIdList = js.Array[ShortRestrictiveResourceId]
+  type AggregationSortConfigurationList = js.Array[AggregationSortConfiguration]
   type AliasName = String
   type AnalysisErrorList = js.Array[AnalysisError]
   type AnalysisName = String
@@ -20,16 +21,31 @@ package object quicksight {
   type ArnList = js.Array[Arn]
   type AwsAccountId = String
   type AwsAndAccountId = String
+  type AxisLabelOptionsList = js.Array[AxisLabelOptions]
+  type BinCountLimit = Double
+  type BinCountValue = Int
+  type BinWidthValue = Double
+  type BodySectionConfigurationList = js.Array[BodySectionConfiguration]
+  type BooleanObject = Boolean
+  type BoxPlotDimensionFieldList = js.Array[DimensionField]
+  type BoxPlotMeasureFieldList = js.Array[MeasureField]
   type CIDR = String
   type CalculatedColumnList = js.Array[CalculatedColumn]
+  type CalculatedFields = js.Array[CalculatedField]
+  type CascadingControlSourceList = js.Array[CascadingControlSource]
   type Catalog = String
+  type CategoryValue = String
+  type CategoryValueList = js.Array[CategoryValue]
   type ClusterId = String
   type ColorList = js.Array[HexColor]
+  type ColorScaleColorList = js.Array[DataColor]
+  type ColumnConfigurationList = js.Array[ColumnConfiguration]
   type ColumnDescriptiveText = String
   type ColumnGroupColumnSchemaList = js.Array[ColumnGroupColumnSchema]
   type ColumnGroupList = js.Array[ColumnGroup]
   type ColumnGroupName = String
   type ColumnGroupSchemaList = js.Array[ColumnGroupSchema]
+  type ColumnHierarchyList = js.Array[ColumnHierarchy]
   type ColumnId = String
   type ColumnLevelPermissionRuleList = js.Array[ColumnLevelPermissionRule]
   type ColumnList = js.Array[ColumnName]
@@ -38,44 +54,97 @@ package object quicksight {
   type ColumnSchemaList = js.Array[ColumnSchema]
   type ColumnTagList = js.Array[ColumnTag]
   type ColumnTagNames = js.Array[ColumnTagName]
+  type ComputationList = js.Array[Computation]
+  type ContributionAnalysisDefaultList = js.Array[ContributionAnalysisDefault]
+  type ContributorDimensionList = js.Array[ColumnIdentifier]
   type CopySourceArn = String
+  type CurrencyCode = String
+  type CustomLabel = String
   type CustomSqlName = String
   type DashboardErrorList = js.Array[DashboardError]
   type DashboardName = String
   type DashboardSearchFilterList = js.Array[DashboardSearchFilter]
   type DashboardSummaryList = js.Array[DashboardSummary]
   type DashboardVersionSummaryList = js.Array[DashboardVersionSummary]
+  type DataLabelTypes = js.Array[DataLabelType]
+  type DataPathColorList = js.Array[DataPathColor]
+  type DataPathValueList = js.Array[DataPathValue]
   type DataSetArnsList = js.Array[Arn]
   type DataSetConfigurationList = js.Array[DataSetConfiguration]
+  type DataSetIdentifier = String
+  type DataSetIdentifierDeclarationList = js.Array[DataSetIdentifierDeclaration]
   type DataSetName = String
   type DataSetReferenceList = js.Array[DataSetReference]
+  type DataSetSearchFilterList = js.Array[DataSetSearchFilter]
   type DataSetSummaryList = js.Array[DataSetSummary]
   type DataSourceList = js.Array[DataSource]
   type DataSourceParametersList = js.Array[DataSourceParameters]
+  type DataSourceSearchFilterList = js.Array[DataSourceSearchFilter]
+  type DataSourceSummaryList = js.Array[DataSourceSummary]
   type Database = String
+  type DateTimeDefaultValueList = js.Array[SensitiveTimestamp]
+  type DateTimeFormat = String
   type DateTimeParameterList = js.Array[DateTimeParameter]
+  type DecimalDefaultValueList = js.Array[SensitiveDoubleObject]
   type DecimalParameterList = js.Array[DecimalParameter]
+  type DecimalPlaces = Double
   type Delimiter = String
+  type DimensionFieldList = js.Array[DimensionField]
   type Domain = String
-  type DoubleList = js.Array[Double]
+  type DrillDownFilterList = js.Array[DrillDownFilter]
   type EmbeddingUrl = String
+  type EntityList = js.Array[Entity]
   type EntryPath = String
   type EntryPoint = String
+  type ExplicitHierarchyColumnList = js.Array[ColumnIdentifier]
   type Expression = String
   type FieldFolderDescription = String
   type FieldFolderMap = js.Dictionary[FieldFolder]
   type FieldFolderPath = String
+  type FieldId = String
+  type FieldOrderList = js.Array[FieldId]
+  type FieldSortOptionsList = js.Array[FieldSortOptions]
+  type FieldValue = String
+  type FilledMapConditionalFormattingOptionList = js.Array[FilledMapConditionalFormattingOption]
+  type FilledMapDimensionFieldList = js.Array[DimensionField]
+  type FilledMapMeasureFieldList = js.Array[MeasureField]
+  type FilterControlList = js.Array[FilterControl]
+  type FilterGroupList = js.Array[FilterGroup]
+  type FilterList = js.Array[Filter]
+  type FilteredVisualsList = js.Array[ShortRestrictiveResourceId]
   type FolderColumnList = js.Array[String]
   type FolderMemberList = js.Array[MemberIdArnPair]
   type FolderName = String
   type FolderSearchFilterList = js.Array[FolderSearchFilter]
   type FolderSummaryList = js.Array[FolderSummary]
+  type FontList = js.Array[Font]
+  type ForecastComputationCustomSeasonalityValue = Int
+  type ForecastConfigurationList = js.Array[ForecastConfiguration]
+  type FreeFromLayoutElementList = js.Array[FreeFormLayoutElement]
+  type FunnelChartDimensionFieldList = js.Array[DimensionField]
+  type FunnelChartMeasureFieldList = js.Array[MeasureField]
+  type GaugeChartConditionalFormattingOptionList = js.Array[GaugeChartConditionalFormattingOption]
+  type GradientStopList = js.Array[GradientStop]
+  type GridLayoutElementColumnIndex = Int
+  type GridLayoutElementColumnSpan = Int
+  type GridLayoutElementList = js.Array[GridLayoutElement]
+  type GridLayoutElementRowIndex = Int
+  type GridLayoutElementRowSpan = Int
   type GroupDescription = String
   type GroupList = js.Array[Group]
   type GroupMemberList = js.Array[GroupMember]
   type GroupMemberName = String
   type GroupName = String
+  type GroupSearchFilterList = js.Array[GroupSearchFilter]
+  type GroupsList = js.Array[String]
+  type GrowthRatePeriodSize = Int
+  type HeaderFooterSectionConfigurationList = js.Array[HeaderFooterSectionConfiguration]
+  type HeatMapDimensionFieldList = js.Array[DimensionField]
+  type HeatMapMeasureFieldList = js.Array[MeasureField]
   type HexColor = String
+  type HexColorWithTransparency = String
+  type HierarchyId = String
+  type HistogramMeasureFieldList = js.Array[MeasureField]
   type Host = String
   type IAMPolicyAssignmentName = String
   type IAMPolicyAssignmentSummaryList = js.Array[IAMPolicyAssignmentSummary]
@@ -87,32 +156,64 @@ package object quicksight {
   type Ingestions = js.Array[Ingestion]
   type InputColumnList = js.Array[InputColumn]
   type InstanceId = String
+  type IntegerDefaultValueList = js.Array[SensitiveLongObject]
   type IntegerParameterList = js.Array[IntegerParameter]
   type IpRestrictionRuleDescription = String
   type IpRestrictionRuleMap = js.Dictionary[IpRestrictionRuleDescription]
+  type KPIConditionalFormattingOptionList = js.Array[KPIConditionalFormattingOption]
+  type Latitude = Double
+  type LayoutList = js.Array[Layout]
+  type Length = String
   type LogicalTableAlias = String
   type LogicalTableId = String
   type LogicalTableMap = js.Dictionary[LogicalTable]
-  type LongList = js.Array[Double]
+  type LongPlainText = String
+  type LongRichText = String
+  type Longitude = Double
   type MaxResults = Int
+  type MeasureFieldList = js.Array[MeasureField]
+  type MissingDataConfigurationList = js.Array[MissingDataConfiguration]
   type Namespace = String
   type Namespaces = js.Array[NamespaceInfoV2]
+  type NarrativeString = String
   type NonEmptyString = String
+  type NullString = String
   type NullableBoolean = Boolean
   type OnClause = String
   type OptionalPort = Int
   type OutputColumnList = js.Array[OutputColumn]
+  type PageNumber = Double
+  type ParameterControlList = js.Array[ParameterControl]
+  type ParameterDeclarationList = js.Array[ParameterDeclaration]
+  type ParameterName = String
+  type ParameterSelectableValueList = js.Array[String]
   type Password = String
   type Path = js.Array[Arn]
+  type PercentNumber = Double
+  type PercentileValue = Double
+  type PeriodsBackward = Int
+  type PeriodsForward = Int
   type PhysicalTableId = String
   type PhysicalTableMap = js.Dictionary[PhysicalTable]
+  type PivotFieldSortOptionsList = js.Array[PivotFieldSortOptions]
+  type PivotMeasureFieldList = js.Array[MeasureField]
+  type PivotTableConditionalFormattingOptionList = js.Array[PivotTableConditionalFormattingOption]
+  type PivotTableDataPathOptionList = js.Array[PivotTableDataPathOption]
+  type PivotTableDimensionList = js.Array[DimensionField]
+  type PivotTableFieldOptionList = js.Array[PivotTableFieldOption]
+  type PivotTableFieldSubtotalOptionsList = js.Array[PivotTableFieldSubtotalOptions]
+  type PixelLength = String
   type Port = Int
   type PositiveInteger = Int
+  type PredefinedHierarchyColumnList = js.Array[ColumnIdentifier]
+  type PredictionInterval = Int
+  type Prefix = String
   type Principal = String
   type PrincipalList = js.Array[String]
   type ProjectedColumnList = js.Array[String]
   type Query = String
   type RecoveryWindowInDays = Double
+  type ReferenceLineList = js.Array[ReferenceLine]
   type RelationalTableCatalog = String
   type RelationalTableName = String
   type RelationalTableSchema = String
@@ -120,40 +221,90 @@ package object quicksight {
   type ResourceName = String
   type ResourcePermissionList = js.Array[ResourcePermission]
   type RestrictiveResourceId = String
+  type RoleArn = String
   type RoleName = String
   type RoleSessionName = String
+  type RowAlternateColorList = js.Array[HexColor]
   type RowLevelPermissionTagDelimiter = String
   type RowLevelPermissionTagRuleList = js.Array[RowLevelPermissionTagRule]
+  type RowSortList = js.Array[FieldSortOptions]
   type S3Bucket = String
   type S3Key = String
+  type Seasonality = Int
+  type SecretArn = String
+  type SelectedFieldList = js.Array[FieldId]
+  type SensitiveDouble = Double
+  type SensitiveDoubleList = js.Array[SensitiveDouble]
+  type SensitiveDoubleObject = Double
+  type SensitiveLong = Double
+  type SensitiveLongList = js.Array[SensitiveLong]
+  type SensitiveLongObject = Double
+  type SensitiveString = String
+  type SensitiveStringList = js.Array[SensitiveString]
+  type SensitiveStringObject = String
+  type SensitiveTimestamp = js.Date
+  type SensitiveTimestampList = js.Array[SensitiveTimestamp]
+  type SeriesItemList = js.Array[SeriesItem]
   type SessionLifetimeInMinutes = Double
   type SessionTagKey = String
   type SessionTagList = js.Array[SessionTag]
   type SessionTagValue = String
+  type SetParameterValueConfigurationList = js.Array[SetParameterValueConfiguration]
+  type SheetControlLayoutList = js.Array[SheetControlLayout]
+  type SheetControlTitle = String
+  type SheetDefinitionList = js.Array[SheetDefinition]
+  type SheetDescription = String
+  type SheetElementRenderingRuleList = js.Array[SheetElementRenderingRule]
   type SheetList = js.Array[Sheet]
+  type SheetName = String
+  type SheetTextBoxContent = String
+  type SheetTextBoxList = js.Array[SheetTextBox]
+  type SheetTitle = String
+  type SheetVisualScopingConfigurations = js.Array[SheetVisualScopingConfiguration]
+  type ShortPlainText = String
+  type ShortRestrictiveResourceId = String
+  type ShortRichText = String
   type SiteBaseUrl = String
+  type SmallMultiplesDimensionFieldList = js.Array[DimensionField]
+  type SqlEndpointPath = String
   type SqlQuery = String
   type StatusCode = Int
+  type StringDefaultValueList = js.Array[SensitiveStringObject]
   type StringList = js.Array[String]
   type StringParameterList = js.Array[StringParameter]
+  type Suffix = String
+  type TableBorderThickness = Int
+  type TableConditionalFormattingOptionList = js.Array[TableConditionalFormattingOption]
+  type TableFieldHeight = Int
+  type TableFieldOptionList = js.Array[TableFieldOption]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TargetVisualList = js.Array[ShortRestrictiveResourceId]
   type TemplateAliasList = js.Array[TemplateAlias]
   type TemplateErrorList = js.Array[TemplateError]
   type TemplateName = String
   type TemplateSummaryList = js.Array[TemplateSummary]
   type TemplateVersionSummaryList = js.Array[TemplateVersionSummary]
+  type TextAreaControlDelimiter = String
   type ThemeAliasList = js.Array[ThemeAlias]
   type ThemeErrorList = js.Array[ThemeError]
   type ThemeName = String
   type ThemeSummaryList = js.Array[ThemeSummary]
   type ThemeVersionSummaryList = js.Array[ThemeVersionSummary]
   type Timestamp = js.Date
-  type TimestampList = js.Array[Timestamp]
+  type TooltipItemList = js.Array[TooltipItem]
+  type TopBottomMoversComputationMoverSize = Int
+  type TopBottomRankedComputationResultSize = Int
   type TransformOperationList = js.Array[TransformOperation]
+  type TreeMapDimensionFieldList = js.Array[DimensionField]
+  type TreeMapMeasureFieldList = js.Array[MeasureField]
   type TypeCastFormat = String
+  type URLOperationTemplate = String
+  type UnaggregatedFieldList = js.Array[UnaggregatedField]
+  type UnicodeIcon = String
+  type UnlimitedPixelLength = String
   type UpdateLinkPermissionList = js.Array[ResourcePermission]
   type UpdateResourcePermissionList = js.Array[ResourcePermission]
   type UserList = js.Array[User]
@@ -161,13 +312,23 @@ package object quicksight {
   type Username = String
   type VersionDescription = String
   type VersionNumber = Double
+  type VisiblePanelColumns = Double
+  type VisiblePanelRows = Double
+  type VisualCustomActionList = js.Array[VisualCustomAction]
+  type VisualCustomActionName = String
+  type VisualCustomActionOperationList = js.Array[VisualCustomActionOperation]
+  type VisualList = js.Array[Visual]
   type Warehouse = String
+  type WordCloudDimensionFieldList = js.Array[DimensionField]
+  type WordCloudMaximumStringLength = Int
+  type WordCloudMeasureFieldList = js.Array[MeasureField]
   type WorkGroup = String
 
   final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
     @inline def cancelIngestionFuture(params: CancelIngestionRequest): Future[CancelIngestionResponse] = service.cancelIngestion(params).promise().toFuture
     @inline def createAccountCustomizationFuture(params: CreateAccountCustomizationRequest): Future[CreateAccountCustomizationResponse] = service.createAccountCustomization(params).promise().toFuture
+    @inline def createAccountSubscriptionFuture(params: CreateAccountSubscriptionRequest): Future[CreateAccountSubscriptionResponse] = service.createAccountSubscription(params).promise().toFuture
     @inline def createAnalysisFuture(params: CreateAnalysisRequest): Future[CreateAnalysisResponse] = service.createAnalysis(params).promise().toFuture
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] = service.createDataSet(params).promise().toFuture
@@ -184,6 +345,7 @@ package object quicksight {
     @inline def createThemeAliasFuture(params: CreateThemeAliasRequest): Future[CreateThemeAliasResponse] = service.createThemeAlias(params).promise().toFuture
     @inline def createThemeFuture(params: CreateThemeRequest): Future[CreateThemeResponse] = service.createTheme(params).promise().toFuture
     @inline def deleteAccountCustomizationFuture(params: DeleteAccountCustomizationRequest): Future[DeleteAccountCustomizationResponse] = service.deleteAccountCustomization(params).promise().toFuture
+    @inline def deleteAccountSubscriptionFuture(params: DeleteAccountSubscriptionRequest): Future[DeleteAccountSubscriptionResponse] = service.deleteAccountSubscription(params).promise().toFuture
     @inline def deleteAnalysisFuture(params: DeleteAnalysisRequest): Future[DeleteAnalysisResponse] = service.deleteAnalysis(params).promise().toFuture
     @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] = service.deleteDashboard(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] = service.deleteDataSet(params).promise().toFuture
@@ -202,8 +364,11 @@ package object quicksight {
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] = service.deleteUser(params).promise().toFuture
     @inline def describeAccountCustomizationFuture(params: DescribeAccountCustomizationRequest): Future[DescribeAccountCustomizationResponse] = service.describeAccountCustomization(params).promise().toFuture
     @inline def describeAccountSettingsFuture(params: DescribeAccountSettingsRequest): Future[DescribeAccountSettingsResponse] = service.describeAccountSettings(params).promise().toFuture
+    @inline def describeAccountSubscriptionFuture(params: DescribeAccountSubscriptionRequest): Future[DescribeAccountSubscriptionResponse] = service.describeAccountSubscription(params).promise().toFuture
+    @inline def describeAnalysisDefinitionFuture(params: DescribeAnalysisDefinitionRequest): Future[DescribeAnalysisDefinitionResponse] = service.describeAnalysisDefinition(params).promise().toFuture
     @inline def describeAnalysisFuture(params: DescribeAnalysisRequest): Future[DescribeAnalysisResponse] = service.describeAnalysis(params).promise().toFuture
     @inline def describeAnalysisPermissionsFuture(params: DescribeAnalysisPermissionsRequest): Future[DescribeAnalysisPermissionsResponse] = service.describeAnalysisPermissions(params).promise().toFuture
+    @inline def describeDashboardDefinitionFuture(params: DescribeDashboardDefinitionRequest): Future[DescribeDashboardDefinitionResponse] = service.describeDashboardDefinition(params).promise().toFuture
     @inline def describeDashboardFuture(params: DescribeDashboardRequest): Future[DescribeDashboardResponse] = service.describeDashboard(params).promise().toFuture
     @inline def describeDashboardPermissionsFuture(params: DescribeDashboardPermissionsRequest): Future[DescribeDashboardPermissionsResponse] = service.describeDashboardPermissions(params).promise().toFuture
     @inline def describeDataSetFuture(params: DescribeDataSetRequest): Future[DescribeDataSetResponse] = service.describeDataSet(params).promise().toFuture
@@ -214,11 +379,13 @@ package object quicksight {
     @inline def describeFolderPermissionsFuture(params: DescribeFolderPermissionsRequest): Future[DescribeFolderPermissionsResponse] = service.describeFolderPermissions(params).promise().toFuture
     @inline def describeFolderResolvedPermissionsFuture(params: DescribeFolderResolvedPermissionsRequest): Future[DescribeFolderResolvedPermissionsResponse] = service.describeFolderResolvedPermissions(params).promise().toFuture
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
+    @inline def describeGroupMembershipFuture(params: DescribeGroupMembershipRequest): Future[DescribeGroupMembershipResponse] = service.describeGroupMembership(params).promise().toFuture
     @inline def describeIAMPolicyAssignmentFuture(params: DescribeIAMPolicyAssignmentRequest): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
     @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] = service.describeIngestion(params).promise().toFuture
     @inline def describeIpRestrictionFuture(params: DescribeIpRestrictionRequest): Future[DescribeIpRestrictionResponse] = service.describeIpRestriction(params).promise().toFuture
     @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] = service.describeNamespace(params).promise().toFuture
     @inline def describeTemplateAliasFuture(params: DescribeTemplateAliasRequest): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
+    @inline def describeTemplateDefinitionFuture(params: DescribeTemplateDefinitionRequest): Future[DescribeTemplateDefinitionResponse] = service.describeTemplateDefinition(params).promise().toFuture
     @inline def describeTemplateFuture(params: DescribeTemplateRequest): Future[DescribeTemplateResponse] = service.describeTemplate(params).promise().toFuture
     @inline def describeTemplatePermissionsFuture(params: DescribeTemplatePermissionsRequest): Future[DescribeTemplatePermissionsResponse] = service.describeTemplatePermissions(params).promise().toFuture
     @inline def describeThemeAliasFuture(params: DescribeThemeAliasRequest): Future[DescribeThemeAliasResponse] = service.describeThemeAlias(params).promise().toFuture
@@ -255,7 +422,10 @@ package object quicksight {
     @inline def restoreAnalysisFuture(params: RestoreAnalysisRequest): Future[RestoreAnalysisResponse] = service.restoreAnalysis(params).promise().toFuture
     @inline def searchAnalysesFuture(params: SearchAnalysesRequest): Future[SearchAnalysesResponse] = service.searchAnalyses(params).promise().toFuture
     @inline def searchDashboardsFuture(params: SearchDashboardsRequest): Future[SearchDashboardsResponse] = service.searchDashboards(params).promise().toFuture
+    @inline def searchDataSetsFuture(params: SearchDataSetsRequest): Future[SearchDataSetsResponse] = service.searchDataSets(params).promise().toFuture
+    @inline def searchDataSourcesFuture(params: SearchDataSourcesRequest): Future[SearchDataSourcesResponse] = service.searchDataSources(params).promise().toFuture
     @inline def searchFoldersFuture(params: SearchFoldersRequest): Future[SearchFoldersResponse] = service.searchFolders(params).promise().toFuture
+    @inline def searchGroupsFuture(params: SearchGroupsRequest): Future[SearchGroupsResponse] = service.searchGroups(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAccountCustomizationFuture(params: UpdateAccountCustomizationRequest): Future[UpdateAccountCustomizationResponse] = service.updateAccountCustomization(params).promise().toFuture
@@ -274,6 +444,7 @@ package object quicksight {
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] = service.updateGroup(params).promise().toFuture
     @inline def updateIAMPolicyAssignmentFuture(params: UpdateIAMPolicyAssignmentRequest): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise().toFuture
     @inline def updateIpRestrictionFuture(params: UpdateIpRestrictionRequest): Future[UpdateIpRestrictionResponse] = service.updateIpRestriction(params).promise().toFuture
+    @inline def updatePublicSharingSettingsFuture(params: UpdatePublicSharingSettingsRequest): Future[UpdatePublicSharingSettingsResponse] = service.updatePublicSharingSettings(params).promise().toFuture
     @inline def updateTemplateAliasFuture(params: UpdateTemplateAliasRequest): Future[UpdateTemplateAliasResponse] = service.updateTemplateAlias(params).promise().toFuture
     @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] = service.updateTemplate(params).promise().toFuture
     @inline def updateTemplatePermissionsFuture(params: UpdateTemplatePermissionsRequest): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
@@ -291,6 +462,7 @@ package object quicksight {
 
     def cancelIngestion(params: CancelIngestionRequest): Request[CancelIngestionResponse] = js.native
     def createAccountCustomization(params: CreateAccountCustomizationRequest): Request[CreateAccountCustomizationResponse] = js.native
+    def createAccountSubscription(params: CreateAccountSubscriptionRequest): Request[CreateAccountSubscriptionResponse] = js.native
     def createAnalysis(params: CreateAnalysisRequest): Request[CreateAnalysisResponse] = js.native
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
@@ -307,6 +479,7 @@ package object quicksight {
     def createTheme(params: CreateThemeRequest): Request[CreateThemeResponse] = js.native
     def createThemeAlias(params: CreateThemeAliasRequest): Request[CreateThemeAliasResponse] = js.native
     def deleteAccountCustomization(params: DeleteAccountCustomizationRequest): Request[DeleteAccountCustomizationResponse] = js.native
+    def deleteAccountSubscription(params: DeleteAccountSubscriptionRequest): Request[DeleteAccountSubscriptionResponse] = js.native
     def deleteAnalysis(params: DeleteAnalysisRequest): Request[DeleteAnalysisResponse] = js.native
     def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse] = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse] = js.native
@@ -325,9 +498,12 @@ package object quicksight {
     def deleteUserByPrincipalId(params: DeleteUserByPrincipalIdRequest): Request[DeleteUserByPrincipalIdResponse] = js.native
     def describeAccountCustomization(params: DescribeAccountCustomizationRequest): Request[DescribeAccountCustomizationResponse] = js.native
     def describeAccountSettings(params: DescribeAccountSettingsRequest): Request[DescribeAccountSettingsResponse] = js.native
+    def describeAccountSubscription(params: DescribeAccountSubscriptionRequest): Request[DescribeAccountSubscriptionResponse] = js.native
     def describeAnalysis(params: DescribeAnalysisRequest): Request[DescribeAnalysisResponse] = js.native
+    def describeAnalysisDefinition(params: DescribeAnalysisDefinitionRequest): Request[DescribeAnalysisDefinitionResponse] = js.native
     def describeAnalysisPermissions(params: DescribeAnalysisPermissionsRequest): Request[DescribeAnalysisPermissionsResponse] = js.native
     def describeDashboard(params: DescribeDashboardRequest): Request[DescribeDashboardResponse] = js.native
+    def describeDashboardDefinition(params: DescribeDashboardDefinitionRequest): Request[DescribeDashboardDefinitionResponse] = js.native
     def describeDashboardPermissions(params: DescribeDashboardPermissionsRequest): Request[DescribeDashboardPermissionsResponse] = js.native
     def describeDataSet(params: DescribeDataSetRequest): Request[DescribeDataSetResponse] = js.native
     def describeDataSetPermissions(params: DescribeDataSetPermissionsRequest): Request[DescribeDataSetPermissionsResponse] = js.native
@@ -337,12 +513,14 @@ package object quicksight {
     def describeFolderPermissions(params: DescribeFolderPermissionsRequest): Request[DescribeFolderPermissionsResponse] = js.native
     def describeFolderResolvedPermissions(params: DescribeFolderResolvedPermissionsRequest): Request[DescribeFolderResolvedPermissionsResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
+    def describeGroupMembership(params: DescribeGroupMembershipRequest): Request[DescribeGroupMembershipResponse] = js.native
     def describeIAMPolicyAssignment(params: DescribeIAMPolicyAssignmentRequest): Request[DescribeIAMPolicyAssignmentResponse] = js.native
     def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse] = js.native
     def describeIpRestriction(params: DescribeIpRestrictionRequest): Request[DescribeIpRestrictionResponse] = js.native
     def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
     def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse] = js.native
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
+    def describeTemplateDefinition(params: DescribeTemplateDefinitionRequest): Request[DescribeTemplateDefinitionResponse] = js.native
     def describeTemplatePermissions(params: DescribeTemplatePermissionsRequest): Request[DescribeTemplatePermissionsResponse] = js.native
     def describeTheme(params: DescribeThemeRequest): Request[DescribeThemeResponse] = js.native
     def describeThemeAlias(params: DescribeThemeAliasRequest): Request[DescribeThemeAliasResponse] = js.native
@@ -378,7 +556,10 @@ package object quicksight {
     def restoreAnalysis(params: RestoreAnalysisRequest): Request[RestoreAnalysisResponse] = js.native
     def searchAnalyses(params: SearchAnalysesRequest): Request[SearchAnalysesResponse] = js.native
     def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse] = js.native
+    def searchDataSets(params: SearchDataSetsRequest): Request[SearchDataSetsResponse] = js.native
+    def searchDataSources(params: SearchDataSourcesRequest): Request[SearchDataSourcesResponse] = js.native
     def searchFolders(params: SearchFoldersRequest): Request[SearchFoldersResponse] = js.native
+    def searchGroups(params: SearchGroupsRequest): Request[SearchGroupsResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccountCustomization(params: UpdateAccountCustomizationRequest): Request[UpdateAccountCustomizationResponse] = js.native
@@ -397,6 +578,7 @@ package object quicksight {
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
     def updateIAMPolicyAssignment(params: UpdateIAMPolicyAssignmentRequest): Request[UpdateIAMPolicyAssignmentResponse] = js.native
     def updateIpRestriction(params: UpdateIpRestrictionRequest): Request[UpdateIpRestrictionResponse] = js.native
+    def updatePublicSharingSettings(params: UpdatePublicSharingSettingsRequest): Request[UpdatePublicSharingSettingsResponse] = js.native
     def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse] = js.native
     def updateTemplateAlias(params: UpdateTemplateAliasRequest): Request[UpdateTemplateAliasResponse] = js.native
     def updateTemplatePermissions(params: UpdateTemplatePermissionsRequest): Request[UpdateTemplatePermissionsResponse] = js.native
@@ -432,6 +614,36 @@ package object quicksight {
     }
   }
 
+  /** A structure that contains the following account information elements: * Your Amazon QuickSight account name. * The edition of Amazon QuickSight that your account is using. * The notification email address that is associated with the Amazon QuickSight account. * The authentication type of the Amazon QuickSight account. * The status of the Amazon QuickSight account's subscription.
+    */
+  @js.native
+  trait AccountInfo extends js.Object {
+    var AccountName: js.UndefOr[String]
+    var AccountSubscriptionStatus: js.UndefOr[String]
+    var AuthenticationType: js.UndefOr[String]
+    var Edition: js.UndefOr[Edition]
+    var NotificationEmail: js.UndefOr[String]
+  }
+
+  object AccountInfo {
+    @inline
+    def apply(
+        AccountName: js.UndefOr[String] = js.undefined,
+        AccountSubscriptionStatus: js.UndefOr[String] = js.undefined,
+        AuthenticationType: js.UndefOr[String] = js.undefined,
+        Edition: js.UndefOr[Edition] = js.undefined,
+        NotificationEmail: js.UndefOr[String] = js.undefined
+    ): AccountInfo = {
+      val __obj = js.Dynamic.literal()
+      AccountName.foreach(__v => __obj.updateDynamic("AccountName")(__v.asInstanceOf[js.Any]))
+      AccountSubscriptionStatus.foreach(__v => __obj.updateDynamic("AccountSubscriptionStatus")(__v.asInstanceOf[js.Any]))
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
+      Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
+      NotificationEmail.foreach(__v => __obj.updateDynamic("NotificationEmail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountInfo]
+    }
+  }
+
   /** The Amazon QuickSight settings associated with your Amazon Web Services account.
     */
   @js.native
@@ -440,6 +652,8 @@ package object quicksight {
     var DefaultNamespace: js.UndefOr[Namespace]
     var Edition: js.UndefOr[Edition]
     var NotificationEmail: js.UndefOr[String]
+    var PublicSharingEnabled: js.UndefOr[Boolean]
+    var TerminationProtectionEnabled: js.UndefOr[Boolean]
   }
 
   object AccountSettings {
@@ -448,13 +662,17 @@ package object quicksight {
         AccountName: js.UndefOr[String] = js.undefined,
         DefaultNamespace: js.UndefOr[Namespace] = js.undefined,
         Edition: js.UndefOr[Edition] = js.undefined,
-        NotificationEmail: js.UndefOr[String] = js.undefined
+        NotificationEmail: js.UndefOr[String] = js.undefined,
+        PublicSharingEnabled: js.UndefOr[Boolean] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[Boolean] = js.undefined
     ): AccountSettings = {
       val __obj = js.Dynamic.literal()
       AccountName.foreach(__v => __obj.updateDynamic("AccountName")(__v.asInstanceOf[js.Any]))
       DefaultNamespace.foreach(__v => __obj.updateDynamic("DefaultNamespace")(__v.asInstanceOf[js.Any]))
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
       NotificationEmail.foreach(__v => __obj.updateDynamic("NotificationEmail")(__v.asInstanceOf[js.Any]))
+      PublicSharingEnabled.foreach(__v => __obj.updateDynamic("PublicSharingEnabled")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountSettings]
     }
   }
@@ -480,7 +698,7 @@ package object quicksight {
     }
   }
 
-  /** Ad hoc (one-time) filtering option.
+  /** An ad hoc (one-time) filtering option.
     */
   @js.native
   trait AdHocFilteringOption extends js.Object {
@@ -495,6 +713,55 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       AvailabilityStatus.foreach(__v => __obj.updateDynamic("AvailabilityStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdHocFilteringOption]
+    }
+  }
+
+  /** An aggregation function aggregates values from a dimension or measure. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait AggregationFunction extends js.Object {
+    var CategoricalAggregationFunction: js.UndefOr[CategoricalAggregationFunction]
+    var DateAggregationFunction: js.UndefOr[DateAggregationFunction]
+    var NumericalAggregationFunction: js.UndefOr[NumericalAggregationFunction]
+  }
+
+  object AggregationFunction {
+    @inline
+    def apply(
+        CategoricalAggregationFunction: js.UndefOr[CategoricalAggregationFunction] = js.undefined,
+        DateAggregationFunction: js.UndefOr[DateAggregationFunction] = js.undefined,
+        NumericalAggregationFunction: js.UndefOr[NumericalAggregationFunction] = js.undefined
+    ): AggregationFunction = {
+      val __obj = js.Dynamic.literal()
+      CategoricalAggregationFunction.foreach(__v => __obj.updateDynamic("CategoricalAggregationFunction")(__v.asInstanceOf[js.Any]))
+      DateAggregationFunction.foreach(__v => __obj.updateDynamic("DateAggregationFunction")(__v.asInstanceOf[js.Any]))
+      NumericalAggregationFunction.foreach(__v => __obj.updateDynamic("NumericalAggregationFunction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregationFunction]
+    }
+  }
+
+  /** The configuration options to sort aggregated values.
+    */
+  @js.native
+  trait AggregationSortConfiguration extends js.Object {
+    var AggregationFunction: AggregationFunction
+    var Column: ColumnIdentifier
+    var SortDirection: SortDirection
+  }
+
+  object AggregationSortConfiguration {
+    @inline
+    def apply(
+        AggregationFunction: AggregationFunction,
+        Column: ColumnIdentifier,
+        SortDirection: SortDirection
+    ): AggregationSortConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "AggregationFunction" -> AggregationFunction.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any],
+        "SortDirection" -> SortDirection.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AggregationSortConfiguration]
     }
   }
 
@@ -540,7 +807,7 @@ package object quicksight {
     */
   @js.native
   trait Analysis extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSetArns: js.UndefOr[DataSetArnsList]
@@ -555,7 +822,7 @@ package object quicksight {
   object Analysis {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSetArns: js.UndefOr[DataSetArnsList] = js.undefined,
@@ -581,23 +848,83 @@ package object quicksight {
     }
   }
 
+  /** The configuration for default analysis settings.
+    */
+  @js.native
+  trait AnalysisDefaults extends js.Object {
+    var DefaultNewSheetConfiguration: DefaultNewSheetConfiguration
+  }
+
+  object AnalysisDefaults {
+    @inline
+    def apply(
+        DefaultNewSheetConfiguration: DefaultNewSheetConfiguration
+    ): AnalysisDefaults = {
+      val __obj = js.Dynamic.literal(
+        "DefaultNewSheetConfiguration" -> DefaultNewSheetConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnalysisDefaults]
+    }
+  }
+
+  /** The definition of an analysis.
+    */
+  @js.native
+  trait AnalysisDefinition extends js.Object {
+    var DataSetIdentifierDeclarations: DataSetIdentifierDeclarationList
+    var AnalysisDefaults: js.UndefOr[AnalysisDefaults]
+    var CalculatedFields: js.UndefOr[CalculatedFields]
+    var ColumnConfigurations: js.UndefOr[ColumnConfigurationList]
+    var FilterGroups: js.UndefOr[FilterGroupList]
+    var ParameterDeclarations: js.UndefOr[ParameterDeclarationList]
+    var Sheets: js.UndefOr[SheetDefinitionList]
+  }
+
+  object AnalysisDefinition {
+    @inline
+    def apply(
+        DataSetIdentifierDeclarations: DataSetIdentifierDeclarationList,
+        AnalysisDefaults: js.UndefOr[AnalysisDefaults] = js.undefined,
+        CalculatedFields: js.UndefOr[CalculatedFields] = js.undefined,
+        ColumnConfigurations: js.UndefOr[ColumnConfigurationList] = js.undefined,
+        FilterGroups: js.UndefOr[FilterGroupList] = js.undefined,
+        ParameterDeclarations: js.UndefOr[ParameterDeclarationList] = js.undefined,
+        Sheets: js.UndefOr[SheetDefinitionList] = js.undefined
+    ): AnalysisDefinition = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifierDeclarations" -> DataSetIdentifierDeclarations.asInstanceOf[js.Any]
+      )
+
+      AnalysisDefaults.foreach(__v => __obj.updateDynamic("AnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      CalculatedFields.foreach(__v => __obj.updateDynamic("CalculatedFields")(__v.asInstanceOf[js.Any]))
+      ColumnConfigurations.foreach(__v => __obj.updateDynamic("ColumnConfigurations")(__v.asInstanceOf[js.Any]))
+      FilterGroups.foreach(__v => __obj.updateDynamic("FilterGroups")(__v.asInstanceOf[js.Any]))
+      ParameterDeclarations.foreach(__v => __obj.updateDynamic("ParameterDeclarations")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalysisDefinition]
+    }
+  }
+
   /** Analysis error.
     */
   @js.native
   trait AnalysisError extends js.Object {
     var Message: js.UndefOr[NonEmptyString]
     var Type: js.UndefOr[AnalysisErrorType]
+    var ViolatedEntities: js.UndefOr[EntityList]
   }
 
   object AnalysisError {
     @inline
     def apply(
         Message: js.UndefOr[NonEmptyString] = js.undefined,
-        Type: js.UndefOr[AnalysisErrorType] = js.undefined
+        Type: js.UndefOr[AnalysisErrorType] = js.undefined,
+        ViolatedEntities: js.UndefOr[EntityList] = js.undefined
     ): AnalysisError = {
       val __obj = js.Dynamic.literal()
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ViolatedEntities.foreach(__v => __obj.updateDynamic("ViolatedEntities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalysisError]
     }
   }
@@ -670,7 +997,7 @@ package object quicksight {
     */
   @js.native
   trait AnalysisSummary extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
     var LastUpdatedTime: js.UndefOr[Timestamp]
@@ -681,7 +1008,7 @@ package object quicksight {
   object AnalysisSummary {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -699,17 +1026,38 @@ package object quicksight {
     }
   }
 
+  /** The date configuration of the filter.
+    */
+  @js.native
+  trait AnchorDateConfiguration extends js.Object {
+    var AnchorOption: js.UndefOr[AnchorOption]
+    var ParameterName: js.UndefOr[ParameterName]
+  }
+
+  object AnchorDateConfiguration {
+    @inline
+    def apply(
+        AnchorOption: js.UndefOr[AnchorOption] = js.undefined,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined
+    ): AnchorDateConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AnchorOption.foreach(__v => __obj.updateDynamic("AnchorOption")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnchorDateConfiguration]
+    }
+  }
+
   /** Information about the dashboard that you want to embed.
     */
   @js.native
   trait AnonymousUserDashboardEmbeddingConfiguration extends js.Object {
-    var InitialDashboardId: RestrictiveResourceId
+    var InitialDashboardId: ShortRestrictiveResourceId
   }
 
   object AnonymousUserDashboardEmbeddingConfiguration {
     @inline
     def apply(
-        InitialDashboardId: RestrictiveResourceId
+        InitialDashboardId: ShortRestrictiveResourceId
     ): AnonymousUserDashboardEmbeddingConfiguration = {
       val __obj = js.Dynamic.literal(
         "InitialDashboardId" -> InitialDashboardId.asInstanceOf[js.Any]
@@ -718,21 +1066,146 @@ package object quicksight {
     }
   }
 
+  /** The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.
+    */
+  @js.native
+  trait AnonymousUserDashboardVisualEmbeddingConfiguration extends js.Object {
+    var InitialDashboardVisualId: DashboardVisualId
+  }
+
+  object AnonymousUserDashboardVisualEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialDashboardVisualId: DashboardVisualId
+    ): AnonymousUserDashboardVisualEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InitialDashboardVisualId" -> InitialDashboardVisualId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnonymousUserDashboardVisualEmbeddingConfiguration]
+    }
+  }
+
   /** The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.
     */
   @js.native
   trait AnonymousUserEmbeddingExperienceConfiguration extends js.Object {
     var Dashboard: js.UndefOr[AnonymousUserDashboardEmbeddingConfiguration]
+    var DashboardVisual: js.UndefOr[AnonymousUserDashboardVisualEmbeddingConfiguration]
+    var QSearchBar: js.UndefOr[AnonymousUserQSearchBarEmbeddingConfiguration]
   }
 
   object AnonymousUserEmbeddingExperienceConfiguration {
     @inline
     def apply(
-        Dashboard: js.UndefOr[AnonymousUserDashboardEmbeddingConfiguration] = js.undefined
+        Dashboard: js.UndefOr[AnonymousUserDashboardEmbeddingConfiguration] = js.undefined,
+        DashboardVisual: js.UndefOr[AnonymousUserDashboardVisualEmbeddingConfiguration] = js.undefined,
+        QSearchBar: js.UndefOr[AnonymousUserQSearchBarEmbeddingConfiguration] = js.undefined
     ): AnonymousUserEmbeddingExperienceConfiguration = {
       val __obj = js.Dynamic.literal()
       Dashboard.foreach(__v => __obj.updateDynamic("Dashboard")(__v.asInstanceOf[js.Any]))
+      DashboardVisual.foreach(__v => __obj.updateDynamic("DashboardVisual")(__v.asInstanceOf[js.Any]))
+      QSearchBar.foreach(__v => __obj.updateDynamic("QSearchBar")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnonymousUserEmbeddingExperienceConfiguration]
+    }
+  }
+
+  /** The settings that you want to use with the Q search bar.
+    */
+  @js.native
+  trait AnonymousUserQSearchBarEmbeddingConfiguration extends js.Object {
+    var InitialTopicId: RestrictiveResourceId
+  }
+
+  object AnonymousUserQSearchBarEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialTopicId: RestrictiveResourceId
+    ): AnonymousUserQSearchBarEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InitialTopicId" -> InitialTopicId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnonymousUserQSearchBarEmbeddingConfiguration]
+    }
+  }
+
+  /** The arc axis configuration of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait ArcAxisConfiguration extends js.Object {
+    var Range: js.UndefOr[ArcAxisDisplayRange]
+    var ReserveRange: js.UndefOr[Int]
+  }
+
+  object ArcAxisConfiguration {
+    @inline
+    def apply(
+        Range: js.UndefOr[ArcAxisDisplayRange] = js.undefined,
+        ReserveRange: js.UndefOr[Int] = js.undefined
+    ): ArcAxisConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
+      ReserveRange.foreach(__v => __obj.updateDynamic("ReserveRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArcAxisConfiguration]
+    }
+  }
+
+  /** The arc axis range of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait ArcAxisDisplayRange extends js.Object {
+    var Max: js.UndefOr[Double]
+    var Min: js.UndefOr[Double]
+  }
+
+  object ArcAxisDisplayRange {
+    @inline
+    def apply(
+        Max: js.UndefOr[Double] = js.undefined,
+        Min: js.UndefOr[Double] = js.undefined
+    ): ArcAxisDisplayRange = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArcAxisDisplayRange]
+    }
+  }
+
+  /** The arc configuration of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait ArcConfiguration extends js.Object {
+    var ArcAngle: js.UndefOr[Double]
+    var ArcThickness: js.UndefOr[ArcThicknessOptions]
+  }
+
+  object ArcConfiguration {
+    @inline
+    def apply(
+        ArcAngle: js.UndefOr[Double] = js.undefined,
+        ArcThickness: js.UndefOr[ArcThicknessOptions] = js.undefined
+    ): ArcConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ArcAngle.foreach(__v => __obj.updateDynamic("ArcAngle")(__v.asInstanceOf[js.Any]))
+      ArcThickness.foreach(__v => __obj.updateDynamic("ArcThickness")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArcConfiguration]
+    }
+  }
+
+  /** The options that determine the arc thickness of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait ArcOptions extends js.Object {
+    var ArcThickness: js.UndefOr[ArcThickness]
+  }
+
+  object ArcOptions {
+    @inline
+    def apply(
+        ArcThickness: js.UndefOr[ArcThickness] = js.undefined
+    ): ArcOptions = {
+      val __obj = js.Dynamic.literal()
+      ArcThickness.foreach(__v => __obj.updateDynamic("ArcThickness")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArcOptions]
     }
   }
 
@@ -740,15 +1213,18 @@ package object quicksight {
     */
   @js.native
   trait AthenaParameters extends js.Object {
+    var RoleArn: js.UndefOr[RoleArn]
     var WorkGroup: js.UndefOr[WorkGroup]
   }
 
   object AthenaParameters {
     @inline
     def apply(
+        RoleArn: js.UndefOr[RoleArn] = js.undefined,
         WorkGroup: js.UndefOr[WorkGroup] = js.undefined
     ): AthenaParameters = {
       val __obj = js.Dynamic.literal()
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       WorkGroup.foreach(__v => __obj.updateDynamic("WorkGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AthenaParameters]
     }
@@ -823,6 +1299,504 @@ package object quicksight {
     }
   }
 
+  /** The data options for an axis. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait AxisDataOptions extends js.Object {
+    var DateAxisOptions: js.UndefOr[DateAxisOptions]
+    var NumericAxisOptions: js.UndefOr[NumericAxisOptions]
+  }
+
+  object AxisDataOptions {
+    @inline
+    def apply(
+        DateAxisOptions: js.UndefOr[DateAxisOptions] = js.undefined,
+        NumericAxisOptions: js.UndefOr[NumericAxisOptions] = js.undefined
+    ): AxisDataOptions = {
+      val __obj = js.Dynamic.literal()
+      DateAxisOptions.foreach(__v => __obj.updateDynamic("DateAxisOptions")(__v.asInstanceOf[js.Any]))
+      NumericAxisOptions.foreach(__v => __obj.updateDynamic("NumericAxisOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisDataOptions]
+    }
+  }
+
+  /** The options that are saved for future extension.
+    */
+  @js.native
+  trait AxisDisplayDataDrivenRange extends js.Object
+
+  object AxisDisplayDataDrivenRange {
+    @inline
+    def apply(): AxisDisplayDataDrivenRange = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AxisDisplayDataDrivenRange]
+    }
+  }
+
+  /** The minimum and maximum setup for an axis display range.
+    */
+  @js.native
+  trait AxisDisplayMinMaxRange extends js.Object {
+    var Maximum: js.UndefOr[Double]
+    var Minimum: js.UndefOr[Double]
+  }
+
+  object AxisDisplayMinMaxRange {
+    @inline
+    def apply(
+        Maximum: js.UndefOr[Double] = js.undefined,
+        Minimum: js.UndefOr[Double] = js.undefined
+    ): AxisDisplayMinMaxRange = {
+      val __obj = js.Dynamic.literal()
+      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
+      Minimum.foreach(__v => __obj.updateDynamic("Minimum")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisDisplayMinMaxRange]
+    }
+  }
+
+  /** The display options for the axis label.
+    */
+  @js.native
+  trait AxisDisplayOptions extends js.Object {
+    var AxisLineVisibility: js.UndefOr[Visibility]
+    var AxisOffset: js.UndefOr[PixelLength]
+    var DataOptions: js.UndefOr[AxisDataOptions]
+    var GridLineVisibility: js.UndefOr[Visibility]
+    var ScrollbarOptions: js.UndefOr[ScrollBarOptions]
+    var TickLabelOptions: js.UndefOr[AxisTickLabelOptions]
+  }
+
+  object AxisDisplayOptions {
+    @inline
+    def apply(
+        AxisLineVisibility: js.UndefOr[Visibility] = js.undefined,
+        AxisOffset: js.UndefOr[PixelLength] = js.undefined,
+        DataOptions: js.UndefOr[AxisDataOptions] = js.undefined,
+        GridLineVisibility: js.UndefOr[Visibility] = js.undefined,
+        ScrollbarOptions: js.UndefOr[ScrollBarOptions] = js.undefined,
+        TickLabelOptions: js.UndefOr[AxisTickLabelOptions] = js.undefined
+    ): AxisDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      AxisLineVisibility.foreach(__v => __obj.updateDynamic("AxisLineVisibility")(__v.asInstanceOf[js.Any]))
+      AxisOffset.foreach(__v => __obj.updateDynamic("AxisOffset")(__v.asInstanceOf[js.Any]))
+      DataOptions.foreach(__v => __obj.updateDynamic("DataOptions")(__v.asInstanceOf[js.Any]))
+      GridLineVisibility.foreach(__v => __obj.updateDynamic("GridLineVisibility")(__v.asInstanceOf[js.Any]))
+      ScrollbarOptions.foreach(__v => __obj.updateDynamic("ScrollbarOptions")(__v.asInstanceOf[js.Any]))
+      TickLabelOptions.foreach(__v => __obj.updateDynamic("TickLabelOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisDisplayOptions]
+    }
+  }
+
+  /** The range setup of a numeric axis display range. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait AxisDisplayRange extends js.Object {
+    var DataDriven: js.UndefOr[AxisDisplayDataDrivenRange]
+    var MinMax: js.UndefOr[AxisDisplayMinMaxRange]
+  }
+
+  object AxisDisplayRange {
+    @inline
+    def apply(
+        DataDriven: js.UndefOr[AxisDisplayDataDrivenRange] = js.undefined,
+        MinMax: js.UndefOr[AxisDisplayMinMaxRange] = js.undefined
+    ): AxisDisplayRange = {
+      val __obj = js.Dynamic.literal()
+      DataDriven.foreach(__v => __obj.updateDynamic("DataDriven")(__v.asInstanceOf[js.Any]))
+      MinMax.foreach(__v => __obj.updateDynamic("MinMax")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisDisplayRange]
+    }
+  }
+
+  /** The label options for a chart axis. You must specify the field that the label is targeted to.
+    */
+  @js.native
+  trait AxisLabelOptions extends js.Object {
+    var ApplyTo: js.UndefOr[AxisLabelReferenceOptions]
+    var CustomLabel: js.UndefOr[String]
+    var FontConfiguration: js.UndefOr[FontConfiguration]
+  }
+
+  object AxisLabelOptions {
+    @inline
+    def apply(
+        ApplyTo: js.UndefOr[AxisLabelReferenceOptions] = js.undefined,
+        CustomLabel: js.UndefOr[String] = js.undefined,
+        FontConfiguration: js.UndefOr[FontConfiguration] = js.undefined
+    ): AxisLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      ApplyTo.foreach(__v => __obj.updateDynamic("ApplyTo")(__v.asInstanceOf[js.Any]))
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      FontConfiguration.foreach(__v => __obj.updateDynamic("FontConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisLabelOptions]
+    }
+  }
+
+  /** The reference that specifies where the axis label is applied to.
+    */
+  @js.native
+  trait AxisLabelReferenceOptions extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+  }
+
+  object AxisLabelReferenceOptions {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId
+    ): AxisLabelReferenceOptions = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AxisLabelReferenceOptions]
+    }
+  }
+
+  /** The liner axis scale setup. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait AxisLinearScale extends js.Object {
+    var StepCount: js.UndefOr[Int]
+    var StepSize: js.UndefOr[Double]
+  }
+
+  object AxisLinearScale {
+    @inline
+    def apply(
+        StepCount: js.UndefOr[Int] = js.undefined,
+        StepSize: js.UndefOr[Double] = js.undefined
+    ): AxisLinearScale = {
+      val __obj = js.Dynamic.literal()
+      StepCount.foreach(__v => __obj.updateDynamic("StepCount")(__v.asInstanceOf[js.Any]))
+      StepSize.foreach(__v => __obj.updateDynamic("StepSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisLinearScale]
+    }
+  }
+
+  /** The logarithmic axis scale setup.
+    */
+  @js.native
+  trait AxisLogarithmicScale extends js.Object {
+    var Base: js.UndefOr[Double]
+  }
+
+  object AxisLogarithmicScale {
+    @inline
+    def apply(
+        Base: js.UndefOr[Double] = js.undefined
+    ): AxisLogarithmicScale = {
+      val __obj = js.Dynamic.literal()
+      Base.foreach(__v => __obj.updateDynamic("Base")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisLogarithmicScale]
+    }
+  }
+
+  /** The scale setup options for a numeric axis display. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait AxisScale extends js.Object {
+    var Linear: js.UndefOr[AxisLinearScale]
+    var Logarithmic: js.UndefOr[AxisLogarithmicScale]
+  }
+
+  object AxisScale {
+    @inline
+    def apply(
+        Linear: js.UndefOr[AxisLinearScale] = js.undefined,
+        Logarithmic: js.UndefOr[AxisLogarithmicScale] = js.undefined
+    ): AxisScale = {
+      val __obj = js.Dynamic.literal()
+      Linear.foreach(__v => __obj.updateDynamic("Linear")(__v.asInstanceOf[js.Any]))
+      Logarithmic.foreach(__v => __obj.updateDynamic("Logarithmic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisScale]
+    }
+  }
+
+  /** The tick label options of an axis.
+    */
+  @js.native
+  trait AxisTickLabelOptions extends js.Object {
+    var LabelOptions: js.UndefOr[LabelOptions]
+    var RotationAngle: js.UndefOr[Double]
+  }
+
+  object AxisTickLabelOptions {
+    @inline
+    def apply(
+        LabelOptions: js.UndefOr[LabelOptions] = js.undefined,
+        RotationAngle: js.UndefOr[Double] = js.undefined
+    ): AxisTickLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      LabelOptions.foreach(__v => __obj.updateDynamic("LabelOptions")(__v.asInstanceOf[js.Any]))
+      RotationAngle.foreach(__v => __obj.updateDynamic("RotationAngle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AxisTickLabelOptions]
+    }
+  }
+
+  /** The aggregated field wells of a bar chart.
+    */
+  @js.native
+  trait BarChartAggregatedFieldWells extends js.Object {
+    var Category: js.UndefOr[DimensionFieldList]
+    var Colors: js.UndefOr[DimensionFieldList]
+    var SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object BarChartAggregatedFieldWells {
+    @inline
+    def apply(
+        Category: js.UndefOr[DimensionFieldList] = js.undefined,
+        Colors: js.UndefOr[DimensionFieldList] = js.undefined,
+        SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): BarChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      SmallMultiples.foreach(__v => __obj.updateDynamic("SmallMultiples")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BarChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a <code>BarChartVisual</code>.
+    */
+  @js.native
+  trait BarChartConfiguration extends js.Object {
+    var BarsArrangement: js.UndefOr[BarsArrangement]
+    var CategoryAxis: js.UndefOr[AxisDisplayOptions]
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[BarChartFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var Orientation: js.UndefOr[BarChartOrientation]
+    var ReferenceLines: js.UndefOr[ReferenceLineList]
+    var SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions]
+    var SortConfiguration: js.UndefOr[BarChartSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var ValueAxis: js.UndefOr[AxisDisplayOptions]
+    var ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object BarChartConfiguration {
+    @inline
+    def apply(
+        BarsArrangement: js.UndefOr[BarsArrangement] = js.undefined,
+        CategoryAxis: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[BarChartFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        Orientation: js.UndefOr[BarChartOrientation] = js.undefined,
+        ReferenceLines: js.UndefOr[ReferenceLineList] = js.undefined,
+        SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[BarChartSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        ValueAxis: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): BarChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BarsArrangement.foreach(__v => __obj.updateDynamic("BarsArrangement")(__v.asInstanceOf[js.Any]))
+      CategoryAxis.foreach(__v => __obj.updateDynamic("CategoryAxis")(__v.asInstanceOf[js.Any]))
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      ColorLabelOptions.foreach(__v => __obj.updateDynamic("ColorLabelOptions")(__v.asInstanceOf[js.Any]))
+      ContributionAnalysisDefaults.foreach(__v => __obj.updateDynamic("ContributionAnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      Orientation.foreach(__v => __obj.updateDynamic("Orientation")(__v.asInstanceOf[js.Any]))
+      ReferenceLines.foreach(__v => __obj.updateDynamic("ReferenceLines")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesOptions.foreach(__v => __obj.updateDynamic("SmallMultiplesOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      ValueAxis.foreach(__v => __obj.updateDynamic("ValueAxis")(__v.asInstanceOf[js.Any]))
+      ValueLabelOptions.foreach(__v => __obj.updateDynamic("ValueLabelOptions")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BarChartConfiguration]
+    }
+  }
+
+  /** The field wells of a <code>BarChartVisual</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait BarChartFieldWells extends js.Object {
+    var BarChartAggregatedFieldWells: js.UndefOr[BarChartAggregatedFieldWells]
+  }
+
+  object BarChartFieldWells {
+    @inline
+    def apply(
+        BarChartAggregatedFieldWells: js.UndefOr[BarChartAggregatedFieldWells] = js.undefined
+    ): BarChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      BarChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("BarChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BarChartFieldWells]
+    }
+  }
+
+  /** sort-configuration-description
+    */
+  @js.native
+  trait BarChartSortConfiguration extends js.Object {
+    var CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+    var ColorItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var ColorSort: js.UndefOr[FieldSortOptionsList]
+    var SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var SmallMultiplesSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object BarChartSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        ColorItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        ColorSort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        SmallMultiplesSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): BarChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimit.foreach(__v => __obj.updateDynamic("CategoryItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      ColorItemsLimit.foreach(__v => __obj.updateDynamic("ColorItemsLimit")(__v.asInstanceOf[js.Any]))
+      ColorSort.foreach(__v => __obj.updateDynamic("ColorSort")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesLimitConfiguration.foreach(__v => __obj.updateDynamic("SmallMultiplesLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesSort.foreach(__v => __obj.updateDynamic("SmallMultiplesSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BarChartSortConfiguration]
+    }
+  }
+
+  /** A bar chart. The <code>BarChartVisual</code> structure describes a visual that is a member of the bar chart family. The following charts can be described using this structure: * Horizontal bar chart * Vertical bar chart * Horizontal stacked bar chart * Vertical stacked bar chart * Horizontal stacked 100% bar chart * Vertical stacked 100% bar chart For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/bar-charts.html|Using bar charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait BarChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[BarChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object BarChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[BarChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): BarChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BarChartVisual]
+    }
+  }
+
+  /** The options that determine the bin count of a histogram.
+    */
+  @js.native
+  trait BinCountOptions extends js.Object {
+    var Value: js.UndefOr[BinCountValue]
+  }
+
+  object BinCountOptions {
+    @inline
+    def apply(
+        Value: js.UndefOr[BinCountValue] = js.undefined
+    ): BinCountOptions = {
+      val __obj = js.Dynamic.literal()
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BinCountOptions]
+    }
+  }
+
+  /** The options that determine the bin width of a histogram.
+    */
+  @js.native
+  trait BinWidthOptions extends js.Object {
+    var BinCountLimit: js.UndefOr[BinCountLimit]
+    var Value: js.UndefOr[BinWidthValue]
+  }
+
+  object BinWidthOptions {
+    @inline
+    def apply(
+        BinCountLimit: js.UndefOr[BinCountLimit] = js.undefined,
+        Value: js.UndefOr[BinWidthValue] = js.undefined
+    ): BinWidthOptions = {
+      val __obj = js.Dynamic.literal()
+      BinCountLimit.foreach(__v => __obj.updateDynamic("BinCountLimit")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BinWidthOptions]
+    }
+  }
+
+  /** The configuration of a body section.
+    */
+  @js.native
+  trait BodySectionConfiguration extends js.Object {
+    var Content: BodySectionContent
+    var SectionId: ShortRestrictiveResourceId
+    var PageBreakConfiguration: js.UndefOr[SectionPageBreakConfiguration]
+    var Style: js.UndefOr[SectionStyle]
+  }
+
+  object BodySectionConfiguration {
+    @inline
+    def apply(
+        Content: BodySectionContent,
+        SectionId: ShortRestrictiveResourceId,
+        PageBreakConfiguration: js.UndefOr[SectionPageBreakConfiguration] = js.undefined,
+        Style: js.UndefOr[SectionStyle] = js.undefined
+    ): BodySectionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Content" -> Content.asInstanceOf[js.Any],
+        "SectionId" -> SectionId.asInstanceOf[js.Any]
+      )
+
+      PageBreakConfiguration.foreach(__v => __obj.updateDynamic("PageBreakConfiguration")(__v.asInstanceOf[js.Any]))
+      Style.foreach(__v => __obj.updateDynamic("Style")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BodySectionConfiguration]
+    }
+  }
+
+  /** The configuration of content in a body section.
+    */
+  @js.native
+  trait BodySectionContent extends js.Object {
+    var Layout: js.UndefOr[SectionLayoutConfiguration]
+  }
+
+  object BodySectionContent {
+    @inline
+    def apply(
+        Layout: js.UndefOr[SectionLayoutConfiguration] = js.undefined
+    ): BodySectionContent = {
+      val __obj = js.Dynamic.literal()
+      Layout.foreach(__v => __obj.updateDynamic("Layout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BodySectionContent]
+    }
+  }
+
   /** The display options for tile borders for visuals.
     */
   @js.native
@@ -838,6 +1812,191 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       Show.foreach(__v => __obj.updateDynamic("Show")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BorderStyle]
+    }
+  }
+
+  /** The aggregated field well for a box plot.
+    */
+  @js.native
+  trait BoxPlotAggregatedFieldWells extends js.Object {
+    var GroupBy: js.UndefOr[BoxPlotDimensionFieldList]
+    var Values: js.UndefOr[BoxPlotMeasureFieldList]
+  }
+
+  object BoxPlotAggregatedFieldWells {
+    @inline
+    def apply(
+        GroupBy: js.UndefOr[BoxPlotDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[BoxPlotMeasureFieldList] = js.undefined
+    ): BoxPlotAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a <code>BoxPlotVisual</code>.
+    */
+  @js.native
+  trait BoxPlotChartConfiguration extends js.Object {
+    var BoxPlotOptions: js.UndefOr[BoxPlotOptions]
+    var CategoryAxis: js.UndefOr[AxisDisplayOptions]
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var FieldWells: js.UndefOr[BoxPlotFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ReferenceLines: js.UndefOr[ReferenceLineList]
+    var SortConfiguration: js.UndefOr[BoxPlotSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object BoxPlotChartConfiguration {
+    @inline
+    def apply(
+        BoxPlotOptions: js.UndefOr[BoxPlotOptions] = js.undefined,
+        CategoryAxis: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[BoxPlotFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ReferenceLines: js.UndefOr[ReferenceLineList] = js.undefined,
+        SortConfiguration: js.UndefOr[BoxPlotSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): BoxPlotChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BoxPlotOptions.foreach(__v => __obj.updateDynamic("BoxPlotOptions")(__v.asInstanceOf[js.Any]))
+      CategoryAxis.foreach(__v => __obj.updateDynamic("CategoryAxis")(__v.asInstanceOf[js.Any]))
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      ReferenceLines.foreach(__v => __obj.updateDynamic("ReferenceLines")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotChartConfiguration]
+    }
+  }
+
+  /** The field wells of a <code>BoxPlotVisual</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait BoxPlotFieldWells extends js.Object {
+    var BoxPlotAggregatedFieldWells: js.UndefOr[BoxPlotAggregatedFieldWells]
+  }
+
+  object BoxPlotFieldWells {
+    @inline
+    def apply(
+        BoxPlotAggregatedFieldWells: js.UndefOr[BoxPlotAggregatedFieldWells] = js.undefined
+    ): BoxPlotFieldWells = {
+      val __obj = js.Dynamic.literal()
+      BoxPlotAggregatedFieldWells.foreach(__v => __obj.updateDynamic("BoxPlotAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotFieldWells]
+    }
+  }
+
+  /** The options of a box plot visual.
+    */
+  @js.native
+  trait BoxPlotOptions extends js.Object {
+    var AllDataPointsVisibility: js.UndefOr[Visibility]
+    var OutlierVisibility: js.UndefOr[Visibility]
+    var StyleOptions: js.UndefOr[BoxPlotStyleOptions]
+  }
+
+  object BoxPlotOptions {
+    @inline
+    def apply(
+        AllDataPointsVisibility: js.UndefOr[Visibility] = js.undefined,
+        OutlierVisibility: js.UndefOr[Visibility] = js.undefined,
+        StyleOptions: js.UndefOr[BoxPlotStyleOptions] = js.undefined
+    ): BoxPlotOptions = {
+      val __obj = js.Dynamic.literal()
+      AllDataPointsVisibility.foreach(__v => __obj.updateDynamic("AllDataPointsVisibility")(__v.asInstanceOf[js.Any]))
+      OutlierVisibility.foreach(__v => __obj.updateDynamic("OutlierVisibility")(__v.asInstanceOf[js.Any]))
+      StyleOptions.foreach(__v => __obj.updateDynamic("StyleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotOptions]
+    }
+  }
+
+  /** The sort configuration of a <code>BoxPlotVisual</code>.
+    */
+  @js.native
+  trait BoxPlotSortConfiguration extends js.Object {
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+    var PaginationConfiguration: js.UndefOr[PaginationConfiguration]
+  }
+
+  object BoxPlotSortConfiguration {
+    @inline
+    def apply(
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        PaginationConfiguration: js.UndefOr[PaginationConfiguration] = js.undefined
+    ): BoxPlotSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      PaginationConfiguration.foreach(__v => __obj.updateDynamic("PaginationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotSortConfiguration]
+    }
+  }
+
+  /** The style options of the box plot.
+    */
+  @js.native
+  trait BoxPlotStyleOptions extends js.Object {
+    var FillStyle: js.UndefOr[BoxPlotFillStyle]
+  }
+
+  object BoxPlotStyleOptions {
+    @inline
+    def apply(
+        FillStyle: js.UndefOr[BoxPlotFillStyle] = js.undefined
+    ): BoxPlotStyleOptions = {
+      val __obj = js.Dynamic.literal()
+      FillStyle.foreach(__v => __obj.updateDynamic("FillStyle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotStyleOptions]
+    }
+  }
+
+  /** A box plot. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html|Using box plots]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait BoxPlotVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[BoxPlotChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object BoxPlotVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[BoxPlotChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): BoxPlotVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BoxPlotVisual]
     }
   }
 
@@ -863,6 +2022,53 @@ package object quicksight {
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CalculatedColumn]
+    }
+  }
+
+  /** The calculated field of an analysis.
+    */
+  @js.native
+  trait CalculatedField extends js.Object {
+    var DataSetIdentifier: DataSetIdentifier
+    var Expression: Expression
+    var Name: ColumnName
+  }
+
+  object CalculatedField {
+    @inline
+    def apply(
+        DataSetIdentifier: DataSetIdentifier,
+        Expression: Expression,
+        Name: ColumnName
+    ): CalculatedField = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifier" -> DataSetIdentifier.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CalculatedField]
+    }
+  }
+
+  /** The table calculation measure field for pivot tables.
+    */
+  @js.native
+  trait CalculatedMeasureField extends js.Object {
+    var Expression: Expression
+    var FieldId: FieldId
+  }
+
+  object CalculatedMeasureField {
+    @inline
+    def apply(
+        Expression: Expression,
+        FieldId: FieldId
+    ): CalculatedMeasureField = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CalculatedMeasureField]
     }
   }
 
@@ -914,6 +2120,45 @@ package object quicksight {
     }
   }
 
+  /** The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.
+    */
+  @js.native
+  trait CascadingControlConfiguration extends js.Object {
+    var SourceControls: js.UndefOr[CascadingControlSourceList]
+  }
+
+  object CascadingControlConfiguration {
+    @inline
+    def apply(
+        SourceControls: js.UndefOr[CascadingControlSourceList] = js.undefined
+    ): CascadingControlConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SourceControls.foreach(__v => __obj.updateDynamic("SourceControls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CascadingControlConfiguration]
+    }
+  }
+
+  /** The source controls that are used in a <code>CascadingControlConfiguration</code>.
+    */
+  @js.native
+  trait CascadingControlSource extends js.Object {
+    var ColumnToMatch: js.UndefOr[ColumnIdentifier]
+    var SourceSheetControlId: js.UndefOr[String]
+  }
+
+  object CascadingControlSource {
+    @inline
+    def apply(
+        ColumnToMatch: js.UndefOr[ColumnIdentifier] = js.undefined,
+        SourceSheetControlId: js.UndefOr[String] = js.undefined
+    ): CascadingControlSource = {
+      val __obj = js.Dynamic.literal()
+      ColumnToMatch.foreach(__v => __obj.updateDynamic("ColumnToMatch")(__v.asInstanceOf[js.Any]))
+      SourceSheetControlId.foreach(__v => __obj.updateDynamic("SourceSheetControlId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CascadingControlSource]
+    }
+  }
+
   /** A transform operation that casts a column to a different type.
     */
   @js.native
@@ -937,6 +2182,248 @@ package object quicksight {
 
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CastColumnTypeOperation]
+    }
+  }
+
+  /** The dimension type field with categorical type columns..
+    */
+  @js.native
+  trait CategoricalDimensionField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var FormatConfiguration: js.UndefOr[StringFormatConfiguration]
+    var HierarchyId: js.UndefOr[HierarchyId]
+  }
+
+  object CategoricalDimensionField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        FormatConfiguration: js.UndefOr[StringFormatConfiguration] = js.undefined,
+        HierarchyId: js.UndefOr[HierarchyId] = js.undefined
+    ): CategoricalDimensionField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      HierarchyId.foreach(__v => __obj.updateDynamic("HierarchyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CategoricalDimensionField]
+    }
+  }
+
+  /** The measure type field with categorical type columns.
+    */
+  @js.native
+  trait CategoricalMeasureField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var AggregationFunction: js.UndefOr[CategoricalAggregationFunction]
+    var FormatConfiguration: js.UndefOr[StringFormatConfiguration]
+  }
+
+  object CategoricalMeasureField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        AggregationFunction: js.UndefOr[CategoricalAggregationFunction] = js.undefined,
+        FormatConfiguration: js.UndefOr[StringFormatConfiguration] = js.undefined
+    ): CategoricalMeasureField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CategoricalMeasureField]
+    }
+  }
+
+  /** The numeric equality type drill down filter.
+    */
+  @js.native
+  trait CategoryDrillDownFilter extends js.Object {
+    var CategoryValues: CategoryValueList
+    var Column: ColumnIdentifier
+  }
+
+  object CategoryDrillDownFilter {
+    @inline
+    def apply(
+        CategoryValues: CategoryValueList,
+        Column: ColumnIdentifier
+    ): CategoryDrillDownFilter = {
+      val __obj = js.Dynamic.literal(
+        "CategoryValues" -> CategoryValues.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CategoryDrillDownFilter]
+    }
+  }
+
+  /** A <code>CategoryFilter</code> filters text values. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/add-a-text-filter-data-prep.html|Adding text filters]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait CategoryFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var Configuration: js.UndefOr[CategoryFilterConfiguration]
+  }
+
+  object CategoryFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        Configuration: js.UndefOr[CategoryFilterConfiguration] = js.undefined
+    ): CategoryFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any]
+      )
+
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CategoryFilter]
+    }
+  }
+
+  /** The configuration for a <code>CategoryFilter</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait CategoryFilterConfiguration extends js.Object {
+    var CustomFilterConfiguration: js.UndefOr[CustomFilterConfiguration]
+    var CustomFilterListConfiguration: js.UndefOr[CustomFilterListConfiguration]
+    var FilterListConfiguration: js.UndefOr[FilterListConfiguration]
+  }
+
+  object CategoryFilterConfiguration {
+    @inline
+    def apply(
+        CustomFilterConfiguration: js.UndefOr[CustomFilterConfiguration] = js.undefined,
+        CustomFilterListConfiguration: js.UndefOr[CustomFilterListConfiguration] = js.undefined,
+        FilterListConfiguration: js.UndefOr[FilterListConfiguration] = js.undefined
+    ): CategoryFilterConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomFilterConfiguration.foreach(__v => __obj.updateDynamic("CustomFilterConfiguration")(__v.asInstanceOf[js.Any]))
+      CustomFilterListConfiguration.foreach(__v => __obj.updateDynamic("CustomFilterListConfiguration")(__v.asInstanceOf[js.Any]))
+      FilterListConfiguration.foreach(__v => __obj.updateDynamic("FilterListConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CategoryFilterConfiguration]
+    }
+  }
+
+  /** The label options for an axis on a chart.
+    */
+  @js.native
+  trait ChartAxisLabelOptions extends js.Object {
+    var AxisLabelOptions: js.UndefOr[AxisLabelOptionsList]
+    var SortIconVisibility: js.UndefOr[Visibility]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ChartAxisLabelOptions {
+    @inline
+    def apply(
+        AxisLabelOptions: js.UndefOr[AxisLabelOptionsList] = js.undefined,
+        SortIconVisibility: js.UndefOr[Visibility] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ChartAxisLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      AxisLabelOptions.foreach(__v => __obj.updateDynamic("AxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      SortIconVisibility.foreach(__v => __obj.updateDynamic("SortIconVisibility")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChartAxisLabelOptions]
+    }
+  }
+
+  /** The cluster marker that is a part of the cluster marker configuration.
+    */
+  @js.native
+  trait ClusterMarker extends js.Object {
+    var SimpleClusterMarker: js.UndefOr[SimpleClusterMarker]
+  }
+
+  object ClusterMarker {
+    @inline
+    def apply(
+        SimpleClusterMarker: js.UndefOr[SimpleClusterMarker] = js.undefined
+    ): ClusterMarker = {
+      val __obj = js.Dynamic.literal()
+      SimpleClusterMarker.foreach(__v => __obj.updateDynamic("SimpleClusterMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterMarker]
+    }
+  }
+
+  /** The cluster marker configuration of the geospatial map selected point style.
+    */
+  @js.native
+  trait ClusterMarkerConfiguration extends js.Object {
+    var ClusterMarker: js.UndefOr[ClusterMarker]
+  }
+
+  object ClusterMarkerConfiguration {
+    @inline
+    def apply(
+        ClusterMarker: js.UndefOr[ClusterMarker] = js.undefined
+    ): ClusterMarkerConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ClusterMarker.foreach(__v => __obj.updateDynamic("ClusterMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClusterMarkerConfiguration]
+    }
+  }
+
+  /** Determines the color scale that is applied to the visual.
+    */
+  @js.native
+  trait ColorScale extends js.Object {
+    var ColorFillType: ColorFillType
+    var Colors: ColorScaleColorList
+    var NullValueColor: js.UndefOr[DataColor]
+  }
+
+  object ColorScale {
+    @inline
+    def apply(
+        ColorFillType: ColorFillType,
+        Colors: ColorScaleColorList,
+        NullValueColor: js.UndefOr[DataColor] = js.undefined
+    ): ColorScale = {
+      val __obj = js.Dynamic.literal(
+        "ColorFillType" -> ColorFillType.asInstanceOf[js.Any],
+        "Colors" -> Colors.asInstanceOf[js.Any]
+      )
+
+      NullValueColor.foreach(__v => __obj.updateDynamic("NullValueColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColorScale]
+    }
+  }
+
+  /** The general configuration of a column.
+    */
+  @js.native
+  trait ColumnConfiguration extends js.Object {
+    var Column: ColumnIdentifier
+    var FormatConfiguration: js.UndefOr[FormatConfiguration]
+    var Role: js.UndefOr[ColumnRole]
+  }
+
+  object ColumnConfiguration {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FormatConfiguration: js.UndefOr[FormatConfiguration] = js.undefined,
+        Role: js.UndefOr[ColumnRole] = js.undefined
+    ): ColumnConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any]
+      )
+
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnConfiguration]
     }
   }
 
@@ -1015,6 +2502,52 @@ package object quicksight {
     }
   }
 
+  /** The option that determines the hierarchy of the fields for a visual element.
+    */
+  @js.native
+  trait ColumnHierarchy extends js.Object {
+    var DateTimeHierarchy: js.UndefOr[DateTimeHierarchy]
+    var ExplicitHierarchy: js.UndefOr[ExplicitHierarchy]
+    var PredefinedHierarchy: js.UndefOr[PredefinedHierarchy]
+  }
+
+  object ColumnHierarchy {
+    @inline
+    def apply(
+        DateTimeHierarchy: js.UndefOr[DateTimeHierarchy] = js.undefined,
+        ExplicitHierarchy: js.UndefOr[ExplicitHierarchy] = js.undefined,
+        PredefinedHierarchy: js.UndefOr[PredefinedHierarchy] = js.undefined
+    ): ColumnHierarchy = {
+      val __obj = js.Dynamic.literal()
+      DateTimeHierarchy.foreach(__v => __obj.updateDynamic("DateTimeHierarchy")(__v.asInstanceOf[js.Any]))
+      ExplicitHierarchy.foreach(__v => __obj.updateDynamic("ExplicitHierarchy")(__v.asInstanceOf[js.Any]))
+      PredefinedHierarchy.foreach(__v => __obj.updateDynamic("PredefinedHierarchy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnHierarchy]
+    }
+  }
+
+  /** A column of a data set.
+    */
+  @js.native
+  trait ColumnIdentifier extends js.Object {
+    var ColumnName: ColumnName
+    var DataSetIdentifier: DataSetIdentifier
+  }
+
+  object ColumnIdentifier {
+    @inline
+    def apply(
+        ColumnName: ColumnName,
+        DataSetIdentifier: DataSetIdentifier
+    ): ColumnIdentifier = {
+      val __obj = js.Dynamic.literal(
+        "ColumnName" -> ColumnName.asInstanceOf[js.Any],
+        "DataSetIdentifier" -> DataSetIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ColumnIdentifier]
+    }
+  }
+
   /** A rule defined to grant access on one or more restricted columns. Each dataset can have multiple rules. To create a restricted column, you add it to one or more rules. Each rule must contain at least one column and at least one user or group. To be able to see a restricted column, a user or group needs to be added to a rule for that column.
     */
   @js.native
@@ -1060,6 +2593,32 @@ package object quicksight {
     }
   }
 
+  /** The sort configuration for a column that is not used in a field well.
+    */
+  @js.native
+  trait ColumnSort extends js.Object {
+    var Direction: SortDirection
+    var SortBy: ColumnIdentifier
+    var AggregationFunction: js.UndefOr[AggregationFunction]
+  }
+
+  object ColumnSort {
+    @inline
+    def apply(
+        Direction: SortDirection,
+        SortBy: ColumnIdentifier,
+        AggregationFunction: js.UndefOr[AggregationFunction] = js.undefined
+    ): ColumnSort = {
+      val __obj = js.Dynamic.literal(
+        "Direction" -> Direction.asInstanceOf[js.Any],
+        "SortBy" -> SortBy.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnSort]
+    }
+  }
+
   /** A tag for a column in a <code> [[https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html|TagColumnOperation]] </code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
@@ -1078,6 +2637,492 @@ package object quicksight {
       ColumnDescription.foreach(__v => __obj.updateDynamic("ColumnDescription")(__v.asInstanceOf[js.Any]))
       ColumnGeographicRole.foreach(__v => __obj.updateDynamic("ColumnGeographicRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnTag]
+    }
+  }
+
+  /** The tooltip item for the columns that are not part of a field well.
+    */
+  @js.native
+  trait ColumnTooltipItem extends js.Object {
+    var Column: ColumnIdentifier
+    var Aggregation: js.UndefOr[AggregationFunction]
+    var Label: js.UndefOr[String]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ColumnTooltipItem {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        Aggregation: js.UndefOr[AggregationFunction] = js.undefined,
+        Label: js.UndefOr[String] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ColumnTooltipItem = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any]
+      )
+
+      Aggregation.foreach(__v => __obj.updateDynamic("Aggregation")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnTooltipItem]
+    }
+  }
+
+  /** The aggregated field wells of a combo chart.
+    */
+  @js.native
+  trait ComboChartAggregatedFieldWells extends js.Object {
+    var BarValues: js.UndefOr[MeasureFieldList]
+    var Category: js.UndefOr[DimensionFieldList]
+    var Colors: js.UndefOr[DimensionFieldList]
+    var LineValues: js.UndefOr[MeasureFieldList]
+  }
+
+  object ComboChartAggregatedFieldWells {
+    @inline
+    def apply(
+        BarValues: js.UndefOr[MeasureFieldList] = js.undefined,
+        Category: js.UndefOr[DimensionFieldList] = js.undefined,
+        Colors: js.UndefOr[DimensionFieldList] = js.undefined,
+        LineValues: js.UndefOr[MeasureFieldList] = js.undefined
+    ): ComboChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      BarValues.foreach(__v => __obj.updateDynamic("BarValues")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      LineValues.foreach(__v => __obj.updateDynamic("LineValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComboChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a <code>ComboChartVisual</code>.
+    */
+  @js.native
+  trait ComboChartConfiguration extends js.Object {
+    var BarDataLabels: js.UndefOr[DataLabelOptions]
+    var BarsArrangement: js.UndefOr[BarsArrangement]
+    var CategoryAxis: js.UndefOr[AxisDisplayOptions]
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var FieldWells: js.UndefOr[ComboChartFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var LineDataLabels: js.UndefOr[DataLabelOptions]
+    var PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ReferenceLines: js.UndefOr[ReferenceLineList]
+    var SecondaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var SecondaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var SortConfiguration: js.UndefOr[ComboChartSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object ComboChartConfiguration {
+    @inline
+    def apply(
+        BarDataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        BarsArrangement: js.UndefOr[BarsArrangement] = js.undefined,
+        CategoryAxis: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[ComboChartFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        LineDataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ReferenceLines: js.UndefOr[ReferenceLineList] = js.undefined,
+        SecondaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        SecondaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[ComboChartSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): ComboChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BarDataLabels.foreach(__v => __obj.updateDynamic("BarDataLabels")(__v.asInstanceOf[js.Any]))
+      BarsArrangement.foreach(__v => __obj.updateDynamic("BarsArrangement")(__v.asInstanceOf[js.Any]))
+      CategoryAxis.foreach(__v => __obj.updateDynamic("CategoryAxis")(__v.asInstanceOf[js.Any]))
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      ColorLabelOptions.foreach(__v => __obj.updateDynamic("ColorLabelOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      LineDataLabels.foreach(__v => __obj.updateDynamic("LineDataLabels")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      ReferenceLines.foreach(__v => __obj.updateDynamic("ReferenceLines")(__v.asInstanceOf[js.Any]))
+      SecondaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("SecondaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      SecondaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("SecondaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComboChartConfiguration]
+    }
+  }
+
+  /** The field wells of the visual. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ComboChartFieldWells extends js.Object {
+    var ComboChartAggregatedFieldWells: js.UndefOr[ComboChartAggregatedFieldWells]
+  }
+
+  object ComboChartFieldWells {
+    @inline
+    def apply(
+        ComboChartAggregatedFieldWells: js.UndefOr[ComboChartAggregatedFieldWells] = js.undefined
+    ): ComboChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      ComboChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("ComboChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComboChartFieldWells]
+    }
+  }
+
+  /** The sort configuration of a <code>ComboChartVisual</code>.
+    */
+  @js.native
+  trait ComboChartSortConfiguration extends js.Object {
+    var CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+    var ColorItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var ColorSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object ComboChartSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        ColorItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        ColorSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): ComboChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimit.foreach(__v => __obj.updateDynamic("CategoryItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      ColorItemsLimit.foreach(__v => __obj.updateDynamic("ColorItemsLimit")(__v.asInstanceOf[js.Any]))
+      ColorSort.foreach(__v => __obj.updateDynamic("ColorSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComboChartSortConfiguration]
+    }
+  }
+
+  /** A combo chart. The <code>ComboChartVisual</code> includes stacked bar combo charts and clustered bar combo charts For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html|Using combo charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait ComboChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[ComboChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object ComboChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[ComboChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): ComboChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComboChartVisual]
+    }
+  }
+
+  /** The comparison display configuration of a KPI or gauge chart.
+    */
+  @js.native
+  trait ComparisonConfiguration extends js.Object {
+    var ComparisonFormat: js.UndefOr[ComparisonFormatConfiguration]
+    var ComparisonMethod: js.UndefOr[ComparisonMethod]
+  }
+
+  object ComparisonConfiguration {
+    @inline
+    def apply(
+        ComparisonFormat: js.UndefOr[ComparisonFormatConfiguration] = js.undefined,
+        ComparisonMethod: js.UndefOr[ComparisonMethod] = js.undefined
+    ): ComparisonConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ComparisonFormat.foreach(__v => __obj.updateDynamic("ComparisonFormat")(__v.asInstanceOf[js.Any]))
+      ComparisonMethod.foreach(__v => __obj.updateDynamic("ComparisonMethod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComparisonConfiguration]
+    }
+  }
+
+  /** The format of the comparison. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ComparisonFormatConfiguration extends js.Object {
+    var NumberDisplayFormatConfiguration: js.UndefOr[NumberDisplayFormatConfiguration]
+    var PercentageDisplayFormatConfiguration: js.UndefOr[PercentageDisplayFormatConfiguration]
+  }
+
+  object ComparisonFormatConfiguration {
+    @inline
+    def apply(
+        NumberDisplayFormatConfiguration: js.UndefOr[NumberDisplayFormatConfiguration] = js.undefined,
+        PercentageDisplayFormatConfiguration: js.UndefOr[PercentageDisplayFormatConfiguration] = js.undefined
+    ): ComparisonFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      NumberDisplayFormatConfiguration.foreach(__v => __obj.updateDynamic("NumberDisplayFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      PercentageDisplayFormatConfiguration.foreach(__v => __obj.updateDynamic("PercentageDisplayFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ComparisonFormatConfiguration]
+    }
+  }
+
+  /** The computation union that is used in an insight visual. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait Computation extends js.Object {
+    var Forecast: js.UndefOr[ForecastComputation]
+    var GrowthRate: js.UndefOr[GrowthRateComputation]
+    var MaximumMinimum: js.UndefOr[MaximumMinimumComputation]
+    var MetricComparison: js.UndefOr[MetricComparisonComputation]
+    var PeriodOverPeriod: js.UndefOr[PeriodOverPeriodComputation]
+    var PeriodToDate: js.UndefOr[PeriodToDateComputation]
+    var TopBottomMovers: js.UndefOr[TopBottomMoversComputation]
+    var TopBottomRanked: js.UndefOr[TopBottomRankedComputation]
+    var TotalAggregation: js.UndefOr[TotalAggregationComputation]
+    var UniqueValues: js.UndefOr[UniqueValuesComputation]
+  }
+
+  object Computation {
+    @inline
+    def apply(
+        Forecast: js.UndefOr[ForecastComputation] = js.undefined,
+        GrowthRate: js.UndefOr[GrowthRateComputation] = js.undefined,
+        MaximumMinimum: js.UndefOr[MaximumMinimumComputation] = js.undefined,
+        MetricComparison: js.UndefOr[MetricComparisonComputation] = js.undefined,
+        PeriodOverPeriod: js.UndefOr[PeriodOverPeriodComputation] = js.undefined,
+        PeriodToDate: js.UndefOr[PeriodToDateComputation] = js.undefined,
+        TopBottomMovers: js.UndefOr[TopBottomMoversComputation] = js.undefined,
+        TopBottomRanked: js.UndefOr[TopBottomRankedComputation] = js.undefined,
+        TotalAggregation: js.UndefOr[TotalAggregationComputation] = js.undefined,
+        UniqueValues: js.UndefOr[UniqueValuesComputation] = js.undefined
+    ): Computation = {
+      val __obj = js.Dynamic.literal()
+      Forecast.foreach(__v => __obj.updateDynamic("Forecast")(__v.asInstanceOf[js.Any]))
+      GrowthRate.foreach(__v => __obj.updateDynamic("GrowthRate")(__v.asInstanceOf[js.Any]))
+      MaximumMinimum.foreach(__v => __obj.updateDynamic("MaximumMinimum")(__v.asInstanceOf[js.Any]))
+      MetricComparison.foreach(__v => __obj.updateDynamic("MetricComparison")(__v.asInstanceOf[js.Any]))
+      PeriodOverPeriod.foreach(__v => __obj.updateDynamic("PeriodOverPeriod")(__v.asInstanceOf[js.Any]))
+      PeriodToDate.foreach(__v => __obj.updateDynamic("PeriodToDate")(__v.asInstanceOf[js.Any]))
+      TopBottomMovers.foreach(__v => __obj.updateDynamic("TopBottomMovers")(__v.asInstanceOf[js.Any]))
+      TopBottomRanked.foreach(__v => __obj.updateDynamic("TopBottomRanked")(__v.asInstanceOf[js.Any]))
+      TotalAggregation.foreach(__v => __obj.updateDynamic("TotalAggregation")(__v.asInstanceOf[js.Any]))
+      UniqueValues.foreach(__v => __obj.updateDynamic("UniqueValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Computation]
+    }
+  }
+
+  /** The formatting configuration for the color.
+    */
+  @js.native
+  trait ConditionalFormattingColor extends js.Object {
+    var Gradient: js.UndefOr[ConditionalFormattingGradientColor]
+    var Solid: js.UndefOr[ConditionalFormattingSolidColor]
+  }
+
+  object ConditionalFormattingColor {
+    @inline
+    def apply(
+        Gradient: js.UndefOr[ConditionalFormattingGradientColor] = js.undefined,
+        Solid: js.UndefOr[ConditionalFormattingSolidColor] = js.undefined
+    ): ConditionalFormattingColor = {
+      val __obj = js.Dynamic.literal()
+      Gradient.foreach(__v => __obj.updateDynamic("Gradient")(__v.asInstanceOf[js.Any]))
+      Solid.foreach(__v => __obj.updateDynamic("Solid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingColor]
+    }
+  }
+
+  /** Determines the custom condition for an icon set.
+    */
+  @js.native
+  trait ConditionalFormattingCustomIconCondition extends js.Object {
+    var Expression: Expression
+    var IconOptions: ConditionalFormattingCustomIconOptions
+    var Color: js.UndefOr[HexColor]
+    var DisplayConfiguration: js.UndefOr[ConditionalFormattingIconDisplayConfiguration]
+  }
+
+  object ConditionalFormattingCustomIconCondition {
+    @inline
+    def apply(
+        Expression: Expression,
+        IconOptions: ConditionalFormattingCustomIconOptions,
+        Color: js.UndefOr[HexColor] = js.undefined,
+        DisplayConfiguration: js.UndefOr[ConditionalFormattingIconDisplayConfiguration] = js.undefined
+    ): ConditionalFormattingCustomIconCondition = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any],
+        "IconOptions" -> IconOptions.asInstanceOf[js.Any]
+      )
+
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      DisplayConfiguration.foreach(__v => __obj.updateDynamic("DisplayConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingCustomIconCondition]
+    }
+  }
+
+  /** Custom icon options for an icon set.
+    */
+  @js.native
+  trait ConditionalFormattingCustomIconOptions extends js.Object {
+    var Icon: js.UndefOr[Icon]
+    var UnicodeIcon: js.UndefOr[UnicodeIcon]
+  }
+
+  object ConditionalFormattingCustomIconOptions {
+    @inline
+    def apply(
+        Icon: js.UndefOr[Icon] = js.undefined,
+        UnicodeIcon: js.UndefOr[UnicodeIcon] = js.undefined
+    ): ConditionalFormattingCustomIconOptions = {
+      val __obj = js.Dynamic.literal()
+      Icon.foreach(__v => __obj.updateDynamic("Icon")(__v.asInstanceOf[js.Any]))
+      UnicodeIcon.foreach(__v => __obj.updateDynamic("UnicodeIcon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingCustomIconOptions]
+    }
+  }
+
+  /** Formatting configuration for gradient color.
+    */
+  @js.native
+  trait ConditionalFormattingGradientColor extends js.Object {
+    var Color: GradientColor
+    var Expression: Expression
+  }
+
+  object ConditionalFormattingGradientColor {
+    @inline
+    def apply(
+        Color: GradientColor,
+        Expression: Expression
+    ): ConditionalFormattingGradientColor = {
+      val __obj = js.Dynamic.literal(
+        "Color" -> Color.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConditionalFormattingGradientColor]
+    }
+  }
+
+  /** The formatting configuration for the icon.
+    */
+  @js.native
+  trait ConditionalFormattingIcon extends js.Object {
+    var CustomCondition: js.UndefOr[ConditionalFormattingCustomIconCondition]
+    var IconSet: js.UndefOr[ConditionalFormattingIconSet]
+  }
+
+  object ConditionalFormattingIcon {
+    @inline
+    def apply(
+        CustomCondition: js.UndefOr[ConditionalFormattingCustomIconCondition] = js.undefined,
+        IconSet: js.UndefOr[ConditionalFormattingIconSet] = js.undefined
+    ): ConditionalFormattingIcon = {
+      val __obj = js.Dynamic.literal()
+      CustomCondition.foreach(__v => __obj.updateDynamic("CustomCondition")(__v.asInstanceOf[js.Any]))
+      IconSet.foreach(__v => __obj.updateDynamic("IconSet")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingIcon]
+    }
+  }
+
+  /** Determines the icon display configuration.
+    */
+  @js.native
+  trait ConditionalFormattingIconDisplayConfiguration extends js.Object {
+    var IconDisplayOption: js.UndefOr[ConditionalFormattingIconDisplayOption]
+  }
+
+  object ConditionalFormattingIconDisplayConfiguration {
+    @inline
+    def apply(
+        IconDisplayOption: js.UndefOr[ConditionalFormattingIconDisplayOption] = js.undefined
+    ): ConditionalFormattingIconDisplayConfiguration = {
+      val __obj = js.Dynamic.literal()
+      IconDisplayOption.foreach(__v => __obj.updateDynamic("IconDisplayOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingIconDisplayConfiguration]
+    }
+  }
+
+  /** Formatting configuration for icon set.
+    */
+  @js.native
+  trait ConditionalFormattingIconSet extends js.Object {
+    var Expression: Expression
+    var IconSetType: js.UndefOr[ConditionalFormattingIconSetType]
+  }
+
+  object ConditionalFormattingIconSet {
+    @inline
+    def apply(
+        Expression: Expression,
+        IconSetType: js.UndefOr[ConditionalFormattingIconSetType] = js.undefined
+    ): ConditionalFormattingIconSet = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+
+      IconSetType.foreach(__v => __obj.updateDynamic("IconSetType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingIconSet]
+    }
+  }
+
+  /** Formatting configuration for solid color.
+    */
+  @js.native
+  trait ConditionalFormattingSolidColor extends js.Object {
+    var Expression: Expression
+    var Color: js.UndefOr[HexColor]
+  }
+
+  object ConditionalFormattingSolidColor {
+    @inline
+    def apply(
+        Expression: Expression,
+        Color: js.UndefOr[HexColor] = js.undefined
+    ): ConditionalFormattingSolidColor = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionalFormattingSolidColor]
+    }
+  }
+
+  /** The contribution analysis visual display for a line, pie, or bar chart.
+    */
+  @js.native
+  trait ContributionAnalysisDefault extends js.Object {
+    var ContributorDimensions: ContributorDimensionList
+    var MeasureFieldId: FieldId
+  }
+
+  object ContributionAnalysisDefault {
+    @inline
+    def apply(
+        ContributorDimensions: ContributorDimensionList,
+        MeasureFieldId: FieldId
+    ): ContributionAnalysisDefault = {
+      val __obj = js.Dynamic.literal(
+        "ContributorDimensions" -> ContributorDimensions.asInstanceOf[js.Any],
+        "MeasureFieldId" -> MeasureFieldId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContributionAnalysisDefault]
     }
   }
 
@@ -1140,13 +3185,96 @@ package object quicksight {
   }
 
   @js.native
+  trait CreateAccountSubscriptionRequest extends js.Object {
+    var AccountName: String
+    var AuthenticationMethod: AuthenticationMethodOption
+    var AwsAccountId: AwsAccountId
+    var Edition: Edition
+    var NotificationEmail: String
+    var ActiveDirectoryName: js.UndefOr[String]
+    var AdminGroup: js.UndefOr[GroupsList]
+    var AuthorGroup: js.UndefOr[GroupsList]
+    var ContactNumber: js.UndefOr[String]
+    var DirectoryId: js.UndefOr[String]
+    var EmailAddress: js.UndefOr[String]
+    var FirstName: js.UndefOr[String]
+    var LastName: js.UndefOr[String]
+    var ReaderGroup: js.UndefOr[GroupsList]
+    var Realm: js.UndefOr[String]
+  }
+
+  object CreateAccountSubscriptionRequest {
+    @inline
+    def apply(
+        AccountName: String,
+        AuthenticationMethod: AuthenticationMethodOption,
+        AwsAccountId: AwsAccountId,
+        Edition: Edition,
+        NotificationEmail: String,
+        ActiveDirectoryName: js.UndefOr[String] = js.undefined,
+        AdminGroup: js.UndefOr[GroupsList] = js.undefined,
+        AuthorGroup: js.UndefOr[GroupsList] = js.undefined,
+        ContactNumber: js.UndefOr[String] = js.undefined,
+        DirectoryId: js.UndefOr[String] = js.undefined,
+        EmailAddress: js.UndefOr[String] = js.undefined,
+        FirstName: js.UndefOr[String] = js.undefined,
+        LastName: js.UndefOr[String] = js.undefined,
+        ReaderGroup: js.UndefOr[GroupsList] = js.undefined,
+        Realm: js.UndefOr[String] = js.undefined
+    ): CreateAccountSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountName" -> AccountName.asInstanceOf[js.Any],
+        "AuthenticationMethod" -> AuthenticationMethod.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Edition" -> Edition.asInstanceOf[js.Any],
+        "NotificationEmail" -> NotificationEmail.asInstanceOf[js.Any]
+      )
+
+      ActiveDirectoryName.foreach(__v => __obj.updateDynamic("ActiveDirectoryName")(__v.asInstanceOf[js.Any]))
+      AdminGroup.foreach(__v => __obj.updateDynamic("AdminGroup")(__v.asInstanceOf[js.Any]))
+      AuthorGroup.foreach(__v => __obj.updateDynamic("AuthorGroup")(__v.asInstanceOf[js.Any]))
+      ContactNumber.foreach(__v => __obj.updateDynamic("ContactNumber")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
+      ReaderGroup.foreach(__v => __obj.updateDynamic("ReaderGroup")(__v.asInstanceOf[js.Any]))
+      Realm.foreach(__v => __obj.updateDynamic("Realm")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccountSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAccountSubscriptionResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var SignupResponse: js.UndefOr[SignupResponse]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object CreateAccountSubscriptionResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        SignupResponse: js.UndefOr[SignupResponse] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): CreateAccountSubscriptionResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      SignupResponse.foreach(__v => __obj.updateDynamic("SignupResponse")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAccountSubscriptionResponse]
+    }
+  }
+
+  @js.native
   trait CreateAnalysisRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
     var Name: AnalysisName
-    var SourceEntity: AnalysisSourceEntity
+    var Definition: js.UndefOr[AnalysisDefinition]
     var Parameters: js.UndefOr[Parameters]
     var Permissions: js.UndefOr[ResourcePermissionList]
+    var SourceEntity: js.UndefOr[AnalysisSourceEntity]
     var Tags: js.UndefOr[TagList]
     var ThemeArn: js.UndefOr[Arn]
   }
@@ -1154,24 +3282,26 @@ package object quicksight {
   object CreateAnalysisRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId,
         Name: AnalysisName,
-        SourceEntity: AnalysisSourceEntity,
+        Definition: js.UndefOr[AnalysisDefinition] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        SourceEntity: js.UndefOr[AnalysisSourceEntity] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined
     ): CreateAnalysisRequest = {
       val __obj = js.Dynamic.literal(
         "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAnalysisRequest]
@@ -1180,7 +3310,7 @@ package object quicksight {
 
   @js.native
   trait CreateAnalysisResponse extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var CreationStatus: js.UndefOr[ResourceStatus]
     var RequestId: js.UndefOr[String]
@@ -1190,7 +3320,7 @@ package object quicksight {
   object CreateAnalysisResponse {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -1228,12 +3358,13 @@ package object quicksight {
   @js.native
   trait CreateDashboardRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var Name: DashboardName
-    var SourceEntity: DashboardSourceEntity
     var DashboardPublishOptions: js.UndefOr[DashboardPublishOptions]
+    var Definition: js.UndefOr[DashboardVersionDefinition]
     var Parameters: js.UndefOr[Parameters]
     var Permissions: js.UndefOr[ResourcePermissionList]
+    var SourceEntity: js.UndefOr[DashboardSourceEntity]
     var Tags: js.UndefOr[TagList]
     var ThemeArn: js.UndefOr[Arn]
     var VersionDescription: js.UndefOr[VersionDescription]
@@ -1243,12 +3374,13 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         Name: DashboardName,
-        SourceEntity: DashboardSourceEntity,
         DashboardPublishOptions: js.UndefOr[DashboardPublishOptions] = js.undefined,
+        Definition: js.UndefOr[DashboardVersionDefinition] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        SourceEntity: js.UndefOr[DashboardSourceEntity] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
@@ -1256,13 +3388,14 @@ package object quicksight {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DashboardId" -> DashboardId.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DashboardPublishOptions.foreach(__v => __obj.updateDynamic("DashboardPublishOptions")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
@@ -1274,7 +3407,7 @@ package object quicksight {
   trait CreateDashboardResponse extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreationStatus: js.UndefOr[ResourceStatus]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var VersionArn: js.UndefOr[Arn]
@@ -1285,7 +3418,7 @@ package object quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
@@ -1859,7 +3992,7 @@ package object quicksight {
   trait CreateTemplateAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var TemplateVersionNumber: VersionNumber
   }
 
@@ -1868,7 +4001,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         TemplateVersionNumber: VersionNumber
     ): CreateTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
@@ -1906,10 +4039,11 @@ package object quicksight {
   @js.native
   trait CreateTemplateRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var SourceEntity: TemplateSourceEntity
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
+    var Definition: js.UndefOr[TemplateVersionDefinition]
     var Name: js.UndefOr[TemplateName]
     var Permissions: js.UndefOr[ResourcePermissionList]
+    var SourceEntity: js.UndefOr[TemplateSourceEntity]
     var Tags: js.UndefOr[TagList]
     var VersionDescription: js.UndefOr[VersionDescription]
   }
@@ -1918,21 +4052,23 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        SourceEntity: TemplateSourceEntity,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
+        Definition: js.UndefOr[TemplateVersionDefinition] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        SourceEntity: js.UndefOr[TemplateSourceEntity] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): CreateTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTemplateRequest]
@@ -1945,7 +4081,7 @@ package object quicksight {
     var CreationStatus: js.UndefOr[ResourceStatus]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
     var VersionArn: js.UndefOr[Arn]
   }
 
@@ -1956,7 +4092,7 @@ package object quicksight {
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
     ): CreateTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -1974,7 +4110,7 @@ package object quicksight {
   trait CreateThemeAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var ThemeVersionNumber: VersionNumber
   }
 
@@ -1983,7 +4119,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         ThemeVersionNumber: VersionNumber
     ): CreateThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
@@ -2021,10 +4157,10 @@ package object quicksight {
   @js.native
   trait CreateThemeRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var BaseThemeId: RestrictiveResourceId
+    var BaseThemeId: ShortRestrictiveResourceId
     var Configuration: ThemeConfiguration
     var Name: ThemeName
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var Permissions: js.UndefOr[ResourcePermissionList]
     var Tags: js.UndefOr[TagList]
     var VersionDescription: js.UndefOr[VersionDescription]
@@ -2034,10 +4170,10 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        BaseThemeId: RestrictiveResourceId,
+        BaseThemeId: ShortRestrictiveResourceId,
         Configuration: ThemeConfiguration,
         Name: ThemeName,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
@@ -2063,7 +4199,7 @@ package object quicksight {
     var CreationStatus: js.UndefOr[ResourceStatus]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
     var VersionArn: js.UndefOr[Arn]
   }
 
@@ -2074,7 +4210,7 @@ package object quicksight {
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
     ): CreateThemeResponse = {
       val __obj = js.Dynamic.literal()
@@ -2114,6 +4250,292 @@ package object quicksight {
     }
   }
 
+  /** The options that determine the currency display format configuration.
+    */
+  @js.native
+  trait CurrencyDisplayFormatConfiguration extends js.Object {
+    var DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration]
+    var NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration]
+    var NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration]
+    var NumberScale: js.UndefOr[NumberScale]
+    var Prefix: js.UndefOr[Prefix]
+    var SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration]
+    var Suffix: js.UndefOr[Suffix]
+    var Symbol: js.UndefOr[CurrencyCode]
+  }
+
+  object CurrencyDisplayFormatConfiguration {
+    @inline
+    def apply(
+        DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration] = js.undefined,
+        NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration] = js.undefined,
+        NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration] = js.undefined,
+        NumberScale: js.UndefOr[NumberScale] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration] = js.undefined,
+        Suffix: js.UndefOr[Suffix] = js.undefined,
+        Symbol: js.UndefOr[CurrencyCode] = js.undefined
+    ): CurrencyDisplayFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DecimalPlacesConfiguration.foreach(__v => __obj.updateDynamic("DecimalPlacesConfiguration")(__v.asInstanceOf[js.Any]))
+      NegativeValueConfiguration.foreach(__v => __obj.updateDynamic("NegativeValueConfiguration")(__v.asInstanceOf[js.Any]))
+      NullValueFormatConfiguration.foreach(__v => __obj.updateDynamic("NullValueFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumberScale.foreach(__v => __obj.updateDynamic("NumberScale")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      SeparatorConfiguration.foreach(__v => __obj.updateDynamic("SeparatorConfiguration")(__v.asInstanceOf[js.Any]))
+      Suffix.foreach(__v => __obj.updateDynamic("Suffix")(__v.asInstanceOf[js.Any]))
+      Symbol.foreach(__v => __obj.updateDynamic("Symbol")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CurrencyDisplayFormatConfiguration]
+    }
+  }
+
+  /** The filter operation that filters data included in a visual or in an entire sheet.
+    */
+  @js.native
+  trait CustomActionFilterOperation extends js.Object {
+    var SelectedFieldsConfiguration: FilterOperationSelectedFieldsConfiguration
+    var TargetVisualsConfiguration: FilterOperationTargetVisualsConfiguration
+  }
+
+  object CustomActionFilterOperation {
+    @inline
+    def apply(
+        SelectedFieldsConfiguration: FilterOperationSelectedFieldsConfiguration,
+        TargetVisualsConfiguration: FilterOperationTargetVisualsConfiguration
+    ): CustomActionFilterOperation = {
+      val __obj = js.Dynamic.literal(
+        "SelectedFieldsConfiguration" -> SelectedFieldsConfiguration.asInstanceOf[js.Any],
+        "TargetVisualsConfiguration" -> TargetVisualsConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomActionFilterOperation]
+    }
+  }
+
+  /** The navigation operation that navigates between different sheets in the same analysis. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait CustomActionNavigationOperation extends js.Object {
+    var LocalNavigationConfiguration: js.UndefOr[LocalNavigationConfiguration]
+  }
+
+  object CustomActionNavigationOperation {
+    @inline
+    def apply(
+        LocalNavigationConfiguration: js.UndefOr[LocalNavigationConfiguration] = js.undefined
+    ): CustomActionNavigationOperation = {
+      val __obj = js.Dynamic.literal()
+      LocalNavigationConfiguration.foreach(__v => __obj.updateDynamic("LocalNavigationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomActionNavigationOperation]
+    }
+  }
+
+  /** The set parameter operation that sets parameters in custom action.
+    */
+  @js.native
+  trait CustomActionSetParametersOperation extends js.Object {
+    var ParameterValueConfigurations: SetParameterValueConfigurationList
+  }
+
+  object CustomActionSetParametersOperation {
+    @inline
+    def apply(
+        ParameterValueConfigurations: SetParameterValueConfigurationList
+    ): CustomActionSetParametersOperation = {
+      val __obj = js.Dynamic.literal(
+        "ParameterValueConfigurations" -> ParameterValueConfigurations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomActionSetParametersOperation]
+    }
+  }
+
+  /** The URL operation that opens a link to another webpage.
+    */
+  @js.native
+  trait CustomActionURLOperation extends js.Object {
+    var URLTarget: URLTargetConfiguration
+    var URLTemplate: URLOperationTemplate
+  }
+
+  object CustomActionURLOperation {
+    @inline
+    def apply(
+        URLTarget: URLTargetConfiguration,
+        URLTemplate: URLOperationTemplate
+    ): CustomActionURLOperation = {
+      val __obj = js.Dynamic.literal(
+        "URLTarget" -> URLTarget.asInstanceOf[js.Any],
+        "URLTemplate" -> URLTemplate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomActionURLOperation]
+    }
+  }
+
+  /** The configuration of a <code>CustomContentVisual</code>.
+    */
+  @js.native
+  trait CustomContentConfiguration extends js.Object {
+    var ContentType: js.UndefOr[CustomContentType]
+    var ContentUrl: js.UndefOr[URLOperationTemplate]
+    var ImageScaling: js.UndefOr[CustomContentImageScalingConfiguration]
+  }
+
+  object CustomContentConfiguration {
+    @inline
+    def apply(
+        ContentType: js.UndefOr[CustomContentType] = js.undefined,
+        ContentUrl: js.UndefOr[URLOperationTemplate] = js.undefined,
+        ImageScaling: js.UndefOr[CustomContentImageScalingConfiguration] = js.undefined
+    ): CustomContentConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ContentUrl.foreach(__v => __obj.updateDynamic("ContentUrl")(__v.asInstanceOf[js.Any]))
+      ImageScaling.foreach(__v => __obj.updateDynamic("ImageScaling")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomContentConfiguration]
+    }
+  }
+
+  /** A visual that contains custom content. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html|Using custom visual content]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait CustomContentVisual extends js.Object {
+    var DataSetIdentifier: DataSetIdentifier
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[CustomContentConfiguration]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object CustomContentVisual {
+    @inline
+    def apply(
+        DataSetIdentifier: DataSetIdentifier,
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[CustomContentConfiguration] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): CustomContentVisual = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifier" -> DataSetIdentifier.asInstanceOf[js.Any],
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomContentVisual]
+    }
+  }
+
+  /** A custom filter that filters based on a single value. This filter can be partially matched.
+    */
+  @js.native
+  trait CustomFilterConfiguration extends js.Object {
+    var MatchOperator: CategoryFilterMatchOperator
+    var NullOption: FilterNullOption
+    var CategoryValue: js.UndefOr[CategoryValue]
+    var ParameterName: js.UndefOr[ParameterName]
+    var SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions]
+  }
+
+  object CustomFilterConfiguration {
+    @inline
+    def apply(
+        MatchOperator: CategoryFilterMatchOperator,
+        NullOption: FilterNullOption,
+        CategoryValue: js.UndefOr[CategoryValue] = js.undefined,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions] = js.undefined
+    ): CustomFilterConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MatchOperator" -> MatchOperator.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any]
+      )
+
+      CategoryValue.foreach(__v => __obj.updateDynamic("CategoryValue")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomFilterConfiguration]
+    }
+  }
+
+  /** A list of custom filter values.
+    */
+  @js.native
+  trait CustomFilterListConfiguration extends js.Object {
+    var MatchOperator: CategoryFilterMatchOperator
+    var NullOption: FilterNullOption
+    var CategoryValues: js.UndefOr[CategoryValueList]
+    var SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions]
+  }
+
+  object CustomFilterListConfiguration {
+    @inline
+    def apply(
+        MatchOperator: CategoryFilterMatchOperator,
+        NullOption: FilterNullOption,
+        CategoryValues: js.UndefOr[CategoryValueList] = js.undefined,
+        SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions] = js.undefined
+    ): CustomFilterListConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MatchOperator" -> MatchOperator.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any]
+      )
+
+      CategoryValues.foreach(__v => __obj.updateDynamic("CategoryValues")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomFilterListConfiguration]
+    }
+  }
+
+  /** The custom narrative options.
+    */
+  @js.native
+  trait CustomNarrativeOptions extends js.Object {
+    var Narrative: NarrativeString
+  }
+
+  object CustomNarrativeOptions {
+    @inline
+    def apply(
+        Narrative: NarrativeString
+    ): CustomNarrativeOptions = {
+      val __obj = js.Dynamic.literal(
+        "Narrative" -> Narrative.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomNarrativeOptions]
+    }
+  }
+
+  /** The customized parameter values. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait CustomParameterValues extends js.Object {
+    var DateTimeValues: js.UndefOr[DateTimeDefaultValueList]
+    var DecimalValues: js.UndefOr[DecimalDefaultValueList]
+    var IntegerValues: js.UndefOr[IntegerDefaultValueList]
+    var StringValues: js.UndefOr[StringDefaultValueList]
+  }
+
+  object CustomParameterValues {
+    @inline
+    def apply(
+        DateTimeValues: js.UndefOr[DateTimeDefaultValueList] = js.undefined,
+        DecimalValues: js.UndefOr[DecimalDefaultValueList] = js.undefined,
+        IntegerValues: js.UndefOr[IntegerDefaultValueList] = js.undefined,
+        StringValues: js.UndefOr[StringDefaultValueList] = js.undefined
+    ): CustomParameterValues = {
+      val __obj = js.Dynamic.literal()
+      DateTimeValues.foreach(__v => __obj.updateDynamic("DateTimeValues")(__v.asInstanceOf[js.Any]))
+      DecimalValues.foreach(__v => __obj.updateDynamic("DecimalValues")(__v.asInstanceOf[js.Any]))
+      IntegerValues.foreach(__v => __obj.updateDynamic("IntegerValues")(__v.asInstanceOf[js.Any]))
+      StringValues.foreach(__v => __obj.updateDynamic("StringValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomParameterValues]
+    }
+  }
+
   /** A physical table type built from the results of the custom SQL query.
     */
   @js.native
@@ -2143,13 +4565,36 @@ package object quicksight {
     }
   }
 
+  /** The configuration of custom values for the destination parameter in <code>DestinationParameterValueConfiguration</code>.
+    */
+  @js.native
+  trait CustomValuesConfiguration extends js.Object {
+    var CustomValues: CustomParameterValues
+    var IncludeNullValue: js.UndefOr[BooleanObject]
+  }
+
+  object CustomValuesConfiguration {
+    @inline
+    def apply(
+        CustomValues: CustomParameterValues,
+        IncludeNullValue: js.UndefOr[BooleanObject] = js.undefined
+    ): CustomValuesConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CustomValues" -> CustomValues.asInstanceOf[js.Any]
+      )
+
+      IncludeNullValue.foreach(__v => __obj.updateDynamic("IncludeNullValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomValuesConfiguration]
+    }
+  }
+
   /** Dashboard.
     */
   @js.native
   trait Dashboard extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var LastPublishedTime: js.UndefOr[Timestamp]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[DashboardName]
@@ -2161,7 +4606,7 @@ package object quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         LastPublishedTime: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[DashboardName] = js.undefined,
@@ -2185,17 +4630,20 @@ package object quicksight {
   trait DashboardError extends js.Object {
     var Message: js.UndefOr[NonEmptyString]
     var Type: js.UndefOr[DashboardErrorType]
+    var ViolatedEntities: js.UndefOr[EntityList]
   }
 
   object DashboardError {
     @inline
     def apply(
         Message: js.UndefOr[NonEmptyString] = js.undefined,
-        Type: js.UndefOr[DashboardErrorType] = js.undefined
+        Type: js.UndefOr[DashboardErrorType] = js.undefined,
+        ViolatedEntities: js.UndefOr[EntityList] = js.undefined
     ): DashboardError = {
       val __obj = js.Dynamic.literal()
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ViolatedEntities.foreach(__v => __obj.updateDynamic("ViolatedEntities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardError]
     }
   }
@@ -2207,6 +4655,7 @@ package object quicksight {
     var AdHocFilteringOption: js.UndefOr[AdHocFilteringOption]
     var ExportToCSVOption: js.UndefOr[ExportToCSVOption]
     var SheetControlsOption: js.UndefOr[SheetControlsOption]
+    var VisualPublishOptions: js.UndefOr[DashboardVisualPublishOptions]
   }
 
   object DashboardPublishOptions {
@@ -2214,12 +4663,14 @@ package object quicksight {
     def apply(
         AdHocFilteringOption: js.UndefOr[AdHocFilteringOption] = js.undefined,
         ExportToCSVOption: js.UndefOr[ExportToCSVOption] = js.undefined,
-        SheetControlsOption: js.UndefOr[SheetControlsOption] = js.undefined
+        SheetControlsOption: js.UndefOr[SheetControlsOption] = js.undefined,
+        VisualPublishOptions: js.UndefOr[DashboardVisualPublishOptions] = js.undefined
     ): DashboardPublishOptions = {
       val __obj = js.Dynamic.literal()
       AdHocFilteringOption.foreach(__v => __obj.updateDynamic("AdHocFilteringOption")(__v.asInstanceOf[js.Any]))
       ExportToCSVOption.foreach(__v => __obj.updateDynamic("ExportToCSVOption")(__v.asInstanceOf[js.Any]))
       SheetControlsOption.foreach(__v => __obj.updateDynamic("SheetControlsOption")(__v.asInstanceOf[js.Any]))
+      VisualPublishOptions.foreach(__v => __obj.updateDynamic("VisualPublishOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardPublishOptions]
     }
   }
@@ -2296,7 +4747,7 @@ package object quicksight {
   trait DashboardSummary extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreatedTime: js.UndefOr[Timestamp]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var LastPublishedTime: js.UndefOr[Timestamp]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[DashboardName]
@@ -2308,7 +4759,7 @@ package object quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         LastPublishedTime: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[DashboardName] = js.undefined,
@@ -2371,6 +4822,44 @@ package object quicksight {
     }
   }
 
+  /** The contents of a dashboard.
+    */
+  @js.native
+  trait DashboardVersionDefinition extends js.Object {
+    var DataSetIdentifierDeclarations: DataSetIdentifierDeclarationList
+    var AnalysisDefaults: js.UndefOr[AnalysisDefaults]
+    var CalculatedFields: js.UndefOr[CalculatedFields]
+    var ColumnConfigurations: js.UndefOr[ColumnConfigurationList]
+    var FilterGroups: js.UndefOr[FilterGroupList]
+    var ParameterDeclarations: js.UndefOr[ParameterDeclarationList]
+    var Sheets: js.UndefOr[SheetDefinitionList]
+  }
+
+  object DashboardVersionDefinition {
+    @inline
+    def apply(
+        DataSetIdentifierDeclarations: DataSetIdentifierDeclarationList,
+        AnalysisDefaults: js.UndefOr[AnalysisDefaults] = js.undefined,
+        CalculatedFields: js.UndefOr[CalculatedFields] = js.undefined,
+        ColumnConfigurations: js.UndefOr[ColumnConfigurationList] = js.undefined,
+        FilterGroups: js.UndefOr[FilterGroupList] = js.undefined,
+        ParameterDeclarations: js.UndefOr[ParameterDeclarationList] = js.undefined,
+        Sheets: js.UndefOr[SheetDefinitionList] = js.undefined
+    ): DashboardVersionDefinition = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifierDeclarations" -> DataSetIdentifierDeclarations.asInstanceOf[js.Any]
+      )
+
+      AnalysisDefaults.foreach(__v => __obj.updateDynamic("AnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      CalculatedFields.foreach(__v => __obj.updateDynamic("CalculatedFields")(__v.asInstanceOf[js.Any]))
+      ColumnConfigurations.foreach(__v => __obj.updateDynamic("ColumnConfigurations")(__v.asInstanceOf[js.Any]))
+      FilterGroups.foreach(__v => __obj.updateDynamic("FilterGroups")(__v.asInstanceOf[js.Any]))
+      ParameterDeclarations.foreach(__v => __obj.updateDynamic("ParameterDeclarations")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashboardVersionDefinition]
+    }
+  }
+
   /** Dashboard version summary.
     */
   @js.native
@@ -2404,6 +4893,70 @@ package object quicksight {
     }
   }
 
+  /** A structure that contains the following elements: * The <code>DashboardId</code> of the dashboard that has the visual that you want to embed. * The <code>SheetId</code> of the sheet that has the visual that you want to embed. * The <code>VisualId</code> of the visual that you want to embed. The <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane of the visual's on-visual menu of the Amazon QuickSight console. You can also get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.
+    */
+  @js.native
+  trait DashboardVisualId extends js.Object {
+    var DashboardId: ShortRestrictiveResourceId
+    var SheetId: ShortRestrictiveResourceId
+    var VisualId: ShortRestrictiveResourceId
+  }
+
+  object DashboardVisualId {
+    @inline
+    def apply(
+        DashboardId: ShortRestrictiveResourceId,
+        SheetId: ShortRestrictiveResourceId,
+        VisualId: ShortRestrictiveResourceId
+    ): DashboardVisualId = {
+      val __obj = js.Dynamic.literal(
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any],
+        "SheetId" -> SheetId.asInstanceOf[js.Any],
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DashboardVisualId]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait DashboardVisualPublishOptions extends js.Object {
+    var ExportHiddenFieldsOption: js.UndefOr[ExportHiddenFieldsOption]
+  }
+
+  object DashboardVisualPublishOptions {
+    @inline
+    def apply(
+        ExportHiddenFieldsOption: js.UndefOr[ExportHiddenFieldsOption] = js.undefined
+    ): DashboardVisualPublishOptions = {
+      val __obj = js.Dynamic.literal()
+      ExportHiddenFieldsOption.foreach(__v => __obj.updateDynamic("ExportHiddenFieldsOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DashboardVisualPublishOptions]
+    }
+  }
+
+  /** Determines the color that is applied to a particular data value.
+    */
+  @js.native
+  trait DataColor extends js.Object {
+    var Color: js.UndefOr[HexColor]
+    var DataValue: js.UndefOr[Double]
+  }
+
+  object DataColor {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColor] = js.undefined,
+        DataValue: js.UndefOr[Double] = js.undefined
+    ): DataColor = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      DataValue.foreach(__v => __obj.updateDynamic("DataValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataColor]
+    }
+  }
+
   /** The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5.
     */
   @js.native
@@ -2425,6 +4978,201 @@ package object quicksight {
       EmptyFillColor.foreach(__v => __obj.updateDynamic("EmptyFillColor")(__v.asInstanceOf[js.Any]))
       MinMaxGradient.foreach(__v => __obj.updateDynamic("MinMaxGradient")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataColorPalette]
+    }
+  }
+
+  /** The data field series item configuration of a line chart.
+    */
+  @js.native
+  trait DataFieldSeriesItem extends js.Object {
+    var AxisBinding: AxisBinding
+    var FieldId: FieldId
+    var FieldValue: js.UndefOr[SensitiveString]
+    var Settings: js.UndefOr[LineChartSeriesSettings]
+  }
+
+  object DataFieldSeriesItem {
+    @inline
+    def apply(
+        AxisBinding: AxisBinding,
+        FieldId: FieldId,
+        FieldValue: js.UndefOr[SensitiveString] = js.undefined,
+        Settings: js.UndefOr[LineChartSeriesSettings] = js.undefined
+    ): DataFieldSeriesItem = {
+      val __obj = js.Dynamic.literal(
+        "AxisBinding" -> AxisBinding.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      FieldValue.foreach(__v => __obj.updateDynamic("FieldValue")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataFieldSeriesItem]
+    }
+  }
+
+  /** The options that determine the presentation of the data labels.
+    */
+  @js.native
+  trait DataLabelOptions extends js.Object {
+    var CategoryLabelVisibility: js.UndefOr[Visibility]
+    var DataLabelTypes: js.UndefOr[DataLabelTypes]
+    var LabelColor: js.UndefOr[HexColor]
+    var LabelContent: js.UndefOr[DataLabelContent]
+    var LabelFontConfiguration: js.UndefOr[FontConfiguration]
+    var MeasureLabelVisibility: js.UndefOr[Visibility]
+    var Overlap: js.UndefOr[DataLabelOverlap]
+    var Position: js.UndefOr[DataLabelPosition]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object DataLabelOptions {
+    @inline
+    def apply(
+        CategoryLabelVisibility: js.UndefOr[Visibility] = js.undefined,
+        DataLabelTypes: js.UndefOr[DataLabelTypes] = js.undefined,
+        LabelColor: js.UndefOr[HexColor] = js.undefined,
+        LabelContent: js.UndefOr[DataLabelContent] = js.undefined,
+        LabelFontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        MeasureLabelVisibility: js.UndefOr[Visibility] = js.undefined,
+        Overlap: js.UndefOr[DataLabelOverlap] = js.undefined,
+        Position: js.UndefOr[DataLabelPosition] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): DataLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      CategoryLabelVisibility.foreach(__v => __obj.updateDynamic("CategoryLabelVisibility")(__v.asInstanceOf[js.Any]))
+      DataLabelTypes.foreach(__v => __obj.updateDynamic("DataLabelTypes")(__v.asInstanceOf[js.Any]))
+      LabelColor.foreach(__v => __obj.updateDynamic("LabelColor")(__v.asInstanceOf[js.Any]))
+      LabelContent.foreach(__v => __obj.updateDynamic("LabelContent")(__v.asInstanceOf[js.Any]))
+      LabelFontConfiguration.foreach(__v => __obj.updateDynamic("LabelFontConfiguration")(__v.asInstanceOf[js.Any]))
+      MeasureLabelVisibility.foreach(__v => __obj.updateDynamic("MeasureLabelVisibility")(__v.asInstanceOf[js.Any]))
+      Overlap.foreach(__v => __obj.updateDynamic("Overlap")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataLabelOptions]
+    }
+  }
+
+  /** The option that determines the data label type. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait DataLabelType extends js.Object {
+    var DataPathLabelType: js.UndefOr[DataPathLabelType]
+    var FieldLabelType: js.UndefOr[FieldLabelType]
+    var MaximumLabelType: js.UndefOr[MaximumLabelType]
+    var MinimumLabelType: js.UndefOr[MinimumLabelType]
+    var RangeEndsLabelType: js.UndefOr[RangeEndsLabelType]
+  }
+
+  object DataLabelType {
+    @inline
+    def apply(
+        DataPathLabelType: js.UndefOr[DataPathLabelType] = js.undefined,
+        FieldLabelType: js.UndefOr[FieldLabelType] = js.undefined,
+        MaximumLabelType: js.UndefOr[MaximumLabelType] = js.undefined,
+        MinimumLabelType: js.UndefOr[MinimumLabelType] = js.undefined,
+        RangeEndsLabelType: js.UndefOr[RangeEndsLabelType] = js.undefined
+    ): DataLabelType = {
+      val __obj = js.Dynamic.literal()
+      DataPathLabelType.foreach(__v => __obj.updateDynamic("DataPathLabelType")(__v.asInstanceOf[js.Any]))
+      FieldLabelType.foreach(__v => __obj.updateDynamic("FieldLabelType")(__v.asInstanceOf[js.Any]))
+      MaximumLabelType.foreach(__v => __obj.updateDynamic("MaximumLabelType")(__v.asInstanceOf[js.Any]))
+      MinimumLabelType.foreach(__v => __obj.updateDynamic("MinimumLabelType")(__v.asInstanceOf[js.Any]))
+      RangeEndsLabelType.foreach(__v => __obj.updateDynamic("RangeEndsLabelType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataLabelType]
+    }
+  }
+
+  /** The color map that determines the color options for a particular element.
+    */
+  @js.native
+  trait DataPathColor extends js.Object {
+    var Color: HexColor
+    var Element: DataPathValue
+    var TimeGranularity: js.UndefOr[TimeGranularity]
+  }
+
+  object DataPathColor {
+    @inline
+    def apply(
+        Color: HexColor,
+        Element: DataPathValue,
+        TimeGranularity: js.UndefOr[TimeGranularity] = js.undefined
+    ): DataPathColor = {
+      val __obj = js.Dynamic.literal(
+        "Color" -> Color.asInstanceOf[js.Any],
+        "Element" -> Element.asInstanceOf[js.Any]
+      )
+
+      TimeGranularity.foreach(__v => __obj.updateDynamic("TimeGranularity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataPathColor]
+    }
+  }
+
+  /** The option that specifies individual data values for labels.
+    */
+  @js.native
+  trait DataPathLabelType extends js.Object {
+    var FieldId: js.UndefOr[FieldId]
+    var FieldValue: js.UndefOr[FieldValue]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object DataPathLabelType {
+    @inline
+    def apply(
+        FieldId: js.UndefOr[FieldId] = js.undefined,
+        FieldValue: js.UndefOr[FieldValue] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): DataPathLabelType = {
+      val __obj = js.Dynamic.literal()
+      FieldId.foreach(__v => __obj.updateDynamic("FieldId")(__v.asInstanceOf[js.Any]))
+      FieldValue.foreach(__v => __obj.updateDynamic("FieldValue")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataPathLabelType]
+    }
+  }
+
+  /** Allows data paths to be sorted by a specific data value.
+    */
+  @js.native
+  trait DataPathSort extends js.Object {
+    var Direction: SortDirection
+    var SortPaths: DataPathValueList
+  }
+
+  object DataPathSort {
+    @inline
+    def apply(
+        Direction: SortDirection,
+        SortPaths: DataPathValueList
+    ): DataPathSort = {
+      val __obj = js.Dynamic.literal(
+        "Direction" -> Direction.asInstanceOf[js.Any],
+        "SortPaths" -> SortPaths.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataPathSort]
+    }
+  }
+
+  /** The data path that needs to be sorted.
+    */
+  @js.native
+  trait DataPathValue extends js.Object {
+    var FieldId: FieldId
+    var FieldValue: FieldValue
+  }
+
+  object DataPathValue {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        FieldValue: FieldValue
+    ): DataPathValue = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any],
+        "FieldValue" -> FieldValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataPathValue]
     }
   }
 
@@ -2515,6 +5263,28 @@ package object quicksight {
     }
   }
 
+  /** A data set.
+    */
+  @js.native
+  trait DataSetIdentifierDeclaration extends js.Object {
+    var DataSetArn: Arn
+    var Identifier: DataSetIdentifier
+  }
+
+  object DataSetIdentifierDeclaration {
+    @inline
+    def apply(
+        DataSetArn: Arn,
+        Identifier: DataSetIdentifier
+    ): DataSetIdentifierDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "DataSetArn" -> DataSetArn.asInstanceOf[js.Any],
+        "Identifier" -> Identifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataSetIdentifierDeclaration]
+    }
+  }
+
   /** Dataset reference.
     */
   @js.native
@@ -2552,6 +5322,31 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       ColumnSchemaList.foreach(__v => __obj.updateDynamic("ColumnSchemaList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSetSchema]
+    }
+  }
+
+  /** A filter that you apply when searching for datasets.
+    */
+  @js.native
+  trait DataSetSearchFilter extends js.Object {
+    var Name: DataSetFilterAttribute
+    var Operator: FilterOperator
+    var Value: String
+  }
+
+  object DataSetSearchFilter {
+    @inline
+    def apply(
+        Name: DataSetFilterAttribute,
+        Operator: FilterOperator,
+        Value: String
+    ): DataSetSearchFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataSetSearchFilter]
     }
   }
 
@@ -2630,6 +5425,7 @@ package object quicksight {
     var ErrorInfo: js.UndefOr[DataSourceErrorInfo]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[ResourceName]
+    var SecretArn: js.UndefOr[SecretArn]
     var SslProperties: js.UndefOr[SslProperties]
     var Status: js.UndefOr[ResourceStatus]
     var Type: js.UndefOr[DataSourceType]
@@ -2647,6 +5443,7 @@ package object quicksight {
         ErrorInfo: js.UndefOr[DataSourceErrorInfo] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined,
+        SecretArn: js.UndefOr[SecretArn] = js.undefined,
         SslProperties: js.UndefOr[SslProperties] = js.undefined,
         Status: js.UndefOr[ResourceStatus] = js.undefined,
         Type: js.UndefOr[DataSourceType] = js.undefined,
@@ -2661,6 +5458,7 @@ package object quicksight {
       ErrorInfo.foreach(__v => __obj.updateDynamic("ErrorInfo")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       SslProperties.foreach(__v => __obj.updateDynamic("SslProperties")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
@@ -2675,17 +5473,20 @@ package object quicksight {
   trait DataSourceCredentials extends js.Object {
     var CopySourceArn: js.UndefOr[CopySourceArn]
     var CredentialPair: js.UndefOr[CredentialPair]
+    var SecretArn: js.UndefOr[SecretArn]
   }
 
   object DataSourceCredentials {
     @inline
     def apply(
         CopySourceArn: js.UndefOr[CopySourceArn] = js.undefined,
-        CredentialPair: js.UndefOr[CredentialPair] = js.undefined
+        CredentialPair: js.UndefOr[CredentialPair] = js.undefined,
+        SecretArn: js.UndefOr[SecretArn] = js.undefined
     ): DataSourceCredentials = {
       val __obj = js.Dynamic.literal()
       CopySourceArn.foreach(__v => __obj.updateDynamic("CopySourceArn")(__v.asInstanceOf[js.Any]))
       CredentialPair.foreach(__v => __obj.updateDynamic("CredentialPair")(__v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceCredentials]
     }
   }
@@ -2721,6 +5522,7 @@ package object quicksight {
     var AuroraParameters: js.UndefOr[AuroraParameters]
     var AuroraPostgreSqlParameters: js.UndefOr[AuroraPostgreSqlParameters]
     var AwsIotAnalyticsParameters: js.UndefOr[AwsIotAnalyticsParameters]
+    var DatabricksParameters: js.UndefOr[DatabricksParameters]
     var ExasolParameters: js.UndefOr[ExasolParameters]
     var JiraParameters: js.UndefOr[JiraParameters]
     var MariaDbParameters: js.UndefOr[MariaDbParameters]
@@ -2748,6 +5550,7 @@ package object quicksight {
         AuroraParameters: js.UndefOr[AuroraParameters] = js.undefined,
         AuroraPostgreSqlParameters: js.UndefOr[AuroraPostgreSqlParameters] = js.undefined,
         AwsIotAnalyticsParameters: js.UndefOr[AwsIotAnalyticsParameters] = js.undefined,
+        DatabricksParameters: js.UndefOr[DatabricksParameters] = js.undefined,
         ExasolParameters: js.UndefOr[ExasolParameters] = js.undefined,
         JiraParameters: js.UndefOr[JiraParameters] = js.undefined,
         MariaDbParameters: js.UndefOr[MariaDbParameters] = js.undefined,
@@ -2772,6 +5575,7 @@ package object quicksight {
       AuroraParameters.foreach(__v => __obj.updateDynamic("AuroraParameters")(__v.asInstanceOf[js.Any]))
       AuroraPostgreSqlParameters.foreach(__v => __obj.updateDynamic("AuroraPostgreSqlParameters")(__v.asInstanceOf[js.Any]))
       AwsIotAnalyticsParameters.foreach(__v => __obj.updateDynamic("AwsIotAnalyticsParameters")(__v.asInstanceOf[js.Any]))
+      DatabricksParameters.foreach(__v => __obj.updateDynamic("DatabricksParameters")(__v.asInstanceOf[js.Any]))
       ExasolParameters.foreach(__v => __obj.updateDynamic("ExasolParameters")(__v.asInstanceOf[js.Any]))
       JiraParameters.foreach(__v => __obj.updateDynamic("JiraParameters")(__v.asInstanceOf[js.Any]))
       MariaDbParameters.foreach(__v => __obj.updateDynamic("MariaDbParameters")(__v.asInstanceOf[js.Any]))
@@ -2792,19 +5596,252 @@ package object quicksight {
     }
   }
 
+  /** A filter that you apply when searching for data sources.
+    */
+  @js.native
+  trait DataSourceSearchFilter extends js.Object {
+    var Name: DataSourceFilterAttribute
+    var Operator: FilterOperator
+    var Value: String
+  }
+
+  object DataSourceSearchFilter {
+    @inline
+    def apply(
+        Name: DataSourceFilterAttribute,
+        Operator: FilterOperator,
+        Value: String
+    ): DataSourceSearchFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DataSourceSearchFilter]
+    }
+  }
+
+  /** A <code>DataSourceSummary</code> object that returns a summary of a data source.
+    */
+  @js.native
+  trait DataSourceSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var DataSourceId: js.UndefOr[ResourceId]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[ResourceName]
+    var Type: js.UndefOr[DataSourceType]
+  }
+
+  object DataSourceSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        DataSourceId: js.UndefOr[ResourceId] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[ResourceName] = js.undefined,
+        Type: js.UndefOr[DataSourceType] = js.undefined
+    ): DataSourceSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DataSourceId.foreach(__v => __obj.updateDynamic("DataSourceId")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSourceSummary]
+    }
+  }
+
+  /** The required parameters that are needed to connect to a Databricks data source.
+    */
+  @js.native
+  trait DatabricksParameters extends js.Object {
+    var Host: Host
+    var Port: Port
+    var SqlEndpointPath: SqlEndpointPath
+  }
+
+  object DatabricksParameters {
+    @inline
+    def apply(
+        Host: Host,
+        Port: Port,
+        SqlEndpointPath: SqlEndpointPath
+    ): DatabricksParameters = {
+      val __obj = js.Dynamic.literal(
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any],
+        "SqlEndpointPath" -> SqlEndpointPath.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatabricksParameters]
+    }
+  }
+
+  /** The options that determine how a date axis is displayed.
+    */
+  @js.native
+  trait DateAxisOptions extends js.Object {
+    var MissingDateVisibility: js.UndefOr[Visibility]
+  }
+
+  object DateAxisOptions {
+    @inline
+    def apply(
+        MissingDateVisibility: js.UndefOr[Visibility] = js.undefined
+    ): DateAxisOptions = {
+      val __obj = js.Dynamic.literal()
+      MissingDateVisibility.foreach(__v => __obj.updateDynamic("MissingDateVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateAxisOptions]
+    }
+  }
+
+  /** The dimension type field with date type columns.
+    */
+  @js.native
+  trait DateDimensionField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var DateGranularity: js.UndefOr[TimeGranularity]
+    var FormatConfiguration: js.UndefOr[DateTimeFormatConfiguration]
+    var HierarchyId: js.UndefOr[HierarchyId]
+  }
+
+  object DateDimensionField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        DateGranularity: js.UndefOr[TimeGranularity] = js.undefined,
+        FormatConfiguration: js.UndefOr[DateTimeFormatConfiguration] = js.undefined,
+        HierarchyId: js.UndefOr[HierarchyId] = js.undefined
+    ): DateDimensionField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      DateGranularity.foreach(__v => __obj.updateDynamic("DateGranularity")(__v.asInstanceOf[js.Any]))
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      HierarchyId.foreach(__v => __obj.updateDynamic("HierarchyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateDimensionField]
+    }
+  }
+
+  /** The measure type field with date type columns.
+    */
+  @js.native
+  trait DateMeasureField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var AggregationFunction: js.UndefOr[DateAggregationFunction]
+    var FormatConfiguration: js.UndefOr[DateTimeFormatConfiguration]
+  }
+
+  object DateMeasureField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        AggregationFunction: js.UndefOr[DateAggregationFunction] = js.undefined,
+        FormatConfiguration: js.UndefOr[DateTimeFormatConfiguration] = js.undefined
+    ): DateMeasureField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateMeasureField]
+    }
+  }
+
+  /** The default values of the <code>DateTimeParameterDeclaration</code>.
+    */
+  @js.native
+  trait DateTimeDefaultValues extends js.Object {
+    var DynamicValue: js.UndefOr[DynamicDefaultValue]
+    var RollingDate: js.UndefOr[RollingDateConfiguration]
+    var StaticValues: js.UndefOr[DateTimeDefaultValueList]
+  }
+
+  object DateTimeDefaultValues {
+    @inline
+    def apply(
+        DynamicValue: js.UndefOr[DynamicDefaultValue] = js.undefined,
+        RollingDate: js.UndefOr[RollingDateConfiguration] = js.undefined,
+        StaticValues: js.UndefOr[DateTimeDefaultValueList] = js.undefined
+    ): DateTimeDefaultValues = {
+      val __obj = js.Dynamic.literal()
+      DynamicValue.foreach(__v => __obj.updateDynamic("DynamicValue")(__v.asInstanceOf[js.Any]))
+      RollingDate.foreach(__v => __obj.updateDynamic("RollingDate")(__v.asInstanceOf[js.Any]))
+      StaticValues.foreach(__v => __obj.updateDynamic("StaticValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimeDefaultValues]
+    }
+  }
+
+  /** Formatting configuration for <code>DateTime</code> fields.
+    */
+  @js.native
+  trait DateTimeFormatConfiguration extends js.Object {
+    var DateTimeFormat: js.UndefOr[DateTimeFormat]
+    var NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration]
+    var NumericFormatConfiguration: js.UndefOr[NumericFormatConfiguration]
+  }
+
+  object DateTimeFormatConfiguration {
+    @inline
+    def apply(
+        DateTimeFormat: js.UndefOr[DateTimeFormat] = js.undefined,
+        NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration] = js.undefined,
+        NumericFormatConfiguration: js.UndefOr[NumericFormatConfiguration] = js.undefined
+    ): DateTimeFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DateTimeFormat.foreach(__v => __obj.updateDynamic("DateTimeFormat")(__v.asInstanceOf[js.Any]))
+      NullValueFormatConfiguration.foreach(__v => __obj.updateDynamic("NullValueFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumericFormatConfiguration.foreach(__v => __obj.updateDynamic("NumericFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimeFormatConfiguration]
+    }
+  }
+
+  /** The option that determines the hierarchy of any <code>DateTime</code> fields.
+    */
+  @js.native
+  trait DateTimeHierarchy extends js.Object {
+    var HierarchyId: HierarchyId
+    var DrillDownFilters: js.UndefOr[DrillDownFilterList]
+  }
+
+  object DateTimeHierarchy {
+    @inline
+    def apply(
+        HierarchyId: HierarchyId,
+        DrillDownFilters: js.UndefOr[DrillDownFilterList] = js.undefined
+    ): DateTimeHierarchy = {
+      val __obj = js.Dynamic.literal(
+        "HierarchyId" -> HierarchyId.asInstanceOf[js.Any]
+      )
+
+      DrillDownFilters.foreach(__v => __obj.updateDynamic("DrillDownFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimeHierarchy]
+    }
+  }
+
   /** A date-time parameter.
     */
   @js.native
   trait DateTimeParameter extends js.Object {
     var Name: NonEmptyString
-    var Values: TimestampList
+    var Values: SensitiveTimestampList
   }
 
   object DateTimeParameter {
     @inline
     def apply(
         Name: NonEmptyString,
-        Values: TimestampList
+        Values: SensitiveTimestampList
     ): DateTimeParameter = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -2814,25 +5851,306 @@ package object quicksight {
     }
   }
 
+  /** A parameter declaration for the <code>DateTime</code> data type.
+    */
+  @js.native
+  trait DateTimeParameterDeclaration extends js.Object {
+    var Name: ParameterName
+    var DefaultValues: js.UndefOr[DateTimeDefaultValues]
+    var TimeGranularity: js.UndefOr[TimeGranularity]
+    var ValueWhenUnset: js.UndefOr[DateTimeValueWhenUnsetConfiguration]
+  }
+
+  object DateTimeParameterDeclaration {
+    @inline
+    def apply(
+        Name: ParameterName,
+        DefaultValues: js.UndefOr[DateTimeDefaultValues] = js.undefined,
+        TimeGranularity: js.UndefOr[TimeGranularity] = js.undefined,
+        ValueWhenUnset: js.UndefOr[DateTimeValueWhenUnsetConfiguration] = js.undefined
+    ): DateTimeParameterDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      DefaultValues.foreach(__v => __obj.updateDynamic("DefaultValues")(__v.asInstanceOf[js.Any]))
+      TimeGranularity.foreach(__v => __obj.updateDynamic("TimeGranularity")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnset.foreach(__v => __obj.updateDynamic("ValueWhenUnset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimeParameterDeclaration]
+    }
+  }
+
+  /** The display options of a control.
+    */
+  @js.native
+  trait DateTimePickerControlDisplayOptions extends js.Object {
+    var DateTimeFormat: js.UndefOr[DateTimeFormat]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object DateTimePickerControlDisplayOptions {
+    @inline
+    def apply(
+        DateTimeFormat: js.UndefOr[DateTimeFormat] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): DateTimePickerControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      DateTimeFormat.foreach(__v => __obj.updateDynamic("DateTimeFormat")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimePickerControlDisplayOptions]
+    }
+  }
+
+  /** The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.
+    */
+  @js.native
+  trait DateTimeValueWhenUnsetConfiguration extends js.Object {
+    var CustomValue: js.UndefOr[SensitiveTimestamp]
+    var ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption]
+  }
+
+  object DateTimeValueWhenUnsetConfiguration {
+    @inline
+    def apply(
+        CustomValue: js.UndefOr[SensitiveTimestamp] = js.undefined,
+        ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption] = js.undefined
+    ): DateTimeValueWhenUnsetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomValue.foreach(__v => __obj.updateDynamic("CustomValue")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnsetOption.foreach(__v => __obj.updateDynamic("ValueWhenUnsetOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DateTimeValueWhenUnsetConfiguration]
+    }
+  }
+
+  /** The default values of the <code>DecimalParameterDeclaration</code>.
+    */
+  @js.native
+  trait DecimalDefaultValues extends js.Object {
+    var DynamicValue: js.UndefOr[DynamicDefaultValue]
+    var StaticValues: js.UndefOr[DecimalDefaultValueList]
+  }
+
+  object DecimalDefaultValues {
+    @inline
+    def apply(
+        DynamicValue: js.UndefOr[DynamicDefaultValue] = js.undefined,
+        StaticValues: js.UndefOr[DecimalDefaultValueList] = js.undefined
+    ): DecimalDefaultValues = {
+      val __obj = js.Dynamic.literal()
+      DynamicValue.foreach(__v => __obj.updateDynamic("DynamicValue")(__v.asInstanceOf[js.Any]))
+      StaticValues.foreach(__v => __obj.updateDynamic("StaticValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecimalDefaultValues]
+    }
+  }
+
   /** A decimal parameter.
     */
   @js.native
   trait DecimalParameter extends js.Object {
     var Name: NonEmptyString
-    var Values: DoubleList
+    var Values: SensitiveDoubleList
   }
 
   object DecimalParameter {
     @inline
     def apply(
         Name: NonEmptyString,
-        Values: DoubleList
+        Values: SensitiveDoubleList
     ): DecimalParameter = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DecimalParameter]
+    }
+  }
+
+  /** A parameter declaration for the <code>Decimal</code> data type.
+    */
+  @js.native
+  trait DecimalParameterDeclaration extends js.Object {
+    var Name: ParameterName
+    var ParameterValueType: ParameterValueType
+    var DefaultValues: js.UndefOr[DecimalDefaultValues]
+    var ValueWhenUnset: js.UndefOr[DecimalValueWhenUnsetConfiguration]
+  }
+
+  object DecimalParameterDeclaration {
+    @inline
+    def apply(
+        Name: ParameterName,
+        ParameterValueType: ParameterValueType,
+        DefaultValues: js.UndefOr[DecimalDefaultValues] = js.undefined,
+        ValueWhenUnset: js.UndefOr[DecimalValueWhenUnsetConfiguration] = js.undefined
+    ): DecimalParameterDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParameterValueType" -> ParameterValueType.asInstanceOf[js.Any]
+      )
+
+      DefaultValues.foreach(__v => __obj.updateDynamic("DefaultValues")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnset.foreach(__v => __obj.updateDynamic("ValueWhenUnset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecimalParameterDeclaration]
+    }
+  }
+
+  /** The option that determines the decimal places configuration.
+    */
+  @js.native
+  trait DecimalPlacesConfiguration extends js.Object {
+    var DecimalPlaces: DecimalPlaces
+  }
+
+  object DecimalPlacesConfiguration {
+    @inline
+    def apply(
+        DecimalPlaces: DecimalPlaces
+    ): DecimalPlacesConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DecimalPlaces" -> DecimalPlaces.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DecimalPlacesConfiguration]
+    }
+  }
+
+  /** The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.
+    */
+  @js.native
+  trait DecimalValueWhenUnsetConfiguration extends js.Object {
+    var CustomValue: js.UndefOr[SensitiveDouble]
+    var ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption]
+  }
+
+  object DecimalValueWhenUnsetConfiguration {
+    @inline
+    def apply(
+        CustomValue: js.UndefOr[SensitiveDouble] = js.undefined,
+        ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption] = js.undefined
+    ): DecimalValueWhenUnsetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomValue.foreach(__v => __obj.updateDynamic("CustomValue")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnsetOption.foreach(__v => __obj.updateDynamic("ValueWhenUnsetOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DecimalValueWhenUnsetConfiguration]
+    }
+  }
+
+  /** The options that determine the default settings of a free-form layout configuration.
+    */
+  @js.native
+  trait DefaultFreeFormLayoutConfiguration extends js.Object {
+    var CanvasSizeOptions: FreeFormLayoutCanvasSizeOptions
+  }
+
+  object DefaultFreeFormLayoutConfiguration {
+    @inline
+    def apply(
+        CanvasSizeOptions: FreeFormLayoutCanvasSizeOptions
+    ): DefaultFreeFormLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CanvasSizeOptions" -> CanvasSizeOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DefaultFreeFormLayoutConfiguration]
+    }
+  }
+
+  /** The options that determine the default settings for a grid layout configuration.
+    */
+  @js.native
+  trait DefaultGridLayoutConfiguration extends js.Object {
+    var CanvasSizeOptions: GridLayoutCanvasSizeOptions
+  }
+
+  object DefaultGridLayoutConfiguration {
+    @inline
+    def apply(
+        CanvasSizeOptions: GridLayoutCanvasSizeOptions
+    ): DefaultGridLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CanvasSizeOptions" -> CanvasSizeOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DefaultGridLayoutConfiguration]
+    }
+  }
+
+  /** The options that determine the default settings for interactive layout configuration.
+    */
+  @js.native
+  trait DefaultInteractiveLayoutConfiguration extends js.Object {
+    var FreeForm: js.UndefOr[DefaultFreeFormLayoutConfiguration]
+    var Grid: js.UndefOr[DefaultGridLayoutConfiguration]
+  }
+
+  object DefaultInteractiveLayoutConfiguration {
+    @inline
+    def apply(
+        FreeForm: js.UndefOr[DefaultFreeFormLayoutConfiguration] = js.undefined,
+        Grid: js.UndefOr[DefaultGridLayoutConfiguration] = js.undefined
+    ): DefaultInteractiveLayoutConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FreeForm.foreach(__v => __obj.updateDynamic("FreeForm")(__v.asInstanceOf[js.Any]))
+      Grid.foreach(__v => __obj.updateDynamic("Grid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultInteractiveLayoutConfiguration]
+    }
+  }
+
+  /** The configuration for default new sheet settings.
+    */
+  @js.native
+  trait DefaultNewSheetConfiguration extends js.Object {
+    var InteractiveLayoutConfiguration: js.UndefOr[DefaultInteractiveLayoutConfiguration]
+    var PaginatedLayoutConfiguration: js.UndefOr[DefaultPaginatedLayoutConfiguration]
+    var SheetContentType: js.UndefOr[SheetContentType]
+  }
+
+  object DefaultNewSheetConfiguration {
+    @inline
+    def apply(
+        InteractiveLayoutConfiguration: js.UndefOr[DefaultInteractiveLayoutConfiguration] = js.undefined,
+        PaginatedLayoutConfiguration: js.UndefOr[DefaultPaginatedLayoutConfiguration] = js.undefined,
+        SheetContentType: js.UndefOr[SheetContentType] = js.undefined
+    ): DefaultNewSheetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      InteractiveLayoutConfiguration.foreach(__v => __obj.updateDynamic("InteractiveLayoutConfiguration")(__v.asInstanceOf[js.Any]))
+      PaginatedLayoutConfiguration.foreach(__v => __obj.updateDynamic("PaginatedLayoutConfiguration")(__v.asInstanceOf[js.Any]))
+      SheetContentType.foreach(__v => __obj.updateDynamic("SheetContentType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultNewSheetConfiguration]
+    }
+  }
+
+  /** The options that determine the default settings for a paginated layout configuration.
+    */
+  @js.native
+  trait DefaultPaginatedLayoutConfiguration extends js.Object {
+    var SectionBased: js.UndefOr[DefaultSectionBasedLayoutConfiguration]
+  }
+
+  object DefaultPaginatedLayoutConfiguration {
+    @inline
+    def apply(
+        SectionBased: js.UndefOr[DefaultSectionBasedLayoutConfiguration] = js.undefined
+    ): DefaultPaginatedLayoutConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SectionBased.foreach(__v => __obj.updateDynamic("SectionBased")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultPaginatedLayoutConfiguration]
+    }
+  }
+
+  /** The options that determine the default settings for a section-based layout configuration.
+    */
+  @js.native
+  trait DefaultSectionBasedLayoutConfiguration extends js.Object {
+    var CanvasSizeOptions: SectionBasedLayoutCanvasSizeOptions
+  }
+
+  object DefaultSectionBasedLayoutConfiguration {
+    @inline
+    def apply(
+        CanvasSizeOptions: SectionBasedLayoutCanvasSizeOptions
+    ): DefaultSectionBasedLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CanvasSizeOptions" -> CanvasSizeOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DefaultSectionBasedLayoutConfiguration]
     }
   }
 
@@ -2877,8 +6195,44 @@ package object quicksight {
   }
 
   @js.native
+  trait DeleteAccountSubscriptionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+  }
+
+  object DeleteAccountSubscriptionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId
+    ): DeleteAccountSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAccountSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAccountSubscriptionResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DeleteAccountSubscriptionResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DeleteAccountSubscriptionResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAccountSubscriptionResponse]
+    }
+  }
+
+  @js.native
   trait DeleteAnalysisRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
     var ForceDeleteWithoutRecovery: js.UndefOr[Boolean]
     var RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDays]
@@ -2887,7 +6241,7 @@ package object quicksight {
   object DeleteAnalysisRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId,
         ForceDeleteWithoutRecovery: js.UndefOr[Boolean] = js.undefined,
         RecoveryWindowInDays: js.UndefOr[RecoveryWindowInDays] = js.undefined
@@ -2905,7 +6259,7 @@ package object quicksight {
 
   @js.native
   trait DeleteAnalysisResponse extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var DeletionTime: js.UndefOr[Timestamp]
     var RequestId: js.UndefOr[String]
@@ -2915,7 +6269,7 @@ package object quicksight {
   object DeleteAnalysisResponse {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         DeletionTime: js.UndefOr[Timestamp] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -2934,7 +6288,7 @@ package object quicksight {
   @js.native
   trait DeleteDashboardRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var VersionNumber: js.UndefOr[VersionNumber]
   }
 
@@ -2942,7 +6296,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DeleteDashboardRequest = {
       val __obj = js.Dynamic.literal(
@@ -2958,7 +6312,7 @@ package object quicksight {
   @js.native
   trait DeleteDashboardResponse extends js.Object {
     var Arn: js.UndefOr[Arn]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
   }
@@ -2967,7 +6321,7 @@ package object quicksight {
     @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DeleteDashboardResponse = {
@@ -3335,7 +6689,7 @@ package object quicksight {
   trait DeleteTemplateAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
   }
 
   object DeleteTemplateAliasRequest {
@@ -3343,7 +6697,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId
+        TemplateId: ShortRestrictiveResourceId
     ): DeleteTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
         "AliasName" -> AliasName.asInstanceOf[js.Any],
@@ -3360,7 +6714,7 @@ package object quicksight {
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DeleteTemplateAliasResponse {
@@ -3370,7 +6724,7 @@ package object quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DeleteTemplateAliasResponse = {
       val __obj = js.Dynamic.literal()
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
@@ -3385,7 +6739,7 @@ package object quicksight {
   @js.native
   trait DeleteTemplateRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var VersionNumber: js.UndefOr[VersionNumber]
   }
 
@@ -3393,7 +6747,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DeleteTemplateRequest = {
       val __obj = js.Dynamic.literal(
@@ -3411,7 +6765,7 @@ package object quicksight {
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DeleteTemplateResponse {
@@ -3420,7 +6774,7 @@ package object quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DeleteTemplateResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -3435,7 +6789,7 @@ package object quicksight {
   trait DeleteThemeAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
   }
 
   object DeleteThemeAliasRequest {
@@ -3443,7 +6797,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId
+        ThemeId: ShortRestrictiveResourceId
     ): DeleteThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
         "AliasName" -> AliasName.asInstanceOf[js.Any],
@@ -3460,7 +6814,7 @@ package object quicksight {
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DeleteThemeAliasResponse {
@@ -3470,7 +6824,7 @@ package object quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DeleteThemeAliasResponse = {
       val __obj = js.Dynamic.literal()
       AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
@@ -3485,7 +6839,7 @@ package object quicksight {
   @js.native
   trait DeleteThemeRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var VersionNumber: js.UndefOr[VersionNumber]
   }
 
@@ -3493,7 +6847,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DeleteThemeRequest = {
       val __obj = js.Dynamic.literal(
@@ -3511,7 +6865,7 @@ package object quicksight {
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DeleteThemeResponse {
@@ -3520,7 +6874,7 @@ package object quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DeleteThemeResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -3712,15 +7066,111 @@ package object quicksight {
   }
 
   @js.native
+  trait DescribeAccountSubscriptionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+  }
+
+  object DescribeAccountSubscriptionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId
+    ): DescribeAccountSubscriptionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAccountSubscriptionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountSubscriptionResponse extends js.Object {
+    var AccountInfo: js.UndefOr[AccountInfo]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeAccountSubscriptionResponse {
+    @inline
+    def apply(
+        AccountInfo: js.UndefOr[AccountInfo] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeAccountSubscriptionResponse = {
+      val __obj = js.Dynamic.literal()
+      AccountInfo.foreach(__v => __obj.updateDynamic("AccountInfo")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountSubscriptionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeAnalysisDefinitionRequest extends js.Object {
+    var AnalysisId: ShortRestrictiveResourceId
+    var AwsAccountId: AwsAccountId
+  }
+
+  object DescribeAnalysisDefinitionRequest {
+    @inline
+    def apply(
+        AnalysisId: ShortRestrictiveResourceId,
+        AwsAccountId: AwsAccountId
+    ): DescribeAnalysisDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAnalysisDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAnalysisDefinitionResponse extends js.Object {
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
+    var Definition: js.UndefOr[AnalysisDefinition]
+    var Errors: js.UndefOr[AnalysisErrorList]
+    var Name: js.UndefOr[AnalysisName]
+    var RequestId: js.UndefOr[String]
+    var ResourceStatus: js.UndefOr[ResourceStatus]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeArn: js.UndefOr[Arn]
+  }
+
+  object DescribeAnalysisDefinitionResponse {
+    @inline
+    def apply(
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
+        Definition: js.UndefOr[AnalysisDefinition] = js.undefined,
+        Errors: js.UndefOr[AnalysisErrorList] = js.undefined,
+        Name: js.UndefOr[AnalysisName] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        ResourceStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined
+    ): DescribeAnalysisDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      AnalysisId.foreach(__v => __obj.updateDynamic("AnalysisId")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      ResourceStatus.foreach(__v => __obj.updateDynamic("ResourceStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAnalysisDefinitionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeAnalysisPermissionsRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
   }
 
   object DescribeAnalysisPermissionsRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId
     ): DescribeAnalysisPermissionsRequest = {
       val __obj = js.Dynamic.literal(
@@ -3734,7 +7184,7 @@ package object quicksight {
   @js.native
   trait DescribeAnalysisPermissionsResponse extends js.Object {
     var AnalysisArn: js.UndefOr[Arn]
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -3744,7 +7194,7 @@ package object quicksight {
     @inline
     def apply(
         AnalysisArn: js.UndefOr[Arn] = js.undefined,
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -3761,14 +7211,14 @@ package object quicksight {
 
   @js.native
   trait DescribeAnalysisRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
   }
 
   object DescribeAnalysisRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId
     ): DescribeAnalysisRequest = {
       val __obj = js.Dynamic.literal(
@@ -3802,16 +7252,80 @@ package object quicksight {
   }
 
   @js.native
+  trait DescribeDashboardDefinitionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var DashboardId: ShortRestrictiveResourceId
+    var AliasName: js.UndefOr[AliasName]
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object DescribeDashboardDefinitionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        DashboardId: ShortRestrictiveResourceId,
+        AliasName: js.UndefOr[AliasName] = js.undefined,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): DescribeDashboardDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "DashboardId" -> DashboardId.asInstanceOf[js.Any]
+      )
+
+      AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDashboardDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDashboardDefinitionResponse extends js.Object {
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
+    var Definition: js.UndefOr[DashboardVersionDefinition]
+    var Errors: js.UndefOr[DashboardErrorList]
+    var Name: js.UndefOr[DashboardName]
+    var RequestId: js.UndefOr[String]
+    var ResourceStatus: js.UndefOr[ResourceStatus]
+    var Status: js.UndefOr[StatusCode]
+    var ThemeArn: js.UndefOr[Arn]
+  }
+
+  object DescribeDashboardDefinitionResponse {
+    @inline
+    def apply(
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
+        Definition: js.UndefOr[DashboardVersionDefinition] = js.undefined,
+        Errors: js.UndefOr[DashboardErrorList] = js.undefined,
+        Name: js.UndefOr[DashboardName] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        ResourceStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined
+    ): DescribeDashboardDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      DashboardId.foreach(__v => __obj.updateDynamic("DashboardId")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      ResourceStatus.foreach(__v => __obj.updateDynamic("ResourceStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDashboardDefinitionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDashboardPermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
   }
 
   object DescribeDashboardPermissionsRequest {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId
+        DashboardId: ShortRestrictiveResourceId
     ): DescribeDashboardPermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -3824,7 +7338,7 @@ package object quicksight {
   @js.native
   trait DescribeDashboardPermissionsResponse extends js.Object {
     var DashboardArn: js.UndefOr[Arn]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
@@ -3835,7 +7349,7 @@ package object quicksight {
     @inline
     def apply(
         DashboardArn: js.UndefOr[Arn] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -3855,7 +7369,7 @@ package object quicksight {
   @js.native
   trait DescribeDashboardRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var AliasName: js.UndefOr[AliasName]
     var VersionNumber: js.UndefOr[VersionNumber]
   }
@@ -3864,7 +7378,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         AliasName: js.UndefOr[AliasName] = js.undefined,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DescribeDashboardRequest = {
@@ -4220,6 +7734,54 @@ package object quicksight {
   }
 
   @js.native
+  trait DescribeGroupMembershipRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var GroupName: GroupName
+    var MemberName: GroupMemberName
+    var Namespace: Namespace
+  }
+
+  object DescribeGroupMembershipRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        GroupName: GroupName,
+        MemberName: GroupMemberName,
+        Namespace: Namespace
+    ): DescribeGroupMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "GroupName" -> GroupName.asInstanceOf[js.Any],
+        "MemberName" -> MemberName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeGroupMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeGroupMembershipResponse extends js.Object {
+    var GroupMember: js.UndefOr[GroupMember]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeGroupMembershipResponse {
+    @inline
+    def apply(
+        GroupMember: js.UndefOr[GroupMember] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeGroupMembershipResponse = {
+      val __obj = js.Dynamic.literal()
+      GroupMember.foreach(__v => __obj.updateDynamic("GroupMember")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGroupMembershipResponse]
+    }
+  }
+
+  @js.native
   trait DescribeGroupRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var GroupName: GroupName
@@ -4445,7 +8007,7 @@ package object quicksight {
   trait DescribeTemplateAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
   }
 
   object DescribeTemplateAliasRequest {
@@ -4453,7 +8015,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId
+        TemplateId: ShortRestrictiveResourceId
     ): DescribeTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
         "AliasName" -> AliasName.asInstanceOf[js.Any],
@@ -4487,16 +8049,80 @@ package object quicksight {
   }
 
   @js.native
+  trait DescribeTemplateDefinitionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var TemplateId: ShortRestrictiveResourceId
+    var AliasName: js.UndefOr[AliasName]
+    var VersionNumber: js.UndefOr[VersionNumber]
+  }
+
+  object DescribeTemplateDefinitionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        TemplateId: ShortRestrictiveResourceId,
+        AliasName: js.UndefOr[AliasName] = js.undefined,
+        VersionNumber: js.UndefOr[VersionNumber] = js.undefined
+    ): DescribeTemplateDefinitionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "TemplateId" -> TemplateId.asInstanceOf[js.Any]
+      )
+
+      AliasName.foreach(__v => __obj.updateDynamic("AliasName")(__v.asInstanceOf[js.Any]))
+      VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTemplateDefinitionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTemplateDefinitionResponse extends js.Object {
+    var Definition: js.UndefOr[TemplateVersionDefinition]
+    var Errors: js.UndefOr[TemplateErrorList]
+    var Name: js.UndefOr[TemplateName]
+    var RequestId: js.UndefOr[String]
+    var ResourceStatus: js.UndefOr[ResourceStatus]
+    var Status: js.UndefOr[StatusCode]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
+    var ThemeArn: js.UndefOr[Arn]
+  }
+
+  object DescribeTemplateDefinitionResponse {
+    @inline
+    def apply(
+        Definition: js.UndefOr[TemplateVersionDefinition] = js.undefined,
+        Errors: js.UndefOr[TemplateErrorList] = js.undefined,
+        Name: js.UndefOr[TemplateName] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        ResourceStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined,
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
+        ThemeArn: js.UndefOr[Arn] = js.undefined
+    ): DescribeTemplateDefinitionResponse = {
+      val __obj = js.Dynamic.literal()
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      ResourceStatus.foreach(__v => __obj.updateDynamic("ResourceStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
+      ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTemplateDefinitionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeTemplatePermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
   }
 
   object DescribeTemplatePermissionsRequest {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId
+        TemplateId: ShortRestrictiveResourceId
     ): DescribeTemplatePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -4512,7 +8138,7 @@ package object quicksight {
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var TemplateArn: js.UndefOr[Arn]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DescribeTemplatePermissionsResponse {
@@ -4522,7 +8148,7 @@ package object quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         TemplateArn: js.UndefOr[Arn] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DescribeTemplatePermissionsResponse = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
@@ -4537,7 +8163,7 @@ package object quicksight {
   @js.native
   trait DescribeTemplateRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var AliasName: js.UndefOr[AliasName]
     var VersionNumber: js.UndefOr[VersionNumber]
   }
@@ -4546,7 +8172,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         AliasName: js.UndefOr[AliasName] = js.undefined,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DescribeTemplateRequest = {
@@ -4587,7 +8213,7 @@ package object quicksight {
   trait DescribeThemeAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
   }
 
   object DescribeThemeAliasRequest {
@@ -4595,7 +8221,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId
+        ThemeId: ShortRestrictiveResourceId
     ): DescribeThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
         "AliasName" -> AliasName.asInstanceOf[js.Any],
@@ -4631,14 +8257,14 @@ package object quicksight {
   @js.native
   trait DescribeThemePermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
   }
 
   object DescribeThemePermissionsRequest {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId
+        ThemeId: ShortRestrictiveResourceId
     ): DescribeThemePermissionsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -4654,7 +8280,7 @@ package object quicksight {
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var ThemeArn: js.UndefOr[Arn]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object DescribeThemePermissionsResponse {
@@ -4664,7 +8290,7 @@ package object quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): DescribeThemePermissionsResponse = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
@@ -4679,7 +8305,7 @@ package object quicksight {
   @js.native
   trait DescribeThemeRequest extends js.Object {
     var AwsAccountId: AwsAndAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var AliasName: js.UndefOr[AliasName]
     var VersionNumber: js.UndefOr[VersionNumber]
   }
@@ -4688,7 +8314,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAndAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         AliasName: js.UndefOr[AliasName] = js.undefined,
         VersionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): DescribeThemeRequest = {
@@ -4770,6 +8396,211 @@ package object quicksight {
     }
   }
 
+  /** The configuration of destination parameter values. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait DestinationParameterValueConfiguration extends js.Object {
+    var CustomValuesConfiguration: js.UndefOr[CustomValuesConfiguration]
+    var SelectAllValueOptions: js.UndefOr[SelectAllValueOptions]
+    var SourceField: js.UndefOr[FieldId]
+    var SourceParameterName: js.UndefOr[String]
+  }
+
+  object DestinationParameterValueConfiguration {
+    @inline
+    def apply(
+        CustomValuesConfiguration: js.UndefOr[CustomValuesConfiguration] = js.undefined,
+        SelectAllValueOptions: js.UndefOr[SelectAllValueOptions] = js.undefined,
+        SourceField: js.UndefOr[FieldId] = js.undefined,
+        SourceParameterName: js.UndefOr[String] = js.undefined
+    ): DestinationParameterValueConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomValuesConfiguration.foreach(__v => __obj.updateDynamic("CustomValuesConfiguration")(__v.asInstanceOf[js.Any]))
+      SelectAllValueOptions.foreach(__v => __obj.updateDynamic("SelectAllValueOptions")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
+      SourceParameterName.foreach(__v => __obj.updateDynamic("SourceParameterName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DestinationParameterValueConfiguration]
+    }
+  }
+
+  /** The dimension type field.
+    */
+  @js.native
+  trait DimensionField extends js.Object {
+    var CategoricalDimensionField: js.UndefOr[CategoricalDimensionField]
+    var DateDimensionField: js.UndefOr[DateDimensionField]
+    var NumericalDimensionField: js.UndefOr[NumericalDimensionField]
+  }
+
+  object DimensionField {
+    @inline
+    def apply(
+        CategoricalDimensionField: js.UndefOr[CategoricalDimensionField] = js.undefined,
+        DateDimensionField: js.UndefOr[DateDimensionField] = js.undefined,
+        NumericalDimensionField: js.UndefOr[NumericalDimensionField] = js.undefined
+    ): DimensionField = {
+      val __obj = js.Dynamic.literal()
+      CategoricalDimensionField.foreach(__v => __obj.updateDynamic("CategoricalDimensionField")(__v.asInstanceOf[js.Any]))
+      DateDimensionField.foreach(__v => __obj.updateDynamic("DateDimensionField")(__v.asInstanceOf[js.Any]))
+      NumericalDimensionField.foreach(__v => __obj.updateDynamic("NumericalDimensionField")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DimensionField]
+    }
+  }
+
+  /** The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.
+    */
+  @js.native
+  trait DonutCenterOptions extends js.Object {
+    var LabelVisibility: js.UndefOr[Visibility]
+  }
+
+  object DonutCenterOptions {
+    @inline
+    def apply(
+        LabelVisibility: js.UndefOr[Visibility] = js.undefined
+    ): DonutCenterOptions = {
+      val __obj = js.Dynamic.literal()
+      LabelVisibility.foreach(__v => __obj.updateDynamic("LabelVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DonutCenterOptions]
+    }
+  }
+
+  /** The options for configuring a donut chart or pie chart.
+    */
+  @js.native
+  trait DonutOptions extends js.Object {
+    var ArcOptions: js.UndefOr[ArcOptions]
+    var DonutCenterOptions: js.UndefOr[DonutCenterOptions]
+  }
+
+  object DonutOptions {
+    @inline
+    def apply(
+        ArcOptions: js.UndefOr[ArcOptions] = js.undefined,
+        DonutCenterOptions: js.UndefOr[DonutCenterOptions] = js.undefined
+    ): DonutOptions = {
+      val __obj = js.Dynamic.literal()
+      ArcOptions.foreach(__v => __obj.updateDynamic("ArcOptions")(__v.asInstanceOf[js.Any]))
+      DonutCenterOptions.foreach(__v => __obj.updateDynamic("DonutCenterOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DonutOptions]
+    }
+  }
+
+  /** The drill down filter for the column hierarchies. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait DrillDownFilter extends js.Object {
+    var CategoryFilter: js.UndefOr[CategoryDrillDownFilter]
+    var NumericEqualityFilter: js.UndefOr[NumericEqualityDrillDownFilter]
+    var TimeRangeFilter: js.UndefOr[TimeRangeDrillDownFilter]
+  }
+
+  object DrillDownFilter {
+    @inline
+    def apply(
+        CategoryFilter: js.UndefOr[CategoryDrillDownFilter] = js.undefined,
+        NumericEqualityFilter: js.UndefOr[NumericEqualityDrillDownFilter] = js.undefined,
+        TimeRangeFilter: js.UndefOr[TimeRangeDrillDownFilter] = js.undefined
+    ): DrillDownFilter = {
+      val __obj = js.Dynamic.literal()
+      CategoryFilter.foreach(__v => __obj.updateDynamic("CategoryFilter")(__v.asInstanceOf[js.Any]))
+      NumericEqualityFilter.foreach(__v => __obj.updateDynamic("NumericEqualityFilter")(__v.asInstanceOf[js.Any]))
+      TimeRangeFilter.foreach(__v => __obj.updateDynamic("TimeRangeFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DrillDownFilter]
+    }
+  }
+
+  /** The display options of a control.
+    */
+  @js.native
+  trait DropDownControlDisplayOptions extends js.Object {
+    var SelectAllOptions: js.UndefOr[ListControlSelectAllOptions]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object DropDownControlDisplayOptions {
+    @inline
+    def apply(
+        SelectAllOptions: js.UndefOr[ListControlSelectAllOptions] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): DropDownControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DropDownControlDisplayOptions]
+    }
+  }
+
+  /** Defines different defaults to the users or groups based on mapping.
+    */
+  @js.native
+  trait DynamicDefaultValue extends js.Object {
+    var DefaultValueColumn: ColumnIdentifier
+    var GroupNameColumn: js.UndefOr[ColumnIdentifier]
+    var UserNameColumn: js.UndefOr[ColumnIdentifier]
+  }
+
+  object DynamicDefaultValue {
+    @inline
+    def apply(
+        DefaultValueColumn: ColumnIdentifier,
+        GroupNameColumn: js.UndefOr[ColumnIdentifier] = js.undefined,
+        UserNameColumn: js.UndefOr[ColumnIdentifier] = js.undefined
+    ): DynamicDefaultValue = {
+      val __obj = js.Dynamic.literal(
+        "DefaultValueColumn" -> DefaultValueColumn.asInstanceOf[js.Any]
+      )
+
+      GroupNameColumn.foreach(__v => __obj.updateDynamic("GroupNameColumn")(__v.asInstanceOf[js.Any]))
+      UserNameColumn.foreach(__v => __obj.updateDynamic("UserNameColumn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamicDefaultValue]
+    }
+  }
+
+  /** An empty visual. Empty visuals are used in layouts but have not been configured to show any data. A new visual created in the Amazon QuickSight console is considered an <code>EmptyVisual</code> until a visual type is selected.
+    */
+  @js.native
+  trait EmptyVisual extends js.Object {
+    var DataSetIdentifier: DataSetIdentifier
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+  }
+
+  object EmptyVisual {
+    @inline
+    def apply(
+        DataSetIdentifier: DataSetIdentifier,
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined
+    ): EmptyVisual = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifier" -> DataSetIdentifier.asInstanceOf[js.Any],
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EmptyVisual]
+    }
+  }
+
+  /** An object, structure, or sub-structure of an analysis, template, or dashboard.
+    */
+  @js.native
+  trait Entity extends js.Object {
+    var Path: js.UndefOr[NonEmptyString]
+  }
+
+  object Entity {
+    @inline
+    def apply(
+        Path: js.UndefOr[NonEmptyString] = js.undefined
+    ): Entity = {
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Entity]
+    }
+  }
+
   /** Error information for the SPICE ingestion of a dataset.
     */
   @js.native
@@ -4813,6 +8644,76 @@ package object quicksight {
     }
   }
 
+  /** The exclude period of <code>TimeRangeFilter</code> or <code>RelativeDatesFilter</code>.
+    */
+  @js.native
+  trait ExcludePeriodConfiguration extends js.Object {
+    var Amount: Int
+    var Granularity: TimeGranularity
+    var Status: js.UndefOr[WidgetStatus]
+  }
+
+  object ExcludePeriodConfiguration {
+    @inline
+    def apply(
+        Amount: Int,
+        Granularity: TimeGranularity,
+        Status: js.UndefOr[WidgetStatus] = js.undefined
+    ): ExcludePeriodConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Amount" -> Amount.asInstanceOf[js.Any],
+        "Granularity" -> Granularity.asInstanceOf[js.Any]
+      )
+
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExcludePeriodConfiguration]
+    }
+  }
+
+  /** The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.
+    */
+  @js.native
+  trait ExplicitHierarchy extends js.Object {
+    var Columns: ExplicitHierarchyColumnList
+    var HierarchyId: HierarchyId
+    var DrillDownFilters: js.UndefOr[DrillDownFilterList]
+  }
+
+  object ExplicitHierarchy {
+    @inline
+    def apply(
+        Columns: ExplicitHierarchyColumnList,
+        HierarchyId: HierarchyId,
+        DrillDownFilters: js.UndefOr[DrillDownFilterList] = js.undefined
+    ): ExplicitHierarchy = {
+      val __obj = js.Dynamic.literal(
+        "Columns" -> Columns.asInstanceOf[js.Any],
+        "HierarchyId" -> HierarchyId.asInstanceOf[js.Any]
+      )
+
+      DrillDownFilters.foreach(__v => __obj.updateDynamic("DrillDownFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExplicitHierarchy]
+    }
+  }
+
+  /** <p/>
+    */
+  @js.native
+  trait ExportHiddenFieldsOption extends js.Object {
+    var AvailabilityStatus: js.UndefOr[DashboardBehavior]
+  }
+
+  object ExportHiddenFieldsOption {
+    @inline
+    def apply(
+        AvailabilityStatus: js.UndefOr[DashboardBehavior] = js.undefined
+    ): ExportHiddenFieldsOption = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityStatus.foreach(__v => __obj.updateDynamic("AvailabilityStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportHiddenFieldsOption]
+    }
+  }
+
   /** Export to .csv option.
     */
   @js.native
@@ -4828,6 +8729,30 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       AvailabilityStatus.foreach(__v => __obj.updateDynamic("AvailabilityStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportToCSVOption]
+    }
+  }
+
+  /** The setup for the detailed tooltip.
+    */
+  @js.native
+  trait FieldBasedTooltip extends js.Object {
+    var AggregationVisibility: js.UndefOr[Visibility]
+    var TooltipFields: js.UndefOr[TooltipItemList]
+    var TooltipTitleType: js.UndefOr[TooltipTitleType]
+  }
+
+  object FieldBasedTooltip {
+    @inline
+    def apply(
+        AggregationVisibility: js.UndefOr[Visibility] = js.undefined,
+        TooltipFields: js.UndefOr[TooltipItemList] = js.undefined,
+        TooltipTitleType: js.UndefOr[TooltipTitleType] = js.undefined
+    ): FieldBasedTooltip = {
+      val __obj = js.Dynamic.literal()
+      AggregationVisibility.foreach(__v => __obj.updateDynamic("AggregationVisibility")(__v.asInstanceOf[js.Any]))
+      TooltipFields.foreach(__v => __obj.updateDynamic("TooltipFields")(__v.asInstanceOf[js.Any]))
+      TooltipTitleType.foreach(__v => __obj.updateDynamic("TooltipTitleType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldBasedTooltip]
     }
   }
 
@@ -4852,6 +8777,549 @@ package object quicksight {
     }
   }
 
+  /** The field label type.
+    */
+  @js.native
+  trait FieldLabelType extends js.Object {
+    var FieldId: js.UndefOr[FieldId]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FieldLabelType {
+    @inline
+    def apply(
+        FieldId: js.UndefOr[FieldId] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FieldLabelType = {
+      val __obj = js.Dynamic.literal()
+      FieldId.foreach(__v => __obj.updateDynamic("FieldId")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldLabelType]
+    }
+  }
+
+  /** The field series item configuration of a line chart.
+    */
+  @js.native
+  trait FieldSeriesItem extends js.Object {
+    var AxisBinding: AxisBinding
+    var FieldId: FieldId
+    var Settings: js.UndefOr[LineChartSeriesSettings]
+  }
+
+  object FieldSeriesItem {
+    @inline
+    def apply(
+        AxisBinding: AxisBinding,
+        FieldId: FieldId,
+        Settings: js.UndefOr[LineChartSeriesSettings] = js.undefined
+    ): FieldSeriesItem = {
+      val __obj = js.Dynamic.literal(
+        "AxisBinding" -> AxisBinding.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldSeriesItem]
+    }
+  }
+
+  /** The sort configuration for a field in a field well.
+    */
+  @js.native
+  trait FieldSort extends js.Object {
+    var Direction: SortDirection
+    var FieldId: FieldId
+  }
+
+  object FieldSort {
+    @inline
+    def apply(
+        Direction: SortDirection,
+        FieldId: FieldId
+    ): FieldSort = {
+      val __obj = js.Dynamic.literal(
+        "Direction" -> Direction.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FieldSort]
+    }
+  }
+
+  /** The field sort options in a chart configuration.
+    */
+  @js.native
+  trait FieldSortOptions extends js.Object {
+    var ColumnSort: js.UndefOr[ColumnSort]
+    var FieldSort: js.UndefOr[FieldSort]
+  }
+
+  object FieldSortOptions {
+    @inline
+    def apply(
+        ColumnSort: js.UndefOr[ColumnSort] = js.undefined,
+        FieldSort: js.UndefOr[FieldSort] = js.undefined
+    ): FieldSortOptions = {
+      val __obj = js.Dynamic.literal()
+      ColumnSort.foreach(__v => __obj.updateDynamic("ColumnSort")(__v.asInstanceOf[js.Any]))
+      FieldSort.foreach(__v => __obj.updateDynamic("FieldSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldSortOptions]
+    }
+  }
+
+  /** The tooltip item for the fields.
+    */
+  @js.native
+  trait FieldTooltipItem extends js.Object {
+    var FieldId: FieldId
+    var Label: js.UndefOr[String]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FieldTooltipItem {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        Label: js.UndefOr[String] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FieldTooltipItem = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldTooltipItem]
+    }
+  }
+
+  /** The aggregated field well of the filled map.
+    */
+  @js.native
+  trait FilledMapAggregatedFieldWells extends js.Object {
+    var Geospatial: js.UndefOr[FilledMapDimensionFieldList]
+    var Values: js.UndefOr[FilledMapMeasureFieldList]
+  }
+
+  object FilledMapAggregatedFieldWells {
+    @inline
+    def apply(
+        Geospatial: js.UndefOr[FilledMapDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[FilledMapMeasureFieldList] = js.undefined
+    ): FilledMapAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Geospatial.foreach(__v => __obj.updateDynamic("Geospatial")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapAggregatedFieldWells]
+    }
+  }
+
+  /** The conditional formatting of a <code>FilledMapVisual</code>.
+    */
+  @js.native
+  trait FilledMapConditionalFormatting extends js.Object {
+    var ConditionalFormattingOptions: FilledMapConditionalFormattingOptionList
+  }
+
+  object FilledMapConditionalFormatting {
+    @inline
+    def apply(
+        ConditionalFormattingOptions: FilledMapConditionalFormattingOptionList
+    ): FilledMapConditionalFormatting = {
+      val __obj = js.Dynamic.literal(
+        "ConditionalFormattingOptions" -> ConditionalFormattingOptions.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FilledMapConditionalFormatting]
+    }
+  }
+
+  /** Conditional formatting options of a <code>FilledMapVisual</code>.
+    */
+  @js.native
+  trait FilledMapConditionalFormattingOption extends js.Object {
+    var Shape: FilledMapShapeConditionalFormatting
+  }
+
+  object FilledMapConditionalFormattingOption {
+    @inline
+    def apply(
+        Shape: FilledMapShapeConditionalFormatting
+    ): FilledMapConditionalFormattingOption = {
+      val __obj = js.Dynamic.literal(
+        "Shape" -> Shape.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FilledMapConditionalFormattingOption]
+    }
+  }
+
+  /** The configuration for a <code>FilledMapVisual</code>.
+    */
+  @js.native
+  trait FilledMapConfiguration extends js.Object {
+    var FieldWells: js.UndefOr[FilledMapFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var MapStyleOptions: js.UndefOr[GeospatialMapStyleOptions]
+    var SortConfiguration: js.UndefOr[FilledMapSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var WindowOptions: js.UndefOr[GeospatialWindowOptions]
+  }
+
+  object FilledMapConfiguration {
+    @inline
+    def apply(
+        FieldWells: js.UndefOr[FilledMapFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        MapStyleOptions: js.UndefOr[GeospatialMapStyleOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[FilledMapSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        WindowOptions: js.UndefOr[GeospatialWindowOptions] = js.undefined
+    ): FilledMapConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      MapStyleOptions.foreach(__v => __obj.updateDynamic("MapStyleOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      WindowOptions.foreach(__v => __obj.updateDynamic("WindowOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapConfiguration]
+    }
+  }
+
+  /** The field wells of a <code>FilledMapVisual</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FilledMapFieldWells extends js.Object {
+    var FilledMapAggregatedFieldWells: js.UndefOr[FilledMapAggregatedFieldWells]
+  }
+
+  object FilledMapFieldWells {
+    @inline
+    def apply(
+        FilledMapAggregatedFieldWells: js.UndefOr[FilledMapAggregatedFieldWells] = js.undefined
+    ): FilledMapFieldWells = {
+      val __obj = js.Dynamic.literal()
+      FilledMapAggregatedFieldWells.foreach(__v => __obj.updateDynamic("FilledMapAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapFieldWells]
+    }
+  }
+
+  /** The conditional formatting that determines the shape of the filled map.
+    */
+  @js.native
+  trait FilledMapShapeConditionalFormatting extends js.Object {
+    var FieldId: FieldId
+    var Format: js.UndefOr[ShapeConditionalFormat]
+  }
+
+  object FilledMapShapeConditionalFormatting {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        Format: js.UndefOr[ShapeConditionalFormat] = js.undefined
+    ): FilledMapShapeConditionalFormatting = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapShapeConditionalFormatting]
+    }
+  }
+
+  /** The sort configuration of a <code>FilledMapVisual</code>.
+    */
+  @js.native
+  trait FilledMapSortConfiguration extends js.Object {
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object FilledMapSortConfiguration {
+    @inline
+    def apply(
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): FilledMapSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapSortConfiguration]
+    }
+  }
+
+  /** A filled map. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/filled-maps.html|Creating filled maps]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait FilledMapVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[FilledMapConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var ConditionalFormatting: js.UndefOr[FilledMapConditionalFormatting]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object FilledMapVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[FilledMapConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        ConditionalFormatting: js.UndefOr[FilledMapConditionalFormatting] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): FilledMapVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      ConditionalFormatting.foreach(__v => __obj.updateDynamic("ConditionalFormatting")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilledMapVisual]
+    }
+  }
+
+  /** With a <code>Filter</code>, you can remove portions of data from a particular visual or view. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var CategoryFilter: js.UndefOr[CategoryFilter]
+    var NumericEqualityFilter: js.UndefOr[NumericEqualityFilter]
+    var NumericRangeFilter: js.UndefOr[NumericRangeFilter]
+    var RelativeDatesFilter: js.UndefOr[RelativeDatesFilter]
+    var TimeEqualityFilter: js.UndefOr[TimeEqualityFilter]
+    var TimeRangeFilter: js.UndefOr[TimeRangeFilter]
+    var TopBottomFilter: js.UndefOr[TopBottomFilter]
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        CategoryFilter: js.UndefOr[CategoryFilter] = js.undefined,
+        NumericEqualityFilter: js.UndefOr[NumericEqualityFilter] = js.undefined,
+        NumericRangeFilter: js.UndefOr[NumericRangeFilter] = js.undefined,
+        RelativeDatesFilter: js.UndefOr[RelativeDatesFilter] = js.undefined,
+        TimeEqualityFilter: js.UndefOr[TimeEqualityFilter] = js.undefined,
+        TimeRangeFilter: js.UndefOr[TimeRangeFilter] = js.undefined,
+        TopBottomFilter: js.UndefOr[TopBottomFilter] = js.undefined
+    ): Filter = {
+      val __obj = js.Dynamic.literal()
+      CategoryFilter.foreach(__v => __obj.updateDynamic("CategoryFilter")(__v.asInstanceOf[js.Any]))
+      NumericEqualityFilter.foreach(__v => __obj.updateDynamic("NumericEqualityFilter")(__v.asInstanceOf[js.Any]))
+      NumericRangeFilter.foreach(__v => __obj.updateDynamic("NumericRangeFilter")(__v.asInstanceOf[js.Any]))
+      RelativeDatesFilter.foreach(__v => __obj.updateDynamic("RelativeDatesFilter")(__v.asInstanceOf[js.Any]))
+      TimeEqualityFilter.foreach(__v => __obj.updateDynamic("TimeEqualityFilter")(__v.asInstanceOf[js.Any]))
+      TimeRangeFilter.foreach(__v => __obj.updateDynamic("TimeRangeFilter")(__v.asInstanceOf[js.Any]))
+      TopBottomFilter.foreach(__v => __obj.updateDynamic("TopBottomFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /** The control of a filter that is used to interact with a dashboard or an analysis. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FilterControl extends js.Object {
+    var DateTimePicker: js.UndefOr[FilterDateTimePickerControl]
+    var Dropdown: js.UndefOr[FilterDropDownControl]
+    var List: js.UndefOr[FilterListControl]
+    var RelativeDateTime: js.UndefOr[FilterRelativeDateTimeControl]
+    var Slider: js.UndefOr[FilterSliderControl]
+    var TextArea: js.UndefOr[FilterTextAreaControl]
+    var TextField: js.UndefOr[FilterTextFieldControl]
+  }
+
+  object FilterControl {
+    @inline
+    def apply(
+        DateTimePicker: js.UndefOr[FilterDateTimePickerControl] = js.undefined,
+        Dropdown: js.UndefOr[FilterDropDownControl] = js.undefined,
+        List: js.UndefOr[FilterListControl] = js.undefined,
+        RelativeDateTime: js.UndefOr[FilterRelativeDateTimeControl] = js.undefined,
+        Slider: js.UndefOr[FilterSliderControl] = js.undefined,
+        TextArea: js.UndefOr[FilterTextAreaControl] = js.undefined,
+        TextField: js.UndefOr[FilterTextFieldControl] = js.undefined
+    ): FilterControl = {
+      val __obj = js.Dynamic.literal()
+      DateTimePicker.foreach(__v => __obj.updateDynamic("DateTimePicker")(__v.asInstanceOf[js.Any]))
+      Dropdown.foreach(__v => __obj.updateDynamic("Dropdown")(__v.asInstanceOf[js.Any]))
+      List.foreach(__v => __obj.updateDynamic("List")(__v.asInstanceOf[js.Any]))
+      RelativeDateTime.foreach(__v => __obj.updateDynamic("RelativeDateTime")(__v.asInstanceOf[js.Any]))
+      Slider.foreach(__v => __obj.updateDynamic("Slider")(__v.asInstanceOf[js.Any]))
+      TextArea.foreach(__v => __obj.updateDynamic("TextArea")(__v.asInstanceOf[js.Any]))
+      TextField.foreach(__v => __obj.updateDynamic("TextField")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterControl]
+    }
+  }
+
+  /** A control from a date filter that is used to specify date and time.
+    */
+  @js.native
+  trait FilterDateTimePickerControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[DateTimePickerControlDisplayOptions]
+    var Type: js.UndefOr[SheetControlDateTimePickerType]
+  }
+
+  object FilterDateTimePickerControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[DateTimePickerControlDisplayOptions] = js.undefined,
+        Type: js.UndefOr[SheetControlDateTimePickerType] = js.undefined
+    ): FilterDateTimePickerControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterDateTimePickerControl]
+    }
+  }
+
+  /** A control to display a dropdown list with buttons that are used to select a single value.
+    */
+  @js.native
+  trait FilterDropDownControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration]
+    var DisplayOptions: js.UndefOr[DropDownControlDisplayOptions]
+    var SelectableValues: js.UndefOr[FilterSelectableValues]
+    var Type: js.UndefOr[SheetControlListType]
+  }
+
+  object FilterDropDownControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration] = js.undefined,
+        DisplayOptions: js.UndefOr[DropDownControlDisplayOptions] = js.undefined,
+        SelectableValues: js.UndefOr[FilterSelectableValues] = js.undefined,
+        Type: js.UndefOr[SheetControlListType] = js.undefined
+    ): FilterDropDownControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      CascadingControlConfiguration.foreach(__v => __obj.updateDynamic("CascadingControlConfiguration")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      SelectableValues.foreach(__v => __obj.updateDynamic("SelectableValues")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterDropDownControl]
+    }
+  }
+
+  /** A grouping of individual filters. Filter groups are applied to the same group of visuals. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/add-a-compound-filter.html|Adding filter conditions (group filters) with AND and OR operators]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait FilterGroup extends js.Object {
+    var CrossDataset: CrossDatasetTypes
+    var FilterGroupId: ShortRestrictiveResourceId
+    var Filters: FilterList
+    var ScopeConfiguration: FilterScopeConfiguration
+    var Status: js.UndefOr[WidgetStatus]
+  }
+
+  object FilterGroup {
+    @inline
+    def apply(
+        CrossDataset: CrossDatasetTypes,
+        FilterGroupId: ShortRestrictiveResourceId,
+        Filters: FilterList,
+        ScopeConfiguration: FilterScopeConfiguration,
+        Status: js.UndefOr[WidgetStatus] = js.undefined
+    ): FilterGroup = {
+      val __obj = js.Dynamic.literal(
+        "CrossDataset" -> CrossDataset.asInstanceOf[js.Any],
+        "FilterGroupId" -> FilterGroupId.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "ScopeConfiguration" -> ScopeConfiguration.asInstanceOf[js.Any]
+      )
+
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterGroup]
+    }
+  }
+
+  /** A list of filter configurations.
+    */
+  @js.native
+  trait FilterListConfiguration extends js.Object {
+    var MatchOperator: CategoryFilterMatchOperator
+    var CategoryValues: js.UndefOr[CategoryValueList]
+    var SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions]
+  }
+
+  object FilterListConfiguration {
+    @inline
+    def apply(
+        MatchOperator: CategoryFilterMatchOperator,
+        CategoryValues: js.UndefOr[CategoryValueList] = js.undefined,
+        SelectAllOptions: js.UndefOr[CategoryFilterSelectAllOptions] = js.undefined
+    ): FilterListConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MatchOperator" -> MatchOperator.asInstanceOf[js.Any]
+      )
+
+      CategoryValues.foreach(__v => __obj.updateDynamic("CategoryValues")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterListConfiguration]
+    }
+  }
+
+  /** A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.
+    */
+  @js.native
+  trait FilterListControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration]
+    var DisplayOptions: js.UndefOr[ListControlDisplayOptions]
+    var SelectableValues: js.UndefOr[FilterSelectableValues]
+    var Type: js.UndefOr[SheetControlListType]
+  }
+
+  object FilterListControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration] = js.undefined,
+        DisplayOptions: js.UndefOr[ListControlDisplayOptions] = js.undefined,
+        SelectableValues: js.UndefOr[FilterSelectableValues] = js.undefined,
+        Type: js.UndefOr[SheetControlListType] = js.undefined
+    ): FilterListControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      CascadingControlConfiguration.foreach(__v => __obj.updateDynamic("CascadingControlConfiguration")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      SelectableValues.foreach(__v => __obj.updateDynamic("SelectableValues")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterListControl]
+    }
+  }
+
   /** A transform operation that filters rows based on a condition.
     */
   @js.native
@@ -4868,6 +9336,212 @@ package object quicksight {
         "ConditionExpression" -> ConditionExpression.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[FilterOperation]
+    }
+  }
+
+  /** The configuration of selected fields in the<code>CustomActionFilterOperation</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FilterOperationSelectedFieldsConfiguration extends js.Object {
+    var SelectedFieldOptions: js.UndefOr[SelectedFieldOptions]
+    var SelectedFields: js.UndefOr[SelectedFieldList]
+  }
+
+  object FilterOperationSelectedFieldsConfiguration {
+    @inline
+    def apply(
+        SelectedFieldOptions: js.UndefOr[SelectedFieldOptions] = js.undefined,
+        SelectedFields: js.UndefOr[SelectedFieldList] = js.undefined
+    ): FilterOperationSelectedFieldsConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SelectedFieldOptions.foreach(__v => __obj.updateDynamic("SelectedFieldOptions")(__v.asInstanceOf[js.Any]))
+      SelectedFields.foreach(__v => __obj.updateDynamic("SelectedFields")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterOperationSelectedFieldsConfiguration]
+    }
+  }
+
+  /** The configuration of target visuals that you want to be filtered. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FilterOperationTargetVisualsConfiguration extends js.Object {
+    var SameSheetTargetVisualConfiguration: js.UndefOr[SameSheetTargetVisualConfiguration]
+  }
+
+  object FilterOperationTargetVisualsConfiguration {
+    @inline
+    def apply(
+        SameSheetTargetVisualConfiguration: js.UndefOr[SameSheetTargetVisualConfiguration] = js.undefined
+    ): FilterOperationTargetVisualsConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SameSheetTargetVisualConfiguration.foreach(__v => __obj.updateDynamic("SameSheetTargetVisualConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterOperationTargetVisualsConfiguration]
+    }
+  }
+
+  /** A control from a date filter that is used to specify the relative date.
+    */
+  @js.native
+  trait FilterRelativeDateTimeControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[RelativeDateTimeControlDisplayOptions]
+  }
+
+  object FilterRelativeDateTimeControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[RelativeDateTimeControlDisplayOptions] = js.undefined
+    ): FilterRelativeDateTimeControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterRelativeDateTimeControl]
+    }
+  }
+
+  /** The scope configuration for a <code>FilterGroup</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FilterScopeConfiguration extends js.Object {
+    var SelectedSheets: js.UndefOr[SelectedSheetsFilterScopeConfiguration]
+  }
+
+  object FilterScopeConfiguration {
+    @inline
+    def apply(
+        SelectedSheets: js.UndefOr[SelectedSheetsFilterScopeConfiguration] = js.undefined
+    ): FilterScopeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SelectedSheets.foreach(__v => __obj.updateDynamic("SelectedSheets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterScopeConfiguration]
+    }
+  }
+
+  /** A list of selectable values that are used in a control.
+    */
+  @js.native
+  trait FilterSelectableValues extends js.Object {
+    var Values: js.UndefOr[ParameterSelectableValueList]
+  }
+
+  object FilterSelectableValues {
+    @inline
+    def apply(
+        Values: js.UndefOr[ParameterSelectableValueList] = js.undefined
+    ): FilterSelectableValues = {
+      val __obj = js.Dynamic.literal()
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterSelectableValues]
+    }
+  }
+
+  /** A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.
+    */
+  @js.native
+  trait FilterSliderControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var MaximumValue: Double
+    var MinimumValue: Double
+    var SourceFilterId: ShortRestrictiveResourceId
+    var StepSize: Double
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[SliderControlDisplayOptions]
+    var Type: js.UndefOr[SheetControlSliderType]
+  }
+
+  object FilterSliderControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        MaximumValue: Double,
+        MinimumValue: Double,
+        SourceFilterId: ShortRestrictiveResourceId,
+        StepSize: Double,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[SliderControlDisplayOptions] = js.undefined,
+        Type: js.UndefOr[SheetControlSliderType] = js.undefined
+    ): FilterSliderControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "MaximumValue" -> MaximumValue.asInstanceOf[js.Any],
+        "MinimumValue" -> MinimumValue.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "StepSize" -> StepSize.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterSliderControl]
+    }
+  }
+
+  /** A control to display a text box that is used to enter multiple entries.
+    */
+  @js.native
+  trait FilterTextAreaControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var Delimiter: js.UndefOr[TextAreaControlDelimiter]
+    var DisplayOptions: js.UndefOr[TextAreaControlDisplayOptions]
+  }
+
+  object FilterTextAreaControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        Delimiter: js.UndefOr[TextAreaControlDelimiter] = js.undefined,
+        DisplayOptions: js.UndefOr[TextAreaControlDisplayOptions] = js.undefined
+    ): FilterTextAreaControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterTextAreaControl]
+    }
+  }
+
+  /** A control to display a text box that is used to enter a single entry.
+    */
+  @js.native
+  trait FilterTextFieldControl extends js.Object {
+    var FilterControlId: ShortRestrictiveResourceId
+    var SourceFilterId: ShortRestrictiveResourceId
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[TextFieldControlDisplayOptions]
+  }
+
+  object FilterTextFieldControl {
+    @inline
+    def apply(
+        FilterControlId: ShortRestrictiveResourceId,
+        SourceFilterId: ShortRestrictiveResourceId,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[TextFieldControlDisplayOptions] = js.undefined
+    ): FilterTextFieldControl = {
+      val __obj = js.Dynamic.literal(
+        "FilterControlId" -> FilterControlId.asInstanceOf[js.Any],
+        "SourceFilterId" -> SourceFilterId.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterTextFieldControl]
     }
   }
 
@@ -4928,7 +9602,7 @@ package object quicksight {
     }
   }
 
-  /** A filter to use to search a Amazon QuickSight folder.
+  /** A filter to use to search an Amazon QuickSight folder.
     */
   @js.native
   trait FolderSearchFilter extends js.Object {
@@ -4985,12 +9659,748 @@ package object quicksight {
     }
   }
 
+  /** Determines the font settings.
+    */
+  @js.native
+  trait Font extends js.Object {
+    var FontFamily: js.UndefOr[String]
+  }
+
+  object Font {
+    @inline
+    def apply(
+        FontFamily: js.UndefOr[String] = js.undefined
+    ): Font = {
+      val __obj = js.Dynamic.literal()
+      FontFamily.foreach(__v => __obj.updateDynamic("FontFamily")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Font]
+    }
+  }
+
+  /** Configures the display properties of the given text.
+    */
+  @js.native
+  trait FontConfiguration extends js.Object {
+    var FontColor: js.UndefOr[HexColor]
+    var FontDecoration: js.UndefOr[FontDecoration]
+    var FontSize: js.UndefOr[FontSize]
+    var FontStyle: js.UndefOr[FontStyle]
+    var FontWeight: js.UndefOr[FontWeight]
+  }
+
+  object FontConfiguration {
+    @inline
+    def apply(
+        FontColor: js.UndefOr[HexColor] = js.undefined,
+        FontDecoration: js.UndefOr[FontDecoration] = js.undefined,
+        FontSize: js.UndefOr[FontSize] = js.undefined,
+        FontStyle: js.UndefOr[FontStyle] = js.undefined,
+        FontWeight: js.UndefOr[FontWeight] = js.undefined
+    ): FontConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FontColor.foreach(__v => __obj.updateDynamic("FontColor")(__v.asInstanceOf[js.Any]))
+      FontDecoration.foreach(__v => __obj.updateDynamic("FontDecoration")(__v.asInstanceOf[js.Any]))
+      FontSize.foreach(__v => __obj.updateDynamic("FontSize")(__v.asInstanceOf[js.Any]))
+      FontStyle.foreach(__v => __obj.updateDynamic("FontStyle")(__v.asInstanceOf[js.Any]))
+      FontWeight.foreach(__v => __obj.updateDynamic("FontWeight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FontConfiguration]
+    }
+  }
+
+  /** The option that determines the text display size.
+    */
+  @js.native
+  trait FontSize extends js.Object {
+    var Relative: js.UndefOr[RelativeFontSize]
+  }
+
+  object FontSize {
+    @inline
+    def apply(
+        Relative: js.UndefOr[RelativeFontSize] = js.undefined
+    ): FontSize = {
+      val __obj = js.Dynamic.literal()
+      Relative.foreach(__v => __obj.updateDynamic("Relative")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FontSize]
+    }
+  }
+
+  /** The option that determines the text display weight, or boldness.
+    */
+  @js.native
+  trait FontWeight extends js.Object {
+    var Name: js.UndefOr[FontWeightName]
+  }
+
+  object FontWeight {
+    @inline
+    def apply(
+        Name: js.UndefOr[FontWeightName] = js.undefined
+    ): FontWeight = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FontWeight]
+    }
+  }
+
+  /** The forecast computation configuration.
+    */
+  @js.native
+  trait ForecastComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var CustomSeasonalityValue: js.UndefOr[ForecastComputationCustomSeasonalityValue]
+    var LowerBoundary: js.UndefOr[Double]
+    var Name: js.UndefOr[String]
+    var PeriodsBackward: js.UndefOr[PeriodsBackward]
+    var PeriodsForward: js.UndefOr[PeriodsForward]
+    var PredictionInterval: js.UndefOr[PredictionInterval]
+    var Seasonality: js.UndefOr[ForecastComputationSeasonality]
+    var UpperBoundary: js.UndefOr[Double]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object ForecastComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        CustomSeasonalityValue: js.UndefOr[ForecastComputationCustomSeasonalityValue] = js.undefined,
+        LowerBoundary: js.UndefOr[Double] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        PeriodsBackward: js.UndefOr[PeriodsBackward] = js.undefined,
+        PeriodsForward: js.UndefOr[PeriodsForward] = js.undefined,
+        PredictionInterval: js.UndefOr[PredictionInterval] = js.undefined,
+        Seasonality: js.UndefOr[ForecastComputationSeasonality] = js.undefined,
+        UpperBoundary: js.UndefOr[Double] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): ForecastComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+
+      CustomSeasonalityValue.foreach(__v => __obj.updateDynamic("CustomSeasonalityValue")(__v.asInstanceOf[js.Any]))
+      LowerBoundary.foreach(__v => __obj.updateDynamic("LowerBoundary")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PeriodsBackward.foreach(__v => __obj.updateDynamic("PeriodsBackward")(__v.asInstanceOf[js.Any]))
+      PeriodsForward.foreach(__v => __obj.updateDynamic("PeriodsForward")(__v.asInstanceOf[js.Any]))
+      PredictionInterval.foreach(__v => __obj.updateDynamic("PredictionInterval")(__v.asInstanceOf[js.Any]))
+      Seasonality.foreach(__v => __obj.updateDynamic("Seasonality")(__v.asInstanceOf[js.Any]))
+      UpperBoundary.foreach(__v => __obj.updateDynamic("UpperBoundary")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForecastComputation]
+    }
+  }
+
+  /** The forecast configuration that is used in a line chart's display properties.
+    */
+  @js.native
+  trait ForecastConfiguration extends js.Object {
+    var ForecastProperties: js.UndefOr[TimeBasedForecastProperties]
+    var Scenario: js.UndefOr[ForecastScenario]
+  }
+
+  object ForecastConfiguration {
+    @inline
+    def apply(
+        ForecastProperties: js.UndefOr[TimeBasedForecastProperties] = js.undefined,
+        Scenario: js.UndefOr[ForecastScenario] = js.undefined
+    ): ForecastConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ForecastProperties.foreach(__v => __obj.updateDynamic("ForecastProperties")(__v.asInstanceOf[js.Any]))
+      Scenario.foreach(__v => __obj.updateDynamic("Scenario")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForecastConfiguration]
+    }
+  }
+
+  /** The forecast scenario of a forecast in the line chart.
+    */
+  @js.native
+  trait ForecastScenario extends js.Object {
+    var WhatIfPointScenario: js.UndefOr[WhatIfPointScenario]
+    var WhatIfRangeScenario: js.UndefOr[WhatIfRangeScenario]
+  }
+
+  object ForecastScenario {
+    @inline
+    def apply(
+        WhatIfPointScenario: js.UndefOr[WhatIfPointScenario] = js.undefined,
+        WhatIfRangeScenario: js.UndefOr[WhatIfRangeScenario] = js.undefined
+    ): ForecastScenario = {
+      val __obj = js.Dynamic.literal()
+      WhatIfPointScenario.foreach(__v => __obj.updateDynamic("WhatIfPointScenario")(__v.asInstanceOf[js.Any]))
+      WhatIfRangeScenario.foreach(__v => __obj.updateDynamic("WhatIfRangeScenario")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ForecastScenario]
+    }
+  }
+
+  /** The formatting configuration for all types of field.
+    */
+  @js.native
+  trait FormatConfiguration extends js.Object {
+    var DateTimeFormatConfiguration: js.UndefOr[DateTimeFormatConfiguration]
+    var NumberFormatConfiguration: js.UndefOr[NumberFormatConfiguration]
+    var StringFormatConfiguration: js.UndefOr[StringFormatConfiguration]
+  }
+
+  object FormatConfiguration {
+    @inline
+    def apply(
+        DateTimeFormatConfiguration: js.UndefOr[DateTimeFormatConfiguration] = js.undefined,
+        NumberFormatConfiguration: js.UndefOr[NumberFormatConfiguration] = js.undefined,
+        StringFormatConfiguration: js.UndefOr[StringFormatConfiguration] = js.undefined
+    ): FormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DateTimeFormatConfiguration.foreach(__v => __obj.updateDynamic("DateTimeFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumberFormatConfiguration.foreach(__v => __obj.updateDynamic("NumberFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      StringFormatConfiguration.foreach(__v => __obj.updateDynamic("StringFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FormatConfiguration]
+    }
+  }
+
+  /** Configuration options for the canvas of a free-form layout.
+    */
+  @js.native
+  trait FreeFormLayoutCanvasSizeOptions extends js.Object {
+    var ScreenCanvasSizeOptions: js.UndefOr[FreeFormLayoutScreenCanvasSizeOptions]
+  }
+
+  object FreeFormLayoutCanvasSizeOptions {
+    @inline
+    def apply(
+        ScreenCanvasSizeOptions: js.UndefOr[FreeFormLayoutScreenCanvasSizeOptions] = js.undefined
+    ): FreeFormLayoutCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal()
+      ScreenCanvasSizeOptions.foreach(__v => __obj.updateDynamic("ScreenCanvasSizeOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FreeFormLayoutCanvasSizeOptions]
+    }
+  }
+
+  /** The configuration of a free-form layout.
+    */
+  @js.native
+  trait FreeFormLayoutConfiguration extends js.Object {
+    var Elements: FreeFromLayoutElementList
+    var CanvasSizeOptions: js.UndefOr[FreeFormLayoutCanvasSizeOptions]
+  }
+
+  object FreeFormLayoutConfiguration {
+    @inline
+    def apply(
+        Elements: FreeFromLayoutElementList,
+        CanvasSizeOptions: js.UndefOr[FreeFormLayoutCanvasSizeOptions] = js.undefined
+    ): FreeFormLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Elements" -> Elements.asInstanceOf[js.Any]
+      )
+
+      CanvasSizeOptions.foreach(__v => __obj.updateDynamic("CanvasSizeOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FreeFormLayoutConfiguration]
+    }
+  }
+
+  /** An element within a free-form layout.
+    */
+  @js.native
+  trait FreeFormLayoutElement extends js.Object {
+    var ElementId: ShortRestrictiveResourceId
+    var ElementType: LayoutElementType
+    var Height: PixelLength
+    var Width: PixelLength
+    var XAxisLocation: PixelLength
+    var YAxisLocation: UnlimitedPixelLength
+    var BackgroundStyle: js.UndefOr[FreeFormLayoutElementBackgroundStyle]
+    var BorderStyle: js.UndefOr[FreeFormLayoutElementBorderStyle]
+    var LoadingAnimation: js.UndefOr[LoadingAnimation]
+    var RenderingRules: js.UndefOr[SheetElementRenderingRuleList]
+    var SelectedBorderStyle: js.UndefOr[FreeFormLayoutElementBorderStyle]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FreeFormLayoutElement {
+    @inline
+    def apply(
+        ElementId: ShortRestrictiveResourceId,
+        ElementType: LayoutElementType,
+        Height: PixelLength,
+        Width: PixelLength,
+        XAxisLocation: PixelLength,
+        YAxisLocation: UnlimitedPixelLength,
+        BackgroundStyle: js.UndefOr[FreeFormLayoutElementBackgroundStyle] = js.undefined,
+        BorderStyle: js.UndefOr[FreeFormLayoutElementBorderStyle] = js.undefined,
+        LoadingAnimation: js.UndefOr[LoadingAnimation] = js.undefined,
+        RenderingRules: js.UndefOr[SheetElementRenderingRuleList] = js.undefined,
+        SelectedBorderStyle: js.UndefOr[FreeFormLayoutElementBorderStyle] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FreeFormLayoutElement = {
+      val __obj = js.Dynamic.literal(
+        "ElementId" -> ElementId.asInstanceOf[js.Any],
+        "ElementType" -> ElementType.asInstanceOf[js.Any],
+        "Height" -> Height.asInstanceOf[js.Any],
+        "Width" -> Width.asInstanceOf[js.Any],
+        "XAxisLocation" -> XAxisLocation.asInstanceOf[js.Any],
+        "YAxisLocation" -> YAxisLocation.asInstanceOf[js.Any]
+      )
+
+      BackgroundStyle.foreach(__v => __obj.updateDynamic("BackgroundStyle")(__v.asInstanceOf[js.Any]))
+      BorderStyle.foreach(__v => __obj.updateDynamic("BorderStyle")(__v.asInstanceOf[js.Any]))
+      LoadingAnimation.foreach(__v => __obj.updateDynamic("LoadingAnimation")(__v.asInstanceOf[js.Any]))
+      RenderingRules.foreach(__v => __obj.updateDynamic("RenderingRules")(__v.asInstanceOf[js.Any]))
+      SelectedBorderStyle.foreach(__v => __obj.updateDynamic("SelectedBorderStyle")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FreeFormLayoutElement]
+    }
+  }
+
+  /** The background style configuration of a free-form layout element.
+    */
+  @js.native
+  trait FreeFormLayoutElementBackgroundStyle extends js.Object {
+    var Color: js.UndefOr[HexColorWithTransparency]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FreeFormLayoutElementBackgroundStyle {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColorWithTransparency] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FreeFormLayoutElementBackgroundStyle = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FreeFormLayoutElementBackgroundStyle]
+    }
+  }
+
+  /** The background style configuration of a free-form layout element.
+    */
+  @js.native
+  trait FreeFormLayoutElementBorderStyle extends js.Object {
+    var Color: js.UndefOr[HexColorWithTransparency]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FreeFormLayoutElementBorderStyle {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColorWithTransparency] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FreeFormLayoutElementBorderStyle = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FreeFormLayoutElementBorderStyle]
+    }
+  }
+
+  /** The options that determine the sizing of the canvas used in a free-form layout.
+    */
+  @js.native
+  trait FreeFormLayoutScreenCanvasSizeOptions extends js.Object {
+    var OptimizedViewPortWidth: PixelLength
+  }
+
+  object FreeFormLayoutScreenCanvasSizeOptions {
+    @inline
+    def apply(
+        OptimizedViewPortWidth: PixelLength
+    ): FreeFormLayoutScreenCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal(
+        "OptimizedViewPortWidth" -> OptimizedViewPortWidth.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FreeFormLayoutScreenCanvasSizeOptions]
+    }
+  }
+
+  /** The free-form layout configuration of a section.
+    */
+  @js.native
+  trait FreeFormSectionLayoutConfiguration extends js.Object {
+    var Elements: FreeFromLayoutElementList
+  }
+
+  object FreeFormSectionLayoutConfiguration {
+    @inline
+    def apply(
+        Elements: FreeFromLayoutElementList
+    ): FreeFormSectionLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Elements" -> Elements.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FreeFormSectionLayoutConfiguration]
+    }
+  }
+
+  /** The field well configuration of a <code>FunnelChartVisual</code>.
+    */
+  @js.native
+  trait FunnelChartAggregatedFieldWells extends js.Object {
+    var Category: js.UndefOr[FunnelChartDimensionFieldList]
+    var Values: js.UndefOr[FunnelChartMeasureFieldList]
+  }
+
+  object FunnelChartAggregatedFieldWells {
+    @inline
+    def apply(
+        Category: js.UndefOr[FunnelChartDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[FunnelChartMeasureFieldList] = js.undefined
+    ): FunnelChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a <code>FunnelChartVisual</code>.
+    */
+  @js.native
+  trait FunnelChartConfiguration extends js.Object {
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var DataLabelOptions: js.UndefOr[FunnelChartDataLabelOptions]
+    var FieldWells: js.UndefOr[FunnelChartFieldWells]
+    var SortConfiguration: js.UndefOr[FunnelChartSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object FunnelChartConfiguration {
+    @inline
+    def apply(
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        DataLabelOptions: js.UndefOr[FunnelChartDataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[FunnelChartFieldWells] = js.undefined,
+        SortConfiguration: js.UndefOr[FunnelChartSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): FunnelChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      DataLabelOptions.foreach(__v => __obj.updateDynamic("DataLabelOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      ValueLabelOptions.foreach(__v => __obj.updateDynamic("ValueLabelOptions")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartConfiguration]
+    }
+  }
+
+  /** The options that determine the presentation of the data labels.
+    */
+  @js.native
+  trait FunnelChartDataLabelOptions extends js.Object {
+    var CategoryLabelVisibility: js.UndefOr[Visibility]
+    var LabelColor: js.UndefOr[HexColor]
+    var LabelFontConfiguration: js.UndefOr[FontConfiguration]
+    var MeasureDataLabelStyle: js.UndefOr[FunnelChartMeasureDataLabelStyle]
+    var MeasureLabelVisibility: js.UndefOr[Visibility]
+    var Position: js.UndefOr[DataLabelPosition]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object FunnelChartDataLabelOptions {
+    @inline
+    def apply(
+        CategoryLabelVisibility: js.UndefOr[Visibility] = js.undefined,
+        LabelColor: js.UndefOr[HexColor] = js.undefined,
+        LabelFontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        MeasureDataLabelStyle: js.UndefOr[FunnelChartMeasureDataLabelStyle] = js.undefined,
+        MeasureLabelVisibility: js.UndefOr[Visibility] = js.undefined,
+        Position: js.UndefOr[DataLabelPosition] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): FunnelChartDataLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      CategoryLabelVisibility.foreach(__v => __obj.updateDynamic("CategoryLabelVisibility")(__v.asInstanceOf[js.Any]))
+      LabelColor.foreach(__v => __obj.updateDynamic("LabelColor")(__v.asInstanceOf[js.Any]))
+      LabelFontConfiguration.foreach(__v => __obj.updateDynamic("LabelFontConfiguration")(__v.asInstanceOf[js.Any]))
+      MeasureDataLabelStyle.foreach(__v => __obj.updateDynamic("MeasureDataLabelStyle")(__v.asInstanceOf[js.Any]))
+      MeasureLabelVisibility.foreach(__v => __obj.updateDynamic("MeasureLabelVisibility")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartDataLabelOptions]
+    }
+  }
+
+  /** The field well configuration of a <code>FunnelChartVisual</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait FunnelChartFieldWells extends js.Object {
+    var FunnelChartAggregatedFieldWells: js.UndefOr[FunnelChartAggregatedFieldWells]
+  }
+
+  object FunnelChartFieldWells {
+    @inline
+    def apply(
+        FunnelChartAggregatedFieldWells: js.UndefOr[FunnelChartAggregatedFieldWells] = js.undefined
+    ): FunnelChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      FunnelChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("FunnelChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartFieldWells]
+    }
+  }
+
+  /** The sort configuration of a <code>FunnelChartVisual</code>.
+    */
+  @js.native
+  trait FunnelChartSortConfiguration extends js.Object {
+    var CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object FunnelChartSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): FunnelChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimit.foreach(__v => __obj.updateDynamic("CategoryItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartSortConfiguration]
+    }
+  }
+
+  /** A funnel chart. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html|Using funnel charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait FunnelChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[FunnelChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object FunnelChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[FunnelChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): FunnelChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunnelChartVisual]
+    }
+  }
+
+  /** The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartArcConditionalFormatting extends js.Object {
+    var ForegroundColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object GaugeChartArcConditionalFormatting {
+    @inline
+    def apply(
+        ForegroundColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): GaugeChartArcConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ForegroundColor.foreach(__v => __obj.updateDynamic("ForegroundColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartArcConditionalFormatting]
+    }
+  }
+
+  /** The conditional formatting of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartConditionalFormatting extends js.Object {
+    var ConditionalFormattingOptions: js.UndefOr[GaugeChartConditionalFormattingOptionList]
+  }
+
+  object GaugeChartConditionalFormatting {
+    @inline
+    def apply(
+        ConditionalFormattingOptions: js.UndefOr[GaugeChartConditionalFormattingOptionList] = js.undefined
+    ): GaugeChartConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ConditionalFormattingOptions.foreach(__v => __obj.updateDynamic("ConditionalFormattingOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartConditionalFormatting]
+    }
+  }
+
+  /** Conditional formatting options of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartConditionalFormattingOption extends js.Object {
+    var Arc: js.UndefOr[GaugeChartArcConditionalFormatting]
+    var PrimaryValue: js.UndefOr[GaugeChartPrimaryValueConditionalFormatting]
+  }
+
+  object GaugeChartConditionalFormattingOption {
+    @inline
+    def apply(
+        Arc: js.UndefOr[GaugeChartArcConditionalFormatting] = js.undefined,
+        PrimaryValue: js.UndefOr[GaugeChartPrimaryValueConditionalFormatting] = js.undefined
+    ): GaugeChartConditionalFormattingOption = {
+      val __obj = js.Dynamic.literal()
+      Arc.foreach(__v => __obj.updateDynamic("Arc")(__v.asInstanceOf[js.Any]))
+      PrimaryValue.foreach(__v => __obj.updateDynamic("PrimaryValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartConditionalFormattingOption]
+    }
+  }
+
+  /** The configuration of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartConfiguration extends js.Object {
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[GaugeChartFieldWells]
+    var GaugeChartOptions: js.UndefOr[GaugeChartOptions]
+    var TooltipOptions: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object GaugeChartConfiguration {
+    @inline
+    def apply(
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[GaugeChartFieldWells] = js.undefined,
+        GaugeChartOptions: js.UndefOr[GaugeChartOptions] = js.undefined,
+        TooltipOptions: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): GaugeChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      GaugeChartOptions.foreach(__v => __obj.updateDynamic("GaugeChartOptions")(__v.asInstanceOf[js.Any]))
+      TooltipOptions.foreach(__v => __obj.updateDynamic("TooltipOptions")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartConfiguration]
+    }
+  }
+
+  /** The field well configuration of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartFieldWells extends js.Object {
+    var TargetValues: js.UndefOr[MeasureFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object GaugeChartFieldWells {
+    @inline
+    def apply(
+        TargetValues: js.UndefOr[MeasureFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): GaugeChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      TargetValues.foreach(__v => __obj.updateDynamic("TargetValues")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartFieldWells]
+    }
+  }
+
+  /** The options that determine the presentation of the <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartOptions extends js.Object {
+    var Arc: js.UndefOr[ArcConfiguration]
+    var ArcAxis: js.UndefOr[ArcAxisConfiguration]
+    var Comparison: js.UndefOr[ComparisonConfiguration]
+    var PrimaryValueDisplayType: js.UndefOr[PrimaryValueDisplayType]
+    var PrimaryValueFontConfiguration: js.UndefOr[FontConfiguration]
+  }
+
+  object GaugeChartOptions {
+    @inline
+    def apply(
+        Arc: js.UndefOr[ArcConfiguration] = js.undefined,
+        ArcAxis: js.UndefOr[ArcAxisConfiguration] = js.undefined,
+        Comparison: js.UndefOr[ComparisonConfiguration] = js.undefined,
+        PrimaryValueDisplayType: js.UndefOr[PrimaryValueDisplayType] = js.undefined,
+        PrimaryValueFontConfiguration: js.UndefOr[FontConfiguration] = js.undefined
+    ): GaugeChartOptions = {
+      val __obj = js.Dynamic.literal()
+      Arc.foreach(__v => __obj.updateDynamic("Arc")(__v.asInstanceOf[js.Any]))
+      ArcAxis.foreach(__v => __obj.updateDynamic("ArcAxis")(__v.asInstanceOf[js.Any]))
+      Comparison.foreach(__v => __obj.updateDynamic("Comparison")(__v.asInstanceOf[js.Any]))
+      PrimaryValueDisplayType.foreach(__v => __obj.updateDynamic("PrimaryValueDisplayType")(__v.asInstanceOf[js.Any]))
+      PrimaryValueFontConfiguration.foreach(__v => __obj.updateDynamic("PrimaryValueFontConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartOptions]
+    }
+  }
+
+  /** The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.
+    */
+  @js.native
+  trait GaugeChartPrimaryValueConditionalFormatting extends js.Object {
+    var Icon: js.UndefOr[ConditionalFormattingIcon]
+    var TextColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object GaugeChartPrimaryValueConditionalFormatting {
+    @inline
+    def apply(
+        Icon: js.UndefOr[ConditionalFormattingIcon] = js.undefined,
+        TextColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): GaugeChartPrimaryValueConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      Icon.foreach(__v => __obj.updateDynamic("Icon")(__v.asInstanceOf[js.Any]))
+      TextColor.foreach(__v => __obj.updateDynamic("TextColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartPrimaryValueConditionalFormatting]
+    }
+  }
+
+  /** A gauge chart. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/gauge-chart.html|Using gauge charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait GaugeChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[GaugeChartConfiguration]
+    var ConditionalFormatting: js.UndefOr[GaugeChartConditionalFormatting]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object GaugeChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[GaugeChartConfiguration] = js.undefined,
+        ConditionalFormatting: js.UndefOr[GaugeChartConditionalFormatting] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): GaugeChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ConditionalFormatting.foreach(__v => __obj.updateDynamic("ConditionalFormatting")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GaugeChartVisual]
+    }
+  }
+
   @js.native
   trait GenerateEmbedUrlForAnonymousUserRequest extends js.Object {
     var AuthorizedResourceArns: ArnList
     var AwsAccountId: AwsAccountId
     var ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration
     var Namespace: Namespace
+    var AllowedDomains: js.UndefOr[StringList]
     var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
     var SessionTags: js.UndefOr[SessionTagList]
   }
@@ -5002,6 +10412,7 @@ package object quicksight {
         AwsAccountId: AwsAccountId,
         ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration,
         Namespace: Namespace,
+        AllowedDomains: js.UndefOr[StringList] = js.undefined,
         SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined,
         SessionTags: js.UndefOr[SessionTagList] = js.undefined
     ): GenerateEmbedUrlForAnonymousUserRequest = {
@@ -5012,6 +10423,7 @@ package object quicksight {
         "Namespace" -> Namespace.asInstanceOf[js.Any]
       )
 
+      AllowedDomains.foreach(__v => __obj.updateDynamic("AllowedDomains")(__v.asInstanceOf[js.Any]))
       SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
       SessionTags.foreach(__v => __obj.updateDynamic("SessionTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateEmbedUrlForAnonymousUserRequest]
@@ -5020,6 +10432,7 @@ package object quicksight {
 
   @js.native
   trait GenerateEmbedUrlForAnonymousUserResponse extends js.Object {
+    var AnonymousUserArn: Arn
     var EmbedUrl: EmbeddingUrl
     var RequestId: String
     var Status: StatusCode
@@ -5028,11 +10441,13 @@ package object quicksight {
   object GenerateEmbedUrlForAnonymousUserResponse {
     @inline
     def apply(
+        AnonymousUserArn: Arn,
         EmbedUrl: EmbeddingUrl,
         RequestId: String,
         Status: StatusCode
     ): GenerateEmbedUrlForAnonymousUserResponse = {
       val __obj = js.Dynamic.literal(
+        "AnonymousUserArn" -> AnonymousUserArn.asInstanceOf[js.Any],
         "EmbedUrl" -> EmbedUrl.asInstanceOf[js.Any],
         "RequestId" -> RequestId.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
@@ -5046,6 +10461,7 @@ package object quicksight {
     var AwsAccountId: AwsAccountId
     var ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration
     var UserArn: Arn
+    var AllowedDomains: js.UndefOr[StringList]
     var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
   }
 
@@ -5055,6 +10471,7 @@ package object quicksight {
         AwsAccountId: AwsAccountId,
         ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration,
         UserArn: Arn,
+        AllowedDomains: js.UndefOr[StringList] = js.undefined,
         SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined
     ): GenerateEmbedUrlForRegisteredUserRequest = {
       val __obj = js.Dynamic.literal(
@@ -5063,6 +10480,7 @@ package object quicksight {
         "UserArn" -> UserArn.asInstanceOf[js.Any]
       )
 
+      AllowedDomains.foreach(__v => __obj.updateDynamic("AllowedDomains")(__v.asInstanceOf[js.Any]))
       SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateEmbedUrlForRegisteredUserRequest]
     }
@@ -5096,30 +10514,232 @@ package object quicksight {
   @js.native
   trait GeoSpatialColumnGroup extends js.Object {
     var Columns: ColumnList
-    var CountryCode: GeoSpatialCountryCode
     var Name: ColumnGroupName
+    var CountryCode: js.UndefOr[GeoSpatialCountryCode]
   }
 
   object GeoSpatialColumnGroup {
     @inline
     def apply(
         Columns: ColumnList,
-        CountryCode: GeoSpatialCountryCode,
-        Name: ColumnGroupName
+        Name: ColumnGroupName,
+        CountryCode: js.UndefOr[GeoSpatialCountryCode] = js.undefined
     ): GeoSpatialColumnGroup = {
       val __obj = js.Dynamic.literal(
         "Columns" -> Columns.asInstanceOf[js.Any],
-        "CountryCode" -> CountryCode.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
+
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoSpatialColumnGroup]
+    }
+  }
+
+  /** The bound options (north, south, west, east) of the geospatial window options.
+    */
+  @js.native
+  trait GeospatialCoordinateBounds extends js.Object {
+    var East: Longitude
+    var North: Latitude
+    var South: Latitude
+    var West: Longitude
+  }
+
+  object GeospatialCoordinateBounds {
+    @inline
+    def apply(
+        East: Longitude,
+        North: Latitude,
+        South: Latitude,
+        West: Longitude
+    ): GeospatialCoordinateBounds = {
+      val __obj = js.Dynamic.literal(
+        "East" -> East.asInstanceOf[js.Any],
+        "North" -> North.asInstanceOf[js.Any],
+        "South" -> South.asInstanceOf[js.Any],
+        "West" -> West.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GeospatialCoordinateBounds]
+    }
+  }
+
+  /** The aggregated field wells for a geospatial map.
+    */
+  @js.native
+  trait GeospatialMapAggregatedFieldWells extends js.Object {
+    var Colors: js.UndefOr[DimensionFieldList]
+    var Geospatial: js.UndefOr[DimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object GeospatialMapAggregatedFieldWells {
+    @inline
+    def apply(
+        Colors: js.UndefOr[DimensionFieldList] = js.undefined,
+        Geospatial: js.UndefOr[DimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): GeospatialMapAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      Geospatial.foreach(__v => __obj.updateDynamic("Geospatial")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialMapAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a <code>GeospatialMapVisual</code>.
+    */
+  @js.native
+  trait GeospatialMapConfiguration extends js.Object {
+    var FieldWells: js.UndefOr[GeospatialMapFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var MapStyleOptions: js.UndefOr[GeospatialMapStyleOptions]
+    var PointStyleOptions: js.UndefOr[GeospatialPointStyleOptions]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+    var WindowOptions: js.UndefOr[GeospatialWindowOptions]
+  }
+
+  object GeospatialMapConfiguration {
+    @inline
+    def apply(
+        FieldWells: js.UndefOr[GeospatialMapFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        MapStyleOptions: js.UndefOr[GeospatialMapStyleOptions] = js.undefined,
+        PointStyleOptions: js.UndefOr[GeospatialPointStyleOptions] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined,
+        WindowOptions: js.UndefOr[GeospatialWindowOptions] = js.undefined
+    ): GeospatialMapConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      MapStyleOptions.foreach(__v => __obj.updateDynamic("MapStyleOptions")(__v.asInstanceOf[js.Any]))
+      PointStyleOptions.foreach(__v => __obj.updateDynamic("PointStyleOptions")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      WindowOptions.foreach(__v => __obj.updateDynamic("WindowOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialMapConfiguration]
+    }
+  }
+
+  /** The field wells of a <code>GeospatialMapVisual</code>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait GeospatialMapFieldWells extends js.Object {
+    var GeospatialMapAggregatedFieldWells: js.UndefOr[GeospatialMapAggregatedFieldWells]
+  }
+
+  object GeospatialMapFieldWells {
+    @inline
+    def apply(
+        GeospatialMapAggregatedFieldWells: js.UndefOr[GeospatialMapAggregatedFieldWells] = js.undefined
+    ): GeospatialMapFieldWells = {
+      val __obj = js.Dynamic.literal()
+      GeospatialMapAggregatedFieldWells.foreach(__v => __obj.updateDynamic("GeospatialMapAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialMapFieldWells]
+    }
+  }
+
+  /** The map style options of the geospatial map.
+    */
+  @js.native
+  trait GeospatialMapStyleOptions extends js.Object {
+    var BaseMapStyle: js.UndefOr[BaseMapStyleType]
+  }
+
+  object GeospatialMapStyleOptions {
+    @inline
+    def apply(
+        BaseMapStyle: js.UndefOr[BaseMapStyleType] = js.undefined
+    ): GeospatialMapStyleOptions = {
+      val __obj = js.Dynamic.literal()
+      BaseMapStyle.foreach(__v => __obj.updateDynamic("BaseMapStyle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialMapStyleOptions]
+    }
+  }
+
+  /** A geospatial map or a points on map visual. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/point-maps.html|Creating point maps]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait GeospatialMapVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[GeospatialMapConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object GeospatialMapVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[GeospatialMapConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): GeospatialMapVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialMapVisual]
+    }
+  }
+
+  /** The point style of the geospatial map.
+    */
+  @js.native
+  trait GeospatialPointStyleOptions extends js.Object {
+    var ClusterMarkerConfiguration: js.UndefOr[ClusterMarkerConfiguration]
+    var SelectedPointStyle: js.UndefOr[GeospatialSelectedPointStyle]
+  }
+
+  object GeospatialPointStyleOptions {
+    @inline
+    def apply(
+        ClusterMarkerConfiguration: js.UndefOr[ClusterMarkerConfiguration] = js.undefined,
+        SelectedPointStyle: js.UndefOr[GeospatialSelectedPointStyle] = js.undefined
+    ): GeospatialPointStyleOptions = {
+      val __obj = js.Dynamic.literal()
+      ClusterMarkerConfiguration.foreach(__v => __obj.updateDynamic("ClusterMarkerConfiguration")(__v.asInstanceOf[js.Any]))
+      SelectedPointStyle.foreach(__v => __obj.updateDynamic("SelectedPointStyle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialPointStyleOptions]
+    }
+  }
+
+  /** The window options of the geospatial map visual.
+    */
+  @js.native
+  trait GeospatialWindowOptions extends js.Object {
+    var Bounds: js.UndefOr[GeospatialCoordinateBounds]
+    var MapZoomMode: js.UndefOr[MapZoomMode]
+  }
+
+  object GeospatialWindowOptions {
+    @inline
+    def apply(
+        Bounds: js.UndefOr[GeospatialCoordinateBounds] = js.undefined,
+        MapZoomMode: js.UndefOr[MapZoomMode] = js.undefined
+    ): GeospatialWindowOptions = {
+      val __obj = js.Dynamic.literal()
+      Bounds.foreach(__v => __obj.updateDynamic("Bounds")(__v.asInstanceOf[js.Any]))
+      MapZoomMode.foreach(__v => __obj.updateDynamic("MapZoomMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GeospatialWindowOptions]
     }
   }
 
   @js.native
   trait GetDashboardEmbedUrlRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var IdentityType: EmbeddingIdentityType
     var AdditionalDashboardIds: js.UndefOr[AdditionalDashboardIdList]
     var Namespace: js.UndefOr[Namespace]
@@ -5134,7 +10754,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         IdentityType: EmbeddingIdentityType,
         AdditionalDashboardIds: js.UndefOr[AdditionalDashboardIdList] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
@@ -5234,6 +10854,170 @@ package object quicksight {
     }
   }
 
+  /** Determines the border options for a table visual.
+    */
+  @js.native
+  trait GlobalTableBorderOptions extends js.Object {
+    var SideSpecificBorder: js.UndefOr[TableSideBorderOptions]
+    var UniformBorder: js.UndefOr[TableBorderOptions]
+  }
+
+  object GlobalTableBorderOptions {
+    @inline
+    def apply(
+        SideSpecificBorder: js.UndefOr[TableSideBorderOptions] = js.undefined,
+        UniformBorder: js.UndefOr[TableBorderOptions] = js.undefined
+    ): GlobalTableBorderOptions = {
+      val __obj = js.Dynamic.literal()
+      SideSpecificBorder.foreach(__v => __obj.updateDynamic("SideSpecificBorder")(__v.asInstanceOf[js.Any]))
+      UniformBorder.foreach(__v => __obj.updateDynamic("UniformBorder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalTableBorderOptions]
+    }
+  }
+
+  /** Determines the gradient color settings.
+    */
+  @js.native
+  trait GradientColor extends js.Object {
+    var Stops: js.UndefOr[GradientStopList]
+  }
+
+  object GradientColor {
+    @inline
+    def apply(
+        Stops: js.UndefOr[GradientStopList] = js.undefined
+    ): GradientColor = {
+      val __obj = js.Dynamic.literal()
+      Stops.foreach(__v => __obj.updateDynamic("Stops")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GradientColor]
+    }
+  }
+
+  /** Determines the gradient stop configuration.
+    */
+  @js.native
+  trait GradientStop extends js.Object {
+    var GradientOffset: Double
+    var Color: js.UndefOr[HexColor]
+    var DataValue: js.UndefOr[Double]
+  }
+
+  object GradientStop {
+    @inline
+    def apply(
+        GradientOffset: Double,
+        Color: js.UndefOr[HexColor] = js.undefined,
+        DataValue: js.UndefOr[Double] = js.undefined
+    ): GradientStop = {
+      val __obj = js.Dynamic.literal(
+        "GradientOffset" -> GradientOffset.asInstanceOf[js.Any]
+      )
+
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      DataValue.foreach(__v => __obj.updateDynamic("DataValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GradientStop]
+    }
+  }
+
+  /** Configuration options for the canvas of a grid layout.
+    */
+  @js.native
+  trait GridLayoutCanvasSizeOptions extends js.Object {
+    var ScreenCanvasSizeOptions: js.UndefOr[GridLayoutScreenCanvasSizeOptions]
+  }
+
+  object GridLayoutCanvasSizeOptions {
+    @inline
+    def apply(
+        ScreenCanvasSizeOptions: js.UndefOr[GridLayoutScreenCanvasSizeOptions] = js.undefined
+    ): GridLayoutCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal()
+      ScreenCanvasSizeOptions.foreach(__v => __obj.updateDynamic("ScreenCanvasSizeOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GridLayoutCanvasSizeOptions]
+    }
+  }
+
+  /** The configuration for a grid layout. Also called a tiled layout. Visuals snap to a grid with standard spacing and alignment. Dashboards are displayed as designed, with options to fit to screen or view at actual size.
+    */
+  @js.native
+  trait GridLayoutConfiguration extends js.Object {
+    var Elements: GridLayoutElementList
+    var CanvasSizeOptions: js.UndefOr[GridLayoutCanvasSizeOptions]
+  }
+
+  object GridLayoutConfiguration {
+    @inline
+    def apply(
+        Elements: GridLayoutElementList,
+        CanvasSizeOptions: js.UndefOr[GridLayoutCanvasSizeOptions] = js.undefined
+    ): GridLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Elements" -> Elements.asInstanceOf[js.Any]
+      )
+
+      CanvasSizeOptions.foreach(__v => __obj.updateDynamic("CanvasSizeOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GridLayoutConfiguration]
+    }
+  }
+
+  /** An element within a grid layout.
+    */
+  @js.native
+  trait GridLayoutElement extends js.Object {
+    var ColumnSpan: GridLayoutElementColumnSpan
+    var ElementId: ShortRestrictiveResourceId
+    var ElementType: LayoutElementType
+    var RowSpan: GridLayoutElementRowSpan
+    var ColumnIndex: js.UndefOr[GridLayoutElementColumnIndex]
+    var RowIndex: js.UndefOr[GridLayoutElementRowIndex]
+  }
+
+  object GridLayoutElement {
+    @inline
+    def apply(
+        ColumnSpan: GridLayoutElementColumnSpan,
+        ElementId: ShortRestrictiveResourceId,
+        ElementType: LayoutElementType,
+        RowSpan: GridLayoutElementRowSpan,
+        ColumnIndex: js.UndefOr[GridLayoutElementColumnIndex] = js.undefined,
+        RowIndex: js.UndefOr[GridLayoutElementRowIndex] = js.undefined
+    ): GridLayoutElement = {
+      val __obj = js.Dynamic.literal(
+        "ColumnSpan" -> ColumnSpan.asInstanceOf[js.Any],
+        "ElementId" -> ElementId.asInstanceOf[js.Any],
+        "ElementType" -> ElementType.asInstanceOf[js.Any],
+        "RowSpan" -> RowSpan.asInstanceOf[js.Any]
+      )
+
+      ColumnIndex.foreach(__v => __obj.updateDynamic("ColumnIndex")(__v.asInstanceOf[js.Any]))
+      RowIndex.foreach(__v => __obj.updateDynamic("RowIndex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GridLayoutElement]
+    }
+  }
+
+  /** The options that determine the sizing of the canvas used in a grid layout.
+    */
+  @js.native
+  trait GridLayoutScreenCanvasSizeOptions extends js.Object {
+    var ResizeOption: ResizeOption
+    var OptimizedViewPortWidth: js.UndefOr[PixelLength]
+  }
+
+  object GridLayoutScreenCanvasSizeOptions {
+    @inline
+    def apply(
+        ResizeOption: ResizeOption,
+        OptimizedViewPortWidth: js.UndefOr[PixelLength] = js.undefined
+    ): GridLayoutScreenCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal(
+        "ResizeOption" -> ResizeOption.asInstanceOf[js.Any]
+      )
+
+      OptimizedViewPortWidth.foreach(__v => __obj.updateDynamic("OptimizedViewPortWidth")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GridLayoutScreenCanvasSizeOptions]
+    }
+  }
+
   /** A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access and security.
     */
   @js.native
@@ -5282,6 +11066,63 @@ package object quicksight {
     }
   }
 
+  /** A <code>GroupSearchFilter</code> object that you want to apply to your search.
+    */
+  @js.native
+  trait GroupSearchFilter extends js.Object {
+    var Name: GroupFilterAttribute
+    var Operator: GroupFilterOperator
+    var Value: String
+  }
+
+  object GroupSearchFilter {
+    @inline
+    def apply(
+        Name: GroupFilterAttribute,
+        Operator: GroupFilterOperator,
+        Value: String
+    ): GroupSearchFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GroupSearchFilter]
+    }
+  }
+
+  /** The growth rate computation configuration.
+    */
+  @js.native
+  trait GrowthRateComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var Name: js.UndefOr[String]
+    var PeriodSize: js.UndefOr[GrowthRatePeriodSize]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object GrowthRateComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        Name: js.UndefOr[String] = js.undefined,
+        PeriodSize: js.UndefOr[GrowthRatePeriodSize] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): GrowthRateComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PeriodSize.foreach(__v => __obj.updateDynamic("PeriodSize")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrowthRateComputation]
+    }
+  }
+
   /** The display options for gutter spacing between tiles on a sheet.
     */
   @js.native
@@ -5297,6 +11138,309 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       Show.foreach(__v => __obj.updateDynamic("Show")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GutterStyle]
+    }
+  }
+
+  /** The configuration of a header or footer section.
+    */
+  @js.native
+  trait HeaderFooterSectionConfiguration extends js.Object {
+    var Layout: SectionLayoutConfiguration
+    var SectionId: ShortRestrictiveResourceId
+    var Style: js.UndefOr[SectionStyle]
+  }
+
+  object HeaderFooterSectionConfiguration {
+    @inline
+    def apply(
+        Layout: SectionLayoutConfiguration,
+        SectionId: ShortRestrictiveResourceId,
+        Style: js.UndefOr[SectionStyle] = js.undefined
+    ): HeaderFooterSectionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Layout" -> Layout.asInstanceOf[js.Any],
+        "SectionId" -> SectionId.asInstanceOf[js.Any]
+      )
+
+      Style.foreach(__v => __obj.updateDynamic("Style")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeaderFooterSectionConfiguration]
+    }
+  }
+
+  /** The aggregated field wells of a heat map.
+    */
+  @js.native
+  trait HeatMapAggregatedFieldWells extends js.Object {
+    var Columns: js.UndefOr[HeatMapDimensionFieldList]
+    var Rows: js.UndefOr[HeatMapDimensionFieldList]
+    var Values: js.UndefOr[HeatMapMeasureFieldList]
+  }
+
+  object HeatMapAggregatedFieldWells {
+    @inline
+    def apply(
+        Columns: js.UndefOr[HeatMapDimensionFieldList] = js.undefined,
+        Rows: js.UndefOr[HeatMapDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[HeatMapMeasureFieldList] = js.undefined
+    ): HeatMapAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      Rows.foreach(__v => __obj.updateDynamic("Rows")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeatMapAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a heat map.
+    */
+  @js.native
+  trait HeatMapConfiguration extends js.Object {
+    var ColorScale: js.UndefOr[ColorScale]
+    var ColumnLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[HeatMapFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var RowLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var SortConfiguration: js.UndefOr[HeatMapSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+  }
+
+  object HeatMapConfiguration {
+    @inline
+    def apply(
+        ColorScale: js.UndefOr[ColorScale] = js.undefined,
+        ColumnLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[HeatMapFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        RowLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[HeatMapSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined
+    ): HeatMapConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ColorScale.foreach(__v => __obj.updateDynamic("ColorScale")(__v.asInstanceOf[js.Any]))
+      ColumnLabelOptions.foreach(__v => __obj.updateDynamic("ColumnLabelOptions")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      RowLabelOptions.foreach(__v => __obj.updateDynamic("RowLabelOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeatMapConfiguration]
+    }
+  }
+
+  /** The field well configuration of a heat map. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait HeatMapFieldWells extends js.Object {
+    var HeatMapAggregatedFieldWells: js.UndefOr[HeatMapAggregatedFieldWells]
+  }
+
+  object HeatMapFieldWells {
+    @inline
+    def apply(
+        HeatMapAggregatedFieldWells: js.UndefOr[HeatMapAggregatedFieldWells] = js.undefined
+    ): HeatMapFieldWells = {
+      val __obj = js.Dynamic.literal()
+      HeatMapAggregatedFieldWells.foreach(__v => __obj.updateDynamic("HeatMapAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeatMapFieldWells]
+    }
+  }
+
+  /** The sort configuration of a heat map.
+    */
+  @js.native
+  trait HeatMapSortConfiguration extends js.Object {
+    var HeatMapColumnItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var HeatMapColumnSort: js.UndefOr[FieldSortOptionsList]
+    var HeatMapRowItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var HeatMapRowSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object HeatMapSortConfiguration {
+    @inline
+    def apply(
+        HeatMapColumnItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        HeatMapColumnSort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        HeatMapRowItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        HeatMapRowSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): HeatMapSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      HeatMapColumnItemsLimitConfiguration.foreach(__v => __obj.updateDynamic("HeatMapColumnItemsLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      HeatMapColumnSort.foreach(__v => __obj.updateDynamic("HeatMapColumnSort")(__v.asInstanceOf[js.Any]))
+      HeatMapRowItemsLimitConfiguration.foreach(__v => __obj.updateDynamic("HeatMapRowItemsLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      HeatMapRowSort.foreach(__v => __obj.updateDynamic("HeatMapRowSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeatMapSortConfiguration]
+    }
+  }
+
+  /** A heat map. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/heat-map.html|Using heat maps]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait HeatMapVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[HeatMapConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object HeatMapVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[HeatMapConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): HeatMapVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HeatMapVisual]
+    }
+  }
+
+  /** The field well configuration of a histogram.
+    */
+  @js.native
+  trait HistogramAggregatedFieldWells extends js.Object {
+    var Values: js.UndefOr[HistogramMeasureFieldList]
+  }
+
+  object HistogramAggregatedFieldWells {
+    @inline
+    def apply(
+        Values: js.UndefOr[HistogramMeasureFieldList] = js.undefined
+    ): HistogramAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistogramAggregatedFieldWells]
+    }
+  }
+
+  /** The options that determine the presentation of histogram bins.
+    */
+  @js.native
+  trait HistogramBinOptions extends js.Object {
+    var BinCount: js.UndefOr[BinCountOptions]
+    var BinWidth: js.UndefOr[BinWidthOptions]
+    var SelectedBinType: js.UndefOr[HistogramBinType]
+    var StartValue: js.UndefOr[Double]
+  }
+
+  object HistogramBinOptions {
+    @inline
+    def apply(
+        BinCount: js.UndefOr[BinCountOptions] = js.undefined,
+        BinWidth: js.UndefOr[BinWidthOptions] = js.undefined,
+        SelectedBinType: js.UndefOr[HistogramBinType] = js.undefined,
+        StartValue: js.UndefOr[Double] = js.undefined
+    ): HistogramBinOptions = {
+      val __obj = js.Dynamic.literal()
+      BinCount.foreach(__v => __obj.updateDynamic("BinCount")(__v.asInstanceOf[js.Any]))
+      BinWidth.foreach(__v => __obj.updateDynamic("BinWidth")(__v.asInstanceOf[js.Any]))
+      SelectedBinType.foreach(__v => __obj.updateDynamic("SelectedBinType")(__v.asInstanceOf[js.Any]))
+      StartValue.foreach(__v => __obj.updateDynamic("StartValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistogramBinOptions]
+    }
+  }
+
+  /** The configuration for a <code>HistogramVisual</code>.
+    */
+  @js.native
+  trait HistogramConfiguration extends js.Object {
+    var BinOptions: js.UndefOr[HistogramBinOptions]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[HistogramFieldWells]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+    var XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var YAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+  }
+
+  object HistogramConfiguration {
+    @inline
+    def apply(
+        BinOptions: js.UndefOr[HistogramBinOptions] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[HistogramFieldWells] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined,
+        XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        YAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined
+    ): HistogramConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BinOptions.foreach(__v => __obj.updateDynamic("BinOptions")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      XAxisDisplayOptions.foreach(__v => __obj.updateDynamic("XAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      XAxisLabelOptions.foreach(__v => __obj.updateDynamic("XAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      YAxisDisplayOptions.foreach(__v => __obj.updateDynamic("YAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistogramConfiguration]
+    }
+  }
+
+  /** The field well configuration of a histogram.
+    */
+  @js.native
+  trait HistogramFieldWells extends js.Object {
+    var HistogramAggregatedFieldWells: js.UndefOr[HistogramAggregatedFieldWells]
+  }
+
+  object HistogramFieldWells {
+    @inline
+    def apply(
+        HistogramAggregatedFieldWells: js.UndefOr[HistogramAggregatedFieldWells] = js.undefined
+    ): HistogramFieldWells = {
+      val __obj = js.Dynamic.literal()
+      HistogramAggregatedFieldWells.foreach(__v => __obj.updateDynamic("HistogramAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistogramFieldWells]
+    }
+  }
+
+  /** A histogram. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/histogram-charts.html|Using histograms]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait HistogramVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[HistogramConfiguration]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object HistogramVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[HistogramConfiguration] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): HistogramVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HistogramVisual]
     }
   }
 
@@ -5426,25 +11570,173 @@ package object quicksight {
     }
   }
 
+  /** The configuration of an insight visual.
+    */
+  @js.native
+  trait InsightConfiguration extends js.Object {
+    var Computations: js.UndefOr[ComputationList]
+    var CustomNarrative: js.UndefOr[CustomNarrativeOptions]
+  }
+
+  object InsightConfiguration {
+    @inline
+    def apply(
+        Computations: js.UndefOr[ComputationList] = js.undefined,
+        CustomNarrative: js.UndefOr[CustomNarrativeOptions] = js.undefined
+    ): InsightConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Computations.foreach(__v => __obj.updateDynamic("Computations")(__v.asInstanceOf[js.Any]))
+      CustomNarrative.foreach(__v => __obj.updateDynamic("CustomNarrative")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightConfiguration]
+    }
+  }
+
+  /** An insight visual. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/computational-insights.html|Working with insights]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait InsightVisual extends js.Object {
+    var DataSetIdentifier: DataSetIdentifier
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var InsightConfiguration: js.UndefOr[InsightConfiguration]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object InsightVisual {
+    @inline
+    def apply(
+        DataSetIdentifier: DataSetIdentifier,
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        InsightConfiguration: js.UndefOr[InsightConfiguration] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): InsightVisual = {
+      val __obj = js.Dynamic.literal(
+        "DataSetIdentifier" -> DataSetIdentifier.asInstanceOf[js.Any],
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      InsightConfiguration.foreach(__v => __obj.updateDynamic("InsightConfiguration")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightVisual]
+    }
+  }
+
+  /** The default values of the <code>IntegerParameterDeclaration</code>.
+    */
+  @js.native
+  trait IntegerDefaultValues extends js.Object {
+    var DynamicValue: js.UndefOr[DynamicDefaultValue]
+    var StaticValues: js.UndefOr[IntegerDefaultValueList]
+  }
+
+  object IntegerDefaultValues {
+    @inline
+    def apply(
+        DynamicValue: js.UndefOr[DynamicDefaultValue] = js.undefined,
+        StaticValues: js.UndefOr[IntegerDefaultValueList] = js.undefined
+    ): IntegerDefaultValues = {
+      val __obj = js.Dynamic.literal()
+      DynamicValue.foreach(__v => __obj.updateDynamic("DynamicValue")(__v.asInstanceOf[js.Any]))
+      StaticValues.foreach(__v => __obj.updateDynamic("StaticValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegerDefaultValues]
+    }
+  }
+
   /** An integer parameter.
     */
   @js.native
   trait IntegerParameter extends js.Object {
     var Name: NonEmptyString
-    var Values: LongList
+    var Values: SensitiveLongList
   }
 
   object IntegerParameter {
     @inline
     def apply(
         Name: NonEmptyString,
-        Values: LongList
+        Values: SensitiveLongList
     ): IntegerParameter = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[IntegerParameter]
+    }
+  }
+
+  /** A parameter declaration for the <code>Integer</code> data type.
+    */
+  @js.native
+  trait IntegerParameterDeclaration extends js.Object {
+    var Name: ParameterName
+    var ParameterValueType: ParameterValueType
+    var DefaultValues: js.UndefOr[IntegerDefaultValues]
+    var ValueWhenUnset: js.UndefOr[IntegerValueWhenUnsetConfiguration]
+  }
+
+  object IntegerParameterDeclaration {
+    @inline
+    def apply(
+        Name: ParameterName,
+        ParameterValueType: ParameterValueType,
+        DefaultValues: js.UndefOr[IntegerDefaultValues] = js.undefined,
+        ValueWhenUnset: js.UndefOr[IntegerValueWhenUnsetConfiguration] = js.undefined
+    ): IntegerParameterDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParameterValueType" -> ParameterValueType.asInstanceOf[js.Any]
+      )
+
+      DefaultValues.foreach(__v => __obj.updateDynamic("DefaultValues")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnset.foreach(__v => __obj.updateDynamic("ValueWhenUnset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegerParameterDeclaration]
+    }
+  }
+
+  /** A parameter declaration for the <code>Integer</code> data type. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait IntegerValueWhenUnsetConfiguration extends js.Object {
+    var CustomValue: js.UndefOr[SensitiveLong]
+    var ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption]
+  }
+
+  object IntegerValueWhenUnsetConfiguration {
+    @inline
+    def apply(
+        CustomValue: js.UndefOr[SensitiveLong] = js.undefined,
+        ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption] = js.undefined
+    ): IntegerValueWhenUnsetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomValue.foreach(__v => __obj.updateDynamic("CustomValue")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnsetOption.foreach(__v => __obj.updateDynamic("ValueWhenUnsetOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IntegerValueWhenUnsetConfiguration]
+    }
+  }
+
+  /** The limit configuration of the visual display for an axis.
+    */
+  @js.native
+  trait ItemsLimitConfiguration extends js.Object {
+    var ItemsLimit: js.UndefOr[Double]
+    var OtherCategories: js.UndefOr[OtherCategories]
+  }
+
+  object ItemsLimitConfiguration {
+    @inline
+    def apply(
+        ItemsLimit: js.UndefOr[Double] = js.undefined,
+        OtherCategories: js.UndefOr[OtherCategories] = js.undefined
+    ): ItemsLimitConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ItemsLimit.foreach(__v => __obj.updateDynamic("ItemsLimit")(__v.asInstanceOf[js.Any]))
+      OtherCategories.foreach(__v => __obj.updateDynamic("OtherCategories")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ItemsLimitConfiguration]
     }
   }
 
@@ -5520,6 +11812,623 @@ package object quicksight {
     }
   }
 
+  /** The conditional formatting of a KPI visual.
+    */
+  @js.native
+  trait KPIConditionalFormatting extends js.Object {
+    var ConditionalFormattingOptions: js.UndefOr[KPIConditionalFormattingOptionList]
+  }
+
+  object KPIConditionalFormatting {
+    @inline
+    def apply(
+        ConditionalFormattingOptions: js.UndefOr[KPIConditionalFormattingOptionList] = js.undefined
+    ): KPIConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ConditionalFormattingOptions.foreach(__v => __obj.updateDynamic("ConditionalFormattingOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIConditionalFormatting]
+    }
+  }
+
+  /** The conditional formatting options of a KPI visual.
+    */
+  @js.native
+  trait KPIConditionalFormattingOption extends js.Object {
+    var PrimaryValue: js.UndefOr[KPIPrimaryValueConditionalFormatting]
+    var ProgressBar: js.UndefOr[KPIProgressBarConditionalFormatting]
+  }
+
+  object KPIConditionalFormattingOption {
+    @inline
+    def apply(
+        PrimaryValue: js.UndefOr[KPIPrimaryValueConditionalFormatting] = js.undefined,
+        ProgressBar: js.UndefOr[KPIProgressBarConditionalFormatting] = js.undefined
+    ): KPIConditionalFormattingOption = {
+      val __obj = js.Dynamic.literal()
+      PrimaryValue.foreach(__v => __obj.updateDynamic("PrimaryValue")(__v.asInstanceOf[js.Any]))
+      ProgressBar.foreach(__v => __obj.updateDynamic("ProgressBar")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIConditionalFormattingOption]
+    }
+  }
+
+  /** The configuration of a KPI visual.
+    */
+  @js.native
+  trait KPIConfiguration extends js.Object {
+    var FieldWells: js.UndefOr[KPIFieldWells]
+    var KPIOptions: js.UndefOr[KPIOptions]
+    var SortConfiguration: js.UndefOr[KPISortConfiguration]
+  }
+
+  object KPIConfiguration {
+    @inline
+    def apply(
+        FieldWells: js.UndefOr[KPIFieldWells] = js.undefined,
+        KPIOptions: js.UndefOr[KPIOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[KPISortConfiguration] = js.undefined
+    ): KPIConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      KPIOptions.foreach(__v => __obj.updateDynamic("KPIOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIConfiguration]
+    }
+  }
+
+  /** The field well configuration of a KPI visual.
+    */
+  @js.native
+  trait KPIFieldWells extends js.Object {
+    var TargetValues: js.UndefOr[MeasureFieldList]
+    var TrendGroups: js.UndefOr[DimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object KPIFieldWells {
+    @inline
+    def apply(
+        TargetValues: js.UndefOr[MeasureFieldList] = js.undefined,
+        TrendGroups: js.UndefOr[DimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): KPIFieldWells = {
+      val __obj = js.Dynamic.literal()
+      TargetValues.foreach(__v => __obj.updateDynamic("TargetValues")(__v.asInstanceOf[js.Any]))
+      TrendGroups.foreach(__v => __obj.updateDynamic("TrendGroups")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIFieldWells]
+    }
+  }
+
+  /** The options that determine the presentation of a KPI visual.
+    */
+  @js.native
+  trait KPIOptions extends js.Object {
+    var Comparison: js.UndefOr[ComparisonConfiguration]
+    var PrimaryValueDisplayType: js.UndefOr[PrimaryValueDisplayType]
+    var PrimaryValueFontConfiguration: js.UndefOr[FontConfiguration]
+    var ProgressBar: js.UndefOr[ProgressBarOptions]
+    var SecondaryValue: js.UndefOr[SecondaryValueOptions]
+    var SecondaryValueFontConfiguration: js.UndefOr[FontConfiguration]
+    var TrendArrows: js.UndefOr[TrendArrowOptions]
+  }
+
+  object KPIOptions {
+    @inline
+    def apply(
+        Comparison: js.UndefOr[ComparisonConfiguration] = js.undefined,
+        PrimaryValueDisplayType: js.UndefOr[PrimaryValueDisplayType] = js.undefined,
+        PrimaryValueFontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        ProgressBar: js.UndefOr[ProgressBarOptions] = js.undefined,
+        SecondaryValue: js.UndefOr[SecondaryValueOptions] = js.undefined,
+        SecondaryValueFontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        TrendArrows: js.UndefOr[TrendArrowOptions] = js.undefined
+    ): KPIOptions = {
+      val __obj = js.Dynamic.literal()
+      Comparison.foreach(__v => __obj.updateDynamic("Comparison")(__v.asInstanceOf[js.Any]))
+      PrimaryValueDisplayType.foreach(__v => __obj.updateDynamic("PrimaryValueDisplayType")(__v.asInstanceOf[js.Any]))
+      PrimaryValueFontConfiguration.foreach(__v => __obj.updateDynamic("PrimaryValueFontConfiguration")(__v.asInstanceOf[js.Any]))
+      ProgressBar.foreach(__v => __obj.updateDynamic("ProgressBar")(__v.asInstanceOf[js.Any]))
+      SecondaryValue.foreach(__v => __obj.updateDynamic("SecondaryValue")(__v.asInstanceOf[js.Any]))
+      SecondaryValueFontConfiguration.foreach(__v => __obj.updateDynamic("SecondaryValueFontConfiguration")(__v.asInstanceOf[js.Any]))
+      TrendArrows.foreach(__v => __obj.updateDynamic("TrendArrows")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIOptions]
+    }
+  }
+
+  /** The conditional formatting for the primary value of a KPI visual.
+    */
+  @js.native
+  trait KPIPrimaryValueConditionalFormatting extends js.Object {
+    var Icon: js.UndefOr[ConditionalFormattingIcon]
+    var TextColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object KPIPrimaryValueConditionalFormatting {
+    @inline
+    def apply(
+        Icon: js.UndefOr[ConditionalFormattingIcon] = js.undefined,
+        TextColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): KPIPrimaryValueConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      Icon.foreach(__v => __obj.updateDynamic("Icon")(__v.asInstanceOf[js.Any]))
+      TextColor.foreach(__v => __obj.updateDynamic("TextColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIPrimaryValueConditionalFormatting]
+    }
+  }
+
+  /** The conditional formatting for the progress bar of a KPI visual.
+    */
+  @js.native
+  trait KPIProgressBarConditionalFormatting extends js.Object {
+    var ForegroundColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object KPIProgressBarConditionalFormatting {
+    @inline
+    def apply(
+        ForegroundColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): KPIProgressBarConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ForegroundColor.foreach(__v => __obj.updateDynamic("ForegroundColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIProgressBarConditionalFormatting]
+    }
+  }
+
+  /** The sort configuration of a KPI visual.
+    */
+  @js.native
+  trait KPISortConfiguration extends js.Object {
+    var TrendGroupSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object KPISortConfiguration {
+    @inline
+    def apply(
+        TrendGroupSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): KPISortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TrendGroupSort.foreach(__v => __obj.updateDynamic("TrendGroupSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPISortConfiguration]
+    }
+  }
+
+  /** A key performance indicator (KPI). For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/kpi.html|Using KPIs]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait KPIVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[KPIConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var ConditionalFormatting: js.UndefOr[KPIConditionalFormatting]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object KPIVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[KPIConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        ConditionalFormatting: js.UndefOr[KPIConditionalFormatting] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): KPIVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      ConditionalFormatting.foreach(__v => __obj.updateDynamic("ConditionalFormatting")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KPIVisual]
+    }
+  }
+
+  /** The share label options for the labels.
+    */
+  @js.native
+  trait LabelOptions extends js.Object {
+    var CustomLabel: js.UndefOr[String]
+    var FontConfiguration: js.UndefOr[FontConfiguration]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object LabelOptions {
+    @inline
+    def apply(
+        CustomLabel: js.UndefOr[String] = js.undefined,
+        FontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): LabelOptions = {
+      val __obj = js.Dynamic.literal()
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      FontConfiguration.foreach(__v => __obj.updateDynamic("FontConfiguration")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LabelOptions]
+    }
+  }
+
+  /** A <code>Layout</code> defines the placement of elements within a sheet. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html|Types of layout]] in the <i>Amazon QuickSight User Guide</i>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait Layout extends js.Object {
+    var Configuration: LayoutConfiguration
+  }
+
+  object Layout {
+    @inline
+    def apply(
+        Configuration: LayoutConfiguration
+    ): Layout = {
+      val __obj = js.Dynamic.literal(
+        "Configuration" -> Configuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Layout]
+    }
+  }
+
+  /** The configuration that determines what the type of layout will be used on a sheet. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait LayoutConfiguration extends js.Object {
+    var FreeFormLayout: js.UndefOr[FreeFormLayoutConfiguration]
+    var GridLayout: js.UndefOr[GridLayoutConfiguration]
+    var SectionBasedLayout: js.UndefOr[SectionBasedLayoutConfiguration]
+  }
+
+  object LayoutConfiguration {
+    @inline
+    def apply(
+        FreeFormLayout: js.UndefOr[FreeFormLayoutConfiguration] = js.undefined,
+        GridLayout: js.UndefOr[GridLayoutConfiguration] = js.undefined,
+        SectionBasedLayout: js.UndefOr[SectionBasedLayoutConfiguration] = js.undefined
+    ): LayoutConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FreeFormLayout.foreach(__v => __obj.updateDynamic("FreeFormLayout")(__v.asInstanceOf[js.Any]))
+      GridLayout.foreach(__v => __obj.updateDynamic("GridLayout")(__v.asInstanceOf[js.Any]))
+      SectionBasedLayout.foreach(__v => __obj.updateDynamic("SectionBasedLayout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LayoutConfiguration]
+    }
+  }
+
+  /** The options for the legend setup of a visual.
+    */
+  @js.native
+  trait LegendOptions extends js.Object {
+    var Height: js.UndefOr[PixelLength]
+    var Position: js.UndefOr[LegendPosition]
+    var Title: js.UndefOr[LabelOptions]
+    var Visibility: js.UndefOr[Visibility]
+    var Width: js.UndefOr[PixelLength]
+  }
+
+  object LegendOptions {
+    @inline
+    def apply(
+        Height: js.UndefOr[PixelLength] = js.undefined,
+        Position: js.UndefOr[LegendPosition] = js.undefined,
+        Title: js.UndefOr[LabelOptions] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined,
+        Width: js.UndefOr[PixelLength] = js.undefined
+    ): LegendOptions = {
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LegendOptions]
+    }
+  }
+
+  /** The field well configuration of a line chart.
+    */
+  @js.native
+  trait LineChartAggregatedFieldWells extends js.Object {
+    var Category: js.UndefOr[DimensionFieldList]
+    var Colors: js.UndefOr[DimensionFieldList]
+    var SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object LineChartAggregatedFieldWells {
+    @inline
+    def apply(
+        Category: js.UndefOr[DimensionFieldList] = js.undefined,
+        Colors: js.UndefOr[DimensionFieldList] = js.undefined,
+        SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): LineChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      SmallMultiples.foreach(__v => __obj.updateDynamic("SmallMultiples")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a line chart.
+    */
+  @js.native
+  trait LineChartConfiguration extends js.Object {
+    var ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var DefaultSeriesSettings: js.UndefOr[LineChartDefaultSeriesSettings]
+    var FieldWells: js.UndefOr[LineChartFieldWells]
+    var ForecastConfigurations: js.UndefOr[ForecastConfigurationList]
+    var Legend: js.UndefOr[LegendOptions]
+    var PrimaryYAxisDisplayOptions: js.UndefOr[LineSeriesAxisDisplayOptions]
+    var PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ReferenceLines: js.UndefOr[ReferenceLineList]
+    var SecondaryYAxisDisplayOptions: js.UndefOr[LineSeriesAxisDisplayOptions]
+    var SecondaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var Series: js.UndefOr[SeriesItemList]
+    var SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions]
+    var SortConfiguration: js.UndefOr[LineChartSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var Type: js.UndefOr[LineChartType]
+    var VisualPalette: js.UndefOr[VisualPalette]
+    var XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+  }
+
+  object LineChartConfiguration {
+    @inline
+    def apply(
+        ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        DefaultSeriesSettings: js.UndefOr[LineChartDefaultSeriesSettings] = js.undefined,
+        FieldWells: js.UndefOr[LineChartFieldWells] = js.undefined,
+        ForecastConfigurations: js.UndefOr[ForecastConfigurationList] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        PrimaryYAxisDisplayOptions: js.UndefOr[LineSeriesAxisDisplayOptions] = js.undefined,
+        PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ReferenceLines: js.UndefOr[ReferenceLineList] = js.undefined,
+        SecondaryYAxisDisplayOptions: js.UndefOr[LineSeriesAxisDisplayOptions] = js.undefined,
+        SecondaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        Series: js.UndefOr[SeriesItemList] = js.undefined,
+        SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[LineChartSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        Type: js.UndefOr[LineChartType] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined,
+        XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined
+    ): LineChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ContributionAnalysisDefaults.foreach(__v => __obj.updateDynamic("ContributionAnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      DefaultSeriesSettings.foreach(__v => __obj.updateDynamic("DefaultSeriesSettings")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      ForecastConfigurations.foreach(__v => __obj.updateDynamic("ForecastConfigurations")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      ReferenceLines.foreach(__v => __obj.updateDynamic("ReferenceLines")(__v.asInstanceOf[js.Any]))
+      SecondaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("SecondaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      SecondaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("SecondaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      Series.foreach(__v => __obj.updateDynamic("Series")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesOptions.foreach(__v => __obj.updateDynamic("SmallMultiplesOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      XAxisDisplayOptions.foreach(__v => __obj.updateDynamic("XAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      XAxisLabelOptions.foreach(__v => __obj.updateDynamic("XAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartConfiguration]
+    }
+  }
+
+  /** The options that determine the default presentation of all line series in <code>LineChartVisual</code>.
+    */
+  @js.native
+  trait LineChartDefaultSeriesSettings extends js.Object {
+    var AxisBinding: js.UndefOr[AxisBinding]
+    var LineStyleSettings: js.UndefOr[LineChartLineStyleSettings]
+    var MarkerStyleSettings: js.UndefOr[LineChartMarkerStyleSettings]
+  }
+
+  object LineChartDefaultSeriesSettings {
+    @inline
+    def apply(
+        AxisBinding: js.UndefOr[AxisBinding] = js.undefined,
+        LineStyleSettings: js.UndefOr[LineChartLineStyleSettings] = js.undefined,
+        MarkerStyleSettings: js.UndefOr[LineChartMarkerStyleSettings] = js.undefined
+    ): LineChartDefaultSeriesSettings = {
+      val __obj = js.Dynamic.literal()
+      AxisBinding.foreach(__v => __obj.updateDynamic("AxisBinding")(__v.asInstanceOf[js.Any]))
+      LineStyleSettings.foreach(__v => __obj.updateDynamic("LineStyleSettings")(__v.asInstanceOf[js.Any]))
+      MarkerStyleSettings.foreach(__v => __obj.updateDynamic("MarkerStyleSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartDefaultSeriesSettings]
+    }
+  }
+
+  /** The field well configuration of a line chart.
+    */
+  @js.native
+  trait LineChartFieldWells extends js.Object {
+    var LineChartAggregatedFieldWells: js.UndefOr[LineChartAggregatedFieldWells]
+  }
+
+  object LineChartFieldWells {
+    @inline
+    def apply(
+        LineChartAggregatedFieldWells: js.UndefOr[LineChartAggregatedFieldWells] = js.undefined
+    ): LineChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      LineChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("LineChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartFieldWells]
+    }
+  }
+
+  /** Line styles options for a line series in <code>LineChartVisual</code>.
+    */
+  @js.native
+  trait LineChartLineStyleSettings extends js.Object {
+    var LineInterpolation: js.UndefOr[LineInterpolation]
+    var LineStyle: js.UndefOr[LineChartLineStyle]
+    var LineVisibility: js.UndefOr[Visibility]
+    var LineWidth: js.UndefOr[PixelLength]
+  }
+
+  object LineChartLineStyleSettings {
+    @inline
+    def apply(
+        LineInterpolation: js.UndefOr[LineInterpolation] = js.undefined,
+        LineStyle: js.UndefOr[LineChartLineStyle] = js.undefined,
+        LineVisibility: js.UndefOr[Visibility] = js.undefined,
+        LineWidth: js.UndefOr[PixelLength] = js.undefined
+    ): LineChartLineStyleSettings = {
+      val __obj = js.Dynamic.literal()
+      LineInterpolation.foreach(__v => __obj.updateDynamic("LineInterpolation")(__v.asInstanceOf[js.Any]))
+      LineStyle.foreach(__v => __obj.updateDynamic("LineStyle")(__v.asInstanceOf[js.Any]))
+      LineVisibility.foreach(__v => __obj.updateDynamic("LineVisibility")(__v.asInstanceOf[js.Any]))
+      LineWidth.foreach(__v => __obj.updateDynamic("LineWidth")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartLineStyleSettings]
+    }
+  }
+
+  /** Marker styles options for a line series in <code>LineChartVisual</code>.
+    */
+  @js.native
+  trait LineChartMarkerStyleSettings extends js.Object {
+    var MarkerColor: js.UndefOr[HexColor]
+    var MarkerShape: js.UndefOr[LineChartMarkerShape]
+    var MarkerSize: js.UndefOr[PixelLength]
+    var MarkerVisibility: js.UndefOr[Visibility]
+  }
+
+  object LineChartMarkerStyleSettings {
+    @inline
+    def apply(
+        MarkerColor: js.UndefOr[HexColor] = js.undefined,
+        MarkerShape: js.UndefOr[LineChartMarkerShape] = js.undefined,
+        MarkerSize: js.UndefOr[PixelLength] = js.undefined,
+        MarkerVisibility: js.UndefOr[Visibility] = js.undefined
+    ): LineChartMarkerStyleSettings = {
+      val __obj = js.Dynamic.literal()
+      MarkerColor.foreach(__v => __obj.updateDynamic("MarkerColor")(__v.asInstanceOf[js.Any]))
+      MarkerShape.foreach(__v => __obj.updateDynamic("MarkerShape")(__v.asInstanceOf[js.Any]))
+      MarkerSize.foreach(__v => __obj.updateDynamic("MarkerSize")(__v.asInstanceOf[js.Any]))
+      MarkerVisibility.foreach(__v => __obj.updateDynamic("MarkerVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartMarkerStyleSettings]
+    }
+  }
+
+  /** The options that determine the presentation of a line series in the visual
+    */
+  @js.native
+  trait LineChartSeriesSettings extends js.Object {
+    var LineStyleSettings: js.UndefOr[LineChartLineStyleSettings]
+    var MarkerStyleSettings: js.UndefOr[LineChartMarkerStyleSettings]
+  }
+
+  object LineChartSeriesSettings {
+    @inline
+    def apply(
+        LineStyleSettings: js.UndefOr[LineChartLineStyleSettings] = js.undefined,
+        MarkerStyleSettings: js.UndefOr[LineChartMarkerStyleSettings] = js.undefined
+    ): LineChartSeriesSettings = {
+      val __obj = js.Dynamic.literal()
+      LineStyleSettings.foreach(__v => __obj.updateDynamic("LineStyleSettings")(__v.asInstanceOf[js.Any]))
+      MarkerStyleSettings.foreach(__v => __obj.updateDynamic("MarkerStyleSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartSeriesSettings]
+    }
+  }
+
+  /** The sort configuration of a line chart.
+    */
+  @js.native
+  trait LineChartSortConfiguration extends js.Object {
+    var CategoryItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+    var ColorItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var SmallMultiplesSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object LineChartSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        ColorItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        SmallMultiplesSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): LineChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimitConfiguration.foreach(__v => __obj.updateDynamic("CategoryItemsLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      ColorItemsLimitConfiguration.foreach(__v => __obj.updateDynamic("ColorItemsLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesLimitConfiguration.foreach(__v => __obj.updateDynamic("SmallMultiplesLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesSort.foreach(__v => __obj.updateDynamic("SmallMultiplesSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartSortConfiguration]
+    }
+  }
+
+  /** A line chart. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html|Using line charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait LineChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[LineChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object LineChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[LineChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): LineChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineChartVisual]
+    }
+  }
+
+  /** The series axis configuration of a line chart.
+    */
+  @js.native
+  trait LineSeriesAxisDisplayOptions extends js.Object {
+    var AxisOptions: js.UndefOr[AxisDisplayOptions]
+    var MissingDataConfigurations: js.UndefOr[MissingDataConfigurationList]
+  }
+
+  object LineSeriesAxisDisplayOptions {
+    @inline
+    def apply(
+        AxisOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        MissingDataConfigurations: js.UndefOr[MissingDataConfigurationList] = js.undefined
+    ): LineSeriesAxisDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      AxisOptions.foreach(__v => __obj.updateDynamic("AxisOptions")(__v.asInstanceOf[js.Any]))
+      MissingDataConfigurations.foreach(__v => __obj.updateDynamic("MissingDataConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineSeriesAxisDisplayOptions]
+    }
+  }
+
   /** A structure that contains the configuration of a shareable link to the dashboard.
     */
   @js.native
@@ -5587,10 +12496,70 @@ package object quicksight {
     }
   }
 
+  /** The display options of a control.
+    */
+  @js.native
+  trait ListControlDisplayOptions extends js.Object {
+    var SearchOptions: js.UndefOr[ListControlSearchOptions]
+    var SelectAllOptions: js.UndefOr[ListControlSelectAllOptions]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object ListControlDisplayOptions {
+    @inline
+    def apply(
+        SearchOptions: js.UndefOr[ListControlSearchOptions] = js.undefined,
+        SelectAllOptions: js.UndefOr[ListControlSelectAllOptions] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): ListControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      SearchOptions.foreach(__v => __obj.updateDynamic("SearchOptions")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlDisplayOptions]
+    }
+  }
+
+  /** The configuration of the search options in a list control.
+    */
+  @js.native
+  trait ListControlSearchOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ListControlSearchOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ListControlSearchOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlSearchOptions]
+    }
+  }
+
+  /** The configuration of the <code>Select all</code> options in a list control.
+    */
+  @js.native
+  trait ListControlSelectAllOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ListControlSelectAllOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ListControlSelectAllOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlSelectAllOptions]
+    }
+  }
+
   @js.native
   trait ListDashboardVersionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -5599,7 +12568,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDashboardVersionsRequest = {
@@ -6247,7 +13216,7 @@ package object quicksight {
   @js.native
   trait ListTemplateAliasesRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -6256,7 +13225,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTemplateAliasesRequest = {
@@ -6299,7 +13268,7 @@ package object quicksight {
   @js.native
   trait ListTemplateVersionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -6308,7 +13277,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTemplateVersionsRequest = {
@@ -6400,7 +13369,7 @@ package object quicksight {
   @js.native
   trait ListThemeAliasesRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -6409,7 +13378,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListThemeAliasesRequest = {
@@ -6452,7 +13421,7 @@ package object quicksight {
   @js.native
   trait ListThemeVersionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
   }
@@ -6461,7 +13430,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListThemeVersionsRequest = {
@@ -6660,6 +13629,43 @@ package object quicksight {
     }
   }
 
+  /** The configuration of loading animation in free-form layout.
+    */
+  @js.native
+  trait LoadingAnimation extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object LoadingAnimation {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): LoadingAnimation = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoadingAnimation]
+    }
+  }
+
+  /** The navigation configuration for <code>CustomActionNavigationOperation</code>.
+    */
+  @js.native
+  trait LocalNavigationConfiguration extends js.Object {
+    var TargetSheetId: ShortRestrictiveResourceId
+  }
+
+  object LocalNavigationConfiguration {
+    @inline
+    def apply(
+        TargetSheetId: ShortRestrictiveResourceId
+    ): LocalNavigationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "TargetSheetId" -> TargetSheetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LocalNavigationConfiguration]
+    }
+  }
+
   /** A <i>logical table</i> is a unit that joins and that data transformations operate on. A logical table has a source, which can be either a physical table or result of a join. When a logical table points to a physical table, the logical table acts as a mutable copy of that physical table through transform operations.
     */
   @js.native
@@ -6707,6 +13713,27 @@ package object quicksight {
       JoinInstruction.foreach(__v => __obj.updateDynamic("JoinInstruction")(__v.asInstanceOf[js.Any]))
       PhysicalTableId.foreach(__v => __obj.updateDynamic("PhysicalTableId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogicalTableSource]
+    }
+  }
+
+  /** The text format for a subtitle. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait LongFormatText extends js.Object {
+    var PlainText: js.UndefOr[LongPlainText]
+    var RichText: js.UndefOr[LongRichText]
+  }
+
+  object LongFormatText {
+    @inline
+    def apply(
+        PlainText: js.UndefOr[LongPlainText] = js.undefined,
+        RichText: js.UndefOr[LongRichText] = js.undefined
+    ): LongFormatText = {
+      val __obj = js.Dynamic.literal()
+      PlainText.foreach(__v => __obj.updateDynamic("PlainText")(__v.asInstanceOf[js.Any]))
+      RichText.foreach(__v => __obj.updateDynamic("RichText")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LongFormatText]
     }
   }
 
@@ -6775,6 +13802,83 @@ package object quicksight {
     }
   }
 
+  /** The maximum label of a data path label.
+    */
+  @js.native
+  trait MaximumLabelType extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object MaximumLabelType {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): MaximumLabelType = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaximumLabelType]
+    }
+  }
+
+  /** The maximum and minimum computation configuration.
+    */
+  @js.native
+  trait MaximumMinimumComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var Type: MaximumMinimumComputationType
+    var Name: js.UndefOr[String]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object MaximumMinimumComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        Type: MaximumMinimumComputationType,
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): MaximumMinimumComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaximumMinimumComputation]
+    }
+  }
+
+  /** The measure (metric) type field.
+    */
+  @js.native
+  trait MeasureField extends js.Object {
+    var CalculatedMeasureField: js.UndefOr[CalculatedMeasureField]
+    var CategoricalMeasureField: js.UndefOr[CategoricalMeasureField]
+    var DateMeasureField: js.UndefOr[DateMeasureField]
+    var NumericalMeasureField: js.UndefOr[NumericalMeasureField]
+  }
+
+  object MeasureField {
+    @inline
+    def apply(
+        CalculatedMeasureField: js.UndefOr[CalculatedMeasureField] = js.undefined,
+        CategoricalMeasureField: js.UndefOr[CategoricalMeasureField] = js.undefined,
+        DateMeasureField: js.UndefOr[DateMeasureField] = js.undefined,
+        NumericalMeasureField: js.UndefOr[NumericalMeasureField] = js.undefined
+    ): MeasureField = {
+      val __obj = js.Dynamic.literal()
+      CalculatedMeasureField.foreach(__v => __obj.updateDynamic("CalculatedMeasureField")(__v.asInstanceOf[js.Any]))
+      CategoricalMeasureField.foreach(__v => __obj.updateDynamic("CategoricalMeasureField")(__v.asInstanceOf[js.Any]))
+      DateMeasureField.foreach(__v => __obj.updateDynamic("DateMeasureField")(__v.asInstanceOf[js.Any]))
+      NumericalMeasureField.foreach(__v => __obj.updateDynamic("NumericalMeasureField")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MeasureField]
+    }
+  }
+
   /** An object that consists of a member Amazon Resource Name (ARN) and a member ID.
     */
   @js.native
@@ -6793,6 +13897,74 @@ package object quicksight {
       MemberArn.foreach(__v => __obj.updateDynamic("MemberArn")(__v.asInstanceOf[js.Any]))
       MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberIdArnPair]
+    }
+  }
+
+  /** The metric comparison computation configuration.
+    */
+  @js.native
+  trait MetricComparisonComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var FromValue: MeasureField
+    var TargetValue: MeasureField
+    var Time: DimensionField
+    var Name: js.UndefOr[String]
+  }
+
+  object MetricComparisonComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        FromValue: MeasureField,
+        TargetValue: MeasureField,
+        Time: DimensionField,
+        Name: js.UndefOr[String] = js.undefined
+    ): MetricComparisonComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "FromValue" -> FromValue.asInstanceOf[js.Any],
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricComparisonComputation]
+    }
+  }
+
+  /** The minimum label of a data path label.
+    */
+  @js.native
+  trait MinimumLabelType extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object MinimumLabelType {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): MinimumLabelType = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MinimumLabelType]
+    }
+  }
+
+  /** The configuration options that determine how missing data is treated during the rendering of a line chart.
+    */
+  @js.native
+  trait MissingDataConfiguration extends js.Object {
+    var TreatmentOption: js.UndefOr[MissingDataTreatmentOption]
+  }
+
+  object MissingDataConfiguration {
+    @inline
+    def apply(
+        TreatmentOption: js.UndefOr[MissingDataTreatmentOption] = js.undefined
+    ): MissingDataConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TreatmentOption.foreach(__v => __obj.updateDynamic("TreatmentOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MissingDataConfiguration]
     }
   }
 
@@ -6875,6 +14047,371 @@ package object quicksight {
     }
   }
 
+  /** The options that determine the negative value configuration.
+    */
+  @js.native
+  trait NegativeValueConfiguration extends js.Object {
+    var DisplayMode: NegativeValueDisplayMode
+  }
+
+  object NegativeValueConfiguration {
+    @inline
+    def apply(
+        DisplayMode: NegativeValueDisplayMode
+    ): NegativeValueConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DisplayMode" -> DisplayMode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NegativeValueConfiguration]
+    }
+  }
+
+  /** The options that determine the null value format configuration.
+    */
+  @js.native
+  trait NullValueFormatConfiguration extends js.Object {
+    var NullString: NullString
+  }
+
+  object NullValueFormatConfiguration {
+    @inline
+    def apply(
+        NullString: NullString
+    ): NullValueFormatConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "NullString" -> NullString.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NullValueFormatConfiguration]
+    }
+  }
+
+  /** The options that determine the number display format configuration.
+    */
+  @js.native
+  trait NumberDisplayFormatConfiguration extends js.Object {
+    var DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration]
+    var NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration]
+    var NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration]
+    var NumberScale: js.UndefOr[NumberScale]
+    var Prefix: js.UndefOr[Prefix]
+    var SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration]
+    var Suffix: js.UndefOr[Suffix]
+  }
+
+  object NumberDisplayFormatConfiguration {
+    @inline
+    def apply(
+        DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration] = js.undefined,
+        NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration] = js.undefined,
+        NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration] = js.undefined,
+        NumberScale: js.UndefOr[NumberScale] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration] = js.undefined,
+        Suffix: js.UndefOr[Suffix] = js.undefined
+    ): NumberDisplayFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DecimalPlacesConfiguration.foreach(__v => __obj.updateDynamic("DecimalPlacesConfiguration")(__v.asInstanceOf[js.Any]))
+      NegativeValueConfiguration.foreach(__v => __obj.updateDynamic("NegativeValueConfiguration")(__v.asInstanceOf[js.Any]))
+      NullValueFormatConfiguration.foreach(__v => __obj.updateDynamic("NullValueFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumberScale.foreach(__v => __obj.updateDynamic("NumberScale")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      SeparatorConfiguration.foreach(__v => __obj.updateDynamic("SeparatorConfiguration")(__v.asInstanceOf[js.Any]))
+      Suffix.foreach(__v => __obj.updateDynamic("Suffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumberDisplayFormatConfiguration]
+    }
+  }
+
+  /** Formatting configuration for number fields.
+    */
+  @js.native
+  trait NumberFormatConfiguration extends js.Object {
+    var FormatConfiguration: js.UndefOr[NumericFormatConfiguration]
+  }
+
+  object NumberFormatConfiguration {
+    @inline
+    def apply(
+        FormatConfiguration: js.UndefOr[NumericFormatConfiguration] = js.undefined
+    ): NumberFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumberFormatConfiguration]
+    }
+  }
+
+  /** The options for an axis with a numeric field.
+    */
+  @js.native
+  trait NumericAxisOptions extends js.Object {
+    var Range: js.UndefOr[AxisDisplayRange]
+    var Scale: js.UndefOr[AxisScale]
+  }
+
+  object NumericAxisOptions {
+    @inline
+    def apply(
+        Range: js.UndefOr[AxisDisplayRange] = js.undefined,
+        Scale: js.UndefOr[AxisScale] = js.undefined
+    ): NumericAxisOptions = {
+      val __obj = js.Dynamic.literal()
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
+      Scale.foreach(__v => __obj.updateDynamic("Scale")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericAxisOptions]
+    }
+  }
+
+  /** The category drill down filter.
+    */
+  @js.native
+  trait NumericEqualityDrillDownFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var Value: Double
+  }
+
+  object NumericEqualityDrillDownFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        Value: Double
+    ): NumericEqualityDrillDownFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NumericEqualityDrillDownFilter]
+    }
+  }
+
+  /** A <code>NumericEqualityFilter</code> filters values that are equal to the specified value.
+    */
+  @js.native
+  trait NumericEqualityFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var MatchOperator: NumericEqualityMatchOperator
+    var NullOption: FilterNullOption
+    var AggregationFunction: js.UndefOr[AggregationFunction]
+    var ParameterName: js.UndefOr[ParameterName]
+    var SelectAllOptions: js.UndefOr[NumericFilterSelectAllOptions]
+    var Value: js.UndefOr[Double]
+  }
+
+  object NumericEqualityFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        MatchOperator: NumericEqualityMatchOperator,
+        NullOption: FilterNullOption,
+        AggregationFunction: js.UndefOr[AggregationFunction] = js.undefined,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        SelectAllOptions: js.UndefOr[NumericFilterSelectAllOptions] = js.undefined,
+        Value: js.UndefOr[Double] = js.undefined
+    ): NumericEqualityFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any],
+        "MatchOperator" -> MatchOperator.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericEqualityFilter]
+    }
+  }
+
+  /** The options that determine the numeric format configuration. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait NumericFormatConfiguration extends js.Object {
+    var CurrencyDisplayFormatConfiguration: js.UndefOr[CurrencyDisplayFormatConfiguration]
+    var NumberDisplayFormatConfiguration: js.UndefOr[NumberDisplayFormatConfiguration]
+    var PercentageDisplayFormatConfiguration: js.UndefOr[PercentageDisplayFormatConfiguration]
+  }
+
+  object NumericFormatConfiguration {
+    @inline
+    def apply(
+        CurrencyDisplayFormatConfiguration: js.UndefOr[CurrencyDisplayFormatConfiguration] = js.undefined,
+        NumberDisplayFormatConfiguration: js.UndefOr[NumberDisplayFormatConfiguration] = js.undefined,
+        PercentageDisplayFormatConfiguration: js.UndefOr[PercentageDisplayFormatConfiguration] = js.undefined
+    ): NumericFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CurrencyDisplayFormatConfiguration.foreach(__v => __obj.updateDynamic("CurrencyDisplayFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumberDisplayFormatConfiguration.foreach(__v => __obj.updateDynamic("NumberDisplayFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      PercentageDisplayFormatConfiguration.foreach(__v => __obj.updateDynamic("PercentageDisplayFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericFormatConfiguration]
+    }
+  }
+
+  /** A <code>NumericRangeFilter</code> filters values that are within the value range.
+    */
+  @js.native
+  trait NumericRangeFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var NullOption: FilterNullOption
+    var AggregationFunction: js.UndefOr[AggregationFunction]
+    var IncludeMaximum: js.UndefOr[Boolean]
+    var IncludeMinimum: js.UndefOr[Boolean]
+    var RangeMaximum: js.UndefOr[NumericRangeFilterValue]
+    var RangeMinimum: js.UndefOr[NumericRangeFilterValue]
+    var SelectAllOptions: js.UndefOr[NumericFilterSelectAllOptions]
+  }
+
+  object NumericRangeFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        NullOption: FilterNullOption,
+        AggregationFunction: js.UndefOr[AggregationFunction] = js.undefined,
+        IncludeMaximum: js.UndefOr[Boolean] = js.undefined,
+        IncludeMinimum: js.UndefOr[Boolean] = js.undefined,
+        RangeMaximum: js.UndefOr[NumericRangeFilterValue] = js.undefined,
+        RangeMinimum: js.UndefOr[NumericRangeFilterValue] = js.undefined,
+        SelectAllOptions: js.UndefOr[NumericFilterSelectAllOptions] = js.undefined
+    ): NumericRangeFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      IncludeMaximum.foreach(__v => __obj.updateDynamic("IncludeMaximum")(__v.asInstanceOf[js.Any]))
+      IncludeMinimum.foreach(__v => __obj.updateDynamic("IncludeMinimum")(__v.asInstanceOf[js.Any]))
+      RangeMaximum.foreach(__v => __obj.updateDynamic("RangeMaximum")(__v.asInstanceOf[js.Any]))
+      RangeMinimum.foreach(__v => __obj.updateDynamic("RangeMinimum")(__v.asInstanceOf[js.Any]))
+      SelectAllOptions.foreach(__v => __obj.updateDynamic("SelectAllOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericRangeFilter]
+    }
+  }
+
+  /** The value input pf the numeric range filter.
+    */
+  @js.native
+  trait NumericRangeFilterValue extends js.Object {
+    var Parameter: js.UndefOr[ParameterName]
+    var StaticValue: js.UndefOr[Double]
+  }
+
+  object NumericRangeFilterValue {
+    @inline
+    def apply(
+        Parameter: js.UndefOr[ParameterName] = js.undefined,
+        StaticValue: js.UndefOr[Double] = js.undefined
+    ): NumericRangeFilterValue = {
+      val __obj = js.Dynamic.literal()
+      Parameter.foreach(__v => __obj.updateDynamic("Parameter")(__v.asInstanceOf[js.Any]))
+      StaticValue.foreach(__v => __obj.updateDynamic("StaticValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericRangeFilterValue]
+    }
+  }
+
+  /** The options that determine the numeric separator configuration.
+    */
+  @js.native
+  trait NumericSeparatorConfiguration extends js.Object {
+    var DecimalSeparator: js.UndefOr[NumericSeparatorSymbol]
+    var ThousandsSeparator: js.UndefOr[ThousandSeparatorOptions]
+  }
+
+  object NumericSeparatorConfiguration {
+    @inline
+    def apply(
+        DecimalSeparator: js.UndefOr[NumericSeparatorSymbol] = js.undefined,
+        ThousandsSeparator: js.UndefOr[ThousandSeparatorOptions] = js.undefined
+    ): NumericSeparatorConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DecimalSeparator.foreach(__v => __obj.updateDynamic("DecimalSeparator")(__v.asInstanceOf[js.Any]))
+      ThousandsSeparator.foreach(__v => __obj.updateDynamic("ThousandsSeparator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericSeparatorConfiguration]
+    }
+  }
+
+  /** Aggregation for numerical values.
+    */
+  @js.native
+  trait NumericalAggregationFunction extends js.Object {
+    var PercentileAggregation: js.UndefOr[PercentileAggregation]
+    var SimpleNumericalAggregation: js.UndefOr[SimpleNumericalAggregationFunction]
+  }
+
+  object NumericalAggregationFunction {
+    @inline
+    def apply(
+        PercentileAggregation: js.UndefOr[PercentileAggregation] = js.undefined,
+        SimpleNumericalAggregation: js.UndefOr[SimpleNumericalAggregationFunction] = js.undefined
+    ): NumericalAggregationFunction = {
+      val __obj = js.Dynamic.literal()
+      PercentileAggregation.foreach(__v => __obj.updateDynamic("PercentileAggregation")(__v.asInstanceOf[js.Any]))
+      SimpleNumericalAggregation.foreach(__v => __obj.updateDynamic("SimpleNumericalAggregation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericalAggregationFunction]
+    }
+  }
+
+  /** The dimension type field with numerical type columns.
+    */
+  @js.native
+  trait NumericalDimensionField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var FormatConfiguration: js.UndefOr[NumberFormatConfiguration]
+    var HierarchyId: js.UndefOr[HierarchyId]
+  }
+
+  object NumericalDimensionField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        FormatConfiguration: js.UndefOr[NumberFormatConfiguration] = js.undefined,
+        HierarchyId: js.UndefOr[HierarchyId] = js.undefined
+    ): NumericalDimensionField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      HierarchyId.foreach(__v => __obj.updateDynamic("HierarchyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericalDimensionField]
+    }
+  }
+
+  /** The measure type field with numerical type columns.
+    */
+  @js.native
+  trait NumericalMeasureField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var AggregationFunction: js.UndefOr[NumericalAggregationFunction]
+    var FormatConfiguration: js.UndefOr[NumberFormatConfiguration]
+  }
+
+  object NumericalMeasureField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        AggregationFunction: js.UndefOr[NumericalAggregationFunction] = js.undefined,
+        FormatConfiguration: js.UndefOr[NumberFormatConfiguration] = js.undefined
+    ): NumericalMeasureField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      AggregationFunction.foreach(__v => __obj.updateDynamic("AggregationFunction")(__v.asInstanceOf[js.Any]))
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NumericalMeasureField]
+    }
+  }
+
   /** The parameters for Oracle.
     */
   @js.native
@@ -6924,6 +14461,379 @@ package object quicksight {
     }
   }
 
+  /** The pagination configuration for a table visual or boxplot.
+    */
+  @js.native
+  trait PaginationConfiguration extends js.Object {
+    var PageNumber: PageNumber
+    var PageSize: Double
+  }
+
+  object PaginationConfiguration {
+    @inline
+    def apply(
+        PageNumber: PageNumber,
+        PageSize: Double
+    ): PaginationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "PageNumber" -> PageNumber.asInstanceOf[js.Any],
+        "PageSize" -> PageSize.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PaginationConfiguration]
+    }
+  }
+
+  /** A collection of options that configure how each panel displays in a small multiples chart.
+    */
+  @js.native
+  trait PanelConfiguration extends js.Object {
+    var BackgroundColor: js.UndefOr[HexColorWithTransparency]
+    var BackgroundVisibility: js.UndefOr[Visibility]
+    var BorderColor: js.UndefOr[HexColorWithTransparency]
+    var BorderStyle: js.UndefOr[PanelBorderStyle]
+    var BorderThickness: js.UndefOr[PixelLength]
+    var BorderVisibility: js.UndefOr[Visibility]
+    var GutterSpacing: js.UndefOr[PixelLength]
+    var GutterVisibility: js.UndefOr[Visibility]
+    var Title: js.UndefOr[PanelTitleOptions]
+  }
+
+  object PanelConfiguration {
+    @inline
+    def apply(
+        BackgroundColor: js.UndefOr[HexColorWithTransparency] = js.undefined,
+        BackgroundVisibility: js.UndefOr[Visibility] = js.undefined,
+        BorderColor: js.UndefOr[HexColorWithTransparency] = js.undefined,
+        BorderStyle: js.UndefOr[PanelBorderStyle] = js.undefined,
+        BorderThickness: js.UndefOr[PixelLength] = js.undefined,
+        BorderVisibility: js.UndefOr[Visibility] = js.undefined,
+        GutterSpacing: js.UndefOr[PixelLength] = js.undefined,
+        GutterVisibility: js.UndefOr[Visibility] = js.undefined,
+        Title: js.UndefOr[PanelTitleOptions] = js.undefined
+    ): PanelConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      BackgroundVisibility.foreach(__v => __obj.updateDynamic("BackgroundVisibility")(__v.asInstanceOf[js.Any]))
+      BorderColor.foreach(__v => __obj.updateDynamic("BorderColor")(__v.asInstanceOf[js.Any]))
+      BorderStyle.foreach(__v => __obj.updateDynamic("BorderStyle")(__v.asInstanceOf[js.Any]))
+      BorderThickness.foreach(__v => __obj.updateDynamic("BorderThickness")(__v.asInstanceOf[js.Any]))
+      BorderVisibility.foreach(__v => __obj.updateDynamic("BorderVisibility")(__v.asInstanceOf[js.Any]))
+      GutterSpacing.foreach(__v => __obj.updateDynamic("GutterSpacing")(__v.asInstanceOf[js.Any]))
+      GutterVisibility.foreach(__v => __obj.updateDynamic("GutterVisibility")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PanelConfiguration]
+    }
+  }
+
+  /** The options that determine the title styles for each small multiples panel.
+    */
+  @js.native
+  trait PanelTitleOptions extends js.Object {
+    var FontConfiguration: js.UndefOr[FontConfiguration]
+    var HorizontalTextAlignment: js.UndefOr[HorizontalTextAlignment]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object PanelTitleOptions {
+    @inline
+    def apply(
+        FontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        HorizontalTextAlignment: js.UndefOr[HorizontalTextAlignment] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): PanelTitleOptions = {
+      val __obj = js.Dynamic.literal()
+      FontConfiguration.foreach(__v => __obj.updateDynamic("FontConfiguration")(__v.asInstanceOf[js.Any]))
+      HorizontalTextAlignment.foreach(__v => __obj.updateDynamic("HorizontalTextAlignment")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PanelTitleOptions]
+    }
+  }
+
+  /** The control of a parameter that users can interact with in a dashboard or an analysis. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ParameterControl extends js.Object {
+    var DateTimePicker: js.UndefOr[ParameterDateTimePickerControl]
+    var Dropdown: js.UndefOr[ParameterDropDownControl]
+    var List: js.UndefOr[ParameterListControl]
+    var Slider: js.UndefOr[ParameterSliderControl]
+    var TextArea: js.UndefOr[ParameterTextAreaControl]
+    var TextField: js.UndefOr[ParameterTextFieldControl]
+  }
+
+  object ParameterControl {
+    @inline
+    def apply(
+        DateTimePicker: js.UndefOr[ParameterDateTimePickerControl] = js.undefined,
+        Dropdown: js.UndefOr[ParameterDropDownControl] = js.undefined,
+        List: js.UndefOr[ParameterListControl] = js.undefined,
+        Slider: js.UndefOr[ParameterSliderControl] = js.undefined,
+        TextArea: js.UndefOr[ParameterTextAreaControl] = js.undefined,
+        TextField: js.UndefOr[ParameterTextFieldControl] = js.undefined
+    ): ParameterControl = {
+      val __obj = js.Dynamic.literal()
+      DateTimePicker.foreach(__v => __obj.updateDynamic("DateTimePicker")(__v.asInstanceOf[js.Any]))
+      Dropdown.foreach(__v => __obj.updateDynamic("Dropdown")(__v.asInstanceOf[js.Any]))
+      List.foreach(__v => __obj.updateDynamic("List")(__v.asInstanceOf[js.Any]))
+      Slider.foreach(__v => __obj.updateDynamic("Slider")(__v.asInstanceOf[js.Any]))
+      TextArea.foreach(__v => __obj.updateDynamic("TextArea")(__v.asInstanceOf[js.Any]))
+      TextField.foreach(__v => __obj.updateDynamic("TextField")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterControl]
+    }
+  }
+
+  /** A control from a date parameter that specifies date and time.
+    */
+  @js.native
+  trait ParameterDateTimePickerControl extends js.Object {
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[DateTimePickerControlDisplayOptions]
+  }
+
+  object ParameterDateTimePickerControl {
+    @inline
+    def apply(
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[DateTimePickerControlDisplayOptions] = js.undefined
+    ): ParameterDateTimePickerControl = {
+      val __obj = js.Dynamic.literal(
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterDateTimePickerControl]
+    }
+  }
+
+  /** The declaration definition of a parameter. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html|Parameters in Amazon QuickSight]] in the <i>Amazon QuickSight User Guide</i>. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ParameterDeclaration extends js.Object {
+    var DateTimeParameterDeclaration: js.UndefOr[DateTimeParameterDeclaration]
+    var DecimalParameterDeclaration: js.UndefOr[DecimalParameterDeclaration]
+    var IntegerParameterDeclaration: js.UndefOr[IntegerParameterDeclaration]
+    var StringParameterDeclaration: js.UndefOr[StringParameterDeclaration]
+  }
+
+  object ParameterDeclaration {
+    @inline
+    def apply(
+        DateTimeParameterDeclaration: js.UndefOr[DateTimeParameterDeclaration] = js.undefined,
+        DecimalParameterDeclaration: js.UndefOr[DecimalParameterDeclaration] = js.undefined,
+        IntegerParameterDeclaration: js.UndefOr[IntegerParameterDeclaration] = js.undefined,
+        StringParameterDeclaration: js.UndefOr[StringParameterDeclaration] = js.undefined
+    ): ParameterDeclaration = {
+      val __obj = js.Dynamic.literal()
+      DateTimeParameterDeclaration.foreach(__v => __obj.updateDynamic("DateTimeParameterDeclaration")(__v.asInstanceOf[js.Any]))
+      DecimalParameterDeclaration.foreach(__v => __obj.updateDynamic("DecimalParameterDeclaration")(__v.asInstanceOf[js.Any]))
+      IntegerParameterDeclaration.foreach(__v => __obj.updateDynamic("IntegerParameterDeclaration")(__v.asInstanceOf[js.Any]))
+      StringParameterDeclaration.foreach(__v => __obj.updateDynamic("StringParameterDeclaration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterDeclaration]
+    }
+  }
+
+  /** A control to display a dropdown list with buttons that are used to select a single value.
+    */
+  @js.native
+  trait ParameterDropDownControl extends js.Object {
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var Title: SheetControlTitle
+    var CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration]
+    var DisplayOptions: js.UndefOr[DropDownControlDisplayOptions]
+    var SelectableValues: js.UndefOr[ParameterSelectableValues]
+    var Type: js.UndefOr[SheetControlListType]
+  }
+
+  object ParameterDropDownControl {
+    @inline
+    def apply(
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        Title: SheetControlTitle,
+        CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration] = js.undefined,
+        DisplayOptions: js.UndefOr[DropDownControlDisplayOptions] = js.undefined,
+        SelectableValues: js.UndefOr[ParameterSelectableValues] = js.undefined,
+        Type: js.UndefOr[SheetControlListType] = js.undefined
+    ): ParameterDropDownControl = {
+      val __obj = js.Dynamic.literal(
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      CascadingControlConfiguration.foreach(__v => __obj.updateDynamic("CascadingControlConfiguration")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      SelectableValues.foreach(__v => __obj.updateDynamic("SelectableValues")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterDropDownControl]
+    }
+  }
+
+  /** A control to display a list with buttons or boxes that are used to select either a single value or multiple values.
+    */
+  @js.native
+  trait ParameterListControl extends js.Object {
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var Title: SheetControlTitle
+    var CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration]
+    var DisplayOptions: js.UndefOr[ListControlDisplayOptions]
+    var SelectableValues: js.UndefOr[ParameterSelectableValues]
+    var Type: js.UndefOr[SheetControlListType]
+  }
+
+  object ParameterListControl {
+    @inline
+    def apply(
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        Title: SheetControlTitle,
+        CascadingControlConfiguration: js.UndefOr[CascadingControlConfiguration] = js.undefined,
+        DisplayOptions: js.UndefOr[ListControlDisplayOptions] = js.undefined,
+        SelectableValues: js.UndefOr[ParameterSelectableValues] = js.undefined,
+        Type: js.UndefOr[SheetControlListType] = js.undefined
+    ): ParameterListControl = {
+      val __obj = js.Dynamic.literal(
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      CascadingControlConfiguration.foreach(__v => __obj.updateDynamic("CascadingControlConfiguration")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      SelectableValues.foreach(__v => __obj.updateDynamic("SelectableValues")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterListControl]
+    }
+  }
+
+  /** A list of selectable values that are used in a control.
+    */
+  @js.native
+  trait ParameterSelectableValues extends js.Object {
+    var LinkToDataSetColumn: js.UndefOr[ColumnIdentifier]
+    var Values: js.UndefOr[ParameterSelectableValueList]
+  }
+
+  object ParameterSelectableValues {
+    @inline
+    def apply(
+        LinkToDataSetColumn: js.UndefOr[ColumnIdentifier] = js.undefined,
+        Values: js.UndefOr[ParameterSelectableValueList] = js.undefined
+    ): ParameterSelectableValues = {
+      val __obj = js.Dynamic.literal()
+      LinkToDataSetColumn.foreach(__v => __obj.updateDynamic("LinkToDataSetColumn")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterSelectableValues]
+    }
+  }
+
+  /** A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.
+    */
+  @js.native
+  trait ParameterSliderControl extends js.Object {
+    var MaximumValue: Double
+    var MinimumValue: Double
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var StepSize: Double
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[SliderControlDisplayOptions]
+  }
+
+  object ParameterSliderControl {
+    @inline
+    def apply(
+        MaximumValue: Double,
+        MinimumValue: Double,
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        StepSize: Double,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[SliderControlDisplayOptions] = js.undefined
+    ): ParameterSliderControl = {
+      val __obj = js.Dynamic.literal(
+        "MaximumValue" -> MaximumValue.asInstanceOf[js.Any],
+        "MinimumValue" -> MinimumValue.asInstanceOf[js.Any],
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "StepSize" -> StepSize.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterSliderControl]
+    }
+  }
+
+  /** A control to display a text box that is used to enter multiple entries.
+    */
+  @js.native
+  trait ParameterTextAreaControl extends js.Object {
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var Title: SheetControlTitle
+    var Delimiter: js.UndefOr[TextAreaControlDelimiter]
+    var DisplayOptions: js.UndefOr[TextAreaControlDisplayOptions]
+  }
+
+  object ParameterTextAreaControl {
+    @inline
+    def apply(
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        Title: SheetControlTitle,
+        Delimiter: js.UndefOr[TextAreaControlDelimiter] = js.undefined,
+        DisplayOptions: js.UndefOr[TextAreaControlDisplayOptions] = js.undefined
+    ): ParameterTextAreaControl = {
+      val __obj = js.Dynamic.literal(
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterTextAreaControl]
+    }
+  }
+
+  /** A control to display a text box that is used to enter a single entry.
+    */
+  @js.native
+  trait ParameterTextFieldControl extends js.Object {
+    var ParameterControlId: ShortRestrictiveResourceId
+    var SourceParameterName: ParameterName
+    var Title: SheetControlTitle
+    var DisplayOptions: js.UndefOr[TextFieldControlDisplayOptions]
+  }
+
+  object ParameterTextFieldControl {
+    @inline
+    def apply(
+        ParameterControlId: ShortRestrictiveResourceId,
+        SourceParameterName: ParameterName,
+        Title: SheetControlTitle,
+        DisplayOptions: js.UndefOr[TextFieldControlDisplayOptions] = js.undefined
+    ): ParameterTextFieldControl = {
+      val __obj = js.Dynamic.literal(
+        "ParameterControlId" -> ParameterControlId.asInstanceOf[js.Any],
+        "SourceParameterName" -> SourceParameterName.asInstanceOf[js.Any],
+        "Title" -> Title.asInstanceOf[js.Any]
+      )
+
+      DisplayOptions.foreach(__v => __obj.updateDynamic("DisplayOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParameterTextFieldControl]
+    }
+  }
+
   /** A list of Amazon QuickSight parameters and the list's override values.
     */
   @js.native
@@ -6951,6 +14861,139 @@ package object quicksight {
     }
   }
 
+  /** The percent range in the visible range.
+    */
+  @js.native
+  trait PercentVisibleRange extends js.Object {
+    var From: js.UndefOr[PercentNumber]
+    var To: js.UndefOr[PercentNumber]
+  }
+
+  object PercentVisibleRange {
+    @inline
+    def apply(
+        From: js.UndefOr[PercentNumber] = js.undefined,
+        To: js.UndefOr[PercentNumber] = js.undefined
+    ): PercentVisibleRange = {
+      val __obj = js.Dynamic.literal()
+      From.foreach(__v => __obj.updateDynamic("From")(__v.asInstanceOf[js.Any]))
+      To.foreach(__v => __obj.updateDynamic("To")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PercentVisibleRange]
+    }
+  }
+
+  /** The options that determine the percentage display format configuration.
+    */
+  @js.native
+  trait PercentageDisplayFormatConfiguration extends js.Object {
+    var DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration]
+    var NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration]
+    var NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration]
+    var Prefix: js.UndefOr[Prefix]
+    var SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration]
+    var Suffix: js.UndefOr[Suffix]
+  }
+
+  object PercentageDisplayFormatConfiguration {
+    @inline
+    def apply(
+        DecimalPlacesConfiguration: js.UndefOr[DecimalPlacesConfiguration] = js.undefined,
+        NegativeValueConfiguration: js.UndefOr[NegativeValueConfiguration] = js.undefined,
+        NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration] = js.undefined,
+        Prefix: js.UndefOr[Prefix] = js.undefined,
+        SeparatorConfiguration: js.UndefOr[NumericSeparatorConfiguration] = js.undefined,
+        Suffix: js.UndefOr[Suffix] = js.undefined
+    ): PercentageDisplayFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DecimalPlacesConfiguration.foreach(__v => __obj.updateDynamic("DecimalPlacesConfiguration")(__v.asInstanceOf[js.Any]))
+      NegativeValueConfiguration.foreach(__v => __obj.updateDynamic("NegativeValueConfiguration")(__v.asInstanceOf[js.Any]))
+      NullValueFormatConfiguration.foreach(__v => __obj.updateDynamic("NullValueFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      SeparatorConfiguration.foreach(__v => __obj.updateDynamic("SeparatorConfiguration")(__v.asInstanceOf[js.Any]))
+      Suffix.foreach(__v => __obj.updateDynamic("Suffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PercentageDisplayFormatConfiguration]
+    }
+  }
+
+  /** An aggregation based on the percentile of values in a dimension or measure.
+    */
+  @js.native
+  trait PercentileAggregation extends js.Object {
+    var PercentileValue: js.UndefOr[PercentileValue]
+  }
+
+  object PercentileAggregation {
+    @inline
+    def apply(
+        PercentileValue: js.UndefOr[PercentileValue] = js.undefined
+    ): PercentileAggregation = {
+      val __obj = js.Dynamic.literal()
+      PercentileValue.foreach(__v => __obj.updateDynamic("PercentileValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PercentileAggregation]
+    }
+  }
+
+  /** The period over period computation configuration.
+    */
+  @js.native
+  trait PeriodOverPeriodComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var Name: js.UndefOr[String]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object PeriodOverPeriodComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        Name: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): PeriodOverPeriodComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PeriodOverPeriodComputation]
+    }
+  }
+
+  /** The period to date computation configuration.
+    */
+  @js.native
+  trait PeriodToDateComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var Name: js.UndefOr[String]
+    var PeriodTimeGranularity: js.UndefOr[TimeGranularity]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object PeriodToDateComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        Name: js.UndefOr[String] = js.undefined,
+        PeriodTimeGranularity: js.UndefOr[TimeGranularity] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): PeriodToDateComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PeriodTimeGranularity.foreach(__v => __obj.updateDynamic("PeriodTimeGranularity")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PeriodToDateComputation]
+    }
+  }
+
   /** A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
@@ -6972,6 +15015,626 @@ package object quicksight {
       RelationalTable.foreach(__v => __obj.updateDynamic("RelationalTable")(__v.asInstanceOf[js.Any]))
       S3Source.foreach(__v => __obj.updateDynamic("S3Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhysicalTable]
+    }
+  }
+
+  /** The field well configuration of a pie chart.
+    */
+  @js.native
+  trait PieChartAggregatedFieldWells extends js.Object {
+    var Category: js.UndefOr[DimensionFieldList]
+    var SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object PieChartAggregatedFieldWells {
+    @inline
+    def apply(
+        Category: js.UndefOr[DimensionFieldList] = js.undefined,
+        SmallMultiples: js.UndefOr[SmallMultiplesDimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): PieChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      SmallMultiples.foreach(__v => __obj.updateDynamic("SmallMultiples")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PieChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a pie chart.
+    */
+  @js.native
+  trait PieChartConfiguration extends js.Object {
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var DonutOptions: js.UndefOr[DonutOptions]
+    var FieldWells: js.UndefOr[PieChartFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions]
+    var SortConfiguration: js.UndefOr[PieChartSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+  }
+
+  object PieChartConfiguration {
+    @inline
+    def apply(
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ContributionAnalysisDefaults: js.UndefOr[ContributionAnalysisDefaultList] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        DonutOptions: js.UndefOr[DonutOptions] = js.undefined,
+        FieldWells: js.UndefOr[PieChartFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        SmallMultiplesOptions: js.UndefOr[SmallMultiplesOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[PieChartSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        ValueLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined
+    ): PieChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      ContributionAnalysisDefaults.foreach(__v => __obj.updateDynamic("ContributionAnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      DonutOptions.foreach(__v => __obj.updateDynamic("DonutOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesOptions.foreach(__v => __obj.updateDynamic("SmallMultiplesOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      ValueLabelOptions.foreach(__v => __obj.updateDynamic("ValueLabelOptions")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PieChartConfiguration]
+    }
+  }
+
+  /** The field well configuration of a pie chart. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait PieChartFieldWells extends js.Object {
+    var PieChartAggregatedFieldWells: js.UndefOr[PieChartAggregatedFieldWells]
+  }
+
+  object PieChartFieldWells {
+    @inline
+    def apply(
+        PieChartAggregatedFieldWells: js.UndefOr[PieChartAggregatedFieldWells] = js.undefined
+    ): PieChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      PieChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("PieChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PieChartFieldWells]
+    }
+  }
+
+  /** The sort configuration of a pie chart.
+    */
+  @js.native
+  trait PieChartSortConfiguration extends js.Object {
+    var CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+    var SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var SmallMultiplesSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object PieChartSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined,
+        SmallMultiplesLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        SmallMultiplesSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): PieChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimit.foreach(__v => __obj.updateDynamic("CategoryItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesLimitConfiguration.foreach(__v => __obj.updateDynamic("SmallMultiplesLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      SmallMultiplesSort.foreach(__v => __obj.updateDynamic("SmallMultiplesSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PieChartSortConfiguration]
+    }
+  }
+
+  /** A pie or donut chart. The <code>PieChartVisual</code> structure describes a visual that is a member of the pie chart family. The following charts can be described by using this structure: * Pie charts * Donut charts For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/pie-chart.html|Using pie charts]] in the <i>Amazon QuickSight User Guide</i>. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/donut-chart.html|Using donut charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait PieChartVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[PieChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object PieChartVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[PieChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): PieChartVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PieChartVisual]
+    }
+  }
+
+  /** The field sort options for a pivot table sort configuration.
+    */
+  @js.native
+  trait PivotFieldSortOptions extends js.Object {
+    var FieldId: FieldId
+    var SortBy: PivotTableSortBy
+  }
+
+  object PivotFieldSortOptions {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        SortBy: PivotTableSortBy
+    ): PivotFieldSortOptions = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any],
+        "SortBy" -> SortBy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PivotFieldSortOptions]
+    }
+  }
+
+  /** The aggregated field well for the pivot table.
+    */
+  @js.native
+  trait PivotTableAggregatedFieldWells extends js.Object {
+    var Columns: js.UndefOr[PivotTableDimensionList]
+    var Rows: js.UndefOr[PivotTableDimensionList]
+    var Values: js.UndefOr[PivotMeasureFieldList]
+  }
+
+  object PivotTableAggregatedFieldWells {
+    @inline
+    def apply(
+        Columns: js.UndefOr[PivotTableDimensionList] = js.undefined,
+        Rows: js.UndefOr[PivotTableDimensionList] = js.undefined,
+        Values: js.UndefOr[PivotMeasureFieldList] = js.undefined
+    ): PivotTableAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      Rows.foreach(__v => __obj.updateDynamic("Rows")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableAggregatedFieldWells]
+    }
+  }
+
+  /** The cell conditional formatting option for a pivot table.
+    */
+  @js.native
+  trait PivotTableCellConditionalFormatting extends js.Object {
+    var FieldId: FieldId
+    var Scope: js.UndefOr[PivotTableConditionalFormattingScope]
+    var TextFormat: js.UndefOr[TextConditionalFormat]
+  }
+
+  object PivotTableCellConditionalFormatting {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        Scope: js.UndefOr[PivotTableConditionalFormattingScope] = js.undefined,
+        TextFormat: js.UndefOr[TextConditionalFormat] = js.undefined
+    ): PivotTableCellConditionalFormatting = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
+      TextFormat.foreach(__v => __obj.updateDynamic("TextFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableCellConditionalFormatting]
+    }
+  }
+
+  /** The conditional formatting for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait PivotTableConditionalFormatting extends js.Object {
+    var ConditionalFormattingOptions: js.UndefOr[PivotTableConditionalFormattingOptionList]
+  }
+
+  object PivotTableConditionalFormatting {
+    @inline
+    def apply(
+        ConditionalFormattingOptions: js.UndefOr[PivotTableConditionalFormattingOptionList] = js.undefined
+    ): PivotTableConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ConditionalFormattingOptions.foreach(__v => __obj.updateDynamic("ConditionalFormattingOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableConditionalFormatting]
+    }
+  }
+
+  /** Conditional formatting options for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait PivotTableConditionalFormattingOption extends js.Object {
+    var Cell: js.UndefOr[PivotTableCellConditionalFormatting]
+  }
+
+  object PivotTableConditionalFormattingOption {
+    @inline
+    def apply(
+        Cell: js.UndefOr[PivotTableCellConditionalFormatting] = js.undefined
+    ): PivotTableConditionalFormattingOption = {
+      val __obj = js.Dynamic.literal()
+      Cell.foreach(__v => __obj.updateDynamic("Cell")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableConditionalFormattingOption]
+    }
+  }
+
+  /** The scope of the cell for conditional formatting.
+    */
+  @js.native
+  trait PivotTableConditionalFormattingScope extends js.Object {
+    var Role: js.UndefOr[PivotTableConditionalFormattingScopeRole]
+  }
+
+  object PivotTableConditionalFormattingScope {
+    @inline
+    def apply(
+        Role: js.UndefOr[PivotTableConditionalFormattingScopeRole] = js.undefined
+    ): PivotTableConditionalFormattingScope = {
+      val __obj = js.Dynamic.literal()
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableConditionalFormattingScope]
+    }
+  }
+
+  /** The configuration for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait PivotTableConfiguration extends js.Object {
+    var FieldOptions: js.UndefOr[PivotTableFieldOptions]
+    var FieldWells: js.UndefOr[PivotTableFieldWells]
+    var PaginatedReportOptions: js.UndefOr[PivotTablePaginatedReportOptions]
+    var SortConfiguration: js.UndefOr[PivotTableSortConfiguration]
+    var TableOptions: js.UndefOr[PivotTableOptions]
+    var TotalOptions: js.UndefOr[PivotTableTotalOptions]
+  }
+
+  object PivotTableConfiguration {
+    @inline
+    def apply(
+        FieldOptions: js.UndefOr[PivotTableFieldOptions] = js.undefined,
+        FieldWells: js.UndefOr[PivotTableFieldWells] = js.undefined,
+        PaginatedReportOptions: js.UndefOr[PivotTablePaginatedReportOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[PivotTableSortConfiguration] = js.undefined,
+        TableOptions: js.UndefOr[PivotTableOptions] = js.undefined,
+        TotalOptions: js.UndefOr[PivotTableTotalOptions] = js.undefined
+    ): PivotTableConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldOptions.foreach(__v => __obj.updateDynamic("FieldOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      PaginatedReportOptions.foreach(__v => __obj.updateDynamic("PaginatedReportOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      TableOptions.foreach(__v => __obj.updateDynamic("TableOptions")(__v.asInstanceOf[js.Any]))
+      TotalOptions.foreach(__v => __obj.updateDynamic("TotalOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableConfiguration]
+    }
+  }
+
+  /** The data path options for the pivot table field options.
+    */
+  @js.native
+  trait PivotTableDataPathOption extends js.Object {
+    var DataPathList: DataPathValueList
+    var Width: js.UndefOr[PixelLength]
+  }
+
+  object PivotTableDataPathOption {
+    @inline
+    def apply(
+        DataPathList: DataPathValueList,
+        Width: js.UndefOr[PixelLength] = js.undefined
+    ): PivotTableDataPathOption = {
+      val __obj = js.Dynamic.literal(
+        "DataPathList" -> DataPathList.asInstanceOf[js.Any]
+      )
+
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableDataPathOption]
+    }
+  }
+
+  /** The selected field options for the pivot table field options.
+    */
+  @js.native
+  trait PivotTableFieldOption extends js.Object {
+    var FieldId: FieldId
+    var CustomLabel: js.UndefOr[CustomLabel]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object PivotTableFieldOption {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        CustomLabel: js.UndefOr[CustomLabel] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): PivotTableFieldOption = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableFieldOption]
+    }
+  }
+
+  /** The field options for a pivot table visual.
+    */
+  @js.native
+  trait PivotTableFieldOptions extends js.Object {
+    var DataPathOptions: js.UndefOr[PivotTableDataPathOptionList]
+    var SelectedFieldOptions: js.UndefOr[PivotTableFieldOptionList]
+  }
+
+  object PivotTableFieldOptions {
+    @inline
+    def apply(
+        DataPathOptions: js.UndefOr[PivotTableDataPathOptionList] = js.undefined,
+        SelectedFieldOptions: js.UndefOr[PivotTableFieldOptionList] = js.undefined
+    ): PivotTableFieldOptions = {
+      val __obj = js.Dynamic.literal()
+      DataPathOptions.foreach(__v => __obj.updateDynamic("DataPathOptions")(__v.asInstanceOf[js.Any]))
+      SelectedFieldOptions.foreach(__v => __obj.updateDynamic("SelectedFieldOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableFieldOptions]
+    }
+  }
+
+  /** The optional configuration of subtotals cells.
+    */
+  @js.native
+  trait PivotTableFieldSubtotalOptions extends js.Object {
+    var FieldId: js.UndefOr[FieldId]
+  }
+
+  object PivotTableFieldSubtotalOptions {
+    @inline
+    def apply(
+        FieldId: js.UndefOr[FieldId] = js.undefined
+    ): PivotTableFieldSubtotalOptions = {
+      val __obj = js.Dynamic.literal()
+      FieldId.foreach(__v => __obj.updateDynamic("FieldId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableFieldSubtotalOptions]
+    }
+  }
+
+  /** The field wells for a pivot table visual. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait PivotTableFieldWells extends js.Object {
+    var PivotTableAggregatedFieldWells: js.UndefOr[PivotTableAggregatedFieldWells]
+  }
+
+  object PivotTableFieldWells {
+    @inline
+    def apply(
+        PivotTableAggregatedFieldWells: js.UndefOr[PivotTableAggregatedFieldWells] = js.undefined
+    ): PivotTableFieldWells = {
+      val __obj = js.Dynamic.literal()
+      PivotTableAggregatedFieldWells.foreach(__v => __obj.updateDynamic("PivotTableAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableFieldWells]
+    }
+  }
+
+  /** The table options for a pivot table visual.
+    */
+  @js.native
+  trait PivotTableOptions extends js.Object {
+    var CellStyle: js.UndefOr[TableCellStyle]
+    var ColumnHeaderStyle: js.UndefOr[TableCellStyle]
+    var ColumnNamesVisibility: js.UndefOr[Visibility]
+    var MetricPlacement: js.UndefOr[PivotTableMetricPlacement]
+    var RowAlternateColorOptions: js.UndefOr[RowAlternateColorOptions]
+    var RowFieldNamesStyle: js.UndefOr[TableCellStyle]
+    var RowHeaderStyle: js.UndefOr[TableCellStyle]
+    var SingleMetricVisibility: js.UndefOr[Visibility]
+    var ToggleButtonsVisibility: js.UndefOr[Visibility]
+  }
+
+  object PivotTableOptions {
+    @inline
+    def apply(
+        CellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        ColumnHeaderStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        ColumnNamesVisibility: js.UndefOr[Visibility] = js.undefined,
+        MetricPlacement: js.UndefOr[PivotTableMetricPlacement] = js.undefined,
+        RowAlternateColorOptions: js.UndefOr[RowAlternateColorOptions] = js.undefined,
+        RowFieldNamesStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        RowHeaderStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        SingleMetricVisibility: js.UndefOr[Visibility] = js.undefined,
+        ToggleButtonsVisibility: js.UndefOr[Visibility] = js.undefined
+    ): PivotTableOptions = {
+      val __obj = js.Dynamic.literal()
+      CellStyle.foreach(__v => __obj.updateDynamic("CellStyle")(__v.asInstanceOf[js.Any]))
+      ColumnHeaderStyle.foreach(__v => __obj.updateDynamic("ColumnHeaderStyle")(__v.asInstanceOf[js.Any]))
+      ColumnNamesVisibility.foreach(__v => __obj.updateDynamic("ColumnNamesVisibility")(__v.asInstanceOf[js.Any]))
+      MetricPlacement.foreach(__v => __obj.updateDynamic("MetricPlacement")(__v.asInstanceOf[js.Any]))
+      RowAlternateColorOptions.foreach(__v => __obj.updateDynamic("RowAlternateColorOptions")(__v.asInstanceOf[js.Any]))
+      RowFieldNamesStyle.foreach(__v => __obj.updateDynamic("RowFieldNamesStyle")(__v.asInstanceOf[js.Any]))
+      RowHeaderStyle.foreach(__v => __obj.updateDynamic("RowHeaderStyle")(__v.asInstanceOf[js.Any]))
+      SingleMetricVisibility.foreach(__v => __obj.updateDynamic("SingleMetricVisibility")(__v.asInstanceOf[js.Any]))
+      ToggleButtonsVisibility.foreach(__v => __obj.updateDynamic("ToggleButtonsVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableOptions]
+    }
+  }
+
+  /** The paginated report options for a pivot table visual.
+    */
+  @js.native
+  trait PivotTablePaginatedReportOptions extends js.Object {
+    var OverflowColumnHeaderVisibility: js.UndefOr[Visibility]
+    var VerticalOverflowVisibility: js.UndefOr[Visibility]
+  }
+
+  object PivotTablePaginatedReportOptions {
+    @inline
+    def apply(
+        OverflowColumnHeaderVisibility: js.UndefOr[Visibility] = js.undefined,
+        VerticalOverflowVisibility: js.UndefOr[Visibility] = js.undefined
+    ): PivotTablePaginatedReportOptions = {
+      val __obj = js.Dynamic.literal()
+      OverflowColumnHeaderVisibility.foreach(__v => __obj.updateDynamic("OverflowColumnHeaderVisibility")(__v.asInstanceOf[js.Any]))
+      VerticalOverflowVisibility.foreach(__v => __obj.updateDynamic("VerticalOverflowVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTablePaginatedReportOptions]
+    }
+  }
+
+  /** The sort by field for the field sort options.
+    */
+  @js.native
+  trait PivotTableSortBy extends js.Object {
+    var Column: js.UndefOr[ColumnSort]
+    var DataPath: js.UndefOr[DataPathSort]
+    var Field: js.UndefOr[FieldSort]
+  }
+
+  object PivotTableSortBy {
+    @inline
+    def apply(
+        Column: js.UndefOr[ColumnSort] = js.undefined,
+        DataPath: js.UndefOr[DataPathSort] = js.undefined,
+        Field: js.UndefOr[FieldSort] = js.undefined
+    ): PivotTableSortBy = {
+      val __obj = js.Dynamic.literal()
+      Column.foreach(__v => __obj.updateDynamic("Column")(__v.asInstanceOf[js.Any]))
+      DataPath.foreach(__v => __obj.updateDynamic("DataPath")(__v.asInstanceOf[js.Any]))
+      Field.foreach(__v => __obj.updateDynamic("Field")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableSortBy]
+    }
+  }
+
+  /** The sort configuration for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait PivotTableSortConfiguration extends js.Object {
+    var FieldSortOptions: js.UndefOr[PivotFieldSortOptionsList]
+  }
+
+  object PivotTableSortConfiguration {
+    @inline
+    def apply(
+        FieldSortOptions: js.UndefOr[PivotFieldSortOptionsList] = js.undefined
+    ): PivotTableSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldSortOptions.foreach(__v => __obj.updateDynamic("FieldSortOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableSortConfiguration]
+    }
+  }
+
+  /** The total options for a pivot table visual.
+    */
+  @js.native
+  trait PivotTableTotalOptions extends js.Object {
+    var ColumnSubtotalOptions: js.UndefOr[SubtotalOptions]
+    var ColumnTotalOptions: js.UndefOr[PivotTotalOptions]
+    var RowSubtotalOptions: js.UndefOr[SubtotalOptions]
+    var RowTotalOptions: js.UndefOr[PivotTotalOptions]
+  }
+
+  object PivotTableTotalOptions {
+    @inline
+    def apply(
+        ColumnSubtotalOptions: js.UndefOr[SubtotalOptions] = js.undefined,
+        ColumnTotalOptions: js.UndefOr[PivotTotalOptions] = js.undefined,
+        RowSubtotalOptions: js.UndefOr[SubtotalOptions] = js.undefined,
+        RowTotalOptions: js.UndefOr[PivotTotalOptions] = js.undefined
+    ): PivotTableTotalOptions = {
+      val __obj = js.Dynamic.literal()
+      ColumnSubtotalOptions.foreach(__v => __obj.updateDynamic("ColumnSubtotalOptions")(__v.asInstanceOf[js.Any]))
+      ColumnTotalOptions.foreach(__v => __obj.updateDynamic("ColumnTotalOptions")(__v.asInstanceOf[js.Any]))
+      RowSubtotalOptions.foreach(__v => __obj.updateDynamic("RowSubtotalOptions")(__v.asInstanceOf[js.Any]))
+      RowTotalOptions.foreach(__v => __obj.updateDynamic("RowTotalOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableTotalOptions]
+    }
+  }
+
+  /** A pivot table. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/pivot-table.html|Using pivot tables]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait PivotTableVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[PivotTableConfiguration]
+    var ConditionalFormatting: js.UndefOr[PivotTableConditionalFormatting]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object PivotTableVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[PivotTableConfiguration] = js.undefined,
+        ConditionalFormatting: js.UndefOr[PivotTableConditionalFormatting] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): PivotTableVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ConditionalFormatting.foreach(__v => __obj.updateDynamic("ConditionalFormatting")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTableVisual]
+    }
+  }
+
+  /** The optional configuration of totals cells in a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait PivotTotalOptions extends js.Object {
+    var CustomLabel: js.UndefOr[String]
+    var MetricHeaderCellStyle: js.UndefOr[TableCellStyle]
+    var Placement: js.UndefOr[TableTotalsPlacement]
+    var ScrollStatus: js.UndefOr[TableTotalsScrollStatus]
+    var TotalCellStyle: js.UndefOr[TableCellStyle]
+    var TotalsVisibility: js.UndefOr[Visibility]
+    var ValueCellStyle: js.UndefOr[TableCellStyle]
+  }
+
+  object PivotTotalOptions {
+    @inline
+    def apply(
+        CustomLabel: js.UndefOr[String] = js.undefined,
+        MetricHeaderCellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        Placement: js.UndefOr[TableTotalsPlacement] = js.undefined,
+        ScrollStatus: js.UndefOr[TableTotalsScrollStatus] = js.undefined,
+        TotalCellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        TotalsVisibility: js.UndefOr[Visibility] = js.undefined,
+        ValueCellStyle: js.UndefOr[TableCellStyle] = js.undefined
+    ): PivotTotalOptions = {
+      val __obj = js.Dynamic.literal()
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      MetricHeaderCellStyle.foreach(__v => __obj.updateDynamic("MetricHeaderCellStyle")(__v.asInstanceOf[js.Any]))
+      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
+      ScrollStatus.foreach(__v => __obj.updateDynamic("ScrollStatus")(__v.asInstanceOf[js.Any]))
+      TotalCellStyle.foreach(__v => __obj.updateDynamic("TotalCellStyle")(__v.asInstanceOf[js.Any]))
+      TotalsVisibility.foreach(__v => __obj.updateDynamic("TotalsVisibility")(__v.asInstanceOf[js.Any]))
+      ValueCellStyle.foreach(__v => __obj.updateDynamic("ValueCellStyle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PivotTotalOptions]
     }
   }
 
@@ -7000,6 +15663,32 @@ package object quicksight {
     }
   }
 
+  /** The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.
+    */
+  @js.native
+  trait PredefinedHierarchy extends js.Object {
+    var Columns: PredefinedHierarchyColumnList
+    var HierarchyId: HierarchyId
+    var DrillDownFilters: js.UndefOr[DrillDownFilterList]
+  }
+
+  object PredefinedHierarchy {
+    @inline
+    def apply(
+        Columns: PredefinedHierarchyColumnList,
+        HierarchyId: HierarchyId,
+        DrillDownFilters: js.UndefOr[DrillDownFilterList] = js.undefined
+    ): PredefinedHierarchy = {
+      val __obj = js.Dynamic.literal(
+        "Columns" -> Columns.asInstanceOf[js.Any],
+        "HierarchyId" -> HierarchyId.asInstanceOf[js.Any]
+      )
+
+      DrillDownFilters.foreach(__v => __obj.updateDynamic("DrillDownFilters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredefinedHierarchy]
+    }
+  }
+
   /** The parameters for Presto.
     */
   @js.native
@@ -7022,6 +15711,24 @@ package object quicksight {
         "Port" -> Port.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PrestoParameters]
+    }
+  }
+
+  /** The options that determine the presentation of the progress bar of a KPI visual.
+    */
+  @js.native
+  trait ProgressBarOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ProgressBarOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ProgressBarOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProgressBarOptions]
     }
   }
 
@@ -7063,6 +15770,24 @@ package object quicksight {
         "WaitingOnIngestion" -> WaitingOnIngestion.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[QueueInfo]
+    }
+  }
+
+  /** The range ends label type of a data path label.
+    */
+  @js.native
+  trait RangeEndsLabelType extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object RangeEndsLabelType {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): RangeEndsLabelType = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RangeEndsLabelType]
     }
   }
 
@@ -7114,6 +15839,197 @@ package object quicksight {
       Host.foreach(__v => __obj.updateDynamic("Host")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RedshiftParameters]
+    }
+  }
+
+  /** The reference line visual display options.
+    */
+  @js.native
+  trait ReferenceLine extends js.Object {
+    var DataConfiguration: ReferenceLineDataConfiguration
+    var LabelConfiguration: js.UndefOr[ReferenceLineLabelConfiguration]
+    var Status: js.UndefOr[WidgetStatus]
+    var StyleConfiguration: js.UndefOr[ReferenceLineStyleConfiguration]
+  }
+
+  object ReferenceLine {
+    @inline
+    def apply(
+        DataConfiguration: ReferenceLineDataConfiguration,
+        LabelConfiguration: js.UndefOr[ReferenceLineLabelConfiguration] = js.undefined,
+        Status: js.UndefOr[WidgetStatus] = js.undefined,
+        StyleConfiguration: js.UndefOr[ReferenceLineStyleConfiguration] = js.undefined
+    ): ReferenceLine = {
+      val __obj = js.Dynamic.literal(
+        "DataConfiguration" -> DataConfiguration.asInstanceOf[js.Any]
+      )
+
+      LabelConfiguration.foreach(__v => __obj.updateDynamic("LabelConfiguration")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StyleConfiguration.foreach(__v => __obj.updateDynamic("StyleConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceLine]
+    }
+  }
+
+  /** The configuration for a custom label on a <code>ReferenceLine</code>.
+    */
+  @js.native
+  trait ReferenceLineCustomLabelConfiguration extends js.Object {
+    var CustomLabel: NonEmptyString
+  }
+
+  object ReferenceLineCustomLabelConfiguration {
+    @inline
+    def apply(
+        CustomLabel: NonEmptyString
+    ): ReferenceLineCustomLabelConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CustomLabel" -> CustomLabel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReferenceLineCustomLabelConfiguration]
+    }
+  }
+
+  /** The data configuration of the reference line.
+    */
+  @js.native
+  trait ReferenceLineDataConfiguration extends js.Object {
+    var AxisBinding: js.UndefOr[AxisBinding]
+    var DynamicConfiguration: js.UndefOr[ReferenceLineDynamicDataConfiguration]
+    var StaticConfiguration: js.UndefOr[ReferenceLineStaticDataConfiguration]
+  }
+
+  object ReferenceLineDataConfiguration {
+    @inline
+    def apply(
+        AxisBinding: js.UndefOr[AxisBinding] = js.undefined,
+        DynamicConfiguration: js.UndefOr[ReferenceLineDynamicDataConfiguration] = js.undefined,
+        StaticConfiguration: js.UndefOr[ReferenceLineStaticDataConfiguration] = js.undefined
+    ): ReferenceLineDataConfiguration = {
+      val __obj = js.Dynamic.literal()
+      AxisBinding.foreach(__v => __obj.updateDynamic("AxisBinding")(__v.asInstanceOf[js.Any]))
+      DynamicConfiguration.foreach(__v => __obj.updateDynamic("DynamicConfiguration")(__v.asInstanceOf[js.Any]))
+      StaticConfiguration.foreach(__v => __obj.updateDynamic("StaticConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceLineDataConfiguration]
+    }
+  }
+
+  /** The dynamic configuration of the reference line data configuration.
+    */
+  @js.native
+  trait ReferenceLineDynamicDataConfiguration extends js.Object {
+    var Calculation: NumericalAggregationFunction
+    var Column: ColumnIdentifier
+    var MeasureAggregationFunction: AggregationFunction
+  }
+
+  object ReferenceLineDynamicDataConfiguration {
+    @inline
+    def apply(
+        Calculation: NumericalAggregationFunction,
+        Column: ColumnIdentifier,
+        MeasureAggregationFunction: AggregationFunction
+    ): ReferenceLineDynamicDataConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Calculation" -> Calculation.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any],
+        "MeasureAggregationFunction" -> MeasureAggregationFunction.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReferenceLineDynamicDataConfiguration]
+    }
+  }
+
+  /** The label configuration of a reference line.
+    */
+  @js.native
+  trait ReferenceLineLabelConfiguration extends js.Object {
+    var CustomLabelConfiguration: js.UndefOr[ReferenceLineCustomLabelConfiguration]
+    var FontColor: js.UndefOr[HexColor]
+    var FontConfiguration: js.UndefOr[FontConfiguration]
+    var HorizontalPosition: js.UndefOr[ReferenceLineLabelHorizontalPosition]
+    var ValueLabelConfiguration: js.UndefOr[ReferenceLineValueLabelConfiguration]
+    var VerticalPosition: js.UndefOr[ReferenceLineLabelVerticalPosition]
+  }
+
+  object ReferenceLineLabelConfiguration {
+    @inline
+    def apply(
+        CustomLabelConfiguration: js.UndefOr[ReferenceLineCustomLabelConfiguration] = js.undefined,
+        FontColor: js.UndefOr[HexColor] = js.undefined,
+        FontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        HorizontalPosition: js.UndefOr[ReferenceLineLabelHorizontalPosition] = js.undefined,
+        ValueLabelConfiguration: js.UndefOr[ReferenceLineValueLabelConfiguration] = js.undefined,
+        VerticalPosition: js.UndefOr[ReferenceLineLabelVerticalPosition] = js.undefined
+    ): ReferenceLineLabelConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomLabelConfiguration.foreach(__v => __obj.updateDynamic("CustomLabelConfiguration")(__v.asInstanceOf[js.Any]))
+      FontColor.foreach(__v => __obj.updateDynamic("FontColor")(__v.asInstanceOf[js.Any]))
+      FontConfiguration.foreach(__v => __obj.updateDynamic("FontConfiguration")(__v.asInstanceOf[js.Any]))
+      HorizontalPosition.foreach(__v => __obj.updateDynamic("HorizontalPosition")(__v.asInstanceOf[js.Any]))
+      ValueLabelConfiguration.foreach(__v => __obj.updateDynamic("ValueLabelConfiguration")(__v.asInstanceOf[js.Any]))
+      VerticalPosition.foreach(__v => __obj.updateDynamic("VerticalPosition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceLineLabelConfiguration]
+    }
+  }
+
+  /** The static data configuration of the reference line data configuration.
+    */
+  @js.native
+  trait ReferenceLineStaticDataConfiguration extends js.Object {
+    var Value: SensitiveDouble
+  }
+
+  object ReferenceLineStaticDataConfiguration {
+    @inline
+    def apply(
+        Value: SensitiveDouble
+    ): ReferenceLineStaticDataConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReferenceLineStaticDataConfiguration]
+    }
+  }
+
+  /** The style configuration of the reference line.
+    */
+  @js.native
+  trait ReferenceLineStyleConfiguration extends js.Object {
+    var Color: js.UndefOr[HexColor]
+    var Pattern: js.UndefOr[ReferenceLinePatternType]
+  }
+
+  object ReferenceLineStyleConfiguration {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColor] = js.undefined,
+        Pattern: js.UndefOr[ReferenceLinePatternType] = js.undefined
+    ): ReferenceLineStyleConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      Pattern.foreach(__v => __obj.updateDynamic("Pattern")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceLineStyleConfiguration]
+    }
+  }
+
+  /** The value label configuration of the label in a reference line.
+    */
+  @js.native
+  trait ReferenceLineValueLabelConfiguration extends js.Object {
+    var FormatConfiguration: js.UndefOr[NumericFormatConfiguration]
+    var RelativePosition: js.UndefOr[ReferenceLineValueLabelRelativePosition]
+  }
+
+  object ReferenceLineValueLabelConfiguration {
+    @inline
+    def apply(
+        FormatConfiguration: js.UndefOr[NumericFormatConfiguration] = js.undefined,
+        RelativePosition: js.UndefOr[ReferenceLineValueLabelRelativePosition] = js.undefined
+    ): ReferenceLineValueLabelConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      RelativePosition.foreach(__v => __obj.updateDynamic("RelativePosition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceLineValueLabelConfiguration]
     }
   }
 
@@ -7197,18 +16113,37 @@ package object quicksight {
     */
   @js.native
   trait RegisteredUserDashboardEmbeddingConfiguration extends js.Object {
-    var InitialDashboardId: RestrictiveResourceId
+    var InitialDashboardId: ShortRestrictiveResourceId
   }
 
   object RegisteredUserDashboardEmbeddingConfiguration {
     @inline
     def apply(
-        InitialDashboardId: RestrictiveResourceId
+        InitialDashboardId: ShortRestrictiveResourceId
     ): RegisteredUserDashboardEmbeddingConfiguration = {
       val __obj = js.Dynamic.literal(
         "InitialDashboardId" -> InitialDashboardId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[RegisteredUserDashboardEmbeddingConfiguration]
+    }
+  }
+
+  /** The experience that you are embedding. You can use this object to generate a url that embeds a visual into your application.
+    */
+  @js.native
+  trait RegisteredUserDashboardVisualEmbeddingConfiguration extends js.Object {
+    var InitialDashboardVisualId: DashboardVisualId
+  }
+
+  object RegisteredUserDashboardVisualEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialDashboardVisualId: DashboardVisualId
+    ): RegisteredUserDashboardVisualEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InitialDashboardVisualId" -> InitialDashboardVisualId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegisteredUserDashboardVisualEmbeddingConfiguration]
     }
   }
 
@@ -7219,6 +16154,7 @@ package object quicksight {
   @js.native
   trait RegisteredUserEmbeddingExperienceConfiguration extends js.Object {
     var Dashboard: js.UndefOr[RegisteredUserDashboardEmbeddingConfiguration]
+    var DashboardVisual: js.UndefOr[RegisteredUserDashboardVisualEmbeddingConfiguration]
     var QSearchBar: js.UndefOr[RegisteredUserQSearchBarEmbeddingConfiguration]
     var QuickSightConsole: js.UndefOr[RegisteredUserQuickSightConsoleEmbeddingConfiguration]
   }
@@ -7227,11 +16163,13 @@ package object quicksight {
     @inline
     def apply(
         Dashboard: js.UndefOr[RegisteredUserDashboardEmbeddingConfiguration] = js.undefined,
+        DashboardVisual: js.UndefOr[RegisteredUserDashboardVisualEmbeddingConfiguration] = js.undefined,
         QSearchBar: js.UndefOr[RegisteredUserQSearchBarEmbeddingConfiguration] = js.undefined,
         QuickSightConsole: js.UndefOr[RegisteredUserQuickSightConsoleEmbeddingConfiguration] = js.undefined
     ): RegisteredUserEmbeddingExperienceConfiguration = {
       val __obj = js.Dynamic.literal()
       Dashboard.foreach(__v => __obj.updateDynamic("Dashboard")(__v.asInstanceOf[js.Any]))
+      DashboardVisual.foreach(__v => __obj.updateDynamic("DashboardVisual")(__v.asInstanceOf[js.Any]))
       QSearchBar.foreach(__v => __obj.updateDynamic("QSearchBar")(__v.asInstanceOf[js.Any]))
       QuickSightConsole.foreach(__v => __obj.updateDynamic("QuickSightConsole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisteredUserEmbeddingExperienceConfiguration]
@@ -7306,6 +16244,74 @@ package object quicksight {
     }
   }
 
+  /** The display options of a control.
+    */
+  @js.native
+  trait RelativeDateTimeControlDisplayOptions extends js.Object {
+    var DateTimeFormat: js.UndefOr[DateTimeFormat]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object RelativeDateTimeControlDisplayOptions {
+    @inline
+    def apply(
+        DateTimeFormat: js.UndefOr[DateTimeFormat] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): RelativeDateTimeControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      DateTimeFormat.foreach(__v => __obj.updateDynamic("DateTimeFormat")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RelativeDateTimeControlDisplayOptions]
+    }
+  }
+
+  /** A <code>RelativeDatesFilter</code> filters relative dates values.
+    */
+  @js.native
+  trait RelativeDatesFilter extends js.Object {
+    var AnchorDateConfiguration: AnchorDateConfiguration
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var NullOption: FilterNullOption
+    var RelativeDateType: RelativeDateType
+    var TimeGranularity: TimeGranularity
+    var ExcludePeriodConfiguration: js.UndefOr[ExcludePeriodConfiguration]
+    var MinimumGranularity: js.UndefOr[TimeGranularity]
+    var ParameterName: js.UndefOr[ParameterName]
+    var RelativeDateValue: js.UndefOr[Int]
+  }
+
+  object RelativeDatesFilter {
+    @inline
+    def apply(
+        AnchorDateConfiguration: AnchorDateConfiguration,
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        NullOption: FilterNullOption,
+        RelativeDateType: RelativeDateType,
+        TimeGranularity: TimeGranularity,
+        ExcludePeriodConfiguration: js.UndefOr[ExcludePeriodConfiguration] = js.undefined,
+        MinimumGranularity: js.UndefOr[TimeGranularity] = js.undefined,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        RelativeDateValue: js.UndefOr[Int] = js.undefined
+    ): RelativeDatesFilter = {
+      val __obj = js.Dynamic.literal(
+        "AnchorDateConfiguration" -> AnchorDateConfiguration.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any],
+        "RelativeDateType" -> RelativeDateType.asInstanceOf[js.Any],
+        "TimeGranularity" -> TimeGranularity.asInstanceOf[js.Any]
+      )
+
+      ExcludePeriodConfiguration.foreach(__v => __obj.updateDynamic("ExcludePeriodConfiguration")(__v.asInstanceOf[js.Any]))
+      MinimumGranularity.foreach(__v => __obj.updateDynamic("MinimumGranularity")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      RelativeDateValue.foreach(__v => __obj.updateDynamic("RelativeDateValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RelativeDatesFilter]
+    }
+  }
+
   /** A transform operation that renames a column.
     */
   @js.native
@@ -7352,14 +16358,14 @@ package object quicksight {
 
   @js.native
   trait RestoreAnalysisRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
   }
 
   object RestoreAnalysisRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId
     ): RestoreAnalysisRequest = {
       val __obj = js.Dynamic.literal(
@@ -7372,7 +16378,7 @@ package object quicksight {
 
   @js.native
   trait RestoreAnalysisResponse extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -7381,7 +16387,7 @@ package object quicksight {
   object RestoreAnalysisResponse {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -7392,6 +16398,50 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreAnalysisResponse]
+    }
+  }
+
+  /** The rolling date configuration of a date time filter.
+    */
+  @js.native
+  trait RollingDateConfiguration extends js.Object {
+    var Expression: Expression
+    var DataSetIdentifier: js.UndefOr[DataSetIdentifier]
+  }
+
+  object RollingDateConfiguration {
+    @inline
+    def apply(
+        Expression: Expression,
+        DataSetIdentifier: js.UndefOr[DataSetIdentifier] = js.undefined
+    ): RollingDateConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+
+      DataSetIdentifier.foreach(__v => __obj.updateDynamic("DataSetIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RollingDateConfiguration]
+    }
+  }
+
+  /** Determines the row alternate color options.
+    */
+  @js.native
+  trait RowAlternateColorOptions extends js.Object {
+    var RowAlternateColors: js.UndefOr[RowAlternateColorList]
+    var Status: js.UndefOr[WidgetStatus]
+  }
+
+  object RowAlternateColorOptions {
+    @inline
+    def apply(
+        RowAlternateColors: js.UndefOr[RowAlternateColorList] = js.undefined,
+        Status: js.UndefOr[WidgetStatus] = js.undefined
+    ): RowAlternateColorOptions = {
+      val __obj = js.Dynamic.literal()
+      RowAlternateColors.foreach(__v => __obj.updateDynamic("RowAlternateColors")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RowAlternateColorOptions]
     }
   }
 
@@ -7548,6 +16598,319 @@ package object quicksight {
     }
   }
 
+  /** The configuration of the same-sheet target visuals that you want to be filtered. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait SameSheetTargetVisualConfiguration extends js.Object {
+    var TargetVisualOptions: js.UndefOr[TargetVisualOptions]
+    var TargetVisuals: js.UndefOr[TargetVisualList]
+  }
+
+  object SameSheetTargetVisualConfiguration {
+    @inline
+    def apply(
+        TargetVisualOptions: js.UndefOr[TargetVisualOptions] = js.undefined,
+        TargetVisuals: js.UndefOr[TargetVisualList] = js.undefined
+    ): SameSheetTargetVisualConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TargetVisualOptions.foreach(__v => __obj.updateDynamic("TargetVisualOptions")(__v.asInstanceOf[js.Any]))
+      TargetVisuals.foreach(__v => __obj.updateDynamic("TargetVisuals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SameSheetTargetVisualConfiguration]
+    }
+  }
+
+  /** The field well configuration of a sankey diagram.
+    */
+  @js.native
+  trait SankeyDiagramAggregatedFieldWells extends js.Object {
+    var Destination: js.UndefOr[DimensionFieldList]
+    var Source: js.UndefOr[DimensionFieldList]
+    var Weight: js.UndefOr[MeasureFieldList]
+  }
+
+  object SankeyDiagramAggregatedFieldWells {
+    @inline
+    def apply(
+        Destination: js.UndefOr[DimensionFieldList] = js.undefined,
+        Source: js.UndefOr[DimensionFieldList] = js.undefined,
+        Weight: js.UndefOr[MeasureFieldList] = js.undefined
+    ): SankeyDiagramAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SankeyDiagramAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a sankey diagram.
+    */
+  @js.native
+  trait SankeyDiagramChartConfiguration extends js.Object {
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[SankeyDiagramFieldWells]
+    var SortConfiguration: js.UndefOr[SankeyDiagramSortConfiguration]
+  }
+
+  object SankeyDiagramChartConfiguration {
+    @inline
+    def apply(
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[SankeyDiagramFieldWells] = js.undefined,
+        SortConfiguration: js.UndefOr[SankeyDiagramSortConfiguration] = js.undefined
+    ): SankeyDiagramChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SankeyDiagramChartConfiguration]
+    }
+  }
+
+  /** The field well configuration of a sankey diagram.
+    */
+  @js.native
+  trait SankeyDiagramFieldWells extends js.Object {
+    var SankeyDiagramAggregatedFieldWells: js.UndefOr[SankeyDiagramAggregatedFieldWells]
+  }
+
+  object SankeyDiagramFieldWells {
+    @inline
+    def apply(
+        SankeyDiagramAggregatedFieldWells: js.UndefOr[SankeyDiagramAggregatedFieldWells] = js.undefined
+    ): SankeyDiagramFieldWells = {
+      val __obj = js.Dynamic.literal()
+      SankeyDiagramAggregatedFieldWells.foreach(__v => __obj.updateDynamic("SankeyDiagramAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SankeyDiagramFieldWells]
+    }
+  }
+
+  /** The sort configuration of a sankey diagram.
+    */
+  @js.native
+  trait SankeyDiagramSortConfiguration extends js.Object {
+    var DestinationItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var SourceItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var WeightSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object SankeyDiagramSortConfiguration {
+    @inline
+    def apply(
+        DestinationItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        SourceItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        WeightSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): SankeyDiagramSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DestinationItemsLimit.foreach(__v => __obj.updateDynamic("DestinationItemsLimit")(__v.asInstanceOf[js.Any]))
+      SourceItemsLimit.foreach(__v => __obj.updateDynamic("SourceItemsLimit")(__v.asInstanceOf[js.Any]))
+      WeightSort.foreach(__v => __obj.updateDynamic("WeightSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SankeyDiagramSortConfiguration]
+    }
+  }
+
+  /** A sankey diagram. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/sankey-diagram.html|Using Sankey diagrams]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait SankeyDiagramVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[SankeyDiagramChartConfiguration]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object SankeyDiagramVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[SankeyDiagramChartConfiguration] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): SankeyDiagramVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SankeyDiagramVisual]
+    }
+  }
+
+  /** The aggregated field well of a scatter plot.
+    */
+  @js.native
+  trait ScatterPlotCategoricallyAggregatedFieldWells extends js.Object {
+    var Category: js.UndefOr[DimensionFieldList]
+    var Size: js.UndefOr[MeasureFieldList]
+    var XAxis: js.UndefOr[MeasureFieldList]
+    var YAxis: js.UndefOr[MeasureFieldList]
+  }
+
+  object ScatterPlotCategoricallyAggregatedFieldWells {
+    @inline
+    def apply(
+        Category: js.UndefOr[DimensionFieldList] = js.undefined,
+        Size: js.UndefOr[MeasureFieldList] = js.undefined,
+        XAxis: js.UndefOr[MeasureFieldList] = js.undefined,
+        YAxis: js.UndefOr[MeasureFieldList] = js.undefined
+    ): ScatterPlotCategoricallyAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      XAxis.foreach(__v => __obj.updateDynamic("XAxis")(__v.asInstanceOf[js.Any]))
+      YAxis.foreach(__v => __obj.updateDynamic("YAxis")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScatterPlotCategoricallyAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a scatter plot.
+    */
+  @js.native
+  trait ScatterPlotConfiguration extends js.Object {
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[ScatterPlotFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var Tooltip: js.UndefOr[TooltipOptions]
+    var VisualPalette: js.UndefOr[VisualPalette]
+    var XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var YAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var YAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+  }
+
+  object ScatterPlotConfiguration {
+    @inline
+    def apply(
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[ScatterPlotFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined,
+        XAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        XAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        YAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        YAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined
+    ): ScatterPlotConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      XAxisDisplayOptions.foreach(__v => __obj.updateDynamic("XAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      XAxisLabelOptions.foreach(__v => __obj.updateDynamic("XAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      YAxisDisplayOptions.foreach(__v => __obj.updateDynamic("YAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      YAxisLabelOptions.foreach(__v => __obj.updateDynamic("YAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScatterPlotConfiguration]
+    }
+  }
+
+  /** The field well configuration of a scatter plot. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ScatterPlotFieldWells extends js.Object {
+    var ScatterPlotCategoricallyAggregatedFieldWells: js.UndefOr[ScatterPlotCategoricallyAggregatedFieldWells]
+    var ScatterPlotUnaggregatedFieldWells: js.UndefOr[ScatterPlotUnaggregatedFieldWells]
+  }
+
+  object ScatterPlotFieldWells {
+    @inline
+    def apply(
+        ScatterPlotCategoricallyAggregatedFieldWells: js.UndefOr[ScatterPlotCategoricallyAggregatedFieldWells] = js.undefined,
+        ScatterPlotUnaggregatedFieldWells: js.UndefOr[ScatterPlotUnaggregatedFieldWells] = js.undefined
+    ): ScatterPlotFieldWells = {
+      val __obj = js.Dynamic.literal()
+      ScatterPlotCategoricallyAggregatedFieldWells.foreach(__v => __obj.updateDynamic("ScatterPlotCategoricallyAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      ScatterPlotUnaggregatedFieldWells.foreach(__v => __obj.updateDynamic("ScatterPlotUnaggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScatterPlotFieldWells]
+    }
+  }
+
+  /** The unaggregated field wells of a scatter plot.
+    */
+  @js.native
+  trait ScatterPlotUnaggregatedFieldWells extends js.Object {
+    var Size: js.UndefOr[MeasureFieldList]
+    var XAxis: js.UndefOr[DimensionFieldList]
+    var YAxis: js.UndefOr[DimensionFieldList]
+  }
+
+  object ScatterPlotUnaggregatedFieldWells {
+    @inline
+    def apply(
+        Size: js.UndefOr[MeasureFieldList] = js.undefined,
+        XAxis: js.UndefOr[DimensionFieldList] = js.undefined,
+        YAxis: js.UndefOr[DimensionFieldList] = js.undefined
+    ): ScatterPlotUnaggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      XAxis.foreach(__v => __obj.updateDynamic("XAxis")(__v.asInstanceOf[js.Any]))
+      YAxis.foreach(__v => __obj.updateDynamic("YAxis")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScatterPlotUnaggregatedFieldWells]
+    }
+  }
+
+  /** A scatter plot. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/scatter-plot.html|Using scatter plots]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait ScatterPlotVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[ScatterPlotConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object ScatterPlotVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[ScatterPlotConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): ScatterPlotVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScatterPlotVisual]
+    }
+  }
+
+  /** The visual display options for a data zoom scroll bar.
+    */
+  @js.native
+  trait ScrollBarOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+    var VisibleRange: js.UndefOr[VisibleRangeOptions]
+  }
+
+  object ScrollBarOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined,
+        VisibleRange: js.UndefOr[VisibleRangeOptions] = js.undefined
+    ): ScrollBarOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      VisibleRange.foreach(__v => __obj.updateDynamic("VisibleRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScrollBarOptions]
+    }
+  }
+
   @js.native
   trait SearchAnalysesRequest extends js.Object {
     var AwsAccountId: AwsAccountId
@@ -7653,6 +17016,110 @@ package object quicksight {
   }
 
   @js.native
+  trait SearchDataSetsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Filters: DataSetSearchFilterList
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchDataSetsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Filters: DataSetSearchFilterList,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchDataSetsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDataSetsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchDataSetsResponse extends js.Object {
+    var DataSetSummaries: js.UndefOr[DataSetSummaryList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object SearchDataSetsResponse {
+    @inline
+    def apply(
+        DataSetSummaries: js.UndefOr[DataSetSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): SearchDataSetsResponse = {
+      val __obj = js.Dynamic.literal()
+      DataSetSummaries.foreach(__v => __obj.updateDynamic("DataSetSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDataSetsResponse]
+    }
+  }
+
+  @js.native
+  trait SearchDataSourcesRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Filters: DataSourceSearchFilterList
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchDataSourcesRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Filters: DataSourceSearchFilterList,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchDataSourcesRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDataSourcesRequest]
+    }
+  }
+
+  @js.native
+  trait SearchDataSourcesResponse extends js.Object {
+    var DataSourceSummaries: js.UndefOr[DataSourceSummaryList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object SearchDataSourcesResponse {
+    @inline
+    def apply(
+        DataSourceSummaries: js.UndefOr[DataSourceSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): SearchDataSourcesResponse = {
+      val __obj = js.Dynamic.literal()
+      DataSourceSummaries.foreach(__v => __obj.updateDynamic("DataSourceSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchDataSourcesResponse]
+    }
+  }
+
+  @js.native
   trait SearchFoldersRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var Filters: FolderSearchFilterList
@@ -7704,6 +17171,264 @@ package object quicksight {
     }
   }
 
+  @js.native
+  trait SearchGroupsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Filters: GroupSearchFilterList
+    var Namespace: Namespace
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchGroupsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Filters: GroupSearchFilterList,
+        Namespace: Namespace,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchGroupsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchGroupsResponse extends js.Object {
+    var GroupList: js.UndefOr[GroupList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object SearchGroupsResponse {
+    @inline
+    def apply(
+        GroupList: js.UndefOr[GroupList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): SearchGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      GroupList.foreach(__v => __obj.updateDynamic("GroupList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchGroupsResponse]
+    }
+  }
+
+  /** The options that determine the presentation of the secondary value of a KPI visual.
+    */
+  @js.native
+  trait SecondaryValueOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object SecondaryValueOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): SecondaryValueOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecondaryValueOptions]
+    }
+  }
+
+  /** The configuration of a page break after a section.
+    */
+  @js.native
+  trait SectionAfterPageBreak extends js.Object {
+    var Status: js.UndefOr[SectionPageBreakStatus]
+  }
+
+  object SectionAfterPageBreak {
+    @inline
+    def apply(
+        Status: js.UndefOr[SectionPageBreakStatus] = js.undefined
+    ): SectionAfterPageBreak = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SectionAfterPageBreak]
+    }
+  }
+
+  /** The options for the canvas of a section-based layout.
+    */
+  @js.native
+  trait SectionBasedLayoutCanvasSizeOptions extends js.Object {
+    var PaperCanvasSizeOptions: js.UndefOr[SectionBasedLayoutPaperCanvasSizeOptions]
+  }
+
+  object SectionBasedLayoutCanvasSizeOptions {
+    @inline
+    def apply(
+        PaperCanvasSizeOptions: js.UndefOr[SectionBasedLayoutPaperCanvasSizeOptions] = js.undefined
+    ): SectionBasedLayoutCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal()
+      PaperCanvasSizeOptions.foreach(__v => __obj.updateDynamic("PaperCanvasSizeOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SectionBasedLayoutCanvasSizeOptions]
+    }
+  }
+
+  /** The configuration for a section-based layout.
+    */
+  @js.native
+  trait SectionBasedLayoutConfiguration extends js.Object {
+    var BodySections: BodySectionConfigurationList
+    var CanvasSizeOptions: SectionBasedLayoutCanvasSizeOptions
+    var FooterSections: HeaderFooterSectionConfigurationList
+    var HeaderSections: HeaderFooterSectionConfigurationList
+  }
+
+  object SectionBasedLayoutConfiguration {
+    @inline
+    def apply(
+        BodySections: BodySectionConfigurationList,
+        CanvasSizeOptions: SectionBasedLayoutCanvasSizeOptions,
+        FooterSections: HeaderFooterSectionConfigurationList,
+        HeaderSections: HeaderFooterSectionConfigurationList
+    ): SectionBasedLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "BodySections" -> BodySections.asInstanceOf[js.Any],
+        "CanvasSizeOptions" -> CanvasSizeOptions.asInstanceOf[js.Any],
+        "FooterSections" -> FooterSections.asInstanceOf[js.Any],
+        "HeaderSections" -> HeaderSections.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SectionBasedLayoutConfiguration]
+    }
+  }
+
+  /** The options for a paper canvas of a section-based layout.
+    */
+  @js.native
+  trait SectionBasedLayoutPaperCanvasSizeOptions extends js.Object {
+    var PaperMargin: js.UndefOr[Spacing]
+    var PaperOrientation: js.UndefOr[PaperOrientation]
+    var PaperSize: js.UndefOr[PaperSize]
+  }
+
+  object SectionBasedLayoutPaperCanvasSizeOptions {
+    @inline
+    def apply(
+        PaperMargin: js.UndefOr[Spacing] = js.undefined,
+        PaperOrientation: js.UndefOr[PaperOrientation] = js.undefined,
+        PaperSize: js.UndefOr[PaperSize] = js.undefined
+    ): SectionBasedLayoutPaperCanvasSizeOptions = {
+      val __obj = js.Dynamic.literal()
+      PaperMargin.foreach(__v => __obj.updateDynamic("PaperMargin")(__v.asInstanceOf[js.Any]))
+      PaperOrientation.foreach(__v => __obj.updateDynamic("PaperOrientation")(__v.asInstanceOf[js.Any]))
+      PaperSize.foreach(__v => __obj.updateDynamic("PaperSize")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SectionBasedLayoutPaperCanvasSizeOptions]
+    }
+  }
+
+  /** The layout configuration of a section.
+    */
+  @js.native
+  trait SectionLayoutConfiguration extends js.Object {
+    var FreeFormLayout: FreeFormSectionLayoutConfiguration
+  }
+
+  object SectionLayoutConfiguration {
+    @inline
+    def apply(
+        FreeFormLayout: FreeFormSectionLayoutConfiguration
+    ): SectionLayoutConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "FreeFormLayout" -> FreeFormLayout.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SectionLayoutConfiguration]
+    }
+  }
+
+  /** The configuration of a page break for a section.
+    */
+  @js.native
+  trait SectionPageBreakConfiguration extends js.Object {
+    var After: js.UndefOr[SectionAfterPageBreak]
+  }
+
+  object SectionPageBreakConfiguration {
+    @inline
+    def apply(
+        After: js.UndefOr[SectionAfterPageBreak] = js.undefined
+    ): SectionPageBreakConfiguration = {
+      val __obj = js.Dynamic.literal()
+      After.foreach(__v => __obj.updateDynamic("After")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SectionPageBreakConfiguration]
+    }
+  }
+
+  /** The options that style a section.
+    */
+  @js.native
+  trait SectionStyle extends js.Object {
+    var Height: js.UndefOr[PixelLength]
+    var Padding: js.UndefOr[Spacing]
+  }
+
+  object SectionStyle {
+    @inline
+    def apply(
+        Height: js.UndefOr[PixelLength] = js.undefined,
+        Padding: js.UndefOr[Spacing] = js.undefined
+    ): SectionStyle = {
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Padding.foreach(__v => __obj.updateDynamic("Padding")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SectionStyle]
+    }
+  }
+
+  /** The configuration for applying a filter to specific sheets or visuals. You can apply this filter to multiple visuals that are on one sheet or to all visuals on a sheet. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait SelectedSheetsFilterScopeConfiguration extends js.Object {
+    var SheetVisualScopingConfigurations: js.UndefOr[SheetVisualScopingConfigurations]
+  }
+
+  object SelectedSheetsFilterScopeConfiguration {
+    @inline
+    def apply(
+        SheetVisualScopingConfigurations: js.UndefOr[SheetVisualScopingConfigurations] = js.undefined
+    ): SelectedSheetsFilterScopeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SheetVisualScopingConfigurations.foreach(__v => __obj.updateDynamic("SheetVisualScopingConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SelectedSheetsFilterScopeConfiguration]
+    }
+  }
+
+  /** The series item configuration of a line chart. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait SeriesItem extends js.Object {
+    var DataFieldSeriesItem: js.UndefOr[DataFieldSeriesItem]
+    var FieldSeriesItem: js.UndefOr[FieldSeriesItem]
+  }
+
+  object SeriesItem {
+    @inline
+    def apply(
+        DataFieldSeriesItem: js.UndefOr[DataFieldSeriesItem] = js.undefined,
+        FieldSeriesItem: js.UndefOr[FieldSeriesItem] = js.undefined
+    ): SeriesItem = {
+      val __obj = js.Dynamic.literal()
+      DataFieldSeriesItem.foreach(__v => __obj.updateDynamic("DataFieldSeriesItem")(__v.asInstanceOf[js.Any]))
+      FieldSeriesItem.foreach(__v => __obj.updateDynamic("FieldSeriesItem")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SeriesItem]
+    }
+  }
+
   /** The parameters for ServiceNow.
     */
   @js.native
@@ -7745,24 +17470,102 @@ package object quicksight {
     }
   }
 
+  /** The configuration of adding parameters in action.
+    */
+  @js.native
+  trait SetParameterValueConfiguration extends js.Object {
+    var DestinationParameterName: ParameterName
+    var Value: DestinationParameterValueConfiguration
+  }
+
+  object SetParameterValueConfiguration {
+    @inline
+    def apply(
+        DestinationParameterName: ParameterName,
+        Value: DestinationParameterValueConfiguration
+    ): SetParameterValueConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DestinationParameterName" -> DestinationParameterName.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SetParameterValueConfiguration]
+    }
+  }
+
+  /** The shape conditional formatting of a filled map visual.
+    */
+  @js.native
+  trait ShapeConditionalFormat extends js.Object {
+    var BackgroundColor: ConditionalFormattingColor
+  }
+
+  object ShapeConditionalFormat {
+    @inline
+    def apply(
+        BackgroundColor: ConditionalFormattingColor
+    ): ShapeConditionalFormat = {
+      val __obj = js.Dynamic.literal(
+        "BackgroundColor" -> BackgroundColor.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ShapeConditionalFormat]
+    }
+  }
+
   /** A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.
     */
   @js.native
   trait Sheet extends js.Object {
-    var Name: js.UndefOr[NonEmptyString]
-    var SheetId: js.UndefOr[RestrictiveResourceId]
+    var Name: js.UndefOr[SheetName]
+    var SheetId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object Sheet {
     @inline
     def apply(
-        Name: js.UndefOr[NonEmptyString] = js.undefined,
-        SheetId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        Name: js.UndefOr[SheetName] = js.undefined,
+        SheetId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): Sheet = {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SheetId.foreach(__v => __obj.updateDynamic("SheetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Sheet]
+    }
+  }
+
+  /** A grid layout to define the placement of sheet control.
+    */
+  @js.native
+  trait SheetControlLayout extends js.Object {
+    var Configuration: SheetControlLayoutConfiguration
+  }
+
+  object SheetControlLayout {
+    @inline
+    def apply(
+        Configuration: SheetControlLayoutConfiguration
+    ): SheetControlLayout = {
+      val __obj = js.Dynamic.literal(
+        "Configuration" -> Configuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SheetControlLayout]
+    }
+  }
+
+  /** The configuration that determines the elements and canvas size options of sheet control.
+    */
+  @js.native
+  trait SheetControlLayoutConfiguration extends js.Object {
+    var GridLayout: js.UndefOr[GridLayoutConfiguration]
+  }
+
+  object SheetControlLayoutConfiguration {
+    @inline
+    def apply(
+        GridLayout: js.UndefOr[GridLayoutConfiguration] = js.undefined
+    ): SheetControlLayoutConfiguration = {
+      val __obj = js.Dynamic.literal()
+      GridLayout.foreach(__v => __obj.updateDynamic("GridLayout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetControlLayoutConfiguration]
     }
   }
 
@@ -7784,6 +17587,96 @@ package object quicksight {
     }
   }
 
+  /** A sheet is an object that contains a set of visuals that are viewed together on one page in a paginated report. Every analysis and dashboard must contain at least one sheet.
+    */
+  @js.native
+  trait SheetDefinition extends js.Object {
+    var SheetId: ShortRestrictiveResourceId
+    var ContentType: js.UndefOr[SheetContentType]
+    var Description: js.UndefOr[SheetDescription]
+    var FilterControls: js.UndefOr[FilterControlList]
+    var Layouts: js.UndefOr[LayoutList]
+    var Name: js.UndefOr[SheetName]
+    var ParameterControls: js.UndefOr[ParameterControlList]
+    var SheetControlLayouts: js.UndefOr[SheetControlLayoutList]
+    var TextBoxes: js.UndefOr[SheetTextBoxList]
+    var Title: js.UndefOr[SheetTitle]
+    var Visuals: js.UndefOr[VisualList]
+  }
+
+  object SheetDefinition {
+    @inline
+    def apply(
+        SheetId: ShortRestrictiveResourceId,
+        ContentType: js.UndefOr[SheetContentType] = js.undefined,
+        Description: js.UndefOr[SheetDescription] = js.undefined,
+        FilterControls: js.UndefOr[FilterControlList] = js.undefined,
+        Layouts: js.UndefOr[LayoutList] = js.undefined,
+        Name: js.UndefOr[SheetName] = js.undefined,
+        ParameterControls: js.UndefOr[ParameterControlList] = js.undefined,
+        SheetControlLayouts: js.UndefOr[SheetControlLayoutList] = js.undefined,
+        TextBoxes: js.UndefOr[SheetTextBoxList] = js.undefined,
+        Title: js.UndefOr[SheetTitle] = js.undefined,
+        Visuals: js.UndefOr[VisualList] = js.undefined
+    ): SheetDefinition = {
+      val __obj = js.Dynamic.literal(
+        "SheetId" -> SheetId.asInstanceOf[js.Any]
+      )
+
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FilterControls.foreach(__v => __obj.updateDynamic("FilterControls")(__v.asInstanceOf[js.Any]))
+      Layouts.foreach(__v => __obj.updateDynamic("Layouts")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParameterControls.foreach(__v => __obj.updateDynamic("ParameterControls")(__v.asInstanceOf[js.Any]))
+      SheetControlLayouts.foreach(__v => __obj.updateDynamic("SheetControlLayouts")(__v.asInstanceOf[js.Any]))
+      TextBoxes.foreach(__v => __obj.updateDynamic("TextBoxes")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Visuals.foreach(__v => __obj.updateDynamic("Visuals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetDefinition]
+    }
+  }
+
+  /** The override configuration of the rendering rules of a sheet.
+    */
+  @js.native
+  trait SheetElementConfigurationOverrides extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object SheetElementConfigurationOverrides {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): SheetElementConfigurationOverrides = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetElementConfigurationOverrides]
+    }
+  }
+
+  /** The rendering rules of a sheet that uses a free-form layout.
+    */
+  @js.native
+  trait SheetElementRenderingRule extends js.Object {
+    var ConfigurationOverrides: SheetElementConfigurationOverrides
+    var Expression: Expression
+  }
+
+  object SheetElementRenderingRule {
+    @inline
+    def apply(
+        ConfigurationOverrides: SheetElementConfigurationOverrides,
+        Expression: Expression
+    ): SheetElementRenderingRule = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationOverrides" -> ConfigurationOverrides.asInstanceOf[js.Any],
+        "Expression" -> Expression.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SheetElementRenderingRule]
+    }
+  }
+
   /** The theme display options for sheets.
     */
   @js.native
@@ -7802,6 +17695,163 @@ package object quicksight {
       Tile.foreach(__v => __obj.updateDynamic("Tile")(__v.asInstanceOf[js.Any]))
       TileLayout.foreach(__v => __obj.updateDynamic("TileLayout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SheetStyle]
+    }
+  }
+
+  /** A text box.
+    */
+  @js.native
+  trait SheetTextBox extends js.Object {
+    var SheetTextBoxId: ShortRestrictiveResourceId
+    var Content: js.UndefOr[SheetTextBoxContent]
+  }
+
+  object SheetTextBox {
+    @inline
+    def apply(
+        SheetTextBoxId: ShortRestrictiveResourceId,
+        Content: js.UndefOr[SheetTextBoxContent] = js.undefined
+    ): SheetTextBox = {
+      val __obj = js.Dynamic.literal(
+        "SheetTextBoxId" -> SheetTextBoxId.asInstanceOf[js.Any]
+      )
+
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetTextBox]
+    }
+  }
+
+  /** The filter that is applied to the options.
+    */
+  @js.native
+  trait SheetVisualScopingConfiguration extends js.Object {
+    var Scope: FilterVisualScope
+    var SheetId: ShortRestrictiveResourceId
+    var VisualIds: js.UndefOr[FilteredVisualsList]
+  }
+
+  object SheetVisualScopingConfiguration {
+    @inline
+    def apply(
+        Scope: FilterVisualScope,
+        SheetId: ShortRestrictiveResourceId,
+        VisualIds: js.UndefOr[FilteredVisualsList] = js.undefined
+    ): SheetVisualScopingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Scope" -> Scope.asInstanceOf[js.Any],
+        "SheetId" -> SheetId.asInstanceOf[js.Any]
+      )
+
+      VisualIds.foreach(__v => __obj.updateDynamic("VisualIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SheetVisualScopingConfiguration]
+    }
+  }
+
+  /** The text format for the title. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait ShortFormatText extends js.Object {
+    var PlainText: js.UndefOr[ShortPlainText]
+    var RichText: js.UndefOr[ShortRichText]
+  }
+
+  object ShortFormatText {
+    @inline
+    def apply(
+        PlainText: js.UndefOr[ShortPlainText] = js.undefined,
+        RichText: js.UndefOr[ShortRichText] = js.undefined
+    ): ShortFormatText = {
+      val __obj = js.Dynamic.literal()
+      PlainText.foreach(__v => __obj.updateDynamic("PlainText")(__v.asInstanceOf[js.Any]))
+      RichText.foreach(__v => __obj.updateDynamic("RichText")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShortFormatText]
+    }
+  }
+
+  /** A <code>SignupResponse</code> object that contains a summary of a newly created account.
+    */
+  @js.native
+  trait SignupResponse extends js.Object {
+    var IAMUser: js.UndefOr[Boolean]
+    var accountName: js.UndefOr[String]
+    var directoryType: js.UndefOr[String]
+    var userLoginName: js.UndefOr[String]
+  }
+
+  object SignupResponse {
+    @inline
+    def apply(
+        IAMUser: js.UndefOr[Boolean] = js.undefined,
+        accountName: js.UndefOr[String] = js.undefined,
+        directoryType: js.UndefOr[String] = js.undefined,
+        userLoginName: js.UndefOr[String] = js.undefined
+    ): SignupResponse = {
+      val __obj = js.Dynamic.literal()
+      IAMUser.foreach(__v => __obj.updateDynamic("IAMUser")(__v.asInstanceOf[js.Any]))
+      accountName.foreach(__v => __obj.updateDynamic("accountName")(__v.asInstanceOf[js.Any]))
+      directoryType.foreach(__v => __obj.updateDynamic("directoryType")(__v.asInstanceOf[js.Any]))
+      userLoginName.foreach(__v => __obj.updateDynamic("userLoginName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SignupResponse]
+    }
+  }
+
+  /** The simple cluster marker of the cluster marker.
+    */
+  @js.native
+  trait SimpleClusterMarker extends js.Object {
+    var Color: js.UndefOr[HexColor]
+  }
+
+  object SimpleClusterMarker {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColor] = js.undefined
+    ): SimpleClusterMarker = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimpleClusterMarker]
+    }
+  }
+
+  /** The display options of a control.
+    */
+  @js.native
+  trait SliderControlDisplayOptions extends js.Object {
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object SliderControlDisplayOptions {
+    @inline
+    def apply(
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): SliderControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SliderControlDisplayOptions]
+    }
+  }
+
+  /** Options that determine the layout and display options of a chart's small multiples.
+    */
+  @js.native
+  trait SmallMultiplesOptions extends js.Object {
+    var MaxVisibleColumns: js.UndefOr[VisiblePanelColumns]
+    var MaxVisibleRows: js.UndefOr[VisiblePanelRows]
+    var PanelConfiguration: js.UndefOr[PanelConfiguration]
+  }
+
+  object SmallMultiplesOptions {
+    @inline
+    def apply(
+        MaxVisibleColumns: js.UndefOr[VisiblePanelColumns] = js.undefined,
+        MaxVisibleRows: js.UndefOr[VisiblePanelRows] = js.undefined,
+        PanelConfiguration: js.UndefOr[PanelConfiguration] = js.undefined
+    ): SmallMultiplesOptions = {
+      val __obj = js.Dynamic.literal()
+      MaxVisibleColumns.foreach(__v => __obj.updateDynamic("MaxVisibleColumns")(__v.asInstanceOf[js.Any]))
+      MaxVisibleRows.foreach(__v => __obj.updateDynamic("MaxVisibleRows")(__v.asInstanceOf[js.Any]))
+      PanelConfiguration.foreach(__v => __obj.updateDynamic("PanelConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SmallMultiplesOptions]
     }
   }
 
@@ -7827,6 +17877,33 @@ package object quicksight {
         "Warehouse" -> Warehouse.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[SnowflakeParameters]
+    }
+  }
+
+  /** The configuration of spacing (often a margin or padding).
+    */
+  @js.native
+  trait Spacing extends js.Object {
+    var Bottom: js.UndefOr[Length]
+    var Left: js.UndefOr[Length]
+    var Right: js.UndefOr[Length]
+    var Top: js.UndefOr[Length]
+  }
+
+  object Spacing {
+    @inline
+    def apply(
+        Bottom: js.UndefOr[Length] = js.undefined,
+        Left: js.UndefOr[Length] = js.undefined,
+        Right: js.UndefOr[Length] = js.undefined,
+        Top: js.UndefOr[Length] = js.undefined
+    ): Spacing = {
+      val __obj = js.Dynamic.literal()
+      Bottom.foreach(__v => __obj.updateDynamic("Bottom")(__v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
+      Right.foreach(__v => __obj.updateDynamic("Right")(__v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Spacing]
     }
   }
 
@@ -7895,25 +17972,723 @@ package object quicksight {
     }
   }
 
+  /** The default values of the <code>StringParameterDeclaration</code>.
+    */
+  @js.native
+  trait StringDefaultValues extends js.Object {
+    var DynamicValue: js.UndefOr[DynamicDefaultValue]
+    var StaticValues: js.UndefOr[StringDefaultValueList]
+  }
+
+  object StringDefaultValues {
+    @inline
+    def apply(
+        DynamicValue: js.UndefOr[DynamicDefaultValue] = js.undefined,
+        StaticValues: js.UndefOr[StringDefaultValueList] = js.undefined
+    ): StringDefaultValues = {
+      val __obj = js.Dynamic.literal()
+      DynamicValue.foreach(__v => __obj.updateDynamic("DynamicValue")(__v.asInstanceOf[js.Any]))
+      StaticValues.foreach(__v => __obj.updateDynamic("StaticValues")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StringDefaultValues]
+    }
+  }
+
+  /** Formatting configuration for string fields.
+    */
+  @js.native
+  trait StringFormatConfiguration extends js.Object {
+    var NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration]
+    var NumericFormatConfiguration: js.UndefOr[NumericFormatConfiguration]
+  }
+
+  object StringFormatConfiguration {
+    @inline
+    def apply(
+        NullValueFormatConfiguration: js.UndefOr[NullValueFormatConfiguration] = js.undefined,
+        NumericFormatConfiguration: js.UndefOr[NumericFormatConfiguration] = js.undefined
+    ): StringFormatConfiguration = {
+      val __obj = js.Dynamic.literal()
+      NullValueFormatConfiguration.foreach(__v => __obj.updateDynamic("NullValueFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      NumericFormatConfiguration.foreach(__v => __obj.updateDynamic("NumericFormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StringFormatConfiguration]
+    }
+  }
+
   /** A string parameter.
     */
   @js.native
   trait StringParameter extends js.Object {
     var Name: NonEmptyString
-    var Values: StringList
+    var Values: SensitiveStringList
   }
 
   object StringParameter {
     @inline
     def apply(
         Name: NonEmptyString,
-        Values: StringList
+        Values: SensitiveStringList
     ): StringParameter = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[StringParameter]
+    }
+  }
+
+  /** A parameter declaration for the <code>String</code> data type.
+    */
+  @js.native
+  trait StringParameterDeclaration extends js.Object {
+    var Name: ParameterName
+    var ParameterValueType: ParameterValueType
+    var DefaultValues: js.UndefOr[StringDefaultValues]
+    var ValueWhenUnset: js.UndefOr[StringValueWhenUnsetConfiguration]
+  }
+
+  object StringParameterDeclaration {
+    @inline
+    def apply(
+        Name: ParameterName,
+        ParameterValueType: ParameterValueType,
+        DefaultValues: js.UndefOr[StringDefaultValues] = js.undefined,
+        ValueWhenUnset: js.UndefOr[StringValueWhenUnsetConfiguration] = js.undefined
+    ): StringParameterDeclaration = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "ParameterValueType" -> ParameterValueType.asInstanceOf[js.Any]
+      )
+
+      DefaultValues.foreach(__v => __obj.updateDynamic("DefaultValues")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnset.foreach(__v => __obj.updateDynamic("ValueWhenUnset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StringParameterDeclaration]
+    }
+  }
+
+  /** The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.
+    */
+  @js.native
+  trait StringValueWhenUnsetConfiguration extends js.Object {
+    var CustomValue: js.UndefOr[SensitiveString]
+    var ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption]
+  }
+
+  object StringValueWhenUnsetConfiguration {
+    @inline
+    def apply(
+        CustomValue: js.UndefOr[SensitiveString] = js.undefined,
+        ValueWhenUnsetOption: js.UndefOr[ValueWhenUnsetOption] = js.undefined
+    ): StringValueWhenUnsetConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomValue.foreach(__v => __obj.updateDynamic("CustomValue")(__v.asInstanceOf[js.Any]))
+      ValueWhenUnsetOption.foreach(__v => __obj.updateDynamic("ValueWhenUnsetOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StringValueWhenUnsetConfiguration]
+    }
+  }
+
+  /** The subtotal options.
+    */
+  @js.native
+  trait SubtotalOptions extends js.Object {
+    var CustomLabel: js.UndefOr[String]
+    var FieldLevel: js.UndefOr[PivotTableSubtotalLevel]
+    var FieldLevelOptions: js.UndefOr[PivotTableFieldSubtotalOptionsList]
+    var MetricHeaderCellStyle: js.UndefOr[TableCellStyle]
+    var TotalCellStyle: js.UndefOr[TableCellStyle]
+    var TotalsVisibility: js.UndefOr[Visibility]
+    var ValueCellStyle: js.UndefOr[TableCellStyle]
+  }
+
+  object SubtotalOptions {
+    @inline
+    def apply(
+        CustomLabel: js.UndefOr[String] = js.undefined,
+        FieldLevel: js.UndefOr[PivotTableSubtotalLevel] = js.undefined,
+        FieldLevelOptions: js.UndefOr[PivotTableFieldSubtotalOptionsList] = js.undefined,
+        MetricHeaderCellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        TotalCellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        TotalsVisibility: js.UndefOr[Visibility] = js.undefined,
+        ValueCellStyle: js.UndefOr[TableCellStyle] = js.undefined
+    ): SubtotalOptions = {
+      val __obj = js.Dynamic.literal()
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      FieldLevel.foreach(__v => __obj.updateDynamic("FieldLevel")(__v.asInstanceOf[js.Any]))
+      FieldLevelOptions.foreach(__v => __obj.updateDynamic("FieldLevelOptions")(__v.asInstanceOf[js.Any]))
+      MetricHeaderCellStyle.foreach(__v => __obj.updateDynamic("MetricHeaderCellStyle")(__v.asInstanceOf[js.Any]))
+      TotalCellStyle.foreach(__v => __obj.updateDynamic("TotalCellStyle")(__v.asInstanceOf[js.Any]))
+      TotalsVisibility.foreach(__v => __obj.updateDynamic("TotalsVisibility")(__v.asInstanceOf[js.Any]))
+      ValueCellStyle.foreach(__v => __obj.updateDynamic("ValueCellStyle")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SubtotalOptions]
+    }
+  }
+
+  /** The aggregated field well for the table.
+    */
+  @js.native
+  trait TableAggregatedFieldWells extends js.Object {
+    var GroupBy: js.UndefOr[DimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object TableAggregatedFieldWells {
+    @inline
+    def apply(
+        GroupBy: js.UndefOr[DimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): TableAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableAggregatedFieldWells]
+    }
+  }
+
+  /** The border options for a table border.
+    */
+  @js.native
+  trait TableBorderOptions extends js.Object {
+    var Color: js.UndefOr[HexColor]
+    var Style: js.UndefOr[TableBorderStyle]
+    var Thickness: js.UndefOr[TableBorderThickness]
+  }
+
+  object TableBorderOptions {
+    @inline
+    def apply(
+        Color: js.UndefOr[HexColor] = js.undefined,
+        Style: js.UndefOr[TableBorderStyle] = js.undefined,
+        Thickness: js.UndefOr[TableBorderThickness] = js.undefined
+    ): TableBorderOptions = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      Style.foreach(__v => __obj.updateDynamic("Style")(__v.asInstanceOf[js.Any]))
+      Thickness.foreach(__v => __obj.updateDynamic("Thickness")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableBorderOptions]
+    }
+  }
+
+  /** The cell conditional formatting option for a table.
+    */
+  @js.native
+  trait TableCellConditionalFormatting extends js.Object {
+    var FieldId: FieldId
+    var TextFormat: js.UndefOr[TextConditionalFormat]
+  }
+
+  object TableCellConditionalFormatting {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        TextFormat: js.UndefOr[TextConditionalFormat] = js.undefined
+    ): TableCellConditionalFormatting = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      TextFormat.foreach(__v => __obj.updateDynamic("TextFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableCellConditionalFormatting]
+    }
+  }
+
+  /** The sizing options for the table image configuration.
+    */
+  @js.native
+  trait TableCellImageSizingConfiguration extends js.Object {
+    var TableCellImageScalingConfiguration: js.UndefOr[TableCellImageScalingConfiguration]
+  }
+
+  object TableCellImageSizingConfiguration {
+    @inline
+    def apply(
+        TableCellImageScalingConfiguration: js.UndefOr[TableCellImageScalingConfiguration] = js.undefined
+    ): TableCellImageSizingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TableCellImageScalingConfiguration.foreach(__v => __obj.updateDynamic("TableCellImageScalingConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableCellImageSizingConfiguration]
+    }
+  }
+
+  /** The table cell style for a cell in pivot table or table visual.
+    */
+  @js.native
+  trait TableCellStyle extends js.Object {
+    var BackgroundColor: js.UndefOr[HexColor]
+    var Border: js.UndefOr[GlobalTableBorderOptions]
+    var FontConfiguration: js.UndefOr[FontConfiguration]
+    var Height: js.UndefOr[TableFieldHeight]
+    var HorizontalTextAlignment: js.UndefOr[HorizontalTextAlignment]
+    var TextWrap: js.UndefOr[TextWrap]
+    var VerticalTextAlignment: js.UndefOr[VerticalTextAlignment]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object TableCellStyle {
+    @inline
+    def apply(
+        BackgroundColor: js.UndefOr[HexColor] = js.undefined,
+        Border: js.UndefOr[GlobalTableBorderOptions] = js.undefined,
+        FontConfiguration: js.UndefOr[FontConfiguration] = js.undefined,
+        Height: js.UndefOr[TableFieldHeight] = js.undefined,
+        HorizontalTextAlignment: js.UndefOr[HorizontalTextAlignment] = js.undefined,
+        TextWrap: js.UndefOr[TextWrap] = js.undefined,
+        VerticalTextAlignment: js.UndefOr[VerticalTextAlignment] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): TableCellStyle = {
+      val __obj = js.Dynamic.literal()
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      Border.foreach(__v => __obj.updateDynamic("Border")(__v.asInstanceOf[js.Any]))
+      FontConfiguration.foreach(__v => __obj.updateDynamic("FontConfiguration")(__v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      HorizontalTextAlignment.foreach(__v => __obj.updateDynamic("HorizontalTextAlignment")(__v.asInstanceOf[js.Any]))
+      TextWrap.foreach(__v => __obj.updateDynamic("TextWrap")(__v.asInstanceOf[js.Any]))
+      VerticalTextAlignment.foreach(__v => __obj.updateDynamic("VerticalTextAlignment")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableCellStyle]
+    }
+  }
+
+  /** The conditional formatting for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait TableConditionalFormatting extends js.Object {
+    var ConditionalFormattingOptions: js.UndefOr[TableConditionalFormattingOptionList]
+  }
+
+  object TableConditionalFormatting {
+    @inline
+    def apply(
+        ConditionalFormattingOptions: js.UndefOr[TableConditionalFormattingOptionList] = js.undefined
+    ): TableConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      ConditionalFormattingOptions.foreach(__v => __obj.updateDynamic("ConditionalFormattingOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableConditionalFormatting]
+    }
+  }
+
+  /** Conditional formatting options for a <code>PivotTableVisual</code>.
+    */
+  @js.native
+  trait TableConditionalFormattingOption extends js.Object {
+    var Cell: js.UndefOr[TableCellConditionalFormatting]
+    var Row: js.UndefOr[TableRowConditionalFormatting]
+  }
+
+  object TableConditionalFormattingOption {
+    @inline
+    def apply(
+        Cell: js.UndefOr[TableCellConditionalFormatting] = js.undefined,
+        Row: js.UndefOr[TableRowConditionalFormatting] = js.undefined
+    ): TableConditionalFormattingOption = {
+      val __obj = js.Dynamic.literal()
+      Cell.foreach(__v => __obj.updateDynamic("Cell")(__v.asInstanceOf[js.Any]))
+      Row.foreach(__v => __obj.updateDynamic("Row")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableConditionalFormattingOption]
+    }
+  }
+
+  /** The configuration for a <code>TableVisual</code>.
+    */
+  @js.native
+  trait TableConfiguration extends js.Object {
+    var FieldOptions: js.UndefOr[TableFieldOptions]
+    var FieldWells: js.UndefOr[TableFieldWells]
+    var PaginatedReportOptions: js.UndefOr[TablePaginatedReportOptions]
+    var SortConfiguration: js.UndefOr[TableSortConfiguration]
+    var TableOptions: js.UndefOr[TableOptions]
+    var TotalOptions: js.UndefOr[TotalOptions]
+  }
+
+  object TableConfiguration {
+    @inline
+    def apply(
+        FieldOptions: js.UndefOr[TableFieldOptions] = js.undefined,
+        FieldWells: js.UndefOr[TableFieldWells] = js.undefined,
+        PaginatedReportOptions: js.UndefOr[TablePaginatedReportOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[TableSortConfiguration] = js.undefined,
+        TableOptions: js.UndefOr[TableOptions] = js.undefined,
+        TotalOptions: js.UndefOr[TotalOptions] = js.undefined
+    ): TableConfiguration = {
+      val __obj = js.Dynamic.literal()
+      FieldOptions.foreach(__v => __obj.updateDynamic("FieldOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      PaginatedReportOptions.foreach(__v => __obj.updateDynamic("PaginatedReportOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      TableOptions.foreach(__v => __obj.updateDynamic("TableOptions")(__v.asInstanceOf[js.Any]))
+      TotalOptions.foreach(__v => __obj.updateDynamic("TotalOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableConfiguration]
+    }
+  }
+
+  /** The custom icon content for the table link content configuration.
+    */
+  @js.native
+  trait TableFieldCustomIconContent extends js.Object {
+    var Icon: js.UndefOr[TableFieldIconSetType]
+  }
+
+  object TableFieldCustomIconContent {
+    @inline
+    def apply(
+        Icon: js.UndefOr[TableFieldIconSetType] = js.undefined
+    ): TableFieldCustomIconContent = {
+      val __obj = js.Dynamic.literal()
+      Icon.foreach(__v => __obj.updateDynamic("Icon")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldCustomIconContent]
+    }
+  }
+
+  /** The custom text content (value, font configuration) for the table link content configuration.
+    */
+  @js.native
+  trait TableFieldCustomTextContent extends js.Object {
+    var FontConfiguration: FontConfiguration
+    var Value: js.UndefOr[String]
+  }
+
+  object TableFieldCustomTextContent {
+    @inline
+    def apply(
+        FontConfiguration: FontConfiguration,
+        Value: js.UndefOr[String] = js.undefined
+    ): TableFieldCustomTextContent = {
+      val __obj = js.Dynamic.literal(
+        "FontConfiguration" -> FontConfiguration.asInstanceOf[js.Any]
+      )
+
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldCustomTextContent]
+    }
+  }
+
+  /** The image configuration of a table field URL.
+    */
+  @js.native
+  trait TableFieldImageConfiguration extends js.Object {
+    var SizingOptions: js.UndefOr[TableCellImageSizingConfiguration]
+  }
+
+  object TableFieldImageConfiguration {
+    @inline
+    def apply(
+        SizingOptions: js.UndefOr[TableCellImageSizingConfiguration] = js.undefined
+    ): TableFieldImageConfiguration = {
+      val __obj = js.Dynamic.literal()
+      SizingOptions.foreach(__v => __obj.updateDynamic("SizingOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldImageConfiguration]
+    }
+  }
+
+  /** The link configuration of a table field URL.
+    */
+  @js.native
+  trait TableFieldLinkConfiguration extends js.Object {
+    var Content: TableFieldLinkContentConfiguration
+    var Target: URLTargetConfiguration
+  }
+
+  object TableFieldLinkConfiguration {
+    @inline
+    def apply(
+        Content: TableFieldLinkContentConfiguration,
+        Target: URLTargetConfiguration
+    ): TableFieldLinkConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Content" -> Content.asInstanceOf[js.Any],
+        "Target" -> Target.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TableFieldLinkConfiguration]
+    }
+  }
+
+  /** The URL content (text, icon) for the table link configuration.
+    */
+  @js.native
+  trait TableFieldLinkContentConfiguration extends js.Object {
+    var CustomIconContent: js.UndefOr[TableFieldCustomIconContent]
+    var CustomTextContent: js.UndefOr[TableFieldCustomTextContent]
+  }
+
+  object TableFieldLinkContentConfiguration {
+    @inline
+    def apply(
+        CustomIconContent: js.UndefOr[TableFieldCustomIconContent] = js.undefined,
+        CustomTextContent: js.UndefOr[TableFieldCustomTextContent] = js.undefined
+    ): TableFieldLinkContentConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CustomIconContent.foreach(__v => __obj.updateDynamic("CustomIconContent")(__v.asInstanceOf[js.Any]))
+      CustomTextContent.foreach(__v => __obj.updateDynamic("CustomTextContent")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldLinkContentConfiguration]
+    }
+  }
+
+  /** The options for a table field.
+    */
+  @js.native
+  trait TableFieldOption extends js.Object {
+    var FieldId: FieldId
+    var CustomLabel: js.UndefOr[CustomLabel]
+    var URLStyling: js.UndefOr[TableFieldURLConfiguration]
+    var Visibility: js.UndefOr[Visibility]
+    var Width: js.UndefOr[PixelLength]
+  }
+
+  object TableFieldOption {
+    @inline
+    def apply(
+        FieldId: FieldId,
+        CustomLabel: js.UndefOr[CustomLabel] = js.undefined,
+        URLStyling: js.UndefOr[TableFieldURLConfiguration] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined,
+        Width: js.UndefOr[PixelLength] = js.undefined
+    ): TableFieldOption = {
+      val __obj = js.Dynamic.literal(
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      URLStyling.foreach(__v => __obj.updateDynamic("URLStyling")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldOption]
+    }
+  }
+
+  /** The field options for a table visual.
+    */
+  @js.native
+  trait TableFieldOptions extends js.Object {
+    var Order: js.UndefOr[FieldOrderList]
+    var SelectedFieldOptions: js.UndefOr[TableFieldOptionList]
+  }
+
+  object TableFieldOptions {
+    @inline
+    def apply(
+        Order: js.UndefOr[FieldOrderList] = js.undefined,
+        SelectedFieldOptions: js.UndefOr[TableFieldOptionList] = js.undefined
+    ): TableFieldOptions = {
+      val __obj = js.Dynamic.literal()
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      SelectedFieldOptions.foreach(__v => __obj.updateDynamic("SelectedFieldOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldOptions]
+    }
+  }
+
+  /** The URL configuration for a table field.
+    */
+  @js.native
+  trait TableFieldURLConfiguration extends js.Object {
+    var ImageConfiguration: js.UndefOr[TableFieldImageConfiguration]
+    var LinkConfiguration: js.UndefOr[TableFieldLinkConfiguration]
+  }
+
+  object TableFieldURLConfiguration {
+    @inline
+    def apply(
+        ImageConfiguration: js.UndefOr[TableFieldImageConfiguration] = js.undefined,
+        LinkConfiguration: js.UndefOr[TableFieldLinkConfiguration] = js.undefined
+    ): TableFieldURLConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ImageConfiguration.foreach(__v => __obj.updateDynamic("ImageConfiguration")(__v.asInstanceOf[js.Any]))
+      LinkConfiguration.foreach(__v => __obj.updateDynamic("LinkConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldURLConfiguration]
+    }
+  }
+
+  /** The field wells for a table visual. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait TableFieldWells extends js.Object {
+    var TableAggregatedFieldWells: js.UndefOr[TableAggregatedFieldWells]
+    var TableUnaggregatedFieldWells: js.UndefOr[TableUnaggregatedFieldWells]
+  }
+
+  object TableFieldWells {
+    @inline
+    def apply(
+        TableAggregatedFieldWells: js.UndefOr[TableAggregatedFieldWells] = js.undefined,
+        TableUnaggregatedFieldWells: js.UndefOr[TableUnaggregatedFieldWells] = js.undefined
+    ): TableFieldWells = {
+      val __obj = js.Dynamic.literal()
+      TableAggregatedFieldWells.foreach(__v => __obj.updateDynamic("TableAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      TableUnaggregatedFieldWells.foreach(__v => __obj.updateDynamic("TableUnaggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableFieldWells]
+    }
+  }
+
+  /** The table options for a table visual.
+    */
+  @js.native
+  trait TableOptions extends js.Object {
+    var CellStyle: js.UndefOr[TableCellStyle]
+    var HeaderStyle: js.UndefOr[TableCellStyle]
+    var Orientation: js.UndefOr[TableOrientation]
+    var RowAlternateColorOptions: js.UndefOr[RowAlternateColorOptions]
+  }
+
+  object TableOptions {
+    @inline
+    def apply(
+        CellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        HeaderStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        Orientation: js.UndefOr[TableOrientation] = js.undefined,
+        RowAlternateColorOptions: js.UndefOr[RowAlternateColorOptions] = js.undefined
+    ): TableOptions = {
+      val __obj = js.Dynamic.literal()
+      CellStyle.foreach(__v => __obj.updateDynamic("CellStyle")(__v.asInstanceOf[js.Any]))
+      HeaderStyle.foreach(__v => __obj.updateDynamic("HeaderStyle")(__v.asInstanceOf[js.Any]))
+      Orientation.foreach(__v => __obj.updateDynamic("Orientation")(__v.asInstanceOf[js.Any]))
+      RowAlternateColorOptions.foreach(__v => __obj.updateDynamic("RowAlternateColorOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableOptions]
+    }
+  }
+
+  /** The paginated report options for a table visual.
+    */
+  @js.native
+  trait TablePaginatedReportOptions extends js.Object {
+    var OverflowColumnHeaderVisibility: js.UndefOr[Visibility]
+    var VerticalOverflowVisibility: js.UndefOr[Visibility]
+  }
+
+  object TablePaginatedReportOptions {
+    @inline
+    def apply(
+        OverflowColumnHeaderVisibility: js.UndefOr[Visibility] = js.undefined,
+        VerticalOverflowVisibility: js.UndefOr[Visibility] = js.undefined
+    ): TablePaginatedReportOptions = {
+      val __obj = js.Dynamic.literal()
+      OverflowColumnHeaderVisibility.foreach(__v => __obj.updateDynamic("OverflowColumnHeaderVisibility")(__v.asInstanceOf[js.Any]))
+      VerticalOverflowVisibility.foreach(__v => __obj.updateDynamic("VerticalOverflowVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TablePaginatedReportOptions]
+    }
+  }
+
+  /** The conditional formatting of a table row.
+    */
+  @js.native
+  trait TableRowConditionalFormatting extends js.Object {
+    var BackgroundColor: js.UndefOr[ConditionalFormattingColor]
+    var TextColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object TableRowConditionalFormatting {
+    @inline
+    def apply(
+        BackgroundColor: js.UndefOr[ConditionalFormattingColor] = js.undefined,
+        TextColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): TableRowConditionalFormatting = {
+      val __obj = js.Dynamic.literal()
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      TextColor.foreach(__v => __obj.updateDynamic("TextColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableRowConditionalFormatting]
+    }
+  }
+
+  /** The side border options for a table.
+    */
+  @js.native
+  trait TableSideBorderOptions extends js.Object {
+    var Bottom: js.UndefOr[TableBorderOptions]
+    var InnerHorizontal: js.UndefOr[TableBorderOptions]
+    var InnerVertical: js.UndefOr[TableBorderOptions]
+    var Left: js.UndefOr[TableBorderOptions]
+    var Right: js.UndefOr[TableBorderOptions]
+    var Top: js.UndefOr[TableBorderOptions]
+  }
+
+  object TableSideBorderOptions {
+    @inline
+    def apply(
+        Bottom: js.UndefOr[TableBorderOptions] = js.undefined,
+        InnerHorizontal: js.UndefOr[TableBorderOptions] = js.undefined,
+        InnerVertical: js.UndefOr[TableBorderOptions] = js.undefined,
+        Left: js.UndefOr[TableBorderOptions] = js.undefined,
+        Right: js.UndefOr[TableBorderOptions] = js.undefined,
+        Top: js.UndefOr[TableBorderOptions] = js.undefined
+    ): TableSideBorderOptions = {
+      val __obj = js.Dynamic.literal()
+      Bottom.foreach(__v => __obj.updateDynamic("Bottom")(__v.asInstanceOf[js.Any]))
+      InnerHorizontal.foreach(__v => __obj.updateDynamic("InnerHorizontal")(__v.asInstanceOf[js.Any]))
+      InnerVertical.foreach(__v => __obj.updateDynamic("InnerVertical")(__v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
+      Right.foreach(__v => __obj.updateDynamic("Right")(__v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableSideBorderOptions]
+    }
+  }
+
+  /** The sort configuration for a <code>TableVisual</code>.
+    */
+  @js.native
+  trait TableSortConfiguration extends js.Object {
+    var PaginationConfiguration: js.UndefOr[PaginationConfiguration]
+    var RowSort: js.UndefOr[RowSortList]
+  }
+
+  object TableSortConfiguration {
+    @inline
+    def apply(
+        PaginationConfiguration: js.UndefOr[PaginationConfiguration] = js.undefined,
+        RowSort: js.UndefOr[RowSortList] = js.undefined
+    ): TableSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      PaginationConfiguration.foreach(__v => __obj.updateDynamic("PaginationConfiguration")(__v.asInstanceOf[js.Any]))
+      RowSort.foreach(__v => __obj.updateDynamic("RowSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableSortConfiguration]
+    }
+  }
+
+  /** The unaggregated field well for the table.
+    */
+  @js.native
+  trait TableUnaggregatedFieldWells extends js.Object {
+    var Values: js.UndefOr[UnaggregatedFieldList]
+  }
+
+  object TableUnaggregatedFieldWells {
+    @inline
+    def apply(
+        Values: js.UndefOr[UnaggregatedFieldList] = js.undefined
+    ): TableUnaggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableUnaggregatedFieldWells]
+    }
+  }
+
+  /** A table visual. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/tabular.html|Using tables as visuals]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait TableVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[TableConfiguration]
+    var ConditionalFormatting: js.UndefOr[TableConditionalFormatting]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object TableVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[TableConfiguration] = js.undefined,
+        ConditionalFormatting: js.UndefOr[TableConditionalFormatting] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): TableVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ConditionalFormatting.foreach(__v => __obj.updateDynamic("ConditionalFormatting")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TableVisual]
     }
   }
 
@@ -8008,7 +18783,7 @@ package object quicksight {
     var CreatedTime: js.UndefOr[Timestamp]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[TemplateName]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
     var Version: js.UndefOr[TemplateVersion]
   }
 
@@ -8019,7 +18794,7 @@ package object quicksight {
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Version: js.UndefOr[TemplateVersion] = js.undefined
     ): Template = {
       val __obj = js.Dynamic.literal()
@@ -8063,17 +18838,20 @@ package object quicksight {
   trait TemplateError extends js.Object {
     var Message: js.UndefOr[NonEmptyString]
     var Type: js.UndefOr[TemplateErrorType]
+    var ViolatedEntities: js.UndefOr[EntityList]
   }
 
   object TemplateError {
     @inline
     def apply(
         Message: js.UndefOr[NonEmptyString] = js.undefined,
-        Type: js.UndefOr[TemplateErrorType] = js.undefined
+        Type: js.UndefOr[TemplateErrorType] = js.undefined,
+        ViolatedEntities: js.UndefOr[EntityList] = js.undefined
     ): TemplateError = {
       val __obj = js.Dynamic.literal()
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ViolatedEntities.foreach(__v => __obj.updateDynamic("ViolatedEntities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateError]
     }
   }
@@ -8149,7 +18927,7 @@ package object quicksight {
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var LatestVersionNumber: js.UndefOr[VersionNumber]
     var Name: js.UndefOr[TemplateName]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object TemplateSummary {
@@ -8160,7 +18938,7 @@ package object quicksight {
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         LatestVersionNumber: js.UndefOr[VersionNumber] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): TemplateSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -8212,6 +18990,44 @@ package object quicksight {
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       VersionNumber.foreach(__v => __obj.updateDynamic("VersionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateVersion]
+    }
+  }
+
+  /** The detailed definition of a template.
+    */
+  @js.native
+  trait TemplateVersionDefinition extends js.Object {
+    var DataSetConfigurations: DataSetConfigurationList
+    var AnalysisDefaults: js.UndefOr[AnalysisDefaults]
+    var CalculatedFields: js.UndefOr[CalculatedFields]
+    var ColumnConfigurations: js.UndefOr[ColumnConfigurationList]
+    var FilterGroups: js.UndefOr[FilterGroupList]
+    var ParameterDeclarations: js.UndefOr[ParameterDeclarationList]
+    var Sheets: js.UndefOr[SheetDefinitionList]
+  }
+
+  object TemplateVersionDefinition {
+    @inline
+    def apply(
+        DataSetConfigurations: DataSetConfigurationList,
+        AnalysisDefaults: js.UndefOr[AnalysisDefaults] = js.undefined,
+        CalculatedFields: js.UndefOr[CalculatedFields] = js.undefined,
+        ColumnConfigurations: js.UndefOr[ColumnConfigurationList] = js.undefined,
+        FilterGroups: js.UndefOr[FilterGroupList] = js.undefined,
+        ParameterDeclarations: js.UndefOr[ParameterDeclarationList] = js.undefined,
+        Sheets: js.UndefOr[SheetDefinitionList] = js.undefined
+    ): TemplateVersionDefinition = {
+      val __obj = js.Dynamic.literal(
+        "DataSetConfigurations" -> DataSetConfigurations.asInstanceOf[js.Any]
+      )
+
+      AnalysisDefaults.foreach(__v => __obj.updateDynamic("AnalysisDefaults")(__v.asInstanceOf[js.Any]))
+      CalculatedFields.foreach(__v => __obj.updateDynamic("CalculatedFields")(__v.asInstanceOf[js.Any]))
+      ColumnConfigurations.foreach(__v => __obj.updateDynamic("ColumnConfigurations")(__v.asInstanceOf[js.Any]))
+      FilterGroups.foreach(__v => __obj.updateDynamic("FilterGroups")(__v.asInstanceOf[js.Any]))
+      ParameterDeclarations.foreach(__v => __obj.updateDynamic("ParameterDeclarations")(__v.asInstanceOf[js.Any]))
+      Sheets.foreach(__v => __obj.updateDynamic("Sheets")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateVersionDefinition]
     }
   }
 
@@ -8270,6 +19086,90 @@ package object quicksight {
     }
   }
 
+  /** The display options of a control.
+    */
+  @js.native
+  trait TextAreaControlDisplayOptions extends js.Object {
+    var PlaceholderOptions: js.UndefOr[TextControlPlaceholderOptions]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object TextAreaControlDisplayOptions {
+    @inline
+    def apply(
+        PlaceholderOptions: js.UndefOr[TextControlPlaceholderOptions] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): TextAreaControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      PlaceholderOptions.foreach(__v => __obj.updateDynamic("PlaceholderOptions")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextAreaControlDisplayOptions]
+    }
+  }
+
+  /** The conditional formatting for the text.
+    */
+  @js.native
+  trait TextConditionalFormat extends js.Object {
+    var BackgroundColor: js.UndefOr[ConditionalFormattingColor]
+    var Icon: js.UndefOr[ConditionalFormattingIcon]
+    var TextColor: js.UndefOr[ConditionalFormattingColor]
+  }
+
+  object TextConditionalFormat {
+    @inline
+    def apply(
+        BackgroundColor: js.UndefOr[ConditionalFormattingColor] = js.undefined,
+        Icon: js.UndefOr[ConditionalFormattingIcon] = js.undefined,
+        TextColor: js.UndefOr[ConditionalFormattingColor] = js.undefined
+    ): TextConditionalFormat = {
+      val __obj = js.Dynamic.literal()
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      Icon.foreach(__v => __obj.updateDynamic("Icon")(__v.asInstanceOf[js.Any]))
+      TextColor.foreach(__v => __obj.updateDynamic("TextColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextConditionalFormat]
+    }
+  }
+
+  /** The configuration of the placeholder options in a text control.
+    */
+  @js.native
+  trait TextControlPlaceholderOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object TextControlPlaceholderOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): TextControlPlaceholderOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextControlPlaceholderOptions]
+    }
+  }
+
+  /** The display options of a control.
+    */
+  @js.native
+  trait TextFieldControlDisplayOptions extends js.Object {
+    var PlaceholderOptions: js.UndefOr[TextControlPlaceholderOptions]
+    var TitleOptions: js.UndefOr[LabelOptions]
+  }
+
+  object TextFieldControlDisplayOptions {
+    @inline
+    def apply(
+        PlaceholderOptions: js.UndefOr[TextControlPlaceholderOptions] = js.undefined,
+        TitleOptions: js.UndefOr[LabelOptions] = js.undefined
+    ): TextFieldControlDisplayOptions = {
+      val __obj = js.Dynamic.literal()
+      PlaceholderOptions.foreach(__v => __obj.updateDynamic("PlaceholderOptions")(__v.asInstanceOf[js.Any]))
+      TitleOptions.foreach(__v => __obj.updateDynamic("TitleOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TextFieldControlDisplayOptions]
+    }
+  }
+
   /** Summary information about a theme.
     */
   @js.native
@@ -8278,7 +19178,7 @@ package object quicksight {
     var CreatedTime: js.UndefOr[Timestamp]
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[ThemeName]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
     var Type: js.UndefOr[ThemeType]
     var Version: js.UndefOr[ThemeVersion]
   }
@@ -8290,7 +19190,7 @@ package object quicksight {
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[ThemeName] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Type: js.UndefOr[ThemeType] = js.undefined,
         Version: js.UndefOr[ThemeVersion] = js.undefined
     ): Theme = {
@@ -8336,6 +19236,7 @@ package object quicksight {
   trait ThemeConfiguration extends js.Object {
     var DataColorPalette: js.UndefOr[DataColorPalette]
     var Sheet: js.UndefOr[SheetStyle]
+    var Typography: js.UndefOr[Typography]
     var UIColorPalette: js.UndefOr[UIColorPalette]
   }
 
@@ -8344,11 +19245,13 @@ package object quicksight {
     def apply(
         DataColorPalette: js.UndefOr[DataColorPalette] = js.undefined,
         Sheet: js.UndefOr[SheetStyle] = js.undefined,
+        Typography: js.UndefOr[Typography] = js.undefined,
         UIColorPalette: js.UndefOr[UIColorPalette] = js.undefined
     ): ThemeConfiguration = {
       val __obj = js.Dynamic.literal()
       DataColorPalette.foreach(__v => __obj.updateDynamic("DataColorPalette")(__v.asInstanceOf[js.Any]))
       Sheet.foreach(__v => __obj.updateDynamic("Sheet")(__v.asInstanceOf[js.Any]))
+      Typography.foreach(__v => __obj.updateDynamic("Typography")(__v.asInstanceOf[js.Any]))
       UIColorPalette.foreach(__v => __obj.updateDynamic("UIColorPalette")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThemeConfiguration]
     }
@@ -8384,7 +19287,7 @@ package object quicksight {
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var LatestVersionNumber: js.UndefOr[VersionNumber]
     var Name: js.UndefOr[ThemeName]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object ThemeSummary {
@@ -8395,7 +19298,7 @@ package object quicksight {
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         LatestVersionNumber: js.UndefOr[VersionNumber] = js.undefined,
         Name: js.UndefOr[ThemeName] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): ThemeSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -8413,7 +19316,7 @@ package object quicksight {
   @js.native
   trait ThemeVersion extends js.Object {
     var Arn: js.UndefOr[Arn]
-    var BaseThemeId: js.UndefOr[RestrictiveResourceId]
+    var BaseThemeId: js.UndefOr[ShortRestrictiveResourceId]
     var Configuration: js.UndefOr[ThemeConfiguration]
     var CreatedTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[VersionDescription]
@@ -8426,7 +19329,7 @@ package object quicksight {
     @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
-        BaseThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        BaseThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Configuration: js.UndefOr[ThemeConfiguration] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[VersionDescription] = js.undefined,
@@ -8477,6 +19380,27 @@ package object quicksight {
     }
   }
 
+  /** The options that determine the thousands separator configuration.
+    */
+  @js.native
+  trait ThousandSeparatorOptions extends js.Object {
+    var Symbol: js.UndefOr[NumericSeparatorSymbol]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object ThousandSeparatorOptions {
+    @inline
+    def apply(
+        Symbol: js.UndefOr[NumericSeparatorSymbol] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): ThousandSeparatorOptions = {
+      val __obj = js.Dynamic.literal()
+      Symbol.foreach(__v => __obj.updateDynamic("Symbol")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ThousandSeparatorOptions]
+    }
+  }
+
   /** The display options for the layout of tiles on a sheet.
     */
   @js.native
@@ -8516,6 +19440,379 @@ package object quicksight {
     }
   }
 
+  /** The forecast properties setup of a forecast in the line chart.
+    */
+  @js.native
+  trait TimeBasedForecastProperties extends js.Object {
+    var LowerBoundary: js.UndefOr[Double]
+    var PeriodsBackward: js.UndefOr[PeriodsBackward]
+    var PeriodsForward: js.UndefOr[PeriodsForward]
+    var PredictionInterval: js.UndefOr[PredictionInterval]
+    var Seasonality: js.UndefOr[Seasonality]
+    var UpperBoundary: js.UndefOr[Double]
+  }
+
+  object TimeBasedForecastProperties {
+    @inline
+    def apply(
+        LowerBoundary: js.UndefOr[Double] = js.undefined,
+        PeriodsBackward: js.UndefOr[PeriodsBackward] = js.undefined,
+        PeriodsForward: js.UndefOr[PeriodsForward] = js.undefined,
+        PredictionInterval: js.UndefOr[PredictionInterval] = js.undefined,
+        Seasonality: js.UndefOr[Seasonality] = js.undefined,
+        UpperBoundary: js.UndefOr[Double] = js.undefined
+    ): TimeBasedForecastProperties = {
+      val __obj = js.Dynamic.literal()
+      LowerBoundary.foreach(__v => __obj.updateDynamic("LowerBoundary")(__v.asInstanceOf[js.Any]))
+      PeriodsBackward.foreach(__v => __obj.updateDynamic("PeriodsBackward")(__v.asInstanceOf[js.Any]))
+      PeriodsForward.foreach(__v => __obj.updateDynamic("PeriodsForward")(__v.asInstanceOf[js.Any]))
+      PredictionInterval.foreach(__v => __obj.updateDynamic("PredictionInterval")(__v.asInstanceOf[js.Any]))
+      Seasonality.foreach(__v => __obj.updateDynamic("Seasonality")(__v.asInstanceOf[js.Any]))
+      UpperBoundary.foreach(__v => __obj.updateDynamic("UpperBoundary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeBasedForecastProperties]
+    }
+  }
+
+  /** A <code>TimeEqualityFilter</code> filters values that are equal to a given value.
+    */
+  @js.native
+  trait TimeEqualityFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var ParameterName: js.UndefOr[ParameterName]
+    var TimeGranularity: js.UndefOr[TimeGranularity]
+    var Value: js.UndefOr[Timestamp]
+  }
+
+  object TimeEqualityFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        TimeGranularity: js.UndefOr[TimeGranularity] = js.undefined,
+        Value: js.UndefOr[Timestamp] = js.undefined
+    ): TimeEqualityFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any]
+      )
+
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      TimeGranularity.foreach(__v => __obj.updateDynamic("TimeGranularity")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeEqualityFilter]
+    }
+  }
+
+  /** The time range drill down filter.
+    */
+  @js.native
+  trait TimeRangeDrillDownFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var RangeMaximum: Timestamp
+    var RangeMinimum: Timestamp
+    var TimeGranularity: TimeGranularity
+  }
+
+  object TimeRangeDrillDownFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        RangeMaximum: Timestamp,
+        RangeMinimum: Timestamp,
+        TimeGranularity: TimeGranularity
+    ): TimeRangeDrillDownFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "RangeMaximum" -> RangeMaximum.asInstanceOf[js.Any],
+        "RangeMinimum" -> RangeMinimum.asInstanceOf[js.Any],
+        "TimeGranularity" -> TimeGranularity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TimeRangeDrillDownFilter]
+    }
+  }
+
+  /** A <code>TimeRangeFilter</code> filters values that are between two specified values.
+    */
+  @js.native
+  trait TimeRangeFilter extends js.Object {
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var NullOption: FilterNullOption
+    var ExcludePeriodConfiguration: js.UndefOr[ExcludePeriodConfiguration]
+    var IncludeMaximum: js.UndefOr[Boolean]
+    var IncludeMinimum: js.UndefOr[Boolean]
+    var RangeMaximumValue: js.UndefOr[TimeRangeFilterValue]
+    var RangeMinimumValue: js.UndefOr[TimeRangeFilterValue]
+    var TimeGranularity: js.UndefOr[TimeGranularity]
+  }
+
+  object TimeRangeFilter {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        NullOption: FilterNullOption,
+        ExcludePeriodConfiguration: js.UndefOr[ExcludePeriodConfiguration] = js.undefined,
+        IncludeMaximum: js.UndefOr[Boolean] = js.undefined,
+        IncludeMinimum: js.UndefOr[Boolean] = js.undefined,
+        RangeMaximumValue: js.UndefOr[TimeRangeFilterValue] = js.undefined,
+        RangeMinimumValue: js.UndefOr[TimeRangeFilterValue] = js.undefined,
+        TimeGranularity: js.UndefOr[TimeGranularity] = js.undefined
+    ): TimeRangeFilter = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any],
+        "NullOption" -> NullOption.asInstanceOf[js.Any]
+      )
+
+      ExcludePeriodConfiguration.foreach(__v => __obj.updateDynamic("ExcludePeriodConfiguration")(__v.asInstanceOf[js.Any]))
+      IncludeMaximum.foreach(__v => __obj.updateDynamic("IncludeMaximum")(__v.asInstanceOf[js.Any]))
+      IncludeMinimum.foreach(__v => __obj.updateDynamic("IncludeMinimum")(__v.asInstanceOf[js.Any]))
+      RangeMaximumValue.foreach(__v => __obj.updateDynamic("RangeMaximumValue")(__v.asInstanceOf[js.Any]))
+      RangeMinimumValue.foreach(__v => __obj.updateDynamic("RangeMinimumValue")(__v.asInstanceOf[js.Any]))
+      TimeGranularity.foreach(__v => __obj.updateDynamic("TimeGranularity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeRangeFilter]
+    }
+  }
+
+  /** The value of a time range filter. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait TimeRangeFilterValue extends js.Object {
+    var Parameter: js.UndefOr[ParameterName]
+    var RollingDate: js.UndefOr[RollingDateConfiguration]
+    var StaticValue: js.UndefOr[Timestamp]
+  }
+
+  object TimeRangeFilterValue {
+    @inline
+    def apply(
+        Parameter: js.UndefOr[ParameterName] = js.undefined,
+        RollingDate: js.UndefOr[RollingDateConfiguration] = js.undefined,
+        StaticValue: js.UndefOr[Timestamp] = js.undefined
+    ): TimeRangeFilterValue = {
+      val __obj = js.Dynamic.literal()
+      Parameter.foreach(__v => __obj.updateDynamic("Parameter")(__v.asInstanceOf[js.Any]))
+      RollingDate.foreach(__v => __obj.updateDynamic("RollingDate")(__v.asInstanceOf[js.Any]))
+      StaticValue.foreach(__v => __obj.updateDynamic("StaticValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeRangeFilterValue]
+    }
+  }
+
+  /** The tooltip. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait TooltipItem extends js.Object {
+    var ColumnTooltipItem: js.UndefOr[ColumnTooltipItem]
+    var FieldTooltipItem: js.UndefOr[FieldTooltipItem]
+  }
+
+  object TooltipItem {
+    @inline
+    def apply(
+        ColumnTooltipItem: js.UndefOr[ColumnTooltipItem] = js.undefined,
+        FieldTooltipItem: js.UndefOr[FieldTooltipItem] = js.undefined
+    ): TooltipItem = {
+      val __obj = js.Dynamic.literal()
+      ColumnTooltipItem.foreach(__v => __obj.updateDynamic("ColumnTooltipItem")(__v.asInstanceOf[js.Any]))
+      FieldTooltipItem.foreach(__v => __obj.updateDynamic("FieldTooltipItem")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TooltipItem]
+    }
+  }
+
+  /** The display options for the visual tooltip.
+    */
+  @js.native
+  trait TooltipOptions extends js.Object {
+    var FieldBasedTooltip: js.UndefOr[FieldBasedTooltip]
+    var SelectedTooltipType: js.UndefOr[SelectedTooltipType]
+    var TooltipVisibility: js.UndefOr[Visibility]
+  }
+
+  object TooltipOptions {
+    @inline
+    def apply(
+        FieldBasedTooltip: js.UndefOr[FieldBasedTooltip] = js.undefined,
+        SelectedTooltipType: js.UndefOr[SelectedTooltipType] = js.undefined,
+        TooltipVisibility: js.UndefOr[Visibility] = js.undefined
+    ): TooltipOptions = {
+      val __obj = js.Dynamic.literal()
+      FieldBasedTooltip.foreach(__v => __obj.updateDynamic("FieldBasedTooltip")(__v.asInstanceOf[js.Any]))
+      SelectedTooltipType.foreach(__v => __obj.updateDynamic("SelectedTooltipType")(__v.asInstanceOf[js.Any]))
+      TooltipVisibility.foreach(__v => __obj.updateDynamic("TooltipVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TooltipOptions]
+    }
+  }
+
+  /** A <code>TopBottomFilter</code> filters values that are at the top or the bottom.
+    */
+  @js.native
+  trait TopBottomFilter extends js.Object {
+    var AggregationSortConfigurations: AggregationSortConfigurationList
+    var Column: ColumnIdentifier
+    var FilterId: ShortRestrictiveResourceId
+    var Limit: js.UndefOr[Int]
+    var ParameterName: js.UndefOr[ParameterName]
+    var TimeGranularity: js.UndefOr[TimeGranularity]
+  }
+
+  object TopBottomFilter {
+    @inline
+    def apply(
+        AggregationSortConfigurations: AggregationSortConfigurationList,
+        Column: ColumnIdentifier,
+        FilterId: ShortRestrictiveResourceId,
+        Limit: js.UndefOr[Int] = js.undefined,
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        TimeGranularity: js.UndefOr[TimeGranularity] = js.undefined
+    ): TopBottomFilter = {
+      val __obj = js.Dynamic.literal(
+        "AggregationSortConfigurations" -> AggregationSortConfigurations.asInstanceOf[js.Any],
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FilterId" -> FilterId.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      TimeGranularity.foreach(__v => __obj.updateDynamic("TimeGranularity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopBottomFilter]
+    }
+  }
+
+  /** The top movers and bottom movers computation setup.
+    */
+  @js.native
+  trait TopBottomMoversComputation extends js.Object {
+    var Category: DimensionField
+    var ComputationId: ShortRestrictiveResourceId
+    var Time: DimensionField
+    var Type: TopBottomComputationType
+    var MoverSize: js.UndefOr[TopBottomMoversComputationMoverSize]
+    var Name: js.UndefOr[String]
+    var SortOrder: js.UndefOr[TopBottomSortOrder]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object TopBottomMoversComputation {
+    @inline
+    def apply(
+        Category: DimensionField,
+        ComputationId: ShortRestrictiveResourceId,
+        Time: DimensionField,
+        Type: TopBottomComputationType,
+        MoverSize: js.UndefOr[TopBottomMoversComputationMoverSize] = js.undefined,
+        Name: js.UndefOr[String] = js.undefined,
+        SortOrder: js.UndefOr[TopBottomSortOrder] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): TopBottomMoversComputation = {
+      val __obj = js.Dynamic.literal(
+        "Category" -> Category.asInstanceOf[js.Any],
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      MoverSize.foreach(__v => __obj.updateDynamic("MoverSize")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopBottomMoversComputation]
+    }
+  }
+
+  /** The top ranked and bottom ranked computation configuration.
+    */
+  @js.native
+  trait TopBottomRankedComputation extends js.Object {
+    var Category: DimensionField
+    var ComputationId: ShortRestrictiveResourceId
+    var Type: TopBottomComputationType
+    var Name: js.UndefOr[String]
+    var ResultSize: js.UndefOr[TopBottomRankedComputationResultSize]
+    var Value: js.UndefOr[MeasureField]
+  }
+
+  object TopBottomRankedComputation {
+    @inline
+    def apply(
+        Category: DimensionField,
+        ComputationId: ShortRestrictiveResourceId,
+        Type: TopBottomComputationType,
+        Name: js.UndefOr[String] = js.undefined,
+        ResultSize: js.UndefOr[TopBottomRankedComputationResultSize] = js.undefined,
+        Value: js.UndefOr[MeasureField] = js.undefined
+    ): TopBottomRankedComputation = {
+      val __obj = js.Dynamic.literal(
+        "Category" -> Category.asInstanceOf[js.Any],
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResultSize.foreach(__v => __obj.updateDynamic("ResultSize")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TopBottomRankedComputation]
+    }
+  }
+
+  /** The total aggregation computation configuration.
+    */
+  @js.native
+  trait TotalAggregationComputation extends js.Object {
+    var ComputationId: ShortRestrictiveResourceId
+    var Value: MeasureField
+    var Name: js.UndefOr[String]
+  }
+
+  object TotalAggregationComputation {
+    @inline
+    def apply(
+        ComputationId: ShortRestrictiveResourceId,
+        Value: MeasureField,
+        Name: js.UndefOr[String] = js.undefined
+    ): TotalAggregationComputation = {
+      val __obj = js.Dynamic.literal(
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TotalAggregationComputation]
+    }
+  }
+
+  /** The total options for a table visual.
+    */
+  @js.native
+  trait TotalOptions extends js.Object {
+    var CustomLabel: js.UndefOr[String]
+    var Placement: js.UndefOr[TableTotalsPlacement]
+    var ScrollStatus: js.UndefOr[TableTotalsScrollStatus]
+    var TotalCellStyle: js.UndefOr[TableCellStyle]
+    var TotalsVisibility: js.UndefOr[Visibility]
+  }
+
+  object TotalOptions {
+    @inline
+    def apply(
+        CustomLabel: js.UndefOr[String] = js.undefined,
+        Placement: js.UndefOr[TableTotalsPlacement] = js.undefined,
+        ScrollStatus: js.UndefOr[TableTotalsScrollStatus] = js.undefined,
+        TotalCellStyle: js.UndefOr[TableCellStyle] = js.undefined,
+        TotalsVisibility: js.UndefOr[Visibility] = js.undefined
+    ): TotalOptions = {
+      val __obj = js.Dynamic.literal()
+      CustomLabel.foreach(__v => __obj.updateDynamic("CustomLabel")(__v.asInstanceOf[js.Any]))
+      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
+      ScrollStatus.foreach(__v => __obj.updateDynamic("ScrollStatus")(__v.asInstanceOf[js.Any]))
+      TotalCellStyle.foreach(__v => __obj.updateDynamic("TotalCellStyle")(__v.asInstanceOf[js.Any]))
+      TotalsVisibility.foreach(__v => __obj.updateDynamic("TotalsVisibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TotalOptions]
+    }
+  }
+
   /** A data transformation on a logical table. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
@@ -8552,6 +19849,164 @@ package object quicksight {
     }
   }
 
+  /** Aggregated field wells of a tree map.
+    */
+  @js.native
+  trait TreeMapAggregatedFieldWells extends js.Object {
+    var Colors: js.UndefOr[TreeMapMeasureFieldList]
+    var Groups: js.UndefOr[TreeMapDimensionFieldList]
+    var Sizes: js.UndefOr[TreeMapMeasureFieldList]
+  }
+
+  object TreeMapAggregatedFieldWells {
+    @inline
+    def apply(
+        Colors: js.UndefOr[TreeMapMeasureFieldList] = js.undefined,
+        Groups: js.UndefOr[TreeMapDimensionFieldList] = js.undefined,
+        Sizes: js.UndefOr[TreeMapMeasureFieldList] = js.undefined
+    ): TreeMapAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Colors.foreach(__v => __obj.updateDynamic("Colors")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Sizes.foreach(__v => __obj.updateDynamic("Sizes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreeMapAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a tree map.
+    */
+  @js.native
+  trait TreeMapConfiguration extends js.Object {
+    var ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var ColorScale: js.UndefOr[ColorScale]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[TreeMapFieldWells]
+    var GroupLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var Legend: js.UndefOr[LegendOptions]
+    var SizeLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var SortConfiguration: js.UndefOr[TreeMapSortConfiguration]
+    var Tooltip: js.UndefOr[TooltipOptions]
+  }
+
+  object TreeMapConfiguration {
+    @inline
+    def apply(
+        ColorLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        ColorScale: js.UndefOr[ColorScale] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[TreeMapFieldWells] = js.undefined,
+        GroupLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        SizeLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[TreeMapSortConfiguration] = js.undefined,
+        Tooltip: js.UndefOr[TooltipOptions] = js.undefined
+    ): TreeMapConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ColorLabelOptions.foreach(__v => __obj.updateDynamic("ColorLabelOptions")(__v.asInstanceOf[js.Any]))
+      ColorScale.foreach(__v => __obj.updateDynamic("ColorScale")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      GroupLabelOptions.foreach(__v => __obj.updateDynamic("GroupLabelOptions")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      SizeLabelOptions.foreach(__v => __obj.updateDynamic("SizeLabelOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      Tooltip.foreach(__v => __obj.updateDynamic("Tooltip")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreeMapConfiguration]
+    }
+  }
+
+  /** The field wells of a tree map. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait TreeMapFieldWells extends js.Object {
+    var TreeMapAggregatedFieldWells: js.UndefOr[TreeMapAggregatedFieldWells]
+  }
+
+  object TreeMapFieldWells {
+    @inline
+    def apply(
+        TreeMapAggregatedFieldWells: js.UndefOr[TreeMapAggregatedFieldWells] = js.undefined
+    ): TreeMapFieldWells = {
+      val __obj = js.Dynamic.literal()
+      TreeMapAggregatedFieldWells.foreach(__v => __obj.updateDynamic("TreeMapAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreeMapFieldWells]
+    }
+  }
+
+  /** The sort configuration of a tree map.
+    */
+  @js.native
+  trait TreeMapSortConfiguration extends js.Object {
+    var TreeMapGroupItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration]
+    var TreeMapSort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object TreeMapSortConfiguration {
+    @inline
+    def apply(
+        TreeMapGroupItemsLimitConfiguration: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        TreeMapSort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): TreeMapSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      TreeMapGroupItemsLimitConfiguration.foreach(__v => __obj.updateDynamic("TreeMapGroupItemsLimitConfiguration")(__v.asInstanceOf[js.Any]))
+      TreeMapSort.foreach(__v => __obj.updateDynamic("TreeMapSort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreeMapSortConfiguration]
+    }
+  }
+
+  /** A tree map. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/tree-map.html|Using tree maps]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait TreeMapVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[TreeMapConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object TreeMapVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[TreeMapConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): TreeMapVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TreeMapVisual]
+    }
+  }
+
+  /** The options that determine the presentation of trend arrows in a KPI visual.
+    */
+  @js.native
+  trait TrendArrowOptions extends js.Object {
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object TrendArrowOptions {
+    @inline
+    def apply(
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): TrendArrowOptions = {
+      val __obj = js.Dynamic.literal()
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrendArrowOptions]
+    }
+  }
+
   /** The parameters for Twitter.
     */
   @js.native
@@ -8571,6 +20026,24 @@ package object quicksight {
         "Query" -> Query.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TwitterParameters]
+    }
+  }
+
+  /** Determines the typography options.
+    */
+  @js.native
+  trait Typography extends js.Object {
+    var FontFamilies: js.UndefOr[FontList]
+  }
+
+  object Typography {
+    @inline
+    def apply(
+        FontFamilies: js.UndefOr[FontList] = js.undefined
+    ): Typography = {
+      val __obj = js.Dynamic.literal()
+      FontFamilies.foreach(__v => __obj.updateDynamic("FontFamilies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Typography]
     }
   }
 
@@ -8634,6 +20107,58 @@ package object quicksight {
       Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
       WarningForeground.foreach(__v => __obj.updateDynamic("WarningForeground")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UIColorPalette]
+    }
+  }
+
+  /** The unaggregated field for a table.
+    */
+  @js.native
+  trait UnaggregatedField extends js.Object {
+    var Column: ColumnIdentifier
+    var FieldId: FieldId
+    var FormatConfiguration: js.UndefOr[FormatConfiguration]
+  }
+
+  object UnaggregatedField {
+    @inline
+    def apply(
+        Column: ColumnIdentifier,
+        FieldId: FieldId,
+        FormatConfiguration: js.UndefOr[FormatConfiguration] = js.undefined
+    ): UnaggregatedField = {
+      val __obj = js.Dynamic.literal(
+        "Column" -> Column.asInstanceOf[js.Any],
+        "FieldId" -> FieldId.asInstanceOf[js.Any]
+      )
+
+      FormatConfiguration.foreach(__v => __obj.updateDynamic("FormatConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnaggregatedField]
+    }
+  }
+
+  /** The unique values computation configuration.
+    */
+  @js.native
+  trait UniqueValuesComputation extends js.Object {
+    var Category: DimensionField
+    var ComputationId: ShortRestrictiveResourceId
+    var Name: js.UndefOr[String]
+  }
+
+  object UniqueValuesComputation {
+    @inline
+    def apply(
+        Category: DimensionField,
+        ComputationId: ShortRestrictiveResourceId,
+        Name: js.UndefOr[String] = js.undefined
+    ): UniqueValuesComputation = {
+      val __obj = js.Dynamic.literal(
+        "Category" -> Category.asInstanceOf[js.Any],
+        "ComputationId" -> ComputationId.asInstanceOf[js.Any]
+      )
+
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UniqueValuesComputation]
     }
   }
 
@@ -8758,6 +20283,7 @@ package object quicksight {
     var AwsAccountId: AwsAccountId
     var DefaultNamespace: Namespace
     var NotificationEmail: js.UndefOr[String]
+    var TerminationProtectionEnabled: js.UndefOr[Boolean]
   }
 
   object UpdateAccountSettingsRequest {
@@ -8765,7 +20291,8 @@ package object quicksight {
     def apply(
         AwsAccountId: AwsAccountId,
         DefaultNamespace: Namespace,
-        NotificationEmail: js.UndefOr[String] = js.undefined
+        NotificationEmail: js.UndefOr[String] = js.undefined,
+        TerminationProtectionEnabled: js.UndefOr[Boolean] = js.undefined
     ): UpdateAccountSettingsRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -8773,6 +20300,7 @@ package object quicksight {
       )
 
       NotificationEmail.foreach(__v => __obj.updateDynamic("NotificationEmail")(__v.asInstanceOf[js.Any]))
+      TerminationProtectionEnabled.foreach(__v => __obj.updateDynamic("TerminationProtectionEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountSettingsRequest]
     }
   }
@@ -8798,7 +20326,7 @@ package object quicksight {
 
   @js.native
   trait UpdateAnalysisPermissionsRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
     var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
     var RevokePermissions: js.UndefOr[UpdateResourcePermissionList]
@@ -8807,7 +20335,7 @@ package object quicksight {
   object UpdateAnalysisPermissionsRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId,
         GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
         RevokePermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined
@@ -8826,7 +20354,7 @@ package object quicksight {
   @js.native
   trait UpdateAnalysisPermissionsResponse extends js.Object {
     var AnalysisArn: js.UndefOr[Arn]
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -8836,7 +20364,7 @@ package object quicksight {
     @inline
     def apply(
         AnalysisArn: js.UndefOr[Arn] = js.undefined,
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -8853,32 +20381,35 @@ package object quicksight {
 
   @js.native
   trait UpdateAnalysisRequest extends js.Object {
-    var AnalysisId: RestrictiveResourceId
+    var AnalysisId: ShortRestrictiveResourceId
     var AwsAccountId: AwsAccountId
     var Name: AnalysisName
-    var SourceEntity: AnalysisSourceEntity
+    var Definition: js.UndefOr[AnalysisDefinition]
     var Parameters: js.UndefOr[Parameters]
+    var SourceEntity: js.UndefOr[AnalysisSourceEntity]
     var ThemeArn: js.UndefOr[Arn]
   }
 
   object UpdateAnalysisRequest {
     @inline
     def apply(
-        AnalysisId: RestrictiveResourceId,
+        AnalysisId: ShortRestrictiveResourceId,
         AwsAccountId: AwsAccountId,
         Name: AnalysisName,
-        SourceEntity: AnalysisSourceEntity,
+        Definition: js.UndefOr[AnalysisDefinition] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        SourceEntity: js.UndefOr[AnalysisSourceEntity] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined
     ): UpdateAnalysisRequest = {
       val __obj = js.Dynamic.literal(
         "AnalysisId" -> AnalysisId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAnalysisRequest]
     }
@@ -8886,7 +20417,7 @@ package object quicksight {
 
   @js.native
   trait UpdateAnalysisResponse extends js.Object {
-    var AnalysisId: js.UndefOr[RestrictiveResourceId]
+    var AnalysisId: js.UndefOr[ShortRestrictiveResourceId]
     var Arn: js.UndefOr[Arn]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -8896,7 +20427,7 @@ package object quicksight {
   object UpdateAnalysisResponse {
     @inline
     def apply(
-        AnalysisId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        AnalysisId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         Arn: js.UndefOr[Arn] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
@@ -8915,7 +20446,7 @@ package object quicksight {
   @js.native
   trait UpdateDashboardPermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var GrantLinkPermissions: js.UndefOr[UpdateLinkPermissionList]
     var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
     var RevokeLinkPermissions: js.UndefOr[UpdateLinkPermissionList]
@@ -8926,7 +20457,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         GrantLinkPermissions: js.UndefOr[UpdateLinkPermissionList] = js.undefined,
         GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
         RevokeLinkPermissions: js.UndefOr[UpdateLinkPermissionList] = js.undefined,
@@ -8948,7 +20479,7 @@ package object quicksight {
   @js.native
   trait UpdateDashboardPermissionsResponse extends js.Object {
     var DashboardArn: js.UndefOr[Arn]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
@@ -8959,7 +20490,7 @@ package object quicksight {
     @inline
     def apply(
         DashboardArn: js.UndefOr[Arn] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
@@ -8979,7 +20510,7 @@ package object quicksight {
   @js.native
   trait UpdateDashboardPublishedVersionRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var VersionNumber: VersionNumber
   }
 
@@ -8987,7 +20518,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         VersionNumber: VersionNumber
     ): UpdateDashboardPublishedVersionRequest = {
       val __obj = js.Dynamic.literal(
@@ -9002,7 +20533,7 @@ package object quicksight {
   @js.native
   trait UpdateDashboardPublishedVersionResponse extends js.Object {
     var DashboardArn: js.UndefOr[Arn]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
   }
@@ -9011,7 +20542,7 @@ package object quicksight {
     @inline
     def apply(
         DashboardArn: js.UndefOr[Arn] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): UpdateDashboardPublishedVersionResponse = {
@@ -9027,11 +20558,12 @@ package object quicksight {
   @js.native
   trait UpdateDashboardRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var DashboardId: RestrictiveResourceId
+    var DashboardId: ShortRestrictiveResourceId
     var Name: DashboardName
-    var SourceEntity: DashboardSourceEntity
     var DashboardPublishOptions: js.UndefOr[DashboardPublishOptions]
+    var Definition: js.UndefOr[DashboardVersionDefinition]
     var Parameters: js.UndefOr[Parameters]
+    var SourceEntity: js.UndefOr[DashboardSourceEntity]
     var ThemeArn: js.UndefOr[Arn]
     var VersionDescription: js.UndefOr[VersionDescription]
   }
@@ -9040,23 +20572,25 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        DashboardId: RestrictiveResourceId,
+        DashboardId: ShortRestrictiveResourceId,
         Name: DashboardName,
-        SourceEntity: DashboardSourceEntity,
         DashboardPublishOptions: js.UndefOr[DashboardPublishOptions] = js.undefined,
+        Definition: js.UndefOr[DashboardVersionDefinition] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
+        SourceEntity: js.UndefOr[DashboardSourceEntity] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): UpdateDashboardRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DashboardId" -> DashboardId.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DashboardPublishOptions.foreach(__v => __obj.updateDynamic("DashboardPublishOptions")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       ThemeArn.foreach(__v => __obj.updateDynamic("ThemeArn")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDashboardRequest]
@@ -9067,7 +20601,7 @@ package object quicksight {
   trait UpdateDashboardResponse extends js.Object {
     var Arn: js.UndefOr[Arn]
     var CreationStatus: js.UndefOr[ResourceStatus]
-    var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var DashboardId: js.UndefOr[ShortRestrictiveResourceId]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var VersionArn: js.UndefOr[Arn]
@@ -9078,7 +20612,7 @@ package object quicksight {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
-        DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        DashboardId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
@@ -9610,10 +21144,50 @@ package object quicksight {
   }
 
   @js.native
+  trait UpdatePublicSharingSettingsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var PublicSharingEnabled: js.UndefOr[Boolean]
+  }
+
+  object UpdatePublicSharingSettingsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        PublicSharingEnabled: js.UndefOr[Boolean] = js.undefined
+    ): UpdatePublicSharingSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      PublicSharingEnabled.foreach(__v => __obj.updateDynamic("PublicSharingEnabled")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicSharingSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePublicSharingSettingsResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdatePublicSharingSettingsResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdatePublicSharingSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicSharingSettingsResponse]
+    }
+  }
+
+  @js.native
   trait UpdateTemplateAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var TemplateVersionNumber: VersionNumber
   }
 
@@ -9622,7 +21196,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         TemplateVersionNumber: VersionNumber
     ): UpdateTemplateAliasRequest = {
       val __obj = js.Dynamic.literal(
@@ -9660,7 +21234,7 @@ package object quicksight {
   @js.native
   trait UpdateTemplatePermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
     var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
     var RevokePermissions: js.UndefOr[UpdateResourcePermissionList]
   }
@@ -9669,7 +21243,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
         GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
         RevokePermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined
     ): UpdateTemplatePermissionsRequest = {
@@ -9690,7 +21264,7 @@ package object quicksight {
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var TemplateArn: js.UndefOr[Arn]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object UpdateTemplatePermissionsResponse {
@@ -9700,7 +21274,7 @@ package object quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         TemplateArn: js.UndefOr[Arn] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): UpdateTemplatePermissionsResponse = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
@@ -9715,9 +21289,10 @@ package object quicksight {
   @js.native
   trait UpdateTemplateRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var SourceEntity: TemplateSourceEntity
-    var TemplateId: RestrictiveResourceId
+    var TemplateId: ShortRestrictiveResourceId
+    var Definition: js.UndefOr[TemplateVersionDefinition]
     var Name: js.UndefOr[TemplateName]
+    var SourceEntity: js.UndefOr[TemplateSourceEntity]
     var VersionDescription: js.UndefOr[VersionDescription]
   }
 
@@ -9725,18 +21300,20 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        SourceEntity: TemplateSourceEntity,
-        TemplateId: RestrictiveResourceId,
+        TemplateId: ShortRestrictiveResourceId,
+        Definition: js.UndefOr[TemplateVersionDefinition] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined,
+        SourceEntity: js.UndefOr[TemplateSourceEntity] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
     ): UpdateTemplateRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
-        "SourceEntity" -> SourceEntity.asInstanceOf[js.Any],
         "TemplateId" -> TemplateId.asInstanceOf[js.Any]
       )
 
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SourceEntity.foreach(__v => __obj.updateDynamic("SourceEntity")(__v.asInstanceOf[js.Any]))
       VersionDescription.foreach(__v => __obj.updateDynamic("VersionDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTemplateRequest]
     }
@@ -9748,7 +21325,7 @@ package object quicksight {
     var CreationStatus: js.UndefOr[ResourceStatus]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var TemplateId: js.UndefOr[RestrictiveResourceId]
+    var TemplateId: js.UndefOr[ShortRestrictiveResourceId]
     var VersionArn: js.UndefOr[Arn]
   }
 
@@ -9759,7 +21336,7 @@ package object quicksight {
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        TemplateId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        TemplateId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
     ): UpdateTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -9777,7 +21354,7 @@ package object quicksight {
   trait UpdateThemeAliasRequest extends js.Object {
     var AliasName: AliasName
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var ThemeVersionNumber: VersionNumber
   }
 
@@ -9786,7 +21363,7 @@ package object quicksight {
     def apply(
         AliasName: AliasName,
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         ThemeVersionNumber: VersionNumber
     ): UpdateThemeAliasRequest = {
       val __obj = js.Dynamic.literal(
@@ -9824,7 +21401,7 @@ package object quicksight {
   @js.native
   trait UpdateThemePermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var ThemeId: RestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
     var RevokePermissions: js.UndefOr[UpdateResourcePermissionList]
   }
@@ -9833,7 +21410,7 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        ThemeId: RestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
         RevokePermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined
     ): UpdateThemePermissionsRequest = {
@@ -9854,7 +21431,7 @@ package object quicksight {
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
     var ThemeArn: js.UndefOr[Arn]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
   }
 
   object UpdateThemePermissionsResponse {
@@ -9864,7 +21441,7 @@ package object quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
         ThemeArn: js.UndefOr[Arn] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined
     ): UpdateThemePermissionsResponse = {
       val __obj = js.Dynamic.literal()
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
@@ -9879,8 +21456,8 @@ package object quicksight {
   @js.native
   trait UpdateThemeRequest extends js.Object {
     var AwsAccountId: AwsAccountId
-    var BaseThemeId: RestrictiveResourceId
-    var ThemeId: RestrictiveResourceId
+    var BaseThemeId: ShortRestrictiveResourceId
+    var ThemeId: ShortRestrictiveResourceId
     var Configuration: js.UndefOr[ThemeConfiguration]
     var Name: js.UndefOr[ThemeName]
     var VersionDescription: js.UndefOr[VersionDescription]
@@ -9890,8 +21467,8 @@ package object quicksight {
     @inline
     def apply(
         AwsAccountId: AwsAccountId,
-        BaseThemeId: RestrictiveResourceId,
-        ThemeId: RestrictiveResourceId,
+        BaseThemeId: ShortRestrictiveResourceId,
+        ThemeId: ShortRestrictiveResourceId,
         Configuration: js.UndefOr[ThemeConfiguration] = js.undefined,
         Name: js.UndefOr[ThemeName] = js.undefined,
         VersionDescription: js.UndefOr[VersionDescription] = js.undefined
@@ -9915,7 +21492,7 @@ package object quicksight {
     var CreationStatus: js.UndefOr[ResourceStatus]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
-    var ThemeId: js.UndefOr[RestrictiveResourceId]
+    var ThemeId: js.UndefOr[ShortRestrictiveResourceId]
     var VersionArn: js.UndefOr[Arn]
   }
 
@@ -9926,7 +21503,7 @@ package object quicksight {
         CreationStatus: js.UndefOr[ResourceStatus] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined,
-        ThemeId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        ThemeId: js.UndefOr[ShortRestrictiveResourceId] = js.undefined,
         VersionArn: js.UndefOr[Arn] = js.undefined
     ): UpdateThemeResponse = {
       val __obj = js.Dynamic.literal()
@@ -10085,6 +21662,227 @@ package object quicksight {
     }
   }
 
+  /** The range options for the data zoom scroll bar.
+    */
+  @js.native
+  trait VisibleRangeOptions extends js.Object {
+    var PercentRange: js.UndefOr[PercentVisibleRange]
+  }
+
+  object VisibleRangeOptions {
+    @inline
+    def apply(
+        PercentRange: js.UndefOr[PercentVisibleRange] = js.undefined
+    ): VisibleRangeOptions = {
+      val __obj = js.Dynamic.literal()
+      PercentRange.foreach(__v => __obj.updateDynamic("PercentRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisibleRangeOptions]
+    }
+  }
+
+  /** A visual displayed on a sheet in an analysis, dashboard, or template. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait Visual extends js.Object {
+    var BarChartVisual: js.UndefOr[BarChartVisual]
+    var BoxPlotVisual: js.UndefOr[BoxPlotVisual]
+    var ComboChartVisual: js.UndefOr[ComboChartVisual]
+    var CustomContentVisual: js.UndefOr[CustomContentVisual]
+    var EmptyVisual: js.UndefOr[EmptyVisual]
+    var FilledMapVisual: js.UndefOr[FilledMapVisual]
+    var FunnelChartVisual: js.UndefOr[FunnelChartVisual]
+    var GaugeChartVisual: js.UndefOr[GaugeChartVisual]
+    var GeospatialMapVisual: js.UndefOr[GeospatialMapVisual]
+    var HeatMapVisual: js.UndefOr[HeatMapVisual]
+    var HistogramVisual: js.UndefOr[HistogramVisual]
+    var InsightVisual: js.UndefOr[InsightVisual]
+    var KPIVisual: js.UndefOr[KPIVisual]
+    var LineChartVisual: js.UndefOr[LineChartVisual]
+    var PieChartVisual: js.UndefOr[PieChartVisual]
+    var PivotTableVisual: js.UndefOr[PivotTableVisual]
+    var SankeyDiagramVisual: js.UndefOr[SankeyDiagramVisual]
+    var ScatterPlotVisual: js.UndefOr[ScatterPlotVisual]
+    var TableVisual: js.UndefOr[TableVisual]
+    var TreeMapVisual: js.UndefOr[TreeMapVisual]
+    var WaterfallVisual: js.UndefOr[WaterfallVisual]
+    var WordCloudVisual: js.UndefOr[WordCloudVisual]
+  }
+
+  object Visual {
+    @inline
+    def apply(
+        BarChartVisual: js.UndefOr[BarChartVisual] = js.undefined,
+        BoxPlotVisual: js.UndefOr[BoxPlotVisual] = js.undefined,
+        ComboChartVisual: js.UndefOr[ComboChartVisual] = js.undefined,
+        CustomContentVisual: js.UndefOr[CustomContentVisual] = js.undefined,
+        EmptyVisual: js.UndefOr[EmptyVisual] = js.undefined,
+        FilledMapVisual: js.UndefOr[FilledMapVisual] = js.undefined,
+        FunnelChartVisual: js.UndefOr[FunnelChartVisual] = js.undefined,
+        GaugeChartVisual: js.UndefOr[GaugeChartVisual] = js.undefined,
+        GeospatialMapVisual: js.UndefOr[GeospatialMapVisual] = js.undefined,
+        HeatMapVisual: js.UndefOr[HeatMapVisual] = js.undefined,
+        HistogramVisual: js.UndefOr[HistogramVisual] = js.undefined,
+        InsightVisual: js.UndefOr[InsightVisual] = js.undefined,
+        KPIVisual: js.UndefOr[KPIVisual] = js.undefined,
+        LineChartVisual: js.UndefOr[LineChartVisual] = js.undefined,
+        PieChartVisual: js.UndefOr[PieChartVisual] = js.undefined,
+        PivotTableVisual: js.UndefOr[PivotTableVisual] = js.undefined,
+        SankeyDiagramVisual: js.UndefOr[SankeyDiagramVisual] = js.undefined,
+        ScatterPlotVisual: js.UndefOr[ScatterPlotVisual] = js.undefined,
+        TableVisual: js.UndefOr[TableVisual] = js.undefined,
+        TreeMapVisual: js.UndefOr[TreeMapVisual] = js.undefined,
+        WaterfallVisual: js.UndefOr[WaterfallVisual] = js.undefined,
+        WordCloudVisual: js.UndefOr[WordCloudVisual] = js.undefined
+    ): Visual = {
+      val __obj = js.Dynamic.literal()
+      BarChartVisual.foreach(__v => __obj.updateDynamic("BarChartVisual")(__v.asInstanceOf[js.Any]))
+      BoxPlotVisual.foreach(__v => __obj.updateDynamic("BoxPlotVisual")(__v.asInstanceOf[js.Any]))
+      ComboChartVisual.foreach(__v => __obj.updateDynamic("ComboChartVisual")(__v.asInstanceOf[js.Any]))
+      CustomContentVisual.foreach(__v => __obj.updateDynamic("CustomContentVisual")(__v.asInstanceOf[js.Any]))
+      EmptyVisual.foreach(__v => __obj.updateDynamic("EmptyVisual")(__v.asInstanceOf[js.Any]))
+      FilledMapVisual.foreach(__v => __obj.updateDynamic("FilledMapVisual")(__v.asInstanceOf[js.Any]))
+      FunnelChartVisual.foreach(__v => __obj.updateDynamic("FunnelChartVisual")(__v.asInstanceOf[js.Any]))
+      GaugeChartVisual.foreach(__v => __obj.updateDynamic("GaugeChartVisual")(__v.asInstanceOf[js.Any]))
+      GeospatialMapVisual.foreach(__v => __obj.updateDynamic("GeospatialMapVisual")(__v.asInstanceOf[js.Any]))
+      HeatMapVisual.foreach(__v => __obj.updateDynamic("HeatMapVisual")(__v.asInstanceOf[js.Any]))
+      HistogramVisual.foreach(__v => __obj.updateDynamic("HistogramVisual")(__v.asInstanceOf[js.Any]))
+      InsightVisual.foreach(__v => __obj.updateDynamic("InsightVisual")(__v.asInstanceOf[js.Any]))
+      KPIVisual.foreach(__v => __obj.updateDynamic("KPIVisual")(__v.asInstanceOf[js.Any]))
+      LineChartVisual.foreach(__v => __obj.updateDynamic("LineChartVisual")(__v.asInstanceOf[js.Any]))
+      PieChartVisual.foreach(__v => __obj.updateDynamic("PieChartVisual")(__v.asInstanceOf[js.Any]))
+      PivotTableVisual.foreach(__v => __obj.updateDynamic("PivotTableVisual")(__v.asInstanceOf[js.Any]))
+      SankeyDiagramVisual.foreach(__v => __obj.updateDynamic("SankeyDiagramVisual")(__v.asInstanceOf[js.Any]))
+      ScatterPlotVisual.foreach(__v => __obj.updateDynamic("ScatterPlotVisual")(__v.asInstanceOf[js.Any]))
+      TableVisual.foreach(__v => __obj.updateDynamic("TableVisual")(__v.asInstanceOf[js.Any]))
+      TreeMapVisual.foreach(__v => __obj.updateDynamic("TreeMapVisual")(__v.asInstanceOf[js.Any]))
+      WaterfallVisual.foreach(__v => __obj.updateDynamic("WaterfallVisual")(__v.asInstanceOf[js.Any]))
+      WordCloudVisual.foreach(__v => __obj.updateDynamic("WordCloudVisual")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Visual]
+    }
+  }
+
+  /** A custom action defined on a visual.
+    */
+  @js.native
+  trait VisualCustomAction extends js.Object {
+    var ActionOperations: VisualCustomActionOperationList
+    var CustomActionId: ShortRestrictiveResourceId
+    var Name: VisualCustomActionName
+    var Trigger: VisualCustomActionTrigger
+    var Status: js.UndefOr[WidgetStatus]
+  }
+
+  object VisualCustomAction {
+    @inline
+    def apply(
+        ActionOperations: VisualCustomActionOperationList,
+        CustomActionId: ShortRestrictiveResourceId,
+        Name: VisualCustomActionName,
+        Trigger: VisualCustomActionTrigger,
+        Status: js.UndefOr[WidgetStatus] = js.undefined
+    ): VisualCustomAction = {
+      val __obj = js.Dynamic.literal(
+        "ActionOperations" -> ActionOperations.asInstanceOf[js.Any],
+        "CustomActionId" -> CustomActionId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Trigger" -> Trigger.asInstanceOf[js.Any]
+      )
+
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualCustomAction]
+    }
+  }
+
+  /** The operation that is defined by the custom action. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait VisualCustomActionOperation extends js.Object {
+    var FilterOperation: js.UndefOr[CustomActionFilterOperation]
+    var NavigationOperation: js.UndefOr[CustomActionNavigationOperation]
+    var SetParametersOperation: js.UndefOr[CustomActionSetParametersOperation]
+    var URLOperation: js.UndefOr[CustomActionURLOperation]
+  }
+
+  object VisualCustomActionOperation {
+    @inline
+    def apply(
+        FilterOperation: js.UndefOr[CustomActionFilterOperation] = js.undefined,
+        NavigationOperation: js.UndefOr[CustomActionNavigationOperation] = js.undefined,
+        SetParametersOperation: js.UndefOr[CustomActionSetParametersOperation] = js.undefined,
+        URLOperation: js.UndefOr[CustomActionURLOperation] = js.undefined
+    ): VisualCustomActionOperation = {
+      val __obj = js.Dynamic.literal()
+      FilterOperation.foreach(__v => __obj.updateDynamic("FilterOperation")(__v.asInstanceOf[js.Any]))
+      NavigationOperation.foreach(__v => __obj.updateDynamic("NavigationOperation")(__v.asInstanceOf[js.Any]))
+      SetParametersOperation.foreach(__v => __obj.updateDynamic("SetParametersOperation")(__v.asInstanceOf[js.Any]))
+      URLOperation.foreach(__v => __obj.updateDynamic("URLOperation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualCustomActionOperation]
+    }
+  }
+
+  /** The visual display options for the visual palette.
+    */
+  @js.native
+  trait VisualPalette extends js.Object {
+    var ChartColor: js.UndefOr[HexColor]
+    var ColorMap: js.UndefOr[DataPathColorList]
+  }
+
+  object VisualPalette {
+    @inline
+    def apply(
+        ChartColor: js.UndefOr[HexColor] = js.undefined,
+        ColorMap: js.UndefOr[DataPathColorList] = js.undefined
+    ): VisualPalette = {
+      val __obj = js.Dynamic.literal()
+      ChartColor.foreach(__v => __obj.updateDynamic("ChartColor")(__v.asInstanceOf[js.Any]))
+      ColorMap.foreach(__v => __obj.updateDynamic("ColorMap")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualPalette]
+    }
+  }
+
+  /** The subtitle label options for a visual.
+    */
+  @js.native
+  trait VisualSubtitleLabelOptions extends js.Object {
+    var FormatText: js.UndefOr[LongFormatText]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object VisualSubtitleLabelOptions {
+    @inline
+    def apply(
+        FormatText: js.UndefOr[LongFormatText] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): VisualSubtitleLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      FormatText.foreach(__v => __obj.updateDynamic("FormatText")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualSubtitleLabelOptions]
+    }
+  }
+
+  /** The title label options for a visual.
+    */
+  @js.native
+  trait VisualTitleLabelOptions extends js.Object {
+    var FormatText: js.UndefOr[ShortFormatText]
+    var Visibility: js.UndefOr[Visibility]
+  }
+
+  object VisualTitleLabelOptions {
+    @inline
+    def apply(
+        FormatText: js.UndefOr[ShortFormatText] = js.undefined,
+        Visibility: js.UndefOr[Visibility] = js.undefined
+    ): VisualTitleLabelOptions = {
+      val __obj = js.Dynamic.literal()
+      FormatText.foreach(__v => __obj.updateDynamic("FormatText")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualTitleLabelOptions]
+    }
+  }
+
   /** VPC connection properties.
     */
   @js.native
@@ -10101,6 +21899,369 @@ package object quicksight {
         "VpcConnectionArn" -> VpcConnectionArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[VpcConnectionProperties]
+    }
+  }
+
+  /** The field well configuration of a waterfall visual.
+    */
+  @js.native
+  trait WaterfallChartAggregatedFieldWells extends js.Object {
+    var Breakdowns: js.UndefOr[DimensionFieldList]
+    var Categories: js.UndefOr[DimensionFieldList]
+    var Values: js.UndefOr[MeasureFieldList]
+  }
+
+  object WaterfallChartAggregatedFieldWells {
+    @inline
+    def apply(
+        Breakdowns: js.UndefOr[DimensionFieldList] = js.undefined,
+        Categories: js.UndefOr[DimensionFieldList] = js.undefined,
+        Values: js.UndefOr[MeasureFieldList] = js.undefined
+    ): WaterfallChartAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      Breakdowns.foreach(__v => __obj.updateDynamic("Breakdowns")(__v.asInstanceOf[js.Any]))
+      Categories.foreach(__v => __obj.updateDynamic("Categories")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallChartAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration for a waterfall visual.
+    */
+  @js.native
+  trait WaterfallChartConfiguration extends js.Object {
+    var CategoryAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var CategoryAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var DataLabels: js.UndefOr[DataLabelOptions]
+    var FieldWells: js.UndefOr[WaterfallChartFieldWells]
+    var Legend: js.UndefOr[LegendOptions]
+    var PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions]
+    var PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var SortConfiguration: js.UndefOr[WaterfallChartSortConfiguration]
+    var VisualPalette: js.UndefOr[VisualPalette]
+    var WaterfallChartOptions: js.UndefOr[WaterfallChartOptions]
+  }
+
+  object WaterfallChartConfiguration {
+    @inline
+    def apply(
+        CategoryAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        CategoryAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        DataLabels: js.UndefOr[DataLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[WaterfallChartFieldWells] = js.undefined,
+        Legend: js.UndefOr[LegendOptions] = js.undefined,
+        PrimaryYAxisDisplayOptions: js.UndefOr[AxisDisplayOptions] = js.undefined,
+        PrimaryYAxisLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        SortConfiguration: js.UndefOr[WaterfallChartSortConfiguration] = js.undefined,
+        VisualPalette: js.UndefOr[VisualPalette] = js.undefined,
+        WaterfallChartOptions: js.UndefOr[WaterfallChartOptions] = js.undefined
+    ): WaterfallChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryAxisDisplayOptions.foreach(__v => __obj.updateDynamic("CategoryAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      CategoryAxisLabelOptions.foreach(__v => __obj.updateDynamic("CategoryAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      DataLabels.foreach(__v => __obj.updateDynamic("DataLabels")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      Legend.foreach(__v => __obj.updateDynamic("Legend")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisDisplayOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisDisplayOptions")(__v.asInstanceOf[js.Any]))
+      PrimaryYAxisLabelOptions.foreach(__v => __obj.updateDynamic("PrimaryYAxisLabelOptions")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      VisualPalette.foreach(__v => __obj.updateDynamic("VisualPalette")(__v.asInstanceOf[js.Any]))
+      WaterfallChartOptions.foreach(__v => __obj.updateDynamic("WaterfallChartOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallChartConfiguration]
+    }
+  }
+
+  /** The field well configuration of a waterfall visual.
+    */
+  @js.native
+  trait WaterfallChartFieldWells extends js.Object {
+    var WaterfallChartAggregatedFieldWells: js.UndefOr[WaterfallChartAggregatedFieldWells]
+  }
+
+  object WaterfallChartFieldWells {
+    @inline
+    def apply(
+        WaterfallChartAggregatedFieldWells: js.UndefOr[WaterfallChartAggregatedFieldWells] = js.undefined
+    ): WaterfallChartFieldWells = {
+      val __obj = js.Dynamic.literal()
+      WaterfallChartAggregatedFieldWells.foreach(__v => __obj.updateDynamic("WaterfallChartAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallChartFieldWells]
+    }
+  }
+
+  /** The options that determine the presentation of a waterfall visual.
+    */
+  @js.native
+  trait WaterfallChartOptions extends js.Object {
+    var TotalBarLabel: js.UndefOr[String]
+  }
+
+  object WaterfallChartOptions {
+    @inline
+    def apply(
+        TotalBarLabel: js.UndefOr[String] = js.undefined
+    ): WaterfallChartOptions = {
+      val __obj = js.Dynamic.literal()
+      TotalBarLabel.foreach(__v => __obj.updateDynamic("TotalBarLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallChartOptions]
+    }
+  }
+
+  /** The sort configuration of a waterfall visual.
+    */
+  @js.native
+  trait WaterfallChartSortConfiguration extends js.Object {
+    var BreakdownItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object WaterfallChartSortConfiguration {
+    @inline
+    def apply(
+        BreakdownItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): WaterfallChartSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      BreakdownItemsLimit.foreach(__v => __obj.updateDynamic("BreakdownItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallChartSortConfiguration]
+    }
+  }
+
+  /** A waterfall chart. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/waterfall-chart.html|Using waterfall charts]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait WaterfallVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[WaterfallChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object WaterfallVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[WaterfallChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): WaterfallVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WaterfallVisual]
+    }
+  }
+
+  /** Provides the forecast to meet the target for a particular date.
+    */
+  @js.native
+  trait WhatIfPointScenario extends js.Object {
+    var Date: Timestamp
+    var Value: Double
+  }
+
+  object WhatIfPointScenario {
+    @inline
+    def apply(
+        Date: Timestamp,
+        Value: Double
+    ): WhatIfPointScenario = {
+      val __obj = js.Dynamic.literal(
+        "Date" -> Date.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[WhatIfPointScenario]
+    }
+  }
+
+  /** Provides the forecast to meet the target for a particular date range.
+    */
+  @js.native
+  trait WhatIfRangeScenario extends js.Object {
+    var EndDate: Timestamp
+    var StartDate: Timestamp
+    var Value: Double
+  }
+
+  object WhatIfRangeScenario {
+    @inline
+    def apply(
+        EndDate: Timestamp,
+        StartDate: Timestamp,
+        Value: Double
+    ): WhatIfRangeScenario = {
+      val __obj = js.Dynamic.literal(
+        "EndDate" -> EndDate.asInstanceOf[js.Any],
+        "StartDate" -> StartDate.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[WhatIfRangeScenario]
+    }
+  }
+
+  /** The aggregated field wells of a word cloud.
+    */
+  @js.native
+  trait WordCloudAggregatedFieldWells extends js.Object {
+    var GroupBy: js.UndefOr[WordCloudDimensionFieldList]
+    var Size: js.UndefOr[WordCloudMeasureFieldList]
+  }
+
+  object WordCloudAggregatedFieldWells {
+    @inline
+    def apply(
+        GroupBy: js.UndefOr[WordCloudDimensionFieldList] = js.undefined,
+        Size: js.UndefOr[WordCloudMeasureFieldList] = js.undefined
+    ): WordCloudAggregatedFieldWells = {
+      val __obj = js.Dynamic.literal()
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudAggregatedFieldWells]
+    }
+  }
+
+  /** The configuration of a word cloud visual.
+    */
+  @js.native
+  trait WordCloudChartConfiguration extends js.Object {
+    var CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions]
+    var FieldWells: js.UndefOr[WordCloudFieldWells]
+    var SortConfiguration: js.UndefOr[WordCloudSortConfiguration]
+    var WordCloudOptions: js.UndefOr[WordCloudOptions]
+  }
+
+  object WordCloudChartConfiguration {
+    @inline
+    def apply(
+        CategoryLabelOptions: js.UndefOr[ChartAxisLabelOptions] = js.undefined,
+        FieldWells: js.UndefOr[WordCloudFieldWells] = js.undefined,
+        SortConfiguration: js.UndefOr[WordCloudSortConfiguration] = js.undefined,
+        WordCloudOptions: js.UndefOr[WordCloudOptions] = js.undefined
+    ): WordCloudChartConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryLabelOptions.foreach(__v => __obj.updateDynamic("CategoryLabelOptions")(__v.asInstanceOf[js.Any]))
+      FieldWells.foreach(__v => __obj.updateDynamic("FieldWells")(__v.asInstanceOf[js.Any]))
+      SortConfiguration.foreach(__v => __obj.updateDynamic("SortConfiguration")(__v.asInstanceOf[js.Any]))
+      WordCloudOptions.foreach(__v => __obj.updateDynamic("WordCloudOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudChartConfiguration]
+    }
+  }
+
+  /** The field wells of a word cloud visual. This is a union type structure. For this structure to be valid, only one of the attributes can be defined.
+    */
+  @js.native
+  trait WordCloudFieldWells extends js.Object {
+    var WordCloudAggregatedFieldWells: js.UndefOr[WordCloudAggregatedFieldWells]
+  }
+
+  object WordCloudFieldWells {
+    @inline
+    def apply(
+        WordCloudAggregatedFieldWells: js.UndefOr[WordCloudAggregatedFieldWells] = js.undefined
+    ): WordCloudFieldWells = {
+      val __obj = js.Dynamic.literal()
+      WordCloudAggregatedFieldWells.foreach(__v => __obj.updateDynamic("WordCloudAggregatedFieldWells")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudFieldWells]
+    }
+  }
+
+  /** The word cloud options for a word cloud visual.
+    */
+  @js.native
+  trait WordCloudOptions extends js.Object {
+    var CloudLayout: js.UndefOr[WordCloudCloudLayout]
+    var MaximumStringLength: js.UndefOr[WordCloudMaximumStringLength]
+    var WordCasing: js.UndefOr[WordCloudWordCasing]
+    var WordOrientation: js.UndefOr[WordCloudWordOrientation]
+    var WordPadding: js.UndefOr[WordCloudWordPadding]
+    var WordScaling: js.UndefOr[WordCloudWordScaling]
+  }
+
+  object WordCloudOptions {
+    @inline
+    def apply(
+        CloudLayout: js.UndefOr[WordCloudCloudLayout] = js.undefined,
+        MaximumStringLength: js.UndefOr[WordCloudMaximumStringLength] = js.undefined,
+        WordCasing: js.UndefOr[WordCloudWordCasing] = js.undefined,
+        WordOrientation: js.UndefOr[WordCloudWordOrientation] = js.undefined,
+        WordPadding: js.UndefOr[WordCloudWordPadding] = js.undefined,
+        WordScaling: js.UndefOr[WordCloudWordScaling] = js.undefined
+    ): WordCloudOptions = {
+      val __obj = js.Dynamic.literal()
+      CloudLayout.foreach(__v => __obj.updateDynamic("CloudLayout")(__v.asInstanceOf[js.Any]))
+      MaximumStringLength.foreach(__v => __obj.updateDynamic("MaximumStringLength")(__v.asInstanceOf[js.Any]))
+      WordCasing.foreach(__v => __obj.updateDynamic("WordCasing")(__v.asInstanceOf[js.Any]))
+      WordOrientation.foreach(__v => __obj.updateDynamic("WordOrientation")(__v.asInstanceOf[js.Any]))
+      WordPadding.foreach(__v => __obj.updateDynamic("WordPadding")(__v.asInstanceOf[js.Any]))
+      WordScaling.foreach(__v => __obj.updateDynamic("WordScaling")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudOptions]
+    }
+  }
+
+  /** The sort configuration of a word cloud visual.
+    */
+  @js.native
+  trait WordCloudSortConfiguration extends js.Object {
+    var CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration]
+    var CategorySort: js.UndefOr[FieldSortOptionsList]
+  }
+
+  object WordCloudSortConfiguration {
+    @inline
+    def apply(
+        CategoryItemsLimit: js.UndefOr[ItemsLimitConfiguration] = js.undefined,
+        CategorySort: js.UndefOr[FieldSortOptionsList] = js.undefined
+    ): WordCloudSortConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CategoryItemsLimit.foreach(__v => __obj.updateDynamic("CategoryItemsLimit")(__v.asInstanceOf[js.Any]))
+      CategorySort.foreach(__v => __obj.updateDynamic("CategorySort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudSortConfiguration]
+    }
+  }
+
+  /** A word cloud. For more information, see [[https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html|Using word clouds]] in the <i>Amazon QuickSight User Guide</i>.
+    */
+  @js.native
+  trait WordCloudVisual extends js.Object {
+    var VisualId: ShortRestrictiveResourceId
+    var Actions: js.UndefOr[VisualCustomActionList]
+    var ChartConfiguration: js.UndefOr[WordCloudChartConfiguration]
+    var ColumnHierarchies: js.UndefOr[ColumnHierarchyList]
+    var Subtitle: js.UndefOr[VisualSubtitleLabelOptions]
+    var Title: js.UndefOr[VisualTitleLabelOptions]
+  }
+
+  object WordCloudVisual {
+    @inline
+    def apply(
+        VisualId: ShortRestrictiveResourceId,
+        Actions: js.UndefOr[VisualCustomActionList] = js.undefined,
+        ChartConfiguration: js.UndefOr[WordCloudChartConfiguration] = js.undefined,
+        ColumnHierarchies: js.UndefOr[ColumnHierarchyList] = js.undefined,
+        Subtitle: js.UndefOr[VisualSubtitleLabelOptions] = js.undefined,
+        Title: js.UndefOr[VisualTitleLabelOptions] = js.undefined
+    ): WordCloudVisual = {
+      val __obj = js.Dynamic.literal(
+        "VisualId" -> VisualId.asInstanceOf[js.Any]
+      )
+
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ChartConfiguration.foreach(__v => __obj.updateDynamic("ChartConfiguration")(__v.asInstanceOf[js.Any]))
+      ColumnHierarchies.foreach(__v => __obj.updateDynamic("ColumnHierarchies")(__v.asInstanceOf[js.Any]))
+      Subtitle.foreach(__v => __obj.updateDynamic("Subtitle")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WordCloudVisual]
     }
   }
 }

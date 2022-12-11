@@ -3,6 +3,24 @@ package facade.amazonaws.services.codeartifact
 import scalajs.js
 
 @js.native
+sealed trait AllowPublish extends js.Any
+object AllowPublish {
+  val ALLOW = "ALLOW".asInstanceOf[AllowPublish]
+  val BLOCK = "BLOCK".asInstanceOf[AllowPublish]
+
+  @inline def values: js.Array[AllowPublish] = js.Array(ALLOW, BLOCK)
+}
+
+@js.native
+sealed trait AllowUpstream extends js.Any
+object AllowUpstream {
+  val ALLOW = "ALLOW".asInstanceOf[AllowUpstream]
+  val BLOCK = "BLOCK".asInstanceOf[AllowUpstream]
+
+  @inline def values: js.Array[AllowUpstream] = js.Array(ALLOW, BLOCK)
+}
+
+@js.native
 sealed trait DomainStatus extends js.Any
 object DomainStatus {
   val Active = "Active".asInstanceOf[DomainStatus]
@@ -52,6 +70,16 @@ object PackageVersionErrorCode {
   val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
   @inline def values: js.Array[PackageVersionErrorCode] = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
+}
+
+@js.native
+sealed trait PackageVersionOriginType extends js.Any
+object PackageVersionOriginType {
+  val INTERNAL = "INTERNAL".asInstanceOf[PackageVersionOriginType]
+  val EXTERNAL = "EXTERNAL".asInstanceOf[PackageVersionOriginType]
+  val UNKNOWN = "UNKNOWN".asInstanceOf[PackageVersionOriginType]
+
+  @inline def values: js.Array[PackageVersionOriginType] = js.Array(INTERNAL, EXTERNAL, UNKNOWN)
 }
 
 @js.native

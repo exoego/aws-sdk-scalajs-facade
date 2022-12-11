@@ -2,15 +2,16 @@ package facade.amazonaws.services.wafv2
 
 import scalajs.js
 
-type ActionValue = "ALLOW" | "BLOCK" | "COUNT" | "CAPTCHA" | "EXCLUDED_AS_COUNT"
+type ActionValue = "ALLOW" | "BLOCK" | "COUNT" | "CAPTCHA" | "CHALLENGE" | "EXCLUDED_AS_COUNT"
 object ActionValue {
   inline val ALLOW: "ALLOW" = "ALLOW"
   inline val BLOCK: "BLOCK" = "BLOCK"
   inline val COUNT: "COUNT" = "COUNT"
   inline val CAPTCHA: "CAPTCHA" = "CAPTCHA"
+  inline val CHALLENGE: "CHALLENGE" = "CHALLENGE"
   inline val EXCLUDED_AS_COUNT: "EXCLUDED_AS_COUNT" = "EXCLUDED_AS_COUNT"
 
-  inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, EXCLUDED_AS_COUNT)
+  inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, CHALLENGE, EXCLUDED_AS_COUNT)
 }
 
 type BodyParsingFallbackBehavior = "MATCH" | "NO_MATCH" | "EVALUATE_AS_STRING"
@@ -34,8 +35,8 @@ object ComparisonOperator {
   inline def values: js.Array[ComparisonOperator] = js.Array(EQ, NE, LE, LT, GE, GT)
 }
 
-type CountryCode = "AF" | "AX" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BQ" | "BA" | "BW" | "BV" | "BR" | "IO" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CG" | "CD" | "CK" | "CR" | "CI" | "HR" | "CU" | "CW" | "CY" | "CZ" | "DK" | "DJ" | "DM" | "DO" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "GF" | "PF" | "TF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GP" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HM" | "VA" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "KP" | "KR" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MK" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MQ" |
-  "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "NF" | "MP" | "NO" | "OM" | "PK" | "PW" | "PS" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "RE" | "RO" | "RU" | "RW" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "GS" | "SS" | "ES" | "LK" | "SD" | "SR" | "SJ" | "SZ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TL" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "UG" | "UA" | "AE" | "GB" | "US" | "UM" | "UY" | "UZ" | "VU" | "VE" | "VN" | "VG" | "VI" | "WF" | "EH" | "YE" | "ZM" | "ZW"
+type CountryCode =
+  "AF" | "AX" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BQ" | "BA" | "BW" | "BV" | "BR" | "IO" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CG" | "CD" | "CK" | "CR" | "CI" | "HR" | "CU" | "CW" | "CY" | "CZ" | "DK" | "DJ" | "DM" | "DO" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "GF" | "PF" | "TF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GP" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HM" | "VA" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "KP" | "KR" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MK" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MQ" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "NF" | "MP" | "NO" | "OM" | "PK" | "PW" | "PS" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "RE" | "RO" | "RU" | "RW" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "GS" | "SS" | "ES" | "LK" | "SD" | "SR" | "SJ" | "SZ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TL" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "UG" | "UA" | "AE" | "GB" | "US" | "UM" | "UY" | "UZ" | "VU" | "VE" | "VN" | "VG" | "VI" | "WF" | "EH" | "YE" | "ZM" | "ZW" | "XK"
 object CountryCode {
   inline val AF: "AF" = "AF"
   inline val AX: "AX" = "AX"
@@ -286,6 +287,7 @@ object CountryCode {
   inline val YE: "YE" = "YE"
   inline val ZM: "ZM" = "ZM"
   inline val ZW: "ZW" = "ZW"
+  inline val XK: "XK" = "XK"
 
   inline def values: js.Array[CountryCode] = js.Array(
     AF,
@@ -536,16 +538,19 @@ object CountryCode {
     EH,
     YE,
     ZM,
-    ZW
+    ZW,
+    XK
   )
 }
 
-type FailureReason = "TOKEN_MISSING" | "TOKEN_EXPIRED"
+type FailureReason = "TOKEN_MISSING" | "TOKEN_EXPIRED" | "TOKEN_INVALID" | "TOKEN_DOMAIN_MISMATCH"
 object FailureReason {
   inline val TOKEN_MISSING: "TOKEN_MISSING" = "TOKEN_MISSING"
   inline val TOKEN_EXPIRED: "TOKEN_EXPIRED" = "TOKEN_EXPIRED"
+  inline val TOKEN_INVALID: "TOKEN_INVALID" = "TOKEN_INVALID"
+  inline val TOKEN_DOMAIN_MISMATCH: "TOKEN_DOMAIN_MISMATCH" = "TOKEN_DOMAIN_MISMATCH"
 
-  inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED)
+  inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED, TOKEN_INVALID, TOKEN_DOMAIN_MISMATCH)
 }
 
 type FallbackBehavior = "MATCH" | "NO_MATCH"
@@ -589,6 +594,14 @@ object IPAddressVersion {
   inline def values: js.Array[IPAddressVersion] = js.Array(IPV4, IPV6)
 }
 
+type InspectionLevel = "COMMON" | "TARGETED"
+object InspectionLevel {
+  inline val COMMON: "COMMON" = "COMMON"
+  inline val TARGETED: "TARGETED" = "TARGETED"
+
+  inline def values: js.Array[InspectionLevel] = js.Array(COMMON, TARGETED)
+}
+
 type JsonMatchScope = "ALL" | "KEY" | "VALUE"
 object JsonMatchScope {
   inline val ALL: "ALL" = "ALL"
@@ -604,6 +617,40 @@ object LabelMatchScope {
   inline val NAMESPACE: "NAMESPACE" = "NAMESPACE"
 
   inline def values: js.Array[LabelMatchScope] = js.Array(LABEL, NAMESPACE)
+}
+
+type MapMatchScope = "ALL" | "KEY" | "VALUE"
+object MapMatchScope {
+  inline val ALL: "ALL" = "ALL"
+  inline val KEY: "KEY" = "KEY"
+  inline val VALUE: "VALUE" = "VALUE"
+
+  inline def values: js.Array[MapMatchScope] = js.Array(ALL, KEY, VALUE)
+}
+
+type OversizeHandling = "CONTINUE" | "MATCH" | "NO_MATCH"
+object OversizeHandling {
+  inline val CONTINUE: "CONTINUE" = "CONTINUE"
+  inline val MATCH: "MATCH" = "MATCH"
+  inline val NO_MATCH: "NO_MATCH" = "NO_MATCH"
+
+  inline def values: js.Array[OversizeHandling] = js.Array(CONTINUE, MATCH, NO_MATCH)
+}
+
+type PayloadType = "JSON" | "FORM_ENCODED"
+object PayloadType {
+  inline val JSON: "JSON" = "JSON"
+  inline val FORM_ENCODED: "FORM_ENCODED" = "FORM_ENCODED"
+
+  inline def values: js.Array[PayloadType] = js.Array(JSON, FORM_ENCODED)
+}
+
+type Platform = "IOS" | "ANDROID"
+object Platform {
+  inline val IOS: "IOS" = "IOS"
+  inline val ANDROID: "ANDROID" = "ANDROID"
+
+  inline def values: js.Array[Platform] = js.Array(IOS, ANDROID)
 }
 
 type PositionalConstraint = "EXACTLY" | "STARTS_WITH" | "ENDS_WITH" | "CONTAINS" | "CONTAINS_WORD"
@@ -625,13 +672,14 @@ object RateBasedStatementAggregateKeyType {
   inline def values: js.Array[RateBasedStatementAggregateKeyType] = js.Array(IP, FORWARDED_IP)
 }
 
-type ResourceType = "APPLICATION_LOAD_BALANCER" | "API_GATEWAY" | "APPSYNC"
+type ResourceType = "APPLICATION_LOAD_BALANCER" | "API_GATEWAY" | "APPSYNC" | "COGNITO_USER_POOL"
 object ResourceType {
   inline val APPLICATION_LOAD_BALANCER: "APPLICATION_LOAD_BALANCER" = "APPLICATION_LOAD_BALANCER"
   inline val API_GATEWAY: "API_GATEWAY" = "API_GATEWAY"
   inline val APPSYNC: "APPSYNC" = "APPSYNC"
+  inline val COGNITO_USER_POOL: "COGNITO_USER_POOL" = "COGNITO_USER_POOL"
 
-  inline def values: js.Array[ResourceType] = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC)
+  inline def values: js.Array[ResourceType] = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC, COGNITO_USER_POOL)
 }
 
 type ResponseContentType = "TEXT_PLAIN" | "TEXT_HTML" | "APPLICATION_JSON"
@@ -649,6 +697,14 @@ object Scope {
   inline val REGIONAL: "REGIONAL" = "REGIONAL"
 
   inline def values: js.Array[Scope] = js.Array(CLOUDFRONT, REGIONAL)
+}
+
+type SensitivityLevel = "LOW" | "HIGH"
+object SensitivityLevel {
+  inline val LOW: "LOW" = "LOW"
+  inline val HIGH: "HIGH" = "HIGH"
+
+  inline def values: js.Array[SensitivityLevel] = js.Array(LOW, HIGH)
 }
 
 type TextTransformationType = "NONE" | "COMPRESS_WHITE_SPACE" | "HTML_ENTITY_DECODE" | "LOWERCASE" | "CMD_LINE" | "URL_DECODE" | "BASE64_DECODE" | "HEX_DECODE" | "MD5" | "REPLACE_COMMENTS" | "ESCAPE_SEQ_DECODE" | "SQL_HEX_DECODE" | "CSS_DECODE" | "JS_DECODE" | "NORMALIZE_PATH" | "NORMALIZE_PATH_WIN" | "REMOVE_NULLS" | "REPLACE_NULLS" | "BASE64_DECODE_EXT" | "URL_DECODE_UNI" | "UTF8_TO_UNICODE"

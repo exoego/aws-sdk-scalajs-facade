@@ -3,6 +3,28 @@ package facade.amazonaws.services.glue
 import scalajs.js
 
 @js.native
+sealed trait AggFunction extends js.Any
+object AggFunction {
+  val avg = "avg".asInstanceOf[AggFunction]
+  val countDistinct = "countDistinct".asInstanceOf[AggFunction]
+  val count = "count".asInstanceOf[AggFunction]
+  val first = "first".asInstanceOf[AggFunction]
+  val last = "last".asInstanceOf[AggFunction]
+  val kurtosis = "kurtosis".asInstanceOf[AggFunction]
+  val max = "max".asInstanceOf[AggFunction]
+  val min = "min".asInstanceOf[AggFunction]
+  val skewness = "skewness".asInstanceOf[AggFunction]
+  val stddev_samp = "stddev_samp".asInstanceOf[AggFunction]
+  val stddev_pop = "stddev_pop".asInstanceOf[AggFunction]
+  val sum = "sum".asInstanceOf[AggFunction]
+  val sumDistinct = "sumDistinct".asInstanceOf[AggFunction]
+  val var_samp = "var_samp".asInstanceOf[AggFunction]
+  val var_pop = "var_pop".asInstanceOf[AggFunction]
+
+  @inline def values: js.Array[AggFunction] = js.Array(avg, countDistinct, count, first, last, kurtosis, max, min, skewness, stddev_samp, stddev_pop, sum, sumDistinct, var_samp, var_pop)
+}
+
+@js.native
 sealed trait BackfillErrorCode extends js.Any
 object BackfillErrorCode {
   val ENCRYPTED_PARTITION_ERROR = "ENCRYPTED_PARTITION_ERROR".asInstanceOf[BackfillErrorCode]
@@ -96,6 +118,15 @@ object Compatibility {
 }
 
 @js.native
+sealed trait CompressionType extends js.Any
+object CompressionType {
+  val gzip = "gzip".asInstanceOf[CompressionType]
+  val bzip2 = "bzip2".asInstanceOf[CompressionType]
+
+  @inline def values: js.Array[CompressionType] = js.Array(gzip, bzip2)
+}
+
+@js.native
 sealed trait ConnectionPropertyKey extends js.Any
 object ConnectionPropertyKey {
   val HOST = "HOST".asInstanceOf[ConnectionPropertyKey]
@@ -185,8 +216,20 @@ object CrawlState {
   val CANCELLED = "CANCELLED".asInstanceOf[CrawlState]
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
   val FAILED = "FAILED".asInstanceOf[CrawlState]
+  val ERROR = "ERROR".asInstanceOf[CrawlState]
 
-  @inline def values: js.Array[CrawlState] = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
+  @inline def values: js.Array[CrawlState] = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED, ERROR)
+}
+
+@js.native
+sealed trait CrawlerHistoryState extends js.Any
+object CrawlerHistoryState {
+  val RUNNING = "RUNNING".asInstanceOf[CrawlerHistoryState]
+  val COMPLETED = "COMPLETED".asInstanceOf[CrawlerHistoryState]
+  val FAILED = "FAILED".asInstanceOf[CrawlerHistoryState]
+  val STOPPED = "STOPPED".asInstanceOf[CrawlerHistoryState]
+
+  @inline def values: js.Array[CrawlerHistoryState] = js.Array(RUNNING, COMPLETED, FAILED, STOPPED)
 }
 
 @js.native
@@ -219,12 +262,41 @@ object CsvHeaderOption {
 }
 
 @js.native
+sealed trait DQStopJobOnFailureTiming extends js.Any
+object DQStopJobOnFailureTiming {
+  val Immediate = "Immediate".asInstanceOf[DQStopJobOnFailureTiming]
+  val AfterDataLoad = "AfterDataLoad".asInstanceOf[DQStopJobOnFailureTiming]
+
+  @inline def values: js.Array[DQStopJobOnFailureTiming] = js.Array(Immediate, AfterDataLoad)
+}
+
+@js.native
+sealed trait DQTransformOutput extends js.Any
+object DQTransformOutput {
+  val PrimaryInput = "PrimaryInput".asInstanceOf[DQTransformOutput]
+  val EvaluationResults = "EvaluationResults".asInstanceOf[DQTransformOutput]
+
+  @inline def values: js.Array[DQTransformOutput] = js.Array(PrimaryInput, EvaluationResults)
+}
+
+@js.native
 sealed trait DataFormat extends js.Any
 object DataFormat {
   val AVRO = "AVRO".asInstanceOf[DataFormat]
   val JSON = "JSON".asInstanceOf[DataFormat]
+  val PROTOBUF = "PROTOBUF".asInstanceOf[DataFormat]
 
-  @inline def values: js.Array[DataFormat] = js.Array(AVRO, JSON)
+  @inline def values: js.Array[DataFormat] = js.Array(AVRO, JSON, PROTOBUF)
+}
+
+@js.native
+sealed trait DataQualityRuleResultStatus extends js.Any
+object DataQualityRuleResultStatus {
+  val PASS = "PASS".asInstanceOf[DataQualityRuleResultStatus]
+  val FAIL = "FAIL".asInstanceOf[DataQualityRuleResultStatus]
+  val ERROR = "ERROR".asInstanceOf[DataQualityRuleResultStatus]
+
+  @inline def values: js.Array[DataQualityRuleResultStatus] = js.Array(PASS, FAIL, ERROR)
 }
 
 @js.native
@@ -247,6 +319,15 @@ object EnableHybridValues {
 }
 
 @js.native
+sealed trait ExecutionClass extends js.Any
+object ExecutionClass {
+  val FLEX = "FLEX".asInstanceOf[ExecutionClass]
+  val STANDARD = "STANDARD".asInstanceOf[ExecutionClass]
+
+  @inline def values: js.Array[ExecutionClass] = js.Array(FLEX, STANDARD)
+}
+
+@js.native
 sealed trait ExistCondition extends js.Any
 object ExistCondition {
   val MUST_EXIST = "MUST_EXIST".asInstanceOf[ExistCondition]
@@ -254,6 +335,175 @@ object ExistCondition {
   val NONE = "NONE".asInstanceOf[ExistCondition]
 
   @inline def values: js.Array[ExistCondition] = js.Array(MUST_EXIST, NOT_EXIST, NONE)
+}
+
+@js.native
+sealed trait FieldName extends js.Any
+object FieldName {
+  val CRAWL_ID = "CRAWL_ID".asInstanceOf[FieldName]
+  val STATE = "STATE".asInstanceOf[FieldName]
+  val START_TIME = "START_TIME".asInstanceOf[FieldName]
+  val END_TIME = "END_TIME".asInstanceOf[FieldName]
+  val DPU_HOUR = "DPU_HOUR".asInstanceOf[FieldName]
+
+  @inline def values: js.Array[FieldName] = js.Array(CRAWL_ID, STATE, START_TIME, END_TIME, DPU_HOUR)
+}
+
+@js.native
+sealed trait FilterLogicalOperator extends js.Any
+object FilterLogicalOperator {
+  val AND = "AND".asInstanceOf[FilterLogicalOperator]
+  val OR = "OR".asInstanceOf[FilterLogicalOperator]
+
+  @inline def values: js.Array[FilterLogicalOperator] = js.Array(AND, OR)
+}
+
+@js.native
+sealed trait FilterOperation extends js.Any
+object FilterOperation {
+  val EQ = "EQ".asInstanceOf[FilterOperation]
+  val LT = "LT".asInstanceOf[FilterOperation]
+  val GT = "GT".asInstanceOf[FilterOperation]
+  val LTE = "LTE".asInstanceOf[FilterOperation]
+  val GTE = "GTE".asInstanceOf[FilterOperation]
+  val REGEX = "REGEX".asInstanceOf[FilterOperation]
+  val ISNULL = "ISNULL".asInstanceOf[FilterOperation]
+
+  @inline def values: js.Array[FilterOperation] = js.Array(EQ, LT, GT, LTE, GTE, REGEX, ISNULL)
+}
+
+@js.native
+sealed trait FilterOperator extends js.Any
+object FilterOperator {
+  val GT = "GT".asInstanceOf[FilterOperator]
+  val GE = "GE".asInstanceOf[FilterOperator]
+  val LT = "LT".asInstanceOf[FilterOperator]
+  val LE = "LE".asInstanceOf[FilterOperator]
+  val EQ = "EQ".asInstanceOf[FilterOperator]
+  val NE = "NE".asInstanceOf[FilterOperator]
+
+  @inline def values: js.Array[FilterOperator] = js.Array(GT, GE, LT, LE, EQ, NE)
+}
+
+@js.native
+sealed trait FilterValueType extends js.Any
+object FilterValueType {
+  val COLUMNEXTRACTED = "COLUMNEXTRACTED".asInstanceOf[FilterValueType]
+  val CONSTANT = "CONSTANT".asInstanceOf[FilterValueType]
+
+  @inline def values: js.Array[FilterValueType] = js.Array(COLUMNEXTRACTED, CONSTANT)
+}
+
+@js.native
+sealed trait GlueRecordType extends js.Any
+object GlueRecordType {
+  val DATE = "DATE".asInstanceOf[GlueRecordType]
+  val STRING = "STRING".asInstanceOf[GlueRecordType]
+  val TIMESTAMP = "TIMESTAMP".asInstanceOf[GlueRecordType]
+  val INT = "INT".asInstanceOf[GlueRecordType]
+  val FLOAT = "FLOAT".asInstanceOf[GlueRecordType]
+  val LONG = "LONG".asInstanceOf[GlueRecordType]
+  val BIGDECIMAL = "BIGDECIMAL".asInstanceOf[GlueRecordType]
+  val BYTE = "BYTE".asInstanceOf[GlueRecordType]
+  val SHORT = "SHORT".asInstanceOf[GlueRecordType]
+  val DOUBLE = "DOUBLE".asInstanceOf[GlueRecordType]
+
+  @inline def values: js.Array[GlueRecordType] = js.Array(DATE, STRING, TIMESTAMP, INT, FLOAT, LONG, BIGDECIMAL, BYTE, SHORT, DOUBLE)
+}
+
+@js.native
+sealed trait JDBCDataType extends js.Any
+object JDBCDataType {
+  val ARRAY = "ARRAY".asInstanceOf[JDBCDataType]
+  val BIGINT = "BIGINT".asInstanceOf[JDBCDataType]
+  val BINARY = "BINARY".asInstanceOf[JDBCDataType]
+  val BIT = "BIT".asInstanceOf[JDBCDataType]
+  val BLOB = "BLOB".asInstanceOf[JDBCDataType]
+  val BOOLEAN = "BOOLEAN".asInstanceOf[JDBCDataType]
+  val CHAR = "CHAR".asInstanceOf[JDBCDataType]
+  val CLOB = "CLOB".asInstanceOf[JDBCDataType]
+  val DATALINK = "DATALINK".asInstanceOf[JDBCDataType]
+  val DATE = "DATE".asInstanceOf[JDBCDataType]
+  val DECIMAL = "DECIMAL".asInstanceOf[JDBCDataType]
+  val DISTINCT = "DISTINCT".asInstanceOf[JDBCDataType]
+  val DOUBLE = "DOUBLE".asInstanceOf[JDBCDataType]
+  val FLOAT = "FLOAT".asInstanceOf[JDBCDataType]
+  val INTEGER = "INTEGER".asInstanceOf[JDBCDataType]
+  val JAVA_OBJECT = "JAVA_OBJECT".asInstanceOf[JDBCDataType]
+  val LONGNVARCHAR = "LONGNVARCHAR".asInstanceOf[JDBCDataType]
+  val LONGVARBINARY = "LONGVARBINARY".asInstanceOf[JDBCDataType]
+  val LONGVARCHAR = "LONGVARCHAR".asInstanceOf[JDBCDataType]
+  val NCHAR = "NCHAR".asInstanceOf[JDBCDataType]
+  val NCLOB = "NCLOB".asInstanceOf[JDBCDataType]
+  val NULL = "NULL".asInstanceOf[JDBCDataType]
+  val NUMERIC = "NUMERIC".asInstanceOf[JDBCDataType]
+  val NVARCHAR = "NVARCHAR".asInstanceOf[JDBCDataType]
+  val OTHER = "OTHER".asInstanceOf[JDBCDataType]
+  val REAL = "REAL".asInstanceOf[JDBCDataType]
+  val REF = "REF".asInstanceOf[JDBCDataType]
+  val REF_CURSOR = "REF_CURSOR".asInstanceOf[JDBCDataType]
+  val ROWID = "ROWID".asInstanceOf[JDBCDataType]
+  val SMALLINT = "SMALLINT".asInstanceOf[JDBCDataType]
+  val SQLXML = "SQLXML".asInstanceOf[JDBCDataType]
+  val STRUCT = "STRUCT".asInstanceOf[JDBCDataType]
+  val TIME = "TIME".asInstanceOf[JDBCDataType]
+  val TIME_WITH_TIMEZONE = "TIME_WITH_TIMEZONE".asInstanceOf[JDBCDataType]
+  val TIMESTAMP = "TIMESTAMP".asInstanceOf[JDBCDataType]
+  val TIMESTAMP_WITH_TIMEZONE = "TIMESTAMP_WITH_TIMEZONE".asInstanceOf[JDBCDataType]
+  val TINYINT = "TINYINT".asInstanceOf[JDBCDataType]
+  val VARBINARY = "VARBINARY".asInstanceOf[JDBCDataType]
+  val VARCHAR = "VARCHAR".asInstanceOf[JDBCDataType]
+
+  @inline def values: js.Array[JDBCDataType] = js.Array(
+    ARRAY,
+    BIGINT,
+    BINARY,
+    BIT,
+    BLOB,
+    BOOLEAN,
+    CHAR,
+    CLOB,
+    DATALINK,
+    DATE,
+    DECIMAL,
+    DISTINCT,
+    DOUBLE,
+    FLOAT,
+    INTEGER,
+    JAVA_OBJECT,
+    LONGNVARCHAR,
+    LONGVARBINARY,
+    LONGVARCHAR,
+    NCHAR,
+    NCLOB,
+    NULL,
+    NUMERIC,
+    NVARCHAR,
+    OTHER,
+    REAL,
+    REF,
+    REF_CURSOR,
+    ROWID,
+    SMALLINT,
+    SQLXML,
+    STRUCT,
+    TIME,
+    TIME_WITH_TIMEZONE,
+    TIMESTAMP,
+    TIMESTAMP_WITH_TIMEZONE,
+    TINYINT,
+    VARBINARY,
+    VARCHAR
+  )
+}
+
+@js.native
+sealed trait JdbcMetadataEntry extends js.Any
+object JdbcMetadataEntry {
+  val COMMENTS = "COMMENTS".asInstanceOf[JdbcMetadataEntry]
+  val RAWTYPES = "RAWTYPES".asInstanceOf[JdbcMetadataEntry]
+
+  @inline def values: js.Array[JdbcMetadataEntry] = js.Array(COMMENTS, RAWTYPES)
 }
 
 @js.native
@@ -275,8 +525,23 @@ object JobRunState {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobRunState]
   val FAILED = "FAILED".asInstanceOf[JobRunState]
   val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
+  val ERROR = "ERROR".asInstanceOf[JobRunState]
+  val WAITING = "WAITING".asInstanceOf[JobRunState]
 
-  @inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  @inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT, ERROR, WAITING)
+}
+
+@js.native
+sealed trait JoinType extends js.Any
+object JoinType {
+  val equijoin = "equijoin".asInstanceOf[JoinType]
+  val left = "left".asInstanceOf[JoinType]
+  val right = "right".asInstanceOf[JoinType]
+  val outer = "outer".asInstanceOf[JoinType]
+  val leftsemi = "leftsemi".asInstanceOf[JoinType]
+  val leftanti = "leftanti".asInstanceOf[JoinType]
+
+  @inline def values: js.Array[JoinType] = js.Array(equijoin, left, right, outer, leftsemi, leftanti)
 }
 
 @js.native
@@ -335,6 +600,32 @@ object NodeType {
 }
 
 @js.native
+sealed trait ParamType extends js.Any
+object ParamType {
+  val str = "str".asInstanceOf[ParamType]
+  val int = "int".asInstanceOf[ParamType]
+  val float = "float".asInstanceOf[ParamType]
+  val complex = "complex".asInstanceOf[ParamType]
+  val bool = "bool".asInstanceOf[ParamType]
+  val list = "list".asInstanceOf[ParamType]
+  val `null` = "null".asInstanceOf[ParamType]
+
+  @inline def values: js.Array[ParamType] = js.Array(str, int, float, complex, bool, list, `null`)
+}
+
+@js.native
+sealed trait ParquetCompressionType extends js.Any
+object ParquetCompressionType {
+  val snappy = "snappy".asInstanceOf[ParquetCompressionType]
+  val lzo = "lzo".asInstanceOf[ParquetCompressionType]
+  val gzip = "gzip".asInstanceOf[ParquetCompressionType]
+  val uncompressed = "uncompressed".asInstanceOf[ParquetCompressionType]
+  val none = "none".asInstanceOf[ParquetCompressionType]
+
+  @inline def values: js.Array[ParquetCompressionType] = js.Array(snappy, lzo, gzip, uncompressed, none)
+}
+
+@js.native
 sealed trait PartitionIndexStatus extends js.Any
 object PartitionIndexStatus {
   val CREATING = "CREATING".asInstanceOf[PartitionIndexStatus]
@@ -362,6 +653,26 @@ object Permission {
 }
 
 @js.native
+sealed trait PermissionType extends js.Any
+object PermissionType {
+  val COLUMN_PERMISSION = "COLUMN_PERMISSION".asInstanceOf[PermissionType]
+  val CELL_FILTER_PERMISSION = "CELL_FILTER_PERMISSION".asInstanceOf[PermissionType]
+
+  @inline def values: js.Array[PermissionType] = js.Array(COLUMN_PERMISSION, CELL_FILTER_PERMISSION)
+}
+
+@js.native
+sealed trait PiiType extends js.Any
+object PiiType {
+  val RowAudit = "RowAudit".asInstanceOf[PiiType]
+  val RowMasking = "RowMasking".asInstanceOf[PiiType]
+  val ColumnAudit = "ColumnAudit".asInstanceOf[PiiType]
+  val ColumnMasking = "ColumnMasking".asInstanceOf[PiiType]
+
+  @inline def values: js.Array[PiiType] = js.Array(RowAudit, RowMasking, ColumnAudit, ColumnMasking)
+}
+
+@js.native
 sealed trait PrincipalType extends js.Any
 object PrincipalType {
   val USER = "USER".asInstanceOf[PrincipalType]
@@ -369,6 +680,17 @@ object PrincipalType {
   val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
   @inline def values: js.Array[PrincipalType] = js.Array(USER, ROLE, GROUP)
+}
+
+@js.native
+sealed trait QuoteChar extends js.Any
+object QuoteChar {
+  val quote = "quote".asInstanceOf[QuoteChar]
+  val quillemet = "quillemet".asInstanceOf[QuoteChar]
+  val single_quote = "single_quote".asInstanceOf[QuoteChar]
+  val disabled = "disabled".asInstanceOf[QuoteChar]
+
+  @inline def values: js.Array[QuoteChar] = js.Array(quote, quillemet, single_quote, disabled)
 }
 
 @js.native
@@ -459,6 +781,31 @@ object SchemaVersionStatus {
 }
 
 @js.native
+sealed trait Separator extends js.Any
+object Separator {
+  val comma = "comma".asInstanceOf[Separator]
+  val ctrla = "ctrla".asInstanceOf[Separator]
+  val pipe = "pipe".asInstanceOf[Separator]
+  val semicolon = "semicolon".asInstanceOf[Separator]
+  val tab = "tab".asInstanceOf[Separator]
+
+  @inline def values: js.Array[Separator] = js.Array(comma, ctrla, pipe, semicolon, tab)
+}
+
+@js.native
+sealed trait SessionStatus extends js.Any
+object SessionStatus {
+  val PROVISIONING = "PROVISIONING".asInstanceOf[SessionStatus]
+  val READY = "READY".asInstanceOf[SessionStatus]
+  val FAILED = "FAILED".asInstanceOf[SessionStatus]
+  val TIMEOUT = "TIMEOUT".asInstanceOf[SessionStatus]
+  val STOPPING = "STOPPING".asInstanceOf[SessionStatus]
+  val STOPPED = "STOPPED".asInstanceOf[SessionStatus]
+
+  @inline def values: js.Array[SessionStatus] = js.Array(PROVISIONING, READY, FAILED, TIMEOUT, STOPPING, STOPPED)
+}
+
+@js.native
 sealed trait Sort extends js.Any
 object Sort {
   val ASC = "ASC".asInstanceOf[Sort]
@@ -474,6 +821,59 @@ object SortDirectionType {
   val ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
 
   @inline def values: js.Array[SortDirectionType] = js.Array(DESCENDING, ASCENDING)
+}
+
+@js.native
+sealed trait SourceControlAuthStrategy extends js.Any
+object SourceControlAuthStrategy {
+  val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[SourceControlAuthStrategy]
+  val AWS_SECRETS_MANAGER = "AWS_SECRETS_MANAGER".asInstanceOf[SourceControlAuthStrategy]
+
+  @inline def values: js.Array[SourceControlAuthStrategy] = js.Array(PERSONAL_ACCESS_TOKEN, AWS_SECRETS_MANAGER)
+}
+
+@js.native
+sealed trait SourceControlProvider extends js.Any
+object SourceControlProvider {
+  val GITHUB = "GITHUB".asInstanceOf[SourceControlProvider]
+  val AWS_CODE_COMMIT = "AWS_CODE_COMMIT".asInstanceOf[SourceControlProvider]
+
+  @inline def values: js.Array[SourceControlProvider] = js.Array(GITHUB, AWS_CODE_COMMIT)
+}
+
+@js.native
+sealed trait StartingPosition extends js.Any
+object StartingPosition {
+  val latest = "latest".asInstanceOf[StartingPosition]
+  val trim_horizon = "trim_horizon".asInstanceOf[StartingPosition]
+  val earliest = "earliest".asInstanceOf[StartingPosition]
+
+  @inline def values: js.Array[StartingPosition] = js.Array(latest, trim_horizon, earliest)
+}
+
+@js.native
+sealed trait StatementState extends js.Any
+object StatementState {
+  val WAITING = "WAITING".asInstanceOf[StatementState]
+  val RUNNING = "RUNNING".asInstanceOf[StatementState]
+  val AVAILABLE = "AVAILABLE".asInstanceOf[StatementState]
+  val CANCELLING = "CANCELLING".asInstanceOf[StatementState]
+  val CANCELLED = "CANCELLED".asInstanceOf[StatementState]
+  val ERROR = "ERROR".asInstanceOf[StatementState]
+
+  @inline def values: js.Array[StatementState] = js.Array(WAITING, RUNNING, AVAILABLE, CANCELLING, CANCELLED, ERROR)
+}
+
+@js.native
+sealed trait TargetFormat extends js.Any
+object TargetFormat {
+  val json = "json".asInstanceOf[TargetFormat]
+  val csv = "csv".asInstanceOf[TargetFormat]
+  val avro = "avro".asInstanceOf[TargetFormat]
+  val orc = "orc".asInstanceOf[TargetFormat]
+  val parquet = "parquet".asInstanceOf[TargetFormat]
+
+  @inline def values: js.Array[TargetFormat] = js.Array(json, csv, avro, orc, parquet)
 }
 
 @js.native
@@ -569,6 +969,15 @@ object TriggerType {
 }
 
 @js.native
+sealed trait UnionType extends js.Any
+object UnionType {
+  val ALL = "ALL".asInstanceOf[UnionType]
+  val DISTINCT = "DISTINCT".asInstanceOf[UnionType]
+
+  @inline def values: js.Array[UnionType] = js.Array(ALL, DISTINCT)
+}
+
+@js.native
 sealed trait UpdateBehavior extends js.Any
 object UpdateBehavior {
   val LOG = "LOG".asInstanceOf[UpdateBehavior]
@@ -578,13 +987,23 @@ object UpdateBehavior {
 }
 
 @js.native
+sealed trait UpdateCatalogBehavior extends js.Any
+object UpdateCatalogBehavior {
+  val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateCatalogBehavior]
+  val LOG = "LOG".asInstanceOf[UpdateCatalogBehavior]
+
+  @inline def values: js.Array[UpdateCatalogBehavior] = js.Array(UPDATE_IN_DATABASE, LOG)
+}
+
+@js.native
 sealed trait WorkerType extends js.Any
 object WorkerType {
   val Standard = "Standard".asInstanceOf[WorkerType]
   val `G.1X` = "G.1X".asInstanceOf[WorkerType]
   val `G.2X` = "G.2X".asInstanceOf[WorkerType]
+  val `G.025X` = "G.025X".asInstanceOf[WorkerType]
 
-  @inline def values: js.Array[WorkerType] = js.Array(Standard, `G.1X`, `G.2X`)
+  @inline def values: js.Array[WorkerType] = js.Array(Standard, `G.1X`, `G.2X`, `G.025X`)
 }
 
 @js.native

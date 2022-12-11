@@ -36,7 +36,15 @@ object ChangeStatus {
   inline def values: js.Array[ChangeStatus] = js.Array(PENDING, INSYNC)
 }
 
-type CloudWatchRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "ap-east-1" | "me-south-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-northwest-1" | "cn-north-1" | "af-south-1" | "eu-south-1" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-iso-west-1" | "us-isob-east-1"
+type CidrCollectionChangeAction = "PUT" | "DELETE_IF_EXISTS"
+object CidrCollectionChangeAction {
+  inline val PUT: "PUT" = "PUT"
+  inline val DELETE_IF_EXISTS: "DELETE_IF_EXISTS" = "DELETE_IF_EXISTS"
+
+  inline def values: js.Array[CidrCollectionChangeAction] = js.Array(PUT, DELETE_IF_EXISTS)
+}
+
+type CloudWatchRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-central-1" | "eu-central-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "ap-east-1" | "me-south-1" | "me-central-1" | "ap-south-1" | "ap-south-2" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-northwest-1" | "cn-north-1" | "af-south-1" | "eu-south-1" | "eu-south-2" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-iso-west-1" | "us-isob-east-1"
 object CloudWatchRegion {
   inline val `us-east-1`: "us-east-1" = "us-east-1"
   inline val `us-east-2`: "us-east-2" = "us-east-2"
@@ -44,12 +52,15 @@ object CloudWatchRegion {
   inline val `us-west-2`: "us-west-2" = "us-west-2"
   inline val `ca-central-1`: "ca-central-1" = "ca-central-1"
   inline val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  inline val `eu-central-2`: "eu-central-2" = "eu-central-2"
   inline val `eu-west-1`: "eu-west-1" = "eu-west-1"
   inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
   inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
   inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
   inline val `me-south-1`: "me-south-1" = "me-south-1"
+  inline val `me-central-1`: "me-central-1" = "me-central-1"
   inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  inline val `ap-south-2`: "ap-south-2" = "ap-south-2"
   inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
   inline val `ap-southeast-3`: "ap-southeast-3" = "ap-southeast-3"
@@ -62,6 +73,7 @@ object CloudWatchRegion {
   inline val `cn-north-1`: "cn-north-1" = "cn-north-1"
   inline val `af-south-1`: "af-south-1" = "af-south-1"
   inline val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  inline val `eu-south-2`: "eu-south-2" = "eu-south-2"
   inline val `us-gov-west-1`: "us-gov-west-1" = "us-gov-west-1"
   inline val `us-gov-east-1`: "us-gov-east-1" = "us-gov-east-1"
   inline val `us-iso-east-1`: "us-iso-east-1" = "us-iso-east-1"
@@ -75,12 +87,15 @@ object CloudWatchRegion {
     `us-west-2`,
     `ca-central-1`,
     `eu-central-1`,
+    `eu-central-2`,
     `eu-west-1`,
     `eu-west-2`,
     `eu-west-3`,
     `ap-east-1`,
     `me-south-1`,
+    `me-central-1`,
     `ap-south-1`,
+    `ap-south-2`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
@@ -93,6 +108,7 @@ object CloudWatchRegion {
     `cn-north-1`,
     `af-south-1`,
     `eu-south-1`,
+    `eu-south-2`,
     `us-gov-west-1`,
     `us-gov-east-1`,
     `us-iso-east-1`,
@@ -193,7 +209,7 @@ object ResourceRecordSetFailover {
   inline def values: js.Array[ResourceRecordSetFailover] = js.Array(PRIMARY, SECONDARY)
 }
 
-type ResourceRecordSetRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-north-1" | "cn-northwest-1" | "ap-east-1" | "me-south-1" | "ap-south-1" | "af-south-1" | "eu-south-1"
+type ResourceRecordSetRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "eu-central-2" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-north-1" | "cn-northwest-1" | "ap-east-1" | "me-south-1" | "me-central-1" | "ap-south-1" | "ap-south-2" | "af-south-1" | "eu-south-1" | "eu-south-2"
 object ResourceRecordSetRegion {
   inline val `us-east-1`: "us-east-1" = "us-east-1"
   inline val `us-east-2`: "us-east-2" = "us-east-2"
@@ -204,6 +220,7 @@ object ResourceRecordSetRegion {
   inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
   inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
   inline val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  inline val `eu-central-2`: "eu-central-2" = "eu-central-2"
   inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
   inline val `ap-southeast-3`: "ap-southeast-3" = "ap-southeast-3"
@@ -216,9 +233,12 @@ object ResourceRecordSetRegion {
   inline val `cn-northwest-1`: "cn-northwest-1" = "cn-northwest-1"
   inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
   inline val `me-south-1`: "me-south-1" = "me-south-1"
+  inline val `me-central-1`: "me-central-1" = "me-central-1"
   inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  inline val `ap-south-2`: "ap-south-2" = "ap-south-2"
   inline val `af-south-1`: "af-south-1" = "af-south-1"
   inline val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  inline val `eu-south-2`: "eu-south-2" = "eu-south-2"
 
   inline def values: js.Array[ResourceRecordSetRegion] = js.Array(
     `us-east-1`,
@@ -230,6 +250,7 @@ object ResourceRecordSetRegion {
     `eu-west-2`,
     `eu-west-3`,
     `eu-central-1`,
+    `eu-central-2`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
@@ -242,9 +263,12 @@ object ResourceRecordSetRegion {
     `cn-northwest-1`,
     `ap-east-1`,
     `me-south-1`,
+    `me-central-1`,
     `ap-south-1`,
+    `ap-south-2`,
     `af-south-1`,
-    `eu-south-1`
+    `eu-south-1`,
+    `eu-south-2`
   )
 }
 
@@ -274,7 +298,7 @@ object TagResourceType {
   inline def values: js.Array[TagResourceType] = js.Array(healthcheck, hostedzone)
 }
 
-type VPCRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ap-east-1" | "me-south-1" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-iso-west-1" | "us-isob-east-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-south-1" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "ca-central-1" | "cn-north-1" | "af-south-1" | "eu-south-1"
+type VPCRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "eu-central-2" | "ap-east-1" | "me-south-1" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-iso-west-1" | "us-isob-east-1" | "me-central-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-south-1" | "ap-south-2" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "ca-central-1" | "cn-north-1" | "af-south-1" | "eu-south-1" | "eu-south-2"
 object VPCRegion {
   inline val `us-east-1`: "us-east-1" = "us-east-1"
   inline val `us-east-2`: "us-east-2" = "us-east-2"
@@ -284,6 +308,7 @@ object VPCRegion {
   inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
   inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
   inline val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  inline val `eu-central-2`: "eu-central-2" = "eu-central-2"
   inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
   inline val `me-south-1`: "me-south-1" = "me-south-1"
   inline val `us-gov-west-1`: "us-gov-west-1" = "us-gov-west-1"
@@ -291,10 +316,12 @@ object VPCRegion {
   inline val `us-iso-east-1`: "us-iso-east-1" = "us-iso-east-1"
   inline val `us-iso-west-1`: "us-iso-west-1" = "us-iso-west-1"
   inline val `us-isob-east-1`: "us-isob-east-1" = "us-isob-east-1"
+  inline val `me-central-1`: "me-central-1" = "me-central-1"
   inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
   inline val `ap-southeast-3`: "ap-southeast-3" = "ap-southeast-3"
   inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  inline val `ap-south-2`: "ap-south-2" = "ap-south-2"
   inline val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
   inline val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
   inline val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
@@ -304,6 +331,7 @@ object VPCRegion {
   inline val `cn-north-1`: "cn-north-1" = "cn-north-1"
   inline val `af-south-1`: "af-south-1" = "af-south-1"
   inline val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  inline val `eu-south-2`: "eu-south-2" = "eu-south-2"
 
   inline def values: js.Array[VPCRegion] = js.Array(
     `us-east-1`,
@@ -314,6 +342,7 @@ object VPCRegion {
     `eu-west-2`,
     `eu-west-3`,
     `eu-central-1`,
+    `eu-central-2`,
     `ap-east-1`,
     `me-south-1`,
     `us-gov-west-1`,
@@ -321,10 +350,12 @@ object VPCRegion {
     `us-iso-east-1`,
     `us-iso-west-1`,
     `us-isob-east-1`,
+    `me-central-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
     `ap-south-1`,
+    `ap-south-2`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -333,6 +364,7 @@ object VPCRegion {
     `ca-central-1`,
     `cn-north-1`,
     `af-south-1`,
-    `eu-south-1`
+    `eu-south-1`,
+    `eu-south-2`
   )
 }

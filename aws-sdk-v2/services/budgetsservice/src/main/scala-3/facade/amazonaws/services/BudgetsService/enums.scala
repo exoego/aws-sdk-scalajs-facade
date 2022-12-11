@@ -54,6 +54,14 @@ object ApprovalModel {
   inline def values: js.Array[ApprovalModel] = js.Array(AUTOMATIC, MANUAL)
 }
 
+type AutoAdjustType = "HISTORICAL" | "FORECAST"
+object AutoAdjustType {
+  inline val HISTORICAL: "HISTORICAL" = "HISTORICAL"
+  inline val FORECAST: "FORECAST" = "FORECAST"
+
+  inline def values: js.Array[AutoAdjustType] = js.Array(HISTORICAL, FORECAST)
+}
+
 /** The type of a budget. It must be one of the following types: <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
   */
 type BudgetType = "USAGE" | "COST" | "RI_UTILIZATION" | "RI_COVERAGE" | "SAVINGS_PLANS_UTILIZATION" | "SAVINGS_PLANS_COVERAGE"
@@ -68,7 +76,7 @@ object BudgetType {
   inline def values: js.Array[BudgetType] = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
 }
 
-/** The comparison operator of a notification. Currently the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
+/** The comparison operator of a notification. Currently, the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
   */
 type ComparisonOperator = "GREATER_THAN" | "LESS_THAN" | "EQUAL_TO"
 object ComparisonOperator {

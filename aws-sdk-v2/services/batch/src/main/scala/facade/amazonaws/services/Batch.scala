@@ -15,6 +15,16 @@ package object batch {
   type DeviceCgroupPermissions = js.Array[DeviceCgroupPermission]
   type DevicesList = js.Array[Device]
   type Ec2ConfigurationList = js.Array[Ec2Configuration]
+  type EksAttemptContainerDetails = js.Array[EksAttemptContainerDetail]
+  type EksAttemptDetails = js.Array[EksAttemptDetail]
+  type EksContainerDetails = js.Array[EksContainerDetail]
+  type EksContainerEnvironmentVariables = js.Array[EksContainerEnvironmentVariable]
+  type EksContainerOverrideList = js.Array[EksContainerOverride]
+  type EksContainerVolumeMounts = js.Array[EksContainerVolumeMount]
+  type EksContainers = js.Array[EksContainer]
+  type EksLimits = js.Dictionary[Quantity]
+  type EksRequests = js.Dictionary[Quantity]
+  type EksVolumes = js.Array[EksVolume]
   type EnvironmentVariables = js.Array[KeyValuePair]
   type EvaluateOnExitList = js.Array[EvaluateOnExit]
   type ImageIdOverride = String
@@ -22,8 +32,10 @@ package object batch {
   type JobDefinitionList = js.Array[JobDefinition]
   type JobDependencyList = js.Array[JobDependency]
   type JobDetailList = js.Array[JobDetail]
+  type JobExecutionTimeoutMinutes = Double
   type JobQueueDetailList = js.Array[JobQueueDetail]
   type JobSummaryList = js.Array[JobSummary]
+  type KubernetesVersion = String
   type ListJobsFilterList = js.Array[KeyValuesPair]
   type LogConfigurationOptionsMap = js.Dictionary[String]
   type MountPoints = js.Array[MountPoint]
@@ -32,6 +44,7 @@ package object batch {
   type NodeRangeProperties = js.Array[NodeRangeProperty]
   type ParametersMap = js.Dictionary[String]
   type PlatformCapabilityList = js.Array[PlatformCapability]
+  type Quantity = String
   type ResourceRequirements = js.Array[ResourceRequirement]
   type SchedulingPolicyDetailList = js.Array[SchedulingPolicyDetail]
   type SchedulingPolicyListingDetailList = js.Array[SchedulingPolicyListingDetail]
@@ -112,7 +125,7 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch array job.
+  /** An object that represents an Batch array job.
     */
   @js.native
   trait ArrayProperties extends js.Object {
@@ -130,7 +143,7 @@ package object batch {
     }
   }
 
-  /** An object representing the array properties of a job.
+  /** An object that represents the array properties of a job.
     */
   @js.native
   trait ArrayPropertiesDetail extends js.Object {
@@ -154,7 +167,7 @@ package object batch {
     }
   }
 
-  /** An object representing the array properties of a job.
+  /** An object that represents the array properties of a job.
     */
   @js.native
   trait ArrayPropertiesSummary extends js.Object {
@@ -175,7 +188,7 @@ package object batch {
     }
   }
 
-  /** An object representing the details of a container that's part of a job attempt.
+  /** An object that represents the details of a container that's part of a job attempt.
     */
   @js.native
   trait AttemptContainerDetail extends js.Object {
@@ -208,7 +221,7 @@ package object batch {
     }
   }
 
-  /** An object representing a job attempt.
+  /** An object that represents a job attempt.
     */
   @js.native
   trait AttemptDetail extends js.Object {
@@ -268,14 +281,16 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch compute environment.
+  /** An object that represents an Batch compute environment.
     */
   @js.native
   trait ComputeEnvironmentDetail extends js.Object {
     var computeEnvironmentArn: String
     var computeEnvironmentName: String
-    var ecsClusterArn: String
     var computeResources: js.UndefOr[ComputeResource]
+    var containerOrchestrationType: js.UndefOr[OrchestrationType]
+    var ecsClusterArn: js.UndefOr[String]
+    var eksConfiguration: js.UndefOr[EksConfiguration]
     var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
     var status: js.UndefOr[CEStatus]
@@ -283,6 +298,8 @@ package object batch {
     var tags: js.UndefOr[TagrisTagsMap]
     var `type`: js.UndefOr[CEType]
     var unmanagedvCpus: js.UndefOr[Int]
+    var updatePolicy: js.UndefOr[UpdatePolicy]
+    var uuid: js.UndefOr[String]
   }
 
   object ComputeEnvironmentDetail {
@@ -290,23 +307,29 @@ package object batch {
     def apply(
         computeEnvironmentArn: String,
         computeEnvironmentName: String,
-        ecsClusterArn: String,
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
+        containerOrchestrationType: js.UndefOr[OrchestrationType] = js.undefined,
+        ecsClusterArn: js.UndefOr[String] = js.undefined,
+        eksConfiguration: js.UndefOr[EksConfiguration] = js.undefined,
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined,
         status: js.UndefOr[CEStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         `type`: js.UndefOr[CEType] = js.undefined,
-        unmanagedvCpus: js.UndefOr[Int] = js.undefined
+        unmanagedvCpus: js.UndefOr[Int] = js.undefined,
+        updatePolicy: js.UndefOr[UpdatePolicy] = js.undefined,
+        uuid: js.UndefOr[String] = js.undefined
     ): ComputeEnvironmentDetail = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentArn" -> computeEnvironmentArn.asInstanceOf[js.Any],
-        "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
-        "ecsClusterArn" -> ecsClusterArn.asInstanceOf[js.Any]
+        "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any]
       )
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      containerOrchestrationType.foreach(__v => __obj.updateDynamic("containerOrchestrationType")(__v.asInstanceOf[js.Any]))
+      ecsClusterArn.foreach(__v => __obj.updateDynamic("ecsClusterArn")(__v.asInstanceOf[js.Any]))
+      eksConfiguration.foreach(__v => __obj.updateDynamic("eksConfiguration")(__v.asInstanceOf[js.Any]))
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -314,11 +337,13 @@ package object batch {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       unmanagedvCpus.foreach(__v => __obj.updateDynamic("unmanagedvCpus")(__v.asInstanceOf[js.Any]))
+      updatePolicy.foreach(__v => __obj.updateDynamic("updatePolicy")(__v.asInstanceOf[js.Any]))
+      uuid.foreach(__v => __obj.updateDynamic("uuid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeEnvironmentDetail]
     }
   }
 
-  /** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+  /** The order that compute environments are tried in for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
     *
     * '''Note:'''All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.
     */
@@ -342,7 +367,7 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch compute resource. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>Batch User Guide</i>.
+  /** An object that represents an Batch compute resource. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute environments]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait ComputeResource extends js.Object {
@@ -410,37 +435,73 @@ package object batch {
     }
   }
 
-  /** An object representing the attributes of a compute environment that can be updated. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>Batch User Guide</i>.
+  /** An object that represents the attributes of a compute environment that can be updated. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html|Updating compute environments]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
+    var allocationStrategy: js.UndefOr[CRUpdateAllocationStrategy]
+    var bidPercentage: js.UndefOr[Int]
     var desiredvCpus: js.UndefOr[Int]
+    var ec2Configuration: js.UndefOr[Ec2ConfigurationList]
+    var ec2KeyPair: js.UndefOr[String]
+    var imageId: js.UndefOr[String]
+    var instanceRole: js.UndefOr[String]
+    var instanceTypes: js.UndefOr[StringList]
+    var launchTemplate: js.UndefOr[LaunchTemplateSpecification]
     var maxvCpus: js.UndefOr[Int]
     var minvCpus: js.UndefOr[Int]
+    var placementGroup: js.UndefOr[String]
     var securityGroupIds: js.UndefOr[StringList]
     var subnets: js.UndefOr[StringList]
+    var tags: js.UndefOr[TagsMap]
+    var `type`: js.UndefOr[CRType]
+    var updateToLatestImageVersion: js.UndefOr[Boolean]
   }
 
   object ComputeResourceUpdate {
     @inline
     def apply(
+        allocationStrategy: js.UndefOr[CRUpdateAllocationStrategy] = js.undefined,
+        bidPercentage: js.UndefOr[Int] = js.undefined,
         desiredvCpus: js.UndefOr[Int] = js.undefined,
+        ec2Configuration: js.UndefOr[Ec2ConfigurationList] = js.undefined,
+        ec2KeyPair: js.UndefOr[String] = js.undefined,
+        imageId: js.UndefOr[String] = js.undefined,
+        instanceRole: js.UndefOr[String] = js.undefined,
+        instanceTypes: js.UndefOr[StringList] = js.undefined,
+        launchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         maxvCpus: js.UndefOr[Int] = js.undefined,
         minvCpus: js.UndefOr[Int] = js.undefined,
+        placementGroup: js.UndefOr[String] = js.undefined,
         securityGroupIds: js.UndefOr[StringList] = js.undefined,
-        subnets: js.UndefOr[StringList] = js.undefined
+        subnets: js.UndefOr[StringList] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined,
+        `type`: js.UndefOr[CRType] = js.undefined,
+        updateToLatestImageVersion: js.UndefOr[Boolean] = js.undefined
     ): ComputeResourceUpdate = {
       val __obj = js.Dynamic.literal()
+      allocationStrategy.foreach(__v => __obj.updateDynamic("allocationStrategy")(__v.asInstanceOf[js.Any]))
+      bidPercentage.foreach(__v => __obj.updateDynamic("bidPercentage")(__v.asInstanceOf[js.Any]))
       desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
+      ec2Configuration.foreach(__v => __obj.updateDynamic("ec2Configuration")(__v.asInstanceOf[js.Any]))
+      ec2KeyPair.foreach(__v => __obj.updateDynamic("ec2KeyPair")(__v.asInstanceOf[js.Any]))
+      imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
+      instanceRole.foreach(__v => __obj.updateDynamic("instanceRole")(__v.asInstanceOf[js.Any]))
+      instanceTypes.foreach(__v => __obj.updateDynamic("instanceTypes")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
       maxvCpus.foreach(__v => __obj.updateDynamic("maxvCpus")(__v.asInstanceOf[js.Any]))
       minvCpus.foreach(__v => __obj.updateDynamic("minvCpus")(__v.asInstanceOf[js.Any]))
+      placementGroup.foreach(__v => __obj.updateDynamic("placementGroup")(__v.asInstanceOf[js.Any]))
       securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
       subnets.foreach(__v => __obj.updateDynamic("subnets")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      updateToLatestImageVersion.foreach(__v => __obj.updateDynamic("updateToLatestImageVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeResourceUpdate]
     }
   }
 
-  /** An object representing the details of a container that's part of a job.
+  /** An object that represents the details of a container that's part of a job.
     */
   @js.native
   trait ContainerDetail extends js.Object {
@@ -566,7 +627,7 @@ package object batch {
     }
   }
 
-  /** Container properties are used in job definitions to describe the container that's launched as part of a job.
+  /** Container properties are used for Amazon ECS based job definitions. These properties to describe the container that's launched as part of a job.
     */
   @js.native
   trait ContainerProperties extends js.Object {
@@ -641,7 +702,7 @@ package object batch {
     }
   }
 
-  /** An object representing summary details of a container within a job.
+  /** An object that represents summary details of a container within a job.
     */
   @js.native
   trait ContainerSummary extends js.Object {
@@ -669,6 +730,7 @@ package object batch {
     var computeEnvironmentName: String
     var `type`: CEType
     var computeResources: js.UndefOr[ComputeResource]
+    var eksConfiguration: js.UndefOr[EksConfiguration]
     var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
     var tags: js.UndefOr[TagrisTagsMap]
@@ -681,6 +743,7 @@ package object batch {
         computeEnvironmentName: String,
         `type`: CEType,
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
+        eksConfiguration: js.UndefOr[EksConfiguration] = js.undefined,
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
@@ -692,6 +755,7 @@ package object batch {
       )
 
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      eksConfiguration.foreach(__v => __obj.updateDynamic("eksConfiguration")(__v.asInstanceOf[js.Any]))
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -774,6 +838,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>CreateSchedulingPolicy</code>.
+    */
   @js.native
   trait CreateSchedulingPolicyRequest extends js.Object {
     var name: String
@@ -878,6 +944,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>DeleteSchedulingPolicy</code>.
+    */
   @js.native
   trait DeleteSchedulingPolicyRequest extends js.Object {
     var arn: String
@@ -1104,6 +1172,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>DescribeSchedulingPolicies</code>.
+    */
   @js.native
   trait DescribeSchedulingPoliciesRequest extends js.Object {
     var arns: StringList
@@ -1137,7 +1207,7 @@ package object batch {
     }
   }
 
-  /** An object representing a container instance host device.
+  /** An object that represents a container instance host device.
     *
     * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
     */
@@ -1226,24 +1296,552 @@ package object batch {
   trait Ec2Configuration extends js.Object {
     var imageType: ImageType
     var imageIdOverride: js.UndefOr[ImageIdOverride]
+    var imageKubernetesVersion: js.UndefOr[KubernetesVersion]
   }
 
   object Ec2Configuration {
     @inline
     def apply(
         imageType: ImageType,
-        imageIdOverride: js.UndefOr[ImageIdOverride] = js.undefined
+        imageIdOverride: js.UndefOr[ImageIdOverride] = js.undefined,
+        imageKubernetesVersion: js.UndefOr[KubernetesVersion] = js.undefined
     ): Ec2Configuration = {
       val __obj = js.Dynamic.literal(
         "imageType" -> imageType.asInstanceOf[js.Any]
       )
 
       imageIdOverride.foreach(__v => __obj.updateDynamic("imageIdOverride")(__v.asInstanceOf[js.Any]))
+      imageKubernetesVersion.foreach(__v => __obj.updateDynamic("imageKubernetesVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Ec2Configuration]
     }
   }
 
-  /** Specifies a set of conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met.
+  /** An object that represents the details for an attempt for a job attempt that an Amazon EKS container runs.
+    */
+  @js.native
+  trait EksAttemptContainerDetail extends js.Object {
+    var exitCode: js.UndefOr[Int]
+    var reason: js.UndefOr[String]
+  }
+
+  object EksAttemptContainerDetail {
+    @inline
+    def apply(
+        exitCode: js.UndefOr[Int] = js.undefined,
+        reason: js.UndefOr[String] = js.undefined
+    ): EksAttemptContainerDetail = {
+      val __obj = js.Dynamic.literal()
+      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksAttemptContainerDetail]
+    }
+  }
+
+  /** An object that represents the details of a job attempt for a job attempt by an Amazon EKS container.
+    */
+  @js.native
+  trait EksAttemptDetail extends js.Object {
+    var containers: js.UndefOr[EksAttemptContainerDetails]
+    var nodeName: js.UndefOr[String]
+    var podName: js.UndefOr[String]
+    var startedAt: js.UndefOr[Double]
+    var statusReason: js.UndefOr[String]
+    var stoppedAt: js.UndefOr[Double]
+  }
+
+  object EksAttemptDetail {
+    @inline
+    def apply(
+        containers: js.UndefOr[EksAttemptContainerDetails] = js.undefined,
+        nodeName: js.UndefOr[String] = js.undefined,
+        podName: js.UndefOr[String] = js.undefined,
+        startedAt: js.UndefOr[Double] = js.undefined,
+        statusReason: js.UndefOr[String] = js.undefined,
+        stoppedAt: js.UndefOr[Double] = js.undefined
+    ): EksAttemptDetail = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      nodeName.foreach(__v => __obj.updateDynamic("nodeName")(__v.asInstanceOf[js.Any]))
+      podName.foreach(__v => __obj.updateDynamic("podName")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksAttemptDetail]
+    }
+  }
+
+  /** Configuration for the Amazon EKS cluster that supports the Batch compute environment. The cluster must exist before the compute environment can be created.
+    */
+  @js.native
+  trait EksConfiguration extends js.Object {
+    var eksClusterArn: String
+    var kubernetesNamespace: String
+  }
+
+  object EksConfiguration {
+    @inline
+    def apply(
+        eksClusterArn: String,
+        kubernetesNamespace: String
+    ): EksConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "eksClusterArn" -> eksClusterArn.asInstanceOf[js.Any],
+        "kubernetesNamespace" -> kubernetesNamespace.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EksConfiguration]
+    }
+  }
+
+  /** EKS container properties are used in job definitions for Amazon EKS based job definitions to describe the properties for a container node in the pod that's launched as part of a job. This can't be specified for Amazon ECS based job definitions.
+    */
+  @js.native
+  trait EksContainer extends js.Object {
+    var image: String
+    var args: js.UndefOr[StringList]
+    var command: js.UndefOr[StringList]
+    var env: js.UndefOr[EksContainerEnvironmentVariables]
+    var imagePullPolicy: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var resources: js.UndefOr[EksContainerResourceRequirements]
+    var securityContext: js.UndefOr[EksContainerSecurityContext]
+    var volumeMounts: js.UndefOr[EksContainerVolumeMounts]
+  }
+
+  object EksContainer {
+    @inline
+    def apply(
+        image: String,
+        args: js.UndefOr[StringList] = js.undefined,
+        command: js.UndefOr[StringList] = js.undefined,
+        env: js.UndefOr[EksContainerEnvironmentVariables] = js.undefined,
+        imagePullPolicy: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        resources: js.UndefOr[EksContainerResourceRequirements] = js.undefined,
+        securityContext: js.UndefOr[EksContainerSecurityContext] = js.undefined,
+        volumeMounts: js.UndefOr[EksContainerVolumeMounts] = js.undefined
+    ): EksContainer = {
+      val __obj = js.Dynamic.literal(
+        "image" -> image.asInstanceOf[js.Any]
+      )
+
+      args.foreach(__v => __obj.updateDynamic("args")(__v.asInstanceOf[js.Any]))
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      env.foreach(__v => __obj.updateDynamic("env")(__v.asInstanceOf[js.Any]))
+      imagePullPolicy.foreach(__v => __obj.updateDynamic("imagePullPolicy")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      securityContext.foreach(__v => __obj.updateDynamic("securityContext")(__v.asInstanceOf[js.Any]))
+      volumeMounts.foreach(__v => __obj.updateDynamic("volumeMounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainer]
+    }
+  }
+
+  /** The details for container properties that are returned by <code>DescribeJobs</code> for jobs that use Amazon EKS.
+    */
+  @js.native
+  trait EksContainerDetail extends js.Object {
+    var args: js.UndefOr[StringList]
+    var command: js.UndefOr[StringList]
+    var env: js.UndefOr[EksContainerEnvironmentVariables]
+    var exitCode: js.UndefOr[Int]
+    var image: js.UndefOr[String]
+    var imagePullPolicy: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var reason: js.UndefOr[String]
+    var resources: js.UndefOr[EksContainerResourceRequirements]
+    var securityContext: js.UndefOr[EksContainerSecurityContext]
+    var volumeMounts: js.UndefOr[EksContainerVolumeMounts]
+  }
+
+  object EksContainerDetail {
+    @inline
+    def apply(
+        args: js.UndefOr[StringList] = js.undefined,
+        command: js.UndefOr[StringList] = js.undefined,
+        env: js.UndefOr[EksContainerEnvironmentVariables] = js.undefined,
+        exitCode: js.UndefOr[Int] = js.undefined,
+        image: js.UndefOr[String] = js.undefined,
+        imagePullPolicy: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        reason: js.UndefOr[String] = js.undefined,
+        resources: js.UndefOr[EksContainerResourceRequirements] = js.undefined,
+        securityContext: js.UndefOr[EksContainerSecurityContext] = js.undefined,
+        volumeMounts: js.UndefOr[EksContainerVolumeMounts] = js.undefined
+    ): EksContainerDetail = {
+      val __obj = js.Dynamic.literal()
+      args.foreach(__v => __obj.updateDynamic("args")(__v.asInstanceOf[js.Any]))
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      env.foreach(__v => __obj.updateDynamic("env")(__v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      imagePullPolicy.foreach(__v => __obj.updateDynamic("imagePullPolicy")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      securityContext.foreach(__v => __obj.updateDynamic("securityContext")(__v.asInstanceOf[js.Any]))
+      volumeMounts.foreach(__v => __obj.updateDynamic("volumeMounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerDetail]
+    }
+  }
+
+  /** An environment variable.
+    */
+  @js.native
+  trait EksContainerEnvironmentVariable extends js.Object {
+    var name: String
+    var value: js.UndefOr[String]
+  }
+
+  object EksContainerEnvironmentVariable {
+    @inline
+    def apply(
+        name: String,
+        value: js.UndefOr[String] = js.undefined
+    ): EksContainerEnvironmentVariable = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerEnvironmentVariable]
+    }
+  }
+
+  /** Object representing any Kubernetes overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+    */
+  @js.native
+  trait EksContainerOverride extends js.Object {
+    var args: js.UndefOr[StringList]
+    var command: js.UndefOr[StringList]
+    var env: js.UndefOr[EksContainerEnvironmentVariables]
+    var image: js.UndefOr[String]
+    var resources: js.UndefOr[EksContainerResourceRequirements]
+  }
+
+  object EksContainerOverride {
+    @inline
+    def apply(
+        args: js.UndefOr[StringList] = js.undefined,
+        command: js.UndefOr[StringList] = js.undefined,
+        env: js.UndefOr[EksContainerEnvironmentVariables] = js.undefined,
+        image: js.UndefOr[String] = js.undefined,
+        resources: js.UndefOr[EksContainerResourceRequirements] = js.undefined
+    ): EksContainerOverride = {
+      val __obj = js.Dynamic.literal()
+      args.foreach(__v => __obj.updateDynamic("args")(__v.asInstanceOf[js.Any]))
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      env.foreach(__v => __obj.updateDynamic("env")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerOverride]
+    }
+  }
+
+  /** The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see [[https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/|Resource management for pods and containers]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksContainerResourceRequirements extends js.Object {
+    var limits: js.UndefOr[EksLimits]
+    var requests: js.UndefOr[EksRequests]
+  }
+
+  object EksContainerResourceRequirements {
+    @inline
+    def apply(
+        limits: js.UndefOr[EksLimits] = js.undefined,
+        requests: js.UndefOr[EksRequests] = js.undefined
+    ): EksContainerResourceRequirements = {
+      val __obj = js.Dynamic.literal()
+      limits.foreach(__v => __obj.updateDynamic("limits")(__v.asInstanceOf[js.Any]))
+      requests.foreach(__v => __obj.updateDynamic("requests")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerResourceRequirements]
+    }
+  }
+
+  /** The security context for a job. For more information, see [[https://kubernetes.io/docs/tasks/configure-pod-container/security-context/|Configure a security context for a pod or container]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksContainerSecurityContext extends js.Object {
+    var privileged: js.UndefOr[Boolean]
+    var readOnlyRootFilesystem: js.UndefOr[Boolean]
+    var runAsGroup: js.UndefOr[Double]
+    var runAsNonRoot: js.UndefOr[Boolean]
+    var runAsUser: js.UndefOr[Double]
+  }
+
+  object EksContainerSecurityContext {
+    @inline
+    def apply(
+        privileged: js.UndefOr[Boolean] = js.undefined,
+        readOnlyRootFilesystem: js.UndefOr[Boolean] = js.undefined,
+        runAsGroup: js.UndefOr[Double] = js.undefined,
+        runAsNonRoot: js.UndefOr[Boolean] = js.undefined,
+        runAsUser: js.UndefOr[Double] = js.undefined
+    ): EksContainerSecurityContext = {
+      val __obj = js.Dynamic.literal()
+      privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
+      readOnlyRootFilesystem.foreach(__v => __obj.updateDynamic("readOnlyRootFilesystem")(__v.asInstanceOf[js.Any]))
+      runAsGroup.foreach(__v => __obj.updateDynamic("runAsGroup")(__v.asInstanceOf[js.Any]))
+      runAsNonRoot.foreach(__v => __obj.updateDynamic("runAsNonRoot")(__v.asInstanceOf[js.Any]))
+      runAsUser.foreach(__v => __obj.updateDynamic("runAsUser")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerSecurityContext]
+    }
+  }
+
+  /** The volume mounts for a container for an Amazon EKS job. For more information about volumes and volume mounts in Kubernetes, see [[https://kubernetes.io/docs/concepts/storage/volumes/|Volumes]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksContainerVolumeMount extends js.Object {
+    var mountPath: js.UndefOr[String]
+    var name: js.UndefOr[String]
+    var readOnly: js.UndefOr[Boolean]
+  }
+
+  object EksContainerVolumeMount {
+    @inline
+    def apply(
+        mountPath: js.UndefOr[String] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        readOnly: js.UndefOr[Boolean] = js.undefined
+    ): EksContainerVolumeMount = {
+      val __obj = js.Dynamic.literal()
+      mountPath.foreach(__v => __obj.updateDynamic("mountPath")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      readOnly.foreach(__v => __obj.updateDynamic("readOnly")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksContainerVolumeMount]
+    }
+  }
+
+  /** Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code> volume is first created when a pod is assigned to a node. It exists as long as that pod is running on that node. The <code>emptyDir</code> volume is initially empty. All containers in the pod can read and write the files in the <code>emptyDir</code> volume. However, the <code>emptyDir</code> volume can be mounted at the same or different paths in each container. When a pod is removed from a node for any reason, the data in the <code>emptyDir</code> is deleted permanently. For more information, see [[https://kubernetes.io/docs/concepts/storage/volumes/#emptydir|emptyDir]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksEmptyDir extends js.Object {
+    var medium: js.UndefOr[String]
+    var sizeLimit: js.UndefOr[Quantity]
+  }
+
+  object EksEmptyDir {
+    @inline
+    def apply(
+        medium: js.UndefOr[String] = js.undefined,
+        sizeLimit: js.UndefOr[Quantity] = js.undefined
+    ): EksEmptyDir = {
+      val __obj = js.Dynamic.literal()
+      medium.foreach(__v => __obj.updateDynamic("medium")(__v.asInstanceOf[js.Any]))
+      sizeLimit.foreach(__v => __obj.updateDynamic("sizeLimit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksEmptyDir]
+    }
+  }
+
+  /** Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see [[https://kubernetes.io/docs/concepts/storage/volumes/#hostpath|hostPath]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksHostPath extends js.Object {
+    var path: js.UndefOr[String]
+  }
+
+  object EksHostPath {
+    @inline
+    def apply(
+        path: js.UndefOr[String] = js.undefined
+    ): EksHostPath = {
+      val __obj = js.Dynamic.literal()
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksHostPath]
+    }
+  }
+
+  /** The properties for the pod.
+    */
+  @js.native
+  trait EksPodProperties extends js.Object {
+    var containers: js.UndefOr[EksContainers]
+    var dnsPolicy: js.UndefOr[String]
+    var hostNetwork: js.UndefOr[Boolean]
+    var serviceAccountName: js.UndefOr[String]
+    var volumes: js.UndefOr[EksVolumes]
+  }
+
+  object EksPodProperties {
+    @inline
+    def apply(
+        containers: js.UndefOr[EksContainers] = js.undefined,
+        dnsPolicy: js.UndefOr[String] = js.undefined,
+        hostNetwork: js.UndefOr[Boolean] = js.undefined,
+        serviceAccountName: js.UndefOr[String] = js.undefined,
+        volumes: js.UndefOr[EksVolumes] = js.undefined
+    ): EksPodProperties = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      dnsPolicy.foreach(__v => __obj.updateDynamic("dnsPolicy")(__v.asInstanceOf[js.Any]))
+      hostNetwork.foreach(__v => __obj.updateDynamic("hostNetwork")(__v.asInstanceOf[js.Any]))
+      serviceAccountName.foreach(__v => __obj.updateDynamic("serviceAccountName")(__v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksPodProperties]
+    }
+  }
+
+  /** The details for the pod.
+    */
+  @js.native
+  trait EksPodPropertiesDetail extends js.Object {
+    var containers: js.UndefOr[EksContainerDetails]
+    var dnsPolicy: js.UndefOr[String]
+    var hostNetwork: js.UndefOr[Boolean]
+    var nodeName: js.UndefOr[String]
+    var podName: js.UndefOr[String]
+    var serviceAccountName: js.UndefOr[String]
+    var volumes: js.UndefOr[EksVolumes]
+  }
+
+  object EksPodPropertiesDetail {
+    @inline
+    def apply(
+        containers: js.UndefOr[EksContainerDetails] = js.undefined,
+        dnsPolicy: js.UndefOr[String] = js.undefined,
+        hostNetwork: js.UndefOr[Boolean] = js.undefined,
+        nodeName: js.UndefOr[String] = js.undefined,
+        podName: js.UndefOr[String] = js.undefined,
+        serviceAccountName: js.UndefOr[String] = js.undefined,
+        volumes: js.UndefOr[EksVolumes] = js.undefined
+    ): EksPodPropertiesDetail = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      dnsPolicy.foreach(__v => __obj.updateDynamic("dnsPolicy")(__v.asInstanceOf[js.Any]))
+      hostNetwork.foreach(__v => __obj.updateDynamic("hostNetwork")(__v.asInstanceOf[js.Any]))
+      nodeName.foreach(__v => __obj.updateDynamic("nodeName")(__v.asInstanceOf[js.Any]))
+      podName.foreach(__v => __obj.updateDynamic("podName")(__v.asInstanceOf[js.Any]))
+      serviceAccountName.foreach(__v => __obj.updateDynamic("serviceAccountName")(__v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksPodPropertiesDetail]
+    }
+  }
+
+  /** An object that contains overrides for the Kubernetes pod properties of a job.
+    */
+  @js.native
+  trait EksPodPropertiesOverride extends js.Object {
+    var containers: js.UndefOr[EksContainerOverrideList]
+  }
+
+  object EksPodPropertiesOverride {
+    @inline
+    def apply(
+        containers: js.UndefOr[EksContainerOverrideList] = js.undefined
+    ): EksPodPropertiesOverride = {
+      val __obj = js.Dynamic.literal()
+      containers.foreach(__v => __obj.updateDynamic("containers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksPodPropertiesOverride]
+    }
+  }
+
+  /** An object that contains the properties for the Kubernetes resources of a job.
+    */
+  @js.native
+  trait EksProperties extends js.Object {
+    var podProperties: js.UndefOr[EksPodProperties]
+  }
+
+  object EksProperties {
+    @inline
+    def apply(
+        podProperties: js.UndefOr[EksPodProperties] = js.undefined
+    ): EksProperties = {
+      val __obj = js.Dynamic.literal()
+      podProperties.foreach(__v => __obj.updateDynamic("podProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksProperties]
+    }
+  }
+
+  /** An object that contains the details for the Kubernetes resources of a job.
+    */
+  @js.native
+  trait EksPropertiesDetail extends js.Object {
+    var podProperties: js.UndefOr[EksPodPropertiesDetail]
+  }
+
+  object EksPropertiesDetail {
+    @inline
+    def apply(
+        podProperties: js.UndefOr[EksPodPropertiesDetail] = js.undefined
+    ): EksPropertiesDetail = {
+      val __obj = js.Dynamic.literal()
+      podProperties.foreach(__v => __obj.updateDynamic("podProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksPropertiesDetail]
+    }
+  }
+
+  /** An object that contains overrides for the Kubernetes resources of a job.
+    */
+  @js.native
+  trait EksPropertiesOverride extends js.Object {
+    var podProperties: js.UndefOr[EksPodPropertiesOverride]
+  }
+
+  object EksPropertiesOverride {
+    @inline
+    def apply(
+        podProperties: js.UndefOr[EksPodPropertiesOverride] = js.undefined
+    ): EksPropertiesOverride = {
+      val __obj = js.Dynamic.literal()
+      podProperties.foreach(__v => __obj.updateDynamic("podProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksPropertiesOverride]
+    }
+  }
+
+  /** Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see [[https://kubernetes.io/docs/concepts/storage/volumes/#secret|secret]] in the <i>Kubernetes documentation</i>.
+    */
+  @js.native
+  trait EksSecret extends js.Object {
+    var secretName: String
+    var optional: js.UndefOr[Boolean]
+  }
+
+  object EksSecret {
+    @inline
+    def apply(
+        secretName: String,
+        optional: js.UndefOr[Boolean] = js.undefined
+    ): EksSecret = {
+      val __obj = js.Dynamic.literal(
+        "secretName" -> secretName.asInstanceOf[js.Any]
+      )
+
+      optional.foreach(__v => __obj.updateDynamic("optional")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksSecret]
+    }
+  }
+
+  /** Specifies an Amazon EKS volume for a job definition.
+    */
+  @js.native
+  trait EksVolume extends js.Object {
+    var name: String
+    var emptyDir: js.UndefOr[EksEmptyDir]
+    var hostPath: js.UndefOr[EksHostPath]
+    var secret: js.UndefOr[EksSecret]
+  }
+
+  object EksVolume {
+    @inline
+    def apply(
+        name: String,
+        emptyDir: js.UndefOr[EksEmptyDir] = js.undefined,
+        hostPath: js.UndefOr[EksHostPath] = js.undefined,
+        secret: js.UndefOr[EksSecret] = js.undefined
+    ): EksVolume = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      emptyDir.foreach(__v => __obj.updateDynamic("emptyDir")(__v.asInstanceOf[js.Any]))
+      hostPath.foreach(__v => __obj.updateDynamic("hostPath")(__v.asInstanceOf[js.Any]))
+      secret.foreach(__v => __obj.updateDynamic("secret")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EksVolume]
+    }
+  }
+
+  /** Specifies an array of up to 5 conditions to be met, and an action to take (<code>RETRY</code> or <code>EXIT</code>) if all conditions are met. If none of the <code>EvaluateOnExit</code> conditions in a <code>RetryStrategy</code> match, then the job is retried.
     */
   @js.native
   trait EvaluateOnExit extends js.Object {
@@ -1314,7 +1912,7 @@ package object batch {
     }
   }
 
-  /** Determine whether your data volume persists on the host container instance and where it is stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist after the containers associated with it stop running.
+  /** Determine whether your data volume persists on the host container instance and where it's stored. If this parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to persist after the containers that are associated with it stop running.
     */
   @js.native
   trait Host extends js.Object {
@@ -1332,7 +1930,7 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch job definition.
+  /** An object that represents an Batch job definition.
     */
   @js.native
   trait JobDefinition extends js.Object {
@@ -1340,7 +1938,9 @@ package object batch {
     var jobDefinitionName: String
     var revision: Int
     var `type`: String
+    var containerOrchestrationType: js.UndefOr[OrchestrationType]
     var containerProperties: js.UndefOr[ContainerProperties]
+    var eksProperties: js.UndefOr[EksProperties]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
     var platformCapabilities: js.UndefOr[PlatformCapabilityList]
@@ -1359,7 +1959,9 @@ package object batch {
         jobDefinitionName: String,
         revision: Int,
         `type`: String,
+        containerOrchestrationType: js.UndefOr[OrchestrationType] = js.undefined,
         containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
+        eksProperties: js.UndefOr[EksProperties] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
@@ -1377,7 +1979,9 @@ package object batch {
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      containerOrchestrationType.foreach(__v => __obj.updateDynamic("containerOrchestrationType")(__v.asInstanceOf[js.Any]))
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
+      eksProperties.foreach(__v => __obj.updateDynamic("eksProperties")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
@@ -1391,7 +1995,7 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch job dependency.
+  /** An object that represents an Batch job dependency.
     */
   @js.native
   trait JobDependency extends js.Object {
@@ -1412,7 +2016,7 @@ package object batch {
     }
   }
 
-  /** An object representing an Batch job.
+  /** An object that represents an Batch job.
     */
   @js.native
   trait JobDetail extends js.Object {
@@ -1427,6 +2031,8 @@ package object batch {
     var container: js.UndefOr[ContainerDetail]
     var createdAt: js.UndefOr[Double]
     var dependsOn: js.UndefOr[JobDependencyList]
+    var eksAttempts: js.UndefOr[EksAttemptDetails]
+    var eksProperties: js.UndefOr[EksPropertiesDetail]
     var jobArn: js.UndefOr[String]
     var nodeDetails: js.UndefOr[NodeDetails]
     var nodeProperties: js.UndefOr[NodeProperties]
@@ -1456,6 +2062,8 @@ package object batch {
         container: js.UndefOr[ContainerDetail] = js.undefined,
         createdAt: js.UndefOr[Double] = js.undefined,
         dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
+        eksAttempts: js.UndefOr[EksAttemptDetails] = js.undefined,
+        eksProperties: js.UndefOr[EksPropertiesDetail] = js.undefined,
         jobArn: js.UndefOr[String] = js.undefined,
         nodeDetails: js.UndefOr[NodeDetails] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
@@ -1484,6 +2092,8 @@ package object batch {
       container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      eksAttempts.foreach(__v => __obj.updateDynamic("eksAttempts")(__v.asInstanceOf[js.Any]))
+      eksProperties.foreach(__v => __obj.updateDynamic("eksProperties")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       nodeDetails.foreach(__v => __obj.updateDynamic("nodeDetails")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
@@ -1501,7 +2111,7 @@ package object batch {
     }
   }
 
-  /** An object representing the details of an Batch job queue.
+  /** An object that represents the details for an Batch job queue.
     */
   @js.native
   trait JobQueueDetail extends js.Object {
@@ -1545,7 +2155,7 @@ package object batch {
     }
   }
 
-  /** An object representing summary details of a job.
+  /** An object that represents summary details of a job.
     */
   @js.native
   trait JobSummary extends js.Object {
@@ -1598,7 +2208,7 @@ package object batch {
     }
   }
 
-  /** An object representing a job timeout configuration.
+  /** An object that represents a job timeout configuration.
     */
   @js.native
   trait JobTimeout extends js.Object {
@@ -1658,7 +2268,7 @@ package object batch {
     }
   }
 
-  /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both. If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
+  /** An object that represents a launch template that's associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both. If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
     *
     * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
@@ -1774,6 +2384,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>ListSchedulingPolicies</code>.
+    */
   @js.native
   trait ListSchedulingPoliciesRequest extends js.Object {
     var maxResults: js.UndefOr[Int]
@@ -1812,6 +2424,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>ListTagsForResource</code>.
+    */
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: String
@@ -1871,7 +2485,7 @@ package object batch {
     }
   }
 
-  /** Details on a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the Docker Remote API and the <code>--volume</code> option to docker run.
+  /** Details for a Docker volume mount point that's used in a job's container properties. This parameter maps to <code>Volumes</code> in the [[https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container|Create a container]] section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.
     */
   @js.native
   trait MountPoint extends js.Object {
@@ -1913,7 +2527,7 @@ package object batch {
     }
   }
 
-  /** An object representing the elastic network interface for a multi-node parallel job node.
+  /** An object that represents the elastic network interface for a multi-node parallel job node.
     */
   @js.native
   trait NetworkInterface extends js.Object {
@@ -1937,7 +2551,7 @@ package object batch {
     }
   }
 
-  /** An object representing the details of a multi-node parallel job node.
+  /** An object that represents the details of a multi-node parallel job node.
     */
   @js.native
   trait NodeDetails extends js.Object {
@@ -1958,9 +2572,9 @@ package object batch {
     }
   }
 
-  /** Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+  /** An object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
     *
-    * '''Note:'''This isn't applicable to jobs that are running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.
+    * '''Note:'''This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs. Rather, use <code>containerOverrides</code> instead.
     */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1981,7 +2595,9 @@ package object batch {
     }
   }
 
-  /** An object representing the node properties of a multi-node parallel job.
+  /** An object that represents the node properties of a multi-node parallel job.
+    *
+    * '''Note:'''Node properties can't be specified for Amazon EKS based job definitions.
     */
   @js.native
   trait NodeProperties extends js.Object {
@@ -2006,7 +2622,7 @@ package object batch {
     }
   }
 
-  /** An object representing the properties of a node that's associated with a multi-node parallel job.
+  /** An object that represents the properties of a node that's associated with a multi-node parallel job.
     */
   @js.native
   trait NodePropertiesSummary extends js.Object {
@@ -2030,7 +2646,7 @@ package object batch {
     }
   }
 
-  /** Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+  /** The object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
     */
   @js.native
   trait NodePropertyOverride extends js.Object {
@@ -2053,7 +2669,7 @@ package object batch {
     }
   }
 
-  /** An object representing the properties of the node range for a multi-node parallel job.
+  /** An object that represents the properties of the node range for a multi-node parallel job.
     */
   @js.native
   trait NodeRangeProperty extends js.Object {
@@ -2083,6 +2699,7 @@ package object batch {
     var jobDefinitionName: String
     var `type`: JobDefinitionType
     var containerProperties: js.UndefOr[ContainerProperties]
+    var eksProperties: js.UndefOr[EksProperties]
     var nodeProperties: js.UndefOr[NodeProperties]
     var parameters: js.UndefOr[ParametersMap]
     var platformCapabilities: js.UndefOr[PlatformCapabilityList]
@@ -2099,6 +2716,7 @@ package object batch {
         jobDefinitionName: String,
         `type`: JobDefinitionType,
         containerProperties: js.UndefOr[ContainerProperties] = js.undefined,
+        eksProperties: js.UndefOr[EksProperties] = js.undefined,
         nodeProperties: js.UndefOr[NodeProperties] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
@@ -2114,6 +2732,7 @@ package object batch {
       )
 
       containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
+      eksProperties.foreach(__v => __obj.updateDynamic("eksProperties")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
@@ -2171,7 +2790,7 @@ package object batch {
     }
   }
 
-  /** The retry strategy associated with a job. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html|Automated job retries]] in the <i>Batch User Guide</i>.
+  /** The retry strategy that's associated with a job. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html|Automated job retries]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait RetryStrategy extends js.Object {
@@ -2240,7 +2859,7 @@ package object batch {
     }
   }
 
-  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>Batch User Guide</i>.
+  /** An object that represents the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {
@@ -2295,6 +2914,7 @@ package object batch {
     var arrayProperties: js.UndefOr[ArrayProperties]
     var containerOverrides: js.UndefOr[ContainerOverrides]
     var dependsOn: js.UndefOr[JobDependencyList]
+    var eksPropertiesOverride: js.UndefOr[EksPropertiesOverride]
     var nodeOverrides: js.UndefOr[NodeOverrides]
     var parameters: js.UndefOr[ParametersMap]
     var propagateTags: js.UndefOr[Boolean]
@@ -2314,6 +2934,7 @@ package object batch {
         arrayProperties: js.UndefOr[ArrayProperties] = js.undefined,
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
         dependsOn: js.UndefOr[JobDependencyList] = js.undefined,
+        eksPropertiesOverride: js.UndefOr[EksPropertiesOverride] = js.undefined,
         nodeOverrides: js.UndefOr[NodeOverrides] = js.undefined,
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         propagateTags: js.UndefOr[Boolean] = js.undefined,
@@ -2332,6 +2953,7 @@ package object batch {
       arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      eksPropertiesOverride.foreach(__v => __obj.updateDynamic("eksPropertiesOverride")(__v.asInstanceOf[js.Any]))
       nodeOverrides.foreach(__v => __obj.updateDynamic("nodeOverrides")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
@@ -2368,6 +2990,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>TagResource</code>.
+    */
   @js.native
   trait TagResourceRequest extends js.Object {
     var resourceArn: String
@@ -2432,7 +3056,7 @@ package object batch {
     }
   }
 
-  /** The container path, mount options, and size of the tmpfs mount.
+  /** The container path, mount options, and size of the <code>tmpfs</code> mount.
     *
     * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
@@ -2487,6 +3111,8 @@ package object batch {
     }
   }
 
+  /** Contains the parameters for <code>UntagResource</code>.
+    */
   @js.native
   trait UntagResourceRequest extends js.Object {
     var resourceArn: String
@@ -2527,6 +3153,7 @@ package object batch {
     var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
     var unmanagedvCpus: js.UndefOr[Int]
+    var updatePolicy: js.UndefOr[UpdatePolicy]
   }
 
   object UpdateComputeEnvironmentRequest {
@@ -2536,7 +3163,8 @@ package object batch {
         computeResources: js.UndefOr[ComputeResourceUpdate] = js.undefined,
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined,
-        unmanagedvCpus: js.UndefOr[Int] = js.undefined
+        unmanagedvCpus: js.UndefOr[Int] = js.undefined,
+        updatePolicy: js.UndefOr[UpdatePolicy] = js.undefined
     ): UpdateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
@@ -2546,6 +3174,7 @@ package object batch {
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       unmanagedvCpus.foreach(__v => __obj.updateDynamic("unmanagedvCpus")(__v.asInstanceOf[js.Any]))
+      updatePolicy.foreach(__v => __obj.updateDynamic("updatePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateComputeEnvironmentRequest]
     }
   }
@@ -2620,6 +3249,29 @@ package object batch {
     }
   }
 
+  /** Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see [[https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html|Updating compute environments]] in the <i>Batch User Guide</i>.
+    */
+  @js.native
+  trait UpdatePolicy extends js.Object {
+    var jobExecutionTimeoutMinutes: js.UndefOr[JobExecutionTimeoutMinutes]
+    var terminateJobsOnUpdate: js.UndefOr[Boolean]
+  }
+
+  object UpdatePolicy {
+    @inline
+    def apply(
+        jobExecutionTimeoutMinutes: js.UndefOr[JobExecutionTimeoutMinutes] = js.undefined,
+        terminateJobsOnUpdate: js.UndefOr[Boolean] = js.undefined
+    ): UpdatePolicy = {
+      val __obj = js.Dynamic.literal()
+      jobExecutionTimeoutMinutes.foreach(__v => __obj.updateDynamic("jobExecutionTimeoutMinutes")(__v.asInstanceOf[js.Any]))
+      terminateJobsOnUpdate.foreach(__v => __obj.updateDynamic("terminateJobsOnUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePolicy]
+    }
+  }
+
+  /** Contains the parameters for <code>UpdateSchedulingPolicy</code>.
+    */
   @js.native
   trait UpdateSchedulingPolicyRequest extends js.Object {
     var arn: String
@@ -2652,7 +3304,7 @@ package object batch {
     }
   }
 
-  /** A data volume used in a job's container properties.
+  /** A data volume that's used in a job's container properties.
     */
   @js.native
   trait Volume extends js.Object {

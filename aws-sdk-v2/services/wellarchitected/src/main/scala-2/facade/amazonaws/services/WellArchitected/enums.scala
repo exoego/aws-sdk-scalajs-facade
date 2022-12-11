@@ -3,6 +3,15 @@ package facade.amazonaws.services.wellarchitected
 import scalajs.js
 
 @js.native
+sealed trait AdditionalResourceType extends js.Any
+object AdditionalResourceType {
+  val HELPFUL_RESOURCE = "HELPFUL_RESOURCE".asInstanceOf[AdditionalResourceType]
+  val IMPROVEMENT_PLAN = "IMPROVEMENT_PLAN".asInstanceOf[AdditionalResourceType]
+
+  @inline def values: js.Array[AdditionalResourceType] = js.Array(HELPFUL_RESOURCE, IMPROVEMENT_PLAN)
+}
+
+@js.native
 sealed trait AnswerReason extends js.Any
 object AnswerReason {
   val OUT_OF_SCOPE = "OUT_OF_SCOPE".asInstanceOf[AnswerReason]
@@ -12,6 +21,37 @@ object AnswerReason {
   val NONE = "NONE".asInstanceOf[AnswerReason]
 
   @inline def values: js.Array[AnswerReason] = js.Array(OUT_OF_SCOPE, BUSINESS_PRIORITIES, ARCHITECTURE_CONSTRAINTS, OTHER, NONE)
+}
+
+@js.native
+sealed trait CheckFailureReason extends js.Any
+object CheckFailureReason {
+  val ASSUME_ROLE_ERROR = "ASSUME_ROLE_ERROR".asInstanceOf[CheckFailureReason]
+  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[CheckFailureReason]
+  val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[CheckFailureReason]
+  val PREMIUM_SUPPORT_REQUIRED = "PREMIUM_SUPPORT_REQUIRED".asInstanceOf[CheckFailureReason]
+
+  @inline def values: js.Array[CheckFailureReason] = js.Array(ASSUME_ROLE_ERROR, ACCESS_DENIED, UNKNOWN_ERROR, PREMIUM_SUPPORT_REQUIRED)
+}
+
+@js.native
+sealed trait CheckProvider extends js.Any
+object CheckProvider {
+  val TRUSTED_ADVISOR = "TRUSTED_ADVISOR".asInstanceOf[CheckProvider]
+
+  @inline def values: js.Array[CheckProvider] = js.Array(TRUSTED_ADVISOR)
+}
+
+@js.native
+sealed trait CheckStatus extends js.Any
+object CheckStatus {
+  val OKAY = "OKAY".asInstanceOf[CheckStatus]
+  val WARNING = "WARNING".asInstanceOf[CheckStatus]
+  val ERROR = "ERROR".asInstanceOf[CheckStatus]
+  val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[CheckStatus]
+  val FETCH_FAILED = "FETCH_FAILED".asInstanceOf[CheckStatus]
+
+  @inline def values: js.Array[CheckStatus] = js.Array(OKAY, WARNING, ERROR, NOT_AVAILABLE, FETCH_FAILED)
 }
 
 @js.native
@@ -97,6 +137,15 @@ object NotificationType {
   @inline def values: js.Array[NotificationType] = js.Array(LENS_VERSION_UPGRADED, LENS_VERSION_DEPRECATED)
 }
 
+@js.native
+sealed trait OrganizationSharingStatus extends js.Any
+object OrganizationSharingStatus {
+  val ENABLED = "ENABLED".asInstanceOf[OrganizationSharingStatus]
+  val DISABLED = "DISABLED".asInstanceOf[OrganizationSharingStatus]
+
+  @inline def values: js.Array[OrganizationSharingStatus] = js.Array(ENABLED, DISABLED)
+}
+
 /** Permission granted on a workload share.
   */
 @js.native
@@ -152,8 +201,20 @@ object ShareStatus {
   val PENDING = "PENDING".asInstanceOf[ShareStatus]
   val REVOKED = "REVOKED".asInstanceOf[ShareStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[ShareStatus]
+  val ASSOCIATING = "ASSOCIATING".asInstanceOf[ShareStatus]
+  val ASSOCIATED = "ASSOCIATED".asInstanceOf[ShareStatus]
+  val FAILED = "FAILED".asInstanceOf[ShareStatus]
 
-  @inline def values: js.Array[ShareStatus] = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED)
+  @inline def values: js.Array[ShareStatus] = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED, ASSOCIATING, ASSOCIATED, FAILED)
+}
+
+@js.native
+sealed trait TrustedAdvisorIntegrationStatus extends js.Any
+object TrustedAdvisorIntegrationStatus {
+  val ENABLED = "ENABLED".asInstanceOf[TrustedAdvisorIntegrationStatus]
+  val DISABLED = "DISABLED".asInstanceOf[TrustedAdvisorIntegrationStatus]
+
+  @inline def values: js.Array[TrustedAdvisorIntegrationStatus] = js.Array(ENABLED, DISABLED)
 }
 
 /** The environment for the workload.

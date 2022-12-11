@@ -23,6 +23,7 @@ package object dlm {
   type DescriptionRegex = String
   type Encrypted = Boolean
   type ExcludeBootVolume = Boolean
+  type ExcludeDataVolumeTagList = js.Array[Tag]
   type ExecutionRoleArn = String
   type Interval = Int
   type LifecyclePolicySummaryList = js.Array[LifecyclePolicySummary]
@@ -38,6 +39,8 @@ package object dlm {
   type ShareRules = js.Array[ShareRule]
   type ShareTargetAccountList = js.Array[AwsAccountId]
   type SnapshotOwnerList = js.Array[AwsAccountId]
+  type StandardTierRetainRuleCount = Int
+  type StandardTierRetainRuleInterval = Int
   type StatusMessage = String
   type TagFilter = String
   type TagKey = String
@@ -88,7 +91,7 @@ package object dlm {
     }
   }
 
-  /** Specifies an action for an event-based policy.
+  /** \```[Event-based policies only]``` Specifies an action for an event-based policy.
     */
   @js.native
   trait Action extends js.Object {
@@ -107,6 +110,44 @@ package object dlm {
         "Name" -> Name.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Action]
+    }
+  }
+
+  /** \```[Snapshot policies only]``` Specifies information about the archive storage tier retention period.
+    */
+  @js.native
+  trait ArchiveRetainRule extends js.Object {
+    var RetentionArchiveTier: RetentionArchiveTier
+  }
+
+  object ArchiveRetainRule {
+    @inline
+    def apply(
+        RetentionArchiveTier: RetentionArchiveTier
+    ): ArchiveRetainRule = {
+      val __obj = js.Dynamic.literal(
+        "RetentionArchiveTier" -> RetentionArchiveTier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ArchiveRetainRule]
+    }
+  }
+
+  /** \```[Snapshot policies only]``` Specifies a snapshot archiving rule for a schedule.
+    */
+  @js.native
+  trait ArchiveRule extends js.Object {
+    var RetainRule: ArchiveRetainRule
+  }
+
+  object ArchiveRule {
+    @inline
+    def apply(
+        RetainRule: ArchiveRetainRule
+    ): ArchiveRule = {
+      val __obj = js.Dynamic.literal(
+        "RetainRule" -> RetainRule.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ArchiveRule]
     }
   }
 
@@ -156,7 +197,9 @@ package object dlm {
     }
   }
 
-  /** Specifies when to create snapshots of EBS volumes. You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
+  /** \```[Snapshot and AMI policies only]``` Specifies when the policy should create snapshots or AMIs.
+    *
+    * '''Note:'''* You must specify either ```CronExpression```, or ```Interval```, ```IntervalUnit```, and ```Times```. * If you need to specify an <a>ArchiveRule</a> for the schedule, then you must specify a creation frequency of at least 28 days.
     */
   @js.native
   trait CreateRule extends js.Object {
@@ -186,7 +229,9 @@ package object dlm {
     }
   }
 
-  /** Specifies a rule for copying shared snapshots across Regions.
+  /** \```[Event-based policies only]``` Specifies a cross-Region copy action for event-based policies.
+    *
+    * '''Note:'''To specify a cross-Region copy rule for snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.
     */
   @js.native
   trait CrossRegionCopyAction extends js.Object {
@@ -212,7 +257,7 @@ package object dlm {
     }
   }
 
-  /** Specifies an AMI deprecation rule for cross-Region AMI copies created by a cross-Region copy rule.
+  /** \```[AMI policies only]``` Specifies an AMI deprecation rule for cross-Region AMI copies created by an AMI policy.
     */
   @js.native
   trait CrossRegionCopyDeprecateRule extends js.Object {
@@ -233,7 +278,7 @@ package object dlm {
     }
   }
 
-  /** Specifies the retention rule for cross-Region snapshot copies.
+  /** Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.
     */
   @js.native
   trait CrossRegionCopyRetainRule extends js.Object {
@@ -254,7 +299,9 @@ package object dlm {
     }
   }
 
-  /** Specifies a rule for cross-Region snapshot copies.
+  /** \```[Snapshot and AMI policies only]``` Specifies a cross-Region copy rule for snapshot and AMI policies.
+    *
+    * '''Note:'''To specify a cross-Region copy action for event-based polices, use <a>CrossRegionCopyAction</a>.
     */
   @js.native
   trait CrossRegionCopyRule extends js.Object {
@@ -320,7 +367,7 @@ package object dlm {
     }
   }
 
-  /** Specifies an AMI deprecation rule for a schedule.
+  /** \```[AMI policies only]``` Specifies an AMI deprecation rule for AMIs created by an AMI lifecycle policy. For age-based schedules, you must specify ```Interval``` and ```IntervalUnit```. For count-based schedules, you must specify ```Count```.
     */
   @js.native
   trait DeprecateRule extends js.Object {
@@ -344,7 +391,7 @@ package object dlm {
     }
   }
 
-  /** Specifies the encryption settings for shared snapshots that are copied across Regions.
+  /** \```[Event-based policies only]``` Specifies the encryption settings for cross-Region snapshot copies created by event-based policies.
     */
   @js.native
   trait EncryptionConfiguration extends js.Object {
@@ -367,7 +414,7 @@ package object dlm {
     }
   }
 
-  /** Specifies an event that triggers an event-based policy.
+  /** \```[Event-based policies only]``` Specifies an event that activates an event-based policy.
     */
   @js.native
   trait EventParameters extends js.Object {
@@ -392,7 +439,7 @@ package object dlm {
     }
   }
 
-  /** Specifies an event that triggers an event-based policy.
+  /** \```[Event-based policies only]``` Specifies an event that activates an event-based policy.
     */
   @js.native
   trait EventSource extends js.Object {
@@ -415,7 +462,7 @@ package object dlm {
     }
   }
 
-  /** Specifies a rule for enabling fast snapshot restore. You can enable fast snapshot restore based on either a count or a time interval.
+  /** \```[Snapshot policies only]``` Specifies a rule for enabling fast snapshot restore for snapshots created by snapshot policies. You can enable fast snapshot restore based on either a count or a time interval.
     */
   @js.native
   trait FastRestoreRule extends js.Object {
@@ -521,7 +568,7 @@ package object dlm {
     }
   }
 
-  /** Detailed information about a lifecycle policy.
+  /** \```[All policy types]``` Detailed information about a snapshot, AMI, or event-based lifecycle policy.
     */
   @js.native
   trait LifecyclePolicy extends js.Object {
@@ -629,11 +676,12 @@ package object dlm {
     }
   }
 
-  /** Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy type and resource type.
+  /** \```[Snapshot and AMI policies only]``` Specifies optional parameters for snapshot and AMI policies. The set of valid parameters depends on the combination of policy type and target resource type. If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data volumes attached to an instance, then Amazon Data Lifecycle Manager will not create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html|Monitor your policies using Amazon CloudWatch]].
     */
   @js.native
   trait Parameters extends js.Object {
     var ExcludeBootVolume: js.UndefOr[ExcludeBootVolume]
+    var ExcludeDataVolumeTags: js.UndefOr[ExcludeDataVolumeTagList]
     var NoReboot: js.UndefOr[NoReboot]
   }
 
@@ -641,16 +689,18 @@ package object dlm {
     @inline
     def apply(
         ExcludeBootVolume: js.UndefOr[ExcludeBootVolume] = js.undefined,
+        ExcludeDataVolumeTags: js.UndefOr[ExcludeDataVolumeTagList] = js.undefined,
         NoReboot: js.UndefOr[NoReboot] = js.undefined
     ): Parameters = {
       val __obj = js.Dynamic.literal()
       ExcludeBootVolume.foreach(__v => __obj.updateDynamic("ExcludeBootVolume")(__v.asInstanceOf[js.Any]))
+      ExcludeDataVolumeTags.foreach(__v => __obj.updateDynamic("ExcludeDataVolumeTags")(__v.asInstanceOf[js.Any]))
       NoReboot.foreach(__v => __obj.updateDynamic("NoReboot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parameters]
     }
   }
 
-  /** Specifies the configuration of a lifecycle policy.
+  /** \```[All policy types]``` Specifies the configuration of a lifecycle policy.
     */
   @js.native
   trait PolicyDetails extends js.Object {
@@ -689,20 +739,23 @@ package object dlm {
     }
   }
 
-  /** Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
+  /** \```[Snapshot and AMI policies only]``` Specifies a retention rule for snapshots created by snapshot policies, or for AMIs created by AMI policies.
+    *
+    * '''Note:'''For snapshot policies that have an <a>ArchiveRule</a>, this retention rule applies to standard tier retention. When the retention threshold is met, snapshots are moved from the standard to the archive tier. For snapshot policies that do not have an ```ArchiveRule```, snapshots are permanently deleted when this retention threshold is met. You can retain snapshots based on either a count or a time interval. * ```Count-based retention``` You must specify ```Count```. If you specify an <a>ArchiveRule</a> for the schedule, then you can specify a retention count of <code>0</code> to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention count of <code>1</code> or more. * ```Age-based retention``` You must specify ```Interval``` and ```IntervalUnit```. If you specify an <a>ArchiveRule</a> for the schedule, then you can specify a retention interval of
+    * <code>0</code> days to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention interval of <code>1</code> day or more.
     */
   @js.native
   trait RetainRule extends js.Object {
-    var Count: js.UndefOr[Count]
-    var Interval: js.UndefOr[Interval]
+    var Count: js.UndefOr[StandardTierRetainRuleCount]
+    var Interval: js.UndefOr[StandardTierRetainRuleInterval]
     var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
   }
 
   object RetainRule {
     @inline
     def apply(
-        Count: js.UndefOr[Count] = js.undefined,
-        Interval: js.UndefOr[Interval] = js.undefined,
+        Count: js.UndefOr[StandardTierRetainRuleCount] = js.undefined,
+        Interval: js.UndefOr[StandardTierRetainRuleInterval] = js.undefined,
         IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
     ): RetainRule = {
       val __obj = js.Dynamic.literal()
@@ -713,10 +766,37 @@ package object dlm {
     }
   }
 
-  /** Specifies a backup schedule for a snapshot or AMI lifecycle policy.
+  /** \```[Snapshot policies only]``` Describes the retention rule for archived snapshots. Once the archive retention threshold is met, the snapshots are permanently deleted from the archive tier.
+    *
+    * '''Note:'''The archive retention rule must retain snapshots in the archive tier for a minimum of 90 days. For ```count-based schedules```, you must specify ```Count```. For ```age-based schedules```, you must specify ```Interval``` and ``` IntervalUnit```. For more information about using snapshot archiving, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive|Considerations for snapshot lifecycle policies]].
+    */
+  @js.native
+  trait RetentionArchiveTier extends js.Object {
+    var Count: js.UndefOr[Count]
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object RetentionArchiveTier {
+    @inline
+    def apply(
+        Count: js.UndefOr[Count] = js.undefined,
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): RetentionArchiveTier = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetentionArchiveTier]
+    }
+  }
+
+  /** \```[Snapshot and AMI policies only]``` Specifies a schedule for a snapshot or AMI lifecycle policy.
     */
   @js.native
   trait Schedule extends js.Object {
+    var ArchiveRule: js.UndefOr[ArchiveRule]
     var CopyTags: js.UndefOr[CopyTags]
     var CreateRule: js.UndefOr[CreateRule]
     var CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules]
@@ -732,6 +812,7 @@ package object dlm {
   object Schedule {
     @inline
     def apply(
+        ArchiveRule: js.UndefOr[ArchiveRule] = js.undefined,
         CopyTags: js.UndefOr[CopyTags] = js.undefined,
         CreateRule: js.UndefOr[CreateRule] = js.undefined,
         CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules] = js.undefined,
@@ -744,6 +825,7 @@ package object dlm {
         VariableTags: js.UndefOr[VariableTagsList] = js.undefined
     ): Schedule = {
       val __obj = js.Dynamic.literal()
+      ArchiveRule.foreach(__v => __obj.updateDynamic("ArchiveRule")(__v.asInstanceOf[js.Any]))
       CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
       CreateRule.foreach(__v => __obj.updateDynamic("CreateRule")(__v.asInstanceOf[js.Any]))
       CrossRegionCopyRules.foreach(__v => __obj.updateDynamic("CrossRegionCopyRules")(__v.asInstanceOf[js.Any]))
@@ -758,7 +840,7 @@ package object dlm {
     }
   }
 
-  /** Specifies a rule for sharing snapshots across Amazon Web Services accounts.
+  /** \```[Snapshot policies only]``` Specifies a rule for sharing snapshots across Amazon Web Services accounts.
     */
   @js.native
   trait ShareRule extends js.Object {

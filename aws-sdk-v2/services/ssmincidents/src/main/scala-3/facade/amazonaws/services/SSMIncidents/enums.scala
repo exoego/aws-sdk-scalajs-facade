@@ -10,7 +10,7 @@ object IncidentRecordStatus {
   inline def values: js.Array[IncidentRecordStatus] = js.Array(OPEN, RESOLVED)
 }
 
-type ItemType = "ANALYSIS" | "INCIDENT" | "METRIC" | "PARENT" | "ATTACHMENT" | "OTHER"
+type ItemType = "ANALYSIS" | "INCIDENT" | "METRIC" | "PARENT" | "ATTACHMENT" | "OTHER" | "AUTOMATION" | "INVOLVED_RESOURCE" | "TASK"
 object ItemType {
   inline val ANALYSIS: "ANALYSIS" = "ANALYSIS"
   inline val INCIDENT: "INCIDENT" = "INCIDENT"
@@ -18,8 +18,11 @@ object ItemType {
   inline val PARENT: "PARENT" = "PARENT"
   inline val ATTACHMENT: "ATTACHMENT" = "ATTACHMENT"
   inline val OTHER: "OTHER" = "OTHER"
+  inline val AUTOMATION: "AUTOMATION" = "AUTOMATION"
+  inline val INVOLVED_RESOURCE: "INVOLVED_RESOURCE" = "INVOLVED_RESOURCE"
+  inline val TASK: "TASK" = "TASK"
 
-  inline def values: js.Array[ItemType] = js.Array(ANALYSIS, INCIDENT, METRIC, PARENT, ATTACHMENT, OTHER)
+  inline def values: js.Array[ItemType] = js.Array(ANALYSIS, INCIDENT, METRIC, PARENT, ATTACHMENT, OTHER, AUTOMATION, INVOLVED_RESOURCE, TASK)
 }
 
 type RegionStatus = "ACTIVE" | "CREATING" | "DELETING" | "FAILED"
@@ -64,4 +67,12 @@ object TimelineEventSort {
   inline val EVENT_TIME: "EVENT_TIME" = "EVENT_TIME"
 
   inline def values: js.Array[TimelineEventSort] = js.Array(EVENT_TIME)
+}
+
+type VariableType = "INCIDENT_RECORD_ARN" | "INVOLVED_RESOURCES"
+object VariableType {
+  inline val INCIDENT_RECORD_ARN: "INCIDENT_RECORD_ARN" = "INCIDENT_RECORD_ARN"
+  inline val INVOLVED_RESOURCES: "INVOLVED_RESOURCES" = "INVOLVED_RESOURCES"
+
+  inline def values: js.Array[VariableType] = js.Array(INCIDENT_RECORD_ARN, INVOLVED_RESOURCES)
 }

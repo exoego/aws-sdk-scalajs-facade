@@ -2,7 +2,7 @@ package facade.amazonaws.services.textract
 
 import scalajs.js
 
-type BlockType = "KEY_VALUE_SET" | "PAGE" | "LINE" | "WORD" | "TABLE" | "CELL" | "SELECTION_ELEMENT"
+type BlockType = "KEY_VALUE_SET" | "PAGE" | "LINE" | "WORD" | "TABLE" | "CELL" | "SELECTION_ELEMENT" | "MERGED_CELL" | "TITLE" | "QUERY" | "QUERY_RESULT" | "SIGNATURE"
 object BlockType {
   inline val KEY_VALUE_SET: "KEY_VALUE_SET" = "KEY_VALUE_SET"
   inline val PAGE: "PAGE" = "PAGE"
@@ -11,8 +11,13 @@ object BlockType {
   inline val TABLE: "TABLE" = "TABLE"
   inline val CELL: "CELL" = "CELL"
   inline val SELECTION_ELEMENT: "SELECTION_ELEMENT" = "SELECTION_ELEMENT"
+  inline val MERGED_CELL: "MERGED_CELL" = "MERGED_CELL"
+  inline val TITLE: "TITLE" = "TITLE"
+  inline val QUERY: "QUERY" = "QUERY"
+  inline val QUERY_RESULT: "QUERY_RESULT" = "QUERY_RESULT"
+  inline val SIGNATURE: "SIGNATURE" = "SIGNATURE"
 
-  inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
+  inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT, MERGED_CELL, TITLE, QUERY, QUERY_RESULT, SIGNATURE)
 }
 
 type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
@@ -23,20 +28,23 @@ object ContentClassifier {
   inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
-type EntityType = "KEY" | "VALUE"
+type EntityType = "KEY" | "VALUE" | "COLUMN_HEADER"
 object EntityType {
   inline val KEY: "KEY" = "KEY"
   inline val VALUE: "VALUE" = "VALUE"
+  inline val COLUMN_HEADER: "COLUMN_HEADER" = "COLUMN_HEADER"
 
-  inline def values: js.Array[EntityType] = js.Array(KEY, VALUE)
+  inline def values: js.Array[EntityType] = js.Array(KEY, VALUE, COLUMN_HEADER)
 }
 
-type FeatureType = "TABLES" | "FORMS"
+type FeatureType = "TABLES" | "FORMS" | "QUERIES" | "SIGNATURES"
 object FeatureType {
   inline val TABLES: "TABLES" = "TABLES"
   inline val FORMS: "FORMS" = "FORMS"
+  inline val QUERIES: "QUERIES" = "QUERIES"
+  inline val SIGNATURES: "SIGNATURES" = "SIGNATURES"
 
-  inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS)
+  inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS, QUERIES, SIGNATURES)
 }
 
 type JobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "PARTIAL_SUCCESS"
@@ -49,13 +57,16 @@ object JobStatus {
   inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
 }
 
-type RelationshipType = "VALUE" | "CHILD" | "COMPLEX_FEATURES"
+type RelationshipType = "VALUE" | "CHILD" | "COMPLEX_FEATURES" | "MERGED_CELL" | "TITLE" | "ANSWER"
 object RelationshipType {
   inline val VALUE: "VALUE" = "VALUE"
   inline val CHILD: "CHILD" = "CHILD"
   inline val COMPLEX_FEATURES: "COMPLEX_FEATURES" = "COMPLEX_FEATURES"
+  inline val MERGED_CELL: "MERGED_CELL" = "MERGED_CELL"
+  inline val TITLE: "TITLE" = "TITLE"
+  inline val ANSWER: "ANSWER" = "ANSWER"
 
-  inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
+  inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES, MERGED_CELL, TITLE, ANSWER)
 }
 
 type SelectionStatus = "SELECTED" | "NOT_SELECTED"

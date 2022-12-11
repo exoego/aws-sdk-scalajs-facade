@@ -13,7 +13,12 @@ package object kinesisvideo {
   type DataEndpoint = String
   type DataRetentionChangeInHours = Int
   type DataRetentionInHours = Int
+  type DestinationRegion = String
+  type DestinationUri = String
   type DeviceName = String
+  type FormatConfig = js.Dictionary[FormatConfigValue]
+  type FormatConfigValue = String
+  type HeightPixels = Int
   type KmsKeyId = String
   type ListOfProtocols = js.Array[ChannelProtocol]
   type ListStreamsInputLimit = Int
@@ -24,6 +29,7 @@ package object kinesisvideo {
   type ResourceEndpoint = String
   type ResourceEndpointList = js.Array[ResourceEndpointListItem]
   type ResourceTags = js.Dictionary[TagValue]
+  type SamplingInterval = Int
   type StreamInfoList = js.Array[StreamInfo]
   type StreamName = String
   type TagKey = String
@@ -33,6 +39,7 @@ package object kinesisvideo {
   type TagValue = String
   type Timestamp = js.Date
   type Version = String
+  type WidthPixels = Int
 
   final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
@@ -40,6 +47,8 @@ package object kinesisvideo {
     @inline def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] = service.createStream(params).promise().toFuture
     @inline def deleteSignalingChannelFuture(params: DeleteSignalingChannelInput): Future[DeleteSignalingChannelOutput] = service.deleteSignalingChannel(params).promise().toFuture
     @inline def deleteStreamFuture(params: DeleteStreamInput): Future[DeleteStreamOutput] = service.deleteStream(params).promise().toFuture
+    @inline def describeImageGenerationConfigurationFuture(params: DescribeImageGenerationConfigurationInput): Future[DescribeImageGenerationConfigurationOutput] = service.describeImageGenerationConfiguration(params).promise().toFuture
+    @inline def describeNotificationConfigurationFuture(params: DescribeNotificationConfigurationInput): Future[DescribeNotificationConfigurationOutput] = service.describeNotificationConfiguration(params).promise().toFuture
     @inline def describeSignalingChannelFuture(params: DescribeSignalingChannelInput): Future[DescribeSignalingChannelOutput] = service.describeSignalingChannel(params).promise().toFuture
     @inline def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] = service.describeStream(params).promise().toFuture
     @inline def getDataEndpointFuture(params: GetDataEndpointInput): Future[GetDataEndpointOutput] = service.getDataEndpoint(params).promise().toFuture
@@ -53,6 +62,8 @@ package object kinesisvideo {
     @inline def untagResourceFuture(params: UntagResourceInput): Future[UntagResourceOutput] = service.untagResource(params).promise().toFuture
     @inline def untagStreamFuture(params: UntagStreamInput): Future[UntagStreamOutput] = service.untagStream(params).promise().toFuture
     @inline def updateDataRetentionFuture(params: UpdateDataRetentionInput): Future[UpdateDataRetentionOutput] = service.updateDataRetention(params).promise().toFuture
+    @inline def updateImageGenerationConfigurationFuture(params: UpdateImageGenerationConfigurationInput): Future[UpdateImageGenerationConfigurationOutput] = service.updateImageGenerationConfiguration(params).promise().toFuture
+    @inline def updateNotificationConfigurationFuture(params: UpdateNotificationConfigurationInput): Future[UpdateNotificationConfigurationOutput] = service.updateNotificationConfiguration(params).promise().toFuture
     @inline def updateSignalingChannelFuture(params: UpdateSignalingChannelInput): Future[UpdateSignalingChannelOutput] = service.updateSignalingChannel(params).promise().toFuture
     @inline def updateStreamFuture(params: UpdateStreamInput): Future[UpdateStreamOutput] = service.updateStream(params).promise().toFuture
 
@@ -67,6 +78,8 @@ package object kinesisvideo {
     def createStream(params: CreateStreamInput): Request[CreateStreamOutput] = js.native
     def deleteSignalingChannel(params: DeleteSignalingChannelInput): Request[DeleteSignalingChannelOutput] = js.native
     def deleteStream(params: DeleteStreamInput): Request[DeleteStreamOutput] = js.native
+    def describeImageGenerationConfiguration(params: DescribeImageGenerationConfigurationInput): Request[DescribeImageGenerationConfigurationOutput] = js.native
+    def describeNotificationConfiguration(params: DescribeNotificationConfigurationInput): Request[DescribeNotificationConfigurationOutput] = js.native
     def describeSignalingChannel(params: DescribeSignalingChannelInput): Request[DescribeSignalingChannelOutput] = js.native
     def describeStream(params: DescribeStreamInput): Request[DescribeStreamOutput] = js.native
     def getDataEndpoint(params: GetDataEndpointInput): Request[GetDataEndpointOutput] = js.native
@@ -80,6 +93,8 @@ package object kinesisvideo {
     def untagResource(params: UntagResourceInput): Request[UntagResourceOutput] = js.native
     def untagStream(params: UntagStreamInput): Request[UntagStreamOutput] = js.native
     def updateDataRetention(params: UpdateDataRetentionInput): Request[UpdateDataRetentionOutput] = js.native
+    def updateImageGenerationConfiguration(params: UpdateImageGenerationConfigurationInput): Request[UpdateImageGenerationConfigurationOutput] = js.native
+    def updateNotificationConfiguration(params: UpdateNotificationConfigurationInput): Request[UpdateNotificationConfigurationOutput] = js.native
     def updateSignalingChannel(params: UpdateSignalingChannelInput): Request[UpdateSignalingChannelOutput] = js.native
     def updateStream(params: UpdateStreamInput): Request[UpdateStreamOutput] = js.native
   }
@@ -303,6 +318,76 @@ package object kinesisvideo {
   }
 
   @js.native
+  trait DescribeImageGenerationConfigurationInput extends js.Object {
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+  }
+
+  object DescribeImageGenerationConfigurationInput {
+    @inline
+    def apply(
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): DescribeImageGenerationConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageGenerationConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait DescribeImageGenerationConfigurationOutput extends js.Object {
+    var ImageGenerationConfiguration: js.UndefOr[ImageGenerationConfiguration]
+  }
+
+  object DescribeImageGenerationConfigurationOutput {
+    @inline
+    def apply(
+        ImageGenerationConfiguration: js.UndefOr[ImageGenerationConfiguration] = js.undefined
+    ): DescribeImageGenerationConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      ImageGenerationConfiguration.foreach(__v => __obj.updateDynamic("ImageGenerationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeImageGenerationConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeNotificationConfigurationInput extends js.Object {
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+  }
+
+  object DescribeNotificationConfigurationInput {
+    @inline
+    def apply(
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): DescribeNotificationConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait DescribeNotificationConfigurationOutput extends js.Object {
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
+  }
+
+  object DescribeNotificationConfigurationOutput {
+    @inline
+    def apply(
+        NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined
+    ): DescribeNotificationConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeNotificationConfigurationOutput]
+    }
+  }
+
+  @js.native
   trait DescribeSignalingChannelInput extends js.Object {
     var ChannelARN: js.UndefOr[ResourceARN]
     var ChannelName: js.UndefOr[ChannelName]
@@ -446,6 +531,69 @@ package object kinesisvideo {
       val __obj = js.Dynamic.literal()
       ResourceEndpointList.foreach(__v => __obj.updateDynamic("ResourceEndpointList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSignalingChannelEndpointOutput]
+    }
+  }
+
+  /** The structure that contains the information required for the KVS images delivery. If null, the configuration will be deleted from the stream.
+    */
+  @js.native
+  trait ImageGenerationConfiguration extends js.Object {
+    var DestinationConfig: ImageGenerationDestinationConfig
+    var Format: Format
+    var ImageSelectorType: ImageSelectorType
+    var SamplingInterval: SamplingInterval
+    var Status: ConfigurationStatus
+    var FormatConfig: js.UndefOr[FormatConfig]
+    var HeightPixels: js.UndefOr[HeightPixels]
+    var WidthPixels: js.UndefOr[WidthPixels]
+  }
+
+  object ImageGenerationConfiguration {
+    @inline
+    def apply(
+        DestinationConfig: ImageGenerationDestinationConfig,
+        Format: Format,
+        ImageSelectorType: ImageSelectorType,
+        SamplingInterval: SamplingInterval,
+        Status: ConfigurationStatus,
+        FormatConfig: js.UndefOr[FormatConfig] = js.undefined,
+        HeightPixels: js.UndefOr[HeightPixels] = js.undefined,
+        WidthPixels: js.UndefOr[WidthPixels] = js.undefined
+    ): ImageGenerationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DestinationConfig" -> DestinationConfig.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "ImageSelectorType" -> ImageSelectorType.asInstanceOf[js.Any],
+        "SamplingInterval" -> SamplingInterval.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      FormatConfig.foreach(__v => __obj.updateDynamic("FormatConfig")(__v.asInstanceOf[js.Any]))
+      HeightPixels.foreach(__v => __obj.updateDynamic("HeightPixels")(__v.asInstanceOf[js.Any]))
+      WidthPixels.foreach(__v => __obj.updateDynamic("WidthPixels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImageGenerationConfiguration]
+    }
+  }
+
+  /** The structure that contains the information required to deliver images to a customer.
+    */
+  @js.native
+  trait ImageGenerationDestinationConfig extends js.Object {
+    var DestinationRegion: DestinationRegion
+    var Uri: DestinationUri
+  }
+
+  object ImageGenerationDestinationConfig {
+    @inline
+    def apply(
+        DestinationRegion: DestinationRegion,
+        Uri: DestinationUri
+    ): ImageGenerationDestinationConfig = {
+      val __obj = js.Dynamic.literal(
+        "DestinationRegion" -> DestinationRegion.asInstanceOf[js.Any],
+        "Uri" -> Uri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImageGenerationDestinationConfig]
     }
   }
 
@@ -609,6 +757,47 @@ package object kinesisvideo {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForStreamOutput]
+    }
+  }
+
+  /** The structure that contains the notification information for the KVS images delivery. If this parameter is null, the configuration will be deleted from the stream.
+    */
+  @js.native
+  trait NotificationConfiguration extends js.Object {
+    var DestinationConfig: NotificationDestinationConfig
+    var Status: ConfigurationStatus
+  }
+
+  object NotificationConfiguration {
+    @inline
+    def apply(
+        DestinationConfig: NotificationDestinationConfig,
+        Status: ConfigurationStatus
+    ): NotificationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DestinationConfig" -> DestinationConfig.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NotificationConfiguration]
+    }
+  }
+
+  /** The structure that contains the information required to deliver a notification to a customer.
+    */
+  @js.native
+  trait NotificationDestinationConfig extends js.Object {
+    var Uri: DestinationUri
+  }
+
+  object NotificationDestinationConfig {
+    @inline
+    def apply(
+        Uri: DestinationUri
+    ): NotificationDestinationConfig = {
+      val __obj = js.Dynamic.literal(
+        "Uri" -> Uri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NotificationDestinationConfig]
     }
   }
 
@@ -927,6 +1116,72 @@ package object kinesisvideo {
     def apply(): UpdateDataRetentionOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDataRetentionOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateImageGenerationConfigurationInput extends js.Object {
+    var ImageGenerationConfiguration: js.UndefOr[ImageGenerationConfiguration]
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+  }
+
+  object UpdateImageGenerationConfigurationInput {
+    @inline
+    def apply(
+        ImageGenerationConfiguration: js.UndefOr[ImageGenerationConfiguration] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): UpdateImageGenerationConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      ImageGenerationConfiguration.foreach(__v => __obj.updateDynamic("ImageGenerationConfiguration")(__v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateImageGenerationConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait UpdateImageGenerationConfigurationOutput extends js.Object
+
+  object UpdateImageGenerationConfigurationOutput {
+    @inline
+    def apply(): UpdateImageGenerationConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateImageGenerationConfigurationOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateNotificationConfigurationInput extends js.Object {
+    var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+  }
+
+  object UpdateNotificationConfigurationInput {
+    @inline
+    def apply(
+        NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined
+    ): UpdateNotificationConfigurationInput = {
+      val __obj = js.Dynamic.literal()
+      NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNotificationConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait UpdateNotificationConfigurationOutput extends js.Object
+
+  object UpdateNotificationConfigurationOutput {
+    @inline
+    def apply(): UpdateNotificationConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateNotificationConfigurationOutput]
     }
   }
 

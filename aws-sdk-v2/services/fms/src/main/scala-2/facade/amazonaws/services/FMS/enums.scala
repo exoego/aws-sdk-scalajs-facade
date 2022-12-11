@@ -45,6 +45,46 @@ object DestinationType {
 }
 
 @js.native
+sealed trait FailedItemReason extends js.Any
+object FailedItemReason {
+  val NOT_VALID_ARN = "NOT_VALID_ARN".asInstanceOf[FailedItemReason]
+  val NOT_VALID_PARTITION = "NOT_VALID_PARTITION".asInstanceOf[FailedItemReason]
+  val NOT_VALID_REGION = "NOT_VALID_REGION".asInstanceOf[FailedItemReason]
+  val NOT_VALID_SERVICE = "NOT_VALID_SERVICE".asInstanceOf[FailedItemReason]
+  val NOT_VALID_RESOURCE_TYPE = "NOT_VALID_RESOURCE_TYPE".asInstanceOf[FailedItemReason]
+  val NOT_VALID_ACCOUNT_ID = "NOT_VALID_ACCOUNT_ID".asInstanceOf[FailedItemReason]
+
+  @inline def values: js.Array[FailedItemReason] = js.Array(NOT_VALID_ARN, NOT_VALID_PARTITION, NOT_VALID_REGION, NOT_VALID_SERVICE, NOT_VALID_RESOURCE_TYPE, NOT_VALID_ACCOUNT_ID)
+}
+
+@js.native
+sealed trait FirewallDeploymentModel extends js.Any
+object FirewallDeploymentModel {
+  val CENTRALIZED = "CENTRALIZED".asInstanceOf[FirewallDeploymentModel]
+  val DISTRIBUTED = "DISTRIBUTED".asInstanceOf[FirewallDeploymentModel]
+
+  @inline def values: js.Array[FirewallDeploymentModel] = js.Array(CENTRALIZED, DISTRIBUTED)
+}
+
+@js.native
+sealed trait MarketplaceSubscriptionOnboardingStatus extends js.Any
+object MarketplaceSubscriptionOnboardingStatus {
+  val NO_SUBSCRIPTION = "NO_SUBSCRIPTION".asInstanceOf[MarketplaceSubscriptionOnboardingStatus]
+  val NOT_COMPLETE = "NOT_COMPLETE".asInstanceOf[MarketplaceSubscriptionOnboardingStatus]
+  val COMPLETE = "COMPLETE".asInstanceOf[MarketplaceSubscriptionOnboardingStatus]
+
+  @inline def values: js.Array[MarketplaceSubscriptionOnboardingStatus] = js.Array(NO_SUBSCRIPTION, NOT_COMPLETE, COMPLETE)
+}
+
+@js.native
+sealed trait NetworkFirewallOverrideAction extends js.Any
+object NetworkFirewallOverrideAction {
+  val DROP_TO_ALERT = "DROP_TO_ALERT".asInstanceOf[NetworkFirewallOverrideAction]
+
+  @inline def values: js.Array[NetworkFirewallOverrideAction] = js.Array(DROP_TO_ALERT)
+}
+
+@js.native
 sealed trait PolicyComplianceStatusType extends js.Any
 object PolicyComplianceStatusType {
   val COMPLIANT = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
@@ -63,6 +103,15 @@ object RemediationActionType {
 }
 
 @js.native
+sealed trait RuleOrder extends js.Any
+object RuleOrder {
+  val STRICT_ORDER = "STRICT_ORDER".asInstanceOf[RuleOrder]
+  val DEFAULT_ACTION_ORDER = "DEFAULT_ACTION_ORDER".asInstanceOf[RuleOrder]
+
+  @inline def values: js.Array[RuleOrder] = js.Array(STRICT_ORDER, DEFAULT_ACTION_ORDER)
+}
+
+@js.native
 sealed trait SecurityServiceType extends js.Any
 object SecurityServiceType {
   val WAF = "WAF".asInstanceOf[SecurityServiceType]
@@ -73,8 +122,21 @@ object SecurityServiceType {
   val SECURITY_GROUPS_USAGE_AUDIT = "SECURITY_GROUPS_USAGE_AUDIT".asInstanceOf[SecurityServiceType]
   val NETWORK_FIREWALL = "NETWORK_FIREWALL".asInstanceOf[SecurityServiceType]
   val DNS_FIREWALL = "DNS_FIREWALL".asInstanceOf[SecurityServiceType]
+  val THIRD_PARTY_FIREWALL = "THIRD_PARTY_FIREWALL".asInstanceOf[SecurityServiceType]
+  val IMPORT_NETWORK_FIREWALL = "IMPORT_NETWORK_FIREWALL".asInstanceOf[SecurityServiceType]
 
-  @inline def values: js.Array[SecurityServiceType] = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL, DNS_FIREWALL)
+  @inline def values: js.Array[SecurityServiceType] = js.Array(
+    WAF,
+    WAFV2,
+    SHIELD_ADVANCED,
+    SECURITY_GROUPS_COMMON,
+    SECURITY_GROUPS_CONTENT_AUDIT,
+    SECURITY_GROUPS_USAGE_AUDIT,
+    NETWORK_FIREWALL,
+    DNS_FIREWALL,
+    THIRD_PARTY_FIREWALL,
+    IMPORT_NETWORK_FIREWALL
+  )
 }
 
 @js.native
@@ -106,6 +168,27 @@ object TargetType {
 }
 
 @js.native
+sealed trait ThirdPartyFirewall extends js.Any
+object ThirdPartyFirewall {
+  val PALO_ALTO_NETWORKS_CLOUD_NGFW = "PALO_ALTO_NETWORKS_CLOUD_NGFW".asInstanceOf[ThirdPartyFirewall]
+  val FORTIGATE_CLOUD_NATIVE_FIREWALL = "FORTIGATE_CLOUD_NATIVE_FIREWALL".asInstanceOf[ThirdPartyFirewall]
+
+  @inline def values: js.Array[ThirdPartyFirewall] = js.Array(PALO_ALTO_NETWORKS_CLOUD_NGFW, FORTIGATE_CLOUD_NATIVE_FIREWALL)
+}
+
+@js.native
+sealed trait ThirdPartyFirewallAssociationStatus extends js.Any
+object ThirdPartyFirewallAssociationStatus {
+  val ONBOARDING = "ONBOARDING".asInstanceOf[ThirdPartyFirewallAssociationStatus]
+  val ONBOARD_COMPLETE = "ONBOARD_COMPLETE".asInstanceOf[ThirdPartyFirewallAssociationStatus]
+  val OFFBOARDING = "OFFBOARDING".asInstanceOf[ThirdPartyFirewallAssociationStatus]
+  val OFFBOARD_COMPLETE = "OFFBOARD_COMPLETE".asInstanceOf[ThirdPartyFirewallAssociationStatus]
+  val NOT_EXIST = "NOT_EXIST".asInstanceOf[ThirdPartyFirewallAssociationStatus]
+
+  @inline def values: js.Array[ThirdPartyFirewallAssociationStatus] = js.Array(ONBOARDING, ONBOARD_COMPLETE, OFFBOARDING, OFFBOARD_COMPLETE, NOT_EXIST)
+}
+
+@js.native
 sealed trait ViolationReason extends js.Any
 object ViolationReason {
   val WEB_ACL_MISSING_RULE_GROUP = "WEB_ACL_MISSING_RULE_GROUP".asInstanceOf[ViolationReason]
@@ -122,6 +205,7 @@ object ViolationReason {
   val MISSING_FIREWALL_SUBNET_IN_AZ = "MISSING_FIREWALL_SUBNET_IN_AZ".asInstanceOf[ViolationReason]
   val MISSING_EXPECTED_ROUTE_TABLE = "MISSING_EXPECTED_ROUTE_TABLE".asInstanceOf[ViolationReason]
   val NETWORK_FIREWALL_POLICY_MODIFIED = "NETWORK_FIREWALL_POLICY_MODIFIED".asInstanceOf[ViolationReason]
+  val FIREWALL_SUBNET_IS_OUT_OF_SCOPE = "FIREWALL_SUBNET_IS_OUT_OF_SCOPE".asInstanceOf[ViolationReason]
   val INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE".asInstanceOf[ViolationReason]
   val FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE".asInstanceOf[ViolationReason]
   val UNEXPECTED_FIREWALL_ROUTES = "UNEXPECTED_FIREWALL_ROUTES".asInstanceOf[ViolationReason]
@@ -133,6 +217,8 @@ object ViolationReason {
   val BLACK_HOLE_ROUTE_DETECTED = "BLACK_HOLE_ROUTE_DETECTED".asInstanceOf[ViolationReason]
   val BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET".asInstanceOf[ViolationReason]
   val RESOURCE_MISSING_DNS_FIREWALL = "RESOURCE_MISSING_DNS_FIREWALL".asInstanceOf[ViolationReason]
+  val ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT = "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT".asInstanceOf[ViolationReason]
+  val FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT = "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT".asInstanceOf[ViolationReason]
 
   @inline def values: js.Array[ViolationReason] = js.Array(
     WEB_ACL_MISSING_RULE_GROUP,
@@ -149,6 +235,7 @@ object ViolationReason {
     MISSING_FIREWALL_SUBNET_IN_AZ,
     MISSING_EXPECTED_ROUTE_TABLE,
     NETWORK_FIREWALL_POLICY_MODIFIED,
+    FIREWALL_SUBNET_IS_OUT_OF_SCOPE,
     INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE,
     FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE,
     UNEXPECTED_FIREWALL_ROUTES,
@@ -159,6 +246,8 @@ object ViolationReason {
     INTERNET_TRAFFIC_NOT_INSPECTED,
     BLACK_HOLE_ROUTE_DETECTED,
     BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET,
-    RESOURCE_MISSING_DNS_FIREWALL
+    RESOURCE_MISSING_DNS_FIREWALL,
+    ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT,
+    FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT
   )
 }

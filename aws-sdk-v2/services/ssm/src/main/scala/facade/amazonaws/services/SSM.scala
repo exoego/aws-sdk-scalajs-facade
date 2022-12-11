@@ -19,6 +19,9 @@ package object ssm {
   type ActivationList = js.Array[Activation]
   type AgentErrorCode = String
   type AggregatorSchemaOnly = Boolean
+  type AlarmList = js.Array[Alarm]
+  type AlarmName = String
+  type AlarmStateInformationList = js.Array[AlarmStateInformation]
   type AllowedPattern = String
   type ApplyOnlyAtCronInterval = Boolean
   type ApproveAfterDays = Int
@@ -69,6 +72,9 @@ package object ssm {
   type BatchErrorMessage = String
   type CalendarNameOrARN = String
   type CalendarNameOrARNList = js.Array[CalendarNameOrARN]
+  type Category = String
+  type CategoryEnumList = js.Array[Category]
+  type CategoryList = js.Array[Category]
   type ChangeDetailsValue = String
   type ChangeRequestName = String
   type ClientToken = String
@@ -154,6 +160,7 @@ package object ssm {
   type GetInventorySchemaMaxResults = Int
   type GetOpsMetadataMaxResults = Int
   type GetParametersByPathMaxResults = Int
+  type GetResourcePoliciesResponseEntries = js.Array[GetResourcePoliciesResponseEntry]
   type IPAddress = String
   type ISO8601String = String
   type IamRole = String
@@ -295,6 +302,8 @@ package object ssm {
   type OpsFilterList = js.Array[OpsFilter]
   type OpsFilterValue = String
   type OpsFilterValueList = js.Array[OpsFilterValue]
+  type OpsItemAccountId = String
+  type OpsItemArn = String
   type OpsItemCategory = String
   type OpsItemDataKey = String
   type OpsItemDataValueString = String
@@ -428,6 +437,9 @@ package object ssm {
   type PatchVendor = String
   type PatchVersion = String
   type PlatformTypeList = js.Array[PlatformType]
+  type Policy = String
+  type PolicyHash = String
+  type PolicyId = String
   type Product = String
   type PutInventoryMessage = String
   type Region = String
@@ -439,6 +451,7 @@ package object ssm {
   type RegistrationsCount = Int
   type RelatedOpsItems = js.Array[RelatedOpsItem]
   type RemainingCount = Int
+  type ResourceArnString = String
   type ResourceComplianceSummaryItemList = js.Array[ResourceComplianceSummaryItem]
   type ResourceCount = Int
   type ResourceCountByStatus = String
@@ -462,6 +475,7 @@ package object ssm {
   type ResourceDataSyncState = String
   type ResourceDataSyncType = String
   type ResourceId = String
+  type ResourcePolicyMaxResults = Int
   type ResponseCode = Int
   type ResultAttributeList = js.Array[ResultAttribute]
   type ReviewInformationList = js.Array[ReviewInformation]
@@ -471,6 +485,7 @@ package object ssm {
   type S3KeyPrefix = String
   type S3Region = String
   type ScheduleExpression = String
+  type ScheduleOffset = Int
   type ScheduledWindowExecutionList = js.Array[ScheduledWindowExecution]
   type ServiceRole = String
   type ServiceSettingId = String
@@ -557,6 +572,7 @@ package object ssm {
     @inline def deleteParametersFuture(params: DeleteParametersRequest): Future[DeleteParametersResult] = service.deleteParameters(params).promise().toFuture
     @inline def deletePatchBaselineFuture(params: DeletePatchBaselineRequest): Future[DeletePatchBaselineResult] = service.deletePatchBaseline(params).promise().toFuture
     @inline def deleteResourceDataSyncFuture(params: DeleteResourceDataSyncRequest): Future[DeleteResourceDataSyncResult] = service.deleteResourceDataSync(params).promise().toFuture
+    @inline def deleteResourcePolicyFuture(params: DeleteResourcePolicyRequest): Future[DeleteResourcePolicyResponse] = service.deleteResourcePolicy(params).promise().toFuture
     @inline def deregisterManagedInstanceFuture(params: DeregisterManagedInstanceRequest): Future[DeregisterManagedInstanceResult] = service.deregisterManagedInstance(params).promise().toFuture
     @inline def deregisterPatchBaselineForPatchGroupFuture(params: DeregisterPatchBaselineForPatchGroupRequest): Future[DeregisterPatchBaselineForPatchGroupResult] = service.deregisterPatchBaselineForPatchGroup(params).promise().toFuture
     @inline def deregisterTargetFromMaintenanceWindowFuture(params: DeregisterTargetFromMaintenanceWindowRequest): Future[DeregisterTargetFromMaintenanceWindowResult] = service.deregisterTargetFromMaintenanceWindow(params).promise().toFuture
@@ -617,6 +633,7 @@ package object ssm {
     @inline def getParametersFuture(params: GetParametersRequest): Future[GetParametersResult] = service.getParameters(params).promise().toFuture
     @inline def getPatchBaselineForPatchGroupFuture(params: GetPatchBaselineForPatchGroupRequest): Future[GetPatchBaselineForPatchGroupResult] = service.getPatchBaselineForPatchGroup(params).promise().toFuture
     @inline def getPatchBaselineFuture(params: GetPatchBaselineRequest): Future[GetPatchBaselineResult] = service.getPatchBaseline(params).promise().toFuture
+    @inline def getResourcePoliciesFuture(params: GetResourcePoliciesRequest): Future[GetResourcePoliciesResponse] = service.getResourcePolicies(params).promise().toFuture
     @inline def getServiceSettingFuture(params: GetServiceSettingRequest): Future[GetServiceSettingResult] = service.getServiceSetting(params).promise().toFuture
     @inline def labelParameterVersionFuture(params: LabelParameterVersionRequest): Future[LabelParameterVersionResult] = service.labelParameterVersion(params).promise().toFuture
     @inline def listAssociationVersionsFuture(params: ListAssociationVersionsRequest): Future[ListAssociationVersionsResult] = service.listAssociationVersions(params).promise().toFuture
@@ -639,6 +656,7 @@ package object ssm {
     @inline def putComplianceItemsFuture(params: PutComplianceItemsRequest): Future[PutComplianceItemsResult] = service.putComplianceItems(params).promise().toFuture
     @inline def putInventoryFuture(params: PutInventoryRequest): Future[PutInventoryResult] = service.putInventory(params).promise().toFuture
     @inline def putParameterFuture(params: PutParameterRequest): Future[PutParameterResult] = service.putParameter(params).promise().toFuture
+    @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def registerDefaultPatchBaselineFuture(params: RegisterDefaultPatchBaselineRequest): Future[RegisterDefaultPatchBaselineResult] = service.registerDefaultPatchBaseline(params).promise().toFuture
     @inline def registerPatchBaselineForPatchGroupFuture(params: RegisterPatchBaselineForPatchGroupRequest): Future[RegisterPatchBaselineForPatchGroupResult] = service.registerPatchBaselineForPatchGroup(params).promise().toFuture
     @inline def registerTargetWithMaintenanceWindowFuture(params: RegisterTargetWithMaintenanceWindowRequest): Future[RegisterTargetWithMaintenanceWindowResult] = service.registerTargetWithMaintenanceWindow(params).promise().toFuture
@@ -700,6 +718,7 @@ package object ssm {
     def deleteParameters(params: DeleteParametersRequest): Request[DeleteParametersResult] = js.native
     def deletePatchBaseline(params: DeletePatchBaselineRequest): Request[DeletePatchBaselineResult] = js.native
     def deleteResourceDataSync(params: DeleteResourceDataSyncRequest): Request[DeleteResourceDataSyncResult] = js.native
+    def deleteResourcePolicy(params: DeleteResourcePolicyRequest): Request[DeleteResourcePolicyResponse] = js.native
     def deregisterManagedInstance(params: DeregisterManagedInstanceRequest): Request[DeregisterManagedInstanceResult] = js.native
     def deregisterPatchBaselineForPatchGroup(params: DeregisterPatchBaselineForPatchGroupRequest): Request[DeregisterPatchBaselineForPatchGroupResult] = js.native
     def deregisterTargetFromMaintenanceWindow(params: DeregisterTargetFromMaintenanceWindowRequest): Request[DeregisterTargetFromMaintenanceWindowResult] = js.native
@@ -760,6 +779,7 @@ package object ssm {
     def getParametersByPath(params: GetParametersByPathRequest): Request[GetParametersByPathResult] = js.native
     def getPatchBaseline(params: GetPatchBaselineRequest): Request[GetPatchBaselineResult] = js.native
     def getPatchBaselineForPatchGroup(params: GetPatchBaselineForPatchGroupRequest): Request[GetPatchBaselineForPatchGroupResult] = js.native
+    def getResourcePolicies(params: GetResourcePoliciesRequest): Request[GetResourcePoliciesResponse] = js.native
     def getServiceSetting(params: GetServiceSettingRequest): Request[GetServiceSettingResult] = js.native
     def labelParameterVersion(params: LabelParameterVersionRequest): Request[LabelParameterVersionResult] = js.native
     def listAssociationVersions(params: ListAssociationVersionsRequest): Request[ListAssociationVersionsResult] = js.native
@@ -782,6 +802,7 @@ package object ssm {
     def putComplianceItems(params: PutComplianceItemsRequest): Request[PutComplianceItemsResult] = js.native
     def putInventory(params: PutInventoryRequest): Request[PutInventoryResult] = js.native
     def putParameter(params: PutParameterRequest): Request[PutParameterResult] = js.native
+    def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def registerDefaultPatchBaseline(params: RegisterDefaultPatchBaselineRequest): Request[RegisterDefaultPatchBaselineResult] = js.native
     def registerPatchBaselineForPatchGroup(params: RegisterPatchBaselineForPatchGroupRequest): Request[RegisterPatchBaselineForPatchGroupResult] = js.native
     def registerTargetWithMaintenanceWindow(params: RegisterTargetWithMaintenanceWindowRequest): Request[RegisterTargetWithMaintenanceWindowResult] = js.native
@@ -919,6 +940,70 @@ package object ssm {
     }
   }
 
+  /** A CloudWatch alarm you apply to an automation or command.
+    */
+  @js.native
+  trait Alarm extends js.Object {
+    var Name: AlarmName
+  }
+
+  object Alarm {
+    @inline
+    def apply(
+        Name: AlarmName
+    ): Alarm = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Alarm]
+    }
+  }
+
+  /** The details for the CloudWatch alarm you want to apply to an automation or command.
+    */
+  @js.native
+  trait AlarmConfiguration extends js.Object {
+    var Alarms: AlarmList
+    var IgnorePollAlarmFailure: js.UndefOr[Boolean]
+  }
+
+  object AlarmConfiguration {
+    @inline
+    def apply(
+        Alarms: AlarmList,
+        IgnorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined
+    ): AlarmConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Alarms" -> Alarms.asInstanceOf[js.Any]
+      )
+
+      IgnorePollAlarmFailure.foreach(__v => __obj.updateDynamic("IgnorePollAlarmFailure")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AlarmConfiguration]
+    }
+  }
+
+  /** The details about the state of your CloudWatch alarm.
+    */
+  @js.native
+  trait AlarmStateInformation extends js.Object {
+    var Name: AlarmName
+    var State: ExternalAlarmState
+  }
+
+  object AlarmStateInformation {
+    @inline
+    def apply(
+        Name: AlarmName,
+        State: ExternalAlarmState
+    ): AlarmStateInformation = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "State" -> State.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AlarmStateInformation]
+    }
+  }
+
   @js.native
   trait AssociateOpsItemRelatedItemRequest extends js.Object {
     var AssociationType: OpsItemRelatedItemAssociationType
@@ -974,6 +1059,8 @@ package object ssm {
     var Name: js.UndefOr[DocumentARN]
     var Overview: js.UndefOr[AssociationOverview]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -989,6 +1076,8 @@ package object ssm {
         Name: js.UndefOr[DocumentARN] = js.undefined,
         Overview: js.UndefOr[AssociationOverview] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): Association = {
       val __obj = js.Dynamic.literal()
@@ -1001,6 +1090,8 @@ package object ssm {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Overview.foreach(__v => __obj.updateDynamic("Overview")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Association]
     }
@@ -1010,6 +1101,7 @@ package object ssm {
     */
   @js.native
   trait AssociationDescription extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationName: js.UndefOr[AssociationName]
@@ -1030,15 +1122,19 @@ package object ssm {
     var Overview: js.UndefOr[AssociationOverview]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
     var Status: js.UndefOr[AssociationStatus]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
   }
 
   object AssociationDescription {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
@@ -1059,12 +1155,16 @@ package object ssm {
         Overview: js.UndefOr[AssociationOverview] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         Status: js.UndefOr[AssociationStatus] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
-        Targets: js.UndefOr[Targets] = js.undefined
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined
     ): AssociationDescription = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
@@ -1085,10 +1185,13 @@ package object ssm {
       Overview.foreach(__v => __obj.updateDynamic("Overview")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationDescription]
     }
   }
@@ -1097,6 +1200,7 @@ package object ssm {
     */
   @js.native
   trait AssociationExecution extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationVersion: js.UndefOr[AssociationVersion]
     var CreatedTime: js.UndefOr[DateTime]
@@ -1105,11 +1209,13 @@ package object ssm {
     var LastExecutionDate: js.UndefOr[DateTime]
     var ResourceCountByStatus: js.UndefOr[ResourceCountByStatus]
     var Status: js.UndefOr[StatusName]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
   }
 
   object AssociationExecution {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
@@ -1117,9 +1223,11 @@ package object ssm {
         ExecutionId: js.UndefOr[AssociationExecutionId] = js.undefined,
         LastExecutionDate: js.UndefOr[DateTime] = js.undefined,
         ResourceCountByStatus: js.UndefOr[ResourceCountByStatus] = js.undefined,
-        Status: js.UndefOr[StatusName] = js.undefined
+        Status: js.UndefOr[StatusName] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined
     ): AssociationExecution = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
@@ -1128,6 +1236,7 @@ package object ssm {
       LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
       ResourceCountByStatus.foreach(__v => __obj.updateDynamic("ResourceCountByStatus")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationExecution]
     }
   }
@@ -1314,8 +1423,10 @@ package object ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -1336,8 +1447,10 @@ package object ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationVersionInfo = {
       val __obj = js.Dynamic.literal()
@@ -1355,8 +1468,10 @@ package object ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationVersionInfo]
     }
@@ -1438,6 +1553,7 @@ package object ssm {
     */
   @js.native
   trait AutomationExecution extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var AssociationId: js.UndefOr[String]
     var AutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus]
@@ -1469,11 +1585,13 @@ package object ssm {
     var TargetMaps: js.UndefOr[TargetMaps]
     var TargetParameterName: js.UndefOr[AutomationParameterKey]
     var Targets: js.UndefOr[Targets]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
   }
 
   object AutomationExecution {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         AssociationId: js.UndefOr[String] = js.undefined,
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
@@ -1504,9 +1622,11 @@ package object ssm {
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
         TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
-        Targets: js.UndefOr[Targets] = js.undefined
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined
     ): AutomationExecution = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
@@ -1538,6 +1658,7 @@ package object ssm {
       TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomationExecution]
     }
   }
@@ -1568,6 +1689,7 @@ package object ssm {
     */
   @js.native
   trait AutomationExecutionMetadata extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var AssociationId: js.UndefOr[String]
     var AutomationExecutionId: js.UndefOr[AutomationExecutionId]
     var AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus]
@@ -1596,11 +1718,13 @@ package object ssm {
     var TargetMaps: js.UndefOr[TargetMaps]
     var TargetParameterName: js.UndefOr[AutomationParameterKey]
     var Targets: js.UndefOr[Targets]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
   }
 
   object AutomationExecutionMetadata {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         AssociationId: js.UndefOr[String] = js.undefined,
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined,
         AutomationExecutionStatus: js.UndefOr[AutomationExecutionStatus] = js.undefined,
@@ -1628,9 +1752,11 @@ package object ssm {
         Target: js.UndefOr[String] = js.undefined,
         TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
-        Targets: js.UndefOr[Targets] = js.undefined
+        Targets: js.UndefOr[Targets] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined
     ): AutomationExecutionMetadata = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
       AutomationExecutionStatus.foreach(__v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any]))
@@ -1659,6 +1785,7 @@ package object ssm {
       TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomationExecutionMetadata]
     }
   }
@@ -1799,6 +1926,7 @@ package object ssm {
     */
   @js.native
   trait Command extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig]
     var CommandId: js.UndefOr[CommandId]
     var Comment: js.UndefOr[Comment]
@@ -1823,11 +1951,13 @@ package object ssm {
     var TargetCount: js.UndefOr[TargetCount]
     var Targets: js.UndefOr[Targets]
     var TimeoutSeconds: js.UndefOr[TimeoutSeconds]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
   }
 
   object Command {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         CommandId: js.UndefOr[CommandId] = js.undefined,
         Comment: js.UndefOr[Comment] = js.undefined,
@@ -1851,9 +1981,11 @@ package object ssm {
         StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
         TargetCount: js.UndefOr[TargetCount] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined,
-        TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
+        TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined
     ): Command = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
       CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
@@ -1878,6 +2010,7 @@ package object ssm {
       TargetCount.foreach(__v => __obj.updateDynamic("TargetCount")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Command]
     }
   }
@@ -2266,6 +2399,7 @@ package object ssm {
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
     var Name: DocumentARN
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
@@ -2278,8 +2412,10 @@ package object ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2287,6 +2423,7 @@ package object ssm {
     @inline
     def apply(
         Name: DocumentARN,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
@@ -2299,14 +2436,17 @@ package object ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationBatchRequestEntry = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
@@ -2319,8 +2459,10 @@ package object ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationBatchRequestEntry]
     }
@@ -2348,6 +2490,7 @@ package object ssm {
   @js.native
   trait CreateAssociationRequest extends js.Object {
     var Name: DocumentARN
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
@@ -2360,8 +2503,11 @@ package object ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
+    var Tags: js.UndefOr[TagList]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -2369,6 +2515,7 @@ package object ssm {
     @inline
     def apply(
         Name: DocumentARN,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
@@ -2381,14 +2528,18 @@ package object ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
@@ -2401,8 +2552,11 @@ package object ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationRequest]
     }
@@ -2557,6 +2711,7 @@ package object ssm {
     var Description: OpsItemDescription
     var Source: OpsItemSource
     var Title: OpsItemTitle
+    var AccountId: js.UndefOr[OpsItemAccountId]
     var ActualEndTime: js.UndefOr[DateTime]
     var ActualStartTime: js.UndefOr[DateTime]
     var Category: js.UndefOr[OpsItemCategory]
@@ -2577,6 +2732,7 @@ package object ssm {
         Description: OpsItemDescription,
         Source: OpsItemSource,
         Title: OpsItemTitle,
+        AccountId: js.UndefOr[OpsItemAccountId] = js.undefined,
         ActualEndTime: js.UndefOr[DateTime] = js.undefined,
         ActualStartTime: js.UndefOr[DateTime] = js.undefined,
         Category: js.UndefOr[OpsItemCategory] = js.undefined,
@@ -2596,6 +2752,7 @@ package object ssm {
         "Title" -> Title.asInstanceOf[js.Any]
       )
 
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       ActualEndTime.foreach(__v => __obj.updateDynamic("ActualEndTime")(__v.asInstanceOf[js.Any]))
       ActualStartTime.foreach(__v => __obj.updateDynamic("ActualStartTime")(__v.asInstanceOf[js.Any]))
       Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
@@ -2614,15 +2771,18 @@ package object ssm {
 
   @js.native
   trait CreateOpsItemResponse extends js.Object {
+    var OpsItemArn: js.UndefOr[OpsItemArn]
     var OpsItemId: js.UndefOr[String]
   }
 
   object CreateOpsItemResponse {
     @inline
     def apply(
+        OpsItemArn: js.UndefOr[OpsItemArn] = js.undefined,
         OpsItemId: js.UndefOr[String] = js.undefined
     ): CreateOpsItemResponse = {
       val __obj = js.Dynamic.literal()
+      OpsItemArn.foreach(__v => __obj.updateDynamic("OpsItemArn")(__v.asInstanceOf[js.Any]))
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsItemResponse]
     }
@@ -3111,6 +3271,40 @@ package object ssm {
     def apply(): DeleteResourceDataSyncResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteResourceDataSyncResult]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyRequest extends js.Object {
+    var PolicyHash: PolicyHash
+    var PolicyId: PolicyId
+    var ResourceArn: ResourceArnString
+  }
+
+  object DeleteResourcePolicyRequest {
+    @inline
+    def apply(
+        PolicyHash: PolicyHash,
+        PolicyId: PolicyId,
+        ResourceArn: ResourceArnString
+    ): DeleteResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "PolicyHash" -> PolicyHash.asInstanceOf[js.Any],
+        "PolicyId" -> PolicyId.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteResourcePolicyResponse extends js.Object
+
+  object DeleteResourcePolicyResponse {
+    @inline
+    def apply(): DeleteResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
   }
 
@@ -4783,13 +4977,15 @@ package object ssm {
     }
   }
 
-  /** Describes a Amazon Web Services Systems Manager document (SSM document).
+  /** Describes an Amazon Web Services Systems Manager document (SSM document).
     */
   @js.native
   trait DocumentDescription extends js.Object {
     var ApprovedVersion: js.UndefOr[DocumentVersion]
     var AttachmentsInformation: js.UndefOr[AttachmentInformationList]
     var Author: js.UndefOr[DocumentAuthor]
+    var Category: js.UndefOr[CategoryList]
+    var CategoryEnum: js.UndefOr[CategoryEnumList]
     var CreatedDate: js.UndefOr[DateTime]
     var DefaultVersion: js.UndefOr[DocumentVersion]
     var Description: js.UndefOr[DescriptionInDocument]
@@ -4823,6 +5019,8 @@ package object ssm {
         ApprovedVersion: js.UndefOr[DocumentVersion] = js.undefined,
         AttachmentsInformation: js.UndefOr[AttachmentInformationList] = js.undefined,
         Author: js.UndefOr[DocumentAuthor] = js.undefined,
+        Category: js.UndefOr[CategoryList] = js.undefined,
+        CategoryEnum: js.UndefOr[CategoryEnumList] = js.undefined,
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
         DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Description: js.UndefOr[DescriptionInDocument] = js.undefined,
@@ -4853,6 +5051,8 @@ package object ssm {
       ApprovedVersion.foreach(__v => __obj.updateDynamic("ApprovedVersion")(__v.asInstanceOf[js.Any]))
       AttachmentsInformation.foreach(__v => __obj.updateDynamic("AttachmentsInformation")(__v.asInstanceOf[js.Any]))
       Author.foreach(__v => __obj.updateDynamic("Author")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      CategoryEnum.foreach(__v => __obj.updateDynamic("CategoryEnum")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DefaultVersion.foreach(__v => __obj.updateDynamic("DefaultVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -4964,9 +5164,9 @@ package object ssm {
     }
   }
 
-  /** One or more filters. Use a filter to return a more specific list of documents. For keys, you can specify one or more tags that have been applied to a document. You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their associated values are as follows: <dl> <dt>DocumentType</dt> <dd>* <code>ApplicationConfiguration</code> * <code>ApplicationConfigurationSchema</code> * <code>Automation</code> * <code>ChangeCalendar</code> * <code>Command</code> * <code>DeploymentStrategy</code> * <code>Package</code> * <code>Policy</code> * <code>Session</code> </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>. * <code>Amazon</code> * <code>Private</code> * <code>Public</code> * <code>Self</code> * <code>ThirdParty</code> </dd> <dt>PlatformTypes</dt> <dd>* <code>Linux</code> * <code>Windows</code> </dd> </dl> <code>Name</code> is another Amazon Web
-    * Services-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>, run the following command: <code>aws ssm list-documents --filters Key=Name,Values=Te</code> You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid resource type values that can be used with this key, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|Amazon Web Services resource and property types reference]] in the <i>CloudFormation User Guide</i>. If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results. To specify a custom key-value pair, use the format
-    * <code>Key=tag:tagName,Values=valueName</code>. For example, if you created a key called region and are using the Amazon Web Services CLI to call the <code>list-documents</code> command: <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
+  /** One or more filters. Use a filter to return a more specific list of documents. For keys, you can specify one or more tags that have been applied to a document. You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their associated values are as follows: <dl> <dt>DocumentType</dt> <dd>* <code>ApplicationConfiguration</code> * <code>ApplicationConfigurationSchema</code> * <code>Automation</code> * <code>ChangeCalendar</code> * <code>Command</code> * <code>Package</code> * <code>Policy</code> * <code>Session</code> </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>. * <code>Amazon</code> * <code>Private</code> * <code>Public</code> * <code>Self</code> * <code>ThirdParty</code> </dd> <dt>PlatformTypes</dt> <dd>* <code>Linux</code> * <code>Windows</code> </dd> </dl> <code>Name</code> is another Amazon Web Services-provided key. If you use
+    * <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>, run the following command: <code>aws ssm list-documents --filters Key=Name,Values=Te</code> You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid resource type values that can be used with this key, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|Amazon Web Services resource and property types reference]] in the <i>CloudFormation User Guide</i>. If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>. For
+    * example, if you created a key called region and are using the Amazon Web Services CLI to call the <code>list-documents</code> command: <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
   @js.native
   trait DocumentKeyValuesFilter extends js.Object {
@@ -5842,6 +6042,7 @@ package object ssm {
 
   @js.native
   trait GetMaintenanceWindowExecutionTaskResult extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var EndTime: js.UndefOr[DateTime]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
     var MaxErrors: js.UndefOr[MaxErrors]
@@ -5853,6 +6054,7 @@ package object ssm {
     var TaskArn: js.UndefOr[MaintenanceWindowTaskArn]
     var TaskExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskId]
     var TaskParameters: js.UndefOr[MaintenanceWindowTaskParametersList]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
     var Type: js.UndefOr[MaintenanceWindowTaskType]
     var WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId]
   }
@@ -5860,6 +6062,7 @@ package object ssm {
   object GetMaintenanceWindowExecutionTaskResult {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         EndTime: js.UndefOr[DateTime] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
         MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
@@ -5871,10 +6074,12 @@ package object ssm {
         TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
         TaskExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskId] = js.undefined,
         TaskParameters: js.UndefOr[MaintenanceWindowTaskParametersList] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined,
         Type: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): GetMaintenanceWindowExecutionTaskResult = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
@@ -5886,6 +6091,7 @@ package object ssm {
       TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
       TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowExecutionTaskResult]
@@ -5989,6 +6195,7 @@ package object ssm {
 
   @js.native
   trait GetMaintenanceWindowTaskResult extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
@@ -6009,6 +6216,7 @@ package object ssm {
   object GetMaintenanceWindowTaskResult {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -6026,6 +6234,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): GetMaintenanceWindowTaskResult = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
@@ -6048,16 +6257,20 @@ package object ssm {
   @js.native
   trait GetOpsItemRequest extends js.Object {
     var OpsItemId: OpsItemId
+    var OpsItemArn: js.UndefOr[OpsItemArn]
   }
 
   object GetOpsItemRequest {
     @inline
     def apply(
-        OpsItemId: OpsItemId
+        OpsItemId: OpsItemId,
+        OpsItemArn: js.UndefOr[OpsItemArn] = js.undefined
     ): GetOpsItemRequest = {
       val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
+
+      OpsItemArn.foreach(__v => __obj.updateDynamic("OpsItemArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsItemRequest]
     }
   }
@@ -6467,6 +6680,73 @@ package object ssm {
     }
   }
 
+  @js.native
+  trait GetResourcePoliciesRequest extends js.Object {
+    var ResourceArn: ResourceArnString
+    var MaxResults: js.UndefOr[ResourcePolicyMaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object GetResourcePoliciesRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArnString,
+        MaxResults: js.UndefOr[ResourcePolicyMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): GetResourcePoliciesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourcePoliciesResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Policies: js.UndefOr[GetResourcePoliciesResponseEntries]
+  }
+
+  object GetResourcePoliciesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Policies: js.UndefOr[GetResourcePoliciesResponseEntries] = js.undefined
+    ): GetResourcePoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePoliciesResponse]
+    }
+  }
+
+  /** A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).
+    */
+  @js.native
+  trait GetResourcePoliciesResponseEntry extends js.Object {
+    var Policy: js.UndefOr[Policy]
+    var PolicyHash: js.UndefOr[PolicyHash]
+    var PolicyId: js.UndefOr[PolicyId]
+  }
+
+  object GetResourcePoliciesResponseEntry {
+    @inline
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined,
+        PolicyHash: js.UndefOr[PolicyHash] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined
+    ): GetResourcePoliciesResponseEntry = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourcePoliciesResponseEntry]
+    }
+  }
+
   /** The request body of the GetServiceSetting API operation.
     */
   @js.native
@@ -6844,7 +7124,8 @@ package object ssm {
     }
   }
 
-  /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope down the information returned by the API. \```Example```: To filter for all managed nodes in a patch group having more than three patches with a <code>FailedCount</code> status, use the following for the filter: * Value for <code>Key</code>: <code>FailedCount</code> * Value for <code>Type</code>: <code>GreaterThan</code> * Value for <code>Values</code>: <code>3</code>
+  /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope down the information returned by the API.
+    * \```Example```: To filter for all managed nodes in a patch group having more than three patches with a <code>FailedCount</code> status, use the following for the filter: * Value for <code>Key</code>: <code>FailedCount</code> * Value for <code>Type</code>: <code>GreaterThan</code> * Value for <code>Values</code>: <code>3</code>
     */
   @js.native
   trait InstancePatchStateFilter extends js.Object {
@@ -8012,6 +8293,7 @@ package object ssm {
     */
   @js.native
   trait MaintenanceWindowExecutionTaskIdentity extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var EndTime: js.UndefOr[DateTime]
     var StartTime: js.UndefOr[DateTime]
     var Status: js.UndefOr[MaintenanceWindowExecutionStatus]
@@ -8019,12 +8301,14 @@ package object ssm {
     var TaskArn: js.UndefOr[MaintenanceWindowTaskArn]
     var TaskExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskId]
     var TaskType: js.UndefOr[MaintenanceWindowTaskType]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
     var WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId]
   }
 
   object MaintenanceWindowExecutionTaskIdentity {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         EndTime: js.UndefOr[DateTime] = js.undefined,
         StartTime: js.UndefOr[DateTime] = js.undefined,
         Status: js.UndefOr[MaintenanceWindowExecutionStatus] = js.undefined,
@@ -8032,9 +8316,11 @@ package object ssm {
         TaskArn: js.UndefOr[MaintenanceWindowTaskArn] = js.undefined,
         TaskExecutionId: js.UndefOr[MaintenanceWindowExecutionTaskId] = js.undefined,
         TaskType: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined,
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): MaintenanceWindowExecutionTaskIdentity = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -8042,6 +8328,7 @@ package object ssm {
       TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
       TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowExecutionTaskIdentity]
     }
@@ -8331,6 +8618,7 @@ package object ssm {
     */
   @js.native
   trait MaintenanceWindowTask extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
@@ -8350,6 +8638,7 @@ package object ssm {
   object MaintenanceWindowTask {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -8366,6 +8655,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): MaintenanceWindowTask = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
@@ -8649,6 +8939,7 @@ package object ssm {
     var LastModifiedTime: js.UndefOr[DateTime]
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
+    var OpsItemArn: js.UndefOr[OpsItemArn]
     var OpsItemId: js.UndefOr[OpsItemId]
     var OpsItemType: js.UndefOr[OpsItemType]
     var PlannedEndTime: js.UndefOr[DateTime]
@@ -8675,6 +8966,7 @@ package object ssm {
         LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
+        OpsItemArn: js.UndefOr[OpsItemArn] = js.undefined,
         OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
         OpsItemType: js.UndefOr[OpsItemType] = js.undefined,
         PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
@@ -8698,6 +8990,7 @@ package object ssm {
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      OpsItemArn.foreach(__v => __obj.updateDynamic("OpsItemArn")(__v.asInstanceOf[js.Any]))
       OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       OpsItemType.foreach(__v => __obj.updateDynamic("OpsItemType")(__v.asInstanceOf[js.Any]))
       PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
@@ -9814,6 +10107,52 @@ package object ssm {
   }
 
   @js.native
+  trait PutResourcePolicyRequest extends js.Object {
+    var Policy: Policy
+    var ResourceArn: ResourceArnString
+    var PolicyHash: js.UndefOr[PolicyHash]
+    var PolicyId: js.UndefOr[PolicyId]
+  }
+
+  object PutResourcePolicyRequest {
+    @inline
+    def apply(
+        Policy: Policy,
+        ResourceArn: ResourceArnString,
+        PolicyHash: js.UndefOr[PolicyHash] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined
+    ): PutResourcePolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Policy" -> Policy.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourcePolicyResponse extends js.Object {
+    var PolicyHash: js.UndefOr[PolicyHash]
+    var PolicyId: js.UndefOr[PolicyId]
+  }
+
+  object PutResourcePolicyResponse {
+    @inline
+    def apply(
+        PolicyHash: js.UndefOr[PolicyHash] = js.undefined,
+        PolicyId: js.UndefOr[PolicyId] = js.undefined
+    ): PutResourcePolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutResourcePolicyResponse]
+    }
+  }
+
+  @js.native
   trait RegisterDefaultPatchBaselineRequest extends js.Object {
     var BaselineId: BaselineId
   }
@@ -9942,6 +10281,7 @@ package object ssm {
     var TaskArn: MaintenanceWindowTaskArn
     var TaskType: MaintenanceWindowTaskType
     var WindowId: MaintenanceWindowId
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ClientToken: js.UndefOr[ClientToken]
     var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
@@ -9962,6 +10302,7 @@ package object ssm {
         TaskArn: MaintenanceWindowTaskArn,
         TaskType: MaintenanceWindowTaskType,
         WindowId: MaintenanceWindowId,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
@@ -9981,6 +10322,7 @@ package object ssm {
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -10483,6 +10825,7 @@ package object ssm {
     var MaxErrors: js.UndefOr[MaxErrors]
     var Parameters: js.UndefOr[AutomationParameterMap]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var TargetParameterName: js.UndefOr[AutomationParameterKey]
     var Targets: js.UndefOr[Targets]
   }
@@ -10496,6 +10839,7 @@ package object ssm {
         MaxErrors: js.UndefOr[MaxErrors] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): Runbook = {
@@ -10508,6 +10852,7 @@ package object ssm {
       MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Runbook]
@@ -10618,6 +10963,7 @@ package object ssm {
   @js.native
   trait SendCommandRequest extends js.Object {
     var DocumentName: DocumentARN
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig]
     var Comment: js.UndefOr[Comment]
     var DocumentHash: js.UndefOr[DocumentHash]
@@ -10640,6 +10986,7 @@ package object ssm {
     @inline
     def apply(
         DocumentName: DocumentARN,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CloudWatchOutputConfig: js.UndefOr[CloudWatchOutputConfig] = js.undefined,
         Comment: js.UndefOr[Comment] = js.undefined,
         DocumentHash: js.UndefOr[DocumentHash] = js.undefined,
@@ -10661,6 +11008,7 @@ package object ssm {
         "DocumentName" -> DocumentName.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
       Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       DocumentHash.foreach(__v => __obj.updateDynamic("DocumentHash")(__v.asInstanceOf[js.Any]))
@@ -10886,6 +11234,7 @@ package object ssm {
   @js.native
   trait StartAutomationExecutionRequest extends js.Object {
     var DocumentName: DocumentARN
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ClientToken: js.UndefOr[IdempotencyToken]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -10903,6 +11252,7 @@ package object ssm {
     @inline
     def apply(
         DocumentName: DocumentARN,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -10919,6 +11269,7 @@ package object ssm {
         "DocumentName" -> DocumentName.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -11088,6 +11439,7 @@ package object ssm {
     var TargetLocation: js.UndefOr[TargetLocation]
     var Targets: js.UndefOr[Targets]
     var TimeoutSeconds: js.UndefOr[Double]
+    var TriggeredAlarms: js.UndefOr[AlarmStateInformationList]
     var ValidNextSteps: js.UndefOr[ValidNextStepList]
   }
 
@@ -11115,6 +11467,7 @@ package object ssm {
         TargetLocation: js.UndefOr[TargetLocation] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined,
         TimeoutSeconds: js.UndefOr[Double] = js.undefined,
+        TriggeredAlarms: js.UndefOr[AlarmStateInformationList] = js.undefined,
         ValidNextSteps: js.UndefOr[ValidNextStepList] = js.undefined
     ): StepExecution = {
       val __obj = js.Dynamic.literal()
@@ -11139,6 +11492,7 @@ package object ssm {
       TargetLocation.foreach(__v => __obj.updateDynamic("TargetLocation")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      TriggeredAlarms.foreach(__v => __obj.updateDynamic("TriggeredAlarms")(__v.asInstanceOf[js.Any]))
       ValidNextSteps.foreach(__v => __obj.updateDynamic("ValidNextSteps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepExecution]
     }
@@ -11252,6 +11606,7 @@ package object ssm {
     var Accounts: js.UndefOr[Accounts]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
     var Regions: js.UndefOr[Regions]
+    var TargetLocationAlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var TargetLocationMaxConcurrency: js.UndefOr[MaxConcurrency]
     var TargetLocationMaxErrors: js.UndefOr[MaxErrors]
   }
@@ -11262,6 +11617,7 @@ package object ssm {
         Accounts: js.UndefOr[Accounts] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
         Regions: js.UndefOr[Regions] = js.undefined,
+        TargetLocationAlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         TargetLocationMaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
         TargetLocationMaxErrors: js.UndefOr[MaxErrors] = js.undefined
     ): TargetLocation = {
@@ -11269,6 +11625,7 @@ package object ssm {
       Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      TargetLocationAlarmConfiguration.foreach(__v => __obj.updateDynamic("TargetLocationAlarmConfiguration")(__v.asInstanceOf[js.Any]))
       TargetLocationMaxConcurrency.foreach(__v => __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any]))
       TargetLocationMaxErrors.foreach(__v => __obj.updateDynamic("TargetLocationMaxErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetLocation]
@@ -11353,6 +11710,7 @@ package object ssm {
   @js.native
   trait UpdateAssociationRequest extends js.Object {
     var AssociationId: AssociationId
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
@@ -11366,8 +11724,10 @@ package object ssm {
     var OutputLocation: js.UndefOr[InstanceAssociationOutputLocation]
     var Parameters: js.UndefOr[Parameters]
     var ScheduleExpression: js.UndefOr[ScheduleExpression]
+    var ScheduleOffset: js.UndefOr[ScheduleOffset]
     var SyncCompliance: js.UndefOr[AssociationSyncCompliance]
     var TargetLocations: js.UndefOr[TargetLocations]
+    var TargetMaps: js.UndefOr[TargetMaps]
     var Targets: js.UndefOr[Targets]
   }
 
@@ -11375,6 +11735,7 @@ package object ssm {
     @inline
     def apply(
         AssociationId: AssociationId,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
@@ -11388,14 +11749,17 @@ package object ssm {
         OutputLocation: js.UndefOr[InstanceAssociationOutputLocation] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
+        ScheduleOffset: js.UndefOr[ScheduleOffset] = js.undefined,
         SyncCompliance: js.UndefOr[AssociationSyncCompliance] = js.undefined,
         TargetLocations: js.UndefOr[TargetLocations] = js.undefined,
+        TargetMaps: js.UndefOr[TargetMaps] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateAssociationRequest = {
       val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
@@ -11409,8 +11773,10 @@ package object ssm {
       OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      ScheduleOffset.foreach(__v => __obj.updateDynamic("ScheduleOffset")(__v.asInstanceOf[js.Any]))
       SyncCompliance.foreach(__v => __obj.updateDynamic("SyncCompliance")(__v.asInstanceOf[js.Any]))
       TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
       Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationRequest]
     }
@@ -11771,6 +12137,7 @@ package object ssm {
   trait UpdateMaintenanceWindowTaskRequest extends js.Object {
     var WindowId: MaintenanceWindowId
     var WindowTaskId: MaintenanceWindowTaskId
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
@@ -11791,6 +12158,7 @@ package object ssm {
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId,
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -11810,6 +12178,7 @@ package object ssm {
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
@@ -11829,6 +12198,7 @@ package object ssm {
 
   @js.native
   trait UpdateMaintenanceWindowTaskResult extends js.Object {
+    var AlarmConfiguration: js.UndefOr[AlarmConfiguration]
     var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
@@ -11848,6 +12218,7 @@ package object ssm {
   object UpdateMaintenanceWindowTaskResult {
     @inline
     def apply(
+        AlarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
@@ -11864,6 +12235,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): UpdateMaintenanceWindowTaskResult = {
       val __obj = js.Dynamic.literal()
+      AlarmConfiguration.foreach(__v => __obj.updateDynamic("AlarmConfiguration")(__v.asInstanceOf[js.Any]))
       CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
@@ -11923,6 +12295,7 @@ package object ssm {
     var Notifications: js.UndefOr[OpsItemNotifications]
     var OperationalData: js.UndefOr[OpsItemOperationalData]
     var OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList]
+    var OpsItemArn: js.UndefOr[OpsItemArn]
     var PlannedEndTime: js.UndefOr[DateTime]
     var PlannedStartTime: js.UndefOr[DateTime]
     var Priority: js.UndefOr[OpsItemPriority]
@@ -11943,6 +12316,7 @@ package object ssm {
         Notifications: js.UndefOr[OpsItemNotifications] = js.undefined,
         OperationalData: js.UndefOr[OpsItemOperationalData] = js.undefined,
         OperationalDataToDelete: js.UndefOr[OpsItemOpsDataKeysList] = js.undefined,
+        OpsItemArn: js.UndefOr[OpsItemArn] = js.undefined,
         PlannedEndTime: js.UndefOr[DateTime] = js.undefined,
         PlannedStartTime: js.UndefOr[DateTime] = js.undefined,
         Priority: js.UndefOr[OpsItemPriority] = js.undefined,
@@ -11962,6 +12336,7 @@ package object ssm {
       Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
       OperationalDataToDelete.foreach(__v => __obj.updateDynamic("OperationalDataToDelete")(__v.asInstanceOf[js.Any]))
+      OpsItemArn.foreach(__v => __obj.updateDynamic("OpsItemArn")(__v.asInstanceOf[js.Any]))
       PlannedEndTime.foreach(__v => __obj.updateDynamic("PlannedEndTime")(__v.asInstanceOf[js.Any]))
       PlannedStartTime.foreach(__v => __obj.updateDynamic("PlannedStartTime")(__v.asInstanceOf[js.Any]))
       Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))

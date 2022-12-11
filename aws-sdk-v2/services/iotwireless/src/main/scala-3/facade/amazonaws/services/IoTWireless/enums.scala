@@ -2,6 +2,13 @@ package facade.amazonaws.services.iotwireless
 
 import scalajs.js
 
+type ApplicationConfigType = "SemtechGeolocation"
+object ApplicationConfigType {
+  inline val SemtechGeolocation: "SemtechGeolocation" = "SemtechGeolocation"
+
+  inline def values: js.Array[ApplicationConfigType] = js.Array(SemtechGeolocation)
+}
+
 /** Sidewalk device battery level.
   */
 type BatteryLevel = "normal" | "low" | "critical"
@@ -43,6 +50,15 @@ object DlClass {
   inline def values: js.Array[DlClass] = js.Array(ClassB, ClassC)
 }
 
+type DownlinkMode = "SEQUENTIAL" | "CONCURRENT" | "USING_UPLINK_GATEWAY"
+object DownlinkMode {
+  inline val SEQUENTIAL: "SEQUENTIAL" = "SEQUENTIAL"
+  inline val CONCURRENT: "CONCURRENT" = "CONCURRENT"
+  inline val USING_UPLINK_GATEWAY: "USING_UPLINK_GATEWAY" = "USING_UPLINK_GATEWAY"
+
+  inline def values: js.Array[DownlinkMode] = js.Array(SEQUENTIAL, CONCURRENT, USING_UPLINK_GATEWAY)
+}
+
 /** Sidewalk device status notification.
   */
 type Event = "discovered" | "lost" | "ack" | "nack" | "passthrough"
@@ -61,6 +77,15 @@ object EventNotificationPartnerType {
   inline val Sidewalk: "Sidewalk" = "Sidewalk"
 
   inline def values: js.Array[EventNotificationPartnerType] = js.Array(Sidewalk)
+}
+
+type EventNotificationResourceType = "SidewalkAccount" | "WirelessDevice" | "WirelessGateway"
+object EventNotificationResourceType {
+  inline val SidewalkAccount: "SidewalkAccount" = "SidewalkAccount"
+  inline val WirelessDevice: "WirelessDevice" = "WirelessDevice"
+  inline val WirelessGateway: "WirelessGateway" = "WirelessGateway"
+
+  inline def values: js.Array[EventNotificationResourceType] = js.Array(SidewalkAccount, WirelessDevice, WirelessGateway)
 }
 
 type EventNotificationTopicStatus = "Enabled" | "Disabled"
@@ -123,14 +148,18 @@ object FuotaTaskStatus {
   inline def values: js.Array[FuotaTaskStatus] = js.Array(Pending, FuotaSession_Waiting, In_FuotaSession, FuotaDone, Delete_Waiting)
 }
 
-type IdentifierType = "PartnerAccountId"
+type IdentifierType = "PartnerAccountId" | "DevEui" | "GatewayEui" | "WirelessDeviceId" | "WirelessGatewayId"
 object IdentifierType {
   inline val PartnerAccountId: "PartnerAccountId" = "PartnerAccountId"
+  inline val DevEui: "DevEui" = "DevEui"
+  inline val GatewayEui: "GatewayEui" = "GatewayEui"
+  inline val WirelessDeviceId: "WirelessDeviceId" = "WirelessDeviceId"
+  inline val WirelessGatewayId: "WirelessGatewayId" = "WirelessGatewayId"
 
-  inline def values: js.Array[IdentifierType] = js.Array(PartnerAccountId)
+  inline def values: js.Array[IdentifierType] = js.Array(PartnerAccountId, DevEui, GatewayEui, WirelessDeviceId, WirelessGatewayId)
 }
 
-/** The log level for a log message.
+/** The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.
   */
 type LogLevel = "INFO" | "ERROR" | "DISABLED"
 object LogLevel {
@@ -158,6 +187,52 @@ object PartnerType {
   inline val Sidewalk: "Sidewalk" = "Sidewalk"
 
   inline def values: js.Array[PartnerType] = js.Array(Sidewalk)
+}
+
+type PositionConfigurationFec = "ROSE" | "NONE"
+object PositionConfigurationFec {
+  inline val ROSE: "ROSE" = "ROSE"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[PositionConfigurationFec] = js.Array(ROSE, NONE)
+}
+
+type PositionConfigurationStatus = "Enabled" | "Disabled"
+object PositionConfigurationStatus {
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val Disabled: "Disabled" = "Disabled"
+
+  inline def values: js.Array[PositionConfigurationStatus] = js.Array(Enabled, Disabled)
+}
+
+type PositionResourceType = "WirelessDevice" | "WirelessGateway"
+object PositionResourceType {
+  inline val WirelessDevice: "WirelessDevice" = "WirelessDevice"
+  inline val WirelessGateway: "WirelessGateway" = "WirelessGateway"
+
+  inline def values: js.Array[PositionResourceType] = js.Array(WirelessDevice, WirelessGateway)
+}
+
+type PositionSolverProvider = "Semtech"
+object PositionSolverProvider {
+  inline val Semtech: "Semtech" = "Semtech"
+
+  inline def values: js.Array[PositionSolverProvider] = js.Array(Semtech)
+}
+
+type PositionSolverType = "GNSS"
+object PositionSolverType {
+  inline val GNSS: "GNSS" = "GNSS"
+
+  inline def values: js.Array[PositionSolverType] = js.Array(GNSS)
+}
+
+type PositioningConfigStatus = "Enabled" | "Disabled"
+object PositioningConfigStatus {
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val Disabled: "Disabled" = "Disabled"
+
+  inline def values: js.Array[PositioningConfigStatus] = js.Array(Enabled, Disabled)
 }
 
 /** The certificate chain algorithm provided by sidewalk.
@@ -195,7 +270,7 @@ object WirelessDeviceEvent {
   inline def values: js.Array[WirelessDeviceEvent] = js.Array(Join, Rejoin, Uplink_Data, Downlink_Data, Registration)
 }
 
-/** WirelessDevice FrameInfo for trace content.
+/** <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.
   */
 type WirelessDeviceFrameInfo = "ENABLED" | "DISABLED"
 object WirelessDeviceFrameInfo {

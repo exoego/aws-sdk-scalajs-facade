@@ -27,12 +27,58 @@ object ManifestLayout {
   inline def values: js.Array[ManifestLayout] = js.Array(FULL, COMPACT)
 }
 
+type PresetSpeke20Audio = "PRESET-AUDIO-1" | "PRESET-AUDIO-2" | "PRESET-AUDIO-3" | "SHARED" | "UNENCRYPTED"
+object PresetSpeke20Audio {
+  inline val `PRESET-AUDIO-1`: "PRESET-AUDIO-1" = "PRESET-AUDIO-1"
+  inline val `PRESET-AUDIO-2`: "PRESET-AUDIO-2" = "PRESET-AUDIO-2"
+  inline val `PRESET-AUDIO-3`: "PRESET-AUDIO-3" = "PRESET-AUDIO-3"
+  inline val SHARED: "SHARED" = "SHARED"
+  inline val UNENCRYPTED: "UNENCRYPTED" = "UNENCRYPTED"
+
+  inline def values: js.Array[PresetSpeke20Audio] = js.Array(`PRESET-AUDIO-1`, `PRESET-AUDIO-2`, `PRESET-AUDIO-3`, SHARED, UNENCRYPTED)
+}
+
+type PresetSpeke20Video = "PRESET-VIDEO-1" | "PRESET-VIDEO-2" | "PRESET-VIDEO-3" | "PRESET-VIDEO-4" | "PRESET-VIDEO-5" | "PRESET-VIDEO-6" | "PRESET-VIDEO-7" | "PRESET-VIDEO-8" | "SHARED" | "UNENCRYPTED"
+object PresetSpeke20Video {
+  inline val `PRESET-VIDEO-1`: "PRESET-VIDEO-1" = "PRESET-VIDEO-1"
+  inline val `PRESET-VIDEO-2`: "PRESET-VIDEO-2" = "PRESET-VIDEO-2"
+  inline val `PRESET-VIDEO-3`: "PRESET-VIDEO-3" = "PRESET-VIDEO-3"
+  inline val `PRESET-VIDEO-4`: "PRESET-VIDEO-4" = "PRESET-VIDEO-4"
+  inline val `PRESET-VIDEO-5`: "PRESET-VIDEO-5" = "PRESET-VIDEO-5"
+  inline val `PRESET-VIDEO-6`: "PRESET-VIDEO-6" = "PRESET-VIDEO-6"
+  inline val `PRESET-VIDEO-7`: "PRESET-VIDEO-7" = "PRESET-VIDEO-7"
+  inline val `PRESET-VIDEO-8`: "PRESET-VIDEO-8" = "PRESET-VIDEO-8"
+  inline val SHARED: "SHARED" = "SHARED"
+  inline val UNENCRYPTED: "UNENCRYPTED" = "UNENCRYPTED"
+
+  inline def values: js.Array[PresetSpeke20Video] = js.Array(
+    `PRESET-VIDEO-1`,
+    `PRESET-VIDEO-2`,
+    `PRESET-VIDEO-3`,
+    `PRESET-VIDEO-4`,
+    `PRESET-VIDEO-5`,
+    `PRESET-VIDEO-6`,
+    `PRESET-VIDEO-7`,
+    `PRESET-VIDEO-8`,
+    SHARED,
+    UNENCRYPTED
+  )
+}
+
 type Profile = "NONE" | "HBBTV_1_5"
 object Profile {
   inline val NONE: "NONE" = "NONE"
   inline val HBBTV_1_5: "HBBTV_1_5" = "HBBTV_1_5"
 
   inline def values: js.Array[Profile] = js.Array(NONE, HBBTV_1_5)
+}
+
+type ScteMarkersSource = "SEGMENTS" | "MANIFEST"
+object ScteMarkersSource {
+  inline val SEGMENTS: "SEGMENTS" = "SEGMENTS"
+  inline val MANIFEST: "MANIFEST" = "MANIFEST"
+
+  inline def values: js.Array[ScteMarkersSource] = js.Array(SEGMENTS, MANIFEST)
 }
 
 type SegmentTemplateFormat = "NUMBER_WITH_TIMELINE" | "TIME_WITH_TIMELINE" | "NUMBER_WITH_DURATION"

@@ -280,6 +280,19 @@ object OutboundCrossClusterSearchConnectionStatusCode {
   @inline def values: js.Array[OutboundCrossClusterSearchConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
 }
 
+/** The overall status value of the domain configuration change.
+  */
+@js.native
+sealed trait OverallChangeStatus extends js.Any
+object OverallChangeStatus {
+  val PENDING = "PENDING".asInstanceOf[OverallChangeStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[OverallChangeStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[OverallChangeStatus]
+  val FAILED = "FAILED".asInstanceOf[OverallChangeStatus]
+
+  @inline def values: js.Array[OverallChangeStatus] = js.Array(PENDING, PROCESSING, COMPLETED, FAILED)
+}
+
 @js.native
 sealed trait PackageStatus extends js.Any
 object PackageStatus {
@@ -301,6 +314,17 @@ object PackageType {
   val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
   @inline def values: js.Array[PackageType] = js.Array(`TXT-DICTIONARY`)
+}
+
+/** <p>Specifies the type of AWS account permitted to manage VPC endpoints.:* AWS_ACCOUNT: Indicates that the account is owned by an AWS user. * AWS_SERVICE: Indicates the the account is owned by an AWS service. </p>
+  */
+@js.native
+sealed trait PrincipalType extends js.Any
+object PrincipalType {
+  val AWS_ACCOUNT = "AWS_ACCOUNT".asInstanceOf[PrincipalType]
+  val AWS_SERVICE = "AWS_SERVICE".asInstanceOf[PrincipalType]
+
+  @inline def values: js.Array[PrincipalType] = js.Array(AWS_ACCOUNT, AWS_SERVICE)
 }
 
 @js.native
@@ -387,7 +411,7 @@ object UpgradeStep {
   @inline def values: js.Array[UpgradeStep] = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
 }
 
-/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
+/** The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
   */
 @js.native
 sealed trait VolumeType extends js.Any
@@ -395,6 +419,34 @@ object VolumeType {
   val standard = "standard".asInstanceOf[VolumeType]
   val gp2 = "gp2".asInstanceOf[VolumeType]
   val io1 = "io1".asInstanceOf[VolumeType]
+  val gp3 = "gp3".asInstanceOf[VolumeType]
 
-  @inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1)
+  @inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1, gp3)
+}
+
+/** <p>Specifies the error code of the failure encountered while describing the VPC endpoint:* ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist. * SERVER_ERROR: Indicates the describe endpoint operation failed due to an internal server error. </p>
+  */
+@js.native
+sealed trait VpcEndpointErrorCode extends js.Any
+object VpcEndpointErrorCode {
+  val ENDPOINT_NOT_FOUND = "ENDPOINT_NOT_FOUND".asInstanceOf[VpcEndpointErrorCode]
+  val SERVER_ERROR = "SERVER_ERROR".asInstanceOf[VpcEndpointErrorCode]
+
+  @inline def values: js.Array[VpcEndpointErrorCode] = js.Array(ENDPOINT_NOT_FOUND, SERVER_ERROR)
+}
+
+/** <p>Specifies the current status of the VPC endpoint:* CREATING: Indicates that the VPC endpoint is currently being created. * CREATE_FAILED: Indicates that the VPC endpoint creation failed. * ACTIVE: Indicates that the VPC endpoint is currently active. * UPDATING: Indicates that the VPC endpoint is currently being updated. * UPDATE_FAILED: Indicates that the VPC endpoint update failed. * DELETING: Indicates that the VPC endpoint is currently being deleted. * DELETE_FAILED: Indicates that the VPC endpoint deletion failed. </p>
+  */
+@js.native
+sealed trait VpcEndpointStatus extends js.Any
+object VpcEndpointStatus {
+  val CREATING = "CREATING".asInstanceOf[VpcEndpointStatus]
+  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[VpcEndpointStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[VpcEndpointStatus]
+  val UPDATING = "UPDATING".asInstanceOf[VpcEndpointStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[VpcEndpointStatus]
+  val DELETING = "DELETING".asInstanceOf[VpcEndpointStatus]
+  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[VpcEndpointStatus]
+
+  @inline def values: js.Array[VpcEndpointStatus] = js.Array(CREATING, CREATE_FAILED, ACTIVE, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
 }

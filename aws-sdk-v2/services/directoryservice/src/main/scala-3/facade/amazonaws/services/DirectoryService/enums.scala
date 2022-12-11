@@ -30,11 +30,23 @@ object ClientAuthenticationStatus {
   inline def values: js.Array[ClientAuthenticationStatus] = js.Array(Enabled, Disabled)
 }
 
-type ClientAuthenticationType = "SmartCard"
+type ClientAuthenticationType = "SmartCard" | "SmartCardOrPassword"
 object ClientAuthenticationType {
   inline val SmartCard: "SmartCard" = "SmartCard"
+  inline val SmartCardOrPassword: "SmartCardOrPassword" = "SmartCardOrPassword"
 
-  inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard)
+  inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard, SmartCardOrPassword)
+}
+
+type DirectoryConfigurationStatus = "Requested" | "Updating" | "Updated" | "Failed" | "Default"
+object DirectoryConfigurationStatus {
+  inline val Requested: "Requested" = "Requested"
+  inline val Updating: "Updating" = "Updating"
+  inline val Updated: "Updated" = "Updated"
+  inline val Failed: "Failed" = "Failed"
+  inline val Default: "Default" = "Default"
+
+  inline def values: js.Array[DirectoryConfigurationStatus] = js.Array(Requested, Updating, Updated, Failed, Default)
 }
 
 type DirectoryEdition = "Enterprise" | "Standard"
@@ -120,6 +132,14 @@ object LDAPSType {
   inline val Client: "Client" = "Client"
 
   inline def values: js.Array[LDAPSType] = js.Array(Client)
+}
+
+type OSVersion = "SERVER_2012" | "SERVER_2019"
+object OSVersion {
+  inline val SERVER_2012: "SERVER_2012" = "SERVER_2012"
+  inline val SERVER_2019: "SERVER_2019" = "SERVER_2019"
+
+  inline def values: js.Array[OSVersion] = js.Array(SERVER_2012, SERVER_2019)
 }
 
 type RadiusAuthenticationProtocol = "PAP" | "CHAP" | "MS-CHAPv1" | "MS-CHAPv2"
@@ -268,4 +288,20 @@ object TrustType {
   inline val External: "External" = "External"
 
   inline def values: js.Array[TrustType] = js.Array(Forest, External)
+}
+
+type UpdateStatus = "Updated" | "Updating" | "UpdateFailed"
+object UpdateStatus {
+  inline val Updated: "Updated" = "Updated"
+  inline val Updating: "Updating" = "Updating"
+  inline val UpdateFailed: "UpdateFailed" = "UpdateFailed"
+
+  inline def values: js.Array[UpdateStatus] = js.Array(Updated, Updating, UpdateFailed)
+}
+
+type UpdateType = "OS"
+object UpdateType {
+  inline val OS: "OS" = "OS"
+
+  inline def values: js.Array[UpdateType] = js.Array(OS)
 }

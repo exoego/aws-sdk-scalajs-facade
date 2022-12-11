@@ -56,6 +56,25 @@ object IngestionJobStatus {
 }
 
 @js.native
+sealed trait LabelRating extends js.Any
+object LabelRating {
+  val ANOMALY = "ANOMALY".asInstanceOf[LabelRating]
+  val NO_ANOMALY = "NO_ANOMALY".asInstanceOf[LabelRating]
+  val NEUTRAL = "NEUTRAL".asInstanceOf[LabelRating]
+
+  @inline def values: js.Array[LabelRating] = js.Array(ANOMALY, NO_ANOMALY, NEUTRAL)
+}
+
+@js.native
+sealed trait LatestInferenceResult extends js.Any
+object LatestInferenceResult {
+  val ANOMALOUS = "ANOMALOUS".asInstanceOf[LatestInferenceResult]
+  val NORMAL = "NORMAL".asInstanceOf[LatestInferenceResult]
+
+  @inline def values: js.Array[LatestInferenceResult] = js.Array(ANOMALOUS, NORMAL)
+}
+
+@js.native
 sealed trait ModelStatus extends js.Any
 object ModelStatus {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ModelStatus]
@@ -63,6 +82,25 @@ object ModelStatus {
   val FAILED = "FAILED".asInstanceOf[ModelStatus]
 
   @inline def values: js.Array[ModelStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+}
+
+@js.native
+sealed trait Monotonicity extends js.Any
+object Monotonicity {
+  val DECREASING = "DECREASING".asInstanceOf[Monotonicity]
+  val INCREASING = "INCREASING".asInstanceOf[Monotonicity]
+  val STATIC = "STATIC".asInstanceOf[Monotonicity]
+
+  @inline def values: js.Array[Monotonicity] = js.Array(DECREASING, INCREASING, STATIC)
+}
+
+@js.native
+sealed trait StatisticalIssueStatus extends js.Any
+object StatisticalIssueStatus {
+  val POTENTIAL_ISSUE_DETECTED = "POTENTIAL_ISSUE_DETECTED".asInstanceOf[StatisticalIssueStatus]
+  val NO_ISSUE_DETECTED = "NO_ISSUE_DETECTED".asInstanceOf[StatisticalIssueStatus]
+
+  @inline def values: js.Array[StatisticalIssueStatus] = js.Array(POTENTIAL_ISSUE_DETECTED, NO_ISSUE_DETECTED)
 }
 
 @js.native

@@ -79,8 +79,8 @@ object DomainPackageStatus {
   inline def values: js.Array[DomainPackageStatus] = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
 }
 
-type ESPartitionInstanceType = "m3.medium.elasticsearch" | "m3.large.elasticsearch" | "m3.xlarge.elasticsearch" | "m3.2xlarge.elasticsearch" | "m4.large.elasticsearch" | "m4.xlarge.elasticsearch" | "m4.2xlarge.elasticsearch" | "m4.4xlarge.elasticsearch" | "m4.10xlarge.elasticsearch" | "m5.large.elasticsearch" | "m5.xlarge.elasticsearch" | "m5.2xlarge.elasticsearch" | "m5.4xlarge.elasticsearch" | "m5.12xlarge.elasticsearch" | "r5.large.elasticsearch" | "r5.xlarge.elasticsearch" | "r5.2xlarge.elasticsearch" | "r5.4xlarge.elasticsearch" | "r5.12xlarge.elasticsearch" | "c5.large.elasticsearch" | "c5.xlarge.elasticsearch" | "c5.2xlarge.elasticsearch" | "c5.4xlarge.elasticsearch" | "c5.9xlarge.elasticsearch" | "c5.18xlarge.elasticsearch" | "ultrawarm1.medium.elasticsearch" | "ultrawarm1.large.elasticsearch" | "t2.micro.elasticsearch" | "t2.small.elasticsearch" | "t2.medium.elasticsearch" | "r3.large.elasticsearch" | "r3.xlarge.elasticsearch" | "r3.2xlarge.elasticsearch" |
-  "r3.4xlarge.elasticsearch" | "r3.8xlarge.elasticsearch" | "i2.xlarge.elasticsearch" | "i2.2xlarge.elasticsearch" | "d2.xlarge.elasticsearch" | "d2.2xlarge.elasticsearch" | "d2.4xlarge.elasticsearch" | "d2.8xlarge.elasticsearch" | "c4.large.elasticsearch" | "c4.xlarge.elasticsearch" | "c4.2xlarge.elasticsearch" | "c4.4xlarge.elasticsearch" | "c4.8xlarge.elasticsearch" | "r4.large.elasticsearch" | "r4.xlarge.elasticsearch" | "r4.2xlarge.elasticsearch" | "r4.4xlarge.elasticsearch" | "r4.8xlarge.elasticsearch" | "r4.16xlarge.elasticsearch" | "i3.large.elasticsearch" | "i3.xlarge.elasticsearch" | "i3.2xlarge.elasticsearch" | "i3.4xlarge.elasticsearch" | "i3.8xlarge.elasticsearch" | "i3.16xlarge.elasticsearch"
+type ESPartitionInstanceType =
+  "m3.medium.elasticsearch" | "m3.large.elasticsearch" | "m3.xlarge.elasticsearch" | "m3.2xlarge.elasticsearch" | "m4.large.elasticsearch" | "m4.xlarge.elasticsearch" | "m4.2xlarge.elasticsearch" | "m4.4xlarge.elasticsearch" | "m4.10xlarge.elasticsearch" | "m5.large.elasticsearch" | "m5.xlarge.elasticsearch" | "m5.2xlarge.elasticsearch" | "m5.4xlarge.elasticsearch" | "m5.12xlarge.elasticsearch" | "r5.large.elasticsearch" | "r5.xlarge.elasticsearch" | "r5.2xlarge.elasticsearch" | "r5.4xlarge.elasticsearch" | "r5.12xlarge.elasticsearch" | "c5.large.elasticsearch" | "c5.xlarge.elasticsearch" | "c5.2xlarge.elasticsearch" | "c5.4xlarge.elasticsearch" | "c5.9xlarge.elasticsearch" | "c5.18xlarge.elasticsearch" | "ultrawarm1.medium.elasticsearch" | "ultrawarm1.large.elasticsearch" | "t2.micro.elasticsearch" | "t2.small.elasticsearch" | "t2.medium.elasticsearch" | "r3.large.elasticsearch" | "r3.xlarge.elasticsearch" | "r3.2xlarge.elasticsearch" | "r3.4xlarge.elasticsearch" | "r3.8xlarge.elasticsearch" | "i2.xlarge.elasticsearch" | "i2.2xlarge.elasticsearch" | "d2.xlarge.elasticsearch" | "d2.2xlarge.elasticsearch" | "d2.4xlarge.elasticsearch" | "d2.8xlarge.elasticsearch" | "c4.large.elasticsearch" | "c4.xlarge.elasticsearch" | "c4.2xlarge.elasticsearch" | "c4.4xlarge.elasticsearch" | "c4.8xlarge.elasticsearch" | "r4.large.elasticsearch" | "r4.xlarge.elasticsearch" | "r4.2xlarge.elasticsearch" | "r4.4xlarge.elasticsearch" | "r4.8xlarge.elasticsearch" | "r4.16xlarge.elasticsearch" | "i3.large.elasticsearch" | "i3.xlarge.elasticsearch" | "i3.2xlarge.elasticsearch" | "i3.4xlarge.elasticsearch" | "i3.8xlarge.elasticsearch" | "i3.16xlarge.elasticsearch"
 object ESPartitionInstanceType {
   inline val `m3.medium.elasticsearch`: "m3.medium.elasticsearch" = "m3.medium.elasticsearch"
   inline val `m3.large.elasticsearch`: "m3.large.elasticsearch" = "m3.large.elasticsearch"
@@ -268,6 +268,18 @@ object OutboundCrossClusterSearchConnectionStatusCode {
   inline def values: js.Array[OutboundCrossClusterSearchConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
 }
 
+/** The overall status value of the domain configuration change.
+  */
+type OverallChangeStatus = "PENDING" | "PROCESSING" | "COMPLETED" | "FAILED"
+object OverallChangeStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[OverallChangeStatus] = js.Array(PENDING, PROCESSING, COMPLETED, FAILED)
+}
+
 type PackageStatus = "COPYING" | "COPY_FAILED" | "VALIDATING" | "VALIDATION_FAILED" | "AVAILABLE" | "DELETING" | "DELETED" | "DELETE_FAILED"
 object PackageStatus {
   inline val COPYING: "COPYING" = "COPYING"
@@ -287,6 +299,16 @@ object PackageType {
   inline val `TXT-DICTIONARY`: "TXT-DICTIONARY" = "TXT-DICTIONARY"
 
   inline def values: js.Array[PackageType] = js.Array(`TXT-DICTIONARY`)
+}
+
+/** <p>Specifies the type of AWS account permitted to manage VPC endpoints.:* AWS_ACCOUNT: Indicates that the account is owned by an AWS user. * AWS_SERVICE: Indicates the the account is owned by an AWS service. </p>
+  */
+type PrincipalType = "AWS_ACCOUNT" | "AWS_SERVICE"
+object PrincipalType {
+  inline val AWS_ACCOUNT: "AWS_ACCOUNT" = "AWS_ACCOUNT"
+  inline val AWS_SERVICE: "AWS_SERVICE" = "AWS_SERVICE"
+
+  inline def values: js.Array[PrincipalType] = js.Array(AWS_ACCOUNT, AWS_SERVICE)
 }
 
 type ReservedElasticsearchInstancePaymentOption = "ALL_UPFRONT" | "PARTIAL_UPFRONT" | "NO_UPFRONT"
@@ -365,13 +387,39 @@ object UpgradeStep {
   inline def values: js.Array[UpgradeStep] = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
 }
 
-/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
+/** The type of EBS volume, standard, gp2, gp3 or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
   */
-type VolumeType = "standard" | "gp2" | "io1"
+type VolumeType = "standard" | "gp2" | "io1" | "gp3"
 object VolumeType {
   inline val standard: "standard" = "standard"
   inline val gp2: "gp2" = "gp2"
   inline val io1: "io1" = "io1"
+  inline val gp3: "gp3" = "gp3"
 
-  inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1)
+  inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1, gp3)
+}
+
+/** <p>Specifies the error code of the failure encountered while describing the VPC endpoint:* ENDPOINT_NOT_FOUND: Indicates that the requested VPC endpoint does not exist. * SERVER_ERROR: Indicates the describe endpoint operation failed due to an internal server error. </p>
+  */
+type VpcEndpointErrorCode = "ENDPOINT_NOT_FOUND" | "SERVER_ERROR"
+object VpcEndpointErrorCode {
+  inline val ENDPOINT_NOT_FOUND: "ENDPOINT_NOT_FOUND" = "ENDPOINT_NOT_FOUND"
+  inline val SERVER_ERROR: "SERVER_ERROR" = "SERVER_ERROR"
+
+  inline def values: js.Array[VpcEndpointErrorCode] = js.Array(ENDPOINT_NOT_FOUND, SERVER_ERROR)
+}
+
+/** <p>Specifies the current status of the VPC endpoint:* CREATING: Indicates that the VPC endpoint is currently being created. * CREATE_FAILED: Indicates that the VPC endpoint creation failed. * ACTIVE: Indicates that the VPC endpoint is currently active. * UPDATING: Indicates that the VPC endpoint is currently being updated. * UPDATE_FAILED: Indicates that the VPC endpoint update failed. * DELETING: Indicates that the VPC endpoint is currently being deleted. * DELETE_FAILED: Indicates that the VPC endpoint deletion failed. </p>
+  */
+type VpcEndpointStatus = "CREATING" | "CREATE_FAILED" | "ACTIVE" | "UPDATING" | "UPDATE_FAILED" | "DELETING" | "DELETE_FAILED"
+object VpcEndpointStatus {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+
+  inline def values: js.Array[VpcEndpointStatus] = js.Array(CREATING, CREATE_FAILED, ACTIVE, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
 }

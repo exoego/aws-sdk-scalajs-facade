@@ -33,6 +33,15 @@ object Action {
 }
 
 @js.native
+sealed trait AppVisibility extends js.Any
+object AppVisibility {
+  val ALL = "ALL".asInstanceOf[AppVisibility]
+  val ASSOCIATED = "ASSOCIATED".asInstanceOf[AppVisibility]
+
+  @inline def values: js.Array[AppVisibility] = js.Array(ALL, ASSOCIATED)
+}
+
+@js.native
 sealed trait ApplicationAttribute extends js.Any
 object ApplicationAttribute {
   val LAUNCH_PARAMETERS = "LAUNCH_PARAMETERS".asInstanceOf[ApplicationAttribute]
@@ -47,8 +56,19 @@ object AuthenticationType {
   val API = "API".asInstanceOf[AuthenticationType]
   val SAML = "SAML".asInstanceOf[AuthenticationType]
   val USERPOOL = "USERPOOL".asInstanceOf[AuthenticationType]
+  val AWS_AD = "AWS_AD".asInstanceOf[AuthenticationType]
 
-  @inline def values: js.Array[AuthenticationType] = js.Array(API, SAML, USERPOOL)
+  @inline def values: js.Array[AuthenticationType] = js.Array(API, SAML, USERPOOL, AWS_AD)
+}
+
+@js.native
+sealed trait CertificateBasedAuthStatus extends js.Any
+object CertificateBasedAuthStatus {
+  val DISABLED = "DISABLED".asInstanceOf[CertificateBasedAuthStatus]
+  val ENABLED = "ENABLED".asInstanceOf[CertificateBasedAuthStatus]
+  val ENABLED_NO_DIRECTORY_LOGIN_FALLBACK = "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK".asInstanceOf[CertificateBasedAuthStatus]
+
+  @inline def values: js.Array[CertificateBasedAuthStatus] = js.Array(DISABLED, ENABLED, ENABLED_NO_DIRECTORY_LOGIN_FALLBACK)
 }
 
 /** The fleet attribute.
@@ -61,8 +81,9 @@ object FleetAttribute {
   val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
   val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
   val USB_DEVICE_FILTER_STRINGS = "USB_DEVICE_FILTER_STRINGS".asInstanceOf[FleetAttribute]
+  val SESSION_SCRIPT_S3_LOCATION = "SESSION_SCRIPT_S3_LOCATION".asInstanceOf[FleetAttribute]
 
-  @inline def values: js.Array[FleetAttribute] = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN, USB_DEVICE_FILTER_STRINGS)
+  @inline def values: js.Array[FleetAttribute] = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN, USB_DEVICE_FILTER_STRINGS, SESSION_SCRIPT_S3_LOCATION)
 }
 
 @js.native
@@ -235,6 +256,15 @@ object PlatformType {
 }
 
 @js.native
+sealed trait PreferredProtocol extends js.Any
+object PreferredProtocol {
+  val TCP = "TCP".asInstanceOf[PreferredProtocol]
+  val UDP = "UDP".asInstanceOf[PreferredProtocol]
+
+  @inline def values: js.Array[PreferredProtocol] = js.Array(TCP, UDP)
+}
+
+@js.native
 sealed trait SessionConnectionState extends js.Any
 object SessionConnectionState {
   val CONNECTED = "CONNECTED".asInstanceOf[SessionConnectionState]
@@ -269,6 +299,7 @@ object StackAttribute {
   val EMBED_HOST_DOMAINS = "EMBED_HOST_DOMAINS".asInstanceOf[StackAttribute]
   val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[StackAttribute]
   val ACCESS_ENDPOINTS = "ACCESS_ENDPOINTS".asInstanceOf[StackAttribute]
+  val STREAMING_EXPERIENCE_SETTINGS = "STREAMING_EXPERIENCE_SETTINGS".asInstanceOf[StackAttribute]
 
   @inline def values: js.Array[StackAttribute] = js.Array(
     STORAGE_CONNECTORS,
@@ -281,7 +312,8 @@ object StackAttribute {
     USER_SETTINGS,
     EMBED_HOST_DOMAINS,
     IAM_ROLE_ARN,
-    ACCESS_ENDPOINTS
+    ACCESS_ENDPOINTS,
+    STREAMING_EXPERIENCE_SETTINGS
   )
 }
 

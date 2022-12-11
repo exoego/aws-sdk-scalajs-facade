@@ -2,6 +2,16 @@ package facade.amazonaws.services.cloudformation
 
 import scalajs.js
 
+type AccountFilterType = "NONE" | "INTERSECTION" | "DIFFERENCE" | "UNION"
+object AccountFilterType {
+  inline val NONE: "NONE" = "NONE"
+  inline val INTERSECTION: "INTERSECTION" = "INTERSECTION"
+  inline val DIFFERENCE: "DIFFERENCE" = "DIFFERENCE"
+  inline val UNION: "UNION" = "UNION"
+
+  inline def values: js.Array[AccountFilterType] = js.Array(NONE, INTERSECTION, DIFFERENCE, UNION)
+}
+
 type AccountGateStatus = "SUCCEEDED" | "FAILED" | "SKIPPED"
 object AccountGateStatus {
   inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
@@ -47,6 +57,15 @@ object ChangeAction {
   inline val Dynamic: "Dynamic" = "Dynamic"
 
   inline def values: js.Array[ChangeAction] = js.Array(Add, Modify, Remove, Import, Dynamic)
+}
+
+type ChangeSetHooksStatus = "PLANNING" | "PLANNED" | "UNAVAILABLE"
+object ChangeSetHooksStatus {
+  inline val PLANNING: "PLANNING" = "PLANNING"
+  inline val PLANNED: "PLANNED" = "PLANNED"
+  inline val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
+
+  inline def values: js.Array[ChangeSetHooksStatus] = js.Array(PLANNING, PLANNED, UNAVAILABLE)
 }
 
 type ChangeSetStatus = "CREATE_PENDING" | "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "DELETE_PENDING" | "DELETE_IN_PROGRESS" | "DELETE_COMPLETE" | "DELETE_FAILED" | "FAILED"
@@ -127,7 +146,7 @@ object ExecutionStatus {
   inline def values: js.Array[ExecutionStatus] = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
 }
 
-type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure" | "InvalidTypeConfiguration"
+type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure" | "InvalidTypeConfiguration" | "HandlerInternalFailure" | "NonCompliant" | "Unknown" | "UnsupportedTarget"
 object HandlerErrorCode {
   inline val NotUpdatable: "NotUpdatable" = "NotUpdatable"
   inline val InvalidRequest: "InvalidRequest" = "InvalidRequest"
@@ -144,6 +163,10 @@ object HandlerErrorCode {
   inline val NetworkFailure: "NetworkFailure" = "NetworkFailure"
   inline val InternalFailure: "InternalFailure" = "InternalFailure"
   inline val InvalidTypeConfiguration: "InvalidTypeConfiguration" = "InvalidTypeConfiguration"
+  inline val HandlerInternalFailure: "HandlerInternalFailure" = "HandlerInternalFailure"
+  inline val NonCompliant: "NonCompliant" = "NonCompliant"
+  inline val Unknown: "Unknown" = "Unknown"
+  inline val UnsupportedTarget: "UnsupportedTarget" = "UnsupportedTarget"
 
   inline def values: js.Array[HandlerErrorCode] = js.Array(
     NotUpdatable,
@@ -160,8 +183,44 @@ object HandlerErrorCode {
     ServiceInternalError,
     NetworkFailure,
     InternalFailure,
-    InvalidTypeConfiguration
+    InvalidTypeConfiguration,
+    HandlerInternalFailure,
+    NonCompliant,
+    Unknown,
+    UnsupportedTarget
   )
+}
+
+type HookFailureMode = "FAIL" | "WARN"
+object HookFailureMode {
+  inline val FAIL: "FAIL" = "FAIL"
+  inline val WARN: "WARN" = "WARN"
+
+  inline def values: js.Array[HookFailureMode] = js.Array(FAIL, WARN)
+}
+
+type HookInvocationPoint = "PRE_PROVISION"
+object HookInvocationPoint {
+  inline val PRE_PROVISION: "PRE_PROVISION" = "PRE_PROVISION"
+
+  inline def values: js.Array[HookInvocationPoint] = js.Array(PRE_PROVISION)
+}
+
+type HookStatus = "HOOK_IN_PROGRESS" | "HOOK_COMPLETE_SUCCEEDED" | "HOOK_COMPLETE_FAILED" | "HOOK_FAILED"
+object HookStatus {
+  inline val HOOK_IN_PROGRESS: "HOOK_IN_PROGRESS" = "HOOK_IN_PROGRESS"
+  inline val HOOK_COMPLETE_SUCCEEDED: "HOOK_COMPLETE_SUCCEEDED" = "HOOK_COMPLETE_SUCCEEDED"
+  inline val HOOK_COMPLETE_FAILED: "HOOK_COMPLETE_FAILED" = "HOOK_COMPLETE_FAILED"
+  inline val HOOK_FAILED: "HOOK_FAILED" = "HOOK_FAILED"
+
+  inline def values: js.Array[HookStatus] = js.Array(HOOK_IN_PROGRESS, HOOK_COMPLETE_SUCCEEDED, HOOK_COMPLETE_FAILED, HOOK_FAILED)
+}
+
+type HookTargetType = "RESOURCE"
+object HookTargetType {
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+
+  inline def values: js.Array[HookTargetType] = js.Array(RESOURCE)
 }
 
 type IdentityProvider = "AWS_Marketplace" | "GitHub" | "Bitbucket"
@@ -180,6 +239,13 @@ object OnFailure {
   inline val DELETE: "DELETE" = "DELETE"
 
   inline def values: js.Array[OnFailure] = js.Array(DO_NOTHING, ROLLBACK, DELETE)
+}
+
+type OperationResultFilterName = "OPERATION_RESULT_STATUS"
+object OperationResultFilterName {
+  inline val OPERATION_RESULT_STATUS: "OPERATION_RESULT_STATUS" = "OPERATION_RESULT_STATUS"
+
+  inline def values: js.Array[OperationResultFilterName] = js.Array(OPERATION_RESULT_STATUS)
 }
 
 type OperationStatus = "PENDING" | "IN_PROGRESS" | "SUCCESS" | "FAILED"
@@ -234,12 +300,13 @@ object RegistrationStatus {
   inline def values: js.Array[RegistrationStatus] = js.Array(COMPLETE, IN_PROGRESS, FAILED)
 }
 
-type RegistryType = "RESOURCE" | "MODULE"
+type RegistryType = "RESOURCE" | "MODULE" | "HOOK"
 object RegistryType {
   inline val RESOURCE: "RESOURCE" = "RESOURCE"
   inline val MODULE: "MODULE" = "MODULE"
+  inline val HOOK: "HOOK" = "HOOK"
 
-  inline def values: js.Array[RegistryType] = js.Array(RESOURCE, MODULE)
+  inline def values: js.Array[RegistryType] = js.Array(RESOURCE, MODULE, HOOK)
 }
 
 type Replacement = "True" | "False" | "Conditional"
@@ -362,11 +429,12 @@ object StackInstanceDetailedStatus {
   inline def values: js.Array[StackInstanceDetailedStatus] = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
 }
 
-type StackInstanceFilterName = "DETAILED_STATUS"
+type StackInstanceFilterName = "DETAILED_STATUS" | "LAST_OPERATION_ID"
 object StackInstanceFilterName {
   inline val DETAILED_STATUS: "DETAILED_STATUS" = "DETAILED_STATUS"
+  inline val LAST_OPERATION_ID: "LAST_OPERATION_ID" = "LAST_OPERATION_ID"
 
-  inline def values: js.Array[StackInstanceFilterName] = js.Array(DETAILED_STATUS)
+  inline def values: js.Array[StackInstanceFilterName] = js.Array(DETAILED_STATUS, LAST_OPERATION_ID)
 }
 
 type StackInstanceStatus = "CURRENT" | "OUTDATED" | "INOPERABLE"
@@ -510,12 +578,13 @@ object TemplateStage {
   inline def values: js.Array[TemplateStage] = js.Array(Original, Processed)
 }
 
-type ThirdPartyType = "RESOURCE" | "MODULE"
+type ThirdPartyType = "RESOURCE" | "MODULE" | "HOOK"
 object ThirdPartyType {
   inline val RESOURCE: "RESOURCE" = "RESOURCE"
   inline val MODULE: "MODULE" = "MODULE"
+  inline val HOOK: "HOOK" = "HOOK"
 
-  inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE)
+  inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE, HOOK)
 }
 
 type TypeTestsStatus = "PASSED" | "FAILED" | "IN_PROGRESS" | "NOT_TESTED"

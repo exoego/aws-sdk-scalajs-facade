@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object personalizeevents {
   type Arn = String
   type Date = js.Date
+  type EventAttributionSource = String
   type EventList = js.Array[Event]
   type EventPropertiesJSON = String
   type FloatType = Float
@@ -56,6 +57,7 @@ package object personalizeevents {
     var eventValue: js.UndefOr[FloatType]
     var impression: js.UndefOr[Impression]
     var itemId: js.UndefOr[ItemId]
+    var metricAttribution: js.UndefOr[MetricAttribution]
     var properties: js.UndefOr[EventPropertiesJSON]
     var recommendationId: js.UndefOr[RecommendationId]
   }
@@ -69,6 +71,7 @@ package object personalizeevents {
         eventValue: js.UndefOr[FloatType] = js.undefined,
         impression: js.UndefOr[Impression] = js.undefined,
         itemId: js.UndefOr[ItemId] = js.undefined,
+        metricAttribution: js.UndefOr[MetricAttribution] = js.undefined,
         properties: js.UndefOr[EventPropertiesJSON] = js.undefined,
         recommendationId: js.UndefOr[RecommendationId] = js.undefined
     ): Event = {
@@ -81,6 +84,7 @@ package object personalizeevents {
       eventValue.foreach(__v => __obj.updateDynamic("eventValue")(__v.asInstanceOf[js.Any]))
       impression.foreach(__v => __obj.updateDynamic("impression")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      metricAttribution.foreach(__v => __obj.updateDynamic("metricAttribution")(__v.asInstanceOf[js.Any]))
       properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
       recommendationId.foreach(__v => __obj.updateDynamic("recommendationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
@@ -107,6 +111,25 @@ package object personalizeevents {
 
       properties.foreach(__v => __obj.updateDynamic("properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Item]
+    }
+  }
+
+  /** Contains information about a metric attribution associated with an event. For more information about metric attributions, see [[https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html|Measuring impact of recommendations]].
+    */
+  @js.native
+  trait MetricAttribution extends js.Object {
+    var eventAttributionSource: EventAttributionSource
+  }
+
+  object MetricAttribution {
+    @inline
+    def apply(
+        eventAttributionSource: EventAttributionSource
+    ): MetricAttribution = {
+      val __obj = js.Dynamic.literal(
+        "eventAttributionSource" -> eventAttributionSource.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MetricAttribution]
     }
   }
 

@@ -18,7 +18,7 @@ object AuthenticationProviderTypes {
   inline def values: js.Array[AuthenticationProviderTypes] = js.Array(AWS_SSO, SAML)
 }
 
-type DataSourceType = "AMAZON_OPENSEARCH_SERVICE" | "CLOUDWATCH" | "PROMETHEUS" | "XRAY" | "TIMESTREAM" | "SITEWISE"
+type DataSourceType = "AMAZON_OPENSEARCH_SERVICE" | "CLOUDWATCH" | "PROMETHEUS" | "XRAY" | "TIMESTREAM" | "SITEWISE" | "ATHENA" | "REDSHIFT" | "TWINMAKER"
 object DataSourceType {
   inline val AMAZON_OPENSEARCH_SERVICE: "AMAZON_OPENSEARCH_SERVICE" = "AMAZON_OPENSEARCH_SERVICE"
   inline val CLOUDWATCH: "CLOUDWATCH" = "CLOUDWATCH"
@@ -26,8 +26,11 @@ object DataSourceType {
   inline val XRAY: "XRAY" = "XRAY"
   inline val TIMESTREAM: "TIMESTREAM" = "TIMESTREAM"
   inline val SITEWISE: "SITEWISE" = "SITEWISE"
+  inline val ATHENA: "ATHENA" = "ATHENA"
+  inline val REDSHIFT: "REDSHIFT" = "REDSHIFT"
+  inline val TWINMAKER: "TWINMAKER" = "TWINMAKER"
 
-  inline def values: js.Array[DataSourceType] = js.Array(AMAZON_OPENSEARCH_SERVICE, CLOUDWATCH, PROMETHEUS, XRAY, TIMESTREAM, SITEWISE)
+  inline def values: js.Array[DataSourceType] = js.Array(AMAZON_OPENSEARCH_SERVICE, CLOUDWATCH, PROMETHEUS, XRAY, TIMESTREAM, SITEWISE, ATHENA, REDSHIFT, TWINMAKER)
 }
 
 type LicenseType = "ENTERPRISE" | "ENTERPRISE_FREE_TRIAL"
@@ -53,12 +56,13 @@ object PermissionType {
   inline def values: js.Array[PermissionType] = js.Array(CUSTOMER_MANAGED, SERVICE_MANAGED)
 }
 
-type Role = "ADMIN" | "EDITOR"
+type Role = "ADMIN" | "EDITOR" | "VIEWER"
 object Role {
   inline val ADMIN: "ADMIN" = "ADMIN"
   inline val EDITOR: "EDITOR" = "EDITOR"
+  inline val VIEWER: "VIEWER" = "VIEWER"
 
-  inline def values: js.Array[Role] = js.Array(ADMIN, EDITOR)
+  inline def values: js.Array[Role] = js.Array(ADMIN, EDITOR, VIEWER)
 }
 
 type SamlConfigurationStatus = "CONFIGURED" | "NOT_CONFIGURED"

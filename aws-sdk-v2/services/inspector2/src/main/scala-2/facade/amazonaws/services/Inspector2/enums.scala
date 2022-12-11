@@ -26,8 +26,9 @@ sealed trait AggregationResourceType extends js.Any
 object AggregationResourceType {
   val AWS_EC2_INSTANCE = "AWS_EC2_INSTANCE".asInstanceOf[AggregationResourceType]
   val AWS_ECR_CONTAINER_IMAGE = "AWS_ECR_CONTAINER_IMAGE".asInstanceOf[AggregationResourceType]
+  val AWS_LAMBDA_FUNCTION = "AWS_LAMBDA_FUNCTION".asInstanceOf[AggregationResourceType]
 
-  @inline def values: js.Array[AggregationResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE)
+  @inline def values: js.Array[AggregationResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_LAMBDA_FUNCTION)
 }
 
 @js.native
@@ -42,8 +43,10 @@ object AggregationType {
   val AWS_ECR_CONTAINER = "AWS_ECR_CONTAINER".asInstanceOf[AggregationType]
   val IMAGE_LAYER = "IMAGE_LAYER".asInstanceOf[AggregationType]
   val ACCOUNT = "ACCOUNT".asInstanceOf[AggregationType]
+  val AWS_LAMBDA_FUNCTION = "AWS_LAMBDA_FUNCTION".asInstanceOf[AggregationType]
+  val LAMBDA_LAYER = "LAMBDA_LAYER".asInstanceOf[AggregationType]
 
-  @inline def values: js.Array[AggregationType] = js.Array(FINDING_TYPE, PACKAGE, TITLE, REPOSITORY, AMI, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER, IMAGE_LAYER, ACCOUNT)
+  @inline def values: js.Array[AggregationType] = js.Array(FINDING_TYPE, PACKAGE, TITLE, REPOSITORY, AMI, AWS_EC2_INSTANCE, AWS_ECR_CONTAINER, IMAGE_LAYER, ACCOUNT, AWS_LAMBDA_FUNCTION, LAMBDA_LAYER)
 }
 
 @js.native
@@ -55,6 +58,15 @@ object AmiSortBy {
   val AFFECTED_INSTANCES = "AFFECTED_INSTANCES".asInstanceOf[AmiSortBy]
 
   @inline def values: js.Array[AmiSortBy] = js.Array(CRITICAL, HIGH, ALL, AFFECTED_INSTANCES)
+}
+
+@js.native
+sealed trait Architecture extends js.Any
+object Architecture {
+  val X86_64 = "X86_64".asInstanceOf[Architecture]
+  val ARM64 = "ARM64".asInstanceOf[Architecture]
+
+  @inline def values: js.Array[Architecture] = js.Array(X86_64, ARM64)
 }
 
 @js.native
@@ -81,8 +93,9 @@ object CoverageResourceType {
   val AWS_EC2_INSTANCE = "AWS_EC2_INSTANCE".asInstanceOf[CoverageResourceType]
   val AWS_ECR_CONTAINER_IMAGE = "AWS_ECR_CONTAINER_IMAGE".asInstanceOf[CoverageResourceType]
   val AWS_ECR_REPOSITORY = "AWS_ECR_REPOSITORY".asInstanceOf[CoverageResourceType]
+  val AWS_LAMBDA_FUNCTION = "AWS_LAMBDA_FUNCTION".asInstanceOf[CoverageResourceType]
 
-  @inline def values: js.Array[CoverageResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY)
+  @inline def values: js.Array[CoverageResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY, AWS_LAMBDA_FUNCTION)
 }
 
 @js.native
@@ -133,6 +146,26 @@ object Ec2Platform {
 }
 
 @js.native
+sealed trait EcrRescanDuration extends js.Any
+object EcrRescanDuration {
+  val LIFETIME = "LIFETIME".asInstanceOf[EcrRescanDuration]
+  val DAYS_30 = "DAYS_30".asInstanceOf[EcrRescanDuration]
+  val DAYS_180 = "DAYS_180".asInstanceOf[EcrRescanDuration]
+
+  @inline def values: js.Array[EcrRescanDuration] = js.Array(LIFETIME, DAYS_30, DAYS_180)
+}
+
+@js.native
+sealed trait EcrRescanDurationStatus extends js.Any
+object EcrRescanDurationStatus {
+  val SUCCESS = "SUCCESS".asInstanceOf[EcrRescanDurationStatus]
+  val PENDING = "PENDING".asInstanceOf[EcrRescanDurationStatus]
+  val FAILED = "FAILED".asInstanceOf[EcrRescanDurationStatus]
+
+  @inline def values: js.Array[EcrRescanDurationStatus] = js.Array(SUCCESS, PENDING, FAILED)
+}
+
+@js.native
 sealed trait EcrScanFrequency extends js.Any
 object EcrScanFrequency {
   val MANUAL = "MANUAL".asInstanceOf[EcrScanFrequency]
@@ -158,6 +191,7 @@ object ErrorCode {
   val EVENTBRIDGE_THROTTLED = "EVENTBRIDGE_THROTTLED".asInstanceOf[ErrorCode]
   val RESOURCE_SCAN_NOT_DISABLED = "RESOURCE_SCAN_NOT_DISABLED".asInstanceOf[ErrorCode]
   val DISASSOCIATE_ALL_MEMBERS = "DISASSOCIATE_ALL_MEMBERS".asInstanceOf[ErrorCode]
+  val ACCOUNT_IS_ISOLATED = "ACCOUNT_IS_ISOLATED".asInstanceOf[ErrorCode]
 
   @inline def values: js.Array[ErrorCode] = js.Array(
     ALREADY_ENABLED,
@@ -172,8 +206,18 @@ object ErrorCode {
     EVENTBRIDGE_UNAVAILABLE,
     EVENTBRIDGE_THROTTLED,
     RESOURCE_SCAN_NOT_DISABLED,
-    DISASSOCIATE_ALL_MEMBERS
+    DISASSOCIATE_ALL_MEMBERS,
+    ACCOUNT_IS_ISOLATED
   )
+}
+
+@js.native
+sealed trait ExploitAvailable extends js.Any
+object ExploitAvailable {
+  val YES = "YES".asInstanceOf[ExploitAvailable]
+  val NO = "NO".asInstanceOf[ExploitAvailable]
+
+  @inline def values: js.Array[ExploitAvailable] = js.Array(YES, NO)
 }
 
 @js.native
@@ -226,6 +270,16 @@ object FindingTypeSortBy {
 }
 
 @js.native
+sealed trait FixAvailable extends js.Any
+object FixAvailable {
+  val YES = "YES".asInstanceOf[FixAvailable]
+  val NO = "NO".asInstanceOf[FixAvailable]
+  val PARTIAL = "PARTIAL".asInstanceOf[FixAvailable]
+
+  @inline def values: js.Array[FixAvailable] = js.Array(YES, NO, PARTIAL)
+}
+
+@js.native
 sealed trait FreeTrialInfoErrorCode extends js.Any
 object FreeTrialInfoErrorCode {
   val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[FreeTrialInfoErrorCode]
@@ -248,8 +302,9 @@ sealed trait FreeTrialType extends js.Any
 object FreeTrialType {
   val EC2 = "EC2".asInstanceOf[FreeTrialType]
   val ECR = "ECR".asInstanceOf[FreeTrialType]
+  val LAMBDA = "LAMBDA".asInstanceOf[FreeTrialType]
 
-  @inline def values: js.Array[FreeTrialType] = js.Array(EC2, ECR)
+  @inline def values: js.Array[FreeTrialType] = js.Array(EC2, ECR, LAMBDA)
 }
 
 @js.native
@@ -272,6 +327,26 @@ object ImageLayerSortBy {
   val ALL = "ALL".asInstanceOf[ImageLayerSortBy]
 
   @inline def values: js.Array[ImageLayerSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+@js.native
+sealed trait LambdaFunctionSortBy extends js.Any
+object LambdaFunctionSortBy {
+  val CRITICAL = "CRITICAL".asInstanceOf[LambdaFunctionSortBy]
+  val HIGH = "HIGH".asInstanceOf[LambdaFunctionSortBy]
+  val ALL = "ALL".asInstanceOf[LambdaFunctionSortBy]
+
+  @inline def values: js.Array[LambdaFunctionSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+@js.native
+sealed trait LambdaLayerSortBy extends js.Any
+object LambdaLayerSortBy {
+  val CRITICAL = "CRITICAL".asInstanceOf[LambdaLayerSortBy]
+  val HIGH = "HIGH".asInstanceOf[LambdaLayerSortBy]
+  val ALL = "ALL".asInstanceOf[LambdaLayerSortBy]
+
+  @inline def values: js.Array[LambdaLayerSortBy] = js.Array(CRITICAL, HIGH, ALL)
 }
 
 @js.native
@@ -317,8 +392,12 @@ object PackageManager {
   val GOMOD = "GOMOD".asInstanceOf[PackageManager]
   val JAR = "JAR".asInstanceOf[PackageManager]
   val OS = "OS".asInstanceOf[PackageManager]
+  val PIP = "PIP".asInstanceOf[PackageManager]
+  val PYTHONPKG = "PYTHONPKG".asInstanceOf[PackageManager]
+  val NODEPKG = "NODEPKG".asInstanceOf[PackageManager]
+  val POM = "POM".asInstanceOf[PackageManager]
 
-  @inline def values: js.Array[PackageManager] = js.Array(BUNDLER, CARGO, COMPOSER, NPM, NUGET, PIPENV, POETRY, YARN, GOBINARY, GOMOD, JAR, OS)
+  @inline def values: js.Array[PackageManager] = js.Array(BUNDLER, CARGO, COMPOSER, NPM, NUGET, PIPENV, POETRY, YARN, GOBINARY, GOMOD, JAR, OS, PIP, PYTHONPKG, NODEPKG, POM)
 }
 
 @js.native
@@ -329,6 +408,15 @@ object PackageSortBy {
   val ALL = "ALL".asInstanceOf[PackageSortBy]
 
   @inline def values: js.Array[PackageSortBy] = js.Array(CRITICAL, HIGH, ALL)
+}
+
+@js.native
+sealed trait PackageType extends js.Any
+object PackageType {
+  val IMAGE = "IMAGE".asInstanceOf[PackageType]
+  val ZIP = "ZIP".asInstanceOf[PackageType]
+
+  @inline def values: js.Array[PackageType] = js.Array(IMAGE, ZIP)
 }
 
 @js.native
@@ -377,8 +465,12 @@ sealed trait ReportingErrorCode extends js.Any
 object ReportingErrorCode {
   val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ReportingErrorCode]
   val INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[ReportingErrorCode]
+  val NO_FINDINGS_FOUND = "NO_FINDINGS_FOUND".asInstanceOf[ReportingErrorCode]
+  val BUCKET_NOT_FOUND = "BUCKET_NOT_FOUND".asInstanceOf[ReportingErrorCode]
+  val INCOMPATIBLE_BUCKET_REGION = "INCOMPATIBLE_BUCKET_REGION".asInstanceOf[ReportingErrorCode]
+  val MALFORMED_KMS_KEY = "MALFORMED_KMS_KEY".asInstanceOf[ReportingErrorCode]
 
-  @inline def values: js.Array[ReportingErrorCode] = js.Array(INTERNAL_ERROR, INVALID_PERMISSIONS)
+  @inline def values: js.Array[ReportingErrorCode] = js.Array(INTERNAL_ERROR, INVALID_PERMISSIONS, NO_FINDINGS_FOUND, BUCKET_NOT_FOUND, INCOMPATIBLE_BUCKET_REGION, MALFORMED_KMS_KEY)
 }
 
 @js.native
@@ -397,8 +489,9 @@ sealed trait ResourceScanType extends js.Any
 object ResourceScanType {
   val EC2 = "EC2".asInstanceOf[ResourceScanType]
   val ECR = "ECR".asInstanceOf[ResourceScanType]
+  val LAMBDA = "LAMBDA".asInstanceOf[ResourceScanType]
 
-  @inline def values: js.Array[ResourceScanType] = js.Array(EC2, ECR)
+  @inline def values: js.Array[ResourceScanType] = js.Array(EC2, ECR, LAMBDA)
 }
 
 @js.native
@@ -407,8 +500,27 @@ object ResourceType {
   val AWS_EC2_INSTANCE = "AWS_EC2_INSTANCE".asInstanceOf[ResourceType]
   val AWS_ECR_CONTAINER_IMAGE = "AWS_ECR_CONTAINER_IMAGE".asInstanceOf[ResourceType]
   val AWS_ECR_REPOSITORY = "AWS_ECR_REPOSITORY".asInstanceOf[ResourceType]
+  val AWS_LAMBDA_FUNCTION = "AWS_LAMBDA_FUNCTION".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY)
+  @inline def values: js.Array[ResourceType] = js.Array(AWS_EC2_INSTANCE, AWS_ECR_CONTAINER_IMAGE, AWS_ECR_REPOSITORY, AWS_LAMBDA_FUNCTION)
+}
+
+@js.native
+sealed trait Runtime extends js.Any
+object Runtime {
+  val NODEJS = "NODEJS".asInstanceOf[Runtime]
+  val NODEJS_12_X = "NODEJS_12_X".asInstanceOf[Runtime]
+  val NODEJS_14_X = "NODEJS_14_X".asInstanceOf[Runtime]
+  val NODEJS_16_X = "NODEJS_16_X".asInstanceOf[Runtime]
+  val JAVA_8 = "JAVA_8".asInstanceOf[Runtime]
+  val JAVA_8_AL2 = "JAVA_8_AL2".asInstanceOf[Runtime]
+  val JAVA_11 = "JAVA_11".asInstanceOf[Runtime]
+  val PYTHON_3_7 = "PYTHON_3_7".asInstanceOf[Runtime]
+  val PYTHON_3_8 = "PYTHON_3_8".asInstanceOf[Runtime]
+  val PYTHON_3_9 = "PYTHON_3_9".asInstanceOf[Runtime]
+  val UNSUPPORTED = "UNSUPPORTED".asInstanceOf[Runtime]
+
+  @inline def values: js.Array[Runtime] = js.Array(NODEJS, NODEJS_12_X, NODEJS_14_X, NODEJS_16_X, JAVA_8, JAVA_8_AL2, JAVA_11, PYTHON_3_7, PYTHON_3_8, PYTHON_3_9, UNSUPPORTED)
 }
 
 @js.native
@@ -436,6 +548,11 @@ object ScanStatusReason {
   val SCAN_FREQUENCY_MANUAL = "SCAN_FREQUENCY_MANUAL".asInstanceOf[ScanStatusReason]
   val SCAN_FREQUENCY_SCAN_ON_PUSH = "SCAN_FREQUENCY_SCAN_ON_PUSH".asInstanceOf[ScanStatusReason]
   val EC2_INSTANCE_STOPPED = "EC2_INSTANCE_STOPPED".asInstanceOf[ScanStatusReason]
+  val PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[ScanStatusReason]
+  val NO_INVENTORY = "NO_INVENTORY".asInstanceOf[ScanStatusReason]
+  val STALE_INVENTORY = "STALE_INVENTORY".asInstanceOf[ScanStatusReason]
+  val EXCLUDED_BY_TAG = "EXCLUDED_BY_TAG".asInstanceOf[ScanStatusReason]
+  val UNSUPPORTED_RUNTIME = "UNSUPPORTED_RUNTIME".asInstanceOf[ScanStatusReason]
 
   @inline def values: js.Array[ScanStatusReason] = js.Array(
     PENDING_INITIAL_SCAN,
@@ -450,7 +567,12 @@ object ScanStatusReason {
     IMAGE_SIZE_EXCEEDED,
     SCAN_FREQUENCY_MANUAL,
     SCAN_FREQUENCY_SCAN_ON_PUSH,
-    EC2_INSTANCE_STOPPED
+    EC2_INSTANCE_STOPPED,
+    PENDING_DISABLE,
+    NO_INVENTORY,
+    STALE_INVENTORY,
+    EXCLUDED_BY_TAG,
+    UNSUPPORTED_RUNTIME
   )
 }
 
@@ -468,8 +590,9 @@ sealed trait Service extends js.Any
 object Service {
   val EC2 = "EC2".asInstanceOf[Service]
   val ECR = "ECR".asInstanceOf[Service]
+  val LAMBDA = "LAMBDA".asInstanceOf[Service]
 
-  @inline def values: js.Array[Service] = js.Array(EC2, ECR)
+  @inline def values: js.Array[Service] = js.Array(EC2, ECR, LAMBDA)
 }
 
 @js.native
@@ -573,6 +696,7 @@ object UsageType {
   val EC2_INSTANCE_HOURS = "EC2_INSTANCE_HOURS".asInstanceOf[UsageType]
   val ECR_INITIAL_SCAN = "ECR_INITIAL_SCAN".asInstanceOf[UsageType]
   val ECR_RESCAN = "ECR_RESCAN".asInstanceOf[UsageType]
+  val LAMBDA_FUNCTION_HOURS = "LAMBDA_FUNCTION_HOURS".asInstanceOf[UsageType]
 
-  @inline def values: js.Array[UsageType] = js.Array(EC2_INSTANCE_HOURS, ECR_INITIAL_SCAN, ECR_RESCAN)
+  @inline def values: js.Array[UsageType] = js.Array(EC2_INSTANCE_HOURS, ECR_INITIAL_SCAN, ECR_RESCAN, LAMBDA_FUNCTION_HOURS)
 }

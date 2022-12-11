@@ -10,6 +10,14 @@ object AdminStatus {
   inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLE_IN_PROGRESS)
 }
 
+type AutoEnableStandards = "NONE" | "DEFAULT"
+object AutoEnableStandards {
+  inline val NONE: "NONE" = "NONE"
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+
+  inline def values: js.Array[AutoEnableStandards] = js.Array(NONE, DEFAULT)
+}
+
 type AwsIamAccessKeyStatus = "Active" | "Inactive"
 object AwsIamAccessKeyStatus {
   inline val Active: "Active" = "Active"
@@ -234,6 +242,15 @@ object VerificationState {
   inline val BENIGN_POSITIVE: "BENIGN_POSITIVE" = "BENIGN_POSITIVE"
 
   inline def values: js.Array[VerificationState] = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
+}
+
+type VulnerabilityFixAvailable = "YES" | "NO" | "PARTIAL"
+object VulnerabilityFixAvailable {
+  inline val YES: "YES" = "YES"
+  inline val NO: "NO" = "NO"
+  inline val PARTIAL: "PARTIAL" = "PARTIAL"
+
+  inline def values: js.Array[VulnerabilityFixAvailable] = js.Array(YES, NO, PARTIAL)
 }
 
 @deprecated("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.", "forever")

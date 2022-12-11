@@ -38,8 +38,9 @@ object ScalarMeasureValueType {
   val BOOLEAN = "BOOLEAN".asInstanceOf[ScalarMeasureValueType]
   val DOUBLE = "DOUBLE".asInstanceOf[ScalarMeasureValueType]
   val VARCHAR = "VARCHAR".asInstanceOf[ScalarMeasureValueType]
+  val TIMESTAMP = "TIMESTAMP".asInstanceOf[ScalarMeasureValueType]
 
-  @inline def values: js.Array[ScalarMeasureValueType] = js.Array(BIGINT, BOOLEAN, DOUBLE, VARCHAR)
+  @inline def values: js.Array[ScalarMeasureValueType] = js.Array(BIGINT, BOOLEAN, DOUBLE, VARCHAR, TIMESTAMP)
 }
 
 @js.native

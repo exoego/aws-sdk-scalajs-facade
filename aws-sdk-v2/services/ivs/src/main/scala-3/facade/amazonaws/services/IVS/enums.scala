@@ -27,6 +27,14 @@ object RecordingConfigurationState {
   inline def values: js.Array[RecordingConfigurationState] = js.Array(CREATING, CREATE_FAILED, ACTIVE)
 }
 
+type RecordingMode = "DISABLED" | "INTERVAL"
+object RecordingMode {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val INTERVAL: "INTERVAL" = "INTERVAL"
+
+  inline def values: js.Array[RecordingMode] = js.Array(DISABLED, INTERVAL)
+}
+
 type StreamHealth = "HEALTHY" | "STARVING" | "UNKNOWN"
 object StreamHealth {
   inline val HEALTHY: "HEALTHY" = "HEALTHY"

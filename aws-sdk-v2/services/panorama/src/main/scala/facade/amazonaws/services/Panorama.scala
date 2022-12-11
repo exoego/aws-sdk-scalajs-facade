@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object panorama {
+  type AlternateSoftwares = js.Array[AlternateSoftwareMetadata]
   type ApplicationInstanceArn = String
   type ApplicationInstanceId = String
   type ApplicationInstanceName = String
@@ -36,10 +37,12 @@ package object panorama {
   type InputPortList = js.Array[NodeInputPort]
   type IotThingName = String
   type IpAddress = String
+  type IpAddressOrServerName = String
   type JobId = String
   type JobList = js.Array[Job]
   type JobTagsList = js.Array[JobResourceTags]
   type LastUpdatedTime = js.Date
+  type LatestAlternateSoftware = String
   type LatestSoftware = String
   type LeaseExpirationTime = js.Date
   type ManifestOverridesPayloadData = String
@@ -48,6 +51,7 @@ package object panorama {
   type Mask = String
   type MaxConnections = Int
   type MaxSize25 = Int
+  type NameFilter = String
   type NextToken = String
   type NodeAssetName = String
   type NodeFromTemplateJobList = js.Array[NodeFromTemplateJob]
@@ -61,7 +65,10 @@ package object panorama {
   type NodePackageName = String
   type NodePackagePatchVersion = String
   type NodePackageVersion = String
+  type NodeSignalList = js.Array[NodeSignal]
   type NodesList = js.Array[Node]
+  type NtpServerList = js.Array[IpAddressOrServerName]
+  type NtpServerName = String
   type Object = String
   type ObjectKey = String
   type OutputPortList = js.Array[NodeOutputPort]
@@ -76,7 +83,9 @@ package object panorama {
   type PrincipalArn = String
   type PrincipalArnsList = js.Array[PrincipalArn]
   type Region = String
+  type ReportedRuntimeContextStates = js.Array[ReportedRuntimeContextState]
   type ResourceArn = String
+  type RuntimeContextName = String
   type RuntimeRoleArn = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -88,6 +97,7 @@ package object panorama {
   type TimeStamp = js.Date
   type Token = String
   type UpdateCreatedTime = js.Date
+  type Version = String
 
   final class PanoramaOps(private val service: Panorama) extends AnyVal {
 
@@ -121,6 +131,7 @@ package object panorama {
     @inline def provisionDeviceFuture(params: ProvisionDeviceRequest): Future[ProvisionDeviceResponse] = service.provisionDevice(params).promise().toFuture
     @inline def registerPackageVersionFuture(params: RegisterPackageVersionRequest): Future[RegisterPackageVersionResponse] = service.registerPackageVersion(params).promise().toFuture
     @inline def removeApplicationInstanceFuture(params: RemoveApplicationInstanceRequest): Future[RemoveApplicationInstanceResponse] = service.removeApplicationInstance(params).promise().toFuture
+    @inline def signalApplicationInstanceNodeInstancesFuture(params: SignalApplicationInstanceNodeInstancesRequest): Future[SignalApplicationInstanceNodeInstancesResponse] = service.signalApplicationInstanceNodeInstances(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDeviceMetadataFuture(params: UpdateDeviceMetadataRequest): Future[UpdateDeviceMetadataResponse] = service.updateDeviceMetadata(params).promise().toFuture
@@ -162,6 +173,7 @@ package object panorama {
     def provisionDevice(params: ProvisionDeviceRequest): Request[ProvisionDeviceResponse] = js.native
     def registerPackageVersion(params: RegisterPackageVersionRequest): Request[RegisterPackageVersionResponse] = js.native
     def removeApplicationInstance(params: RemoveApplicationInstanceRequest): Request[RemoveApplicationInstanceResponse] = js.native
+    def signalApplicationInstanceNodeInstances(params: SignalApplicationInstanceNodeInstancesRequest): Request[SignalApplicationInstanceNodeInstancesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDeviceMetadata(params: UpdateDeviceMetadataRequest): Request[UpdateDeviceMetadataResponse] = js.native
@@ -169,6 +181,24 @@ package object panorama {
   object Panorama {
     @inline implicit def toOps(service: Panorama): PanoramaOps = {
       new PanoramaOps(service)
+    }
+  }
+
+  /** Details about a beta appliance software update.
+    */
+  @js.native
+  trait AlternateSoftwareMetadata extends js.Object {
+    var Version: js.UndefOr[Version]
+  }
+
+  object AlternateSoftwareMetadata {
+    @inline
+    def apply(
+        Version: js.UndefOr[Version] = js.undefined
+    ): AlternateSoftwareMetadata = {
+      val __obj = js.Dynamic.literal()
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AlternateSoftwareMetadata]
     }
   }
 
@@ -184,6 +214,7 @@ package object panorama {
     var Description: js.UndefOr[Description]
     var HealthStatus: js.UndefOr[ApplicationInstanceHealthStatus]
     var Name: js.UndefOr[ApplicationInstanceName]
+    var RuntimeContextStates: js.UndefOr[ReportedRuntimeContextStates]
     var Status: js.UndefOr[ApplicationInstanceStatus]
     var StatusDescription: js.UndefOr[ApplicationInstanceStatusDescription]
     var Tags: js.UndefOr[TagMap]
@@ -200,6 +231,7 @@ package object panorama {
         Description: js.UndefOr[Description] = js.undefined,
         HealthStatus: js.UndefOr[ApplicationInstanceHealthStatus] = js.undefined,
         Name: js.UndefOr[ApplicationInstanceName] = js.undefined,
+        RuntimeContextStates: js.UndefOr[ReportedRuntimeContextStates] = js.undefined,
         Status: js.UndefOr[ApplicationInstanceStatus] = js.undefined,
         StatusDescription: js.UndefOr[ApplicationInstanceStatusDescription] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
@@ -213,6 +245,7 @@ package object panorama {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RuntimeContextStates.foreach(__v => __obj.updateDynamic("RuntimeContextStates")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusDescription.foreach(__v => __obj.updateDynamic("StatusDescription")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -279,22 +312,23 @@ package object panorama {
   @js.native
   trait CreateJobForDevicesRequest extends js.Object {
     var DeviceIds: DeviceIdList
-    var DeviceJobConfig: DeviceJobConfig
     var JobType: JobType
+    var DeviceJobConfig: js.UndefOr[DeviceJobConfig]
   }
 
   object CreateJobForDevicesRequest {
     @inline
     def apply(
         DeviceIds: DeviceIdList,
-        DeviceJobConfig: DeviceJobConfig,
-        JobType: JobType
+        JobType: JobType,
+        DeviceJobConfig: js.UndefOr[DeviceJobConfig] = js.undefined
     ): CreateJobForDevicesRequest = {
       val __obj = js.Dynamic.literal(
         "DeviceIds" -> DeviceIds.asInstanceOf[js.Any],
-        "DeviceJobConfig" -> DeviceJobConfig.asInstanceOf[js.Any],
         "JobType" -> JobType.asInstanceOf[js.Any]
       )
+
+      DeviceJobConfig.foreach(__v => __obj.updateDynamic("DeviceJobConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobForDevicesRequest]
     }
   }
@@ -650,6 +684,7 @@ package object panorama {
     var HealthStatus: js.UndefOr[ApplicationInstanceHealthStatus]
     var LastUpdatedTime: js.UndefOr[TimeStamp]
     var Name: js.UndefOr[ApplicationInstanceName]
+    var RuntimeContextStates: js.UndefOr[ReportedRuntimeContextStates]
     var RuntimeRoleArn: js.UndefOr[RuntimeRoleArn]
     var Status: js.UndefOr[ApplicationInstanceStatus]
     var StatusDescription: js.UndefOr[ApplicationInstanceStatusDescription]
@@ -669,6 +704,7 @@ package object panorama {
         HealthStatus: js.UndefOr[ApplicationInstanceHealthStatus] = js.undefined,
         LastUpdatedTime: js.UndefOr[TimeStamp] = js.undefined,
         Name: js.UndefOr[ApplicationInstanceName] = js.undefined,
+        RuntimeContextStates: js.UndefOr[ReportedRuntimeContextStates] = js.undefined,
         RuntimeRoleArn: js.UndefOr[RuntimeRoleArn] = js.undefined,
         Status: js.UndefOr[ApplicationInstanceStatus] = js.undefined,
         StatusDescription: js.UndefOr[ApplicationInstanceStatusDescription] = js.undefined,
@@ -685,6 +721,7 @@ package object panorama {
       HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RuntimeContextStates.foreach(__v => __obj.updateDynamic("RuntimeContextStates")(__v.asInstanceOf[js.Any]))
       RuntimeRoleArn.foreach(__v => __obj.updateDynamic("RuntimeRoleArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StatusDescription.foreach(__v => __obj.updateDynamic("StatusDescription")(__v.asInstanceOf[js.Any]))
@@ -719,6 +756,7 @@ package object panorama {
     var DeviceType: js.UndefOr[DeviceType]
     var ImageVersion: js.UndefOr[ImageVersion]
     var JobId: js.UndefOr[JobId]
+    var JobType: js.UndefOr[JobType]
     var Status: js.UndefOr[UpdateProgress]
   }
 
@@ -732,6 +770,7 @@ package object panorama {
         DeviceType: js.UndefOr[DeviceType] = js.undefined,
         ImageVersion: js.UndefOr[ImageVersion] = js.undefined,
         JobId: js.UndefOr[JobId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
         Status: js.UndefOr[UpdateProgress] = js.undefined
     ): DescribeDeviceJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -742,6 +781,7 @@ package object panorama {
       DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
       ImageVersion.foreach(__v => __obj.updateDynamic("ImageVersion")(__v.asInstanceOf[js.Any]))
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeviceJobResponse]
     }
@@ -766,13 +806,18 @@ package object panorama {
 
   @js.native
   trait DescribeDeviceResponse extends js.Object {
+    var AlternateSoftwares: js.UndefOr[AlternateSoftwares]
     var Arn: js.UndefOr[DeviceArn]
+    var Brand: js.UndefOr[DeviceBrand]
     var CreatedTime: js.UndefOr[CreatedTime]
     var CurrentNetworkingStatus: js.UndefOr[NetworkStatus]
     var CurrentSoftware: js.UndefOr[CurrentSoftware]
     var Description: js.UndefOr[Description]
+    var DeviceAggregatedStatus: js.UndefOr[DeviceAggregatedStatus]
     var DeviceConnectionStatus: js.UndefOr[DeviceConnectionStatus]
     var DeviceId: js.UndefOr[DeviceId]
+    var LatestAlternateSoftware: js.UndefOr[LatestAlternateSoftware]
+    var LatestDeviceJob: js.UndefOr[LatestDeviceJob]
     var LatestSoftware: js.UndefOr[LatestSoftware]
     var LeaseExpirationTime: js.UndefOr[LeaseExpirationTime]
     var Name: js.UndefOr[DeviceName]
@@ -786,13 +831,18 @@ package object panorama {
   object DescribeDeviceResponse {
     @inline
     def apply(
+        AlternateSoftwares: js.UndefOr[AlternateSoftwares] = js.undefined,
         Arn: js.UndefOr[DeviceArn] = js.undefined,
+        Brand: js.UndefOr[DeviceBrand] = js.undefined,
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         CurrentNetworkingStatus: js.UndefOr[NetworkStatus] = js.undefined,
         CurrentSoftware: js.UndefOr[CurrentSoftware] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        DeviceAggregatedStatus: js.UndefOr[DeviceAggregatedStatus] = js.undefined,
         DeviceConnectionStatus: js.UndefOr[DeviceConnectionStatus] = js.undefined,
         DeviceId: js.UndefOr[DeviceId] = js.undefined,
+        LatestAlternateSoftware: js.UndefOr[LatestAlternateSoftware] = js.undefined,
+        LatestDeviceJob: js.UndefOr[LatestDeviceJob] = js.undefined,
         LatestSoftware: js.UndefOr[LatestSoftware] = js.undefined,
         LeaseExpirationTime: js.UndefOr[LeaseExpirationTime] = js.undefined,
         Name: js.UndefOr[DeviceName] = js.undefined,
@@ -803,13 +853,18 @@ package object panorama {
         Type: js.UndefOr[DeviceType] = js.undefined
     ): DescribeDeviceResponse = {
       val __obj = js.Dynamic.literal()
+      AlternateSoftwares.foreach(__v => __obj.updateDynamic("AlternateSoftwares")(__v.asInstanceOf[js.Any]))
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Brand.foreach(__v => __obj.updateDynamic("Brand")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       CurrentNetworkingStatus.foreach(__v => __obj.updateDynamic("CurrentNetworkingStatus")(__v.asInstanceOf[js.Any]))
       CurrentSoftware.foreach(__v => __obj.updateDynamic("CurrentSoftware")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceAggregatedStatus.foreach(__v => __obj.updateDynamic("DeviceAggregatedStatus")(__v.asInstanceOf[js.Any]))
       DeviceConnectionStatus.foreach(__v => __obj.updateDynamic("DeviceConnectionStatus")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      LatestAlternateSoftware.foreach(__v => __obj.updateDynamic("LatestAlternateSoftware")(__v.asInstanceOf[js.Any]))
+      LatestDeviceJob.foreach(__v => __obj.updateDynamic("LatestDeviceJob")(__v.asInstanceOf[js.Any]))
       LatestSoftware.foreach(__v => __obj.updateDynamic("LatestSoftware")(__v.asInstanceOf[js.Any]))
       LeaseExpirationTime.foreach(__v => __obj.updateDynamic("LeaseExpirationTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -1165,31 +1220,52 @@ package object panorama {
     */
   @js.native
   trait Device extends js.Object {
+    var Brand: js.UndefOr[DeviceBrand]
     var CreatedTime: js.UndefOr[CreatedTime]
+    var CurrentSoftware: js.UndefOr[CurrentSoftware]
+    var Description: js.UndefOr[Description]
+    var DeviceAggregatedStatus: js.UndefOr[DeviceAggregatedStatus]
     var DeviceId: js.UndefOr[DeviceId]
     var LastUpdatedTime: js.UndefOr[LastUpdatedTime]
+    var LatestDeviceJob: js.UndefOr[LatestDeviceJob]
     var LeaseExpirationTime: js.UndefOr[LeaseExpirationTime]
     var Name: js.UndefOr[DeviceName]
     var ProvisioningStatus: js.UndefOr[DeviceStatus]
+    var Tags: js.UndefOr[TagMap]
+    var Type: js.UndefOr[DeviceType]
   }
 
   object Device {
     @inline
     def apply(
+        Brand: js.UndefOr[DeviceBrand] = js.undefined,
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
+        CurrentSoftware: js.UndefOr[CurrentSoftware] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        DeviceAggregatedStatus: js.UndefOr[DeviceAggregatedStatus] = js.undefined,
         DeviceId: js.UndefOr[DeviceId] = js.undefined,
         LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        LatestDeviceJob: js.UndefOr[LatestDeviceJob] = js.undefined,
         LeaseExpirationTime: js.UndefOr[LeaseExpirationTime] = js.undefined,
         Name: js.UndefOr[DeviceName] = js.undefined,
-        ProvisioningStatus: js.UndefOr[DeviceStatus] = js.undefined
+        ProvisioningStatus: js.UndefOr[DeviceStatus] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        Type: js.UndefOr[DeviceType] = js.undefined
     ): Device = {
       val __obj = js.Dynamic.literal()
+      Brand.foreach(__v => __obj.updateDynamic("Brand")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      CurrentSoftware.foreach(__v => __obj.updateDynamic("CurrentSoftware")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceAggregatedStatus.foreach(__v => __obj.updateDynamic("DeviceAggregatedStatus")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      LatestDeviceJob.foreach(__v => __obj.updateDynamic("LatestDeviceJob")(__v.asInstanceOf[js.Any]))
       LeaseExpirationTime.foreach(__v => __obj.updateDynamic("LeaseExpirationTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ProvisioningStatus.foreach(__v => __obj.updateDynamic("ProvisioningStatus")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
   }
@@ -1202,6 +1278,7 @@ package object panorama {
     var DeviceId: js.UndefOr[DeviceId]
     var DeviceName: js.UndefOr[DeviceName]
     var JobId: js.UndefOr[JobId]
+    var JobType: js.UndefOr[JobType]
   }
 
   object DeviceJob {
@@ -1210,13 +1287,15 @@ package object panorama {
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         DeviceId: js.UndefOr[DeviceId] = js.undefined,
         DeviceName: js.UndefOr[DeviceName] = js.undefined,
-        JobId: js.UndefOr[JobId] = js.undefined
+        JobId: js.UndefOr[JobId] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined
     ): DeviceJob = {
       val __obj = js.Dynamic.literal()
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceJob]
     }
   }
@@ -1326,6 +1405,30 @@ package object panorama {
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[JobResourceTags]
+    }
+  }
+
+  /** Returns information about the latest device job.
+    */
+  @js.native
+  trait LatestDeviceJob extends js.Object {
+    var ImageVersion: js.UndefOr[ImageVersion]
+    var JobType: js.UndefOr[JobType]
+    var Status: js.UndefOr[UpdateProgress]
+  }
+
+  object LatestDeviceJob {
+    @inline
+    def apply(
+        ImageVersion: js.UndefOr[ImageVersion] = js.undefined,
+        JobType: js.UndefOr[JobType] = js.undefined,
+        Status: js.UndefOr[UpdateProgress] = js.undefined
+    ): LatestDeviceJob = {
+      val __obj = js.Dynamic.literal()
+      ImageVersion.foreach(__v => __obj.updateDynamic("ImageVersion")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LatestDeviceJob]
     }
   }
 
@@ -1502,19 +1605,31 @@ package object panorama {
 
   @js.native
   trait ListDevicesRequest extends js.Object {
+    var DeviceAggregatedStatusFilter: js.UndefOr[DeviceAggregatedStatus]
     var MaxResults: js.UndefOr[MaxSize25]
+    var NameFilter: js.UndefOr[NameFilter]
     var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ListDevicesSortBy]
+    var SortOrder: js.UndefOr[SortOrder]
   }
 
   object ListDevicesRequest {
     @inline
     def apply(
+        DeviceAggregatedStatusFilter: js.UndefOr[DeviceAggregatedStatus] = js.undefined,
         MaxResults: js.UndefOr[MaxSize25] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NameFilter: js.UndefOr[NameFilter] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[ListDevicesSortBy] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): ListDevicesRequest = {
       val __obj = js.Dynamic.literal()
+      DeviceAggregatedStatusFilter.foreach(__v => __obj.updateDynamic("DeviceAggregatedStatusFilter")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameFilter.foreach(__v => __obj.updateDynamic("NameFilter")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevicesRequest]
     }
   }
@@ -1786,17 +1901,20 @@ package object panorama {
   trait NetworkPayload extends js.Object {
     var Ethernet0: js.UndefOr[EthernetPayload]
     var Ethernet1: js.UndefOr[EthernetPayload]
+    var Ntp: js.UndefOr[NtpPayload]
   }
 
   object NetworkPayload {
     @inline
     def apply(
         Ethernet0: js.UndefOr[EthernetPayload] = js.undefined,
-        Ethernet1: js.UndefOr[EthernetPayload] = js.undefined
+        Ethernet1: js.UndefOr[EthernetPayload] = js.undefined,
+        Ntp: js.UndefOr[NtpPayload] = js.undefined
     ): NetworkPayload = {
       val __obj = js.Dynamic.literal()
       Ethernet0.foreach(__v => __obj.updateDynamic("Ethernet0")(__v.asInstanceOf[js.Any]))
       Ethernet1.foreach(__v => __obj.updateDynamic("Ethernet1")(__v.asInstanceOf[js.Any]))
+      Ntp.foreach(__v => __obj.updateDynamic("Ntp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkPayload]
     }
   }
@@ -1807,17 +1925,23 @@ package object panorama {
   trait NetworkStatus extends js.Object {
     var Ethernet0Status: js.UndefOr[EthernetStatus]
     var Ethernet1Status: js.UndefOr[EthernetStatus]
+    var LastUpdatedTime: js.UndefOr[LastUpdatedTime]
+    var NtpStatus: js.UndefOr[NtpStatus]
   }
 
   object NetworkStatus {
     @inline
     def apply(
         Ethernet0Status: js.UndefOr[EthernetStatus] = js.undefined,
-        Ethernet1Status: js.UndefOr[EthernetStatus] = js.undefined
+        Ethernet1Status: js.UndefOr[EthernetStatus] = js.undefined,
+        LastUpdatedTime: js.UndefOr[LastUpdatedTime] = js.undefined,
+        NtpStatus: js.UndefOr[NtpStatus] = js.undefined
     ): NetworkStatus = {
       val __obj = js.Dynamic.literal()
       Ethernet0Status.foreach(__v => __obj.updateDynamic("Ethernet0Status")(__v.asInstanceOf[js.Any]))
       Ethernet1Status.foreach(__v => __obj.updateDynamic("Ethernet1Status")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      NtpStatus.foreach(__v => __obj.updateDynamic("NtpStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkStatus]
     }
   }
@@ -2016,6 +2140,71 @@ package object panorama {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeOutputPort]
+    }
+  }
+
+  /** A signal to a camera node to start or stop processing video.
+    */
+  @js.native
+  trait NodeSignal extends js.Object {
+    var NodeInstanceId: NodeInstanceId
+    var Signal: NodeSignalValue
+  }
+
+  object NodeSignal {
+    @inline
+    def apply(
+        NodeInstanceId: NodeInstanceId,
+        Signal: NodeSignalValue
+    ): NodeSignal = {
+      val __obj = js.Dynamic.literal(
+        "NodeInstanceId" -> NodeInstanceId.asInstanceOf[js.Any],
+        "Signal" -> Signal.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NodeSignal]
+    }
+  }
+
+  /** Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.
+    */
+  @js.native
+  trait NtpPayload extends js.Object {
+    var NtpServers: NtpServerList
+  }
+
+  object NtpPayload {
+    @inline
+    def apply(
+        NtpServers: NtpServerList
+    ): NtpPayload = {
+      val __obj = js.Dynamic.literal(
+        "NtpServers" -> NtpServers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NtpPayload]
+    }
+  }
+
+  /** Details about an NTP server connection.
+    */
+  @js.native
+  trait NtpStatus extends js.Object {
+    var ConnectionStatus: js.UndefOr[NetworkConnectionStatus]
+    var IpAddress: js.UndefOr[IpAddress]
+    var NtpServerName: js.UndefOr[NtpServerName]
+  }
+
+  object NtpStatus {
+    @inline
+    def apply(
+        ConnectionStatus: js.UndefOr[NetworkConnectionStatus] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        NtpServerName: js.UndefOr[NtpServerName] = js.undefined
+    ): NtpStatus = {
+      val __obj = js.Dynamic.literal()
+      ConnectionStatus.foreach(__v => __obj.updateDynamic("ConnectionStatus")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      NtpServerName.foreach(__v => __obj.updateDynamic("NtpServerName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NtpStatus]
     }
   }
 
@@ -2383,6 +2572,34 @@ package object panorama {
     }
   }
 
+  /** An application instance's state.
+    */
+  @js.native
+  trait ReportedRuntimeContextState extends js.Object {
+    var DesiredState: DesiredState
+    var DeviceReportedStatus: DeviceReportedStatus
+    var DeviceReportedTime: TimeStamp
+    var RuntimeContextName: RuntimeContextName
+  }
+
+  object ReportedRuntimeContextState {
+    @inline
+    def apply(
+        DesiredState: DesiredState,
+        DeviceReportedStatus: DeviceReportedStatus,
+        DeviceReportedTime: TimeStamp,
+        RuntimeContextName: RuntimeContextName
+    ): ReportedRuntimeContextState = {
+      val __obj = js.Dynamic.literal(
+        "DesiredState" -> DesiredState.asInstanceOf[js.Any],
+        "DeviceReportedStatus" -> DeviceReportedStatus.asInstanceOf[js.Any],
+        "DeviceReportedTime" -> DeviceReportedTime.asInstanceOf[js.Any],
+        "RuntimeContextName" -> RuntimeContextName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReportedRuntimeContextState]
+    }
+  }
+
   /** A location in Amazon S3.
     */
   @js.native
@@ -2406,6 +2623,43 @@ package object panorama {
 
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
+    }
+  }
+
+  @js.native
+  trait SignalApplicationInstanceNodeInstancesRequest extends js.Object {
+    var ApplicationInstanceId: ApplicationInstanceId
+    var NodeSignals: NodeSignalList
+  }
+
+  object SignalApplicationInstanceNodeInstancesRequest {
+    @inline
+    def apply(
+        ApplicationInstanceId: ApplicationInstanceId,
+        NodeSignals: NodeSignalList
+    ): SignalApplicationInstanceNodeInstancesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationInstanceId" -> ApplicationInstanceId.asInstanceOf[js.Any],
+        "NodeSignals" -> NodeSignals.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SignalApplicationInstanceNodeInstancesRequest]
+    }
+  }
+
+  @js.native
+  trait SignalApplicationInstanceNodeInstancesResponse extends js.Object {
+    var ApplicationInstanceId: ApplicationInstanceId
+  }
+
+  object SignalApplicationInstanceNodeInstancesResponse {
+    @inline
+    def apply(
+        ApplicationInstanceId: ApplicationInstanceId
+    ): SignalApplicationInstanceNodeInstancesResponse = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationInstanceId" -> ApplicationInstanceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SignalApplicationInstanceNodeInstancesResponse]
     }
   }
 

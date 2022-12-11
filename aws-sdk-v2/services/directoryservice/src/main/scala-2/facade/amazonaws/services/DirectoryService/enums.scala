@@ -37,8 +37,21 @@ object ClientAuthenticationStatus {
 sealed trait ClientAuthenticationType extends js.Any
 object ClientAuthenticationType {
   val SmartCard = "SmartCard".asInstanceOf[ClientAuthenticationType]
+  val SmartCardOrPassword = "SmartCardOrPassword".asInstanceOf[ClientAuthenticationType]
 
-  @inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard)
+  @inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard, SmartCardOrPassword)
+}
+
+@js.native
+sealed trait DirectoryConfigurationStatus extends js.Any
+object DirectoryConfigurationStatus {
+  val Requested = "Requested".asInstanceOf[DirectoryConfigurationStatus]
+  val Updating = "Updating".asInstanceOf[DirectoryConfigurationStatus]
+  val Updated = "Updated".asInstanceOf[DirectoryConfigurationStatus]
+  val Failed = "Failed".asInstanceOf[DirectoryConfigurationStatus]
+  val Default = "Default".asInstanceOf[DirectoryConfigurationStatus]
+
+  @inline def values: js.Array[DirectoryConfigurationStatus] = js.Array(Requested, Updating, Updated, Failed, Default)
 }
 
 @js.native
@@ -132,6 +145,15 @@ object LDAPSType {
   val Client = "Client".asInstanceOf[LDAPSType]
 
   @inline def values: js.Array[LDAPSType] = js.Array(Client)
+}
+
+@js.native
+sealed trait OSVersion extends js.Any
+object OSVersion {
+  val SERVER_2012 = "SERVER_2012".asInstanceOf[OSVersion]
+  val SERVER_2019 = "SERVER_2019".asInstanceOf[OSVersion]
+
+  @inline def values: js.Array[OSVersion] = js.Array(SERVER_2012, SERVER_2019)
 }
 
 @js.native
@@ -295,4 +317,22 @@ object TrustType {
   val External = "External".asInstanceOf[TrustType]
 
   @inline def values: js.Array[TrustType] = js.Array(Forest, External)
+}
+
+@js.native
+sealed trait UpdateStatus extends js.Any
+object UpdateStatus {
+  val Updated = "Updated".asInstanceOf[UpdateStatus]
+  val Updating = "Updating".asInstanceOf[UpdateStatus]
+  val UpdateFailed = "UpdateFailed".asInstanceOf[UpdateStatus]
+
+  @inline def values: js.Array[UpdateStatus] = js.Array(Updated, Updating, UpdateFailed)
+}
+
+@js.native
+sealed trait UpdateType extends js.Any
+object UpdateType {
+  val OS = "OS".asInstanceOf[UpdateType]
+
+  @inline def values: js.Array[UpdateType] = js.Array(OS)
 }

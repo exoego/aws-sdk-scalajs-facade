@@ -95,7 +95,9 @@ package object licensemanager {
     @inline def listLicenseSpecificationsForResourceFuture(params: ListLicenseSpecificationsForResourceRequest): Future[ListLicenseSpecificationsForResourceResponse] = service.listLicenseSpecificationsForResource(params).promise().toFuture
     @inline def listLicenseVersionsFuture(params: ListLicenseVersionsRequest): Future[ListLicenseVersionsResponse] = service.listLicenseVersions(params).promise().toFuture
     @inline def listLicensesFuture(params: ListLicensesRequest): Future[ListLicensesResponse] = service.listLicenses(params).promise().toFuture
+    @inline def listReceivedGrantsForOrganizationFuture(params: ListReceivedGrantsForOrganizationRequest): Future[ListReceivedGrantsForOrganizationResponse] = service.listReceivedGrantsForOrganization(params).promise().toFuture
     @inline def listReceivedGrantsFuture(params: ListReceivedGrantsRequest): Future[ListReceivedGrantsResponse] = service.listReceivedGrants(params).promise().toFuture
+    @inline def listReceivedLicensesForOrganizationFuture(params: ListReceivedLicensesForOrganizationRequest): Future[ListReceivedLicensesForOrganizationResponse] = service.listReceivedLicensesForOrganization(params).promise().toFuture
     @inline def listReceivedLicensesFuture(params: ListReceivedLicensesRequest): Future[ListReceivedLicensesResponse] = service.listReceivedLicenses(params).promise().toFuture
     @inline def listResourceInventoryFuture(params: ListResourceInventoryRequest): Future[ListResourceInventoryResponse] = service.listResourceInventory(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
@@ -152,7 +154,9 @@ package object licensemanager {
     def listLicenseVersions(params: ListLicenseVersionsRequest): Request[ListLicenseVersionsResponse] = js.native
     def listLicenses(params: ListLicensesRequest): Request[ListLicensesResponse] = js.native
     def listReceivedGrants(params: ListReceivedGrantsRequest): Request[ListReceivedGrantsResponse] = js.native
+    def listReceivedGrantsForOrganization(params: ListReceivedGrantsForOrganizationRequest): Request[ListReceivedGrantsForOrganizationResponse] = js.native
     def listReceivedLicenses(params: ListReceivedLicensesRequest): Request[ListReceivedLicensesResponse] = js.native
+    def listReceivedLicensesForOrganization(params: ListReceivedLicensesForOrganizationRequest): Request[ListReceivedLicensesForOrganizationResponse] = js.native
     def listResourceInventory(params: ListResourceInventoryRequest): Request[ListResourceInventoryResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTokens(params: ListTokensRequest): Request[ListTokensResponse] = js.native
@@ -2513,6 +2517,52 @@ package object licensemanager {
   }
 
   @js.native
+  trait ListReceivedGrantsForOrganizationRequest extends js.Object {
+    var LicenseArn: Arn
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxSize100]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReceivedGrantsForOrganizationRequest {
+    @inline
+    def apply(
+        LicenseArn: Arn,
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxSize100] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReceivedGrantsForOrganizationRequest = {
+      val __obj = js.Dynamic.literal(
+        "LicenseArn" -> LicenseArn.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReceivedGrantsForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait ListReceivedGrantsForOrganizationResponse extends js.Object {
+    var Grants: js.UndefOr[GrantList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReceivedGrantsForOrganizationResponse {
+    @inline
+    def apply(
+        Grants: js.UndefOr[GrantList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReceivedGrantsForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReceivedGrantsForOrganizationResponse]
+    }
+  }
+
+  @js.native
   trait ListReceivedGrantsRequest extends js.Object {
     var Filters: js.UndefOr[FilterList]
     var GrantArns: js.UndefOr[ArnList]
@@ -2553,6 +2603,47 @@ package object licensemanager {
       Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReceivedGrantsResponse]
+    }
+  }
+
+  @js.native
+  trait ListReceivedLicensesForOrganizationRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxSize100]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReceivedLicensesForOrganizationRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxSize100] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReceivedLicensesForOrganizationRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReceivedLicensesForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait ListReceivedLicensesForOrganizationResponse extends js.Object {
+    var Licenses: js.UndefOr[GrantedLicenseList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReceivedLicensesForOrganizationResponse {
+    @inline
+    def apply(
+        Licenses: js.UndefOr[GrantedLicenseList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReceivedLicensesForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      Licenses.foreach(__v => __obj.updateDynamic("Licenses")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReceivedLicensesForOrganizationResponse]
     }
   }
 

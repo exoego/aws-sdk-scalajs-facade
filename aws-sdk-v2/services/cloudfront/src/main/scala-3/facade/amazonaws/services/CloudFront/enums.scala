@@ -47,6 +47,14 @@ object CertificateSource {
   inline def values: js.Array[CertificateSource] = js.Array(cloudfront, iam, acm)
 }
 
+type ContinuousDeploymentPolicyType = "SingleWeight" | "SingleHeader"
+object ContinuousDeploymentPolicyType {
+  inline val SingleWeight: "SingleWeight" = "SingleWeight"
+  inline val SingleHeader: "SingleHeader" = "SingleHeader"
+
+  inline def values: js.Array[ContinuousDeploymentPolicyType] = js.Array(SingleWeight, SingleHeader)
+}
+
 type EventType = "viewer-request" | "viewer-response" | "origin-request" | "origin-response"
 object EventType {
   inline val `viewer-request`: "viewer-request" = "viewer-request"
@@ -96,12 +104,14 @@ object GeoRestrictionType {
   inline def values: js.Array[GeoRestrictionType] = js.Array(blacklist, whitelist, none)
 }
 
-type HttpVersion = "http1.1" | "http2"
+type HttpVersion = "http1.1" | "http2" | "http3" | "http2and3"
 object HttpVersion {
   inline val `http1.1`: "http1.1" = "http1.1"
   inline val http2: "http2" = "http2"
+  inline val http3: "http3" = "http3"
+  inline val http2and3: "http2and3" = "http2and3"
 
-  inline def values: js.Array[HttpVersion] = js.Array(`http1.1`, http2)
+  inline def values: js.Array[HttpVersion] = js.Array(`http1.1`, http2, http3, http2and3)
 }
 
 type ICPRecordalStatus = "APPROVED" | "SUSPENDED" | "PENDING"
@@ -146,6 +156,29 @@ object MinimumProtocolVersion {
   inline val `TLSv1.2_2021`: "TLSv1.2_2021" = "TLSv1.2_2021"
 
   inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`, `TLSv1.2_2021`)
+}
+
+type OriginAccessControlOriginTypes = "s3"
+object OriginAccessControlOriginTypes {
+  inline val s3: "s3" = "s3"
+
+  inline def values: js.Array[OriginAccessControlOriginTypes] = js.Array(s3)
+}
+
+type OriginAccessControlSigningBehaviors = "never" | "always" | "no-override"
+object OriginAccessControlSigningBehaviors {
+  inline val never: "never" = "never"
+  inline val always: "always" = "always"
+  inline val `no-override`: "no-override" = "no-override"
+
+  inline def values: js.Array[OriginAccessControlSigningBehaviors] = js.Array(never, always, `no-override`)
+}
+
+type OriginAccessControlSigningProtocols = "sigv4"
+object OriginAccessControlSigningProtocols {
+  inline val sigv4: "sigv4" = "sigv4"
+
+  inline def values: js.Array[OriginAccessControlSigningProtocols] = js.Array(sigv4)
 }
 
 type OriginProtocolPolicy = "http-only" | "match-viewer" | "https-only"

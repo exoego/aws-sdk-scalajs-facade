@@ -71,6 +71,7 @@ package object sns {
     @inline def deletePlatformApplicationFuture(params: DeletePlatformApplicationInput): Future[js.Object] = service.deletePlatformApplication(params).promise().toFuture
     @inline def deleteSMSSandboxPhoneNumberFuture(params: DeleteSMSSandboxPhoneNumberInput): Future[DeleteSMSSandboxPhoneNumberResult] = service.deleteSMSSandboxPhoneNumber(params).promise().toFuture
     @inline def deleteTopicFuture(params: DeleteTopicInput): Future[js.Object] = service.deleteTopic(params).promise().toFuture
+    @inline def getDataProtectionPolicyFuture(params: GetDataProtectionPolicyInput): Future[GetDataProtectionPolicyResponse] = service.getDataProtectionPolicy(params).promise().toFuture
     @inline def getEndpointAttributesFuture(params: GetEndpointAttributesInput): Future[GetEndpointAttributesResponse] = service.getEndpointAttributes(params).promise().toFuture
     @inline def getPlatformApplicationAttributesFuture(params: GetPlatformApplicationAttributesInput): Future[GetPlatformApplicationAttributesResponse] = service.getPlatformApplicationAttributes(params).promise().toFuture
     @inline def getSMSAttributesFuture(params: GetSMSAttributesInput): Future[GetSMSAttributesResponse] = service.getSMSAttributes(params).promise().toFuture
@@ -89,6 +90,7 @@ package object sns {
     @inline def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] = service.optInPhoneNumber(params).promise().toFuture
     @inline def publishBatchFuture(params: PublishBatchInput): Future[PublishBatchResponse] = service.publishBatch(params).promise().toFuture
     @inline def publishFuture(params: PublishInput): Future[PublishResponse] = service.publish(params).promise().toFuture
+    @inline def putDataProtectionPolicyFuture(params: PutDataProtectionPolicyInput): Future[js.Object] = service.putDataProtectionPolicy(params).promise().toFuture
     @inline def removePermissionFuture(params: RemovePermissionInput): Future[js.Object] = service.removePermission(params).promise().toFuture
     @inline def setEndpointAttributesFuture(params: SetEndpointAttributesInput): Future[js.Object] = service.setEndpointAttributes(params).promise().toFuture
     @inline def setPlatformApplicationAttributesFuture(params: SetPlatformApplicationAttributesInput): Future[js.Object] = service.setPlatformApplicationAttributes(params).promise().toFuture
@@ -119,6 +121,7 @@ package object sns {
     def deletePlatformApplication(params: DeletePlatformApplicationInput): Request[js.Object] = js.native
     def deleteSMSSandboxPhoneNumber(params: DeleteSMSSandboxPhoneNumberInput): Request[DeleteSMSSandboxPhoneNumberResult] = js.native
     def deleteTopic(params: DeleteTopicInput): Request[js.Object] = js.native
+    def getDataProtectionPolicy(params: GetDataProtectionPolicyInput): Request[GetDataProtectionPolicyResponse] = js.native
     def getEndpointAttributes(params: GetEndpointAttributesInput): Request[GetEndpointAttributesResponse] = js.native
     def getPlatformApplicationAttributes(params: GetPlatformApplicationAttributesInput): Request[GetPlatformApplicationAttributesResponse] = js.native
     def getSMSAttributes(params: GetSMSAttributesInput): Request[GetSMSAttributesResponse] = js.native
@@ -137,6 +140,7 @@ package object sns {
     def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse] = js.native
     def publish(params: PublishInput): Request[PublishResponse] = js.native
     def publishBatch(params: PublishBatchInput): Request[PublishBatchResponse] = js.native
+    def putDataProtectionPolicy(params: PutDataProtectionPolicyInput): Request[js.Object] = js.native
     def removePermission(params: RemovePermissionInput): Request[js.Object] = js.native
     def setEndpointAttributes(params: SetEndpointAttributesInput): Request[js.Object] = js.native
     def setPlatformApplicationAttributes(params: SetPlatformApplicationAttributesInput): Request[js.Object] = js.native
@@ -419,6 +423,7 @@ package object sns {
   trait CreateTopicInput extends js.Object {
     var Name: topicName
     var Attributes: js.UndefOr[TopicAttributesMap]
+    var DataProtectionPolicy: js.UndefOr[attributeValue]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -427,6 +432,7 @@ package object sns {
     def apply(
         Name: topicName,
         Attributes: js.UndefOr[TopicAttributesMap] = js.undefined,
+        DataProtectionPolicy: js.UndefOr[attributeValue] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTopicInput = {
       val __obj = js.Dynamic.literal(
@@ -434,6 +440,7 @@ package object sns {
       )
 
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      DataProtectionPolicy.foreach(__v => __obj.updateDynamic("DataProtectionPolicy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTopicInput]
     }
@@ -558,6 +565,39 @@ package object sns {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
+    }
+  }
+
+  @js.native
+  trait GetDataProtectionPolicyInput extends js.Object {
+    var ResourceArn: topicARN
+  }
+
+  object GetDataProtectionPolicyInput {
+    @inline
+    def apply(
+        ResourceArn: topicARN
+    ): GetDataProtectionPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataProtectionPolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetDataProtectionPolicyResponse extends js.Object {
+    var DataProtectionPolicy: js.UndefOr[attributeValue]
+  }
+
+  object GetDataProtectionPolicyResponse {
+    @inline
+    def apply(
+        DataProtectionPolicy: js.UndefOr[attributeValue] = js.undefined
+    ): GetDataProtectionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      DataProtectionPolicy.foreach(__v => __obj.updateDynamic("DataProtectionPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataProtectionPolicyResponse]
     }
   }
 
@@ -1401,6 +1441,26 @@ package object sns {
       MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishResponse]
+    }
+  }
+
+  @js.native
+  trait PutDataProtectionPolicyInput extends js.Object {
+    var DataProtectionPolicy: attributeValue
+    var ResourceArn: topicARN
+  }
+
+  object PutDataProtectionPolicyInput {
+    @inline
+    def apply(
+        DataProtectionPolicy: attributeValue,
+        ResourceArn: topicARN
+    ): PutDataProtectionPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "DataProtectionPolicy" -> DataProtectionPolicy.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutDataProtectionPolicyInput]
     }
   }
 

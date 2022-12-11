@@ -18,7 +18,7 @@ object Gender {
   inline def values: js.Array[Gender] = js.Array(Female, Male)
 }
 
-type LanguageCode = "arb" | "cmn-CN" | "cy-GB" | "da-DK" | "de-DE" | "en-AU" | "en-GB" | "en-GB-WLS" | "en-IN" | "en-US" | "es-ES" | "es-MX" | "es-US" | "fr-CA" | "fr-FR" | "is-IS" | "it-IT" | "ja-JP" | "hi-IN" | "ko-KR" | "nb-NO" | "nl-NL" | "pl-PL" | "pt-BR" | "pt-PT" | "ro-RO" | "ru-RU" | "sv-SE" | "tr-TR" | "en-NZ" | "en-ZA"
+type LanguageCode = "arb" | "cmn-CN" | "cy-GB" | "da-DK" | "de-DE" | "en-AU" | "en-GB" | "en-GB-WLS" | "en-IN" | "en-US" | "es-ES" | "es-MX" | "es-US" | "fr-CA" | "fr-FR" | "is-IS" | "it-IT" | "ja-JP" | "hi-IN" | "ko-KR" | "nb-NO" | "nl-NL" | "pl-PL" | "pt-BR" | "pt-PT" | "ro-RO" | "ru-RU" | "sv-SE" | "tr-TR" | "en-NZ" | "en-ZA" | "ca-ES" | "de-AT" | "yue-CN" | "ar-AE" | "fi-FI"
 object LanguageCode {
   inline val arb: "arb" = "arb"
   inline val `cmn-CN`: "cmn-CN" = "cmn-CN"
@@ -51,6 +51,11 @@ object LanguageCode {
   inline val `tr-TR`: "tr-TR" = "tr-TR"
   inline val `en-NZ`: "en-NZ" = "en-NZ"
   inline val `en-ZA`: "en-ZA" = "en-ZA"
+  inline val `ca-ES`: "ca-ES" = "ca-ES"
+  inline val `de-AT`: "de-AT" = "de-AT"
+  inline val `yue-CN`: "yue-CN" = "yue-CN"
+  inline val `ar-AE`: "ar-AE" = "ar-AE"
+  inline val `fi-FI`: "fi-FI" = "fi-FI"
 
   inline def values: js.Array[LanguageCode] = js.Array(
     arb,
@@ -83,7 +88,12 @@ object LanguageCode {
     `sv-SE`,
     `tr-TR`,
     `en-NZ`,
-    `en-ZA`
+    `en-ZA`,
+    `ca-ES`,
+    `de-AT`,
+    `yue-CN`,
+    `ar-AE`,
+    `fi-FI`
   )
 }
 
@@ -125,7 +135,7 @@ object TextType {
   inline def values: js.Array[TextType] = js.Array(ssml, text)
 }
 
-type VoiceId = "Aditi" | "Amy" | "Astrid" | "Bianca" | "Brian" | "Camila" | "Carla" | "Carmen" | "Celine" | "Chantal" | "Conchita" | "Cristiano" | "Dora" | "Emma" | "Enrique" | "Ewa" | "Filiz" | "Gabrielle" | "Geraint" | "Giorgio" | "Gwyneth" | "Hans" | "Ines" | "Ivy" | "Jacek" | "Jan" | "Joanna" | "Joey" | "Justin" | "Karl" | "Kendra" | "Kevin" | "Kimberly" | "Lea" | "Liv" | "Lotte" | "Lucia" | "Lupe" | "Mads" | "Maja" | "Marlene" | "Mathieu" | "Matthew" | "Maxim" | "Mia" | "Miguel" | "Mizuki" | "Naja" | "Nicole" | "Olivia" | "Penelope" | "Raveena" | "Ricardo" | "Ruben" | "Russell" | "Salli" | "Seoyeon" | "Takumi" | "Tatyana" | "Vicki" | "Vitoria" | "Zeina" | "Zhiyu" | "Aria" | "Ayanda"
+type VoiceId = "Aditi" | "Amy" | "Astrid" | "Bianca" | "Brian" | "Camila" | "Carla" | "Carmen" | "Celine" | "Chantal" | "Conchita" | "Cristiano" | "Dora" | "Emma" | "Enrique" | "Ewa" | "Filiz" | "Gabrielle" | "Geraint" | "Giorgio" | "Gwyneth" | "Hans" | "Ines" | "Ivy" | "Jacek" | "Jan" | "Joanna" | "Joey" | "Justin" | "Karl" | "Kendra" | "Kevin" | "Kimberly" | "Lea" | "Liv" | "Lotte" | "Lucia" | "Lupe" | "Mads" | "Maja" | "Marlene" | "Mathieu" | "Matthew" | "Maxim" | "Mia" | "Miguel" | "Mizuki" | "Naja" | "Nicole" | "Olivia" | "Penelope" | "Raveena" | "Ricardo" | "Ruben" | "Russell" | "Salli" | "Seoyeon" | "Takumi" | "Tatyana" | "Vicki" | "Vitoria" | "Zeina" | "Zhiyu" | "Aria" | "Ayanda" | "Arlet" | "Hannah" | "Arthur" | "Daniel" | "Liam" | "Pedro" | "Kajal" | "Hiujin" | "Laura" | "Elin" | "Ida" | "Suvi" | "Ola" | "Hala"
 object VoiceId {
   inline val Aditi: "Aditi" = "Aditi"
   inline val Amy: "Amy" = "Amy"
@@ -192,6 +202,20 @@ object VoiceId {
   inline val Zhiyu: "Zhiyu" = "Zhiyu"
   inline val Aria: "Aria" = "Aria"
   inline val Ayanda: "Ayanda" = "Ayanda"
+  inline val Arlet: "Arlet" = "Arlet"
+  inline val Hannah: "Hannah" = "Hannah"
+  inline val Arthur: "Arthur" = "Arthur"
+  inline val Daniel: "Daniel" = "Daniel"
+  inline val Liam: "Liam" = "Liam"
+  inline val Pedro: "Pedro" = "Pedro"
+  inline val Kajal: "Kajal" = "Kajal"
+  inline val Hiujin: "Hiujin" = "Hiujin"
+  inline val Laura: "Laura" = "Laura"
+  inline val Elin: "Elin" = "Elin"
+  inline val Ida: "Ida" = "Ida"
+  inline val Suvi: "Suvi" = "Suvi"
+  inline val Ola: "Ola" = "Ola"
+  inline val Hala: "Hala" = "Hala"
 
   inline def values: js.Array[VoiceId] = js.Array(
     Aditi,
@@ -258,6 +282,20 @@ object VoiceId {
     Zeina,
     Zhiyu,
     Aria,
-    Ayanda
+    Ayanda,
+    Arlet,
+    Hannah,
+    Arthur,
+    Daniel,
+    Liam,
+    Pedro,
+    Kajal,
+    Hiujin,
+    Laura,
+    Elin,
+    Ida,
+    Suvi,
+    Ola,
+    Hala
   )
 }

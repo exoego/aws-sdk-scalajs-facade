@@ -104,32 +104,22 @@ package object robomaker {
 
     @inline def batchDeleteWorldsFuture(params: BatchDeleteWorldsRequest): Future[BatchDeleteWorldsResponse] = service.batchDeleteWorlds(params).promise().toFuture
     @inline def batchDescribeSimulationJobFuture(params: BatchDescribeSimulationJobRequest): Future[BatchDescribeSimulationJobResponse] = service.batchDescribeSimulationJob(params).promise().toFuture
-    @inline def cancelDeploymentJobFuture(params: CancelDeploymentJobRequest): Future[CancelDeploymentJobResponse] = service.cancelDeploymentJob(params).promise().toFuture
     @inline def cancelSimulationJobBatchFuture(params: CancelSimulationJobBatchRequest): Future[CancelSimulationJobBatchResponse] = service.cancelSimulationJobBatch(params).promise().toFuture
     @inline def cancelSimulationJobFuture(params: CancelSimulationJobRequest): Future[CancelSimulationJobResponse] = service.cancelSimulationJob(params).promise().toFuture
     @inline def cancelWorldExportJobFuture(params: CancelWorldExportJobRequest): Future[CancelWorldExportJobResponse] = service.cancelWorldExportJob(params).promise().toFuture
     @inline def cancelWorldGenerationJobFuture(params: CancelWorldGenerationJobRequest): Future[CancelWorldGenerationJobResponse] = service.cancelWorldGenerationJob(params).promise().toFuture
-    @inline def createDeploymentJobFuture(params: CreateDeploymentJobRequest): Future[CreateDeploymentJobResponse] = service.createDeploymentJob(params).promise().toFuture
-    @inline def createFleetFuture(params: CreateFleetRequest): Future[CreateFleetResponse] = service.createFleet(params).promise().toFuture
     @inline def createRobotApplicationFuture(params: CreateRobotApplicationRequest): Future[CreateRobotApplicationResponse] = service.createRobotApplication(params).promise().toFuture
     @inline def createRobotApplicationVersionFuture(params: CreateRobotApplicationVersionRequest): Future[CreateRobotApplicationVersionResponse] = service.createRobotApplicationVersion(params).promise().toFuture
-    @inline def createRobotFuture(params: CreateRobotRequest): Future[CreateRobotResponse] = service.createRobot(params).promise().toFuture
     @inline def createSimulationApplicationFuture(params: CreateSimulationApplicationRequest): Future[CreateSimulationApplicationResponse] = service.createSimulationApplication(params).promise().toFuture
     @inline def createSimulationApplicationVersionFuture(params: CreateSimulationApplicationVersionRequest): Future[CreateSimulationApplicationVersionResponse] = service.createSimulationApplicationVersion(params).promise().toFuture
     @inline def createSimulationJobFuture(params: CreateSimulationJobRequest): Future[CreateSimulationJobResponse] = service.createSimulationJob(params).promise().toFuture
     @inline def createWorldExportJobFuture(params: CreateWorldExportJobRequest): Future[CreateWorldExportJobResponse] = service.createWorldExportJob(params).promise().toFuture
     @inline def createWorldGenerationJobFuture(params: CreateWorldGenerationJobRequest): Future[CreateWorldGenerationJobResponse] = service.createWorldGenerationJob(params).promise().toFuture
     @inline def createWorldTemplateFuture(params: CreateWorldTemplateRequest): Future[CreateWorldTemplateResponse] = service.createWorldTemplate(params).promise().toFuture
-    @inline def deleteFleetFuture(params: DeleteFleetRequest): Future[DeleteFleetResponse] = service.deleteFleet(params).promise().toFuture
     @inline def deleteRobotApplicationFuture(params: DeleteRobotApplicationRequest): Future[DeleteRobotApplicationResponse] = service.deleteRobotApplication(params).promise().toFuture
-    @inline def deleteRobotFuture(params: DeleteRobotRequest): Future[DeleteRobotResponse] = service.deleteRobot(params).promise().toFuture
     @inline def deleteSimulationApplicationFuture(params: DeleteSimulationApplicationRequest): Future[DeleteSimulationApplicationResponse] = service.deleteSimulationApplication(params).promise().toFuture
     @inline def deleteWorldTemplateFuture(params: DeleteWorldTemplateRequest): Future[DeleteWorldTemplateResponse] = service.deleteWorldTemplate(params).promise().toFuture
-    @inline def deregisterRobotFuture(params: DeregisterRobotRequest): Future[DeregisterRobotResponse] = service.deregisterRobot(params).promise().toFuture
-    @inline def describeDeploymentJobFuture(params: DescribeDeploymentJobRequest): Future[DescribeDeploymentJobResponse] = service.describeDeploymentJob(params).promise().toFuture
-    @inline def describeFleetFuture(params: DescribeFleetRequest): Future[DescribeFleetResponse] = service.describeFleet(params).promise().toFuture
     @inline def describeRobotApplicationFuture(params: DescribeRobotApplicationRequest): Future[DescribeRobotApplicationResponse] = service.describeRobotApplication(params).promise().toFuture
-    @inline def describeRobotFuture(params: DescribeRobotRequest): Future[DescribeRobotResponse] = service.describeRobot(params).promise().toFuture
     @inline def describeSimulationApplicationFuture(params: DescribeSimulationApplicationRequest): Future[DescribeSimulationApplicationResponse] = service.describeSimulationApplication(params).promise().toFuture
     @inline def describeSimulationJobBatchFuture(params: DescribeSimulationJobBatchRequest): Future[DescribeSimulationJobBatchResponse] = service.describeSimulationJobBatch(params).promise().toFuture
     @inline def describeSimulationJobFuture(params: DescribeSimulationJobRequest): Future[DescribeSimulationJobResponse] = service.describeSimulationJob(params).promise().toFuture
@@ -138,10 +128,7 @@ package object robomaker {
     @inline def describeWorldGenerationJobFuture(params: DescribeWorldGenerationJobRequest): Future[DescribeWorldGenerationJobResponse] = service.describeWorldGenerationJob(params).promise().toFuture
     @inline def describeWorldTemplateFuture(params: DescribeWorldTemplateRequest): Future[DescribeWorldTemplateResponse] = service.describeWorldTemplate(params).promise().toFuture
     @inline def getWorldTemplateBodyFuture(params: GetWorldTemplateBodyRequest): Future[GetWorldTemplateBodyResponse] = service.getWorldTemplateBody(params).promise().toFuture
-    @inline def listDeploymentJobsFuture(params: ListDeploymentJobsRequest): Future[ListDeploymentJobsResponse] = service.listDeploymentJobs(params).promise().toFuture
-    @inline def listFleetsFuture(params: ListFleetsRequest): Future[ListFleetsResponse] = service.listFleets(params).promise().toFuture
     @inline def listRobotApplicationsFuture(params: ListRobotApplicationsRequest): Future[ListRobotApplicationsResponse] = service.listRobotApplications(params).promise().toFuture
-    @inline def listRobotsFuture(params: ListRobotsRequest): Future[ListRobotsResponse] = service.listRobots(params).promise().toFuture
     @inline def listSimulationApplicationsFuture(params: ListSimulationApplicationsRequest): Future[ListSimulationApplicationsResponse] = service.listSimulationApplications(params).promise().toFuture
     @inline def listSimulationJobBatchesFuture(params: ListSimulationJobBatchesRequest): Future[ListSimulationJobBatchesResponse] = service.listSimulationJobBatches(params).promise().toFuture
     @inline def listSimulationJobsFuture(params: ListSimulationJobsRequest): Future[ListSimulationJobsResponse] = service.listSimulationJobs(params).promise().toFuture
@@ -150,10 +137,8 @@ package object robomaker {
     @inline def listWorldGenerationJobsFuture(params: ListWorldGenerationJobsRequest): Future[ListWorldGenerationJobsResponse] = service.listWorldGenerationJobs(params).promise().toFuture
     @inline def listWorldTemplatesFuture(params: ListWorldTemplatesRequest): Future[ListWorldTemplatesResponse] = service.listWorldTemplates(params).promise().toFuture
     @inline def listWorldsFuture(params: ListWorldsRequest): Future[ListWorldsResponse] = service.listWorlds(params).promise().toFuture
-    @inline def registerRobotFuture(params: RegisterRobotRequest): Future[RegisterRobotResponse] = service.registerRobot(params).promise().toFuture
     @inline def restartSimulationJobFuture(params: RestartSimulationJobRequest): Future[RestartSimulationJobResponse] = service.restartSimulationJob(params).promise().toFuture
     @inline def startSimulationJobBatchFuture(params: StartSimulationJobBatchRequest): Future[StartSimulationJobBatchResponse] = service.startSimulationJobBatch(params).promise().toFuture
-    @inline def syncDeploymentJobFuture(params: SyncDeploymentJobRequest): Future[SyncDeploymentJobResponse] = service.syncDeploymentJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateRobotApplicationFuture(params: UpdateRobotApplicationRequest): Future[UpdateRobotApplicationResponse] = service.updateRobotApplication(params).promise().toFuture
@@ -167,16 +152,72 @@ package object robomaker {
   class RoboMaker() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated(
+      "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
+    @deprecated(
+      "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
+    @deprecated(
+      "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def createRobot(params: CreateRobotRequest): Request[CreateRobotResponse] = js.native
+    @deprecated(
+      "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def registerRobot(params: RegisterRobotRequest): Request[RegisterRobotResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def deleteRobot(params: DeleteRobotRequest): Request[DeleteRobotResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def deregisterRobot(params: DeregisterRobotRequest): Request[DeregisterRobotResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def describeDeploymentJob(params: DescribeDeploymentJobRequest): Request[DescribeDeploymentJobResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def describeFleet(params: DescribeFleetRequest): Request[DescribeFleetResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def describeRobot(params: DescribeRobotRequest): Request[DescribeRobotResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def listDeploymentJobs(params: ListDeploymentJobsRequest): Request[ListDeploymentJobsResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def listRobots(params: ListRobotsRequest): Request[ListRobotsResponse] = js.native
+    @deprecated(
+      "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+      "forever"
+    ) def syncDeploymentJob(params: SyncDeploymentJobRequest): Request[SyncDeploymentJobResponse] = js.native
     def batchDeleteWorlds(params: BatchDeleteWorldsRequest): Request[BatchDeleteWorldsResponse] = js.native
     def batchDescribeSimulationJob(params: BatchDescribeSimulationJobRequest): Request[BatchDescribeSimulationJobResponse] = js.native
-    def cancelDeploymentJob(params: CancelDeploymentJobRequest): Request[CancelDeploymentJobResponse] = js.native
     def cancelSimulationJob(params: CancelSimulationJobRequest): Request[CancelSimulationJobResponse] = js.native
     def cancelSimulationJobBatch(params: CancelSimulationJobBatchRequest): Request[CancelSimulationJobBatchResponse] = js.native
     def cancelWorldExportJob(params: CancelWorldExportJobRequest): Request[CancelWorldExportJobResponse] = js.native
     def cancelWorldGenerationJob(params: CancelWorldGenerationJobRequest): Request[CancelWorldGenerationJobResponse] = js.native
-    def createDeploymentJob(params: CreateDeploymentJobRequest): Request[CreateDeploymentJobResponse] = js.native
-    def createFleet(params: CreateFleetRequest): Request[CreateFleetResponse] = js.native
-    def createRobot(params: CreateRobotRequest): Request[CreateRobotResponse] = js.native
     def createRobotApplication(params: CreateRobotApplicationRequest): Request[CreateRobotApplicationResponse] = js.native
     def createRobotApplicationVersion(params: CreateRobotApplicationVersionRequest): Request[CreateRobotApplicationVersionResponse] = js.native
     def createSimulationApplication(params: CreateSimulationApplicationRequest): Request[CreateSimulationApplicationResponse] = js.native
@@ -185,15 +226,9 @@ package object robomaker {
     def createWorldExportJob(params: CreateWorldExportJobRequest): Request[CreateWorldExportJobResponse] = js.native
     def createWorldGenerationJob(params: CreateWorldGenerationJobRequest): Request[CreateWorldGenerationJobResponse] = js.native
     def createWorldTemplate(params: CreateWorldTemplateRequest): Request[CreateWorldTemplateResponse] = js.native
-    def deleteFleet(params: DeleteFleetRequest): Request[DeleteFleetResponse] = js.native
-    def deleteRobot(params: DeleteRobotRequest): Request[DeleteRobotResponse] = js.native
     def deleteRobotApplication(params: DeleteRobotApplicationRequest): Request[DeleteRobotApplicationResponse] = js.native
     def deleteSimulationApplication(params: DeleteSimulationApplicationRequest): Request[DeleteSimulationApplicationResponse] = js.native
     def deleteWorldTemplate(params: DeleteWorldTemplateRequest): Request[DeleteWorldTemplateResponse] = js.native
-    def deregisterRobot(params: DeregisterRobotRequest): Request[DeregisterRobotResponse] = js.native
-    def describeDeploymentJob(params: DescribeDeploymentJobRequest): Request[DescribeDeploymentJobResponse] = js.native
-    def describeFleet(params: DescribeFleetRequest): Request[DescribeFleetResponse] = js.native
-    def describeRobot(params: DescribeRobotRequest): Request[DescribeRobotResponse] = js.native
     def describeRobotApplication(params: DescribeRobotApplicationRequest): Request[DescribeRobotApplicationResponse] = js.native
     def describeSimulationApplication(params: DescribeSimulationApplicationRequest): Request[DescribeSimulationApplicationResponse] = js.native
     def describeSimulationJob(params: DescribeSimulationJobRequest): Request[DescribeSimulationJobResponse] = js.native
@@ -203,10 +238,7 @@ package object robomaker {
     def describeWorldGenerationJob(params: DescribeWorldGenerationJobRequest): Request[DescribeWorldGenerationJobResponse] = js.native
     def describeWorldTemplate(params: DescribeWorldTemplateRequest): Request[DescribeWorldTemplateResponse] = js.native
     def getWorldTemplateBody(params: GetWorldTemplateBodyRequest): Request[GetWorldTemplateBodyResponse] = js.native
-    def listDeploymentJobs(params: ListDeploymentJobsRequest): Request[ListDeploymentJobsResponse] = js.native
-    def listFleets(params: ListFleetsRequest): Request[ListFleetsResponse] = js.native
     def listRobotApplications(params: ListRobotApplicationsRequest): Request[ListRobotApplicationsResponse] = js.native
-    def listRobots(params: ListRobotsRequest): Request[ListRobotsResponse] = js.native
     def listSimulationApplications(params: ListSimulationApplicationsRequest): Request[ListSimulationApplicationsResponse] = js.native
     def listSimulationJobBatches(params: ListSimulationJobBatchesRequest): Request[ListSimulationJobBatchesResponse] = js.native
     def listSimulationJobs(params: ListSimulationJobsRequest): Request[ListSimulationJobsResponse] = js.native
@@ -215,10 +247,8 @@ package object robomaker {
     def listWorldGenerationJobs(params: ListWorldGenerationJobsRequest): Request[ListWorldGenerationJobsResponse] = js.native
     def listWorldTemplates(params: ListWorldTemplatesRequest): Request[ListWorldTemplatesResponse] = js.native
     def listWorlds(params: ListWorldsRequest): Request[ListWorldsResponse] = js.native
-    def registerRobot(params: RegisterRobotRequest): Request[RegisterRobotResponse] = js.native
     def restartSimulationJob(params: RestartSimulationJobRequest): Request[RestartSimulationJobResponse] = js.native
     def startSimulationJobBatch(params: StartSimulationJobBatchRequest): Request[StartSimulationJobBatchResponse] = js.native
-    def syncDeploymentJob(params: SyncDeploymentJobRequest): Request[SyncDeploymentJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateRobotApplication(params: UpdateRobotApplicationRequest): Request[UpdateRobotApplicationResponse] = js.native
@@ -321,6 +351,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CancelDeploymentJobRequest extends js.Object {
     var job: Arn
@@ -338,6 +372,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CancelDeploymentJobResponse extends js.Object
 
@@ -509,6 +547,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateDeploymentJobRequest extends js.Object {
     var clientRequestToken: ClientRequestToken
@@ -539,6 +581,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
@@ -579,6 +625,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateFleetRequest extends js.Object {
     var name: Name
@@ -600,6 +650,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateFleetResponse extends js.Object {
     var arn: js.UndefOr[Arn]
@@ -759,6 +813,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateRobotRequest extends js.Object {
     var architecture: Architecture
@@ -786,6 +844,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait CreateRobotResponse extends js.Object {
     var architecture: js.UndefOr[Architecture]
@@ -1342,6 +1404,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeleteFleetRequest extends js.Object {
     var fleet: Arn
@@ -1359,6 +1425,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeleteFleetResponse extends js.Object
 
@@ -1402,6 +1472,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeleteRobotRequest extends js.Object {
     var robot: Arn
@@ -1419,6 +1493,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeleteRobotResponse extends js.Object
 
@@ -1613,6 +1691,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeregisterRobotRequest extends js.Object {
     var fleet: Arn
@@ -1633,6 +1715,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DeregisterRobotResponse extends js.Object {
     var fleet: js.UndefOr[Arn]
@@ -1652,6 +1738,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeDeploymentJobRequest extends js.Object {
     var job: Arn
@@ -1669,6 +1759,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
@@ -1712,6 +1806,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeFleetRequest extends js.Object {
     var fleet: Arn
@@ -1729,6 +1827,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeFleetResponse extends js.Object {
     var arn: js.UndefOr[Arn]
@@ -1830,6 +1932,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeRobotRequest extends js.Object {
     var robot: Arn
@@ -1847,6 +1953,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait DescribeRobotResponse extends js.Object {
     var architecture: js.UndefOr[Architecture]
@@ -2553,6 +2663,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListDeploymentJobsRequest extends js.Object {
     var filters: js.UndefOr[Filters]
@@ -2575,6 +2689,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListDeploymentJobsResponse extends js.Object {
     var deploymentJobs: js.UndefOr[DeploymentJobs]
@@ -2594,6 +2712,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListFleetsRequest extends js.Object {
     var filters: js.UndefOr[Filters]
@@ -2616,6 +2738,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListFleetsResponse extends js.Object {
     var fleetDetails: js.UndefOr[Fleets]
@@ -2679,6 +2805,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListRobotsRequest extends js.Object {
     var filters: js.UndefOr[Filters]
@@ -2701,6 +2831,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait ListRobotsResponse extends js.Object {
     var nextToken: js.UndefOr[PaginationToken]
@@ -3050,17 +3184,16 @@ package object robomaker {
     */
   @js.native
   trait LoggingConfig extends js.Object {
-    var recordAllRosTopics: BoxedBoolean
+    var recordAllRosTopics: js.UndefOr[BoxedBoolean]
   }
 
   object LoggingConfig {
     @inline
     def apply(
-        recordAllRosTopics: BoxedBoolean
+        recordAllRosTopics: js.UndefOr[BoxedBoolean] = js.undefined
     ): LoggingConfig = {
-      val __obj = js.Dynamic.literal(
-        "recordAllRosTopics" -> recordAllRosTopics.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      recordAllRosTopics.foreach(__v => __obj.updateDynamic("recordAllRosTopics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingConfig]
     }
   }
@@ -3181,6 +3314,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait RegisterRobotRequest extends js.Object {
     var fleet: Arn
@@ -3201,6 +3338,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "AWS RoboMaker is unable to process this request as the support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait RegisterRobotResponse extends js.Object {
     var fleet: js.UndefOr[Arn]
@@ -3908,6 +4049,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait SyncDeploymentJobRequest extends js.Object {
     var clientRequestToken: ClientRequestToken
@@ -3928,6 +4073,10 @@ package object robomaker {
     }
   }
 
+  @deprecated(
+    "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.",
+    "forever"
+  )
   @js.native
   trait SyncDeploymentJobResponse extends js.Object {
     var arn: js.UndefOr[Arn]
@@ -4432,6 +4581,7 @@ package object robomaker {
   trait WorldExportJobSummary extends js.Object {
     var arn: js.UndefOr[Arn]
     var createdAt: js.UndefOr[CreatedAt]
+    var outputLocation: js.UndefOr[OutputLocation]
     var status: js.UndefOr[WorldExportJobStatus]
     var worlds: js.UndefOr[Arns]
   }
@@ -4441,12 +4591,14 @@ package object robomaker {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
+        outputLocation: js.UndefOr[OutputLocation] = js.undefined,
         status: js.UndefOr[WorldExportJobStatus] = js.undefined,
         worlds: js.UndefOr[Arns] = js.undefined
     ): WorldExportJobSummary = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       worlds.foreach(__v => __obj.updateDynamic("worlds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorldExportJobSummary]

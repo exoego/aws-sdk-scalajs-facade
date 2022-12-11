@@ -78,6 +78,37 @@ object EndpointStatus {
   inline def values: js.Array[EndpointStatus] = js.Array(created, creating, deleted, deleting, failed)
 }
 
+type EphemerisInvalidReason = "METADATA_INVALID" | "TIME_RANGE_INVALID" | "TRAJECTORY_INVALID" | "KMS_KEY_INVALID" | "VALIDATION_ERROR"
+object EphemerisInvalidReason {
+  inline val METADATA_INVALID: "METADATA_INVALID" = "METADATA_INVALID"
+  inline val TIME_RANGE_INVALID: "TIME_RANGE_INVALID" = "TIME_RANGE_INVALID"
+  inline val TRAJECTORY_INVALID: "TRAJECTORY_INVALID" = "TRAJECTORY_INVALID"
+  inline val KMS_KEY_INVALID: "KMS_KEY_INVALID" = "KMS_KEY_INVALID"
+  inline val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+
+  inline def values: js.Array[EphemerisInvalidReason] = js.Array(METADATA_INVALID, TIME_RANGE_INVALID, TRAJECTORY_INVALID, KMS_KEY_INVALID, VALIDATION_ERROR)
+}
+
+type EphemerisSource = "CUSTOMER_PROVIDED" | "SPACE_TRACK"
+object EphemerisSource {
+  inline val CUSTOMER_PROVIDED: "CUSTOMER_PROVIDED" = "CUSTOMER_PROVIDED"
+  inline val SPACE_TRACK: "SPACE_TRACK" = "SPACE_TRACK"
+
+  inline def values: js.Array[EphemerisSource] = js.Array(CUSTOMER_PROVIDED, SPACE_TRACK)
+}
+
+type EphemerisStatus = "VALIDATING" | "INVALID" | "ERROR" | "ENABLED" | "DISABLED" | "EXPIRED"
+object EphemerisStatus {
+  inline val VALIDATING: "VALIDATING" = "VALIDATING"
+  inline val INVALID: "INVALID" = "INVALID"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+
+  inline def values: js.Array[EphemerisStatus] = js.Array(VALIDATING, INVALID, ERROR, ENABLED, DISABLED, EXPIRED)
+}
+
 type FrequencyUnits = "GHz" | "MHz" | "kHz"
 object FrequencyUnits {
   inline val GHz: "GHz" = "GHz"

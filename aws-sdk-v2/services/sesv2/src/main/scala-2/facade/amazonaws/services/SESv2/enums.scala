@@ -165,6 +165,15 @@ object EventType {
 }
 
 @js.native
+sealed trait FeatureStatus extends js.Any
+object FeatureStatus {
+  val ENABLED = "ENABLED".asInstanceOf[FeatureStatus]
+  val DISABLED = "DISABLED".asInstanceOf[FeatureStatus]
+
+  @inline def values: js.Array[FeatureStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
 sealed trait IdentityType extends js.Any
 object IdentityType {
   val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
@@ -198,6 +207,19 @@ object JobStatus {
   @inline def values: js.Array[JobStatus] = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
 }
 
+/** The <code>ListRecommendations</code> filter type. This can be one of the following: * <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>. * <code>IMPACT</code> – The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>. * <code>STATUS</code> – The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>. * <code>RESOURCE_ARN</code> – The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+  */
+@js.native
+sealed trait ListRecommendationsFilterKey extends js.Any
+object ListRecommendationsFilterKey {
+  val TYPE = "TYPE".asInstanceOf[ListRecommendationsFilterKey]
+  val IMPACT = "IMPACT".asInstanceOf[ListRecommendationsFilterKey]
+  val STATUS = "STATUS".asInstanceOf[ListRecommendationsFilterKey]
+  val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[ListRecommendationsFilterKey]
+
+  @inline def values: js.Array[ListRecommendationsFilterKey] = js.Array(TYPE, IMPACT, STATUS, RESOURCE_ARN)
+}
+
 /** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
   */
 @js.native
@@ -221,6 +243,80 @@ object MailType {
 }
 
 @js.native
+sealed trait Metric extends js.Any
+object Metric {
+  val SEND = "SEND".asInstanceOf[Metric]
+  val COMPLAINT = "COMPLAINT".asInstanceOf[Metric]
+  val PERMANENT_BOUNCE = "PERMANENT_BOUNCE".asInstanceOf[Metric]
+  val TRANSIENT_BOUNCE = "TRANSIENT_BOUNCE".asInstanceOf[Metric]
+  val OPEN = "OPEN".asInstanceOf[Metric]
+  val CLICK = "CLICK".asInstanceOf[Metric]
+  val DELIVERY = "DELIVERY".asInstanceOf[Metric]
+  val DELIVERY_OPEN = "DELIVERY_OPEN".asInstanceOf[Metric]
+  val DELIVERY_CLICK = "DELIVERY_CLICK".asInstanceOf[Metric]
+  val DELIVERY_COMPLAINT = "DELIVERY_COMPLAINT".asInstanceOf[Metric]
+
+  @inline def values: js.Array[Metric] = js.Array(SEND, COMPLAINT, PERMANENT_BOUNCE, TRANSIENT_BOUNCE, OPEN, CLICK, DELIVERY, DELIVERY_OPEN, DELIVERY_CLICK, DELIVERY_COMPLAINT)
+}
+
+/** The <code>BatchGetMetricDataQuery</code> dimension name. This can be one of the following: * <code>EMAIL_IDENTITY</code> – The email identity used when sending messages. * <code>CONFIGURATION_SET</code> – The configuration set used when sending messages (if one was used). * <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>, etc.).
+  */
+@js.native
+sealed trait MetricDimensionName extends js.Any
+object MetricDimensionName {
+  val EMAIL_IDENTITY = "EMAIL_IDENTITY".asInstanceOf[MetricDimensionName]
+  val CONFIGURATION_SET = "CONFIGURATION_SET".asInstanceOf[MetricDimensionName]
+  val ISP = "ISP".asInstanceOf[MetricDimensionName]
+
+  @inline def values: js.Array[MetricDimensionName] = js.Array(EMAIL_IDENTITY, CONFIGURATION_SET, ISP)
+}
+
+@js.native
+sealed trait MetricNamespace extends js.Any
+object MetricNamespace {
+  val VDM = "VDM".asInstanceOf[MetricNamespace]
+
+  @inline def values: js.Array[MetricNamespace] = js.Array(VDM)
+}
+
+@js.native
+sealed trait QueryErrorCode extends js.Any
+object QueryErrorCode {
+  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[QueryErrorCode]
+  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[QueryErrorCode]
+
+  @inline def values: js.Array[QueryErrorCode] = js.Array(INTERNAL_FAILURE, ACCESS_DENIED)
+}
+
+@js.native
+sealed trait RecommendationImpact extends js.Any
+object RecommendationImpact {
+  val LOW = "LOW".asInstanceOf[RecommendationImpact]
+  val HIGH = "HIGH".asInstanceOf[RecommendationImpact]
+
+  @inline def values: js.Array[RecommendationImpact] = js.Array(LOW, HIGH)
+}
+
+@js.native
+sealed trait RecommendationStatus extends js.Any
+object RecommendationStatus {
+  val OPEN = "OPEN".asInstanceOf[RecommendationStatus]
+  val FIXED = "FIXED".asInstanceOf[RecommendationStatus]
+
+  @inline def values: js.Array[RecommendationStatus] = js.Array(OPEN, FIXED)
+}
+
+@js.native
+sealed trait RecommendationType extends js.Any
+object RecommendationType {
+  val DKIM = "DKIM".asInstanceOf[RecommendationType]
+  val DMARC = "DMARC".asInstanceOf[RecommendationType]
+  val SPF = "SPF".asInstanceOf[RecommendationType]
+
+  @inline def values: js.Array[RecommendationType] = js.Array(DKIM, DMARC, SPF)
+}
+
+@js.native
 sealed trait ReviewStatus extends js.Any
 object ReviewStatus {
   val PENDING = "PENDING".asInstanceOf[ReviewStatus]
@@ -229,6 +325,15 @@ object ReviewStatus {
   val DENIED = "DENIED".asInstanceOf[ReviewStatus]
 
   @inline def values: js.Array[ReviewStatus] = js.Array(PENDING, FAILED, GRANTED, DENIED)
+}
+
+@js.native
+sealed trait ScalingMode extends js.Any
+object ScalingMode {
+  val STANDARD = "STANDARD".asInstanceOf[ScalingMode]
+  val MANAGED = "MANAGED".asInstanceOf[ScalingMode]
+
+  @inline def values: js.Array[ScalingMode] = js.Array(STANDARD, MANAGED)
 }
 
 @js.native
@@ -271,6 +376,18 @@ object TlsPolicy {
   val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
 
   @inline def values: js.Array[TlsPolicy] = js.Array(REQUIRE, OPTIONAL)
+}
+
+@js.native
+sealed trait VerificationStatus extends js.Any
+object VerificationStatus {
+  val PENDING = "PENDING".asInstanceOf[VerificationStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[VerificationStatus]
+  val FAILED = "FAILED".asInstanceOf[VerificationStatus]
+  val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[VerificationStatus]
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[VerificationStatus]
+
+  @inline def values: js.Array[VerificationStatus] = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
 }
 
 /** The warmup status of a dedicated IP.

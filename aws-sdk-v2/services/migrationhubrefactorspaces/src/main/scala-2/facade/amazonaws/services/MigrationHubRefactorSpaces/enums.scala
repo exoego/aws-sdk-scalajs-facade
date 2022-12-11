@@ -146,8 +146,9 @@ object ProxyType {
 sealed trait RouteActivationState extends js.Any
 object RouteActivationState {
   val ACTIVE = "ACTIVE".asInstanceOf[RouteActivationState]
+  val INACTIVE = "INACTIVE".asInstanceOf[RouteActivationState]
 
-  @inline def values: js.Array[RouteActivationState] = js.Array(ACTIVE)
+  @inline def values: js.Array[RouteActivationState] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native

@@ -27,23 +27,34 @@ package object emrcontainers {
   type JobArn = String
   type JobRunStates = js.Array[JobRunState]
   type JobRuns = js.Array[JobRun]
+  type JobTemplateArn = String
+  type JobTemplates = js.Array[JobTemplate]
+  type KmsKeyArn = String
   type KubernetesNamespace = String
   type LogGroupName = String
   type NextToken = String
+  type ParametricIAMRoleArn = String
+  type ParametricReleaseLabel = String
   type ReleaseLabel = String
   type RequestIdentityUserArn = String
   type ResourceIdString = String
   type ResourceNameString = String
   type RsiArn = String
   type SensitivePropertiesMap = js.Dictionary[String1024]
+  type SparkSqlParameters = String
   type SparkSubmitParameters = String
   type String1024 = String
   type String128 = String
+  type String2048 = String
   type String256 = String
   type StringEmpty256 = String
   type SubnetIds = js.Array[String256]
   type TagKeyList = js.Array[String128]
   type TagMap = js.Dictionary[StringEmpty256]
+  type TemplateParameter = String
+  type TemplateParameterConfigurationMap = js.Dictionary[TemplateParameterConfiguration]
+  type TemplateParameterInputMap = js.Dictionary[String1024]
+  type TemplateParameterName = String
   type UriString = String
   type VirtualClusterArn = String
   type VirtualClusterStates = js.Array[VirtualClusterState]
@@ -52,14 +63,18 @@ package object emrcontainers {
   final class EMRcontainersOps(private val service: EMRcontainers) extends AnyVal {
 
     @inline def cancelJobRunFuture(params: CancelJobRunRequest): Future[CancelJobRunResponse] = service.cancelJobRun(params).promise().toFuture
+    @inline def createJobTemplateFuture(params: CreateJobTemplateRequest): Future[CreateJobTemplateResponse] = service.createJobTemplate(params).promise().toFuture
     @inline def createManagedEndpointFuture(params: CreateManagedEndpointRequest): Future[CreateManagedEndpointResponse] = service.createManagedEndpoint(params).promise().toFuture
     @inline def createVirtualClusterFuture(params: CreateVirtualClusterRequest): Future[CreateVirtualClusterResponse] = service.createVirtualCluster(params).promise().toFuture
+    @inline def deleteJobTemplateFuture(params: DeleteJobTemplateRequest): Future[DeleteJobTemplateResponse] = service.deleteJobTemplate(params).promise().toFuture
     @inline def deleteManagedEndpointFuture(params: DeleteManagedEndpointRequest): Future[DeleteManagedEndpointResponse] = service.deleteManagedEndpoint(params).promise().toFuture
     @inline def deleteVirtualClusterFuture(params: DeleteVirtualClusterRequest): Future[DeleteVirtualClusterResponse] = service.deleteVirtualCluster(params).promise().toFuture
     @inline def describeJobRunFuture(params: DescribeJobRunRequest): Future[DescribeJobRunResponse] = service.describeJobRun(params).promise().toFuture
+    @inline def describeJobTemplateFuture(params: DescribeJobTemplateRequest): Future[DescribeJobTemplateResponse] = service.describeJobTemplate(params).promise().toFuture
     @inline def describeManagedEndpointFuture(params: DescribeManagedEndpointRequest): Future[DescribeManagedEndpointResponse] = service.describeManagedEndpoint(params).promise().toFuture
     @inline def describeVirtualClusterFuture(params: DescribeVirtualClusterRequest): Future[DescribeVirtualClusterResponse] = service.describeVirtualCluster(params).promise().toFuture
     @inline def listJobRunsFuture(params: ListJobRunsRequest): Future[ListJobRunsResponse] = service.listJobRuns(params).promise().toFuture
+    @inline def listJobTemplatesFuture(params: ListJobTemplatesRequest): Future[ListJobTemplatesResponse] = service.listJobTemplates(params).promise().toFuture
     @inline def listManagedEndpointsFuture(params: ListManagedEndpointsRequest): Future[ListManagedEndpointsResponse] = service.listManagedEndpoints(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listVirtualClustersFuture(params: ListVirtualClustersRequest): Future[ListVirtualClustersResponse] = service.listVirtualClusters(params).promise().toFuture
@@ -75,14 +90,18 @@ package object emrcontainers {
     def this(config: AWSConfig) = this()
 
     def cancelJobRun(params: CancelJobRunRequest): Request[CancelJobRunResponse] = js.native
+    def createJobTemplate(params: CreateJobTemplateRequest): Request[CreateJobTemplateResponse] = js.native
     def createManagedEndpoint(params: CreateManagedEndpointRequest): Request[CreateManagedEndpointResponse] = js.native
     def createVirtualCluster(params: CreateVirtualClusterRequest): Request[CreateVirtualClusterResponse] = js.native
+    def deleteJobTemplate(params: DeleteJobTemplateRequest): Request[DeleteJobTemplateResponse] = js.native
     def deleteManagedEndpoint(params: DeleteManagedEndpointRequest): Request[DeleteManagedEndpointResponse] = js.native
     def deleteVirtualCluster(params: DeleteVirtualClusterRequest): Request[DeleteVirtualClusterResponse] = js.native
     def describeJobRun(params: DescribeJobRunRequest): Request[DescribeJobRunResponse] = js.native
+    def describeJobTemplate(params: DescribeJobTemplateRequest): Request[DescribeJobTemplateResponse] = js.native
     def describeManagedEndpoint(params: DescribeManagedEndpointRequest): Request[DescribeManagedEndpointResponse] = js.native
     def describeVirtualCluster(params: DescribeVirtualClusterRequest): Request[DescribeVirtualClusterResponse] = js.native
     def listJobRuns(params: ListJobRunsRequest): Request[ListJobRunsResponse] = js.native
+    def listJobTemplates(params: ListJobTemplatesRequest): Request[ListJobTemplatesResponse] = js.native
     def listManagedEndpoints(params: ListManagedEndpointsRequest): Request[ListManagedEndpointsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listVirtualClusters(params: ListVirtualClustersRequest): Request[ListVirtualClustersResponse] = js.native
@@ -271,6 +290,61 @@ package object emrcontainers {
   }
 
   @js.native
+  trait CreateJobTemplateRequest extends js.Object {
+    var clientToken: ClientToken
+    var jobTemplateData: JobTemplateData
+    var name: ResourceNameString
+    var kmsKeyArn: js.UndefOr[KmsKeyArn]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateJobTemplateRequest {
+    @inline
+    def apply(
+        clientToken: ClientToken,
+        jobTemplateData: JobTemplateData,
+        name: ResourceNameString,
+        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateJobTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "jobTemplateData" -> jobTemplateData.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait CreateJobTemplateResponse extends js.Object {
+    var arn: js.UndefOr[JobTemplateArn]
+    var createdAt: js.UndefOr[Date]
+    var id: js.UndefOr[ResourceIdString]
+    var name: js.UndefOr[ResourceNameString]
+  }
+
+  object CreateJobTemplateResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[JobTemplateArn] = js.undefined,
+        createdAt: js.UndefOr[Date] = js.undefined,
+        id: js.UndefOr[ResourceIdString] = js.undefined,
+        name: js.UndefOr[ResourceNameString] = js.undefined
+    ): CreateJobTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateJobTemplateResponse]
+    }
+  }
+
+  @js.native
   trait CreateManagedEndpointRequest extends js.Object {
     var clientToken: ClientToken
     var executionRoleArn: IAMRoleArn
@@ -387,6 +461,39 @@ package object emrcontainers {
   }
 
   @js.native
+  trait DeleteJobTemplateRequest extends js.Object {
+    var id: ResourceIdString
+  }
+
+  object DeleteJobTemplateRequest {
+    @inline
+    def apply(
+        id: ResourceIdString
+    ): DeleteJobTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteJobTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteJobTemplateResponse extends js.Object {
+    var id: js.UndefOr[ResourceIdString]
+  }
+
+  object DeleteJobTemplateResponse {
+    @inline
+    def apply(
+        id: js.UndefOr[ResourceIdString] = js.undefined
+    ): DeleteJobTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteJobTemplateResponse]
+    }
+  }
+
+  @js.native
   trait DeleteManagedEndpointRequest extends js.Object {
     var id: ResourceIdString
     var virtualClusterId: ResourceIdString
@@ -491,6 +598,39 @@ package object emrcontainers {
       val __obj = js.Dynamic.literal()
       jobRun.foreach(__v => __obj.updateDynamic("jobRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobRunResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeJobTemplateRequest extends js.Object {
+    var id: ResourceIdString
+  }
+
+  object DescribeJobTemplateRequest {
+    @inline
+    def apply(
+        id: ResourceIdString
+    ): DescribeJobTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeJobTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeJobTemplateResponse extends js.Object {
+    var jobTemplate: js.UndefOr[JobTemplate]
+  }
+
+  object DescribeJobTemplateResponse {
+    @inline
+    def apply(
+        jobTemplate: js.UndefOr[JobTemplate] = js.undefined
+    ): DescribeJobTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      jobTemplate.foreach(__v => __obj.updateDynamic("jobTemplate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeJobTemplateResponse]
     }
   }
 
@@ -650,19 +790,22 @@ package object emrcontainers {
     }
   }
 
-  /** Specify the driver that the job runs on.
+  /** Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either sparkSqlJobDriver or sparkSubmitJobDriver.
     */
   @js.native
   trait JobDriver extends js.Object {
+    var sparkSqlJobDriver: js.UndefOr[SparkSqlJobDriver]
     var sparkSubmitJobDriver: js.UndefOr[SparkSubmitJobDriver]
   }
 
   object JobDriver {
     @inline
     def apply(
+        sparkSqlJobDriver: js.UndefOr[SparkSqlJobDriver] = js.undefined,
         sparkSubmitJobDriver: js.UndefOr[SparkSubmitJobDriver] = js.undefined
     ): JobDriver = {
       val __obj = js.Dynamic.literal()
+      sparkSqlJobDriver.foreach(__v => __obj.updateDynamic("sparkSqlJobDriver")(__v.asInstanceOf[js.Any]))
       sparkSubmitJobDriver.foreach(__v => __obj.updateDynamic("sparkSubmitJobDriver")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDriver]
     }
@@ -731,6 +874,85 @@ package object emrcontainers {
     }
   }
 
+  /** This entity describes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+    */
+  @js.native
+  trait JobTemplate extends js.Object {
+    var jobTemplateData: JobTemplateData
+    var arn: js.UndefOr[JobTemplateArn]
+    var createdAt: js.UndefOr[Date]
+    var createdBy: js.UndefOr[RequestIdentityUserArn]
+    var decryptionError: js.UndefOr[String2048]
+    var id: js.UndefOr[ResourceIdString]
+    var kmsKeyArn: js.UndefOr[KmsKeyArn]
+    var name: js.UndefOr[ResourceNameString]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object JobTemplate {
+    @inline
+    def apply(
+        jobTemplateData: JobTemplateData,
+        arn: js.UndefOr[JobTemplateArn] = js.undefined,
+        createdAt: js.UndefOr[Date] = js.undefined,
+        createdBy: js.UndefOr[RequestIdentityUserArn] = js.undefined,
+        decryptionError: js.UndefOr[String2048] = js.undefined,
+        id: js.UndefOr[ResourceIdString] = js.undefined,
+        kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
+        name: js.UndefOr[ResourceNameString] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): JobTemplate = {
+      val __obj = js.Dynamic.literal(
+        "jobTemplateData" -> jobTemplateData.asInstanceOf[js.Any]
+      )
+
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      createdBy.foreach(__v => __obj.updateDynamic("createdBy")(__v.asInstanceOf[js.Any]))
+      decryptionError.foreach(__v => __obj.updateDynamic("decryptionError")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobTemplate]
+    }
+  }
+
+  /** The values of StartJobRun API requests used in job runs started using the job template.
+    */
+  @js.native
+  trait JobTemplateData extends js.Object {
+    var executionRoleArn: ParametricIAMRoleArn
+    var jobDriver: JobDriver
+    var releaseLabel: ParametricReleaseLabel
+    var configurationOverrides: js.UndefOr[ParametricConfigurationOverrides]
+    var jobTags: js.UndefOr[TagMap]
+    var parameterConfiguration: js.UndefOr[TemplateParameterConfigurationMap]
+  }
+
+  object JobTemplateData {
+    @inline
+    def apply(
+        executionRoleArn: ParametricIAMRoleArn,
+        jobDriver: JobDriver,
+        releaseLabel: ParametricReleaseLabel,
+        configurationOverrides: js.UndefOr[ParametricConfigurationOverrides] = js.undefined,
+        jobTags: js.UndefOr[TagMap] = js.undefined,
+        parameterConfiguration: js.UndefOr[TemplateParameterConfigurationMap] = js.undefined
+    ): JobTemplateData = {
+      val __obj = js.Dynamic.literal(
+        "executionRoleArn" -> executionRoleArn.asInstanceOf[js.Any],
+        "jobDriver" -> jobDriver.asInstanceOf[js.Any],
+        "releaseLabel" -> releaseLabel.asInstanceOf[js.Any]
+      )
+
+      configurationOverrides.foreach(__v => __obj.updateDynamic("configurationOverrides")(__v.asInstanceOf[js.Any]))
+      jobTags.foreach(__v => __obj.updateDynamic("jobTags")(__v.asInstanceOf[js.Any]))
+      parameterConfiguration.foreach(__v => __obj.updateDynamic("parameterConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobTemplateData]
+    }
+  }
+
   @js.native
   trait ListJobRunsRequest extends js.Object {
     var virtualClusterId: ResourceIdString
@@ -783,6 +1005,50 @@ package object emrcontainers {
       jobRuns.foreach(__v => __obj.updateDynamic("jobRuns")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobRunsResponse]
+    }
+  }
+
+  @js.native
+  trait ListJobTemplatesRequest extends js.Object {
+    var createdAfter: js.UndefOr[Date]
+    var createdBefore: js.UndefOr[Date]
+    var maxResults: js.UndefOr[JavaInteger]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListJobTemplatesRequest {
+    @inline
+    def apply(
+        createdAfter: js.UndefOr[Date] = js.undefined,
+        createdBefore: js.UndefOr[Date] = js.undefined,
+        maxResults: js.UndefOr[JavaInteger] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListJobTemplatesRequest = {
+      val __obj = js.Dynamic.literal()
+      createdAfter.foreach(__v => __obj.updateDynamic("createdAfter")(__v.asInstanceOf[js.Any]))
+      createdBefore.foreach(__v => __obj.updateDynamic("createdBefore")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobTemplatesRequest]
+    }
+  }
+
+  @js.native
+  trait ListJobTemplatesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var templates: js.UndefOr[JobTemplates]
+  }
+
+  object ListJobTemplatesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        templates: js.UndefOr[JobTemplates] = js.undefined
+    ): ListJobTemplatesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      templates.foreach(__v => __obj.updateDynamic("templates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListJobTemplatesResponse]
     }
   }
 
@@ -951,6 +1217,90 @@ package object emrcontainers {
     }
   }
 
+  /** A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs. This data type allows job template parameters to be specified within.
+    */
+  @js.native
+  trait ParametricCloudWatchMonitoringConfiguration extends js.Object {
+    var logGroupName: js.UndefOr[TemplateParameter]
+    var logStreamNamePrefix: js.UndefOr[String256]
+  }
+
+  object ParametricCloudWatchMonitoringConfiguration {
+    @inline
+    def apply(
+        logGroupName: js.UndefOr[TemplateParameter] = js.undefined,
+        logStreamNamePrefix: js.UndefOr[String256] = js.undefined
+    ): ParametricCloudWatchMonitoringConfiguration = {
+      val __obj = js.Dynamic.literal()
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParametricCloudWatchMonitoringConfiguration]
+    }
+  }
+
+  /** A configuration specification to be used to override existing configurations. This data type allows job template parameters to be specified within.
+    */
+  @js.native
+  trait ParametricConfigurationOverrides extends js.Object {
+    var applicationConfiguration: js.UndefOr[ConfigurationList]
+    var monitoringConfiguration: js.UndefOr[ParametricMonitoringConfiguration]
+  }
+
+  object ParametricConfigurationOverrides {
+    @inline
+    def apply(
+        applicationConfiguration: js.UndefOr[ConfigurationList] = js.undefined,
+        monitoringConfiguration: js.UndefOr[ParametricMonitoringConfiguration] = js.undefined
+    ): ParametricConfigurationOverrides = {
+      val __obj = js.Dynamic.literal()
+      applicationConfiguration.foreach(__v => __obj.updateDynamic("applicationConfiguration")(__v.asInstanceOf[js.Any]))
+      monitoringConfiguration.foreach(__v => __obj.updateDynamic("monitoringConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParametricConfigurationOverrides]
+    }
+  }
+
+  /** Configuration setting for monitoring. This data type allows job template parameters to be specified within.
+    */
+  @js.native
+  trait ParametricMonitoringConfiguration extends js.Object {
+    var cloudWatchMonitoringConfiguration: js.UndefOr[ParametricCloudWatchMonitoringConfiguration]
+    var persistentAppUI: js.UndefOr[TemplateParameter]
+    var s3MonitoringConfiguration: js.UndefOr[ParametricS3MonitoringConfiguration]
+  }
+
+  object ParametricMonitoringConfiguration {
+    @inline
+    def apply(
+        cloudWatchMonitoringConfiguration: js.UndefOr[ParametricCloudWatchMonitoringConfiguration] = js.undefined,
+        persistentAppUI: js.UndefOr[TemplateParameter] = js.undefined,
+        s3MonitoringConfiguration: js.UndefOr[ParametricS3MonitoringConfiguration] = js.undefined
+    ): ParametricMonitoringConfiguration = {
+      val __obj = js.Dynamic.literal()
+      cloudWatchMonitoringConfiguration.foreach(__v => __obj.updateDynamic("cloudWatchMonitoringConfiguration")(__v.asInstanceOf[js.Any]))
+      persistentAppUI.foreach(__v => __obj.updateDynamic("persistentAppUI")(__v.asInstanceOf[js.Any]))
+      s3MonitoringConfiguration.foreach(__v => __obj.updateDynamic("s3MonitoringConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParametricMonitoringConfiguration]
+    }
+  }
+
+  /** Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3. This data type allows job template parameters to be specified within.
+    */
+  @js.native
+  trait ParametricS3MonitoringConfiguration extends js.Object {
+    var logUri: js.UndefOr[UriString]
+  }
+
+  object ParametricS3MonitoringConfiguration {
+    @inline
+    def apply(
+        logUri: js.UndefOr[UriString] = js.undefined
+    ): ParametricS3MonitoringConfiguration = {
+      val __obj = js.Dynamic.literal()
+      logUri.foreach(__v => __obj.updateDynamic("logUri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ParametricS3MonitoringConfiguration]
+    }
+  }
+
   /** Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.
     */
   @js.native
@@ -967,6 +1317,27 @@ package object emrcontainers {
         "logUri" -> logUri.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[S3MonitoringConfiguration]
+    }
+  }
+
+  /** The job driver for job type.
+    */
+  @js.native
+  trait SparkSqlJobDriver extends js.Object {
+    var entryPoint: js.UndefOr[EntryPointPath]
+    var sparkSqlParameters: js.UndefOr[SparkSqlParameters]
+  }
+
+  object SparkSqlJobDriver {
+    @inline
+    def apply(
+        entryPoint: js.UndefOr[EntryPointPath] = js.undefined,
+        sparkSqlParameters: js.UndefOr[SparkSqlParameters] = js.undefined
+    ): SparkSqlJobDriver = {
+      val __obj = js.Dynamic.literal()
+      entryPoint.foreach(__v => __obj.updateDynamic("entryPoint")(__v.asInstanceOf[js.Any]))
+      sparkSqlParameters.foreach(__v => __obj.updateDynamic("sparkSqlParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SparkSqlJobDriver]
     }
   }
 
@@ -999,12 +1370,14 @@ package object emrcontainers {
   @js.native
   trait StartJobRunRequest extends js.Object {
     var clientToken: ClientToken
-    var executionRoleArn: IAMRoleArn
-    var jobDriver: JobDriver
-    var releaseLabel: ReleaseLabel
     var virtualClusterId: ResourceIdString
     var configurationOverrides: js.UndefOr[ConfigurationOverrides]
+    var executionRoleArn: js.UndefOr[IAMRoleArn]
+    var jobDriver: js.UndefOr[JobDriver]
+    var jobTemplateId: js.UndefOr[ResourceIdString]
+    var jobTemplateParameters: js.UndefOr[TemplateParameterInputMap]
     var name: js.UndefOr[ResourceNameString]
+    var releaseLabel: js.UndefOr[ReleaseLabel]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -1012,24 +1385,28 @@ package object emrcontainers {
     @inline
     def apply(
         clientToken: ClientToken,
-        executionRoleArn: IAMRoleArn,
-        jobDriver: JobDriver,
-        releaseLabel: ReleaseLabel,
         virtualClusterId: ResourceIdString,
         configurationOverrides: js.UndefOr[ConfigurationOverrides] = js.undefined,
+        executionRoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
+        jobDriver: js.UndefOr[JobDriver] = js.undefined,
+        jobTemplateId: js.UndefOr[ResourceIdString] = js.undefined,
+        jobTemplateParameters: js.UndefOr[TemplateParameterInputMap] = js.undefined,
         name: js.UndefOr[ResourceNameString] = js.undefined,
+        releaseLabel: js.UndefOr[ReleaseLabel] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): StartJobRunRequest = {
       val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
-        "executionRoleArn" -> executionRoleArn.asInstanceOf[js.Any],
-        "jobDriver" -> jobDriver.asInstanceOf[js.Any],
-        "releaseLabel" -> releaseLabel.asInstanceOf[js.Any],
         "virtualClusterId" -> virtualClusterId.asInstanceOf[js.Any]
       )
 
       configurationOverrides.foreach(__v => __obj.updateDynamic("configurationOverrides")(__v.asInstanceOf[js.Any]))
+      executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
+      jobDriver.foreach(__v => __obj.updateDynamic("jobDriver")(__v.asInstanceOf[js.Any]))
+      jobTemplateId.foreach(__v => __obj.updateDynamic("jobTemplateId")(__v.asInstanceOf[js.Any]))
+      jobTemplateParameters.foreach(__v => __obj.updateDynamic("jobTemplateParameters")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      releaseLabel.foreach(__v => __obj.updateDynamic("releaseLabel")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartJobRunRequest]
     }
@@ -1088,6 +1465,27 @@ package object emrcontainers {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** The configuration of a job template parameter.
+    */
+  @js.native
+  trait TemplateParameterConfiguration extends js.Object {
+    var defaultValue: js.UndefOr[String1024]
+    var `type`: js.UndefOr[TemplateParameterDataType]
+  }
+
+  object TemplateParameterConfiguration {
+    @inline
+    def apply(
+        defaultValue: js.UndefOr[String1024] = js.undefined,
+        `type`: js.UndefOr[TemplateParameterDataType] = js.undefined
+    ): TemplateParameterConfiguration = {
+      val __obj = js.Dynamic.literal()
+      defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateParameterConfiguration]
     }
   }
 

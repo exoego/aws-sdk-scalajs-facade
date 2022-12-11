@@ -54,8 +54,25 @@ object ComparisonOperatorType {
   inline def values: js.Array[ComparisonOperatorType] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
-type EC2InstanceType = "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" |
-  "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge"
+type ComputeStatus = "PENDING" | "ACTIVE" | "TERMINATING"
+object ComputeStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+
+  inline def values: js.Array[ComputeStatus] = js.Array(PENDING, ACTIVE, TERMINATING)
+}
+
+type ComputeType = "EC2" | "ANYWHERE"
+object ComputeType {
+  inline val EC2: "EC2" = "EC2"
+  inline val ANYWHERE: "ANYWHERE" = "ANYWHERE"
+
+  inline def values: js.Array[ComputeType] = js.Array(EC2, ANYWHERE)
+}
+
+type EC2InstanceType =
+  "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "c5d.large" | "c5d.xlarge" | "c5d.2xlarge" | "c5d.4xlarge" | "c5d.9xlarge" | "c5d.12xlarge" | "c5d.18xlarge" | "c5d.24xlarge" | "c6a.large" | "c6a.xlarge" | "c6a.2xlarge" | "c6a.4xlarge" | "c6a.8xlarge" | "c6a.12xlarge" | "c6a.16xlarge" | "c6a.24xlarge" | "c6i.large" | "c6i.xlarge" | "c6i.2xlarge" | "c6i.4xlarge" | "c6i.8xlarge" | "c6i.12xlarge" | "c6i.16xlarge" | "c6i.24xlarge" | "r5d.large" | "r5d.xlarge" | "r5d.2xlarge" | "r5d.4xlarge" | "r5d.8xlarge" | "r5d.12xlarge" | "r5d.16xlarge" | "r5d.24xlarge"
 object EC2InstanceType {
   inline val `t2.micro`: "t2.micro" = "t2.micro"
   inline val `t2.small`: "t2.small" = "t2.small"
@@ -139,6 +156,38 @@ object EC2InstanceType {
   inline val `m5a.12xlarge`: "m5a.12xlarge" = "m5a.12xlarge"
   inline val `m5a.16xlarge`: "m5a.16xlarge" = "m5a.16xlarge"
   inline val `m5a.24xlarge`: "m5a.24xlarge" = "m5a.24xlarge"
+  inline val `c5d.large`: "c5d.large" = "c5d.large"
+  inline val `c5d.xlarge`: "c5d.xlarge" = "c5d.xlarge"
+  inline val `c5d.2xlarge`: "c5d.2xlarge" = "c5d.2xlarge"
+  inline val `c5d.4xlarge`: "c5d.4xlarge" = "c5d.4xlarge"
+  inline val `c5d.9xlarge`: "c5d.9xlarge" = "c5d.9xlarge"
+  inline val `c5d.12xlarge`: "c5d.12xlarge" = "c5d.12xlarge"
+  inline val `c5d.18xlarge`: "c5d.18xlarge" = "c5d.18xlarge"
+  inline val `c5d.24xlarge`: "c5d.24xlarge" = "c5d.24xlarge"
+  inline val `c6a.large`: "c6a.large" = "c6a.large"
+  inline val `c6a.xlarge`: "c6a.xlarge" = "c6a.xlarge"
+  inline val `c6a.2xlarge`: "c6a.2xlarge" = "c6a.2xlarge"
+  inline val `c6a.4xlarge`: "c6a.4xlarge" = "c6a.4xlarge"
+  inline val `c6a.8xlarge`: "c6a.8xlarge" = "c6a.8xlarge"
+  inline val `c6a.12xlarge`: "c6a.12xlarge" = "c6a.12xlarge"
+  inline val `c6a.16xlarge`: "c6a.16xlarge" = "c6a.16xlarge"
+  inline val `c6a.24xlarge`: "c6a.24xlarge" = "c6a.24xlarge"
+  inline val `c6i.large`: "c6i.large" = "c6i.large"
+  inline val `c6i.xlarge`: "c6i.xlarge" = "c6i.xlarge"
+  inline val `c6i.2xlarge`: "c6i.2xlarge" = "c6i.2xlarge"
+  inline val `c6i.4xlarge`: "c6i.4xlarge" = "c6i.4xlarge"
+  inline val `c6i.8xlarge`: "c6i.8xlarge" = "c6i.8xlarge"
+  inline val `c6i.12xlarge`: "c6i.12xlarge" = "c6i.12xlarge"
+  inline val `c6i.16xlarge`: "c6i.16xlarge" = "c6i.16xlarge"
+  inline val `c6i.24xlarge`: "c6i.24xlarge" = "c6i.24xlarge"
+  inline val `r5d.large`: "r5d.large" = "r5d.large"
+  inline val `r5d.xlarge`: "r5d.xlarge" = "r5d.xlarge"
+  inline val `r5d.2xlarge`: "r5d.2xlarge" = "r5d.2xlarge"
+  inline val `r5d.4xlarge`: "r5d.4xlarge" = "r5d.4xlarge"
+  inline val `r5d.8xlarge`: "r5d.8xlarge" = "r5d.8xlarge"
+  inline val `r5d.12xlarge`: "r5d.12xlarge" = "r5d.12xlarge"
+  inline val `r5d.16xlarge`: "r5d.16xlarge" = "r5d.16xlarge"
+  inline val `r5d.24xlarge`: "r5d.24xlarge" = "r5d.24xlarge"
 
   inline def values: js.Array[EC2InstanceType] = js.Array(
     `t2.micro`,
@@ -222,12 +271,44 @@ object EC2InstanceType {
     `m5a.8xlarge`,
     `m5a.12xlarge`,
     `m5a.16xlarge`,
-    `m5a.24xlarge`
+    `m5a.24xlarge`,
+    `c5d.large`,
+    `c5d.xlarge`,
+    `c5d.2xlarge`,
+    `c5d.4xlarge`,
+    `c5d.9xlarge`,
+    `c5d.12xlarge`,
+    `c5d.18xlarge`,
+    `c5d.24xlarge`,
+    `c6a.large`,
+    `c6a.xlarge`,
+    `c6a.2xlarge`,
+    `c6a.4xlarge`,
+    `c6a.8xlarge`,
+    `c6a.12xlarge`,
+    `c6a.16xlarge`,
+    `c6a.24xlarge`,
+    `c6i.large`,
+    `c6i.xlarge`,
+    `c6i.2xlarge`,
+    `c6i.4xlarge`,
+    `c6i.8xlarge`,
+    `c6i.12xlarge`,
+    `c6i.16xlarge`,
+    `c6i.24xlarge`,
+    `r5d.large`,
+    `r5d.xlarge`,
+    `r5d.2xlarge`,
+    `r5d.4xlarge`,
+    `r5d.8xlarge`,
+    `r5d.12xlarge`,
+    `r5d.16xlarge`,
+    `r5d.24xlarge`
   )
 }
 
-type EventCode = "GENERIC_EVENT" | "FLEET_CREATED" | "FLEET_DELETED" | "FLEET_SCALING_EVENT" | "FLEET_STATE_DOWNLOADING" | "FLEET_STATE_VALIDATING" | "FLEET_STATE_BUILDING" | "FLEET_STATE_ACTIVATING" | "FLEET_STATE_ACTIVE" | "FLEET_STATE_ERROR" | "FLEET_INITIALIZATION_FAILED" | "FLEET_BINARY_DOWNLOAD_FAILED" | "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" | "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" | "FLEET_VALIDATION_TIMED_OUT" | "FLEET_ACTIVATION_FAILED" | "FLEET_ACTIVATION_FAILED_NO_INSTANCES" | "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" | "SERVER_PROCESS_INVALID_PATH" | "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" | "SERVER_PROCESS_PROCESS_READY_TIMEOUT" | "SERVER_PROCESS_CRASHED" | "SERVER_PROCESS_TERMINATED_UNHEALTHY" | "SERVER_PROCESS_FORCE_TERMINATED" | "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" | "GAME_SESSION_ACTIVATION_TIMEOUT" | "FLEET_CREATION_EXTRACTING_BUILD" | "FLEET_CREATION_RUNNING_INSTALLER" | "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" |
-  "FLEET_VPC_PEERING_SUCCEEDED" | "FLEET_VPC_PEERING_FAILED" | "FLEET_VPC_PEERING_DELETED" | "INSTANCE_INTERRUPTED"
+type EventCode =
+  "GENERIC_EVENT" | "FLEET_CREATED" | "FLEET_DELETED" | "FLEET_SCALING_EVENT" | "FLEET_STATE_DOWNLOADING" | "FLEET_STATE_VALIDATING" | "FLEET_STATE_BUILDING" | "FLEET_STATE_ACTIVATING" | "FLEET_STATE_ACTIVE" | "FLEET_STATE_ERROR" | "FLEET_INITIALIZATION_FAILED" | "FLEET_BINARY_DOWNLOAD_FAILED" | "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" | "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" | "FLEET_VALIDATION_TIMED_OUT" | "FLEET_ACTIVATION_FAILED" | "FLEET_ACTIVATION_FAILED_NO_INSTANCES" | "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" | "SERVER_PROCESS_INVALID_PATH" | "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" | "SERVER_PROCESS_PROCESS_READY_TIMEOUT" | "SERVER_PROCESS_CRASHED" | "SERVER_PROCESS_TERMINATED_UNHEALTHY" | "SERVER_PROCESS_FORCE_TERMINATED" | "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" | "GAME_SESSION_ACTIVATION_TIMEOUT" | "FLEET_CREATION_EXTRACTING_BUILD" | "FLEET_CREATION_RUNNING_INSTALLER" | "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" | "FLEET_VPC_PEERING_SUCCEEDED" | "FLEET_VPC_PEERING_FAILED" | "FLEET_VPC_PEERING_DELETED" | "INSTANCE_INTERRUPTED" | "INSTANCE_RECYCLED"
 object EventCode {
   inline val GENERIC_EVENT: "GENERIC_EVENT" = "GENERIC_EVENT"
   inline val FLEET_CREATED: "FLEET_CREATED" = "FLEET_CREATED"
@@ -262,6 +343,7 @@ object EventCode {
   inline val FLEET_VPC_PEERING_FAILED: "FLEET_VPC_PEERING_FAILED" = "FLEET_VPC_PEERING_FAILED"
   inline val FLEET_VPC_PEERING_DELETED: "FLEET_VPC_PEERING_DELETED" = "FLEET_VPC_PEERING_DELETED"
   inline val INSTANCE_INTERRUPTED: "INSTANCE_INTERRUPTED" = "INSTANCE_INTERRUPTED"
+  inline val INSTANCE_RECYCLED: "INSTANCE_RECYCLED" = "INSTANCE_RECYCLED"
 
   inline def values: js.Array[EventCode] = js.Array(
     GENERIC_EVENT,
@@ -296,7 +378,8 @@ object EventCode {
     FLEET_VPC_PEERING_SUCCEEDED,
     FLEET_VPC_PEERING_FAILED,
     FLEET_VPC_PEERING_DELETED,
-    INSTANCE_INTERRUPTED
+    INSTANCE_INTERRUPTED,
+    INSTANCE_RECYCLED
   )
 }
 
@@ -307,7 +390,7 @@ object FleetAction {
   inline def values: js.Array[FleetAction] = js.Array(AUTO_SCALING)
 }
 
-type FleetStatus = "NEW" | "DOWNLOADING" | "VALIDATING" | "BUILDING" | "ACTIVATING" | "ACTIVE" | "DELETING" | "ERROR" | "TERMINATED"
+type FleetStatus = "NEW" | "DOWNLOADING" | "VALIDATING" | "BUILDING" | "ACTIVATING" | "ACTIVE" | "DELETING" | "ERROR" | "TERMINATED" | "NOT_FOUND"
 object FleetStatus {
   inline val NEW: "NEW" = "NEW"
   inline val DOWNLOADING: "DOWNLOADING" = "DOWNLOADING"
@@ -318,8 +401,9 @@ object FleetStatus {
   inline val DELETING: "DELETING" = "DELETING"
   inline val ERROR: "ERROR" = "ERROR"
   inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val NOT_FOUND: "NOT_FOUND" = "NOT_FOUND"
 
-  inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+  inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED, NOT_FOUND)
 }
 
 type FleetType = "ON_DEMAND" | "SPOT"
@@ -361,8 +445,8 @@ object GameServerGroupDeleteOption {
   inline def values: js.Array[GameServerGroupDeleteOption] = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
 }
 
-type GameServerGroupInstanceType = "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "r6g.medium" | "r6g.large" | "r6g.xlarge" | "r6g.2xlarge" | "r6g.4xlarge" | "r6g.8xlarge" | "r6g.12xlarge" | "r6g.16xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" |
-  "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge"
+type GameServerGroupInstanceType =
+  "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "r6g.medium" | "r6g.large" | "r6g.xlarge" | "r6g.2xlarge" | "r6g.4xlarge" | "r6g.8xlarge" | "r6g.12xlarge" | "r6g.16xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge"
 object GameServerGroupInstanceType {
   inline val `c4.large`: "c4.large" = "c4.large"
   inline val `c4.xlarge`: "c4.xlarge" = "c4.xlarge"
@@ -636,6 +720,14 @@ object IpProtocol {
   inline def values: js.Array[IpProtocol] = js.Array(TCP, UDP)
 }
 
+type LocationFilter = "AWS" | "CUSTOM"
+object LocationFilter {
+  inline val AWS: "AWS" = "AWS"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+
+  inline def values: js.Array[LocationFilter] = js.Array(AWS, CUSTOM)
+}
+
 type LocationUpdateStatus = "PENDING_UPDATE"
 object LocationUpdateStatus {
   inline val PENDING_UPDATE: "PENDING_UPDATE" = "PENDING_UPDATE"
@@ -657,7 +749,7 @@ object MatchmakingConfigurationStatus {
   inline def values: js.Array[MatchmakingConfigurationStatus] = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
 }
 
-type MetricName = "ActivatingGameSessions" | "ActiveGameSessions" | "ActiveInstances" | "AvailableGameSessions" | "AvailablePlayerSessions" | "CurrentPlayerSessions" | "IdleInstances" | "PercentAvailableGameSessions" | "PercentIdleInstances" | "QueueDepth" | "WaitTime"
+type MetricName = "ActivatingGameSessions" | "ActiveGameSessions" | "ActiveInstances" | "AvailableGameSessions" | "AvailablePlayerSessions" | "CurrentPlayerSessions" | "IdleInstances" | "PercentAvailableGameSessions" | "PercentIdleInstances" | "QueueDepth" | "WaitTime" | "ConcurrentActivatableGameSessions"
 object MetricName {
   inline val ActivatingGameSessions: "ActivatingGameSessions" = "ActivatingGameSessions"
   inline val ActiveGameSessions: "ActiveGameSessions" = "ActiveGameSessions"
@@ -670,6 +762,7 @@ object MetricName {
   inline val PercentIdleInstances: "PercentIdleInstances" = "PercentIdleInstances"
   inline val QueueDepth: "QueueDepth" = "QueueDepth"
   inline val WaitTime: "WaitTime" = "WaitTime"
+  inline val ConcurrentActivatableGameSessions: "ConcurrentActivatableGameSessions" = "ConcurrentActivatableGameSessions"
 
   inline def values: js.Array[MetricName] = js.Array(
     ActivatingGameSessions,
@@ -682,7 +775,8 @@ object MetricName {
     PercentAvailableGameSessions,
     PercentIdleInstances,
     QueueDepth,
-    WaitTime
+    WaitTime,
+    ConcurrentActivatableGameSessions
   )
 }
 

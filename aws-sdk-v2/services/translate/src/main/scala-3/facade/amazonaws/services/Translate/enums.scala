@@ -10,11 +10,35 @@ object Directionality {
   inline def values: js.Array[Directionality] = js.Array(UNI, MULTI)
 }
 
+type DisplayLanguageCode = "de" | "en" | "es" | "fr" | "it" | "ja" | "ko" | "pt" | "zh" | "zh-TW"
+object DisplayLanguageCode {
+  inline val de: "de" = "de"
+  inline val en: "en" = "en"
+  inline val es: "es" = "es"
+  inline val fr: "fr" = "fr"
+  inline val it: "it" = "it"
+  inline val ja: "ja" = "ja"
+  inline val ko: "ko" = "ko"
+  inline val pt: "pt" = "pt"
+  inline val zh: "zh" = "zh"
+  inline val `zh-TW`: "zh-TW" = "zh-TW"
+
+  inline def values: js.Array[DisplayLanguageCode] = js.Array(de, en, es, fr, it, ja, ko, pt, zh, `zh-TW`)
+}
+
 type EncryptionKeyType = "KMS"
 object EncryptionKeyType {
   inline val KMS: "KMS" = "KMS"
 
   inline def values: js.Array[EncryptionKeyType] = js.Array(KMS)
+}
+
+type Formality = "FORMAL" | "INFORMAL"
+object Formality {
+  inline val FORMAL: "FORMAL" = "FORMAL"
+  inline val INFORMAL: "INFORMAL" = "INFORMAL"
+
+  inline def values: js.Array[Formality] = js.Array(FORMAL, INFORMAL)
 }
 
 type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "COMPLETED_WITH_ERROR" | "FAILED" | "STOP_REQUESTED" | "STOPPED"

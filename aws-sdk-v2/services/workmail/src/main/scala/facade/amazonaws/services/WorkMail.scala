@@ -16,6 +16,7 @@ package object workmail {
   type ActionsList = js.Array[AccessControlRuleAction]
   type Aliases = js.Array[EmailAddress]
   type AmazonResourceName = String
+  type AvailabilityConfigurationList = js.Array[AvailabilityConfiguration]
   type BooleanObject = Boolean
   type Description = String
   type DeviceId = String
@@ -33,16 +34,30 @@ package object workmail {
   type Domains = js.Array[Domain]
   type EmailAddress = String
   type EntityIdentifier = String
+  type ExpiresIn = Double
+  type ExternalUserName = String
   type FolderConfigurations = js.Array[FolderConfiguration]
   type GroupName = String
   type Groups = js.Array[Group]
   type HostedZoneId = String
   type IdempotencyClientToken = String
+  type ImpersonationMatchedRuleList = js.Array[ImpersonationMatchedRule]
+  type ImpersonationRoleDescription = String
+  type ImpersonationRoleId = String
+  type ImpersonationRoleIdList = js.Array[ImpersonationRoleId]
+  type ImpersonationRoleList = js.Array[ImpersonationRole]
+  type ImpersonationRoleName = String
+  type ImpersonationRuleDescription = String
+  type ImpersonationRuleId = String
+  type ImpersonationRuleList = js.Array[ImpersonationRule]
+  type ImpersonationRuleName = String
+  type ImpersonationToken = String
   type IpAddress = String
   type IpRange = String
   type IpRangeList = js.Array[IpRange]
   type Jobs = js.Array[MailboxExportJob]
   type KmsKeyArn = String
+  type LambdaArn = String
   type LogGroupArn = String
   type MailDomains = js.Array[MailDomainSummary]
   type MailboxExportErrorInfo = String
@@ -79,7 +94,9 @@ package object workmail {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TargetUsers = js.Array[EntityIdentifier]
   type Timestamp = js.Date
+  type Url = String
   type UserIdList = js.Array[WorkMailIdentifier]
   type UserName = String
   type Users = js.Array[User]
@@ -90,17 +107,22 @@ package object workmail {
 
     @inline def associateDelegateToResourceFuture(params: AssociateDelegateToResourceRequest): Future[AssociateDelegateToResourceResponse] = service.associateDelegateToResource(params).promise().toFuture
     @inline def associateMemberToGroupFuture(params: AssociateMemberToGroupRequest): Future[AssociateMemberToGroupResponse] = service.associateMemberToGroup(params).promise().toFuture
+    @inline def assumeImpersonationRoleFuture(params: AssumeImpersonationRoleRequest): Future[AssumeImpersonationRoleResponse] = service.assumeImpersonationRole(params).promise().toFuture
     @inline def cancelMailboxExportJobFuture(params: CancelMailboxExportJobRequest): Future[CancelMailboxExportJobResponse] = service.cancelMailboxExportJob(params).promise().toFuture
     @inline def createAliasFuture(params: CreateAliasRequest): Future[CreateAliasResponse] = service.createAlias(params).promise().toFuture
+    @inline def createAvailabilityConfigurationFuture(params: CreateAvailabilityConfigurationRequest): Future[CreateAvailabilityConfigurationResponse] = service.createAvailabilityConfiguration(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
+    @inline def createImpersonationRoleFuture(params: CreateImpersonationRoleRequest): Future[CreateImpersonationRoleResponse] = service.createImpersonationRole(params).promise().toFuture
     @inline def createMobileDeviceAccessRuleFuture(params: CreateMobileDeviceAccessRuleRequest): Future[CreateMobileDeviceAccessRuleResponse] = service.createMobileDeviceAccessRule(params).promise().toFuture
     @inline def createOrganizationFuture(params: CreateOrganizationRequest): Future[CreateOrganizationResponse] = service.createOrganization(params).promise().toFuture
     @inline def createResourceFuture(params: CreateResourceRequest): Future[CreateResourceResponse] = service.createResource(params).promise().toFuture
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def deleteAccessControlRuleFuture(params: DeleteAccessControlRuleRequest): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteAvailabilityConfigurationFuture(params: DeleteAvailabilityConfigurationRequest): Future[DeleteAvailabilityConfigurationResponse] = service.deleteAvailabilityConfiguration(params).promise().toFuture
     @inline def deleteEmailMonitoringConfigurationFuture(params: DeleteEmailMonitoringConfigurationRequest): Future[DeleteEmailMonitoringConfigurationResponse] = service.deleteEmailMonitoringConfiguration(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
+    @inline def deleteImpersonationRoleFuture(params: DeleteImpersonationRoleRequest): Future[DeleteImpersonationRoleResponse] = service.deleteImpersonationRole(params).promise().toFuture
     @inline def deleteMailboxPermissionsFuture(params: DeleteMailboxPermissionsRequest): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
     @inline def deleteMobileDeviceAccessOverrideFuture(params: DeleteMobileDeviceAccessOverrideRequest): Future[DeleteMobileDeviceAccessOverrideResponse] = service.deleteMobileDeviceAccessOverride(params).promise().toFuture
     @inline def deleteMobileDeviceAccessRuleFuture(params: DeleteMobileDeviceAccessRuleRequest): Future[DeleteMobileDeviceAccessRuleResponse] = service.deleteMobileDeviceAccessRule(params).promise().toFuture
@@ -121,14 +143,18 @@ package object workmail {
     @inline def disassociateMemberFromGroupFuture(params: DisassociateMemberFromGroupRequest): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise().toFuture
     @inline def getAccessControlEffectFuture(params: GetAccessControlEffectRequest): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
     @inline def getDefaultRetentionPolicyFuture(params: GetDefaultRetentionPolicyRequest): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
+    @inline def getImpersonationRoleEffectFuture(params: GetImpersonationRoleEffectRequest): Future[GetImpersonationRoleEffectResponse] = service.getImpersonationRoleEffect(params).promise().toFuture
+    @inline def getImpersonationRoleFuture(params: GetImpersonationRoleRequest): Future[GetImpersonationRoleResponse] = service.getImpersonationRole(params).promise().toFuture
     @inline def getMailDomainFuture(params: GetMailDomainRequest): Future[GetMailDomainResponse] = service.getMailDomain(params).promise().toFuture
     @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] = service.getMailboxDetails(params).promise().toFuture
     @inline def getMobileDeviceAccessEffectFuture(params: GetMobileDeviceAccessEffectRequest): Future[GetMobileDeviceAccessEffectResponse] = service.getMobileDeviceAccessEffect(params).promise().toFuture
     @inline def getMobileDeviceAccessOverrideFuture(params: GetMobileDeviceAccessOverrideRequest): Future[GetMobileDeviceAccessOverrideResponse] = service.getMobileDeviceAccessOverride(params).promise().toFuture
     @inline def listAccessControlRulesFuture(params: ListAccessControlRulesRequest): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
+    @inline def listAvailabilityConfigurationsFuture(params: ListAvailabilityConfigurationsRequest): Future[ListAvailabilityConfigurationsResponse] = service.listAvailabilityConfigurations(params).promise().toFuture
     @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] = service.listGroupMembers(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listImpersonationRolesFuture(params: ListImpersonationRolesRequest): Future[ListImpersonationRolesResponse] = service.listImpersonationRoles(params).promise().toFuture
     @inline def listMailDomainsFuture(params: ListMailDomainsRequest): Future[ListMailDomainsResponse] = service.listMailDomains(params).promise().toFuture
     @inline def listMailboxExportJobsFuture(params: ListMailboxExportJobsRequest): Future[ListMailboxExportJobsResponse] = service.listMailboxExportJobs(params).promise().toFuture
     @inline def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
@@ -150,8 +176,11 @@ package object workmail {
     @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] = service.resetPassword(params).promise().toFuture
     @inline def startMailboxExportJobFuture(params: StartMailboxExportJobRequest): Future[StartMailboxExportJobResponse] = service.startMailboxExportJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def testAvailabilityConfigurationFuture(params: TestAvailabilityConfigurationRequest): Future[TestAvailabilityConfigurationResponse] = service.testAvailabilityConfiguration(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAvailabilityConfigurationFuture(params: UpdateAvailabilityConfigurationRequest): Future[UpdateAvailabilityConfigurationResponse] = service.updateAvailabilityConfiguration(params).promise().toFuture
     @inline def updateDefaultMailDomainFuture(params: UpdateDefaultMailDomainRequest): Future[UpdateDefaultMailDomainResponse] = service.updateDefaultMailDomain(params).promise().toFuture
+    @inline def updateImpersonationRoleFuture(params: UpdateImpersonationRoleRequest): Future[UpdateImpersonationRoleResponse] = service.updateImpersonationRole(params).promise().toFuture
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
     @inline def updateMobileDeviceAccessRuleFuture(params: UpdateMobileDeviceAccessRuleRequest): Future[UpdateMobileDeviceAccessRuleResponse] = service.updateMobileDeviceAccessRule(params).promise().toFuture
     @inline def updatePrimaryEmailAddressFuture(params: UpdatePrimaryEmailAddressRequest): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
@@ -166,17 +195,22 @@ package object workmail {
 
     def associateDelegateToResource(params: AssociateDelegateToResourceRequest): Request[AssociateDelegateToResourceResponse] = js.native
     def associateMemberToGroup(params: AssociateMemberToGroupRequest): Request[AssociateMemberToGroupResponse] = js.native
+    def assumeImpersonationRole(params: AssumeImpersonationRoleRequest): Request[AssumeImpersonationRoleResponse] = js.native
     def cancelMailboxExportJob(params: CancelMailboxExportJobRequest): Request[CancelMailboxExportJobResponse] = js.native
     def createAlias(params: CreateAliasRequest): Request[CreateAliasResponse] = js.native
+    def createAvailabilityConfiguration(params: CreateAvailabilityConfigurationRequest): Request[CreateAvailabilityConfigurationResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
+    def createImpersonationRole(params: CreateImpersonationRoleRequest): Request[CreateImpersonationRoleResponse] = js.native
     def createMobileDeviceAccessRule(params: CreateMobileDeviceAccessRuleRequest): Request[CreateMobileDeviceAccessRuleResponse] = js.native
     def createOrganization(params: CreateOrganizationRequest): Request[CreateOrganizationResponse] = js.native
     def createResource(params: CreateResourceRequest): Request[CreateResourceResponse] = js.native
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
+    def deleteAvailabilityConfiguration(params: DeleteAvailabilityConfigurationRequest): Request[DeleteAvailabilityConfigurationResponse] = js.native
     def deleteEmailMonitoringConfiguration(params: DeleteEmailMonitoringConfigurationRequest): Request[DeleteEmailMonitoringConfigurationResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
+    def deleteImpersonationRole(params: DeleteImpersonationRoleRequest): Request[DeleteImpersonationRoleResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
     def deleteMobileDeviceAccessOverride(params: DeleteMobileDeviceAccessOverrideRequest): Request[DeleteMobileDeviceAccessOverrideResponse] = js.native
     def deleteMobileDeviceAccessRule(params: DeleteMobileDeviceAccessRuleRequest): Request[DeleteMobileDeviceAccessRuleResponse] = js.native
@@ -197,14 +231,18 @@ package object workmail {
     def disassociateMemberFromGroup(params: DisassociateMemberFromGroupRequest): Request[DisassociateMemberFromGroupResponse] = js.native
     def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] = js.native
     def getDefaultRetentionPolicy(params: GetDefaultRetentionPolicyRequest): Request[GetDefaultRetentionPolicyResponse] = js.native
+    def getImpersonationRole(params: GetImpersonationRoleRequest): Request[GetImpersonationRoleResponse] = js.native
+    def getImpersonationRoleEffect(params: GetImpersonationRoleEffectRequest): Request[GetImpersonationRoleEffectResponse] = js.native
     def getMailDomain(params: GetMailDomainRequest): Request[GetMailDomainResponse] = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
     def getMobileDeviceAccessEffect(params: GetMobileDeviceAccessEffectRequest): Request[GetMobileDeviceAccessEffectResponse] = js.native
     def getMobileDeviceAccessOverride(params: GetMobileDeviceAccessOverrideRequest): Request[GetMobileDeviceAccessOverrideResponse] = js.native
     def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
+    def listAvailabilityConfigurations(params: ListAvailabilityConfigurationsRequest): Request[ListAvailabilityConfigurationsResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
+    def listImpersonationRoles(params: ListImpersonationRolesRequest): Request[ListImpersonationRolesResponse] = js.native
     def listMailDomains(params: ListMailDomainsRequest): Request[ListMailDomainsResponse] = js.native
     def listMailboxExportJobs(params: ListMailboxExportJobsRequest): Request[ListMailboxExportJobsResponse] = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
@@ -226,8 +264,11 @@ package object workmail {
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse] = js.native
     def startMailboxExportJob(params: StartMailboxExportJobRequest): Request[StartMailboxExportJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def testAvailabilityConfiguration(params: TestAvailabilityConfigurationRequest): Request[TestAvailabilityConfigurationResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAvailabilityConfiguration(params: UpdateAvailabilityConfigurationRequest): Request[UpdateAvailabilityConfigurationResponse] = js.native
     def updateDefaultMailDomain(params: UpdateDefaultMailDomainRequest): Request[UpdateDefaultMailDomainResponse] = js.native
+    def updateImpersonationRole(params: UpdateImpersonationRoleRequest): Request[UpdateImpersonationRoleResponse] = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
     def updateMobileDeviceAccessRule(params: UpdateMobileDeviceAccessRuleRequest): Request[UpdateMobileDeviceAccessRuleResponse] = js.native
     def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
@@ -239,7 +280,7 @@ package object workmail {
     }
   }
 
-  /** A rule that controls access to an Amazon WorkMail organization.
+  /** A rule that controls access to an WorkMail organization.
     */
   @js.native
   trait AccessControlRule extends js.Object {
@@ -248,9 +289,11 @@ package object workmail {
     var DateModified: js.UndefOr[Timestamp]
     var Description: js.UndefOr[AccessControlRuleDescription]
     var Effect: js.UndefOr[AccessControlRuleEffect]
+    var ImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList]
     var IpRanges: js.UndefOr[IpRangeList]
     var Name: js.UndefOr[AccessControlRuleName]
     var NotActions: js.UndefOr[ActionsList]
+    var NotImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList]
     var NotIpRanges: js.UndefOr[IpRangeList]
     var NotUserIds: js.UndefOr[UserIdList]
     var UserIds: js.UndefOr[UserIdList]
@@ -264,9 +307,11 @@ package object workmail {
         DateModified: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[AccessControlRuleDescription] = js.undefined,
         Effect: js.UndefOr[AccessControlRuleEffect] = js.undefined,
+        ImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList] = js.undefined,
         IpRanges: js.UndefOr[IpRangeList] = js.undefined,
         Name: js.UndefOr[AccessControlRuleName] = js.undefined,
         NotActions: js.UndefOr[ActionsList] = js.undefined,
+        NotImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList] = js.undefined,
         NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
         NotUserIds: js.UndefOr[UserIdList] = js.undefined,
         UserIds: js.UndefOr[UserIdList] = js.undefined
@@ -277,9 +322,11 @@ package object workmail {
       DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      ImpersonationRoleIds.foreach(__v => __obj.updateDynamic("ImpersonationRoleIds")(__v.asInstanceOf[js.Any]))
       IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
+      NotImpersonationRoleIds.foreach(__v => __obj.updateDynamic("NotImpersonationRoleIds")(__v.asInstanceOf[js.Any]))
       NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
       NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
       UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
@@ -352,6 +399,78 @@ package object workmail {
     def apply(): AssociateMemberToGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateMemberToGroupResponse]
+    }
+  }
+
+  @js.native
+  trait AssumeImpersonationRoleRequest extends js.Object {
+    var ImpersonationRoleId: ImpersonationRoleId
+    var OrganizationId: OrganizationId
+  }
+
+  object AssumeImpersonationRoleRequest {
+    @inline
+    def apply(
+        ImpersonationRoleId: ImpersonationRoleId,
+        OrganizationId: OrganizationId
+    ): AssumeImpersonationRoleRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImpersonationRoleId" -> ImpersonationRoleId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssumeImpersonationRoleRequest]
+    }
+  }
+
+  @js.native
+  trait AssumeImpersonationRoleResponse extends js.Object {
+    var ExpiresIn: js.UndefOr[ExpiresIn]
+    var Token: js.UndefOr[ImpersonationToken]
+  }
+
+  object AssumeImpersonationRoleResponse {
+    @inline
+    def apply(
+        ExpiresIn: js.UndefOr[ExpiresIn] = js.undefined,
+        Token: js.UndefOr[ImpersonationToken] = js.undefined
+    ): AssumeImpersonationRoleResponse = {
+      val __obj = js.Dynamic.literal()
+      ExpiresIn.foreach(__v => __obj.updateDynamic("ExpiresIn")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssumeImpersonationRoleResponse]
+    }
+  }
+
+  /** List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+    */
+  @js.native
+  trait AvailabilityConfiguration extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var DomainName: js.UndefOr[DomainName]
+    var EwsProvider: js.UndefOr[RedactedEwsAvailabilityProvider]
+    var LambdaProvider: js.UndefOr[LambdaAvailabilityProvider]
+    var ProviderType: js.UndefOr[AvailabilityProviderType]
+  }
+
+  object AvailabilityConfiguration {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        EwsProvider: js.UndefOr[RedactedEwsAvailabilityProvider] = js.undefined,
+        LambdaProvider: js.UndefOr[LambdaAvailabilityProvider] = js.undefined,
+        ProviderType: js.UndefOr[AvailabilityProviderType] = js.undefined
+    ): AvailabilityConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EwsProvider.foreach(__v => __obj.updateDynamic("EwsProvider")(__v.asInstanceOf[js.Any]))
+      LambdaProvider.foreach(__v => __obj.updateDynamic("LambdaProvider")(__v.asInstanceOf[js.Any]))
+      ProviderType.foreach(__v => __obj.updateDynamic("ProviderType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AvailabilityConfiguration]
     }
   }
 
@@ -448,6 +567,47 @@ package object workmail {
   }
 
   @js.native
+  trait CreateAvailabilityConfigurationRequest extends js.Object {
+    var DomainName: DomainName
+    var OrganizationId: OrganizationId
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+    var EwsProvider: js.UndefOr[EwsAvailabilityProvider]
+    var LambdaProvider: js.UndefOr[LambdaAvailabilityProvider]
+  }
+
+  object CreateAvailabilityConfigurationRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        OrganizationId: OrganizationId,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined,
+        EwsProvider: js.UndefOr[EwsAvailabilityProvider] = js.undefined,
+        LambdaProvider: js.UndefOr[LambdaAvailabilityProvider] = js.undefined
+    ): CreateAvailabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      EwsProvider.foreach(__v => __obj.updateDynamic("EwsProvider")(__v.asInstanceOf[js.Any]))
+      LambdaProvider.foreach(__v => __obj.updateDynamic("LambdaProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAvailabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAvailabilityConfigurationResponse extends js.Object
+
+  object CreateAvailabilityConfigurationResponse {
+    @inline
+    def apply(): CreateAvailabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateAvailabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait CreateGroupRequest extends js.Object {
     var Name: GroupName
     var OrganizationId: OrganizationId
@@ -480,6 +640,55 @@ package object workmail {
       val __obj = js.Dynamic.literal()
       GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateImpersonationRoleRequest extends js.Object {
+    var Name: ImpersonationRoleName
+    var OrganizationId: OrganizationId
+    var Rules: ImpersonationRuleList
+    var Type: ImpersonationRoleType
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+    var Description: js.UndefOr[ImpersonationRoleDescription]
+  }
+
+  object CreateImpersonationRoleRequest {
+    @inline
+    def apply(
+        Name: ImpersonationRoleName,
+        OrganizationId: OrganizationId,
+        Rules: ImpersonationRuleList,
+        Type: ImpersonationRoleType,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined,
+        Description: js.UndefOr[ImpersonationRoleDescription] = js.undefined
+    ): CreateImpersonationRoleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImpersonationRoleRequest]
+    }
+  }
+
+  @js.native
+  trait CreateImpersonationRoleResponse extends js.Object {
+    var ImpersonationRoleId: js.UndefOr[ImpersonationRoleId]
+  }
+
+  object CreateImpersonationRoleResponse {
+    @inline
+    def apply(
+        ImpersonationRoleId: js.UndefOr[ImpersonationRoleId] = js.undefined
+    ): CreateImpersonationRoleResponse = {
+      val __obj = js.Dynamic.literal()
+      ImpersonationRoleId.foreach(__v => __obj.updateDynamic("ImpersonationRoleId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateImpersonationRoleResponse]
     }
   }
 
@@ -771,6 +980,37 @@ package object workmail {
   }
 
   @js.native
+  trait DeleteAvailabilityConfigurationRequest extends js.Object {
+    var DomainName: DomainName
+    var OrganizationId: OrganizationId
+  }
+
+  object DeleteAvailabilityConfigurationRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        OrganizationId: OrganizationId
+    ): DeleteAvailabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAvailabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAvailabilityConfigurationResponse extends js.Object
+
+  object DeleteAvailabilityConfigurationResponse {
+    @inline
+    def apply(): DeleteAvailabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAvailabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteEmailMonitoringConfigurationRequest extends js.Object {
     var OrganizationId: OrganizationId
   }
@@ -826,6 +1066,37 @@ package object workmail {
     def apply(): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteImpersonationRoleRequest extends js.Object {
+    var ImpersonationRoleId: ImpersonationRoleId
+    var OrganizationId: OrganizationId
+  }
+
+  object DeleteImpersonationRoleRequest {
+    @inline
+    def apply(
+        ImpersonationRoleId: ImpersonationRoleId,
+        OrganizationId: OrganizationId
+    ): DeleteImpersonationRoleRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImpersonationRoleId" -> ImpersonationRoleId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteImpersonationRoleRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteImpersonationRoleResponse extends js.Object
+
+  object DeleteImpersonationRoleResponse {
+    @inline
+    def apply(): DeleteImpersonationRoleResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteImpersonationRoleResponse]
     }
   }
 
@@ -1578,7 +1849,7 @@ package object workmail {
     }
   }
 
-  /** The domain to associate with an Amazon WorkMail organization. When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>Amazon WorkMail Administrator Guide</i>.
+  /** The domain to associate with an WorkMail organization. When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>WorkMail Administrator Guide</i>.
     */
   @js.native
   trait Domain extends js.Object {
@@ -1596,6 +1867,31 @@ package object workmail {
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Domain]
+    }
+  }
+
+  /** Describes an EWS based availability provider. This is only used as input to the service.
+    */
+  @js.native
+  trait EwsAvailabilityProvider extends js.Object {
+    var EwsEndpoint: Url
+    var EwsPassword: Password
+    var EwsUsername: ExternalUserName
+  }
+
+  object EwsAvailabilityProvider {
+    @inline
+    def apply(
+        EwsEndpoint: Url,
+        EwsPassword: Password,
+        EwsUsername: ExternalUserName
+    ): EwsAvailabilityProvider = {
+      val __obj = js.Dynamic.literal(
+        "EwsEndpoint" -> EwsEndpoint.asInstanceOf[js.Any],
+        "EwsPassword" -> EwsPassword.asInstanceOf[js.Any],
+        "EwsUsername" -> EwsUsername.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EwsAvailabilityProvider]
     }
   }
 
@@ -1630,7 +1926,8 @@ package object workmail {
     var Action: AccessControlRuleAction
     var IpAddress: IpAddress
     var OrganizationId: OrganizationId
-    var UserId: WorkMailIdentifier
+    var ImpersonationRoleId: js.UndefOr[ImpersonationRoleId]
+    var UserId: js.UndefOr[WorkMailIdentifier]
   }
 
   object GetAccessControlEffectRequest {
@@ -1639,14 +1936,17 @@ package object workmail {
         Action: AccessControlRuleAction,
         IpAddress: IpAddress,
         OrganizationId: OrganizationId,
-        UserId: WorkMailIdentifier
+        ImpersonationRoleId: js.UndefOr[ImpersonationRoleId] = js.undefined,
+        UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
     ): GetAccessControlEffectRequest = {
       val __obj = js.Dynamic.literal(
         "Action" -> Action.asInstanceOf[js.Any],
         "IpAddress" -> IpAddress.asInstanceOf[js.Any],
-        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
-        "UserId" -> UserId.asInstanceOf[js.Any]
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
+
+      ImpersonationRoleId.foreach(__v => __obj.updateDynamic("ImpersonationRoleId")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessControlEffectRequest]
     }
   }
@@ -1709,6 +2009,105 @@ package object workmail {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDefaultRetentionPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait GetImpersonationRoleEffectRequest extends js.Object {
+    var ImpersonationRoleId: ImpersonationRoleId
+    var OrganizationId: OrganizationId
+    var TargetUser: EntityIdentifier
+  }
+
+  object GetImpersonationRoleEffectRequest {
+    @inline
+    def apply(
+        ImpersonationRoleId: ImpersonationRoleId,
+        OrganizationId: OrganizationId,
+        TargetUser: EntityIdentifier
+    ): GetImpersonationRoleEffectRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImpersonationRoleId" -> ImpersonationRoleId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "TargetUser" -> TargetUser.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetImpersonationRoleEffectRequest]
+    }
+  }
+
+  @js.native
+  trait GetImpersonationRoleEffectResponse extends js.Object {
+    var Effect: js.UndefOr[AccessEffect]
+    var MatchedRules: js.UndefOr[ImpersonationMatchedRuleList]
+    var Type: js.UndefOr[ImpersonationRoleType]
+  }
+
+  object GetImpersonationRoleEffectResponse {
+    @inline
+    def apply(
+        Effect: js.UndefOr[AccessEffect] = js.undefined,
+        MatchedRules: js.UndefOr[ImpersonationMatchedRuleList] = js.undefined,
+        Type: js.UndefOr[ImpersonationRoleType] = js.undefined
+    ): GetImpersonationRoleEffectResponse = {
+      val __obj = js.Dynamic.literal()
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImpersonationRoleEffectResponse]
+    }
+  }
+
+  @js.native
+  trait GetImpersonationRoleRequest extends js.Object {
+    var ImpersonationRoleId: ImpersonationRoleId
+    var OrganizationId: OrganizationId
+  }
+
+  object GetImpersonationRoleRequest {
+    @inline
+    def apply(
+        ImpersonationRoleId: ImpersonationRoleId,
+        OrganizationId: OrganizationId
+    ): GetImpersonationRoleRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImpersonationRoleId" -> ImpersonationRoleId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetImpersonationRoleRequest]
+    }
+  }
+
+  @js.native
+  trait GetImpersonationRoleResponse extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[ImpersonationRoleDescription]
+    var ImpersonationRoleId: js.UndefOr[ImpersonationRoleId]
+    var Name: js.UndefOr[ImpersonationRoleName]
+    var Rules: js.UndefOr[ImpersonationRuleList]
+    var Type: js.UndefOr[ImpersonationRoleType]
+  }
+
+  object GetImpersonationRoleResponse {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ImpersonationRoleDescription] = js.undefined,
+        ImpersonationRoleId: js.UndefOr[ImpersonationRoleId] = js.undefined,
+        Name: js.UndefOr[ImpersonationRoleName] = js.undefined,
+        Rules: js.UndefOr[ImpersonationRuleList] = js.undefined,
+        Type: js.UndefOr[ImpersonationRoleType] = js.undefined
+    ): GetImpersonationRoleResponse = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ImpersonationRoleId.foreach(__v => __obj.updateDynamic("ImpersonationRoleId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImpersonationRoleResponse]
     }
   }
 
@@ -1902,7 +2301,7 @@ package object workmail {
     }
   }
 
-  /** The representation of an Amazon WorkMail group.
+  /** The representation of an WorkMail group.
     */
   @js.native
   trait Group extends js.Object {
@@ -1932,6 +2331,111 @@ package object workmail {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
+    }
+  }
+
+  /** The impersonation rule that matched the input.
+    */
+  @js.native
+  trait ImpersonationMatchedRule extends js.Object {
+    var ImpersonationRuleId: js.UndefOr[ImpersonationRuleId]
+    var Name: js.UndefOr[ImpersonationRuleName]
+  }
+
+  object ImpersonationMatchedRule {
+    @inline
+    def apply(
+        ImpersonationRuleId: js.UndefOr[ImpersonationRuleId] = js.undefined,
+        Name: js.UndefOr[ImpersonationRuleName] = js.undefined
+    ): ImpersonationMatchedRule = {
+      val __obj = js.Dynamic.literal()
+      ImpersonationRuleId.foreach(__v => __obj.updateDynamic("ImpersonationRuleId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImpersonationMatchedRule]
+    }
+  }
+
+  /** An impersonation role for the given WorkMail organization.
+    */
+  @js.native
+  trait ImpersonationRole extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var ImpersonationRoleId: js.UndefOr[ImpersonationRoleId]
+    var Name: js.UndefOr[ImpersonationRoleName]
+    var Type: js.UndefOr[ImpersonationRoleType]
+  }
+
+  object ImpersonationRole {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        ImpersonationRoleId: js.UndefOr[ImpersonationRoleId] = js.undefined,
+        Name: js.UndefOr[ImpersonationRoleName] = js.undefined,
+        Type: js.UndefOr[ImpersonationRoleType] = js.undefined
+    ): ImpersonationRole = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      ImpersonationRoleId.foreach(__v => __obj.updateDynamic("ImpersonationRoleId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImpersonationRole]
+    }
+  }
+
+  /** The rules for the given impersonation role.
+    */
+  @js.native
+  trait ImpersonationRule extends js.Object {
+    var Effect: AccessEffect
+    var ImpersonationRuleId: ImpersonationRuleId
+    var Description: js.UndefOr[ImpersonationRuleDescription]
+    var Name: js.UndefOr[ImpersonationRuleName]
+    var NotTargetUsers: js.UndefOr[TargetUsers]
+    var TargetUsers: js.UndefOr[TargetUsers]
+  }
+
+  object ImpersonationRule {
+    @inline
+    def apply(
+        Effect: AccessEffect,
+        ImpersonationRuleId: ImpersonationRuleId,
+        Description: js.UndefOr[ImpersonationRuleDescription] = js.undefined,
+        Name: js.UndefOr[ImpersonationRuleName] = js.undefined,
+        NotTargetUsers: js.UndefOr[TargetUsers] = js.undefined,
+        TargetUsers: js.UndefOr[TargetUsers] = js.undefined
+    ): ImpersonationRule = {
+      val __obj = js.Dynamic.literal(
+        "Effect" -> Effect.asInstanceOf[js.Any],
+        "ImpersonationRuleId" -> ImpersonationRuleId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotTargetUsers.foreach(__v => __obj.updateDynamic("NotTargetUsers")(__v.asInstanceOf[js.Any]))
+      TargetUsers.foreach(__v => __obj.updateDynamic("TargetUsers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImpersonationRule]
+    }
+  }
+
+  /** Describes a Lambda based availability provider.
+    */
+  @js.native
+  trait LambdaAvailabilityProvider extends js.Object {
+    var LambdaArn: LambdaArn
+  }
+
+  object LambdaAvailabilityProvider {
+    @inline
+    def apply(
+        LambdaArn: LambdaArn
+    ): LambdaAvailabilityProvider = {
+      val __obj = js.Dynamic.literal(
+        "LambdaArn" -> LambdaArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LambdaAvailabilityProvider]
     }
   }
 
@@ -2011,6 +2515,49 @@ package object workmail {
       Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesResponse]
+    }
+  }
+
+  @js.native
+  trait ListAvailabilityConfigurationsRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAvailabilityConfigurationsRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAvailabilityConfigurationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailabilityConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAvailabilityConfigurationsResponse extends js.Object {
+    var AvailabilityConfigurations: js.UndefOr[AvailabilityConfigurationList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAvailabilityConfigurationsResponse {
+    @inline
+    def apply(
+        AvailabilityConfigurations: js.UndefOr[AvailabilityConfigurationList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAvailabilityConfigurationsResponse = {
+      val __obj = js.Dynamic.literal()
+      AvailabilityConfigurations.foreach(__v => __obj.updateDynamic("AvailabilityConfigurations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailabilityConfigurationsResponse]
     }
   }
 
@@ -2100,6 +2647,49 @@ package object workmail {
       Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListImpersonationRolesRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListImpersonationRolesRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListImpersonationRolesRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImpersonationRolesRequest]
+    }
+  }
+
+  @js.native
+  trait ListImpersonationRolesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Roles: js.UndefOr[ImpersonationRoleList]
+  }
+
+  object ListImpersonationRolesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Roles: js.UndefOr[ImpersonationRoleList] = js.undefined
+    ): ListImpersonationRolesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Roles.foreach(__v => __obj.updateDynamic("Roles")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListImpersonationRolesResponse]
     }
   }
 
@@ -2670,7 +3260,7 @@ package object workmail {
     }
   }
 
-  /** A rule that controls access to mobile devices for an Amazon WorkMail group.
+  /** A rule that controls access to mobile devices for an WorkMail group.
     */
   @js.native
   trait MobileDeviceAccessRule extends js.Object {
@@ -2789,8 +3379,10 @@ package object workmail {
     var Name: AccessControlRuleName
     var OrganizationId: OrganizationId
     var Actions: js.UndefOr[ActionsList]
+    var ImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList]
     var IpRanges: js.UndefOr[IpRangeList]
     var NotActions: js.UndefOr[ActionsList]
+    var NotImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList]
     var NotIpRanges: js.UndefOr[IpRangeList]
     var NotUserIds: js.UndefOr[UserIdList]
     var UserIds: js.UndefOr[UserIdList]
@@ -2804,8 +3396,10 @@ package object workmail {
         Name: AccessControlRuleName,
         OrganizationId: OrganizationId,
         Actions: js.UndefOr[ActionsList] = js.undefined,
+        ImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList] = js.undefined,
         IpRanges: js.UndefOr[IpRangeList] = js.undefined,
         NotActions: js.UndefOr[ActionsList] = js.undefined,
+        NotImpersonationRoleIds: js.UndefOr[ImpersonationRoleIdList] = js.undefined,
         NotIpRanges: js.UndefOr[IpRangeList] = js.undefined,
         NotUserIds: js.UndefOr[UserIdList] = js.undefined,
         UserIds: js.UndefOr[UserIdList] = js.undefined
@@ -2818,8 +3412,10 @@ package object workmail {
       )
 
       Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      ImpersonationRoleIds.foreach(__v => __obj.updateDynamic("ImpersonationRoleIds")(__v.asInstanceOf[js.Any]))
       IpRanges.foreach(__v => __obj.updateDynamic("IpRanges")(__v.asInstanceOf[js.Any]))
       NotActions.foreach(__v => __obj.updateDynamic("NotActions")(__v.asInstanceOf[js.Any]))
+      NotImpersonationRoleIds.foreach(__v => __obj.updateDynamic("NotImpersonationRoleIds")(__v.asInstanceOf[js.Any]))
       NotIpRanges.foreach(__v => __obj.updateDynamic("NotIpRanges")(__v.asInstanceOf[js.Any]))
       NotUserIds.foreach(__v => __obj.updateDynamic("NotUserIds")(__v.asInstanceOf[js.Any]))
       UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
@@ -3019,6 +3615,27 @@ package object workmail {
     def apply(): PutRetentionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRetentionPolicyResponse]
+    }
+  }
+
+  /** Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.
+    */
+  @js.native
+  trait RedactedEwsAvailabilityProvider extends js.Object {
+    var EwsEndpoint: js.UndefOr[Url]
+    var EwsUsername: js.UndefOr[ExternalUserName]
+  }
+
+  object RedactedEwsAvailabilityProvider {
+    @inline
+    def apply(
+        EwsEndpoint: js.UndefOr[Url] = js.undefined,
+        EwsUsername: js.UndefOr[ExternalUserName] = js.undefined
+    ): RedactedEwsAvailabilityProvider = {
+      val __obj = js.Dynamic.literal()
+      EwsEndpoint.foreach(__v => __obj.updateDynamic("EwsEndpoint")(__v.asInstanceOf[js.Any]))
+      EwsUsername.foreach(__v => __obj.updateDynamic("EwsUsername")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RedactedEwsAvailabilityProvider]
     }
   }
 
@@ -3270,6 +3887,52 @@ package object workmail {
   }
 
   @js.native
+  trait TestAvailabilityConfigurationRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var DomainName: js.UndefOr[DomainName]
+    var EwsProvider: js.UndefOr[EwsAvailabilityProvider]
+    var LambdaProvider: js.UndefOr[LambdaAvailabilityProvider]
+  }
+
+  object TestAvailabilityConfigurationRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        EwsProvider: js.UndefOr[EwsAvailabilityProvider] = js.undefined,
+        LambdaProvider: js.UndefOr[LambdaAvailabilityProvider] = js.undefined
+    ): TestAvailabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EwsProvider.foreach(__v => __obj.updateDynamic("EwsProvider")(__v.asInstanceOf[js.Any]))
+      LambdaProvider.foreach(__v => __obj.updateDynamic("LambdaProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestAvailabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait TestAvailabilityConfigurationResponse extends js.Object {
+    var FailureReason: js.UndefOr[String]
+    var TestPassed: js.UndefOr[Boolean]
+  }
+
+  object TestAvailabilityConfigurationResponse {
+    @inline
+    def apply(
+        FailureReason: js.UndefOr[String] = js.undefined,
+        TestPassed: js.UndefOr[Boolean] = js.undefined
+    ): TestAvailabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      TestPassed.foreach(__v => __obj.updateDynamic("TestPassed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestAvailabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceARN: AmazonResourceName
     var TagKeys: TagKeyList
@@ -3301,6 +3964,44 @@ package object workmail {
   }
 
   @js.native
+  trait UpdateAvailabilityConfigurationRequest extends js.Object {
+    var DomainName: DomainName
+    var OrganizationId: OrganizationId
+    var EwsProvider: js.UndefOr[EwsAvailabilityProvider]
+    var LambdaProvider: js.UndefOr[LambdaAvailabilityProvider]
+  }
+
+  object UpdateAvailabilityConfigurationRequest {
+    @inline
+    def apply(
+        DomainName: DomainName,
+        OrganizationId: OrganizationId,
+        EwsProvider: js.UndefOr[EwsAvailabilityProvider] = js.undefined,
+        LambdaProvider: js.UndefOr[LambdaAvailabilityProvider] = js.undefined
+    ): UpdateAvailabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      EwsProvider.foreach(__v => __obj.updateDynamic("EwsProvider")(__v.asInstanceOf[js.Any]))
+      LambdaProvider.foreach(__v => __obj.updateDynamic("LambdaProvider")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAvailabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAvailabilityConfigurationResponse extends js.Object
+
+  object UpdateAvailabilityConfigurationResponse {
+    @inline
+    def apply(): UpdateAvailabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateAvailabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateDefaultMailDomainRequest extends js.Object {
     var DomainName: WorkMailDomainName
     var OrganizationId: OrganizationId
@@ -3328,6 +4029,50 @@ package object workmail {
     def apply(): UpdateDefaultMailDomainResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateDefaultMailDomainResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateImpersonationRoleRequest extends js.Object {
+    var ImpersonationRoleId: ImpersonationRoleId
+    var Name: ImpersonationRoleName
+    var OrganizationId: OrganizationId
+    var Rules: ImpersonationRuleList
+    var Type: ImpersonationRoleType
+    var Description: js.UndefOr[ImpersonationRoleDescription]
+  }
+
+  object UpdateImpersonationRoleRequest {
+    @inline
+    def apply(
+        ImpersonationRoleId: ImpersonationRoleId,
+        Name: ImpersonationRoleName,
+        OrganizationId: OrganizationId,
+        Rules: ImpersonationRuleList,
+        Type: ImpersonationRoleType,
+        Description: js.UndefOr[ImpersonationRoleDescription] = js.undefined
+    ): UpdateImpersonationRoleRequest = {
+      val __obj = js.Dynamic.literal(
+        "ImpersonationRoleId" -> ImpersonationRoleId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateImpersonationRoleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateImpersonationRoleResponse extends js.Object
+
+  object UpdateImpersonationRoleResponse {
+    @inline
+    def apply(): UpdateImpersonationRoleResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateImpersonationRoleResponse]
     }
   }
 
@@ -3502,7 +4247,7 @@ package object workmail {
     }
   }
 
-  /** The representation of an Amazon WorkMail user.
+  /** The representation of an WorkMail user.
     */
   @js.native
   trait User extends js.Object {

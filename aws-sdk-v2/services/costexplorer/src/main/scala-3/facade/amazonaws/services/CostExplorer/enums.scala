@@ -37,6 +37,22 @@ object Context {
   inline def values: js.Array[Context] = js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS)
 }
 
+type CostAllocationTagStatus = "Active" | "Inactive"
+object CostAllocationTagStatus {
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
+
+  inline def values: js.Array[CostAllocationTagStatus] = js.Array(Active, Inactive)
+}
+
+type CostAllocationTagType = "AWSGenerated" | "UserDefined"
+object CostAllocationTagType {
+  inline val AWSGenerated: "AWSGenerated" = "AWSGenerated"
+  inline val UserDefined: "UserDefined" = "UserDefined"
+
+  inline def values: js.Array[CostAllocationTagType] = js.Array(AWSGenerated, UserDefined)
+}
+
 type CostCategoryInheritedValueDimensionName = "LINKED_ACCOUNT_NAME" | "TAG"
 object CostCategoryInheritedValueDimensionName {
   inline val LINKED_ACCOUNT_NAME: "LINKED_ACCOUNT_NAME" = "LINKED_ACCOUNT_NAME"
@@ -93,7 +109,7 @@ object CostCategoryStatusComponent {
   inline def values: js.Array[CostCategoryStatusComponent] = js.Array(COST_EXPLORER)
 }
 
-type Dimension = "AZ" | "INSTANCE_TYPE" | "LINKED_ACCOUNT" | "LINKED_ACCOUNT_NAME" | "OPERATION" | "PURCHASE_TYPE" | "REGION" | "SERVICE" | "SERVICE_CODE" | "USAGE_TYPE" | "USAGE_TYPE_GROUP" | "RECORD_TYPE" | "OPERATING_SYSTEM" | "TENANCY" | "SCOPE" | "PLATFORM" | "SUBSCRIPTION_ID" | "LEGAL_ENTITY_NAME" | "DEPLOYMENT_OPTION" | "DATABASE_ENGINE" | "CACHE_ENGINE" | "INSTANCE_TYPE_FAMILY" | "BILLING_ENTITY" | "RESERVATION_ID" | "RESOURCE_ID" | "RIGHTSIZING_TYPE" | "SAVINGS_PLANS_TYPE" | "SAVINGS_PLAN_ARN" | "PAYMENT_OPTION" | "AGREEMENT_END_DATE_TIME_AFTER" | "AGREEMENT_END_DATE_TIME_BEFORE"
+type Dimension = "AZ" | "INSTANCE_TYPE" | "LINKED_ACCOUNT" | "LINKED_ACCOUNT_NAME" | "OPERATION" | "PURCHASE_TYPE" | "REGION" | "SERVICE" | "SERVICE_CODE" | "USAGE_TYPE" | "USAGE_TYPE_GROUP" | "RECORD_TYPE" | "OPERATING_SYSTEM" | "TENANCY" | "SCOPE" | "PLATFORM" | "SUBSCRIPTION_ID" | "LEGAL_ENTITY_NAME" | "DEPLOYMENT_OPTION" | "DATABASE_ENGINE" | "CACHE_ENGINE" | "INSTANCE_TYPE_FAMILY" | "BILLING_ENTITY" | "RESERVATION_ID" | "RESOURCE_ID" | "RIGHTSIZING_TYPE" | "SAVINGS_PLANS_TYPE" | "SAVINGS_PLAN_ARN" | "PAYMENT_OPTION" | "AGREEMENT_END_DATE_TIME_AFTER" | "AGREEMENT_END_DATE_TIME_BEFORE" | "INVOICING_ENTITY"
 object Dimension {
   inline val AZ: "AZ" = "AZ"
   inline val INSTANCE_TYPE: "INSTANCE_TYPE" = "INSTANCE_TYPE"
@@ -126,6 +142,7 @@ object Dimension {
   inline val PAYMENT_OPTION: "PAYMENT_OPTION" = "PAYMENT_OPTION"
   inline val AGREEMENT_END_DATE_TIME_AFTER: "AGREEMENT_END_DATE_TIME_AFTER" = "AGREEMENT_END_DATE_TIME_AFTER"
   inline val AGREEMENT_END_DATE_TIME_BEFORE: "AGREEMENT_END_DATE_TIME_BEFORE" = "AGREEMENT_END_DATE_TIME_BEFORE"
+  inline val INVOICING_ENTITY: "INVOICING_ENTITY" = "INVOICING_ENTITY"
 
   inline def values: js.Array[Dimension] = js.Array(
     AZ,
@@ -158,7 +175,8 @@ object Dimension {
     SAVINGS_PLAN_ARN,
     PAYMENT_OPTION,
     AGREEMENT_END_DATE_TIME_AFTER,
-    AGREEMENT_END_DATE_TIME_BEFORE
+    AGREEMENT_END_DATE_TIME_BEFORE,
+    INVOICING_ENTITY
   )
 }
 
@@ -199,6 +217,15 @@ object FindingReasonCode {
     DISK_THROUGHPUT_OVER_PROVISIONED,
     DISK_THROUGHPUT_UNDER_PROVISIONED
   )
+}
+
+type GenerationStatus = "SUCCEEDED" | "PROCESSING" | "FAILED"
+object GenerationStatus {
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[GenerationStatus] = js.Array(SUCCEEDED, PROCESSING, FAILED)
 }
 
 type Granularity = "DAILY" | "MONTHLY" | "HOURLY"

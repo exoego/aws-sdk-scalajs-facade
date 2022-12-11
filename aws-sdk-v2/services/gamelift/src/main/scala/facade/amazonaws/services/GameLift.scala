@@ -20,9 +20,17 @@ package object gamelift {
   type BuildId = String
   type BuildIdOrArn = String
   type BuildList = js.Array[Build]
+  type ComputeArn = String
+  type ComputeAuthToken = String
+  type ComputeList = js.Array[Compute]
+  type ComputeName = String
+  type ComputeNameOrArn = String
   type CustomEventData = String
+  type CustomInputLocationStringModel = String
+  type CustomLocationNameOrArnModel = String
   type DesiredPlayerSessionList = js.Array[DesiredPlayerSession]
   type DnsName = String
+  type DnsNameInput = String
   type DoubleObject = Double
   type EC2InstanceLimitList = js.Array[EC2InstanceLimit]
   type EventList = js.Array[Event]
@@ -36,6 +44,7 @@ package object gamelift {
   type FleetIdOrArnList = js.Array[FleetIdOrArn]
   type FleetUtilizationList = js.Array[FleetUtilization]
   type FreeText = String
+  type GameLiftServiceSdkEndpointOutput = String
   type GamePropertyKey = String
   type GamePropertyList = js.Array[GameProperty]
   type GamePropertyValue = String
@@ -75,9 +84,13 @@ package object gamelift {
   type LaunchTemplateId = String
   type LaunchTemplateName = String
   type LaunchTemplateVersion = String
+  type ListLocationsLimit = Int
+  type LocationArnModel = String
   type LocationAttributesList = js.Array[LocationAttributes]
   type LocationConfigurationList = js.Array[LocationConfiguration]
+  type LocationFilterList = js.Array[LocationFilter]
   type LocationList = js.Array[LocationStringModel]
+  type LocationModelList = js.Array[LocationModel]
   type LocationStateList = js.Array[LocationState]
   type LocationStringModel = String
   type MatchedPlayerSessionList = js.Array[MatchedPlayerSession]
@@ -102,9 +115,13 @@ package object gamelift {
   type NonBlankString = String
   type NonEmptyString = String
   type NonNegativeDouble = Double
+  type NonNegativeLimitedLengthDouble = String
   type NonZeroAndMaxString = String
   type PlacedPlayerSessionList = js.Array[PlacedPlayerSession]
   type PlayerAttributeMap = js.Dictionary[AttributeValue]
+  type PlayerAttributeString = String
+  type PlayerAttributeStringDoubleMap = js.Dictionary[DoubleObject]
+  type PlayerAttributeStringList = js.Array[PlayerAttributeString]
   type PlayerData = String
   type PlayerDataMap = js.Dictionary[PlayerData]
   type PlayerIdList = js.Array[NonZeroAndMaxString]
@@ -128,8 +145,8 @@ package object gamelift {
   type ScriptIdOrArn = String
   type ScriptList = js.Array[Script]
   type ServerProcessList = js.Array[ServerProcess]
+  type ServerSdkVersion = String
   type SnsArnStringModel = String
-  type StringDoubleMap = js.Dictionary[DoubleObject]
   type StringList = js.Array[NonZeroAndMaxString]
   type StringModel = String
   type TagKey = String
@@ -156,6 +173,7 @@ package object gamelift {
     @inline def createGameServerGroupFuture(params: CreateGameServerGroupInput): Future[CreateGameServerGroupOutput] = service.createGameServerGroup(params).promise().toFuture
     @inline def createGameSessionFuture(params: CreateGameSessionInput): Future[CreateGameSessionOutput] = service.createGameSession(params).promise().toFuture
     @inline def createGameSessionQueueFuture(params: CreateGameSessionQueueInput): Future[CreateGameSessionQueueOutput] = service.createGameSessionQueue(params).promise().toFuture
+    @inline def createLocationFuture(params: CreateLocationInput): Future[CreateLocationOutput] = service.createLocation(params).promise().toFuture
     @inline def createMatchmakingConfigurationFuture(params: CreateMatchmakingConfigurationInput): Future[CreateMatchmakingConfigurationOutput] = service.createMatchmakingConfiguration(params).promise().toFuture
     @inline def createMatchmakingRuleSetFuture(params: CreateMatchmakingRuleSetInput): Future[CreateMatchmakingRuleSetOutput] = service.createMatchmakingRuleSet(params).promise().toFuture
     @inline def createPlayerSessionFuture(params: CreatePlayerSessionInput): Future[CreatePlayerSessionOutput] = service.createPlayerSession(params).promise().toFuture
@@ -169,15 +187,18 @@ package object gamelift {
     @inline def deleteFleetLocationsFuture(params: DeleteFleetLocationsInput): Future[DeleteFleetLocationsOutput] = service.deleteFleetLocations(params).promise().toFuture
     @inline def deleteGameServerGroupFuture(params: DeleteGameServerGroupInput): Future[DeleteGameServerGroupOutput] = service.deleteGameServerGroup(params).promise().toFuture
     @inline def deleteGameSessionQueueFuture(params: DeleteGameSessionQueueInput): Future[DeleteGameSessionQueueOutput] = service.deleteGameSessionQueue(params).promise().toFuture
+    @inline def deleteLocationFuture(params: DeleteLocationInput): Future[DeleteLocationOutput] = service.deleteLocation(params).promise().toFuture
     @inline def deleteMatchmakingConfigurationFuture(params: DeleteMatchmakingConfigurationInput): Future[DeleteMatchmakingConfigurationOutput] = service.deleteMatchmakingConfiguration(params).promise().toFuture
     @inline def deleteMatchmakingRuleSetFuture(params: DeleteMatchmakingRuleSetInput): Future[DeleteMatchmakingRuleSetOutput] = service.deleteMatchmakingRuleSet(params).promise().toFuture
     @inline def deleteScalingPolicyFuture(params: DeleteScalingPolicyInput): Future[js.Object] = service.deleteScalingPolicy(params).promise().toFuture
     @inline def deleteScriptFuture(params: DeleteScriptInput): Future[js.Object] = service.deleteScript(params).promise().toFuture
     @inline def deleteVpcPeeringAuthorizationFuture(params: DeleteVpcPeeringAuthorizationInput): Future[DeleteVpcPeeringAuthorizationOutput] = service.deleteVpcPeeringAuthorization(params).promise().toFuture
     @inline def deleteVpcPeeringConnectionFuture(params: DeleteVpcPeeringConnectionInput): Future[DeleteVpcPeeringConnectionOutput] = service.deleteVpcPeeringConnection(params).promise().toFuture
+    @inline def deregisterComputeFuture(params: DeregisterComputeInput): Future[DeregisterComputeOutput] = service.deregisterCompute(params).promise().toFuture
     @inline def deregisterGameServerFuture(params: DeregisterGameServerInput): Future[js.Object] = service.deregisterGameServer(params).promise().toFuture
     @inline def describeAliasFuture(params: DescribeAliasInput): Future[DescribeAliasOutput] = service.describeAlias(params).promise().toFuture
     @inline def describeBuildFuture(params: DescribeBuildInput): Future[DescribeBuildOutput] = service.describeBuild(params).promise().toFuture
+    @inline def describeComputeFuture(params: DescribeComputeInput): Future[DescribeComputeOutput] = service.describeCompute(params).promise().toFuture
     @inline def describeEC2InstanceLimitsFuture(params: DescribeEC2InstanceLimitsInput): Future[DescribeEC2InstanceLimitsOutput] = service.describeEC2InstanceLimits(params).promise().toFuture
     @inline def describeFleetAttributesFuture(params: DescribeFleetAttributesInput): Future[DescribeFleetAttributesOutput] = service.describeFleetAttributes(params).promise().toFuture
     @inline def describeFleetCapacityFuture(params: DescribeFleetCapacityInput): Future[DescribeFleetCapacityOutput] = service.describeFleetCapacity(params).promise().toFuture
@@ -204,16 +225,21 @@ package object gamelift {
     @inline def describeScriptFuture(params: DescribeScriptInput): Future[DescribeScriptOutput] = service.describeScript(params).promise().toFuture
     @inline def describeVpcPeeringAuthorizationsFuture(params: DescribeVpcPeeringAuthorizationsInput): Future[DescribeVpcPeeringAuthorizationsOutput] = service.describeVpcPeeringAuthorizations(params).promise().toFuture
     @inline def describeVpcPeeringConnectionsFuture(params: DescribeVpcPeeringConnectionsInput): Future[DescribeVpcPeeringConnectionsOutput] = service.describeVpcPeeringConnections(params).promise().toFuture
+    @inline def getComputeAccessFuture(params: GetComputeAccessInput): Future[GetComputeAccessOutput] = service.getComputeAccess(params).promise().toFuture
+    @inline def getComputeAuthTokenFuture(params: GetComputeAuthTokenInput): Future[GetComputeAuthTokenOutput] = service.getComputeAuthToken(params).promise().toFuture
     @inline def getGameSessionLogUrlFuture(params: GetGameSessionLogUrlInput): Future[GetGameSessionLogUrlOutput] = service.getGameSessionLogUrl(params).promise().toFuture
     @inline def getInstanceAccessFuture(params: GetInstanceAccessInput): Future[GetInstanceAccessOutput] = service.getInstanceAccess(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesInput): Future[ListAliasesOutput] = service.listAliases(params).promise().toFuture
     @inline def listBuildsFuture(params: ListBuildsInput): Future[ListBuildsOutput] = service.listBuilds(params).promise().toFuture
+    @inline def listComputeFuture(params: ListComputeInput): Future[ListComputeOutput] = service.listCompute(params).promise().toFuture
     @inline def listFleetsFuture(params: ListFleetsInput): Future[ListFleetsOutput] = service.listFleets(params).promise().toFuture
     @inline def listGameServerGroupsFuture(params: ListGameServerGroupsInput): Future[ListGameServerGroupsOutput] = service.listGameServerGroups(params).promise().toFuture
     @inline def listGameServersFuture(params: ListGameServersInput): Future[ListGameServersOutput] = service.listGameServers(params).promise().toFuture
+    @inline def listLocationsFuture(params: ListLocationsInput): Future[ListLocationsOutput] = service.listLocations(params).promise().toFuture
     @inline def listScriptsFuture(params: ListScriptsInput): Future[ListScriptsOutput] = service.listScripts(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putScalingPolicyFuture(params: PutScalingPolicyInput): Future[PutScalingPolicyOutput] = service.putScalingPolicy(params).promise().toFuture
+    @inline def registerComputeFuture(params: RegisterComputeInput): Future[RegisterComputeOutput] = service.registerCompute(params).promise().toFuture
     @inline def registerGameServerFuture(params: RegisterGameServerInput): Future[RegisterGameServerOutput] = service.registerGameServer(params).promise().toFuture
     @inline def requestUploadCredentialsFuture(params: RequestUploadCredentialsInput): Future[RequestUploadCredentialsOutput] = service.requestUploadCredentials(params).promise().toFuture
     @inline def resolveAliasFuture(params: ResolveAliasInput): Future[ResolveAliasOutput] = service.resolveAlias(params).promise().toFuture
@@ -259,6 +285,7 @@ package object gamelift {
     def createGameServerGroup(params: CreateGameServerGroupInput): Request[CreateGameServerGroupOutput] = js.native
     def createGameSession(params: CreateGameSessionInput): Request[CreateGameSessionOutput] = js.native
     def createGameSessionQueue(params: CreateGameSessionQueueInput): Request[CreateGameSessionQueueOutput] = js.native
+    def createLocation(params: CreateLocationInput): Request[CreateLocationOutput] = js.native
     def createMatchmakingConfiguration(params: CreateMatchmakingConfigurationInput): Request[CreateMatchmakingConfigurationOutput] = js.native
     def createMatchmakingRuleSet(params: CreateMatchmakingRuleSetInput): Request[CreateMatchmakingRuleSetOutput] = js.native
     def createPlayerSession(params: CreatePlayerSessionInput): Request[CreatePlayerSessionOutput] = js.native
@@ -272,15 +299,18 @@ package object gamelift {
     def deleteFleetLocations(params: DeleteFleetLocationsInput): Request[DeleteFleetLocationsOutput] = js.native
     def deleteGameServerGroup(params: DeleteGameServerGroupInput): Request[DeleteGameServerGroupOutput] = js.native
     def deleteGameSessionQueue(params: DeleteGameSessionQueueInput): Request[DeleteGameSessionQueueOutput] = js.native
+    def deleteLocation(params: DeleteLocationInput): Request[DeleteLocationOutput] = js.native
     def deleteMatchmakingConfiguration(params: DeleteMatchmakingConfigurationInput): Request[DeleteMatchmakingConfigurationOutput] = js.native
     def deleteMatchmakingRuleSet(params: DeleteMatchmakingRuleSetInput): Request[DeleteMatchmakingRuleSetOutput] = js.native
     def deleteScalingPolicy(params: DeleteScalingPolicyInput): Request[js.Object] = js.native
     def deleteScript(params: DeleteScriptInput): Request[js.Object] = js.native
     def deleteVpcPeeringAuthorization(params: DeleteVpcPeeringAuthorizationInput): Request[DeleteVpcPeeringAuthorizationOutput] = js.native
     def deleteVpcPeeringConnection(params: DeleteVpcPeeringConnectionInput): Request[DeleteVpcPeeringConnectionOutput] = js.native
+    def deregisterCompute(params: DeregisterComputeInput): Request[DeregisterComputeOutput] = js.native
     def deregisterGameServer(params: DeregisterGameServerInput): Request[js.Object] = js.native
     def describeAlias(params: DescribeAliasInput): Request[DescribeAliasOutput] = js.native
     def describeBuild(params: DescribeBuildInput): Request[DescribeBuildOutput] = js.native
+    def describeCompute(params: DescribeComputeInput): Request[DescribeComputeOutput] = js.native
     def describeEC2InstanceLimits(params: DescribeEC2InstanceLimitsInput): Request[DescribeEC2InstanceLimitsOutput] = js.native
     def describeFleetAttributes(params: DescribeFleetAttributesInput): Request[DescribeFleetAttributesOutput] = js.native
     def describeFleetCapacity(params: DescribeFleetCapacityInput): Request[DescribeFleetCapacityOutput] = js.native
@@ -307,16 +337,21 @@ package object gamelift {
     def describeScript(params: DescribeScriptInput): Request[DescribeScriptOutput] = js.native
     def describeVpcPeeringAuthorizations(params: DescribeVpcPeeringAuthorizationsInput): Request[DescribeVpcPeeringAuthorizationsOutput] = js.native
     def describeVpcPeeringConnections(params: DescribeVpcPeeringConnectionsInput): Request[DescribeVpcPeeringConnectionsOutput] = js.native
+    def getComputeAccess(params: GetComputeAccessInput): Request[GetComputeAccessOutput] = js.native
+    def getComputeAuthToken(params: GetComputeAuthTokenInput): Request[GetComputeAuthTokenOutput] = js.native
     def getGameSessionLogUrl(params: GetGameSessionLogUrlInput): Request[GetGameSessionLogUrlOutput] = js.native
     def getInstanceAccess(params: GetInstanceAccessInput): Request[GetInstanceAccessOutput] = js.native
     def listAliases(params: ListAliasesInput): Request[ListAliasesOutput] = js.native
     def listBuilds(params: ListBuildsInput): Request[ListBuildsOutput] = js.native
+    def listCompute(params: ListComputeInput): Request[ListComputeOutput] = js.native
     def listFleets(params: ListFleetsInput): Request[ListFleetsOutput] = js.native
     def listGameServerGroups(params: ListGameServerGroupsInput): Request[ListGameServerGroupsOutput] = js.native
     def listGameServers(params: ListGameServersInput): Request[ListGameServersOutput] = js.native
+    def listLocations(params: ListLocationsInput): Request[ListLocationsOutput] = js.native
     def listScripts(params: ListScriptsInput): Request[ListScriptsOutput] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putScalingPolicy(params: PutScalingPolicyInput): Request[PutScalingPolicyOutput] = js.native
+    def registerCompute(params: RegisterComputeInput): Request[RegisterComputeOutput] = js.native
     def registerGameServer(params: RegisterGameServerInput): Request[RegisterGameServerOutput] = js.native
     def requestUploadCredentials(params: RequestUploadCredentialsInput): Request[RequestUploadCredentialsOutput] = js.native
     def resolveAlias(params: ResolveAliasInput): Request[ResolveAliasOutput] = js.native
@@ -352,8 +387,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait AcceptMatchInput extends js.Object {
     var AcceptanceType: AcceptanceType
@@ -388,7 +421,8 @@ package object gamelift {
     }
   }
 
-  /** Properties that describe an alias resource. \```Related actions``` <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Properties that describe an alias resource.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait Alias extends js.Object {
@@ -424,23 +458,42 @@ package object gamelift {
     }
   }
 
-  /** Values for use in <a>Player</a> attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
+  /** GameLift Anywhere configuration options for your Anywhere fleets.
+    */
+  @js.native
+  trait AnywhereConfiguration extends js.Object {
+    var Cost: NonNegativeLimitedLengthDouble
+  }
+
+  object AnywhereConfiguration {
+    @inline
+    def apply(
+        Cost: NonNegativeLimitedLengthDouble
+    ): AnywhereConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Cost" -> Cost.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnywhereConfiguration]
+    }
+  }
+
+  /** Values for use in player attribute key-value pairs. This object lets you specify an attribute value using any of the valid data types: string, number, string array, or data map. Each <code>AttributeValue</code> object can use only one of the available properties.
     */
   @js.native
   trait AttributeValue extends js.Object {
     var N: js.UndefOr[DoubleObject]
-    var S: js.UndefOr[NonZeroAndMaxString]
-    var SDM: js.UndefOr[StringDoubleMap]
-    var SL: js.UndefOr[StringList]
+    var S: js.UndefOr[PlayerAttributeString]
+    var SDM: js.UndefOr[PlayerAttributeStringDoubleMap]
+    var SL: js.UndefOr[PlayerAttributeStringList]
   }
 
   object AttributeValue {
     @inline
     def apply(
         N: js.UndefOr[DoubleObject] = js.undefined,
-        S: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        SDM: js.UndefOr[StringDoubleMap] = js.undefined,
-        SL: js.UndefOr[StringList] = js.undefined
+        S: js.UndefOr[PlayerAttributeString] = js.undefined,
+        SDM: js.UndefOr[PlayerAttributeStringDoubleMap] = js.undefined,
+        SL: js.UndefOr[PlayerAttributeStringList] = js.undefined
     ): AttributeValue = {
       val __obj = js.Dynamic.literal()
       N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
@@ -451,7 +504,7 @@ package object gamelift {
     }
   }
 
-  /** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>.
+  /** Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html|RequestUploadCredentials]].
     */
   @js.native
   trait AwsCredentials extends js.Object {
@@ -475,7 +528,7 @@ package object gamelift {
     }
   }
 
-  /** Properties describing a custom game build. \```Related actions``` <a>CreateBuild</a> | <a>ListBuilds</a> | <a>DescribeBuild</a> | <a>UpdateBuild</a> | <a>DeleteBuild</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Properties describing a custom game build. [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait Build extends js.Object {
@@ -484,6 +537,7 @@ package object gamelift {
     var CreationTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[FreeText]
     var OperatingSystem: js.UndefOr[OperatingSystem]
+    var ServerSdkVersion: js.UndefOr[ServerSdkVersion]
     var SizeOnDisk: js.UndefOr[PositiveLong]
     var Status: js.UndefOr[BuildStatus]
     var Version: js.UndefOr[FreeText]
@@ -497,6 +551,7 @@ package object gamelift {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[FreeText] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        ServerSdkVersion: js.UndefOr[ServerSdkVersion] = js.undefined,
         SizeOnDisk: js.UndefOr[PositiveLong] = js.undefined,
         Status: js.UndefOr[BuildStatus] = js.undefined,
         Version: js.UndefOr[FreeText] = js.undefined
@@ -507,6 +562,7 @@ package object gamelift {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      ServerSdkVersion.foreach(__v => __obj.updateDynamic("ServerSdkVersion")(__v.asInstanceOf[js.Any]))
       SizeOnDisk.foreach(__v => __obj.updateDynamic("SizeOnDisk")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
@@ -514,7 +570,7 @@ package object gamelift {
     }
   }
 
-  /** Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html|GameLift Server SDK]] operation <code>GetInstanceCertificate</code>. A fleet's certificate configuration is part of <a>FleetAttributes</a>.
+  /** Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html|GameLift Server SDK]] operation <code>GetInstanceCertificate</code>.
     */
   @js.native
   trait CertificateConfiguration extends js.Object {
@@ -573,8 +629,57 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
+  /** Resources used to host your game servers. A compute resource can be managed GameLift Amazon EC2 instances or your own resources.
     */
+  @js.native
+  trait Compute extends js.Object {
+    var ComputeArn: js.UndefOr[ComputeArn]
+    var ComputeName: js.UndefOr[ComputeName]
+    var ComputeStatus: js.UndefOr[ComputeStatus]
+    var CreationTime: js.UndefOr[Timestamp]
+    var DnsName: js.UndefOr[DnsName]
+    var FleetArn: js.UndefOr[FleetArn]
+    var FleetId: js.UndefOr[FleetId]
+    var GameLiftServiceSdkEndpoint: js.UndefOr[GameLiftServiceSdkEndpointOutput]
+    var IpAddress: js.UndefOr[IpAddress]
+    var Location: js.UndefOr[LocationStringModel]
+    var OperatingSystem: js.UndefOr[OperatingSystem]
+    var Type: js.UndefOr[EC2InstanceType]
+  }
+
+  object Compute {
+    @inline
+    def apply(
+        ComputeArn: js.UndefOr[ComputeArn] = js.undefined,
+        ComputeName: js.UndefOr[ComputeName] = js.undefined,
+        ComputeStatus: js.UndefOr[ComputeStatus] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DnsName: js.UndefOr[DnsName] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
+        FleetId: js.UndefOr[FleetId] = js.undefined,
+        GameLiftServiceSdkEndpoint: js.UndefOr[GameLiftServiceSdkEndpointOutput] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        Location: js.UndefOr[LocationStringModel] = js.undefined,
+        OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        Type: js.UndefOr[EC2InstanceType] = js.undefined
+    ): Compute = {
+      val __obj = js.Dynamic.literal()
+      ComputeArn.foreach(__v => __obj.updateDynamic("ComputeArn")(__v.asInstanceOf[js.Any]))
+      ComputeName.foreach(__v => __obj.updateDynamic("ComputeName")(__v.asInstanceOf[js.Any]))
+      ComputeStatus.foreach(__v => __obj.updateDynamic("ComputeStatus")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameLiftServiceSdkEndpoint.foreach(__v => __obj.updateDynamic("GameLiftServiceSdkEndpoint")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Compute]
+    }
+  }
+
   @js.native
   trait CreateAliasInput extends js.Object {
     var Name: NonBlankAndLengthConstraintString
@@ -602,8 +707,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateAliasOutput extends js.Object {
     var Alias: js.UndefOr[Alias]
@@ -620,12 +723,11 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateBuildInput extends js.Object {
     var Name: js.UndefOr[NonZeroAndMaxString]
     var OperatingSystem: js.UndefOr[OperatingSystem]
+    var ServerSdkVersion: js.UndefOr[ServerSdkVersion]
     var StorageLocation: js.UndefOr[S3Location]
     var Tags: js.UndefOr[TagList]
     var Version: js.UndefOr[NonZeroAndMaxString]
@@ -636,6 +738,7 @@ package object gamelift {
     def apply(
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
+        ServerSdkVersion: js.UndefOr[ServerSdkVersion] = js.undefined,
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
@@ -643,6 +746,7 @@ package object gamelift {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      ServerSdkVersion.foreach(__v => __obj.updateDynamic("ServerSdkVersion")(__v.asInstanceOf[js.Any]))
       StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
@@ -650,8 +754,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateBuildOutput extends js.Object {
     var Build: js.UndefOr[Build]
@@ -674,16 +776,16 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateFleetInput extends js.Object {
-    var EC2InstanceType: EC2InstanceType
     var Name: NonZeroAndMaxString
+    var AnywhereConfiguration: js.UndefOr[AnywhereConfiguration]
     var BuildId: js.UndefOr[BuildIdOrArn]
     var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
+    var ComputeType: js.UndefOr[ComputeType]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var EC2InboundPermissions: js.UndefOr[IpPermissionsList]
+    var EC2InstanceType: js.UndefOr[EC2InstanceType]
     var FleetType: js.UndefOr[FleetType]
     var InstanceRoleArn: js.UndefOr[NonEmptyString]
     var Locations: js.UndefOr[LocationConfigurationList]
@@ -703,12 +805,14 @@ package object gamelift {
   object CreateFleetInput {
     @inline
     def apply(
-        EC2InstanceType: EC2InstanceType,
         Name: NonZeroAndMaxString,
+        AnywhereConfiguration: js.UndefOr[AnywhereConfiguration] = js.undefined,
         BuildId: js.UndefOr[BuildIdOrArn] = js.undefined,
         CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
+        ComputeType: js.UndefOr[ComputeType] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         EC2InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined,
+        EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
         FleetType: js.UndefOr[FleetType] = js.undefined,
         InstanceRoleArn: js.UndefOr[NonEmptyString] = js.undefined,
         Locations: js.UndefOr[LocationConfigurationList] = js.undefined,
@@ -725,14 +829,16 @@ package object gamelift {
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateFleetInput = {
       val __obj = js.Dynamic.literal(
-        "EC2InstanceType" -> EC2InstanceType.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      AnywhereConfiguration.foreach(__v => __obj.updateDynamic("AnywhereConfiguration")(__v.asInstanceOf[js.Any]))
       BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
       CertificateConfiguration.foreach(__v => __obj.updateDynamic("CertificateConfiguration")(__v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EC2InboundPermissions.foreach(__v => __obj.updateDynamic("EC2InboundPermissions")(__v.asInstanceOf[js.Any]))
+      EC2InstanceType.foreach(__v => __obj.updateDynamic("EC2InstanceType")(__v.asInstanceOf[js.Any]))
       FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
       InstanceRoleArn.foreach(__v => __obj.updateDynamic("InstanceRoleArn")(__v.asInstanceOf[js.Any]))
       Locations.foreach(__v => __obj.updateDynamic("Locations")(__v.asInstanceOf[js.Any]))
@@ -751,8 +857,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateFleetLocationsInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -773,8 +877,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateFleetLocationsOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -797,8 +899,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateFleetOutput extends js.Object {
     var FleetAttributes: js.UndefOr[FleetAttributes]
@@ -882,8 +982,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateGameSessionInput extends js.Object {
     var MaximumPlayerSessionCount: WholeNumber
@@ -929,8 +1027,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateGameSessionOutput extends js.Object {
     var GameSession: js.UndefOr[GameSession]
@@ -947,8 +1043,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateGameSessionQueueInput extends js.Object {
     var Name: GameSessionQueueName
@@ -991,8 +1085,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateGameSessionQueueOutput extends js.Object {
     var GameSessionQueue: js.UndefOr[GameSessionQueue]
@@ -1009,8 +1101,43 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
+  @js.native
+  trait CreateLocationInput extends js.Object {
+    var LocationName: CustomInputLocationStringModel
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateLocationInput {
+    @inline
+    def apply(
+        LocationName: CustomInputLocationStringModel,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateLocationInput = {
+      val __obj = js.Dynamic.literal(
+        "LocationName" -> LocationName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationInput]
+    }
+  }
+
+  @js.native
+  trait CreateLocationOutput extends js.Object {
+    var Location: js.UndefOr[LocationModel]
+  }
+
+  object CreateLocationOutput {
+    @inline
+    def apply(
+        Location: js.UndefOr[LocationModel] = js.undefined
+    ): CreateLocationOutput = {
+      val __obj = js.Dynamic.literal()
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationOutput]
+    }
+  }
+
   @js.native
   trait CreateMatchmakingConfigurationInput extends js.Object {
     var AcceptanceRequired: BooleanModel
@@ -1071,8 +1198,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateMatchmakingConfigurationOutput extends js.Object {
     var Configuration: js.UndefOr[MatchmakingConfiguration]
@@ -1089,8 +1214,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateMatchmakingRuleSetInput extends js.Object {
     var Name: MatchmakingIdStringModel
@@ -1115,8 +1238,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateMatchmakingRuleSetOutput extends js.Object {
     var RuleSet: MatchmakingRuleSet
@@ -1134,8 +1255,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreatePlayerSessionInput extends js.Object {
     var GameSessionId: ArnStringModel
@@ -1160,8 +1279,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreatePlayerSessionOutput extends js.Object {
     var PlayerSession: js.UndefOr[PlayerSession]
@@ -1178,8 +1295,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreatePlayerSessionsInput extends js.Object {
     var GameSessionId: ArnStringModel
@@ -1204,8 +1319,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreatePlayerSessionsOutput extends js.Object {
     var PlayerSessions: js.UndefOr[PlayerSessionList]
@@ -1266,8 +1379,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateVpcPeeringAuthorizationInput extends js.Object {
     var GameLiftAwsAccountId: NonZeroAndMaxString
@@ -1288,8 +1399,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait CreateVpcPeeringAuthorizationOutput extends js.Object {
     var VpcPeeringAuthorization: js.UndefOr[VpcPeeringAuthorization]
@@ -1306,8 +1415,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait CreateVpcPeeringConnectionInput extends js.Object {
     var FleetId: FleetId
@@ -1342,8 +1449,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteAliasInput extends js.Object {
     var AliasId: AliasIdOrArn
@@ -1361,8 +1466,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteBuildInput extends js.Object {
     var BuildId: BuildIdOrArn
@@ -1380,8 +1483,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteFleetInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -1399,8 +1500,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteFleetLocationsInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -1421,8 +1520,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DeleteFleetLocationsOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -1482,8 +1579,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteGameSessionQueueInput extends js.Object {
     var Name: GameSessionQueueNameOrArn
@@ -1512,8 +1607,34 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
+  @js.native
+  trait DeleteLocationInput extends js.Object {
+    var LocationName: CustomLocationNameOrArnModel
+  }
+
+  object DeleteLocationInput {
+    @inline
+    def apply(
+        LocationName: CustomLocationNameOrArnModel
+    ): DeleteLocationInput = {
+      val __obj = js.Dynamic.literal(
+        "LocationName" -> LocationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteLocationInput]
+    }
+  }
+
+  @js.native
+  trait DeleteLocationOutput extends js.Object
+
+  object DeleteLocationOutput {
+    @inline
+    def apply(): DeleteLocationOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteLocationOutput]
+    }
+  }
+
   @js.native
   trait DeleteMatchmakingConfigurationInput extends js.Object {
     var Name: MatchmakingConfigurationName
@@ -1542,8 +1663,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteMatchmakingRuleSetInput extends js.Object {
     var Name: MatchmakingRuleSetName
@@ -1561,8 +1680,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DeleteMatchmakingRuleSetOutput extends js.Object
 
@@ -1574,8 +1691,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteScalingPolicyInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -1613,8 +1728,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteVpcPeeringAuthorizationInput extends js.Object {
     var GameLiftAwsAccountId: NonZeroAndMaxString
@@ -1646,8 +1759,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DeleteVpcPeeringConnectionInput extends js.Object {
     var FleetId: FleetId
@@ -1680,6 +1791,37 @@ package object gamelift {
   }
 
   @js.native
+  trait DeregisterComputeInput extends js.Object {
+    var ComputeName: ComputeNameOrArn
+    var FleetId: FleetIdOrArn
+  }
+
+  object DeregisterComputeInput {
+    @inline
+    def apply(
+        ComputeName: ComputeNameOrArn,
+        FleetId: FleetIdOrArn
+    ): DeregisterComputeInput = {
+      val __obj = js.Dynamic.literal(
+        "ComputeName" -> ComputeName.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeregisterComputeInput]
+    }
+  }
+
+  @js.native
+  trait DeregisterComputeOutput extends js.Object
+
+  object DeregisterComputeOutput {
+    @inline
+    def apply(): DeregisterComputeOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeregisterComputeOutput]
+    }
+  }
+
+  @js.native
   trait DeregisterGameServerInput extends js.Object {
     var GameServerGroupName: GameServerGroupNameOrArn
     var GameServerId: GameServerId
@@ -1699,8 +1841,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeAliasInput extends js.Object {
     var AliasId: AliasIdOrArn
@@ -1718,8 +1858,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeAliasOutput extends js.Object {
     var Alias: js.UndefOr[Alias]
@@ -1736,8 +1874,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeBuildInput extends js.Object {
     var BuildId: BuildIdOrArn
@@ -1755,8 +1891,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeBuildOutput extends js.Object {
     var Build: js.UndefOr[Build]
@@ -1773,8 +1907,42 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
+  @js.native
+  trait DescribeComputeInput extends js.Object {
+    var ComputeName: ComputeNameOrArn
+    var FleetId: FleetIdOrArn
+  }
+
+  object DescribeComputeInput {
+    @inline
+    def apply(
+        ComputeName: ComputeNameOrArn,
+        FleetId: FleetIdOrArn
+    ): DescribeComputeInput = {
+      val __obj = js.Dynamic.literal(
+        "ComputeName" -> ComputeName.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeComputeInput]
+    }
+  }
+
+  @js.native
+  trait DescribeComputeOutput extends js.Object {
+    var Compute: js.UndefOr[Compute]
+  }
+
+  object DescribeComputeOutput {
+    @inline
+    def apply(
+        Compute: js.UndefOr[Compute] = js.undefined
+    ): DescribeComputeOutput = {
+      val __obj = js.Dynamic.literal()
+      Compute.foreach(__v => __obj.updateDynamic("Compute")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeComputeOutput]
+    }
+  }
+
   @js.native
   trait DescribeEC2InstanceLimitsInput extends js.Object {
     var EC2InstanceType: js.UndefOr[EC2InstanceType]
@@ -1794,8 +1962,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeEC2InstanceLimitsOutput extends js.Object {
     var EC2InstanceLimits: js.UndefOr[EC2InstanceLimitList]
@@ -1812,8 +1978,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetAttributesInput extends js.Object {
     var FleetIds: js.UndefOr[FleetIdOrArnList]
@@ -1836,8 +2000,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetAttributesOutput extends js.Object {
     var FleetAttributes: js.UndefOr[FleetAttributesList]
@@ -1857,8 +2019,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetCapacityInput extends js.Object {
     var FleetIds: js.UndefOr[FleetIdOrArnList]
@@ -1881,8 +2041,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetCapacityOutput extends js.Object {
     var FleetCapacity: js.UndefOr[FleetCapacityList]
@@ -1902,8 +2060,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetEventsInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -1934,8 +2090,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetEventsOutput extends js.Object {
     var Events: js.UndefOr[EventList]
@@ -1955,8 +2109,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetLocationAttributesInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -1984,8 +2136,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetLocationAttributesOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -2011,8 +2161,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetLocationCapacityInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2033,8 +2181,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetLocationCapacityOutput extends js.Object {
     var FleetCapacity: js.UndefOr[FleetCapacity]
@@ -2051,8 +2197,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetLocationUtilizationInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2073,8 +2217,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetLocationUtilizationOutput extends js.Object {
     var FleetUtilization: js.UndefOr[FleetUtilization]
@@ -2091,8 +2233,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetPortSettingsInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2114,8 +2254,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetPortSettingsOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -2144,8 +2282,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeFleetUtilizationInput extends js.Object {
     var FleetIds: js.UndefOr[FleetIdOrArnList]
@@ -2168,8 +2304,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeFleetUtilizationOutput extends js.Object {
     var FleetUtilization: js.UndefOr[FleetUtilizationList]
@@ -2304,8 +2438,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeGameSessionDetailsInput extends js.Object {
     var AliasId: js.UndefOr[AliasIdOrArn]
@@ -2340,8 +2472,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeGameSessionDetailsOutput extends js.Object {
     var GameSessionDetails: js.UndefOr[GameSessionDetailList]
@@ -2361,8 +2491,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeGameSessionPlacementInput extends js.Object {
     var PlacementId: IdStringModel
@@ -2380,8 +2508,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeGameSessionPlacementOutput extends js.Object {
     var GameSessionPlacement: js.UndefOr[GameSessionPlacement]
@@ -2398,8 +2524,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeGameSessionQueuesInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
@@ -2422,8 +2546,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeGameSessionQueuesOutput extends js.Object {
     var GameSessionQueues: js.UndefOr[GameSessionQueueList]
@@ -2443,8 +2565,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeGameSessionsInput extends js.Object {
     var AliasId: js.UndefOr[AliasIdOrArn]
@@ -2479,8 +2599,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeGameSessionsOutput extends js.Object {
     var GameSessions: js.UndefOr[GameSessionList]
@@ -2500,8 +2618,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeInstancesInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2532,8 +2648,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeInstancesOutput extends js.Object {
     var Instances: js.UndefOr[InstanceList]
@@ -2553,8 +2667,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeMatchmakingConfigurationsInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
@@ -2580,8 +2692,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeMatchmakingConfigurationsOutput extends js.Object {
     var Configurations: js.UndefOr[MatchmakingConfigurationList]
@@ -2601,8 +2711,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeMatchmakingInput extends js.Object {
     var TicketIds: MatchmakingIdList
@@ -2620,8 +2728,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeMatchmakingOutput extends js.Object {
     var TicketList: js.UndefOr[MatchmakingTicketList]
@@ -2638,8 +2744,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeMatchmakingRuleSetsInput extends js.Object {
     var Limit: js.UndefOr[RuleSetLimit]
@@ -2662,8 +2766,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeMatchmakingRuleSetsOutput extends js.Object {
     var RuleSets: MatchmakingRuleSetList
@@ -2685,8 +2787,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribePlayerSessionsInput extends js.Object {
     var GameSessionId: js.UndefOr[ArnStringModel]
@@ -2718,8 +2818,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribePlayerSessionsOutput extends js.Object {
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -2739,8 +2837,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeRuntimeConfigurationInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2758,8 +2854,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeRuntimeConfigurationOutput extends js.Object {
     var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
@@ -2776,8 +2870,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeScalingPoliciesInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -2808,8 +2900,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeScalingPoliciesOutput extends js.Object {
     var NextToken: js.UndefOr[NonZeroAndMaxString]
@@ -2889,8 +2979,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait DescribeVpcPeeringConnectionsInput extends js.Object {
     var FleetId: js.UndefOr[FleetId]
@@ -2907,8 +2995,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait DescribeVpcPeeringConnectionsOutput extends js.Object {
     var VpcPeeringConnections: js.UndefOr[VpcPeeringConnectionList]
@@ -2925,7 +3011,7 @@ package object gamelift {
     }
   }
 
-  /** Player information for use when creating player sessions using a game session placement request with <a>StartGameSessionPlacement</a>.
+  /** Player information for use when creating player sessions using a game session placement request.
     */
   @js.native
   trait DesiredPlayerSession extends js.Object {
@@ -2946,7 +3032,7 @@ package object gamelift {
     }
   }
 
-  /** Resource capacity settings. Fleet capacity is measured in EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected. EC2 instance counts are part of <a>FleetCapacity</a>.
+  /** Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.
     */
   @js.native
   trait EC2InstanceCounts extends js.Object {
@@ -2982,7 +3068,7 @@ package object gamelift {
     }
   }
 
-  /** The GameLift service limits for an EC2 instance type and current utilization. GameLift allows AWS accounts a maximum number of instances, per instance type, per AWS Region or location, for use with GameLift. You can request an limit increase for your account by using the ```Service limits``` page in the GameLift console. \```Related actions``` <a>DescribeEC2InstanceLimits</a>
+  /** The GameLift service limits for an Amazon EC2 instance type and current utilization. GameLift allows Amazon Web Services accounts a maximum number of instances, per instance type, per Amazon Web Services Region or location, for use with GameLift. You can request an limit increase for your account by using the ```Service limits``` page in the GameLift console.
     */
   @js.native
   trait EC2InstanceLimit extends js.Object {
@@ -3009,7 +3095,7 @@ package object gamelift {
     }
   }
 
-  /** Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems. \```Related actions``` <a>DescribeFleetEvents</a>
+  /** Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
     */
   @js.native
   trait Event extends js.Object {
@@ -3042,7 +3128,7 @@ package object gamelift {
     }
   }
 
-  /** A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations. Filter configurations are part of a <a>GameSessionQueue</a>.
+  /** A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.
     */
   @js.native
   trait FilterConfiguration extends js.Object {
@@ -3060,13 +3146,16 @@ package object gamelift {
     }
   }
 
-  /** Describes a GameLift fleet of game hosting resources. \```Related actions``` <a>CreateFleet</a> | <a>DescribeFleetAttributes</a>
+  /** Describes a GameLift fleet of game hosting resources.
+    * \```Related actions```
     */
   @js.native
   trait FleetAttributes extends js.Object {
+    var AnywhereConfiguration: js.UndefOr[AnywhereConfiguration]
     var BuildArn: js.UndefOr[BuildArn]
     var BuildId: js.UndefOr[BuildId]
     var CertificateConfiguration: js.UndefOr[CertificateConfiguration]
+    var ComputeType: js.UndefOr[ComputeType]
     var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var FleetArn: js.UndefOr[FleetArn]
@@ -3092,9 +3181,11 @@ package object gamelift {
   object FleetAttributes {
     @inline
     def apply(
+        AnywhereConfiguration: js.UndefOr[AnywhereConfiguration] = js.undefined,
         BuildArn: js.UndefOr[BuildArn] = js.undefined,
         BuildId: js.UndefOr[BuildId] = js.undefined,
         CertificateConfiguration: js.UndefOr[CertificateConfiguration] = js.undefined,
+        ComputeType: js.UndefOr[ComputeType] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         FleetArn: js.UndefOr[FleetArn] = js.undefined,
@@ -3117,9 +3208,11 @@ package object gamelift {
         TerminationTime: js.UndefOr[Timestamp] = js.undefined
     ): FleetAttributes = {
       val __obj = js.Dynamic.literal()
+      AnywhereConfiguration.foreach(__v => __obj.updateDynamic("AnywhereConfiguration")(__v.asInstanceOf[js.Any]))
       BuildArn.foreach(__v => __obj.updateDynamic("BuildArn")(__v.asInstanceOf[js.Any]))
       BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
       CertificateConfiguration.foreach(__v => __obj.updateDynamic("CertificateConfiguration")(__v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
@@ -3144,7 +3237,8 @@ package object gamelift {
     }
   }
 
-  /** Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. \```Related actions``` <a>DescribeFleetCapacity</a> | <a>DescribeFleetLocationCapacity</a> | <a>UpdateFleetCapacity</a>
+  /** Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html|DescribeFleetCapacity]] | [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html|DescribeFleetLocationCapacity]] | [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html|UpdateFleetCapacity]]
     */
   @js.native
   trait FleetCapacity extends js.Object {
@@ -3174,7 +3268,8 @@ package object gamelift {
     }
   }
 
-  /** Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region. \```Related actions``` <a>DescribeFleetUtilization</a> | <a>DescribeFleetLocationUtilization</a>
+  /** Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's remote location or its home Region.
+    * \```Related actions```
     */
   @js.native
   trait FleetUtilization extends js.Object {
@@ -3232,7 +3327,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Properties describing a game server that is running on an instance in a <a>GameServerGroup</a>. A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>. \```Related actions``` <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a> | <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | [[https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html|All APIs by task]]
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Properties describing a game server that is running on an instance in a game server group. A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>.
     */
   @js.native
   trait GameServer extends js.Object {
@@ -3280,7 +3375,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding EC2 Auto Scaling group. A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively. \```Related actions``` <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | [[https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html|All APIs by task]]
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Properties that describe a game server group resource. A game server group manages certain properties related to a corresponding Amazon EC2 Auto Scaling group. A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.
     */
   @js.native
   trait GameServerGroup extends js.Object {
@@ -3331,7 +3426,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group with <a>CreateGameServerGroup</a>. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group.
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done directly on the Auto Scaling group.
     */
   @js.native
   trait GameServerGroupAutoScalingPolicy extends js.Object {
@@ -3354,7 +3449,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>. \```Related actions``` <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> | <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | [[https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html|All APIs by task]]
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Additional properties, including status, that describe an EC2 instance in a game server group. Instance configurations are set with game server group properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used when creating the game server group. Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
     */
   @js.native
   trait GameServerInstance extends js.Object {
@@ -3381,7 +3476,7 @@ package object gamelift {
     }
   }
 
-  /** Properties describing a game session. A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days. \```Related actions``` <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a> | <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a> | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Properties describing a game session. A game session in ACTIVE status can host players. When a game session ends, its status is set to <code>TERMINATED</code>. Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days. [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait GameSession extends js.Object {
@@ -3453,13 +3548,13 @@ package object gamelift {
     }
   }
 
-  /** Connection information for a new game session that is created in response to a <a>StartMatchmaking</a> request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the <a>MatchmakingTicket</a>, which can be retrieved by calling <a>DescribeMatchmaking</a>.
+  /** Connection information for a new game session that is created in response to a start matchmaking request. Once a match is made, the FlexMatch engine creates a new game session for it. This information, including the game session endpoint and player sessions for each player in the original matchmaking request, is added to the matchmaking ticket.
     */
   @js.native
   trait GameSessionConnectionInfo extends js.Object {
     var DnsName: js.UndefOr[DnsName]
     var GameSessionArn: js.UndefOr[ArnStringModel]
-    var IpAddress: js.UndefOr[StringModel]
+    var IpAddress: js.UndefOr[IpAddress]
     var MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList]
     var Port: js.UndefOr[PositiveInteger]
   }
@@ -3469,7 +3564,7 @@ package object gamelift {
     def apply(
         DnsName: js.UndefOr[DnsName] = js.undefined,
         GameSessionArn: js.UndefOr[ArnStringModel] = js.undefined,
-        IpAddress: js.UndefOr[StringModel] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
         MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList] = js.undefined,
         Port: js.UndefOr[PositiveInteger] = js.undefined
     ): GameSessionConnectionInfo = {
@@ -3504,7 +3599,7 @@ package object gamelift {
     }
   }
 
-  /** Object that describes a <a>StartGameSessionPlacement</a> request. This object includes the full details of the original request plus the current status and start/end time stamps. Game session placement-related operations include: * <a>StartGameSessionPlacement</a> * <a>DescribeGameSessionPlacement</a> * <a>StopGameSessionPlacement</a>
+  /** This object includes the full details of the original request plus the current status and start/end time stamps.
     */
   @js.native
   trait GameSessionPlacement extends js.Object {
@@ -3573,7 +3668,7 @@ package object gamelift {
     }
   }
 
-  /** Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution. \```Related actions``` <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
+  /** Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.
     */
   @js.native
   trait GameSessionQueue extends js.Object {
@@ -3615,7 +3710,7 @@ package object gamelift {
     }
   }
 
-  /** A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations. Destinations are part of a <a>GameSessionQueue</a>.
+  /** A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new game session on any of the queue's destinations.
     */
   @js.native
   trait GameSessionQueueDestination extends js.Object {
@@ -3633,8 +3728,105 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
+  @js.native
+  trait GetComputeAccessInput extends js.Object {
+    var ComputeName: ComputeNameOrArn
+    var FleetId: FleetIdOrArn
+  }
+
+  object GetComputeAccessInput {
+    @inline
+    def apply(
+        ComputeName: ComputeNameOrArn,
+        FleetId: FleetIdOrArn
+    ): GetComputeAccessInput = {
+      val __obj = js.Dynamic.literal(
+        "ComputeName" -> ComputeName.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetComputeAccessInput]
+    }
+  }
+
+  @js.native
+  trait GetComputeAccessOutput extends js.Object {
+    var ComputeArn: js.UndefOr[ComputeArn]
+    var ComputeName: js.UndefOr[ComputeNameOrArn]
+    var Credentials: js.UndefOr[AwsCredentials]
+    var FleetArn: js.UndefOr[FleetArn]
+    var FleetId: js.UndefOr[FleetIdOrArn]
+  }
+
+  object GetComputeAccessOutput {
+    @inline
+    def apply(
+        ComputeArn: js.UndefOr[ComputeArn] = js.undefined,
+        ComputeName: js.UndefOr[ComputeNameOrArn] = js.undefined,
+        Credentials: js.UndefOr[AwsCredentials] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined
+    ): GetComputeAccessOutput = {
+      val __obj = js.Dynamic.literal()
+      ComputeArn.foreach(__v => __obj.updateDynamic("ComputeArn")(__v.asInstanceOf[js.Any]))
+      ComputeName.foreach(__v => __obj.updateDynamic("ComputeName")(__v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComputeAccessOutput]
+    }
+  }
+
+  @js.native
+  trait GetComputeAuthTokenInput extends js.Object {
+    var ComputeName: ComputeNameOrArn
+    var FleetId: FleetIdOrArn
+  }
+
+  object GetComputeAuthTokenInput {
+    @inline
+    def apply(
+        ComputeName: ComputeNameOrArn,
+        FleetId: FleetIdOrArn
+    ): GetComputeAuthTokenInput = {
+      val __obj = js.Dynamic.literal(
+        "ComputeName" -> ComputeName.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetComputeAuthTokenInput]
+    }
+  }
+
+  @js.native
+  trait GetComputeAuthTokenOutput extends js.Object {
+    var AuthToken: js.UndefOr[ComputeAuthToken]
+    var ComputeArn: js.UndefOr[ComputeArn]
+    var ComputeName: js.UndefOr[ComputeNameOrArn]
+    var ExpirationTimestamp: js.UndefOr[Timestamp]
+    var FleetArn: js.UndefOr[FleetArn]
+    var FleetId: js.UndefOr[FleetIdOrArn]
+  }
+
+  object GetComputeAuthTokenOutput {
+    @inline
+    def apply(
+        AuthToken: js.UndefOr[ComputeAuthToken] = js.undefined,
+        ComputeArn: js.UndefOr[ComputeArn] = js.undefined,
+        ComputeName: js.UndefOr[ComputeNameOrArn] = js.undefined,
+        ExpirationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
+        FleetId: js.UndefOr[FleetIdOrArn] = js.undefined
+    ): GetComputeAuthTokenOutput = {
+      val __obj = js.Dynamic.literal()
+      AuthToken.foreach(__v => __obj.updateDynamic("AuthToken")(__v.asInstanceOf[js.Any]))
+      ComputeArn.foreach(__v => __obj.updateDynamic("ComputeArn")(__v.asInstanceOf[js.Any]))
+      ComputeName.foreach(__v => __obj.updateDynamic("ComputeName")(__v.asInstanceOf[js.Any]))
+      ExpirationTimestamp.foreach(__v => __obj.updateDynamic("ExpirationTimestamp")(__v.asInstanceOf[js.Any]))
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetComputeAuthTokenOutput]
+    }
+  }
+
   @js.native
   trait GetGameSessionLogUrlInput extends js.Object {
     var GameSessionId: ArnStringModel
@@ -3652,8 +3844,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait GetGameSessionLogUrlOutput extends js.Object {
     var PreSignedUrl: js.UndefOr[NonZeroAndMaxString]
@@ -3670,8 +3860,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait GetInstanceAccessInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -3692,8 +3880,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait GetInstanceAccessOutput extends js.Object {
     var InstanceAccess: js.UndefOr[InstanceAccess]
@@ -3710,7 +3896,8 @@ package object gamelift {
     }
   }
 
-  /** Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet can contain zero or more instances. \```Related actions``` <a>DescribeInstances</a>
+  /** Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet can contain zero or more instances.
+    * \```Related actions```
     */
   @js.native
   trait Instance extends js.Object {
@@ -3755,7 +3942,7 @@ package object gamelift {
     }
   }
 
-  /** Information required to remotely connect to a fleet instance. Access is requested by calling <a>GetInstanceAccess</a>.
+  /** Information required to remotely connect to a fleet instance.
     */
   @js.native
   trait InstanceAccess extends js.Object {
@@ -3785,7 +3972,7 @@ package object gamelift {
     }
   }
 
-  /** Set of credentials required to remotely access a fleet instance. Access credentials are requested by calling <a>GetInstanceAccess</a> and returned in an <a>InstanceAccess</a> object.
+  /** Set of credentials required to remotely access a fleet instance.
     */
   @js.native
   trait InstanceCredentials extends js.Object {
@@ -3806,7 +3993,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` An allowed instance type for a <a>GameServerGroup</a>. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` An allowed instance type for a game server group. All game server groups must have at least two instance types defined for it. GameLift FleetIQ periodically evaluates each defined instance type for viability. It then updates the Auto Scaling group with the list of viable instance types.
     */
   @js.native
   trait InstanceDefinition extends js.Object {
@@ -3829,7 +4016,7 @@ package object gamelift {
     }
   }
 
-  /** A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift automatically opens two port ranges, one for TCP messaging and one for UDP. \```Related actions``` <a>DescribeFleetPortSettings</a>
+  /** A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an instance in a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets, GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
     */
   @js.native
   trait IpPermission extends js.Object {
@@ -3857,7 +4044,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group with <a>CreateGameServerGroup</a>.
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` An Amazon Elastic Compute Cloud launch template that contains configuration settings and game server code to be deployed to all instances in a game server group. The launch template is specified when creating a new game server group.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -3881,8 +4068,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait ListAliasesInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
@@ -3908,8 +4093,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait ListAliasesOutput extends js.Object {
     var Aliases: js.UndefOr[AliasList]
@@ -3929,8 +4112,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait ListBuildsInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
@@ -3953,8 +4134,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait ListBuildsOutput extends js.Object {
     var Builds: js.UndefOr[BuildList]
@@ -3974,8 +4153,52 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
+  @js.native
+  trait ListComputeInput extends js.Object {
+    var FleetId: FleetIdOrArn
+    var Limit: js.UndefOr[PositiveInteger]
+    var Location: js.UndefOr[LocationStringModel]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListComputeInput {
+    @inline
+    def apply(
+        FleetId: FleetIdOrArn,
+        Limit: js.UndefOr[PositiveInteger] = js.undefined,
+        Location: js.UndefOr[LocationStringModel] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListComputeInput = {
+      val __obj = js.Dynamic.literal(
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComputeInput]
+    }
+  }
+
+  @js.native
+  trait ListComputeOutput extends js.Object {
+    var ComputeList: js.UndefOr[ComputeList]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListComputeOutput {
+    @inline
+    def apply(
+        ComputeList: js.UndefOr[ComputeList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListComputeOutput = {
+      val __obj = js.Dynamic.literal()
+      ComputeList.foreach(__v => __obj.updateDynamic("ComputeList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListComputeOutput]
+    }
+  }
+
   @js.native
   trait ListFleetsInput extends js.Object {
     var BuildId: js.UndefOr[BuildIdOrArn]
@@ -4001,8 +4224,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait ListFleetsOutput extends js.Object {
     var FleetIds: js.UndefOr[FleetIdList]
@@ -4107,6 +4328,47 @@ package object gamelift {
   }
 
   @js.native
+  trait ListLocationsInput extends js.Object {
+    var Filters: js.UndefOr[LocationFilterList]
+    var Limit: js.UndefOr[ListLocationsLimit]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListLocationsInput {
+    @inline
+    def apply(
+        Filters: js.UndefOr[LocationFilterList] = js.undefined,
+        Limit: js.UndefOr[ListLocationsLimit] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListLocationsInput = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLocationsInput]
+    }
+  }
+
+  @js.native
+  trait ListLocationsOutput extends js.Object {
+    var Locations: js.UndefOr[LocationModelList]
+    var NextToken: js.UndefOr[NonZeroAndMaxString]
+  }
+
+  object ListLocationsOutput {
+    @inline
+    def apply(
+        Locations: js.UndefOr[LocationModelList] = js.undefined,
+        NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
+    ): ListLocationsOutput = {
+      val __obj = js.Dynamic.literal()
+      Locations.foreach(__v => __obj.updateDynamic("Locations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLocationsOutput]
+    }
+  }
+
+  @js.native
   trait ListScriptsInput extends js.Object {
     var Limit: js.UndefOr[PositiveInteger]
     var NextToken: js.UndefOr[NonEmptyString]
@@ -4177,7 +4439,7 @@ package object gamelift {
     }
   }
 
-  /** Represents a location in a multi-location fleet. \```Related actions``` <a>DescribeFleetLocationAttributes</a>
+  /** Details about a location in a multi-location fleet.
     */
   @js.native
   trait LocationAttributes extends js.Object {
@@ -4201,25 +4463,48 @@ package object gamelift {
     }
   }
 
-  /** A remote location where a multi-location fleet can deploy EC2 instances for game hosting. \```Related actions``` <a>CreateFleet</a>
+  /** A remote location where a multi-location fleet can deploy EC2 instances for game hosting.
     */
   @js.native
   trait LocationConfiguration extends js.Object {
-    var Location: js.UndefOr[LocationStringModel]
+    var Location: LocationStringModel
   }
 
   object LocationConfiguration {
     @inline
     def apply(
-        Location: js.UndefOr[LocationStringModel] = js.undefined
+        Location: LocationStringModel
     ): LocationConfiguration = {
-      val __obj = js.Dynamic.literal()
-      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "Location" -> Location.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[LocationConfiguration]
     }
   }
 
-  /** A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet. \```Related actions``` <a>CreateFleet</a> | <a>CreateFleetLocations</a> | <a>DeleteFleetLocations</a>
+  /** Properties of a location
+    */
+  @js.native
+  trait LocationModel extends js.Object {
+    var LocationArn: js.UndefOr[LocationArnModel]
+    var LocationName: js.UndefOr[LocationStringModel]
+  }
+
+  object LocationModel {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArnModel] = js.undefined,
+        LocationName: js.UndefOr[LocationStringModel] = js.undefined
+    ): LocationModel = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationName.foreach(__v => __obj.updateDynamic("LocationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LocationModel]
+    }
+  }
+
+  /** A fleet location and its life-cycle state. A location state object might be used to describe a fleet's remote location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and preparing it for game hosting, and then removing all instances and deleting the location from the fleet. * ```NEW``` -- A new fleet location has been defined and desired instances is set to 1. * ```DOWNLOADING/VALIDATING/BUILDING/ACTIVATING``` -- GameLift is setting up the new fleet location, creating new instances with the game build or Realtime script and starting server processes. * ```ACTIVE``` -- Hosts can now accept game sessions. * ```ERROR``` -- An error occurred when downloading, validating, building, or activating the fleet location. * ```DELETING``` -- Hosts are responding to a delete fleet location request. * ```TERMINATED``` -- The fleet location no longer exists. * ```NOT_FOUND``` -- The fleet location was not found. This could be because the
+    * custom location was removed or not created.
     */
   @js.native
   trait LocationState extends js.Object {
@@ -4327,8 +4612,8 @@ package object gamelift {
     }
   }
 
-  /** Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in <a>MatchmakingConfiguration</a> objects. A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html|Build a FlexMatch rule set]]. * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an
-    * attribute might specify a player's skill or level. * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. * Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.
+  /** Set of rule statements, used with FlexMatch, that determine how to build your player matches. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see [[https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html|Build a FlexMatch rule set]]. * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled. * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level. * Rules --
+    * Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role. * Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.
     */
   @js.native
   trait MatchmakingRuleSet extends js.Object {
@@ -4357,7 +4642,7 @@ package object gamelift {
     }
   }
 
-  /** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved by calling <a>DescribeMatchmaking</a> with the ticket ID.
+  /** Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID, supplied by the requester, when creating a matchmaking request.
     */
   @js.native
   trait MatchmakingTicket extends js.Object {
@@ -4405,7 +4690,7 @@ package object gamelift {
     }
   }
 
-  /** Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call <a>DescribePlayerSessions</a> with the player session ID. \```Related actions``` <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Information about a player session. This object contains only the player ID and player session ID. To retrieve full details on a player session, call [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html|DescribePlayerSessions]] with the player session ID.
     */
   @js.native
   trait PlacedPlayerSession extends js.Object {
@@ -4453,7 +4738,7 @@ package object gamelift {
     }
   }
 
-  /** Regional latency information for a player, used when requesting a new game session with <a>StartGameSessionPlacement</a>. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player.
+  /** Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player.
     */
   @js.native
   trait PlayerLatency extends js.Object {
@@ -4477,7 +4762,7 @@ package object gamelift {
     }
   }
 
-  /** Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time. Latency policies are part of a <a>GameSessionQueue</a>.
+  /** Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used only with placement request that provide player latency information. Player latency policies can be stacked to gradually relax latency requirements over time.
     */
   @js.native
   trait PlayerLatencyPolicy extends js.Object {
@@ -4498,7 +4783,8 @@ package object gamelift {
     }
   }
 
-  /** Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed. \```Related actions``` <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> | <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Represents a player session. Player sessions are created either for a specific game session, or as part of a game session placement or matchmaking request. A player session can represents a reserved player slot in a game session (when status is <code>RESERVED</code>) or actual player activity in a game session (when status is <code>ACTIVE</code>). A player session object, including player data, is automatically passed to a game session when the player connects to the game session and is validated. After the game session ends, player sessions information is retained for 30 days and then removed.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait PlayerSession extends js.Object {
@@ -4550,7 +4836,7 @@ package object gamelift {
   }
 
   /** Custom prioritization settings for use by a game session queue when placing new game sessions with available game servers. When defined, this configuration replaces the default FleetIQ prioritization process, which is as follows: * If player latency data is included in a game session request, destinations and locations are prioritized first based on lowest average latency (1), then on lowest hosting cost (2), then on destination list order (3), and finally on location (alphabetical) (4). This approach ensures that the queue's top priority is to place game sessions where average player latency is lowest, and--if latency is the same--where the hosting cost is less, etc. * If player latency data is not included, destinations and locations are prioritized first on destination list order (1), and then on location (alphabetical) (2). This approach ensures that the queue's top priority is to place game sessions on the first destination fleet listed. If that fleet has multiple locations,
-    * the game session is placed on the first location (when listed alphabetically). Changing the priority order will affect how game sessions are placed. Priority configurations are part of a <a>GameSessionQueue</a>.
+    * the game session is placed on the first location (when listed alphabetically). Changing the priority order will affect how game sessions are placed.
     */
   @js.native
   trait PriorityConfiguration extends js.Object {
@@ -4571,8 +4857,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait PutScalingPolicyInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -4618,8 +4902,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait PutScalingPolicyOutput extends js.Object {
     var Name: js.UndefOr[NonZeroAndMaxString]
@@ -4633,6 +4915,55 @@ package object gamelift {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScalingPolicyOutput]
+    }
+  }
+
+  @js.native
+  trait RegisterComputeInput extends js.Object {
+    var ComputeName: ComputeName
+    var FleetId: FleetIdOrArn
+    var CertificatePath: js.UndefOr[NonZeroAndMaxString]
+    var DnsName: js.UndefOr[DnsNameInput]
+    var IpAddress: js.UndefOr[IpAddress]
+    var Location: js.UndefOr[LocationStringModel]
+  }
+
+  object RegisterComputeInput {
+    @inline
+    def apply(
+        ComputeName: ComputeName,
+        FleetId: FleetIdOrArn,
+        CertificatePath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        DnsName: js.UndefOr[DnsNameInput] = js.undefined,
+        IpAddress: js.UndefOr[IpAddress] = js.undefined,
+        Location: js.UndefOr[LocationStringModel] = js.undefined
+    ): RegisterComputeInput = {
+      val __obj = js.Dynamic.literal(
+        "ComputeName" -> ComputeName.asInstanceOf[js.Any],
+        "FleetId" -> FleetId.asInstanceOf[js.Any]
+      )
+
+      CertificatePath.foreach(__v => __obj.updateDynamic("CertificatePath")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterComputeInput]
+    }
+  }
+
+  @js.native
+  trait RegisterComputeOutput extends js.Object {
+    var Compute: js.UndefOr[Compute]
+  }
+
+  object RegisterComputeOutput {
+    @inline
+    def apply(
+        Compute: js.UndefOr[Compute] = js.undefined
+    ): RegisterComputeOutput = {
+      val __obj = js.Dynamic.literal()
+      Compute.foreach(__v => __obj.updateDynamic("Compute")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterComputeOutput]
     }
   }
 
@@ -4682,8 +5013,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait RequestUploadCredentialsInput extends js.Object {
     var BuildId: BuildIdOrArn
@@ -4701,8 +5030,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait RequestUploadCredentialsOutput extends js.Object {
     var StorageLocation: js.UndefOr[S3Location]
@@ -4722,8 +5049,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait ResolveAliasInput extends js.Object {
     var AliasId: AliasIdOrArn
@@ -4741,8 +5066,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait ResolveAliasOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -4762,7 +5085,7 @@ package object gamelift {
     }
   }
 
-  /** A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources. The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period. The resource creation limit policy is included in <a>FleetAttributes</a>.
+  /** A policy that puts limits on the number of game sessions that a player can create within a specified span of time. With this policy, you can control players' ability to consume available resources. The policy is evaluated when a player tries to create a new game session. On receiving a <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than game session limit in the specified time period.
     */
   @js.native
   trait ResourceCreationLimitPolicy extends js.Object {
@@ -4819,7 +5142,8 @@ package object gamelift {
     }
   }
 
-  /** The routing configuration for a fleet alias. \```Related actions``` <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** The routing configuration for a fleet alias.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait RoutingStrategy extends js.Object {
@@ -4843,7 +5167,7 @@ package object gamelift {
     }
   }
 
-  /** A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each <a>ServerProcess</a>. Learn more about [[https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html| Running Multiple Processes on a Fleet]]. \```Related actions``` <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a>
+  /** A collection of server process configurations that describe the set of processes to run on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an updated runtime configuration. A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each server process. Learn more about [[https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html| Running Multiple Processes on a Fleet]].
     */
   @js.native
   trait RuntimeConfiguration extends js.Object {
@@ -4867,7 +5191,7 @@ package object gamelift {
     }
   }
 
-  /** The location in Amazon S3 where build or script files are stored for access by Amazon GameLift. This location is specified in <a>CreateBuild</a>, <a>CreateScript</a>, and <a>UpdateScript</a> requests.
+  /** The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -4894,7 +5218,7 @@ package object gamelift {
     }
   }
 
-  /** Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID. \```Related actions``` <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> | <a>StopFleetActions</a> | <a>StartFleetActions</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and fleet ID.
     */
   @js.native
   trait ScalingPolicy extends js.Object {
@@ -4951,7 +5275,8 @@ package object gamelift {
     }
   }
 
-  /** Properties describing a Realtime script. \```Related actions``` <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a> | <a>DeleteScript</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Properties describing a Realtime script.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait Script extends js.Object {
@@ -4987,8 +5312,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait SearchGameSessionsInput extends js.Object {
     var AliasId: js.UndefOr[AliasIdOrArn]
@@ -5023,8 +5346,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait SearchGameSessionsOutput extends js.Object {
     var GameSessions: js.UndefOr[GameSessionList]
@@ -5044,7 +5365,7 @@ package object gamelift {
     }
   }
 
-  /** A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's <a>RuntimeConfiguration</a>.
+  /** A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.
     */
   @js.native
   trait ServerProcess extends js.Object {
@@ -5070,8 +5391,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StartFleetActionsInput extends js.Object {
     var Actions: FleetActionList
@@ -5096,8 +5415,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait StartFleetActionsOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -5117,8 +5434,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StartGameSessionPlacementInput extends js.Object {
     var GameSessionQueueName: GameSessionQueueNameOrArn
@@ -5158,8 +5473,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait StartGameSessionPlacementOutput extends js.Object {
     var GameSessionPlacement: js.UndefOr[GameSessionPlacement]
@@ -5176,8 +5489,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StartMatchBackfillInput extends js.Object {
     var ConfigurationName: MatchmakingConfigurationName
@@ -5205,8 +5516,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait StartMatchBackfillOutput extends js.Object {
     var MatchmakingTicket: js.UndefOr[MatchmakingTicket]
@@ -5223,8 +5532,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StartMatchmakingInput extends js.Object {
     var ConfigurationName: MatchmakingConfigurationName
@@ -5249,8 +5556,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait StartMatchmakingOutput extends js.Object {
     var MatchmakingTicket: js.UndefOr[MatchmakingTicket]
@@ -5267,8 +5572,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StopFleetActionsInput extends js.Object {
     var Actions: FleetActionList
@@ -5293,8 +5596,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StopFleetActionsOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -5314,8 +5615,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StopGameSessionPlacementInput extends js.Object {
     var PlacementId: IdStringModel
@@ -5333,8 +5632,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait StopGameSessionPlacementOutput extends js.Object {
     var GameSessionPlacement: js.UndefOr[GameSessionPlacement]
@@ -5351,8 +5648,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait StopMatchmakingInput extends js.Object {
     var TicketId: MatchmakingIdStringModel
@@ -5417,7 +5712,9 @@ package object gamelift {
     }
   }
 
-  /** A label that can be assigned to a GameLift resource. \```Learn more``` [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging AWS Resources]] in the <i>AWS General Reference</i> [[http://aws.amazon.com/answers/account-management/aws-tagging-strategies/| AWS Tagging Strategies]] \```Related actions``` <a>TagResource</a> | <a>UntagResource</a> | <a>ListTagsForResource</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** A label that can be assigned to a GameLift resource.
+    * \```Learn more``` [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging Amazon Web Services Resources]] in the <i>Amazon Web Services General Reference</i> [[http://aws.amazon.com/answers/account-management/aws-tagging-strategies/| Amazon Web Services Tagging Strategies]]
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait Tag extends js.Object {
@@ -5470,7 +5767,7 @@ package object gamelift {
     }
   }
 
-  /** Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value. \```Related actions``` <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> | <a>StopFleetActions</a> | <a>StartFleetActions</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed for the target based policy, including the target value.
     */
   @js.native
   trait TargetConfiguration extends js.Object {
@@ -5489,7 +5786,7 @@ package object gamelift {
     }
   }
 
-  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Settings for a target-based scaling policy as part of a <a>GameServerGroupAutoScalingPolicy</a>. These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.
+  /** \```This data type is used with the GameLift FleetIQ and game server groups.``` Settings for a target-based scaling policy as part of a [[https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html|GameServerGroupAutoScalingPolicy]] . These settings are used to create a target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the target value.
     */
   @js.native
   trait TargetTrackingConfiguration extends js.Object {
@@ -5539,8 +5836,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateAliasInput extends js.Object {
     var AliasId: AliasIdOrArn
@@ -5568,8 +5863,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateAliasOutput extends js.Object {
     var Alias: js.UndefOr[Alias]
@@ -5586,8 +5879,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateBuildInput extends js.Object {
     var BuildId: BuildIdOrArn
@@ -5612,8 +5903,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateBuildOutput extends js.Object {
     var Build: js.UndefOr[Build]
@@ -5630,11 +5919,10 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateFleetAttributesInput extends js.Object {
     var FleetId: FleetIdOrArn
+    var AnywhereConfiguration: js.UndefOr[AnywhereConfiguration]
     var Description: js.UndefOr[NonZeroAndMaxString]
     var MetricGroups: js.UndefOr[MetricGroupList]
     var Name: js.UndefOr[NonZeroAndMaxString]
@@ -5646,6 +5934,7 @@ package object gamelift {
     @inline
     def apply(
         FleetId: FleetIdOrArn,
+        AnywhereConfiguration: js.UndefOr[AnywhereConfiguration] = js.undefined,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         MetricGroups: js.UndefOr[MetricGroupList] = js.undefined,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
@@ -5656,6 +5945,7 @@ package object gamelift {
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
+      AnywhereConfiguration.foreach(__v => __obj.updateDynamic("AnywhereConfiguration")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -5665,26 +5955,25 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateFleetAttributesOutput extends js.Object {
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
   }
 
   object UpdateFleetAttributesOutput {
     @inline
     def apply(
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetAttributesOutput = {
       val __obj = js.Dynamic.literal()
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetAttributesOutput]
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateFleetCapacityInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -5715,8 +6004,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateFleetCapacityOutput extends js.Object {
     var FleetArn: js.UndefOr[FleetArn]
@@ -5739,8 +6026,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateFleetPortSettingsInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -5765,19 +6050,20 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateFleetPortSettingsOutput extends js.Object {
+    var FleetArn: js.UndefOr[FleetArn]
     var FleetId: js.UndefOr[FleetId]
   }
 
   object UpdateFleetPortSettingsOutput {
     @inline
     def apply(
+        FleetArn: js.UndefOr[FleetArn] = js.undefined,
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetPortSettingsOutput = {
       val __obj = js.Dynamic.literal()
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
       FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetPortSettingsOutput]
     }
@@ -5875,8 +6161,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateGameSessionInput extends js.Object {
     var GameSessionId: ArnStringModel
@@ -5907,8 +6191,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateGameSessionOutput extends js.Object {
     var GameSession: js.UndefOr[GameSession]
@@ -5925,8 +6207,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateGameSessionQueueInput extends js.Object {
     var Name: GameSessionQueueNameOrArn
@@ -5966,8 +6246,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateGameSessionQueueOutput extends js.Object {
     var GameSessionQueue: js.UndefOr[GameSessionQueue]
@@ -5984,8 +6262,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateMatchmakingConfigurationInput extends js.Object {
     var Name: MatchmakingConfigurationName
@@ -6043,8 +6319,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateMatchmakingConfigurationOutput extends js.Object {
     var Configuration: js.UndefOr[MatchmakingConfiguration]
@@ -6061,8 +6335,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait UpdateRuntimeConfigurationInput extends js.Object {
     var FleetId: FleetIdOrArn
@@ -6083,8 +6355,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait UpdateRuntimeConfigurationOutput extends js.Object {
     var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
@@ -6147,8 +6417,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the input for a request operation.
-    */
   @js.native
   trait ValidateMatchmakingRuleSetInput extends js.Object {
     var RuleSetBody: RuleSetBody
@@ -6166,8 +6434,6 @@ package object gamelift {
     }
   }
 
-  /** Represents the returned data in response to a request operation.
-    */
   @js.native
   trait ValidateMatchmakingRuleSetOutput extends js.Object {
     var Valid: js.UndefOr[BooleanModel]
@@ -6184,7 +6450,8 @@ package object gamelift {
     }
   }
 
-  /** Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued. \```Related actions``` <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> | <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a> | <a>DeleteVpcPeeringConnection</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Represents an authorization for a VPC peering connection between the VPC for an Amazon GameLift fleet and another VPC on an account you have access to. This authorization must exist and be valid for the peering connection to be established. Authorizations are valid for 24 hours after they are issued.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait VpcPeeringAuthorization extends js.Object {
@@ -6214,7 +6481,8 @@ package object gamelift {
     }
   }
 
-  /** Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established. \```Related actions``` <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> | <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a> | <a>DeleteVpcPeeringConnection</a> | [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
+  /** Represents a peering connection between a VPC on one of your Amazon Web Services accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.
+    * \```Related actions``` [[https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets|All APIs by task]]
     */
   @js.native
   trait VpcPeeringConnection extends js.Object {
@@ -6250,7 +6518,7 @@ package object gamelift {
     }
   }
 
-  /** Represents status information for a VPC peering connection. Status is associated with a <a>VpcPeeringConnection</a> object. Status codes and messages are provided from EC2 (see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html|VpcPeeringConnectionStateReason]]). Connection status information is also communicated as a fleet <a>Event</a>.
+  /** Represents status information for a VPC peering connection. Status codes and messages are provided from EC2 (see [[https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html|VpcPeeringConnectionStateReason]]). Connection status information is also communicated as a fleet event.
     */
   @js.native
   trait VpcPeeringConnectionStatus extends js.Object {

@@ -12,23 +12,32 @@ package object kinesisvideoarchivedmedia {
   type DASHMaxResults = Double
   type DASHStreamingSessionURL = String
   type Expires = Int
+  type FormatConfig = js.Dictionary[FormatConfigValue]
+  type FormatConfigValue = String
   type FragmentList = js.Array[Fragment]
   type FragmentNumberList = js.Array[FragmentNumberString]
   type FragmentNumberString = String
+  type GetImagesMaxResults = Double
   type HLSMaxResults = Double
   type HLSStreamingSessionURL = String
+  type HeightPixels = Int
+  type ImageContent = String
+  type Images = js.Array[Image]
   type ListFragmentsMaxResults = Double
   type NextToken = String
   type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ResourceARN = String
+  type SamplingInterval = Int
   type StreamName = String
   type Timestamp = js.Date
+  type WidthPixels = Int
 
   final class KinesisVideoArchivedMediaOps(private val service: KinesisVideoArchivedMedia) extends AnyVal {
 
     @inline def getClipFuture(params: GetClipInput): Future[GetClipOutput] = service.getClip(params).promise().toFuture
     @inline def getDASHStreamingSessionURLFuture(params: GetDASHStreamingSessionURLInput): Future[GetDASHStreamingSessionURLOutput] = service.getDASHStreamingSessionURL(params).promise().toFuture
     @inline def getHLSStreamingSessionURLFuture(params: GetHLSStreamingSessionURLInput): Future[GetHLSStreamingSessionURLOutput] = service.getHLSStreamingSessionURL(params).promise().toFuture
+    @inline def getImagesFuture(params: GetImagesInput): Future[GetImagesOutput] = service.getImages(params).promise().toFuture
     @inline def getMediaForFragmentListFuture(params: GetMediaForFragmentListInput): Future[GetMediaForFragmentListOutput] = service.getMediaForFragmentList(params).promise().toFuture
     @inline def listFragmentsFuture(params: ListFragmentsInput): Future[ListFragmentsOutput] = service.listFragments(params).promise().toFuture
 
@@ -42,6 +51,7 @@ package object kinesisvideoarchivedmedia {
     def getClip(params: GetClipInput): Request[GetClipOutput] = js.native
     def getDASHStreamingSessionURL(params: GetDASHStreamingSessionURLInput): Request[GetDASHStreamingSessionURLOutput] = js.native
     def getHLSStreamingSessionURL(params: GetHLSStreamingSessionURLInput): Request[GetHLSStreamingSessionURLOutput] = js.native
+    def getImages(params: GetImagesInput): Request[GetImagesOutput] = js.native
     def getMediaForFragmentList(params: GetMediaForFragmentListInput): Request[GetMediaForFragmentListOutput] = js.native
     def listFragments(params: ListFragmentsInput): Request[ListFragmentsOutput] = js.native
   }
@@ -342,6 +352,76 @@ package object kinesisvideoarchivedmedia {
   }
 
   @js.native
+  trait GetImagesInput extends js.Object {
+    var EndTimestamp: Timestamp
+    var Format: Format
+    var ImageSelectorType: ImageSelectorType
+    var SamplingInterval: SamplingInterval
+    var StartTimestamp: Timestamp
+    var FormatConfig: js.UndefOr[FormatConfig]
+    var HeightPixels: js.UndefOr[HeightPixels]
+    var MaxResults: js.UndefOr[GetImagesMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var StreamARN: js.UndefOr[ResourceARN]
+    var StreamName: js.UndefOr[StreamName]
+    var WidthPixels: js.UndefOr[WidthPixels]
+  }
+
+  object GetImagesInput {
+    @inline
+    def apply(
+        EndTimestamp: Timestamp,
+        Format: Format,
+        ImageSelectorType: ImageSelectorType,
+        SamplingInterval: SamplingInterval,
+        StartTimestamp: Timestamp,
+        FormatConfig: js.UndefOr[FormatConfig] = js.undefined,
+        HeightPixels: js.UndefOr[HeightPixels] = js.undefined,
+        MaxResults: js.UndefOr[GetImagesMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StreamARN: js.UndefOr[ResourceARN] = js.undefined,
+        StreamName: js.UndefOr[StreamName] = js.undefined,
+        WidthPixels: js.UndefOr[WidthPixels] = js.undefined
+    ): GetImagesInput = {
+      val __obj = js.Dynamic.literal(
+        "EndTimestamp" -> EndTimestamp.asInstanceOf[js.Any],
+        "Format" -> Format.asInstanceOf[js.Any],
+        "ImageSelectorType" -> ImageSelectorType.asInstanceOf[js.Any],
+        "SamplingInterval" -> SamplingInterval.asInstanceOf[js.Any],
+        "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
+      )
+
+      FormatConfig.foreach(__v => __obj.updateDynamic("FormatConfig")(__v.asInstanceOf[js.Any]))
+      HeightPixels.foreach(__v => __obj.updateDynamic("HeightPixels")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      WidthPixels.foreach(__v => __obj.updateDynamic("WidthPixels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImagesInput]
+    }
+  }
+
+  @js.native
+  trait GetImagesOutput extends js.Object {
+    var Images: js.UndefOr[Images]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object GetImagesOutput {
+    @inline
+    def apply(
+        Images: js.UndefOr[Images] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetImagesOutput = {
+      val __obj = js.Dynamic.literal()
+      Images.foreach(__v => __obj.updateDynamic("Images")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetImagesOutput]
+    }
+  }
+
+  @js.native
   trait GetMediaForFragmentListInput extends js.Object {
     var Fragments: FragmentNumberList
     var StreamARN: js.UndefOr[ResourceARN]
@@ -423,6 +503,30 @@ package object kinesisvideoarchivedmedia {
       EndTimestamp.foreach(__v => __obj.updateDynamic("EndTimestamp")(__v.asInstanceOf[js.Any]))
       StartTimestamp.foreach(__v => __obj.updateDynamic("StartTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HLSTimestampRange]
+    }
+  }
+
+  /** A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.
+    */
+  @js.native
+  trait Image extends js.Object {
+    var Error: js.UndefOr[ImageError]
+    var ImageContent: js.UndefOr[ImageContent]
+    var TimeStamp: js.UndefOr[Timestamp]
+  }
+
+  object Image {
+    @inline
+    def apply(
+        Error: js.UndefOr[ImageError] = js.undefined,
+        ImageContent: js.UndefOr[ImageContent] = js.undefined,
+        TimeStamp: js.UndefOr[Timestamp] = js.undefined
+    ): Image = {
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      ImageContent.foreach(__v => __obj.updateDynamic("ImageContent")(__v.asInstanceOf[js.Any]))
+      TimeStamp.foreach(__v => __obj.updateDynamic("TimeStamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Image]
     }
   }
 

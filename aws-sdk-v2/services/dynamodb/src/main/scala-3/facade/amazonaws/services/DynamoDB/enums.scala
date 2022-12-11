@@ -168,6 +168,17 @@ object GlobalTableStatus {
   inline def values: js.Array[GlobalTableStatus] = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
 }
 
+type ImportStatus = "IN_PROGRESS" | "COMPLETED" | "CANCELLING" | "CANCELLED" | "FAILED"
+object ImportStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ImportStatus] = js.Array(IN_PROGRESS, COMPLETED, CANCELLING, CANCELLED, FAILED)
+}
+
 type IndexStatus = "CREATING" | "UPDATING" | "DELETING" | "ACTIVE"
 object IndexStatus {
   inline val CREATING: "CREATING" = "CREATING"
@@ -176,6 +187,24 @@ object IndexStatus {
   inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
   inline def values: js.Array[IndexStatus] = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
+}
+
+type InputCompressionType = "GZIP" | "ZSTD" | "NONE"
+object InputCompressionType {
+  inline val GZIP: "GZIP" = "GZIP"
+  inline val ZSTD: "ZSTD" = "ZSTD"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[InputCompressionType] = js.Array(GZIP, ZSTD, NONE)
+}
+
+type InputFormat = "DYNAMODB_JSON" | "ION" | "CSV"
+object InputFormat {
+  inline val DYNAMODB_JSON: "DYNAMODB_JSON" = "DYNAMODB_JSON"
+  inline val ION: "ION" = "ION"
+  inline val CSV: "CSV" = "CSV"
+
+  inline def values: js.Array[InputFormat] = js.Array(DYNAMODB_JSON, ION, CSV)
 }
 
 type KeyType = "HASH" | "RANGE"

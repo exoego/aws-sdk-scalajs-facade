@@ -14,21 +14,31 @@ package object ssmincidents {
   type ChatbotSnsConfigurationSet = js.Array[SnsArn]
   type ClientToken = String
   type DedupeString = String
+  type DynamicSsmParameters = js.Dictionary[DynamicSsmParameterValue]
+  type DynamicSsmParametersKeyString = String
   type EngagementSet = js.Array[SsmContactsArn]
   type EventData = String
+  type EventReferenceList = js.Array[EventReference]
   type EventSummaryList = js.Array[EventSummary]
   type FilterKeyString = String
   type FilterList = js.Array[Filter]
+  type GeneratedId = String
   type Impact = Int
   type IncidentRecordSummaryList = js.Array[IncidentRecordSummary]
   type IncidentSource = String
   type IncidentSummary = String
   type IncidentTitle = String
   type IntegerList = js.Array[Int]
+  type Integrations = js.Array[Integration]
   type MaxResults = Int
   type MetricDefinition = String
   type NextToken = String
   type NotificationTargetSet = js.Array[NotificationTargetItem]
+  type PagerDutyConfigurationNameString = String
+  type PagerDutyConfigurationSecretIdString = String
+  type PagerDutyIncidentConfigurationServiceIdString = String
+  type PagerDutyIncidentDetailIdString = String
+  type PagerDutyIncidentDetailSecretIdString = String
   type Policy = String
   type PolicyId = String
   type RawData = String
@@ -43,6 +53,7 @@ package object ssmincidents {
   type ResponsePlanName = String
   type ResponsePlanSummaryList = js.Array[ResponsePlanSummary]
   type RoleArn = String
+  type ServicePrincipal = String
   type SnsArn = String
   type SseKmsKey = String
   type SsmAutomationDocumentNameString = String
@@ -57,6 +68,7 @@ package object ssmincidents {
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
+  type TagMapUpdate = js.Dictionary[TagValue]
   type TagValue = String
   type TimelineEventType = String
   type Timestamp = js.Date
@@ -268,19 +280,22 @@ package object ssmincidents {
   trait CreateReplicationSetInput extends js.Object {
     var regions: RegionMapInput
     var clientToken: js.UndefOr[ClientToken]
+    var tags: js.UndefOr[TagMap]
   }
 
   object CreateReplicationSetInput {
     @inline
     def apply(
         regions: RegionMapInput,
-        clientToken: js.UndefOr[ClientToken] = js.undefined
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
     ): CreateReplicationSetInput = {
       val __obj = js.Dynamic.literal(
         "regions" -> regions.asInstanceOf[js.Any]
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationSetInput]
     }
   }
@@ -311,6 +326,7 @@ package object ssmincidents {
     var clientToken: js.UndefOr[ClientToken]
     var displayName: js.UndefOr[ResponsePlanDisplayName]
     var engagements: js.UndefOr[EngagementSet]
+    var integrations: js.UndefOr[Integrations]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -324,6 +340,7 @@ package object ssmincidents {
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         displayName: js.UndefOr[ResponsePlanDisplayName] = js.undefined,
         engagements: js.UndefOr[EngagementSet] = js.undefined,
+        integrations: js.UndefOr[Integrations] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateResponsePlanInput = {
       val __obj = js.Dynamic.literal(
@@ -336,6 +353,7 @@ package object ssmincidents {
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       engagements.foreach(__v => __obj.updateDynamic("engagements")(__v.asInstanceOf[js.Any]))
+      integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResponsePlanInput]
     }
@@ -365,6 +383,7 @@ package object ssmincidents {
     var eventType: TimelineEventType
     var incidentRecordArn: Arn
     var clientToken: js.UndefOr[ClientToken]
+    var eventReferences: js.UndefOr[EventReferenceList]
   }
 
   object CreateTimelineEventInput {
@@ -374,7 +393,8 @@ package object ssmincidents {
         eventTime: Timestamp,
         eventType: TimelineEventType,
         incidentRecordArn: Arn,
-        clientToken: js.UndefOr[ClientToken] = js.undefined
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        eventReferences: js.UndefOr[EventReferenceList] = js.undefined
     ): CreateTimelineEventInput = {
       val __obj = js.Dynamic.literal(
         "eventData" -> eventData.asInstanceOf[js.Any],
@@ -384,6 +404,7 @@ package object ssmincidents {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      eventReferences.foreach(__v => __obj.updateDynamic("eventReferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTimelineEventInput]
     }
   }
@@ -573,6 +594,24 @@ package object ssmincidents {
     }
   }
 
+  /** The dynamic SSM parameter value.
+    */
+  @js.native
+  trait DynamicSsmParameterValue extends js.Object {
+    var variable: js.UndefOr[VariableType]
+  }
+
+  object DynamicSsmParameterValue {
+    @inline
+    def apply(
+        variable: js.UndefOr[VariableType] = js.undefined
+    ): DynamicSsmParameterValue = {
+      val __obj = js.Dynamic.literal()
+      variable.foreach(__v => __obj.updateDynamic("variable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamicSsmParameterValue]
+    }
+  }
+
   /** Used to remove the chat channel from an incident record or response plan.
     */
   @js.native
@@ -586,6 +625,27 @@ package object ssmincidents {
     }
   }
 
+  /** An item referenced in a <code>TimelineEvent</code> that is involved in or somehow associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.
+    */
+  @js.native
+  trait EventReference extends js.Object {
+    var relatedItemId: js.UndefOr[GeneratedId]
+    var resource: js.UndefOr[Arn]
+  }
+
+  object EventReference {
+    @inline
+    def apply(
+        relatedItemId: js.UndefOr[GeneratedId] = js.undefined,
+        resource: js.UndefOr[Arn] = js.undefined
+    ): EventReference = {
+      val __obj = js.Dynamic.literal()
+      relatedItemId.foreach(__v => __obj.updateDynamic("relatedItemId")(__v.asInstanceOf[js.Any]))
+      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventReference]
+    }
+  }
+
   /** Details about a timeline event during an incident.
     */
   @js.native
@@ -595,6 +655,7 @@ package object ssmincidents {
     var eventType: TimelineEventType
     var eventUpdatedTime: Timestamp
     var incidentRecordArn: Arn
+    var eventReferences: js.UndefOr[EventReferenceList]
   }
 
   object EventSummary {
@@ -604,7 +665,8 @@ package object ssmincidents {
         eventTime: Timestamp,
         eventType: TimelineEventType,
         eventUpdatedTime: Timestamp,
-        incidentRecordArn: Arn
+        incidentRecordArn: Arn,
+        eventReferences: js.UndefOr[EventReferenceList] = js.undefined
     ): EventSummary = {
       val __obj = js.Dynamic.literal(
         "eventId" -> eventId.asInstanceOf[js.Any],
@@ -613,6 +675,8 @@ package object ssmincidents {
         "eventUpdatedTime" -> eventUpdatedTime.asInstanceOf[js.Any],
         "incidentRecordArn" -> incidentRecordArn.asInstanceOf[js.Any]
       )
+
+      eventReferences.foreach(__v => __obj.updateDynamic("eventReferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSummary]
     }
   }
@@ -778,6 +842,7 @@ package object ssmincidents {
     var chatChannel: js.UndefOr[ChatChannel]
     var displayName: js.UndefOr[ResponsePlanDisplayName]
     var engagements: js.UndefOr[EngagementSet]
+    var integrations: js.UndefOr[Integrations]
   }
 
   object GetResponsePlanOutput {
@@ -789,7 +854,8 @@ package object ssmincidents {
         actions: js.UndefOr[ActionsList] = js.undefined,
         chatChannel: js.UndefOr[ChatChannel] = js.undefined,
         displayName: js.UndefOr[ResponsePlanDisplayName] = js.undefined,
-        engagements: js.UndefOr[EngagementSet] = js.undefined
+        engagements: js.UndefOr[EngagementSet] = js.undefined,
+        integrations: js.UndefOr[Integrations] = js.undefined
     ): GetResponsePlanOutput = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any],
@@ -801,6 +867,7 @@ package object ssmincidents {
       chatChannel.foreach(__v => __obj.updateDynamic("chatChannel")(__v.asInstanceOf[js.Any]))
       displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
       engagements.foreach(__v => __obj.updateDynamic("engagements")(__v.asInstanceOf[js.Any]))
+      integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResponsePlanOutput]
     }
   }
@@ -907,7 +974,7 @@ package object ssmincidents {
   trait IncidentRecordSource extends js.Object {
     var createdBy: Arn
     var source: IncidentSource
-    var invokedBy: js.UndefOr[Arn]
+    var invokedBy: js.UndefOr[ServicePrincipal]
     var resourceArn: js.UndefOr[Arn]
   }
 
@@ -916,7 +983,7 @@ package object ssmincidents {
     def apply(
         createdBy: Arn,
         source: IncidentSource,
-        invokedBy: js.UndefOr[Arn] = js.undefined,
+        invokedBy: js.UndefOr[ServicePrincipal] = js.undefined,
         resourceArn: js.UndefOr[Arn] = js.undefined
     ): IncidentRecordSource = {
       val __obj = js.Dynamic.literal(
@@ -975,6 +1042,7 @@ package object ssmincidents {
     var impact: Impact
     var title: IncidentTitle
     var dedupeString: js.UndefOr[DedupeString]
+    var incidentTags: js.UndefOr[TagMap]
     var notificationTargets: js.UndefOr[NotificationTargetSet]
     var summary: js.UndefOr[IncidentSummary]
   }
@@ -985,6 +1053,7 @@ package object ssmincidents {
         impact: Impact,
         title: IncidentTitle,
         dedupeString: js.UndefOr[DedupeString] = js.undefined,
+        incidentTags: js.UndefOr[TagMap] = js.undefined,
         notificationTargets: js.UndefOr[NotificationTargetSet] = js.undefined,
         summary: js.UndefOr[IncidentSummary] = js.undefined
     ): IncidentTemplate = {
@@ -994,9 +1063,28 @@ package object ssmincidents {
       )
 
       dedupeString.foreach(__v => __obj.updateDynamic("dedupeString")(__v.asInstanceOf[js.Any]))
+      incidentTags.foreach(__v => __obj.updateDynamic("incidentTags")(__v.asInstanceOf[js.Any]))
       notificationTargets.foreach(__v => __obj.updateDynamic("notificationTargets")(__v.asInstanceOf[js.Any]))
       summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IncidentTemplate]
+    }
+  }
+
+  /** Information about third-party services integrated into a response plan.
+    */
+  @js.native
+  trait Integration extends js.Object {
+    var pagerDutyConfiguration: js.UndefOr[PagerDutyConfiguration]
+  }
+
+  object Integration {
+    @inline
+    def apply(
+        pagerDutyConfiguration: js.UndefOr[PagerDutyConfiguration] = js.undefined
+    ): Integration = {
+      val __obj = js.Dynamic.literal()
+      pagerDutyConfiguration.foreach(__v => __obj.updateDynamic("pagerDutyConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Integration]
     }
   }
 
@@ -1028,6 +1116,7 @@ package object ssmincidents {
   trait ItemValue extends js.Object {
     var arn: js.UndefOr[Arn]
     var metricDefinition: js.UndefOr[MetricDefinition]
+    var pagerDutyIncidentDetail: js.UndefOr[PagerDutyIncidentDetail]
     var url: js.UndefOr[Url]
   }
 
@@ -1036,11 +1125,13 @@ package object ssmincidents {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         metricDefinition: js.UndefOr[MetricDefinition] = js.undefined,
+        pagerDutyIncidentDetail: js.UndefOr[PagerDutyIncidentDetail] = js.undefined,
         url: js.UndefOr[Url] = js.undefined
     ): ItemValue = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       metricDefinition.foreach(__v => __obj.updateDynamic("metricDefinition")(__v.asInstanceOf[js.Any]))
+      pagerDutyIncidentDetail.foreach(__v => __obj.updateDynamic("pagerDutyIncidentDetail")(__v.asInstanceOf[js.Any]))
       url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ItemValue]
     }
@@ -1320,6 +1411,76 @@ package object ssmincidents {
     }
   }
 
+  /** Details about the PagerDuty configuration for a response plan.
+    */
+  @js.native
+  trait PagerDutyConfiguration extends js.Object {
+    var name: PagerDutyConfigurationNameString
+    var pagerDutyIncidentConfiguration: PagerDutyIncidentConfiguration
+    var secretId: PagerDutyConfigurationSecretIdString
+  }
+
+  object PagerDutyConfiguration {
+    @inline
+    def apply(
+        name: PagerDutyConfigurationNameString,
+        pagerDutyIncidentConfiguration: PagerDutyIncidentConfiguration,
+        secretId: PagerDutyConfigurationSecretIdString
+    ): PagerDutyConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "pagerDutyIncidentConfiguration" -> pagerDutyIncidentConfiguration.asInstanceOf[js.Any],
+        "secretId" -> secretId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PagerDutyConfiguration]
+    }
+  }
+
+  /** Details about the PagerDuty service where the response plan creates an incident.
+    */
+  @js.native
+  trait PagerDutyIncidentConfiguration extends js.Object {
+    var serviceId: PagerDutyIncidentConfigurationServiceIdString
+  }
+
+  object PagerDutyIncidentConfiguration {
+    @inline
+    def apply(
+        serviceId: PagerDutyIncidentConfigurationServiceIdString
+    ): PagerDutyIncidentConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "serviceId" -> serviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PagerDutyIncidentConfiguration]
+    }
+  }
+
+  /** Details about the PagerDuty incident associated with an incident created by an Incident Manager response plan.
+    */
+  @js.native
+  trait PagerDutyIncidentDetail extends js.Object {
+    var id: PagerDutyIncidentDetailIdString
+    var autoResolve: js.UndefOr[Boolean]
+    var secretId: js.UndefOr[PagerDutyIncidentDetailSecretIdString]
+  }
+
+  object PagerDutyIncidentDetail {
+    @inline
+    def apply(
+        id: PagerDutyIncidentDetailIdString,
+        autoResolve: js.UndefOr[Boolean] = js.undefined,
+        secretId: js.UndefOr[PagerDutyIncidentDetailSecretIdString] = js.undefined
+    ): PagerDutyIncidentDetail = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      autoResolve.foreach(__v => __obj.updateDynamic("autoResolve")(__v.asInstanceOf[js.Any]))
+      secretId.foreach(__v => __obj.updateDynamic("secretId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PagerDutyIncidentDetail]
+    }
+  }
+
   @js.native
   trait PutResourcePolicyInput extends js.Object {
     var policy: Policy
@@ -1409,6 +1570,7 @@ package object ssmincidents {
   @js.native
   trait RelatedItem extends js.Object {
     var identifier: ItemIdentifier
+    var generatedId: js.UndefOr[GeneratedId]
     var title: js.UndefOr[RelatedItemTitleString]
   }
 
@@ -1416,12 +1578,14 @@ package object ssmincidents {
     @inline
     def apply(
         identifier: ItemIdentifier,
+        generatedId: js.UndefOr[GeneratedId] = js.undefined,
         title: js.UndefOr[RelatedItemTitleString] = js.undefined
     ): RelatedItem = {
       val __obj = js.Dynamic.literal(
         "identifier" -> identifier.asInstanceOf[js.Any]
       )
 
+      generatedId.foreach(__v => __obj.updateDynamic("generatedId")(__v.asInstanceOf[js.Any]))
       title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelatedItem]
     }
@@ -1547,6 +1711,7 @@ package object ssmincidents {
     var documentName: SsmAutomationDocumentNameString
     var roleArn: RoleArn
     var documentVersion: js.UndefOr[SsmAutomationDocumentVersionString]
+    var dynamicParameters: js.UndefOr[DynamicSsmParameters]
     var parameters: js.UndefOr[SsmParameters]
     var targetAccount: js.UndefOr[SsmTargetAccount]
   }
@@ -1557,6 +1722,7 @@ package object ssmincidents {
         documentName: SsmAutomationDocumentNameString,
         roleArn: RoleArn,
         documentVersion: js.UndefOr[SsmAutomationDocumentVersionString] = js.undefined,
+        dynamicParameters: js.UndefOr[DynamicSsmParameters] = js.undefined,
         parameters: js.UndefOr[SsmParameters] = js.undefined,
         targetAccount: js.UndefOr[SsmTargetAccount] = js.undefined
     ): SsmAutomation = {
@@ -1566,6 +1732,7 @@ package object ssmincidents {
       )
 
       documentVersion.foreach(__v => __obj.updateDynamic("documentVersion")(__v.asInstanceOf[js.Any]))
+      dynamicParameters.foreach(__v => __obj.updateDynamic("dynamicParameters")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       targetAccount.foreach(__v => __obj.updateDynamic("targetAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SsmAutomation]
@@ -1663,6 +1830,7 @@ package object ssmincidents {
     var eventType: TimelineEventType
     var eventUpdatedTime: Timestamp
     var incidentRecordArn: Arn
+    var eventReferences: js.UndefOr[EventReferenceList]
   }
 
   object TimelineEvent {
@@ -1673,7 +1841,8 @@ package object ssmincidents {
         eventTime: Timestamp,
         eventType: TimelineEventType,
         eventUpdatedTime: Timestamp,
-        incidentRecordArn: Arn
+        incidentRecordArn: Arn,
+        eventReferences: js.UndefOr[EventReferenceList] = js.undefined
     ): TimelineEvent = {
       val __obj = js.Dynamic.literal(
         "eventData" -> eventData.asInstanceOf[js.Any],
@@ -1683,6 +1852,8 @@ package object ssmincidents {
         "eventUpdatedTime" -> eventUpdatedTime.asInstanceOf[js.Any],
         "incidentRecordArn" -> incidentRecordArn.asInstanceOf[js.Any]
       )
+
+      eventReferences.foreach(__v => __obj.updateDynamic("eventReferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimelineEvent]
     }
   }
@@ -1935,7 +2106,9 @@ package object ssmincidents {
     var incidentTemplateImpact: js.UndefOr[Impact]
     var incidentTemplateNotificationTargets: js.UndefOr[NotificationTargetSet]
     var incidentTemplateSummary: js.UndefOr[IncidentSummary]
+    var incidentTemplateTags: js.UndefOr[TagMapUpdate]
     var incidentTemplateTitle: js.UndefOr[IncidentTitle]
+    var integrations: js.UndefOr[Integrations]
   }
 
   object UpdateResponsePlanInput {
@@ -1951,7 +2124,9 @@ package object ssmincidents {
         incidentTemplateImpact: js.UndefOr[Impact] = js.undefined,
         incidentTemplateNotificationTargets: js.UndefOr[NotificationTargetSet] = js.undefined,
         incidentTemplateSummary: js.UndefOr[IncidentSummary] = js.undefined,
-        incidentTemplateTitle: js.UndefOr[IncidentTitle] = js.undefined
+        incidentTemplateTags: js.UndefOr[TagMapUpdate] = js.undefined,
+        incidentTemplateTitle: js.UndefOr[IncidentTitle] = js.undefined,
+        integrations: js.UndefOr[Integrations] = js.undefined
     ): UpdateResponsePlanInput = {
       val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
@@ -1966,7 +2141,9 @@ package object ssmincidents {
       incidentTemplateImpact.foreach(__v => __obj.updateDynamic("incidentTemplateImpact")(__v.asInstanceOf[js.Any]))
       incidentTemplateNotificationTargets.foreach(__v => __obj.updateDynamic("incidentTemplateNotificationTargets")(__v.asInstanceOf[js.Any]))
       incidentTemplateSummary.foreach(__v => __obj.updateDynamic("incidentTemplateSummary")(__v.asInstanceOf[js.Any]))
+      incidentTemplateTags.foreach(__v => __obj.updateDynamic("incidentTemplateTags")(__v.asInstanceOf[js.Any]))
       incidentTemplateTitle.foreach(__v => __obj.updateDynamic("incidentTemplateTitle")(__v.asInstanceOf[js.Any]))
+      integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResponsePlanInput]
     }
   }
@@ -1988,6 +2165,7 @@ package object ssmincidents {
     var incidentRecordArn: Arn
     var clientToken: js.UndefOr[ClientToken]
     var eventData: js.UndefOr[EventData]
+    var eventReferences: js.UndefOr[EventReferenceList]
     var eventTime: js.UndefOr[Timestamp]
     var eventType: js.UndefOr[TimelineEventType]
   }
@@ -1999,6 +2177,7 @@ package object ssmincidents {
         incidentRecordArn: Arn,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
         eventData: js.UndefOr[EventData] = js.undefined,
+        eventReferences: js.UndefOr[EventReferenceList] = js.undefined,
         eventTime: js.UndefOr[Timestamp] = js.undefined,
         eventType: js.UndefOr[TimelineEventType] = js.undefined
     ): UpdateTimelineEventInput = {
@@ -2009,6 +2188,7 @@ package object ssmincidents {
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       eventData.foreach(__v => __obj.updateDynamic("eventData")(__v.asInstanceOf[js.Any]))
+      eventReferences.foreach(__v => __obj.updateDynamic("eventReferences")(__v.asInstanceOf[js.Any]))
       eventTime.foreach(__v => __obj.updateDynamic("eventTime")(__v.asInstanceOf[js.Any]))
       eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTimelineEventInput]

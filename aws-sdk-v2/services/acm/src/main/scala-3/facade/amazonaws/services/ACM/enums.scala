@@ -207,6 +207,21 @@ object RevocationReason {
   )
 }
 
+type SortBy = "CREATED_AT"
+object SortBy {
+  inline val CREATED_AT: "CREATED_AT" = "CREATED_AT"
+
+  inline def values: js.Array[SortBy] = js.Array(CREATED_AT)
+}
+
+type SortOrder = "ASCENDING" | "DESCENDING"
+object SortOrder {
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
+
+  inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
+}
+
 type ValidationMethod = "EMAIL" | "DNS"
 object ValidationMethod {
   inline val EMAIL: "EMAIL" = "EMAIL"

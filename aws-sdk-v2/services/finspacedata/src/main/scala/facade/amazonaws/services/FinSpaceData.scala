@@ -8,7 +8,9 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object finspacedata {
+  type AccessKeyId = String
   type AliasString = String
+  type ApplicationPermissionList = js.Array[ApplicationPermission]
   type ChangesetArn = String
   type ChangesetId = String
   type ChangesetList = js.Array[ChangesetSummary]
@@ -28,24 +30,40 @@ package object finspacedata {
   type DatasetTitle = String
   type Email = String
   type ErrorMessage = String
+  type FirstName = String
   type FormatParams = js.Dictionary[StringMapValue]
   type IdType = String
+  type LastName = String
   type OwnerName = String
   type PaginationToken = String
   type PartitionColumnList = js.Array[StringValueLength1to255]
+  type Password = String
+  type PermissionGroupByUserList = js.Array[PermissionGroupByUser]
+  type PermissionGroupDescription = String
   type PermissionGroupId = String
+  type PermissionGroupList = js.Array[PermissionGroup]
+  type PermissionGroupName = String
   type PhoneNumber = String
   type ResourcePermissionsList = js.Array[ResourcePermission]
   type ResultLimit = Int
+  type RoleArn = String
+  type S3BucketName = String
   type S3DestinationFormatOptions = js.Dictionary[StringMapValue]
+  type S3Key = String
+  type SecretAccessKey = String
   type SessionDuration = Double
+  type SessionToken = String
   type SortColumnList = js.Array[StringValueLength1to255]
   type SourceParams = js.Dictionary[StringMapValue]
+  type StatusCode = Int
   type StringMapKey = String
   type StringMapValue = String
   type StringValueLength1to250 = String
   type StringValueLength1to255 = String
   type TimestampEpoch = Double
+  type UserByPermissionGroupList = js.Array[UserByPermissionGroup]
+  type UserId = String
+  type UserList = js.Array[User]
   type stringValueLength1to1024 = String
   type stringValueLength1to255 = String
   type stringValueLength1to63 = String
@@ -53,20 +71,37 @@ package object finspacedata {
 
   final class FinSpaceDataOps(private val service: FinSpaceData) extends AnyVal {
 
+    @inline def associateUserToPermissionGroupFuture(params: AssociateUserToPermissionGroupRequest): Future[AssociateUserToPermissionGroupResponse] = service.associateUserToPermissionGroup(params).promise().toFuture
     @inline def createChangesetFuture(params: CreateChangesetRequest): Future[CreateChangesetResponse] = service.createChangeset(params).promise().toFuture
     @inline def createDataViewFuture(params: CreateDataViewRequest): Future[CreateDataViewResponse] = service.createDataView(params).promise().toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
+    @inline def createPermissionGroupFuture(params: CreatePermissionGroupRequest): Future[CreatePermissionGroupResponse] = service.createPermissionGroup(params).promise().toFuture
+    @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
+    @inline def deletePermissionGroupFuture(params: DeletePermissionGroupRequest): Future[DeletePermissionGroupResponse] = service.deletePermissionGroup(params).promise().toFuture
+    @inline def disableUserFuture(params: DisableUserRequest): Future[DisableUserResponse] = service.disableUser(params).promise().toFuture
+    @inline def disassociateUserFromPermissionGroupFuture(params: DisassociateUserFromPermissionGroupRequest): Future[DisassociateUserFromPermissionGroupResponse] = service.disassociateUserFromPermissionGroup(params).promise().toFuture
+    @inline def enableUserFuture(params: EnableUserRequest): Future[EnableUserResponse] = service.enableUser(params).promise().toFuture
     @inline def getChangesetFuture(params: GetChangesetRequest): Future[GetChangesetResponse] = service.getChangeset(params).promise().toFuture
     @inline def getDataViewFuture(params: GetDataViewRequest): Future[GetDataViewResponse] = service.getDataView(params).promise().toFuture
     @inline def getDatasetFuture(params: GetDatasetRequest): Future[GetDatasetResponse] = service.getDataset(params).promise().toFuture
+    @inline def getExternalDataViewAccessDetailsFuture(params: GetExternalDataViewAccessDetailsRequest): Future[GetExternalDataViewAccessDetailsResponse] = service.getExternalDataViewAccessDetails(params).promise().toFuture
+    @inline def getPermissionGroupFuture(params: GetPermissionGroupRequest): Future[GetPermissionGroupResponse] = service.getPermissionGroup(params).promise().toFuture
     @inline def getProgrammaticAccessCredentialsFuture(params: GetProgrammaticAccessCredentialsRequest): Future[GetProgrammaticAccessCredentialsResponse] = service.getProgrammaticAccessCredentials(params).promise().toFuture
+    @inline def getUserFuture(params: GetUserRequest): Future[GetUserResponse] = service.getUser(params).promise().toFuture
     @inline def getWorkingLocationFuture(params: GetWorkingLocationRequest): Future[GetWorkingLocationResponse] = service.getWorkingLocation(params).promise().toFuture
     @inline def listChangesetsFuture(params: ListChangesetsRequest): Future[ListChangesetsResponse] = service.listChangesets(params).promise().toFuture
     @inline def listDataViewsFuture(params: ListDataViewsRequest): Future[ListDataViewsResponse] = service.listDataViews(params).promise().toFuture
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
+    @inline def listPermissionGroupsByUserFuture(params: ListPermissionGroupsByUserRequest): Future[ListPermissionGroupsByUserResponse] = service.listPermissionGroupsByUser(params).promise().toFuture
+    @inline def listPermissionGroupsFuture(params: ListPermissionGroupsRequest): Future[ListPermissionGroupsResponse] = service.listPermissionGroups(params).promise().toFuture
+    @inline def listUsersByPermissionGroupFuture(params: ListUsersByPermissionGroupRequest): Future[ListUsersByPermissionGroupResponse] = service.listUsersByPermissionGroup(params).promise().toFuture
+    @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
+    @inline def resetUserPasswordFuture(params: ResetUserPasswordRequest): Future[ResetUserPasswordResponse] = service.resetUserPassword(params).promise().toFuture
     @inline def updateChangesetFuture(params: UpdateChangesetRequest): Future[UpdateChangesetResponse] = service.updateChangeset(params).promise().toFuture
     @inline def updateDatasetFuture(params: UpdateDatasetRequest): Future[UpdateDatasetResponse] = service.updateDataset(params).promise().toFuture
+    @inline def updatePermissionGroupFuture(params: UpdatePermissionGroupRequest): Future[UpdatePermissionGroupResponse] = service.updatePermissionGroup(params).promise().toFuture
+    @inline def updateUserFuture(params: UpdateUserRequest): Future[UpdateUserResponse] = service.updateUser(params).promise().toFuture
 
   }
 
@@ -75,24 +110,108 @@ package object finspacedata {
   class FinSpaceData() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateUserToPermissionGroup(params: AssociateUserToPermissionGroupRequest): Request[AssociateUserToPermissionGroupResponse] = js.native
     def createChangeset(params: CreateChangesetRequest): Request[CreateChangesetResponse] = js.native
     def createDataView(params: CreateDataViewRequest): Request[CreateDataViewResponse] = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
+    def createPermissionGroup(params: CreatePermissionGroupRequest): Request[CreatePermissionGroupResponse] = js.native
+    def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
+    def deletePermissionGroup(params: DeletePermissionGroupRequest): Request[DeletePermissionGroupResponse] = js.native
+    def disableUser(params: DisableUserRequest): Request[DisableUserResponse] = js.native
+    def disassociateUserFromPermissionGroup(params: DisassociateUserFromPermissionGroupRequest): Request[DisassociateUserFromPermissionGroupResponse] = js.native
+    def enableUser(params: EnableUserRequest): Request[EnableUserResponse] = js.native
     def getChangeset(params: GetChangesetRequest): Request[GetChangesetResponse] = js.native
     def getDataView(params: GetDataViewRequest): Request[GetDataViewResponse] = js.native
     def getDataset(params: GetDatasetRequest): Request[GetDatasetResponse] = js.native
+    def getExternalDataViewAccessDetails(params: GetExternalDataViewAccessDetailsRequest): Request[GetExternalDataViewAccessDetailsResponse] = js.native
+    def getPermissionGroup(params: GetPermissionGroupRequest): Request[GetPermissionGroupResponse] = js.native
     def getProgrammaticAccessCredentials(params: GetProgrammaticAccessCredentialsRequest): Request[GetProgrammaticAccessCredentialsResponse] = js.native
+    def getUser(params: GetUserRequest): Request[GetUserResponse] = js.native
     def getWorkingLocation(params: GetWorkingLocationRequest): Request[GetWorkingLocationResponse] = js.native
     def listChangesets(params: ListChangesetsRequest): Request[ListChangesetsResponse] = js.native
     def listDataViews(params: ListDataViewsRequest): Request[ListDataViewsResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
+    def listPermissionGroups(params: ListPermissionGroupsRequest): Request[ListPermissionGroupsResponse] = js.native
+    def listPermissionGroupsByUser(params: ListPermissionGroupsByUserRequest): Request[ListPermissionGroupsByUserResponse] = js.native
+    def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
+    def listUsersByPermissionGroup(params: ListUsersByPermissionGroupRequest): Request[ListUsersByPermissionGroupResponse] = js.native
+    def resetUserPassword(params: ResetUserPasswordRequest): Request[ResetUserPasswordResponse] = js.native
     def updateChangeset(params: UpdateChangesetRequest): Request[UpdateChangesetResponse] = js.native
     def updateDataset(params: UpdateDatasetRequest): Request[UpdateDatasetResponse] = js.native
+    def updatePermissionGroup(params: UpdatePermissionGroupRequest): Request[UpdatePermissionGroupResponse] = js.native
+    def updateUser(params: UpdateUserRequest): Request[UpdateUserResponse] = js.native
   }
   object FinSpaceData {
     @inline implicit def toOps(service: FinSpaceData): FinSpaceDataOps = {
       new FinSpaceDataOps(service)
+    }
+  }
+
+  @js.native
+  trait AssociateUserToPermissionGroupRequest extends js.Object {
+    var permissionGroupId: PermissionGroupId
+    var userId: UserId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object AssociateUserToPermissionGroupRequest {
+    @inline
+    def apply(
+        permissionGroupId: PermissionGroupId,
+        userId: UserId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): AssociateUserToPermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateUserToPermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateUserToPermissionGroupResponse extends js.Object {
+    var statusCode: js.UndefOr[StatusCode]
+  }
+
+  object AssociateUserToPermissionGroupResponse {
+    @inline
+    def apply(
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): AssociateUserToPermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateUserToPermissionGroupResponse]
+    }
+  }
+
+  /** The credentials required to access the external Dataview from the S3 location.
+    */
+  @js.native
+  trait AwsCredentials extends js.Object {
+    var accessKeyId: js.UndefOr[AccessKeyId]
+    var expiration: js.UndefOr[TimestampEpoch]
+    var secretAccessKey: js.UndefOr[SecretAccessKey]
+    var sessionToken: js.UndefOr[SessionToken]
+  }
+
+  object AwsCredentials {
+    @inline
+    def apply(
+        accessKeyId: js.UndefOr[AccessKeyId] = js.undefined,
+        expiration: js.UndefOr[TimestampEpoch] = js.undefined,
+        secretAccessKey: js.UndefOr[SecretAccessKey] = js.undefined,
+        sessionToken: js.UndefOr[SessionToken] = js.undefined
+    ): AwsCredentials = {
+      val __obj = js.Dynamic.literal()
+      accessKeyId.foreach(__v => __obj.updateDynamic("accessKeyId")(__v.asInstanceOf[js.Any]))
+      expiration.foreach(__v => __obj.updateDynamic("expiration")(__v.asInstanceOf[js.Any]))
+      secretAccessKey.foreach(__v => __obj.updateDynamic("secretAccessKey")(__v.asInstanceOf[js.Any]))
+      sessionToken.foreach(__v => __obj.updateDynamic("sessionToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AwsCredentials]
     }
   }
 
@@ -366,6 +485,101 @@ package object finspacedata {
     }
   }
 
+  @js.native
+  trait CreatePermissionGroupRequest extends js.Object {
+    var applicationPermissions: ApplicationPermissionList
+    var name: PermissionGroupName
+    var clientToken: js.UndefOr[ClientToken]
+    var description: js.UndefOr[PermissionGroupDescription]
+  }
+
+  object CreatePermissionGroupRequest {
+    @inline
+    def apply(
+        applicationPermissions: ApplicationPermissionList,
+        name: PermissionGroupName,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        description: js.UndefOr[PermissionGroupDescription] = js.undefined
+    ): CreatePermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "applicationPermissions" -> applicationPermissions.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePermissionGroupResponse extends js.Object {
+    var permissionGroupId: js.UndefOr[PermissionGroupId]
+  }
+
+  object CreatePermissionGroupResponse {
+    @inline
+    def apply(
+        permissionGroupId: js.UndefOr[PermissionGroupId] = js.undefined
+    ): CreatePermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      permissionGroupId.foreach(__v => __obj.updateDynamic("permissionGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePermissionGroupResponse]
+    }
+  }
+
+  @js.native
+  trait CreateUserRequest extends js.Object {
+    var emailAddress: Email
+    var `type`: UserType
+    var ApiAccess: js.UndefOr[ApiAccess]
+    var apiAccessPrincipalArn: js.UndefOr[RoleArn]
+    var clientToken: js.UndefOr[ClientToken]
+    var firstName: js.UndefOr[FirstName]
+    var lastName: js.UndefOr[LastName]
+  }
+
+  object CreateUserRequest {
+    @inline
+    def apply(
+        emailAddress: Email,
+        `type`: UserType,
+        ApiAccess: js.UndefOr[ApiAccess] = js.undefined,
+        apiAccessPrincipalArn: js.UndefOr[RoleArn] = js.undefined,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        firstName: js.UndefOr[FirstName] = js.undefined,
+        lastName: js.UndefOr[LastName] = js.undefined
+    ): CreateUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "emailAddress" -> emailAddress.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      ApiAccess.foreach(__v => __obj.updateDynamic("ApiAccess")(__v.asInstanceOf[js.Any]))
+      apiAccessPrincipalArn.foreach(__v => __obj.updateDynamic("apiAccessPrincipalArn")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      firstName.foreach(__v => __obj.updateDynamic("firstName")(__v.asInstanceOf[js.Any]))
+      lastName.foreach(__v => __obj.updateDynamic("lastName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUserResponse extends js.Object {
+    var userId: js.UndefOr[UserId]
+  }
+
+  object CreateUserResponse {
+    @inline
+    def apply(
+        userId: js.UndefOr[UserId] = js.undefined
+    ): CreateUserResponse = {
+      val __obj = js.Dynamic.literal()
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUserResponse]
+    }
+  }
+
   /** Short term API credentials.
     */
   @js.native
@@ -598,6 +812,157 @@ package object finspacedata {
     }
   }
 
+  @js.native
+  trait DeletePermissionGroupRequest extends js.Object {
+    var permissionGroupId: PermissionGroupId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object DeletePermissionGroupRequest {
+    @inline
+    def apply(
+        permissionGroupId: PermissionGroupId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): DeletePermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePermissionGroupResponse extends js.Object {
+    var permissionGroupId: js.UndefOr[PermissionGroupId]
+  }
+
+  object DeletePermissionGroupResponse {
+    @inline
+    def apply(
+        permissionGroupId: js.UndefOr[PermissionGroupId] = js.undefined
+    ): DeletePermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      permissionGroupId.foreach(__v => __obj.updateDynamic("permissionGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeletePermissionGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DisableUserRequest extends js.Object {
+    var userId: UserId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object DisableUserRequest {
+    @inline
+    def apply(
+        userId: UserId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): DisableUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableUserRequest]
+    }
+  }
+
+  @js.native
+  trait DisableUserResponse extends js.Object {
+    var userId: js.UndefOr[UserId]
+  }
+
+  object DisableUserResponse {
+    @inline
+    def apply(
+        userId: js.UndefOr[UserId] = js.undefined
+    ): DisableUserResponse = {
+      val __obj = js.Dynamic.literal()
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisableUserResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateUserFromPermissionGroupRequest extends js.Object {
+    var permissionGroupId: PermissionGroupId
+    var userId: UserId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object DisassociateUserFromPermissionGroupRequest {
+    @inline
+    def apply(
+        permissionGroupId: PermissionGroupId,
+        userId: UserId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): DisassociateUserFromPermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateUserFromPermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateUserFromPermissionGroupResponse extends js.Object {
+    var statusCode: js.UndefOr[StatusCode]
+  }
+
+  object DisassociateUserFromPermissionGroupResponse {
+    @inline
+    def apply(
+        statusCode: js.UndefOr[StatusCode] = js.undefined
+    ): DisassociateUserFromPermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateUserFromPermissionGroupResponse]
+    }
+  }
+
+  @js.native
+  trait EnableUserRequest extends js.Object {
+    var userId: UserId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object EnableUserRequest {
+    @inline
+    def apply(
+        userId: UserId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): EnableUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableUserRequest]
+    }
+  }
+
+  @js.native
+  trait EnableUserResponse extends js.Object {
+    var userId: js.UndefOr[UserId]
+  }
+
+  object EnableUserResponse {
+    @inline
+    def apply(
+        userId: js.UndefOr[UserId] = js.undefined
+    ): EnableUserResponse = {
+      val __obj = js.Dynamic.literal()
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnableUserResponse]
+    }
+  }
+
   /** Request to describe a changeset.
     */
   @js.native
@@ -811,6 +1176,78 @@ package object finspacedata {
     }
   }
 
+  @js.native
+  trait GetExternalDataViewAccessDetailsRequest extends js.Object {
+    var dataViewId: DataViewId
+    var datasetId: DatasetId
+  }
+
+  object GetExternalDataViewAccessDetailsRequest {
+    @inline
+    def apply(
+        dataViewId: DataViewId,
+        datasetId: DatasetId
+    ): GetExternalDataViewAccessDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "dataViewId" -> dataViewId.asInstanceOf[js.Any],
+        "datasetId" -> datasetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetExternalDataViewAccessDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetExternalDataViewAccessDetailsResponse extends js.Object {
+    var credentials: js.UndefOr[AwsCredentials]
+    var s3Location: js.UndefOr[S3Location]
+  }
+
+  object GetExternalDataViewAccessDetailsResponse {
+    @inline
+    def apply(
+        credentials: js.UndefOr[AwsCredentials] = js.undefined,
+        s3Location: js.UndefOr[S3Location] = js.undefined
+    ): GetExternalDataViewAccessDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+      credentials.foreach(__v => __obj.updateDynamic("credentials")(__v.asInstanceOf[js.Any]))
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetExternalDataViewAccessDetailsResponse]
+    }
+  }
+
+  @js.native
+  trait GetPermissionGroupRequest extends js.Object {
+    var permissionGroupId: PermissionGroupId
+  }
+
+  object GetPermissionGroupRequest {
+    @inline
+    def apply(
+        permissionGroupId: PermissionGroupId
+    ): GetPermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetPermissionGroupResponse extends js.Object {
+    var permissionGroup: js.UndefOr[PermissionGroup]
+  }
+
+  object GetPermissionGroupResponse {
+    @inline
+    def apply(
+        permissionGroup: js.UndefOr[PermissionGroup] = js.undefined
+    ): GetPermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      permissionGroup.foreach(__v => __obj.updateDynamic("permissionGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPermissionGroupResponse]
+    }
+  }
+
   /** Request for GetProgrammaticAccessCredentials operation
     */
   @js.native
@@ -852,6 +1289,75 @@ package object finspacedata {
       credentials.foreach(__v => __obj.updateDynamic("credentials")(__v.asInstanceOf[js.Any]))
       durationInMinutes.foreach(__v => __obj.updateDynamic("durationInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProgrammaticAccessCredentialsResponse]
+    }
+  }
+
+  @js.native
+  trait GetUserRequest extends js.Object {
+    var userId: UserId
+  }
+
+  object GetUserRequest {
+    @inline
+    def apply(
+        userId: UserId
+    ): GetUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetUserRequest]
+    }
+  }
+
+  @js.native
+  trait GetUserResponse extends js.Object {
+    var apiAccess: js.UndefOr[ApiAccess]
+    var apiAccessPrincipalArn: js.UndefOr[RoleArn]
+    var createTime: js.UndefOr[TimestampEpoch]
+    var emailAddress: js.UndefOr[Email]
+    var firstName: js.UndefOr[FirstName]
+    var lastDisabledTime: js.UndefOr[TimestampEpoch]
+    var lastEnabledTime: js.UndefOr[TimestampEpoch]
+    var lastLoginTime: js.UndefOr[TimestampEpoch]
+    var lastModifiedTime: js.UndefOr[TimestampEpoch]
+    var lastName: js.UndefOr[LastName]
+    var status: js.UndefOr[UserStatus]
+    var `type`: js.UndefOr[UserType]
+    var userId: js.UndefOr[UserId]
+  }
+
+  object GetUserResponse {
+    @inline
+    def apply(
+        apiAccess: js.UndefOr[ApiAccess] = js.undefined,
+        apiAccessPrincipalArn: js.UndefOr[RoleArn] = js.undefined,
+        createTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        firstName: js.UndefOr[FirstName] = js.undefined,
+        lastDisabledTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastEnabledTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastLoginTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastModifiedTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastName: js.UndefOr[LastName] = js.undefined,
+        status: js.UndefOr[UserStatus] = js.undefined,
+        `type`: js.UndefOr[UserType] = js.undefined,
+        userId: js.UndefOr[UserId] = js.undefined
+    ): GetUserResponse = {
+      val __obj = js.Dynamic.literal()
+      apiAccess.foreach(__v => __obj.updateDynamic("apiAccess")(__v.asInstanceOf[js.Any]))
+      apiAccessPrincipalArn.foreach(__v => __obj.updateDynamic("apiAccessPrincipalArn")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      emailAddress.foreach(__v => __obj.updateDynamic("emailAddress")(__v.asInstanceOf[js.Any]))
+      firstName.foreach(__v => __obj.updateDynamic("firstName")(__v.asInstanceOf[js.Any]))
+      lastDisabledTime.foreach(__v => __obj.updateDynamic("lastDisabledTime")(__v.asInstanceOf[js.Any]))
+      lastEnabledTime.foreach(__v => __obj.updateDynamic("lastEnabledTime")(__v.asInstanceOf[js.Any]))
+      lastLoginTime.foreach(__v => __obj.updateDynamic("lastLoginTime")(__v.asInstanceOf[js.Any]))
+      lastModifiedTime.foreach(__v => __obj.updateDynamic("lastModifiedTime")(__v.asInstanceOf[js.Any]))
+      lastName.foreach(__v => __obj.updateDynamic("lastName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetUserResponse]
     }
   }
 
@@ -1027,7 +1533,233 @@ package object finspacedata {
     }
   }
 
-  /** Permission group parameters for Dataset permissions.
+  @js.native
+  trait ListPermissionGroupsByUserRequest extends js.Object {
+    var maxResults: ResultLimit
+    var userId: UserId
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListPermissionGroupsByUserRequest {
+    @inline
+    def apply(
+        maxResults: ResultLimit,
+        userId: UserId,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListPermissionGroupsByUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "maxResults" -> maxResults.asInstanceOf[js.Any],
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionGroupsByUserRequest]
+    }
+  }
+
+  @js.native
+  trait ListPermissionGroupsByUserResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var permissionGroups: js.UndefOr[PermissionGroupByUserList]
+  }
+
+  object ListPermissionGroupsByUserResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        permissionGroups: js.UndefOr[PermissionGroupByUserList] = js.undefined
+    ): ListPermissionGroupsByUserResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissionGroups.foreach(__v => __obj.updateDynamic("permissionGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionGroupsByUserResponse]
+    }
+  }
+
+  @js.native
+  trait ListPermissionGroupsRequest extends js.Object {
+    var maxResults: ResultLimit
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListPermissionGroupsRequest {
+    @inline
+    def apply(
+        maxResults: ResultLimit,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListPermissionGroupsRequest = {
+      val __obj = js.Dynamic.literal(
+        "maxResults" -> maxResults.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListPermissionGroupsResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var permissionGroups: js.UndefOr[PermissionGroupList]
+  }
+
+  object ListPermissionGroupsResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        permissionGroups: js.UndefOr[PermissionGroupList] = js.undefined
+    ): ListPermissionGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissionGroups.foreach(__v => __obj.updateDynamic("permissionGroups")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPermissionGroupsResponse]
+    }
+  }
+
+  @js.native
+  trait ListUsersByPermissionGroupRequest extends js.Object {
+    var maxResults: ResultLimit
+    var permissionGroupId: PermissionGroupId
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListUsersByPermissionGroupRequest {
+    @inline
+    def apply(
+        maxResults: ResultLimit,
+        permissionGroupId: PermissionGroupId,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUsersByPermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "maxResults" -> maxResults.asInstanceOf[js.Any],
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersByPermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait ListUsersByPermissionGroupResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var users: js.UndefOr[UserByPermissionGroupList]
+  }
+
+  object ListUsersByPermissionGroupResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        users: js.UndefOr[UserByPermissionGroupList] = js.undefined
+    ): ListUsersByPermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      users.foreach(__v => __obj.updateDynamic("users")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersByPermissionGroupResponse]
+    }
+  }
+
+  @js.native
+  trait ListUsersRequest extends js.Object {
+    var maxResults: ResultLimit
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListUsersRequest {
+    @inline
+    def apply(
+        maxResults: ResultLimit,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListUsersRequest = {
+      val __obj = js.Dynamic.literal(
+        "maxResults" -> maxResults.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersRequest]
+    }
+  }
+
+  @js.native
+  trait ListUsersResponse extends js.Object {
+    var nextToken: js.UndefOr[PaginationToken]
+    var users: js.UndefOr[UserList]
+  }
+
+  object ListUsersResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[PaginationToken] = js.undefined,
+        users: js.UndefOr[UserList] = js.undefined
+    ): ListUsersResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      users.foreach(__v => __obj.updateDynamic("users")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListUsersResponse]
+    }
+  }
+
+  /** The structure for a permission group.
+    */
+  @js.native
+  trait PermissionGroup extends js.Object {
+    var applicationPermissions: js.UndefOr[ApplicationPermissionList]
+    var createTime: js.UndefOr[TimestampEpoch]
+    var description: js.UndefOr[PermissionGroupDescription]
+    var lastModifiedTime: js.UndefOr[TimestampEpoch]
+    var membershipStatus: js.UndefOr[PermissionGroupMembershipStatus]
+    var name: js.UndefOr[PermissionGroupName]
+    var permissionGroupId: js.UndefOr[PermissionGroupId]
+  }
+
+  object PermissionGroup {
+    @inline
+    def apply(
+        applicationPermissions: js.UndefOr[ApplicationPermissionList] = js.undefined,
+        createTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        description: js.UndefOr[PermissionGroupDescription] = js.undefined,
+        lastModifiedTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        membershipStatus: js.UndefOr[PermissionGroupMembershipStatus] = js.undefined,
+        name: js.UndefOr[PermissionGroupName] = js.undefined,
+        permissionGroupId: js.UndefOr[PermissionGroupId] = js.undefined
+    ): PermissionGroup = {
+      val __obj = js.Dynamic.literal()
+      applicationPermissions.foreach(__v => __obj.updateDynamic("applicationPermissions")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastModifiedTime.foreach(__v => __obj.updateDynamic("lastModifiedTime")(__v.asInstanceOf[js.Any]))
+      membershipStatus.foreach(__v => __obj.updateDynamic("membershipStatus")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      permissionGroupId.foreach(__v => __obj.updateDynamic("permissionGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PermissionGroup]
+    }
+  }
+
+  /** The structure of a permission group associated with a user account.
+    */
+  @js.native
+  trait PermissionGroupByUser extends js.Object {
+    var membershipStatus: js.UndefOr[PermissionGroupMembershipStatus]
+    var name: js.UndefOr[PermissionGroupName]
+    var permissionGroupId: js.UndefOr[PermissionGroupId]
+  }
+
+  object PermissionGroupByUser {
+    @inline
+    def apply(
+        membershipStatus: js.UndefOr[PermissionGroupMembershipStatus] = js.undefined,
+        name: js.UndefOr[PermissionGroupName] = js.undefined,
+        permissionGroupId: js.UndefOr[PermissionGroupId] = js.undefined
+    ): PermissionGroupByUser = {
+      val __obj = js.Dynamic.literal()
+      membershipStatus.foreach(__v => __obj.updateDynamic("membershipStatus")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      permissionGroupId.foreach(__v => __obj.updateDynamic("permissionGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PermissionGroupByUser]
+    }
+  }
+
+  /** Permission group parameters for Dataset permissions. Here is an example of how you could specify the <code>PermissionGroupParams</code>: <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission": "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"}, {"permission": "DeleteDataset"} ] } </code>
     */
   @js.native
   trait PermissionGroupParams extends js.Object {
@@ -1048,7 +1780,47 @@ package object finspacedata {
     }
   }
 
-  /** Resource permission for a Dataset.
+  @js.native
+  trait ResetUserPasswordRequest extends js.Object {
+    var userId: UserId
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object ResetUserPasswordRequest {
+    @inline
+    def apply(
+        userId: UserId,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): ResetUserPasswordRequest = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetUserPasswordRequest]
+    }
+  }
+
+  @js.native
+  trait ResetUserPasswordResponse extends js.Object {
+    var temporaryPassword: js.UndefOr[Password]
+    var userId: js.UndefOr[UserId]
+  }
+
+  object ResetUserPasswordResponse {
+    @inline
+    def apply(
+        temporaryPassword: js.UndefOr[Password] = js.undefined,
+        userId: js.UndefOr[UserId] = js.undefined
+    ): ResetUserPasswordResponse = {
+      val __obj = js.Dynamic.literal()
+      temporaryPassword.foreach(__v => __obj.updateDynamic("temporaryPassword")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResetUserPasswordResponse]
+    }
+  }
+
+  /** Resource permission for a dataset. When you create a dataset, all the other members of the same user group inherit access to the dataset. You can only create a dataset if your user group has application permission for Create Datasets. The following is a list of valid dataset permissions that you can apply: * <code>ViewDatasetDetails</code> * <code>ReadDatasetDetails</code> * <code>AddDatasetData</code> * <code>CreateDataView</code> * <code>EditDatasetMetadata</code> * <code>DeleteDataset</code> For more information on the dataset permissions, see [[https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions|Supported Dataset Permissions]] in the FinSpace User Guide.
     */
   @js.native
   trait ResourcePermission extends js.Object {
@@ -1063,6 +1835,28 @@ package object finspacedata {
       val __obj = js.Dynamic.literal()
       permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePermission]
+    }
+  }
+
+  /** The location of an external Dataview in an S3 bucket.
+    */
+  @js.native
+  trait S3Location extends js.Object {
+    var bucket: S3BucketName
+    var key: S3Key
+  }
+
+  object S3Location {
+    @inline
+    def apply(
+        bucket: S3BucketName,
+        key: S3Key
+    ): S3Location = {
+      val __obj = js.Dynamic.literal(
+        "bucket" -> bucket.asInstanceOf[js.Any],
+        "key" -> key.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3Location]
     }
   }
 
@@ -1211,6 +2005,200 @@ package object finspacedata {
       val __obj = js.Dynamic.literal()
       datasetId.foreach(__v => __obj.updateDynamic("datasetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatasetResponse]
+    }
+  }
+
+  @js.native
+  trait UpdatePermissionGroupRequest extends js.Object {
+    var permissionGroupId: PermissionGroupId
+    var applicationPermissions: js.UndefOr[ApplicationPermissionList]
+    var clientToken: js.UndefOr[ClientToken]
+    var description: js.UndefOr[PermissionGroupDescription]
+    var name: js.UndefOr[PermissionGroupName]
+  }
+
+  object UpdatePermissionGroupRequest {
+    @inline
+    def apply(
+        permissionGroupId: PermissionGroupId,
+        applicationPermissions: js.UndefOr[ApplicationPermissionList] = js.undefined,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        description: js.UndefOr[PermissionGroupDescription] = js.undefined,
+        name: js.UndefOr[PermissionGroupName] = js.undefined
+    ): UpdatePermissionGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "permissionGroupId" -> permissionGroupId.asInstanceOf[js.Any]
+      )
+
+      applicationPermissions.foreach(__v => __obj.updateDynamic("applicationPermissions")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePermissionGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePermissionGroupResponse extends js.Object {
+    var permissionGroupId: js.UndefOr[PermissionGroupId]
+  }
+
+  object UpdatePermissionGroupResponse {
+    @inline
+    def apply(
+        permissionGroupId: js.UndefOr[PermissionGroupId] = js.undefined
+    ): UpdatePermissionGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      permissionGroupId.foreach(__v => __obj.updateDynamic("permissionGroupId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePermissionGroupResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateUserRequest extends js.Object {
+    var userId: UserId
+    var apiAccess: js.UndefOr[ApiAccess]
+    var apiAccessPrincipalArn: js.UndefOr[RoleArn]
+    var clientToken: js.UndefOr[ClientToken]
+    var firstName: js.UndefOr[FirstName]
+    var lastName: js.UndefOr[LastName]
+    var `type`: js.UndefOr[UserType]
+  }
+
+  object UpdateUserRequest {
+    @inline
+    def apply(
+        userId: UserId,
+        apiAccess: js.UndefOr[ApiAccess] = js.undefined,
+        apiAccessPrincipalArn: js.UndefOr[RoleArn] = js.undefined,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        firstName: js.UndefOr[FirstName] = js.undefined,
+        lastName: js.UndefOr[LastName] = js.undefined,
+        `type`: js.UndefOr[UserType] = js.undefined
+    ): UpdateUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "userId" -> userId.asInstanceOf[js.Any]
+      )
+
+      apiAccess.foreach(__v => __obj.updateDynamic("apiAccess")(__v.asInstanceOf[js.Any]))
+      apiAccessPrincipalArn.foreach(__v => __obj.updateDynamic("apiAccessPrincipalArn")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      firstName.foreach(__v => __obj.updateDynamic("firstName")(__v.asInstanceOf[js.Any]))
+      lastName.foreach(__v => __obj.updateDynamic("lastName")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateUserResponse extends js.Object {
+    var userId: js.UndefOr[UserId]
+  }
+
+  object UpdateUserResponse {
+    @inline
+    def apply(
+        userId: js.UndefOr[UserId] = js.undefined
+    ): UpdateUserResponse = {
+      val __obj = js.Dynamic.literal()
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateUserResponse]
+    }
+  }
+
+  /** The details of the user account.
+    */
+  @js.native
+  trait User extends js.Object {
+    var apiAccess: js.UndefOr[ApiAccess]
+    var apiAccessPrincipalArn: js.UndefOr[RoleArn]
+    var createTime: js.UndefOr[TimestampEpoch]
+    var emailAddress: js.UndefOr[Email]
+    var firstName: js.UndefOr[FirstName]
+    var lastDisabledTime: js.UndefOr[TimestampEpoch]
+    var lastEnabledTime: js.UndefOr[TimestampEpoch]
+    var lastLoginTime: js.UndefOr[TimestampEpoch]
+    var lastModifiedTime: js.UndefOr[TimestampEpoch]
+    var lastName: js.UndefOr[LastName]
+    var status: js.UndefOr[UserStatus]
+    var `type`: js.UndefOr[UserType]
+    var userId: js.UndefOr[UserId]
+  }
+
+  object User {
+    @inline
+    def apply(
+        apiAccess: js.UndefOr[ApiAccess] = js.undefined,
+        apiAccessPrincipalArn: js.UndefOr[RoleArn] = js.undefined,
+        createTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        firstName: js.UndefOr[FirstName] = js.undefined,
+        lastDisabledTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastEnabledTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastLoginTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastModifiedTime: js.UndefOr[TimestampEpoch] = js.undefined,
+        lastName: js.UndefOr[LastName] = js.undefined,
+        status: js.UndefOr[UserStatus] = js.undefined,
+        `type`: js.UndefOr[UserType] = js.undefined,
+        userId: js.UndefOr[UserId] = js.undefined
+    ): User = {
+      val __obj = js.Dynamic.literal()
+      apiAccess.foreach(__v => __obj.updateDynamic("apiAccess")(__v.asInstanceOf[js.Any]))
+      apiAccessPrincipalArn.foreach(__v => __obj.updateDynamic("apiAccessPrincipalArn")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      emailAddress.foreach(__v => __obj.updateDynamic("emailAddress")(__v.asInstanceOf[js.Any]))
+      firstName.foreach(__v => __obj.updateDynamic("firstName")(__v.asInstanceOf[js.Any]))
+      lastDisabledTime.foreach(__v => __obj.updateDynamic("lastDisabledTime")(__v.asInstanceOf[js.Any]))
+      lastEnabledTime.foreach(__v => __obj.updateDynamic("lastEnabledTime")(__v.asInstanceOf[js.Any]))
+      lastLoginTime.foreach(__v => __obj.updateDynamic("lastLoginTime")(__v.asInstanceOf[js.Any]))
+      lastModifiedTime.foreach(__v => __obj.updateDynamic("lastModifiedTime")(__v.asInstanceOf[js.Any]))
+      lastName.foreach(__v => __obj.updateDynamic("lastName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[User]
+    }
+  }
+
+  /** The structure of a user account associated with a permission group.
+    */
+  @js.native
+  trait UserByPermissionGroup extends js.Object {
+    var apiAccess: js.UndefOr[ApiAccess]
+    var apiAccessPrincipalArn: js.UndefOr[RoleArn]
+    var emailAddress: js.UndefOr[Email]
+    var firstName: js.UndefOr[FirstName]
+    var lastName: js.UndefOr[LastName]
+    var membershipStatus: js.UndefOr[PermissionGroupMembershipStatus]
+    var status: js.UndefOr[UserStatus]
+    var `type`: js.UndefOr[UserType]
+    var userId: js.UndefOr[UserId]
+  }
+
+  object UserByPermissionGroup {
+    @inline
+    def apply(
+        apiAccess: js.UndefOr[ApiAccess] = js.undefined,
+        apiAccessPrincipalArn: js.UndefOr[RoleArn] = js.undefined,
+        emailAddress: js.UndefOr[Email] = js.undefined,
+        firstName: js.UndefOr[FirstName] = js.undefined,
+        lastName: js.UndefOr[LastName] = js.undefined,
+        membershipStatus: js.UndefOr[PermissionGroupMembershipStatus] = js.undefined,
+        status: js.UndefOr[UserStatus] = js.undefined,
+        `type`: js.UndefOr[UserType] = js.undefined,
+        userId: js.UndefOr[UserId] = js.undefined
+    ): UserByPermissionGroup = {
+      val __obj = js.Dynamic.literal()
+      apiAccess.foreach(__v => __obj.updateDynamic("apiAccess")(__v.asInstanceOf[js.Any]))
+      apiAccessPrincipalArn.foreach(__v => __obj.updateDynamic("apiAccessPrincipalArn")(__v.asInstanceOf[js.Any]))
+      emailAddress.foreach(__v => __obj.updateDynamic("emailAddress")(__v.asInstanceOf[js.Any]))
+      firstName.foreach(__v => __obj.updateDynamic("firstName")(__v.asInstanceOf[js.Any]))
+      lastName.foreach(__v => __obj.updateDynamic("lastName")(__v.asInstanceOf[js.Any]))
+      membershipStatus.foreach(__v => __obj.updateDynamic("membershipStatus")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UserByPermissionGroup]
     }
   }
 }

@@ -10,25 +10,36 @@ import facade.amazonaws._
 package object macie2 {
   type BucketCriteria = js.Dictionary[BucketCriteriaAdditionalProperties]
   type Cells = js.Array[Cell]
+  type ClassificationScopeId = String
+  type ClassificationScopeName = String
   type Criterion = js.Dictionary[CriterionAdditionalProperties]
   type CustomDetections = js.Array[CustomDetection]
   type DefaultDetections = js.Array[DefaultDetection]
   type KeyValuePairList = js.Array[KeyValuePair]
   type MaxResults = Int
+  type NextToken = String
   type Pages = js.Array[Page]
   type Ranges = js.Array[Range]
   type Records = js.Array[Record]
+  type S3BucketName = String
   type SensitiveData = js.Array[SensitiveDataItem]
+  type SensitiveDataOccurrences = js.Dictionary[__listOfDetectedDataDetails]
+  type SensitivityInspectionTemplateId = String
   type SeverityLevelList = js.Array[SeverityLevel]
   type TagMap = js.Dictionary[__string]
+  type Timestamp = js.Date
   type __boolean = Boolean
   type __double = Double
   type __integer = Int
   type __listOfAdminAccount = js.Array[AdminAccount]
+  type __listOfAllowListSummary = js.Array[AllowListSummary]
   type __listOfBatchGetCustomDataIdentifierSummary = js.Array[BatchGetCustomDataIdentifierSummary]
   type __listOfBucketMetadata = js.Array[BucketMetadata]
+  type __listOfClassificationScopeSummary = js.Array[ClassificationScopeSummary]
   type __listOfCriteriaForJob = js.Array[CriteriaForJob]
   type __listOfCustomDataIdentifierSummary = js.Array[CustomDataIdentifierSummary]
+  type __listOfDetectedDataDetails = js.Array[DetectedDataDetails]
+  type __listOfDetection = js.Array[Detection]
   type __listOfFinding = js.Array[Finding]
   type __listOfFindingType = js.Array[FindingType]
   type __listOfFindingsFilterListItem = js.Array[FindingsFilterListItem]
@@ -41,11 +52,16 @@ package object macie2 {
   type __listOfManagedDataIdentifierSummary = js.Array[ManagedDataIdentifierSummary]
   type __listOfMatchingResource = js.Array[MatchingResource]
   type __listOfMember = js.Array[Member]
+  type __listOfResourceProfileArtifact = js.Array[ResourceProfileArtifact]
   type __listOfS3BucketDefinitionForJob = js.Array[S3BucketDefinitionForJob]
+  type __listOfS3BucketName = js.Array[S3BucketName]
   type __listOfSearchResourcesCriteria = js.Array[SearchResourcesCriteria]
   type __listOfSearchResourcesTagCriterionPair = js.Array[SearchResourcesTagCriterionPair]
+  type __listOfSensitivityInspectionTemplatesEntry = js.Array[SensitivityInspectionTemplatesEntry]
+  type __listOfSuppressDataIdentifier = js.Array[SuppressDataIdentifier]
   type __listOfTagCriterionPairForJob = js.Array[TagCriterionPairForJob]
   type __listOfTagValuePair = js.Array[TagValuePair]
+  type __listOfUnavailabilityReasonCode = js.Array[UnavailabilityReasonCode]
   type __listOfUnprocessedAccount = js.Array[UnprocessedAccount]
   type __listOfUsageByAccount = js.Array[UsageByAccount]
   type __listOfUsageRecord = js.Array[UsageRecord]
@@ -54,12 +70,21 @@ package object macie2 {
   type __listOf__string = js.Array[__string]
   type __long = Double
   type __string = String
+  type __stringMin1Max1024PatternSS = String
+  type __stringMin1Max128 = String
+  type __stringMin1Max128Pattern = String
+  type __stringMin1Max2048 = String
+  type __stringMin1Max512PatternSS = String
+  type __stringMin22Max22PatternAZ0922 = String
+  type __stringMin3Max255PatternAZaZ093255 = String
+  type __stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922 = String
   type __timestampIso8601 = js.Date
 
   final class Macie2Ops(private val service: Macie2) extends AnyVal {
 
     @inline def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] = service.acceptInvitation(params).promise().toFuture
     @inline def batchGetCustomDataIdentifiersFuture(params: BatchGetCustomDataIdentifiersRequest): Future[BatchGetCustomDataIdentifiersResponse] = service.batchGetCustomDataIdentifiers(params).promise().toFuture
+    @inline def createAllowListFuture(params: CreateAllowListRequest): Future[CreateAllowListResponse] = service.createAllowList(params).promise().toFuture
     @inline def createClassificationJobFuture(params: CreateClassificationJobRequest): Future[CreateClassificationJobResponse] = service.createClassificationJob(params).promise().toFuture
     @inline def createCustomDataIdentifierFuture(params: CreateCustomDataIdentifierRequest): Future[CreateCustomDataIdentifierResponse] = service.createCustomDataIdentifier(params).promise().toFuture
     @inline def createFindingsFilterFuture(params: CreateFindingsFilterRequest): Future[CreateFindingsFilterResponse] = service.createFindingsFilter(params).promise().toFuture
@@ -67,6 +92,7 @@ package object macie2 {
     @inline def createMemberFuture(params: CreateMemberRequest): Future[CreateMemberResponse] = service.createMember(params).promise().toFuture
     @inline def createSampleFindingsFuture(params: CreateSampleFindingsRequest): Future[CreateSampleFindingsResponse] = service.createSampleFindings(params).promise().toFuture
     @inline def declineInvitationsFuture(params: DeclineInvitationsRequest): Future[DeclineInvitationsResponse] = service.declineInvitations(params).promise().toFuture
+    @inline def deleteAllowListFuture(params: DeleteAllowListRequest): Future[DeleteAllowListResponse] = service.deleteAllowList(params).promise().toFuture
     @inline def deleteCustomDataIdentifierFuture(params: DeleteCustomDataIdentifierRequest): Future[DeleteCustomDataIdentifierResponse] = service.deleteCustomDataIdentifier(params).promise().toFuture
     @inline def deleteFindingsFilterFuture(params: DeleteFindingsFilterRequest): Future[DeleteFindingsFilterResponse] = service.deleteFindingsFilter(params).promise().toFuture
     @inline def deleteInvitationsFuture(params: DeleteInvitationsRequest): Future[DeleteInvitationsResponse] = service.deleteInvitations(params).promise().toFuture
@@ -82,8 +108,11 @@ package object macie2 {
     @inline def enableMacieFuture(params: EnableMacieRequest): Future[EnableMacieResponse] = service.enableMacie(params).promise().toFuture
     @inline def enableOrganizationAdminAccountFuture(params: EnableOrganizationAdminAccountRequest): Future[EnableOrganizationAdminAccountResponse] = service.enableOrganizationAdminAccount(params).promise().toFuture
     @inline def getAdministratorAccountFuture(params: GetAdministratorAccountRequest): Future[GetAdministratorAccountResponse] = service.getAdministratorAccount(params).promise().toFuture
+    @inline def getAllowListFuture(params: GetAllowListRequest): Future[GetAllowListResponse] = service.getAllowList(params).promise().toFuture
+    @inline def getAutomatedDiscoveryConfigurationFuture(params: GetAutomatedDiscoveryConfigurationRequest): Future[GetAutomatedDiscoveryConfigurationResponse] = service.getAutomatedDiscoveryConfiguration(params).promise().toFuture
     @inline def getBucketStatisticsFuture(params: GetBucketStatisticsRequest): Future[GetBucketStatisticsResponse] = service.getBucketStatistics(params).promise().toFuture
     @inline def getClassificationExportConfigurationFuture(params: GetClassificationExportConfigurationRequest): Future[GetClassificationExportConfigurationResponse] = service.getClassificationExportConfiguration(params).promise().toFuture
+    @inline def getClassificationScopeFuture(params: GetClassificationScopeRequest): Future[GetClassificationScopeResponse] = service.getClassificationScope(params).promise().toFuture
     @inline def getCustomDataIdentifierFuture(params: GetCustomDataIdentifierRequest): Future[GetCustomDataIdentifierResponse] = service.getCustomDataIdentifier(params).promise().toFuture
     @inline def getFindingStatisticsFuture(params: GetFindingStatisticsRequest): Future[GetFindingStatisticsResponse] = service.getFindingStatistics(params).promise().toFuture
     @inline def getFindingsFilterFuture(params: GetFindingsFilterRequest): Future[GetFindingsFilterResponse] = service.getFindingsFilter(params).promise().toFuture
@@ -93,9 +122,16 @@ package object macie2 {
     @inline def getMacieSessionFuture(params: GetMacieSessionRequest): Future[GetMacieSessionResponse] = service.getMacieSession(params).promise().toFuture
     @inline def getMasterAccountFuture(params: GetMasterAccountRequest): Future[GetMasterAccountResponse] = service.getMasterAccount(params).promise().toFuture
     @inline def getMemberFuture(params: GetMemberRequest): Future[GetMemberResponse] = service.getMember(params).promise().toFuture
+    @inline def getResourceProfileFuture(params: GetResourceProfileRequest): Future[GetResourceProfileResponse] = service.getResourceProfile(params).promise().toFuture
+    @inline def getRevealConfigurationFuture(params: GetRevealConfigurationRequest): Future[GetRevealConfigurationResponse] = service.getRevealConfiguration(params).promise().toFuture
+    @inline def getSensitiveDataOccurrencesAvailabilityFuture(params: GetSensitiveDataOccurrencesAvailabilityRequest): Future[GetSensitiveDataOccurrencesAvailabilityResponse] = service.getSensitiveDataOccurrencesAvailability(params).promise().toFuture
+    @inline def getSensitiveDataOccurrencesFuture(params: GetSensitiveDataOccurrencesRequest): Future[GetSensitiveDataOccurrencesResponse] = service.getSensitiveDataOccurrences(params).promise().toFuture
+    @inline def getSensitivityInspectionTemplateFuture(params: GetSensitivityInspectionTemplateRequest): Future[GetSensitivityInspectionTemplateResponse] = service.getSensitivityInspectionTemplate(params).promise().toFuture
     @inline def getUsageStatisticsFuture(params: GetUsageStatisticsRequest): Future[GetUsageStatisticsResponse] = service.getUsageStatistics(params).promise().toFuture
     @inline def getUsageTotalsFuture(params: GetUsageTotalsRequest): Future[GetUsageTotalsResponse] = service.getUsageTotals(params).promise().toFuture
+    @inline def listAllowListsFuture(params: ListAllowListsRequest): Future[ListAllowListsResponse] = service.listAllowLists(params).promise().toFuture
     @inline def listClassificationJobsFuture(params: ListClassificationJobsRequest): Future[ListClassificationJobsResponse] = service.listClassificationJobs(params).promise().toFuture
+    @inline def listClassificationScopesFuture(params: ListClassificationScopesRequest): Future[ListClassificationScopesResponse] = service.listClassificationScopes(params).promise().toFuture
     @inline def listCustomDataIdentifiersFuture(params: ListCustomDataIdentifiersRequest): Future[ListCustomDataIdentifiersResponse] = service.listCustomDataIdentifiers(params).promise().toFuture
     @inline def listFindingsFiltersFuture(params: ListFindingsFiltersRequest): Future[ListFindingsFiltersResponse] = service.listFindingsFilters(params).promise().toFuture
     @inline def listFindingsFuture(params: ListFindingsRequest): Future[ListFindingsResponse] = service.listFindings(params).promise().toFuture
@@ -103,6 +139,9 @@ package object macie2 {
     @inline def listManagedDataIdentifiersFuture(params: ListManagedDataIdentifiersRequest): Future[ListManagedDataIdentifiersResponse] = service.listManagedDataIdentifiers(params).promise().toFuture
     @inline def listMembersFuture(params: ListMembersRequest): Future[ListMembersResponse] = service.listMembers(params).promise().toFuture
     @inline def listOrganizationAdminAccountsFuture(params: ListOrganizationAdminAccountsRequest): Future[ListOrganizationAdminAccountsResponse] = service.listOrganizationAdminAccounts(params).promise().toFuture
+    @inline def listResourceProfileArtifactsFuture(params: ListResourceProfileArtifactsRequest): Future[ListResourceProfileArtifactsResponse] = service.listResourceProfileArtifacts(params).promise().toFuture
+    @inline def listResourceProfileDetectionsFuture(params: ListResourceProfileDetectionsRequest): Future[ListResourceProfileDetectionsResponse] = service.listResourceProfileDetections(params).promise().toFuture
+    @inline def listSensitivityInspectionTemplatesFuture(params: ListSensitivityInspectionTemplatesRequest): Future[ListSensitivityInspectionTemplatesResponse] = service.listSensitivityInspectionTemplates(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putClassificationExportConfigurationFuture(params: PutClassificationExportConfigurationRequest): Future[PutClassificationExportConfigurationResponse] = service.putClassificationExportConfiguration(params).promise().toFuture
     @inline def putFindingsPublicationConfigurationFuture(params: PutFindingsPublicationConfigurationRequest): Future[PutFindingsPublicationConfigurationResponse] = service.putFindingsPublicationConfiguration(params).promise().toFuture
@@ -110,11 +149,18 @@ package object macie2 {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def testCustomDataIdentifierFuture(params: TestCustomDataIdentifierRequest): Future[TestCustomDataIdentifierResponse] = service.testCustomDataIdentifier(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateAllowListFuture(params: UpdateAllowListRequest): Future[UpdateAllowListResponse] = service.updateAllowList(params).promise().toFuture
+    @inline def updateAutomatedDiscoveryConfigurationFuture(params: UpdateAutomatedDiscoveryConfigurationRequest): Future[UpdateAutomatedDiscoveryConfigurationResponse] = service.updateAutomatedDiscoveryConfiguration(params).promise().toFuture
     @inline def updateClassificationJobFuture(params: UpdateClassificationJobRequest): Future[UpdateClassificationJobResponse] = service.updateClassificationJob(params).promise().toFuture
+    @inline def updateClassificationScopeFuture(params: UpdateClassificationScopeRequest): Future[UpdateClassificationScopeResponse] = service.updateClassificationScope(params).promise().toFuture
     @inline def updateFindingsFilterFuture(params: UpdateFindingsFilterRequest): Future[UpdateFindingsFilterResponse] = service.updateFindingsFilter(params).promise().toFuture
     @inline def updateMacieSessionFuture(params: UpdateMacieSessionRequest): Future[UpdateMacieSessionResponse] = service.updateMacieSession(params).promise().toFuture
     @inline def updateMemberSessionFuture(params: UpdateMemberSessionRequest): Future[UpdateMemberSessionResponse] = service.updateMemberSession(params).promise().toFuture
     @inline def updateOrganizationConfigurationFuture(params: UpdateOrganizationConfigurationRequest): Future[UpdateOrganizationConfigurationResponse] = service.updateOrganizationConfiguration(params).promise().toFuture
+    @inline def updateResourceProfileDetectionsFuture(params: UpdateResourceProfileDetectionsRequest): Future[UpdateResourceProfileDetectionsResponse] = service.updateResourceProfileDetections(params).promise().toFuture
+    @inline def updateResourceProfileFuture(params: UpdateResourceProfileRequest): Future[UpdateResourceProfileResponse] = service.updateResourceProfile(params).promise().toFuture
+    @inline def updateRevealConfigurationFuture(params: UpdateRevealConfigurationRequest): Future[UpdateRevealConfigurationResponse] = service.updateRevealConfiguration(params).promise().toFuture
+    @inline def updateSensitivityInspectionTemplateFuture(params: UpdateSensitivityInspectionTemplateRequest): Future[UpdateSensitivityInspectionTemplateResponse] = service.updateSensitivityInspectionTemplate(params).promise().toFuture
 
   }
 
@@ -125,6 +171,7 @@ package object macie2 {
 
     def acceptInvitation(params: AcceptInvitationRequest): Request[AcceptInvitationResponse] = js.native
     def batchGetCustomDataIdentifiers(params: BatchGetCustomDataIdentifiersRequest): Request[BatchGetCustomDataIdentifiersResponse] = js.native
+    def createAllowList(params: CreateAllowListRequest): Request[CreateAllowListResponse] = js.native
     def createClassificationJob(params: CreateClassificationJobRequest): Request[CreateClassificationJobResponse] = js.native
     def createCustomDataIdentifier(params: CreateCustomDataIdentifierRequest): Request[CreateCustomDataIdentifierResponse] = js.native
     def createFindingsFilter(params: CreateFindingsFilterRequest): Request[CreateFindingsFilterResponse] = js.native
@@ -132,6 +179,7 @@ package object macie2 {
     def createMember(params: CreateMemberRequest): Request[CreateMemberResponse] = js.native
     def createSampleFindings(params: CreateSampleFindingsRequest): Request[CreateSampleFindingsResponse] = js.native
     def declineInvitations(params: DeclineInvitationsRequest): Request[DeclineInvitationsResponse] = js.native
+    def deleteAllowList(params: DeleteAllowListRequest): Request[DeleteAllowListResponse] = js.native
     def deleteCustomDataIdentifier(params: DeleteCustomDataIdentifierRequest): Request[DeleteCustomDataIdentifierResponse] = js.native
     def deleteFindingsFilter(params: DeleteFindingsFilterRequest): Request[DeleteFindingsFilterResponse] = js.native
     def deleteInvitations(params: DeleteInvitationsRequest): Request[DeleteInvitationsResponse] = js.native
@@ -147,8 +195,11 @@ package object macie2 {
     def enableMacie(params: EnableMacieRequest): Request[EnableMacieResponse] = js.native
     def enableOrganizationAdminAccount(params: EnableOrganizationAdminAccountRequest): Request[EnableOrganizationAdminAccountResponse] = js.native
     def getAdministratorAccount(params: GetAdministratorAccountRequest): Request[GetAdministratorAccountResponse] = js.native
+    def getAllowList(params: GetAllowListRequest): Request[GetAllowListResponse] = js.native
+    def getAutomatedDiscoveryConfiguration(params: GetAutomatedDiscoveryConfigurationRequest): Request[GetAutomatedDiscoveryConfigurationResponse] = js.native
     def getBucketStatistics(params: GetBucketStatisticsRequest): Request[GetBucketStatisticsResponse] = js.native
     def getClassificationExportConfiguration(params: GetClassificationExportConfigurationRequest): Request[GetClassificationExportConfigurationResponse] = js.native
+    def getClassificationScope(params: GetClassificationScopeRequest): Request[GetClassificationScopeResponse] = js.native
     def getCustomDataIdentifier(params: GetCustomDataIdentifierRequest): Request[GetCustomDataIdentifierResponse] = js.native
     def getFindingStatistics(params: GetFindingStatisticsRequest): Request[GetFindingStatisticsResponse] = js.native
     def getFindings(params: GetFindingsRequest): Request[GetFindingsResponse] = js.native
@@ -158,9 +209,16 @@ package object macie2 {
     def getMacieSession(params: GetMacieSessionRequest): Request[GetMacieSessionResponse] = js.native
     def getMasterAccount(params: GetMasterAccountRequest): Request[GetMasterAccountResponse] = js.native
     def getMember(params: GetMemberRequest): Request[GetMemberResponse] = js.native
+    def getResourceProfile(params: GetResourceProfileRequest): Request[GetResourceProfileResponse] = js.native
+    def getRevealConfiguration(params: GetRevealConfigurationRequest): Request[GetRevealConfigurationResponse] = js.native
+    def getSensitiveDataOccurrences(params: GetSensitiveDataOccurrencesRequest): Request[GetSensitiveDataOccurrencesResponse] = js.native
+    def getSensitiveDataOccurrencesAvailability(params: GetSensitiveDataOccurrencesAvailabilityRequest): Request[GetSensitiveDataOccurrencesAvailabilityResponse] = js.native
+    def getSensitivityInspectionTemplate(params: GetSensitivityInspectionTemplateRequest): Request[GetSensitivityInspectionTemplateResponse] = js.native
     def getUsageStatistics(params: GetUsageStatisticsRequest): Request[GetUsageStatisticsResponse] = js.native
     def getUsageTotals(params: GetUsageTotalsRequest): Request[GetUsageTotalsResponse] = js.native
+    def listAllowLists(params: ListAllowListsRequest): Request[ListAllowListsResponse] = js.native
     def listClassificationJobs(params: ListClassificationJobsRequest): Request[ListClassificationJobsResponse] = js.native
+    def listClassificationScopes(params: ListClassificationScopesRequest): Request[ListClassificationScopesResponse] = js.native
     def listCustomDataIdentifiers(params: ListCustomDataIdentifiersRequest): Request[ListCustomDataIdentifiersResponse] = js.native
     def listFindings(params: ListFindingsRequest): Request[ListFindingsResponse] = js.native
     def listFindingsFilters(params: ListFindingsFiltersRequest): Request[ListFindingsFiltersResponse] = js.native
@@ -168,6 +226,9 @@ package object macie2 {
     def listManagedDataIdentifiers(params: ListManagedDataIdentifiersRequest): Request[ListManagedDataIdentifiersResponse] = js.native
     def listMembers(params: ListMembersRequest): Request[ListMembersResponse] = js.native
     def listOrganizationAdminAccounts(params: ListOrganizationAdminAccountsRequest): Request[ListOrganizationAdminAccountsResponse] = js.native
+    def listResourceProfileArtifacts(params: ListResourceProfileArtifactsRequest): Request[ListResourceProfileArtifactsResponse] = js.native
+    def listResourceProfileDetections(params: ListResourceProfileDetectionsRequest): Request[ListResourceProfileDetectionsResponse] = js.native
+    def listSensitivityInspectionTemplates(params: ListSensitivityInspectionTemplatesRequest): Request[ListSensitivityInspectionTemplatesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putClassificationExportConfiguration(params: PutClassificationExportConfigurationRequest): Request[PutClassificationExportConfigurationResponse] = js.native
     def putFindingsPublicationConfiguration(params: PutFindingsPublicationConfigurationRequest): Request[PutFindingsPublicationConfigurationResponse] = js.native
@@ -175,11 +236,18 @@ package object macie2 {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testCustomDataIdentifier(params: TestCustomDataIdentifierRequest): Request[TestCustomDataIdentifierResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateAllowList(params: UpdateAllowListRequest): Request[UpdateAllowListResponse] = js.native
+    def updateAutomatedDiscoveryConfiguration(params: UpdateAutomatedDiscoveryConfigurationRequest): Request[UpdateAutomatedDiscoveryConfigurationResponse] = js.native
     def updateClassificationJob(params: UpdateClassificationJobRequest): Request[UpdateClassificationJobResponse] = js.native
+    def updateClassificationScope(params: UpdateClassificationScopeRequest): Request[UpdateClassificationScopeResponse] = js.native
     def updateFindingsFilter(params: UpdateFindingsFilterRequest): Request[UpdateFindingsFilterResponse] = js.native
     def updateMacieSession(params: UpdateMacieSessionRequest): Request[UpdateMacieSessionResponse] = js.native
     def updateMemberSession(params: UpdateMemberSessionRequest): Request[UpdateMemberSessionResponse] = js.native
     def updateOrganizationConfiguration(params: UpdateOrganizationConfigurationRequest): Request[UpdateOrganizationConfigurationResponse] = js.native
+    def updateResourceProfile(params: UpdateResourceProfileRequest): Request[UpdateResourceProfileResponse] = js.native
+    def updateResourceProfileDetections(params: UpdateResourceProfileDetectionsRequest): Request[UpdateResourceProfileDetectionsResponse] = js.native
+    def updateRevealConfiguration(params: UpdateRevealConfigurationRequest): Request[UpdateRevealConfigurationResponse] = js.native
+    def updateSensitivityInspectionTemplate(params: UpdateSensitivityInspectionTemplateRequest): Request[UpdateSensitivityInspectionTemplateResponse] = js.native
   }
   object Macie2 {
     @inline implicit def toOps(service: Macie2): Macie2Ops = {
@@ -301,6 +369,83 @@ package object macie2 {
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdminAccount]
+    }
+  }
+
+  /** Specifies the criteria for an allow list. The criteria must specify a regular expression (regex) or an S3 object (s3WordsList). It can't specify both.
+    */
+  @js.native
+  trait AllowListCriteria extends js.Object {
+    var regex: js.UndefOr[__stringMin1Max512PatternSS]
+    var s3WordsList: js.UndefOr[S3WordsList]
+  }
+
+  object AllowListCriteria {
+    @inline
+    def apply(
+        regex: js.UndefOr[__stringMin1Max512PatternSS] = js.undefined,
+        s3WordsList: js.UndefOr[S3WordsList] = js.undefined
+    ): AllowListCriteria = {
+      val __obj = js.Dynamic.literal()
+      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
+      s3WordsList.foreach(__v => __obj.updateDynamic("s3WordsList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AllowListCriteria]
+    }
+  }
+
+  /** Provides information about the current status of an allow list, which indicates whether Amazon Macie can access and use the list's criteria.
+    */
+  @js.native
+  trait AllowListStatus extends js.Object {
+    var code: AllowListStatusCode
+    var description: js.UndefOr[__stringMin1Max1024PatternSS]
+  }
+
+  object AllowListStatus {
+    @inline
+    def apply(
+        code: AllowListStatusCode,
+        description: js.UndefOr[__stringMin1Max1024PatternSS] = js.undefined
+    ): AllowListStatus = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AllowListStatus]
+    }
+  }
+
+  /** Provides a subset of information about an allow list.
+    */
+  @js.native
+  trait AllowListSummary extends js.Object {
+    var arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922]
+    var createdAt: js.UndefOr[__timestampIso8601]
+    var description: js.UndefOr[__stringMin1Max512PatternSS]
+    var id: js.UndefOr[__stringMin22Max22PatternAZ0922]
+    var name: js.UndefOr[__stringMin1Max128Pattern]
+    var updatedAt: js.UndefOr[__timestampIso8601]
+  }
+
+  object AllowListSummary {
+    @inline
+    def apply(
+        arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922] = js.undefined,
+        createdAt: js.UndefOr[__timestampIso8601] = js.undefined,
+        description: js.UndefOr[__stringMin1Max512PatternSS] = js.undefined,
+        id: js.UndefOr[__stringMin22Max22PatternAZ0922] = js.undefined,
+        name: js.UndefOr[__stringMin1Max128Pattern] = js.undefined,
+        updatedAt: js.UndefOr[__timestampIso8601] = js.undefined
+    ): AllowListSummary = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AllowListSummary]
     }
   }
 
@@ -468,7 +613,7 @@ package object macie2 {
     }
   }
 
-  /** Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account level or bucket level. For detailed information about each setting, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html|Blocking public access to your Amazon S3 storage]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at the account or bucket level. For detailed information about each setting, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html|Blocking public access to your Amazon S3 storage]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait BlockPublicAccess extends js.Object {
@@ -660,7 +805,7 @@ package object macie2 {
     }
   }
 
-  /** Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for the versioning property is false and the value for most other properties is null. Exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.
+  /** Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process metadata from Amazon S3 for the bucket and the bucket's objects, the value for the versioning property is false and the value for most other properties is null. Key exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error, refer to the errorCode and errorMessage values.
     */
   @js.native
   trait BucketMetadata extends js.Object {
@@ -674,12 +819,14 @@ package object macie2 {
     var errorCode: js.UndefOr[BucketMetadataErrorCode]
     var errorMessage: js.UndefOr[__string]
     var jobDetails: js.UndefOr[JobDetails]
+    var lastAutomatedDiscoveryTime: js.UndefOr[__timestampIso8601]
     var lastUpdated: js.UndefOr[__timestampIso8601]
     var objectCount: js.UndefOr[__long]
     var objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType]
     var publicAccess: js.UndefOr[BucketPublicAccess]
     var region: js.UndefOr[__string]
     var replicationDetails: js.UndefOr[ReplicationDetails]
+    var sensitivityScore: js.UndefOr[__integer]
     var serverSideEncryption: js.UndefOr[BucketServerSideEncryption]
     var sharedAccess: js.UndefOr[SharedAccess]
     var sizeInBytes: js.UndefOr[__long]
@@ -703,12 +850,14 @@ package object macie2 {
         errorCode: js.UndefOr[BucketMetadataErrorCode] = js.undefined,
         errorMessage: js.UndefOr[__string] = js.undefined,
         jobDetails: js.UndefOr[JobDetails] = js.undefined,
+        lastAutomatedDiscoveryTime: js.UndefOr[__timestampIso8601] = js.undefined,
         lastUpdated: js.UndefOr[__timestampIso8601] = js.undefined,
         objectCount: js.UndefOr[__long] = js.undefined,
         objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType] = js.undefined,
         publicAccess: js.UndefOr[BucketPublicAccess] = js.undefined,
         region: js.UndefOr[__string] = js.undefined,
         replicationDetails: js.UndefOr[ReplicationDetails] = js.undefined,
+        sensitivityScore: js.UndefOr[__integer] = js.undefined,
         serverSideEncryption: js.UndefOr[BucketServerSideEncryption] = js.undefined,
         sharedAccess: js.UndefOr[SharedAccess] = js.undefined,
         sizeInBytes: js.UndefOr[__long] = js.undefined,
@@ -729,12 +878,14 @@ package object macie2 {
       errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
       errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       jobDetails.foreach(__v => __obj.updateDynamic("jobDetails")(__v.asInstanceOf[js.Any]))
+      lastAutomatedDiscoveryTime.foreach(__v => __obj.updateDynamic("lastAutomatedDiscoveryTime")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
       objectCountByEncryptionType.foreach(__v => __obj.updateDynamic("objectCountByEncryptionType")(__v.asInstanceOf[js.Any]))
       publicAccess.foreach(__v => __obj.updateDynamic("publicAccess")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       replicationDetails.foreach(__v => __obj.updateDynamic("replicationDetails")(__v.asInstanceOf[js.Any]))
+      sensitivityScore.foreach(__v => __obj.updateDynamic("sensitivityScore")(__v.asInstanceOf[js.Any]))
       serverSideEncryption.foreach(__v => __obj.updateDynamic("serverSideEncryption")(__v.asInstanceOf[js.Any]))
       sharedAccess.foreach(__v => __obj.updateDynamic("sharedAccess")(__v.asInstanceOf[js.Any]))
       sizeInBytes.foreach(__v => __obj.updateDynamic("sizeInBytes")(__v.asInstanceOf[js.Any]))
@@ -852,6 +1003,33 @@ package object macie2 {
     }
   }
 
+  /** Provides aggregated statistical data for sensitive data discovery metrics that apply to S3 buckets, grouped by bucket sensitivity score (sensitivityScore). If automated sensitive data discovery is currently disabled for your account, the value for each metric is 0.
+    */
+  @js.native
+  trait BucketStatisticsBySensitivity extends js.Object {
+    var classificationError: js.UndefOr[SensitivityAggregations]
+    var notClassified: js.UndefOr[SensitivityAggregations]
+    var notSensitive: js.UndefOr[SensitivityAggregations]
+    var sensitive: js.UndefOr[SensitivityAggregations]
+  }
+
+  object BucketStatisticsBySensitivity {
+    @inline
+    def apply(
+        classificationError: js.UndefOr[SensitivityAggregations] = js.undefined,
+        notClassified: js.UndefOr[SensitivityAggregations] = js.undefined,
+        notSensitive: js.UndefOr[SensitivityAggregations] = js.undefined,
+        sensitive: js.UndefOr[SensitivityAggregations] = js.undefined
+    ): BucketStatisticsBySensitivity = {
+      val __obj = js.Dynamic.literal()
+      classificationError.foreach(__v => __obj.updateDynamic("classificationError")(__v.asInstanceOf[js.Any]))
+      notClassified.foreach(__v => __obj.updateDynamic("notClassified")(__v.asInstanceOf[js.Any]))
+      notSensitive.foreach(__v => __obj.updateDynamic("notSensitive")(__v.asInstanceOf[js.Any]))
+      sensitive.foreach(__v => __obj.updateDynamic("sensitive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketStatisticsBySensitivity]
+    }
+  }
+
   /** Specifies the location of an occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file.
     */
   @js.native
@@ -879,13 +1057,14 @@ package object macie2 {
     }
   }
 
-  /** Provides information about a sensitive data finding, including the classification job that produced the finding.
+  /** Provides information about a sensitive data finding and the details of the finding.
     */
   @js.native
   trait ClassificationDetails extends js.Object {
     var detailedResultsLocation: js.UndefOr[__string]
     var jobArn: js.UndefOr[__string]
     var jobId: js.UndefOr[__string]
+    var originType: js.UndefOr[OriginType]
     var result: js.UndefOr[ClassificationResult]
   }
 
@@ -895,18 +1074,20 @@ package object macie2 {
         detailedResultsLocation: js.UndefOr[__string] = js.undefined,
         jobArn: js.UndefOr[__string] = js.undefined,
         jobId: js.UndefOr[__string] = js.undefined,
+        originType: js.UndefOr[OriginType] = js.undefined,
         result: js.UndefOr[ClassificationResult] = js.undefined
     ): ClassificationDetails = {
       val __obj = js.Dynamic.literal()
       detailedResultsLocation.foreach(__v => __obj.updateDynamic("detailedResultsLocation")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
       jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      originType.foreach(__v => __obj.updateDynamic("originType")(__v.asInstanceOf[js.Any]))
       result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClassificationDetails]
     }
   }
 
-  /** Specifies where to store data classification results, and the encryption settings to use when storing results in that location. Currently, you can store classification results only in an S3 bucket.
+  /** Specifies where to store data classification results, and the encryption settings to use when storing results in that location. The location must be an S3 bucket.
     */
   @js.native
   trait ClassificationExportConfiguration extends js.Object {
@@ -978,12 +1159,83 @@ package object macie2 {
     }
   }
 
+  /** Provides information about the classification scope for an Amazon Macie account. Macie uses the scope's settings when it performs automated sensitive data discovery for the account.
+    */
+  @js.native
+  trait ClassificationScopeSummary extends js.Object {
+    var id: js.UndefOr[ClassificationScopeId]
+    var name: js.UndefOr[ClassificationScopeName]
+  }
+
+  object ClassificationScopeSummary {
+    @inline
+    def apply(
+        id: js.UndefOr[ClassificationScopeId] = js.undefined,
+        name: js.UndefOr[ClassificationScopeName] = js.undefined
+    ): ClassificationScopeSummary = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClassificationScopeSummary]
+    }
+  }
+
+  @js.native
+  trait CreateAllowListRequest extends js.Object {
+    var clientToken: __string
+    var criteria: AllowListCriteria
+    var name: __stringMin1Max128Pattern
+    var description: js.UndefOr[__stringMin1Max512PatternSS]
+    var tags: js.UndefOr[TagMap]
+  }
+
+  object CreateAllowListRequest {
+    @inline
+    def apply(
+        clientToken: __string,
+        criteria: AllowListCriteria,
+        name: __stringMin1Max128Pattern,
+        description: js.UndefOr[__stringMin1Max512PatternSS] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateAllowListRequest = {
+      val __obj = js.Dynamic.literal(
+        "clientToken" -> clientToken.asInstanceOf[js.Any],
+        "criteria" -> criteria.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAllowListRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAllowListResponse extends js.Object {
+    var arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922]
+    var id: js.UndefOr[__stringMin22Max22PatternAZ0922]
+  }
+
+  object CreateAllowListResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922] = js.undefined,
+        id: js.UndefOr[__stringMin22Max22PatternAZ0922] = js.undefined
+    ): CreateAllowListResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAllowListResponse]
+    }
+  }
+
   @js.native
   trait CreateClassificationJobRequest extends js.Object {
     var clientToken: __string
     var jobType: JobType
     var name: __string
     var s3JobDefinition: S3JobDefinition
+    var allowListIds: js.UndefOr[__listOf__string]
     var customDataIdentifierIds: js.UndefOr[__listOf__string]
     var description: js.UndefOr[__string]
     var initialRun: js.UndefOr[__boolean]
@@ -1001,6 +1253,7 @@ package object macie2 {
         jobType: JobType,
         name: __string,
         s3JobDefinition: S3JobDefinition,
+        allowListIds: js.UndefOr[__listOf__string] = js.undefined,
         customDataIdentifierIds: js.UndefOr[__listOf__string] = js.undefined,
         description: js.UndefOr[__string] = js.undefined,
         initialRun: js.UndefOr[__boolean] = js.undefined,
@@ -1017,6 +1270,7 @@ package object macie2 {
         "s3JobDefinition" -> s3JobDefinition.asInstanceOf[js.Any]
       )
 
+      allowListIds.foreach(__v => __obj.updateDynamic("allowListIds")(__v.asInstanceOf[js.Any]))
       customDataIdentifierIds.foreach(__v => __obj.updateDynamic("customDataIdentifierIds")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       initialRun.foreach(__v => __obj.updateDynamic("initialRun")(__v.asInstanceOf[js.Any]))
@@ -1050,13 +1304,13 @@ package object macie2 {
 
   @js.native
   trait CreateCustomDataIdentifierRequest extends js.Object {
+    var name: __string
+    var regex: __string
     var clientToken: js.UndefOr[__string]
     var description: js.UndefOr[__string]
     var ignoreWords: js.UndefOr[__listOf__string]
     var keywords: js.UndefOr[__listOf__string]
     var maximumMatchDistance: js.UndefOr[__integer]
-    var name: js.UndefOr[__string]
-    var regex: js.UndefOr[__string]
     var severityLevels: js.UndefOr[SeverityLevelList]
     var tags: js.UndefOr[TagMap]
   }
@@ -1064,24 +1318,26 @@ package object macie2 {
   object CreateCustomDataIdentifierRequest {
     @inline
     def apply(
+        name: __string,
+        regex: __string,
         clientToken: js.UndefOr[__string] = js.undefined,
         description: js.UndefOr[__string] = js.undefined,
         ignoreWords: js.UndefOr[__listOf__string] = js.undefined,
         keywords: js.UndefOr[__listOf__string] = js.undefined,
         maximumMatchDistance: js.UndefOr[__integer] = js.undefined,
-        name: js.UndefOr[__string] = js.undefined,
-        regex: js.UndefOr[__string] = js.undefined,
         severityLevels: js.UndefOr[SeverityLevelList] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateCustomDataIdentifierRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any],
+        "regex" -> regex.asInstanceOf[js.Any]
+      )
+
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       ignoreWords.foreach(__v => __obj.updateDynamic("ignoreWords")(__v.asInstanceOf[js.Any]))
       keywords.foreach(__v => __obj.updateDynamic("keywords")(__v.asInstanceOf[js.Any]))
       maximumMatchDistance.foreach(__v => __obj.updateDynamic("maximumMatchDistance")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
       severityLevels.foreach(__v => __obj.updateDynamic("severityLevels")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomDataIdentifierRequest]
@@ -1487,6 +1743,38 @@ package object macie2 {
   }
 
   @js.native
+  trait DeleteAllowListRequest extends js.Object {
+    var id: __string
+    var ignoreJobChecks: js.UndefOr[__string]
+  }
+
+  object DeleteAllowListRequest {
+    @inline
+    def apply(
+        id: __string,
+        ignoreJobChecks: js.UndefOr[__string] = js.undefined
+    ): DeleteAllowListRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      ignoreJobChecks.foreach(__v => __obj.updateDynamic("ignoreJobChecks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAllowListRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAllowListResponse extends js.Object
+
+  object DeleteAllowListResponse {
+    @inline
+    def apply(): DeleteAllowListResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAllowListResponse]
+    }
+  }
+
+  @js.native
   trait DeleteCustomDataIdentifierRequest extends js.Object {
     var id: __string
   }
@@ -1666,6 +1954,7 @@ package object macie2 {
 
   @js.native
   trait DescribeClassificationJobResponse extends js.Object {
+    var allowListIds: js.UndefOr[__listOf__string]
     var clientToken: js.UndefOr[__string]
     var createdAt: js.UndefOr[__timestampIso8601]
     var customDataIdentifierIds: js.UndefOr[__listOf__string]
@@ -1691,6 +1980,7 @@ package object macie2 {
   object DescribeClassificationJobResponse {
     @inline
     def apply(
+        allowListIds: js.UndefOr[__listOf__string] = js.undefined,
         clientToken: js.UndefOr[__string] = js.undefined,
         createdAt: js.UndefOr[__timestampIso8601] = js.undefined,
         customDataIdentifierIds: js.UndefOr[__listOf__string] = js.undefined,
@@ -1713,6 +2003,7 @@ package object macie2 {
         userPausedDetails: js.UndefOr[UserPausedDetails] = js.undefined
     ): DescribeClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
+      allowListIds.foreach(__v => __obj.updateDynamic("allowListIds")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       customDataIdentifierIds.foreach(__v => __obj.updateDynamic("customDataIdentifierIds")(__v.asInstanceOf[js.Any]))
@@ -1764,6 +2055,58 @@ package object macie2 {
       autoEnable.foreach(__v => __obj.updateDynamic("autoEnable")(__v.asInstanceOf[js.Any]))
       maxAccountLimitReached.foreach(__v => __obj.updateDynamic("maxAccountLimitReached")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationConfigurationResponse]
+    }
+  }
+
+  /** Specifies 1-10 occurrences of a specific type of sensitive data reported by a finding.
+    */
+  @js.native
+  trait DetectedDataDetails extends js.Object {
+    var value: __stringMin1Max128
+  }
+
+  object DetectedDataDetails {
+    @inline
+    def apply(
+        value: __stringMin1Max128
+    ): DetectedDataDetails = {
+      val __obj = js.Dynamic.literal(
+        "value" -> value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetectedDataDetails]
+    }
+  }
+
+  /** Provides information about a type of sensitive data that Amazon Macie found in an S3 bucket while performing automated sensitive data discovery for the bucket. The information also specifies the custom data identifier or managed data identifier that detected the data. This information is available only if automated sensitive data discovery is currently enabled for your account.
+    */
+  @js.native
+  trait Detection extends js.Object {
+    var arn: js.UndefOr[__string]
+    var count: js.UndefOr[__long]
+    var id: js.UndefOr[__string]
+    var name: js.UndefOr[__string]
+    var suppressed: js.UndefOr[__boolean]
+    var `type`: js.UndefOr[DataIdentifierType]
+  }
+
+  object Detection {
+    @inline
+    def apply(
+        arn: js.UndefOr[__string] = js.undefined,
+        count: js.UndefOr[__long] = js.undefined,
+        id: js.UndefOr[__string] = js.undefined,
+        name: js.UndefOr[__string] = js.undefined,
+        suppressed: js.UndefOr[__boolean] = js.undefined,
+        `type`: js.UndefOr[DataIdentifierType] = js.undefined
+    ): Detection = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      suppressed.foreach(__v => __obj.updateDynamic("suppressed")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Detection]
     }
   }
 
@@ -2213,6 +2556,105 @@ package object macie2 {
   }
 
   @js.native
+  trait GetAllowListRequest extends js.Object {
+    var id: __string
+  }
+
+  object GetAllowListRequest {
+    @inline
+    def apply(
+        id: __string
+    ): GetAllowListRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAllowListRequest]
+    }
+  }
+
+  @js.native
+  trait GetAllowListResponse extends js.Object {
+    var arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922]
+    var createdAt: js.UndefOr[__timestampIso8601]
+    var criteria: js.UndefOr[AllowListCriteria]
+    var description: js.UndefOr[__stringMin1Max512PatternSS]
+    var id: js.UndefOr[__stringMin22Max22PatternAZ0922]
+    var name: js.UndefOr[__stringMin1Max128Pattern]
+    var status: js.UndefOr[AllowListStatus]
+    var tags: js.UndefOr[TagMap]
+    var updatedAt: js.UndefOr[__timestampIso8601]
+  }
+
+  object GetAllowListResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922] = js.undefined,
+        createdAt: js.UndefOr[__timestampIso8601] = js.undefined,
+        criteria: js.UndefOr[AllowListCriteria] = js.undefined,
+        description: js.UndefOr[__stringMin1Max512PatternSS] = js.undefined,
+        id: js.UndefOr[__stringMin22Max22PatternAZ0922] = js.undefined,
+        name: js.UndefOr[__stringMin1Max128Pattern] = js.undefined,
+        status: js.UndefOr[AllowListStatus] = js.undefined,
+        tags: js.UndefOr[TagMap] = js.undefined,
+        updatedAt: js.UndefOr[__timestampIso8601] = js.undefined
+    ): GetAllowListResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      criteria.foreach(__v => __obj.updateDynamic("criteria")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAllowListResponse]
+    }
+  }
+
+  @js.native
+  trait GetAutomatedDiscoveryConfigurationRequest extends js.Object
+
+  object GetAutomatedDiscoveryConfigurationRequest {
+    @inline
+    def apply(): GetAutomatedDiscoveryConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetAutomatedDiscoveryConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetAutomatedDiscoveryConfigurationResponse extends js.Object {
+    var classificationScopeId: js.UndefOr[ClassificationScopeId]
+    var disabledAt: js.UndefOr[Timestamp]
+    var firstEnabledAt: js.UndefOr[Timestamp]
+    var lastUpdatedAt: js.UndefOr[Timestamp]
+    var sensitivityInspectionTemplateId: js.UndefOr[SensitivityInspectionTemplateId]
+    var status: js.UndefOr[AutomatedDiscoveryStatus]
+  }
+
+  object GetAutomatedDiscoveryConfigurationResponse {
+    @inline
+    def apply(
+        classificationScopeId: js.UndefOr[ClassificationScopeId] = js.undefined,
+        disabledAt: js.UndefOr[Timestamp] = js.undefined,
+        firstEnabledAt: js.UndefOr[Timestamp] = js.undefined,
+        lastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        sensitivityInspectionTemplateId: js.UndefOr[SensitivityInspectionTemplateId] = js.undefined,
+        status: js.UndefOr[AutomatedDiscoveryStatus] = js.undefined
+    ): GetAutomatedDiscoveryConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      classificationScopeId.foreach(__v => __obj.updateDynamic("classificationScopeId")(__v.asInstanceOf[js.Any]))
+      disabledAt.foreach(__v => __obj.updateDynamic("disabledAt")(__v.asInstanceOf[js.Any]))
+      firstEnabledAt.foreach(__v => __obj.updateDynamic("firstEnabledAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      sensitivityInspectionTemplateId.foreach(__v => __obj.updateDynamic("sensitivityInspectionTemplateId")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAutomatedDiscoveryConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait GetBucketStatisticsRequest extends js.Object {
     var accountId: js.UndefOr[__string]
   }
@@ -2235,6 +2677,7 @@ package object macie2 {
     var bucketCountByEncryptionType: js.UndefOr[BucketCountByEncryptionType]
     var bucketCountByObjectEncryptionRequirement: js.UndefOr[BucketCountPolicyAllowsUnencryptedObjectUploads]
     var bucketCountBySharedAccessType: js.UndefOr[BucketCountBySharedAccessType]
+    var bucketStatisticsBySensitivity: js.UndefOr[BucketStatisticsBySensitivity]
     var classifiableObjectCount: js.UndefOr[__long]
     var classifiableSizeInBytes: js.UndefOr[__long]
     var lastUpdated: js.UndefOr[__timestampIso8601]
@@ -2253,6 +2696,7 @@ package object macie2 {
         bucketCountByEncryptionType: js.UndefOr[BucketCountByEncryptionType] = js.undefined,
         bucketCountByObjectEncryptionRequirement: js.UndefOr[BucketCountPolicyAllowsUnencryptedObjectUploads] = js.undefined,
         bucketCountBySharedAccessType: js.UndefOr[BucketCountBySharedAccessType] = js.undefined,
+        bucketStatisticsBySensitivity: js.UndefOr[BucketStatisticsBySensitivity] = js.undefined,
         classifiableObjectCount: js.UndefOr[__long] = js.undefined,
         classifiableSizeInBytes: js.UndefOr[__long] = js.undefined,
         lastUpdated: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -2268,6 +2712,7 @@ package object macie2 {
       bucketCountByEncryptionType.foreach(__v => __obj.updateDynamic("bucketCountByEncryptionType")(__v.asInstanceOf[js.Any]))
       bucketCountByObjectEncryptionRequirement.foreach(__v => __obj.updateDynamic("bucketCountByObjectEncryptionRequirement")(__v.asInstanceOf[js.Any]))
       bucketCountBySharedAccessType.foreach(__v => __obj.updateDynamic("bucketCountBySharedAccessType")(__v.asInstanceOf[js.Any]))
+      bucketStatisticsBySensitivity.foreach(__v => __obj.updateDynamic("bucketStatisticsBySensitivity")(__v.asInstanceOf[js.Any]))
       classifiableObjectCount.foreach(__v => __obj.updateDynamic("classifiableObjectCount")(__v.asInstanceOf[js.Any]))
       classifiableSizeInBytes.foreach(__v => __obj.updateDynamic("classifiableSizeInBytes")(__v.asInstanceOf[js.Any]))
       lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
@@ -2304,6 +2749,45 @@ package object macie2 {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetClassificationExportConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetClassificationScopeRequest extends js.Object {
+    var id: __string
+  }
+
+  object GetClassificationScopeRequest {
+    @inline
+    def apply(
+        id: __string
+    ): GetClassificationScopeRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetClassificationScopeRequest]
+    }
+  }
+
+  @js.native
+  trait GetClassificationScopeResponse extends js.Object {
+    var id: js.UndefOr[ClassificationScopeId]
+    var name: js.UndefOr[ClassificationScopeName]
+    var s3: js.UndefOr[S3ClassificationScope]
+  }
+
+  object GetClassificationScopeResponse {
+    @inline
+    def apply(
+        id: js.UndefOr[ClassificationScopeId] = js.undefined,
+        name: js.UndefOr[ClassificationScopeName] = js.undefined,
+        s3: js.UndefOr[S3ClassificationScope] = js.undefined
+    ): GetClassificationScopeResponse = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetClassificationScopeResponse]
     }
   }
 
@@ -2681,6 +3165,195 @@ package object macie2 {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMemberResponse]
+    }
+  }
+
+  @js.native
+  trait GetResourceProfileRequest extends js.Object {
+    var resourceArn: __string
+  }
+
+  object GetResourceProfileRequest {
+    @inline
+    def apply(
+        resourceArn: __string
+    ): GetResourceProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResourceProfileRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourceProfileResponse extends js.Object {
+    var profileUpdatedAt: js.UndefOr[__timestampIso8601]
+    var sensitivityScore: js.UndefOr[__integer]
+    var sensitivityScoreOverridden: js.UndefOr[__boolean]
+    var statistics: js.UndefOr[ResourceStatistics]
+  }
+
+  object GetResourceProfileResponse {
+    @inline
+    def apply(
+        profileUpdatedAt: js.UndefOr[__timestampIso8601] = js.undefined,
+        sensitivityScore: js.UndefOr[__integer] = js.undefined,
+        sensitivityScoreOverridden: js.UndefOr[__boolean] = js.undefined,
+        statistics: js.UndefOr[ResourceStatistics] = js.undefined
+    ): GetResourceProfileResponse = {
+      val __obj = js.Dynamic.literal()
+      profileUpdatedAt.foreach(__v => __obj.updateDynamic("profileUpdatedAt")(__v.asInstanceOf[js.Any]))
+      sensitivityScore.foreach(__v => __obj.updateDynamic("sensitivityScore")(__v.asInstanceOf[js.Any]))
+      sensitivityScoreOverridden.foreach(__v => __obj.updateDynamic("sensitivityScoreOverridden")(__v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceProfileResponse]
+    }
+  }
+
+  @js.native
+  trait GetRevealConfigurationRequest extends js.Object
+
+  object GetRevealConfigurationRequest {
+    @inline
+    def apply(): GetRevealConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetRevealConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetRevealConfigurationResponse extends js.Object {
+    var configuration: js.UndefOr[RevealConfiguration]
+  }
+
+  object GetRevealConfigurationResponse {
+    @inline
+    def apply(
+        configuration: js.UndefOr[RevealConfiguration] = js.undefined
+    ): GetRevealConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRevealConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetSensitiveDataOccurrencesAvailabilityRequest extends js.Object {
+    var findingId: __string
+  }
+
+  object GetSensitiveDataOccurrencesAvailabilityRequest {
+    @inline
+    def apply(
+        findingId: __string
+    ): GetSensitiveDataOccurrencesAvailabilityRequest = {
+      val __obj = js.Dynamic.literal(
+        "findingId" -> findingId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSensitiveDataOccurrencesAvailabilityRequest]
+    }
+  }
+
+  @js.native
+  trait GetSensitiveDataOccurrencesAvailabilityResponse extends js.Object {
+    var code: js.UndefOr[AvailabilityCode]
+    var reasons: js.UndefOr[__listOfUnavailabilityReasonCode]
+  }
+
+  object GetSensitiveDataOccurrencesAvailabilityResponse {
+    @inline
+    def apply(
+        code: js.UndefOr[AvailabilityCode] = js.undefined,
+        reasons: js.UndefOr[__listOfUnavailabilityReasonCode] = js.undefined
+    ): GetSensitiveDataOccurrencesAvailabilityResponse = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      reasons.foreach(__v => __obj.updateDynamic("reasons")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSensitiveDataOccurrencesAvailabilityResponse]
+    }
+  }
+
+  @js.native
+  trait GetSensitiveDataOccurrencesRequest extends js.Object {
+    var findingId: __string
+  }
+
+  object GetSensitiveDataOccurrencesRequest {
+    @inline
+    def apply(
+        findingId: __string
+    ): GetSensitiveDataOccurrencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "findingId" -> findingId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSensitiveDataOccurrencesRequest]
+    }
+  }
+
+  @js.native
+  trait GetSensitiveDataOccurrencesResponse extends js.Object {
+    var error: js.UndefOr[__string]
+    var sensitiveDataOccurrences: js.UndefOr[SensitiveDataOccurrences]
+    var status: js.UndefOr[RevealRequestStatus]
+  }
+
+  object GetSensitiveDataOccurrencesResponse {
+    @inline
+    def apply(
+        error: js.UndefOr[__string] = js.undefined,
+        sensitiveDataOccurrences: js.UndefOr[SensitiveDataOccurrences] = js.undefined,
+        status: js.UndefOr[RevealRequestStatus] = js.undefined
+    ): GetSensitiveDataOccurrencesResponse = {
+      val __obj = js.Dynamic.literal()
+      error.foreach(__v => __obj.updateDynamic("error")(__v.asInstanceOf[js.Any]))
+      sensitiveDataOccurrences.foreach(__v => __obj.updateDynamic("sensitiveDataOccurrences")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSensitiveDataOccurrencesResponse]
+    }
+  }
+
+  @js.native
+  trait GetSensitivityInspectionTemplateRequest extends js.Object {
+    var id: __string
+  }
+
+  object GetSensitivityInspectionTemplateRequest {
+    @inline
+    def apply(
+        id: __string
+    ): GetSensitivityInspectionTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSensitivityInspectionTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait GetSensitivityInspectionTemplateResponse extends js.Object {
+    var description: js.UndefOr[__string]
+    var excludes: js.UndefOr[SensitivityInspectionTemplateExcludes]
+    var includes: js.UndefOr[SensitivityInspectionTemplateIncludes]
+    var name: js.UndefOr[__string]
+    var sensitivityInspectionTemplateId: js.UndefOr[SensitivityInspectionTemplateId]
+  }
+
+  object GetSensitivityInspectionTemplateResponse {
+    @inline
+    def apply(
+        description: js.UndefOr[__string] = js.undefined,
+        excludes: js.UndefOr[SensitivityInspectionTemplateExcludes] = js.undefined,
+        includes: js.UndefOr[SensitivityInspectionTemplateIncludes] = js.undefined,
+        name: js.UndefOr[__string] = js.undefined,
+        sensitivityInspectionTemplateId: js.UndefOr[SensitivityInspectionTemplateId] = js.undefined
+    ): GetSensitivityInspectionTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      excludes.foreach(__v => __obj.updateDynamic("excludes")(__v.asInstanceOf[js.Any]))
+      includes.foreach(__v => __obj.updateDynamic("includes")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      sensitivityInspectionTemplateId.foreach(__v => __obj.updateDynamic("sensitivityInspectionTemplateId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetSensitivityInspectionTemplateResponse]
     }
   }
 
@@ -3133,6 +3806,44 @@ package object macie2 {
   }
 
   @js.native
+  trait ListAllowListsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListAllowListsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListAllowListsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAllowListsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAllowListsResponse extends js.Object {
+    var allowLists: js.UndefOr[__listOfAllowListSummary]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListAllowListsResponse {
+    @inline
+    def apply(
+        allowLists: js.UndefOr[__listOfAllowListSummary] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListAllowListsResponse = {
+      val __obj = js.Dynamic.literal()
+      allowLists.foreach(__v => __obj.updateDynamic("allowLists")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAllowListsResponse]
+    }
+  }
+
+  @js.native
   trait ListClassificationJobsRequest extends js.Object {
     var filterCriteria: js.UndefOr[ListJobsFilterCriteria]
     var maxResults: js.UndefOr[__integer]
@@ -3173,6 +3884,44 @@ package object macie2 {
       items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClassificationJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListClassificationScopesRequest extends js.Object {
+    var name: js.UndefOr[__string]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListClassificationScopesRequest {
+    @inline
+    def apply(
+        name: js.UndefOr[__string] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListClassificationScopesRequest = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClassificationScopesRequest]
+    }
+  }
+
+  @js.native
+  trait ListClassificationScopesResponse extends js.Object {
+    var classificationScopes: js.UndefOr[__listOfClassificationScopeSummary]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListClassificationScopesResponse {
+    @inline
+    def apply(
+        classificationScopes: js.UndefOr[__listOfClassificationScopeSummary] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListClassificationScopesResponse = {
+      val __obj = js.Dynamic.literal()
+      classificationScopes.foreach(__v => __obj.updateDynamic("classificationScopes")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClassificationScopesResponse]
     }
   }
 
@@ -3515,6 +4264,127 @@ package object macie2 {
   }
 
   @js.native
+  trait ListResourceProfileArtifactsRequest extends js.Object {
+    var resourceArn: __string
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListResourceProfileArtifactsRequest {
+    @inline
+    def apply(
+        resourceArn: __string,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListResourceProfileArtifactsRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceProfileArtifactsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceProfileArtifactsResponse extends js.Object {
+    var artifacts: js.UndefOr[__listOfResourceProfileArtifact]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListResourceProfileArtifactsResponse {
+    @inline
+    def apply(
+        artifacts: js.UndefOr[__listOfResourceProfileArtifact] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListResourceProfileArtifactsResponse = {
+      val __obj = js.Dynamic.literal()
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceProfileArtifactsResponse]
+    }
+  }
+
+  @js.native
+  trait ListResourceProfileDetectionsRequest extends js.Object {
+    var resourceArn: __string
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListResourceProfileDetectionsRequest {
+    @inline
+    def apply(
+        resourceArn: __string,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListResourceProfileDetectionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceProfileDetectionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResourceProfileDetectionsResponse extends js.Object {
+    var detections: js.UndefOr[__listOfDetection]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListResourceProfileDetectionsResponse {
+    @inline
+    def apply(
+        detections: js.UndefOr[__listOfDetection] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListResourceProfileDetectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      detections.foreach(__v => __obj.updateDynamic("detections")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResourceProfileDetectionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSensitivityInspectionTemplatesRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[__string]
+  }
+
+  object ListSensitivityInspectionTemplatesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[__string] = js.undefined
+    ): ListSensitivityInspectionTemplatesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSensitivityInspectionTemplatesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSensitivityInspectionTemplatesResponse extends js.Object {
+    var nextToken: js.UndefOr[__string]
+    var sensitivityInspectionTemplates: js.UndefOr[__listOfSensitivityInspectionTemplatesEntry]
+  }
+
+  object ListSensitivityInspectionTemplatesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[__string] = js.undefined,
+        sensitivityInspectionTemplates: js.UndefOr[__listOfSensitivityInspectionTemplatesEntry] = js.undefined
+    ): ListSensitivityInspectionTemplatesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sensitivityInspectionTemplates.foreach(__v => __obj.updateDynamic("sensitivityInspectionTemplates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSensitivityInspectionTemplatesResponse]
+    }
+  }
+
+  @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: __string
   }
@@ -3568,7 +4438,7 @@ package object macie2 {
     }
   }
 
-  /** Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Exceptions are accountId and bucketName. To identify the cause of the error, refer to the errorCode and errorMessage values.
+  /** Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects, the value for most of these properties is null. Key exceptions are accountId and bucketName. To identify the cause of the error, refer to the errorCode and errorMessage values.
     */
   @js.native
   trait MatchingBucket extends js.Object {
@@ -3579,8 +4449,10 @@ package object macie2 {
     var errorCode: js.UndefOr[BucketMetadataErrorCode]
     var errorMessage: js.UndefOr[__string]
     var jobDetails: js.UndefOr[JobDetails]
+    var lastAutomatedDiscoveryTime: js.UndefOr[__timestampIso8601]
     var objectCount: js.UndefOr[__long]
     var objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType]
+    var sensitivityScore: js.UndefOr[__integer]
     var sizeInBytes: js.UndefOr[__long]
     var sizeInBytesCompressed: js.UndefOr[__long]
     var unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics]
@@ -3597,8 +4469,10 @@ package object macie2 {
         errorCode: js.UndefOr[BucketMetadataErrorCode] = js.undefined,
         errorMessage: js.UndefOr[__string] = js.undefined,
         jobDetails: js.UndefOr[JobDetails] = js.undefined,
+        lastAutomatedDiscoveryTime: js.UndefOr[__timestampIso8601] = js.undefined,
         objectCount: js.UndefOr[__long] = js.undefined,
         objectCountByEncryptionType: js.UndefOr[ObjectCountByEncryptionType] = js.undefined,
+        sensitivityScore: js.UndefOr[__integer] = js.undefined,
         sizeInBytes: js.UndefOr[__long] = js.undefined,
         sizeInBytesCompressed: js.UndefOr[__long] = js.undefined,
         unclassifiableObjectCount: js.UndefOr[ObjectLevelStatistics] = js.undefined,
@@ -3612,8 +4486,10 @@ package object macie2 {
       errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
       errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       jobDetails.foreach(__v => __obj.updateDynamic("jobDetails")(__v.asInstanceOf[js.Any]))
+      lastAutomatedDiscoveryTime.foreach(__v => __obj.updateDynamic("lastAutomatedDiscoveryTime")(__v.asInstanceOf[js.Any]))
       objectCount.foreach(__v => __obj.updateDynamic("objectCount")(__v.asInstanceOf[js.Any]))
       objectCountByEncryptionType.foreach(__v => __obj.updateDynamic("objectCountByEncryptionType")(__v.asInstanceOf[js.Any]))
+      sensitivityScore.foreach(__v => __obj.updateDynamic("sensitivityScore")(__v.asInstanceOf[js.Any]))
       sizeInBytes.foreach(__v => __obj.updateDynamic("sizeInBytes")(__v.asInstanceOf[js.Any]))
       sizeInBytesCompressed.foreach(__v => __obj.updateDynamic("sizeInBytesCompressed")(__v.asInstanceOf[js.Any]))
       unclassifiableObjectCount.foreach(__v => __obj.updateDynamic("unclassifiableObjectCount")(__v.asInstanceOf[js.Any]))
@@ -3730,7 +4606,7 @@ package object macie2 {
     }
   }
 
-  /** Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for the buckets in the query results. If versioning is enabled for a bucket, total storage size values are based on the size of the latest version of each applicable object in the bucket.
+  /** Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.
     */
   @js.native
   trait ObjectLevelStatistics extends js.Object {
@@ -3961,6 +4837,74 @@ package object macie2 {
     }
   }
 
+  /** Provides information about an S3 object that Amazon Macie selected for analysis while performing automated sensitive data discovery for an S3 bucket, and the status and results of the analysis. This information is available only if automated sensitive data discovery is currently enabled for your account.
+    */
+  @js.native
+  trait ResourceProfileArtifact extends js.Object {
+    var arn: __string
+    var classificationResultStatus: __string
+    var sensitive: js.UndefOr[__boolean]
+  }
+
+  object ResourceProfileArtifact {
+    @inline
+    def apply(
+        arn: __string,
+        classificationResultStatus: __string,
+        sensitive: js.UndefOr[__boolean] = js.undefined
+    ): ResourceProfileArtifact = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "classificationResultStatus" -> classificationResultStatus.asInstanceOf[js.Any]
+      )
+
+      sensitive.foreach(__v => __obj.updateDynamic("sensitive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceProfileArtifact]
+    }
+  }
+
+  /** Provides statistical data for sensitive data discovery metrics that apply to an S3 bucket that Amazon Macie monitors and analyzes for your account. The statistics capture the results of automated sensitive data discovery activities that Macie has performed for the bucket. The data is available only if automated sensitive data discovery is currently enabled for your account.
+    */
+  @js.native
+  trait ResourceStatistics extends js.Object {
+    var totalBytesClassified: js.UndefOr[__long]
+    var totalDetections: js.UndefOr[__long]
+    var totalDetectionsSuppressed: js.UndefOr[__long]
+    var totalItemsClassified: js.UndefOr[__long]
+    var totalItemsSensitive: js.UndefOr[__long]
+    var totalItemsSkipped: js.UndefOr[__long]
+    var totalItemsSkippedInvalidEncryption: js.UndefOr[__long]
+    var totalItemsSkippedInvalidKms: js.UndefOr[__long]
+    var totalItemsSkippedPermissionDenied: js.UndefOr[__long]
+  }
+
+  object ResourceStatistics {
+    @inline
+    def apply(
+        totalBytesClassified: js.UndefOr[__long] = js.undefined,
+        totalDetections: js.UndefOr[__long] = js.undefined,
+        totalDetectionsSuppressed: js.UndefOr[__long] = js.undefined,
+        totalItemsClassified: js.UndefOr[__long] = js.undefined,
+        totalItemsSensitive: js.UndefOr[__long] = js.undefined,
+        totalItemsSkipped: js.UndefOr[__long] = js.undefined,
+        totalItemsSkippedInvalidEncryption: js.UndefOr[__long] = js.undefined,
+        totalItemsSkippedInvalidKms: js.UndefOr[__long] = js.undefined,
+        totalItemsSkippedPermissionDenied: js.UndefOr[__long] = js.undefined
+    ): ResourceStatistics = {
+      val __obj = js.Dynamic.literal()
+      totalBytesClassified.foreach(__v => __obj.updateDynamic("totalBytesClassified")(__v.asInstanceOf[js.Any]))
+      totalDetections.foreach(__v => __obj.updateDynamic("totalDetections")(__v.asInstanceOf[js.Any]))
+      totalDetectionsSuppressed.foreach(__v => __obj.updateDynamic("totalDetectionsSuppressed")(__v.asInstanceOf[js.Any]))
+      totalItemsClassified.foreach(__v => __obj.updateDynamic("totalItemsClassified")(__v.asInstanceOf[js.Any]))
+      totalItemsSensitive.foreach(__v => __obj.updateDynamic("totalItemsSensitive")(__v.asInstanceOf[js.Any]))
+      totalItemsSkipped.foreach(__v => __obj.updateDynamic("totalItemsSkipped")(__v.asInstanceOf[js.Any]))
+      totalItemsSkippedInvalidEncryption.foreach(__v => __obj.updateDynamic("totalItemsSkippedInvalidEncryption")(__v.asInstanceOf[js.Any]))
+      totalItemsSkippedInvalidKms.foreach(__v => __obj.updateDynamic("totalItemsSkippedInvalidKms")(__v.asInstanceOf[js.Any]))
+      totalItemsSkippedPermissionDenied.foreach(__v => __obj.updateDynamic("totalItemsSkippedPermissionDenied")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceStatistics]
+    }
+  }
+
   /** Provides information about the resources that a finding applies to.
     */
   @js.native
@@ -3979,6 +4923,29 @@ package object macie2 {
       s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
       s3Object.foreach(__v => __obj.updateDynamic("s3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcesAffected]
+    }
+  }
+
+  /** Specifies the configuration settings for retrieving occurrences of sensitive data reported by findings, and the status of the configuration for an Amazon Macie account. When you enable the configuration for the first time, your request must specify an Key Management Service (KMS) key. Otherwise, an error occurs. Macie uses the specified key to encrypt the sensitive data that you retrieve.
+    */
+  @js.native
+  trait RevealConfiguration extends js.Object {
+    var status: RevealStatus
+    var kmsKeyId: js.UndefOr[__stringMin1Max2048]
+  }
+
+  object RevealConfiguration {
+    @inline
+    def apply(
+        status: RevealStatus,
+        kmsKeyId: js.UndefOr[__stringMin1Max2048] = js.undefined
+    ): RevealConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevealConfiguration]
     }
   }
 
@@ -4085,6 +5052,85 @@ package object macie2 {
     }
   }
 
+  /** Specifies the S3 buckets that are excluded from automated sensitive data discovery for an Amazon Macie account.
+    */
+  @js.native
+  trait S3ClassificationScope extends js.Object {
+    var excludes: S3ClassificationScopeExclusion
+  }
+
+  object S3ClassificationScope {
+    @inline
+    def apply(
+        excludes: S3ClassificationScopeExclusion
+    ): S3ClassificationScope = {
+      val __obj = js.Dynamic.literal(
+        "excludes" -> excludes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3ClassificationScope]
+    }
+  }
+
+  /** Specifies the names of the S3 buckets that are excluded from automated sensitive data discovery.
+    */
+  @js.native
+  trait S3ClassificationScopeExclusion extends js.Object {
+    var bucketNames: __listOfS3BucketName
+  }
+
+  object S3ClassificationScopeExclusion {
+    @inline
+    def apply(
+        bucketNames: __listOfS3BucketName
+    ): S3ClassificationScopeExclusion = {
+      val __obj = js.Dynamic.literal(
+        "bucketNames" -> bucketNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3ClassificationScopeExclusion]
+    }
+  }
+
+  /** Specifies S3 buckets to add or remove from the exclusion list defined by the classification scope for an Amazon Macie account.
+    */
+  @js.native
+  trait S3ClassificationScopeExclusionUpdate extends js.Object {
+    var bucketNames: __listOfS3BucketName
+    var operation: ClassificationScopeUpdateOperation
+  }
+
+  object S3ClassificationScopeExclusionUpdate {
+    @inline
+    def apply(
+        bucketNames: __listOfS3BucketName,
+        operation: ClassificationScopeUpdateOperation
+    ): S3ClassificationScopeExclusionUpdate = {
+      val __obj = js.Dynamic.literal(
+        "bucketNames" -> bucketNames.asInstanceOf[js.Any],
+        "operation" -> operation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3ClassificationScopeExclusionUpdate]
+    }
+  }
+
+  /** Specifies changes to the list of S3 buckets that are excluded from automated sensitive data discovery for an Amazon Macie account.
+    */
+  @js.native
+  trait S3ClassificationScopeUpdate extends js.Object {
+    var excludes: S3ClassificationScopeExclusionUpdate
+  }
+
+  object S3ClassificationScopeUpdate {
+    @inline
+    def apply(
+        excludes: S3ClassificationScopeExclusionUpdate
+    ): S3ClassificationScopeUpdate = {
+      val __obj = js.Dynamic.literal(
+        "excludes" -> excludes.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3ClassificationScopeUpdate]
+    }
+  }
+
   /** Specifies an S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.
     */
   @js.native
@@ -4183,6 +5229,28 @@ package object macie2 {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Object]
+    }
+  }
+
+  /** Provides information about an S3 object that lists specific text to ignore.
+    */
+  @js.native
+  trait S3WordsList extends js.Object {
+    var bucketName: __stringMin3Max255PatternAZaZ093255
+    var objectKey: __stringMin1Max1024PatternSS
+  }
+
+  object S3WordsList {
+    @inline
+    def apply(
+        bucketName: __stringMin3Max255PatternAZaZ093255,
+        objectKey: __stringMin1Max1024PatternSS
+    ): S3WordsList = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "objectKey" -> objectKey.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3WordsList]
     }
   }
 
@@ -4444,6 +5512,96 @@ package object macie2 {
     }
   }
 
+  /** Provides aggregated statistical data for sensitive data discovery metrics that apply to S3 buckets. Each field contains aggregated data for all the buckets that have a sensitivity score (sensitivityScore) of a specified value or within a specified range (BucketStatisticsBySensitivity). If automated sensitive data discovery is currently disabled for your account, the value for each field is 0.
+    */
+  @js.native
+  trait SensitivityAggregations extends js.Object {
+    var classifiableSizeInBytes: js.UndefOr[__long]
+    var publiclyAccessibleCount: js.UndefOr[__long]
+    var totalCount: js.UndefOr[__long]
+    var totalSizeInBytes: js.UndefOr[__long]
+  }
+
+  object SensitivityAggregations {
+    @inline
+    def apply(
+        classifiableSizeInBytes: js.UndefOr[__long] = js.undefined,
+        publiclyAccessibleCount: js.UndefOr[__long] = js.undefined,
+        totalCount: js.UndefOr[__long] = js.undefined,
+        totalSizeInBytes: js.UndefOr[__long] = js.undefined
+    ): SensitivityAggregations = {
+      val __obj = js.Dynamic.literal()
+      classifiableSizeInBytes.foreach(__v => __obj.updateDynamic("classifiableSizeInBytes")(__v.asInstanceOf[js.Any]))
+      publiclyAccessibleCount.foreach(__v => __obj.updateDynamic("publiclyAccessibleCount")(__v.asInstanceOf[js.Any]))
+      totalCount.foreach(__v => __obj.updateDynamic("totalCount")(__v.asInstanceOf[js.Any]))
+      totalSizeInBytes.foreach(__v => __obj.updateDynamic("totalSizeInBytes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitivityAggregations]
+    }
+  }
+
+  /** Specifies managed data identifiers to exclude (not use) when performing automated sensitive data discovery for an Amazon Macie account. For information about the managed data identifiers that Amazon Macie currently provides, see [[https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html|Using managed data identifiers]] in the <i>Amazon Macie User Guide</i>.
+    */
+  @js.native
+  trait SensitivityInspectionTemplateExcludes extends js.Object {
+    var managedDataIdentifierIds: js.UndefOr[__listOf__string]
+  }
+
+  object SensitivityInspectionTemplateExcludes {
+    @inline
+    def apply(
+        managedDataIdentifierIds: js.UndefOr[__listOf__string] = js.undefined
+    ): SensitivityInspectionTemplateExcludes = {
+      val __obj = js.Dynamic.literal()
+      managedDataIdentifierIds.foreach(__v => __obj.updateDynamic("managedDataIdentifierIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitivityInspectionTemplateExcludes]
+    }
+  }
+
+  /** Specifies the allow lists, custom data identifiers, and managed data identifiers to include (use) when performing automated sensitive data discovery for an Amazon Macie account. The configuration must specify at least one custom data identifier or managed data identifier. For information about the managed data identifiers that Amazon Macie currently provides, see [[https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html|Using managed data identifiers]] in the <i>Amazon Macie User Guide</i>.
+    */
+  @js.native
+  trait SensitivityInspectionTemplateIncludes extends js.Object {
+    var allowListIds: js.UndefOr[__listOf__string]
+    var customDataIdentifierIds: js.UndefOr[__listOf__string]
+    var managedDataIdentifierIds: js.UndefOr[__listOf__string]
+  }
+
+  object SensitivityInspectionTemplateIncludes {
+    @inline
+    def apply(
+        allowListIds: js.UndefOr[__listOf__string] = js.undefined,
+        customDataIdentifierIds: js.UndefOr[__listOf__string] = js.undefined,
+        managedDataIdentifierIds: js.UndefOr[__listOf__string] = js.undefined
+    ): SensitivityInspectionTemplateIncludes = {
+      val __obj = js.Dynamic.literal()
+      allowListIds.foreach(__v => __obj.updateDynamic("allowListIds")(__v.asInstanceOf[js.Any]))
+      customDataIdentifierIds.foreach(__v => __obj.updateDynamic("customDataIdentifierIds")(__v.asInstanceOf[js.Any]))
+      managedDataIdentifierIds.foreach(__v => __obj.updateDynamic("managedDataIdentifierIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitivityInspectionTemplateIncludes]
+    }
+  }
+
+  /** Provides information about the sensitivity inspection template for an Amazon Macie account. Macie uses the template's settings when it performs automated sensitive data discovery for the account.
+    */
+  @js.native
+  trait SensitivityInspectionTemplatesEntry extends js.Object {
+    var id: js.UndefOr[__string]
+    var name: js.UndefOr[__string]
+  }
+
+  object SensitivityInspectionTemplatesEntry {
+    @inline
+    def apply(
+        id: js.UndefOr[__string] = js.undefined,
+        name: js.UndefOr[__string] = js.undefined
+    ): SensitivityInspectionTemplatesEntry = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SensitivityInspectionTemplatesEntry]
+    }
+  }
+
   /** Provides information about the server-side encryption settings for an S3 bucket or S3 object.
     */
   @js.native
@@ -4694,6 +5852,27 @@ package object macie2 {
     }
   }
 
+  /** Specifies a custom data identifier or managed data identifier that detected a type of sensitive data to start excluding or including in an S3 bucket's sensitivity score.
+    */
+  @js.native
+  trait SuppressDataIdentifier extends js.Object {
+    var id: js.UndefOr[__string]
+    var `type`: js.UndefOr[DataIdentifierType]
+  }
+
+  object SuppressDataIdentifier {
+    @inline
+    def apply(
+        id: js.UndefOr[__string] = js.undefined,
+        `type`: js.UndefOr[DataIdentifierType] = js.undefined
+    ): SuppressDataIdentifier = {
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SuppressDataIdentifier]
+    }
+  }
+
   /** Specifies a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job.
     */
   @js.native
@@ -4917,6 +6096,80 @@ package object macie2 {
   }
 
   @js.native
+  trait UpdateAllowListRequest extends js.Object {
+    var criteria: AllowListCriteria
+    var id: __string
+    var name: __stringMin1Max128Pattern
+    var description: js.UndefOr[__stringMin1Max512PatternSS]
+  }
+
+  object UpdateAllowListRequest {
+    @inline
+    def apply(
+        criteria: AllowListCriteria,
+        id: __string,
+        name: __stringMin1Max128Pattern,
+        description: js.UndefOr[__stringMin1Max512PatternSS] = js.undefined
+    ): UpdateAllowListRequest = {
+      val __obj = js.Dynamic.literal(
+        "criteria" -> criteria.asInstanceOf[js.Any],
+        "id" -> id.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAllowListRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAllowListResponse extends js.Object {
+    var arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922]
+    var id: js.UndefOr[__stringMin22Max22PatternAZ0922]
+  }
+
+  object UpdateAllowListResponse {
+    @inline
+    def apply(
+        arn: js.UndefOr[__stringMin71Max89PatternArnAwsAwsCnAwsUsGovMacie2AZ19920D12AllowListAZ0922] = js.undefined,
+        id: js.UndefOr[__stringMin22Max22PatternAZ0922] = js.undefined
+    ): UpdateAllowListResponse = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAllowListResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAutomatedDiscoveryConfigurationRequest extends js.Object {
+    var status: AutomatedDiscoveryStatus
+  }
+
+  object UpdateAutomatedDiscoveryConfigurationRequest {
+    @inline
+    def apply(
+        status: AutomatedDiscoveryStatus
+    ): UpdateAutomatedDiscoveryConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "status" -> status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateAutomatedDiscoveryConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAutomatedDiscoveryConfigurationResponse extends js.Object
+
+  object UpdateAutomatedDiscoveryConfigurationResponse {
+    @inline
+    def apply(): UpdateAutomatedDiscoveryConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateAutomatedDiscoveryConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateClassificationJobRequest extends js.Object {
     var jobId: __string
     var jobStatus: JobStatus
@@ -4944,6 +6197,38 @@ package object macie2 {
     def apply(): UpdateClassificationJobResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateClassificationJobResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateClassificationScopeRequest extends js.Object {
+    var id: __string
+    var s3: js.UndefOr[S3ClassificationScopeUpdate]
+  }
+
+  object UpdateClassificationScopeRequest {
+    @inline
+    def apply(
+        id: __string,
+        s3: js.UndefOr[S3ClassificationScopeUpdate] = js.undefined
+    ): UpdateClassificationScopeRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateClassificationScopeRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateClassificationScopeResponse extends js.Object
+
+  object UpdateClassificationScopeResponse {
+    @inline
+    def apply(): UpdateClassificationScopeResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateClassificationScopeResponse]
     }
   }
 
@@ -5091,6 +6376,141 @@ package object macie2 {
     }
   }
 
+  @js.native
+  trait UpdateResourceProfileDetectionsRequest extends js.Object {
+    var resourceArn: __string
+    var suppressDataIdentifiers: js.UndefOr[__listOfSuppressDataIdentifier]
+  }
+
+  object UpdateResourceProfileDetectionsRequest {
+    @inline
+    def apply(
+        resourceArn: __string,
+        suppressDataIdentifiers: js.UndefOr[__listOfSuppressDataIdentifier] = js.undefined
+    ): UpdateResourceProfileDetectionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      suppressDataIdentifiers.foreach(__v => __obj.updateDynamic("suppressDataIdentifiers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResourceProfileDetectionsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceProfileDetectionsResponse extends js.Object
+
+  object UpdateResourceProfileDetectionsResponse {
+    @inline
+    def apply(): UpdateResourceProfileDetectionsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateResourceProfileDetectionsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceProfileRequest extends js.Object {
+    var resourceArn: __string
+    var sensitivityScoreOverride: js.UndefOr[__integer]
+  }
+
+  object UpdateResourceProfileRequest {
+    @inline
+    def apply(
+        resourceArn: __string,
+        sensitivityScoreOverride: js.UndefOr[__integer] = js.undefined
+    ): UpdateResourceProfileRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+
+      sensitivityScoreOverride.foreach(__v => __obj.updateDynamic("sensitivityScoreOverride")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResourceProfileRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceProfileResponse extends js.Object
+
+  object UpdateResourceProfileResponse {
+    @inline
+    def apply(): UpdateResourceProfileResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateResourceProfileResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRevealConfigurationRequest extends js.Object {
+    var configuration: RevealConfiguration
+  }
+
+  object UpdateRevealConfigurationRequest {
+    @inline
+    def apply(
+        configuration: RevealConfiguration
+    ): UpdateRevealConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "configuration" -> configuration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRevealConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRevealConfigurationResponse extends js.Object {
+    var configuration: js.UndefOr[RevealConfiguration]
+  }
+
+  object UpdateRevealConfigurationResponse {
+    @inline
+    def apply(
+        configuration: js.UndefOr[RevealConfiguration] = js.undefined
+    ): UpdateRevealConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRevealConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSensitivityInspectionTemplateRequest extends js.Object {
+    var id: __string
+    var description: js.UndefOr[__string]
+    var excludes: js.UndefOr[SensitivityInspectionTemplateExcludes]
+    var includes: js.UndefOr[SensitivityInspectionTemplateIncludes]
+  }
+
+  object UpdateSensitivityInspectionTemplateRequest {
+    @inline
+    def apply(
+        id: __string,
+        description: js.UndefOr[__string] = js.undefined,
+        excludes: js.UndefOr[SensitivityInspectionTemplateExcludes] = js.undefined,
+        includes: js.UndefOr[SensitivityInspectionTemplateIncludes] = js.undefined
+    ): UpdateSensitivityInspectionTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "id" -> id.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      excludes.foreach(__v => __obj.updateDynamic("excludes")(__v.asInstanceOf[js.Any]))
+      includes.foreach(__v => __obj.updateDynamic("includes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSensitivityInspectionTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSensitivityInspectionTemplateResponse extends js.Object
+
+  object UpdateSensitivityInspectionTemplateResponse {
+    @inline
+    def apply(): UpdateSensitivityInspectionTemplateResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateSensitivityInspectionTemplateResponse]
+    }
+  }
+
   /** Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.
     */
   @js.native
@@ -5123,6 +6543,7 @@ package object macie2 {
   @js.native
   trait UsageRecord extends js.Object {
     var accountId: js.UndefOr[__string]
+    var automatedDiscoveryFreeTrialStartDate: js.UndefOr[__timestampIso8601]
     var freeTrialStartDate: js.UndefOr[__timestampIso8601]
     var usage: js.UndefOr[__listOfUsageByAccount]
   }
@@ -5131,11 +6552,13 @@ package object macie2 {
     @inline
     def apply(
         accountId: js.UndefOr[__string] = js.undefined,
+        automatedDiscoveryFreeTrialStartDate: js.UndefOr[__timestampIso8601] = js.undefined,
         freeTrialStartDate: js.UndefOr[__timestampIso8601] = js.undefined,
         usage: js.UndefOr[__listOfUsageByAccount] = js.undefined
     ): UsageRecord = {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      automatedDiscoveryFreeTrialStartDate.foreach(__v => __obj.updateDynamic("automatedDiscoveryFreeTrialStartDate")(__v.asInstanceOf[js.Any]))
       freeTrialStartDate.foreach(__v => __obj.updateDynamic("freeTrialStartDate")(__v.asInstanceOf[js.Any]))
       usage.foreach(__v => __obj.updateDynamic("usage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UsageRecord]

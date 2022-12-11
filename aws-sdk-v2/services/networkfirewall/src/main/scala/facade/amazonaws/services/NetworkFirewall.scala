@@ -14,6 +14,7 @@ package object networkfirewall {
   type AvailabilityZone = String
   type AzSubnet = String
   type AzSubnets = js.Array[AzSubnet]
+  type CIDRCount = Int
   type CollectionMember_String = String
   type CustomActions = js.Array[CustomAction]
   type Description = String
@@ -26,8 +27,14 @@ package object networkfirewall {
   type Flags = js.Array[TCPFlag]
   type HashMapKey = String
   type HashMapValue = String
+  type IPSetArn = String
+  type IPSetMetadataMap = js.Dictionary[IPSetMetadata]
+  type IPSetReferenceMap = js.Dictionary[IPSetReference]
+  type IPSetReferenceName = String
   type IPSets = js.Dictionary[IPSet]
+  type KeyId = String
   type Keyword = String
+  type LastUpdateTime = js.Date
   type LogDestinationConfigs = js.Array[LogDestinationConfig]
   type LogDestinationMap = js.Dictionary[HashMapValue]
   type NumberOfAssociations = Int
@@ -102,6 +109,7 @@ package object networkfirewall {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateFirewallDeleteProtectionFuture(params: UpdateFirewallDeleteProtectionRequest): Future[UpdateFirewallDeleteProtectionResponse] = service.updateFirewallDeleteProtection(params).promise().toFuture
     @inline def updateFirewallDescriptionFuture(params: UpdateFirewallDescriptionRequest): Future[UpdateFirewallDescriptionResponse] = service.updateFirewallDescription(params).promise().toFuture
+    @inline def updateFirewallEncryptionConfigurationFuture(params: UpdateFirewallEncryptionConfigurationRequest): Future[UpdateFirewallEncryptionConfigurationResponse] = service.updateFirewallEncryptionConfiguration(params).promise().toFuture
     @inline def updateFirewallPolicyChangeProtectionFuture(params: UpdateFirewallPolicyChangeProtectionRequest): Future[UpdateFirewallPolicyChangeProtectionResponse] = service.updateFirewallPolicyChangeProtection(params).promise().toFuture
     @inline def updateFirewallPolicyFuture(params: UpdateFirewallPolicyRequest): Future[UpdateFirewallPolicyResponse] = service.updateFirewallPolicy(params).promise().toFuture
     @inline def updateLoggingConfigurationFuture(params: UpdateLoggingConfigurationRequest): Future[UpdateLoggingConfigurationResponse] = service.updateLoggingConfiguration(params).promise().toFuture
@@ -140,6 +148,7 @@ package object networkfirewall {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateFirewallDeleteProtection(params: UpdateFirewallDeleteProtectionRequest): Request[UpdateFirewallDeleteProtectionResponse] = js.native
     def updateFirewallDescription(params: UpdateFirewallDescriptionRequest): Request[UpdateFirewallDescriptionResponse] = js.native
+    def updateFirewallEncryptionConfiguration(params: UpdateFirewallEncryptionConfigurationRequest): Request[UpdateFirewallEncryptionConfigurationResponse] = js.native
     def updateFirewallPolicy(params: UpdateFirewallPolicyRequest): Request[UpdateFirewallPolicyResponse] = js.native
     def updateFirewallPolicyChangeProtection(params: UpdateFirewallPolicyChangeProtectionRequest): Request[UpdateFirewallPolicyChangeProtectionResponse] = js.native
     def updateLoggingConfiguration(params: UpdateLoggingConfigurationRequest): Request[UpdateLoggingConfigurationResponse] = js.native
@@ -293,7 +302,7 @@ package object networkfirewall {
     }
   }
 
-  /** The configuration and status for a single subnet that you've specified for use by the AWS Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
+  /** The configuration and status for a single subnet that you've specified for use by the Network Firewall firewall. This is part of the <a>FirewallStatus</a>.
     */
   @js.native
   trait Attachment extends js.Object {
@@ -317,12 +326,55 @@ package object networkfirewall {
     }
   }
 
+  /** Summarizes the CIDR blocks used by the IP set references in a firewall. Network Firewall calculates the number of CIDRs by taking an aggregated count of all CIDRs used by the IP sets you are referencing.
+    */
+  @js.native
+  trait CIDRSummary extends js.Object {
+    var AvailableCIDRCount: js.UndefOr[CIDRCount]
+    var IPSetReferences: js.UndefOr[IPSetMetadataMap]
+    var UtilizedCIDRCount: js.UndefOr[CIDRCount]
+  }
+
+  object CIDRSummary {
+    @inline
+    def apply(
+        AvailableCIDRCount: js.UndefOr[CIDRCount] = js.undefined,
+        IPSetReferences: js.UndefOr[IPSetMetadataMap] = js.undefined,
+        UtilizedCIDRCount: js.UndefOr[CIDRCount] = js.undefined
+    ): CIDRSummary = {
+      val __obj = js.Dynamic.literal()
+      AvailableCIDRCount.foreach(__v => __obj.updateDynamic("AvailableCIDRCount")(__v.asInstanceOf[js.Any]))
+      IPSetReferences.foreach(__v => __obj.updateDynamic("IPSetReferences")(__v.asInstanceOf[js.Any]))
+      UtilizedCIDRCount.foreach(__v => __obj.updateDynamic("UtilizedCIDRCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CIDRSummary]
+    }
+  }
+
+  /** The capacity usage summary of the resources used by the <a>ReferenceSets</a> in a firewall.
+    */
+  @js.native
+  trait CapacityUsageSummary extends js.Object {
+    var CIDRs: js.UndefOr[CIDRSummary]
+  }
+
+  object CapacityUsageSummary {
+    @inline
+    def apply(
+        CIDRs: js.UndefOr[CIDRSummary] = js.undefined
+    ): CapacityUsageSummary = {
+      val __obj = js.Dynamic.literal()
+      CIDRs.foreach(__v => __obj.updateDynamic("CIDRs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityUsageSummary]
+    }
+  }
+
   @js.native
   trait CreateFirewallPolicyRequest extends js.Object {
     var FirewallPolicy: FirewallPolicy
     var FirewallPolicyName: ResourceName
     var Description: js.UndefOr[Description]
     var DryRun: js.UndefOr[Boolean]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -333,6 +385,7 @@ package object networkfirewall {
         FirewallPolicyName: ResourceName,
         Description: js.UndefOr[Description] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateFirewallPolicyRequest = {
       val __obj = js.Dynamic.literal(
@@ -342,6 +395,7 @@ package object networkfirewall {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFirewallPolicyRequest]
     }
@@ -375,6 +429,7 @@ package object networkfirewall {
     var VpcId: VpcId
     var DeleteProtection: js.UndefOr[Boolean]
     var Description: js.UndefOr[Description]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var FirewallPolicyChangeProtection: js.UndefOr[Boolean]
     var SubnetChangeProtection: js.UndefOr[Boolean]
     var Tags: js.UndefOr[TagList]
@@ -389,6 +444,7 @@ package object networkfirewall {
         VpcId: VpcId,
         DeleteProtection: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         FirewallPolicyChangeProtection: js.UndefOr[Boolean] = js.undefined,
         SubnetChangeProtection: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -402,6 +458,7 @@ package object networkfirewall {
 
       DeleteProtection.foreach(__v => __obj.updateDynamic("DeleteProtection")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       FirewallPolicyChangeProtection.foreach(__v => __obj.updateDynamic("FirewallPolicyChangeProtection")(__v.asInstanceOf[js.Any]))
       SubnetChangeProtection.foreach(__v => __obj.updateDynamic("SubnetChangeProtection")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -435,8 +492,10 @@ package object networkfirewall {
     var Type: RuleGroupType
     var Description: js.UndefOr[Description]
     var DryRun: js.UndefOr[Boolean]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var RuleGroup: js.UndefOr[RuleGroup]
     var Rules: js.UndefOr[RulesString]
+    var SourceMetadata: js.UndefOr[SourceMetadata]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -448,8 +507,10 @@ package object networkfirewall {
         Type: RuleGroupType,
         Description: js.UndefOr[Description] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined,
         Rules: js.UndefOr[RulesString] = js.undefined,
+        SourceMetadata: js.UndefOr[SourceMetadata] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
@@ -460,8 +521,10 @@ package object networkfirewall {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      SourceMetadata.foreach(__v => __obj.updateDynamic("SourceMetadata")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleGroupRequest]
     }
@@ -833,6 +896,7 @@ package object networkfirewall {
     var RuleGroupName: ResourceName
     var Capacity: js.UndefOr[RuleCapacity]
     var Description: js.UndefOr[Description]
+    var LastModifiedTime: js.UndefOr[LastUpdateTime]
     var StatefulRuleOptions: js.UndefOr[StatefulRuleOptions]
     var Type: js.UndefOr[RuleGroupType]
   }
@@ -844,6 +908,7 @@ package object networkfirewall {
         RuleGroupName: ResourceName,
         Capacity: js.UndefOr[RuleCapacity] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        LastModifiedTime: js.UndefOr[LastUpdateTime] = js.undefined,
         StatefulRuleOptions: js.UndefOr[StatefulRuleOptions] = js.undefined,
         Type: js.UndefOr[RuleGroupType] = js.undefined
     ): DescribeRuleGroupMetadataResponse = {
@@ -854,6 +919,7 @@ package object networkfirewall {
 
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       StatefulRuleOptions.foreach(__v => __obj.updateDynamic("StatefulRuleOptions")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRuleGroupMetadataResponse]
@@ -906,7 +972,7 @@ package object networkfirewall {
     }
   }
 
-  /** The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <a>CustomAction</a>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric. AWS Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. For more information about CloudWatch custom metric dimensions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions|Publishing Custom Metrics]] in the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html|Amazon CloudWatch User Guide]].
+  /** The value to use in an Amazon CloudWatch custom metric dimension. This is used in the <code>PublishMetrics</code> <a>CustomAction</a>. A CloudWatch custom metric dimension is a name/value pair that's part of the identity of a metric. Network Firewall sets the dimension name to <code>CustomAction</code> and you provide the dimension value. For more information about CloudWatch custom metric dimensions, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#usingDimensions|Publishing Custom Metrics]] in the [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html|Amazon CloudWatch User Guide]].
     */
   @js.native
   trait Dimension extends js.Object {
@@ -977,7 +1043,30 @@ package object networkfirewall {
     }
   }
 
-  /** The firewall defines the configuration settings for an AWS Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall AWS resource. The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both objects by calling <a>DescribeFirewall</a>.
+  /** A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see [[https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html|Encryption at rest with Amazon Web Services Key Managment Service]] in the <i>Network Firewall Developer Guide</i>.
+    */
+  @js.native
+  trait EncryptionConfiguration extends js.Object {
+    var Type: EncryptionType
+    var KeyId: js.UndefOr[KeyId]
+  }
+
+  object EncryptionConfiguration {
+    @inline
+    def apply(
+        Type: EncryptionType,
+        KeyId: js.UndefOr[KeyId] = js.undefined
+    ): EncryptionConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EncryptionConfiguration]
+    }
+  }
+
+  /** The firewall defines the configuration settings for an Network Firewall firewall. These settings include the firewall policy, the subnets in your VPC to use for the firewall endpoints, and any tags that are attached to the firewall Amazon Web Services resource. The status of the firewall, for example whether it's ready to filter network traffic, is provided in the corresponding <a>FirewallStatus</a>. You can retrieve both objects by calling <a>DescribeFirewall</a>.
     */
   @js.native
   trait Firewall extends js.Object {
@@ -987,6 +1076,7 @@ package object networkfirewall {
     var VpcId: VpcId
     var DeleteProtection: js.UndefOr[Boolean]
     var Description: js.UndefOr[Description]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var FirewallArn: js.UndefOr[ResourceArn]
     var FirewallName: js.UndefOr[ResourceName]
     var FirewallPolicyChangeProtection: js.UndefOr[Boolean]
@@ -1003,6 +1093,7 @@ package object networkfirewall {
         VpcId: VpcId,
         DeleteProtection: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         FirewallArn: js.UndefOr[ResourceArn] = js.undefined,
         FirewallName: js.UndefOr[ResourceName] = js.undefined,
         FirewallPolicyChangeProtection: js.UndefOr[Boolean] = js.undefined,
@@ -1018,6 +1109,7 @@ package object networkfirewall {
 
       DeleteProtection.foreach(__v => __obj.updateDynamic("DeleteProtection")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       FirewallArn.foreach(__v => __obj.updateDynamic("FirewallArn")(__v.asInstanceOf[js.Any]))
       FirewallName.foreach(__v => __obj.updateDynamic("FirewallName")(__v.asInstanceOf[js.Any]))
       FirewallPolicyChangeProtection.foreach(__v => __obj.updateDynamic("FirewallPolicyChangeProtection")(__v.asInstanceOf[js.Any]))
@@ -1117,7 +1209,9 @@ package object networkfirewall {
     var ConsumedStatefulRuleCapacity: js.UndefOr[RuleCapacity]
     var ConsumedStatelessRuleCapacity: js.UndefOr[RuleCapacity]
     var Description: js.UndefOr[Description]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var FirewallPolicyStatus: js.UndefOr[ResourceStatus]
+    var LastModifiedTime: js.UndefOr[LastUpdateTime]
     var NumberOfAssociations: js.UndefOr[NumberOfAssociations]
     var Tags: js.UndefOr[TagList]
   }
@@ -1131,7 +1225,9 @@ package object networkfirewall {
         ConsumedStatefulRuleCapacity: js.UndefOr[RuleCapacity] = js.undefined,
         ConsumedStatelessRuleCapacity: js.UndefOr[RuleCapacity] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         FirewallPolicyStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        LastModifiedTime: js.UndefOr[LastUpdateTime] = js.undefined,
         NumberOfAssociations: js.UndefOr[NumberOfAssociations] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): FirewallPolicyResponse = {
@@ -1144,7 +1240,9 @@ package object networkfirewall {
       ConsumedStatefulRuleCapacity.foreach(__v => __obj.updateDynamic("ConsumedStatefulRuleCapacity")(__v.asInstanceOf[js.Any]))
       ConsumedStatelessRuleCapacity.foreach(__v => __obj.updateDynamic("ConsumedStatelessRuleCapacity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       FirewallPolicyStatus.foreach(__v => __obj.updateDynamic("FirewallPolicyStatus")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       NumberOfAssociations.foreach(__v => __obj.updateDynamic("NumberOfAssociations")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirewallPolicyResponse]
@@ -1157,6 +1255,7 @@ package object networkfirewall {
   trait FirewallStatus extends js.Object {
     var ConfigurationSyncStateSummary: ConfigurationSyncState
     var Status: FirewallStatusValue
+    var CapacityUsageSummary: js.UndefOr[CapacityUsageSummary]
     var SyncStates: js.UndefOr[SyncStates]
   }
 
@@ -1165,6 +1264,7 @@ package object networkfirewall {
     def apply(
         ConfigurationSyncStateSummary: ConfigurationSyncState,
         Status: FirewallStatusValue,
+        CapacityUsageSummary: js.UndefOr[CapacityUsageSummary] = js.undefined,
         SyncStates: js.UndefOr[SyncStates] = js.undefined
     ): FirewallStatus = {
       val __obj = js.Dynamic.literal(
@@ -1172,12 +1272,13 @@ package object networkfirewall {
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
+      CapacityUsageSummary.foreach(__v => __obj.updateDynamic("CapacityUsageSummary")(__v.asInstanceOf[js.Any]))
       SyncStates.foreach(__v => __obj.updateDynamic("SyncStates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirewallStatus]
     }
   }
 
-  /** The basic rule criteria for AWS Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <a>StatefulRule</a>.
+  /** The basic rule criteria for Network Firewall to use to inspect packet headers in stateful traffic flow inspection. Traffic flows that match the criteria are a match for the corresponding <a>StatefulRule</a>.
     */
   @js.native
   trait Header extends js.Object {
@@ -1227,6 +1328,42 @@ package object networkfirewall {
         "Definition" -> Definition.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[IPSet]
+    }
+  }
+
+  /** General information about the IP set.
+    */
+  @js.native
+  trait IPSetMetadata extends js.Object {
+    var ResolvedCIDRCount: js.UndefOr[CIDRCount]
+  }
+
+  object IPSetMetadata {
+    @inline
+    def apply(
+        ResolvedCIDRCount: js.UndefOr[CIDRCount] = js.undefined
+    ): IPSetMetadata = {
+      val __obj = js.Dynamic.literal()
+      ResolvedCIDRCount.foreach(__v => __obj.updateDynamic("ResolvedCIDRCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPSetMetadata]
+    }
+  }
+
+  /** Configures one or more IP set references for a Suricata-compatible rule group. This is used in <a>CreateRuleGroup</a> or <a>UpdateRuleGroup</a>. An IP set reference is a rule variable that references a resource that you create and manage in another Amazon Web Services service, such as an Amazon VPC prefix list. Network Firewall IP set references enable you to dynamically update the contents of your rules. When you create, update, or delete the IP set you are referencing in your rule, Network Firewall automatically updates the rule's content with the changes. For more information about IP set references in Network Firewall, see [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references|Using IP set references]] in the <i>Network Firewall Developer Guide</i>. Network Firewall currently supports only [[https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html|Amazon VPC prefix lists]] as IP set references.
+    */
+  @js.native
+  trait IPSetReference extends js.Object {
+    var ReferenceArn: js.UndefOr[ResourceArn]
+  }
+
+  object IPSetReference {
+    @inline
+    def apply(
+        ReferenceArn: js.UndefOr[ResourceArn] = js.undefined
+    ): IPSetReference = {
+      val __obj = js.Dynamic.literal()
+      ReferenceArn.foreach(__v => __obj.updateDynamic("ReferenceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IPSetReference]
     }
   }
 
@@ -1311,22 +1448,28 @@ package object networkfirewall {
 
   @js.native
   trait ListRuleGroupsRequest extends js.Object {
+    var ManagedType: js.UndefOr[ResourceManagedType]
     var MaxResults: js.UndefOr[PaginationMaxResults]
     var NextToken: js.UndefOr[PaginationToken]
     var Scope: js.UndefOr[ResourceManagedStatus]
+    var Type: js.UndefOr[RuleGroupType]
   }
 
   object ListRuleGroupsRequest {
     @inline
     def apply(
+        ManagedType: js.UndefOr[ResourceManagedType] = js.undefined,
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        Scope: js.UndefOr[ResourceManagedStatus] = js.undefined
+        Scope: js.UndefOr[ResourceManagedStatus] = js.undefined,
+        Type: js.UndefOr[RuleGroupType] = js.undefined
     ): ListRuleGroupsRequest = {
       val __obj = js.Dynamic.literal()
+      ManagedType.foreach(__v => __obj.updateDynamic("ManagedType")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRuleGroupsRequest]
     }
   }
@@ -1393,7 +1536,7 @@ package object networkfirewall {
     }
   }
 
-  /** Defines where AWS Network Firewall sends logs for the firewall for one log type. This is used in <a>LoggingConfiguration</a>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream. Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>.
+  /** Defines where Network Firewall sends logs for the firewall for one log type. This is used in <a>LoggingConfiguration</a>. You can send each type of log to an Amazon S3 bucket, a CloudWatch log group, or a Kinesis Data Firehose delivery stream. Network Firewall generates logs for stateful rule groups. You can save alert and flow log types. The stateful rules engine records flow logs for all network traffic that it receives. It records alert logs for traffic that matches stateful rules that have the rule action set to <code>DROP</code> or <code>ALERT</code>.
     */
   @js.native
   trait LogDestinationConfig extends js.Object {
@@ -1418,7 +1561,7 @@ package object networkfirewall {
     }
   }
 
-  /** Defines how AWS Network Firewall performs logging for a <a>Firewall</a>.
+  /** Defines how Network Firewall performs logging for a <a>Firewall</a>.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -1581,7 +1724,25 @@ package object networkfirewall {
     }
   }
 
-  /** The inspection criteria and action for a single stateless rule. AWS Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.
+  /** Contains a set of IP set references.
+    */
+  @js.native
+  trait ReferenceSets extends js.Object {
+    var IPSetReferences: js.UndefOr[IPSetReferenceMap]
+  }
+
+  object ReferenceSets {
+    @inline
+    def apply(
+        IPSetReferences: js.UndefOr[IPSetReferenceMap] = js.undefined
+    ): ReferenceSets = {
+      val __obj = js.Dynamic.literal()
+      IPSetReferences.foreach(__v => __obj.updateDynamic("IPSetReferences")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferenceSets]
+    }
+  }
+
+  /** The inspection criteria and action for a single stateless rule. Network Firewall inspects each packet for the specified matching criteria. When a packet matches the criteria, Network Firewall performs the rule's actions on the packet.
     */
   @js.native
   trait RuleDefinition extends js.Object {
@@ -1603,11 +1764,12 @@ package object networkfirewall {
     }
   }
 
-  /** The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. AWS Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.
+  /** The object that defines the rules in a rule group. This, along with <a>RuleGroupResponse</a>, define the rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>. Network Firewall uses a rule group to inspect and control network traffic. You define stateless rule groups to inspect individual packets and you define stateful rule groups to inspect packets in the context of their traffic flow. To use a rule group, you include it by reference in an Network Firewall firewall policy, then you use the policy in a firewall. You can reference a rule group from more than one firewall policy, and you can use a firewall policy in more than one firewall.
     */
   @js.native
   trait RuleGroup extends js.Object {
     var RulesSource: RulesSource
+    var ReferenceSets: js.UndefOr[ReferenceSets]
     var RuleVariables: js.UndefOr[RuleVariables]
     var StatefulRuleOptions: js.UndefOr[StatefulRuleOptions]
   }
@@ -1616,6 +1778,7 @@ package object networkfirewall {
     @inline
     def apply(
         RulesSource: RulesSource,
+        ReferenceSets: js.UndefOr[ReferenceSets] = js.undefined,
         RuleVariables: js.UndefOr[RuleVariables] = js.undefined,
         StatefulRuleOptions: js.UndefOr[StatefulRuleOptions] = js.undefined
     ): RuleGroup = {
@@ -1623,6 +1786,7 @@ package object networkfirewall {
         "RulesSource" -> RulesSource.asInstanceOf[js.Any]
       )
 
+      ReferenceSets.foreach(__v => __obj.updateDynamic("ReferenceSets")(__v.asInstanceOf[js.Any]))
       RuleVariables.foreach(__v => __obj.updateDynamic("RuleVariables")(__v.asInstanceOf[js.Any]))
       StatefulRuleOptions.foreach(__v => __obj.updateDynamic("StatefulRuleOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleGroup]
@@ -1660,8 +1824,12 @@ package object networkfirewall {
     var Capacity: js.UndefOr[RuleCapacity]
     var ConsumedCapacity: js.UndefOr[RuleCapacity]
     var Description: js.UndefOr[Description]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var LastModifiedTime: js.UndefOr[LastUpdateTime]
     var NumberOfAssociations: js.UndefOr[NumberOfAssociations]
     var RuleGroupStatus: js.UndefOr[ResourceStatus]
+    var SnsTopic: js.UndefOr[ResourceArn]
+    var SourceMetadata: js.UndefOr[SourceMetadata]
     var Tags: js.UndefOr[TagList]
     var Type: js.UndefOr[RuleGroupType]
   }
@@ -1675,8 +1843,12 @@ package object networkfirewall {
         Capacity: js.UndefOr[RuleCapacity] = js.undefined,
         ConsumedCapacity: js.UndefOr[RuleCapacity] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+        LastModifiedTime: js.UndefOr[LastUpdateTime] = js.undefined,
         NumberOfAssociations: js.UndefOr[NumberOfAssociations] = js.undefined,
         RuleGroupStatus: js.UndefOr[ResourceStatus] = js.undefined,
+        SnsTopic: js.UndefOr[ResourceArn] = js.undefined,
+        SourceMetadata: js.UndefOr[SourceMetadata] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         Type: js.UndefOr[RuleGroupType] = js.undefined
     ): RuleGroupResponse = {
@@ -1689,8 +1861,12 @@ package object networkfirewall {
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       NumberOfAssociations.foreach(__v => __obj.updateDynamic("NumberOfAssociations")(__v.asInstanceOf[js.Any]))
       RuleGroupStatus.foreach(__v => __obj.updateDynamic("RuleGroupStatus")(__v.asInstanceOf[js.Any]))
+      SnsTopic.foreach(__v => __obj.updateDynamic("SnsTopic")(__v.asInstanceOf[js.Any]))
+      SourceMetadata.foreach(__v => __obj.updateDynamic("SourceMetadata")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleGroupResponse]
@@ -1768,7 +1944,7 @@ package object networkfirewall {
     }
   }
 
-  /** Stateful inspection criteria for a domain list rule group. For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake. By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html|Stateful domain list rule groups in AWS Network Firewall]] in the <i>Network Firewall Developer Guide</i>.
+  /** Stateful inspection criteria for a domain list rule group. For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake. By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and [[https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html|Stateful domain list rule groups in Network Firewall]] in the <i>Network Firewall Developer Guide</i>.
     */
   @js.native
   trait RulesSourceList extends js.Object {
@@ -1793,25 +1969,49 @@ package object networkfirewall {
     }
   }
 
+  /** High-level information about the managed rule group that your own rule group is copied from. You can use the the metadata to track version updates made to the originating rule group. You can retrieve all objects for a rule group by calling [[https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html|DescribeRuleGroup]].
+    */
+  @js.native
+  trait SourceMetadata extends js.Object {
+    var SourceArn: js.UndefOr[ResourceArn]
+    var SourceUpdateToken: js.UndefOr[UpdateToken]
+  }
+
+  object SourceMetadata {
+    @inline
+    def apply(
+        SourceArn: js.UndefOr[ResourceArn] = js.undefined,
+        SourceUpdateToken: js.UndefOr[UpdateToken] = js.undefined
+    ): SourceMetadata = {
+      val __obj = js.Dynamic.literal()
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceUpdateToken.foreach(__v => __obj.updateDynamic("SourceUpdateToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceMetadata]
+    }
+  }
+
   /** Configuration settings for the handling of the stateful rule groups in a firewall policy.
     */
   @js.native
   trait StatefulEngineOptions extends js.Object {
     var RuleOrder: js.UndefOr[RuleOrder]
+    var StreamExceptionPolicy: js.UndefOr[StreamExceptionPolicy]
   }
 
   object StatefulEngineOptions {
     @inline
     def apply(
-        RuleOrder: js.UndefOr[RuleOrder] = js.undefined
+        RuleOrder: js.UndefOr[RuleOrder] = js.undefined,
+        StreamExceptionPolicy: js.UndefOr[StreamExceptionPolicy] = js.undefined
     ): StatefulEngineOptions = {
       val __obj = js.Dynamic.literal()
       RuleOrder.foreach(__v => __obj.updateDynamic("RuleOrder")(__v.asInstanceOf[js.Any]))
+      StreamExceptionPolicy.foreach(__v => __obj.updateDynamic("StreamExceptionPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StatefulEngineOptions]
     }
   }
 
-  /** A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see [[https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#|Rules Format]].
+  /** A single Suricata rules specification, for use in a stateful rule group. Use this option to specify a simple Suricata rule with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see [[https://suricata.readthedocs.io/rules/intro.html#|Rules Format]].
     */
   @js.native
   trait StatefulRule extends js.Object {
@@ -1965,7 +2165,7 @@ package object networkfirewall {
     }
   }
 
-  /** The ID for a subnet that you want to associate with the firewall. This is used with <a>CreateFirewall</a> and <a>AssociateSubnets</a>. AWS Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.
+  /** The ID for a subnet that you want to associate with the firewall. This is used with <a>CreateFirewall</a> and <a>AssociateSubnets</a>. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.
     */
   @js.native
   trait SubnetMapping extends js.Object {
@@ -1984,7 +2184,7 @@ package object networkfirewall {
     }
   }
 
-  /** The status of the firewall endpoint and firewall policy configuration for a single VPC subnet. For each VPC subnet that you associate with a firewall, AWS Network Firewall does the following: * Instantiates a firewall endpoint in the subnet, ready to take traffic. * Configures the endpoint with the current firewall policy settings, to provide the filtering behavior for the endpoint. When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete.
+  /** The status of the firewall endpoint and firewall policy configuration for a single VPC subnet. For each VPC subnet that you associate with a firewall, Network Firewall does the following: * Instantiates a firewall endpoint in the subnet, ready to take traffic. * Configures the endpoint with the current firewall policy settings, to provide the filtering behavior for the endpoint. When you update a firewall, for example to add a subnet association or change a rule group in the firewall policy, the affected sync states reflect out-of-sync or not ready status until the changes are complete.
     */
   @js.native
   trait SyncState extends js.Object {
@@ -2028,7 +2228,7 @@ package object networkfirewall {
     }
   }
 
-  /** A key:value pair associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+  /** A key:value pair associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2215,6 +2415,56 @@ package object networkfirewall {
   }
 
   @js.native
+  trait UpdateFirewallEncryptionConfigurationRequest extends js.Object {
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var FirewallArn: js.UndefOr[ResourceArn]
+    var FirewallName: js.UndefOr[ResourceName]
+    var UpdateToken: js.UndefOr[UpdateToken]
+  }
+
+  object UpdateFirewallEncryptionConfigurationRequest {
+    @inline
+    def apply(
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+        FirewallArn: js.UndefOr[ResourceArn] = js.undefined,
+        FirewallName: js.UndefOr[ResourceName] = js.undefined,
+        UpdateToken: js.UndefOr[UpdateToken] = js.undefined
+    ): UpdateFirewallEncryptionConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      FirewallArn.foreach(__v => __obj.updateDynamic("FirewallArn")(__v.asInstanceOf[js.Any]))
+      FirewallName.foreach(__v => __obj.updateDynamic("FirewallName")(__v.asInstanceOf[js.Any]))
+      UpdateToken.foreach(__v => __obj.updateDynamic("UpdateToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallEncryptionConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFirewallEncryptionConfigurationResponse extends js.Object {
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
+    var FirewallArn: js.UndefOr[ResourceArn]
+    var FirewallName: js.UndefOr[ResourceName]
+    var UpdateToken: js.UndefOr[UpdateToken]
+  }
+
+  object UpdateFirewallEncryptionConfigurationResponse {
+    @inline
+    def apply(
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
+        FirewallArn: js.UndefOr[ResourceArn] = js.undefined,
+        FirewallName: js.UndefOr[ResourceName] = js.undefined,
+        UpdateToken: js.UndefOr[UpdateToken] = js.undefined
+    ): UpdateFirewallEncryptionConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      FirewallArn.foreach(__v => __obj.updateDynamic("FirewallArn")(__v.asInstanceOf[js.Any]))
+      FirewallName.foreach(__v => __obj.updateDynamic("FirewallName")(__v.asInstanceOf[js.Any]))
+      UpdateToken.foreach(__v => __obj.updateDynamic("UpdateToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFirewallEncryptionConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateFirewallPolicyChangeProtectionRequest extends js.Object {
     var FirewallPolicyChangeProtection: Boolean
     var FirewallArn: js.UndefOr[ResourceArn]
@@ -2272,6 +2522,7 @@ package object networkfirewall {
     var UpdateToken: UpdateToken
     var Description: js.UndefOr[Description]
     var DryRun: js.UndefOr[Boolean]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var FirewallPolicyArn: js.UndefOr[ResourceArn]
     var FirewallPolicyName: js.UndefOr[ResourceName]
   }
@@ -2283,6 +2534,7 @@ package object networkfirewall {
         UpdateToken: UpdateToken,
         Description: js.UndefOr[Description] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         FirewallPolicyArn: js.UndefOr[ResourceArn] = js.undefined,
         FirewallPolicyName: js.UndefOr[ResourceName] = js.undefined
     ): UpdateFirewallPolicyRequest = {
@@ -2293,6 +2545,7 @@ package object networkfirewall {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       FirewallPolicyArn.foreach(__v => __obj.updateDynamic("FirewallPolicyArn")(__v.asInstanceOf[js.Any]))
       FirewallPolicyName.foreach(__v => __obj.updateDynamic("FirewallPolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFirewallPolicyRequest]
@@ -2368,10 +2621,12 @@ package object networkfirewall {
     var UpdateToken: UpdateToken
     var Description: js.UndefOr[Description]
     var DryRun: js.UndefOr[Boolean]
+    var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var RuleGroup: js.UndefOr[RuleGroup]
     var RuleGroupArn: js.UndefOr[ResourceArn]
     var RuleGroupName: js.UndefOr[ResourceName]
     var Rules: js.UndefOr[RulesString]
+    var SourceMetadata: js.UndefOr[SourceMetadata]
     var Type: js.UndefOr[RuleGroupType]
   }
 
@@ -2381,10 +2636,12 @@ package object networkfirewall {
         UpdateToken: UpdateToken,
         Description: js.UndefOr[Description] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
+        EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined,
         RuleGroupArn: js.UndefOr[ResourceArn] = js.undefined,
         RuleGroupName: js.UndefOr[ResourceName] = js.undefined,
         Rules: js.UndefOr[RulesString] = js.undefined,
+        SourceMetadata: js.UndefOr[SourceMetadata] = js.undefined,
         Type: js.UndefOr[RuleGroupType] = js.undefined
     ): UpdateRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
@@ -2393,10 +2650,12 @@ package object networkfirewall {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
       RuleGroupArn.foreach(__v => __obj.updateDynamic("RuleGroupArn")(__v.asInstanceOf[js.Any]))
       RuleGroupName.foreach(__v => __obj.updateDynamic("RuleGroupName")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      SourceMetadata.foreach(__v => __obj.updateDynamic("SourceMetadata")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuleGroupRequest]
     }

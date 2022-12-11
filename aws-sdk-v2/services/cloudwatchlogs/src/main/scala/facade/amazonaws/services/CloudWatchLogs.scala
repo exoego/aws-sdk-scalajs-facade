@@ -9,7 +9,11 @@ import facade.amazonaws._
 
 package object cloudwatchlogs {
   type AccessPolicy = String
+  type AccountId = String
+  type AccountIds = js.Array[AccountId]
+  type AmazonResourceName = String
   type Arn = String
+  type DataProtectionPolicyDocument = String
   type Days = Int
   type DefaultValue = Double
   type Descending = Boolean
@@ -38,13 +42,17 @@ package object cloudwatchlogs {
   type FilterPattern = String
   type FilteredLogEvents = js.Array[FilteredLogEvent]
   type ForceUpdate = Boolean
+  type IncludeLinkedAccounts = Boolean
   type InputLogEvents = js.Array[InputLogEvent]
   type InputLogStreamNames = js.Array[LogStreamName]
   type Interleaved = Boolean
   type KmsKeyId = String
   type LogEventIndex = Int
   type LogGroupFieldList = js.Array[LogGroupField]
+  type LogGroupIdentifier = String
+  type LogGroupIdentifiers = js.Array[LogGroupIdentifier]
   type LogGroupName = String
+  type LogGroupNamePattern = String
   type LogGroupNames = js.Array[LogGroupName]
   type LogGroups = js.Array[LogGroup]
   type LogRecord = js.Dictionary[Value]
@@ -82,6 +90,7 @@ package object cloudwatchlogs {
   type SubscriptionFilters = js.Array[SubscriptionFilter]
   type Success = Boolean
   type TagKey = String
+  type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
@@ -89,6 +98,7 @@ package object cloudwatchlogs {
   type TestEventMessages = js.Array[EventMessage]
   type Timestamp = Double
   type Token = String
+  type Unmask = Boolean
   type Value = String
 
   final class CloudWatchLogsOps(private val service: CloudWatchLogs) extends AnyVal {
@@ -98,6 +108,7 @@ package object cloudwatchlogs {
     @inline def createExportTaskFuture(params: CreateExportTaskRequest): Future[CreateExportTaskResponse] = service.createExportTask(params).promise().toFuture
     @inline def createLogGroupFuture(params: CreateLogGroupRequest): Future[js.Object] = service.createLogGroup(params).promise().toFuture
     @inline def createLogStreamFuture(params: CreateLogStreamRequest): Future[js.Object] = service.createLogStream(params).promise().toFuture
+    @inline def deleteDataProtectionPolicyFuture(params: DeleteDataProtectionPolicyRequest): Future[js.Object] = service.deleteDataProtectionPolicy(params).promise().toFuture
     @inline def deleteDestinationFuture(params: DeleteDestinationRequest): Future[js.Object] = service.deleteDestination(params).promise().toFuture
     @inline def deleteLogGroupFuture(params: DeleteLogGroupRequest): Future[js.Object] = service.deleteLogGroup(params).promise().toFuture
     @inline def deleteLogStreamFuture(params: DeleteLogStreamRequest): Future[js.Object] = service.deleteLogStream(params).promise().toFuture
@@ -117,11 +128,13 @@ package object cloudwatchlogs {
     @inline def describeSubscriptionFiltersFuture(params: DescribeSubscriptionFiltersRequest): Future[DescribeSubscriptionFiltersResponse] = service.describeSubscriptionFilters(params).promise().toFuture
     @inline def disassociateKmsKeyFuture(params: DisassociateKmsKeyRequest): Future[js.Object] = service.disassociateKmsKey(params).promise().toFuture
     @inline def filterLogEventsFuture(params: FilterLogEventsRequest): Future[FilterLogEventsResponse] = service.filterLogEvents(params).promise().toFuture
+    @inline def getDataProtectionPolicyFuture(params: GetDataProtectionPolicyRequest): Future[GetDataProtectionPolicyResponse] = service.getDataProtectionPolicy(params).promise().toFuture
     @inline def getLogEventsFuture(params: GetLogEventsRequest): Future[GetLogEventsResponse] = service.getLogEvents(params).promise().toFuture
     @inline def getLogGroupFieldsFuture(params: GetLogGroupFieldsRequest): Future[GetLogGroupFieldsResponse] = service.getLogGroupFields(params).promise().toFuture
     @inline def getLogRecordFuture(params: GetLogRecordRequest): Future[GetLogRecordResponse] = service.getLogRecord(params).promise().toFuture
     @inline def getQueryResultsFuture(params: GetQueryResultsRequest): Future[GetQueryResultsResponse] = service.getQueryResults(params).promise().toFuture
-    @inline def listTagsLogGroupFuture(params: ListTagsLogGroupRequest): Future[ListTagsLogGroupResponse] = service.listTagsLogGroup(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def putDataProtectionPolicyFuture(params: PutDataProtectionPolicyRequest): Future[PutDataProtectionPolicyResponse] = service.putDataProtectionPolicy(params).promise().toFuture
     @inline def putDestinationFuture(params: PutDestinationRequest): Future[PutDestinationResponse] = service.putDestination(params).promise().toFuture
     @inline def putDestinationPolicyFuture(params: PutDestinationPolicyRequest): Future[js.Object] = service.putDestinationPolicy(params).promise().toFuture
     @inline def putLogEventsFuture(params: PutLogEventsRequest): Future[PutLogEventsResponse] = service.putLogEvents(params).promise().toFuture
@@ -132,9 +145,9 @@ package object cloudwatchlogs {
     @inline def putSubscriptionFilterFuture(params: PutSubscriptionFilterRequest): Future[js.Object] = service.putSubscriptionFilter(params).promise().toFuture
     @inline def startQueryFuture(params: StartQueryRequest): Future[StartQueryResponse] = service.startQuery(params).promise().toFuture
     @inline def stopQueryFuture(params: StopQueryRequest): Future[StopQueryResponse] = service.stopQuery(params).promise().toFuture
-    @inline def tagLogGroupFuture(params: TagLogGroupRequest): Future[js.Object] = service.tagLogGroup(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def testMetricFilterFuture(params: TestMetricFilterRequest): Future[TestMetricFilterResponse] = service.testMetricFilter(params).promise().toFuture
-    @inline def untagLogGroupFuture(params: UntagLogGroupRequest): Future[js.Object] = service.untagLogGroup(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
 
   }
 
@@ -143,11 +156,15 @@ package object cloudwatchlogs {
   class CloudWatchLogs() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    @deprecated("Please use the generic tagging API ListTagsForResource", "forever") def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse] = js.native
+    @deprecated("Please use the generic tagging API TagResource", "forever") def tagLogGroup(params: TagLogGroupRequest): Request[js.Object] = js.native
+    @deprecated("Please use the generic tagging API UntagResource", "forever") def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object] = js.native
     def associateKmsKey(params: AssociateKmsKeyRequest): Request[js.Object] = js.native
     def cancelExportTask(params: CancelExportTaskRequest): Request[js.Object] = js.native
     def createExportTask(params: CreateExportTaskRequest): Request[CreateExportTaskResponse] = js.native
     def createLogGroup(params: CreateLogGroupRequest): Request[js.Object] = js.native
     def createLogStream(params: CreateLogStreamRequest): Request[js.Object] = js.native
+    def deleteDataProtectionPolicy(params: DeleteDataProtectionPolicyRequest): Request[js.Object] = js.native
     def deleteDestination(params: DeleteDestinationRequest): Request[js.Object] = js.native
     def deleteLogGroup(params: DeleteLogGroupRequest): Request[js.Object] = js.native
     def deleteLogStream(params: DeleteLogStreamRequest): Request[js.Object] = js.native
@@ -167,11 +184,13 @@ package object cloudwatchlogs {
     def describeSubscriptionFilters(params: DescribeSubscriptionFiltersRequest): Request[DescribeSubscriptionFiltersResponse] = js.native
     def disassociateKmsKey(params: DisassociateKmsKeyRequest): Request[js.Object] = js.native
     def filterLogEvents(params: FilterLogEventsRequest): Request[FilterLogEventsResponse] = js.native
+    def getDataProtectionPolicy(params: GetDataProtectionPolicyRequest): Request[GetDataProtectionPolicyResponse] = js.native
     def getLogEvents(params: GetLogEventsRequest): Request[GetLogEventsResponse] = js.native
     def getLogGroupFields(params: GetLogGroupFieldsRequest): Request[GetLogGroupFieldsResponse] = js.native
     def getLogRecord(params: GetLogRecordRequest): Request[GetLogRecordResponse] = js.native
     def getQueryResults(params: GetQueryResultsRequest): Request[GetQueryResultsResponse] = js.native
-    def listTagsLogGroup(params: ListTagsLogGroupRequest): Request[ListTagsLogGroupResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def putDataProtectionPolicy(params: PutDataProtectionPolicyRequest): Request[PutDataProtectionPolicyResponse] = js.native
     def putDestination(params: PutDestinationRequest): Request[PutDestinationResponse] = js.native
     def putDestinationPolicy(params: PutDestinationPolicyRequest): Request[js.Object] = js.native
     def putLogEvents(params: PutLogEventsRequest): Request[PutLogEventsResponse] = js.native
@@ -182,9 +201,9 @@ package object cloudwatchlogs {
     def putSubscriptionFilter(params: PutSubscriptionFilterRequest): Request[js.Object] = js.native
     def startQuery(params: StartQueryRequest): Request[StartQueryResponse] = js.native
     def stopQuery(params: StopQueryRequest): Request[StopQueryResponse] = js.native
-    def tagLogGroup(params: TagLogGroupRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def testMetricFilter(params: TestMetricFilterRequest): Request[TestMetricFilterResponse] = js.native
-    def untagLogGroup(params: UntagLogGroupRequest): Request[js.Object] = js.native
+    def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
   }
   object CloudWatchLogs {
     @inline implicit def toOps(service: CloudWatchLogs): CloudWatchLogsOps = {
@@ -322,6 +341,23 @@ package object cloudwatchlogs {
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateLogStreamRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDataProtectionPolicyRequest extends js.Object {
+    var logGroupIdentifier: LogGroupIdentifier
+  }
+
+  object DeleteDataProtectionPolicyRequest {
+    @inline
+    def apply(
+        logGroupIdentifier: LogGroupIdentifier
+    ): DeleteDataProtectionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "logGroupIdentifier" -> logGroupIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDataProtectionPolicyRequest]
     }
   }
 
@@ -572,7 +608,10 @@ package object cloudwatchlogs {
 
   @js.native
   trait DescribeLogGroupsRequest extends js.Object {
+    var accountIdentifiers: js.UndefOr[AccountIds]
+    var includeLinkedAccounts: js.UndefOr[IncludeLinkedAccounts]
     var limit: js.UndefOr[DescribeLimit]
+    var logGroupNamePattern: js.UndefOr[LogGroupNamePattern]
     var logGroupNamePrefix: js.UndefOr[LogGroupName]
     var nextToken: js.UndefOr[NextToken]
   }
@@ -580,12 +619,18 @@ package object cloudwatchlogs {
   object DescribeLogGroupsRequest {
     @inline
     def apply(
+        accountIdentifiers: js.UndefOr[AccountIds] = js.undefined,
+        includeLinkedAccounts: js.UndefOr[IncludeLinkedAccounts] = js.undefined,
         limit: js.UndefOr[DescribeLimit] = js.undefined,
+        logGroupNamePattern: js.UndefOr[LogGroupNamePattern] = js.undefined,
         logGroupNamePrefix: js.UndefOr[LogGroupName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeLogGroupsRequest = {
       val __obj = js.Dynamic.literal()
+      accountIdentifiers.foreach(__v => __obj.updateDynamic("accountIdentifiers")(__v.asInstanceOf[js.Any]))
+      includeLinkedAccounts.foreach(__v => __obj.updateDynamic("includeLinkedAccounts")(__v.asInstanceOf[js.Any]))
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupNamePattern.foreach(__v => __obj.updateDynamic("logGroupNamePattern")(__v.asInstanceOf[js.Any]))
       logGroupNamePrefix.foreach(__v => __obj.updateDynamic("logGroupNamePrefix")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLogGroupsRequest]
@@ -616,6 +661,7 @@ package object cloudwatchlogs {
     var logGroupName: LogGroupName
     var descending: js.UndefOr[Descending]
     var limit: js.UndefOr[DescribeLimit]
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
     var logStreamNamePrefix: js.UndefOr[LogStreamName]
     var nextToken: js.UndefOr[NextToken]
     var orderBy: js.UndefOr[OrderBy]
@@ -627,6 +673,7 @@ package object cloudwatchlogs {
         logGroupName: LogGroupName,
         descending: js.UndefOr[Descending] = js.undefined,
         limit: js.UndefOr[DescribeLimit] = js.undefined,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
         logStreamNamePrefix: js.UndefOr[LogStreamName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         orderBy: js.UndefOr[OrderBy] = js.undefined
@@ -637,6 +684,7 @@ package object cloudwatchlogs {
 
       descending.foreach(__v => __obj.updateDynamic("descending")(__v.asInstanceOf[js.Any]))
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
       logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
@@ -1023,10 +1071,12 @@ package object cloudwatchlogs {
     var filterPattern: js.UndefOr[FilterPattern]
     var interleaved: js.UndefOr[Interleaved]
     var limit: js.UndefOr[EventsLimit]
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
     var logStreamNamePrefix: js.UndefOr[LogStreamName]
     var logStreamNames: js.UndefOr[InputLogStreamNames]
     var nextToken: js.UndefOr[NextToken]
     var startTime: js.UndefOr[Timestamp]
+    var unmask: js.UndefOr[Unmask]
   }
 
   object FilterLogEventsRequest {
@@ -1037,10 +1087,12 @@ package object cloudwatchlogs {
         filterPattern: js.UndefOr[FilterPattern] = js.undefined,
         interleaved: js.UndefOr[Interleaved] = js.undefined,
         limit: js.UndefOr[EventsLimit] = js.undefined,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
         logStreamNamePrefix: js.UndefOr[LogStreamName] = js.undefined,
         logStreamNames: js.UndefOr[InputLogStreamNames] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
-        startTime: js.UndefOr[Timestamp] = js.undefined
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        unmask: js.UndefOr[Unmask] = js.undefined
     ): FilterLogEventsRequest = {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
@@ -1050,10 +1102,12 @@ package object cloudwatchlogs {
       filterPattern.foreach(__v => __obj.updateDynamic("filterPattern")(__v.asInstanceOf[js.Any]))
       interleaved.foreach(__v => __obj.updateDynamic("interleaved")(__v.asInstanceOf[js.Any]))
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
       logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
       logStreamNames.foreach(__v => __obj.updateDynamic("logStreamNames")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      unmask.foreach(__v => __obj.updateDynamic("unmask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterLogEventsRequest]
     }
   }
@@ -1111,14 +1165,55 @@ package object cloudwatchlogs {
   }
 
   @js.native
+  trait GetDataProtectionPolicyRequest extends js.Object {
+    var logGroupIdentifier: LogGroupIdentifier
+  }
+
+  object GetDataProtectionPolicyRequest {
+    @inline
+    def apply(
+        logGroupIdentifier: LogGroupIdentifier
+    ): GetDataProtectionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "logGroupIdentifier" -> logGroupIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDataProtectionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetDataProtectionPolicyResponse extends js.Object {
+    var lastUpdatedTime: js.UndefOr[Timestamp]
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
+    var policyDocument: js.UndefOr[DataProtectionPolicyDocument]
+  }
+
+  object GetDataProtectionPolicyResponse {
+    @inline
+    def apply(
+        lastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
+        policyDocument: js.UndefOr[DataProtectionPolicyDocument] = js.undefined
+    ): GetDataProtectionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDataProtectionPolicyResponse]
+    }
+  }
+
+  @js.native
   trait GetLogEventsRequest extends js.Object {
     var logGroupName: LogGroupName
     var logStreamName: LogStreamName
     var endTime: js.UndefOr[Timestamp]
     var limit: js.UndefOr[EventsLimit]
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
     var nextToken: js.UndefOr[NextToken]
     var startFromHead: js.UndefOr[StartFromHead]
     var startTime: js.UndefOr[Timestamp]
+    var unmask: js.UndefOr[Unmask]
   }
 
   object GetLogEventsRequest {
@@ -1128,9 +1223,11 @@ package object cloudwatchlogs {
         logStreamName: LogStreamName,
         endTime: js.UndefOr[Timestamp] = js.undefined,
         limit: js.UndefOr[EventsLimit] = js.undefined,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         startFromHead: js.UndefOr[StartFromHead] = js.undefined,
-        startTime: js.UndefOr[Timestamp] = js.undefined
+        startTime: js.UndefOr[Timestamp] = js.undefined,
+        unmask: js.UndefOr[Unmask] = js.undefined
     ): GetLogEventsRequest = {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
@@ -1139,9 +1236,11 @@ package object cloudwatchlogs {
 
       endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       startFromHead.foreach(__v => __obj.updateDynamic("startFromHead")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      unmask.foreach(__v => __obj.updateDynamic("unmask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogEventsRequest]
     }
   }
@@ -1171,6 +1270,7 @@ package object cloudwatchlogs {
   @js.native
   trait GetLogGroupFieldsRequest extends js.Object {
     var logGroupName: LogGroupName
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
     var time: js.UndefOr[Timestamp]
   }
 
@@ -1178,12 +1278,14 @@ package object cloudwatchlogs {
     @inline
     def apply(
         logGroupName: LogGroupName,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
         time: js.UndefOr[Timestamp] = js.undefined
     ): GetLogGroupFieldsRequest = {
       val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
       time.foreach(__v => __obj.updateDynamic("time")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogGroupFieldsRequest]
     }
@@ -1208,16 +1310,20 @@ package object cloudwatchlogs {
   @js.native
   trait GetLogRecordRequest extends js.Object {
     var logRecordPointer: LogRecordPointer
+    var unmask: js.UndefOr[Unmask]
   }
 
   object GetLogRecordRequest {
     @inline
     def apply(
-        logRecordPointer: LogRecordPointer
+        logRecordPointer: LogRecordPointer,
+        unmask: js.UndefOr[Unmask] = js.undefined
     ): GetLogRecordRequest = {
       val __obj = js.Dynamic.literal(
         "logRecordPointer" -> logRecordPointer.asInstanceOf[js.Any]
       )
+
+      unmask.foreach(__v => __obj.updateDynamic("unmask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogRecordRequest]
     }
   }
@@ -1300,6 +1406,40 @@ package object cloudwatchlogs {
   }
 
   @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @deprecated("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse", "forever")
+  @js.native
   trait ListTagsLogGroupRequest extends js.Object {
     var logGroupName: LogGroupName
   }
@@ -1316,6 +1456,7 @@ package object cloudwatchlogs {
     }
   }
 
+  @deprecated("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse", "forever")
   @js.native
   trait ListTagsLogGroupResponse extends js.Object {
     var tags: js.UndefOr[Tags]
@@ -1338,6 +1479,7 @@ package object cloudwatchlogs {
   trait LogGroup extends js.Object {
     var arn: js.UndefOr[Arn]
     var creationTime: js.UndefOr[Timestamp]
+    var dataProtectionStatus: js.UndefOr[DataProtectionStatus]
     var kmsKeyId: js.UndefOr[KmsKeyId]
     var logGroupName: js.UndefOr[LogGroupName]
     var metricFilterCount: js.UndefOr[FilterCount]
@@ -1350,6 +1492,7 @@ package object cloudwatchlogs {
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        dataProtectionStatus: js.UndefOr[DataProtectionStatus] = js.undefined,
         kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         metricFilterCount: js.UndefOr[FilterCount] = js.undefined,
@@ -1359,6 +1502,7 @@ package object cloudwatchlogs {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      dataProtectionStatus.foreach(__v => __obj.updateDynamic("dataProtectionStatus")(__v.asInstanceOf[js.Any]))
       kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
       logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
       metricFilterCount.foreach(__v => __obj.updateDynamic("metricFilterCount")(__v.asInstanceOf[js.Any]))
@@ -1542,6 +1686,48 @@ package object cloudwatchlogs {
   }
 
   @js.native
+  trait PutDataProtectionPolicyRequest extends js.Object {
+    var logGroupIdentifier: LogGroupIdentifier
+    var policyDocument: DataProtectionPolicyDocument
+  }
+
+  object PutDataProtectionPolicyRequest {
+    @inline
+    def apply(
+        logGroupIdentifier: LogGroupIdentifier,
+        policyDocument: DataProtectionPolicyDocument
+    ): PutDataProtectionPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "logGroupIdentifier" -> logGroupIdentifier.asInstanceOf[js.Any],
+        "policyDocument" -> policyDocument.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutDataProtectionPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutDataProtectionPolicyResponse extends js.Object {
+    var lastUpdatedTime: js.UndefOr[Timestamp]
+    var logGroupIdentifier: js.UndefOr[LogGroupIdentifier]
+    var policyDocument: js.UndefOr[DataProtectionPolicyDocument]
+  }
+
+  object PutDataProtectionPolicyResponse {
+    @inline
+    def apply(
+        lastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        logGroupIdentifier: js.UndefOr[LogGroupIdentifier] = js.undefined,
+        policyDocument: js.UndefOr[DataProtectionPolicyDocument] = js.undefined
+    ): PutDataProtectionPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifier.foreach(__v => __obj.updateDynamic("logGroupIdentifier")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutDataProtectionPolicyResponse]
+    }
+  }
+
+  @js.native
   trait PutDestinationPolicyRequest extends js.Object {
     var accessPolicy: AccessPolicy
     var destinationName: DestinationName
@@ -1570,6 +1756,7 @@ package object cloudwatchlogs {
     var destinationName: DestinationName
     var roleArn: RoleArn
     var targetArn: TargetArn
+    var tags: js.UndefOr[Tags]
   }
 
   object PutDestinationRequest {
@@ -1577,13 +1764,16 @@ package object cloudwatchlogs {
     def apply(
         destinationName: DestinationName,
         roleArn: RoleArn,
-        targetArn: TargetArn
+        targetArn: TargetArn,
+        tags: js.UndefOr[Tags] = js.undefined
     ): PutDestinationRequest = {
       val __obj = js.Dynamic.literal(
         "destinationName" -> destinationName.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDestinationRequest]
     }
   }
@@ -1987,6 +2177,7 @@ package object cloudwatchlogs {
     var queryString: QueryString
     var startTime: Timestamp
     var limit: js.UndefOr[EventsLimit]
+    var logGroupIdentifiers: js.UndefOr[LogGroupIdentifiers]
     var logGroupName: js.UndefOr[LogGroupName]
     var logGroupNames: js.UndefOr[LogGroupNames]
   }
@@ -1998,6 +2189,7 @@ package object cloudwatchlogs {
         queryString: QueryString,
         startTime: Timestamp,
         limit: js.UndefOr[EventsLimit] = js.undefined,
+        logGroupIdentifiers: js.UndefOr[LogGroupIdentifiers] = js.undefined,
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         logGroupNames: js.UndefOr[LogGroupNames] = js.undefined
     ): StartQueryRequest = {
@@ -2008,6 +2200,7 @@ package object cloudwatchlogs {
       )
 
       limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupIdentifiers.foreach(__v => __obj.updateDynamic("logGroupIdentifiers")(__v.asInstanceOf[js.Any]))
       logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
       logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartQueryRequest]
@@ -2099,6 +2292,7 @@ package object cloudwatchlogs {
     }
   }
 
+  @deprecated("Please use the generic tagging API model TagResourceRequest", "forever")
   @js.native
   trait TagLogGroupRequest extends js.Object {
     var logGroupName: LogGroupName
@@ -2116,6 +2310,26 @@ package object cloudwatchlogs {
         "tags" -> tags.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[TagLogGroupRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+    var tags: Tags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName,
+        tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
     }
   }
 
@@ -2155,6 +2369,7 @@ package object cloudwatchlogs {
     }
   }
 
+  @deprecated("Please use the generic tagging API model UntagResourceRequest", "forever")
   @js.native
   trait UntagLogGroupRequest extends js.Object {
     var logGroupName: LogGroupName
@@ -2172,6 +2387,26 @@ package object cloudwatchlogs {
         "tags" -> tags.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UntagLogGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: AmazonResourceName
+    var tagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: AmazonResourceName,
+        tagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
     }
   }
 }

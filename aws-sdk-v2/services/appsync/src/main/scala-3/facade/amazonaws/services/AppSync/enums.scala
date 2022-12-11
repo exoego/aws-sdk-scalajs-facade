@@ -140,6 +140,13 @@ object ResolverKind {
   inline def values: js.Array[ResolverKind] = js.Array(UNIT, PIPELINE)
 }
 
+type RuntimeName = "APPSYNC_JS"
+object RuntimeName {
+  inline val APPSYNC_JS: "APPSYNC_JS" = "APPSYNC_JS"
+
+  inline def values: js.Array[RuntimeName] = js.Array(APPSYNC_JS)
+}
+
 type SchemaStatus = "PROCESSING" | "ACTIVE" | "DELETING" | "FAILED" | "SUCCESS" | "NOT_APPLICABLE"
 object SchemaStatus {
   inline val PROCESSING: "PROCESSING" = "PROCESSING"

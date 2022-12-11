@@ -34,6 +34,7 @@ package object redshiftdata {
   type SubStatementList = js.Array[SubStatementData]
   type TableList = js.Array[TableMember]
   type Timestamp = js.Date
+  type WorkgroupNameString = String
 
   final class RedshiftDataOps(private val service: RedshiftData) extends AnyVal {
 
@@ -81,6 +82,7 @@ package object redshiftdata {
     var SecretArn: js.UndefOr[SecretArn]
     var StatementName: js.UndefOr[StatementNameString]
     var WithEvent: js.UndefOr[Boolean]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object BatchExecuteStatementInput {
@@ -92,7 +94,8 @@ package object redshiftdata {
         DbUser: js.UndefOr[String] = js.undefined,
         SecretArn: js.UndefOr[SecretArn] = js.undefined,
         StatementName: js.UndefOr[StatementNameString] = js.undefined,
-        WithEvent: js.UndefOr[Boolean] = js.undefined
+        WithEvent: js.UndefOr[Boolean] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): BatchExecuteStatementInput = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
@@ -104,6 +107,7 @@ package object redshiftdata {
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       StatementName.foreach(__v => __obj.updateDynamic("StatementName")(__v.asInstanceOf[js.Any]))
       WithEvent.foreach(__v => __obj.updateDynamic("WithEvent")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchExecuteStatementInput]
     }
   }
@@ -116,6 +120,7 @@ package object redshiftdata {
     var DbUser: js.UndefOr[String]
     var Id: js.UndefOr[StatementId]
     var SecretArn: js.UndefOr[SecretArn]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object BatchExecuteStatementOutput {
@@ -126,7 +131,8 @@ package object redshiftdata {
         Database: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[StatementId] = js.undefined,
-        SecretArn: js.UndefOr[SecretArn] = js.undefined
+        SecretArn: js.UndefOr[SecretArn] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): BatchExecuteStatementOutput = {
       val __obj = js.Dynamic.literal()
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -135,6 +141,7 @@ package object redshiftdata {
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchExecuteStatementOutput]
     }
   }
@@ -263,6 +270,7 @@ package object redshiftdata {
     var Status: js.UndefOr[StatusString]
     var SubStatements: js.UndefOr[SubStatementList]
     var UpdatedAt: js.UndefOr[Timestamp]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object DescribeStatementResponse {
@@ -285,7 +293,8 @@ package object redshiftdata {
         SecretArn: js.UndefOr[SecretArn] = js.undefined,
         Status: js.UndefOr[StatusString] = js.undefined,
         SubStatements: js.UndefOr[SubStatementList] = js.undefined,
-        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): DescribeStatementResponse = {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
@@ -308,6 +317,7 @@ package object redshiftdata {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubStatements.foreach(__v => __obj.updateDynamic("SubStatements")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStatementResponse]
     }
   }
@@ -323,6 +333,7 @@ package object redshiftdata {
     var Schema: js.UndefOr[String]
     var SecretArn: js.UndefOr[SecretArn]
     var Table: js.UndefOr[String]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object DescribeTableRequest {
@@ -336,7 +347,8 @@ package object redshiftdata {
         NextToken: js.UndefOr[String] = js.undefined,
         Schema: js.UndefOr[String] = js.undefined,
         SecretArn: js.UndefOr[SecretArn] = js.undefined,
-        Table: js.UndefOr[String] = js.undefined
+        Table: js.UndefOr[String] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): DescribeTableRequest = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any]
@@ -350,6 +362,7 @@ package object redshiftdata {
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTableRequest]
     }
   }
@@ -386,6 +399,7 @@ package object redshiftdata {
     var SecretArn: js.UndefOr[SecretArn]
     var StatementName: js.UndefOr[StatementNameString]
     var WithEvent: js.UndefOr[Boolean]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object ExecuteStatementInput {
@@ -398,7 +412,8 @@ package object redshiftdata {
         Parameters: js.UndefOr[SqlParametersList] = js.undefined,
         SecretArn: js.UndefOr[SecretArn] = js.undefined,
         StatementName: js.UndefOr[StatementNameString] = js.undefined,
-        WithEvent: js.UndefOr[Boolean] = js.undefined
+        WithEvent: js.UndefOr[Boolean] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): ExecuteStatementInput = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any],
@@ -411,6 +426,7 @@ package object redshiftdata {
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       StatementName.foreach(__v => __obj.updateDynamic("StatementName")(__v.asInstanceOf[js.Any]))
       WithEvent.foreach(__v => __obj.updateDynamic("WithEvent")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementInput]
     }
   }
@@ -423,6 +439,7 @@ package object redshiftdata {
     var DbUser: js.UndefOr[String]
     var Id: js.UndefOr[StatementId]
     var SecretArn: js.UndefOr[SecretArn]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object ExecuteStatementOutput {
@@ -433,7 +450,8 @@ package object redshiftdata {
         Database: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[StatementId] = js.undefined,
-        SecretArn: js.UndefOr[SecretArn] = js.undefined
+        SecretArn: js.UndefOr[SecretArn] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): ExecuteStatementOutput = {
       val __obj = js.Dynamic.literal()
       ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
@@ -442,6 +460,7 @@ package object redshiftdata {
       DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementOutput]
     }
   }
@@ -535,6 +554,7 @@ package object redshiftdata {
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[String]
     var SecretArn: js.UndefOr[SecretArn]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object ListDatabasesRequest {
@@ -545,7 +565,8 @@ package object redshiftdata {
         DbUser: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
-        SecretArn: js.UndefOr[SecretArn] = js.undefined
+        SecretArn: js.UndefOr[SecretArn] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): ListDatabasesRequest = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any]
@@ -556,6 +577,7 @@ package object redshiftdata {
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatabasesRequest]
     }
   }
@@ -589,6 +611,7 @@ package object redshiftdata {
     var NextToken: js.UndefOr[String]
     var SchemaPattern: js.UndefOr[String]
     var SecretArn: js.UndefOr[SecretArn]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object ListSchemasRequest {
@@ -601,7 +624,8 @@ package object redshiftdata {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
         SchemaPattern: js.UndefOr[String] = js.undefined,
-        SecretArn: js.UndefOr[SecretArn] = js.undefined
+        SecretArn: js.UndefOr[SecretArn] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): ListSchemasRequest = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any]
@@ -614,6 +638,7 @@ package object redshiftdata {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SchemaPattern.foreach(__v => __obj.updateDynamic("SchemaPattern")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSchemasRequest]
     }
   }
@@ -697,6 +722,7 @@ package object redshiftdata {
     var SchemaPattern: js.UndefOr[String]
     var SecretArn: js.UndefOr[SecretArn]
     var TablePattern: js.UndefOr[String]
+    var WorkgroupName: js.UndefOr[WorkgroupNameString]
   }
 
   object ListTablesRequest {
@@ -710,7 +736,8 @@ package object redshiftdata {
         NextToken: js.UndefOr[String] = js.undefined,
         SchemaPattern: js.UndefOr[String] = js.undefined,
         SecretArn: js.UndefOr[SecretArn] = js.undefined,
-        TablePattern: js.UndefOr[String] = js.undefined
+        TablePattern: js.UndefOr[String] = js.undefined,
+        WorkgroupName: js.UndefOr[WorkgroupNameString] = js.undefined
     ): ListTablesRequest = {
       val __obj = js.Dynamic.literal(
         "Database" -> Database.asInstanceOf[js.Any]
@@ -724,6 +751,7 @@ package object redshiftdata {
       SchemaPattern.foreach(__v => __obj.updateDynamic("SchemaPattern")(__v.asInstanceOf[js.Any]))
       SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
       TablePattern.foreach(__v => __obj.updateDynamic("TablePattern")(__v.asInstanceOf[js.Any]))
+      WorkgroupName.foreach(__v => __obj.updateDynamic("WorkgroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTablesRequest]
     }
   }

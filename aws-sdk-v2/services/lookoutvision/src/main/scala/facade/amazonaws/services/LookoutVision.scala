@@ -9,7 +9,11 @@ import facade.amazonaws._
 
 package object lookoutvision {
   type AnomalyClassFilter = String
+  type AnomalyList = js.Array[Anomaly]
+  type AnomalyMask = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type AnomalyName = String
   type ClientToken = String
+  type Color = String
   type CompilerOptions = String
   type ComponentDescription = String
   type ComponentName = String
@@ -113,6 +117,27 @@ package object lookoutvision {
   object LookoutVision {
     @inline implicit def toOps(service: LookoutVision): LookoutVisionOps = {
       new LookoutVisionOps(service)
+    }
+  }
+
+  /** Information about an anomaly type found on an image by an image segmentation model. For more information, see <a>DetectAnomalies</a>.
+    */
+  @js.native
+  trait Anomaly extends js.Object {
+    var Name: js.UndefOr[AnomalyName]
+    var PixelAnomaly: js.UndefOr[PixelAnomaly]
+  }
+
+  object Anomaly {
+    @inline
+    def apply(
+        Name: js.UndefOr[AnomalyName] = js.undefined,
+        PixelAnomaly: js.UndefOr[PixelAnomaly] = js.undefined
+    ): Anomaly = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PixelAnomaly.foreach(__v => __obj.updateDynamic("PixelAnomaly")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Anomaly]
     }
   }
 
@@ -666,10 +691,12 @@ package object lookoutvision {
     }
   }
 
-  /** The prediction results from a call to <a>DetectAnomalies</a>.
+  /** The prediction results from a call to <a>DetectAnomalies</a>. <code>DetectAnomalyResult</code> includes classification information for the prediction (<code>IsAnomalous</code> and <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code> also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>). Classification information is calculated separately from segmentation information and you shouldn't assume a relationship between them.
     */
   @js.native
   trait DetectAnomalyResult extends js.Object {
+    var Anomalies: js.UndefOr[AnomalyList]
+    var AnomalyMask: js.UndefOr[AnomalyMask]
     var Confidence: js.UndefOr[Float]
     var IsAnomalous: js.UndefOr[Boolean]
     var Source: js.UndefOr[ImageSource]
@@ -678,11 +705,15 @@ package object lookoutvision {
   object DetectAnomalyResult {
     @inline
     def apply(
+        Anomalies: js.UndefOr[AnomalyList] = js.undefined,
+        AnomalyMask: js.UndefOr[AnomalyMask] = js.undefined,
         Confidence: js.UndefOr[Float] = js.undefined,
         IsAnomalous: js.UndefOr[Boolean] = js.undefined,
         Source: js.UndefOr[ImageSource] = js.undefined
     ): DetectAnomalyResult = {
       val __obj = js.Dynamic.literal()
+      Anomalies.foreach(__v => __obj.updateDynamic("Anomalies")(__v.asInstanceOf[js.Any]))
+      AnomalyMask.foreach(__v => __obj.updateDynamic("AnomalyMask")(__v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       IsAnomalous.foreach(__v => __obj.updateDynamic("IsAnomalous")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
@@ -696,9 +727,9 @@ package object lookoutvision {
     */
   @js.native
   trait GreengrassConfiguration extends js.Object {
-    var CompilerOptions: CompilerOptions
     var ComponentName: ComponentName
     var S3OutputLocation: S3Location
+    var CompilerOptions: js.UndefOr[CompilerOptions]
     var ComponentDescription: js.UndefOr[ComponentDescription]
     var ComponentVersion: js.UndefOr[ComponentVersion]
     var Tags: js.UndefOr[TagList]
@@ -709,9 +740,9 @@ package object lookoutvision {
   object GreengrassConfiguration {
     @inline
     def apply(
-        CompilerOptions: CompilerOptions,
         ComponentName: ComponentName,
         S3OutputLocation: S3Location,
+        CompilerOptions: js.UndefOr[CompilerOptions] = js.undefined,
         ComponentDescription: js.UndefOr[ComponentDescription] = js.undefined,
         ComponentVersion: js.UndefOr[ComponentVersion] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -719,11 +750,11 @@ package object lookoutvision {
         TargetPlatform: js.UndefOr[TargetPlatform] = js.undefined
     ): GreengrassConfiguration = {
       val __obj = js.Dynamic.literal(
-        "CompilerOptions" -> CompilerOptions.asInstanceOf[js.Any],
         "ComponentName" -> ComponentName.asInstanceOf[js.Any],
         "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any]
       )
 
+      CompilerOptions.foreach(__v => __obj.updateDynamic("CompilerOptions")(__v.asInstanceOf[js.Any]))
       ComponentDescription.foreach(__v => __obj.updateDynamic("ComponentDescription")(__v.asInstanceOf[js.Any]))
       ComponentVersion.foreach(__v => __obj.updateDynamic("ComponentVersion")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1029,6 +1060,8 @@ package object lookoutvision {
     var EvaluationManifest: js.UndefOr[OutputS3Object]
     var EvaluationResult: js.UndefOr[OutputS3Object]
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var MaxInferenceUnits: js.UndefOr[InferenceUnits]
+    var MinInferenceUnits: js.UndefOr[InferenceUnits]
     var ModelArn: js.UndefOr[ModelArn]
     var ModelVersion: js.UndefOr[ModelVersion]
     var OutputConfig: js.UndefOr[OutputConfig]
@@ -1046,6 +1079,8 @@ package object lookoutvision {
         EvaluationManifest: js.UndefOr[OutputS3Object] = js.undefined,
         EvaluationResult: js.UndefOr[OutputS3Object] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        MaxInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
+        MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
         ModelArn: js.UndefOr[ModelArn] = js.undefined,
         ModelVersion: js.UndefOr[ModelVersion] = js.undefined,
         OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
@@ -1060,6 +1095,8 @@ package object lookoutvision {
       EvaluationManifest.foreach(__v => __obj.updateDynamic("EvaluationManifest")(__v.asInstanceOf[js.Any]))
       EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MaxInferenceUnits.foreach(__v => __obj.updateDynamic("MaxInferenceUnits")(__v.asInstanceOf[js.Any]))
+      MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
       ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
       ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
@@ -1298,6 +1335,27 @@ package object lookoutvision {
     }
   }
 
+  /** Information about the pixels in an anomaly mask. For more information, see <a>Anomaly</a>. <code>PixelAnomaly</code> is only returned by image segmentation models.
+    */
+  @js.native
+  trait PixelAnomaly extends js.Object {
+    var Color: js.UndefOr[Color]
+    var TotalPercentageArea: js.UndefOr[Float]
+  }
+
+  object PixelAnomaly {
+    @inline
+    def apply(
+        Color: js.UndefOr[Color] = js.undefined,
+        TotalPercentageArea: js.UndefOr[Float] = js.undefined
+    ): PixelAnomaly = {
+      val __obj = js.Dynamic.literal()
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      TotalPercentageArea.foreach(__v => __obj.updateDynamic("TotalPercentageArea")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PixelAnomaly]
+    }
+  }
+
   /** Describe an Amazon Lookout for Vision project. For more information, see <a>DescribeProject</a>.
     */
   @js.native
@@ -1427,6 +1485,7 @@ package object lookoutvision {
     var ModelVersion: ModelVersion
     var ProjectName: ProjectName
     var ClientToken: js.UndefOr[ClientToken]
+    var MaxInferenceUnits: js.UndefOr[InferenceUnits]
   }
 
   object StartModelRequest {
@@ -1435,7 +1494,8 @@ package object lookoutvision {
         MinInferenceUnits: InferenceUnits,
         ModelVersion: ModelVersion,
         ProjectName: ProjectName,
-        ClientToken: js.UndefOr[ClientToken] = js.undefined
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        MaxInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined
     ): StartModelRequest = {
       val __obj = js.Dynamic.literal(
         "MinInferenceUnits" -> MinInferenceUnits.asInstanceOf[js.Any],
@@ -1444,6 +1504,7 @@ package object lookoutvision {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      MaxInferenceUnits.foreach(__v => __obj.updateDynamic("MaxInferenceUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartModelRequest]
     }
   }
@@ -1561,23 +1622,24 @@ package object lookoutvision {
     */
   @js.native
   trait TargetPlatform extends js.Object {
-    var Accelerator: TargetPlatformAccelerator
     var Arch: TargetPlatformArch
     var Os: TargetPlatformOs
+    var Accelerator: js.UndefOr[TargetPlatformAccelerator]
   }
 
   object TargetPlatform {
     @inline
     def apply(
-        Accelerator: TargetPlatformAccelerator,
         Arch: TargetPlatformArch,
-        Os: TargetPlatformOs
+        Os: TargetPlatformOs,
+        Accelerator: js.UndefOr[TargetPlatformAccelerator] = js.undefined
     ): TargetPlatform = {
       val __obj = js.Dynamic.literal(
-        "Accelerator" -> Accelerator.asInstanceOf[js.Any],
         "Arch" -> Arch.asInstanceOf[js.Any],
         "Os" -> Os.asInstanceOf[js.Any]
       )
+
+      Accelerator.foreach(__v => __obj.updateDynamic("Accelerator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetPlatform]
     }
   }

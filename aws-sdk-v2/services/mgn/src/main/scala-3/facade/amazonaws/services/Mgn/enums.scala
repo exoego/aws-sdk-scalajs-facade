@@ -2,6 +2,32 @@ package facade.amazonaws.services.mgn
 
 import scalajs.js
 
+type ApplicationHealthStatus = "HEALTHY" | "LAGGING" | "ERROR"
+object ApplicationHealthStatus {
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val LAGGING: "LAGGING" = "LAGGING"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[ApplicationHealthStatus] = js.Array(HEALTHY, LAGGING, ERROR)
+}
+
+type ApplicationProgressStatus = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED"
+object ApplicationProgressStatus {
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+
+  inline def values: js.Array[ApplicationProgressStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
+}
+
+type BootMode = "LEGACY_BIOS" | "UEFI"
+object BootMode {
+  inline val LEGACY_BIOS: "LEGACY_BIOS" = "LEGACY_BIOS"
+  inline val UEFI: "UEFI" = "UEFI"
+
+  inline def values: js.Array[BootMode] = js.Array(LEGACY_BIOS, UEFI)
+}
+
 type ChangeServerLifeCycleStateSourceServerLifecycleState = "READY_FOR_TEST" | "READY_FOR_CUTOVER" | "CUTOVER"
 object ChangeServerLifeCycleStateSourceServerLifecycleState {
   inline val READY_FOR_TEST: "READY_FOR_TEST" = "READY_FOR_TEST"
@@ -218,6 +244,24 @@ object LifeCycleState {
   inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED, DISCOVERED)
 }
 
+type PostLaunchActionExecutionStatus = "IN_PROGRESS" | "SUCCESS" | "FAILED"
+object PostLaunchActionExecutionStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[PostLaunchActionExecutionStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+}
+
+type PostLaunchActionsDeploymentType = "TEST_AND_CUTOVER" | "CUTOVER_ONLY" | "TEST_ONLY"
+object PostLaunchActionsDeploymentType {
+  inline val TEST_AND_CUTOVER: "TEST_AND_CUTOVER" = "TEST_AND_CUTOVER"
+  inline val CUTOVER_ONLY: "CUTOVER_ONLY" = "CUTOVER_ONLY"
+  inline val TEST_ONLY: "TEST_ONLY" = "TEST_ONLY"
+
+  inline def values: js.Array[PostLaunchActionsDeploymentType] = js.Array(TEST_AND_CUTOVER, CUTOVER_ONLY, TEST_ONLY)
+}
+
 type ReplicationConfigurationDataPlaneRouting = "PRIVATE_IP" | "PUBLIC_IP"
 object ReplicationConfigurationDataPlaneRouting {
   inline val PRIVATE_IP: "PRIVATE_IP" = "PRIVATE_IP"
@@ -226,12 +270,13 @@ object ReplicationConfigurationDataPlaneRouting {
   inline def values: js.Array[ReplicationConfigurationDataPlaneRouting] = js.Array(PRIVATE_IP, PUBLIC_IP)
 }
 
-type ReplicationConfigurationDefaultLargeStagingDiskType = "GP2" | "ST1"
+type ReplicationConfigurationDefaultLargeStagingDiskType = "GP2" | "ST1" | "GP3"
 object ReplicationConfigurationDefaultLargeStagingDiskType {
   inline val GP2: "GP2" = "GP2"
   inline val ST1: "ST1" = "ST1"
+  inline val GP3: "GP3" = "GP3"
 
-  inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1)
+  inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1, GP3)
 }
 
 type ReplicationConfigurationEbsEncryption = "DEFAULT" | "CUSTOM"
@@ -242,7 +287,7 @@ object ReplicationConfigurationEbsEncryption {
   inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(DEFAULT, CUSTOM)
 }
 
-type ReplicationConfigurationReplicatedDiskStagingDiskType = "AUTO" | "GP2" | "IO1" | "SC1" | "ST1" | "STANDARD"
+type ReplicationConfigurationReplicatedDiskStagingDiskType = "AUTO" | "GP2" | "IO1" | "SC1" | "ST1" | "STANDARD" | "GP3" | "IO2"
 object ReplicationConfigurationReplicatedDiskStagingDiskType {
   inline val AUTO: "AUTO" = "AUTO"
   inline val GP2: "GP2" = "GP2"
@@ -250,8 +295,10 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   inline val SC1: "SC1" = "SC1"
   inline val ST1: "ST1" = "ST1"
   inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val GP3: "GP3" = "GP3"
+  inline val IO2: "IO2" = "IO2"
 
-  inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
+  inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD, GP3, IO2)
 }
 
 type ReplicationType = "AGENT_BASED" | "SNAPSHOT_SHIPPING"
@@ -262,10 +309,56 @@ object ReplicationType {
   inline def values: js.Array[ReplicationType] = js.Array(AGENT_BASED, SNAPSHOT_SHIPPING)
 }
 
+type SsmDocumentType = "AUTOMATION" | "COMMAND"
+object SsmDocumentType {
+  inline val AUTOMATION: "AUTOMATION" = "AUTOMATION"
+  inline val COMMAND: "COMMAND" = "COMMAND"
+
+  inline def values: js.Array[SsmDocumentType] = js.Array(AUTOMATION, COMMAND)
+}
+
+type SsmParameterStoreParameterType = "STRING"
+object SsmParameterStoreParameterType {
+  inline val STRING: "STRING" = "STRING"
+
+  inline def values: js.Array[SsmParameterStoreParameterType] = js.Array(STRING)
+}
+
 type TargetInstanceTypeRightSizingMethod = "NONE" | "BASIC"
 object TargetInstanceTypeRightSizingMethod {
   inline val NONE: "NONE" = "NONE"
   inline val BASIC: "BASIC" = "BASIC"
 
   inline def values: js.Array[TargetInstanceTypeRightSizingMethod] = js.Array(NONE, BASIC)
+}
+
+type VolumeType = "io1" | "io2" | "gp3" | "gp2" | "st1" | "sc1" | "standard"
+object VolumeType {
+  inline val io1: "io1" = "io1"
+  inline val io2: "io2" = "io2"
+  inline val gp3: "gp3" = "gp3"
+  inline val gp2: "gp2" = "gp2"
+  inline val st1: "st1" = "st1"
+  inline val sc1: "sc1" = "sc1"
+  inline val standard: "standard" = "standard"
+
+  inline def values: js.Array[VolumeType] = js.Array(io1, io2, gp3, gp2, st1, sc1, standard)
+}
+
+type WaveHealthStatus = "HEALTHY" | "LAGGING" | "ERROR"
+object WaveHealthStatus {
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val LAGGING: "LAGGING" = "LAGGING"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[WaveHealthStatus] = js.Array(HEALTHY, LAGGING, ERROR)
+}
+
+type WaveProgressStatus = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED"
+object WaveProgressStatus {
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+
+  inline def values: js.Array[WaveProgressStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
 }

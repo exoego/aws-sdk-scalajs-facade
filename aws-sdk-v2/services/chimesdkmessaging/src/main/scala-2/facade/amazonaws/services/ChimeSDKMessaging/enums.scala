@@ -133,6 +133,23 @@ object PushNotificationType {
 }
 
 @js.native
+sealed trait SearchFieldKey extends js.Any
+object SearchFieldKey {
+  val MEMBERS = "MEMBERS".asInstanceOf[SearchFieldKey]
+
+  @inline def values: js.Array[SearchFieldKey] = js.Array(MEMBERS)
+}
+
+@js.native
+sealed trait SearchFieldOperator extends js.Any
+object SearchFieldOperator {
+  val EQUALS = "EQUALS".asInstanceOf[SearchFieldOperator]
+  val INCLUDES = "INCLUDES".asInstanceOf[SearchFieldOperator]
+
+  @inline def values: js.Array[SearchFieldOperator] = js.Array(EQUALS, INCLUDES)
+}
+
+@js.native
 sealed trait SortOrder extends js.Any
 object SortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]

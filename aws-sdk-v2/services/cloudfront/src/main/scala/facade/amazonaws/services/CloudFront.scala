@@ -21,6 +21,7 @@ package object cloudfront {
   type CommentType = String
   type ConflictingAliases = js.Array[ConflictingAlias]
   type ContentTypeProfileList = js.Array[ContentTypeProfile]
+  type ContinuousDeploymentPolicySummaryList = js.Array[ContinuousDeploymentPolicySummary]
   type CookieNameList = js.Array[String]
   type CustomErrorResponseList = js.Array[CustomErrorResponse]
   type DistributionIdListSummary = js.Array[String]
@@ -47,6 +48,7 @@ package object cloudfront {
   type LambdaFunctionAssociationList = js.Array[LambdaFunctionAssociation]
   type LocationList = js.Array[String]
   type MethodsList = js.Array[Method]
+  type OriginAccessControlSummaryList = js.Array[OriginAccessControlSummary]
   type OriginCustomHeadersList = js.Array[OriginCustomHeader]
   type OriginGroupList = js.Array[OriginGroup]
   type OriginGroupMemberList = js.Array[OriginGroupMember]
@@ -63,8 +65,10 @@ package object cloudfront {
   type ResourceARN = String
   type ResponseHeadersPolicyCustomHeaderList = js.Array[ResponseHeadersPolicyCustomHeader]
   type ResponseHeadersPolicySummaryList = js.Array[ResponseHeadersPolicySummary]
+  type SamplingRate = Double
   type SignerList = js.Array[Signer]
   type SslProtocolsList = js.Array[SslProtocol]
+  type StagingDistributionDnsNameList = js.Array[String]
   type StatusCodeList = js.Array[Int]
   type StreamingDistributionSummaryList = js.Array[StreamingDistributionSummary]
   type TagKey = String
@@ -81,8 +85,10 @@ package object cloudfront {
   final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
 
     @inline def associateAliasFuture(params: AssociateAliasRequest): Future[js.Object] = service.associateAlias(params).promise().toFuture
+    @inline def copyDistributionFuture(params: CopyDistributionRequest): Future[CopyDistributionResult] = service.copyDistribution(params).promise().toFuture
     @inline def createCachePolicyFuture(params: CreateCachePolicyRequest): Future[CreateCachePolicyResult] = service.createCachePolicy(params).promise().toFuture
     @inline def createCloudFrontOriginAccessIdentityFuture(params: CreateCloudFrontOriginAccessIdentityRequest): Future[CreateCloudFrontOriginAccessIdentityResult] = service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def createContinuousDeploymentPolicyFuture(params: CreateContinuousDeploymentPolicyRequest): Future[CreateContinuousDeploymentPolicyResult] = service.createContinuousDeploymentPolicy(params).promise().toFuture
     @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] = service.createDistribution(params).promise().toFuture
     @inline def createDistributionWithTagsFuture(params: CreateDistributionWithTagsRequest): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise().toFuture
     @inline def createFieldLevelEncryptionConfigFuture(params: CreateFieldLevelEncryptionConfigRequest): Future[CreateFieldLevelEncryptionConfigResult] = service.createFieldLevelEncryptionConfig(params).promise().toFuture
@@ -91,6 +97,7 @@ package object cloudfront {
     @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] = service.createInvalidation(params).promise().toFuture
     @inline def createKeyGroupFuture(params: CreateKeyGroupRequest): Future[CreateKeyGroupResult] = service.createKeyGroup(params).promise().toFuture
     @inline def createMonitoringSubscriptionFuture(params: CreateMonitoringSubscriptionRequest): Future[CreateMonitoringSubscriptionResult] = service.createMonitoringSubscription(params).promise().toFuture
+    @inline def createOriginAccessControlFuture(params: CreateOriginAccessControlRequest): Future[CreateOriginAccessControlResult] = service.createOriginAccessControl(params).promise().toFuture
     @inline def createOriginRequestPolicyFuture(params: CreateOriginRequestPolicyRequest): Future[CreateOriginRequestPolicyResult] = service.createOriginRequestPolicy(params).promise().toFuture
     @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] = service.createPublicKey(params).promise().toFuture
     @inline def createRealtimeLogConfigFuture(params: CreateRealtimeLogConfigRequest): Future[CreateRealtimeLogConfigResult] = service.createRealtimeLogConfig(params).promise().toFuture
@@ -99,12 +106,14 @@ package object cloudfront {
     @inline def createStreamingDistributionWithTagsFuture(params: CreateStreamingDistributionWithTagsRequest): Future[CreateStreamingDistributionWithTagsResult] = service.createStreamingDistributionWithTags(params).promise().toFuture
     @inline def deleteCachePolicyFuture(params: DeleteCachePolicyRequest): Future[js.Object] = service.deleteCachePolicy(params).promise().toFuture
     @inline def deleteCloudFrontOriginAccessIdentityFuture(params: DeleteCloudFrontOriginAccessIdentityRequest): Future[js.Object] = service.deleteCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def deleteContinuousDeploymentPolicyFuture(params: DeleteContinuousDeploymentPolicyRequest): Future[js.Object] = service.deleteContinuousDeploymentPolicy(params).promise().toFuture
     @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] = service.deleteDistribution(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionConfigFuture(params: DeleteFieldLevelEncryptionConfigRequest): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionProfileFuture(params: DeleteFieldLevelEncryptionProfileRequest): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] = service.deleteFunction(params).promise().toFuture
     @inline def deleteKeyGroupFuture(params: DeleteKeyGroupRequest): Future[js.Object] = service.deleteKeyGroup(params).promise().toFuture
     @inline def deleteMonitoringSubscriptionFuture(params: DeleteMonitoringSubscriptionRequest): Future[DeleteMonitoringSubscriptionResult] = service.deleteMonitoringSubscription(params).promise().toFuture
+    @inline def deleteOriginAccessControlFuture(params: DeleteOriginAccessControlRequest): Future[js.Object] = service.deleteOriginAccessControl(params).promise().toFuture
     @inline def deleteOriginRequestPolicyFuture(params: DeleteOriginRequestPolicyRequest): Future[js.Object] = service.deleteOriginRequestPolicy(params).promise().toFuture
     @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] = service.deletePublicKey(params).promise().toFuture
     @inline def deleteRealtimeLogConfigFuture(params: DeleteRealtimeLogConfigRequest): Future[js.Object] = service.deleteRealtimeLogConfig(params).promise().toFuture
@@ -115,6 +124,8 @@ package object cloudfront {
     @inline def getCachePolicyFuture(params: GetCachePolicyRequest): Future[GetCachePolicyResult] = service.getCachePolicy(params).promise().toFuture
     @inline def getCloudFrontOriginAccessIdentityConfigFuture(params: GetCloudFrontOriginAccessIdentityConfigRequest): Future[GetCloudFrontOriginAccessIdentityConfigResult] = service.getCloudFrontOriginAccessIdentityConfig(params).promise().toFuture
     @inline def getCloudFrontOriginAccessIdentityFuture(params: GetCloudFrontOriginAccessIdentityRequest): Future[GetCloudFrontOriginAccessIdentityResult] = service.getCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def getContinuousDeploymentPolicyConfigFuture(params: GetContinuousDeploymentPolicyConfigRequest): Future[GetContinuousDeploymentPolicyConfigResult] = service.getContinuousDeploymentPolicyConfig(params).promise().toFuture
+    @inline def getContinuousDeploymentPolicyFuture(params: GetContinuousDeploymentPolicyRequest): Future[GetContinuousDeploymentPolicyResult] = service.getContinuousDeploymentPolicy(params).promise().toFuture
     @inline def getDistributionConfigFuture(params: GetDistributionConfigRequest): Future[GetDistributionConfigResult] = service.getDistributionConfig(params).promise().toFuture
     @inline def getDistributionFuture(params: GetDistributionRequest): Future[GetDistributionResult] = service.getDistribution(params).promise().toFuture
     @inline def getFieldLevelEncryptionConfigFuture(params: GetFieldLevelEncryptionConfigRequest): Future[GetFieldLevelEncryptionConfigResult] = service.getFieldLevelEncryptionConfig(params).promise().toFuture
@@ -126,6 +137,8 @@ package object cloudfront {
     @inline def getKeyGroupConfigFuture(params: GetKeyGroupConfigRequest): Future[GetKeyGroupConfigResult] = service.getKeyGroupConfig(params).promise().toFuture
     @inline def getKeyGroupFuture(params: GetKeyGroupRequest): Future[GetKeyGroupResult] = service.getKeyGroup(params).promise().toFuture
     @inline def getMonitoringSubscriptionFuture(params: GetMonitoringSubscriptionRequest): Future[GetMonitoringSubscriptionResult] = service.getMonitoringSubscription(params).promise().toFuture
+    @inline def getOriginAccessControlConfigFuture(params: GetOriginAccessControlConfigRequest): Future[GetOriginAccessControlConfigResult] = service.getOriginAccessControlConfig(params).promise().toFuture
+    @inline def getOriginAccessControlFuture(params: GetOriginAccessControlRequest): Future[GetOriginAccessControlResult] = service.getOriginAccessControl(params).promise().toFuture
     @inline def getOriginRequestPolicyConfigFuture(params: GetOriginRequestPolicyConfigRequest): Future[GetOriginRequestPolicyConfigResult] = service.getOriginRequestPolicyConfig(params).promise().toFuture
     @inline def getOriginRequestPolicyFuture(params: GetOriginRequestPolicyRequest): Future[GetOriginRequestPolicyResult] = service.getOriginRequestPolicy(params).promise().toFuture
     @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] = service.getPublicKeyConfig(params).promise().toFuture
@@ -138,6 +151,7 @@ package object cloudfront {
     @inline def listCachePoliciesFuture(params: ListCachePoliciesRequest): Future[ListCachePoliciesResult] = service.listCachePolicies(params).promise().toFuture
     @inline def listCloudFrontOriginAccessIdentitiesFuture(params: ListCloudFrontOriginAccessIdentitiesRequest): Future[ListCloudFrontOriginAccessIdentitiesResult] = service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
     @inline def listConflictingAliasesFuture(params: ListConflictingAliasesRequest): Future[ListConflictingAliasesResult] = service.listConflictingAliases(params).promise().toFuture
+    @inline def listContinuousDeploymentPoliciesFuture(params: ListContinuousDeploymentPoliciesRequest): Future[ListContinuousDeploymentPoliciesResult] = service.listContinuousDeploymentPolicies(params).promise().toFuture
     @inline def listDistributionsByCachePolicyIdFuture(params: ListDistributionsByCachePolicyIdRequest): Future[ListDistributionsByCachePolicyIdResult] = service.listDistributionsByCachePolicyId(params).promise().toFuture
     @inline def listDistributionsByKeyGroupFuture(params: ListDistributionsByKeyGroupRequest): Future[ListDistributionsByKeyGroupResult] = service.listDistributionsByKeyGroup(params).promise().toFuture
     @inline def listDistributionsByOriginRequestPolicyIdFuture(params: ListDistributionsByOriginRequestPolicyIdRequest): Future[ListDistributionsByOriginRequestPolicyIdResult] = service.listDistributionsByOriginRequestPolicyId(params).promise().toFuture
@@ -150,6 +164,7 @@ package object cloudfront {
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResult] = service.listFunctions(params).promise().toFuture
     @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] = service.listInvalidations(params).promise().toFuture
     @inline def listKeyGroupsFuture(params: ListKeyGroupsRequest): Future[ListKeyGroupsResult] = service.listKeyGroups(params).promise().toFuture
+    @inline def listOriginAccessControlsFuture(params: ListOriginAccessControlsRequest): Future[ListOriginAccessControlsResult] = service.listOriginAccessControls(params).promise().toFuture
     @inline def listOriginRequestPoliciesFuture(params: ListOriginRequestPoliciesRequest): Future[ListOriginRequestPoliciesResult] = service.listOriginRequestPolicies(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] = service.listPublicKeys(params).promise().toFuture
     @inline def listRealtimeLogConfigsFuture(params: ListRealtimeLogConfigsRequest): Future[ListRealtimeLogConfigsResult] = service.listRealtimeLogConfigs(params).promise().toFuture
@@ -162,11 +177,14 @@ package object cloudfront {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateCachePolicyFuture(params: UpdateCachePolicyRequest): Future[UpdateCachePolicyResult] = service.updateCachePolicy(params).promise().toFuture
     @inline def updateCloudFrontOriginAccessIdentityFuture(params: UpdateCloudFrontOriginAccessIdentityRequest): Future[UpdateCloudFrontOriginAccessIdentityResult] = service.updateCloudFrontOriginAccessIdentity(params).promise().toFuture
+    @inline def updateContinuousDeploymentPolicyFuture(params: UpdateContinuousDeploymentPolicyRequest): Future[UpdateContinuousDeploymentPolicyResult] = service.updateContinuousDeploymentPolicy(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
+    @inline def updateDistributionWithStagingConfigFuture(params: UpdateDistributionWithStagingConfigRequest): Future[UpdateDistributionWithStagingConfigResult] = service.updateDistributionWithStagingConfig(params).promise().toFuture
     @inline def updateFieldLevelEncryptionConfigFuture(params: UpdateFieldLevelEncryptionConfigRequest): Future[UpdateFieldLevelEncryptionConfigResult] = service.updateFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def updateFieldLevelEncryptionProfileFuture(params: UpdateFieldLevelEncryptionProfileRequest): Future[UpdateFieldLevelEncryptionProfileResult] = service.updateFieldLevelEncryptionProfile(params).promise().toFuture
     @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResult] = service.updateFunction(params).promise().toFuture
     @inline def updateKeyGroupFuture(params: UpdateKeyGroupRequest): Future[UpdateKeyGroupResult] = service.updateKeyGroup(params).promise().toFuture
+    @inline def updateOriginAccessControlFuture(params: UpdateOriginAccessControlRequest): Future[UpdateOriginAccessControlResult] = service.updateOriginAccessControl(params).promise().toFuture
     @inline def updateOriginRequestPolicyFuture(params: UpdateOriginRequestPolicyRequest): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
     @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] = service.updatePublicKey(params).promise().toFuture
     @inline def updateRealtimeLogConfigFuture(params: UpdateRealtimeLogConfigRequest): Future[UpdateRealtimeLogConfigResult] = service.updateRealtimeLogConfig(params).promise().toFuture
@@ -181,8 +199,10 @@ package object cloudfront {
     def this(config: AWSConfig) = this()
 
     def associateAlias(params: AssociateAliasRequest): Request[js.Object] = js.native
+    def copyDistribution(params: CopyDistributionRequest): Request[CopyDistributionResult] = js.native
     def createCachePolicy(params: CreateCachePolicyRequest): Request[CreateCachePolicyResult] = js.native
     def createCloudFrontOriginAccessIdentity(params: CreateCloudFrontOriginAccessIdentityRequest): Request[CreateCloudFrontOriginAccessIdentityResult] = js.native
+    def createContinuousDeploymentPolicy(params: CreateContinuousDeploymentPolicyRequest): Request[CreateContinuousDeploymentPolicyResult] = js.native
     def createDistribution(params: CreateDistributionRequest): Request[CreateDistributionResult] = js.native
     def createDistributionWithTags(params: CreateDistributionWithTagsRequest): Request[CreateDistributionWithTagsResult] = js.native
     def createFieldLevelEncryptionConfig(params: CreateFieldLevelEncryptionConfigRequest): Request[CreateFieldLevelEncryptionConfigResult] = js.native
@@ -191,6 +211,7 @@ package object cloudfront {
     def createInvalidation(params: CreateInvalidationRequest): Request[CreateInvalidationResult] = js.native
     def createKeyGroup(params: CreateKeyGroupRequest): Request[CreateKeyGroupResult] = js.native
     def createMonitoringSubscription(params: CreateMonitoringSubscriptionRequest): Request[CreateMonitoringSubscriptionResult] = js.native
+    def createOriginAccessControl(params: CreateOriginAccessControlRequest): Request[CreateOriginAccessControlResult] = js.native
     def createOriginRequestPolicy(params: CreateOriginRequestPolicyRequest): Request[CreateOriginRequestPolicyResult] = js.native
     def createPublicKey(params: CreatePublicKeyRequest): Request[CreatePublicKeyResult] = js.native
     def createRealtimeLogConfig(params: CreateRealtimeLogConfigRequest): Request[CreateRealtimeLogConfigResult] = js.native
@@ -199,12 +220,14 @@ package object cloudfront {
     def createStreamingDistributionWithTags(params: CreateStreamingDistributionWithTagsRequest): Request[CreateStreamingDistributionWithTagsResult] = js.native
     def deleteCachePolicy(params: DeleteCachePolicyRequest): Request[js.Object] = js.native
     def deleteCloudFrontOriginAccessIdentity(params: DeleteCloudFrontOriginAccessIdentityRequest): Request[js.Object] = js.native
+    def deleteContinuousDeploymentPolicy(params: DeleteContinuousDeploymentPolicyRequest): Request[js.Object] = js.native
     def deleteDistribution(params: DeleteDistributionRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionConfig(params: DeleteFieldLevelEncryptionConfigRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionProfile(params: DeleteFieldLevelEncryptionProfileRequest): Request[js.Object] = js.native
     def deleteFunction(params: DeleteFunctionRequest): Request[js.Object] = js.native
     def deleteKeyGroup(params: DeleteKeyGroupRequest): Request[js.Object] = js.native
     def deleteMonitoringSubscription(params: DeleteMonitoringSubscriptionRequest): Request[DeleteMonitoringSubscriptionResult] = js.native
+    def deleteOriginAccessControl(params: DeleteOriginAccessControlRequest): Request[js.Object] = js.native
     def deleteOriginRequestPolicy(params: DeleteOriginRequestPolicyRequest): Request[js.Object] = js.native
     def deletePublicKey(params: DeletePublicKeyRequest): Request[js.Object] = js.native
     def deleteRealtimeLogConfig(params: DeleteRealtimeLogConfigRequest): Request[js.Object] = js.native
@@ -215,6 +238,8 @@ package object cloudfront {
     def getCachePolicyConfig(params: GetCachePolicyConfigRequest): Request[GetCachePolicyConfigResult] = js.native
     def getCloudFrontOriginAccessIdentity(params: GetCloudFrontOriginAccessIdentityRequest): Request[GetCloudFrontOriginAccessIdentityResult] = js.native
     def getCloudFrontOriginAccessIdentityConfig(params: GetCloudFrontOriginAccessIdentityConfigRequest): Request[GetCloudFrontOriginAccessIdentityConfigResult] = js.native
+    def getContinuousDeploymentPolicy(params: GetContinuousDeploymentPolicyRequest): Request[GetContinuousDeploymentPolicyResult] = js.native
+    def getContinuousDeploymentPolicyConfig(params: GetContinuousDeploymentPolicyConfigRequest): Request[GetContinuousDeploymentPolicyConfigResult] = js.native
     def getDistribution(params: GetDistributionRequest): Request[GetDistributionResult] = js.native
     def getDistributionConfig(params: GetDistributionConfigRequest): Request[GetDistributionConfigResult] = js.native
     def getFieldLevelEncryption(params: GetFieldLevelEncryptionRequest): Request[GetFieldLevelEncryptionResult] = js.native
@@ -226,6 +251,8 @@ package object cloudfront {
     def getKeyGroup(params: GetKeyGroupRequest): Request[GetKeyGroupResult] = js.native
     def getKeyGroupConfig(params: GetKeyGroupConfigRequest): Request[GetKeyGroupConfigResult] = js.native
     def getMonitoringSubscription(params: GetMonitoringSubscriptionRequest): Request[GetMonitoringSubscriptionResult] = js.native
+    def getOriginAccessControl(params: GetOriginAccessControlRequest): Request[GetOriginAccessControlResult] = js.native
+    def getOriginAccessControlConfig(params: GetOriginAccessControlConfigRequest): Request[GetOriginAccessControlConfigResult] = js.native
     def getOriginRequestPolicy(params: GetOriginRequestPolicyRequest): Request[GetOriginRequestPolicyResult] = js.native
     def getOriginRequestPolicyConfig(params: GetOriginRequestPolicyConfigRequest): Request[GetOriginRequestPolicyConfigResult] = js.native
     def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResult] = js.native
@@ -238,6 +265,7 @@ package object cloudfront {
     def listCachePolicies(params: ListCachePoliciesRequest): Request[ListCachePoliciesResult] = js.native
     def listCloudFrontOriginAccessIdentities(params: ListCloudFrontOriginAccessIdentitiesRequest): Request[ListCloudFrontOriginAccessIdentitiesResult] = js.native
     def listConflictingAliases(params: ListConflictingAliasesRequest): Request[ListConflictingAliasesResult] = js.native
+    def listContinuousDeploymentPolicies(params: ListContinuousDeploymentPoliciesRequest): Request[ListContinuousDeploymentPoliciesResult] = js.native
     def listDistributions(params: ListDistributionsRequest): Request[ListDistributionsResult] = js.native
     def listDistributionsByCachePolicyId(params: ListDistributionsByCachePolicyIdRequest): Request[ListDistributionsByCachePolicyIdResult] = js.native
     def listDistributionsByKeyGroup(params: ListDistributionsByKeyGroupRequest): Request[ListDistributionsByKeyGroupResult] = js.native
@@ -250,6 +278,7 @@ package object cloudfront {
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResult] = js.native
     def listInvalidations(params: ListInvalidationsRequest): Request[ListInvalidationsResult] = js.native
     def listKeyGroups(params: ListKeyGroupsRequest): Request[ListKeyGroupsResult] = js.native
+    def listOriginAccessControls(params: ListOriginAccessControlsRequest): Request[ListOriginAccessControlsResult] = js.native
     def listOriginRequestPolicies(params: ListOriginRequestPoliciesRequest): Request[ListOriginRequestPoliciesResult] = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResult] = js.native
     def listRealtimeLogConfigs(params: ListRealtimeLogConfigsRequest): Request[ListRealtimeLogConfigsResult] = js.native
@@ -262,11 +291,14 @@ package object cloudfront {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateCachePolicy(params: UpdateCachePolicyRequest): Request[UpdateCachePolicyResult] = js.native
     def updateCloudFrontOriginAccessIdentity(params: UpdateCloudFrontOriginAccessIdentityRequest): Request[UpdateCloudFrontOriginAccessIdentityResult] = js.native
+    def updateContinuousDeploymentPolicy(params: UpdateContinuousDeploymentPolicyRequest): Request[UpdateContinuousDeploymentPolicyResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
+    def updateDistributionWithStagingConfig(params: UpdateDistributionWithStagingConfigRequest): Request[UpdateDistributionWithStagingConfigResult] = js.native
     def updateFieldLevelEncryptionConfig(params: UpdateFieldLevelEncryptionConfigRequest): Request[UpdateFieldLevelEncryptionConfigResult] = js.native
     def updateFieldLevelEncryptionProfile(params: UpdateFieldLevelEncryptionProfileRequest): Request[UpdateFieldLevelEncryptionProfileResult] = js.native
     def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResult] = js.native
     def updateKeyGroup(params: UpdateKeyGroupRequest): Request[UpdateKeyGroupResult] = js.native
+    def updateOriginAccessControl(params: UpdateOriginAccessControlRequest): Request[UpdateOriginAccessControlResult] = js.native
     def updateOriginRequestPolicy(params: UpdateOriginRequestPolicyRequest): Request[UpdateOriginRequestPolicyResult] = js.native
     def updatePublicKey(params: UpdatePublicKeyRequest): Request[UpdatePublicKeyResult] = js.native
     def updateRealtimeLogConfig(params: UpdateRealtimeLogConfigRequest): Request[UpdateRealtimeLogConfigResult] = js.native
@@ -952,6 +984,150 @@ package object cloudfront {
     }
   }
 
+  /** A continuous deployment policy.
+    */
+  @js.native
+  trait ContinuousDeploymentPolicy extends js.Object {
+    var ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig
+    var Id: String
+    var LastModifiedTime: timestamp
+  }
+
+  object ContinuousDeploymentPolicy {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig,
+        Id: String,
+        LastModifiedTime: timestamp
+    ): ContinuousDeploymentPolicy = {
+      val __obj = js.Dynamic.literal(
+        "ContinuousDeploymentPolicyConfig" -> ContinuousDeploymentPolicyConfig.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContinuousDeploymentPolicy]
+    }
+  }
+
+  /** Contains the configuration for a continuous deployment policy.
+    */
+  @js.native
+  trait ContinuousDeploymentPolicyConfig extends js.Object {
+    var Enabled: Boolean
+    var StagingDistributionDnsNames: StagingDistributionDnsNames
+    var TrafficConfig: js.UndefOr[TrafficConfig]
+  }
+
+  object ContinuousDeploymentPolicyConfig {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        StagingDistributionDnsNames: StagingDistributionDnsNames,
+        TrafficConfig: js.UndefOr[TrafficConfig] = js.undefined
+    ): ContinuousDeploymentPolicyConfig = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any],
+        "StagingDistributionDnsNames" -> StagingDistributionDnsNames.asInstanceOf[js.Any]
+      )
+
+      TrafficConfig.foreach(__v => __obj.updateDynamic("TrafficConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContinuousDeploymentPolicyConfig]
+    }
+  }
+
+  /** Contains a list of continuous deployment policies.
+    */
+  @js.native
+  trait ContinuousDeploymentPolicyList extends js.Object {
+    var MaxItems: Int
+    var Quantity: Int
+    var Items: js.UndefOr[ContinuousDeploymentPolicySummaryList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ContinuousDeploymentPolicyList {
+    @inline
+    def apply(
+        MaxItems: Int,
+        Quantity: Int,
+        Items: js.UndefOr[ContinuousDeploymentPolicySummaryList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ContinuousDeploymentPolicyList = {
+      val __obj = js.Dynamic.literal(
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContinuousDeploymentPolicyList]
+    }
+  }
+
+  /** A summary of the information about your continuous deployment policies.
+    */
+  @js.native
+  trait ContinuousDeploymentPolicySummary extends js.Object {
+    var ContinuousDeploymentPolicy: ContinuousDeploymentPolicy
+  }
+
+  object ContinuousDeploymentPolicySummary {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicy: ContinuousDeploymentPolicy
+    ): ContinuousDeploymentPolicySummary = {
+      val __obj = js.Dynamic.literal(
+        "ContinuousDeploymentPolicy" -> ContinuousDeploymentPolicy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContinuousDeploymentPolicySummary]
+    }
+  }
+
+  /** This configuration determines which HTTP requests are sent to the staging distribution. If the HTTP request contains a header and value that matches what you specify here, the request is sent to the staging distribution. Otherwise the request is sent to the primary distribution.
+    */
+  @js.native
+  trait ContinuousDeploymentSingleHeaderConfig extends js.Object {
+    var Header: String
+    var Value: String
+  }
+
+  object ContinuousDeploymentSingleHeaderConfig {
+    @inline
+    def apply(
+        Header: String,
+        Value: String
+    ): ContinuousDeploymentSingleHeaderConfig = {
+      val __obj = js.Dynamic.literal(
+        "Header" -> Header.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ContinuousDeploymentSingleHeaderConfig]
+    }
+  }
+
+  /** Contains the percentage of traffic to send to a staging distribution.
+    */
+  @js.native
+  trait ContinuousDeploymentSingleWeightConfig extends js.Object {
+    var Weight: Float
+    var SessionStickinessConfig: js.UndefOr[SessionStickinessConfig]
+  }
+
+  object ContinuousDeploymentSingleWeightConfig {
+    @inline
+    def apply(
+        Weight: Float,
+        SessionStickinessConfig: js.UndefOr[SessionStickinessConfig] = js.undefined
+    ): ContinuousDeploymentSingleWeightConfig = {
+      val __obj = js.Dynamic.literal(
+        "Weight" -> Weight.asInstanceOf[js.Any]
+      )
+
+      SessionStickinessConfig.foreach(__v => __obj.updateDynamic("SessionStickinessConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContinuousDeploymentSingleWeightConfig]
+    }
+  }
+
   /** Contains a list of cookie names.
     */
   @js.native
@@ -995,6 +1171,55 @@ package object cloudfront {
 
       WhitelistedNames.foreach(__v => __obj.updateDynamic("WhitelistedNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CookiePreference]
+    }
+  }
+
+  @js.native
+  trait CopyDistributionRequest extends js.Object {
+    var CallerReference: String
+    var PrimaryDistributionId: String
+    var IfMatch: js.UndefOr[String]
+    var Staging: js.UndefOr[Boolean]
+  }
+
+  object CopyDistributionRequest {
+    @inline
+    def apply(
+        CallerReference: String,
+        PrimaryDistributionId: String,
+        IfMatch: js.UndefOr[String] = js.undefined,
+        Staging: js.UndefOr[Boolean] = js.undefined
+    ): CopyDistributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CallerReference" -> CallerReference.asInstanceOf[js.Any],
+        "PrimaryDistributionId" -> PrimaryDistributionId.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      Staging.foreach(__v => __obj.updateDynamic("Staging")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait CopyDistributionResult extends js.Object {
+    var Distribution: js.UndefOr[Distribution]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
+  }
+
+  object CopyDistributionResult {
+    @inline
+    def apply(
+        Distribution: js.UndefOr[Distribution] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
+    ): CopyDistributionResult = {
+      val __obj = js.Dynamic.literal()
+      Distribution.foreach(__v => __obj.updateDynamic("Distribution")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CopyDistributionResult]
     }
   }
 
@@ -1077,6 +1302,45 @@ package object cloudfront {
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCloudFrontOriginAccessIdentityResult]
+    }
+  }
+
+  @js.native
+  trait CreateContinuousDeploymentPolicyRequest extends js.Object {
+    var ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig
+  }
+
+  object CreateContinuousDeploymentPolicyRequest {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig
+    ): CreateContinuousDeploymentPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContinuousDeploymentPolicyConfig" -> ContinuousDeploymentPolicyConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateContinuousDeploymentPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateContinuousDeploymentPolicyResult extends js.Object {
+    var ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy]
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
+  }
+
+  object CreateContinuousDeploymentPolicyResult {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
+    ): CreateContinuousDeploymentPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ContinuousDeploymentPolicy.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicy")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateContinuousDeploymentPolicyResult]
     }
   }
 
@@ -1404,6 +1668,45 @@ package object cloudfront {
       val __obj = js.Dynamic.literal()
       MonitoringSubscription.foreach(__v => __obj.updateDynamic("MonitoringSubscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait CreateOriginAccessControlRequest extends js.Object {
+    var OriginAccessControlConfig: OriginAccessControlConfig
+  }
+
+  object CreateOriginAccessControlRequest {
+    @inline
+    def apply(
+        OriginAccessControlConfig: OriginAccessControlConfig
+    ): CreateOriginAccessControlRequest = {
+      val __obj = js.Dynamic.literal(
+        "OriginAccessControlConfig" -> OriginAccessControlConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateOriginAccessControlRequest]
+    }
+  }
+
+  @js.native
+  trait CreateOriginAccessControlResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
+    var OriginAccessControl: js.UndefOr[OriginAccessControl]
+  }
+
+  object CreateOriginAccessControlResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
+        OriginAccessControl: js.UndefOr[OriginAccessControl] = js.undefined
+    ): CreateOriginAccessControlResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      OriginAccessControl.foreach(__v => __obj.updateDynamic("OriginAccessControl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateOriginAccessControlResult]
     }
   }
 
@@ -1877,8 +2180,30 @@ package object cloudfront {
     }
   }
 
-  /** This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps. 1 * \```To delete a web distribution using the CloudFront API:``` <ol> * Disable the web distribution * Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution. * Update the XML document that was returned in the response to your <code>GET Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>. * Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 2. * Review the response to the <code>PUT Distribution
-    * Config</code> request to confirm that the distribution was successfully disabled. * Submit a <code>GET Distribution</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>. * Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 6. * Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was successfully deleted. </ol> For information about deleting a distribution using the CloudFront console, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html|Deleting a Distribution]] in the <i>Amazon CloudFront Developer Guide</i>.
+  @js.native
+  trait DeleteContinuousDeploymentPolicyRequest extends js.Object {
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object DeleteContinuousDeploymentPolicyRequest {
+    @inline
+    def apply(
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): DeleteContinuousDeploymentPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteContinuousDeploymentPolicyRequest]
+    }
+  }
+
+  /** This action deletes a web distribution. To delete a web distribution using the CloudFront API, perform the following steps.
+    * \```To delete a web distribution using the CloudFront API:``` <ol> * Disable the web distribution * Submit a <code>GET Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution. * Update the XML document that was returned in the response to your <code>GET Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>. * Submit a <code>PUT Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 2. * Review the response to the <code>PUT Distribution Config</code> request to confirm that the distribution was successfully disabled. * Submit a <code>GET Distribution</code> request to
+    * confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>. * Submit a <code>DELETE Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Distribution Config</code> request in Step 6. * Review the response to your <code>DELETE Distribution</code> request to confirm that the distribution was successfully deleted. </ol> For information about deleting a distribution using the CloudFront console, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html|Deleting a Distribution]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait DeleteDistributionRequest extends js.Object {
@@ -2009,6 +2334,27 @@ package object cloudfront {
     def apply(): DeleteMonitoringSubscriptionResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait DeleteOriginAccessControlRequest extends js.Object {
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object DeleteOriginAccessControlRequest {
+    @inline
+    def apply(
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): DeleteOriginAccessControlRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteOriginAccessControlRequest]
     }
   }
 
@@ -2215,6 +2561,7 @@ package object cloudfront {
     var Origins: Origins
     var Aliases: js.UndefOr[Aliases]
     var CacheBehaviors: js.UndefOr[CacheBehaviors]
+    var ContinuousDeploymentPolicyId: js.UndefOr[String]
     var CustomErrorResponses: js.UndefOr[CustomErrorResponses]
     var DefaultRootObject: js.UndefOr[String]
     var HttpVersion: js.UndefOr[HttpVersion]
@@ -2223,6 +2570,7 @@ package object cloudfront {
     var OriginGroups: js.UndefOr[OriginGroups]
     var PriceClass: js.UndefOr[PriceClass]
     var Restrictions: js.UndefOr[Restrictions]
+    var Staging: js.UndefOr[Boolean]
     var ViewerCertificate: js.UndefOr[ViewerCertificate]
     var WebACLId: js.UndefOr[String]
   }
@@ -2237,6 +2585,7 @@ package object cloudfront {
         Origins: Origins,
         Aliases: js.UndefOr[Aliases] = js.undefined,
         CacheBehaviors: js.UndefOr[CacheBehaviors] = js.undefined,
+        ContinuousDeploymentPolicyId: js.UndefOr[String] = js.undefined,
         CustomErrorResponses: js.UndefOr[CustomErrorResponses] = js.undefined,
         DefaultRootObject: js.UndefOr[String] = js.undefined,
         HttpVersion: js.UndefOr[HttpVersion] = js.undefined,
@@ -2245,6 +2594,7 @@ package object cloudfront {
         OriginGroups: js.UndefOr[OriginGroups] = js.undefined,
         PriceClass: js.UndefOr[PriceClass] = js.undefined,
         Restrictions: js.UndefOr[Restrictions] = js.undefined,
+        Staging: js.UndefOr[Boolean] = js.undefined,
         ViewerCertificate: js.UndefOr[ViewerCertificate] = js.undefined,
         WebACLId: js.UndefOr[String] = js.undefined
     ): DistributionConfig = {
@@ -2258,6 +2608,7 @@ package object cloudfront {
 
       Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
       CacheBehaviors.foreach(__v => __obj.updateDynamic("CacheBehaviors")(__v.asInstanceOf[js.Any]))
+      ContinuousDeploymentPolicyId.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicyId")(__v.asInstanceOf[js.Any]))
       CustomErrorResponses.foreach(__v => __obj.updateDynamic("CustomErrorResponses")(__v.asInstanceOf[js.Any]))
       DefaultRootObject.foreach(__v => __obj.updateDynamic("DefaultRootObject")(__v.asInstanceOf[js.Any]))
       HttpVersion.foreach(__v => __obj.updateDynamic("HttpVersion")(__v.asInstanceOf[js.Any]))
@@ -2266,6 +2617,7 @@ package object cloudfront {
       OriginGroups.foreach(__v => __obj.updateDynamic("OriginGroups")(__v.asInstanceOf[js.Any]))
       PriceClass.foreach(__v => __obj.updateDynamic("PriceClass")(__v.asInstanceOf[js.Any]))
       Restrictions.foreach(__v => __obj.updateDynamic("Restrictions")(__v.asInstanceOf[js.Any]))
+      Staging.foreach(__v => __obj.updateDynamic("Staging")(__v.asInstanceOf[js.Any]))
       ViewerCertificate.foreach(__v => __obj.updateDynamic("ViewerCertificate")(__v.asInstanceOf[js.Any]))
       WebACLId.foreach(__v => __obj.updateDynamic("WebACLId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DistributionConfig]
@@ -2383,6 +2735,7 @@ package object cloudfront {
     var Origins: Origins
     var PriceClass: PriceClass
     var Restrictions: Restrictions
+    var Staging: Boolean
     var Status: String
     var ViewerCertificate: ViewerCertificate
     var WebACLId: String
@@ -2408,6 +2761,7 @@ package object cloudfront {
         Origins: Origins,
         PriceClass: PriceClass,
         Restrictions: Restrictions,
+        Staging: Boolean,
         Status: String,
         ViewerCertificate: ViewerCertificate,
         WebACLId: String,
@@ -2430,6 +2784,7 @@ package object cloudfront {
         "Origins" -> Origins.asInstanceOf[js.Any],
         "PriceClass" -> PriceClass.asInstanceOf[js.Any],
         "Restrictions" -> Restrictions.asInstanceOf[js.Any],
+        "Staging" -> Staging.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any],
         "ViewerCertificate" -> ViewerCertificate.asInstanceOf[js.Any],
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
@@ -3126,6 +3481,78 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait GetContinuousDeploymentPolicyConfigRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetContinuousDeploymentPolicyConfigRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetContinuousDeploymentPolicyConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContinuousDeploymentPolicyConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetContinuousDeploymentPolicyConfigResult extends js.Object {
+    var ContinuousDeploymentPolicyConfig: js.UndefOr[ContinuousDeploymentPolicyConfig]
+    var ETag: js.UndefOr[String]
+  }
+
+  object GetContinuousDeploymentPolicyConfigResult {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicyConfig: js.UndefOr[ContinuousDeploymentPolicyConfig] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined
+    ): GetContinuousDeploymentPolicyConfigResult = {
+      val __obj = js.Dynamic.literal()
+      ContinuousDeploymentPolicyConfig.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicyConfig")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContinuousDeploymentPolicyConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetContinuousDeploymentPolicyRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetContinuousDeploymentPolicyRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetContinuousDeploymentPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetContinuousDeploymentPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetContinuousDeploymentPolicyResult extends js.Object {
+    var ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy]
+    var ETag: js.UndefOr[String]
+  }
+
+  object GetContinuousDeploymentPolicyResult {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined
+    ): GetContinuousDeploymentPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ContinuousDeploymentPolicy.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicy")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetContinuousDeploymentPolicyResult]
+    }
+  }
+
   /** The request to get a distribution configuration.
     */
   @js.native
@@ -3535,6 +3962,78 @@ package object cloudfront {
       val __obj = js.Dynamic.literal()
       MonitoringSubscription.foreach(__v => __obj.updateDynamic("MonitoringSubscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMonitoringSubscriptionResult]
+    }
+  }
+
+  @js.native
+  trait GetOriginAccessControlConfigRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetOriginAccessControlConfigRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetOriginAccessControlConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetOriginAccessControlConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetOriginAccessControlConfigResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var OriginAccessControlConfig: js.UndefOr[OriginAccessControlConfig]
+  }
+
+  object GetOriginAccessControlConfigResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        OriginAccessControlConfig: js.UndefOr[OriginAccessControlConfig] = js.undefined
+    ): GetOriginAccessControlConfigResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      OriginAccessControlConfig.foreach(__v => __obj.updateDynamic("OriginAccessControlConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOriginAccessControlConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetOriginAccessControlRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetOriginAccessControlRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetOriginAccessControlRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetOriginAccessControlRequest]
+    }
+  }
+
+  @js.native
+  trait GetOriginAccessControlResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var OriginAccessControl: js.UndefOr[OriginAccessControl]
+  }
+
+  object GetOriginAccessControlResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        OriginAccessControl: js.UndefOr[OriginAccessControl] = js.undefined
+    ): GetOriginAccessControlResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      OriginAccessControl.foreach(__v => __obj.updateDynamic("OriginAccessControl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetOriginAccessControlResult]
     }
   }
 
@@ -4337,6 +4836,41 @@ package object cloudfront {
   }
 
   @js.native
+  trait ListContinuousDeploymentPoliciesRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListContinuousDeploymentPoliciesRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListContinuousDeploymentPoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContinuousDeploymentPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListContinuousDeploymentPoliciesResult extends js.Object {
+    var ContinuousDeploymentPolicyList: js.UndefOr[ContinuousDeploymentPolicyList]
+  }
+
+  object ListContinuousDeploymentPoliciesResult {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicyList: js.UndefOr[ContinuousDeploymentPolicyList] = js.undefined
+    ): ListContinuousDeploymentPoliciesResult = {
+      val __obj = js.Dynamic.literal()
+      ContinuousDeploymentPolicyList.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicyList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListContinuousDeploymentPoliciesResult]
+    }
+  }
+
+  @js.native
   trait ListDistributionsByCachePolicyIdRequest extends js.Object {
     var CachePolicyId: String
     var Marker: js.UndefOr[String]
@@ -4808,6 +5342,41 @@ package object cloudfront {
   }
 
   @js.native
+  trait ListOriginAccessControlsRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListOriginAccessControlsRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListOriginAccessControlsRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOriginAccessControlsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOriginAccessControlsResult extends js.Object {
+    var OriginAccessControlList: js.UndefOr[OriginAccessControlList]
+  }
+
+  object ListOriginAccessControlsResult {
+    @inline
+    def apply(
+        OriginAccessControlList: js.UndefOr[OriginAccessControlList] = js.undefined
+    ): ListOriginAccessControlsResult = {
+      val __obj = js.Dynamic.literal()
+      OriginAccessControlList.foreach(__v => __obj.updateDynamic("OriginAccessControlList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOriginAccessControlsResult]
+    }
+  }
+
+  @js.native
   trait ListOriginRequestPoliciesRequest extends js.Object {
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[String]
@@ -5086,6 +5655,7 @@ package object cloudfront {
     var ConnectionTimeout: js.UndefOr[Int]
     var CustomHeaders: js.UndefOr[CustomHeaders]
     var CustomOriginConfig: js.UndefOr[CustomOriginConfig]
+    var OriginAccessControlId: js.UndefOr[String]
     var OriginPath: js.UndefOr[String]
     var OriginShield: js.UndefOr[OriginShield]
     var S3OriginConfig: js.UndefOr[S3OriginConfig]
@@ -5100,6 +5670,7 @@ package object cloudfront {
         ConnectionTimeout: js.UndefOr[Int] = js.undefined,
         CustomHeaders: js.UndefOr[CustomHeaders] = js.undefined,
         CustomOriginConfig: js.UndefOr[CustomOriginConfig] = js.undefined,
+        OriginAccessControlId: js.UndefOr[String] = js.undefined,
         OriginPath: js.UndefOr[String] = js.undefined,
         OriginShield: js.UndefOr[OriginShield] = js.undefined,
         S3OriginConfig: js.UndefOr[S3OriginConfig] = js.undefined
@@ -5113,10 +5684,135 @@ package object cloudfront {
       ConnectionTimeout.foreach(__v => __obj.updateDynamic("ConnectionTimeout")(__v.asInstanceOf[js.Any]))
       CustomHeaders.foreach(__v => __obj.updateDynamic("CustomHeaders")(__v.asInstanceOf[js.Any]))
       CustomOriginConfig.foreach(__v => __obj.updateDynamic("CustomOriginConfig")(__v.asInstanceOf[js.Any]))
+      OriginAccessControlId.foreach(__v => __obj.updateDynamic("OriginAccessControlId")(__v.asInstanceOf[js.Any]))
       OriginPath.foreach(__v => __obj.updateDynamic("OriginPath")(__v.asInstanceOf[js.Any]))
       OriginShield.foreach(__v => __obj.updateDynamic("OriginShield")(__v.asInstanceOf[js.Any]))
       S3OriginConfig.foreach(__v => __obj.updateDynamic("S3OriginConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Origin]
+    }
+  }
+
+  /** A CloudFront origin access control, including its unique identifier.
+    */
+  @js.native
+  trait OriginAccessControl extends js.Object {
+    var Id: String
+    var OriginAccessControlConfig: js.UndefOr[OriginAccessControlConfig]
+  }
+
+  object OriginAccessControl {
+    @inline
+    def apply(
+        Id: String,
+        OriginAccessControlConfig: js.UndefOr[OriginAccessControlConfig] = js.undefined
+    ): OriginAccessControl = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      OriginAccessControlConfig.foreach(__v => __obj.updateDynamic("OriginAccessControlConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginAccessControl]
+    }
+  }
+
+  /** A CloudFront origin access control configuration.
+    */
+  @js.native
+  trait OriginAccessControlConfig extends js.Object {
+    var Name: String
+    var OriginAccessControlOriginType: OriginAccessControlOriginTypes
+    var SigningBehavior: OriginAccessControlSigningBehaviors
+    var SigningProtocol: OriginAccessControlSigningProtocols
+    var Description: js.UndefOr[String]
+  }
+
+  object OriginAccessControlConfig {
+    @inline
+    def apply(
+        Name: String,
+        OriginAccessControlOriginType: OriginAccessControlOriginTypes,
+        SigningBehavior: OriginAccessControlSigningBehaviors,
+        SigningProtocol: OriginAccessControlSigningProtocols,
+        Description: js.UndefOr[String] = js.undefined
+    ): OriginAccessControlConfig = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OriginAccessControlOriginType" -> OriginAccessControlOriginType.asInstanceOf[js.Any],
+        "SigningBehavior" -> SigningBehavior.asInstanceOf[js.Any],
+        "SigningProtocol" -> SigningProtocol.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginAccessControlConfig]
+    }
+  }
+
+  /** A list of CloudFront origin access controls.
+    */
+  @js.native
+  trait OriginAccessControlList extends js.Object {
+    var IsTruncated: Boolean
+    var Marker: String
+    var MaxItems: Int
+    var Quantity: Int
+    var Items: js.UndefOr[OriginAccessControlSummaryList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object OriginAccessControlList {
+    @inline
+    def apply(
+        IsTruncated: Boolean,
+        Marker: String,
+        MaxItems: Int,
+        Quantity: Int,
+        Items: js.UndefOr[OriginAccessControlSummaryList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): OriginAccessControlList = {
+      val __obj = js.Dynamic.literal(
+        "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
+        "Marker" -> Marker.asInstanceOf[js.Any],
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OriginAccessControlList]
+    }
+  }
+
+  /** A CloudFront origin access control.
+    */
+  @js.native
+  trait OriginAccessControlSummary extends js.Object {
+    var Description: String
+    var Id: String
+    var Name: String
+    var OriginAccessControlOriginType: OriginAccessControlOriginTypes
+    var SigningBehavior: OriginAccessControlSigningBehaviors
+    var SigningProtocol: OriginAccessControlSigningProtocols
+  }
+
+  object OriginAccessControlSummary {
+    @inline
+    def apply(
+        Description: String,
+        Id: String,
+        Name: String,
+        OriginAccessControlOriginType: OriginAccessControlOriginTypes,
+        SigningBehavior: OriginAccessControlSigningBehaviors,
+        SigningProtocol: OriginAccessControlSigningProtocols
+    ): OriginAccessControlSummary = {
+      val __obj = js.Dynamic.literal(
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "OriginAccessControlOriginType" -> OriginAccessControlOriginType.asInstanceOf[js.Any],
+        "SigningBehavior" -> SigningBehavior.asInstanceOf[js.Any],
+        "SigningProtocol" -> SigningProtocol.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OriginAccessControlSummary]
     }
   }
 
@@ -6019,6 +6715,7 @@ package object cloudfront {
     var CorsConfig: js.UndefOr[ResponseHeadersPolicyCorsConfig]
     var CustomHeadersConfig: js.UndefOr[ResponseHeadersPolicyCustomHeadersConfig]
     var SecurityHeadersConfig: js.UndefOr[ResponseHeadersPolicySecurityHeadersConfig]
+    var ServerTimingHeadersConfig: js.UndefOr[ResponseHeadersPolicyServerTimingHeadersConfig]
   }
 
   object ResponseHeadersPolicyConfig {
@@ -6028,7 +6725,8 @@ package object cloudfront {
         Comment: js.UndefOr[String] = js.undefined,
         CorsConfig: js.UndefOr[ResponseHeadersPolicyCorsConfig] = js.undefined,
         CustomHeadersConfig: js.UndefOr[ResponseHeadersPolicyCustomHeadersConfig] = js.undefined,
-        SecurityHeadersConfig: js.UndefOr[ResponseHeadersPolicySecurityHeadersConfig] = js.undefined
+        SecurityHeadersConfig: js.UndefOr[ResponseHeadersPolicySecurityHeadersConfig] = js.undefined,
+        ServerTimingHeadersConfig: js.UndefOr[ResponseHeadersPolicyServerTimingHeadersConfig] = js.undefined
     ): ResponseHeadersPolicyConfig = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -6038,6 +6736,7 @@ package object cloudfront {
       CorsConfig.foreach(__v => __obj.updateDynamic("CorsConfig")(__v.asInstanceOf[js.Any]))
       CustomHeadersConfig.foreach(__v => __obj.updateDynamic("CustomHeadersConfig")(__v.asInstanceOf[js.Any]))
       SecurityHeadersConfig.foreach(__v => __obj.updateDynamic("SecurityHeadersConfig")(__v.asInstanceOf[js.Any]))
+      ServerTimingHeadersConfig.foreach(__v => __obj.updateDynamic("ServerTimingHeadersConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseHeadersPolicyConfig]
     }
   }
@@ -6275,6 +6974,29 @@ package object cloudfront {
     }
   }
 
+  /** A configuration for enabling the <code>Server-Timing</code> header in HTTP responses sent from CloudFront. CloudFront adds this header to HTTP responses that it sends in response to requests that match a cache behavior that's associated with this response headers policy. You can use the <code>Server-Timing</code> header to view metrics that can help you gain insights about the behavior and performance of CloudFront. For example, you can see which cache layer served a cache hit, or the first byte latency from the origin when there was a cache miss. You can use the metrics in the <code>Server-Timing</code> header to troubleshoot issues or test the efficiency of your CloudFront configuration. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#server-timing-header|Server-Timing header]] in the <i>Amazon CloudFront Developer Guide</i>.
+    */
+  @js.native
+  trait ResponseHeadersPolicyServerTimingHeadersConfig extends js.Object {
+    var Enabled: Boolean
+    var SamplingRate: js.UndefOr[SamplingRate]
+  }
+
+  object ResponseHeadersPolicyServerTimingHeadersConfig {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        SamplingRate: js.UndefOr[SamplingRate] = js.undefined
+    ): ResponseHeadersPolicyServerTimingHeadersConfig = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      SamplingRate.foreach(__v => __obj.updateDynamic("SamplingRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyServerTimingHeadersConfig]
+    }
+  }
+
   /** Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header’s value. For more information about the <code>Strict-Transport-Security</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security|Strict-Transport-Security]] in the MDN Web Docs.
     */
   @js.native
@@ -6415,6 +7137,28 @@ package object cloudfront {
     }
   }
 
+  /** Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.
+    */
+  @js.native
+  trait SessionStickinessConfig extends js.Object {
+    var IdleTTL: Int
+    var MaximumTTL: Int
+  }
+
+  object SessionStickinessConfig {
+    @inline
+    def apply(
+        IdleTTL: Int,
+        MaximumTTL: Int
+    ): SessionStickinessConfig = {
+      val __obj = js.Dynamic.literal(
+        "IdleTTL" -> IdleTTL.asInstanceOf[js.Any],
+        "MaximumTTL" -> MaximumTTL.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SessionStickinessConfig]
+    }
+  }
+
   /** A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
@@ -6433,6 +7177,29 @@ package object cloudfront {
       AwsAccountNumber.foreach(__v => __obj.updateDynamic("AwsAccountNumber")(__v.asInstanceOf[js.Any]))
       KeyPairIds.foreach(__v => __obj.updateDynamic("KeyPairIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Signer]
+    }
+  }
+
+  /** The CloudFront domain name of the staging distribution.
+    */
+  @js.native
+  trait StagingDistributionDnsNames extends js.Object {
+    var Quantity: Int
+    var Items: js.UndefOr[StagingDistributionDnsNameList]
+  }
+
+  object StagingDistributionDnsNames {
+    @inline
+    def apply(
+        Quantity: Int,
+        Items: js.UndefOr[StagingDistributionDnsNameList] = js.undefined
+    ): StagingDistributionDnsNames = {
+      val __obj = js.Dynamic.literal(
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StagingDistributionDnsNames]
     }
   }
 
@@ -6822,6 +7589,32 @@ package object cloudfront {
     }
   }
 
+  /** The traffic configuration of your continuous deployment.
+    */
+  @js.native
+  trait TrafficConfig extends js.Object {
+    var Type: ContinuousDeploymentPolicyType
+    var SingleHeaderConfig: js.UndefOr[ContinuousDeploymentSingleHeaderConfig]
+    var SingleWeightConfig: js.UndefOr[ContinuousDeploymentSingleWeightConfig]
+  }
+
+  object TrafficConfig {
+    @inline
+    def apply(
+        Type: ContinuousDeploymentPolicyType,
+        SingleHeaderConfig: js.UndefOr[ContinuousDeploymentSingleHeaderConfig] = js.undefined,
+        SingleWeightConfig: js.UndefOr[ContinuousDeploymentSingleWeightConfig] = js.undefined
+    ): TrafficConfig = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      SingleHeaderConfig.foreach(__v => __obj.updateDynamic("SingleHeaderConfig")(__v.asInstanceOf[js.Any]))
+      SingleWeightConfig.foreach(__v => __obj.updateDynamic("SingleWeightConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrafficConfig]
+    }
+  }
+
   /** A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
@@ -6986,6 +7779,49 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait UpdateContinuousDeploymentPolicyRequest extends js.Object {
+    var ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object UpdateContinuousDeploymentPolicyRequest {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicyConfig: ContinuousDeploymentPolicyConfig,
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): UpdateContinuousDeploymentPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ContinuousDeploymentPolicyConfig" -> ContinuousDeploymentPolicyConfig.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContinuousDeploymentPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateContinuousDeploymentPolicyResult extends js.Object {
+    var ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy]
+    var ETag: js.UndefOr[String]
+  }
+
+  object UpdateContinuousDeploymentPolicyResult {
+    @inline
+    def apply(
+        ContinuousDeploymentPolicy: js.UndefOr[ContinuousDeploymentPolicy] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined
+    ): UpdateContinuousDeploymentPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ContinuousDeploymentPolicy.foreach(__v => __obj.updateDynamic("ContinuousDeploymentPolicy")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateContinuousDeploymentPolicyResult]
+    }
+  }
+
   /** The request to update a distribution.
     */
   @js.native
@@ -7030,6 +7866,49 @@ package object cloudfront {
       Distribution.foreach(__v => __obj.updateDynamic("Distribution")(__v.asInstanceOf[js.Any]))
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDistributionResult]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionWithStagingConfigRequest extends js.Object {
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+    var StagingDistributionId: js.UndefOr[String]
+  }
+
+  object UpdateDistributionWithStagingConfigRequest {
+    @inline
+    def apply(
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined,
+        StagingDistributionId: js.UndefOr[String] = js.undefined
+    ): UpdateDistributionWithStagingConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      StagingDistributionId.foreach(__v => __obj.updateDynamic("StagingDistributionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionWithStagingConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDistributionWithStagingConfigResult extends js.Object {
+    var Distribution: js.UndefOr[Distribution]
+    var ETag: js.UndefOr[String]
+  }
+
+  object UpdateDistributionWithStagingConfigResult {
+    @inline
+    def apply(
+        Distribution: js.UndefOr[Distribution] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined
+    ): UpdateDistributionWithStagingConfigResult = {
+      val __obj = js.Dynamic.literal()
+      Distribution.foreach(__v => __obj.updateDynamic("Distribution")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDistributionWithStagingConfigResult]
     }
   }
 
@@ -7204,6 +8083,49 @@ package object cloudfront {
       ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
       KeyGroup.foreach(__v => __obj.updateDynamic("KeyGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateKeyGroupResult]
+    }
+  }
+
+  @js.native
+  trait UpdateOriginAccessControlRequest extends js.Object {
+    var Id: String
+    var OriginAccessControlConfig: OriginAccessControlConfig
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object UpdateOriginAccessControlRequest {
+    @inline
+    def apply(
+        Id: String,
+        OriginAccessControlConfig: OriginAccessControlConfig,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): UpdateOriginAccessControlRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "OriginAccessControlConfig" -> OriginAccessControlConfig.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateOriginAccessControlRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateOriginAccessControlResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var OriginAccessControl: js.UndefOr[OriginAccessControl]
+  }
+
+  object UpdateOriginAccessControlResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        OriginAccessControl: js.UndefOr[OriginAccessControl] = js.undefined
+    ): UpdateOriginAccessControlResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      OriginAccessControl.foreach(__v => __obj.updateDynamic("OriginAccessControl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateOriginAccessControlResult]
     }
   }
 

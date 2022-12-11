@@ -40,6 +40,15 @@ object ChangeStatus {
 }
 
 @js.native
+sealed trait CidrCollectionChangeAction extends js.Any
+object CidrCollectionChangeAction {
+  val PUT = "PUT".asInstanceOf[CidrCollectionChangeAction]
+  val DELETE_IF_EXISTS = "DELETE_IF_EXISTS".asInstanceOf[CidrCollectionChangeAction]
+
+  @inline def values: js.Array[CidrCollectionChangeAction] = js.Array(PUT, DELETE_IF_EXISTS)
+}
+
+@js.native
 sealed trait CloudWatchRegion extends js.Any
 object CloudWatchRegion {
   val `us-east-1` = "us-east-1".asInstanceOf[CloudWatchRegion]
@@ -48,12 +57,15 @@ object CloudWatchRegion {
   val `us-west-2` = "us-west-2".asInstanceOf[CloudWatchRegion]
   val `ca-central-1` = "ca-central-1".asInstanceOf[CloudWatchRegion]
   val `eu-central-1` = "eu-central-1".asInstanceOf[CloudWatchRegion]
+  val `eu-central-2` = "eu-central-2".asInstanceOf[CloudWatchRegion]
   val `eu-west-1` = "eu-west-1".asInstanceOf[CloudWatchRegion]
   val `eu-west-2` = "eu-west-2".asInstanceOf[CloudWatchRegion]
   val `eu-west-3` = "eu-west-3".asInstanceOf[CloudWatchRegion]
   val `ap-east-1` = "ap-east-1".asInstanceOf[CloudWatchRegion]
   val `me-south-1` = "me-south-1".asInstanceOf[CloudWatchRegion]
+  val `me-central-1` = "me-central-1".asInstanceOf[CloudWatchRegion]
   val `ap-south-1` = "ap-south-1".asInstanceOf[CloudWatchRegion]
+  val `ap-south-2` = "ap-south-2".asInstanceOf[CloudWatchRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[CloudWatchRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[CloudWatchRegion]
   val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[CloudWatchRegion]
@@ -66,6 +78,7 @@ object CloudWatchRegion {
   val `cn-north-1` = "cn-north-1".asInstanceOf[CloudWatchRegion]
   val `af-south-1` = "af-south-1".asInstanceOf[CloudWatchRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[CloudWatchRegion]
+  val `eu-south-2` = "eu-south-2".asInstanceOf[CloudWatchRegion]
   val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
   val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
   val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
@@ -79,12 +92,15 @@ object CloudWatchRegion {
     `us-west-2`,
     `ca-central-1`,
     `eu-central-1`,
+    `eu-central-2`,
     `eu-west-1`,
     `eu-west-2`,
     `eu-west-3`,
     `ap-east-1`,
     `me-south-1`,
+    `me-central-1`,
     `ap-south-1`,
+    `ap-south-2`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
@@ -97,6 +113,7 @@ object CloudWatchRegion {
     `cn-north-1`,
     `af-south-1`,
     `eu-south-1`,
+    `eu-south-2`,
     `us-gov-west-1`,
     `us-gov-east-1`,
     `us-iso-east-1`,
@@ -217,6 +234,7 @@ object ResourceRecordSetRegion {
   val `eu-west-2` = "eu-west-2".asInstanceOf[ResourceRecordSetRegion]
   val `eu-west-3` = "eu-west-3".asInstanceOf[ResourceRecordSetRegion]
   val `eu-central-1` = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
+  val `eu-central-2` = "eu-central-2".asInstanceOf[ResourceRecordSetRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[ResourceRecordSetRegion]
   val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[ResourceRecordSetRegion]
@@ -229,9 +247,12 @@ object ResourceRecordSetRegion {
   val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-east-1` = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
   val `me-south-1` = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
+  val `me-central-1` = "me-central-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-south-1` = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
+  val `ap-south-2` = "ap-south-2".asInstanceOf[ResourceRecordSetRegion]
   val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
+  val `eu-south-2` = "eu-south-2".asInstanceOf[ResourceRecordSetRegion]
 
   @inline def values: js.Array[ResourceRecordSetRegion] = js.Array(
     `us-east-1`,
@@ -243,6 +264,7 @@ object ResourceRecordSetRegion {
     `eu-west-2`,
     `eu-west-3`,
     `eu-central-1`,
+    `eu-central-2`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
@@ -255,9 +277,12 @@ object ResourceRecordSetRegion {
     `cn-northwest-1`,
     `ap-east-1`,
     `me-south-1`,
+    `me-central-1`,
     `ap-south-1`,
+    `ap-south-2`,
     `af-south-1`,
-    `eu-south-1`
+    `eu-south-1`,
+    `eu-south-2`
   )
 }
 
@@ -301,6 +326,7 @@ object VPCRegion {
   val `eu-west-2` = "eu-west-2".asInstanceOf[VPCRegion]
   val `eu-west-3` = "eu-west-3".asInstanceOf[VPCRegion]
   val `eu-central-1` = "eu-central-1".asInstanceOf[VPCRegion]
+  val `eu-central-2` = "eu-central-2".asInstanceOf[VPCRegion]
   val `ap-east-1` = "ap-east-1".asInstanceOf[VPCRegion]
   val `me-south-1` = "me-south-1".asInstanceOf[VPCRegion]
   val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[VPCRegion]
@@ -308,10 +334,12 @@ object VPCRegion {
   val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[VPCRegion]
   val `us-iso-west-1` = "us-iso-west-1".asInstanceOf[VPCRegion]
   val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[VPCRegion]
+  val `me-central-1` = "me-central-1".asInstanceOf[VPCRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
   val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[VPCRegion]
   val `ap-south-1` = "ap-south-1".asInstanceOf[VPCRegion]
+  val `ap-south-2` = "ap-south-2".asInstanceOf[VPCRegion]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[VPCRegion]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[VPCRegion]
   val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[VPCRegion]
@@ -321,6 +349,7 @@ object VPCRegion {
   val `cn-north-1` = "cn-north-1".asInstanceOf[VPCRegion]
   val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
+  val `eu-south-2` = "eu-south-2".asInstanceOf[VPCRegion]
 
   @inline def values: js.Array[VPCRegion] = js.Array(
     `us-east-1`,
@@ -331,6 +360,7 @@ object VPCRegion {
     `eu-west-2`,
     `eu-west-3`,
     `eu-central-1`,
+    `eu-central-2`,
     `ap-east-1`,
     `me-south-1`,
     `us-gov-west-1`,
@@ -338,10 +368,12 @@ object VPCRegion {
     `us-iso-east-1`,
     `us-iso-west-1`,
     `us-isob-east-1`,
+    `me-central-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-southeast-3`,
     `ap-south-1`,
+    `ap-south-2`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -350,6 +382,7 @@ object VPCRegion {
     `ca-central-1`,
     `cn-north-1`,
     `af-south-1`,
-    `eu-south-1`
+    `eu-south-1`,
+    `eu-south-2`
   )
 }

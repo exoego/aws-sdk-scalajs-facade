@@ -220,6 +220,23 @@ object RevocationReason {
 }
 
 @js.native
+sealed trait SortBy extends js.Any
+object SortBy {
+  val CREATED_AT = "CREATED_AT".asInstanceOf[SortBy]
+
+  @inline def values: js.Array[SortBy] = js.Array(CREATED_AT)
+}
+
+@js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
+}
+
+@js.native
 sealed trait ValidationMethod extends js.Any
 object ValidationMethod {
   val EMAIL = "EMAIL".asInstanceOf[ValidationMethod]

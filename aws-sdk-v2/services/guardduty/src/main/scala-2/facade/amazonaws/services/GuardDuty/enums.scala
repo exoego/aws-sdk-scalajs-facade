@@ -12,14 +12,29 @@ object AdminStatus {
 }
 
 @js.native
+sealed trait CriterionKey extends js.Any
+object CriterionKey {
+  val EC2_INSTANCE_ARN = "EC2_INSTANCE_ARN".asInstanceOf[CriterionKey]
+  val SCAN_ID = "SCAN_ID".asInstanceOf[CriterionKey]
+  val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[CriterionKey]
+  val GUARDDUTY_FINDING_ID = "GUARDDUTY_FINDING_ID".asInstanceOf[CriterionKey]
+  val SCAN_START_TIME = "SCAN_START_TIME".asInstanceOf[CriterionKey]
+  val SCAN_STATUS = "SCAN_STATUS".asInstanceOf[CriterionKey]
+
+  @inline def values: js.Array[CriterionKey] = js.Array(EC2_INSTANCE_ARN, SCAN_ID, ACCOUNT_ID, GUARDDUTY_FINDING_ID, SCAN_START_TIME, SCAN_STATUS)
+}
+
+@js.native
 sealed trait DataSource extends js.Any
 object DataSource {
   val FLOW_LOGS = "FLOW_LOGS".asInstanceOf[DataSource]
   val CLOUD_TRAIL = "CLOUD_TRAIL".asInstanceOf[DataSource]
   val DNS_LOGS = "DNS_LOGS".asInstanceOf[DataSource]
   val S3_LOGS = "S3_LOGS".asInstanceOf[DataSource]
+  val KUBERNETES_AUDIT_LOGS = "KUBERNETES_AUDIT_LOGS".asInstanceOf[DataSource]
+  val EC2_MALWARE_SCAN = "EC2_MALWARE_SCAN".asInstanceOf[DataSource]
 
-  @inline def values: js.Array[DataSource] = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
+  @inline def values: js.Array[DataSource] = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS, KUBERNETES_AUDIT_LOGS, EC2_MALWARE_SCAN)
 }
 
 @js.native
@@ -46,6 +61,15 @@ object DetectorStatus {
   val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
   @inline def values: js.Array[DetectorStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait EbsSnapshotPreservation extends js.Any
+object EbsSnapshotPreservation {
+  val NO_RETENTION = "NO_RETENTION".asInstanceOf[EbsSnapshotPreservation]
+  val RETENTION_WITH_FINDING = "RETENTION_WITH_FINDING".asInstanceOf[EbsSnapshotPreservation]
+
+  @inline def values: js.Array[EbsSnapshotPreservation] = js.Array(NO_RETENTION, RETENTION_WITH_FINDING)
 }
 
 @js.native
@@ -129,6 +153,35 @@ object PublishingStatus {
   val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
   @inline def values: js.Array[PublishingStatus] = js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED)
+}
+
+/** An enum value representing possible resource properties to match with given scan condition.
+  */
+@js.native
+sealed trait ScanCriterionKey extends js.Any
+object ScanCriterionKey {
+  val EC2_INSTANCE_TAG = "EC2_INSTANCE_TAG".asInstanceOf[ScanCriterionKey]
+
+  @inline def values: js.Array[ScanCriterionKey] = js.Array(EC2_INSTANCE_TAG)
+}
+
+@js.native
+sealed trait ScanResult extends js.Any
+object ScanResult {
+  val CLEAN = "CLEAN".asInstanceOf[ScanResult]
+  val INFECTED = "INFECTED".asInstanceOf[ScanResult]
+
+  @inline def values: js.Array[ScanResult] = js.Array(CLEAN, INFECTED)
+}
+
+@js.native
+sealed trait ScanStatus extends js.Any
+object ScanStatus {
+  val RUNNING = "RUNNING".asInstanceOf[ScanStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[ScanStatus]
+  val FAILED = "FAILED".asInstanceOf[ScanStatus]
+
+  @inline def values: js.Array[ScanStatus] = js.Array(RUNNING, COMPLETED, FAILED)
 }
 
 @js.native

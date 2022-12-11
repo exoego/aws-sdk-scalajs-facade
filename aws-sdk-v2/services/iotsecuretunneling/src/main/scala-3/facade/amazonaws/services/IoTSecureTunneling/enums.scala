@@ -2,6 +2,15 @@ package facade.amazonaws.services.iotsecuretunneling
 
 import scalajs.js
 
+type ClientMode = "SOURCE" | "DESTINATION" | "ALL"
+object ClientMode {
+  inline val SOURCE: "SOURCE" = "SOURCE"
+  inline val DESTINATION: "DESTINATION" = "DESTINATION"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[ClientMode] = js.Array(SOURCE, DESTINATION, ALL)
+}
+
 type ConnectionStatus = "CONNECTED" | "DISCONNECTED"
 object ConnectionStatus {
   inline val CONNECTED: "CONNECTED" = "CONNECTED"

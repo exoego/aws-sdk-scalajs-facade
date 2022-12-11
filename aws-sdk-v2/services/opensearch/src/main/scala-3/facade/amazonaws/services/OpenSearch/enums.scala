@@ -12,7 +12,7 @@ object AutoTuneDesiredState {
   inline def values: js.Array[AutoTuneDesiredState] = js.Array(ENABLED, DISABLED)
 }
 
-/** The Auto-Tune state for the domain. For valid states see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service</a>.
+/** The Auto-Tune state for the domain. For valid states see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html| Auto-Tune for Amazon OpenSearch Service]].
   */
 type AutoTuneState = "ENABLED" | "DISABLED" | "ENABLE_IN_PROGRESS" | "DISABLE_IN_PROGRESS" | "DISABLED_AND_ROLLBACK_SCHEDULED" | "DISABLED_AND_ROLLBACK_IN_PROGRESS" | "DISABLED_AND_ROLLBACK_COMPLETE" | "DISABLED_AND_ROLLBACK_ERROR" | "ERROR"
 object AutoTuneState {
@@ -101,7 +101,7 @@ object InboundConnectionStatusCode {
   inline def values: js.Array[InboundConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, APPROVED, PROVISIONING, ACTIVE, REJECTING, REJECTED, DELETING, DELETED)
 }
 
-/** <p>Type of log file. Can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute. * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute. * ES_APPLICATION_LOGS: OpenSearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain. </p>
+/** The type of log file. Can be one of the following: * ```INDEX_SLOW_LOGS``` - Index slow logs contain insert requests that took more time than the configured index query log threshold to execute. * ```SEARCH_SLOW_LOGS``` - Search slow logs contain search queries that took more time than the configured search query log threshold to execute. * ```ES_APPLICATION_LOGS``` - OpenSearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * ```AUDIT_LOGS``` - Audit logs contain records of user requests for access to the domain.
   */
 type LogType = "INDEX_SLOW_LOGS" | "SEARCH_SLOW_LOGS" | "ES_APPLICATION_LOGS" | "AUDIT_LOGS"
 object LogType {
@@ -113,9 +113,8 @@ object LogType {
   inline def values: js.Array[LogType] = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS)
 }
 
-type OpenSearchPartitionInstanceType = "m3.medium.search" | "m3.large.search" | "m3.xlarge.search" | "m3.2xlarge.search" | "m4.large.search" | "m4.xlarge.search" | "m4.2xlarge.search" | "m4.4xlarge.search" | "m4.10xlarge.search" | "m5.large.search" | "m5.xlarge.search" | "m5.2xlarge.search" | "m5.4xlarge.search" | "m5.12xlarge.search" | "m5.24xlarge.search" | "r5.large.search" | "r5.xlarge.search" | "r5.2xlarge.search" | "r5.4xlarge.search" | "r5.12xlarge.search" | "r5.24xlarge.search" | "c5.large.search" | "c5.xlarge.search" | "c5.2xlarge.search" | "c5.4xlarge.search" | "c5.9xlarge.search" | "c5.18xlarge.search" | "t3.nano.search" | "t3.micro.search" | "t3.small.search" | "t3.medium.search" | "t3.large.search" | "t3.xlarge.search" | "t3.2xlarge.search" | "ultrawarm1.medium.search" | "ultrawarm1.large.search" | "ultrawarm1.xlarge.search" | "t2.micro.search" | "t2.small.search" | "t2.medium.search" | "r3.large.search" | "r3.xlarge.search" | "r3.2xlarge.search" | "r3.4xlarge.search" |
-  "r3.8xlarge.search" | "i2.xlarge.search" | "i2.2xlarge.search" | "d2.xlarge.search" | "d2.2xlarge.search" | "d2.4xlarge.search" | "d2.8xlarge.search" | "c4.large.search" | "c4.xlarge.search" | "c4.2xlarge.search" | "c4.4xlarge.search" | "c4.8xlarge.search" | "r4.large.search" | "r4.xlarge.search" | "r4.2xlarge.search" | "r4.4xlarge.search" | "r4.8xlarge.search" | "r4.16xlarge.search" | "i3.large.search" | "i3.xlarge.search" | "i3.2xlarge.search" | "i3.4xlarge.search" | "i3.8xlarge.search" | "i3.16xlarge.search" | "r6g.large.search" | "r6g.xlarge.search" | "r6g.2xlarge.search" | "r6g.4xlarge.search" | "r6g.8xlarge.search" | "r6g.12xlarge.search" | "m6g.large.search" | "m6g.xlarge.search" | "m6g.2xlarge.search" | "m6g.4xlarge.search" | "m6g.8xlarge.search" | "m6g.12xlarge.search" | "c6g.large.search" | "c6g.xlarge.search" | "c6g.2xlarge.search" | "c6g.4xlarge.search" | "c6g.8xlarge.search" | "c6g.12xlarge.search" | "r6gd.large.search" | "r6gd.xlarge.search" | "r6gd.2xlarge.search" |
-  "r6gd.4xlarge.search" | "r6gd.8xlarge.search" | "r6gd.12xlarge.search" | "r6gd.16xlarge.search" | "t4g.small.search" | "t4g.medium.search"
+type OpenSearchPartitionInstanceType =
+  "m3.medium.search" | "m3.large.search" | "m3.xlarge.search" | "m3.2xlarge.search" | "m4.large.search" | "m4.xlarge.search" | "m4.2xlarge.search" | "m4.4xlarge.search" | "m4.10xlarge.search" | "m5.large.search" | "m5.xlarge.search" | "m5.2xlarge.search" | "m5.4xlarge.search" | "m5.12xlarge.search" | "m5.24xlarge.search" | "r5.large.search" | "r5.xlarge.search" | "r5.2xlarge.search" | "r5.4xlarge.search" | "r5.12xlarge.search" | "r5.24xlarge.search" | "c5.large.search" | "c5.xlarge.search" | "c5.2xlarge.search" | "c5.4xlarge.search" | "c5.9xlarge.search" | "c5.18xlarge.search" | "t3.nano.search" | "t3.micro.search" | "t3.small.search" | "t3.medium.search" | "t3.large.search" | "t3.xlarge.search" | "t3.2xlarge.search" | "ultrawarm1.medium.search" | "ultrawarm1.large.search" | "ultrawarm1.xlarge.search" | "t2.micro.search" | "t2.small.search" | "t2.medium.search" | "r3.large.search" | "r3.xlarge.search" | "r3.2xlarge.search" | "r3.4xlarge.search" | "r3.8xlarge.search" | "i2.xlarge.search" | "i2.2xlarge.search" | "d2.xlarge.search" | "d2.2xlarge.search" | "d2.4xlarge.search" | "d2.8xlarge.search" | "c4.large.search" | "c4.xlarge.search" | "c4.2xlarge.search" | "c4.4xlarge.search" | "c4.8xlarge.search" | "r4.large.search" | "r4.xlarge.search" | "r4.2xlarge.search" | "r4.4xlarge.search" | "r4.8xlarge.search" | "r4.16xlarge.search" | "i3.large.search" | "i3.xlarge.search" | "i3.2xlarge.search" | "i3.4xlarge.search" | "i3.8xlarge.search" | "i3.16xlarge.search" | "r6g.large.search" | "r6g.xlarge.search" | "r6g.2xlarge.search" | "r6g.4xlarge.search" | "r6g.8xlarge.search" | "r6g.12xlarge.search" | "m6g.large.search" | "m6g.xlarge.search" | "m6g.2xlarge.search" | "m6g.4xlarge.search" | "m6g.8xlarge.search" | "m6g.12xlarge.search" | "c6g.large.search" | "c6g.xlarge.search" | "c6g.2xlarge.search" | "c6g.4xlarge.search" | "c6g.8xlarge.search" | "c6g.12xlarge.search" | "r6gd.large.search" | "r6gd.xlarge.search" | "r6gd.2xlarge.search" | "r6gd.4xlarge.search" | "r6gd.8xlarge.search" | "r6gd.12xlarge.search" | "r6gd.16xlarge.search" | "t4g.small.search" | "t4g.medium.search"
 object OpenSearchPartitionInstanceType {
   inline val `m3.medium.search`: "m3.medium.search" = "m3.medium.search"
   inline val `m3.large.search`: "m3.large.search" = "m3.large.search"
@@ -321,7 +320,7 @@ object OpenSearchWarmPartitionInstanceType {
   inline def values: js.Array[OpenSearchWarmPartitionInstanceType] = js.Array(`ultrawarm1.medium.search`, `ultrawarm1.large.search`, `ultrawarm1.xlarge.search`)
 }
 
-/** The state of a requested change. One of the following: * Processing: The request change is still in progress. * Active: The request change is processed and deployed to the domain.
+/** The state of a requested domain configuration change. Can be one of the following: * ```Processing``` - The requested change is still in progress. * ```Active``` - The requested change is processed and deployed to the domain.
   */
 type OptionState = "RequiresIndexDocuments" | "Processing" | "Active"
 object OptionState {
@@ -348,6 +347,18 @@ object OutboundConnectionStatusCode {
   inline def values: js.Array[OutboundConnectionStatusCode] = js.Array(VALIDATING, VALIDATION_FAILED, PENDING_ACCEPTANCE, APPROVED, PROVISIONING, ACTIVE, REJECTING, REJECTED, DELETING, DELETED)
 }
 
+/** The overall status value of the domain configuration change.
+  */
+type OverallChangeStatus = "PENDING" | "PROCESSING" | "COMPLETED" | "FAILED"
+object OverallChangeStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[OverallChangeStatus] = js.Array(PENDING, PROCESSING, COMPLETED, FAILED)
+}
+
 type PackageStatus = "COPYING" | "COPY_FAILED" | "VALIDATING" | "VALIDATION_FAILED" | "AVAILABLE" | "DELETING" | "DELETED" | "DELETE_FAILED"
 object PackageStatus {
   inline val COPYING: "COPYING" = "COPYING"
@@ -369,6 +380,14 @@ object PackageType {
   inline def values: js.Array[PackageType] = js.Array(`TXT-DICTIONARY`)
 }
 
+type PrincipalType = "AWS_ACCOUNT" | "AWS_SERVICE"
+object PrincipalType {
+  inline val AWS_ACCOUNT: "AWS_ACCOUNT" = "AWS_ACCOUNT"
+  inline val AWS_SERVICE: "AWS_SERVICE" = "AWS_SERVICE"
+
+  inline def values: js.Array[PrincipalType] = js.Array(AWS_ACCOUNT, AWS_SERVICE)
+}
+
 type ReservedInstancePaymentOption = "ALL_UPFRONT" | "PARTIAL_UPFRONT" | "NO_UPFRONT"
 object ReservedInstancePaymentOption {
   inline val ALL_UPFRONT: "ALL_UPFRONT" = "ALL_UPFRONT"
@@ -378,7 +397,7 @@ object ReservedInstancePaymentOption {
   inline def values: js.Array[ReservedInstancePaymentOption] = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
 }
 
-/** The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+/** The rollback state while disabling Auto-Tune for the domain.
   */
 type RollbackOnDisable = "NO_ROLLBACK" | "DEFAULT_ROLLBACK"
 object RollbackOnDisable {
@@ -388,7 +407,7 @@ object RollbackOnDisable {
   inline def values: js.Array[RollbackOnDisable] = js.Array(NO_ROLLBACK, DEFAULT_ROLLBACK)
 }
 
-/** The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING, and JVM_YOUNG_GEN_TUNING.
+/** The Auto-Tune action type.
   */
 type ScheduledAutoTuneActionType = "JVM_HEAP_SIZE_TUNING" | "JVM_YOUNG_GEN_TUNING"
 object ScheduledAutoTuneActionType {
@@ -398,7 +417,7 @@ object ScheduledAutoTuneActionType {
   inline def values: js.Array[ScheduledAutoTuneActionType] = js.Array(JVM_HEAP_SIZE_TUNING, JVM_YOUNG_GEN_TUNING)
 }
 
-/** The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+/** The Auto-Tune action severity.
   */
 type ScheduledAutoTuneSeverityType = "LOW" | "MEDIUM" | "HIGH"
 object ScheduledAutoTuneSeverityType {
@@ -417,7 +436,7 @@ object TLSSecurityPolicy {
   inline def values: js.Array[TLSSecurityPolicy] = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
 }
 
-/** The unit of a maintenance schedule duration. Valid value is HOUR. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+/** The unit of a maintenance schedule duration. Valid value is <code>HOUR</code>.
   */
 type TimeUnit = "HOURS"
 object TimeUnit {
@@ -445,13 +464,35 @@ object UpgradeStep {
   inline def values: js.Array[UpgradeStep] = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
 }
 
-/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a> for more information.
+/** The type of EBS volume that a domain uses. For more information, see [[https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-createupdatedomains.html#opensearch-createdomain-configure-ebs|Configuring EBS-based storage]].
   */
-type VolumeType = "standard" | "gp2" | "io1"
+type VolumeType = "standard" | "gp2" | "io1" | "gp3"
 object VolumeType {
   inline val standard: "standard" = "standard"
   inline val gp2: "gp2" = "gp2"
   inline val io1: "io1" = "io1"
+  inline val gp3: "gp3" = "gp3"
 
-  inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1)
+  inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1, gp3)
+}
+
+type VpcEndpointErrorCode = "ENDPOINT_NOT_FOUND" | "SERVER_ERROR"
+object VpcEndpointErrorCode {
+  inline val ENDPOINT_NOT_FOUND: "ENDPOINT_NOT_FOUND" = "ENDPOINT_NOT_FOUND"
+  inline val SERVER_ERROR: "SERVER_ERROR" = "SERVER_ERROR"
+
+  inline def values: js.Array[VpcEndpointErrorCode] = js.Array(ENDPOINT_NOT_FOUND, SERVER_ERROR)
+}
+
+type VpcEndpointStatus = "CREATING" | "CREATE_FAILED" | "ACTIVE" | "UPDATING" | "UPDATE_FAILED" | "DELETING" | "DELETE_FAILED"
+object VpcEndpointStatus {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+
+  inline def values: js.Array[VpcEndpointStatus] = js.Array(CREATING, CREATE_FAILED, ACTIVE, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
 }

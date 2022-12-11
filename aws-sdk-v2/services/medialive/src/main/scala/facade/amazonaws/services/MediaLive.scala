@@ -125,6 +125,8 @@ package object medialive {
   type __longMin0Max86400000 = Double
   type __string = String
   type __stringMax1000 = String
+  type __stringMax2048 = String
+  type __stringMax255 = String
   type __stringMax256 = String
   type __stringMax32 = String
   type __stringMin1 = String
@@ -137,6 +139,7 @@ package object medialive {
   type __stringMin34Max34 = String
   type __stringMin3Max3 = String
   type __stringMin6Max6 = String
+  type __stringPattern010920300 = String
   type __timestamp = js.Date
 
   final class MediaLiveOps(private val service: MediaLive) extends AnyVal {
@@ -184,8 +187,10 @@ package object medialive {
     @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] = service.listReservations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] = service.purchaseOffering(params).promise().toFuture
+    @inline def rebootInputDeviceFuture(params: RebootInputDeviceRequest): Future[RebootInputDeviceResponse] = service.rebootInputDevice(params).promise().toFuture
     @inline def rejectInputDeviceTransferFuture(params: RejectInputDeviceTransferRequest): Future[RejectInputDeviceTransferResponse] = service.rejectInputDeviceTransfer(params).promise().toFuture
     @inline def startChannelFuture(params: StartChannelRequest): Future[StartChannelResponse] = service.startChannel(params).promise().toFuture
+    @inline def startInputDeviceMaintenanceWindowFuture(params: StartInputDeviceMaintenanceWindowRequest): Future[StartInputDeviceMaintenanceWindowResponse] = service.startInputDeviceMaintenanceWindow(params).promise().toFuture
     @inline def startMultiplexFuture(params: StartMultiplexRequest): Future[StartMultiplexResponse] = service.startMultiplex(params).promise().toFuture
     @inline def stopChannelFuture(params: StopChannelRequest): Future[StopChannelResponse] = service.stopChannel(params).promise().toFuture
     @inline def stopMultiplexFuture(params: StopMultiplexRequest): Future[StopMultiplexResponse] = service.stopMultiplex(params).promise().toFuture
@@ -249,8 +254,10 @@ package object medialive {
     def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse] = js.native
+    def rebootInputDevice(params: RebootInputDeviceRequest): Request[RebootInputDeviceResponse] = js.native
     def rejectInputDeviceTransfer(params: RejectInputDeviceTransferRequest): Request[RejectInputDeviceTransferResponse] = js.native
     def startChannel(params: StartChannelRequest): Request[StartChannelResponse] = js.native
+    def startInputDeviceMaintenanceWindow(params: StartInputDeviceMaintenanceWindowRequest): Request[StartInputDeviceMaintenanceWindowResponse] = js.native
     def startMultiplex(params: StartMultiplexRequest): Request[StartMultiplexResponse] = js.native
     def stopChannel(params: StopChannelRequest): Request[StopChannelResponse] = js.native
     def stopMultiplex(params: StopMultiplexRequest): Request[StopMultiplexResponse] = js.native
@@ -561,6 +568,7 @@ package object medialive {
   trait AudioCodecSettings extends js.Object {
     var AacSettings: js.UndefOr[AacSettings]
     var Ac3Settings: js.UndefOr[Ac3Settings]
+    var Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings]
     var Eac3Settings: js.UndefOr[Eac3Settings]
     var Mp2Settings: js.UndefOr[Mp2Settings]
     var PassThroughSettings: js.UndefOr[PassThroughSettings]
@@ -572,6 +580,7 @@ package object medialive {
     def apply(
         AacSettings: js.UndefOr[AacSettings] = js.undefined,
         Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
+        Eac3AtmosSettings: js.UndefOr[Eac3AtmosSettings] = js.undefined,
         Eac3Settings: js.UndefOr[Eac3Settings] = js.undefined,
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         PassThroughSettings: js.UndefOr[PassThroughSettings] = js.undefined,
@@ -580,6 +589,7 @@ package object medialive {
       val __obj = js.Dynamic.literal()
       AacSettings.foreach(__v => __obj.updateDynamic("AacSettings")(__v.asInstanceOf[js.Any]))
       Ac3Settings.foreach(__v => __obj.updateDynamic("Ac3Settings")(__v.asInstanceOf[js.Any]))
+      Eac3AtmosSettings.foreach(__v => __obj.updateDynamic("Eac3AtmosSettings")(__v.asInstanceOf[js.Any]))
       Eac3Settings.foreach(__v => __obj.updateDynamic("Eac3Settings")(__v.asInstanceOf[js.Any]))
       Mp2Settings.foreach(__v => __obj.updateDynamic("Mp2Settings")(__v.asInstanceOf[js.Any]))
       PassThroughSettings.foreach(__v => __obj.updateDynamic("PassThroughSettings")(__v.asInstanceOf[js.Any]))
@@ -593,7 +603,7 @@ package object medialive {
   @js.native
   trait AudioDescription extends js.Object {
     var AudioSelectorName: __string
-    var Name: __string
+    var Name: __stringMax255
     var AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings]
     var AudioType: js.UndefOr[AudioType]
     var AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl]
@@ -609,7 +619,7 @@ package object medialive {
     @inline
     def apply(
         AudioSelectorName: __string,
-        Name: __string,
+        Name: __stringMax255,
         AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
         AudioType: js.UndefOr[AudioType] = js.undefined,
         AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl] = js.undefined,
@@ -954,6 +964,7 @@ package object medialive {
     */
   @js.native
   trait AvailSettings extends js.Object {
+    var Esam: js.UndefOr[Esam]
     var Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert]
     var Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos]
   }
@@ -961,10 +972,12 @@ package object medialive {
   object AvailSettings {
     @inline
     def apply(
+        Esam: js.UndefOr[Esam] = js.undefined,
         Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert] = js.undefined,
         Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos] = js.undefined
     ): AvailSettings = {
       val __obj = js.Dynamic.literal()
+      Esam.foreach(__v => __obj.updateDynamic("Esam")(__v.asInstanceOf[js.Any]))
       Scte35SpliceInsert.foreach(__v => __obj.updateDynamic("Scte35SpliceInsert")(__v.asInstanceOf[js.Any]))
       Scte35TimeSignalApos.foreach(__v => __obj.updateDynamic("Scte35TimeSignalApos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailSettings]
@@ -1411,6 +1424,7 @@ package object medialive {
   trait CaptionDescription extends js.Object {
     var CaptionSelectorName: __string
     var Name: __string
+    var Accessibility: js.UndefOr[AccessibilityType]
     var DestinationSettings: js.UndefOr[CaptionDestinationSettings]
     var LanguageCode: js.UndefOr[__string]
     var LanguageDescription: js.UndefOr[__string]
@@ -1421,6 +1435,7 @@ package object medialive {
     def apply(
         CaptionSelectorName: __string,
         Name: __string,
+        Accessibility: js.UndefOr[AccessibilityType] = js.undefined,
         DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
         LanguageCode: js.UndefOr[__string] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
@@ -1430,6 +1445,7 @@ package object medialive {
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      Accessibility.foreach(__v => __obj.updateDynamic("Accessibility")(__v.asInstanceOf[js.Any]))
       DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       LanguageDescription.foreach(__v => __obj.updateDynamic("LanguageDescription")(__v.asInstanceOf[js.Any]))
@@ -1638,6 +1654,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
@@ -1660,6 +1677,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
@@ -1679,6 +1697,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelineDetails.foreach(__v => __obj.updateDynamic("PipelineDetails")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
@@ -1721,6 +1740,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelinesRunningCount: js.UndefOr[__integer]
     var RoleArn: js.UndefOr[__string]
@@ -1741,6 +1761,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined,
@@ -1758,6 +1779,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
@@ -1823,6 +1845,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceCreateSettings]
     var Name: js.UndefOr[__string]
     var RequestId: js.UndefOr[__string]
     var Reserved: js.UndefOr[__string]
@@ -1841,6 +1864,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceCreateSettings] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         RequestId: js.UndefOr[__string] = js.undefined,
         Reserved: js.UndefOr[__string] = js.undefined,
@@ -1856,6 +1880,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Reserved.foreach(__v => __obj.updateDynamic("Reserved")(__v.asInstanceOf[js.Any]))
@@ -2185,6 +2210,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
@@ -2207,6 +2233,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
@@ -2226,6 +2253,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelineDetails.foreach(__v => __obj.updateDynamic("PipelineDetails")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
@@ -2452,6 +2480,7 @@ package object medialive {
     var OfferingId: js.UndefOr[__string]
     var OfferingType: js.UndefOr[OfferingType]
     var Region: js.UndefOr[__string]
+    var RenewalSettings: js.UndefOr[RenewalSettings]
     var ReservationId: js.UndefOr[__string]
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
@@ -2475,6 +2504,7 @@ package object medialive {
         OfferingId: js.UndefOr[__string] = js.undefined,
         OfferingType: js.UndefOr[OfferingType] = js.undefined,
         Region: js.UndefOr[__string] = js.undefined,
+        RenewalSettings: js.UndefOr[RenewalSettings] = js.undefined,
         ReservationId: js.UndefOr[__string] = js.undefined,
         ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined,
@@ -2495,6 +2525,7 @@ package object medialive {
       OfferingId.foreach(__v => __obj.updateDynamic("OfferingId")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      RenewalSettings.foreach(__v => __obj.updateDynamic("RenewalSettings")(__v.asInstanceOf[js.Any]))
       ReservationId.foreach(__v => __obj.updateDynamic("ReservationId")(__v.asInstanceOf[js.Any]))
       ResourceSpecification.foreach(__v => __obj.updateDynamic("ResourceSpecification")(__v.asInstanceOf[js.Any]))
       Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
@@ -2592,6 +2623,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
@@ -2614,6 +2646,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
@@ -2633,6 +2666,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelineDetails.foreach(__v => __obj.updateDynamic("PipelineDetails")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
@@ -3118,6 +3152,7 @@ package object medialive {
     var OfferingId: js.UndefOr[__string]
     var OfferingType: js.UndefOr[OfferingType]
     var Region: js.UndefOr[__string]
+    var RenewalSettings: js.UndefOr[RenewalSettings]
     var ReservationId: js.UndefOr[__string]
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
@@ -3141,6 +3176,7 @@ package object medialive {
         OfferingId: js.UndefOr[__string] = js.undefined,
         OfferingType: js.UndefOr[OfferingType] = js.undefined,
         Region: js.UndefOr[__string] = js.undefined,
+        RenewalSettings: js.UndefOr[RenewalSettings] = js.undefined,
         ReservationId: js.UndefOr[__string] = js.undefined,
         ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined,
@@ -3161,6 +3197,7 @@ package object medialive {
       OfferingId.foreach(__v => __obj.updateDynamic("OfferingId")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      RenewalSettings.foreach(__v => __obj.updateDynamic("RenewalSettings")(__v.asInstanceOf[js.Any]))
       ReservationId.foreach(__v => __obj.updateDynamic("ReservationId")(__v.asInstanceOf[js.Any]))
       ResourceSpecification.foreach(__v => __obj.updateDynamic("ResourceSpecification")(__v.asInstanceOf[js.Any]))
       Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
@@ -3215,6 +3252,19 @@ package object medialive {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ScheduleActions.foreach(__v => __obj.updateDynamic("ScheduleActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScheduleResponse]
+    }
+  }
+
+  /** Dolby Vision Profile 8.1 Settings
+    */
+  @js.native
+  trait DolbyVision81Settings extends js.Object
+
+  object DolbyVision81Settings {
+    @inline
+    def apply(): DolbyVision81Settings = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DolbyVision81Settings]
     }
   }
 
@@ -3373,6 +3423,42 @@ package object medialive {
       val __obj = js.Dynamic.literal()
       RepInterval.foreach(__v => __obj.updateDynamic("RepInterval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbTdtSettings]
+    }
+  }
+
+  /** Eac3 Atmos Settings
+    */
+  @js.native
+  trait Eac3AtmosSettings extends js.Object {
+    var Bitrate: js.UndefOr[__double]
+    var CodingMode: js.UndefOr[Eac3AtmosCodingMode]
+    var Dialnorm: js.UndefOr[__integerMin1Max31]
+    var DrcLine: js.UndefOr[Eac3AtmosDrcLine]
+    var DrcRf: js.UndefOr[Eac3AtmosDrcRf]
+    var HeightTrim: js.UndefOr[__double]
+    var SurroundTrim: js.UndefOr[__double]
+  }
+
+  object Eac3AtmosSettings {
+    @inline
+    def apply(
+        Bitrate: js.UndefOr[__double] = js.undefined,
+        CodingMode: js.UndefOr[Eac3AtmosCodingMode] = js.undefined,
+        Dialnorm: js.UndefOr[__integerMin1Max31] = js.undefined,
+        DrcLine: js.UndefOr[Eac3AtmosDrcLine] = js.undefined,
+        DrcRf: js.UndefOr[Eac3AtmosDrcRf] = js.undefined,
+        HeightTrim: js.UndefOr[__double] = js.undefined,
+        SurroundTrim: js.UndefOr[__double] = js.undefined
+    ): Eac3AtmosSettings = {
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
+      Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
+      DrcLine.foreach(__v => __obj.updateDynamic("DrcLine")(__v.asInstanceOf[js.Any]))
+      DrcRf.foreach(__v => __obj.updateDynamic("DrcRf")(__v.asInstanceOf[js.Any]))
+      HeightTrim.foreach(__v => __obj.updateDynamic("HeightTrim")(__v.asInstanceOf[js.Any]))
+      SurroundTrim.foreach(__v => __obj.updateDynamic("SurroundTrim")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Eac3AtmosSettings]
     }
   }
 
@@ -3581,6 +3667,41 @@ package object medialive {
       MotionGraphicsConfiguration.foreach(__v => __obj.updateDynamic("MotionGraphicsConfiguration")(__v.asInstanceOf[js.Any]))
       NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncoderSettings]
+    }
+  }
+
+  /** Settings for the Esam
+    */
+  @js.native
+  trait Esam extends js.Object {
+    var AcquisitionPointId: __stringMax256
+    var PoisEndpoint: __stringMax2048
+    var AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000]
+    var PasswordParam: js.UndefOr[__string]
+    var Username: js.UndefOr[__string]
+    var ZoneIdentity: js.UndefOr[__stringMax256]
+  }
+
+  object Esam {
+    @inline
+    def apply(
+        AcquisitionPointId: __stringMax256,
+        PoisEndpoint: __stringMax2048,
+        AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
+        PasswordParam: js.UndefOr[__string] = js.undefined,
+        Username: js.UndefOr[__string] = js.undefined,
+        ZoneIdentity: js.UndefOr[__stringMax256] = js.undefined
+    ): Esam = {
+      val __obj = js.Dynamic.literal(
+        "AcquisitionPointId" -> AcquisitionPointId.asInstanceOf[js.Any],
+        "PoisEndpoint" -> PoisEndpoint.asInstanceOf[js.Any]
+      )
+
+      AdAvailOffset.foreach(__v => __obj.updateDynamic("AdAvailOffset")(__v.asInstanceOf[js.Any]))
+      PasswordParam.foreach(__v => __obj.updateDynamic("PasswordParam")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      ZoneIdentity.foreach(__v => __obj.updateDynamic("ZoneIdentity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Esam]
     }
   }
 
@@ -4062,6 +4183,7 @@ package object medialive {
   @js.native
   trait H265ColorSpaceSettings extends js.Object {
     var ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings]
+    var DolbyVision81Settings: js.UndefOr[DolbyVision81Settings]
     var Hdr10Settings: js.UndefOr[Hdr10Settings]
     var Rec601Settings: js.UndefOr[Rec601Settings]
     var Rec709Settings: js.UndefOr[Rec709Settings]
@@ -4071,12 +4193,14 @@ package object medialive {
     @inline
     def apply(
         ColorSpacePassthroughSettings: js.UndefOr[ColorSpacePassthroughSettings] = js.undefined,
+        DolbyVision81Settings: js.UndefOr[DolbyVision81Settings] = js.undefined,
         Hdr10Settings: js.UndefOr[Hdr10Settings] = js.undefined,
         Rec601Settings: js.UndefOr[Rec601Settings] = js.undefined,
         Rec709Settings: js.UndefOr[Rec709Settings] = js.undefined
     ): H265ColorSpaceSettings = {
       val __obj = js.Dynamic.literal()
       ColorSpacePassthroughSettings.foreach(__v => __obj.updateDynamic("ColorSpacePassthroughSettings")(__v.asInstanceOf[js.Any]))
+      DolbyVision81Settings.foreach(__v => __obj.updateDynamic("DolbyVision81Settings")(__v.asInstanceOf[js.Any]))
       Hdr10Settings.foreach(__v => __obj.updateDynamic("Hdr10Settings")(__v.asInstanceOf[js.Any]))
       Rec601Settings.foreach(__v => __obj.updateDynamic("Rec601Settings")(__v.asInstanceOf[js.Any]))
       Rec709Settings.foreach(__v => __obj.updateDynamic("Rec709Settings")(__v.asInstanceOf[js.Any]))
@@ -4356,6 +4480,7 @@ package object medialive {
     var Mode: js.UndefOr[HlsMode]
     var OutputSelection: js.UndefOr[HlsOutputSelection]
     var ProgramDateTime: js.UndefOr[HlsProgramDateTime]
+    var ProgramDateTimeClock: js.UndefOr[HlsProgramDateTimeClock]
     var ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600]
     var RedundantManifest: js.UndefOr[HlsRedundantManifest]
     var SegmentLength: js.UndefOr[__integerMin1]
@@ -4403,6 +4528,7 @@ package object medialive {
         Mode: js.UndefOr[HlsMode] = js.undefined,
         OutputSelection: js.UndefOr[HlsOutputSelection] = js.undefined,
         ProgramDateTime: js.UndefOr[HlsProgramDateTime] = js.undefined,
+        ProgramDateTimeClock: js.UndefOr[HlsProgramDateTimeClock] = js.undefined,
         ProgramDateTimePeriod: js.UndefOr[__integerMin0Max3600] = js.undefined,
         RedundantManifest: js.UndefOr[HlsRedundantManifest] = js.undefined,
         SegmentLength: js.UndefOr[__integerMin1] = js.undefined,
@@ -4449,6 +4575,7 @@ package object medialive {
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       OutputSelection.foreach(__v => __obj.updateDynamic("OutputSelection")(__v.asInstanceOf[js.Any]))
       ProgramDateTime.foreach(__v => __obj.updateDynamic("ProgramDateTime")(__v.asInstanceOf[js.Any]))
+      ProgramDateTimeClock.foreach(__v => __obj.updateDynamic("ProgramDateTimeClock")(__v.asInstanceOf[js.Any]))
       ProgramDateTimePeriod.foreach(__v => __obj.updateDynamic("ProgramDateTimePeriod")(__v.asInstanceOf[js.Any]))
       RedundantManifest.foreach(__v => __obj.updateDynamic("RedundantManifest")(__v.asInstanceOf[js.Any]))
       SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
@@ -4900,6 +5027,7 @@ package object medialive {
   @js.native
   trait InputDeviceConfigurableSettings extends js.Object {
     var ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput]
+    var LatencyMs: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
   }
 
@@ -4907,10 +5035,12 @@ package object medialive {
     @inline
     def apply(
         ConfiguredInput: js.UndefOr[InputDeviceConfiguredInput] = js.undefined,
+        LatencyMs: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined
     ): InputDeviceConfigurableSettings = {
       val __obj = js.Dynamic.literal()
       ConfiguredInput.foreach(__v => __obj.updateDynamic("ConfiguredInput")(__v.asInstanceOf[js.Any]))
+      LatencyMs.foreach(__v => __obj.updateDynamic("LatencyMs")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDeviceConfigurableSettings]
     }
@@ -4925,6 +5055,7 @@ package object medialive {
     var DeviceState: js.UndefOr[InputDeviceState]
     var Framerate: js.UndefOr[__double]
     var Height: js.UndefOr[__integer]
+    var LatencyMs: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var ScanType: js.UndefOr[InputDeviceScanType]
     var Width: js.UndefOr[__integer]
@@ -4938,6 +5069,7 @@ package object medialive {
         DeviceState: js.UndefOr[InputDeviceState] = js.undefined,
         Framerate: js.UndefOr[__double] = js.undefined,
         Height: js.UndefOr[__integer] = js.undefined,
+        LatencyMs: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         ScanType: js.UndefOr[InputDeviceScanType] = js.undefined,
         Width: js.UndefOr[__integer] = js.undefined
@@ -4948,6 +5080,7 @@ package object medialive {
       DeviceState.foreach(__v => __obj.updateDynamic("DeviceState")(__v.asInstanceOf[js.Any]))
       Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      LatencyMs.foreach(__v => __obj.updateDynamic("LatencyMs")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
       Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
@@ -5081,6 +5214,7 @@ package object medialive {
     var DeviceState: js.UndefOr[InputDeviceState]
     var Framerate: js.UndefOr[__double]
     var Height: js.UndefOr[__integer]
+    var LatencyMs: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var ScanType: js.UndefOr[InputDeviceScanType]
     var Width: js.UndefOr[__integer]
@@ -5094,6 +5228,7 @@ package object medialive {
         DeviceState: js.UndefOr[InputDeviceState] = js.undefined,
         Framerate: js.UndefOr[__double] = js.undefined,
         Height: js.UndefOr[__integer] = js.undefined,
+        LatencyMs: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         ScanType: js.UndefOr[InputDeviceScanType] = js.undefined,
         Width: js.UndefOr[__integer] = js.undefined
@@ -5104,6 +5239,7 @@ package object medialive {
       DeviceState.foreach(__v => __obj.updateDynamic("DeviceState")(__v.asInstanceOf[js.Any]))
       Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      LatencyMs.foreach(__v => __obj.updateDynamic("LatencyMs")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       ScanType.foreach(__v => __obj.updateDynamic("ScanType")(__v.asInstanceOf[js.Any]))
       Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
@@ -5115,7 +5251,7 @@ package object medialive {
     */
   @js.native
   trait InputLocation extends js.Object {
-    var Uri: __string
+    var Uri: __stringMax2048
     var PasswordParam: js.UndefOr[__string]
     var Username: js.UndefOr[__string]
   }
@@ -5123,7 +5259,7 @@ package object medialive {
   object InputLocation {
     @inline
     def apply(
-        Uri: __string,
+        Uri: __stringMax2048,
         PasswordParam: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): InputLocation = {
@@ -6163,6 +6299,78 @@ package object medialive {
       TransportStreamId.foreach(__v => __obj.updateDynamic("TransportStreamId")(__v.asInstanceOf[js.Any]))
       VideoPid.foreach(__v => __obj.updateDynamic("VideoPid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[M3u8Settings]
+    }
+  }
+
+  /** Placeholder documentation for MaintenanceCreateSettings
+    */
+  @js.native
+  trait MaintenanceCreateSettings extends js.Object {
+    var MaintenanceDay: js.UndefOr[MaintenanceDay]
+    var MaintenanceStartTime: js.UndefOr[__stringPattern010920300]
+  }
+
+  object MaintenanceCreateSettings {
+    @inline
+    def apply(
+        MaintenanceDay: js.UndefOr[MaintenanceDay] = js.undefined,
+        MaintenanceStartTime: js.UndefOr[__stringPattern010920300] = js.undefined
+    ): MaintenanceCreateSettings = {
+      val __obj = js.Dynamic.literal()
+      MaintenanceDay.foreach(__v => __obj.updateDynamic("MaintenanceDay")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartTime.foreach(__v => __obj.updateDynamic("MaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaintenanceCreateSettings]
+    }
+  }
+
+  /** Placeholder documentation for MaintenanceStatus
+    */
+  @js.native
+  trait MaintenanceStatus extends js.Object {
+    var MaintenanceDay: js.UndefOr[MaintenanceDay]
+    var MaintenanceDeadline: js.UndefOr[__string]
+    var MaintenanceScheduledDate: js.UndefOr[__string]
+    var MaintenanceStartTime: js.UndefOr[__string]
+  }
+
+  object MaintenanceStatus {
+    @inline
+    def apply(
+        MaintenanceDay: js.UndefOr[MaintenanceDay] = js.undefined,
+        MaintenanceDeadline: js.UndefOr[__string] = js.undefined,
+        MaintenanceScheduledDate: js.UndefOr[__string] = js.undefined,
+        MaintenanceStartTime: js.UndefOr[__string] = js.undefined
+    ): MaintenanceStatus = {
+      val __obj = js.Dynamic.literal()
+      MaintenanceDay.foreach(__v => __obj.updateDynamic("MaintenanceDay")(__v.asInstanceOf[js.Any]))
+      MaintenanceDeadline.foreach(__v => __obj.updateDynamic("MaintenanceDeadline")(__v.asInstanceOf[js.Any]))
+      MaintenanceScheduledDate.foreach(__v => __obj.updateDynamic("MaintenanceScheduledDate")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartTime.foreach(__v => __obj.updateDynamic("MaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaintenanceStatus]
+    }
+  }
+
+  /** Placeholder documentation for MaintenanceUpdateSettings
+    */
+  @js.native
+  trait MaintenanceUpdateSettings extends js.Object {
+    var MaintenanceDay: js.UndefOr[MaintenanceDay]
+    var MaintenanceScheduledDate: js.UndefOr[__string]
+    var MaintenanceStartTime: js.UndefOr[__stringPattern010920300]
+  }
+
+  object MaintenanceUpdateSettings {
+    @inline
+    def apply(
+        MaintenanceDay: js.UndefOr[MaintenanceDay] = js.undefined,
+        MaintenanceScheduledDate: js.UndefOr[__string] = js.undefined,
+        MaintenanceStartTime: js.UndefOr[__stringPattern010920300] = js.undefined
+    ): MaintenanceUpdateSettings = {
+      val __obj = js.Dynamic.literal()
+      MaintenanceDay.foreach(__v => __obj.updateDynamic("MaintenanceDay")(__v.asInstanceOf[js.Any]))
+      MaintenanceScheduledDate.foreach(__v => __obj.updateDynamic("MaintenanceScheduledDate")(__v.asInstanceOf[js.Any]))
+      MaintenanceStartTime.foreach(__v => __obj.updateDynamic("MaintenanceStartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MaintenanceUpdateSettings]
     }
   }
 
@@ -7436,6 +7644,7 @@ package object medialive {
     var Count: __integerMin1
     var OfferingId: __string
     var Name: js.UndefOr[__string]
+    var RenewalSettings: js.UndefOr[RenewalSettings]
     var RequestId: js.UndefOr[__string]
     var Start: js.UndefOr[__string]
     var Tags: js.UndefOr[Tags]
@@ -7447,6 +7656,7 @@ package object medialive {
         Count: __integerMin1,
         OfferingId: __string,
         Name: js.UndefOr[__string] = js.undefined,
+        RenewalSettings: js.UndefOr[RenewalSettings] = js.undefined,
         RequestId: js.UndefOr[__string] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -7457,6 +7667,7 @@ package object medialive {
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RenewalSettings.foreach(__v => __obj.updateDynamic("RenewalSettings")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -7492,6 +7703,42 @@ package object medialive {
     def apply(): RawSettings = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RawSettings]
+    }
+  }
+
+  /** A request to reboot an AWS Elemental device.
+    */
+  @js.native
+  trait RebootInputDeviceRequest extends js.Object {
+    var InputDeviceId: __string
+    var Force: js.UndefOr[RebootInputDeviceForce]
+  }
+
+  object RebootInputDeviceRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string,
+        Force: js.UndefOr[RebootInputDeviceForce] = js.undefined
+    ): RebootInputDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RebootInputDeviceRequest]
+    }
+  }
+
+  /** Placeholder documentation for RebootInputDeviceResponse
+    */
+  @js.native
+  trait RebootInputDeviceResponse extends js.Object
+
+  object RebootInputDeviceResponse {
+    @inline
+    def apply(): RebootInputDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RebootInputDeviceResponse]
     }
   }
 
@@ -7579,6 +7826,27 @@ package object medialive {
     }
   }
 
+  /** The Renewal settings for Reservations
+    */
+  @js.native
+  trait RenewalSettings extends js.Object {
+    var AutomaticRenewal: js.UndefOr[ReservationAutomaticRenewal]
+    var RenewalCount: js.UndefOr[__integerMin1]
+  }
+
+  object RenewalSettings {
+    @inline
+    def apply(
+        AutomaticRenewal: js.UndefOr[ReservationAutomaticRenewal] = js.undefined,
+        RenewalCount: js.UndefOr[__integerMin1] = js.undefined
+    ): RenewalSettings = {
+      val __obj = js.Dynamic.literal()
+      AutomaticRenewal.foreach(__v => __obj.updateDynamic("AutomaticRenewal")(__v.asInstanceOf[js.Any]))
+      RenewalCount.foreach(__v => __obj.updateDynamic("RenewalCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RenewalSettings]
+    }
+  }
+
   /** Reserved resources available to use
     */
   @js.native
@@ -7595,6 +7863,7 @@ package object medialive {
     var OfferingId: js.UndefOr[__string]
     var OfferingType: js.UndefOr[OfferingType]
     var Region: js.UndefOr[__string]
+    var RenewalSettings: js.UndefOr[RenewalSettings]
     var ReservationId: js.UndefOr[__string]
     var ResourceSpecification: js.UndefOr[ReservationResourceSpecification]
     var Start: js.UndefOr[__string]
@@ -7618,6 +7887,7 @@ package object medialive {
         OfferingId: js.UndefOr[__string] = js.undefined,
         OfferingType: js.UndefOr[OfferingType] = js.undefined,
         Region: js.UndefOr[__string] = js.undefined,
+        RenewalSettings: js.UndefOr[RenewalSettings] = js.undefined,
         ReservationId: js.UndefOr[__string] = js.undefined,
         ResourceSpecification: js.UndefOr[ReservationResourceSpecification] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined,
@@ -7638,6 +7908,7 @@ package object medialive {
       OfferingId.foreach(__v => __obj.updateDynamic("OfferingId")(__v.asInstanceOf[js.Any]))
       OfferingType.foreach(__v => __obj.updateDynamic("OfferingType")(__v.asInstanceOf[js.Any]))
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      RenewalSettings.foreach(__v => __obj.updateDynamic("RenewalSettings")(__v.asInstanceOf[js.Any]))
       ReservationId.foreach(__v => __obj.updateDynamic("ReservationId")(__v.asInstanceOf[js.Any]))
       ResourceSpecification.foreach(__v => __obj.updateDynamic("ResourceSpecification")(__v.asInstanceOf[js.Any]))
       Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
@@ -7801,6 +8072,7 @@ package object medialive {
     var MotionGraphicsImageActivateSettings: js.UndefOr[MotionGraphicsActivateScheduleActionSettings]
     var MotionGraphicsImageDeactivateSettings: js.UndefOr[MotionGraphicsDeactivateScheduleActionSettings]
     var PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings]
+    var Scte35InputSettings: js.UndefOr[Scte35InputScheduleActionSettings]
     var Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings]
     var Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings]
     var Scte35TimeSignalSettings: js.UndefOr[Scte35TimeSignalScheduleActionSettings]
@@ -7818,6 +8090,7 @@ package object medialive {
         MotionGraphicsImageActivateSettings: js.UndefOr[MotionGraphicsActivateScheduleActionSettings] = js.undefined,
         MotionGraphicsImageDeactivateSettings: js.UndefOr[MotionGraphicsDeactivateScheduleActionSettings] = js.undefined,
         PauseStateSettings: js.UndefOr[PauseStateScheduleActionSettings] = js.undefined,
+        Scte35InputSettings: js.UndefOr[Scte35InputScheduleActionSettings] = js.undefined,
         Scte35ReturnToNetworkSettings: js.UndefOr[Scte35ReturnToNetworkScheduleActionSettings] = js.undefined,
         Scte35SpliceInsertSettings: js.UndefOr[Scte35SpliceInsertScheduleActionSettings] = js.undefined,
         Scte35TimeSignalSettings: js.UndefOr[Scte35TimeSignalScheduleActionSettings] = js.undefined,
@@ -7832,6 +8105,7 @@ package object medialive {
       MotionGraphicsImageActivateSettings.foreach(__v => __obj.updateDynamic("MotionGraphicsImageActivateSettings")(__v.asInstanceOf[js.Any]))
       MotionGraphicsImageDeactivateSettings.foreach(__v => __obj.updateDynamic("MotionGraphicsImageDeactivateSettings")(__v.asInstanceOf[js.Any]))
       PauseStateSettings.foreach(__v => __obj.updateDynamic("PauseStateSettings")(__v.asInstanceOf[js.Any]))
+      Scte35InputSettings.foreach(__v => __obj.updateDynamic("Scte35InputSettings")(__v.asInstanceOf[js.Any]))
       Scte35ReturnToNetworkSettings.foreach(__v => __obj.updateDynamic("Scte35ReturnToNetworkSettings")(__v.asInstanceOf[js.Any]))
       Scte35SpliceInsertSettings.foreach(__v => __obj.updateDynamic("Scte35SpliceInsertSettings")(__v.asInstanceOf[js.Any]))
       Scte35TimeSignalSettings.foreach(__v => __obj.updateDynamic("Scte35TimeSignalSettings")(__v.asInstanceOf[js.Any]))
@@ -7996,6 +8270,29 @@ package object medialive {
         "SegmentationDescriptorScte35DescriptorSettings" -> SegmentationDescriptorScte35DescriptorSettings.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Scte35DescriptorSettings]
+    }
+  }
+
+  /** Settings for the "scte35 input" action
+    */
+  @js.native
+  trait Scte35InputScheduleActionSettings extends js.Object {
+    var Mode: Scte35InputMode
+    var InputAttachmentNameReference: js.UndefOr[__string]
+  }
+
+  object Scte35InputScheduleActionSettings {
+    @inline
+    def apply(
+        Mode: Scte35InputMode,
+        InputAttachmentNameReference: js.UndefOr[__string] = js.undefined
+    ): Scte35InputScheduleActionSettings = {
+      val __obj = js.Dynamic.literal(
+        "Mode" -> Mode.asInstanceOf[js.Any]
+      )
+
+      InputAttachmentNameReference.foreach(__v => __obj.updateDynamic("InputAttachmentNameReference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scte35InputScheduleActionSettings]
     }
   }
 
@@ -8227,6 +8524,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
@@ -8249,6 +8547,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
@@ -8268,6 +8567,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelineDetails.foreach(__v => __obj.updateDynamic("PipelineDetails")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
@@ -8276,6 +8576,38 @@ package object medialive {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChannelResponse]
+    }
+  }
+
+  /** Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
+    */
+  @js.native
+  trait StartInputDeviceMaintenanceWindowRequest extends js.Object {
+    var InputDeviceId: __string
+  }
+
+  object StartInputDeviceMaintenanceWindowRequest {
+    @inline
+    def apply(
+        InputDeviceId: __string
+    ): StartInputDeviceMaintenanceWindowRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputDeviceId" -> InputDeviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartInputDeviceMaintenanceWindowRequest]
+    }
+  }
+
+  /** Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
+    */
+  @js.native
+  trait StartInputDeviceMaintenanceWindowResponse extends js.Object
+
+  object StartInputDeviceMaintenanceWindowResponse {
+    @inline
+    def apply(): StartInputDeviceMaintenanceWindowResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartInputDeviceMaintenanceWindowResponse]
     }
   }
 
@@ -8485,6 +8817,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceStatus]
     var Name: js.UndefOr[__string]
     var PipelineDetails: js.UndefOr[__listOfPipelineDetail]
     var PipelinesRunningCount: js.UndefOr[__integer]
@@ -8507,6 +8840,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceStatus] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PipelineDetails: js.UndefOr[__listOfPipelineDetail] = js.undefined,
         PipelinesRunningCount: js.UndefOr[__integer] = js.undefined,
@@ -8526,6 +8860,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PipelineDetails.foreach(__v => __obj.updateDynamic("PipelineDetails")(__v.asInstanceOf[js.Any]))
       PipelinesRunningCount.foreach(__v => __obj.updateDynamic("PipelinesRunningCount")(__v.asInstanceOf[js.Any]))
@@ -8913,6 +9248,7 @@ package object medialive {
     var InputAttachments: js.UndefOr[__listOfInputAttachment]
     var InputSpecification: js.UndefOr[InputSpecification]
     var LogLevel: js.UndefOr[LogLevel]
+    var Maintenance: js.UndefOr[MaintenanceUpdateSettings]
     var Name: js.UndefOr[__string]
     var RoleArn: js.UndefOr[__string]
   }
@@ -8927,6 +9263,7 @@ package object medialive {
         InputAttachments: js.UndefOr[__listOfInputAttachment] = js.undefined,
         InputSpecification: js.UndefOr[InputSpecification] = js.undefined,
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        Maintenance: js.UndefOr[MaintenanceUpdateSettings] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): UpdateChannelRequest = {
@@ -8940,6 +9277,7 @@ package object medialive {
       InputAttachments.foreach(__v => __obj.updateDynamic("InputAttachments")(__v.asInstanceOf[js.Any]))
       InputSpecification.foreach(__v => __obj.updateDynamic("InputSpecification")(__v.asInstanceOf[js.Any]))
       LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      Maintenance.foreach(__v => __obj.updateDynamic("Maintenance")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
@@ -9241,19 +9579,22 @@ package object medialive {
   trait UpdateReservationRequest extends js.Object {
     var ReservationId: __string
     var Name: js.UndefOr[__string]
+    var RenewalSettings: js.UndefOr[RenewalSettings]
   }
 
   object UpdateReservationRequest {
     @inline
     def apply(
         ReservationId: __string,
-        Name: js.UndefOr[__string] = js.undefined
+        Name: js.UndefOr[__string] = js.undefined,
+        RenewalSettings: js.UndefOr[RenewalSettings] = js.undefined
     ): UpdateReservationRequest = {
       val __obj = js.Dynamic.literal(
         "ReservationId" -> ReservationId.asInstanceOf[js.Any]
       )
 
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RenewalSettings.foreach(__v => __obj.updateDynamic("RenewalSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReservationRequest]
     }
   }

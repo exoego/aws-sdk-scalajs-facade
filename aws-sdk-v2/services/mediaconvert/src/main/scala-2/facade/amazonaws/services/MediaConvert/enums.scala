@@ -25,7 +25,7 @@ object AacCodecProfile {
   @inline def values: js.Array[AacCodecProfile] = js.Array(LC, HEV1, HEV2)
 }
 
-/** Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
+/** The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels, C, L, R, Ls, Rs, LFE.
   */
 @js.native
 sealed trait AacCodingMode extends js.Any
@@ -314,6 +314,20 @@ object AudioDefaultSelection {
   @inline def values: js.Array[AudioDefaultSelection] = js.Array(DEFAULT, NOT_DEFAULT)
 }
 
+/** Apply audio timing corrections to help synchronize audio and video in your output. To apply timing corrections, your input must meet the following requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS) table. * Audio track: AAC. Choose from the following audio timing correction settings: * Disabled (Default): Apply no correction. * Auto: Recommended for most inputs. MediaConvert analyzes the audio timing in your input and determines which correction setting to use, if needed. * Track: Adjust the duration of each audio frame by a constant amount to align the audio track length with STTS duration. Track-level correction does not affect pitch, and is recommended for tonal audio content such as music. * Frame: Adjust the duration of each audio frame by a variable amount to align audio frames with STTS timestamps. No corrections are made to already-aligned frames. Frame-level correction may affect the pitch of corrected frames, and is recommended for atonal audio
+  * content such as speech or percussion.
+  */
+@js.native
+sealed trait AudioDurationCorrection extends js.Any
+object AudioDurationCorrection {
+  val DISABLED = "DISABLED".asInstanceOf[AudioDurationCorrection]
+  val AUTO = "AUTO".asInstanceOf[AudioDurationCorrection]
+  val TRACK = "TRACK".asInstanceOf[AudioDurationCorrection]
+  val FRAME = "FRAME".asInstanceOf[AudioDurationCorrection]
+
+  @inline def values: js.Array[AudioDurationCorrection] = js.Array(DISABLED, AUTO, TRACK, FRAME)
+}
+
 /** Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify.
   */
 @js.native
@@ -408,6 +422,17 @@ object Av1AdaptiveQuantization {
   val MAX = "MAX".asInstanceOf[Av1AdaptiveQuantization]
 
   @inline def values: js.Array[Av1AdaptiveQuantization] = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
+}
+
+/** Specify the Bit depth (Av1BitDepth). You can choose 8-bit (BIT_8) or 10-bit (BIT_10).
+  */
+@js.native
+sealed trait Av1BitDepth extends js.Any
+object Av1BitDepth {
+  val BIT_8 = "BIT_8".asInstanceOf[Av1BitDepth]
+  val BIT_10 = "BIT_10".asInstanceOf[Av1BitDepth]
+
+  @inline def values: js.Array[Av1BitDepth] = js.Array(BIT_8, BIT_10)
 }
 
 /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
@@ -826,6 +851,17 @@ object CmafManifestDurationFormat {
   @inline def values: js.Array[CmafManifestDurationFormat] = js.Array(FLOATING_POINT, INTEGER)
 }
 
+/** Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+  */
+@js.native
+sealed trait CmafMpdManifestBandwidthType extends js.Any
+object CmafMpdManifestBandwidthType {
+  val AVERAGE = "AVERAGE".asInstanceOf[CmafMpdManifestBandwidthType]
+  val MAX = "MAX".asInstanceOf[CmafMpdManifestBandwidthType]
+
+  @inline def values: js.Array[CmafMpdManifestBandwidthType] = js.Array(AVERAGE, MAX)
+}
+
 /** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
   */
 @js.native
@@ -890,6 +926,17 @@ object CmafTargetDurationCompatibilityMode {
   val SPEC_COMPLIANT = "SPEC_COMPLIANT".asInstanceOf[CmafTargetDurationCompatibilityMode]
 
   @inline def values: js.Array[CmafTargetDurationCompatibilityMode] = js.Array(LEGACY, SPEC_COMPLIANT)
+}
+
+/** Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
+  */
+@js.native
+sealed trait CmafVideoCompositionOffsets extends js.Any
+object CmafVideoCompositionOffsets {
+  val SIGNED = "SIGNED".asInstanceOf[CmafVideoCompositionOffsets]
+  val UNSIGNED = "UNSIGNED".asInstanceOf[CmafVideoCompositionOffsets]
+
+  @inline def values: js.Array[CmafVideoCompositionOffsets] = js.Array(SIGNED, UNSIGNED)
 }
 
 /** When set to ENABLED, a DASH MPD manifest will be generated for this output.
@@ -971,6 +1018,28 @@ object CmfcIFrameOnlyManifest {
   @inline def values: js.Array[CmfcIFrameOnlyManifest] = js.Array(INCLUDE, EXCLUDE)
 }
 
+/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
+  */
+@js.native
+sealed trait CmfcKlvMetadata extends js.Any
+object CmfcKlvMetadata {
+  val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcKlvMetadata]
+  val NONE = "NONE".asInstanceOf[CmfcKlvMetadata]
+
+  @inline def values: js.Array[CmfcKlvMetadata] = js.Array(PASSTHROUGH, NONE)
+}
+
+/** To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled.
+  */
+@js.native
+sealed trait CmfcManifestMetadataSignaling extends js.Any
+object CmfcManifestMetadataSignaling {
+  val ENABLED = "ENABLED".asInstanceOf[CmfcManifestMetadataSignaling]
+  val DISABLED = "DISABLED".asInstanceOf[CmfcManifestMetadataSignaling]
+
+  @inline def values: js.Array[CmfcManifestMetadataSignaling] = js.Array(ENABLED, DISABLED)
+}
+
 /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
   */
 @js.native
@@ -993,6 +1062,28 @@ object CmfcScte35Source {
   @inline def values: js.Array[CmfcScte35Source] = js.Array(PASSTHROUGH, NONE)
 }
 
+/** To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
+  */
+@js.native
+sealed trait CmfcTimedMetadata extends js.Any
+object CmfcTimedMetadata {
+  val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[CmfcTimedMetadata]
+  val NONE = "NONE".asInstanceOf[CmfcTimedMetadata]
+
+  @inline def values: js.Array[CmfcTimedMetadata] = js.Array(PASSTHROUGH, NONE)
+}
+
+/** Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+  */
+@js.native
+sealed trait CmfcTimedMetadataBoxVersion extends js.Any
+object CmfcTimedMetadataBoxVersion {
+  val VERSION_0 = "VERSION_0".asInstanceOf[CmfcTimedMetadataBoxVersion]
+  val VERSION_1 = "VERSION_1".asInstanceOf[CmfcTimedMetadataBoxVersion]
+
+  @inline def values: js.Array[CmfcTimedMetadataBoxVersion] = js.Array(VERSION_0, VERSION_1)
+}
+
 /** Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
   */
 @js.native
@@ -1004,7 +1095,7 @@ object ColorMetadata {
   @inline def values: js.Array[ColorMetadata] = js.Array(IGNORE, INSERT)
 }
 
-/** If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
+/** If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow. The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 here and specify correct values in the input HDR 10 metadata settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. Select P3D65 (SDR) to set the input color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
   */
 @js.native
 sealed trait ColorSpace extends js.Any
@@ -1014,11 +1105,13 @@ object ColorSpace {
   val REC_709 = "REC_709".asInstanceOf[ColorSpace]
   val HDR10 = "HDR10".asInstanceOf[ColorSpace]
   val HLG_2020 = "HLG_2020".asInstanceOf[ColorSpace]
+  val P3DCI = "P3DCI".asInstanceOf[ColorSpace]
+  val P3D65_SDR = "P3D65_SDR".asInstanceOf[ColorSpace]
 
-  @inline def values: js.Array[ColorSpace] = js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020)
+  @inline def values: js.Array[ColorSpace] = js.Array(FOLLOW, REC_601, REC_709, HDR10, HLG_2020, P3DCI, P3D65_SDR)
 }
 
-/** Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+/** Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
   */
 @js.native
 sealed trait ColorSpaceConversion extends js.Any
@@ -1028,8 +1121,10 @@ object ColorSpaceConversion {
   val FORCE_709 = "FORCE_709".asInstanceOf[ColorSpaceConversion]
   val FORCE_HDR10 = "FORCE_HDR10".asInstanceOf[ColorSpaceConversion]
   val FORCE_HLG_2020 = "FORCE_HLG_2020".asInstanceOf[ColorSpaceConversion]
+  val FORCE_P3DCI = "FORCE_P3DCI".asInstanceOf[ColorSpaceConversion]
+  val FORCE_P3D65_SDR = "FORCE_P3D65_SDR".asInstanceOf[ColorSpaceConversion]
 
-  @inline def values: js.Array[ColorSpaceConversion] = js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020)
+  @inline def values: js.Array[ColorSpaceConversion] = js.Array(NONE, FORCE_601, FORCE_709, FORCE_HDR10, FORCE_HLG_2020, FORCE_P3DCI, FORCE_P3D65_SDR)
 }
 
 /** There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings.
@@ -1130,6 +1225,17 @@ object DashIsoIntervalCadence {
   @inline def values: js.Array[DashIsoIntervalCadence] = js.Array(FOLLOW_IFRAME, FOLLOW_CUSTOM)
 }
 
+/** Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+  */
+@js.native
+sealed trait DashIsoMpdManifestBandwidthType extends js.Any
+object DashIsoMpdManifestBandwidthType {
+  val AVERAGE = "AVERAGE".asInstanceOf[DashIsoMpdManifestBandwidthType]
+  val MAX = "MAX".asInstanceOf[DashIsoMpdManifestBandwidthType]
+
+  @inline def values: js.Array[DashIsoMpdManifestBandwidthType] = js.Array(AVERAGE, MAX)
+}
+
 /** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
   */
 @js.native
@@ -1183,6 +1289,17 @@ object DashIsoSegmentLengthControl {
   val GOP_MULTIPLE = "GOP_MULTIPLE".asInstanceOf[DashIsoSegmentLengthControl]
 
   @inline def values: js.Array[DashIsoSegmentLengthControl] = js.Array(EXACT, GOP_MULTIPLE)
+}
+
+/** Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to zero, and sample composition time offsets will increment using signed integers.
+  */
+@js.native
+sealed trait DashIsoVideoCompositionOffsets extends js.Any
+object DashIsoVideoCompositionOffsets {
+  val SIGNED = "SIGNED".asInstanceOf[DashIsoVideoCompositionOffsets]
+  val UNSIGNED = "UNSIGNED".asInstanceOf[DashIsoVideoCompositionOffsets]
+
+  @inline def values: js.Array[DashIsoVideoCompositionOffsets] = js.Array(SIGNED, UNSIGNED)
 }
 
 /** When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
@@ -1267,14 +1384,26 @@ object DolbyVisionLevel6Mode {
   @inline def values: js.Array[DolbyVisionLevel6Mode] = js.Array(PASSTHROUGH, RECALCULATE, SPECIFY)
 }
 
-/** In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data.
+/** Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
+  */
+@js.native
+sealed trait DolbyVisionMapping extends js.Any
+object DolbyVisionMapping {
+  val HDR10_NOMAP = "HDR10_NOMAP".asInstanceOf[DolbyVisionMapping]
+  val HDR10_1000 = "HDR10_1000".asInstanceOf[DolbyVisionMapping]
+
+  @inline def values: js.Array[DolbyVisionMapping] = js.Array(HDR10_NOMAP, HDR10_1000)
+}
+
+/** Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata.
   */
 @js.native
 sealed trait DolbyVisionProfile extends js.Any
 object DolbyVisionProfile {
   val PROFILE_5 = "PROFILE_5".asInstanceOf[DolbyVisionProfile]
+  val PROFILE_8_1 = "PROFILE_8_1".asInstanceOf[DolbyVisionProfile]
 
-  @inline def values: js.Array[DolbyVisionProfile] = js.Array(PROFILE_5)
+  @inline def values: js.Array[DolbyVisionProfile] = js.Array(PROFILE_5, PROFILE_8_1)
 }
 
 /** Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
@@ -1748,6 +1877,17 @@ object EmbeddedTerminateCaptions {
   @inline def values: js.Array[EmbeddedTerminateCaptions] = js.Array(END_OF_INPUT, DISABLED)
 }
 
+/** Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM) when your AVCHD input contains timecode tag data in the Modified Digital Video Pack Metadata (MDPM). When you do, we recommend you also set Timecode source (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override blank, or set to None (NONE), when your input does not contain MDPM timecode.
+  */
+@js.native
+sealed trait EmbeddedTimecodeOverride extends js.Any
+object EmbeddedTimecodeOverride {
+  val NONE = "NONE".asInstanceOf[EmbeddedTimecodeOverride]
+  val USE_MDPM = "USE_MDPM".asInstanceOf[EmbeddedTimecodeOverride]
+
+  @inline def values: js.Array[EmbeddedTimecodeOverride] = js.Array(NONE, USE_MDPM)
+}
+
 /** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
   */
 @js.native
@@ -2111,7 +2251,7 @@ object H264UnregisteredSeiTimecode {
   @inline def values: js.Array[H264UnregisteredSeiTimecode] = js.Array(DISABLED, ENABLED)
 }
 
-/** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+/** When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
   */
 @js.native
 sealed trait H265AdaptiveQuantization extends js.Any
@@ -2122,8 +2262,9 @@ object H265AdaptiveQuantization {
   val HIGH = "HIGH".asInstanceOf[H265AdaptiveQuantization]
   val HIGHER = "HIGHER".asInstanceOf[H265AdaptiveQuantization]
   val MAX = "MAX".asInstanceOf[H265AdaptiveQuantization]
+  val AUTO = "AUTO".asInstanceOf[H265AdaptiveQuantization]
 
-  @inline def values: js.Array[H265AdaptiveQuantization] = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX)
+  @inline def values: js.Array[H265AdaptiveQuantization] = js.Array(OFF, LOW, MEDIUM, HIGH, HIGHER, MAX, AUTO)
 }
 
 /** Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF).
@@ -2419,6 +2560,8 @@ object H265WriteMp4PackagingType {
   @inline def values: js.Array[H265WriteMp4PackagingType] = js.Array(HVC1, HEV1)
 }
 
+/** Ad marker for Apple HLS manifest.
+  */
 @js.native
 sealed trait HlsAdMarkers extends js.Any
 object HlsAdMarkers {
@@ -2473,6 +2616,17 @@ object HlsCaptionLanguageSetting {
   val NONE = "NONE".asInstanceOf[HlsCaptionLanguageSetting]
 
   @inline def values: js.Array[HlsCaptionLanguageSetting] = js.Array(INSERT, OMIT, NONE)
+}
+
+/** Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption segments that align with the video segments from the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+  */
+@js.native
+sealed trait HlsCaptionSegmentLengthControl extends js.Any
+object HlsCaptionSegmentLengthControl {
+  val LARGE_SEGMENTS = "LARGE_SEGMENTS".asInstanceOf[HlsCaptionSegmentLengthControl]
+  val MATCH_VIDEO = "MATCH_VIDEO".asInstanceOf[HlsCaptionSegmentLengthControl]
+
+  @inline def values: js.Array[HlsCaptionSegmentLengthControl] = js.Array(LARGE_SEGMENTS, MATCH_VIDEO)
 }
 
 /** Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
@@ -2686,7 +2840,7 @@ object HlsTargetDurationCompatibilityMode {
   @inline def values: js.Array[HlsTargetDurationCompatibilityMode] = js.Array(LEGACY, SPEC_COMPLIANT)
 }
 
-/** Indicates ID3 frame that has the timecode.
+/** Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
   */
 @js.native
 sealed trait HlsTimedMetadataId3Frame extends js.Any
@@ -2696,6 +2850,17 @@ object HlsTimedMetadataId3Frame {
   val TDRL = "TDRL".asInstanceOf[HlsTimedMetadataId3Frame]
 
   @inline def values: js.Array[HlsTimedMetadataId3Frame] = js.Array(NONE, PRIV, TDRL)
+}
+
+/** Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+  */
+@js.native
+sealed trait ImscAccessibilitySubs extends js.Any
+object ImscAccessibilitySubs {
+  val DISABLED = "DISABLED".asInstanceOf[ImscAccessibilitySubs]
+  val ENABLED = "ENABLED".asInstanceOf[ImscAccessibilitySubs]
+
+  @inline def values: js.Array[ImscAccessibilitySubs] = js.Array(DISABLED, ENABLED)
 }
 
 /** Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions.
@@ -3048,6 +3213,7 @@ object LanguageCode {
   val ORJ = "ORJ".asInstanceOf[LanguageCode]
   val QPC = "QPC".asInstanceOf[LanguageCode]
   val TNG = "TNG".asInstanceOf[LanguageCode]
+  val SRP = "SRP".asInstanceOf[LanguageCode]
 
   @inline def values: js.Array[LanguageCode] = js.Array(
     ENG,
@@ -3240,7 +3406,8 @@ object LanguageCode {
     ZUL,
     ORJ,
     QPC,
-    TNG
+    TNG,
+    SRP
   )
 }
 
@@ -3330,6 +3497,17 @@ object M2tsForceTsVideoEbpOrder {
   val DEFAULT = "DEFAULT".asInstanceOf[M2tsForceTsVideoEbpOrder]
 
   @inline def values: js.Array[M2tsForceTsVideoEbpOrder] = js.Array(FORCE, DEFAULT)
+}
+
+/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
+  */
+@js.native
+sealed trait M2tsKlvMetadata extends js.Any
+object M2tsKlvMetadata {
+  val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[M2tsKlvMetadata]
+  val NONE = "NONE".asInstanceOf[M2tsKlvMetadata]
+
+  @inline def values: js.Array[M2tsKlvMetadata] = js.Array(PASSTHROUGH, NONE)
 }
 
 /** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
@@ -3611,6 +3789,28 @@ object MpdCaptionContainerType {
   @inline def values: js.Array[MpdCaptionContainerType] = js.Array(RAW, FRAGMENTED_MP4)
 }
 
+/** To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and writes each instance to a separate event message box in the output, according to MISB ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
+  */
+@js.native
+sealed trait MpdKlvMetadata extends js.Any
+object MpdKlvMetadata {
+  val NONE = "NONE".asInstanceOf[MpdKlvMetadata]
+  val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdKlvMetadata]
+
+  @inline def values: js.Array[MpdKlvMetadata] = js.Array(NONE, PASSTHROUGH)
+}
+
+/** To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled.
+  */
+@js.native
+sealed trait MpdManifestMetadataSignaling extends js.Any
+object MpdManifestMetadataSignaling {
+  val ENABLED = "ENABLED".asInstanceOf[MpdManifestMetadataSignaling]
+  val DISABLED = "DISABLED".asInstanceOf[MpdManifestMetadataSignaling]
+
+  @inline def values: js.Array[MpdManifestMetadataSignaling] = js.Array(ENABLED, DISABLED)
+}
+
 /** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
   */
 @js.native
@@ -3631,6 +3831,28 @@ object MpdScte35Source {
   val NONE = "NONE".asInstanceOf[MpdScte35Source]
 
   @inline def values: js.Array[MpdScte35Source] = js.Array(PASSTHROUGH, NONE)
+}
+
+/** To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
+  */
+@js.native
+sealed trait MpdTimedMetadata extends js.Any
+object MpdTimedMetadata {
+  val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[MpdTimedMetadata]
+  val NONE = "NONE".asInstanceOf[MpdTimedMetadata]
+
+  @inline def values: js.Array[MpdTimedMetadata] = js.Array(PASSTHROUGH, NONE)
+}
+
+/** Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+  */
+@js.native
+sealed trait MpdTimedMetadataBoxVersion extends js.Any
+object MpdTimedMetadataBoxVersion {
+  val VERSION_0 = "VERSION_0".asInstanceOf[MpdTimedMetadataBoxVersion]
+  val VERSION_1 = "VERSION_1".asInstanceOf[MpdTimedMetadataBoxVersion]
+
+  @inline def values: js.Array[MpdTimedMetadataBoxVersion] = js.Array(VERSION_0, VERSION_1)
 }
 
 /** Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to the following settings: Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
@@ -3822,7 +4044,7 @@ object Mpeg2SpatialAdaptiveQuantization {
   @inline def values: js.Array[Mpeg2SpatialAdaptiveQuantization] = js.Array(DISABLED, ENABLED)
 }
 
-/** Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
+/** Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
   */
 @js.native
 sealed trait Mpeg2Syntax extends js.Any
@@ -3958,7 +4180,7 @@ object NielsenUniqueTicPerAudioTrackType {
   @inline def values: js.Array[NielsenUniqueTicPerAudioTrackType] = js.Array(RESERVE_UNIQUE_TICS_PER_TRACK, SAME_TICS_PER_TRACK)
 }
 
-/** Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+/** When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
   */
 @js.native
 sealed trait NoiseFilterPostTemporalSharpening extends js.Any
@@ -3968,6 +4190,18 @@ object NoiseFilterPostTemporalSharpening {
   val AUTO = "AUTO".asInstanceOf[NoiseFilterPostTemporalSharpening]
 
   @inline def values: js.Array[NoiseFilterPostTemporalSharpening] = js.Array(DISABLED, ENABLED, AUTO)
+}
+
+/** Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+  */
+@js.native
+sealed trait NoiseFilterPostTemporalSharpeningStrength extends js.Any
+object NoiseFilterPostTemporalSharpeningStrength {
+  val LOW = "LOW".asInstanceOf[NoiseFilterPostTemporalSharpeningStrength]
+  val MEDIUM = "MEDIUM".asInstanceOf[NoiseFilterPostTemporalSharpeningStrength]
+  val HIGH = "HIGH".asInstanceOf[NoiseFilterPostTemporalSharpeningStrength]
+
+  @inline def values: js.Array[NoiseFilterPostTemporalSharpeningStrength] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 /** Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
@@ -4023,6 +4257,17 @@ object OutputSdt {
   val SDT_NONE = "SDT_NONE".asInstanceOf[OutputSdt]
 
   @inline def values: js.Array[OutputSdt] = js.Array(SDT_FOLLOW, SDT_FOLLOW_IF_PRESENT, SDT_MANUAL, SDT_NONE)
+}
+
+/** Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled (DISABLED) or leave blank.
+  */
+@js.native
+sealed trait PadVideo extends js.Any
+object PadVideo {
+  val DISABLED = "DISABLED".asInstanceOf[PadVideo]
+  val BLACK = "BLACK".asInstanceOf[PadVideo]
+
+  @inline def values: js.Array[PadVideo] = js.Array(DISABLED, BLACK)
 }
 
 /** Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
@@ -4189,6 +4434,17 @@ object RenewalType {
   @inline def values: js.Array[RenewalType] = js.Array(AUTO_RENEW, EXPIRE)
 }
 
+/** Set to ENABLED to force a rendition to be included.
+  */
+@js.native
+sealed trait RequiredFlag extends js.Any
+object RequiredFlag {
+  val ENABLED = "ENABLED".asInstanceOf[RequiredFlag]
+  val DISABLED = "DISABLED".asInstanceOf[RequiredFlag]
+
+  @inline def values: js.Array[RequiredFlag] = js.Array(ENABLED, DISABLED)
+}
+
 /** Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
   */
 @js.native
@@ -4210,6 +4466,21 @@ object RespondToAfd {
   val PASSTHROUGH = "PASSTHROUGH".asInstanceOf[RespondToAfd]
 
   @inline def values: js.Array[RespondToAfd] = js.Array(NONE, RESPOND, PASSTHROUGH)
+}
+
+/** Use Min top rendition size to specify a minimum size for the highest resolution in your ABR stack. * The highest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 1280x720 the highest resolution in your ABR stack will be equal to or greater than 1280x720. * If you specify a value for Max resolution, the value that you specify for Min top rendition size must be less than, or equal to, Max resolution. Use Min bottom rendition size to specify a minimum size for the lowest resolution in your ABR stack. * The lowest resolution in your ABR stack will be equal to or greater than the value that you enter. For example: If you specify 640x360 the lowest resolution in your ABR stack will be equal to or greater than to 640x360. * If you specify a Min top rendition size rule, the value that you specify for Min bottom rendition size must be less than, or equal to, Min top rendition size. Use Force include renditions to specify one
+  * or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting. Use Allowed renditions to specify a list of possible resolutions in your ABR stack. * (Required) The number of resolutions that you specify must be equal to, or greater than, the Max renditions setting. * MediaConvert will create an ABR stack
+  * exclusively from the list of resolutions that you specify. * Some resolutions in the Allowed renditions list may not be included, however you can force a resolution to be included by setting Required to ENABLED. * You must specify at least one resolution that is greater than or equal to any resolutions that you specify in Min top rendition size or Min bottom rendition size. * If you specify Allowed renditions, you must not specify a separate rule for Force include renditions.
+  */
+@js.native
+sealed trait RuleType extends js.Any
+object RuleType {
+  val MIN_TOP_RENDITION_SIZE = "MIN_TOP_RENDITION_SIZE".asInstanceOf[RuleType]
+  val MIN_BOTTOM_RENDITION_SIZE = "MIN_BOTTOM_RENDITION_SIZE".asInstanceOf[RuleType]
+  val FORCE_INCLUDE_RENDITIONS = "FORCE_INCLUDE_RENDITIONS".asInstanceOf[RuleType]
+  val ALLOWED_RENDITIONS = "ALLOWED_RENDITIONS".asInstanceOf[RuleType]
+
+  @inline def values: js.Array[RuleType] = js.Array(MIN_TOP_RENDITION_SIZE, MIN_BOTTOM_RENDITION_SIZE, FORCE_INCLUDE_RENDITIONS, ALLOWED_RENDITIONS)
 }
 
 /** Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
@@ -4378,7 +4649,7 @@ object TimecodeSource {
   @inline def values: js.Array[TimecodeSource] = js.Array(EMBEDDED, ZEROBASED, SPECIFIEDSTART)
 }
 
-/** Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output.
+/** Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None (NONE) or leave blank.
   */
 @js.native
 sealed trait TimedMetadata extends js.Any
@@ -4665,15 +4936,27 @@ object WavFormat {
   @inline def values: js.Array[WavFormat] = js.Array(RIFF, RF64)
 }
 
-/** Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+/** Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes under EXT-X-MEDIA in the HLS or CMAF manifest for this track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such accessibility. MediaConvert will not add the above attributes.
+  */
+@js.native
+sealed trait WebvttAccessibilitySubs extends js.Any
+object WebvttAccessibilitySubs {
+  val DISABLED = "DISABLED".asInstanceOf[WebvttAccessibilitySubs]
+  val ENABLED = "ENABLED".asInstanceOf[WebvttAccessibilitySubs]
+
+  @inline def values: js.Array[WebvttAccessibilitySubs] = js.Array(DISABLED, ENABLED)
+}
+
+/** To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
   */
 @js.native
 sealed trait WebvttStylePassthrough extends js.Any
 object WebvttStylePassthrough {
   val ENABLED = "ENABLED".asInstanceOf[WebvttStylePassthrough]
   val DISABLED = "DISABLED".asInstanceOf[WebvttStylePassthrough]
+  val STRICT = "STRICT".asInstanceOf[WebvttStylePassthrough]
 
-  @inline def values: js.Array[WebvttStylePassthrough] = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[WebvttStylePassthrough] = js.Array(ENABLED, DISABLED, STRICT)
 }
 
 /** Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.

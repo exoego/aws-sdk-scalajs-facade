@@ -58,6 +58,23 @@ object DASHPlaybackMode {
 }
 
 @js.native
+sealed trait Format extends js.Any
+object Format {
+  val JPEG = "JPEG".asInstanceOf[Format]
+  val PNG = "PNG".asInstanceOf[Format]
+
+  @inline def values: js.Array[Format] = js.Array(JPEG, PNG)
+}
+
+@js.native
+sealed trait FormatConfigKey extends js.Any
+object FormatConfigKey {
+  val JPEGQuality = "JPEGQuality".asInstanceOf[FormatConfigKey]
+
+  @inline def values: js.Array[FormatConfigKey] = js.Array(JPEGQuality)
+}
+
+@js.native
 sealed trait FragmentSelectorType extends js.Any
 object FragmentSelectorType {
   val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
@@ -102,4 +119,22 @@ object HLSPlaybackMode {
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
 
   @inline def values: js.Array[HLSPlaybackMode] = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+}
+
+@js.native
+sealed trait ImageError extends js.Any
+object ImageError {
+  val NO_MEDIA = "NO_MEDIA".asInstanceOf[ImageError]
+  val MEDIA_ERROR = "MEDIA_ERROR".asInstanceOf[ImageError]
+
+  @inline def values: js.Array[ImageError] = js.Array(NO_MEDIA, MEDIA_ERROR)
+}
+
+@js.native
+sealed trait ImageSelectorType extends js.Any
+object ImageSelectorType {
+  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ImageSelectorType]
+  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ImageSelectorType]
+
+  @inline def values: js.Array[ImageSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }

@@ -28,14 +28,15 @@ object S3EncryptionOption {
   inline def values: js.Array[S3EncryptionOption] = js.Array(SSE_S3, SSE_KMS)
 }
 
-type ScalarMeasureValueType = "BIGINT" | "BOOLEAN" | "DOUBLE" | "VARCHAR"
+type ScalarMeasureValueType = "BIGINT" | "BOOLEAN" | "DOUBLE" | "VARCHAR" | "TIMESTAMP"
 object ScalarMeasureValueType {
   inline val BIGINT: "BIGINT" = "BIGINT"
   inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
   inline val DOUBLE: "DOUBLE" = "DOUBLE"
   inline val VARCHAR: "VARCHAR" = "VARCHAR"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  inline def values: js.Array[ScalarMeasureValueType] = js.Array(BIGINT, BOOLEAN, DOUBLE, VARCHAR)
+  inline def values: js.Array[ScalarMeasureValueType] = js.Array(BIGINT, BOOLEAN, DOUBLE, VARCHAR, TIMESTAMP)
 }
 
 type ScalarType = "VARCHAR" | "BOOLEAN" | "BIGINT" | "DOUBLE" | "TIMESTAMP" | "DATE" | "TIME" | "INTERVAL_DAY_TO_SECOND" | "INTERVAL_YEAR_TO_MONTH" | "UNKNOWN" | "INTEGER"

@@ -49,6 +49,10 @@ package object personalize {
   type ItemAttribute = String
   type KmsKeyArn = String
   type MaxResults = Int
+  type MetricAttributes = js.Array[MetricAttribute]
+  type MetricAttributesNamesList = js.Array[MetricName]
+  type MetricAttributions = js.Array[MetricAttributionSummary]
+  type MetricExpression = String
   type MetricName = String
   type MetricRegex = String
   type MetricValue = Double
@@ -70,6 +74,10 @@ package object personalize {
   type SolutionVersions = js.Array[SolutionVersionSummary]
   type Solutions = js.Array[SolutionSummary]
   type Status = String
+  type TagKey = String
+  type TagKeys = js.Array[TagKey]
+  type TagValue = String
+  type Tags = js.Array[Tag]
   type TrackingId = String
   type TrainingHours = Double
   type TrainingInputMode = String
@@ -87,6 +95,7 @@ package object personalize {
     @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
     @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] = service.createEventTracker(params).promise().toFuture
     @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] = service.createFilter(params).promise().toFuture
+    @inline def createMetricAttributionFuture(params: CreateMetricAttributionRequest): Future[CreateMetricAttributionResponse] = service.createMetricAttribution(params).promise().toFuture
     @inline def createRecommenderFuture(params: CreateRecommenderRequest): Future[CreateRecommenderResponse] = service.createRecommender(params).promise().toFuture
     @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
     @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] = service.createSolution(params).promise().toFuture
@@ -96,6 +105,7 @@ package object personalize {
     @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
     @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] = service.deleteEventTracker(params).promise().toFuture
     @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[js.Object] = service.deleteFilter(params).promise().toFuture
+    @inline def deleteMetricAttributionFuture(params: DeleteMetricAttributionRequest): Future[js.Object] = service.deleteMetricAttribution(params).promise().toFuture
     @inline def deleteRecommenderFuture(params: DeleteRecommenderRequest): Future[js.Object] = service.deleteRecommender(params).promise().toFuture
     @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] = service.deleteSchema(params).promise().toFuture
     @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] = service.deleteSolution(params).promise().toFuture
@@ -110,6 +120,7 @@ package object personalize {
     @inline def describeEventTrackerFuture(params: DescribeEventTrackerRequest): Future[DescribeEventTrackerResponse] = service.describeEventTracker(params).promise().toFuture
     @inline def describeFeatureTransformationFuture(params: DescribeFeatureTransformationRequest): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise().toFuture
     @inline def describeFilterFuture(params: DescribeFilterRequest): Future[DescribeFilterResponse] = service.describeFilter(params).promise().toFuture
+    @inline def describeMetricAttributionFuture(params: DescribeMetricAttributionRequest): Future[DescribeMetricAttributionResponse] = service.describeMetricAttribution(params).promise().toFuture
     @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] = service.describeRecipe(params).promise().toFuture
     @inline def describeRecommenderFuture(params: DescribeRecommenderRequest): Future[DescribeRecommenderResponse] = service.describeRecommender(params).promise().toFuture
     @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] = service.describeSchema(params).promise().toFuture
@@ -125,13 +136,21 @@ package object personalize {
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
     @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] = service.listEventTrackers(params).promise().toFuture
     @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] = service.listFilters(params).promise().toFuture
+    @inline def listMetricAttributionMetricsFuture(params: ListMetricAttributionMetricsRequest): Future[ListMetricAttributionMetricsResponse] = service.listMetricAttributionMetrics(params).promise().toFuture
+    @inline def listMetricAttributionsFuture(params: ListMetricAttributionsRequest): Future[ListMetricAttributionsResponse] = service.listMetricAttributions(params).promise().toFuture
     @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] = service.listRecipes(params).promise().toFuture
     @inline def listRecommendersFuture(params: ListRecommendersRequest): Future[ListRecommendersResponse] = service.listRecommenders(params).promise().toFuture
     @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
     @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] = service.listSolutionVersions(params).promise().toFuture
     @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] = service.listSolutions(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def startRecommenderFuture(params: StartRecommenderRequest): Future[StartRecommenderResponse] = service.startRecommender(params).promise().toFuture
+    @inline def stopRecommenderFuture(params: StopRecommenderRequest): Future[StopRecommenderResponse] = service.stopRecommender(params).promise().toFuture
     @inline def stopSolutionVersionCreationFuture(params: StopSolutionVersionCreationRequest): Future[js.Object] = service.stopSolutionVersionCreation(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
+    @inline def updateMetricAttributionFuture(params: UpdateMetricAttributionRequest): Future[UpdateMetricAttributionResponse] = service.updateMetricAttribution(params).promise().toFuture
     @inline def updateRecommenderFuture(params: UpdateRecommenderRequest): Future[UpdateRecommenderResponse] = service.updateRecommender(params).promise().toFuture
 
   }
@@ -150,6 +169,7 @@ package object personalize {
     def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] = js.native
     def createEventTracker(params: CreateEventTrackerRequest): Request[CreateEventTrackerResponse] = js.native
     def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
+    def createMetricAttribution(params: CreateMetricAttributionRequest): Request[CreateMetricAttributionResponse] = js.native
     def createRecommender(params: CreateRecommenderRequest): Request[CreateRecommenderResponse] = js.native
     def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
     def createSolution(params: CreateSolutionRequest): Request[CreateSolutionResponse] = js.native
@@ -159,6 +179,7 @@ package object personalize {
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
     def deleteEventTracker(params: DeleteEventTrackerRequest): Request[js.Object] = js.native
     def deleteFilter(params: DeleteFilterRequest): Request[js.Object] = js.native
+    def deleteMetricAttribution(params: DeleteMetricAttributionRequest): Request[js.Object] = js.native
     def deleteRecommender(params: DeleteRecommenderRequest): Request[js.Object] = js.native
     def deleteSchema(params: DeleteSchemaRequest): Request[js.Object] = js.native
     def deleteSolution(params: DeleteSolutionRequest): Request[js.Object] = js.native
@@ -173,6 +194,7 @@ package object personalize {
     def describeEventTracker(params: DescribeEventTrackerRequest): Request[DescribeEventTrackerResponse] = js.native
     def describeFeatureTransformation(params: DescribeFeatureTransformationRequest): Request[DescribeFeatureTransformationResponse] = js.native
     def describeFilter(params: DescribeFilterRequest): Request[DescribeFilterResponse] = js.native
+    def describeMetricAttribution(params: DescribeMetricAttributionRequest): Request[DescribeMetricAttributionResponse] = js.native
     def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
     def describeRecommender(params: DescribeRecommenderRequest): Request[DescribeRecommenderResponse] = js.native
     def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
@@ -188,13 +210,21 @@ package object personalize {
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listEventTrackers(params: ListEventTrackersRequest): Request[ListEventTrackersResponse] = js.native
     def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse] = js.native
+    def listMetricAttributionMetrics(params: ListMetricAttributionMetricsRequest): Request[ListMetricAttributionMetricsResponse] = js.native
+    def listMetricAttributions(params: ListMetricAttributionsRequest): Request[ListMetricAttributionsResponse] = js.native
     def listRecipes(params: ListRecipesRequest): Request[ListRecipesResponse] = js.native
     def listRecommenders(params: ListRecommendersRequest): Request[ListRecommendersResponse] = js.native
     def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse] = js.native
     def listSolutionVersions(params: ListSolutionVersionsRequest): Request[ListSolutionVersionsResponse] = js.native
     def listSolutions(params: ListSolutionsRequest): Request[ListSolutionsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def startRecommender(params: StartRecommenderRequest): Request[StartRecommenderResponse] = js.native
+    def stopRecommender(params: StopRecommenderRequest): Request[StopRecommenderResponse] = js.native
     def stopSolutionVersionCreation(params: StopSolutionVersionCreationRequest): Request[js.Object] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
+    def updateMetricAttribution(params: UpdateMetricAttributionRequest): Request[UpdateMetricAttributionResponse] = js.native
     def updateRecommender(params: UpdateRecommenderRequest): Request[UpdateRecommenderResponse] = js.native
   }
   object Personalize {
@@ -271,7 +301,7 @@ package object personalize {
     }
   }
 
-  /** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.
+  /** When the solution performs AutoML (<code>performAutoML</code> is true in [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html|CreateSolution]]), Amazon Personalize determines which recipe, from the specified list, optimizes the given metric. Amazon Personalize then uses that recipe for the solution.
     */
   @js.native
   trait AutoMLConfig extends js.Object {
@@ -292,7 +322,7 @@ package object personalize {
     }
   }
 
-  /** When the solution performs AutoML (<code>performAutoML</code> is true in <a>CreateSolution</a>), specifies the recipe that best optimized the specified metric.
+  /** When the solution performs AutoML (<code>performAutoML</code> is true in [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html|CreateSolution]]), specifies the recipe that best optimized the specified metric.
     */
   @js.native
   trait AutoMLResult extends js.Object {
@@ -420,7 +450,7 @@ package object personalize {
     }
   }
 
-  /** A truncated version of the <a>BatchInferenceJob</a> datatype. The <a>ListBatchInferenceJobs</a> operation returns a list of batch inference job summaries.
+  /** A truncated version of the [[https://docs.aws.amazon.com/personalize/latest/dg/API_BatchInferenceJob.html|BatchInferenceJob]]. The [[https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchInferenceJobs.html|ListBatchInferenceJobs]] operation returns a list of batch inference job summaries.
     */
   @js.native
   trait BatchInferenceJobSummary extends js.Object {
@@ -545,7 +575,7 @@ package object personalize {
     }
   }
 
-  /** A truncated version of the <a>BatchSegmentJob</a> datatype. The <a>ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.
+  /** A truncated version of the [[https://docs.aws.amazon.com/personalize/latest/dg/API_BatchSegmentJob.html|BatchSegmentJob]] datatype. [[https://docs.aws.amazon.com/personalize/latest/dg/API_ListBatchSegmentJobs.html|ListBatchSegmentJobs]] operation returns a list of batch segment job summaries.
     */
   @js.native
   trait BatchSegmentJobSummary extends js.Object {
@@ -581,7 +611,7 @@ package object personalize {
     }
   }
 
-  /** An object that describes the deployment of a solution version. For more information on campaigns, see <a>CreateCampaign</a>.
+  /** An object that describes the deployment of a solution version. For more information on campaigns, see [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html|CreateCampaign]].
     */
   @js.native
   trait Campaign extends js.Object {
@@ -644,7 +674,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a campaign. For a complete listing, call the <a>DescribeCampaign</a> API.
+  /** Provides a summary of the properties of a campaign. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html|DescribeCampaign]] API.
     */
   @js.native
   trait CampaignSummary extends js.Object {
@@ -677,7 +707,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a campaign update. For a complete listing, call the <a>DescribeCampaign</a> API.
+  /** Provides a summary of the properties of a campaign update. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html|DescribeCampaign]] API.
     */
   @js.native
   trait CampaignUpdateSummary extends js.Object {
@@ -768,6 +798,7 @@ package object personalize {
     var batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig]
     var filterArn: js.UndefOr[Arn]
     var numResults: js.UndefOr[NumBatchResults]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateBatchInferenceJobRequest {
@@ -780,7 +811,8 @@ package object personalize {
         solutionVersionArn: Arn,
         batchInferenceJobConfig: js.UndefOr[BatchInferenceJobConfig] = js.undefined,
         filterArn: js.UndefOr[Arn] = js.undefined,
-        numResults: js.UndefOr[NumBatchResults] = js.undefined
+        numResults: js.UndefOr[NumBatchResults] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateBatchInferenceJobRequest = {
       val __obj = js.Dynamic.literal(
         "jobInput" -> jobInput.asInstanceOf[js.Any],
@@ -793,6 +825,7 @@ package object personalize {
       batchInferenceJobConfig.foreach(__v => __obj.updateDynamic("batchInferenceJobConfig")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBatchInferenceJobRequest]
     }
   }
@@ -822,6 +855,7 @@ package object personalize {
     var solutionVersionArn: Arn
     var filterArn: js.UndefOr[Arn]
     var numResults: js.UndefOr[NumBatchResults]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateBatchSegmentJobRequest {
@@ -833,7 +867,8 @@ package object personalize {
         roleArn: RoleArn,
         solutionVersionArn: Arn,
         filterArn: js.UndefOr[Arn] = js.undefined,
-        numResults: js.UndefOr[NumBatchResults] = js.undefined
+        numResults: js.UndefOr[NumBatchResults] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateBatchSegmentJobRequest = {
       val __obj = js.Dynamic.literal(
         "jobInput" -> jobInput.asInstanceOf[js.Any],
@@ -845,6 +880,7 @@ package object personalize {
 
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBatchSegmentJobRequest]
     }
   }
@@ -871,6 +907,7 @@ package object personalize {
     var solutionVersionArn: Arn
     var campaignConfig: js.UndefOr[CampaignConfig]
     var minProvisionedTPS: js.UndefOr[TransactionsPerSecond]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateCampaignRequest {
@@ -879,7 +916,8 @@ package object personalize {
         name: Name,
         solutionVersionArn: Arn,
         campaignConfig: js.UndefOr[CampaignConfig] = js.undefined,
-        minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined
+        minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateCampaignRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
@@ -888,6 +926,7 @@ package object personalize {
 
       campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
       minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCampaignRequest]
     }
   }
@@ -915,6 +954,7 @@ package object personalize {
     var jobOutput: DatasetExportJobOutput
     var roleArn: RoleArn
     var ingestionMode: js.UndefOr[IngestionMode]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetExportJobRequest {
@@ -924,7 +964,8 @@ package object personalize {
         jobName: Name,
         jobOutput: DatasetExportJobOutput,
         roleArn: RoleArn,
-        ingestionMode: js.UndefOr[IngestionMode] = js.undefined
+        ingestionMode: js.UndefOr[IngestionMode] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetExportJobRequest = {
       val __obj = js.Dynamic.literal(
         "datasetArn" -> datasetArn.asInstanceOf[js.Any],
@@ -934,6 +975,7 @@ package object personalize {
       )
 
       ingestionMode.foreach(__v => __obj.updateDynamic("ingestionMode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetExportJobRequest]
     }
   }
@@ -960,6 +1002,7 @@ package object personalize {
     var domain: js.UndefOr[Domain]
     var kmsKeyArn: js.UndefOr[KmsKeyArn]
     var roleArn: js.UndefOr[RoleArn]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetGroupRequest {
@@ -968,7 +1011,8 @@ package object personalize {
         name: Name,
         domain: js.UndefOr[Domain] = js.undefined,
         kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
-        roleArn: js.UndefOr[RoleArn] = js.undefined
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetGroupRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
@@ -977,6 +1021,7 @@ package object personalize {
       domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupRequest]
     }
   }
@@ -1006,6 +1051,9 @@ package object personalize {
     var datasetArn: Arn
     var jobName: Name
     var roleArn: RoleArn
+    var importMode: js.UndefOr[ImportMode]
+    var publishAttributionMetricsToS3: js.UndefOr[Boolean]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetImportJobRequest {
@@ -1014,7 +1062,10 @@ package object personalize {
         dataSource: DataSource,
         datasetArn: Arn,
         jobName: Name,
-        roleArn: RoleArn
+        roleArn: RoleArn,
+        importMode: js.UndefOr[ImportMode] = js.undefined,
+        publishAttributionMetricsToS3: js.UndefOr[Boolean] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetImportJobRequest = {
       val __obj = js.Dynamic.literal(
         "dataSource" -> dataSource.asInstanceOf[js.Any],
@@ -1022,6 +1073,10 @@ package object personalize {
         "jobName" -> jobName.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
+
+      importMode.foreach(__v => __obj.updateDynamic("importMode")(__v.asInstanceOf[js.Any]))
+      publishAttributionMetricsToS3.foreach(__v => __obj.updateDynamic("publishAttributionMetricsToS3")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
     }
   }
@@ -1048,6 +1103,7 @@ package object personalize {
     var datasetType: DatasetType
     var name: Name
     var schemaArn: Arn
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateDatasetRequest {
@@ -1056,7 +1112,8 @@ package object personalize {
         datasetGroupArn: Arn,
         datasetType: DatasetType,
         name: Name,
-        schemaArn: Arn
+        schemaArn: Arn,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateDatasetRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
@@ -1064,6 +1121,8 @@ package object personalize {
         "name" -> name.asInstanceOf[js.Any],
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
@@ -1088,18 +1147,22 @@ package object personalize {
   trait CreateEventTrackerRequest extends js.Object {
     var datasetGroupArn: Arn
     var name: Name
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateEventTrackerRequest {
     @inline
     def apply(
         datasetGroupArn: Arn,
-        name: Name
+        name: Name,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateEventTrackerRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventTrackerRequest]
     }
   }
@@ -1128,6 +1191,7 @@ package object personalize {
     var datasetGroupArn: Arn
     var filterExpression: FilterExpression
     var name: Name
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateFilterRequest {
@@ -1135,13 +1199,16 @@ package object personalize {
     def apply(
         datasetGroupArn: Arn,
         filterExpression: FilterExpression,
-        name: Name
+        name: Name,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateFilterRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "filterExpression" -> filterExpression.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFilterRequest]
     }
   }
@@ -1163,11 +1230,54 @@ package object personalize {
   }
 
   @js.native
+  trait CreateMetricAttributionRequest extends js.Object {
+    var datasetGroupArn: Arn
+    var metrics: MetricAttributes
+    var metricsOutputConfig: MetricAttributionOutput
+    var name: Name
+  }
+
+  object CreateMetricAttributionRequest {
+    @inline
+    def apply(
+        datasetGroupArn: Arn,
+        metrics: MetricAttributes,
+        metricsOutputConfig: MetricAttributionOutput,
+        name: Name
+    ): CreateMetricAttributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
+        "metrics" -> metrics.asInstanceOf[js.Any],
+        "metricsOutputConfig" -> metricsOutputConfig.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateMetricAttributionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMetricAttributionResponse extends js.Object {
+    var metricAttributionArn: js.UndefOr[Arn]
+  }
+
+  object CreateMetricAttributionResponse {
+    @inline
+    def apply(
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined
+    ): CreateMetricAttributionResponse = {
+      val __obj = js.Dynamic.literal()
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMetricAttributionResponse]
+    }
+  }
+
+  @js.native
   trait CreateRecommenderRequest extends js.Object {
     var datasetGroupArn: Arn
     var name: Name
     var recipeArn: Arn
     var recommenderConfig: js.UndefOr[RecommenderConfig]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateRecommenderRequest {
@@ -1176,7 +1286,8 @@ package object personalize {
         datasetGroupArn: Arn,
         name: Name,
         recipeArn: Arn,
-        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined
+        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateRecommenderRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
@@ -1185,6 +1296,7 @@ package object personalize {
       )
 
       recommenderConfig.foreach(__v => __obj.updateDynamic("recommenderConfig")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRecommenderRequest]
     }
   }
@@ -1254,6 +1366,7 @@ package object personalize {
     var performHPO: js.UndefOr[Boolean]
     var recipeArn: js.UndefOr[Arn]
     var solutionConfig: js.UndefOr[SolutionConfig]
+    var tags: js.UndefOr[Tags]
   }
 
   object CreateSolutionRequest {
@@ -1265,7 +1378,8 @@ package object personalize {
         performAutoML: js.UndefOr[PerformAutoML] = js.undefined,
         performHPO: js.UndefOr[Boolean] = js.undefined,
         recipeArn: js.UndefOr[Arn] = js.undefined,
-        solutionConfig: js.UndefOr[SolutionConfig] = js.undefined
+        solutionConfig: js.UndefOr[SolutionConfig] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined
     ): CreateSolutionRequest = {
       val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
@@ -1277,6 +1391,7 @@ package object personalize {
       performHPO.foreach(__v => __obj.updateDynamic("performHPO")(__v.asInstanceOf[js.Any]))
       recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
       solutionConfig.foreach(__v => __obj.updateDynamic("solutionConfig")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionRequest]
     }
   }
@@ -1300,6 +1415,8 @@ package object personalize {
   @js.native
   trait CreateSolutionVersionRequest extends js.Object {
     var solutionArn: Arn
+    var name: js.UndefOr[Name]
+    var tags: js.UndefOr[Tags]
     var trainingMode: js.UndefOr[TrainingMode]
   }
 
@@ -1307,12 +1424,16 @@ package object personalize {
     @inline
     def apply(
         solutionArn: Arn,
+        name: js.UndefOr[Name] = js.undefined,
+        tags: js.UndefOr[Tags] = js.undefined,
         trainingMode: js.UndefOr[TrainingMode] = js.undefined
     ): CreateSolutionVersionRequest = {
       val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
 
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       trainingMode.foreach(__v => __obj.updateDynamic("trainingMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionVersionRequest]
     }
@@ -1391,7 +1512,7 @@ package object personalize {
     }
   }
 
-  /** Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a>CreateDatasetExportJob</a>. A dataset export job can be in one of the following states: * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+  /** Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html|CreateDatasetExportJob]]. A dataset export job can be in one of the following states: * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
     */
   @js.native
   trait DatasetExportJob extends js.Object {
@@ -1455,7 +1576,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a dataset export job. For a complete listing, call the <a>DescribeDatasetExportJob</a> API.
+  /** Provides a summary of the properties of a dataset export job. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html|DescribeDatasetExportJob]] API.
     */
   @js.native
   trait DatasetExportJobSummary extends js.Object {
@@ -1488,7 +1609,7 @@ package object personalize {
     }
   }
 
-  /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset. You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.
+  /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html|CreateDatasetGroup]]. You then create a dataset and add it to a dataset group by calling [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html|CreateDataset]]. The dataset group is used to create and train a solution by calling [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html|CreateSolution]]. A dataset group can contain only one of each type of dataset. You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.
     */
   @js.native
   trait DatasetGroup extends js.Object {
@@ -1530,7 +1651,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a dataset group. For a complete listing, call the <a>DescribeDatasetGroup</a> API.
+  /** Provides a summary of the properties of a dataset group. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html|DescribeDatasetGroup]] API.
     */
   @js.native
   trait DatasetGroupSummary extends js.Object {
@@ -1566,7 +1687,7 @@ package object personalize {
     }
   }
 
-  /** Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see <a>CreateDatasetImportJob</a>. A dataset import job can be in one of the following states: * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+  /** Describes a job that imports training data from a data source (Amazon S3 bucket) to an Amazon Personalize dataset. For more information, see [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html|CreateDatasetImportJob]]. A dataset import job can be in one of the following states: * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
     */
   @js.native
   trait DatasetImportJob extends js.Object {
@@ -1575,8 +1696,10 @@ package object personalize {
     var datasetArn: js.UndefOr[Arn]
     var datasetImportJobArn: js.UndefOr[Arn]
     var failureReason: js.UndefOr[FailureReason]
+    var importMode: js.UndefOr[ImportMode]
     var jobName: js.UndefOr[Name]
     var lastUpdatedDateTime: js.UndefOr[Date]
+    var publishAttributionMetricsToS3: js.UndefOr[Boolean]
     var roleArn: js.UndefOr[Arn]
     var status: js.UndefOr[Status]
   }
@@ -1589,8 +1712,10 @@ package object personalize {
         datasetArn: js.UndefOr[Arn] = js.undefined,
         datasetImportJobArn: js.UndefOr[Arn] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
+        importMode: js.UndefOr[ImportMode] = js.undefined,
         jobName: js.UndefOr[Name] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        publishAttributionMetricsToS3: js.UndefOr[Boolean] = js.undefined,
         roleArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetImportJob = {
@@ -1600,21 +1725,24 @@ package object personalize {
       datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
       datasetImportJobArn.foreach(__v => __obj.updateDynamic("datasetImportJobArn")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      importMode.foreach(__v => __obj.updateDynamic("importMode")(__v.asInstanceOf[js.Any]))
       jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      publishAttributionMetricsToS3.foreach(__v => __obj.updateDynamic("publishAttributionMetricsToS3")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetImportJob]
     }
   }
 
-  /** Provides a summary of the properties of a dataset import job. For a complete listing, call the <a>DescribeDatasetImportJob</a> API.
+  /** Provides a summary of the properties of a dataset import job. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html|DescribeDatasetImportJob]] API.
     */
   @js.native
   trait DatasetImportJobSummary extends js.Object {
     var creationDateTime: js.UndefOr[Date]
     var datasetImportJobArn: js.UndefOr[Arn]
     var failureReason: js.UndefOr[FailureReason]
+    var importMode: js.UndefOr[ImportMode]
     var jobName: js.UndefOr[Name]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var status: js.UndefOr[Status]
@@ -1626,6 +1754,7 @@ package object personalize {
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetImportJobArn: js.UndefOr[Arn] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
+        importMode: js.UndefOr[ImportMode] = js.undefined,
         jobName: js.UndefOr[Name] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
@@ -1634,6 +1763,7 @@ package object personalize {
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       datasetImportJobArn.foreach(__v => __obj.updateDynamic("datasetImportJobArn")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      importMode.foreach(__v => __obj.updateDynamic("importMode")(__v.asInstanceOf[js.Any]))
       jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1641,7 +1771,7 @@ package object personalize {
     }
   }
 
-  /** Describes the schema for a dataset. For more information on schemas, see <a>CreateSchema</a>.
+  /** Describes the schema for a dataset. For more information on schemas, see [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html|CreateSchema]].
     */
   @js.native
   trait DatasetSchema extends js.Object {
@@ -1674,7 +1804,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a dataset schema. For a complete listing, call the <a>DescribeSchema</a> API.
+  /** Provides a summary of the properties of a dataset schema. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html|DescribeSchema]] API.
     */
   @js.native
   trait DatasetSchemaSummary extends js.Object {
@@ -1704,7 +1834,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a dataset. For a complete listing, call the <a>DescribeDataset</a> API.
+  /** Provides a summary of the properties of a dataset. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDataset.html|DescribeDataset]] API.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -1921,6 +2051,23 @@ package object personalize {
         "filterArn" -> filterArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteFilterRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMetricAttributionRequest extends js.Object {
+    var metricAttributionArn: Arn
+  }
+
+  object DeleteMetricAttributionRequest {
+    @inline
+    def apply(
+        metricAttributionArn: Arn
+    ): DeleteMetricAttributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "metricAttributionArn" -> metricAttributionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMetricAttributionRequest]
     }
   }
 
@@ -2339,6 +2486,39 @@ package object personalize {
   }
 
   @js.native
+  trait DescribeMetricAttributionRequest extends js.Object {
+    var metricAttributionArn: Arn
+  }
+
+  object DescribeMetricAttributionRequest {
+    @inline
+    def apply(
+        metricAttributionArn: Arn
+    ): DescribeMetricAttributionRequest = {
+      val __obj = js.Dynamic.literal(
+        "metricAttributionArn" -> metricAttributionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeMetricAttributionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeMetricAttributionResponse extends js.Object {
+    var metricAttribution: js.UndefOr[MetricAttribution]
+  }
+
+  object DescribeMetricAttributionResponse {
+    @inline
+    def apply(
+        metricAttribution: js.UndefOr[MetricAttribution] = js.undefined
+    ): DescribeMetricAttributionResponse = {
+      val __obj = js.Dynamic.literal()
+      metricAttribution.foreach(__v => __obj.updateDynamic("metricAttribution")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMetricAttributionResponse]
+    }
+  }
+
+  @js.native
   trait DescribeRecipeRequest extends js.Object {
     var recipeArn: Arn
   }
@@ -2542,7 +2722,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of an event tracker. For a complete listing, call the <a>DescribeEventTracker</a> API.
+  /** Provides a summary of the properties of an event tracker. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeEventTracker.html|DescribeEventTracker]] API.
     */
   @js.native
   trait EventTrackerSummary extends js.Object {
@@ -3202,6 +3382,88 @@ package object personalize {
   }
 
   @js.native
+  trait ListMetricAttributionMetricsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var metricAttributionArn: js.UndefOr[Arn]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricAttributionMetricsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricAttributionMetricsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricAttributionMetricsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMetricAttributionMetricsResponse extends js.Object {
+    var metrics: js.UndefOr[MetricAttributes]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricAttributionMetricsResponse {
+    @inline
+    def apply(
+        metrics: js.UndefOr[MetricAttributes] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricAttributionMetricsResponse = {
+      val __obj = js.Dynamic.literal()
+      metrics.foreach(__v => __obj.updateDynamic("metrics")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricAttributionMetricsResponse]
+    }
+  }
+
+  @js.native
+  trait ListMetricAttributionsRequest extends js.Object {
+    var datasetGroupArn: js.UndefOr[Arn]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricAttributionsRequest {
+    @inline
+    def apply(
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricAttributionsRequest = {
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricAttributionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMetricAttributionsResponse extends js.Object {
+    var metricAttributions: js.UndefOr[MetricAttributions]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMetricAttributionsResponse {
+    @inline
+    def apply(
+        metricAttributions: js.UndefOr[MetricAttributions] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMetricAttributionsResponse = {
+      val __obj = js.Dynamic.literal()
+      metricAttributions.foreach(__v => __obj.updateDynamic("metricAttributions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMetricAttributionsResponse]
+    }
+  }
+
+  @js.native
   trait ListRecipesRequest extends js.Object {
     var domain: js.UndefOr[Domain]
     var maxResults: js.UndefOr[MaxResults]
@@ -3406,6 +3668,159 @@ package object personalize {
     }
   }
 
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var resourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var tags: js.UndefOr[Tags]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        tags: js.UndefOr[Tags] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  /** Contains information on a metric that a metric attribution reports on. For more information, see [[https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html|Measuring impact of recommendations]].
+    */
+  @js.native
+  trait MetricAttribute extends js.Object {
+    var eventType: EventType
+    var expression: MetricExpression
+    var metricName: MetricName
+  }
+
+  object MetricAttribute {
+    @inline
+    def apply(
+        eventType: EventType,
+        expression: MetricExpression,
+        metricName: MetricName
+    ): MetricAttribute = {
+      val __obj = js.Dynamic.literal(
+        "eventType" -> eventType.asInstanceOf[js.Any],
+        "expression" -> expression.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MetricAttribute]
+    }
+  }
+
+  /** Contains information on a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you import the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see [[https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html|Measuring impact of recommendations]].
+    */
+  @js.native
+  trait MetricAttribution extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var datasetGroupArn: js.UndefOr[Arn]
+    var failureReason: js.UndefOr[FailureReason]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var metricAttributionArn: js.UndefOr[Arn]
+    var metricsOutputConfig: js.UndefOr[MetricAttributionOutput]
+    var name: js.UndefOr[Name]
+    var status: js.UndefOr[Status]
+  }
+
+  object MetricAttribution {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined,
+        metricsOutputConfig: js.UndefOr[MetricAttributionOutput] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): MetricAttribution = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      metricsOutputConfig.foreach(__v => __obj.updateDynamic("metricsOutputConfig")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricAttribution]
+    }
+  }
+
+  /** The output configuration details for a metric attribution.
+    */
+  @js.native
+  trait MetricAttributionOutput extends js.Object {
+    var roleArn: RoleArn
+    var s3DataDestination: js.UndefOr[S3DataConfig]
+  }
+
+  object MetricAttributionOutput {
+    @inline
+    def apply(
+        roleArn: RoleArn,
+        s3DataDestination: js.UndefOr[S3DataConfig] = js.undefined
+    ): MetricAttributionOutput = {
+      val __obj = js.Dynamic.literal(
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      s3DataDestination.foreach(__v => __obj.updateDynamic("s3DataDestination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricAttributionOutput]
+    }
+  }
+
+  /** Provides a summary of the properties of a metric attribution. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeMetricAttribution.html|DescribeMetricAttribution]].
+    */
+  @js.native
+  trait MetricAttributionSummary extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var metricAttributionArn: js.UndefOr[Arn]
+    var name: js.UndefOr[Name]
+    var status: js.UndefOr[Status]
+  }
+
+  object MetricAttributionSummary {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): MetricAttributionSummary = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricAttributionSummary]
+    }
+  }
+
   /** Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see [[https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html|Optimizing a solution]].
     */
   @js.native
@@ -3427,7 +3842,7 @@ package object personalize {
     }
   }
 
-  /** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.
+  /** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the [[https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html|CreateSolution]] operation.
     */
   @js.native
   trait Recipe extends js.Object {
@@ -3469,7 +3884,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a recipe. For a complete listing, call the <a>DescribeRecipe</a> API.
+  /** Provides a summary of the properties of a recipe. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecipe.html|DescribeRecipe]] API.
     */
   @js.native
   trait RecipeSummary extends js.Object {
@@ -3511,6 +3926,7 @@ package object personalize {
     var failureReason: js.UndefOr[FailureReason]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var latestRecommenderUpdate: js.UndefOr[RecommenderUpdateSummary]
+    var modelMetrics: js.UndefOr[Metrics]
     var name: js.UndefOr[Name]
     var recipeArn: js.UndefOr[Arn]
     var recommenderArn: js.UndefOr[Arn]
@@ -3526,6 +3942,7 @@ package object personalize {
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         latestRecommenderUpdate: js.UndefOr[RecommenderUpdateSummary] = js.undefined,
+        modelMetrics: js.UndefOr[Metrics] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         recipeArn: js.UndefOr[Arn] = js.undefined,
         recommenderArn: js.UndefOr[Arn] = js.undefined,
@@ -3538,6 +3955,7 @@ package object personalize {
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       latestRecommenderUpdate.foreach(__v => __obj.updateDynamic("latestRecommenderUpdate")(__v.asInstanceOf[js.Any]))
+      modelMetrics.foreach(__v => __obj.updateDynamic("modelMetrics")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
       recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
@@ -3552,15 +3970,18 @@ package object personalize {
   @js.native
   trait RecommenderConfig extends js.Object {
     var itemExplorationConfig: js.UndefOr[HyperParameters]
+    var minRecommendationRequestsPerSecond: js.UndefOr[TransactionsPerSecond]
   }
 
   object RecommenderConfig {
     @inline
     def apply(
-        itemExplorationConfig: js.UndefOr[HyperParameters] = js.undefined
+        itemExplorationConfig: js.UndefOr[HyperParameters] = js.undefined,
+        minRecommendationRequestsPerSecond: js.UndefOr[TransactionsPerSecond] = js.undefined
     ): RecommenderConfig = {
       val __obj = js.Dynamic.literal()
       itemExplorationConfig.foreach(__v => __obj.updateDynamic("itemExplorationConfig")(__v.asInstanceOf[js.Any]))
+      minRecommendationRequestsPerSecond.foreach(__v => __obj.updateDynamic("minRecommendationRequestsPerSecond")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommenderConfig]
     }
   }
@@ -3604,7 +4025,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a recommender update. For a complete listing, call the <a>DescribeRecommender</a> API.
+  /** Provides a summary of the properties of a recommender update. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html|DescribeRecommender]] API.
     */
   @js.native
   trait RecommenderUpdateSummary extends js.Object {
@@ -3744,13 +4165,14 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a solution. For a complete listing, call the <a>DescribeSolution</a> API.
+  /** Provides a summary of the properties of a solution. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html|DescribeSolution]] API.
     */
   @js.native
   trait SolutionSummary extends js.Object {
     var creationDateTime: js.UndefOr[Date]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var name: js.UndefOr[Name]
+    var recipeArn: js.UndefOr[Arn]
     var solutionArn: js.UndefOr[Arn]
     var status: js.UndefOr[Status]
   }
@@ -3761,6 +4183,7 @@ package object personalize {
         creationDateTime: js.UndefOr[Date] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
+        recipeArn: js.UndefOr[Arn] = js.undefined,
         solutionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): SolutionSummary = {
@@ -3768,13 +4191,14 @@ package object personalize {
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
       solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionSummary]
     }
   }
 
-  /** An object that provides information about a specific version of a <a>Solution</a> in a Custom dataset group.
+  /** An object that provides information about a specific version of a [[https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html|Solution]] in a Custom dataset group.
     */
   @js.native
   trait SolutionVersion extends js.Object {
@@ -3783,6 +4207,7 @@ package object personalize {
     var eventType: js.UndefOr[EventType]
     var failureReason: js.UndefOr[FailureReason]
     var lastUpdatedDateTime: js.UndefOr[Date]
+    var name: js.UndefOr[Name]
     var performAutoML: js.UndefOr[PerformAutoML]
     var performHPO: js.UndefOr[PerformHPO]
     var recipeArn: js.UndefOr[Arn]
@@ -3803,6 +4228,7 @@ package object personalize {
         eventType: js.UndefOr[EventType] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
         performAutoML: js.UndefOr[PerformAutoML] = js.undefined,
         performHPO: js.UndefOr[PerformHPO] = js.undefined,
         recipeArn: js.UndefOr[Arn] = js.undefined,
@@ -3820,6 +4246,7 @@ package object personalize {
       eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       performAutoML.foreach(__v => __obj.updateDynamic("performAutoML")(__v.asInstanceOf[js.Any]))
       performHPO.foreach(__v => __obj.updateDynamic("performHPO")(__v.asInstanceOf[js.Any]))
       recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
@@ -3834,7 +4261,7 @@ package object personalize {
     }
   }
 
-  /** Provides a summary of the properties of a solution version. For a complete listing, call the <a>DescribeSolutionVersion</a> API.
+  /** Provides a summary of the properties of a solution version. For a complete listing, call the [[https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html|DescribeSolutionVersion]] API.
     */
   @js.native
   trait SolutionVersionSummary extends js.Object {
@@ -3865,6 +4292,72 @@ package object personalize {
   }
 
   @js.native
+  trait StartRecommenderRequest extends js.Object {
+    var recommenderArn: Arn
+  }
+
+  object StartRecommenderRequest {
+    @inline
+    def apply(
+        recommenderArn: Arn
+    ): StartRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommenderArn" -> recommenderArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartRecommenderRequest]
+    }
+  }
+
+  @js.native
+  trait StartRecommenderResponse extends js.Object {
+    var recommenderArn: js.UndefOr[Arn]
+  }
+
+  object StartRecommenderResponse {
+    @inline
+    def apply(
+        recommenderArn: js.UndefOr[Arn] = js.undefined
+    ): StartRecommenderResponse = {
+      val __obj = js.Dynamic.literal()
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartRecommenderResponse]
+    }
+  }
+
+  @js.native
+  trait StopRecommenderRequest extends js.Object {
+    var recommenderArn: Arn
+  }
+
+  object StopRecommenderRequest {
+    @inline
+    def apply(
+        recommenderArn: Arn
+    ): StopRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommenderArn" -> recommenderArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopRecommenderRequest]
+    }
+  }
+
+  @js.native
+  trait StopRecommenderResponse extends js.Object {
+    var recommenderArn: js.UndefOr[Arn]
+  }
+
+  object StopRecommenderResponse {
+    @inline
+    def apply(
+        recommenderArn: js.UndefOr[Arn] = js.undefined
+    ): StopRecommenderResponse = {
+      val __obj = js.Dynamic.literal()
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StopRecommenderResponse]
+    }
+  }
+
+  @js.native
   trait StopSolutionVersionCreationRequest extends js.Object {
     var solutionVersionArn: Arn
   }
@@ -3878,6 +4371,59 @@ package object personalize {
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[StopSolutionVersionCreationRequest]
+    }
+  }
+
+  /** The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see [[https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html|Tagging Personalize resources]].
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var tagKey: TagKey
+    var tagValue: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        tagKey: TagKey,
+        tagValue: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "tagKey" -> tagKey.asInstanceOf[js.Any],
+        "tagValue" -> tagValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tags: Tags
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tags: Tags
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tags" -> tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
     }
   }
 
@@ -3896,6 +4442,37 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       algorithmHyperParameters.foreach(__v => __obj.updateDynamic("algorithmHyperParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TunedHPOParams]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var resourceArn: Arn
+    var tagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        resourceArn: Arn,
+        tagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any],
+        "tagKeys" -> tagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 
@@ -3939,6 +4516,47 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCampaignResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateMetricAttributionRequest extends js.Object {
+    var addMetrics: js.UndefOr[MetricAttributes]
+    var metricAttributionArn: js.UndefOr[Arn]
+    var metricsOutputConfig: js.UndefOr[MetricAttributionOutput]
+    var removeMetrics: js.UndefOr[MetricAttributesNamesList]
+  }
+
+  object UpdateMetricAttributionRequest {
+    @inline
+    def apply(
+        addMetrics: js.UndefOr[MetricAttributes] = js.undefined,
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined,
+        metricsOutputConfig: js.UndefOr[MetricAttributionOutput] = js.undefined,
+        removeMetrics: js.UndefOr[MetricAttributesNamesList] = js.undefined
+    ): UpdateMetricAttributionRequest = {
+      val __obj = js.Dynamic.literal()
+      addMetrics.foreach(__v => __obj.updateDynamic("addMetrics")(__v.asInstanceOf[js.Any]))
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      metricsOutputConfig.foreach(__v => __obj.updateDynamic("metricsOutputConfig")(__v.asInstanceOf[js.Any]))
+      removeMetrics.foreach(__v => __obj.updateDynamic("removeMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMetricAttributionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMetricAttributionResponse extends js.Object {
+    var metricAttributionArn: js.UndefOr[Arn]
+  }
+
+  object UpdateMetricAttributionResponse {
+    @inline
+    def apply(
+        metricAttributionArn: js.UndefOr[Arn] = js.undefined
+    ): UpdateMetricAttributionResponse = {
+      val __obj = js.Dynamic.literal()
+      metricAttributionArn.foreach(__v => __obj.updateDynamic("metricAttributionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMetricAttributionResponse]
     }
   }
 

@@ -75,6 +75,7 @@ package object ecr {
   type PushTimestamp = js.Date
   type Reason = String
   type RecommendationText = String
+  type RecordedPullTimestamp = js.Date
   type ReferenceUrlsList = js.Array[Url]
   type Region = String
   type RegistryId = String
@@ -1624,6 +1625,7 @@ package object ecr {
     var imageScanStatus: js.UndefOr[ImageScanStatus]
     var imageSizeInBytes: js.UndefOr[ImageSizeInBytes]
     var imageTags: js.UndefOr[ImageTagList]
+    var lastRecordedPullTime: js.UndefOr[RecordedPullTimestamp]
     var registryId: js.UndefOr[RegistryId]
     var repositoryName: js.UndefOr[RepositoryName]
   }
@@ -1639,6 +1641,7 @@ package object ecr {
         imageScanStatus: js.UndefOr[ImageScanStatus] = js.undefined,
         imageSizeInBytes: js.UndefOr[ImageSizeInBytes] = js.undefined,
         imageTags: js.UndefOr[ImageTagList] = js.undefined,
+        lastRecordedPullTime: js.UndefOr[RecordedPullTimestamp] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): ImageDetail = {
@@ -1651,6 +1654,7 @@ package object ecr {
       imageScanStatus.foreach(__v => __obj.updateDynamic("imageScanStatus")(__v.asInstanceOf[js.Any]))
       imageSizeInBytes.foreach(__v => __obj.updateDynamic("imageSizeInBytes")(__v.asInstanceOf[js.Any]))
       imageTags.foreach(__v => __obj.updateDynamic("imageTags")(__v.asInstanceOf[js.Any]))
+      lastRecordedPullTime.foreach(__v => __obj.updateDynamic("lastRecordedPullTime")(__v.asInstanceOf[js.Any]))
       registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageDetail]
@@ -2796,7 +2800,7 @@ package object ecr {
     }
   }
 
-  /** The details of a scanning repository filter.
+  /** The details of a scanning repository filter. For more information on how to use filters, see [[https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters|Using filters]] in the <i>Amazon Elastic Container Registry User Guide</i>.
     */
   @js.native
   trait ScanningRepositoryFilter extends js.Object {
@@ -2983,7 +2987,7 @@ package object ecr {
     }
   }
 
-  /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+  /** The metadata to apply to a resource to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     */
   @js.native
   trait Tag extends js.Object {

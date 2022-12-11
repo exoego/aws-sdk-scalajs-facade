@@ -10,6 +10,14 @@ object Domain {
   inline def values: js.Array[Domain] = js.Array(ECOMMERCE, VIDEO_ON_DEMAND)
 }
 
+type ImportMode = "FULL" | "INCREMENTAL"
+object ImportMode {
+  inline val FULL: "FULL" = "FULL"
+  inline val INCREMENTAL: "INCREMENTAL" = "INCREMENTAL"
+
+  inline def values: js.Array[ImportMode] = js.Array(FULL, INCREMENTAL)
+}
+
 type IngestionMode = "BULK" | "PUT" | "ALL"
 object IngestionMode {
   inline val BULK: "BULK" = "BULK"

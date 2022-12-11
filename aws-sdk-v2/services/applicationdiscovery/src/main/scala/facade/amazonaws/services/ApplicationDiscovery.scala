@@ -13,8 +13,10 @@ package object applicationdiscovery {
   type AgentIds = js.Array[AgentId]
   type AgentNetworkInfoList = js.Array[AgentNetworkInfo]
   type AgentsInfo = js.Array[AgentInfo]
+  type ApplicationDescription = String
   type ApplicationId = String
   type ApplicationIdsList = js.Array[ApplicationId]
+  type ApplicationName = String
   type BatchDeleteImportDataErrorDescription = String
   type BatchDeleteImportDataErrorList = js.Array[BatchDeleteImportDataError]
   type BoxedInteger = Int
@@ -53,6 +55,7 @@ package object applicationdiscovery {
   type ImportURL = String
   type NeighborDetailsList = js.Array[NeighborConnectionDetail]
   type NextToken = String
+  type OrderByElementFieldName = String
   type OrderByList = js.Array[OrderByElement]
   type S3Bucket = String
   type S3PresignedUrl = String
@@ -154,7 +157,7 @@ package object applicationdiscovery {
     }
   }
 
-  /** Information about agents or connectors associated with the user’s AWS account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.
+  /** Information about agents or connectors associated with the user’s Amazon Web Services account. Information includes agent or connector IDs, IP addresses, media access control (MAC) addresses, agent or connector health, hostname where the agent or connector resides, and agent version for each agent.
     */
   @js.native
   trait AgentInfo extends js.Object {
@@ -379,15 +382,15 @@ package object applicationdiscovery {
 
   @js.native
   trait CreateApplicationRequest extends js.Object {
-    var name: String
-    var description: js.UndefOr[String]
+    var name: ApplicationName
+    var description: js.UndefOr[ApplicationDescription]
   }
 
   object CreateApplicationRequest {
     @inline
     def apply(
-        name: String,
-        description: js.UndefOr[String] = js.undefined
+        name: ApplicationName,
+        description: js.UndefOr[ApplicationDescription] = js.undefined
     ): CreateApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
@@ -482,6 +485,41 @@ package object applicationdiscovery {
     }
   }
 
+  @js.native
+  trait CustomerAgentlessCollectorInfo extends js.Object {
+    var activeAgentlessCollectors: Int
+    var denyListedAgentlessCollectors: Int
+    var healthyAgentlessCollectors: Int
+    var shutdownAgentlessCollectors: Int
+    var totalAgentlessCollectors: Int
+    var unhealthyAgentlessCollectors: Int
+    var unknownAgentlessCollectors: Int
+  }
+
+  object CustomerAgentlessCollectorInfo {
+    @inline
+    def apply(
+        activeAgentlessCollectors: Int,
+        denyListedAgentlessCollectors: Int,
+        healthyAgentlessCollectors: Int,
+        shutdownAgentlessCollectors: Int,
+        totalAgentlessCollectors: Int,
+        unhealthyAgentlessCollectors: Int,
+        unknownAgentlessCollectors: Int
+    ): CustomerAgentlessCollectorInfo = {
+      val __obj = js.Dynamic.literal(
+        "activeAgentlessCollectors" -> activeAgentlessCollectors.asInstanceOf[js.Any],
+        "denyListedAgentlessCollectors" -> denyListedAgentlessCollectors.asInstanceOf[js.Any],
+        "healthyAgentlessCollectors" -> healthyAgentlessCollectors.asInstanceOf[js.Any],
+        "shutdownAgentlessCollectors" -> shutdownAgentlessCollectors.asInstanceOf[js.Any],
+        "totalAgentlessCollectors" -> totalAgentlessCollectors.asInstanceOf[js.Any],
+        "unhealthyAgentlessCollectors" -> unhealthyAgentlessCollectors.asInstanceOf[js.Any],
+        "unknownAgentlessCollectors" -> unknownAgentlessCollectors.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomerAgentlessCollectorInfo]
+    }
+  }
+
   /** Inventory data for installed discovery connectors.
     */
   @js.native
@@ -516,6 +554,43 @@ package object applicationdiscovery {
         "unknownConnectors" -> unknownConnectors.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CustomerConnectorInfo]
+    }
+  }
+
+  /** The inventory data for installed Migration Evaluator collectors.
+    */
+  @js.native
+  trait CustomerMeCollectorInfo extends js.Object {
+    var activeMeCollectors: Int
+    var denyListedMeCollectors: Int
+    var healthyMeCollectors: Int
+    var shutdownMeCollectors: Int
+    var totalMeCollectors: Int
+    var unhealthyMeCollectors: Int
+    var unknownMeCollectors: Int
+  }
+
+  object CustomerMeCollectorInfo {
+    @inline
+    def apply(
+        activeMeCollectors: Int,
+        denyListedMeCollectors: Int,
+        healthyMeCollectors: Int,
+        shutdownMeCollectors: Int,
+        totalMeCollectors: Int,
+        unhealthyMeCollectors: Int,
+        unknownMeCollectors: Int
+    ): CustomerMeCollectorInfo = {
+      val __obj = js.Dynamic.literal(
+        "activeMeCollectors" -> activeMeCollectors.asInstanceOf[js.Any],
+        "denyListedMeCollectors" -> denyListedMeCollectors.asInstanceOf[js.Any],
+        "healthyMeCollectors" -> healthyMeCollectors.asInstanceOf[js.Any],
+        "shutdownMeCollectors" -> shutdownMeCollectors.asInstanceOf[js.Any],
+        "totalMeCollectors" -> totalMeCollectors.asInstanceOf[js.Any],
+        "unhealthyMeCollectors" -> unhealthyMeCollectors.asInstanceOf[js.Any],
+        "unknownMeCollectors" -> unknownMeCollectors.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomerMeCollectorInfo]
     }
   }
 
@@ -977,7 +1052,7 @@ package object applicationdiscovery {
     }
   }
 
-  /** A filter that can use conditional operators. For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>AWS Application Discovery Service User Guide</i>.
+  /** A filter that can use conditional operators. For more information about filters, see [[https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html|Querying Discovered Configuration Items]] in the <i>Amazon Web Services Application Discovery Service User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -1016,8 +1091,10 @@ package object applicationdiscovery {
   @js.native
   trait GetDiscoverySummaryResponse extends js.Object {
     var agentSummary: js.UndefOr[CustomerAgentInfo]
+    var agentlessCollectorSummary: js.UndefOr[CustomerAgentlessCollectorInfo]
     var applications: js.UndefOr[Double]
     var connectorSummary: js.UndefOr[CustomerConnectorInfo]
+    var meCollectorSummary: js.UndefOr[CustomerMeCollectorInfo]
     var servers: js.UndefOr[Double]
     var serversMappedToApplications: js.UndefOr[Double]
     var serversMappedtoTags: js.UndefOr[Double]
@@ -1027,16 +1104,20 @@ package object applicationdiscovery {
     @inline
     def apply(
         agentSummary: js.UndefOr[CustomerAgentInfo] = js.undefined,
+        agentlessCollectorSummary: js.UndefOr[CustomerAgentlessCollectorInfo] = js.undefined,
         applications: js.UndefOr[Double] = js.undefined,
         connectorSummary: js.UndefOr[CustomerConnectorInfo] = js.undefined,
+        meCollectorSummary: js.UndefOr[CustomerMeCollectorInfo] = js.undefined,
         servers: js.UndefOr[Double] = js.undefined,
         serversMappedToApplications: js.UndefOr[Double] = js.undefined,
         serversMappedtoTags: js.UndefOr[Double] = js.undefined
     ): GetDiscoverySummaryResponse = {
       val __obj = js.Dynamic.literal()
       agentSummary.foreach(__v => __obj.updateDynamic("agentSummary")(__v.asInstanceOf[js.Any]))
+      agentlessCollectorSummary.foreach(__v => __obj.updateDynamic("agentlessCollectorSummary")(__v.asInstanceOf[js.Any]))
       applications.foreach(__v => __obj.updateDynamic("applications")(__v.asInstanceOf[js.Any]))
       connectorSummary.foreach(__v => __obj.updateDynamic("connectorSummary")(__v.asInstanceOf[js.Any]))
+      meCollectorSummary.foreach(__v => __obj.updateDynamic("meCollectorSummary")(__v.asInstanceOf[js.Any]))
       servers.foreach(__v => __obj.updateDynamic("servers")(__v.asInstanceOf[js.Any]))
       serversMappedToApplications.foreach(__v => __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any]))
       serversMappedtoTags.foreach(__v => __obj.updateDynamic("serversMappedtoTags")(__v.asInstanceOf[js.Any]))
@@ -1260,14 +1341,14 @@ package object applicationdiscovery {
     */
   @js.native
   trait OrderByElement extends js.Object {
-    var fieldName: String
+    var fieldName: OrderByElementFieldName
     var sortOrder: js.UndefOr[orderString]
   }
 
   object OrderByElement {
     @inline
     def apply(
-        fieldName: String,
+        fieldName: OrderByElementFieldName,
         sortOrder: js.UndefOr[orderString] = js.undefined
     ): OrderByElement = {
       val __obj = js.Dynamic.literal(
@@ -1501,7 +1582,7 @@ package object applicationdiscovery {
     }
   }
 
-  /** Metadata that help you categorize IT assets.
+  /** Metadata that help you categorize IT assets. <important> Do not store sensitive information (like personal data) in tags. </important>
     */
   @js.native
   trait Tag extends js.Object {
@@ -1548,16 +1629,16 @@ package object applicationdiscovery {
   @js.native
   trait UpdateApplicationRequest extends js.Object {
     var configurationId: ApplicationId
-    var description: js.UndefOr[String]
-    var name: js.UndefOr[String]
+    var description: js.UndefOr[ApplicationDescription]
+    var name: js.UndefOr[ApplicationName]
   }
 
   object UpdateApplicationRequest {
     @inline
     def apply(
         configurationId: ApplicationId,
-        description: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
+        description: js.UndefOr[ApplicationDescription] = js.undefined,
+        name: js.UndefOr[ApplicationName] = js.undefined
     ): UpdateApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "configurationId" -> configurationId.asInstanceOf[js.Any]

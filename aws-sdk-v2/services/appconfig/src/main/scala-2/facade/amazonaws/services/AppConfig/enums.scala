@@ -3,6 +3,28 @@ package facade.amazonaws.services.appconfig
 import scalajs.js
 
 @js.native
+sealed trait ActionPoint extends js.Any
+object ActionPoint {
+  val PRE_CREATE_HOSTED_CONFIGURATION_VERSION = "PRE_CREATE_HOSTED_CONFIGURATION_VERSION".asInstanceOf[ActionPoint]
+  val PRE_START_DEPLOYMENT = "PRE_START_DEPLOYMENT".asInstanceOf[ActionPoint]
+  val ON_DEPLOYMENT_START = "ON_DEPLOYMENT_START".asInstanceOf[ActionPoint]
+  val ON_DEPLOYMENT_STEP = "ON_DEPLOYMENT_STEP".asInstanceOf[ActionPoint]
+  val ON_DEPLOYMENT_BAKING = "ON_DEPLOYMENT_BAKING".asInstanceOf[ActionPoint]
+  val ON_DEPLOYMENT_COMPLETE = "ON_DEPLOYMENT_COMPLETE".asInstanceOf[ActionPoint]
+  val ON_DEPLOYMENT_ROLLED_BACK = "ON_DEPLOYMENT_ROLLED_BACK".asInstanceOf[ActionPoint]
+
+  @inline def values: js.Array[ActionPoint] = js.Array(
+    PRE_CREATE_HOSTED_CONFIGURATION_VERSION,
+    PRE_START_DEPLOYMENT,
+    ON_DEPLOYMENT_START,
+    ON_DEPLOYMENT_STEP,
+    ON_DEPLOYMENT_BAKING,
+    ON_DEPLOYMENT_COMPLETE,
+    ON_DEPLOYMENT_ROLLED_BACK
+  )
+}
+
+@js.native
 sealed trait DeploymentEventType extends js.Any
 object DeploymentEventType {
   val PERCENTAGE_UPDATED = "PERCENTAGE_UPDATED".asInstanceOf[DeploymentEventType]

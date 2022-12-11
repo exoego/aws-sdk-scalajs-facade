@@ -21,6 +21,7 @@ package object rdsdataservice {
   type DbName = String
   type DoubleArray = js.Array[BoxedDouble]
   type FieldList = js.Array[Field]
+  type FormattedSqlRecords = String
   type Id = String
   type LongArray = js.Array[BoxedLong]
   type Metadata = js.Array[ColumnMetadata]
@@ -357,6 +358,7 @@ package object rdsdataservice {
     var sql: SqlStatement
     var continueAfterTimeout: js.UndefOr[Boolean]
     var database: js.UndefOr[DbName]
+    var formatRecordsAs: js.UndefOr[RecordsFormatType]
     var includeResultMetadata: js.UndefOr[Boolean]
     var parameters: js.UndefOr[SqlParametersList]
     var resultSetOptions: js.UndefOr[ResultSetOptions]
@@ -372,6 +374,7 @@ package object rdsdataservice {
         sql: SqlStatement,
         continueAfterTimeout: js.UndefOr[Boolean] = js.undefined,
         database: js.UndefOr[DbName] = js.undefined,
+        formatRecordsAs: js.UndefOr[RecordsFormatType] = js.undefined,
         includeResultMetadata: js.UndefOr[Boolean] = js.undefined,
         parameters: js.UndefOr[SqlParametersList] = js.undefined,
         resultSetOptions: js.UndefOr[ResultSetOptions] = js.undefined,
@@ -386,6 +389,7 @@ package object rdsdataservice {
 
       continueAfterTimeout.foreach(__v => __obj.updateDynamic("continueAfterTimeout")(__v.asInstanceOf[js.Any]))
       database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
+      formatRecordsAs.foreach(__v => __obj.updateDynamic("formatRecordsAs")(__v.asInstanceOf[js.Any]))
       includeResultMetadata.foreach(__v => __obj.updateDynamic("includeResultMetadata")(__v.asInstanceOf[js.Any]))
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       resultSetOptions.foreach(__v => __obj.updateDynamic("resultSetOptions")(__v.asInstanceOf[js.Any]))
@@ -400,6 +404,7 @@ package object rdsdataservice {
   @js.native
   trait ExecuteStatementResponse extends js.Object {
     var columnMetadata: js.UndefOr[Metadata]
+    var formattedRecords: js.UndefOr[FormattedSqlRecords]
     var generatedFields: js.UndefOr[FieldList]
     var numberOfRecordsUpdated: js.UndefOr[RecordsUpdated]
     var records: js.UndefOr[SqlRecords]
@@ -409,12 +414,14 @@ package object rdsdataservice {
     @inline
     def apply(
         columnMetadata: js.UndefOr[Metadata] = js.undefined,
+        formattedRecords: js.UndefOr[FormattedSqlRecords] = js.undefined,
         generatedFields: js.UndefOr[FieldList] = js.undefined,
         numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
         records: js.UndefOr[SqlRecords] = js.undefined
     ): ExecuteStatementResponse = {
       val __obj = js.Dynamic.literal()
       columnMetadata.foreach(__v => __obj.updateDynamic("columnMetadata")(__v.asInstanceOf[js.Any]))
+      formattedRecords.foreach(__v => __obj.updateDynamic("formattedRecords")(__v.asInstanceOf[js.Any]))
       generatedFields.foreach(__v => __obj.updateDynamic("generatedFields")(__v.asInstanceOf[js.Any]))
       numberOfRecordsUpdated.foreach(__v => __obj.updateDynamic("numberOfRecordsUpdated")(__v.asInstanceOf[js.Any]))
       records.foreach(__v => __obj.updateDynamic("records")(__v.asInstanceOf[js.Any]))
@@ -459,6 +466,8 @@ package object rdsdataservice {
   }
 
   /** A record returned by a call.
+    *
+    * '''Note:'''This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.
     */
   @js.native
   trait Record extends js.Object {
@@ -477,6 +486,8 @@ package object rdsdataservice {
   }
 
   /** The result set returned by a SQL statement.
+    *
+    * '''Note:'''This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.
     */
   @js.native
   trait ResultFrame extends js.Object {
@@ -523,15 +534,18 @@ package object rdsdataservice {
   @js.native
   trait ResultSetOptions extends js.Object {
     var decimalReturnType: js.UndefOr[DecimalReturnType]
+    var longReturnType: js.UndefOr[LongReturnType]
   }
 
   object ResultSetOptions {
     @inline
     def apply(
-        decimalReturnType: js.UndefOr[DecimalReturnType] = js.undefined
+        decimalReturnType: js.UndefOr[DecimalReturnType] = js.undefined,
+        longReturnType: js.UndefOr[LongReturnType] = js.undefined
     ): ResultSetOptions = {
       val __obj = js.Dynamic.literal()
       decimalReturnType.foreach(__v => __obj.updateDynamic("decimalReturnType")(__v.asInstanceOf[js.Any]))
+      longReturnType.foreach(__v => __obj.updateDynamic("longReturnType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultSetOptions]
     }
   }
@@ -605,7 +619,7 @@ package object rdsdataservice {
 
   /** The result of a SQL statement.
     * {{{
-    * &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;
+    * &lt;note&gt; &lt;p&gt;This data structure is only used with the deprecated &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt; &lt;/note&gt;
     * }}}
     */
   @js.native
@@ -628,6 +642,8 @@ package object rdsdataservice {
   }
 
   /** A structure value returned by a call.
+    *
+    * '''Note:'''This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.
     */
   @js.native
   trait StructValue extends js.Object {
@@ -665,7 +681,7 @@ package object rdsdataservice {
 
   /** Contains the value of a column.
     * {{{
-    * &lt;important&gt; &lt;p&gt;This data type is deprecated.&lt;/p&gt; &lt;/important&gt;
+    * &lt;note&gt; &lt;p&gt;This data structure is only used with the deprecated &lt;code&gt;ExecuteSql&lt;/code&gt; operation. Use the &lt;code&gt;BatchExecuteStatement&lt;/code&gt; or &lt;code&gt;ExecuteStatement&lt;/code&gt; operation instead.&lt;/p&gt; &lt;/note&gt;
     * }}}
     */
   @js.native

@@ -18,8 +18,18 @@ sealed trait ConfigurationSyncState extends js.Any
 object ConfigurationSyncState {
   val PENDING = "PENDING".asInstanceOf[ConfigurationSyncState]
   val IN_SYNC = "IN_SYNC".asInstanceOf[ConfigurationSyncState]
+  val CAPACITY_CONSTRAINED = "CAPACITY_CONSTRAINED".asInstanceOf[ConfigurationSyncState]
 
-  @inline def values: js.Array[ConfigurationSyncState] = js.Array(PENDING, IN_SYNC)
+  @inline def values: js.Array[ConfigurationSyncState] = js.Array(PENDING, IN_SYNC, CAPACITY_CONSTRAINED)
+}
+
+@js.native
+sealed trait EncryptionType extends js.Any
+object EncryptionType {
+  val CUSTOMER_KMS = "CUSTOMER_KMS".asInstanceOf[EncryptionType]
+  val AWS_OWNED_KMS_KEY = "AWS_OWNED_KMS_KEY".asInstanceOf[EncryptionType]
+
+  @inline def values: js.Array[EncryptionType] = js.Array(CUSTOMER_KMS, AWS_OWNED_KMS_KEY)
 }
 
 @js.native
@@ -73,8 +83,9 @@ sealed trait PerObjectSyncStatus extends js.Any
 object PerObjectSyncStatus {
   val PENDING = "PENDING".asInstanceOf[PerObjectSyncStatus]
   val IN_SYNC = "IN_SYNC".asInstanceOf[PerObjectSyncStatus]
+  val CAPACITY_CONSTRAINED = "CAPACITY_CONSTRAINED".asInstanceOf[PerObjectSyncStatus]
 
-  @inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC)
+  @inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC, CAPACITY_CONSTRAINED)
 }
 
 @js.native
@@ -84,6 +95,15 @@ object ResourceManagedStatus {
   val ACCOUNT = "ACCOUNT".asInstanceOf[ResourceManagedStatus]
 
   @inline def values: js.Array[ResourceManagedStatus] = js.Array(MANAGED, ACCOUNT)
+}
+
+@js.native
+sealed trait ResourceManagedType extends js.Any
+object ResourceManagedType {
+  val AWS_MANAGED_THREAT_SIGNATURES = "AWS_MANAGED_THREAT_SIGNATURES".asInstanceOf[ResourceManagedType]
+  val AWS_MANAGED_DOMAIN_LISTS = "AWS_MANAGED_DOMAIN_LISTS".asInstanceOf[ResourceManagedType]
+
+  @inline def values: js.Array[ResourceManagedType] = js.Array(AWS_MANAGED_THREAT_SIGNATURES, AWS_MANAGED_DOMAIN_LISTS)
 }
 
 @js.native
@@ -156,6 +176,15 @@ object StatefulRuleProtocol {
   val DHCP = "DHCP".asInstanceOf[StatefulRuleProtocol]
 
   @inline def values: js.Array[StatefulRuleProtocol] = js.Array(IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
+}
+
+@js.native
+sealed trait StreamExceptionPolicy extends js.Any
+object StreamExceptionPolicy {
+  val DROP = "DROP".asInstanceOf[StreamExceptionPolicy]
+  val CONTINUE = "CONTINUE".asInstanceOf[StreamExceptionPolicy]
+
+  @inline def values: js.Array[StreamExceptionPolicy] = js.Array(DROP, CONTINUE)
 }
 
 @js.native

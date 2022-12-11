@@ -10,11 +10,14 @@ import facade.amazonaws._
 package object devopsguru {
   type AccountHealths = js.Array[AccountHealth]
   type AccountIdList = js.Array[AwsAccountId]
+  type AnalyzedResourceCount = Double
+  type AnomalousLogGroups = js.Array[AnomalousLogGroup]
   type AnomalyDescription = String
   type AnomalyId = String
   type AnomalyLimit = Double
   type AnomalyName = String
   type AnomalyResources = js.Array[AnomalyResource]
+  type AnomalySource = String
   type AppBoundaryKey = String
   type AssociatedResourceArns = js.Array[ResourceArn]
   type AwsAccountId = String
@@ -41,23 +44,38 @@ package object devopsguru {
   type EventResources = js.Array[EventResource]
   type EventSource = String
   type Events = js.Array[Event]
+  type Explanation = String
+  type InsightDescription = String
   type InsightId = String
   type InsightName = String
   type InsightSeverities = js.Array[InsightSeverity]
   type InsightStatuses = js.Array[InsightStatus]
   type ListAnomaliesForInsightMaxResults = Int
+  type ListAnomalousLogGroupsMaxResults = Int
   type ListEventsMaxResults = Int
   type ListInsightsAccountIdList = js.Array[AwsAccountId]
   type ListInsightsMaxResults = Int
   type ListInsightsOrganizationalUnitIdList = js.Array[OrganizationalUnitId]
+  type ListMonitoredResourcesMaxResults = Int
+  type LogAnomalyClasses = js.Array[LogAnomalyClass]
+  type LogAnomalyShowcases = js.Array[LogAnomalyShowcase]
+  type LogAnomalyToken = String
+  type LogEventId = String
+  type LogGroupName = String
+  type LogStreamName = String
   type MeanTimeToRecoverInMilliseconds = Double
   type MetricValue = Double
+  type MonitoredResourceIdentifiers = js.Array[MonitoredResourceIdentifier]
+  type MonitoredResourceName = String
   type NotificationChannelId = String
+  type NotificationMessageTypes = js.Array[NotificationMessageType]
   type NumMetricsAnalyzed = Int
   type NumOpenProactiveInsights = Int
   type NumOpenReactiveInsights = Int
   type NumProactiveInsights = Int
   type NumReactiveInsights = Int
+  type NumberOfLogLinesOccurrences = Int
+  type NumberOfLogLinesScanned = Int
   type OrganizationResourceCollectionMaxResults = Int
   type OrganizationalUnitId = String
   type OrganizationalUnitIdList = js.Array[OrganizationalUnitId]
@@ -83,6 +101,7 @@ package object devopsguru {
   type ReactiveAnomalies = js.Array[ReactiveAnomalySummary]
   type ReactiveInsights = js.Array[ReactiveInsightSummary]
   type ReactiveOrganizationInsights = js.Array[ReactiveOrganizationInsightSummary]
+  type RecommendationCategory = String
   type RecommendationDescription = String
   type RecommendationLink = String
   type RecommendationName = String
@@ -105,6 +124,7 @@ package object devopsguru {
   type ResourceHours = Double
   type ResourceName = String
   type ResourceType = String
+  type ResourceTypeFilters = js.Array[ResourceTypeFilter]
   type SearchInsightsAccountIdList = js.Array[AwsAccountId]
   type SearchInsightsMaxResults = Int
   type SearchOrganizationInsightsMaxResults = Int
@@ -131,9 +151,11 @@ package object devopsguru {
   final class DevOpsGuruOps(private val service: DevOpsGuru) extends AnyVal {
 
     @inline def addNotificationChannelFuture(params: AddNotificationChannelRequest): Future[AddNotificationChannelResponse] = service.addNotificationChannel(params).promise().toFuture
+    @inline def deleteInsightFuture(params: DeleteInsightRequest): Future[DeleteInsightResponse] = service.deleteInsight(params).promise().toFuture
     @inline def describeAccountHealthFuture(params: DescribeAccountHealthRequest): Future[DescribeAccountHealthResponse] = service.describeAccountHealth(params).promise().toFuture
     @inline def describeAccountOverviewFuture(params: DescribeAccountOverviewRequest): Future[DescribeAccountOverviewResponse] = service.describeAccountOverview(params).promise().toFuture
     @inline def describeAnomalyFuture(params: DescribeAnomalyRequest): Future[DescribeAnomalyResponse] = service.describeAnomaly(params).promise().toFuture
+    @inline def describeEventSourcesConfigFuture(params: DescribeEventSourcesConfigRequest): Future[DescribeEventSourcesConfigResponse] = service.describeEventSourcesConfig(params).promise().toFuture
     @inline def describeFeedbackFuture(params: DescribeFeedbackRequest): Future[DescribeFeedbackResponse] = service.describeFeedback(params).promise().toFuture
     @inline def describeInsightFuture(params: DescribeInsightRequest): Future[DescribeInsightResponse] = service.describeInsight(params).promise().toFuture
     @inline def describeOrganizationHealthFuture(params: DescribeOrganizationHealthRequest): Future[DescribeOrganizationHealthResponse] = service.describeOrganizationHealth(params).promise().toFuture
@@ -144,8 +166,10 @@ package object devopsguru {
     @inline def getCostEstimationFuture(params: GetCostEstimationRequest): Future[GetCostEstimationResponse] = service.getCostEstimation(params).promise().toFuture
     @inline def getResourceCollectionFuture(params: GetResourceCollectionRequest): Future[GetResourceCollectionResponse] = service.getResourceCollection(params).promise().toFuture
     @inline def listAnomaliesForInsightFuture(params: ListAnomaliesForInsightRequest): Future[ListAnomaliesForInsightResponse] = service.listAnomaliesForInsight(params).promise().toFuture
+    @inline def listAnomalousLogGroupsFuture(params: ListAnomalousLogGroupsRequest): Future[ListAnomalousLogGroupsResponse] = service.listAnomalousLogGroups(params).promise().toFuture
     @inline def listEventsFuture(params: ListEventsRequest): Future[ListEventsResponse] = service.listEvents(params).promise().toFuture
     @inline def listInsightsFuture(params: ListInsightsRequest): Future[ListInsightsResponse] = service.listInsights(params).promise().toFuture
+    @inline def listMonitoredResourcesFuture(params: ListMonitoredResourcesRequest): Future[ListMonitoredResourcesResponse] = service.listMonitoredResources(params).promise().toFuture
     @inline def listNotificationChannelsFuture(params: ListNotificationChannelsRequest): Future[ListNotificationChannelsResponse] = service.listNotificationChannels(params).promise().toFuture
     @inline def listOrganizationInsightsFuture(params: ListOrganizationInsightsRequest): Future[ListOrganizationInsightsResponse] = service.listOrganizationInsights(params).promise().toFuture
     @inline def listRecommendationsFuture(params: ListRecommendationsRequest): Future[ListRecommendationsResponse] = service.listRecommendations(params).promise().toFuture
@@ -154,6 +178,7 @@ package object devopsguru {
     @inline def searchInsightsFuture(params: SearchInsightsRequest): Future[SearchInsightsResponse] = service.searchInsights(params).promise().toFuture
     @inline def searchOrganizationInsightsFuture(params: SearchOrganizationInsightsRequest): Future[SearchOrganizationInsightsResponse] = service.searchOrganizationInsights(params).promise().toFuture
     @inline def startCostEstimationFuture(params: StartCostEstimationRequest): Future[StartCostEstimationResponse] = service.startCostEstimation(params).promise().toFuture
+    @inline def updateEventSourcesConfigFuture(params: UpdateEventSourcesConfigRequest): Future[UpdateEventSourcesConfigResponse] = service.updateEventSourcesConfig(params).promise().toFuture
     @inline def updateResourceCollectionFuture(params: UpdateResourceCollectionRequest): Future[UpdateResourceCollectionResponse] = service.updateResourceCollection(params).promise().toFuture
     @inline def updateServiceIntegrationFuture(params: UpdateServiceIntegrationRequest): Future[UpdateServiceIntegrationResponse] = service.updateServiceIntegration(params).promise().toFuture
 
@@ -165,9 +190,11 @@ package object devopsguru {
     def this(config: AWSConfig) = this()
 
     def addNotificationChannel(params: AddNotificationChannelRequest): Request[AddNotificationChannelResponse] = js.native
+    def deleteInsight(params: DeleteInsightRequest): Request[DeleteInsightResponse] = js.native
     def describeAccountHealth(params: DescribeAccountHealthRequest): Request[DescribeAccountHealthResponse] = js.native
     def describeAccountOverview(params: DescribeAccountOverviewRequest): Request[DescribeAccountOverviewResponse] = js.native
     def describeAnomaly(params: DescribeAnomalyRequest): Request[DescribeAnomalyResponse] = js.native
+    def describeEventSourcesConfig(params: DescribeEventSourcesConfigRequest): Request[DescribeEventSourcesConfigResponse] = js.native
     def describeFeedback(params: DescribeFeedbackRequest): Request[DescribeFeedbackResponse] = js.native
     def describeInsight(params: DescribeInsightRequest): Request[DescribeInsightResponse] = js.native
     def describeOrganizationHealth(params: DescribeOrganizationHealthRequest): Request[DescribeOrganizationHealthResponse] = js.native
@@ -178,8 +205,10 @@ package object devopsguru {
     def getCostEstimation(params: GetCostEstimationRequest): Request[GetCostEstimationResponse] = js.native
     def getResourceCollection(params: GetResourceCollectionRequest): Request[GetResourceCollectionResponse] = js.native
     def listAnomaliesForInsight(params: ListAnomaliesForInsightRequest): Request[ListAnomaliesForInsightResponse] = js.native
+    def listAnomalousLogGroups(params: ListAnomalousLogGroupsRequest): Request[ListAnomalousLogGroupsResponse] = js.native
     def listEvents(params: ListEventsRequest): Request[ListEventsResponse] = js.native
     def listInsights(params: ListInsightsRequest): Request[ListInsightsResponse] = js.native
+    def listMonitoredResources(params: ListMonitoredResourcesRequest): Request[ListMonitoredResourcesResponse] = js.native
     def listNotificationChannels(params: ListNotificationChannelsRequest): Request[ListNotificationChannelsResponse] = js.native
     def listOrganizationInsights(params: ListOrganizationInsightsRequest): Request[ListOrganizationInsightsResponse] = js.native
     def listRecommendations(params: ListRecommendationsRequest): Request[ListRecommendationsResponse] = js.native
@@ -188,6 +217,7 @@ package object devopsguru {
     def searchInsights(params: SearchInsightsRequest): Request[SearchInsightsResponse] = js.native
     def searchOrganizationInsights(params: SearchOrganizationInsightsRequest): Request[SearchOrganizationInsightsResponse] = js.native
     def startCostEstimation(params: StartCostEstimationRequest): Request[StartCostEstimationResponse] = js.native
+    def updateEventSourcesConfig(params: UpdateEventSourcesConfigRequest): Request[UpdateEventSourcesConfigResponse] = js.native
     def updateResourceCollection(params: UpdateResourceCollectionRequest): Request[UpdateResourceCollectionResponse] = js.native
     def updateServiceIntegration(params: UpdateServiceIntegrationRequest): Request[UpdateServiceIntegrationResponse] = js.native
   }
@@ -273,6 +303,54 @@ package object devopsguru {
     }
   }
 
+  /** Information about your account's integration with Amazon CodeGuru Profiler. This returns whether DevOps Guru is configured to consume recommendations generated from Amazon CodeGuru Profiler.
+    */
+  @js.native
+  trait AmazonCodeGuruProfilerIntegration extends js.Object {
+    var Status: js.UndefOr[EventSourceOptInStatus]
+  }
+
+  object AmazonCodeGuruProfilerIntegration {
+    @inline
+    def apply(
+        Status: js.UndefOr[EventSourceOptInStatus] = js.undefined
+    ): AmazonCodeGuruProfilerIntegration = {
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonCodeGuruProfilerIntegration]
+    }
+  }
+
+  /** An Amazon CloudWatch log group that contains log anomalies and is used to generate an insight.
+    */
+  @js.native
+  trait AnomalousLogGroup extends js.Object {
+    var ImpactEndTime: js.UndefOr[Timestamp]
+    var ImpactStartTime: js.UndefOr[Timestamp]
+    var LogAnomalyShowcases: js.UndefOr[LogAnomalyShowcases]
+    var LogGroupName: js.UndefOr[LogGroupName]
+    var NumberOfLogLinesScanned: js.UndefOr[NumberOfLogLinesScanned]
+  }
+
+  object AnomalousLogGroup {
+    @inline
+    def apply(
+        ImpactEndTime: js.UndefOr[Timestamp] = js.undefined,
+        ImpactStartTime: js.UndefOr[Timestamp] = js.undefined,
+        LogAnomalyShowcases: js.UndefOr[LogAnomalyShowcases] = js.undefined,
+        LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
+        NumberOfLogLinesScanned: js.UndefOr[NumberOfLogLinesScanned] = js.undefined
+    ): AnomalousLogGroup = {
+      val __obj = js.Dynamic.literal()
+      ImpactEndTime.foreach(__v => __obj.updateDynamic("ImpactEndTime")(__v.asInstanceOf[js.Any]))
+      ImpactStartTime.foreach(__v => __obj.updateDynamic("ImpactStartTime")(__v.asInstanceOf[js.Any]))
+      LogAnomalyShowcases.foreach(__v => __obj.updateDynamic("LogAnomalyShowcases")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      NumberOfLogLinesScanned.foreach(__v => __obj.updateDynamic("NumberOfLogLinesScanned")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalousLogGroup]
+    }
+  }
+
   /** A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes the anomalous behavior.
     */
   @js.native
@@ -335,6 +413,30 @@ package object devopsguru {
       CloudWatchMetrics.foreach(__v => __obj.updateDynamic("CloudWatchMetrics")(__v.asInstanceOf[js.Any]))
       PerformanceInsightsMetrics.foreach(__v => __obj.updateDynamic("PerformanceInsightsMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalySourceDetails]
+    }
+  }
+
+  /** Metadata about the detection source that generates proactive anomalies. The anomaly is detected using analysis of the metric data&#x2028; over a period of time
+    */
+  @js.native
+  trait AnomalySourceMetadata extends js.Object {
+    var Source: js.UndefOr[AnomalySource]
+    var SourceResourceName: js.UndefOr[ResourceName]
+    var SourceResourceType: js.UndefOr[ResourceType]
+  }
+
+  object AnomalySourceMetadata {
+    @inline
+    def apply(
+        Source: js.UndefOr[AnomalySource] = js.undefined,
+        SourceResourceName: js.UndefOr[ResourceName] = js.undefined,
+        SourceResourceType: js.UndefOr[ResourceType] = js.undefined
+    ): AnomalySourceMetadata = {
+      val __obj = js.Dynamic.literal()
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      SourceResourceName.foreach(__v => __obj.updateDynamic("SourceResourceName")(__v.asInstanceOf[js.Any]))
+      SourceResourceType.foreach(__v => __obj.updateDynamic("SourceResourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnomalySourceMetadata]
     }
   }
 
@@ -419,6 +521,7 @@ package object devopsguru {
     */
   @js.native
   trait CloudFormationHealth extends js.Object {
+    var AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount]
     var Insight: js.UndefOr[InsightHealth]
     var StackName: js.UndefOr[StackName]
   }
@@ -426,10 +529,12 @@ package object devopsguru {
   object CloudFormationHealth {
     @inline
     def apply(
+        AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount] = js.undefined,
         Insight: js.UndefOr[InsightHealth] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined
     ): CloudFormationHealth = {
       val __obj = js.Dynamic.literal()
+      AnalyzedResourceCount.foreach(__v => __obj.updateDynamic("AnalyzedResourceCount")(__v.asInstanceOf[js.Any]))
       Insight.foreach(__v => __obj.updateDynamic("Insight")(__v.asInstanceOf[js.Any]))
       StackName.foreach(__v => __obj.updateDynamic("StackName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudFormationHealth]
@@ -493,7 +598,7 @@ package object devopsguru {
     }
   }
 
-  /** The dimension of am Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension|Dimensions]] in the <i>Amazon CloudWatch User Guide</i>.
+  /** The dimension of an Amazon CloudWatch metric that is used when DevOps Guru analyzes the resources in your account for operational problems and anomalous behavior. A dimension is a name/value pair that is part of the identity of a metric. A metric can have up to 10 dimensions. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension|Dimensions]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait CloudWatchMetricsDimension extends js.Object {
@@ -557,6 +662,34 @@ package object devopsguru {
   }
 
   @js.native
+  trait DeleteInsightRequest extends js.Object {
+    var Id: InsightId
+  }
+
+  object DeleteInsightRequest {
+    @inline
+    def apply(
+        Id: InsightId
+    ): DeleteInsightRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteInsightRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteInsightResponse extends js.Object
+
+  object DeleteInsightResponse {
+    @inline
+    def apply(): DeleteInsightResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteInsightResponse]
+    }
+  }
+
+  @js.native
   trait DescribeAccountHealthRequest extends js.Object
 
   object DescribeAccountHealthRequest {
@@ -573,6 +706,7 @@ package object devopsguru {
     var OpenProactiveInsights: NumOpenProactiveInsights
     var OpenReactiveInsights: NumOpenReactiveInsights
     var ResourceHours: ResourceHours
+    var AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount]
   }
 
   object DescribeAccountHealthResponse {
@@ -581,7 +715,8 @@ package object devopsguru {
         MetricsAnalyzed: NumMetricsAnalyzed,
         OpenProactiveInsights: NumOpenProactiveInsights,
         OpenReactiveInsights: NumOpenReactiveInsights,
-        ResourceHours: ResourceHours
+        ResourceHours: ResourceHours,
+        AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount] = js.undefined
     ): DescribeAccountHealthResponse = {
       val __obj = js.Dynamic.literal(
         "MetricsAnalyzed" -> MetricsAnalyzed.asInstanceOf[js.Any],
@@ -589,6 +724,8 @@ package object devopsguru {
         "OpenReactiveInsights" -> OpenReactiveInsights.asInstanceOf[js.Any],
         "ResourceHours" -> ResourceHours.asInstanceOf[js.Any]
       )
+
+      AnalyzedResourceCount.foreach(__v => __obj.updateDynamic("AnalyzedResourceCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountHealthResponse]
     }
   }
@@ -674,6 +811,33 @@ package object devopsguru {
       ProactiveAnomaly.foreach(__v => __obj.updateDynamic("ProactiveAnomaly")(__v.asInstanceOf[js.Any]))
       ReactiveAnomaly.foreach(__v => __obj.updateDynamic("ReactiveAnomaly")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAnomalyResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeEventSourcesConfigRequest extends js.Object
+
+  object DescribeEventSourcesConfigRequest {
+    @inline
+    def apply(): DescribeEventSourcesConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeEventSourcesConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEventSourcesConfigResponse extends js.Object {
+    var EventSources: js.UndefOr[EventSourcesConfig]
+  }
+
+  object DescribeEventSourcesConfigResponse {
+    @inline
+    def apply(
+        EventSources: js.UndefOr[EventSourcesConfig] = js.undefined
+    ): DescribeEventSourcesConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      EventSources.foreach(__v => __obj.updateDynamic("EventSources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEventSourcesConfigResponse]
     }
   }
 
@@ -1056,6 +1220,24 @@ package object devopsguru {
     }
   }
 
+  /** Information about the integration of DevOps Guru as consumer with another AWS service, such as AWS CodeGuru Profiler via EventBridge.
+    */
+  @js.native
+  trait EventSourcesConfig extends js.Object {
+    var AmazonCodeGuruProfiler: js.UndefOr[AmazonCodeGuruProfilerIntegration]
+  }
+
+  object EventSourcesConfig {
+    @inline
+    def apply(
+        AmazonCodeGuruProfiler: js.UndefOr[AmazonCodeGuruProfilerIntegration] = js.undefined
+    ): EventSourcesConfig = {
+      val __obj = js.Dynamic.literal()
+      AmazonCodeGuruProfiler.foreach(__v => __obj.updateDynamic("AmazonCodeGuruProfiler")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventSourcesConfig]
+    }
+  }
+
   /** The time range during which an Amazon Web Services event occurred. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions.
     */
   @js.native
@@ -1285,6 +1467,54 @@ package object devopsguru {
     }
   }
 
+  @js.native
+  trait ListAnomalousLogGroupsRequest extends js.Object {
+    var InsightId: InsightId
+    var MaxResults: js.UndefOr[ListAnomalousLogGroupsMaxResults]
+    var NextToken: js.UndefOr[UuidNextToken]
+  }
+
+  object ListAnomalousLogGroupsRequest {
+    @inline
+    def apply(
+        InsightId: InsightId,
+        MaxResults: js.UndefOr[ListAnomalousLogGroupsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[UuidNextToken] = js.undefined
+    ): ListAnomalousLogGroupsRequest = {
+      val __obj = js.Dynamic.literal(
+        "InsightId" -> InsightId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAnomalousLogGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAnomalousLogGroupsResponse extends js.Object {
+    var AnomalousLogGroups: AnomalousLogGroups
+    var InsightId: InsightId
+    var NextToken: js.UndefOr[UuidNextToken]
+  }
+
+  object ListAnomalousLogGroupsResponse {
+    @inline
+    def apply(
+        AnomalousLogGroups: AnomalousLogGroups,
+        InsightId: InsightId,
+        NextToken: js.UndefOr[UuidNextToken] = js.undefined
+    ): ListAnomalousLogGroupsResponse = {
+      val __obj = js.Dynamic.literal(
+        "AnomalousLogGroups" -> AnomalousLogGroups.asInstanceOf[js.Any],
+        "InsightId" -> InsightId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAnomalousLogGroupsResponse]
+    }
+  }
+
   /** Filters you can use to specify which events are returned when <code>ListEvents</code> is called.
     */
   @js.native
@@ -1499,6 +1729,71 @@ package object devopsguru {
     }
   }
 
+  /** Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.
+    */
+  @js.native
+  trait ListMonitoredResourcesFilters extends js.Object {
+    var ResourcePermission: ResourcePermission
+    var ResourceTypeFilters: ResourceTypeFilters
+  }
+
+  object ListMonitoredResourcesFilters {
+    @inline
+    def apply(
+        ResourcePermission: ResourcePermission,
+        ResourceTypeFilters: ResourceTypeFilters
+    ): ListMonitoredResourcesFilters = {
+      val __obj = js.Dynamic.literal(
+        "ResourcePermission" -> ResourcePermission.asInstanceOf[js.Any],
+        "ResourceTypeFilters" -> ResourceTypeFilters.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListMonitoredResourcesFilters]
+    }
+  }
+
+  @js.native
+  trait ListMonitoredResourcesRequest extends js.Object {
+    var Filters: js.UndefOr[ListMonitoredResourcesFilters]
+    var MaxResults: js.UndefOr[ListMonitoredResourcesMaxResults]
+    var NextToken: js.UndefOr[UuidNextToken]
+  }
+
+  object ListMonitoredResourcesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[ListMonitoredResourcesFilters] = js.undefined,
+        MaxResults: js.UndefOr[ListMonitoredResourcesMaxResults] = js.undefined,
+        NextToken: js.UndefOr[UuidNextToken] = js.undefined
+    ): ListMonitoredResourcesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitoredResourcesRequest]
+    }
+  }
+
+  @js.native
+  trait ListMonitoredResourcesResponse extends js.Object {
+    var MonitoredResourceIdentifiers: MonitoredResourceIdentifiers
+    var NextToken: js.UndefOr[UuidNextToken]
+  }
+
+  object ListMonitoredResourcesResponse {
+    @inline
+    def apply(
+        MonitoredResourceIdentifiers: MonitoredResourceIdentifiers,
+        NextToken: js.UndefOr[UuidNextToken] = js.undefined
+    ): ListMonitoredResourcesResponse = {
+      val __obj = js.Dynamic.literal(
+        "MonitoredResourceIdentifiers" -> MonitoredResourceIdentifiers.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitoredResourcesResponse]
+    }
+  }
+
   @js.native
   trait ListNotificationChannelsRequest extends js.Object {
     var NextToken: js.UndefOr[UuidNextToken]
@@ -1632,7 +1927,128 @@ package object devopsguru {
     }
   }
 
-  /** Information about a notification channel. A notification channel is used to notify you when DevOps Guru creates an insight. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html|Permissions for cross account Amazon SNS topics]]. If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html|Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics]].
+  /** Information about an anomalous log event found within a log group.
+    */
+  @js.native
+  trait LogAnomalyClass extends js.Object {
+    var Explanation: js.UndefOr[Explanation]
+    var LogAnomalyToken: js.UndefOr[LogAnomalyToken]
+    var LogAnomalyType: js.UndefOr[LogAnomalyType]
+    var LogEventId: js.UndefOr[LogEventId]
+    var LogEventTimestamp: js.UndefOr[Timestamp]
+    var LogStreamName: js.UndefOr[LogStreamName]
+    var NumberOfLogLinesOccurrences: js.UndefOr[NumberOfLogLinesOccurrences]
+  }
+
+  object LogAnomalyClass {
+    @inline
+    def apply(
+        Explanation: js.UndefOr[Explanation] = js.undefined,
+        LogAnomalyToken: js.UndefOr[LogAnomalyToken] = js.undefined,
+        LogAnomalyType: js.UndefOr[LogAnomalyType] = js.undefined,
+        LogEventId: js.UndefOr[LogEventId] = js.undefined,
+        LogEventTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        LogStreamName: js.UndefOr[LogStreamName] = js.undefined,
+        NumberOfLogLinesOccurrences: js.UndefOr[NumberOfLogLinesOccurrences] = js.undefined
+    ): LogAnomalyClass = {
+      val __obj = js.Dynamic.literal()
+      Explanation.foreach(__v => __obj.updateDynamic("Explanation")(__v.asInstanceOf[js.Any]))
+      LogAnomalyToken.foreach(__v => __obj.updateDynamic("LogAnomalyToken")(__v.asInstanceOf[js.Any]))
+      LogAnomalyType.foreach(__v => __obj.updateDynamic("LogAnomalyType")(__v.asInstanceOf[js.Any]))
+      LogEventId.foreach(__v => __obj.updateDynamic("LogEventId")(__v.asInstanceOf[js.Any]))
+      LogEventTimestamp.foreach(__v => __obj.updateDynamic("LogEventTimestamp")(__v.asInstanceOf[js.Any]))
+      LogStreamName.foreach(__v => __obj.updateDynamic("LogStreamName")(__v.asInstanceOf[js.Any]))
+      NumberOfLogLinesOccurrences.foreach(__v => __obj.updateDynamic("NumberOfLogLinesOccurrences")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogAnomalyClass]
+    }
+  }
+
+  /** A cluster of similar anomalous log events found within a log group.
+    */
+  @js.native
+  trait LogAnomalyShowcase extends js.Object {
+    var LogAnomalyClasses: js.UndefOr[LogAnomalyClasses]
+  }
+
+  object LogAnomalyShowcase {
+    @inline
+    def apply(
+        LogAnomalyClasses: js.UndefOr[LogAnomalyClasses] = js.undefined
+    ): LogAnomalyShowcase = {
+      val __obj = js.Dynamic.literal()
+      LogAnomalyClasses.foreach(__v => __obj.updateDynamic("LogAnomalyClasses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogAnomalyShowcase]
+    }
+  }
+
+  /** Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection.
+    */
+  @js.native
+  trait LogsAnomalyDetectionIntegration extends js.Object {
+    var OptInStatus: js.UndefOr[OptInStatus]
+  }
+
+  object LogsAnomalyDetectionIntegration {
+    @inline
+    def apply(
+        OptInStatus: js.UndefOr[OptInStatus] = js.undefined
+    ): LogsAnomalyDetectionIntegration = {
+      val __obj = js.Dynamic.literal()
+      OptInStatus.foreach(__v => __obj.updateDynamic("OptInStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogsAnomalyDetectionIntegration]
+    }
+  }
+
+  /** Information about the integration of DevOps Guru with CloudWatch log groups for log anomaly detection. You can use this to update the configuration.
+    */
+  @js.native
+  trait LogsAnomalyDetectionIntegrationConfig extends js.Object {
+    var OptInStatus: js.UndefOr[OptInStatus]
+  }
+
+  object LogsAnomalyDetectionIntegrationConfig {
+    @inline
+    def apply(
+        OptInStatus: js.UndefOr[OptInStatus] = js.undefined
+    ): LogsAnomalyDetectionIntegrationConfig = {
+      val __obj = js.Dynamic.literal()
+      OptInStatus.foreach(__v => __obj.updateDynamic("OptInStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LogsAnomalyDetectionIntegrationConfig]
+    }
+  }
+
+  /** Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource.
+    */
+  @js.native
+  trait MonitoredResourceIdentifier extends js.Object {
+    var LastUpdated: js.UndefOr[Timestamp]
+    var MonitoredResourceName: js.UndefOr[MonitoredResourceName]
+    var ResourceCollection: js.UndefOr[ResourceCollection]
+    var ResourcePermission: js.UndefOr[ResourcePermission]
+    var Type: js.UndefOr[ResourceType]
+  }
+
+  object MonitoredResourceIdentifier {
+    @inline
+    def apply(
+        LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        MonitoredResourceName: js.UndefOr[MonitoredResourceName] = js.undefined,
+        ResourceCollection: js.UndefOr[ResourceCollection] = js.undefined,
+        ResourcePermission: js.UndefOr[ResourcePermission] = js.undefined,
+        Type: js.UndefOr[ResourceType] = js.undefined
+    ): MonitoredResourceIdentifier = {
+      val __obj = js.Dynamic.literal()
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      MonitoredResourceName.foreach(__v => __obj.updateDynamic("MonitoredResourceName")(__v.asInstanceOf[js.Any]))
+      ResourceCollection.foreach(__v => __obj.updateDynamic("ResourceCollection")(__v.asInstanceOf[js.Any]))
+      ResourcePermission.foreach(__v => __obj.updateDynamic("ResourcePermission")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitoredResourceIdentifier]
+    }
+  }
+
+  /** Information about a notification channel. A notification channel is used to notify you when DevOps Guru creates an insight. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html|Permissions for cross account Amazon SNS topics]]. If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.
+    * If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html|Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics]].
     */
   @js.native
   trait NotificationChannel extends js.Object {
@@ -1658,17 +2074,42 @@ package object devopsguru {
   @js.native
   trait NotificationChannelConfig extends js.Object {
     var Sns: SnsChannelConfig
+    var Filters: js.UndefOr[NotificationFilterConfig]
   }
 
   object NotificationChannelConfig {
     @inline
     def apply(
-        Sns: SnsChannelConfig
+        Sns: SnsChannelConfig,
+        Filters: js.UndefOr[NotificationFilterConfig] = js.undefined
     ): NotificationChannelConfig = {
       val __obj = js.Dynamic.literal(
         "Sns" -> Sns.asInstanceOf[js.Any]
       )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationChannelConfig]
+    }
+  }
+
+  /** The filter configurations for the Amazon SNS notification topic you use with DevOps Guru. You can choose to specify which events or message types to receive notifications for. You can also choose to specify which severity levels to receive notifications for.
+    */
+  @js.native
+  trait NotificationFilterConfig extends js.Object {
+    var MessageTypes: js.UndefOr[NotificationMessageTypes]
+    var Severities: js.UndefOr[InsightSeverities]
+  }
+
+  object NotificationFilterConfig {
+    @inline
+    def apply(
+        MessageTypes: js.UndefOr[NotificationMessageTypes] = js.undefined,
+        Severities: js.UndefOr[InsightSeverities] = js.undefined
+    ): NotificationFilterConfig = {
+      val __obj = js.Dynamic.literal()
+      MessageTypes.foreach(__v => __obj.updateDynamic("MessageTypes")(__v.asInstanceOf[js.Any]))
+      Severities.foreach(__v => __obj.updateDynamic("Severities")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NotificationFilterConfig]
     }
   }
 
@@ -1690,7 +2131,7 @@ package object devopsguru {
     }
   }
 
-  /** Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight.
+  /** Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. You can use this to update the configuration.
     */
   @js.native
   trait OpsCenterIntegrationConfig extends js.Object {
@@ -1920,6 +2361,7 @@ package object devopsguru {
   @js.native
   trait ProactiveAnomaly extends js.Object {
     var AnomalyReportedTimeRange: js.UndefOr[AnomalyReportedTimeRange]
+    var AnomalyResources: js.UndefOr[AnomalyResources]
     var AnomalyTimeRange: js.UndefOr[AnomalyTimeRange]
     var AssociatedInsightId: js.UndefOr[InsightId]
     var Id: js.UndefOr[AnomalyId]
@@ -1928,6 +2370,7 @@ package object devopsguru {
     var ResourceCollection: js.UndefOr[ResourceCollection]
     var Severity: js.UndefOr[AnomalySeverity]
     var SourceDetails: js.UndefOr[AnomalySourceDetails]
+    var SourceMetadata: js.UndefOr[AnomalySourceMetadata]
     var Status: js.UndefOr[AnomalyStatus]
     var UpdateTime: js.UndefOr[Timestamp]
   }
@@ -1936,6 +2379,7 @@ package object devopsguru {
     @inline
     def apply(
         AnomalyReportedTimeRange: js.UndefOr[AnomalyReportedTimeRange] = js.undefined,
+        AnomalyResources: js.UndefOr[AnomalyResources] = js.undefined,
         AnomalyTimeRange: js.UndefOr[AnomalyTimeRange] = js.undefined,
         AssociatedInsightId: js.UndefOr[InsightId] = js.undefined,
         Id: js.UndefOr[AnomalyId] = js.undefined,
@@ -1944,11 +2388,13 @@ package object devopsguru {
         ResourceCollection: js.UndefOr[ResourceCollection] = js.undefined,
         Severity: js.UndefOr[AnomalySeverity] = js.undefined,
         SourceDetails: js.UndefOr[AnomalySourceDetails] = js.undefined,
+        SourceMetadata: js.UndefOr[AnomalySourceMetadata] = js.undefined,
         Status: js.UndefOr[AnomalyStatus] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined
     ): ProactiveAnomaly = {
       val __obj = js.Dynamic.literal()
       AnomalyReportedTimeRange.foreach(__v => __obj.updateDynamic("AnomalyReportedTimeRange")(__v.asInstanceOf[js.Any]))
+      AnomalyResources.foreach(__v => __obj.updateDynamic("AnomalyResources")(__v.asInstanceOf[js.Any]))
       AnomalyTimeRange.foreach(__v => __obj.updateDynamic("AnomalyTimeRange")(__v.asInstanceOf[js.Any]))
       AssociatedInsightId.foreach(__v => __obj.updateDynamic("AssociatedInsightId")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
@@ -1957,6 +2403,7 @@ package object devopsguru {
       ResourceCollection.foreach(__v => __obj.updateDynamic("ResourceCollection")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       SourceDetails.foreach(__v => __obj.updateDynamic("SourceDetails")(__v.asInstanceOf[js.Any]))
+      SourceMetadata.foreach(__v => __obj.updateDynamic("SourceMetadata")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProactiveAnomaly]
@@ -1968,6 +2415,7 @@ package object devopsguru {
   @js.native
   trait ProactiveAnomalySummary extends js.Object {
     var AnomalyReportedTimeRange: js.UndefOr[AnomalyReportedTimeRange]
+    var AnomalyResources: js.UndefOr[AnomalyResources]
     var AnomalyTimeRange: js.UndefOr[AnomalyTimeRange]
     var AssociatedInsightId: js.UndefOr[InsightId]
     var Id: js.UndefOr[AnomalyId]
@@ -1976,6 +2424,7 @@ package object devopsguru {
     var ResourceCollection: js.UndefOr[ResourceCollection]
     var Severity: js.UndefOr[AnomalySeverity]
     var SourceDetails: js.UndefOr[AnomalySourceDetails]
+    var SourceMetadata: js.UndefOr[AnomalySourceMetadata]
     var Status: js.UndefOr[AnomalyStatus]
     var UpdateTime: js.UndefOr[Timestamp]
   }
@@ -1984,6 +2433,7 @@ package object devopsguru {
     @inline
     def apply(
         AnomalyReportedTimeRange: js.UndefOr[AnomalyReportedTimeRange] = js.undefined,
+        AnomalyResources: js.UndefOr[AnomalyResources] = js.undefined,
         AnomalyTimeRange: js.UndefOr[AnomalyTimeRange] = js.undefined,
         AssociatedInsightId: js.UndefOr[InsightId] = js.undefined,
         Id: js.UndefOr[AnomalyId] = js.undefined,
@@ -1992,11 +2442,13 @@ package object devopsguru {
         ResourceCollection: js.UndefOr[ResourceCollection] = js.undefined,
         Severity: js.UndefOr[AnomalySeverity] = js.undefined,
         SourceDetails: js.UndefOr[AnomalySourceDetails] = js.undefined,
+        SourceMetadata: js.UndefOr[AnomalySourceMetadata] = js.undefined,
         Status: js.UndefOr[AnomalyStatus] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined
     ): ProactiveAnomalySummary = {
       val __obj = js.Dynamic.literal()
       AnomalyReportedTimeRange.foreach(__v => __obj.updateDynamic("AnomalyReportedTimeRange")(__v.asInstanceOf[js.Any]))
+      AnomalyResources.foreach(__v => __obj.updateDynamic("AnomalyResources")(__v.asInstanceOf[js.Any]))
       AnomalyTimeRange.foreach(__v => __obj.updateDynamic("AnomalyTimeRange")(__v.asInstanceOf[js.Any]))
       AssociatedInsightId.foreach(__v => __obj.updateDynamic("AssociatedInsightId")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
@@ -2005,6 +2457,7 @@ package object devopsguru {
       ResourceCollection.foreach(__v => __obj.updateDynamic("ResourceCollection")(__v.asInstanceOf[js.Any]))
       Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       SourceDetails.foreach(__v => __obj.updateDynamic("SourceDetails")(__v.asInstanceOf[js.Any]))
+      SourceMetadata.foreach(__v => __obj.updateDynamic("SourceMetadata")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProactiveAnomalySummary]
@@ -2015,6 +2468,7 @@ package object devopsguru {
     */
   @js.native
   trait ProactiveInsight extends js.Object {
+    var Description: js.UndefOr[InsightDescription]
     var Id: js.UndefOr[InsightId]
     var InsightTimeRange: js.UndefOr[InsightTimeRange]
     var Name: js.UndefOr[InsightName]
@@ -2028,6 +2482,7 @@ package object devopsguru {
   object ProactiveInsight {
     @inline
     def apply(
+        Description: js.UndefOr[InsightDescription] = js.undefined,
         Id: js.UndefOr[InsightId] = js.undefined,
         InsightTimeRange: js.UndefOr[InsightTimeRange] = js.undefined,
         Name: js.UndefOr[InsightName] = js.undefined,
@@ -2038,6 +2493,7 @@ package object devopsguru {
         Status: js.UndefOr[InsightStatus] = js.undefined
     ): ProactiveInsight = {
       val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InsightTimeRange.foreach(__v => __obj.updateDynamic("InsightTimeRange")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2276,6 +2732,7 @@ package object devopsguru {
     */
   @js.native
   trait ReactiveInsight extends js.Object {
+    var Description: js.UndefOr[InsightDescription]
     var Id: js.UndefOr[InsightId]
     var InsightTimeRange: js.UndefOr[InsightTimeRange]
     var Name: js.UndefOr[InsightName]
@@ -2288,6 +2745,7 @@ package object devopsguru {
   object ReactiveInsight {
     @inline
     def apply(
+        Description: js.UndefOr[InsightDescription] = js.undefined,
         Id: js.UndefOr[InsightId] = js.undefined,
         InsightTimeRange: js.UndefOr[InsightTimeRange] = js.undefined,
         Name: js.UndefOr[InsightName] = js.undefined,
@@ -2297,6 +2755,7 @@ package object devopsguru {
         Status: js.UndefOr[InsightStatus] = js.undefined
     ): ReactiveInsight = {
       val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InsightTimeRange.foreach(__v => __obj.updateDynamic("InsightTimeRange")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2393,6 +2852,7 @@ package object devopsguru {
     */
   @js.native
   trait Recommendation extends js.Object {
+    var Category: js.UndefOr[RecommendationCategory]
     var Description: js.UndefOr[RecommendationDescription]
     var Link: js.UndefOr[RecommendationLink]
     var Name: js.UndefOr[RecommendationName]
@@ -2404,6 +2864,7 @@ package object devopsguru {
   object Recommendation {
     @inline
     def apply(
+        Category: js.UndefOr[RecommendationCategory] = js.undefined,
         Description: js.UndefOr[RecommendationDescription] = js.undefined,
         Link: js.UndefOr[RecommendationLink] = js.undefined,
         Name: js.UndefOr[RecommendationName] = js.undefined,
@@ -2412,6 +2873,7 @@ package object devopsguru {
         RelatedEvents: js.UndefOr[RecommendationRelatedEvents] = js.undefined
     ): Recommendation = {
       val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Link.foreach(__v => __obj.updateDynamic("Link")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2801,6 +3263,7 @@ package object devopsguru {
     */
   @js.native
   trait ServiceHealth extends js.Object {
+    var AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount]
     var Insight: js.UndefOr[ServiceInsightHealth]
     var ServiceName: js.UndefOr[ServiceName]
   }
@@ -2808,10 +3271,12 @@ package object devopsguru {
   object ServiceHealth {
     @inline
     def apply(
+        AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount] = js.undefined,
         Insight: js.UndefOr[ServiceInsightHealth] = js.undefined,
         ServiceName: js.UndefOr[ServiceName] = js.undefined
     ): ServiceHealth = {
       val __obj = js.Dynamic.literal()
+      AnalyzedResourceCount.foreach(__v => __obj.updateDynamic("AnalyzedResourceCount")(__v.asInstanceOf[js.Any]))
       Insight.foreach(__v => __obj.updateDynamic("Insight")(__v.asInstanceOf[js.Any]))
       ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceHealth]
@@ -2843,15 +3308,18 @@ package object devopsguru {
     */
   @js.native
   trait ServiceIntegrationConfig extends js.Object {
+    var LogsAnomalyDetection: js.UndefOr[LogsAnomalyDetectionIntegration]
     var OpsCenter: js.UndefOr[OpsCenterIntegration]
   }
 
   object ServiceIntegrationConfig {
     @inline
     def apply(
+        LogsAnomalyDetection: js.UndefOr[LogsAnomalyDetectionIntegration] = js.undefined,
         OpsCenter: js.UndefOr[OpsCenterIntegration] = js.undefined
     ): ServiceIntegrationConfig = {
       val __obj = js.Dynamic.literal()
+      LogsAnomalyDetection.foreach(__v => __obj.updateDynamic("LogsAnomalyDetection")(__v.asInstanceOf[js.Any]))
       OpsCenter.foreach(__v => __obj.updateDynamic("OpsCenter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceIntegrationConfig]
     }
@@ -2887,7 +3355,8 @@ package object devopsguru {
     }
   }
 
-  /** Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html|Permissions for cross account Amazon SNS topics]]. If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html|Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics]].
+  /** Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html|Permissions for cross account Amazon SNS topics]]. If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics. If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK),
+    * then you must add permissions to the CMK. For more information, see [[https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html|Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics]].
     */
   @js.native
   trait SnsChannelConfig extends js.Object {
@@ -2958,8 +3427,8 @@ package object devopsguru {
     }
   }
 
-  /** A collection of Amazon Web Services stags. Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the [[https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf|Tagging best practices]] whitepaper. Each Amazon Web Services tag has two parts. * A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive. * An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag
-    * <i>values</i> are case-sensitive. Together these are known as <i>key</i>-<i>value</i> pairs. <important> The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>Devops-guru-deployment-application</code> or <code>Devops-guru-rds-application</code>. While <i>keys</i> are case-sensitive, the case of <i>key</i> characters don't matter to DevOps Guru. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>. </important>
+  /** A collection of Amazon Web Services tags. Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the [[https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf|Tagging best practices]] whitepaper. Each Amazon Web Services tag has two parts. * A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive. * An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag
+    * <i>values</i> are case-sensitive. Together these are known as <i>key</i>-<i>value</i> pairs. <important> The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>. </important>
     */
   @js.native
   trait TagCollection extends js.Object {
@@ -3029,6 +3498,7 @@ package object devopsguru {
     */
   @js.native
   trait TagHealth extends js.Object {
+    var AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount]
     var AppBoundaryKey: js.UndefOr[AppBoundaryKey]
     var Insight: js.UndefOr[InsightHealth]
     var TagValue: js.UndefOr[TagValue]
@@ -3037,11 +3507,13 @@ package object devopsguru {
   object TagHealth {
     @inline
     def apply(
+        AnalyzedResourceCount: js.UndefOr[AnalyzedResourceCount] = js.undefined,
         AppBoundaryKey: js.UndefOr[AppBoundaryKey] = js.undefined,
         Insight: js.UndefOr[InsightHealth] = js.undefined,
         TagValue: js.UndefOr[TagValue] = js.undefined
     ): TagHealth = {
       val __obj = js.Dynamic.literal()
+      AnalyzedResourceCount.foreach(__v => __obj.updateDynamic("AnalyzedResourceCount")(__v.asInstanceOf[js.Any]))
       AppBoundaryKey.foreach(__v => __obj.updateDynamic("AppBoundaryKey")(__v.asInstanceOf[js.Any]))
       Insight.foreach(__v => __obj.updateDynamic("Insight")(__v.asInstanceOf[js.Any]))
       TagValue.foreach(__v => __obj.updateDynamic("TagValue")(__v.asInstanceOf[js.Any]))
@@ -3085,6 +3557,33 @@ package object devopsguru {
       val __obj = js.Dynamic.literal()
       StackNames.foreach(__v => __obj.updateDynamic("StackNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCloudFormationCollectionFilter]
+    }
+  }
+
+  @js.native
+  trait UpdateEventSourcesConfigRequest extends js.Object {
+    var EventSources: js.UndefOr[EventSourcesConfig]
+  }
+
+  object UpdateEventSourcesConfigRequest {
+    @inline
+    def apply(
+        EventSources: js.UndefOr[EventSourcesConfig] = js.undefined
+    ): UpdateEventSourcesConfigRequest = {
+      val __obj = js.Dynamic.literal()
+      EventSources.foreach(__v => __obj.updateDynamic("EventSources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEventSourcesConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEventSourcesConfigResponse extends js.Object
+
+  object UpdateEventSourcesConfigResponse {
+    @inline
+    def apply(): UpdateEventSourcesConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateEventSourcesConfigResponse]
     }
   }
 
@@ -3144,15 +3643,18 @@ package object devopsguru {
     */
   @js.native
   trait UpdateServiceIntegrationConfig extends js.Object {
+    var LogsAnomalyDetection: js.UndefOr[LogsAnomalyDetectionIntegrationConfig]
     var OpsCenter: js.UndefOr[OpsCenterIntegrationConfig]
   }
 
   object UpdateServiceIntegrationConfig {
     @inline
     def apply(
+        LogsAnomalyDetection: js.UndefOr[LogsAnomalyDetectionIntegrationConfig] = js.undefined,
         OpsCenter: js.UndefOr[OpsCenterIntegrationConfig] = js.undefined
     ): UpdateServiceIntegrationConfig = {
       val __obj = js.Dynamic.literal()
+      LogsAnomalyDetection.foreach(__v => __obj.updateDynamic("LogsAnomalyDetection")(__v.asInstanceOf[js.Any]))
       OpsCenter.foreach(__v => __obj.updateDynamic("OpsCenter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceIntegrationConfig]
     }

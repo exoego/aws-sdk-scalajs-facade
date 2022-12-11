@@ -34,12 +34,21 @@ package object directoryservice {
   type ConnectPassword = String
   type ConnectedDirectoriesLimitReached = Boolean
   type CreateSnapshotBeforeSchemaExtension = Boolean
+  type CreateSnapshotBeforeUpdate = Boolean
   type CreatedDateTime = js.Date
   type CustomerId = String
   type CustomerUserName = String
   type DeleteAssociatedConditionalForwarder = Boolean
   type Description = String
   type DesiredNumberOfDomainControllers = Int
+  type DirectoryConfigurationSettingAllowedValues = String
+  type DirectoryConfigurationSettingLastRequestedDateTime = js.Date
+  type DirectoryConfigurationSettingLastUpdatedDateTime = js.Date
+  type DirectoryConfigurationSettingName = String
+  type DirectoryConfigurationSettingRequestDetailedStatus = js.Dictionary[DirectoryConfigurationStatus]
+  type DirectoryConfigurationSettingRequestStatusMessage = String
+  type DirectoryConfigurationSettingType = String
+  type DirectoryConfigurationSettingValue = String
   type DirectoryDescriptions = js.Array[DirectoryDescription]
   type DirectoryId = String
   type DirectoryIds = js.Array[DirectoryId]
@@ -52,6 +61,7 @@ package object directoryservice {
   type DomainControllers = js.Array[DomainController]
   type EndDateTime = js.Date
   type EventTopics = js.Array[EventTopic]
+  type InitiatedBy = String
   type IpAddr = String
   type IpAddrs = js.Array[IpAddr]
   type IpRouteStatusReason = String
@@ -90,6 +100,8 @@ package object directoryservice {
   type SecurityGroupId = String
   type Server = String
   type Servers = js.Array[Server]
+  type SettingEntries = js.Array[SettingEntry]
+  type Settings = js.Array[Setting]
   type SharedDirectories = js.Array[SharedDirectory]
   type SnapshotId = String
   type SnapshotIds = js.Array[SnapshotId]
@@ -116,7 +128,9 @@ package object directoryservice {
   type TrustPassword = String
   type TrustStateReason = String
   type Trusts = js.Array[Trust]
+  type UpdateActivities = js.Array[UpdateInfoEntry]
   type UpdateSecurityGroupForDirectoryControllers = Boolean
+  type UpdateStatusReason = String
   type UseSameUsername = Boolean
   type UserName = String
   type UserPassword = String
@@ -153,9 +167,11 @@ package object directoryservice {
     @inline def describeEventTopicsFuture(params: DescribeEventTopicsRequest): Future[DescribeEventTopicsResult] = service.describeEventTopics(params).promise().toFuture
     @inline def describeLDAPSSettingsFuture(params: DescribeLDAPSSettingsRequest): Future[DescribeLDAPSSettingsResult] = service.describeLDAPSSettings(params).promise().toFuture
     @inline def describeRegionsFuture(params: DescribeRegionsRequest): Future[DescribeRegionsResult] = service.describeRegions(params).promise().toFuture
+    @inline def describeSettingsFuture(params: DescribeSettingsRequest): Future[DescribeSettingsResult] = service.describeSettings(params).promise().toFuture
     @inline def describeSharedDirectoriesFuture(params: DescribeSharedDirectoriesRequest): Future[DescribeSharedDirectoriesResult] = service.describeSharedDirectories(params).promise().toFuture
     @inline def describeSnapshotsFuture(params: DescribeSnapshotsRequest): Future[DescribeSnapshotsResult] = service.describeSnapshots(params).promise().toFuture
     @inline def describeTrustsFuture(params: DescribeTrustsRequest): Future[DescribeTrustsResult] = service.describeTrusts(params).promise().toFuture
+    @inline def describeUpdateDirectoryFuture(params: DescribeUpdateDirectoryRequest): Future[DescribeUpdateDirectoryResult] = service.describeUpdateDirectory(params).promise().toFuture
     @inline def disableClientAuthenticationFuture(params: DisableClientAuthenticationRequest): Future[DisableClientAuthenticationResult] = service.disableClientAuthentication(params).promise().toFuture
     @inline def disableLDAPSFuture(params: DisableLDAPSRequest): Future[DisableLDAPSResult] = service.disableLDAPS(params).promise().toFuture
     @inline def disableRadiusFuture(params: DisableRadiusRequest): Future[DisableRadiusResult] = service.disableRadius(params).promise().toFuture
@@ -183,8 +199,10 @@ package object directoryservice {
     @inline def startSchemaExtensionFuture(params: StartSchemaExtensionRequest): Future[StartSchemaExtensionResult] = service.startSchemaExtension(params).promise().toFuture
     @inline def unshareDirectoryFuture(params: UnshareDirectoryRequest): Future[UnshareDirectoryResult] = service.unshareDirectory(params).promise().toFuture
     @inline def updateConditionalForwarderFuture(params: UpdateConditionalForwarderRequest): Future[UpdateConditionalForwarderResult] = service.updateConditionalForwarder(params).promise().toFuture
+    @inline def updateDirectorySetupFuture(params: UpdateDirectorySetupRequest): Future[UpdateDirectorySetupResult] = service.updateDirectorySetup(params).promise().toFuture
     @inline def updateNumberOfDomainControllersFuture(params: UpdateNumberOfDomainControllersRequest): Future[UpdateNumberOfDomainControllersResult] = service.updateNumberOfDomainControllers(params).promise().toFuture
     @inline def updateRadiusFuture(params: UpdateRadiusRequest): Future[UpdateRadiusResult] = service.updateRadius(params).promise().toFuture
+    @inline def updateSettingsFuture(params: UpdateSettingsRequest): Future[UpdateSettingsResult] = service.updateSettings(params).promise().toFuture
     @inline def updateTrustFuture(params: UpdateTrustRequest): Future[UpdateTrustResult] = service.updateTrust(params).promise().toFuture
     @inline def verifyTrustFuture(params: VerifyTrustRequest): Future[VerifyTrustResult] = service.verifyTrust(params).promise().toFuture
 
@@ -224,9 +242,11 @@ package object directoryservice {
     def describeEventTopics(params: DescribeEventTopicsRequest): Request[DescribeEventTopicsResult] = js.native
     def describeLDAPSSettings(params: DescribeLDAPSSettingsRequest): Request[DescribeLDAPSSettingsResult] = js.native
     def describeRegions(params: DescribeRegionsRequest): Request[DescribeRegionsResult] = js.native
+    def describeSettings(params: DescribeSettingsRequest): Request[DescribeSettingsResult] = js.native
     def describeSharedDirectories(params: DescribeSharedDirectoriesRequest): Request[DescribeSharedDirectoriesResult] = js.native
     def describeSnapshots(params: DescribeSnapshotsRequest): Request[DescribeSnapshotsResult] = js.native
     def describeTrusts(params: DescribeTrustsRequest): Request[DescribeTrustsResult] = js.native
+    def describeUpdateDirectory(params: DescribeUpdateDirectoryRequest): Request[DescribeUpdateDirectoryResult] = js.native
     def disableClientAuthentication(params: DisableClientAuthenticationRequest): Request[DisableClientAuthenticationResult] = js.native
     def disableLDAPS(params: DisableLDAPSRequest): Request[DisableLDAPSResult] = js.native
     def disableRadius(params: DisableRadiusRequest): Request[DisableRadiusResult] = js.native
@@ -254,8 +274,10 @@ package object directoryservice {
     def startSchemaExtension(params: StartSchemaExtensionRequest): Request[StartSchemaExtensionResult] = js.native
     def unshareDirectory(params: UnshareDirectoryRequest): Request[UnshareDirectoryResult] = js.native
     def updateConditionalForwarder(params: UpdateConditionalForwarderRequest): Request[UpdateConditionalForwarderResult] = js.native
+    def updateDirectorySetup(params: UpdateDirectorySetupRequest): Request[UpdateDirectorySetupResult] = js.native
     def updateNumberOfDomainControllers(params: UpdateNumberOfDomainControllersRequest): Request[UpdateNumberOfDomainControllersResult] = js.native
     def updateRadius(params: UpdateRadiusRequest): Request[UpdateRadiusResult] = js.native
+    def updateSettings(params: UpdateSettingsRequest): Request[UpdateSettingsResult] = js.native
     def updateTrust(params: UpdateTrustRequest): Request[UpdateTrustResult] = js.native
     def verifyTrust(params: VerifyTrustRequest): Request[VerifyTrustResult] = js.native
   }
@@ -1623,6 +1645,52 @@ package object directoryservice {
   }
 
   @js.native
+  trait DescribeSettingsRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var NextToken: js.UndefOr[NextToken]
+    var Status: js.UndefOr[DirectoryConfigurationStatus]
+  }
+
+  object DescribeSettingsRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Status: js.UndefOr[DirectoryConfigurationStatus] = js.undefined
+    ): DescribeSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeSettingsResult extends js.Object {
+    var DirectoryId: js.UndefOr[DirectoryId]
+    var NextToken: js.UndefOr[NextToken]
+    var SettingEntries: js.UndefOr[SettingEntries]
+  }
+
+  object DescribeSettingsResult {
+    @inline
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SettingEntries: js.UndefOr[SettingEntries] = js.undefined
+    ): DescribeSettingsResult = {
+      val __obj = js.Dynamic.literal()
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SettingEntries.foreach(__v => __obj.updateDynamic("SettingEntries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSettingsResult]
+    }
+  }
+
+  @js.native
   trait DescribeSharedDirectoriesRequest extends js.Object {
     var OwnerDirectoryId: DirectoryId
     var Limit: js.UndefOr[Limit]
@@ -1764,6 +1832,52 @@ package object directoryservice {
     }
   }
 
+  @js.native
+  trait DescribeUpdateDirectoryRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var UpdateType: UpdateType
+    var NextToken: js.UndefOr[NextToken]
+    var RegionName: js.UndefOr[RegionName]
+  }
+
+  object DescribeUpdateDirectoryRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        UpdateType: UpdateType,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RegionName: js.UndefOr[RegionName] = js.undefined
+    ): DescribeUpdateDirectoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "UpdateType" -> UpdateType.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUpdateDirectoryRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeUpdateDirectoryResult extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var UpdateActivities: js.UndefOr[UpdateActivities]
+  }
+
+  object DescribeUpdateDirectoryResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        UpdateActivities: js.UndefOr[UpdateActivities] = js.undefined
+    ): DescribeUpdateDirectoryResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UpdateActivities.foreach(__v => __obj.updateDynamic("UpdateActivities")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeUpdateDirectoryResult]
+    }
+  }
+
   /** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created.
     */
   @js.native
@@ -1839,6 +1953,7 @@ package object directoryservice {
     var Edition: js.UndefOr[DirectoryEdition]
     var LaunchTime: js.UndefOr[LaunchTime]
     var Name: js.UndefOr[DirectoryName]
+    var OsVersion: js.UndefOr[OSVersion]
     var OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription]
     var RadiusSettings: js.UndefOr[RadiusSettings]
     var RadiusStatus: js.UndefOr[RadiusStatus]
@@ -1869,6 +1984,7 @@ package object directoryservice {
         Edition: js.UndefOr[DirectoryEdition] = js.undefined,
         LaunchTime: js.UndefOr[LaunchTime] = js.undefined,
         Name: js.UndefOr[DirectoryName] = js.undefined,
+        OsVersion: js.UndefOr[OSVersion] = js.undefined,
         OwnerDirectoryDescription: js.UndefOr[OwnerDirectoryDescription] = js.undefined,
         RadiusSettings: js.UndefOr[RadiusSettings] = js.undefined,
         RadiusStatus: js.UndefOr[RadiusStatus] = js.undefined,
@@ -1896,6 +2012,7 @@ package object directoryservice {
       Edition.foreach(__v => __obj.updateDynamic("Edition")(__v.asInstanceOf[js.Any]))
       LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OsVersion.foreach(__v => __obj.updateDynamic("OsVersion")(__v.asInstanceOf[js.Any]))
       OwnerDirectoryDescription.foreach(__v => __obj.updateDynamic("OwnerDirectoryDescription")(__v.asInstanceOf[js.Any]))
       RadiusSettings.foreach(__v => __obj.updateDynamic("RadiusSettings")(__v.asInstanceOf[js.Any]))
       RadiusStatus.foreach(__v => __obj.updateDynamic("RadiusStatus")(__v.asInstanceOf[js.Any]))
@@ -2733,6 +2850,24 @@ package object directoryservice {
     }
   }
 
+  /** OS version that the directory needs to be updated to.
+    */
+  @js.native
+  trait OSUpdateSettings extends js.Object {
+    var OSVersion: js.UndefOr[OSVersion]
+  }
+
+  object OSUpdateSettings {
+    @inline
+    def apply(
+        OSVersion: js.UndefOr[OSVersion] = js.undefined
+    ): OSUpdateSettings = {
+      val __obj = js.Dynamic.literal()
+      OSVersion.foreach(__v => __obj.updateDynamic("OSVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OSUpdateSettings]
+    }
+  }
+
   /** Describes the directory owner account details that have been shared to the directory consumer account.
     */
   @js.native
@@ -3171,6 +3306,73 @@ package object directoryservice {
     }
   }
 
+  /** Contains information about the configurable settings for a directory.
+    */
+  @js.native
+  trait Setting extends js.Object {
+    var Name: DirectoryConfigurationSettingName
+    var Value: DirectoryConfigurationSettingValue
+  }
+
+  object Setting {
+    @inline
+    def apply(
+        Name: DirectoryConfigurationSettingName,
+        Value: DirectoryConfigurationSettingValue
+    ): Setting = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Setting]
+    }
+  }
+
+  /** Contains information about the specified configurable setting for a directory.
+    */
+  @js.native
+  trait SettingEntry extends js.Object {
+    var AllowedValues: js.UndefOr[DirectoryConfigurationSettingAllowedValues]
+    var AppliedValue: js.UndefOr[DirectoryConfigurationSettingValue]
+    var LastRequestedDateTime: js.UndefOr[DirectoryConfigurationSettingLastRequestedDateTime]
+    var LastUpdatedDateTime: js.UndefOr[DirectoryConfigurationSettingLastUpdatedDateTime]
+    var Name: js.UndefOr[DirectoryConfigurationSettingName]
+    var RequestDetailedStatus: js.UndefOr[DirectoryConfigurationSettingRequestDetailedStatus]
+    var RequestStatus: js.UndefOr[DirectoryConfigurationStatus]
+    var RequestStatusMessage: js.UndefOr[DirectoryConfigurationSettingRequestStatusMessage]
+    var RequestedValue: js.UndefOr[DirectoryConfigurationSettingValue]
+    var Type: js.UndefOr[DirectoryConfigurationSettingType]
+  }
+
+  object SettingEntry {
+    @inline
+    def apply(
+        AllowedValues: js.UndefOr[DirectoryConfigurationSettingAllowedValues] = js.undefined,
+        AppliedValue: js.UndefOr[DirectoryConfigurationSettingValue] = js.undefined,
+        LastRequestedDateTime: js.UndefOr[DirectoryConfigurationSettingLastRequestedDateTime] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[DirectoryConfigurationSettingLastUpdatedDateTime] = js.undefined,
+        Name: js.UndefOr[DirectoryConfigurationSettingName] = js.undefined,
+        RequestDetailedStatus: js.UndefOr[DirectoryConfigurationSettingRequestDetailedStatus] = js.undefined,
+        RequestStatus: js.UndefOr[DirectoryConfigurationStatus] = js.undefined,
+        RequestStatusMessage: js.UndefOr[DirectoryConfigurationSettingRequestStatusMessage] = js.undefined,
+        RequestedValue: js.UndefOr[DirectoryConfigurationSettingValue] = js.undefined,
+        Type: js.UndefOr[DirectoryConfigurationSettingType] = js.undefined
+    ): SettingEntry = {
+      val __obj = js.Dynamic.literal()
+      AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
+      AppliedValue.foreach(__v => __obj.updateDynamic("AppliedValue")(__v.asInstanceOf[js.Any]))
+      LastRequestedDateTime.foreach(__v => __obj.updateDynamic("LastRequestedDateTime")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDateTime.foreach(__v => __obj.updateDynamic("LastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestDetailedStatus.foreach(__v => __obj.updateDynamic("RequestDetailedStatus")(__v.asInstanceOf[js.Any]))
+      RequestStatus.foreach(__v => __obj.updateDynamic("RequestStatus")(__v.asInstanceOf[js.Any]))
+      RequestStatusMessage.foreach(__v => __obj.updateDynamic("RequestStatusMessage")(__v.asInstanceOf[js.Any]))
+      RequestedValue.foreach(__v => __obj.updateDynamic("RequestedValue")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SettingEntry]
+    }
+  }
+
   @js.native
   trait ShareDirectoryRequest extends js.Object {
     var DirectoryId: DirectoryId
@@ -3544,6 +3746,83 @@ package object directoryservice {
   }
 
   @js.native
+  trait UpdateDirectorySetupRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var UpdateType: UpdateType
+    var CreateSnapshotBeforeUpdate: js.UndefOr[CreateSnapshotBeforeUpdate]
+    var OSUpdateSettings: js.UndefOr[OSUpdateSettings]
+  }
+
+  object UpdateDirectorySetupRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        UpdateType: UpdateType,
+        CreateSnapshotBeforeUpdate: js.UndefOr[CreateSnapshotBeforeUpdate] = js.undefined,
+        OSUpdateSettings: js.UndefOr[OSUpdateSettings] = js.undefined
+    ): UpdateDirectorySetupRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "UpdateType" -> UpdateType.asInstanceOf[js.Any]
+      )
+
+      CreateSnapshotBeforeUpdate.foreach(__v => __obj.updateDynamic("CreateSnapshotBeforeUpdate")(__v.asInstanceOf[js.Any]))
+      OSUpdateSettings.foreach(__v => __obj.updateDynamic("OSUpdateSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDirectorySetupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDirectorySetupResult extends js.Object
+
+  object UpdateDirectorySetupResult {
+    @inline
+    def apply(): UpdateDirectorySetupResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateDirectorySetupResult]
+    }
+  }
+
+  /** An entry of update information related to a requested update type.
+    */
+  @js.native
+  trait UpdateInfoEntry extends js.Object {
+    var InitiatedBy: js.UndefOr[InitiatedBy]
+    var LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime]
+    var NewValue: js.UndefOr[UpdateValue]
+    var PreviousValue: js.UndefOr[UpdateValue]
+    var Region: js.UndefOr[RegionName]
+    var StartTime: js.UndefOr[StartDateTime]
+    var Status: js.UndefOr[UpdateStatus]
+    var StatusReason: js.UndefOr[UpdateStatusReason]
+  }
+
+  object UpdateInfoEntry {
+    @inline
+    def apply(
+        InitiatedBy: js.UndefOr[InitiatedBy] = js.undefined,
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        NewValue: js.UndefOr[UpdateValue] = js.undefined,
+        PreviousValue: js.UndefOr[UpdateValue] = js.undefined,
+        Region: js.UndefOr[RegionName] = js.undefined,
+        StartTime: js.UndefOr[StartDateTime] = js.undefined,
+        Status: js.UndefOr[UpdateStatus] = js.undefined,
+        StatusReason: js.UndefOr[UpdateStatusReason] = js.undefined
+    ): UpdateInfoEntry = {
+      val __obj = js.Dynamic.literal()
+      InitiatedBy.foreach(__v => __obj.updateDynamic("InitiatedBy")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDateTime.foreach(__v => __obj.updateDynamic("LastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      NewValue.foreach(__v => __obj.updateDynamic("NewValue")(__v.asInstanceOf[js.Any]))
+      PreviousValue.foreach(__v => __obj.updateDynamic("PreviousValue")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInfoEntry]
+    }
+  }
+
+  @js.native
   trait UpdateNumberOfDomainControllersRequest extends js.Object {
     var DesiredNumber: DesiredNumberOfDomainControllers
     var DirectoryId: DirectoryId
@@ -3610,6 +3889,42 @@ package object directoryservice {
   }
 
   @js.native
+  trait UpdateSettingsRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Settings: Settings
+  }
+
+  object UpdateSettingsRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Settings: Settings
+    ): UpdateSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
+        "Settings" -> Settings.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSettingsResult extends js.Object {
+    var DirectoryId: js.UndefOr[DirectoryId]
+  }
+
+  object UpdateSettingsResult {
+    @inline
+    def apply(
+        DirectoryId: js.UndefOr[DirectoryId] = js.undefined
+    ): UpdateSettingsResult = {
+      val __obj = js.Dynamic.literal()
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSettingsResult]
+    }
+  }
+
+  @js.native
   trait UpdateTrustRequest extends js.Object {
     var TrustId: TrustId
     var SelectiveAuth: js.UndefOr[SelectiveAuth]
@@ -3646,6 +3961,24 @@ package object directoryservice {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       TrustId.foreach(__v => __obj.updateDynamic("TrustId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTrustResult]
+    }
+  }
+
+  /** The value for a given type of <code>UpdateSettings</code>.
+    */
+  @js.native
+  trait UpdateValue extends js.Object {
+    var OSUpdateSettings: js.UndefOr[OSUpdateSettings]
+  }
+
+  object UpdateValue {
+    @inline
+    def apply(
+        OSUpdateSettings: js.UndefOr[OSUpdateSettings] = js.undefined
+    ): UpdateValue = {
+      val __obj = js.Dynamic.literal()
+      OSUpdateSettings.foreach(__v => __obj.updateDynamic("OSUpdateSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateValue]
     }
   }
 

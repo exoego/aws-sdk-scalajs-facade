@@ -20,8 +20,11 @@ object ItemType {
   val PARENT = "PARENT".asInstanceOf[ItemType]
   val ATTACHMENT = "ATTACHMENT".asInstanceOf[ItemType]
   val OTHER = "OTHER".asInstanceOf[ItemType]
+  val AUTOMATION = "AUTOMATION".asInstanceOf[ItemType]
+  val INVOLVED_RESOURCE = "INVOLVED_RESOURCE".asInstanceOf[ItemType]
+  val TASK = "TASK".asInstanceOf[ItemType]
 
-  @inline def values: js.Array[ItemType] = js.Array(ANALYSIS, INCIDENT, METRIC, PARENT, ATTACHMENT, OTHER)
+  @inline def values: js.Array[ItemType] = js.Array(ANALYSIS, INCIDENT, METRIC, PARENT, ATTACHMENT, OTHER, AUTOMATION, INVOLVED_RESOURCE, TASK)
 }
 
 @js.native
@@ -71,4 +74,13 @@ object TimelineEventSort {
   val EVENT_TIME = "EVENT_TIME".asInstanceOf[TimelineEventSort]
 
   @inline def values: js.Array[TimelineEventSort] = js.Array(EVENT_TIME)
+}
+
+@js.native
+sealed trait VariableType extends js.Any
+object VariableType {
+  val INCIDENT_RECORD_ARN = "INCIDENT_RECORD_ARN".asInstanceOf[VariableType]
+  val INVOLVED_RESOURCES = "INVOLVED_RESOURCES".asInstanceOf[VariableType]
+
+  @inline def values: js.Array[VariableType] = js.Array(INCIDENT_RECORD_ARN, INVOLVED_RESOURCES)
 }

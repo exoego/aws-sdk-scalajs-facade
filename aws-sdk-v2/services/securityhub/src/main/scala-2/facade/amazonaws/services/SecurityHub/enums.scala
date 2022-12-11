@@ -12,6 +12,15 @@ object AdminStatus {
 }
 
 @js.native
+sealed trait AutoEnableStandards extends js.Any
+object AutoEnableStandards {
+  val NONE = "NONE".asInstanceOf[AutoEnableStandards]
+  val DEFAULT = "DEFAULT".asInstanceOf[AutoEnableStandards]
+
+  @inline def values: js.Array[AutoEnableStandards] = js.Array(NONE, DEFAULT)
+}
+
+@js.native
 sealed trait AwsIamAccessKeyStatus extends js.Any
 object AwsIamAccessKeyStatus {
   val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
@@ -256,6 +265,16 @@ object VerificationState {
   val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
   @inline def values: js.Array[VerificationState] = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
+}
+
+@js.native
+sealed trait VulnerabilityFixAvailable extends js.Any
+object VulnerabilityFixAvailable {
+  val YES = "YES".asInstanceOf[VulnerabilityFixAvailable]
+  val NO = "NO".asInstanceOf[VulnerabilityFixAvailable]
+  val PARTIAL = "PARTIAL".asInstanceOf[VulnerabilityFixAvailable]
+
+  @inline def values: js.Array[VulnerabilityFixAvailable] = js.Array(YES, NO, PARTIAL)
 }
 
 @deprecated("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.", "forever")

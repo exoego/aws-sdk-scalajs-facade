@@ -369,7 +369,7 @@ object DocumentStatus {
   inline def values: js.Array[DocumentStatus] = js.Array(Creating, Active, Updating, Deleting, Failed)
 }
 
-type DocumentType = "Command" | "Policy" | "Automation" | "Session" | "Package" | "ApplicationConfiguration" | "ApplicationConfigurationSchema" | "DeploymentStrategy" | "ChangeCalendar" | "Automation.ChangeTemplate" | "ProblemAnalysis" | "ProblemAnalysisTemplate"
+type DocumentType = "Command" | "Policy" | "Automation" | "Session" | "Package" | "ApplicationConfiguration" | "ApplicationConfigurationSchema" | "DeploymentStrategy" | "ChangeCalendar" | "Automation.ChangeTemplate" | "ProblemAnalysis" | "ProblemAnalysisTemplate" | "CloudFormation" | "ConformancePackTemplate"
 object DocumentType {
   inline val Command: "Command" = "Command"
   inline val Policy: "Policy" = "Policy"
@@ -383,6 +383,8 @@ object DocumentType {
   inline val `Automation.ChangeTemplate`: "Automation.ChangeTemplate" = "Automation.ChangeTemplate"
   inline val ProblemAnalysis: "ProblemAnalysis" = "ProblemAnalysis"
   inline val ProblemAnalysisTemplate: "ProblemAnalysisTemplate" = "ProblemAnalysisTemplate"
+  inline val CloudFormation: "CloudFormation" = "CloudFormation"
+  inline val ConformancePackTemplate: "ConformancePackTemplate" = "ConformancePackTemplate"
 
   inline def values: js.Array[DocumentType] = js.Array(
     Command,
@@ -396,7 +398,9 @@ object DocumentType {
     ChangeCalendar,
     `Automation.ChangeTemplate`,
     ProblemAnalysis,
-    ProblemAnalysisTemplate
+    ProblemAnalysisTemplate,
+    CloudFormation,
+    ConformancePackTemplate
   )
 }
 
@@ -406,6 +410,14 @@ object ExecutionMode {
   inline val Interactive: "Interactive" = "Interactive"
 
   inline def values: js.Array[ExecutionMode] = js.Array(Auto, Interactive)
+}
+
+type ExternalAlarmState = "UNKNOWN" | "ALARM"
+object ExternalAlarmState {
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val ALARM: "ALARM" = "ALARM"
+
+  inline def values: js.Array[ExternalAlarmState] = js.Array(UNKNOWN, ALARM)
 }
 
 type Fault = "Client" | "Server" | "Unknown"
@@ -546,11 +558,12 @@ object NotificationType {
   inline def values: js.Array[NotificationType] = js.Array(Command, Invocation)
 }
 
-type OperatingSystem = "WINDOWS" | "AMAZON_LINUX" | "AMAZON_LINUX_2" | "UBUNTU" | "REDHAT_ENTERPRISE_LINUX" | "SUSE" | "CENTOS" | "ORACLE_LINUX" | "DEBIAN" | "MACOS" | "RASPBIAN"
+type OperatingSystem = "WINDOWS" | "AMAZON_LINUX" | "AMAZON_LINUX_2" | "AMAZON_LINUX_2022" | "UBUNTU" | "REDHAT_ENTERPRISE_LINUX" | "SUSE" | "CENTOS" | "ORACLE_LINUX" | "DEBIAN" | "MACOS" | "RASPBIAN" | "ROCKY_LINUX"
 object OperatingSystem {
   inline val WINDOWS: "WINDOWS" = "WINDOWS"
   inline val AMAZON_LINUX: "AMAZON_LINUX" = "AMAZON_LINUX"
   inline val AMAZON_LINUX_2: "AMAZON_LINUX_2" = "AMAZON_LINUX_2"
+  inline val AMAZON_LINUX_2022: "AMAZON_LINUX_2022" = "AMAZON_LINUX_2022"
   inline val UBUNTU: "UBUNTU" = "UBUNTU"
   inline val REDHAT_ENTERPRISE_LINUX: "REDHAT_ENTERPRISE_LINUX" = "REDHAT_ENTERPRISE_LINUX"
   inline val SUSE: "SUSE" = "SUSE"
@@ -559,8 +572,9 @@ object OperatingSystem {
   inline val DEBIAN: "DEBIAN" = "DEBIAN"
   inline val MACOS: "MACOS" = "MACOS"
   inline val RASPBIAN: "RASPBIAN" = "RASPBIAN"
+  inline val ROCKY_LINUX: "ROCKY_LINUX" = "ROCKY_LINUX"
 
-  inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN)
+  inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, AMAZON_LINUX_2022, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN, ROCKY_LINUX)
 }
 
 type OpsFilterOperatorType = "Equal" | "NotEqual" | "BeginWith" | "LessThan" | "GreaterThan" | "Exists"
@@ -597,7 +611,7 @@ object OpsItemEventFilterOperator {
   inline def values: js.Array[OpsItemEventFilterOperator] = js.Array(Equal)
 }
 
-type OpsItemFilterKey = "Status" | "CreatedBy" | "Source" | "Priority" | "Title" | "OpsItemId" | "CreatedTime" | "LastModifiedTime" | "ActualStartTime" | "ActualEndTime" | "PlannedStartTime" | "PlannedEndTime" | "OperationalData" | "OperationalDataKey" | "OperationalDataValue" | "ResourceId" | "AutomationId" | "Category" | "Severity" | "OpsItemType" | "ChangeRequestByRequesterArn" | "ChangeRequestByRequesterName" | "ChangeRequestByApproverArn" | "ChangeRequestByApproverName" | "ChangeRequestByTemplate" | "ChangeRequestByTargetsResourceGroup" | "InsightByType"
+type OpsItemFilterKey = "Status" | "CreatedBy" | "Source" | "Priority" | "Title" | "OpsItemId" | "CreatedTime" | "LastModifiedTime" | "ActualStartTime" | "ActualEndTime" | "PlannedStartTime" | "PlannedEndTime" | "OperationalData" | "OperationalDataKey" | "OperationalDataValue" | "ResourceId" | "AutomationId" | "Category" | "Severity" | "OpsItemType" | "ChangeRequestByRequesterArn" | "ChangeRequestByRequesterName" | "ChangeRequestByApproverArn" | "ChangeRequestByApproverName" | "ChangeRequestByTemplate" | "ChangeRequestByTargetsResourceGroup" | "InsightByType" | "AccountId"
 object OpsItemFilterKey {
   inline val Status: "Status" = "Status"
   inline val CreatedBy: "CreatedBy" = "CreatedBy"
@@ -626,6 +640,7 @@ object OpsItemFilterKey {
   inline val ChangeRequestByTemplate: "ChangeRequestByTemplate" = "ChangeRequestByTemplate"
   inline val ChangeRequestByTargetsResourceGroup: "ChangeRequestByTargetsResourceGroup" = "ChangeRequestByTargetsResourceGroup"
   inline val InsightByType: "InsightByType" = "InsightByType"
+  inline val AccountId: "AccountId" = "AccountId"
 
   inline def values: js.Array[OpsItemFilterKey] = js.Array(
     Status,
@@ -654,7 +669,8 @@ object OpsItemFilterKey {
     ChangeRequestByApproverName,
     ChangeRequestByTemplate,
     ChangeRequestByTargetsResourceGroup,
-    InsightByType
+    InsightByType,
+    AccountId
   )
 }
 
@@ -914,7 +930,7 @@ object ResourceType {
   inline def values: js.Array[ResourceType] = js.Array(ManagedInstance, Document, EC2Instance)
 }
 
-type ResourceTypeForTagging = "Document" | "ManagedInstance" | "MaintenanceWindow" | "Parameter" | "PatchBaseline" | "OpsItem" | "OpsMetadata"
+type ResourceTypeForTagging = "Document" | "ManagedInstance" | "MaintenanceWindow" | "Parameter" | "PatchBaseline" | "OpsItem" | "OpsMetadata" | "Automation" | "Association"
 object ResourceTypeForTagging {
   inline val Document: "Document" = "Document"
   inline val ManagedInstance: "ManagedInstance" = "ManagedInstance"
@@ -923,8 +939,10 @@ object ResourceTypeForTagging {
   inline val PatchBaseline: "PatchBaseline" = "PatchBaseline"
   inline val OpsItem: "OpsItem" = "OpsItem"
   inline val OpsMetadata: "OpsMetadata" = "OpsMetadata"
+  inline val Automation: "Automation" = "Automation"
+  inline val Association: "Association" = "Association"
 
-  inline def values: js.Array[ResourceTypeForTagging] = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata)
+  inline def values: js.Array[ResourceTypeForTagging] = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata, Automation, Association)
 }
 
 type ReviewStatus = "APPROVED" | "NOT_REVIEWED" | "PENDING" | "REJECTED"

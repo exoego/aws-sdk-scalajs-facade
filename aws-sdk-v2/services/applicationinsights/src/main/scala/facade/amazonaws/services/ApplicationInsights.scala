@@ -285,6 +285,7 @@ package object applicationinsights {
     var AutoConfigEnabled: js.UndefOr[AutoConfigEnabled]
     var AutoCreate: js.UndefOr[AutoCreate]
     var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
+    var GroupingType: js.UndefOr[GroupingType]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
@@ -297,6 +298,7 @@ package object applicationinsights {
         AutoConfigEnabled: js.UndefOr[AutoConfigEnabled] = js.undefined,
         AutoCreate: js.UndefOr[AutoCreate] = js.undefined,
         CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
+        GroupingType: js.UndefOr[GroupingType] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
         ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
@@ -306,6 +308,7 @@ package object applicationinsights {
       AutoConfigEnabled.foreach(__v => __obj.updateDynamic("AutoConfigEnabled")(__v.asInstanceOf[js.Any]))
       AutoCreate.foreach(__v => __obj.updateDynamic("AutoCreate")(__v.asInstanceOf[js.Any]))
       CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
+      GroupingType.foreach(__v => __obj.updateDynamic("GroupingType")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
       ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))

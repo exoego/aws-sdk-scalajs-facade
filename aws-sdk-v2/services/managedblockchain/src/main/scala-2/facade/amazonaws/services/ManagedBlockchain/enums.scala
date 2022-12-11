@@ -3,6 +3,24 @@ package facade.amazonaws.services.managedblockchain
 import scalajs.js
 
 @js.native
+sealed trait AccessorStatus extends js.Any
+object AccessorStatus {
+  val AVAILABLE = "AVAILABLE".asInstanceOf[AccessorStatus]
+  val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[AccessorStatus]
+  val DELETED = "DELETED".asInstanceOf[AccessorStatus]
+
+  @inline def values: js.Array[AccessorStatus] = js.Array(AVAILABLE, PENDING_DELETION, DELETED)
+}
+
+@js.native
+sealed trait AccessorType extends js.Any
+object AccessorType {
+  val BILLING_TOKEN = "BILLING_TOKEN".asInstanceOf[AccessorType]
+
+  @inline def values: js.Array[AccessorType] = js.Array(BILLING_TOKEN)
+}
+
+@js.native
 sealed trait Edition extends js.Any
 object Edition {
   val STARTER = "STARTER".asInstanceOf[Edition]

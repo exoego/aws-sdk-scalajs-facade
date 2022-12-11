@@ -112,6 +112,25 @@ object EC2InstanceState {
 }
 
 @js.native
+sealed trait ExtensionStatus extends js.Any
+object ExtensionStatus {
+  val EXTENDED = "EXTENDED".asInstanceOf[ExtensionStatus]
+  val EXTENSION_ERROR = "EXTENSION_ERROR".asInstanceOf[ExtensionStatus]
+  val NOT_EXTENDED = "NOT_EXTENDED".asInstanceOf[ExtensionStatus]
+
+  @inline def values: js.Array[ExtensionStatus] = js.Array(EXTENDED, EXTENSION_ERROR, NOT_EXTENDED)
+}
+
+@js.native
+sealed trait FailbackLaunchType extends js.Any
+object FailbackLaunchType {
+  val RECOVERY = "RECOVERY".asInstanceOf[FailbackLaunchType]
+  val DRILL = "DRILL".asInstanceOf[FailbackLaunchType]
+
+  @inline def values: js.Array[FailbackLaunchType] = js.Array(RECOVERY, DRILL)
+}
+
+@js.native
 sealed trait FailbackReplicationError extends js.Any
 object FailbackReplicationError {
   val AGENT_NOT_SEEN = "AGENT_NOT_SEEN".asInstanceOf[FailbackReplicationError]
@@ -123,6 +142,18 @@ object FailbackReplicationError {
   val FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE = "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE".asInstanceOf[FailbackReplicationError]
   val FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE = "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE".asInstanceOf[FailbackReplicationError]
   val FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION = "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION".asInstanceOf[FailbackReplicationError]
+  val FAILED_GETTING_REPLICATION_STATE = "FAILED_GETTING_REPLICATION_STATE".asInstanceOf[FailbackReplicationError]
+  val SNAPSHOTS_FAILURE = "SNAPSHOTS_FAILURE".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_CREATE_SECURITY_GROUP = "FAILED_TO_CREATE_SECURITY_GROUP".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_LAUNCH_REPLICATION_SERVER = "FAILED_TO_LAUNCH_REPLICATION_SERVER".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_BOOT_REPLICATION_SERVER = "FAILED_TO_BOOT_REPLICATION_SERVER".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_AUTHENTICATE_WITH_SERVICE = "FAILED_TO_AUTHENTICATE_WITH_SERVICE".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE = "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_CREATE_STAGING_DISKS = "FAILED_TO_CREATE_STAGING_DISKS".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_ATTACH_STAGING_DISKS = "FAILED_TO_ATTACH_STAGING_DISKS".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT = "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER".asInstanceOf[FailbackReplicationError]
+  val FAILED_TO_START_DATA_TRANSFER = "FAILED_TO_START_DATA_TRANSFER".asInstanceOf[FailbackReplicationError]
 
   @inline def values: js.Array[FailbackReplicationError] = js.Array(
     AGENT_NOT_SEEN,
@@ -133,7 +164,19 @@ object FailbackReplicationError {
     FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT,
     FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE,
     FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE,
-    FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION
+    FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION,
+    FAILED_GETTING_REPLICATION_STATE,
+    SNAPSHOTS_FAILURE,
+    FAILED_TO_CREATE_SECURITY_GROUP,
+    FAILED_TO_LAUNCH_REPLICATION_SERVER,
+    FAILED_TO_BOOT_REPLICATION_SERVER,
+    FAILED_TO_AUTHENTICATE_WITH_SERVICE,
+    FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE,
+    FAILED_TO_CREATE_STAGING_DISKS,
+    FAILED_TO_ATTACH_STAGING_DISKS,
+    FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT,
+    FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER,
+    FAILED_TO_START_DATA_TRANSFER
   )
 }
 
@@ -145,8 +188,18 @@ object FailbackState {
   val FAILBACK_READY_FOR_LAUNCH = "FAILBACK_READY_FOR_LAUNCH".asInstanceOf[FailbackState]
   val FAILBACK_COMPLETED = "FAILBACK_COMPLETED".asInstanceOf[FailbackState]
   val FAILBACK_ERROR = "FAILBACK_ERROR".asInstanceOf[FailbackState]
+  val FAILBACK_NOT_READY_FOR_LAUNCH = "FAILBACK_NOT_READY_FOR_LAUNCH".asInstanceOf[FailbackState]
+  val FAILBACK_LAUNCH_STATE_NOT_AVAILABLE = "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE".asInstanceOf[FailbackState]
 
-  @inline def values: js.Array[FailbackState] = js.Array(FAILBACK_NOT_STARTED, FAILBACK_IN_PROGRESS, FAILBACK_READY_FOR_LAUNCH, FAILBACK_COMPLETED, FAILBACK_ERROR)
+  @inline def values: js.Array[FailbackState] = js.Array(
+    FAILBACK_NOT_STARTED,
+    FAILBACK_IN_PROGRESS,
+    FAILBACK_READY_FOR_LAUNCH,
+    FAILBACK_COMPLETED,
+    FAILBACK_ERROR,
+    FAILBACK_NOT_READY_FOR_LAUNCH,
+    FAILBACK_LAUNCH_STATE_NOT_AVAILABLE
+  )
 }
 
 @js.native
@@ -157,8 +210,9 @@ object InitiatedBy {
   val FAILBACK = "FAILBACK".asInstanceOf[InitiatedBy]
   val DIAGNOSTIC = "DIAGNOSTIC".asInstanceOf[InitiatedBy]
   val TERMINATE_RECOVERY_INSTANCES = "TERMINATE_RECOVERY_INSTANCES".asInstanceOf[InitiatedBy]
+  val TARGET_ACCOUNT = "TARGET_ACCOUNT".asInstanceOf[InitiatedBy]
 
-  @inline def values: js.Array[InitiatedBy] = js.Array(START_RECOVERY, START_DRILL, FAILBACK, DIAGNOSTIC, TERMINATE_RECOVERY_INSTANCES)
+  @inline def values: js.Array[InitiatedBy] = js.Array(START_RECOVERY, START_DRILL, FAILBACK, DIAGNOSTIC, TERMINATE_RECOVERY_INSTANCES, TARGET_ACCOUNT)
 }
 
 @js.native
@@ -218,8 +272,9 @@ sealed trait JobType extends js.Any
 object JobType {
   val LAUNCH = "LAUNCH".asInstanceOf[JobType]
   val TERMINATE = "TERMINATE".asInstanceOf[JobType]
+  val CREATE_CONVERTED_SNAPSHOT = "CREATE_CONVERTED_SNAPSHOT".asInstanceOf[JobType]
 
-  @inline def values: js.Array[JobType] = js.Array(LAUNCH, TERMINATE)
+  @inline def values: js.Array[JobType] = js.Array(LAUNCH, TERMINATE, CREATE_CONVERTED_SNAPSHOT)
 }
 
 @js.native
@@ -264,6 +319,15 @@ object LaunchStatus {
 }
 
 @js.native
+sealed trait OriginEnvironment extends js.Any
+object OriginEnvironment {
+  val ON_PREMISES = "ON_PREMISES".asInstanceOf[OriginEnvironment]
+  val AWS = "AWS".asInstanceOf[OriginEnvironment]
+
+  @inline def values: js.Array[OriginEnvironment] = js.Array(ON_PREMISES, AWS)
+}
+
+@js.native
 sealed trait PITPolicyRuleUnits extends js.Any
 object PITPolicyRuleUnits {
   val MINUTE = "MINUTE".asInstanceOf[PITPolicyRuleUnits]
@@ -283,6 +347,17 @@ object RecoveryInstanceDataReplicationInitiationStepName {
   val CONFIGURE_REPLICATION_SOFTWARE = "CONFIGURE_REPLICATION_SOFTWARE".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
   val PAIR_AGENT_WITH_REPLICATION_SOFTWARE = "PAIR_AGENT_WITH_REPLICATION_SOFTWARE".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
   val ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION = "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val WAIT = "WAIT".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val CREATE_SECURITY_GROUP = "CREATE_SECURITY_GROUP".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val LAUNCH_REPLICATION_SERVER = "LAUNCH_REPLICATION_SERVER".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val BOOT_REPLICATION_SERVER = "BOOT_REPLICATION_SERVER".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val AUTHENTICATE_WITH_SERVICE = "AUTHENTICATE_WITH_SERVICE".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val DOWNLOAD_REPLICATION_SOFTWARE = "DOWNLOAD_REPLICATION_SOFTWARE".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val CREATE_STAGING_DISKS = "CREATE_STAGING_DISKS".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val ATTACH_STAGING_DISKS = "ATTACH_STAGING_DISKS".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val PAIR_REPLICATION_SERVER_WITH_AGENT = "PAIR_REPLICATION_SERVER_WITH_AGENT".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val CONNECT_AGENT_TO_REPLICATION_SERVER = "CONNECT_AGENT_TO_REPLICATION_SERVER".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
+  val START_DATA_TRANSFER = "START_DATA_TRANSFER".asInstanceOf[RecoveryInstanceDataReplicationInitiationStepName]
 
   @inline def values: js.Array[RecoveryInstanceDataReplicationInitiationStepName] = js.Array(
     LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE,
@@ -291,7 +366,18 @@ object RecoveryInstanceDataReplicationInitiationStepName {
     DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT,
     CONFIGURE_REPLICATION_SOFTWARE,
     PAIR_AGENT_WITH_REPLICATION_SOFTWARE,
-    ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION
+    ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION,
+    WAIT,
+    CREATE_SECURITY_GROUP,
+    LAUNCH_REPLICATION_SERVER,
+    BOOT_REPLICATION_SERVER,
+    AUTHENTICATE_WITH_SERVICE,
+    DOWNLOAD_REPLICATION_SOFTWARE,
+    CREATE_STAGING_DISKS,
+    ATTACH_STAGING_DISKS,
+    PAIR_REPLICATION_SERVER_WITH_AGENT,
+    CONNECT_AGENT_TO_REPLICATION_SERVER,
+    START_DATA_TRANSFER
   )
 }
 
@@ -320,8 +406,10 @@ object RecoveryInstanceDataReplicationState {
   val RESCAN = "RESCAN".asInstanceOf[RecoveryInstanceDataReplicationState]
   val STALLED = "STALLED".asInstanceOf[RecoveryInstanceDataReplicationState]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[RecoveryInstanceDataReplicationState]
+  val REPLICATION_STATE_NOT_AVAILABLE = "REPLICATION_STATE_NOT_AVAILABLE".asInstanceOf[RecoveryInstanceDataReplicationState]
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[RecoveryInstanceDataReplicationState]
 
-  @inline def values: js.Array[RecoveryInstanceDataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED)
+  @inline def values: js.Array[RecoveryInstanceDataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED, REPLICATION_STATE_NOT_AVAILABLE, NOT_STARTED)
 }
 
 @js.native
@@ -348,8 +436,9 @@ object ReplicationConfigurationDefaultLargeStagingDiskType {
   val GP2 = "GP2".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
   val GP3 = "GP3".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
   val ST1 = "ST1".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
+  val AUTO = "AUTO".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
 
-  @inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, GP3, ST1)
+  @inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, GP3, ST1, AUTO)
 }
 
 @js.native
@@ -373,6 +462,17 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   val STANDARD = "STANDARD".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
 
   @inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, GP3, IO1, SC1, ST1, STANDARD)
+}
+
+/** Replication direction designates if this is a failover replication, or a failback replication. When a DRS agent is installed on an instance, the replication direction is failover. In cases where a recovery launch was made in the recovery location and a new recovery instance was created, and then a failback replication was initiated from that recovery instance back to the origin location, then the replication direction will be failback.
+  */
+@js.native
+sealed trait ReplicationDirection extends js.Any
+object ReplicationDirection {
+  val FAILOVER = "FAILOVER".asInstanceOf[ReplicationDirection]
+  val FAILBACK = "FAILBACK".asInstanceOf[ReplicationDirection]
+
+  @inline def values: js.Array[ReplicationDirection] = js.Array(FAILOVER, FAILBACK)
 }
 
 @js.native

@@ -20,6 +20,7 @@ package object apprunner {
   type ConnectionSummaryList = js.Array[ConnectionSummary]
   type Cpu = String
   type CustomDomainList = js.Array[CustomDomain]
+  type CustomerAccountId = String
   type DescribeCustomDomainsMaxResults = Int
   type DomainName = String
   type HealthCheckHealthyThreshold = Int
@@ -34,6 +35,8 @@ package object apprunner {
   type Memory = String
   type NextToken = String
   type NullableBoolean = Boolean
+  type ObservabilityConfigurationName = String
+  type ObservabilityConfigurationSummaryList = js.Array[ObservabilityConfigurationSummary]
   type OperationSummaryList = js.Array[OperationSummary]
   type RoleArn = String
   type RuntimeEnvironmentVariables = js.Dictionary[RuntimeEnvironmentVariablesValue]
@@ -44,37 +47,56 @@ package object apprunner {
   type ServiceName = String
   type ServiceSummaryList = js.Array[ServiceSummary]
   type StartCommand = String
+  type StringList = js.Array[String]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
   type Timestamp = js.Date
   type UUID = String
+  type VpcConnectorName = String
+  type VpcConnectors = js.Array[VpcConnector]
+  type VpcDNSTargetList = js.Array[VpcDNSTarget]
+  type VpcIngressConnectionName = String
+  type VpcIngressConnectionSummaryList = js.Array[VpcIngressConnectionSummary]
 
   final class AppRunnerOps(private val service: AppRunner) extends AnyVal {
 
     @inline def associateCustomDomainFuture(params: AssociateCustomDomainRequest): Future[AssociateCustomDomainResponse] = service.associateCustomDomain(params).promise().toFuture
     @inline def createAutoScalingConfigurationFuture(params: CreateAutoScalingConfigurationRequest): Future[CreateAutoScalingConfigurationResponse] = service.createAutoScalingConfiguration(params).promise().toFuture
     @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
+    @inline def createObservabilityConfigurationFuture(params: CreateObservabilityConfigurationRequest): Future[CreateObservabilityConfigurationResponse] = service.createObservabilityConfiguration(params).promise().toFuture
     @inline def createServiceFuture(params: CreateServiceRequest): Future[CreateServiceResponse] = service.createService(params).promise().toFuture
+    @inline def createVpcConnectorFuture(params: CreateVpcConnectorRequest): Future[CreateVpcConnectorResponse] = service.createVpcConnector(params).promise().toFuture
+    @inline def createVpcIngressConnectionFuture(params: CreateVpcIngressConnectionRequest): Future[CreateVpcIngressConnectionResponse] = service.createVpcIngressConnection(params).promise().toFuture
     @inline def deleteAutoScalingConfigurationFuture(params: DeleteAutoScalingConfigurationRequest): Future[DeleteAutoScalingConfigurationResponse] = service.deleteAutoScalingConfiguration(params).promise().toFuture
     @inline def deleteConnectionFuture(params: DeleteConnectionRequest): Future[DeleteConnectionResponse] = service.deleteConnection(params).promise().toFuture
+    @inline def deleteObservabilityConfigurationFuture(params: DeleteObservabilityConfigurationRequest): Future[DeleteObservabilityConfigurationResponse] = service.deleteObservabilityConfiguration(params).promise().toFuture
     @inline def deleteServiceFuture(params: DeleteServiceRequest): Future[DeleteServiceResponse] = service.deleteService(params).promise().toFuture
+    @inline def deleteVpcConnectorFuture(params: DeleteVpcConnectorRequest): Future[DeleteVpcConnectorResponse] = service.deleteVpcConnector(params).promise().toFuture
+    @inline def deleteVpcIngressConnectionFuture(params: DeleteVpcIngressConnectionRequest): Future[DeleteVpcIngressConnectionResponse] = service.deleteVpcIngressConnection(params).promise().toFuture
     @inline def describeAutoScalingConfigurationFuture(params: DescribeAutoScalingConfigurationRequest): Future[DescribeAutoScalingConfigurationResponse] = service.describeAutoScalingConfiguration(params).promise().toFuture
     @inline def describeCustomDomainsFuture(params: DescribeCustomDomainsRequest): Future[DescribeCustomDomainsResponse] = service.describeCustomDomains(params).promise().toFuture
+    @inline def describeObservabilityConfigurationFuture(params: DescribeObservabilityConfigurationRequest): Future[DescribeObservabilityConfigurationResponse] = service.describeObservabilityConfiguration(params).promise().toFuture
     @inline def describeServiceFuture(params: DescribeServiceRequest): Future[DescribeServiceResponse] = service.describeService(params).promise().toFuture
+    @inline def describeVpcConnectorFuture(params: DescribeVpcConnectorRequest): Future[DescribeVpcConnectorResponse] = service.describeVpcConnector(params).promise().toFuture
+    @inline def describeVpcIngressConnectionFuture(params: DescribeVpcIngressConnectionRequest): Future[DescribeVpcIngressConnectionResponse] = service.describeVpcIngressConnection(params).promise().toFuture
     @inline def disassociateCustomDomainFuture(params: DisassociateCustomDomainRequest): Future[DisassociateCustomDomainResponse] = service.disassociateCustomDomain(params).promise().toFuture
     @inline def listAutoScalingConfigurationsFuture(params: ListAutoScalingConfigurationsRequest): Future[ListAutoScalingConfigurationsResponse] = service.listAutoScalingConfigurations(params).promise().toFuture
     @inline def listConnectionsFuture(params: ListConnectionsRequest): Future[ListConnectionsResponse] = service.listConnections(params).promise().toFuture
+    @inline def listObservabilityConfigurationsFuture(params: ListObservabilityConfigurationsRequest): Future[ListObservabilityConfigurationsResponse] = service.listObservabilityConfigurations(params).promise().toFuture
     @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] = service.listOperations(params).promise().toFuture
     @inline def listServicesFuture(params: ListServicesRequest): Future[ListServicesResponse] = service.listServices(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listVpcConnectorsFuture(params: ListVpcConnectorsRequest): Future[ListVpcConnectorsResponse] = service.listVpcConnectors(params).promise().toFuture
+    @inline def listVpcIngressConnectionsFuture(params: ListVpcIngressConnectionsRequest): Future[ListVpcIngressConnectionsResponse] = service.listVpcIngressConnections(params).promise().toFuture
     @inline def pauseServiceFuture(params: PauseServiceRequest): Future[PauseServiceResponse] = service.pauseService(params).promise().toFuture
     @inline def resumeServiceFuture(params: ResumeServiceRequest): Future[ResumeServiceResponse] = service.resumeService(params).promise().toFuture
     @inline def startDeploymentFuture(params: StartDeploymentRequest): Future[StartDeploymentResponse] = service.startDeployment(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
+    @inline def updateVpcIngressConnectionFuture(params: UpdateVpcIngressConnectionRequest): Future[UpdateVpcIngressConnectionResponse] = service.updateVpcIngressConnection(params).promise().toFuture
 
   }
 
@@ -86,25 +108,38 @@ package object apprunner {
     def associateCustomDomain(params: AssociateCustomDomainRequest): Request[AssociateCustomDomainResponse] = js.native
     def createAutoScalingConfiguration(params: CreateAutoScalingConfigurationRequest): Request[CreateAutoScalingConfigurationResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
+    def createObservabilityConfiguration(params: CreateObservabilityConfigurationRequest): Request[CreateObservabilityConfigurationResponse] = js.native
     def createService(params: CreateServiceRequest): Request[CreateServiceResponse] = js.native
+    def createVpcConnector(params: CreateVpcConnectorRequest): Request[CreateVpcConnectorResponse] = js.native
+    def createVpcIngressConnection(params: CreateVpcIngressConnectionRequest): Request[CreateVpcIngressConnectionResponse] = js.native
     def deleteAutoScalingConfiguration(params: DeleteAutoScalingConfigurationRequest): Request[DeleteAutoScalingConfigurationResponse] = js.native
     def deleteConnection(params: DeleteConnectionRequest): Request[DeleteConnectionResponse] = js.native
+    def deleteObservabilityConfiguration(params: DeleteObservabilityConfigurationRequest): Request[DeleteObservabilityConfigurationResponse] = js.native
     def deleteService(params: DeleteServiceRequest): Request[DeleteServiceResponse] = js.native
+    def deleteVpcConnector(params: DeleteVpcConnectorRequest): Request[DeleteVpcConnectorResponse] = js.native
+    def deleteVpcIngressConnection(params: DeleteVpcIngressConnectionRequest): Request[DeleteVpcIngressConnectionResponse] = js.native
     def describeAutoScalingConfiguration(params: DescribeAutoScalingConfigurationRequest): Request[DescribeAutoScalingConfigurationResponse] = js.native
     def describeCustomDomains(params: DescribeCustomDomainsRequest): Request[DescribeCustomDomainsResponse] = js.native
+    def describeObservabilityConfiguration(params: DescribeObservabilityConfigurationRequest): Request[DescribeObservabilityConfigurationResponse] = js.native
     def describeService(params: DescribeServiceRequest): Request[DescribeServiceResponse] = js.native
+    def describeVpcConnector(params: DescribeVpcConnectorRequest): Request[DescribeVpcConnectorResponse] = js.native
+    def describeVpcIngressConnection(params: DescribeVpcIngressConnectionRequest): Request[DescribeVpcIngressConnectionResponse] = js.native
     def disassociateCustomDomain(params: DisassociateCustomDomainRequest): Request[DisassociateCustomDomainResponse] = js.native
     def listAutoScalingConfigurations(params: ListAutoScalingConfigurationsRequest): Request[ListAutoScalingConfigurationsResponse] = js.native
     def listConnections(params: ListConnectionsRequest): Request[ListConnectionsResponse] = js.native
+    def listObservabilityConfigurations(params: ListObservabilityConfigurationsRequest): Request[ListObservabilityConfigurationsResponse] = js.native
     def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse] = js.native
     def listServices(params: ListServicesRequest): Request[ListServicesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listVpcConnectors(params: ListVpcConnectorsRequest): Request[ListVpcConnectorsResponse] = js.native
+    def listVpcIngressConnections(params: ListVpcIngressConnectionsRequest): Request[ListVpcIngressConnectionsResponse] = js.native
     def pauseService(params: PauseServiceRequest): Request[PauseServiceResponse] = js.native
     def resumeService(params: ResumeServiceRequest): Request[ResumeServiceResponse] = js.native
     def startDeployment(params: StartDeploymentRequest): Request[StartDeploymentResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
+    def updateVpcIngressConnection(params: UpdateVpcIngressConnectionRequest): Request[UpdateVpcIngressConnectionResponse] = js.native
   }
   object AppRunner {
     @inline implicit def toOps(service: AppRunner): AppRunnerOps = {
@@ -141,6 +176,7 @@ package object apprunner {
     var CustomDomain: CustomDomain
     var DNSTarget: String
     var ServiceArn: AppRunnerResourceArn
+    var VpcDNSTargets: VpcDNSTargetList
   }
 
   object AssociateCustomDomainResponse {
@@ -148,12 +184,14 @@ package object apprunner {
     def apply(
         CustomDomain: CustomDomain,
         DNSTarget: String,
-        ServiceArn: AppRunnerResourceArn
+        ServiceArn: AppRunnerResourceArn,
+        VpcDNSTargets: VpcDNSTargetList
     ): AssociateCustomDomainResponse = {
       val __obj = js.Dynamic.literal(
         "CustomDomain" -> CustomDomain.asInstanceOf[js.Any],
         "DNSTarget" -> DNSTarget.asInstanceOf[js.Any],
-        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any]
+        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any],
+        "VpcDNSTargets" -> VpcDNSTargets.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssociateCustomDomainResponse]
     }
@@ -180,7 +218,7 @@ package object apprunner {
     }
   }
 
-  /** Describes an App Runner automatic scaling configuration resource. Multiple revisions of a configuration have the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values. A higher <code>MinSize</code> increases the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost. A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness during peak demand.
+  /** Describes an App Runner automatic scaling configuration resource. A higher <code>MinSize</code> increases the spread of your App Runner service over more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal cost. A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness during peak demand. Multiple revisions of a configuration might have the same <code>AutoScalingConfigurationName</code> and different <code>AutoScalingConfigurationRevision</code> values.
     */
   @js.native
   trait AutoScalingConfiguration extends js.Object {
@@ -506,6 +544,47 @@ package object apprunner {
   }
 
   @js.native
+  trait CreateObservabilityConfigurationRequest extends js.Object {
+    var ObservabilityConfigurationName: ObservabilityConfigurationName
+    var Tags: js.UndefOr[TagList]
+    var TraceConfiguration: js.UndefOr[TraceConfiguration]
+  }
+
+  object CreateObservabilityConfigurationRequest {
+    @inline
+    def apply(
+        ObservabilityConfigurationName: ObservabilityConfigurationName,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TraceConfiguration: js.UndefOr[TraceConfiguration] = js.undefined
+    ): CreateObservabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfigurationName" -> ObservabilityConfigurationName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TraceConfiguration.foreach(__v => __obj.updateDynamic("TraceConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateObservabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait CreateObservabilityConfigurationResponse extends js.Object {
+    var ObservabilityConfiguration: ObservabilityConfiguration
+  }
+
+  object CreateObservabilityConfigurationResponse {
+    @inline
+    def apply(
+        ObservabilityConfiguration: ObservabilityConfiguration
+    ): CreateObservabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfiguration" -> ObservabilityConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateObservabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait CreateServiceRequest extends js.Object {
     var ServiceName: ServiceName
     var SourceConfiguration: SourceConfiguration
@@ -513,6 +592,8 @@ package object apprunner {
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration]
     var InstanceConfiguration: js.UndefOr[InstanceConfiguration]
+    var NetworkConfiguration: js.UndefOr[NetworkConfiguration]
+    var ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -525,6 +606,8 @@ package object apprunner {
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration] = js.undefined,
         InstanceConfiguration: js.UndefOr[InstanceConfiguration] = js.undefined,
+        NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+        ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateServiceRequest = {
       val __obj = js.Dynamic.literal(
@@ -536,6 +619,8 @@ package object apprunner {
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       HealthCheckConfiguration.foreach(__v => __obj.updateDynamic("HealthCheckConfiguration")(__v.asInstanceOf[js.Any]))
       InstanceConfiguration.foreach(__v => __obj.updateDynamic("InstanceConfiguration")(__v.asInstanceOf[js.Any]))
+      NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfiguration.foreach(__v => __obj.updateDynamic("ObservabilityConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceRequest]
     }
@@ -558,6 +643,94 @@ package object apprunner {
         "Service" -> Service.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateServiceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateVpcConnectorRequest extends js.Object {
+    var Subnets: StringList
+    var VpcConnectorName: VpcConnectorName
+    var SecurityGroups: js.UndefOr[StringList]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateVpcConnectorRequest {
+    @inline
+    def apply(
+        Subnets: StringList,
+        VpcConnectorName: VpcConnectorName,
+        SecurityGroups: js.UndefOr[StringList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateVpcConnectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "Subnets" -> Subnets.asInstanceOf[js.Any],
+        "VpcConnectorName" -> VpcConnectorName.asInstanceOf[js.Any]
+      )
+
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVpcConnectorResponse extends js.Object {
+    var VpcConnector: VpcConnector
+  }
+
+  object CreateVpcConnectorResponse {
+    @inline
+    def apply(
+        VpcConnector: VpcConnector
+    ): CreateVpcConnectorResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnector" -> VpcConnector.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateVpcConnectorResponse]
+    }
+  }
+
+  @js.native
+  trait CreateVpcIngressConnectionRequest extends js.Object {
+    var IngressVpcConfiguration: IngressVpcConfiguration
+    var ServiceArn: AppRunnerResourceArn
+    var VpcIngressConnectionName: VpcIngressConnectionName
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateVpcIngressConnectionRequest {
+    @inline
+    def apply(
+        IngressVpcConfiguration: IngressVpcConfiguration,
+        ServiceArn: AppRunnerResourceArn,
+        VpcIngressConnectionName: VpcIngressConnectionName,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateVpcIngressConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "IngressVpcConfiguration" -> IngressVpcConfiguration.asInstanceOf[js.Any],
+        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any],
+        "VpcIngressConnectionName" -> VpcIngressConnectionName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateVpcIngressConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateVpcIngressConnectionResponse extends js.Object {
+    var VpcIngressConnection: VpcIngressConnection
+  }
+
+  object CreateVpcIngressConnectionResponse {
+    @inline
+    def apply(
+        VpcIngressConnection: VpcIngressConnection
+    ): CreateVpcIngressConnectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnection" -> VpcIngressConnection.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateVpcIngressConnectionResponse]
     }
   }
 
@@ -658,6 +831,40 @@ package object apprunner {
   }
 
   @js.native
+  trait DeleteObservabilityConfigurationRequest extends js.Object {
+    var ObservabilityConfigurationArn: AppRunnerResourceArn
+  }
+
+  object DeleteObservabilityConfigurationRequest {
+    @inline
+    def apply(
+        ObservabilityConfigurationArn: AppRunnerResourceArn
+    ): DeleteObservabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfigurationArn" -> ObservabilityConfigurationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteObservabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteObservabilityConfigurationResponse extends js.Object {
+    var ObservabilityConfiguration: ObservabilityConfiguration
+  }
+
+  object DeleteObservabilityConfigurationResponse {
+    @inline
+    def apply(
+        ObservabilityConfiguration: ObservabilityConfiguration
+    ): DeleteObservabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfiguration" -> ObservabilityConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteObservabilityConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteServiceRequest extends js.Object {
     var ServiceArn: AppRunnerResourceArn
   }
@@ -691,6 +898,74 @@ package object apprunner {
         "Service" -> Service.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteServiceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcConnectorRequest extends js.Object {
+    var VpcConnectorArn: AppRunnerResourceArn
+  }
+
+  object DeleteVpcConnectorRequest {
+    @inline
+    def apply(
+        VpcConnectorArn: AppRunnerResourceArn
+    ): DeleteVpcConnectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnectorArn" -> VpcConnectorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcConnectorResponse extends js.Object {
+    var VpcConnector: VpcConnector
+  }
+
+  object DeleteVpcConnectorResponse {
+    @inline
+    def apply(
+        VpcConnector: VpcConnector
+    ): DeleteVpcConnectorResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnector" -> VpcConnector.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcConnectorResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcIngressConnectionRequest extends js.Object {
+    var VpcIngressConnectionArn: AppRunnerResourceArn
+  }
+
+  object DeleteVpcIngressConnectionRequest {
+    @inline
+    def apply(
+        VpcIngressConnectionArn: AppRunnerResourceArn
+    ): DeleteVpcIngressConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnectionArn" -> VpcIngressConnectionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcIngressConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteVpcIngressConnectionResponse extends js.Object {
+    var VpcIngressConnection: VpcIngressConnection
+  }
+
+  object DeleteVpcIngressConnectionResponse {
+    @inline
+    def apply(
+        VpcIngressConnection: VpcIngressConnection
+    ): DeleteVpcIngressConnectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnection" -> VpcIngressConnection.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVpcIngressConnectionResponse]
     }
   }
 
@@ -757,6 +1032,7 @@ package object apprunner {
     var CustomDomains: CustomDomainList
     var DNSTarget: String
     var ServiceArn: AppRunnerResourceArn
+    var VpcDNSTargets: VpcDNSTargetList
     var NextToken: js.UndefOr[String]
   }
 
@@ -766,16 +1042,52 @@ package object apprunner {
         CustomDomains: CustomDomainList,
         DNSTarget: String,
         ServiceArn: AppRunnerResourceArn,
+        VpcDNSTargets: VpcDNSTargetList,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeCustomDomainsResponse = {
       val __obj = js.Dynamic.literal(
         "CustomDomains" -> CustomDomains.asInstanceOf[js.Any],
         "DNSTarget" -> DNSTarget.asInstanceOf[js.Any],
-        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any]
+        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any],
+        "VpcDNSTargets" -> VpcDNSTargets.asInstanceOf[js.Any]
       )
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCustomDomainsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeObservabilityConfigurationRequest extends js.Object {
+    var ObservabilityConfigurationArn: AppRunnerResourceArn
+  }
+
+  object DescribeObservabilityConfigurationRequest {
+    @inline
+    def apply(
+        ObservabilityConfigurationArn: AppRunnerResourceArn
+    ): DescribeObservabilityConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfigurationArn" -> ObservabilityConfigurationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeObservabilityConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeObservabilityConfigurationResponse extends js.Object {
+    var ObservabilityConfiguration: ObservabilityConfiguration
+  }
+
+  object DescribeObservabilityConfigurationResponse {
+    @inline
+    def apply(
+        ObservabilityConfiguration: ObservabilityConfiguration
+    ): DescribeObservabilityConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfiguration" -> ObservabilityConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeObservabilityConfigurationResponse]
     }
   }
 
@@ -814,6 +1126,74 @@ package object apprunner {
   }
 
   @js.native
+  trait DescribeVpcConnectorRequest extends js.Object {
+    var VpcConnectorArn: AppRunnerResourceArn
+  }
+
+  object DescribeVpcConnectorRequest {
+    @inline
+    def apply(
+        VpcConnectorArn: AppRunnerResourceArn
+    ): DescribeVpcConnectorRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnectorArn" -> VpcConnectorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcConnectorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeVpcConnectorResponse extends js.Object {
+    var VpcConnector: VpcConnector
+  }
+
+  object DescribeVpcConnectorResponse {
+    @inline
+    def apply(
+        VpcConnector: VpcConnector
+    ): DescribeVpcConnectorResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnector" -> VpcConnector.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcConnectorResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeVpcIngressConnectionRequest extends js.Object {
+    var VpcIngressConnectionArn: AppRunnerResourceArn
+  }
+
+  object DescribeVpcIngressConnectionRequest {
+    @inline
+    def apply(
+        VpcIngressConnectionArn: AppRunnerResourceArn
+    ): DescribeVpcIngressConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnectionArn" -> VpcIngressConnectionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcIngressConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeVpcIngressConnectionResponse extends js.Object {
+    var VpcIngressConnection: VpcIngressConnection
+  }
+
+  object DescribeVpcIngressConnectionResponse {
+    @inline
+    def apply(
+        VpcIngressConnection: VpcIngressConnection
+    ): DescribeVpcIngressConnectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnection" -> VpcIngressConnection.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeVpcIngressConnectionResponse]
+    }
+  }
+
+  @js.native
   trait DisassociateCustomDomainRequest extends js.Object {
     var DomainName: DomainName
     var ServiceArn: AppRunnerResourceArn
@@ -838,6 +1218,7 @@ package object apprunner {
     var CustomDomain: CustomDomain
     var DNSTarget: String
     var ServiceArn: AppRunnerResourceArn
+    var VpcDNSTargets: VpcDNSTargetList
   }
 
   object DisassociateCustomDomainResponse {
@@ -845,14 +1226,37 @@ package object apprunner {
     def apply(
         CustomDomain: CustomDomain,
         DNSTarget: String,
-        ServiceArn: AppRunnerResourceArn
+        ServiceArn: AppRunnerResourceArn,
+        VpcDNSTargets: VpcDNSTargetList
     ): DisassociateCustomDomainResponse = {
       val __obj = js.Dynamic.literal(
         "CustomDomain" -> CustomDomain.asInstanceOf[js.Any],
         "DNSTarget" -> DNSTarget.asInstanceOf[js.Any],
-        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any]
+        "ServiceArn" -> ServiceArn.asInstanceOf[js.Any],
+        "VpcDNSTargets" -> VpcDNSTargets.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DisassociateCustomDomainResponse]
+    }
+  }
+
+  /** Describes configuration settings related to outbound network traffic of an App Runner service.
+    */
+  @js.native
+  trait EgressConfiguration extends js.Object {
+    var EgressType: js.UndefOr[EgressType]
+    var VpcConnectorArn: js.UndefOr[AppRunnerResourceArn]
+  }
+
+  object EgressConfiguration {
+    @inline
+    def apply(
+        EgressType: js.UndefOr[EgressType] = js.undefined,
+        VpcConnectorArn: js.UndefOr[AppRunnerResourceArn] = js.undefined
+    ): EgressConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EgressType.foreach(__v => __obj.updateDynamic("EgressType")(__v.asInstanceOf[js.Any]))
+      VpcConnectorArn.foreach(__v => __obj.updateDynamic("VpcConnectorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EgressConfiguration]
     }
   }
 
@@ -914,7 +1318,7 @@ package object apprunner {
   trait ImageConfiguration extends js.Object {
     var Port: js.UndefOr[String]
     var RuntimeEnvironmentVariables: js.UndefOr[RuntimeEnvironmentVariables]
-    var StartCommand: js.UndefOr[String]
+    var StartCommand: js.UndefOr[StartCommand]
   }
 
   object ImageConfiguration {
@@ -922,7 +1326,7 @@ package object apprunner {
     def apply(
         Port: js.UndefOr[String] = js.undefined,
         RuntimeEnvironmentVariables: js.UndefOr[RuntimeEnvironmentVariables] = js.undefined,
-        StartCommand: js.UndefOr[String] = js.undefined
+        StartCommand: js.UndefOr[StartCommand] = js.undefined
     ): ImageConfiguration = {
       val __obj = js.Dynamic.literal()
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
@@ -955,6 +1359,45 @@ package object apprunner {
 
       ImageConfiguration.foreach(__v => __obj.updateDynamic("ImageConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageRepository]
+    }
+  }
+
+  /** Network configuration settings for inbound network traffic.
+    */
+  @js.native
+  trait IngressConfiguration extends js.Object {
+    var IsPubliclyAccessible: js.UndefOr[Boolean]
+  }
+
+  object IngressConfiguration {
+    @inline
+    def apply(
+        IsPubliclyAccessible: js.UndefOr[Boolean] = js.undefined
+    ): IngressConfiguration = {
+      val __obj = js.Dynamic.literal()
+      IsPubliclyAccessible.foreach(__v => __obj.updateDynamic("IsPubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IngressConfiguration]
+    }
+  }
+
+  /** The configuration of your VPC and the associated VPC endpoint. The VPC endpoint is an Amazon Web Services PrivateLink resource that allows access to your App Runner services from within an Amazon VPC.
+    */
+  @js.native
+  trait IngressVpcConfiguration extends js.Object {
+    var VpcEndpointId: js.UndefOr[String]
+    var VpcId: js.UndefOr[String]
+  }
+
+  object IngressVpcConfiguration {
+    @inline
+    def apply(
+        VpcEndpointId: js.UndefOr[String] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined
+    ): IngressVpcConfiguration = {
+      val __obj = js.Dynamic.literal()
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IngressVpcConfiguration]
     }
   }
 
@@ -1072,6 +1515,52 @@ package object apprunner {
   }
 
   @js.native
+  trait ListObservabilityConfigurationsRequest extends js.Object {
+    var LatestOnly: js.UndefOr[Boolean]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName]
+  }
+
+  object ListObservabilityConfigurationsRequest {
+    @inline
+    def apply(
+        LatestOnly: js.UndefOr[Boolean] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName] = js.undefined
+    ): ListObservabilityConfigurationsRequest = {
+      val __obj = js.Dynamic.literal()
+      LatestOnly.foreach(__v => __obj.updateDynamic("LatestOnly")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationName.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObservabilityConfigurationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListObservabilityConfigurationsResponse extends js.Object {
+    var ObservabilityConfigurationSummaryList: ObservabilityConfigurationSummaryList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListObservabilityConfigurationsResponse {
+    @inline
+    def apply(
+        ObservabilityConfigurationSummaryList: ObservabilityConfigurationSummaryList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListObservabilityConfigurationsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityConfigurationSummaryList" -> ObservabilityConfigurationSummaryList.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListObservabilityConfigurationsResponse]
+    }
+  }
+
+  @js.native
   trait ListOperationsRequest extends js.Object {
     var ServiceArn: AppRunnerResourceArn
     var MaxResults: js.UndefOr[ListOperationsMaxResults]
@@ -1184,6 +1673,194 @@ package object apprunner {
       val __obj = js.Dynamic.literal()
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
+  @js.native
+  trait ListVpcConnectorsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcConnectorsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcConnectorsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcConnectorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListVpcConnectorsResponse extends js.Object {
+    var VpcConnectors: VpcConnectors
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcConnectorsResponse {
+    @inline
+    def apply(
+        VpcConnectors: VpcConnectors,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcConnectorsResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcConnectors" -> VpcConnectors.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcConnectorsResponse]
+    }
+  }
+
+  /** Returns a list of VPC Ingress Connections based on the filter provided. It can return either <code>ServiceArn</code> or <code>VpcEndpointId</code>, or both.
+    */
+  @js.native
+  trait ListVpcIngressConnectionsFilter extends js.Object {
+    var ServiceArn: js.UndefOr[AppRunnerResourceArn]
+    var VpcEndpointId: js.UndefOr[String]
+  }
+
+  object ListVpcIngressConnectionsFilter {
+    @inline
+    def apply(
+        ServiceArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        VpcEndpointId: js.UndefOr[String] = js.undefined
+    ): ListVpcIngressConnectionsFilter = {
+      val __obj = js.Dynamic.literal()
+      ServiceArn.foreach(__v => __obj.updateDynamic("ServiceArn")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcIngressConnectionsFilter]
+    }
+  }
+
+  @js.native
+  trait ListVpcIngressConnectionsRequest extends js.Object {
+    var Filter: js.UndefOr[ListVpcIngressConnectionsFilter]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcIngressConnectionsRequest {
+    @inline
+    def apply(
+        Filter: js.UndefOr[ListVpcIngressConnectionsFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcIngressConnectionsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcIngressConnectionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListVpcIngressConnectionsResponse extends js.Object {
+    var VpcIngressConnectionSummaryList: VpcIngressConnectionSummaryList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListVpcIngressConnectionsResponse {
+    @inline
+    def apply(
+        VpcIngressConnectionSummaryList: VpcIngressConnectionSummaryList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListVpcIngressConnectionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnectionSummaryList" -> VpcIngressConnectionSummaryList.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListVpcIngressConnectionsResponse]
+    }
+  }
+
+  /** Describes configuration settings related to network traffic of an App Runner service. Consists of embedded objects for each configurable network feature.
+    */
+  @js.native
+  trait NetworkConfiguration extends js.Object {
+    var EgressConfiguration: js.UndefOr[EgressConfiguration]
+    var IngressConfiguration: js.UndefOr[IngressConfiguration]
+  }
+
+  object NetworkConfiguration {
+    @inline
+    def apply(
+        EgressConfiguration: js.UndefOr[EgressConfiguration] = js.undefined,
+        IngressConfiguration: js.UndefOr[IngressConfiguration] = js.undefined
+    ): NetworkConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EgressConfiguration.foreach(__v => __obj.updateDynamic("EgressConfiguration")(__v.asInstanceOf[js.Any]))
+      IngressConfiguration.foreach(__v => __obj.updateDynamic("IngressConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkConfiguration]
+    }
+  }
+
+  /** Describes an App Runner observability configuration resource. Multiple revisions of a configuration have the same <code>ObservabilityConfigurationName</code> and different <code>ObservabilityConfigurationRevision</code> values. The resource is designed to configure multiple features (currently one feature, tracing). This type contains optional members that describe the configuration of these features (currently one member, <code>TraceConfiguration</code>). If a feature member isn't specified, the feature isn't enabled.
+    */
+  @js.native
+  trait ObservabilityConfiguration extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DeletedAt: js.UndefOr[Timestamp]
+    var Latest: js.UndefOr[Boolean]
+    var ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn]
+    var ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName]
+    var ObservabilityConfigurationRevision: js.UndefOr[Int]
+    var Status: js.UndefOr[ObservabilityConfigurationStatus]
+    var TraceConfiguration: js.UndefOr[TraceConfiguration]
+  }
+
+  object ObservabilityConfiguration {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        DeletedAt: js.UndefOr[Timestamp] = js.undefined,
+        Latest: js.UndefOr[Boolean] = js.undefined,
+        ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName] = js.undefined,
+        ObservabilityConfigurationRevision: js.UndefOr[Int] = js.undefined,
+        Status: js.UndefOr[ObservabilityConfigurationStatus] = js.undefined,
+        TraceConfiguration: js.UndefOr[TraceConfiguration] = js.undefined
+    ): ObservabilityConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeletedAt.foreach(__v => __obj.updateDynamic("DeletedAt")(__v.asInstanceOf[js.Any]))
+      Latest.foreach(__v => __obj.updateDynamic("Latest")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationArn.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationArn")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationName.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationName")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationRevision.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationRevision")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TraceConfiguration.foreach(__v => __obj.updateDynamic("TraceConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObservabilityConfiguration]
+    }
+  }
+
+  /** Provides summary information about an App Runner observability configuration resource. This type contains limited information about an observability configuration. It includes only identification information, without configuration details. It's returned by the <a>ListObservabilityConfigurations</a> action. Complete configuration information is returned by the <a>CreateObservabilityConfiguration</a>, <a>DescribeObservabilityConfiguration</a>, and <a>DeleteObservabilityConfiguration</a> actions using the <a>ObservabilityConfiguration</a> type.
+    */
+  @js.native
+  trait ObservabilityConfigurationSummary extends js.Object {
+    var ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn]
+    var ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName]
+    var ObservabilityConfigurationRevision: js.UndefOr[Int]
+  }
+
+  object ObservabilityConfigurationSummary {
+    @inline
+    def apply(
+        ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        ObservabilityConfigurationName: js.UndefOr[ObservabilityConfigurationName] = js.undefined,
+        ObservabilityConfigurationRevision: js.UndefOr[Int] = js.undefined
+    ): ObservabilityConfigurationSummary = {
+      val __obj = js.Dynamic.literal()
+      ObservabilityConfigurationArn.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationArn")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationName.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationName")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfigurationRevision.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationRevision")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ObservabilityConfigurationSummary]
     }
   }
 
@@ -1306,16 +1983,18 @@ package object apprunner {
     var AutoScalingConfigurationSummary: AutoScalingConfigurationSummary
     var CreatedAt: Timestamp
     var InstanceConfiguration: InstanceConfiguration
+    var NetworkConfiguration: NetworkConfiguration
     var ServiceArn: AppRunnerResourceArn
     var ServiceId: ServiceId
     var ServiceName: ServiceName
-    var ServiceUrl: String
     var SourceConfiguration: SourceConfiguration
     var Status: ServiceStatus
     var UpdatedAt: Timestamp
     var DeletedAt: js.UndefOr[Timestamp]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration]
+    var ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration]
+    var ServiceUrl: js.UndefOr[String]
   }
 
   object Service {
@@ -1324,25 +2003,27 @@ package object apprunner {
         AutoScalingConfigurationSummary: AutoScalingConfigurationSummary,
         CreatedAt: Timestamp,
         InstanceConfiguration: InstanceConfiguration,
+        NetworkConfiguration: NetworkConfiguration,
         ServiceArn: AppRunnerResourceArn,
         ServiceId: ServiceId,
         ServiceName: ServiceName,
-        ServiceUrl: String,
         SourceConfiguration: SourceConfiguration,
         Status: ServiceStatus,
         UpdatedAt: Timestamp,
         DeletedAt: js.UndefOr[Timestamp] = js.undefined,
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
-        HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration] = js.undefined
+        HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration] = js.undefined,
+        ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration] = js.undefined,
+        ServiceUrl: js.UndefOr[String] = js.undefined
     ): Service = {
       val __obj = js.Dynamic.literal(
         "AutoScalingConfigurationSummary" -> AutoScalingConfigurationSummary.asInstanceOf[js.Any],
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "InstanceConfiguration" -> InstanceConfiguration.asInstanceOf[js.Any],
+        "NetworkConfiguration" -> NetworkConfiguration.asInstanceOf[js.Any],
         "ServiceArn" -> ServiceArn.asInstanceOf[js.Any],
         "ServiceId" -> ServiceId.asInstanceOf[js.Any],
         "ServiceName" -> ServiceName.asInstanceOf[js.Any],
-        "ServiceUrl" -> ServiceUrl.asInstanceOf[js.Any],
         "SourceConfiguration" -> SourceConfiguration.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
@@ -1351,7 +2032,32 @@ package object apprunner {
       DeletedAt.foreach(__v => __obj.updateDynamic("DeletedAt")(__v.asInstanceOf[js.Any]))
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       HealthCheckConfiguration.foreach(__v => __obj.updateDynamic("HealthCheckConfiguration")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfiguration.foreach(__v => __obj.updateDynamic("ObservabilityConfiguration")(__v.asInstanceOf[js.Any]))
+      ServiceUrl.foreach(__v => __obj.updateDynamic("ServiceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
+    }
+  }
+
+  /** Describes the observability configuration of an App Runner service. These are additional observability features, like tracing, that you choose to enable. They're configured in a separate resource that you associate with your service.
+    */
+  @js.native
+  trait ServiceObservabilityConfiguration extends js.Object {
+    var ObservabilityEnabled: Boolean
+    var ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn]
+  }
+
+  object ServiceObservabilityConfiguration {
+    @inline
+    def apply(
+        ObservabilityEnabled: Boolean,
+        ObservabilityConfigurationArn: js.UndefOr[AppRunnerResourceArn] = js.undefined
+    ): ServiceObservabilityConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "ObservabilityEnabled" -> ObservabilityEnabled.asInstanceOf[js.Any]
+      )
+
+      ObservabilityConfigurationArn.foreach(__v => __obj.updateDynamic("ObservabilityConfigurationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceObservabilityConfiguration]
     }
   }
 
@@ -1526,6 +2232,25 @@ package object apprunner {
     }
   }
 
+  /** Describes the configuration of the tracing feature within an App Runner observability configuration.
+    */
+  @js.native
+  trait TraceConfiguration extends js.Object {
+    var Vendor: TracingVendor
+  }
+
+  object TraceConfiguration {
+    @inline
+    def apply(
+        Vendor: TracingVendor
+    ): TraceConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Vendor" -> Vendor.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TraceConfiguration]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: AppRunnerResourceArn
@@ -1563,6 +2288,8 @@ package object apprunner {
     var AutoScalingConfigurationArn: js.UndefOr[AppRunnerResourceArn]
     var HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration]
     var InstanceConfiguration: js.UndefOr[InstanceConfiguration]
+    var NetworkConfiguration: js.UndefOr[NetworkConfiguration]
+    var ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration]
     var SourceConfiguration: js.UndefOr[SourceConfiguration]
   }
 
@@ -1573,6 +2300,8 @@ package object apprunner {
         AutoScalingConfigurationArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
         HealthCheckConfiguration: js.UndefOr[HealthCheckConfiguration] = js.undefined,
         InstanceConfiguration: js.UndefOr[InstanceConfiguration] = js.undefined,
+        NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+        ObservabilityConfiguration: js.UndefOr[ServiceObservabilityConfiguration] = js.undefined,
         SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined
     ): UpdateServiceRequest = {
       val __obj = js.Dynamic.literal(
@@ -1582,6 +2311,8 @@ package object apprunner {
       AutoScalingConfigurationArn.foreach(__v => __obj.updateDynamic("AutoScalingConfigurationArn")(__v.asInstanceOf[js.Any]))
       HealthCheckConfiguration.foreach(__v => __obj.updateDynamic("HealthCheckConfiguration")(__v.asInstanceOf[js.Any]))
       InstanceConfiguration.foreach(__v => __obj.updateDynamic("InstanceConfiguration")(__v.asInstanceOf[js.Any]))
+      NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
+      ObservabilityConfiguration.foreach(__v => __obj.updateDynamic("ObservabilityConfiguration")(__v.asInstanceOf[js.Any]))
       SourceConfiguration.foreach(__v => __obj.updateDynamic("SourceConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceRequest]
     }
@@ -1604,6 +2335,171 @@ package object apprunner {
         "Service" -> Service.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateServiceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateVpcIngressConnectionRequest extends js.Object {
+    var IngressVpcConfiguration: IngressVpcConfiguration
+    var VpcIngressConnectionArn: AppRunnerResourceArn
+  }
+
+  object UpdateVpcIngressConnectionRequest {
+    @inline
+    def apply(
+        IngressVpcConfiguration: IngressVpcConfiguration,
+        VpcIngressConnectionArn: AppRunnerResourceArn
+    ): UpdateVpcIngressConnectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "IngressVpcConfiguration" -> IngressVpcConfiguration.asInstanceOf[js.Any],
+        "VpcIngressConnectionArn" -> VpcIngressConnectionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcIngressConnectionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateVpcIngressConnectionResponse extends js.Object {
+    var VpcIngressConnection: VpcIngressConnection
+  }
+
+  object UpdateVpcIngressConnectionResponse {
+    @inline
+    def apply(
+        VpcIngressConnection: VpcIngressConnection
+    ): UpdateVpcIngressConnectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "VpcIngressConnection" -> VpcIngressConnection.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateVpcIngressConnectionResponse]
+    }
+  }
+
+  /** Describes an App Runner VPC connector resource. A VPC connector describes the Amazon Virtual Private Cloud (Amazon VPC) that an App Runner service is associated with, and the subnets and security group that are used. Multiple revisions of a connector might have the same <code>Name</code> and different <code>Revision</code> values.
+    *
+    * '''Note:'''At this time, App Runner supports only one revision per name.
+    */
+  @js.native
+  trait VpcConnector extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DeletedAt: js.UndefOr[Timestamp]
+    var SecurityGroups: js.UndefOr[StringList]
+    var Status: js.UndefOr[VpcConnectorStatus]
+    var Subnets: js.UndefOr[StringList]
+    var VpcConnectorArn: js.UndefOr[AppRunnerResourceArn]
+    var VpcConnectorName: js.UndefOr[VpcConnectorName]
+    var VpcConnectorRevision: js.UndefOr[Int]
+  }
+
+  object VpcConnector {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        DeletedAt: js.UndefOr[Timestamp] = js.undefined,
+        SecurityGroups: js.UndefOr[StringList] = js.undefined,
+        Status: js.UndefOr[VpcConnectorStatus] = js.undefined,
+        Subnets: js.UndefOr[StringList] = js.undefined,
+        VpcConnectorArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        VpcConnectorName: js.UndefOr[VpcConnectorName] = js.undefined,
+        VpcConnectorRevision: js.UndefOr[Int] = js.undefined
+    ): VpcConnector = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeletedAt.foreach(__v => __obj.updateDynamic("DeletedAt")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VpcConnectorArn.foreach(__v => __obj.updateDynamic("VpcConnectorArn")(__v.asInstanceOf[js.Any]))
+      VpcConnectorName.foreach(__v => __obj.updateDynamic("VpcConnectorName")(__v.asInstanceOf[js.Any]))
+      VpcConnectorRevision.foreach(__v => __obj.updateDynamic("VpcConnectorRevision")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcConnector]
+    }
+  }
+
+  /** DNS Target record for a custom domain of this Amazon VPC.
+    */
+  @js.native
+  trait VpcDNSTarget extends js.Object {
+    var DomainName: js.UndefOr[DomainName]
+    var VpcId: js.UndefOr[String]
+    var VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn]
+  }
+
+  object VpcDNSTarget {
+    @inline
+    def apply(
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        VpcId: js.UndefOr[String] = js.undefined,
+        VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn] = js.undefined
+    ): VpcDNSTarget = {
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      VpcIngressConnectionArn.foreach(__v => __obj.updateDynamic("VpcIngressConnectionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcDNSTarget]
+    }
+  }
+
+  /** The App Runner resource that specifies an App Runner endpoint for incoming traffic. It establishes a connection between a VPC interface endpoint and a App Runner service, to make your App Runner service accessible from only within an Amazon VPC.
+    */
+  @js.native
+  trait VpcIngressConnection extends js.Object {
+    var AccountId: js.UndefOr[CustomerAccountId]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var DeletedAt: js.UndefOr[Timestamp]
+    var DomainName: js.UndefOr[DomainName]
+    var IngressVpcConfiguration: js.UndefOr[IngressVpcConfiguration]
+    var ServiceArn: js.UndefOr[AppRunnerResourceArn]
+    var Status: js.UndefOr[VpcIngressConnectionStatus]
+    var VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn]
+    var VpcIngressConnectionName: js.UndefOr[VpcIngressConnectionName]
+  }
+
+  object VpcIngressConnection {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[CustomerAccountId] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        DeletedAt: js.UndefOr[Timestamp] = js.undefined,
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        IngressVpcConfiguration: js.UndefOr[IngressVpcConfiguration] = js.undefined,
+        ServiceArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        Status: js.UndefOr[VpcIngressConnectionStatus] = js.undefined,
+        VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        VpcIngressConnectionName: js.UndefOr[VpcIngressConnectionName] = js.undefined
+    ): VpcIngressConnection = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeletedAt.foreach(__v => __obj.updateDynamic("DeletedAt")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      IngressVpcConfiguration.foreach(__v => __obj.updateDynamic("IngressVpcConfiguration")(__v.asInstanceOf[js.Any]))
+      ServiceArn.foreach(__v => __obj.updateDynamic("ServiceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcIngressConnectionArn.foreach(__v => __obj.updateDynamic("VpcIngressConnectionArn")(__v.asInstanceOf[js.Any]))
+      VpcIngressConnectionName.foreach(__v => __obj.updateDynamic("VpcIngressConnectionName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcIngressConnection]
+    }
+  }
+
+  /** Provides summary information about an VPC Ingress Connection, which includes its VPC Ingress Connection ARN and its associated Service ARN.
+    */
+  @js.native
+  trait VpcIngressConnectionSummary extends js.Object {
+    var ServiceArn: js.UndefOr[AppRunnerResourceArn]
+    var VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn]
+  }
+
+  object VpcIngressConnectionSummary {
+    @inline
+    def apply(
+        ServiceArn: js.UndefOr[AppRunnerResourceArn] = js.undefined,
+        VpcIngressConnectionArn: js.UndefOr[AppRunnerResourceArn] = js.undefined
+    ): VpcIngressConnectionSummary = {
+      val __obj = js.Dynamic.literal()
+      ServiceArn.foreach(__v => __obj.updateDynamic("ServiceArn")(__v.asInstanceOf[js.Any]))
+      VpcIngressConnectionArn.foreach(__v => __obj.updateDynamic("VpcIngressConnectionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VpcIngressConnectionSummary]
     }
   }
 }

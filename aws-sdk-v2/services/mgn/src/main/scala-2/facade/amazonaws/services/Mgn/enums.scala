@@ -3,6 +3,35 @@ package facade.amazonaws.services.mgn
 import scalajs.js
 
 @js.native
+sealed trait ApplicationHealthStatus extends js.Any
+object ApplicationHealthStatus {
+  val HEALTHY = "HEALTHY".asInstanceOf[ApplicationHealthStatus]
+  val LAGGING = "LAGGING".asInstanceOf[ApplicationHealthStatus]
+  val ERROR = "ERROR".asInstanceOf[ApplicationHealthStatus]
+
+  @inline def values: js.Array[ApplicationHealthStatus] = js.Array(HEALTHY, LAGGING, ERROR)
+}
+
+@js.native
+sealed trait ApplicationProgressStatus extends js.Any
+object ApplicationProgressStatus {
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[ApplicationProgressStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ApplicationProgressStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[ApplicationProgressStatus]
+
+  @inline def values: js.Array[ApplicationProgressStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
+}
+
+@js.native
+sealed trait BootMode extends js.Any
+object BootMode {
+  val LEGACY_BIOS = "LEGACY_BIOS".asInstanceOf[BootMode]
+  val UEFI = "UEFI".asInstanceOf[BootMode]
+
+  @inline def values: js.Array[BootMode] = js.Array(LEGACY_BIOS, UEFI)
+}
+
+@js.native
 sealed trait ChangeServerLifeCycleStateSourceServerLifecycleState extends js.Any
 object ChangeServerLifeCycleStateSourceServerLifecycleState {
   val READY_FOR_TEST = "READY_FOR_TEST".asInstanceOf[ChangeServerLifeCycleStateSourceServerLifecycleState]
@@ -232,6 +261,26 @@ object LifeCycleState {
 }
 
 @js.native
+sealed trait PostLaunchActionExecutionStatus extends js.Any
+object PostLaunchActionExecutionStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[PostLaunchActionExecutionStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[PostLaunchActionExecutionStatus]
+  val FAILED = "FAILED".asInstanceOf[PostLaunchActionExecutionStatus]
+
+  @inline def values: js.Array[PostLaunchActionExecutionStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+}
+
+@js.native
+sealed trait PostLaunchActionsDeploymentType extends js.Any
+object PostLaunchActionsDeploymentType {
+  val TEST_AND_CUTOVER = "TEST_AND_CUTOVER".asInstanceOf[PostLaunchActionsDeploymentType]
+  val CUTOVER_ONLY = "CUTOVER_ONLY".asInstanceOf[PostLaunchActionsDeploymentType]
+  val TEST_ONLY = "TEST_ONLY".asInstanceOf[PostLaunchActionsDeploymentType]
+
+  @inline def values: js.Array[PostLaunchActionsDeploymentType] = js.Array(TEST_AND_CUTOVER, CUTOVER_ONLY, TEST_ONLY)
+}
+
+@js.native
 sealed trait ReplicationConfigurationDataPlaneRouting extends js.Any
 object ReplicationConfigurationDataPlaneRouting {
   val PRIVATE_IP = "PRIVATE_IP".asInstanceOf[ReplicationConfigurationDataPlaneRouting]
@@ -245,8 +294,9 @@ sealed trait ReplicationConfigurationDefaultLargeStagingDiskType extends js.Any
 object ReplicationConfigurationDefaultLargeStagingDiskType {
   val GP2 = "GP2".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
   val ST1 = "ST1".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
+  val GP3 = "GP3".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
 
-  @inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1)
+  @inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1, GP3)
 }
 
 @js.native
@@ -267,8 +317,10 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   val SC1 = "SC1".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
   val ST1 = "ST1".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
   val STANDARD = "STANDARD".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
+  val GP3 = "GP3".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
+  val IO2 = "IO2".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
 
-  @inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
+  @inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD, GP3, IO2)
 }
 
 @js.native
@@ -281,10 +333,61 @@ object ReplicationType {
 }
 
 @js.native
+sealed trait SsmDocumentType extends js.Any
+object SsmDocumentType {
+  val AUTOMATION = "AUTOMATION".asInstanceOf[SsmDocumentType]
+  val COMMAND = "COMMAND".asInstanceOf[SsmDocumentType]
+
+  @inline def values: js.Array[SsmDocumentType] = js.Array(AUTOMATION, COMMAND)
+}
+
+@js.native
+sealed trait SsmParameterStoreParameterType extends js.Any
+object SsmParameterStoreParameterType {
+  val STRING = "STRING".asInstanceOf[SsmParameterStoreParameterType]
+
+  @inline def values: js.Array[SsmParameterStoreParameterType] = js.Array(STRING)
+}
+
+@js.native
 sealed trait TargetInstanceTypeRightSizingMethod extends js.Any
 object TargetInstanceTypeRightSizingMethod {
   val NONE = "NONE".asInstanceOf[TargetInstanceTypeRightSizingMethod]
   val BASIC = "BASIC".asInstanceOf[TargetInstanceTypeRightSizingMethod]
 
   @inline def values: js.Array[TargetInstanceTypeRightSizingMethod] = js.Array(NONE, BASIC)
+}
+
+@js.native
+sealed trait VolumeType extends js.Any
+object VolumeType {
+  val io1 = "io1".asInstanceOf[VolumeType]
+  val io2 = "io2".asInstanceOf[VolumeType]
+  val gp3 = "gp3".asInstanceOf[VolumeType]
+  val gp2 = "gp2".asInstanceOf[VolumeType]
+  val st1 = "st1".asInstanceOf[VolumeType]
+  val sc1 = "sc1".asInstanceOf[VolumeType]
+  val standard = "standard".asInstanceOf[VolumeType]
+
+  @inline def values: js.Array[VolumeType] = js.Array(io1, io2, gp3, gp2, st1, sc1, standard)
+}
+
+@js.native
+sealed trait WaveHealthStatus extends js.Any
+object WaveHealthStatus {
+  val HEALTHY = "HEALTHY".asInstanceOf[WaveHealthStatus]
+  val LAGGING = "LAGGING".asInstanceOf[WaveHealthStatus]
+  val ERROR = "ERROR".asInstanceOf[WaveHealthStatus]
+
+  @inline def values: js.Array[WaveHealthStatus] = js.Array(HEALTHY, LAGGING, ERROR)
+}
+
+@js.native
+sealed trait WaveProgressStatus extends js.Any
+object WaveProgressStatus {
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[WaveProgressStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WaveProgressStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[WaveProgressStatus]
+
+  @inline def values: js.Array[WaveProgressStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
 }

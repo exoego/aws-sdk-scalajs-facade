@@ -2,7 +2,7 @@ package facade.amazonaws.services.voiceid
 
 import scalajs.js
 
-type AuthenticationDecision = "ACCEPT" | "REJECT" | "NOT_ENOUGH_SPEECH" | "SPEAKER_NOT_ENROLLED" | "SPEAKER_OPTED_OUT" | "SPEAKER_ID_NOT_PROVIDED"
+type AuthenticationDecision = "ACCEPT" | "REJECT" | "NOT_ENOUGH_SPEECH" | "SPEAKER_NOT_ENROLLED" | "SPEAKER_OPTED_OUT" | "SPEAKER_ID_NOT_PROVIDED" | "SPEAKER_EXPIRED"
 object AuthenticationDecision {
   inline val ACCEPT: "ACCEPT" = "ACCEPT"
   inline val REJECT: "REJECT" = "REJECT"
@@ -10,8 +10,9 @@ object AuthenticationDecision {
   inline val SPEAKER_NOT_ENROLLED: "SPEAKER_NOT_ENROLLED" = "SPEAKER_NOT_ENROLLED"
   inline val SPEAKER_OPTED_OUT: "SPEAKER_OPTED_OUT" = "SPEAKER_OPTED_OUT"
   inline val SPEAKER_ID_NOT_PROVIDED: "SPEAKER_ID_NOT_PROVIDED" = "SPEAKER_ID_NOT_PROVIDED"
+  inline val SPEAKER_EXPIRED: "SPEAKER_EXPIRED" = "SPEAKER_EXPIRED"
 
-  inline def values: js.Array[AuthenticationDecision] = js.Array(ACCEPT, REJECT, NOT_ENOUGH_SPEECH, SPEAKER_NOT_ENROLLED, SPEAKER_OPTED_OUT, SPEAKER_ID_NOT_PROVIDED)
+  inline def values: js.Array[AuthenticationDecision] = js.Array(ACCEPT, REJECT, NOT_ENOUGH_SPEECH, SPEAKER_NOT_ENROLLED, SPEAKER_OPTED_OUT, SPEAKER_ID_NOT_PROVIDED, SPEAKER_EXPIRED)
 }
 
 type DomainStatus = "ACTIVE" | "PENDING" | "SUSPENDED"
@@ -56,11 +57,12 @@ object FraudDetectionDecision {
   inline def values: js.Array[FraudDetectionDecision] = js.Array(HIGH_RISK, LOW_RISK, NOT_ENOUGH_SPEECH)
 }
 
-type FraudDetectionReason = "KNOWN_FRAUDSTER"
+type FraudDetectionReason = "KNOWN_FRAUDSTER" | "VOICE_SPOOFING"
 object FraudDetectionReason {
   inline val KNOWN_FRAUDSTER: "KNOWN_FRAUDSTER" = "KNOWN_FRAUDSTER"
+  inline val VOICE_SPOOFING: "VOICE_SPOOFING" = "VOICE_SPOOFING"
 
-  inline def values: js.Array[FraudDetectionReason] = js.Array(KNOWN_FRAUDSTER)
+  inline def values: js.Array[FraudDetectionReason] = js.Array(KNOWN_FRAUDSTER, VOICE_SPOOFING)
 }
 
 type FraudsterRegistrationJobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "COMPLETED_WITH_ERRORS" | "FAILED"
@@ -72,6 +74,15 @@ object FraudsterRegistrationJobStatus {
   inline val FAILED: "FAILED" = "FAILED"
 
   inline def values: js.Array[FraudsterRegistrationJobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, FAILED)
+}
+
+type ServerSideEncryptionUpdateStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED"
+object ServerSideEncryptionUpdateStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ServerSideEncryptionUpdateStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
 }
 
 type SpeakerEnrollmentJobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "COMPLETED_WITH_ERRORS" | "FAILED"

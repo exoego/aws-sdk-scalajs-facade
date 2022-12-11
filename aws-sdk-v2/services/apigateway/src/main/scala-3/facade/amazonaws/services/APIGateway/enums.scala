@@ -28,7 +28,7 @@ object AuthorizerType {
   inline def values: js.Array[AuthorizerType] = js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS)
 }
 
-/** Returns the size of the ```CacheCluster```.
+/** Returns the size of the CacheCluster.
   */
 type CacheClusterSize = "0.5" | "1.6" | "6.1" | "13.5" | "28.4" | "58.2" | "118" | "237"
 object CacheClusterSize {
@@ -44,7 +44,7 @@ object CacheClusterSize {
   inline def values: js.Array[CacheClusterSize] = js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`)
 }
 
-/** Returns the status of the ```CacheCluster```.
+/** Returns the status of the CacheCluster.
   */
 type CacheClusterStatus = "CREATE_IN_PROGRESS" | "AVAILABLE" | "DELETE_IN_PROGRESS" | "NOT_AVAILABLE" | "FLUSH_IN_PROGRESS"
 object CacheClusterStatus {

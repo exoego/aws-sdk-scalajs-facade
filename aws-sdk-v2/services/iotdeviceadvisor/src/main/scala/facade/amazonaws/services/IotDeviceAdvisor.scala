@@ -16,6 +16,7 @@ package object iotdeviceadvisor {
   type GroupName = String
   type GroupResultList = js.Array[GroupResult]
   type IntendedForQualificationBoolean = Boolean
+  type IsLongDurationTestBoolean = Boolean
   type LogUrl = String
   type MaxResults = Int
   type ParallelRun = Boolean
@@ -29,10 +30,13 @@ package object iotdeviceadvisor {
   type SuiteDefinitionVersion = String
   type SuiteRunResultCount = Int
   type SuiteRunsList = js.Array[SuiteRunInformation]
+  type SystemMessage = String
   type TagKeyList = js.Array[String128]
   type TagMap = js.Dictionary[String256]
   type TestCaseDefinitionName = String
   type TestCaseRuns = js.Array[TestCaseRun]
+  type TestCaseScenarioId = String
+  type TestCaseScenariosList = js.Array[TestCaseScenario]
   type Timestamp = js.Date
   type Token = String
   type UUID = String
@@ -597,6 +601,8 @@ package object iotdeviceadvisor {
     var devicePermissionRoleArn: js.UndefOr[AmazonResourceName]
     var devices: js.UndefOr[DeviceUnderTestList]
     var intendedForQualification: js.UndefOr[IntendedForQualificationBoolean]
+    var isLongDurationTest: js.UndefOr[IsLongDurationTestBoolean]
+    var protocol: js.UndefOr[Protocol]
     var rootGroup: js.UndefOr[RootGroup]
     var suiteDefinitionName: js.UndefOr[SuiteDefinitionName]
   }
@@ -607,6 +613,8 @@ package object iotdeviceadvisor {
         devicePermissionRoleArn: js.UndefOr[AmazonResourceName] = js.undefined,
         devices: js.UndefOr[DeviceUnderTestList] = js.undefined,
         intendedForQualification: js.UndefOr[IntendedForQualificationBoolean] = js.undefined,
+        isLongDurationTest: js.UndefOr[IsLongDurationTestBoolean] = js.undefined,
+        protocol: js.UndefOr[Protocol] = js.undefined,
         rootGroup: js.UndefOr[RootGroup] = js.undefined,
         suiteDefinitionName: js.UndefOr[SuiteDefinitionName] = js.undefined
     ): SuiteDefinitionConfiguration = {
@@ -614,6 +622,8 @@ package object iotdeviceadvisor {
       devicePermissionRoleArn.foreach(__v => __obj.updateDynamic("devicePermissionRoleArn")(__v.asInstanceOf[js.Any]))
       devices.foreach(__v => __obj.updateDynamic("devices")(__v.asInstanceOf[js.Any]))
       intendedForQualification.foreach(__v => __obj.updateDynamic("intendedForQualification")(__v.asInstanceOf[js.Any]))
+      isLongDurationTest.foreach(__v => __obj.updateDynamic("isLongDurationTest")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       rootGroup.foreach(__v => __obj.updateDynamic("rootGroup")(__v.asInstanceOf[js.Any]))
       suiteDefinitionName.foreach(__v => __obj.updateDynamic("suiteDefinitionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuiteDefinitionConfiguration]
@@ -627,6 +637,8 @@ package object iotdeviceadvisor {
     var createdAt: js.UndefOr[Timestamp]
     var defaultDevices: js.UndefOr[DeviceUnderTestList]
     var intendedForQualification: js.UndefOr[IntendedForQualificationBoolean]
+    var isLongDurationTest: js.UndefOr[IsLongDurationTestBoolean]
+    var protocol: js.UndefOr[Protocol]
     var suiteDefinitionId: js.UndefOr[UUID]
     var suiteDefinitionName: js.UndefOr[SuiteDefinitionName]
   }
@@ -637,6 +649,8 @@ package object iotdeviceadvisor {
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         defaultDevices: js.UndefOr[DeviceUnderTestList] = js.undefined,
         intendedForQualification: js.UndefOr[IntendedForQualificationBoolean] = js.undefined,
+        isLongDurationTest: js.UndefOr[IsLongDurationTestBoolean] = js.undefined,
+        protocol: js.UndefOr[Protocol] = js.undefined,
         suiteDefinitionId: js.UndefOr[UUID] = js.undefined,
         suiteDefinitionName: js.UndefOr[SuiteDefinitionName] = js.undefined
     ): SuiteDefinitionInformation = {
@@ -644,6 +658,8 @@ package object iotdeviceadvisor {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       defaultDevices.foreach(__v => __obj.updateDynamic("defaultDevices")(__v.asInstanceOf[js.Any]))
       intendedForQualification.foreach(__v => __obj.updateDynamic("intendedForQualification")(__v.asInstanceOf[js.Any]))
+      isLongDurationTest.foreach(__v => __obj.updateDynamic("isLongDurationTest")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       suiteDefinitionId.foreach(__v => __obj.updateDynamic("suiteDefinitionId")(__v.asInstanceOf[js.Any]))
       suiteDefinitionName.foreach(__v => __obj.updateDynamic("suiteDefinitionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuiteDefinitionInformation]
@@ -762,6 +778,7 @@ package object iotdeviceadvisor {
     var testCaseDefinitionId: js.UndefOr[UUID]
     var testCaseDefinitionName: js.UndefOr[TestCaseDefinitionName]
     var testCaseRunId: js.UndefOr[UUID]
+    var testScenarios: js.UndefOr[TestCaseScenariosList]
     var warnings: js.UndefOr[Warnings]
   }
 
@@ -776,6 +793,7 @@ package object iotdeviceadvisor {
         testCaseDefinitionId: js.UndefOr[UUID] = js.undefined,
         testCaseDefinitionName: js.UndefOr[TestCaseDefinitionName] = js.undefined,
         testCaseRunId: js.UndefOr[UUID] = js.undefined,
+        testScenarios: js.UndefOr[TestCaseScenariosList] = js.undefined,
         warnings: js.UndefOr[Warnings] = js.undefined
     ): TestCaseRun = {
       val __obj = js.Dynamic.literal()
@@ -787,8 +805,39 @@ package object iotdeviceadvisor {
       testCaseDefinitionId.foreach(__v => __obj.updateDynamic("testCaseDefinitionId")(__v.asInstanceOf[js.Any]))
       testCaseDefinitionName.foreach(__v => __obj.updateDynamic("testCaseDefinitionName")(__v.asInstanceOf[js.Any]))
       testCaseRunId.foreach(__v => __obj.updateDynamic("testCaseRunId")(__v.asInstanceOf[js.Any]))
+      testScenarios.foreach(__v => __obj.updateDynamic("testScenarios")(__v.asInstanceOf[js.Any]))
       warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestCaseRun]
+    }
+  }
+
+  /** Provides test case scenario.
+    */
+  @js.native
+  trait TestCaseScenario extends js.Object {
+    var failure: js.UndefOr[Failure]
+    var status: js.UndefOr[TestCaseScenarioStatus]
+    var systemMessage: js.UndefOr[SystemMessage]
+    var testCaseScenarioId: js.UndefOr[TestCaseScenarioId]
+    var testCaseScenarioType: js.UndefOr[TestCaseScenarioType]
+  }
+
+  object TestCaseScenario {
+    @inline
+    def apply(
+        failure: js.UndefOr[Failure] = js.undefined,
+        status: js.UndefOr[TestCaseScenarioStatus] = js.undefined,
+        systemMessage: js.UndefOr[SystemMessage] = js.undefined,
+        testCaseScenarioId: js.UndefOr[TestCaseScenarioId] = js.undefined,
+        testCaseScenarioType: js.UndefOr[TestCaseScenarioType] = js.undefined
+    ): TestCaseScenario = {
+      val __obj = js.Dynamic.literal()
+      failure.foreach(__v => __obj.updateDynamic("failure")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      systemMessage.foreach(__v => __obj.updateDynamic("systemMessage")(__v.asInstanceOf[js.Any]))
+      testCaseScenarioId.foreach(__v => __obj.updateDynamic("testCaseScenarioId")(__v.asInstanceOf[js.Any]))
+      testCaseScenarioType.foreach(__v => __obj.updateDynamic("testCaseScenarioType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestCaseScenario]
     }
   }
 

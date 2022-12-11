@@ -21,6 +21,7 @@ package object servicecatalog {
   type CausingEntity = String
   type CloudWatchDashboardName = String
   type CloudWatchDashboards = js.Array[CloudWatchDashboard]
+  type CodeStarConnectionArn = String
   type ConstraintDescription = String
   type ConstraintDetails = js.Array[ConstraintDetail]
   type ConstraintParameters = String
@@ -49,6 +50,9 @@ package object servicecatalog {
   type InstructionType = String
   type InstructionValue = String
   type LastRequestId = String
+  type LastSuccessfulSyncTime = js.Date
+  type LastSyncStatusMessage = String
+  type LastSyncTime = js.Date
   type LaunchPathSummaries = js.Array[LaunchPathSummary]
   type LaunchPaths = js.Array[LaunchPath]
   type LogicalResourceId = String
@@ -134,6 +138,9 @@ package object servicecatalog {
   type RecordTags = js.Array[RecordTag]
   type RecordType = String
   type Region = String
+  type Repository = String
+  type RepositoryArtifactPath = String
+  type RepositoryBranch = String
   type ResourceARN = String
   type ResourceChangeDetails = js.Array[ResourceChangeDetail]
   type ResourceChanges = js.Array[ResourceChange]
@@ -162,6 +169,7 @@ package object servicecatalog {
   type SortField = String
   type SourceProvisioningArtifactProperties = js.Array[SourceProvisioningArtifactPropertiesMap]
   type SourceProvisioningArtifactPropertiesMap = js.Dictionary[ProvisioningArtifactPropertyValue]
+  type SourceRevision = String
   type StackInstances = js.Array[StackInstance]
   type StackSetAccounts = js.Array[AccountId]
   type StackSetFailureToleranceCount = Int
@@ -728,6 +736,34 @@ package object servicecatalog {
     }
   }
 
+  /** The subtype containing details about the Codestar connection <code>Type</code>.
+    */
+  @js.native
+  trait CodeStarParameters extends js.Object {
+    var ArtifactPath: RepositoryArtifactPath
+    var Branch: RepositoryBranch
+    var ConnectionArn: CodeStarConnectionArn
+    var Repository: Repository
+  }
+
+  object CodeStarParameters {
+    @inline
+    def apply(
+        ArtifactPath: RepositoryArtifactPath,
+        Branch: RepositoryBranch,
+        ConnectionArn: CodeStarConnectionArn,
+        Repository: Repository
+    ): CodeStarParameters = {
+      val __obj = js.Dynamic.literal(
+        "ArtifactPath" -> ArtifactPath.asInstanceOf[js.Any],
+        "Branch" -> Branch.asInstanceOf[js.Any],
+        "ConnectionArn" -> ConnectionArn.asInstanceOf[js.Any],
+        "Repository" -> Repository.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CodeStarParameters]
+    }
+  }
+
   /** Information about a constraint.
     */
   @js.native
@@ -950,6 +986,7 @@ package object servicecatalog {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var AccountId: js.UndefOr[AccountId]
     var OrganizationNode: js.UndefOr[OrganizationNode]
+    var SharePrincipals: js.UndefOr[Boolean]
     var ShareTagOptions: js.UndefOr[Boolean]
   }
 
@@ -960,6 +997,7 @@ package object servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccountId: js.UndefOr[AccountId] = js.undefined,
         OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined,
+        SharePrincipals: js.UndefOr[Boolean] = js.undefined,
         ShareTagOptions: js.UndefOr[Boolean] = js.undefined
     ): CreatePortfolioShareInput = {
       val __obj = js.Dynamic.literal(
@@ -969,6 +1007,7 @@ package object servicecatalog {
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
+      SharePrincipals.foreach(__v => __obj.updateDynamic("SharePrincipals")(__v.asInstanceOf[js.Any]))
       ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioShareInput]
     }
@@ -996,10 +1035,11 @@ package object servicecatalog {
     var Name: ProductViewName
     var Owner: ProductViewOwner
     var ProductType: ProductType
-    var ProvisioningArtifactParameters: ProvisioningArtifactProperties
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var Description: js.UndefOr[ProductViewShortDescription]
     var Distributor: js.UndefOr[ProductViewOwner]
+    var ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactProperties]
+    var SourceConnection: js.UndefOr[SourceConnection]
     var SupportDescription: js.UndefOr[SupportDescription]
     var SupportEmail: js.UndefOr[SupportEmail]
     var SupportUrl: js.UndefOr[SupportUrl]
@@ -1013,10 +1053,11 @@ package object servicecatalog {
         Name: ProductViewName,
         Owner: ProductViewOwner,
         ProductType: ProductType,
-        ProvisioningArtifactParameters: ProvisioningArtifactProperties,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Description: js.UndefOr[ProductViewShortDescription] = js.undefined,
         Distributor: js.UndefOr[ProductViewOwner] = js.undefined,
+        ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactProperties] = js.undefined,
+        SourceConnection: js.UndefOr[SourceConnection] = js.undefined,
         SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
         SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
         SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
@@ -1026,13 +1067,14 @@ package object servicecatalog {
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any],
         "Owner" -> Owner.asInstanceOf[js.Any],
-        "ProductType" -> ProductType.asInstanceOf[js.Any],
-        "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.asInstanceOf[js.Any]
+        "ProductType" -> ProductType.asInstanceOf[js.Any]
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Distributor.foreach(__v => __obj.updateDynamic("Distributor")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactParameters.foreach(__v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any]))
+      SourceConnection.foreach(__v => __obj.updateDynamic("SourceConnection")(__v.asInstanceOf[js.Any]))
       SupportDescription.foreach(__v => __obj.updateDynamic("SupportDescription")(__v.asInstanceOf[js.Any]))
       SupportEmail.foreach(__v => __obj.updateDynamic("SupportEmail")(__v.asInstanceOf[js.Any]))
       SupportUrl.foreach(__v => __obj.updateDynamic("SupportUrl")(__v.asInstanceOf[js.Any]))
@@ -2087,6 +2129,7 @@ package object servicecatalog {
   @js.native
   trait DescribeProvisioningParametersOutput extends js.Object {
     var ConstraintSummaries: js.UndefOr[ConstraintSummaries]
+    var ProvisioningArtifactOutputKeys: js.UndefOr[ProvisioningArtifactOutputs]
     var ProvisioningArtifactOutputs: js.UndefOr[ProvisioningArtifactOutputs]
     var ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters]
     var ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences]
@@ -2098,6 +2141,7 @@ package object servicecatalog {
     @inline
     def apply(
         ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
+        ProvisioningArtifactOutputKeys: js.UndefOr[ProvisioningArtifactOutputs] = js.undefined,
         ProvisioningArtifactOutputs: js.UndefOr[ProvisioningArtifactOutputs] = js.undefined,
         ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters] = js.undefined,
         ProvisioningArtifactPreferences: js.UndefOr[ProvisioningArtifactPreferences] = js.undefined,
@@ -2106,6 +2150,7 @@ package object servicecatalog {
     ): DescribeProvisioningParametersOutput = {
       val __obj = js.Dynamic.literal()
       ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactOutputKeys.foreach(__v => __obj.updateDynamic("ProvisioningArtifactOutputKeys")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactOutputs.foreach(__v => __obj.updateDynamic("ProvisioningArtifactOutputs")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactParameters.foreach(__v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactPreferences.foreach(__v => __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any]))
@@ -2332,6 +2377,7 @@ package object servicecatalog {
     var PortfolioId: Id
     var PrincipalARN: PrincipalARN
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
+    var PrincipalType: js.UndefOr[PrincipalType]
   }
 
   object DisassociatePrincipalFromPortfolioInput {
@@ -2339,7 +2385,8 @@ package object servicecatalog {
     def apply(
         PortfolioId: Id,
         PrincipalARN: PrincipalARN,
-        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
+        AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
+        PrincipalType: js.UndefOr[PrincipalType] = js.undefined
     ): DisassociatePrincipalFromPortfolioInput = {
       val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
@@ -2347,6 +2394,7 @@ package object servicecatalog {
       )
 
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioInput]
     }
   }
@@ -2751,6 +2799,36 @@ package object servicecatalog {
       val __obj = js.Dynamic.literal()
       RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportAsProvisionedProductOutput]
+    }
+  }
+
+  /** Provides details about the product's connection sync and contains the following sub-fields. * <code>LastSyncTime</code> * <code>LastSyncStatus</code> * <code>LastSyncStatusMessage</code> * <code>LastSuccessfulSyncTime</code> * <code>LastSuccessfulSyncProvisioningArtifactID</code>
+    */
+  @js.native
+  trait LastSync extends js.Object {
+    var LastSuccessfulSyncProvisioningArtifactId: js.UndefOr[Id]
+    var LastSuccessfulSyncTime: js.UndefOr[LastSuccessfulSyncTime]
+    var LastSyncStatus: js.UndefOr[LastSyncStatus]
+    var LastSyncStatusMessage: js.UndefOr[LastSyncStatusMessage]
+    var LastSyncTime: js.UndefOr[LastSyncTime]
+  }
+
+  object LastSync {
+    @inline
+    def apply(
+        LastSuccessfulSyncProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
+        LastSuccessfulSyncTime: js.UndefOr[LastSuccessfulSyncTime] = js.undefined,
+        LastSyncStatus: js.UndefOr[LastSyncStatus] = js.undefined,
+        LastSyncStatusMessage: js.UndefOr[LastSyncStatusMessage] = js.undefined,
+        LastSyncTime: js.UndefOr[LastSyncTime] = js.undefined
+    ): LastSync = {
+      val __obj = js.Dynamic.literal()
+      LastSuccessfulSyncProvisioningArtifactId.foreach(__v => __obj.updateDynamic("LastSuccessfulSyncProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulSyncTime.foreach(__v => __obj.updateDynamic("LastSuccessfulSyncTime")(__v.asInstanceOf[js.Any]))
+      LastSyncStatus.foreach(__v => __obj.updateDynamic("LastSyncStatus")(__v.asInstanceOf[js.Any]))
+      LastSyncStatusMessage.foreach(__v => __obj.updateDynamic("LastSyncStatusMessage")(__v.asInstanceOf[js.Any]))
+      LastSyncTime.foreach(__v => __obj.updateDynamic("LastSyncTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LastSync]
     }
   }
 
@@ -3762,6 +3840,7 @@ package object servicecatalog {
   trait PortfolioShareDetail extends js.Object {
     var Accepted: js.UndefOr[Boolean]
     var PrincipalId: js.UndefOr[Id]
+    var SharePrincipals: js.UndefOr[Boolean]
     var ShareTagOptions: js.UndefOr[Boolean]
     var Type: js.UndefOr[DescribePortfolioShareType]
   }
@@ -3771,12 +3850,14 @@ package object servicecatalog {
     def apply(
         Accepted: js.UndefOr[Boolean] = js.undefined,
         PrincipalId: js.UndefOr[Id] = js.undefined,
+        SharePrincipals: js.UndefOr[Boolean] = js.undefined,
         ShareTagOptions: js.UndefOr[Boolean] = js.undefined,
         Type: js.UndefOr[DescribePortfolioShareType] = js.undefined
     ): PortfolioShareDetail = {
       val __obj = js.Dynamic.literal()
       Accepted.foreach(__v => __obj.updateDynamic("Accepted")(__v.asInstanceOf[js.Any]))
       PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      SharePrincipals.foreach(__v => __obj.updateDynamic("SharePrincipals")(__v.asInstanceOf[js.Any]))
       ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortfolioShareDetail]
@@ -3832,6 +3913,7 @@ package object servicecatalog {
     var CreatedTime: js.UndefOr[CreatedTime]
     var ProductARN: js.UndefOr[ResourceARN]
     var ProductViewSummary: js.UndefOr[ProductViewSummary]
+    var SourceConnection: js.UndefOr[SourceConnectionDetail]
     var Status: js.UndefOr[Status]
   }
 
@@ -3841,12 +3923,14 @@ package object servicecatalog {
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         ProductARN: js.UndefOr[ResourceARN] = js.undefined,
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
+        SourceConnection: js.UndefOr[SourceConnectionDetail] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): ProductViewDetail = {
       val __obj = js.Dynamic.literal()
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       ProductARN.foreach(__v => __obj.updateDynamic("ProductARN")(__v.asInstanceOf[js.Any]))
       ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
+      SourceConnection.foreach(__v => __obj.updateDynamic("SourceConnection")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewDetail]
     }
@@ -4232,6 +4316,7 @@ package object servicecatalog {
     var Guidance: js.UndefOr[ProvisioningArtifactGuidance]
     var Id: js.UndefOr[Id]
     var Name: js.UndefOr[ProvisioningArtifactName]
+    var SourceRevision: js.UndefOr[SourceRevision]
     var Type: js.UndefOr[ProvisioningArtifactType]
   }
 
@@ -4244,6 +4329,7 @@ package object servicecatalog {
         Guidance: js.UndefOr[ProvisioningArtifactGuidance] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
+        SourceRevision: js.UndefOr[SourceRevision] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
     ): ProvisioningArtifactDetail = {
       val __obj = js.Dynamic.literal()
@@ -4253,6 +4339,7 @@ package object servicecatalog {
       Guidance.foreach(__v => __obj.updateDynamic("Guidance")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SourceRevision.foreach(__v => __obj.updateDynamic("SourceRevision")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactDetail]
     }
@@ -4312,7 +4399,7 @@ package object servicecatalog {
     }
   }
 
-  /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>AWS CloudFormation User Guide</i>.
+  /** The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]] in the <i>CloudFormation User Guide</i>.
     */
   @js.native
   trait ProvisioningArtifactPreferences extends js.Object {
@@ -4337,9 +4424,9 @@ package object servicecatalog {
     */
   @js.native
   trait ProvisioningArtifactProperties extends js.Object {
-    var Info: ProvisioningArtifactInfo
     var Description: js.UndefOr[ProvisioningArtifactDescription]
     var DisableTemplateValidation: js.UndefOr[DisableTemplateValidation]
+    var Info: js.UndefOr[ProvisioningArtifactInfo]
     var Name: js.UndefOr[ProvisioningArtifactName]
     var Type: js.UndefOr[ProvisioningArtifactType]
   }
@@ -4347,18 +4434,16 @@ package object servicecatalog {
   object ProvisioningArtifactProperties {
     @inline
     def apply(
-        Info: ProvisioningArtifactInfo,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
         DisableTemplateValidation: js.UndefOr[DisableTemplateValidation] = js.undefined,
+        Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
     ): ProvisioningArtifactProperties = {
-      val __obj = js.Dynamic.literal(
-        "Info" -> Info.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DisableTemplateValidation.foreach(__v => __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any]))
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactProperties]
@@ -4437,7 +4522,7 @@ package object servicecatalog {
     }
   }
 
-  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type One or more AWS accounts that will have access to the provisioned product. Applicable only to a <code>CFN_STACKSET</code> provisioned product type. The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation. If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+  /** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product type One or more Amazon Web Services accounts that will have access to the provisioned product. Applicable only to a <code>CFN_STACKSET</code> provisioned product type. The Amazon Web Services accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code> operation. If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
     */
   @js.native
   trait ProvisioningPreferences extends js.Object {
@@ -5069,7 +5154,72 @@ package object servicecatalog {
     }
   }
 
-  /** An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+  /** A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.
+    */
+  @js.native
+  trait SourceConnection extends js.Object {
+    var ConnectionParameters: SourceConnectionParameters
+    var Type: js.UndefOr[SourceType]
+  }
+
+  object SourceConnection {
+    @inline
+    def apply(
+        ConnectionParameters: SourceConnectionParameters,
+        Type: js.UndefOr[SourceType] = js.undefined
+    ): SourceConnection = {
+      val __obj = js.Dynamic.literal(
+        "ConnectionParameters" -> ConnectionParameters.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConnection]
+    }
+  }
+
+  /** Provides details about the configured <code>SourceConnection</code>.
+    */
+  @js.native
+  trait SourceConnectionDetail extends js.Object {
+    var ConnectionParameters: js.UndefOr[SourceConnectionParameters]
+    var LastSync: js.UndefOr[LastSync]
+    var Type: js.UndefOr[SourceType]
+  }
+
+  object SourceConnectionDetail {
+    @inline
+    def apply(
+        ConnectionParameters: js.UndefOr[SourceConnectionParameters] = js.undefined,
+        LastSync: js.UndefOr[LastSync] = js.undefined,
+        Type: js.UndefOr[SourceType] = js.undefined
+    ): SourceConnectionDetail = {
+      val __obj = js.Dynamic.literal()
+      ConnectionParameters.foreach(__v => __obj.updateDynamic("ConnectionParameters")(__v.asInstanceOf[js.Any]))
+      LastSync.foreach(__v => __obj.updateDynamic("LastSync")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConnectionDetail]
+    }
+  }
+
+  /** Provides connection details.
+    */
+  @js.native
+  trait SourceConnectionParameters extends js.Object {
+    var CodeStar: js.UndefOr[CodeStarParameters]
+  }
+
+  object SourceConnectionParameters {
+    @inline
+    def apply(
+        CodeStar: js.UndefOr[CodeStarParameters] = js.undefined
+    ): SourceConnectionParameters = {
+      val __obj = js.Dynamic.literal()
+      CodeStar.foreach(__v => __obj.updateDynamic("CodeStar")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourceConnectionParameters]
+    }
+  }
+
+  /** An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -5325,6 +5475,7 @@ package object servicecatalog {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var AccountId: js.UndefOr[AccountId]
     var OrganizationNode: js.UndefOr[OrganizationNode]
+    var SharePrincipals: js.UndefOr[NullableBoolean]
     var ShareTagOptions: js.UndefOr[NullableBoolean]
   }
 
@@ -5335,6 +5486,7 @@ package object servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccountId: js.UndefOr[AccountId] = js.undefined,
         OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined,
+        SharePrincipals: js.UndefOr[NullableBoolean] = js.undefined,
         ShareTagOptions: js.UndefOr[NullableBoolean] = js.undefined
     ): UpdatePortfolioShareInput = {
       val __obj = js.Dynamic.literal(
@@ -5344,6 +5496,7 @@ package object servicecatalog {
       AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
+      SharePrincipals.foreach(__v => __obj.updateDynamic("SharePrincipals")(__v.asInstanceOf[js.Any]))
       ShareTagOptions.foreach(__v => __obj.updateDynamic("ShareTagOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePortfolioShareInput]
     }
@@ -5378,6 +5531,7 @@ package object servicecatalog {
     var Name: js.UndefOr[ProductViewName]
     var Owner: js.UndefOr[ProductViewOwner]
     var RemoveTags: js.UndefOr[TagKeys]
+    var SourceConnection: js.UndefOr[SourceConnection]
     var SupportDescription: js.UndefOr[SupportDescription]
     var SupportEmail: js.UndefOr[SupportEmail]
     var SupportUrl: js.UndefOr[SupportUrl]
@@ -5394,6 +5548,7 @@ package object servicecatalog {
         Name: js.UndefOr[ProductViewName] = js.undefined,
         Owner: js.UndefOr[ProductViewOwner] = js.undefined,
         RemoveTags: js.UndefOr[TagKeys] = js.undefined,
+        SourceConnection: js.UndefOr[SourceConnection] = js.undefined,
         SupportDescription: js.UndefOr[SupportDescription] = js.undefined,
         SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
         SupportUrl: js.UndefOr[SupportUrl] = js.undefined
@@ -5409,6 +5564,7 @@ package object servicecatalog {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       RemoveTags.foreach(__v => __obj.updateDynamic("RemoveTags")(__v.asInstanceOf[js.Any]))
+      SourceConnection.foreach(__v => __obj.updateDynamic("SourceConnection")(__v.asInstanceOf[js.Any]))
       SupportDescription.foreach(__v => __obj.updateDynamic("SupportDescription")(__v.asInstanceOf[js.Any]))
       SupportEmail.foreach(__v => __obj.updateDynamic("SupportEmail")(__v.asInstanceOf[js.Any]))
       SupportUrl.foreach(__v => __obj.updateDynamic("SupportUrl")(__v.asInstanceOf[js.Any]))

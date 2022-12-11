@@ -152,6 +152,14 @@ object EventType {
   inline def values: js.Array[EventType] = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY, SUBSCRIPTION)
 }
 
+type FeatureStatus = "ENABLED" | "DISABLED"
+object FeatureStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[FeatureStatus] = js.Array(ENABLED, DISABLED)
+}
+
 type IdentityType = "EMAIL_ADDRESS" | "DOMAIN" | "MANAGED_DOMAIN"
 object IdentityType {
   inline val EMAIL_ADDRESS: "EMAIL_ADDRESS" = "EMAIL_ADDRESS"
@@ -183,6 +191,18 @@ object JobStatus {
   inline def values: js.Array[JobStatus] = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
 }
 
+/** The <code>ListRecommendations</code> filter type. This can be one of the following: * <code>TYPE</code> – The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>. * <code>IMPACT</code> – The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>. * <code>STATUS</code> – The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>. * <code>RESOURCE_ARN</code> – The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+  */
+type ListRecommendationsFilterKey = "TYPE" | "IMPACT" | "STATUS" | "RESOURCE_ARN"
+object ListRecommendationsFilterKey {
+  inline val TYPE: "TYPE" = "TYPE"
+  inline val IMPACT: "IMPACT" = "IMPACT"
+  inline val STATUS: "STATUS" = "STATUS"
+  inline val RESOURCE_ARN: "RESOURCE_ARN" = "RESOURCE_ARN"
+
+  inline def values: js.Array[ListRecommendationsFilterKey] = js.Array(TYPE, IMPACT, STATUS, RESOURCE_ARN)
+}
+
 /** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
   */
 type MailFromDomainStatus = "PENDING" | "SUCCESS" | "FAILED" | "TEMPORARY_FAILURE"
@@ -203,6 +223,73 @@ object MailType {
   inline def values: js.Array[MailType] = js.Array(MARKETING, TRANSACTIONAL)
 }
 
+type Metric = "SEND" | "COMPLAINT" | "PERMANENT_BOUNCE" | "TRANSIENT_BOUNCE" | "OPEN" | "CLICK" | "DELIVERY" | "DELIVERY_OPEN" | "DELIVERY_CLICK" | "DELIVERY_COMPLAINT"
+object Metric {
+  inline val SEND: "SEND" = "SEND"
+  inline val COMPLAINT: "COMPLAINT" = "COMPLAINT"
+  inline val PERMANENT_BOUNCE: "PERMANENT_BOUNCE" = "PERMANENT_BOUNCE"
+  inline val TRANSIENT_BOUNCE: "TRANSIENT_BOUNCE" = "TRANSIENT_BOUNCE"
+  inline val OPEN: "OPEN" = "OPEN"
+  inline val CLICK: "CLICK" = "CLICK"
+  inline val DELIVERY: "DELIVERY" = "DELIVERY"
+  inline val DELIVERY_OPEN: "DELIVERY_OPEN" = "DELIVERY_OPEN"
+  inline val DELIVERY_CLICK: "DELIVERY_CLICK" = "DELIVERY_CLICK"
+  inline val DELIVERY_COMPLAINT: "DELIVERY_COMPLAINT" = "DELIVERY_COMPLAINT"
+
+  inline def values: js.Array[Metric] = js.Array(SEND, COMPLAINT, PERMANENT_BOUNCE, TRANSIENT_BOUNCE, OPEN, CLICK, DELIVERY, DELIVERY_OPEN, DELIVERY_CLICK, DELIVERY_COMPLAINT)
+}
+
+/** The <code>BatchGetMetricDataQuery</code> dimension name. This can be one of the following: * <code>EMAIL_IDENTITY</code> – The email identity used when sending messages. * <code>CONFIGURATION_SET</code> – The configuration set used when sending messages (if one was used). * <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>, etc.).
+  */
+type MetricDimensionName = "EMAIL_IDENTITY" | "CONFIGURATION_SET" | "ISP"
+object MetricDimensionName {
+  inline val EMAIL_IDENTITY: "EMAIL_IDENTITY" = "EMAIL_IDENTITY"
+  inline val CONFIGURATION_SET: "CONFIGURATION_SET" = "CONFIGURATION_SET"
+  inline val ISP: "ISP" = "ISP"
+
+  inline def values: js.Array[MetricDimensionName] = js.Array(EMAIL_IDENTITY, CONFIGURATION_SET, ISP)
+}
+
+type MetricNamespace = "VDM"
+object MetricNamespace {
+  inline val VDM: "VDM" = "VDM"
+
+  inline def values: js.Array[MetricNamespace] = js.Array(VDM)
+}
+
+type QueryErrorCode = "INTERNAL_FAILURE" | "ACCESS_DENIED"
+object QueryErrorCode {
+  inline val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+
+  inline def values: js.Array[QueryErrorCode] = js.Array(INTERNAL_FAILURE, ACCESS_DENIED)
+}
+
+type RecommendationImpact = "LOW" | "HIGH"
+object RecommendationImpact {
+  inline val LOW: "LOW" = "LOW"
+  inline val HIGH: "HIGH" = "HIGH"
+
+  inline def values: js.Array[RecommendationImpact] = js.Array(LOW, HIGH)
+}
+
+type RecommendationStatus = "OPEN" | "FIXED"
+object RecommendationStatus {
+  inline val OPEN: "OPEN" = "OPEN"
+  inline val FIXED: "FIXED" = "FIXED"
+
+  inline def values: js.Array[RecommendationStatus] = js.Array(OPEN, FIXED)
+}
+
+type RecommendationType = "DKIM" | "DMARC" | "SPF"
+object RecommendationType {
+  inline val DKIM: "DKIM" = "DKIM"
+  inline val DMARC: "DMARC" = "DMARC"
+  inline val SPF: "SPF" = "SPF"
+
+  inline def values: js.Array[RecommendationType] = js.Array(DKIM, DMARC, SPF)
+}
+
 type ReviewStatus = "PENDING" | "FAILED" | "GRANTED" | "DENIED"
 object ReviewStatus {
   inline val PENDING: "PENDING" = "PENDING"
@@ -211,6 +298,14 @@ object ReviewStatus {
   inline val DENIED: "DENIED" = "DENIED"
 
   inline def values: js.Array[ReviewStatus] = js.Array(PENDING, FAILED, GRANTED, DENIED)
+}
+
+type ScalingMode = "STANDARD" | "MANAGED"
+object ScalingMode {
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val MANAGED: "MANAGED" = "MANAGED"
+
+  inline def values: js.Array[ScalingMode] = js.Array(STANDARD, MANAGED)
 }
 
 type SubscriptionStatus = "OPT_IN" | "OPT_OUT"
@@ -249,6 +344,17 @@ object TlsPolicy {
   inline val OPTIONAL: "OPTIONAL" = "OPTIONAL"
 
   inline def values: js.Array[TlsPolicy] = js.Array(REQUIRE, OPTIONAL)
+}
+
+type VerificationStatus = "PENDING" | "SUCCESS" | "FAILED" | "TEMPORARY_FAILURE" | "NOT_STARTED"
+object VerificationStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TEMPORARY_FAILURE: "TEMPORARY_FAILURE" = "TEMPORARY_FAILURE"
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+
+  inline def values: js.Array[VerificationStatus] = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
 }
 
 /** The warmup status of a dedicated IP.

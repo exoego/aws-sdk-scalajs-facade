@@ -10,14 +10,28 @@ object AdminStatus {
   inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLE_IN_PROGRESS)
 }
 
-type DataSource = "FLOW_LOGS" | "CLOUD_TRAIL" | "DNS_LOGS" | "S3_LOGS"
+type CriterionKey = "EC2_INSTANCE_ARN" | "SCAN_ID" | "ACCOUNT_ID" | "GUARDDUTY_FINDING_ID" | "SCAN_START_TIME" | "SCAN_STATUS"
+object CriterionKey {
+  inline val EC2_INSTANCE_ARN: "EC2_INSTANCE_ARN" = "EC2_INSTANCE_ARN"
+  inline val SCAN_ID: "SCAN_ID" = "SCAN_ID"
+  inline val ACCOUNT_ID: "ACCOUNT_ID" = "ACCOUNT_ID"
+  inline val GUARDDUTY_FINDING_ID: "GUARDDUTY_FINDING_ID" = "GUARDDUTY_FINDING_ID"
+  inline val SCAN_START_TIME: "SCAN_START_TIME" = "SCAN_START_TIME"
+  inline val SCAN_STATUS: "SCAN_STATUS" = "SCAN_STATUS"
+
+  inline def values: js.Array[CriterionKey] = js.Array(EC2_INSTANCE_ARN, SCAN_ID, ACCOUNT_ID, GUARDDUTY_FINDING_ID, SCAN_START_TIME, SCAN_STATUS)
+}
+
+type DataSource = "FLOW_LOGS" | "CLOUD_TRAIL" | "DNS_LOGS" | "S3_LOGS" | "KUBERNETES_AUDIT_LOGS" | "EC2_MALWARE_SCAN"
 object DataSource {
   inline val FLOW_LOGS: "FLOW_LOGS" = "FLOW_LOGS"
   inline val CLOUD_TRAIL: "CLOUD_TRAIL" = "CLOUD_TRAIL"
   inline val DNS_LOGS: "DNS_LOGS" = "DNS_LOGS"
   inline val S3_LOGS: "S3_LOGS" = "S3_LOGS"
+  inline val KUBERNETES_AUDIT_LOGS: "KUBERNETES_AUDIT_LOGS" = "KUBERNETES_AUDIT_LOGS"
+  inline val EC2_MALWARE_SCAN: "EC2_MALWARE_SCAN" = "EC2_MALWARE_SCAN"
 
-  inline def values: js.Array[DataSource] = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
+  inline def values: js.Array[DataSource] = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS, KUBERNETES_AUDIT_LOGS, EC2_MALWARE_SCAN)
 }
 
 type DataSourceStatus = "ENABLED" | "DISABLED"
@@ -41,6 +55,14 @@ object DetectorStatus {
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[DetectorStatus] = js.Array(ENABLED, DISABLED)
+}
+
+type EbsSnapshotPreservation = "NO_RETENTION" | "RETENTION_WITH_FINDING"
+object EbsSnapshotPreservation {
+  inline val NO_RETENTION: "NO_RETENTION" = "NO_RETENTION"
+  inline val RETENTION_WITH_FINDING: "RETENTION_WITH_FINDING" = "RETENTION_WITH_FINDING"
+
+  inline def values: js.Array[EbsSnapshotPreservation] = js.Array(NO_RETENTION, RETENTION_WITH_FINDING)
 }
 
 type Feedback = "USEFUL" | "NOT_USEFUL"
@@ -116,6 +138,32 @@ object PublishingStatus {
   inline val STOPPED: "STOPPED" = "STOPPED"
 
   inline def values: js.Array[PublishingStatus] = js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED)
+}
+
+/** An enum value representing possible resource properties to match with given scan condition.
+  */
+type ScanCriterionKey = "EC2_INSTANCE_TAG"
+object ScanCriterionKey {
+  inline val EC2_INSTANCE_TAG: "EC2_INSTANCE_TAG" = "EC2_INSTANCE_TAG"
+
+  inline def values: js.Array[ScanCriterionKey] = js.Array(EC2_INSTANCE_TAG)
+}
+
+type ScanResult = "CLEAN" | "INFECTED"
+object ScanResult {
+  inline val CLEAN: "CLEAN" = "CLEAN"
+  inline val INFECTED: "INFECTED" = "INFECTED"
+
+  inline def values: js.Array[ScanResult] = js.Array(CLEAN, INFECTED)
+}
+
+type ScanStatus = "RUNNING" | "COMPLETED" | "FAILED"
+object ScanStatus {
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ScanStatus] = js.Array(RUNNING, COMPLETED, FAILED)
 }
 
 type ThreatIntelSetFormat = "TXT" | "STIX" | "OTX_CSV" | "ALIEN_VAULT" | "PROOF_POINT" | "FIRE_EYE"

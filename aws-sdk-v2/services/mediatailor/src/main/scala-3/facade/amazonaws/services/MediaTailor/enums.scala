@@ -18,11 +18,12 @@ object ChannelState {
   inline def values: js.Array[ChannelState] = js.Array(RUNNING, STOPPED)
 }
 
-type MessageType = "SPLICE_INSERT"
+type MessageType = "SPLICE_INSERT" | "TIME_SIGNAL"
 object MessageType {
   inline val SPLICE_INSERT: "SPLICE_INSERT" = "SPLICE_INSERT"
+  inline val TIME_SIGNAL: "TIME_SIGNAL" = "TIME_SIGNAL"
 
-  inline def values: js.Array[MessageType] = js.Array(SPLICE_INSERT)
+  inline def values: js.Array[MessageType] = js.Array(SPLICE_INSERT, TIME_SIGNAL)
 }
 
 type Mode = "OFF" | "BEHIND_LIVE_EDGE"
@@ -70,6 +71,14 @@ object ScheduleEntryType {
   inline val FILLER_SLATE: "FILLER_SLATE" = "FILLER_SLATE"
 
   inline def values: js.Array[ScheduleEntryType] = js.Array(PROGRAM, FILLER_SLATE)
+}
+
+type Tier = "BASIC" | "STANDARD"
+object Tier {
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+
+  inline def values: js.Array[Tier] = js.Array(BASIC, STANDARD)
 }
 
 type Type = "DASH" | "HLS"

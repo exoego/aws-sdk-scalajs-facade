@@ -33,6 +33,13 @@ object AssociatedTranscriptFilterName {
   inline def values: js.Array[AssociatedTranscriptFilterName] = js.Array(IntentId, SlotTypeId)
 }
 
+type AudioRecognitionStrategy = "UseSlotValuesAsCustomVocabulary"
+object AudioRecognitionStrategy {
+  inline val UseSlotValuesAsCustomVocabulary: "UseSlotValuesAsCustomVocabulary" = "UseSlotValuesAsCustomVocabulary"
+
+  inline def values: js.Array[AudioRecognitionStrategy] = js.Array(UseSlotValuesAsCustomVocabulary)
+}
+
 type BotAliasStatus = "Creating" | "Available" | "Deleting" | "Failed"
 object BotAliasStatus {
   inline val Creating: "Creating" = "Creating"
@@ -95,7 +102,7 @@ object BotLocaleStatus {
   inline def values: js.Array[BotLocaleStatus] = js.Array(Creating, Building, Built, ReadyExpressTesting, Failed, Deleting, NotBuilt, Importing, Processing)
 }
 
-type BotRecommendationStatus = "Processing" | "Deleting" | "Deleted" | "Downloading" | "Updating" | "Available" | "Failed"
+type BotRecommendationStatus = "Processing" | "Deleting" | "Deleted" | "Downloading" | "Updating" | "Available" | "Failed" | "Stopping" | "Stopped"
 object BotRecommendationStatus {
   inline val Processing: "Processing" = "Processing"
   inline val Deleting: "Deleting" = "Deleting"
@@ -104,8 +111,10 @@ object BotRecommendationStatus {
   inline val Updating: "Updating" = "Updating"
   inline val Available: "Available" = "Available"
   inline val Failed: "Failed" = "Failed"
+  inline val Stopping: "Stopping" = "Stopping"
+  inline val Stopped: "Stopped" = "Stopped"
 
-  inline def values: js.Array[BotRecommendationStatus] = js.Array(Processing, Deleting, Deleted, Downloading, Updating, Available, Failed)
+  inline def values: js.Array[BotRecommendationStatus] = js.Array(Processing, Deleting, Deleted, Downloading, Updating, Available, Failed, Stopping, Stopped)
 }
 
 type BotSortAttribute = "BotName"
@@ -149,12 +158,48 @@ object BuiltInSlotTypeSortAttribute {
   inline def values: js.Array[BuiltInSlotTypeSortAttribute] = js.Array(SlotTypeSignature)
 }
 
+type CustomVocabularyStatus = "Ready" | "Deleting" | "Exporting" | "Importing" | "Creating"
+object CustomVocabularyStatus {
+  inline val Ready: "Ready" = "Ready"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Exporting: "Exporting" = "Exporting"
+  inline val Importing: "Importing" = "Importing"
+  inline val Creating: "Creating" = "Creating"
+
+  inline def values: js.Array[CustomVocabularyStatus] = js.Array(Ready, Deleting, Exporting, Importing, Creating)
+}
+
+type DialogActionType = "ElicitIntent" | "StartIntent" | "ElicitSlot" | "EvaluateConditional" | "InvokeDialogCodeHook" | "ConfirmIntent" | "FulfillIntent" | "CloseIntent" | "EndConversation"
+object DialogActionType {
+  inline val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  inline val StartIntent: "StartIntent" = "StartIntent"
+  inline val ElicitSlot: "ElicitSlot" = "ElicitSlot"
+  inline val EvaluateConditional: "EvaluateConditional" = "EvaluateConditional"
+  inline val InvokeDialogCodeHook: "InvokeDialogCodeHook" = "InvokeDialogCodeHook"
+  inline val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  inline val FulfillIntent: "FulfillIntent" = "FulfillIntent"
+  inline val CloseIntent: "CloseIntent" = "CloseIntent"
+  inline val EndConversation: "EndConversation" = "EndConversation"
+
+  inline def values: js.Array[DialogActionType] = js.Array(ElicitIntent, StartIntent, ElicitSlot, EvaluateConditional, InvokeDialogCodeHook, ConfirmIntent, FulfillIntent, CloseIntent, EndConversation)
+}
+
 type Effect = "Allow" | "Deny"
 object Effect {
   inline val Allow: "Allow" = "Allow"
   inline val Deny: "Deny" = "Deny"
 
   inline def values: js.Array[Effect] = js.Array(Allow, Deny)
+}
+
+type ErrorCode = "DUPLICATE_INPUT" | "RESOURCE_DOES_NOT_EXIST" | "RESOURCE_ALREADY_EXISTS" | "INTERNAL_SERVER_FAILURE"
+object ErrorCode {
+  inline val DUPLICATE_INPUT: "DUPLICATE_INPUT" = "DUPLICATE_INPUT"
+  inline val RESOURCE_DOES_NOT_EXIST: "RESOURCE_DOES_NOT_EXIST" = "RESOURCE_DOES_NOT_EXIST"
+  inline val RESOURCE_ALREADY_EXISTS: "RESOURCE_ALREADY_EXISTS" = "RESOURCE_ALREADY_EXISTS"
+  inline val INTERNAL_SERVER_FAILURE: "INTERNAL_SERVER_FAILURE" = "INTERNAL_SERVER_FAILURE"
+
+  inline def values: js.Array[ErrorCode] = js.Array(DUPLICATE_INPUT, RESOURCE_DOES_NOT_EXIST, RESOURCE_ALREADY_EXISTS, INTERNAL_SERVER_FAILURE)
 }
 
 type ExportFilterName = "ExportResourceType"
@@ -189,11 +234,12 @@ object ExportStatus {
   inline def values: js.Array[ExportStatus] = js.Array(InProgress, Completed, Failed, Deleting)
 }
 
-type ImportExportFileFormat = "LexJson"
+type ImportExportFileFormat = "LexJson" | "TSV"
 object ImportExportFileFormat {
   inline val LexJson: "LexJson" = "LexJson"
+  inline val TSV: "TSV" = "TSV"
 
-  inline def values: js.Array[ImportExportFileFormat] = js.Array(LexJson)
+  inline def values: js.Array[ImportExportFileFormat] = js.Array(LexJson, TSV)
 }
 
 type ImportFilterName = "ImportResourceType"
@@ -209,6 +255,15 @@ object ImportFilterOperator {
   inline val EQ: "EQ" = "EQ"
 
   inline def values: js.Array[ImportFilterOperator] = js.Array(CO, EQ)
+}
+
+type ImportResourceType = "Bot" | "BotLocale" | "CustomVocabulary"
+object ImportResourceType {
+  inline val Bot: "Bot" = "Bot"
+  inline val BotLocale: "BotLocale" = "BotLocale"
+  inline val CustomVocabulary: "CustomVocabulary" = "CustomVocabulary"
+
+  inline def values: js.Array[ImportResourceType] = js.Array(Bot, BotLocale, CustomVocabulary)
 }
 
 type ImportSortAttribute = "LastUpdatedDateTime"
@@ -260,12 +315,34 @@ object MergeStrategy {
   inline def values: js.Array[MergeStrategy] = js.Array(Overwrite, FailOnConflict, Append)
 }
 
+type MessageSelectionStrategy = "Random" | "Ordered"
+object MessageSelectionStrategy {
+  inline val Random: "Random" = "Random"
+  inline val Ordered: "Ordered" = "Ordered"
+
+  inline def values: js.Array[MessageSelectionStrategy] = js.Array(Random, Ordered)
+}
+
 type ObfuscationSettingType = "None" | "DefaultObfuscation"
 object ObfuscationSettingType {
   inline val None: "None" = "None"
   inline val DefaultObfuscation: "DefaultObfuscation" = "DefaultObfuscation"
 
   inline def values: js.Array[ObfuscationSettingType] = js.Array(None, DefaultObfuscation)
+}
+
+/** The attempt name of attempts of a prompt.
+  */
+type PromptAttempt = "Initial" | "Retry1" | "Retry2" | "Retry3" | "Retry4" | "Retry5"
+object PromptAttempt {
+  inline val Initial: "Initial" = "Initial"
+  inline val Retry1: "Retry1" = "Retry1"
+  inline val Retry2: "Retry2" = "Retry2"
+  inline val Retry3: "Retry3" = "Retry3"
+  inline val Retry4: "Retry4" = "Retry4"
+  inline val Retry5: "Retry5" = "Retry5"
+
+  inline def values: js.Array[PromptAttempt] = js.Array(Initial, Retry1, Retry2, Retry3, Retry4, Retry5)
 }
 
 type SearchOrder = "Ascending" | "Descending"
@@ -299,6 +376,14 @@ object SlotFilterOperator {
   inline def values: js.Array[SlotFilterOperator] = js.Array(CO, EQ)
 }
 
+type SlotShape = "Scalar" | "List"
+object SlotShape {
+  inline val Scalar: "Scalar" = "Scalar"
+  inline val List: "List" = "List"
+
+  inline def values: js.Array[SlotShape] = js.Array(Scalar, List)
+}
+
 type SlotSortAttribute = "SlotName" | "LastUpdatedDateTime"
 object SlotSortAttribute {
   inline val SlotName: "SlotName" = "SlotName"
@@ -307,13 +392,14 @@ object SlotSortAttribute {
   inline def values: js.Array[SlotSortAttribute] = js.Array(SlotName, LastUpdatedDateTime)
 }
 
-type SlotTypeCategory = "Custom" | "Extended" | "ExternalGrammar"
+type SlotTypeCategory = "Custom" | "Extended" | "ExternalGrammar" | "Composite"
 object SlotTypeCategory {
   inline val Custom: "Custom" = "Custom"
   inline val Extended: "Extended" = "Extended"
   inline val ExternalGrammar: "ExternalGrammar" = "ExternalGrammar"
+  inline val Composite: "Composite" = "Composite"
 
-  inline def values: js.Array[SlotTypeCategory] = js.Array(Custom, Extended, ExternalGrammar)
+  inline def values: js.Array[SlotTypeCategory] = js.Array(Custom, Extended, ExternalGrammar, Composite)
 }
 
 type SlotTypeFilterName = "SlotTypeName" | "ExternalSourceType"
@@ -340,12 +426,13 @@ object SlotTypeSortAttribute {
   inline def values: js.Array[SlotTypeSortAttribute] = js.Array(SlotTypeName, LastUpdatedDateTime)
 }
 
-type SlotValueResolutionStrategy = "OriginalValue" | "TopResolution"
+type SlotValueResolutionStrategy = "OriginalValue" | "TopResolution" | "Concatenation"
 object SlotValueResolutionStrategy {
   inline val OriginalValue: "OriginalValue" = "OriginalValue"
   inline val TopResolution: "TopResolution" = "TopResolution"
+  inline val Concatenation: "Concatenation" = "Concatenation"
 
-  inline def values: js.Array[SlotValueResolutionStrategy] = js.Array(OriginalValue, TopResolution)
+  inline def values: js.Array[SlotValueResolutionStrategy] = js.Array(OriginalValue, TopResolution, Concatenation)
 }
 
 type SortOrder = "Ascending" | "Descending"

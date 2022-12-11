@@ -21,6 +21,7 @@ package object braket {
   type HyperParametersValueString = String
   type InputConfigList = js.Array[InputFileConfig]
   type InputFileConfigChannelNameString = String
+  type InstanceConfigInstanceCountInteger = Int
   type InstanceConfigVolumeSizeInGbInteger = Int
   type JobArn = String
   type JobEventDetailsMessageString = String
@@ -647,18 +648,22 @@ package object braket {
   trait InstanceConfig extends js.Object {
     var instanceType: InstanceType
     var volumeSizeInGb: InstanceConfigVolumeSizeInGbInteger
+    var instanceCount: js.UndefOr[InstanceConfigInstanceCountInteger]
   }
 
   object InstanceConfig {
     @inline
     def apply(
         instanceType: InstanceType,
-        volumeSizeInGb: InstanceConfigVolumeSizeInGbInteger
+        volumeSizeInGb: InstanceConfigVolumeSizeInGbInteger,
+        instanceCount: js.UndefOr[InstanceConfigInstanceCountInteger] = js.undefined
     ): InstanceConfig = {
       val __obj = js.Dynamic.literal(
         "instanceType" -> instanceType.asInstanceOf[js.Any],
         "volumeSizeInGb" -> volumeSizeInGb.asInstanceOf[js.Any]
       )
+
+      instanceCount.foreach(__v => __obj.updateDynamic("instanceCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceConfig]
     }
   }

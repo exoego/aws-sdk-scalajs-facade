@@ -2,7 +2,7 @@ package facade.amazonaws.services.route53recoveryreadiness
 
 import scalajs.js
 
-/** The readiness of an entire ReadinessCheck or an individual resource ARN.
+/** The readiness status.
   */
 @js.native
 sealed trait Readiness extends js.Any

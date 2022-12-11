@@ -41,6 +41,14 @@ object FunctionResponseType {
   inline def values: js.Array[FunctionResponseType] = js.Array(ReportBatchItemFailures)
 }
 
+type FunctionUrlAuthType = "NONE" | "AWS_IAM"
+object FunctionUrlAuthType {
+  inline val NONE: "NONE" = "NONE"
+  inline val AWS_IAM: "AWS_IAM" = "AWS_IAM"
+
+  inline def values: js.Array[FunctionUrlAuthType] = js.Array(NONE, AWS_IAM)
+}
+
 type FunctionVersion = "ALL"
 object FunctionVersion {
   inline val ALL: "ALL" = "ALL"
@@ -66,7 +74,7 @@ object LastUpdateStatus {
   inline def values: js.Array[LastUpdateStatus] = js.Array(Successful, Failed, InProgress)
 }
 
-type LastUpdateStatusReasonCode = "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage"
+type LastUpdateStatusReasonCode = "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage" | "KMSKeyAccessDenied" | "KMSKeyNotFound" | "InvalidStateKMSKey" | "DisabledKMSKey" | "EFSIOError" | "EFSMountConnectivityError" | "EFSMountFailure" | "EFSMountTimeout" | "InvalidRuntime" | "InvalidZipFileException" | "FunctionError"
 object LastUpdateStatusReasonCode {
   inline val EniLimitExceeded: "EniLimitExceeded" = "EniLimitExceeded"
   inline val InsufficientRolePermissions: "InsufficientRolePermissions" = "InsufficientRolePermissions"
@@ -78,6 +86,17 @@ object LastUpdateStatusReasonCode {
   inline val ImageDeleted: "ImageDeleted" = "ImageDeleted"
   inline val ImageAccessDenied: "ImageAccessDenied" = "ImageAccessDenied"
   inline val InvalidImage: "InvalidImage" = "InvalidImage"
+  inline val KMSKeyAccessDenied: "KMSKeyAccessDenied" = "KMSKeyAccessDenied"
+  inline val KMSKeyNotFound: "KMSKeyNotFound" = "KMSKeyNotFound"
+  inline val InvalidStateKMSKey: "InvalidStateKMSKey" = "InvalidStateKMSKey"
+  inline val DisabledKMSKey: "DisabledKMSKey" = "DisabledKMSKey"
+  inline val EFSIOError: "EFSIOError" = "EFSIOError"
+  inline val EFSMountConnectivityError: "EFSMountConnectivityError" = "EFSMountConnectivityError"
+  inline val EFSMountFailure: "EFSMountFailure" = "EFSMountFailure"
+  inline val EFSMountTimeout: "EFSMountTimeout" = "EFSMountTimeout"
+  inline val InvalidRuntime: "InvalidRuntime" = "InvalidRuntime"
+  inline val InvalidZipFileException: "InvalidZipFileException" = "InvalidZipFileException"
+  inline val FunctionError: "FunctionError" = "FunctionError"
 
   inline def values: js.Array[LastUpdateStatusReasonCode] = js.Array(
     EniLimitExceeded,
@@ -89,7 +108,18 @@ object LastUpdateStatusReasonCode {
     InvalidSecurityGroup,
     ImageDeleted,
     ImageAccessDenied,
-    InvalidImage
+    InvalidImage,
+    KMSKeyAccessDenied,
+    KMSKeyNotFound,
+    InvalidStateKMSKey,
+    DisabledKMSKey,
+    EFSIOError,
+    EFSMountConnectivityError,
+    EFSMountFailure,
+    EFSMountTimeout,
+    InvalidRuntime,
+    InvalidZipFileException,
+    FunctionError
   )
 }
 
@@ -118,7 +148,7 @@ object ProvisionedConcurrencyStatusEnum {
   inline def values: js.Array[ProvisionedConcurrencyStatusEnum] = js.Array(IN_PROGRESS, READY, FAILED)
 }
 
-type Runtime = "nodejs" | "nodejs4.3" | "nodejs6.10" | "nodejs8.10" | "nodejs10.x" | "nodejs12.x" | "nodejs14.x" | "java8" | "java8.al2" | "java11" | "python2.7" | "python3.6" | "python3.7" | "python3.8" | "python3.9" | "dotnetcore1.0" | "dotnetcore2.0" | "dotnetcore2.1" | "dotnetcore3.1" | "nodejs4.3-edge" | "go1.x" | "ruby2.5" | "ruby2.7" | "provided" | "provided.al2"
+type Runtime = "nodejs" | "nodejs4.3" | "nodejs6.10" | "nodejs8.10" | "nodejs10.x" | "nodejs12.x" | "nodejs14.x" | "nodejs16.x" | "java8" | "java8.al2" | "java11" | "python2.7" | "python3.6" | "python3.7" | "python3.8" | "python3.9" | "dotnetcore1.0" | "dotnetcore2.0" | "dotnetcore2.1" | "dotnetcore3.1" | "dotnet6" | "nodejs4.3-edge" | "go1.x" | "ruby2.5" | "ruby2.7" | "provided" | "provided.al2" | "nodejs18.x"
 object Runtime {
   inline val nodejs: "nodejs" = "nodejs"
   inline val `nodejs4.3`: "nodejs4.3" = "nodejs4.3"
@@ -127,6 +157,7 @@ object Runtime {
   inline val `nodejs10.x`: "nodejs10.x" = "nodejs10.x"
   inline val `nodejs12.x`: "nodejs12.x" = "nodejs12.x"
   inline val `nodejs14.x`: "nodejs14.x" = "nodejs14.x"
+  inline val `nodejs16.x`: "nodejs16.x" = "nodejs16.x"
   inline val java8: "java8" = "java8"
   inline val `java8.al2`: "java8.al2" = "java8.al2"
   inline val java11: "java11" = "java11"
@@ -139,12 +170,14 @@ object Runtime {
   inline val `dotnetcore2.0`: "dotnetcore2.0" = "dotnetcore2.0"
   inline val `dotnetcore2.1`: "dotnetcore2.1" = "dotnetcore2.1"
   inline val `dotnetcore3.1`: "dotnetcore3.1" = "dotnetcore3.1"
+  inline val dotnet6: "dotnet6" = "dotnet6"
   inline val `nodejs4.3-edge`: "nodejs4.3-edge" = "nodejs4.3-edge"
   inline val `go1.x`: "go1.x" = "go1.x"
   inline val `ruby2.5`: "ruby2.5" = "ruby2.5"
   inline val `ruby2.7`: "ruby2.7" = "ruby2.7"
   inline val provided: "provided" = "provided"
   inline val `provided.al2`: "provided.al2" = "provided.al2"
+  inline val `nodejs18.x`: "nodejs18.x" = "nodejs18.x"
 
   inline def values: js.Array[Runtime] = js.Array(
     nodejs,
@@ -154,6 +187,7 @@ object Runtime {
     `nodejs10.x`,
     `nodejs12.x`,
     `nodejs14.x`,
+    `nodejs16.x`,
     java8,
     `java8.al2`,
     java11,
@@ -166,13 +200,31 @@ object Runtime {
     `dotnetcore2.0`,
     `dotnetcore2.1`,
     `dotnetcore3.1`,
+    dotnet6,
     `nodejs4.3-edge`,
     `go1.x`,
     `ruby2.5`,
     `ruby2.7`,
     provided,
-    `provided.al2`
+    `provided.al2`,
+    `nodejs18.x`
   )
+}
+
+type SnapStartApplyOn = "PublishedVersions" | "None"
+object SnapStartApplyOn {
+  inline val PublishedVersions: "PublishedVersions" = "PublishedVersions"
+  inline val None: "None" = "None"
+
+  inline def values: js.Array[SnapStartApplyOn] = js.Array(PublishedVersions, None)
+}
+
+type SnapStartOptimizationStatus = "On" | "Off"
+object SnapStartOptimizationStatus {
+  inline val On: "On" = "On"
+  inline val Off: "Off" = "Off"
+
+  inline def values: js.Array[SnapStartOptimizationStatus] = js.Array(On, Off)
 }
 
 type SourceAccessType = "BASIC_AUTH" | "VPC_SUBNET" | "VPC_SECURITY_GROUP" | "SASL_SCRAM_512_AUTH" | "SASL_SCRAM_256_AUTH" | "VIRTUAL_HOST" | "CLIENT_CERTIFICATE_TLS_AUTH" | "SERVER_ROOT_CA_CERTIFICATE"
@@ -199,7 +251,7 @@ object State {
   inline def values: js.Array[State] = js.Array(Pending, Active, Inactive, Failed)
 }
 
-type StateReasonCode = "Idle" | "Creating" | "Restoring" | "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage"
+type StateReasonCode = "Idle" | "Creating" | "Restoring" | "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage" | "KMSKeyAccessDenied" | "KMSKeyNotFound" | "InvalidStateKMSKey" | "DisabledKMSKey" | "EFSIOError" | "EFSMountConnectivityError" | "EFSMountFailure" | "EFSMountTimeout" | "InvalidRuntime" | "InvalidZipFileException" | "FunctionError"
 object StateReasonCode {
   inline val Idle: "Idle" = "Idle"
   inline val Creating: "Creating" = "Creating"
@@ -214,6 +266,17 @@ object StateReasonCode {
   inline val ImageDeleted: "ImageDeleted" = "ImageDeleted"
   inline val ImageAccessDenied: "ImageAccessDenied" = "ImageAccessDenied"
   inline val InvalidImage: "InvalidImage" = "InvalidImage"
+  inline val KMSKeyAccessDenied: "KMSKeyAccessDenied" = "KMSKeyAccessDenied"
+  inline val KMSKeyNotFound: "KMSKeyNotFound" = "KMSKeyNotFound"
+  inline val InvalidStateKMSKey: "InvalidStateKMSKey" = "InvalidStateKMSKey"
+  inline val DisabledKMSKey: "DisabledKMSKey" = "DisabledKMSKey"
+  inline val EFSIOError: "EFSIOError" = "EFSIOError"
+  inline val EFSMountConnectivityError: "EFSMountConnectivityError" = "EFSMountConnectivityError"
+  inline val EFSMountFailure: "EFSMountFailure" = "EFSMountFailure"
+  inline val EFSMountTimeout: "EFSMountTimeout" = "EFSMountTimeout"
+  inline val InvalidRuntime: "InvalidRuntime" = "InvalidRuntime"
+  inline val InvalidZipFileException: "InvalidZipFileException" = "InvalidZipFileException"
+  inline val FunctionError: "FunctionError" = "FunctionError"
 
   inline def values: js.Array[StateReasonCode] = js.Array(
     Idle,
@@ -228,7 +291,18 @@ object StateReasonCode {
     InvalidSecurityGroup,
     ImageDeleted,
     ImageAccessDenied,
-    InvalidImage
+    InvalidImage,
+    KMSKeyAccessDenied,
+    KMSKeyNotFound,
+    InvalidStateKMSKey,
+    DisabledKMSKey,
+    EFSIOError,
+    EFSMountConnectivityError,
+    EFSMountFailure,
+    EFSMountTimeout,
+    InvalidRuntime,
+    InvalidZipFileException,
+    FunctionError
   )
 }
 

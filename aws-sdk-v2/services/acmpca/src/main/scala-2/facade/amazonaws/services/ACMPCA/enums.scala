@@ -65,6 +65,15 @@ object CertificateAuthorityType {
 }
 
 @js.native
+sealed trait CertificateAuthorityUsageMode extends js.Any
+object CertificateAuthorityUsageMode {
+  val GENERAL_PURPOSE = "GENERAL_PURPOSE".asInstanceOf[CertificateAuthorityUsageMode]
+  val SHORT_LIVED_CERTIFICATE = "SHORT_LIVED_CERTIFICATE".asInstanceOf[CertificateAuthorityUsageMode]
+
+  @inline def values: js.Array[CertificateAuthorityUsageMode] = js.Array(GENERAL_PURPOSE, SHORT_LIVED_CERTIFICATE)
+}
+
+@js.native
 sealed trait ExtendedKeyUsageType extends js.Any
 object ExtendedKeyUsageType {
   val SERVER_AUTH = "SERVER_AUTH".asInstanceOf[ExtendedKeyUsageType]

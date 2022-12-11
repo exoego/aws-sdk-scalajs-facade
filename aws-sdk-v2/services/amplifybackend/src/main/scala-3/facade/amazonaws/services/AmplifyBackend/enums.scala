@@ -29,6 +29,8 @@ object AuthenticatedElement {
   inline def values: js.Array[AuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
 }
 
+/** The type of verification message to send.
+  */
 type DeliveryMethod = "EMAIL" | "SMS"
 object DeliveryMethod {
   inline val EMAIL: "EMAIL" = "EMAIL"

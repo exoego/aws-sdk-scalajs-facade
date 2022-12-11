@@ -55,12 +55,13 @@ object SentimentType {
   inline def values: js.Array[SentimentType] = js.Array(MIXED, NEGATIVE, NEUTRAL, POSITIVE)
 }
 
-type Shape = "Scalar" | "List"
+type Shape = "Scalar" | "List" | "Composite"
 object Shape {
   inline val Scalar: "Scalar" = "Scalar"
   inline val List: "List" = "List"
+  inline val Composite: "Composite" = "Composite"
 
-  inline def values: js.Array[Shape] = js.Array(Scalar, List)
+  inline def values: js.Array[Shape] = js.Array(Scalar, List, Composite)
 }
 
 type StyleType = "Default" | "SpellByLetter" | "SpellByWord"

@@ -42,6 +42,7 @@ package object elasticache {
   type KeyList = js.Array[String]
   type LogDeliveryConfigurationList = js.Array[LogDeliveryConfiguration]
   type LogDeliveryConfigurationRequestList = js.Array[LogDeliveryConfigurationRequest]
+  type NetworkTypeList = js.Array[NetworkType]
   type NodeGroupConfigurationList = js.Array[NodeGroupConfiguration]
   type NodeGroupList = js.Array[NodeGroup]
   type NodeGroupMemberList = js.Array[NodeGroupMember]
@@ -304,6 +305,27 @@ package object elasticache {
     }
   }
 
+  /** Specifies the authentication mode to use.
+    */
+  @js.native
+  trait AuthenticationMode extends js.Object {
+    var Passwords: js.UndefOr[PasswordListInput]
+    var Type: js.UndefOr[InputAuthenticationType]
+  }
+
+  object AuthenticationMode {
+    @inline
+    def apply(
+        Passwords: js.UndefOr[PasswordListInput] = js.undefined,
+        Type: js.UndefOr[InputAuthenticationType] = js.undefined
+    ): AuthenticationMode = {
+      val __obj = js.Dynamic.literal()
+      Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthenticationMode]
+    }
+  }
+
   /** Represents the input of an AuthorizeCacheSecurityGroupIngress operation.
     */
   @js.native
@@ -432,7 +454,9 @@ package object elasticache {
     var ConfigurationEndpoint: js.UndefOr[Endpoint]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList]
+    var NetworkType: js.UndefOr[NetworkType]
     var NotificationConfiguration: js.UndefOr[NotificationConfiguration]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
@@ -467,7 +491,9 @@ package object elasticache {
         ConfigurationEndpoint: js.UndefOr[Endpoint] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList] = js.undefined,
+        NetworkType: js.UndefOr[NetworkType] = js.undefined,
         NotificationConfiguration: js.UndefOr[NotificationConfiguration] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
@@ -499,7 +525,9 @@ package object elasticache {
       ConfigurationEndpoint.foreach(__v => __obj.updateDynamic("ConfigurationEndpoint")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NotificationConfiguration.foreach(__v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
@@ -588,14 +616,26 @@ package object elasticache {
     }
   }
 
-  /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis. The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <li> General purpose: <li> Current generation: \```M6g node types:``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+  /** Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's protocol-compliant caching software - either Memcached or Redis. The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <li> General purpose: <li> Current generation:
+    * \```M6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
     *
-    * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]] \```M5 node types:``` <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> \```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> \```T4g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> \```T3 node types:``` <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> \```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
-    * <code>cache.t2.medium</code> </li> * Previous generation: (not recommended) \```T1 node types:``` <code>cache.t1.micro</code> \```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> \```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </li> * Compute optimized: <li> Previous generation: (not recommended) \```C1 node types:``` <code>cache.c1.xlarge</code> </li> * Memory optimized with data tiering: <li> Current generation: \```R6gd node types``` (available only for Redis engine version 6.2 onward). <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </li> <li> Memory optimized: <li> Current generation: \```R6g node types``` (available only for Redis engine version 5.0.6
-    * onward and for Memcached engine version 1.5.16 onward). <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+    * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]]
+    * \```M5 node types:``` <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
+    * \```M4 node types:``` <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+    * \```T4g node types``` (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code>
+    * \```T3 node types:``` <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
+    * \```T2 node types:``` <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </li> * Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)
+    * \```T1 node types:``` <code>cache.t1.micro</code>
+    * \```M1 node types:``` <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+    * \```M3 node types:``` <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </li> * Compute optimized: <li> Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)
+    * \```C1 node types:``` <code>cache.c1.xlarge</code> </li> <li> Memory optimized: <li> Current generation:
+    * \```R6g node types``` (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward). <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
     *
-    * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]] \```R5 node types:``` <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> \```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </li> * Previous generation: (not recommended) \```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> \```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </li>```Additional node type info``` * All current
-    * generation instance types are created in Amazon VPC by default. * Redis append-only files (AOF) are not supported for T1 or T2 instances. * Redis Multi-AZ with automatic failover is not supported on T1 instances. * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.
+    * '''Note:'''For region availability, see [[https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion|Supported Node Types]]
+    * \```R5 node types:``` <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
+    * \```R4 node types:``` <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </li> * Previous generation: (not recommended. Existing clusters are still supported but creation of new clusters is not supported for these types.)
+    * \```M2 node types:``` <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+    * \```R3 node types:``` <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </li>```Additional node type info``` * All current generation instance types are created in Amazon VPC by default. * Redis append-only files (AOF) are not supported for T1 or T2 instances. * Redis Multi-AZ with automatic failover is not supported on T1 instances. * Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.
     */
   @js.native
   trait CacheNode extends js.Object {
@@ -933,6 +973,7 @@ package object elasticache {
     var CacheSubnetGroupDescription: js.UndefOr[String]
     var CacheSubnetGroupName: js.UndefOr[String]
     var Subnets: js.UndefOr[SubnetList]
+    var SupportedNetworkTypes: js.UndefOr[NetworkTypeList]
     var VpcId: js.UndefOr[String]
   }
 
@@ -943,6 +984,7 @@ package object elasticache {
         CacheSubnetGroupDescription: js.UndefOr[String] = js.undefined,
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Subnets: js.UndefOr[SubnetList] = js.undefined,
+        SupportedNetworkTypes: js.UndefOr[NetworkTypeList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): CacheSubnetGroup = {
       val __obj = js.Dynamic.literal()
@@ -950,6 +992,7 @@ package object elasticache {
       CacheSubnetGroupDescription.foreach(__v => __obj.updateDynamic("CacheSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      SupportedNetworkTypes.foreach(__v => __obj.updateDynamic("SupportedNetworkTypes")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CacheSubnetGroup]
     }
@@ -1122,7 +1165,9 @@ package object elasticache {
     var CacheSubnetGroupName: js.UndefOr[String]
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
+    var NetworkType: js.UndefOr[NetworkType]
     var NotificationTopicArn: js.UndefOr[String]
     var NumCacheNodes: js.UndefOr[IntegerOptional]
     var OutpostMode: js.UndefOr[OutpostMode]
@@ -1139,6 +1184,7 @@ package object elasticache {
     var SnapshotRetentionLimit: js.UndefOr[IntegerOptional]
     var SnapshotWindow: js.UndefOr[String]
     var Tags: js.UndefOr[TagList]
+    var TransitEncryptionEnabled: js.UndefOr[BooleanOptional]
   }
 
   object CreateCacheClusterMessage {
@@ -1154,7 +1200,9 @@ package object elasticache {
         CacheSubnetGroupName: js.UndefOr[String] = js.undefined,
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
+        NetworkType: js.UndefOr[NetworkType] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NumCacheNodes: js.UndefOr[IntegerOptional] = js.undefined,
         OutpostMode: js.UndefOr[OutpostMode] = js.undefined,
@@ -1170,7 +1218,8 @@ package object elasticache {
         SnapshotName: js.UndefOr[String] = js.undefined,
         SnapshotRetentionLimit: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotWindow: js.UndefOr[String] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TransitEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined
     ): CreateCacheClusterMessage = {
       val __obj = js.Dynamic.literal(
         "CacheClusterId" -> CacheClusterId.asInstanceOf[js.Any]
@@ -1185,7 +1234,9 @@ package object elasticache {
       CacheSubnetGroupName.foreach(__v => __obj.updateDynamic("CacheSubnetGroupName")(__v.asInstanceOf[js.Any]))
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheNodes.foreach(__v => __obj.updateDynamic("NumCacheNodes")(__v.asInstanceOf[js.Any]))
       OutpostMode.foreach(__v => __obj.updateDynamic("OutpostMode")(__v.asInstanceOf[js.Any]))
@@ -1202,6 +1253,7 @@ package object elasticache {
       SnapshotRetentionLimit.foreach(__v => __obj.updateDynamic("SnapshotRetentionLimit")(__v.asInstanceOf[js.Any]))
       SnapshotWindow.foreach(__v => __obj.updateDynamic("SnapshotWindow")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TransitEncryptionEnabled.foreach(__v => __obj.updateDynamic("TransitEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCacheClusterMessage]
     }
   }
@@ -1412,9 +1464,11 @@ package object elasticache {
     var Engine: js.UndefOr[String]
     var EngineVersion: js.UndefOr[String]
     var GlobalReplicationGroupId: js.UndefOr[String]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var KmsKeyId: js.UndefOr[String]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var MultiAZEnabled: js.UndefOr[BooleanOptional]
+    var NetworkType: js.UndefOr[NetworkType]
     var NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList]
     var NotificationTopicArn: js.UndefOr[String]
     var NumCacheClusters: js.UndefOr[IntegerOptional]
@@ -1451,9 +1505,11 @@ package object elasticache {
         Engine: js.UndefOr[String] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
         GlobalReplicationGroupId: js.UndefOr[String] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         MultiAZEnabled: js.UndefOr[BooleanOptional] = js.undefined,
+        NetworkType: js.UndefOr[NetworkType] = js.undefined,
         NodeGroupConfiguration: js.UndefOr[NodeGroupConfigurationList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         NumCacheClusters: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1489,9 +1545,11 @@ package object elasticache {
       Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupId.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupId")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MultiAZEnabled.foreach(__v => __obj.updateDynamic("MultiAZEnabled")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NodeGroupConfiguration.foreach(__v => __obj.updateDynamic("NodeGroupConfiguration")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       NumCacheClusters.foreach(__v => __obj.updateDynamic("NumCacheClusters")(__v.asInstanceOf[js.Any]))
@@ -1610,6 +1668,7 @@ package object elasticache {
     var Engine: EngineType
     var UserId: UserId
     var UserName: UserName
+    var AuthenticationMode: js.UndefOr[AuthenticationMode]
     var NoPasswordRequired: js.UndefOr[BooleanOptional]
     var Passwords: js.UndefOr[PasswordListInput]
     var Tags: js.UndefOr[TagList]
@@ -1622,6 +1681,7 @@ package object elasticache {
         Engine: EngineType,
         UserId: UserId,
         UserName: UserName,
+        AuthenticationMode: js.UndefOr[AuthenticationMode] = js.undefined,
         NoPasswordRequired: js.UndefOr[BooleanOptional] = js.undefined,
         Passwords: js.UndefOr[PasswordListInput] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1633,6 +1693,7 @@ package object elasticache {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
+      AuthenticationMode.foreach(__v => __obj.updateDynamic("AuthenticationMode")(__v.asInstanceOf[js.Any]))
       NoPasswordRequired.foreach(__v => __obj.updateDynamic("NoPasswordRequired")(__v.asInstanceOf[js.Any]))
       Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3183,6 +3244,7 @@ package object elasticache {
     var CacheParameterGroupName: js.UndefOr[String]
     var CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList]
     var EngineVersion: js.UndefOr[String]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var NewAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList]
     var NotificationTopicArn: js.UndefOr[String]
@@ -3208,6 +3270,7 @@ package object elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         NewAvailabilityZones: js.UndefOr[PreferredAvailabilityZoneList] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
@@ -3232,6 +3295,7 @@ package object elasticache {
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroupNames.foreach(__v => __obj.updateDynamic("CacheSecurityGroupNames")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       NewAvailabilityZones.foreach(__v => __obj.updateDynamic("NewAvailabilityZones")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
@@ -3391,6 +3455,7 @@ package object elasticache {
     var CacheParameterGroupName: js.UndefOr[String]
     var CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList]
     var EngineVersion: js.UndefOr[String]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList]
     var MultiAZEnabled: js.UndefOr[BooleanOptional]
     var NodeGroupId: js.UndefOr[String]
@@ -3421,6 +3486,7 @@ package object elasticache {
         CacheParameterGroupName: js.UndefOr[String] = js.undefined,
         CacheSecurityGroupNames: js.UndefOr[CacheSecurityGroupNameList] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationRequestList] = js.undefined,
         MultiAZEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         NodeGroupId: js.UndefOr[String] = js.undefined,
@@ -3450,6 +3516,7 @@ package object elasticache {
       CacheParameterGroupName.foreach(__v => __obj.updateDynamic("CacheParameterGroupName")(__v.asInstanceOf[js.Any]))
       CacheSecurityGroupNames.foreach(__v => __obj.updateDynamic("CacheSecurityGroupNames")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MultiAZEnabled.foreach(__v => __obj.updateDynamic("MultiAZEnabled")(__v.asInstanceOf[js.Any]))
       NodeGroupId.foreach(__v => __obj.updateDynamic("NodeGroupId")(__v.asInstanceOf[js.Any]))
@@ -3565,6 +3632,7 @@ package object elasticache {
     var UserId: UserId
     var AccessString: js.UndefOr[AccessString]
     var AppendAccessString: js.UndefOr[AccessString]
+    var AuthenticationMode: js.UndefOr[AuthenticationMode]
     var NoPasswordRequired: js.UndefOr[BooleanOptional]
     var Passwords: js.UndefOr[PasswordListInput]
   }
@@ -3575,6 +3643,7 @@ package object elasticache {
         UserId: UserId,
         AccessString: js.UndefOr[AccessString] = js.undefined,
         AppendAccessString: js.UndefOr[AccessString] = js.undefined,
+        AuthenticationMode: js.UndefOr[AuthenticationMode] = js.undefined,
         NoPasswordRequired: js.UndefOr[BooleanOptional] = js.undefined,
         Passwords: js.UndefOr[PasswordListInput] = js.undefined
     ): ModifyUserMessage = {
@@ -3584,6 +3653,7 @@ package object elasticache {
 
       AccessString.foreach(__v => __obj.updateDynamic("AccessString")(__v.asInstanceOf[js.Any]))
       AppendAccessString.foreach(__v => __obj.updateDynamic("AppendAccessString")(__v.asInstanceOf[js.Any]))
+      AuthenticationMode.foreach(__v => __obj.updateDynamic("AuthenticationMode")(__v.asInstanceOf[js.Any]))
       NoPasswordRequired.foreach(__v => __obj.updateDynamic("NoPasswordRequired")(__v.asInstanceOf[js.Any]))
       Passwords.foreach(__v => __obj.updateDynamic("Passwords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyUserMessage]
@@ -4157,6 +4227,7 @@ package object elasticache {
     var AtRestEncryptionEnabled: js.UndefOr[BooleanOptional]
     var AuthTokenEnabled: js.UndefOr[BooleanOptional]
     var AuthTokenLastModifiedDate: js.UndefOr[TStamp]
+    var AutoMinorVersionUpgrade: js.UndefOr[Boolean]
     var AutomaticFailover: js.UndefOr[AutomaticFailoverStatus]
     var CacheNodeType: js.UndefOr[String]
     var ClusterEnabled: js.UndefOr[BooleanOptional]
@@ -4164,11 +4235,13 @@ package object elasticache {
     var DataTiering: js.UndefOr[DataTieringStatus]
     var Description: js.UndefOr[String]
     var GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo]
+    var IpDiscovery: js.UndefOr[IpDiscovery]
     var KmsKeyId: js.UndefOr[String]
     var LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList]
     var MemberClusters: js.UndefOr[ClusterIdList]
     var MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList]
     var MultiAZ: js.UndefOr[MultiAZStatus]
+    var NetworkType: js.UndefOr[NetworkType]
     var NodeGroups: js.UndefOr[NodeGroupList]
     var PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues]
     var ReplicationGroupCreateTime: js.UndefOr[TStamp]
@@ -4188,6 +4261,7 @@ package object elasticache {
         AtRestEncryptionEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         AuthTokenEnabled: js.UndefOr[BooleanOptional] = js.undefined,
         AuthTokenLastModifiedDate: js.UndefOr[TStamp] = js.undefined,
+        AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AutomaticFailover: js.UndefOr[AutomaticFailoverStatus] = js.undefined,
         CacheNodeType: js.UndefOr[String] = js.undefined,
         ClusterEnabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -4195,11 +4269,13 @@ package object elasticache {
         DataTiering: js.UndefOr[DataTieringStatus] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         GlobalReplicationGroupInfo: js.UndefOr[GlobalReplicationGroupInfo] = js.undefined,
+        IpDiscovery: js.UndefOr[IpDiscovery] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
         LogDeliveryConfigurations: js.UndefOr[LogDeliveryConfigurationList] = js.undefined,
         MemberClusters: js.UndefOr[ClusterIdList] = js.undefined,
         MemberClustersOutpostArns: js.UndefOr[ReplicationGroupOutpostArnList] = js.undefined,
         MultiAZ: js.UndefOr[MultiAZStatus] = js.undefined,
+        NetworkType: js.UndefOr[NetworkType] = js.undefined,
         NodeGroups: js.UndefOr[NodeGroupList] = js.undefined,
         PendingModifiedValues: js.UndefOr[ReplicationGroupPendingModifiedValues] = js.undefined,
         ReplicationGroupCreateTime: js.UndefOr[TStamp] = js.undefined,
@@ -4216,6 +4292,7 @@ package object elasticache {
       AtRestEncryptionEnabled.foreach(__v => __obj.updateDynamic("AtRestEncryptionEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenEnabled.foreach(__v => __obj.updateDynamic("AuthTokenEnabled")(__v.asInstanceOf[js.Any]))
       AuthTokenLastModifiedDate.foreach(__v => __obj.updateDynamic("AuthTokenLastModifiedDate")(__v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       AutomaticFailover.foreach(__v => __obj.updateDynamic("AutomaticFailover")(__v.asInstanceOf[js.Any]))
       CacheNodeType.foreach(__v => __obj.updateDynamic("CacheNodeType")(__v.asInstanceOf[js.Any]))
       ClusterEnabled.foreach(__v => __obj.updateDynamic("ClusterEnabled")(__v.asInstanceOf[js.Any]))
@@ -4223,11 +4300,13 @@ package object elasticache {
       DataTiering.foreach(__v => __obj.updateDynamic("DataTiering")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       GlobalReplicationGroupInfo.foreach(__v => __obj.updateDynamic("GlobalReplicationGroupInfo")(__v.asInstanceOf[js.Any]))
+      IpDiscovery.foreach(__v => __obj.updateDynamic("IpDiscovery")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LogDeliveryConfigurations.foreach(__v => __obj.updateDynamic("LogDeliveryConfigurations")(__v.asInstanceOf[js.Any]))
       MemberClusters.foreach(__v => __obj.updateDynamic("MemberClusters")(__v.asInstanceOf[js.Any]))
       MemberClustersOutpostArns.foreach(__v => __obj.updateDynamic("MemberClustersOutpostArns")(__v.asInstanceOf[js.Any]))
       MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      NetworkType.foreach(__v => __obj.updateDynamic("NetworkType")(__v.asInstanceOf[js.Any]))
       NodeGroups.foreach(__v => __obj.updateDynamic("NodeGroups")(__v.asInstanceOf[js.Any]))
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       ReplicationGroupCreateTime.foreach(__v => __obj.updateDynamic("ReplicationGroupCreateTime")(__v.asInstanceOf[js.Any]))
@@ -4788,6 +4867,7 @@ package object elasticache {
     var SubnetAvailabilityZone: js.UndefOr[AvailabilityZone]
     var SubnetIdentifier: js.UndefOr[String]
     var SubnetOutpost: js.UndefOr[SubnetOutpost]
+    var SupportedNetworkTypes: js.UndefOr[NetworkTypeList]
   }
 
   object Subnet {
@@ -4795,12 +4875,14 @@ package object elasticache {
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
-        SubnetOutpost: js.UndefOr[SubnetOutpost] = js.undefined
+        SubnetOutpost: js.UndefOr[SubnetOutpost] = js.undefined,
+        SupportedNetworkTypes: js.UndefOr[NetworkTypeList] = js.undefined
     ): Subnet = {
       val __obj = js.Dynamic.literal()
       SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
       SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
       SubnetOutpost.foreach(__v => __obj.updateDynamic("SubnetOutpost")(__v.asInstanceOf[js.Any]))
+      SupportedNetworkTypes.foreach(__v => __obj.updateDynamic("SupportedNetworkTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
     }
   }

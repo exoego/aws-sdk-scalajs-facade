@@ -81,6 +81,7 @@ package object migrationhubrefactorspaces {
     @inline def putResourcePolicyFuture(params: PutResourcePolicyRequest): Future[PutResourcePolicyResponse] = service.putResourcePolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateRouteFuture(params: UpdateRouteRequest): Future[UpdateRouteResponse] = service.updateRoute(params).promise().toFuture
 
   }
 
@@ -112,6 +113,7 @@ package object migrationhubrefactorspaces {
     def putResourcePolicy(params: PutResourcePolicyRequest): Request[PutResourcePolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateRoute(params: UpdateRouteRequest): Request[UpdateRouteResponse] = js.native
   }
   object MigrationHubRefactorSpaces {
     @inline implicit def toOps(service: MigrationHubRefactorSpaces): MigrationHubRefactorSpacesOps = {
@@ -437,6 +439,7 @@ package object migrationhubrefactorspaces {
     var RouteType: RouteType
     var ServiceIdentifier: ServiceId
     var ClientToken: js.UndefOr[ClientToken]
+    var DefaultRoute: js.UndefOr[DefaultRouteInput]
     var Tags: js.UndefOr[TagMap]
     var UriPathRoute: js.UndefOr[UriPathRouteInput]
   }
@@ -449,6 +452,7 @@ package object migrationhubrefactorspaces {
         RouteType: RouteType,
         ServiceIdentifier: ServiceId,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        DefaultRoute: js.UndefOr[DefaultRouteInput] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         UriPathRoute: js.UndefOr[UriPathRouteInput] = js.undefined
     ): CreateRouteRequest = {
@@ -460,6 +464,7 @@ package object migrationhubrefactorspaces {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DefaultRoute.foreach(__v => __obj.updateDynamic("DefaultRoute")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UriPathRoute.foreach(__v => __obj.updateDynamic("UriPathRoute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteRequest]
@@ -618,6 +623,24 @@ package object migrationhubrefactorspaces {
       UrlEndpoint.foreach(__v => __obj.updateDynamic("UrlEndpoint")(__v.asInstanceOf[js.Any]))
       VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceResponse]
+    }
+  }
+
+  /** The configuration for the default route type.
+    */
+  @js.native
+  trait DefaultRouteInput extends js.Object {
+    var ActivationState: js.UndefOr[RouteActivationState]
+  }
+
+  object DefaultRouteInput {
+    @inline
+    def apply(
+        ActivationState: js.UndefOr[RouteActivationState] = js.undefined
+    ): DefaultRouteInput = {
+      val __obj = js.Dynamic.literal()
+      ActivationState.foreach(__v => __obj.updateDynamic("ActivationState")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultRouteInput]
     }
   }
 
@@ -1850,6 +1873,63 @@ package object migrationhubrefactorspaces {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteRequest extends js.Object {
+    var ActivationState: RouteActivationState
+    var ApplicationIdentifier: ApplicationId
+    var EnvironmentIdentifier: EnvironmentId
+    var RouteIdentifier: RouteId
+  }
+
+  object UpdateRouteRequest {
+    @inline
+    def apply(
+        ActivationState: RouteActivationState,
+        ApplicationIdentifier: ApplicationId,
+        EnvironmentIdentifier: EnvironmentId,
+        RouteIdentifier: RouteId
+    ): UpdateRouteRequest = {
+      val __obj = js.Dynamic.literal(
+        "ActivationState" -> ActivationState.asInstanceOf[js.Any],
+        "ApplicationIdentifier" -> ApplicationIdentifier.asInstanceOf[js.Any],
+        "EnvironmentIdentifier" -> EnvironmentIdentifier.asInstanceOf[js.Any],
+        "RouteIdentifier" -> RouteIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRouteRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteResponse extends js.Object {
+    var ApplicationId: js.UndefOr[ApplicationId]
+    var Arn: js.UndefOr[ResourceArn]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var RouteId: js.UndefOr[RouteId]
+    var ServiceId: js.UndefOr[ServiceId]
+    var State: js.UndefOr[RouteState]
+  }
+
+  object UpdateRouteResponse {
+    @inline
+    def apply(
+        ApplicationId: js.UndefOr[ApplicationId] = js.undefined,
+        Arn: js.UndefOr[ResourceArn] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        RouteId: js.UndefOr[RouteId] = js.undefined,
+        ServiceId: js.UndefOr[ServiceId] = js.undefined,
+        State: js.UndefOr[RouteState] = js.undefined
+    ): UpdateRouteResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
+      ServiceId.foreach(__v => __obj.updateDynamic("ServiceId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRouteResponse]
     }
   }
 

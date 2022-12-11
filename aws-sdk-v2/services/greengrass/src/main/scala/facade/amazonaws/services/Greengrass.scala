@@ -1999,6 +1999,7 @@ package object greengrass {
     var Environment: js.UndefOr[FunctionConfigurationEnvironment]
     var ExecArgs: js.UndefOr[__string]
     var Executable: js.UndefOr[__string]
+    var FunctionRuntimeOverride: js.UndefOr[__string]
     var MemorySize: js.UndefOr[__integer]
     var Pinned: js.UndefOr[__boolean]
     var Timeout: js.UndefOr[__integer]
@@ -2011,6 +2012,7 @@ package object greengrass {
         Environment: js.UndefOr[FunctionConfigurationEnvironment] = js.undefined,
         ExecArgs: js.UndefOr[__string] = js.undefined,
         Executable: js.UndefOr[__string] = js.undefined,
+        FunctionRuntimeOverride: js.UndefOr[__string] = js.undefined,
         MemorySize: js.UndefOr[__integer] = js.undefined,
         Pinned: js.UndefOr[__boolean] = js.undefined,
         Timeout: js.UndefOr[__integer] = js.undefined
@@ -2020,6 +2022,7 @@ package object greengrass {
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       ExecArgs.foreach(__v => __obj.updateDynamic("ExecArgs")(__v.asInstanceOf[js.Any]))
       Executable.foreach(__v => __obj.updateDynamic("Executable")(__v.asInstanceOf[js.Any]))
+      FunctionRuntimeOverride.foreach(__v => __obj.updateDynamic("FunctionRuntimeOverride")(__v.asInstanceOf[js.Any]))
       MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
       Pinned.foreach(__v => __obj.updateDynamic("Pinned")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))

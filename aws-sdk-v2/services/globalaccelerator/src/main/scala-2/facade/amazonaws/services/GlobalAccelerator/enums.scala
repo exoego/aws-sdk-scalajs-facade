@@ -98,11 +98,21 @@ object HealthState {
 }
 
 @js.native
+sealed trait IpAddressFamily extends js.Any
+object IpAddressFamily {
+  val IPv4 = "IPv4".asInstanceOf[IpAddressFamily]
+  val IPv6 = "IPv6".asInstanceOf[IpAddressFamily]
+
+  @inline def values: js.Array[IpAddressFamily] = js.Array(IPv4, IPv6)
+}
+
+@js.native
 sealed trait IpAddressType extends js.Any
 object IpAddressType {
   val IPV4 = "IPV4".asInstanceOf[IpAddressType]
+  val DUAL_STACK = "DUAL_STACK".asInstanceOf[IpAddressType]
 
-  @inline def values: js.Array[IpAddressType] = js.Array(IPV4)
+  @inline def values: js.Array[IpAddressType] = js.Array(IPV4, DUAL_STACK)
 }
 
 @js.native

@@ -3,6 +3,17 @@ package facade.amazonaws.services.chimesdkmeetings
 import scalajs.js
 
 @js.native
+sealed trait MediaCapabilities extends js.Any
+object MediaCapabilities {
+  val SendReceive = "SendReceive".asInstanceOf[MediaCapabilities]
+  val Send = "Send".asInstanceOf[MediaCapabilities]
+  val Receive = "Receive".asInstanceOf[MediaCapabilities]
+  val None = "None".asInstanceOf[MediaCapabilities]
+
+  @inline def values: js.Array[MediaCapabilities] = js.Array(SendReceive, Send, Receive, None)
+}
+
+@js.native
 sealed trait MeetingFeatureStatus extends js.Any
 object MeetingFeatureStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[MeetingFeatureStatus]
@@ -123,6 +134,7 @@ object TranscribeRegion {
   val `eu-west-2` = "eu-west-2".asInstanceOf[TranscribeRegion]
   val `sa-east-1` = "sa-east-1".asInstanceOf[TranscribeRegion]
   val auto = "auto".asInstanceOf[TranscribeRegion]
+  val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[TranscribeRegion]
 
   @inline def values: js.Array[TranscribeRegion] = js.Array(
     `us-east-2`,
@@ -136,7 +148,8 @@ object TranscribeRegion {
     `eu-west-1`,
     `eu-west-2`,
     `sa-east-1`,
-    auto
+    auto,
+    `us-gov-west-1`
   )
 }
 

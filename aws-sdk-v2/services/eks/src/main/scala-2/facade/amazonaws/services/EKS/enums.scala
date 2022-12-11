@@ -11,8 +11,10 @@ object AMITypes {
   val CUSTOM = "CUSTOM".asInstanceOf[AMITypes]
   val BOTTLEROCKET_ARM_64 = "BOTTLEROCKET_ARM_64".asInstanceOf[AMITypes]
   val BOTTLEROCKET_x86_64 = "BOTTLEROCKET_x86_64".asInstanceOf[AMITypes]
+  val BOTTLEROCKET_ARM_64_NVIDIA = "BOTTLEROCKET_ARM_64_NVIDIA".asInstanceOf[AMITypes]
+  val BOTTLEROCKET_x86_64_NVIDIA = "BOTTLEROCKET_x86_64_NVIDIA".asInstanceOf[AMITypes]
 
-  @inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64)
+  @inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64, BOTTLEROCKET_ARM_64_NVIDIA, BOTTLEROCKET_x86_64_NVIDIA)
 }
 
 @js.native
@@ -49,8 +51,9 @@ object AddonStatus {
   val DELETING = "DELETING".asInstanceOf[AddonStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AddonStatus]
   val DEGRADED = "DEGRADED".asInstanceOf[AddonStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[AddonStatus]
 
-  @inline def values: js.Array[AddonStatus] = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED)
+  @inline def values: js.Array[AddonStatus] = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED, UPDATE_FAILED)
 }
 
 @js.native
@@ -60,6 +63,19 @@ object CapacityTypes {
   val SPOT = "SPOT".asInstanceOf[CapacityTypes]
 
   @inline def values: js.Array[CapacityTypes] = js.Array(ON_DEMAND, SPOT)
+}
+
+@js.native
+sealed trait ClusterIssueCode extends js.Any
+object ClusterIssueCode {
+  val AccessDenied = "AccessDenied".asInstanceOf[ClusterIssueCode]
+  val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[ClusterIssueCode]
+  val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ClusterIssueCode]
+  val InternalFailure = "InternalFailure".asInstanceOf[ClusterIssueCode]
+  val ResourceLimitExceeded = "ResourceLimitExceeded".asInstanceOf[ClusterIssueCode]
+  val ResourceNotFound = "ResourceNotFound".asInstanceOf[ClusterIssueCode]
+
+  @inline def values: js.Array[ClusterIssueCode] = js.Array(AccessDenied, ClusterUnreachable, ConfigurationConflict, InternalFailure, ResourceLimitExceeded, ResourceNotFound)
 }
 
 @js.native
@@ -146,6 +162,15 @@ object FargateProfileStatus {
 }
 
 @js.native
+sealed trait IpFamily extends js.Any
+object IpFamily {
+  val ipv4 = "ipv4".asInstanceOf[IpFamily]
+  val ipv6 = "ipv6".asInstanceOf[IpFamily]
+
+  @inline def values: js.Array[IpFamily] = js.Array(ipv4, ipv6)
+}
+
+@js.native
 sealed trait LogType extends js.Any
 object LogType {
   val api = "api".asInstanceOf[LogType]
@@ -178,6 +203,7 @@ object NodegroupIssueCode {
   val AccessDenied = "AccessDenied".asInstanceOf[NodegroupIssueCode]
   val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
   val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[NodegroupIssueCode]
+  val Ec2SubnetMissingIpv6Assignment = "Ec2SubnetMissingIpv6Assignment".asInstanceOf[NodegroupIssueCode]
 
   @inline def values: js.Array[NodegroupIssueCode] = js.Array(
     AutoScalingGroupNotFound,
@@ -197,7 +223,8 @@ object NodegroupIssueCode {
     InsufficientFreeAddresses,
     AccessDenied,
     InternalFailure,
-    ClusterUnreachable
+    ClusterUnreachable,
+    Ec2SubnetMissingIpv6Assignment
   )
 }
 
@@ -220,8 +247,9 @@ sealed trait ResolveConflicts extends js.Any
 object ResolveConflicts {
   val OVERWRITE = "OVERWRITE".asInstanceOf[ResolveConflicts]
   val NONE = "NONE".asInstanceOf[ResolveConflicts]
+  val PRESERVE = "PRESERVE".asInstanceOf[ResolveConflicts]
 
-  @inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE)
+  @inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE, PRESERVE)
 }
 
 @js.native

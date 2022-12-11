@@ -28,6 +28,7 @@ package object s3outposts {
     @inline def createEndpointFuture(params: CreateEndpointRequest): Future[CreateEndpointResult] = service.createEndpoint(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[js.Object] = service.deleteEndpoint(params).promise().toFuture
     @inline def listEndpointsFuture(params: ListEndpointsRequest): Future[ListEndpointsResult] = service.listEndpoints(params).promise().toFuture
+    @inline def listSharedEndpointsFuture(params: ListSharedEndpointsRequest): Future[ListSharedEndpointsResult] = service.listSharedEndpoints(params).promise().toFuture
 
   }
 
@@ -39,6 +40,7 @@ package object s3outposts {
     def createEndpoint(params: CreateEndpointRequest): Request[CreateEndpointResult] = js.native
     def deleteEndpoint(params: DeleteEndpointRequest): Request[js.Object] = js.native
     def listEndpoints(params: ListEndpointsRequest): Request[ListEndpointsResult] = js.native
+    def listSharedEndpoints(params: ListSharedEndpointsRequest): Request[ListSharedEndpointsResult] = js.native
   }
   object S3Outposts {
     @inline implicit def toOps(service: S3Outposts): S3OutpostsOps = {
@@ -112,7 +114,7 @@ package object s3outposts {
     }
   }
 
-  /** Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html| Accessing S3 on Outposts using VPC only access points]].
+  /** Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/WorkingWithS3Outposts.html| Accessing S3 on Outposts using VPC-only access points]] in the <i>Amazon Simple Storage Service User Guide</i>.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -195,6 +197,49 @@ package object s3outposts {
       Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEndpointsResult]
+    }
+  }
+
+  @js.native
+  trait ListSharedEndpointsRequest extends js.Object {
+    var OutpostId: OutpostId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSharedEndpointsRequest {
+    @inline
+    def apply(
+        OutpostId: OutpostId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSharedEndpointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OutpostId" -> OutpostId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedEndpointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListSharedEndpointsResult extends js.Object {
+    var Endpoints: js.UndefOr[Endpoints]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListSharedEndpointsResult {
+    @inline
+    def apply(
+        Endpoints: js.UndefOr[Endpoints] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListSharedEndpointsResult = {
+      val __obj = js.Dynamic.literal()
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSharedEndpointsResult]
     }
   }
 

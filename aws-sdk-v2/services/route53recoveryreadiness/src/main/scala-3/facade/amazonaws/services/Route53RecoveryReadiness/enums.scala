@@ -2,7 +2,7 @@ package facade.amazonaws.services.route53recoveryreadiness
 
 import scalajs.js
 
-/** The readiness of an entire ReadinessCheck or an individual resource ARN.
+/** The readiness status.
   */
 type Readiness = "READY" | "NOT_READY" | "UNKNOWN" | "NOT_AUTHORIZED"
 object Readiness {

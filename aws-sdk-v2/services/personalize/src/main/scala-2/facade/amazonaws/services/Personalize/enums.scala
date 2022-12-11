@@ -12,6 +12,15 @@ object Domain {
 }
 
 @js.native
+sealed trait ImportMode extends js.Any
+object ImportMode {
+  val FULL = "FULL".asInstanceOf[ImportMode]
+  val INCREMENTAL = "INCREMENTAL".asInstanceOf[ImportMode]
+
+  @inline def values: js.Array[ImportMode] = js.Array(FULL, INCREMENTAL)
+}
+
+@js.native
 sealed trait IngestionMode extends js.Any
 object IngestionMode {
   val BULK = "BULK".asInstanceOf[IngestionMode]

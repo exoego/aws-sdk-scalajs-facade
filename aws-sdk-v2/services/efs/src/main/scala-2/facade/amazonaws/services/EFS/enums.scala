@@ -24,6 +24,17 @@ object PerformanceMode {
   @inline def values: js.Array[PerformanceMode] = js.Array(generalPurpose, maxIO)
 }
 
+@js.native
+sealed trait ReplicationStatus extends js.Any
+object ReplicationStatus {
+  val ENABLED = "ENABLED".asInstanceOf[ReplicationStatus]
+  val ENABLING = "ENABLING".asInstanceOf[ReplicationStatus]
+  val DELETING = "DELETING".asInstanceOf[ReplicationStatus]
+  val ERROR = "ERROR".asInstanceOf[ReplicationStatus]
+
+  @inline def values: js.Array[ReplicationStatus] = js.Array(ENABLED, ENABLING, DELETING, ERROR)
+}
+
 /** An EFS resource, for example a file system or a mount target.
   */
 @js.native
@@ -62,8 +73,9 @@ sealed trait ThroughputMode extends js.Any
 object ThroughputMode {
   val bursting = "bursting".asInstanceOf[ThroughputMode]
   val provisioned = "provisioned".asInstanceOf[ThroughputMode]
+  val elastic = "elastic".asInstanceOf[ThroughputMode]
 
-  @inline def values: js.Array[ThroughputMode] = js.Array(bursting, provisioned)
+  @inline def values: js.Array[ThroughputMode] = js.Array(bursting, provisioned, elastic)
 }
 
 @js.native
@@ -74,8 +86,9 @@ object TransitionToIARules {
   val AFTER_30_DAYS = "AFTER_30_DAYS".asInstanceOf[TransitionToIARules]
   val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
   val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
+  val AFTER_1_DAY = "AFTER_1_DAY".asInstanceOf[TransitionToIARules]
 
-  @inline def values: js.Array[TransitionToIARules] = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+  @inline def values: js.Array[TransitionToIARules] = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS, AFTER_1_DAY)
 }
 
 @js.native

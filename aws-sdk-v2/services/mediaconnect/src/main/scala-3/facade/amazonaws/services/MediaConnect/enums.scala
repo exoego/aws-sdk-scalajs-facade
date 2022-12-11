@@ -74,6 +74,19 @@ object KeyType {
   inline def values: js.Array[KeyType] = js.Array(speke, `static-key`, `srt-password`)
 }
 
+type MaintenanceDay = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday"
+object MaintenanceDay {
+  inline val Monday: "Monday" = "Monday"
+  inline val Tuesday: "Tuesday" = "Tuesday"
+  inline val Wednesday: "Wednesday" = "Wednesday"
+  inline val Thursday: "Thursday" = "Thursday"
+  inline val Friday: "Friday" = "Friday"
+  inline val Saturday: "Saturday" = "Saturday"
+  inline val Sunday: "Sunday" = "Sunday"
+
+  inline def values: js.Array[MaintenanceDay] = js.Array(Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)
+}
+
 type MediaStreamType = "video" | "audio" | "ancillary-data"
 object MediaStreamType {
   inline val video: "video" = "video"
@@ -98,7 +111,7 @@ object PriceUnits {
   inline def values: js.Array[PriceUnits] = js.Array(HOURLY)
 }
 
-type Protocol = "zixi-push" | "rtp-fec" | "rtp" | "zixi-pull" | "rist" | "st2110-jpegxs" | "cdi" | "srt-listener" | "fujitsu-qos"
+type Protocol = "zixi-push" | "rtp-fec" | "rtp" | "zixi-pull" | "rist" | "st2110-jpegxs" | "cdi" | "srt-listener" | "srt-caller" | "fujitsu-qos"
 object Protocol {
   inline val `zixi-push`: "zixi-push" = "zixi-push"
   inline val `rtp-fec`: "rtp-fec" = "rtp-fec"
@@ -108,9 +121,10 @@ object Protocol {
   inline val `st2110-jpegxs`: "st2110-jpegxs" = "st2110-jpegxs"
   inline val cdi: "cdi" = "cdi"
   inline val `srt-listener`: "srt-listener" = "srt-listener"
+  inline val `srt-caller`: "srt-caller" = "srt-caller"
   inline val `fujitsu-qos`: "fujitsu-qos" = "fujitsu-qos"
 
-  inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `st2110-jpegxs`, cdi, `srt-listener`, `fujitsu-qos`)
+  inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `st2110-jpegxs`, cdi, `srt-listener`, `srt-caller`, `fujitsu-qos`)
 }
 
 type Range = "NARROW" | "FULL" | "FULLPROTECT"

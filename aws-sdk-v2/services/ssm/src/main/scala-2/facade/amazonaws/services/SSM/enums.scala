@@ -417,6 +417,8 @@ object DocumentType {
   val `Automation.ChangeTemplate` = "Automation.ChangeTemplate".asInstanceOf[DocumentType]
   val ProblemAnalysis = "ProblemAnalysis".asInstanceOf[DocumentType]
   val ProblemAnalysisTemplate = "ProblemAnalysisTemplate".asInstanceOf[DocumentType]
+  val CloudFormation = "CloudFormation".asInstanceOf[DocumentType]
+  val ConformancePackTemplate = "ConformancePackTemplate".asInstanceOf[DocumentType]
 
   @inline def values: js.Array[DocumentType] = js.Array(
     Command,
@@ -430,7 +432,9 @@ object DocumentType {
     ChangeCalendar,
     `Automation.ChangeTemplate`,
     ProblemAnalysis,
-    ProblemAnalysisTemplate
+    ProblemAnalysisTemplate,
+    CloudFormation,
+    ConformancePackTemplate
   )
 }
 
@@ -441,6 +445,15 @@ object ExecutionMode {
   val Interactive = "Interactive".asInstanceOf[ExecutionMode]
 
   @inline def values: js.Array[ExecutionMode] = js.Array(Auto, Interactive)
+}
+
+@js.native
+sealed trait ExternalAlarmState extends js.Any
+object ExternalAlarmState {
+  val UNKNOWN = "UNKNOWN".asInstanceOf[ExternalAlarmState]
+  val ALARM = "ALARM".asInstanceOf[ExternalAlarmState]
+
+  @inline def values: js.Array[ExternalAlarmState] = js.Array(UNKNOWN, ALARM)
 }
 
 @js.native
@@ -601,6 +614,7 @@ object OperatingSystem {
   val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
   val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
   val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+  val AMAZON_LINUX_2022 = "AMAZON_LINUX_2022".asInstanceOf[OperatingSystem]
   val UBUNTU = "UBUNTU".asInstanceOf[OperatingSystem]
   val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
   val SUSE = "SUSE".asInstanceOf[OperatingSystem]
@@ -609,8 +623,9 @@ object OperatingSystem {
   val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
   val MACOS = "MACOS".asInstanceOf[OperatingSystem]
   val RASPBIAN = "RASPBIAN".asInstanceOf[OperatingSystem]
+  val ROCKY_LINUX = "ROCKY_LINUX".asInstanceOf[OperatingSystem]
 
-  @inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN)
+  @inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, AMAZON_LINUX_2022, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN, ROCKY_LINUX)
 }
 
 @js.native
@@ -681,6 +696,7 @@ object OpsItemFilterKey {
   val ChangeRequestByTemplate = "ChangeRequestByTemplate".asInstanceOf[OpsItemFilterKey]
   val ChangeRequestByTargetsResourceGroup = "ChangeRequestByTargetsResourceGroup".asInstanceOf[OpsItemFilterKey]
   val InsightByType = "InsightByType".asInstanceOf[OpsItemFilterKey]
+  val AccountId = "AccountId".asInstanceOf[OpsItemFilterKey]
 
   @inline def values: js.Array[OpsItemFilterKey] = js.Array(
     Status,
@@ -709,7 +725,8 @@ object OpsItemFilterKey {
     ChangeRequestByApproverName,
     ChangeRequestByTemplate,
     ChangeRequestByTargetsResourceGroup,
-    InsightByType
+    InsightByType,
+    AccountId
   )
 }
 
@@ -999,8 +1016,10 @@ object ResourceTypeForTagging {
   val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
   val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
   val OpsMetadata = "OpsMetadata".asInstanceOf[ResourceTypeForTagging]
+  val Automation = "Automation".asInstanceOf[ResourceTypeForTagging]
+  val Association = "Association".asInstanceOf[ResourceTypeForTagging]
 
-  @inline def values: js.Array[ResourceTypeForTagging] = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata)
+  @inline def values: js.Array[ResourceTypeForTagging] = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata, Automation, Association)
 }
 
 @js.native

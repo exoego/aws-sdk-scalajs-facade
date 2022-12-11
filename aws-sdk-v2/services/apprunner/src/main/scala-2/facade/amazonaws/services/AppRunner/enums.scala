@@ -56,6 +56,15 @@ object CustomDomainAssociationStatus {
 }
 
 @js.native
+sealed trait EgressType extends js.Any
+object EgressType {
+  val DEFAULT = "DEFAULT".asInstanceOf[EgressType]
+  val VPC = "VPC".asInstanceOf[EgressType]
+
+  @inline def values: js.Array[EgressType] = js.Array(DEFAULT, VPC)
+}
+
+@js.native
 sealed trait HealthCheckProtocol extends js.Any
 object HealthCheckProtocol {
   val TCP = "TCP".asInstanceOf[HealthCheckProtocol]
@@ -71,6 +80,15 @@ object ImageRepositoryType {
   val ECR_PUBLIC = "ECR_PUBLIC".asInstanceOf[ImageRepositoryType]
 
   @inline def values: js.Array[ImageRepositoryType] = js.Array(ECR, ECR_PUBLIC)
+}
+
+@js.native
+sealed trait ObservabilityConfigurationStatus extends js.Any
+object ObservabilityConfigurationStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[ObservabilityConfigurationStatus]
+  val INACTIVE = "INACTIVE".asInstanceOf[ObservabilityConfigurationStatus]
+
+  @inline def values: js.Array[ObservabilityConfigurationStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -112,8 +130,16 @@ sealed trait Runtime extends js.Any
 object Runtime {
   val PYTHON_3 = "PYTHON_3".asInstanceOf[Runtime]
   val NODEJS_12 = "NODEJS_12".asInstanceOf[Runtime]
+  val NODEJS_14 = "NODEJS_14".asInstanceOf[Runtime]
+  val CORRETTO_8 = "CORRETTO_8".asInstanceOf[Runtime]
+  val CORRETTO_11 = "CORRETTO_11".asInstanceOf[Runtime]
+  val NODEJS_16 = "NODEJS_16".asInstanceOf[Runtime]
+  val GO_1 = "GO_1".asInstanceOf[Runtime]
+  val DOTNET_6 = "DOTNET_6".asInstanceOf[Runtime]
+  val PHP_81 = "PHP_81".asInstanceOf[Runtime]
+  val RUBY_31 = "RUBY_31".asInstanceOf[Runtime]
 
-  @inline def values: js.Array[Runtime] = js.Array(PYTHON_3, NODEJS_12)
+  @inline def values: js.Array[Runtime] = js.Array(PYTHON_3, NODEJS_12, NODEJS_14, CORRETTO_8, CORRETTO_11, NODEJS_16, GO_1, DOTNET_6, PHP_81, RUBY_31)
 }
 
 @js.native
@@ -135,4 +161,36 @@ object SourceCodeVersionType {
   val BRANCH = "BRANCH".asInstanceOf[SourceCodeVersionType]
 
   @inline def values: js.Array[SourceCodeVersionType] = js.Array(BRANCH)
+}
+
+@js.native
+sealed trait TracingVendor extends js.Any
+object TracingVendor {
+  val AWSXRAY = "AWSXRAY".asInstanceOf[TracingVendor]
+
+  @inline def values: js.Array[TracingVendor] = js.Array(AWSXRAY)
+}
+
+@js.native
+sealed trait VpcConnectorStatus extends js.Any
+object VpcConnectorStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[VpcConnectorStatus]
+  val INACTIVE = "INACTIVE".asInstanceOf[VpcConnectorStatus]
+
+  @inline def values: js.Array[VpcConnectorStatus] = js.Array(ACTIVE, INACTIVE)
+}
+
+@js.native
+sealed trait VpcIngressConnectionStatus extends js.Any
+object VpcIngressConnectionStatus {
+  val AVAILABLE = "AVAILABLE".asInstanceOf[VpcIngressConnectionStatus]
+  val PENDING_CREATION = "PENDING_CREATION".asInstanceOf[VpcIngressConnectionStatus]
+  val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[VpcIngressConnectionStatus]
+  val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[VpcIngressConnectionStatus]
+  val FAILED_CREATION = "FAILED_CREATION".asInstanceOf[VpcIngressConnectionStatus]
+  val FAILED_UPDATE = "FAILED_UPDATE".asInstanceOf[VpcIngressConnectionStatus]
+  val FAILED_DELETION = "FAILED_DELETION".asInstanceOf[VpcIngressConnectionStatus]
+  val DELETED = "DELETED".asInstanceOf[VpcIngressConnectionStatus]
+
+  @inline def values: js.Array[VpcIngressConnectionStatus] = js.Array(AVAILABLE, PENDING_CREATION, PENDING_UPDATE, PENDING_DELETION, FAILED_CREATION, FAILED_UPDATE, FAILED_DELETION, DELETED)
 }

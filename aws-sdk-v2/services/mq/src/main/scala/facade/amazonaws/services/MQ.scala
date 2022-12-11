@@ -12,6 +12,7 @@ package object mq {
   type __boolean = Boolean
   type __integer = Int
   type __integerMin5Max100 = Int
+  type __listOfActionRequired = js.Array[ActionRequired]
   type __listOfAvailabilityZone = js.Array[AvailabilityZone]
   type __listOfBrokerEngineType = js.Array[BrokerEngineType]
   type __listOfBrokerInstance = js.Array[BrokerInstance]
@@ -88,6 +89,27 @@ package object mq {
   object MQ {
     @inline implicit def toOps(service: MQ): MQOps = {
       new MQOps(service)
+    }
+  }
+
+  /** The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.
+    */
+  @js.native
+  trait ActionRequired extends js.Object {
+    var ActionRequiredCode: js.UndefOr[__string]
+    var ActionRequiredInfo: js.UndefOr[__string]
+  }
+
+  object ActionRequired {
+    @inline
+    def apply(
+        ActionRequiredCode: js.UndefOr[__string] = js.undefined,
+        ActionRequiredInfo: js.UndefOr[__string] = js.undefined
+    ): ActionRequired = {
+      val __obj = js.Dynamic.literal()
+      ActionRequiredCode.foreach(__v => __obj.updateDynamic("ActionRequiredCode")(__v.asInstanceOf[js.Any]))
+      ActionRequiredInfo.foreach(__v => __obj.updateDynamic("ActionRequiredInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionRequired]
     }
   }
 
@@ -767,6 +789,7 @@ package object mq {
 
   @js.native
   trait DescribeBrokerResponse extends js.Object {
+    var ActionsRequired: js.UndefOr[__listOfActionRequired]
     var AuthenticationStrategy: js.UndefOr[AuthenticationStrategy]
     var AutoMinorVersionUpgrade: js.UndefOr[__boolean]
     var BrokerArn: js.UndefOr[__string]
@@ -800,6 +823,7 @@ package object mq {
   object DescribeBrokerResponse {
     @inline
     def apply(
+        ActionsRequired: js.UndefOr[__listOfActionRequired] = js.undefined,
         AuthenticationStrategy: js.UndefOr[AuthenticationStrategy] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerArn: js.UndefOr[__string] = js.undefined,
@@ -830,6 +854,7 @@ package object mq {
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): DescribeBrokerResponse = {
       val __obj = js.Dynamic.literal()
+      ActionsRequired.foreach(__v => __obj.updateDynamic("ActionsRequired")(__v.asInstanceOf[js.Any]))
       AuthenticationStrategy.foreach(__v => __obj.updateDynamic("AuthenticationStrategy")(__v.asInstanceOf[js.Any]))
       AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       BrokerArn.foreach(__v => __obj.updateDynamic("BrokerArn")(__v.asInstanceOf[js.Any]))

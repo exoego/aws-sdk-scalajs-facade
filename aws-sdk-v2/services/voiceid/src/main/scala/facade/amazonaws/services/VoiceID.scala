@@ -451,6 +451,7 @@ package object voiceid {
     var DomainStatus: js.UndefOr[DomainStatus]
     var Name: js.UndefOr[DomainName]
     var ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration]
+    var ServerSideEncryptionUpdateDetails: js.UndefOr[ServerSideEncryptionUpdateDetails]
     var UpdatedAt: js.UndefOr[Timestamp]
   }
 
@@ -464,6 +465,7 @@ package object voiceid {
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined,
         Name: js.UndefOr[DomainName] = js.undefined,
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined,
+        ServerSideEncryptionUpdateDetails: js.UndefOr[ServerSideEncryptionUpdateDetails] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): Domain = {
       val __obj = js.Dynamic.literal()
@@ -474,6 +476,7 @@ package object voiceid {
       DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerSideEncryptionUpdateDetails.foreach(__v => __obj.updateDynamic("ServerSideEncryptionUpdateDetails")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Domain]
     }
@@ -490,6 +493,7 @@ package object voiceid {
     var DomainStatus: js.UndefOr[DomainStatus]
     var Name: js.UndefOr[DomainName]
     var ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration]
+    var ServerSideEncryptionUpdateDetails: js.UndefOr[ServerSideEncryptionUpdateDetails]
     var UpdatedAt: js.UndefOr[Timestamp]
   }
 
@@ -503,6 +507,7 @@ package object voiceid {
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined,
         Name: js.UndefOr[DomainName] = js.undefined,
         ServerSideEncryptionConfiguration: js.UndefOr[ServerSideEncryptionConfiguration] = js.undefined,
+        ServerSideEncryptionUpdateDetails: js.UndefOr[ServerSideEncryptionUpdateDetails] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): DomainSummary = {
       val __obj = js.Dynamic.literal()
@@ -513,6 +518,7 @@ package object voiceid {
       DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ServerSideEncryptionConfiguration.foreach(__v => __obj.updateDynamic("ServerSideEncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      ServerSideEncryptionUpdateDetails.foreach(__v => __obj.updateDynamic("ServerSideEncryptionUpdateDetails")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainSummary]
     }
@@ -692,15 +698,18 @@ package object voiceid {
   @js.native
   trait FraudRiskDetails extends js.Object {
     var KnownFraudsterRisk: KnownFraudsterRisk
+    var VoiceSpoofingRisk: VoiceSpoofingRisk
   }
 
   object FraudRiskDetails {
     @inline
     def apply(
-        KnownFraudsterRisk: KnownFraudsterRisk
+        KnownFraudsterRisk: KnownFraudsterRisk,
+        VoiceSpoofingRisk: VoiceSpoofingRisk
     ): FraudRiskDetails = {
       val __obj = js.Dynamic.literal(
-        "KnownFraudsterRisk" -> KnownFraudsterRisk.asInstanceOf[js.Any]
+        "KnownFraudsterRisk" -> KnownFraudsterRisk.asInstanceOf[js.Any],
+        "VoiceSpoofingRisk" -> VoiceSpoofingRisk.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[FraudRiskDetails]
     }
@@ -1145,7 +1154,7 @@ package object voiceid {
     }
   }
 
-  /** The configuration definining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.
+  /** The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.
     */
   @js.native
   trait RegistrationConfig extends js.Object {
@@ -1166,7 +1175,7 @@ package object voiceid {
     }
   }
 
-  /** The configuration containing information about the customer-managed KMS Key used for encrypting customer data.
+  /** The configuration containing information about the customer managed key used for encrypting customer data.
     */
   @js.native
   trait ServerSideEncryptionConfiguration extends js.Object {
@@ -1185,6 +1194,30 @@ package object voiceid {
     }
   }
 
+  /** Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.
+    */
+  @js.native
+  trait ServerSideEncryptionUpdateDetails extends js.Object {
+    var Message: js.UndefOr[String]
+    var OldKmsKeyId: js.UndefOr[KmsKeyId]
+    var UpdateStatus: js.UndefOr[ServerSideEncryptionUpdateStatus]
+  }
+
+  object ServerSideEncryptionUpdateDetails {
+    @inline
+    def apply(
+        Message: js.UndefOr[String] = js.undefined,
+        OldKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        UpdateStatus: js.UndefOr[ServerSideEncryptionUpdateStatus] = js.undefined
+    ): ServerSideEncryptionUpdateDetails = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OldKmsKeyId.foreach(__v => __obj.updateDynamic("OldKmsKeyId")(__v.asInstanceOf[js.Any]))
+      UpdateStatus.foreach(__v => __obj.updateDynamic("UpdateStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServerSideEncryptionUpdateDetails]
+    }
+  }
+
   /** Contains all the information about a speaker.
     */
   @js.native
@@ -1193,6 +1226,7 @@ package object voiceid {
     var CustomerSpeakerId: js.UndefOr[CustomerSpeakerId]
     var DomainId: js.UndefOr[DomainId]
     var GeneratedSpeakerId: js.UndefOr[GeneratedSpeakerId]
+    var LastAccessedAt: js.UndefOr[Timestamp]
     var Status: js.UndefOr[SpeakerStatus]
     var UpdatedAt: js.UndefOr[Timestamp]
   }
@@ -1204,6 +1238,7 @@ package object voiceid {
         CustomerSpeakerId: js.UndefOr[CustomerSpeakerId] = js.undefined,
         DomainId: js.UndefOr[DomainId] = js.undefined,
         GeneratedSpeakerId: js.UndefOr[GeneratedSpeakerId] = js.undefined,
+        LastAccessedAt: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[SpeakerStatus] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): Speaker = {
@@ -1212,6 +1247,7 @@ package object voiceid {
       CustomerSpeakerId.foreach(__v => __obj.updateDynamic("CustomerSpeakerId")(__v.asInstanceOf[js.Any]))
       DomainId.foreach(__v => __obj.updateDynamic("DomainId")(__v.asInstanceOf[js.Any]))
       GeneratedSpeakerId.foreach(__v => __obj.updateDynamic("GeneratedSpeakerId")(__v.asInstanceOf[js.Any]))
+      LastAccessedAt.foreach(__v => __obj.updateDynamic("LastAccessedAt")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Speaker]
@@ -1316,6 +1352,7 @@ package object voiceid {
     var CustomerSpeakerId: js.UndefOr[CustomerSpeakerId]
     var DomainId: js.UndefOr[DomainId]
     var GeneratedSpeakerId: js.UndefOr[GeneratedSpeakerId]
+    var LastAccessedAt: js.UndefOr[Timestamp]
     var Status: js.UndefOr[SpeakerStatus]
     var UpdatedAt: js.UndefOr[Timestamp]
   }
@@ -1327,6 +1364,7 @@ package object voiceid {
         CustomerSpeakerId: js.UndefOr[CustomerSpeakerId] = js.undefined,
         DomainId: js.UndefOr[DomainId] = js.undefined,
         GeneratedSpeakerId: js.UndefOr[GeneratedSpeakerId] = js.undefined,
+        LastAccessedAt: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[SpeakerStatus] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): SpeakerSummary = {
@@ -1335,6 +1373,7 @@ package object voiceid {
       CustomerSpeakerId.foreach(__v => __obj.updateDynamic("CustomerSpeakerId")(__v.asInstanceOf[js.Any]))
       DomainId.foreach(__v => __obj.updateDynamic("DomainId")(__v.asInstanceOf[js.Any]))
       GeneratedSpeakerId.foreach(__v => __obj.updateDynamic("GeneratedSpeakerId")(__v.asInstanceOf[js.Any]))
+      LastAccessedAt.foreach(__v => __obj.updateDynamic("LastAccessedAt")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpeakerSummary]
@@ -1445,7 +1484,7 @@ package object voiceid {
     }
   }
 
-  /** A tag that can be assigned to a Voice ID resource.
+  /** The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1569,6 +1608,25 @@ package object voiceid {
       val __obj = js.Dynamic.literal()
       Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainResponse]
+    }
+  }
+
+  /** The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+    */
+  @js.native
+  trait VoiceSpoofingRisk extends js.Object {
+    var RiskScore: Score
+  }
+
+  object VoiceSpoofingRisk {
+    @inline
+    def apply(
+        RiskScore: Score
+    ): VoiceSpoofingRisk = {
+      val __obj = js.Dynamic.literal(
+        "RiskScore" -> RiskScore.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VoiceSpoofingRisk]
     }
   }
 }

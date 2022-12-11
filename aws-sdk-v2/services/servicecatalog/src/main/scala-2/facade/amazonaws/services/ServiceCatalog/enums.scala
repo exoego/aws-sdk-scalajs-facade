@@ -71,6 +71,15 @@ object EvaluationType {
 }
 
 @js.native
+sealed trait LastSyncStatus extends js.Any
+object LastSyncStatus {
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[LastSyncStatus]
+  val FAILED = "FAILED".asInstanceOf[LastSyncStatus]
+
+  @inline def values: js.Array[LastSyncStatus] = js.Array(SUCCEEDED, FAILED)
+}
+
+@js.native
 sealed trait OrganizationNodeType extends js.Any
 object OrganizationNodeType {
   val ORGANIZATION = "ORGANIZATION".asInstanceOf[OrganizationNodeType]
@@ -94,8 +103,9 @@ object PortfolioShareType {
 sealed trait PrincipalType extends js.Any
 object PrincipalType {
   val IAM = "IAM".asInstanceOf[PrincipalType]
+  val IAM_PATTERN = "IAM_PATTERN".asInstanceOf[PrincipalType]
 
-  @inline def values: js.Array[PrincipalType] = js.Array(IAM)
+  @inline def values: js.Array[PrincipalType] = js.Array(IAM, IAM_PATTERN)
 }
 
 @js.native
@@ -308,6 +318,14 @@ object SortOrder {
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
   @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
+}
+
+@js.native
+sealed trait SourceType extends js.Any
+object SourceType {
+  val CODESTAR = "CODESTAR".asInstanceOf[SourceType]
+
+  @inline def values: js.Array[SourceType] = js.Array(CODESTAR)
 }
 
 @js.native

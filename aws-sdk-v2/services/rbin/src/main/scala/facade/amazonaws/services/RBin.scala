@@ -22,6 +22,8 @@ package object rbin {
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type TimeStamp = js.Date
+  type UnlockDelayValue = Int
 
   final class RBinOps(private val service: RBin) extends AnyVal {
 
@@ -30,7 +32,9 @@ package object rbin {
     @inline def getRuleFuture(params: GetRuleRequest): Future[GetRuleResponse] = service.getRule(params).promise().toFuture
     @inline def listRulesFuture(params: ListRulesRequest): Future[ListRulesResponse] = service.listRules(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def lockRuleFuture(params: LockRuleRequest): Future[LockRuleResponse] = service.lockRule(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def unlockRuleFuture(params: UnlockRuleRequest): Future[UnlockRuleResponse] = service.unlockRule(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateRuleFuture(params: UpdateRuleRequest): Future[UpdateRuleResponse] = service.updateRule(params).promise().toFuture
 
@@ -46,7 +50,9 @@ package object rbin {
     def getRule(params: GetRuleRequest): Request[GetRuleResponse] = js.native
     def listRules(params: ListRulesRequest): Request[ListRulesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def lockRule(params: LockRuleRequest): Request[LockRuleResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def unlockRule(params: UnlockRuleRequest): Request[UnlockRuleResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateRule(params: UpdateRuleRequest): Request[UpdateRuleResponse] = js.native
   }
@@ -61,6 +67,7 @@ package object rbin {
     var ResourceType: ResourceType
     var RetentionPeriod: RetentionPeriod
     var Description: js.UndefOr[Description]
+    var LockConfiguration: js.UndefOr[LockConfiguration]
     var ResourceTags: js.UndefOr[ResourceTags]
     var Tags: js.UndefOr[TagList]
   }
@@ -71,6 +78,7 @@ package object rbin {
         ResourceType: ResourceType,
         RetentionPeriod: RetentionPeriod,
         Description: js.UndefOr[Description] = js.undefined,
+        LockConfiguration: js.UndefOr[LockConfiguration] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleRequest = {
@@ -80,6 +88,7 @@ package object rbin {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LockConfiguration.foreach(__v => __obj.updateDynamic("LockConfiguration")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleRequest]
@@ -90,6 +99,8 @@ package object rbin {
   trait CreateRuleResponse extends js.Object {
     var Description: js.UndefOr[Description]
     var Identifier: js.UndefOr[RuleIdentifier]
+    var LockConfiguration: js.UndefOr[LockConfiguration]
+    var LockState: js.UndefOr[LockState]
     var ResourceTags: js.UndefOr[ResourceTags]
     var ResourceType: js.UndefOr[ResourceType]
     var RetentionPeriod: js.UndefOr[RetentionPeriod]
@@ -102,6 +113,8 @@ package object rbin {
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockConfiguration: js.UndefOr[LockConfiguration] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -111,6 +124,8 @@ package object rbin {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockConfiguration.foreach(__v => __obj.updateDynamic("LockConfiguration")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -169,6 +184,9 @@ package object rbin {
   trait GetRuleResponse extends js.Object {
     var Description: js.UndefOr[Description]
     var Identifier: js.UndefOr[RuleIdentifier]
+    var LockConfiguration: js.UndefOr[LockConfiguration]
+    var LockEndTime: js.UndefOr[TimeStamp]
+    var LockState: js.UndefOr[LockState]
     var ResourceTags: js.UndefOr[ResourceTags]
     var ResourceType: js.UndefOr[ResourceType]
     var RetentionPeriod: js.UndefOr[RetentionPeriod]
@@ -180,6 +198,9 @@ package object rbin {
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockConfiguration: js.UndefOr[LockConfiguration] = js.undefined,
+        LockEndTime: js.UndefOr[TimeStamp] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -188,6 +209,9 @@ package object rbin {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockConfiguration.foreach(__v => __obj.updateDynamic("LockConfiguration")(__v.asInstanceOf[js.Any]))
+      LockEndTime.foreach(__v => __obj.updateDynamic("LockEndTime")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -199,6 +223,7 @@ package object rbin {
   @js.native
   trait ListRulesRequest extends js.Object {
     var ResourceType: ResourceType
+    var LockState: js.UndefOr[LockState]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ResourceTags: js.UndefOr[ResourceTags]
@@ -208,6 +233,7 @@ package object rbin {
     @inline
     def apply(
         ResourceType: ResourceType,
+        LockState: js.UndefOr[LockState] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined
@@ -216,6 +242,7 @@ package object rbin {
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
@@ -275,7 +302,83 @@ package object rbin {
     }
   }
 
-  /** Information about a resource tag used to identify resources that are to be retained by a Recycle Bin retention rule.
+  /** Information about a retention rule lock configuration.
+    */
+  @js.native
+  trait LockConfiguration extends js.Object {
+    var UnlockDelay: UnlockDelay
+  }
+
+  object LockConfiguration {
+    @inline
+    def apply(
+        UnlockDelay: UnlockDelay
+    ): LockConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "UnlockDelay" -> UnlockDelay.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LockConfiguration]
+    }
+  }
+
+  @js.native
+  trait LockRuleRequest extends js.Object {
+    var Identifier: RuleIdentifier
+    var LockConfiguration: LockConfiguration
+  }
+
+  object LockRuleRequest {
+    @inline
+    def apply(
+        Identifier: RuleIdentifier,
+        LockConfiguration: LockConfiguration
+    ): LockRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "LockConfiguration" -> LockConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LockRuleRequest]
+    }
+  }
+
+  @js.native
+  trait LockRuleResponse extends js.Object {
+    var Description: js.UndefOr[Description]
+    var Identifier: js.UndefOr[RuleIdentifier]
+    var LockConfiguration: js.UndefOr[LockConfiguration]
+    var LockState: js.UndefOr[LockState]
+    var ResourceTags: js.UndefOr[ResourceTags]
+    var ResourceType: js.UndefOr[ResourceType]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[RuleStatus]
+  }
+
+  object LockRuleResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockConfiguration: js.UndefOr[LockConfiguration] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
+        ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[RuleStatus] = js.undefined
+    ): LockRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockConfiguration.foreach(__v => __obj.updateDynamic("LockConfiguration")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LockRuleResponse]
+    }
+  }
+
+  /** Information about the resource tags used to identify resources that are retained by the retention rule.
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -298,7 +401,7 @@ package object rbin {
     }
   }
 
-  /** Information about the retention period for which a retention rule is to retain resources.
+  /** Information about the retention period for which the retention rule is to retain resources.
     */
   @js.native
   trait RetentionPeriod extends js.Object {
@@ -326,6 +429,7 @@ package object rbin {
   trait RuleSummary extends js.Object {
     var Description: js.UndefOr[Description]
     var Identifier: js.UndefOr[RuleIdentifier]
+    var LockState: js.UndefOr[LockState]
     var RetentionPeriod: js.UndefOr[RetentionPeriod]
   }
 
@@ -334,17 +438,19 @@ package object rbin {
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
         RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): RuleSummary = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleSummary]
     }
   }
 
-  /** Information about the tags assigned to a Recycle Bin retention rule.
+  /** Information about the tags to assign to the retention rule.
     */
   @js.native
   trait Tag extends js.Object {
@@ -394,6 +500,85 @@ package object rbin {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Information about the retention rule unlock delay. The unlock delay is the period after which a retention rule can be modified or edited after it has been unlocked by a user with the required permissions. The retention rule can't be modified or deleted during the unlock delay.
+    */
+  @js.native
+  trait UnlockDelay extends js.Object {
+    var UnlockDelayUnit: UnlockDelayUnit
+    var UnlockDelayValue: UnlockDelayValue
+  }
+
+  object UnlockDelay {
+    @inline
+    def apply(
+        UnlockDelayUnit: UnlockDelayUnit,
+        UnlockDelayValue: UnlockDelayValue
+    ): UnlockDelay = {
+      val __obj = js.Dynamic.literal(
+        "UnlockDelayUnit" -> UnlockDelayUnit.asInstanceOf[js.Any],
+        "UnlockDelayValue" -> UnlockDelayValue.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UnlockDelay]
+    }
+  }
+
+  @js.native
+  trait UnlockRuleRequest extends js.Object {
+    var Identifier: RuleIdentifier
+  }
+
+  object UnlockRuleRequest {
+    @inline
+    def apply(
+        Identifier: RuleIdentifier
+    ): UnlockRuleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UnlockRuleRequest]
+    }
+  }
+
+  @js.native
+  trait UnlockRuleResponse extends js.Object {
+    var Description: js.UndefOr[Description]
+    var Identifier: js.UndefOr[RuleIdentifier]
+    var LockConfiguration: js.UndefOr[LockConfiguration]
+    var LockEndTime: js.UndefOr[TimeStamp]
+    var LockState: js.UndefOr[LockState]
+    var ResourceTags: js.UndefOr[ResourceTags]
+    var ResourceType: js.UndefOr[ResourceType]
+    var RetentionPeriod: js.UndefOr[RetentionPeriod]
+    var Status: js.UndefOr[RuleStatus]
+  }
+
+  object UnlockRuleResponse {
+    @inline
+    def apply(
+        Description: js.UndefOr[Description] = js.undefined,
+        Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockConfiguration: js.UndefOr[LockConfiguration] = js.undefined,
+        LockEndTime: js.UndefOr[TimeStamp] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
+        ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
+        Status: js.UndefOr[RuleStatus] = js.undefined
+    ): UnlockRuleResponse = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockConfiguration.foreach(__v => __obj.updateDynamic("LockConfiguration")(__v.asInstanceOf[js.Any]))
+      LockEndTime.foreach(__v => __obj.updateDynamic("LockEndTime")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UnlockRuleResponse]
     }
   }
 
@@ -462,6 +647,8 @@ package object rbin {
   trait UpdateRuleResponse extends js.Object {
     var Description: js.UndefOr[Description]
     var Identifier: js.UndefOr[RuleIdentifier]
+    var LockEndTime: js.UndefOr[TimeStamp]
+    var LockState: js.UndefOr[LockState]
     var ResourceTags: js.UndefOr[ResourceTags]
     var ResourceType: js.UndefOr[ResourceType]
     var RetentionPeriod: js.UndefOr[RetentionPeriod]
@@ -473,6 +660,8 @@ package object rbin {
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         Identifier: js.UndefOr[RuleIdentifier] = js.undefined,
+        LockEndTime: js.UndefOr[TimeStamp] = js.undefined,
+        LockState: js.UndefOr[LockState] = js.undefined,
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         RetentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -481,6 +670,8 @@ package object rbin {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      LockEndTime.foreach(__v => __obj.updateDynamic("LockEndTime")(__v.asInstanceOf[js.Any]))
+      LockState.foreach(__v => __obj.updateDynamic("LockState")(__v.asInstanceOf[js.Any]))
       ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       RetentionPeriod.foreach(__v => __obj.updateDynamic("RetentionPeriod")(__v.asInstanceOf[js.Any]))

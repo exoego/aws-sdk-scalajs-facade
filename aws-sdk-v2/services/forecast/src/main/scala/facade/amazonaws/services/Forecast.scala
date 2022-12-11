@@ -12,14 +12,19 @@ package object forecast {
   type Arn = String
   type ArnList = js.Array[Arn]
   type AttributeConfigs = js.Array[AttributeConfig]
+  type AttributeValue = String
+  type BaselineMetrics = js.Array[BaselineMetric]
   type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
   type Configuration = js.Dictionary[Values]
   type ContinuousParameterRanges = js.Array[ContinuousParameterRange]
   type DatasetGroups = js.Array[DatasetGroupSummary]
   type DatasetImportJobs = js.Array[DatasetImportJobSummary]
   type Datasets = js.Array[DatasetSummary]
+  type DayOfMonth = Int
+  type Detail = String
   type ErrorMessage = String
   type ErrorMetrics = js.Array[ErrorMetric]
+  type EvaluationState = String
   type Explainabilities = js.Array[ExplainabilitySummary]
   type ExplainabilityExports = js.Array[ExplainabilityExportSummary]
   type FeaturizationMethodParameters = js.Dictionary[ParameterValue]
@@ -32,13 +37,20 @@ package object forecast {
   type ForecastType = String
   type ForecastTypes = js.Array[ForecastType]
   type Forecasts = js.Array[ForecastSummary]
+  type Format = String
   type Frequency = String
   type GeolocationFormat = String
+  type Hour = Int
   type IntegerParameterRanges = js.Array[IntegerParameterRange]
   type KMSKeyArn = String
   type LocalDateTime = String
+  type LongArn = String
+  type LongArnList = js.Array[LongArn]
   type MaxResults = Int
   type Message = String
+  type MetricName = String
+  type MetricResults = js.Array[MetricResult]
+  type Monitors = js.Array[MonitorSummary]
   type Name = String
   type NextToken = String
   type ParameterKey = String
@@ -46,6 +58,7 @@ package object forecast {
   type PredictorBacktestExportJobs = js.Array[PredictorBacktestExportJobSummary]
   type PredictorEvaluationResults = js.Array[EvaluationResult]
   type PredictorExecutions = js.Array[PredictorExecution]
+  type PredictorMonitorEvaluations = js.Array[PredictorMonitorEvaluation]
   type Predictors = js.Array[PredictorSummary]
   type S3Path = String
   type SchemaAttributes = js.Array[SchemaAttribute]
@@ -57,6 +70,8 @@ package object forecast {
   type Tags = js.Array[Tag]
   type TestWindowDetails = js.Array[TestWindowSummary]
   type TestWindows = js.Array[WindowSummary]
+  type TimeSeriesConditions = js.Array[TimeSeriesCondition]
+  type TimeSeriesTransformations = js.Array[TimeSeriesTransformation]
   type TimeZone = String
   type Timestamp = js.Date
   type TimestampFormat = String
@@ -66,6 +81,10 @@ package object forecast {
   type Value = String
   type Values = js.Array[Value]
   type WeightedQuantileLosses = js.Array[WeightedQuantileLoss]
+  type WhatIfAnalyses = js.Array[WhatIfAnalysisSummary]
+  type WhatIfForecastArnListForExport = js.Array[LongArn]
+  type WhatIfForecastExports = js.Array[WhatIfForecastExportSummary]
+  type WhatIfForecasts = js.Array[WhatIfForecastSummary]
 
   final class ForecastOps(private val service: Forecast) extends AnyVal {
 
@@ -77,8 +96,12 @@ package object forecast {
     @inline def createExplainabilityFuture(params: CreateExplainabilityRequest): Future[CreateExplainabilityResponse] = service.createExplainability(params).promise().toFuture
     @inline def createForecastExportJobFuture(params: CreateForecastExportJobRequest): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise().toFuture
     @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] = service.createForecast(params).promise().toFuture
+    @inline def createMonitorFuture(params: CreateMonitorRequest): Future[CreateMonitorResponse] = service.createMonitor(params).promise().toFuture
     @inline def createPredictorBacktestExportJobFuture(params: CreatePredictorBacktestExportJobRequest): Future[CreatePredictorBacktestExportJobResponse] = service.createPredictorBacktestExportJob(params).promise().toFuture
     @inline def createPredictorFuture(params: CreatePredictorRequest): Future[CreatePredictorResponse] = service.createPredictor(params).promise().toFuture
+    @inline def createWhatIfAnalysisFuture(params: CreateWhatIfAnalysisRequest): Future[CreateWhatIfAnalysisResponse] = service.createWhatIfAnalysis(params).promise().toFuture
+    @inline def createWhatIfForecastExportFuture(params: CreateWhatIfForecastExportRequest): Future[CreateWhatIfForecastExportResponse] = service.createWhatIfForecastExport(params).promise().toFuture
+    @inline def createWhatIfForecastFuture(params: CreateWhatIfForecastRequest): Future[CreateWhatIfForecastResponse] = service.createWhatIfForecast(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] = service.deleteDataset(params).promise().toFuture
     @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
     @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] = service.deleteDatasetImportJob(params).promise().toFuture
@@ -86,9 +109,13 @@ package object forecast {
     @inline def deleteExplainabilityFuture(params: DeleteExplainabilityRequest): Future[js.Object] = service.deleteExplainability(params).promise().toFuture
     @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] = service.deleteForecastExportJob(params).promise().toFuture
     @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] = service.deleteForecast(params).promise().toFuture
+    @inline def deleteMonitorFuture(params: DeleteMonitorRequest): Future[js.Object] = service.deleteMonitor(params).promise().toFuture
     @inline def deletePredictorBacktestExportJobFuture(params: DeletePredictorBacktestExportJobRequest): Future[js.Object] = service.deletePredictorBacktestExportJob(params).promise().toFuture
     @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] = service.deletePredictor(params).promise().toFuture
     @inline def deleteResourceTreeFuture(params: DeleteResourceTreeRequest): Future[js.Object] = service.deleteResourceTree(params).promise().toFuture
+    @inline def deleteWhatIfAnalysisFuture(params: DeleteWhatIfAnalysisRequest): Future[js.Object] = service.deleteWhatIfAnalysis(params).promise().toFuture
+    @inline def deleteWhatIfForecastExportFuture(params: DeleteWhatIfForecastExportRequest): Future[js.Object] = service.deleteWhatIfForecastExport(params).promise().toFuture
+    @inline def deleteWhatIfForecastFuture(params: DeleteWhatIfForecastRequest): Future[js.Object] = service.deleteWhatIfForecast(params).promise().toFuture
     @inline def describeAutoPredictorFuture(params: DescribeAutoPredictorRequest): Future[DescribeAutoPredictorResponse] = service.describeAutoPredictor(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
@@ -97,8 +124,12 @@ package object forecast {
     @inline def describeExplainabilityFuture(params: DescribeExplainabilityRequest): Future[DescribeExplainabilityResponse] = service.describeExplainability(params).promise().toFuture
     @inline def describeForecastExportJobFuture(params: DescribeForecastExportJobRequest): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise().toFuture
     @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] = service.describeForecast(params).promise().toFuture
+    @inline def describeMonitorFuture(params: DescribeMonitorRequest): Future[DescribeMonitorResponse] = service.describeMonitor(params).promise().toFuture
     @inline def describePredictorBacktestExportJobFuture(params: DescribePredictorBacktestExportJobRequest): Future[DescribePredictorBacktestExportJobResponse] = service.describePredictorBacktestExportJob(params).promise().toFuture
     @inline def describePredictorFuture(params: DescribePredictorRequest): Future[DescribePredictorResponse] = service.describePredictor(params).promise().toFuture
+    @inline def describeWhatIfAnalysisFuture(params: DescribeWhatIfAnalysisRequest): Future[DescribeWhatIfAnalysisResponse] = service.describeWhatIfAnalysis(params).promise().toFuture
+    @inline def describeWhatIfForecastExportFuture(params: DescribeWhatIfForecastExportRequest): Future[DescribeWhatIfForecastExportResponse] = service.describeWhatIfForecastExport(params).promise().toFuture
+    @inline def describeWhatIfForecastFuture(params: DescribeWhatIfForecastRequest): Future[DescribeWhatIfForecastResponse] = service.describeWhatIfForecast(params).promise().toFuture
     @inline def getAccuracyMetricsFuture(params: GetAccuracyMetricsRequest): Future[GetAccuracyMetricsResponse] = service.getAccuracyMetrics(params).promise().toFuture
     @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
     @inline def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
@@ -107,9 +138,15 @@ package object forecast {
     @inline def listExplainabilityExportsFuture(params: ListExplainabilityExportsRequest): Future[ListExplainabilityExportsResponse] = service.listExplainabilityExports(params).promise().toFuture
     @inline def listForecastExportJobsFuture(params: ListForecastExportJobsRequest): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise().toFuture
     @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] = service.listForecasts(params).promise().toFuture
+    @inline def listMonitorEvaluationsFuture(params: ListMonitorEvaluationsRequest): Future[ListMonitorEvaluationsResponse] = service.listMonitorEvaluations(params).promise().toFuture
+    @inline def listMonitorsFuture(params: ListMonitorsRequest): Future[ListMonitorsResponse] = service.listMonitors(params).promise().toFuture
     @inline def listPredictorBacktestExportJobsFuture(params: ListPredictorBacktestExportJobsRequest): Future[ListPredictorBacktestExportJobsResponse] = service.listPredictorBacktestExportJobs(params).promise().toFuture
     @inline def listPredictorsFuture(params: ListPredictorsRequest): Future[ListPredictorsResponse] = service.listPredictors(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listWhatIfAnalysesFuture(params: ListWhatIfAnalysesRequest): Future[ListWhatIfAnalysesResponse] = service.listWhatIfAnalyses(params).promise().toFuture
+    @inline def listWhatIfForecastExportsFuture(params: ListWhatIfForecastExportsRequest): Future[ListWhatIfForecastExportsResponse] = service.listWhatIfForecastExports(params).promise().toFuture
+    @inline def listWhatIfForecastsFuture(params: ListWhatIfForecastsRequest): Future[ListWhatIfForecastsResponse] = service.listWhatIfForecasts(params).promise().toFuture
+    @inline def resumeResourceFuture(params: ResumeResourceRequest): Future[js.Object] = service.resumeResource(params).promise().toFuture
     @inline def stopResourceFuture(params: StopResourceRequest): Future[js.Object] = service.stopResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -130,8 +167,12 @@ package object forecast {
     def createExplainabilityExport(params: CreateExplainabilityExportRequest): Request[CreateExplainabilityExportResponse] = js.native
     def createForecast(params: CreateForecastRequest): Request[CreateForecastResponse] = js.native
     def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] = js.native
+    def createMonitor(params: CreateMonitorRequest): Request[CreateMonitorResponse] = js.native
     def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse] = js.native
     def createPredictorBacktestExportJob(params: CreatePredictorBacktestExportJobRequest): Request[CreatePredictorBacktestExportJobResponse] = js.native
+    def createWhatIfAnalysis(params: CreateWhatIfAnalysisRequest): Request[CreateWhatIfAnalysisResponse] = js.native
+    def createWhatIfForecast(params: CreateWhatIfForecastRequest): Request[CreateWhatIfForecastResponse] = js.native
+    def createWhatIfForecastExport(params: CreateWhatIfForecastExportRequest): Request[CreateWhatIfForecastExportResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
     def deleteDatasetImportJob(params: DeleteDatasetImportJobRequest): Request[js.Object] = js.native
@@ -139,9 +180,13 @@ package object forecast {
     def deleteExplainabilityExport(params: DeleteExplainabilityExportRequest): Request[js.Object] = js.native
     def deleteForecast(params: DeleteForecastRequest): Request[js.Object] = js.native
     def deleteForecastExportJob(params: DeleteForecastExportJobRequest): Request[js.Object] = js.native
+    def deleteMonitor(params: DeleteMonitorRequest): Request[js.Object] = js.native
     def deletePredictor(params: DeletePredictorRequest): Request[js.Object] = js.native
     def deletePredictorBacktestExportJob(params: DeletePredictorBacktestExportJobRequest): Request[js.Object] = js.native
     def deleteResourceTree(params: DeleteResourceTreeRequest): Request[js.Object] = js.native
+    def deleteWhatIfAnalysis(params: DeleteWhatIfAnalysisRequest): Request[js.Object] = js.native
+    def deleteWhatIfForecast(params: DeleteWhatIfForecastRequest): Request[js.Object] = js.native
+    def deleteWhatIfForecastExport(params: DeleteWhatIfForecastExportRequest): Request[js.Object] = js.native
     def describeAutoPredictor(params: DescribeAutoPredictorRequest): Request[DescribeAutoPredictorResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
@@ -150,8 +195,12 @@ package object forecast {
     def describeExplainabilityExport(params: DescribeExplainabilityExportRequest): Request[DescribeExplainabilityExportResponse] = js.native
     def describeForecast(params: DescribeForecastRequest): Request[DescribeForecastResponse] = js.native
     def describeForecastExportJob(params: DescribeForecastExportJobRequest): Request[DescribeForecastExportJobResponse] = js.native
+    def describeMonitor(params: DescribeMonitorRequest): Request[DescribeMonitorResponse] = js.native
     def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse] = js.native
     def describePredictorBacktestExportJob(params: DescribePredictorBacktestExportJobRequest): Request[DescribePredictorBacktestExportJobResponse] = js.native
+    def describeWhatIfAnalysis(params: DescribeWhatIfAnalysisRequest): Request[DescribeWhatIfAnalysisResponse] = js.native
+    def describeWhatIfForecast(params: DescribeWhatIfForecastRequest): Request[DescribeWhatIfForecastResponse] = js.native
+    def describeWhatIfForecastExport(params: DescribeWhatIfForecastExportRequest): Request[DescribeWhatIfForecastExportResponse] = js.native
     def getAccuracyMetrics(params: GetAccuracyMetricsRequest): Request[GetAccuracyMetricsResponse] = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
@@ -160,9 +209,15 @@ package object forecast {
     def listExplainabilityExports(params: ListExplainabilityExportsRequest): Request[ListExplainabilityExportsResponse] = js.native
     def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] = js.native
     def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
+    def listMonitorEvaluations(params: ListMonitorEvaluationsRequest): Request[ListMonitorEvaluationsResponse] = js.native
+    def listMonitors(params: ListMonitorsRequest): Request[ListMonitorsResponse] = js.native
     def listPredictorBacktestExportJobs(params: ListPredictorBacktestExportJobsRequest): Request[ListPredictorBacktestExportJobsResponse] = js.native
     def listPredictors(params: ListPredictorsRequest): Request[ListPredictorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listWhatIfAnalyses(params: ListWhatIfAnalysesRequest): Request[ListWhatIfAnalysesResponse] = js.native
+    def listWhatIfForecastExports(params: ListWhatIfForecastExportsRequest): Request[ListWhatIfForecastExportsResponse] = js.native
+    def listWhatIfForecasts(params: ListWhatIfForecastsRequest): Request[ListWhatIfForecastsResponse] = js.native
+    def resumeResource(params: ResumeResourceRequest): Request[js.Object] = js.native
     def stopResource(params: StopResourceRequest): Request[js.Object] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -174,7 +229,34 @@ package object forecast {
     }
   }
 
-  /** Describes an additional dataset. This object is part of the <a>DataConfig</a> object. Forecast supports the Weather Index and Holidays additional datasets. \```Weather Index``` The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]]. \```Holidays``` Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
+  /** Defines the modifications that you are making to an attribute for a what-if forecast. For example, you can use this operation to create a what-if forecast that investigates a 10% off sale on all shoes. To do this, you specify <code>"AttributeName": "shoes"</code>, <code>"Operation": "MULTIPLY"</code>, and <code>"Value": "0.90"</code>. Pair this operation with the <a>TimeSeriesCondition</a> operation within the [[CreateWhatIfForecastRequest.TimeSeriesTransformations]] operation to define a subset of attribute items that are modified.
+    */
+  @js.native
+  trait Action extends js.Object {
+    var AttributeName: Name
+    var Operation: Operation
+    var Value: Double
+  }
+
+  object Action {
+    @inline
+    def apply(
+        AttributeName: Name,
+        Operation: Operation,
+        Value: Double
+    ): Action = {
+      val __obj = js.Dynamic.literal(
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "Operation" -> Operation.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Action]
+    }
+  }
+
+  /** Describes an additional dataset. This object is part of the <a>DataConfig</a> object. Forecast supports the Weather Index and Holidays additional datasets.
+    * \```Weather Index``` The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
+    * \```Holidays``` Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
     */
   @js.native
   trait AdditionalDataset extends js.Object {
@@ -216,6 +298,45 @@ package object forecast {
         "Transformations" -> Transformations.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AttributeConfig]
+    }
+  }
+
+  /** Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.
+    */
+  @js.native
+  trait Baseline extends js.Object {
+    var PredictorBaseline: js.UndefOr[PredictorBaseline]
+  }
+
+  object Baseline {
+    @inline
+    def apply(
+        PredictorBaseline: js.UndefOr[PredictorBaseline] = js.undefined
+    ): Baseline = {
+      val __obj = js.Dynamic.literal()
+      PredictorBaseline.foreach(__v => __obj.updateDynamic("PredictorBaseline")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Baseline]
+    }
+  }
+
+  /** An individual metric that you can use for comparison as you evaluate your monitoring results.
+    */
+  @js.native
+  trait BaselineMetric extends js.Object {
+    var Name: js.UndefOr[Name]
+    var Value: js.UndefOr[Double]
+  }
+
+  object BaselineMetric {
+    @inline
+    def apply(
+        Name: js.UndefOr[Name] = js.undefined,
+        Value: js.UndefOr[Double] = js.undefined
+    ): BaselineMetric = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaselineMetric]
     }
   }
 
@@ -280,9 +401,11 @@ package object forecast {
     var ForecastFrequency: js.UndefOr[Frequency]
     var ForecastHorizon: js.UndefOr[Int]
     var ForecastTypes: js.UndefOr[ForecastTypes]
+    var MonitorConfig: js.UndefOr[MonitorConfig]
     var OptimizationMetric: js.UndefOr[OptimizationMetric]
     var ReferencePredictorArn: js.UndefOr[Arn]
     var Tags: js.UndefOr[Tags]
+    var TimeAlignmentBoundary: js.UndefOr[TimeAlignmentBoundary]
   }
 
   object CreateAutoPredictorRequest {
@@ -296,9 +419,11 @@ package object forecast {
         ForecastFrequency: js.UndefOr[Frequency] = js.undefined,
         ForecastHorizon: js.UndefOr[Int] = js.undefined,
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
+        MonitorConfig: js.UndefOr[MonitorConfig] = js.undefined,
         OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
         ReferencePredictorArn: js.UndefOr[Arn] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TimeAlignmentBoundary: js.UndefOr[TimeAlignmentBoundary] = js.undefined
     ): CreateAutoPredictorRequest = {
       val __obj = js.Dynamic.literal(
         "PredictorName" -> PredictorName.asInstanceOf[js.Any]
@@ -311,9 +436,11 @@ package object forecast {
       ForecastFrequency.foreach(__v => __obj.updateDynamic("ForecastFrequency")(__v.asInstanceOf[js.Any]))
       ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
+      MonitorConfig.foreach(__v => __obj.updateDynamic("MonitorConfig")(__v.asInstanceOf[js.Any]))
       OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
       ReferencePredictorArn.foreach(__v => __obj.updateDynamic("ReferencePredictorArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeAlignmentBoundary.foreach(__v => __obj.updateDynamic("TimeAlignmentBoundary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAutoPredictorRequest]
     }
   }
@@ -382,6 +509,7 @@ package object forecast {
     var DataSource: DataSource
     var DatasetArn: Arn
     var DatasetImportJobName: Name
+    var Format: js.UndefOr[Format]
     var GeolocationFormat: js.UndefOr[GeolocationFormat]
     var Tags: js.UndefOr[Tags]
     var TimeZone: js.UndefOr[TimeZone]
@@ -395,6 +523,7 @@ package object forecast {
         DataSource: DataSource,
         DatasetArn: Arn,
         DatasetImportJobName: Name,
+        Format: js.UndefOr[Format] = js.undefined,
         GeolocationFormat: js.UndefOr[GeolocationFormat] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TimeZone: js.UndefOr[TimeZone] = js.undefined,
@@ -407,6 +536,7 @@ package object forecast {
         "DatasetImportJobName" -> DatasetImportJobName.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       GeolocationFormat.foreach(__v => __obj.updateDynamic("GeolocationFormat")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
@@ -489,6 +619,7 @@ package object forecast {
     var Destination: DataDestination
     var ExplainabilityArn: Arn
     var ExplainabilityExportName: Name
+    var Format: js.UndefOr[Format]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -498,6 +629,7 @@ package object forecast {
         Destination: DataDestination,
         ExplainabilityArn: Arn,
         ExplainabilityExportName: Name,
+        Format: js.UndefOr[Format] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateExplainabilityExportRequest = {
       val __obj = js.Dynamic.literal(
@@ -506,6 +638,7 @@ package object forecast {
         "ExplainabilityExportName" -> ExplainabilityExportName.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExplainabilityExportRequest]
     }
@@ -590,6 +723,7 @@ package object forecast {
     var Destination: DataDestination
     var ForecastArn: Arn
     var ForecastExportJobName: Name
+    var Format: js.UndefOr[Format]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -599,6 +733,7 @@ package object forecast {
         Destination: DataDestination,
         ForecastArn: Arn,
         ForecastExportJobName: Name,
+        Format: js.UndefOr[Format] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateForecastExportJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -607,6 +742,7 @@ package object forecast {
         "ForecastExportJobName" -> ForecastExportJobName.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastExportJobRequest]
     }
@@ -634,6 +770,7 @@ package object forecast {
     var PredictorArn: Arn
     var ForecastTypes: js.UndefOr[ForecastTypes]
     var Tags: js.UndefOr[Tags]
+    var TimeSeriesSelector: js.UndefOr[TimeSeriesSelector]
   }
 
   object CreateForecastRequest {
@@ -642,7 +779,8 @@ package object forecast {
         ForecastName: Name,
         PredictorArn: Arn,
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TimeSeriesSelector: js.UndefOr[TimeSeriesSelector] = js.undefined
     ): CreateForecastRequest = {
       val __obj = js.Dynamic.literal(
         "ForecastName" -> ForecastName.asInstanceOf[js.Any],
@@ -651,6 +789,7 @@ package object forecast {
 
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeSeriesSelector.foreach(__v => __obj.updateDynamic("TimeSeriesSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastRequest]
     }
   }
@@ -672,10 +811,51 @@ package object forecast {
   }
 
   @js.native
+  trait CreateMonitorRequest extends js.Object {
+    var MonitorName: Name
+    var ResourceArn: Arn
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateMonitorRequest {
+    @inline
+    def apply(
+        MonitorName: Name,
+        ResourceArn: Arn,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorName" -> MonitorName.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMonitorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMonitorResponse extends js.Object {
+    var MonitorArn: js.UndefOr[Arn]
+  }
+
+  object CreateMonitorResponse {
+    @inline
+    def apply(
+        MonitorArn: js.UndefOr[Arn] = js.undefined
+    ): CreateMonitorResponse = {
+      val __obj = js.Dynamic.literal()
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMonitorResponse]
+    }
+  }
+
+  @js.native
   trait CreatePredictorBacktestExportJobRequest extends js.Object {
     var Destination: DataDestination
     var PredictorArn: Arn
     var PredictorBacktestExportJobName: Name
+    var Format: js.UndefOr[Format]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -685,6 +865,7 @@ package object forecast {
         Destination: DataDestination,
         PredictorArn: Arn,
         PredictorBacktestExportJobName: Name,
+        Format: js.UndefOr[Format] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePredictorBacktestExportJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -693,6 +874,7 @@ package object forecast {
         "PredictorBacktestExportJobName" -> PredictorBacktestExportJobName.asInstanceOf[js.Any]
       )
 
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePredictorBacktestExportJobRequest]
     }
@@ -790,6 +972,141 @@ package object forecast {
     }
   }
 
+  @js.native
+  trait CreateWhatIfAnalysisRequest extends js.Object {
+    var ForecastArn: Arn
+    var WhatIfAnalysisName: Name
+    var Tags: js.UndefOr[Tags]
+    var TimeSeriesSelector: js.UndefOr[TimeSeriesSelector]
+  }
+
+  object CreateWhatIfAnalysisRequest {
+    @inline
+    def apply(
+        ForecastArn: Arn,
+        WhatIfAnalysisName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TimeSeriesSelector: js.UndefOr[TimeSeriesSelector] = js.undefined
+    ): CreateWhatIfAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "ForecastArn" -> ForecastArn.asInstanceOf[js.Any],
+        "WhatIfAnalysisName" -> WhatIfAnalysisName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeSeriesSelector.foreach(__v => __obj.updateDynamic("TimeSeriesSelector")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWhatIfAnalysisResponse extends js.Object {
+    var WhatIfAnalysisArn: js.UndefOr[Arn]
+  }
+
+  object CreateWhatIfAnalysisResponse {
+    @inline
+    def apply(
+        WhatIfAnalysisArn: js.UndefOr[Arn] = js.undefined
+    ): CreateWhatIfAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      WhatIfAnalysisArn.foreach(__v => __obj.updateDynamic("WhatIfAnalysisArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfAnalysisResponse]
+    }
+  }
+
+  @js.native
+  trait CreateWhatIfForecastExportRequest extends js.Object {
+    var Destination: DataDestination
+    var WhatIfForecastArns: WhatIfForecastArnListForExport
+    var WhatIfForecastExportName: Name
+    var Format: js.UndefOr[Format]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateWhatIfForecastExportRequest {
+    @inline
+    def apply(
+        Destination: DataDestination,
+        WhatIfForecastArns: WhatIfForecastArnListForExport,
+        WhatIfForecastExportName: Name,
+        Format: js.UndefOr[Format] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateWhatIfForecastExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "WhatIfForecastArns" -> WhatIfForecastArns.asInstanceOf[js.Any],
+        "WhatIfForecastExportName" -> WhatIfForecastExportName.asInstanceOf[js.Any]
+      )
+
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfForecastExportRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWhatIfForecastExportResponse extends js.Object {
+    var WhatIfForecastExportArn: js.UndefOr[LongArn]
+  }
+
+  object CreateWhatIfForecastExportResponse {
+    @inline
+    def apply(
+        WhatIfForecastExportArn: js.UndefOr[LongArn] = js.undefined
+    ): CreateWhatIfForecastExportResponse = {
+      val __obj = js.Dynamic.literal()
+      WhatIfForecastExportArn.foreach(__v => __obj.updateDynamic("WhatIfForecastExportArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfForecastExportResponse]
+    }
+  }
+
+  @js.native
+  trait CreateWhatIfForecastRequest extends js.Object {
+    var WhatIfAnalysisArn: Arn
+    var WhatIfForecastName: Name
+    var Tags: js.UndefOr[Tags]
+    var TimeSeriesReplacementsDataSource: js.UndefOr[TimeSeriesReplacementsDataSource]
+    var TimeSeriesTransformations: js.UndefOr[TimeSeriesTransformations]
+  }
+
+  object CreateWhatIfForecastRequest {
+    @inline
+    def apply(
+        WhatIfAnalysisArn: Arn,
+        WhatIfForecastName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined,
+        TimeSeriesReplacementsDataSource: js.UndefOr[TimeSeriesReplacementsDataSource] = js.undefined,
+        TimeSeriesTransformations: js.UndefOr[TimeSeriesTransformations] = js.undefined
+    ): CreateWhatIfForecastRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfAnalysisArn" -> WhatIfAnalysisArn.asInstanceOf[js.Any],
+        "WhatIfForecastName" -> WhatIfForecastName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TimeSeriesReplacementsDataSource.foreach(__v => __obj.updateDynamic("TimeSeriesReplacementsDataSource")(__v.asInstanceOf[js.Any]))
+      TimeSeriesTransformations.foreach(__v => __obj.updateDynamic("TimeSeriesTransformations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfForecastRequest]
+    }
+  }
+
+  @js.native
+  trait CreateWhatIfForecastResponse extends js.Object {
+    var WhatIfForecastArn: js.UndefOr[LongArn]
+  }
+
+  object CreateWhatIfForecastResponse {
+    @inline
+    def apply(
+        WhatIfForecastArn: js.UndefOr[LongArn] = js.undefined
+    ): CreateWhatIfForecastResponse = {
+      val __obj = js.Dynamic.literal()
+      WhatIfForecastArn.foreach(__v => __obj.updateDynamic("WhatIfForecastArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateWhatIfForecastResponse]
+    }
+  }
+
   /** The data configuration for your dataset group and any additional datasets.
     */
   @js.native
@@ -854,7 +1171,7 @@ package object forecast {
     }
   }
 
-  /** Provides a summary of the dataset group properties used in the <a>ListDatasetGroups</a> operation. To get the complete set of properties, call the <a>DescribeDatasetGroup</a> operation, and provide the <code>DatasetGroupArn</code>.
+  /** Provides a summary of the dataset group properties used in the [[https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetGroups.html|ListDatasetGroups]] operation. To get the complete set of properties, call the [[https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html|DescribeDatasetGroup]] operation, and provide the <code>DatasetGroupArn</code>.
     */
   @js.native
   trait DatasetGroupSummary extends js.Object {
@@ -881,7 +1198,7 @@ package object forecast {
     }
   }
 
-  /** Provides a summary of the dataset import job properties used in the <a>ListDatasetImportJobs</a> operation. To get the complete set of properties, call the <a>DescribeDatasetImportJob</a> operation, and provide the <code>DatasetImportJobArn</code>.
+  /** Provides a summary of the dataset import job properties used in the [[https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html|ListDatasetImportJobs]] operation. To get the complete set of properties, call the [[https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html|DescribeDatasetImportJob]] operation, and provide the <code>DatasetImportJobArn</code>.
     */
   @js.native
   trait DatasetImportJobSummary extends js.Object {
@@ -917,7 +1234,7 @@ package object forecast {
     }
   }
 
-  /** Provides a summary of the dataset properties used in the <a>ListDatasets</a> operation. To get the complete set of properties, call the <a>DescribeDataset</a> operation, and provide the <code>DatasetArn</code>.
+  /** Provides a summary of the dataset properties used in the [[https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasets.html|ListDatasets]] operation. To get the complete set of properties, call the [[https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html|DescribeDataset]] operation, and provide the <code>DatasetArn</code>.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -1070,6 +1387,23 @@ package object forecast {
   }
 
   @js.native
+  trait DeleteMonitorRequest extends js.Object {
+    var MonitorArn: Arn
+  }
+
+  object DeleteMonitorRequest {
+    @inline
+    def apply(
+        MonitorArn: Arn
+    ): DeleteMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMonitorRequest]
+    }
+  }
+
+  @js.native
   trait DeletePredictorBacktestExportJobRequest extends js.Object {
     var PredictorBacktestExportJobArn: Arn
   }
@@ -1121,6 +1455,57 @@ package object forecast {
   }
 
   @js.native
+  trait DeleteWhatIfAnalysisRequest extends js.Object {
+    var WhatIfAnalysisArn: Arn
+  }
+
+  object DeleteWhatIfAnalysisRequest {
+    @inline
+    def apply(
+        WhatIfAnalysisArn: Arn
+    ): DeleteWhatIfAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfAnalysisArn" -> WhatIfAnalysisArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWhatIfAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWhatIfForecastExportRequest extends js.Object {
+    var WhatIfForecastExportArn: LongArn
+  }
+
+  object DeleteWhatIfForecastExportRequest {
+    @inline
+    def apply(
+        WhatIfForecastExportArn: LongArn
+    ): DeleteWhatIfForecastExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfForecastExportArn" -> WhatIfForecastExportArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWhatIfForecastExportRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteWhatIfForecastRequest extends js.Object {
+    var WhatIfForecastArn: LongArn
+  }
+
+  object DeleteWhatIfForecastRequest {
+    @inline
+    def apply(
+        WhatIfForecastArn: LongArn
+    ): DeleteWhatIfForecastRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfForecastArn" -> WhatIfForecastArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteWhatIfForecastRequest]
+    }
+  }
+
+  @js.native
   trait DescribeAutoPredictorRequest extends js.Object {
     var PredictorArn: Arn
   }
@@ -1151,11 +1536,13 @@ package object forecast {
     var ForecastTypes: js.UndefOr[ForecastTypes]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
+    var MonitorInfo: js.UndefOr[MonitorInfo]
     var OptimizationMetric: js.UndefOr[OptimizationMetric]
     var PredictorArn: js.UndefOr[Arn]
     var PredictorName: js.UndefOr[Name]
     var ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary]
     var Status: js.UndefOr[Status]
+    var TimeAlignmentBoundary: js.UndefOr[TimeAlignmentBoundary]
   }
 
   object DescribeAutoPredictorResponse {
@@ -1173,11 +1560,13 @@ package object forecast {
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
+        MonitorInfo: js.UndefOr[MonitorInfo] = js.undefined,
         OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
         PredictorArn: js.UndefOr[Arn] = js.undefined,
         PredictorName: js.UndefOr[Name] = js.undefined,
         ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary] = js.undefined,
-        Status: js.UndefOr[Status] = js.undefined
+        Status: js.UndefOr[Status] = js.undefined,
+        TimeAlignmentBoundary: js.UndefOr[TimeAlignmentBoundary] = js.undefined
     ): DescribeAutoPredictorResponse = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
@@ -1192,11 +1581,13 @@ package object forecast {
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      MonitorInfo.foreach(__v => __obj.updateDynamic("MonitorInfo")(__v.asInstanceOf[js.Any]))
       OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
       PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
       ReferencePredictorSummary.foreach(__v => __obj.updateDynamic("ReferencePredictorSummary")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimeAlignmentBoundary.foreach(__v => __obj.updateDynamic("TimeAlignmentBoundary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutoPredictorResponse]
     }
   }
@@ -1279,6 +1670,7 @@ package object forecast {
     var DatasetImportJobName: js.UndefOr[Name]
     var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
     var FieldStatistics: js.UndefOr[FieldStatistics]
+    var Format: js.UndefOr[Format]
     var GeolocationFormat: js.UndefOr[GeolocationFormat]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
@@ -1299,6 +1691,7 @@ package object forecast {
         DatasetImportJobName: js.UndefOr[Name] = js.undefined,
         EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
         FieldStatistics: js.UndefOr[FieldStatistics] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
         GeolocationFormat: js.UndefOr[GeolocationFormat] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
@@ -1316,6 +1709,7 @@ package object forecast {
       DatasetImportJobName.foreach(__v => __obj.updateDynamic("DatasetImportJobName")(__v.asInstanceOf[js.Any]))
       EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
       FieldStatistics.foreach(__v => __obj.updateDynamic("FieldStatistics")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       GeolocationFormat.foreach(__v => __obj.updateDynamic("GeolocationFormat")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
@@ -1411,6 +1805,7 @@ package object forecast {
     var ExplainabilityArn: js.UndefOr[Arn]
     var ExplainabilityExportArn: js.UndefOr[Arn]
     var ExplainabilityExportName: js.UndefOr[Name]
+    var Format: js.UndefOr[Format]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
     var Status: js.UndefOr[Status]
@@ -1424,6 +1819,7 @@ package object forecast {
         ExplainabilityArn: js.UndefOr[Arn] = js.undefined,
         ExplainabilityExportArn: js.UndefOr[Arn] = js.undefined,
         ExplainabilityExportName: js.UndefOr[Name] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -1434,6 +1830,7 @@ package object forecast {
       ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
       ExplainabilityExportArn.foreach(__v => __obj.updateDynamic("ExplainabilityExportArn")(__v.asInstanceOf[js.Any]))
       ExplainabilityExportName.foreach(__v => __obj.updateDynamic("ExplainabilityExportName")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1537,6 +1934,7 @@ package object forecast {
     var ForecastArn: js.UndefOr[Arn]
     var ForecastExportJobArn: js.UndefOr[Arn]
     var ForecastExportJobName: js.UndefOr[Name]
+    var Format: js.UndefOr[Format]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
     var Status: js.UndefOr[Status]
@@ -1550,6 +1948,7 @@ package object forecast {
         ForecastArn: js.UndefOr[Arn] = js.undefined,
         ForecastExportJobArn: js.UndefOr[Arn] = js.undefined,
         ForecastExportJobName: js.UndefOr[Name] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -1560,6 +1959,7 @@ package object forecast {
       ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
       ForecastExportJobArn.foreach(__v => __obj.updateDynamic("ForecastExportJobArn")(__v.asInstanceOf[js.Any]))
       ForecastExportJobName.foreach(__v => __obj.updateDynamic("ForecastExportJobName")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1596,6 +1996,7 @@ package object forecast {
     var Message: js.UndefOr[ErrorMessage]
     var PredictorArn: js.UndefOr[Arn]
     var Status: js.UndefOr[String]
+    var TimeSeriesSelector: js.UndefOr[TimeSeriesSelector]
   }
 
   object DescribeForecastResponse {
@@ -1610,7 +2011,8 @@ package object forecast {
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[ErrorMessage] = js.undefined,
         PredictorArn: js.UndefOr[Arn] = js.undefined,
-        Status: js.UndefOr[String] = js.undefined
+        Status: js.UndefOr[String] = js.undefined,
+        TimeSeriesSelector: js.UndefOr[TimeSeriesSelector] = js.undefined
     ): DescribeForecastResponse = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
@@ -1623,7 +2025,71 @@ package object forecast {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimeSeriesSelector.foreach(__v => __obj.updateDynamic("TimeSeriesSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeForecastResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeMonitorRequest extends js.Object {
+    var MonitorArn: Arn
+  }
+
+  object DescribeMonitorRequest {
+    @inline
+    def apply(
+        MonitorArn: Arn
+    ): DescribeMonitorRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeMonitorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeMonitorResponse extends js.Object {
+    var Baseline: js.UndefOr[Baseline]
+    var CreationTime: js.UndefOr[Timestamp]
+    var EstimatedEvaluationTimeRemainingInMinutes: js.UndefOr[Double]
+    var LastEvaluationState: js.UndefOr[EvaluationState]
+    var LastEvaluationTime: js.UndefOr[Timestamp]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var MonitorArn: js.UndefOr[Arn]
+    var MonitorName: js.UndefOr[Name]
+    var ResourceArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribeMonitorResponse {
+    @inline
+    def apply(
+        Baseline: js.UndefOr[Baseline] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        EstimatedEvaluationTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        LastEvaluationState: js.UndefOr[EvaluationState] = js.undefined,
+        LastEvaluationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        MonitorArn: js.UndefOr[Arn] = js.undefined,
+        MonitorName: js.UndefOr[Name] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribeMonitorResponse = {
+      val __obj = js.Dynamic.literal()
+      Baseline.foreach(__v => __obj.updateDynamic("Baseline")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EstimatedEvaluationTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedEvaluationTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      LastEvaluationState.foreach(__v => __obj.updateDynamic("LastEvaluationState")(__v.asInstanceOf[js.Any]))
+      LastEvaluationTime.foreach(__v => __obj.updateDynamic("LastEvaluationTime")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      MonitorName.foreach(__v => __obj.updateDynamic("MonitorName")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMonitorResponse]
     }
   }
 
@@ -1648,6 +2114,7 @@ package object forecast {
   trait DescribePredictorBacktestExportJobResponse extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var Destination: js.UndefOr[DataDestination]
+    var Format: js.UndefOr[Format]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
     var PredictorArn: js.UndefOr[Arn]
@@ -1661,6 +2128,7 @@ package object forecast {
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Destination: js.UndefOr[DataDestination] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
         PredictorArn: js.UndefOr[Arn] = js.undefined,
@@ -1671,6 +2139,7 @@ package object forecast {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
@@ -1780,6 +2249,186 @@ package object forecast {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePredictorResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfAnalysisRequest extends js.Object {
+    var WhatIfAnalysisArn: Arn
+  }
+
+  object DescribeWhatIfAnalysisRequest {
+    @inline
+    def apply(
+        WhatIfAnalysisArn: Arn
+    ): DescribeWhatIfAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfAnalysisArn" -> WhatIfAnalysisArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeWhatIfAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfAnalysisResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
+    var ForecastArn: js.UndefOr[Arn]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[String]
+    var TimeSeriesSelector: js.UndefOr[TimeSeriesSelector]
+    var WhatIfAnalysisArn: js.UndefOr[Arn]
+    var WhatIfAnalysisName: js.UndefOr[Name]
+  }
+
+  object DescribeWhatIfAnalysisResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        ForecastArn: js.UndefOr[Arn] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        TimeSeriesSelector: js.UndefOr[TimeSeriesSelector] = js.undefined,
+        WhatIfAnalysisArn: js.UndefOr[Arn] = js.undefined,
+        WhatIfAnalysisName: js.UndefOr[Name] = js.undefined
+    ): DescribeWhatIfAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimeSeriesSelector.foreach(__v => __obj.updateDynamic("TimeSeriesSelector")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisArn.foreach(__v => __obj.updateDynamic("WhatIfAnalysisArn")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisName.foreach(__v => __obj.updateDynamic("WhatIfAnalysisName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWhatIfAnalysisResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfForecastExportRequest extends js.Object {
+    var WhatIfForecastExportArn: LongArn
+  }
+
+  object DescribeWhatIfForecastExportRequest {
+    @inline
+    def apply(
+        WhatIfForecastExportArn: LongArn
+    ): DescribeWhatIfForecastExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfForecastExportArn" -> WhatIfForecastExportArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeWhatIfForecastExportRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfForecastExportResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
+    var Format: js.UndefOr[Format]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var Status: js.UndefOr[Status]
+    var WhatIfForecastArns: js.UndefOr[LongArnList]
+    var WhatIfForecastExportArn: js.UndefOr[LongArn]
+    var WhatIfForecastExportName: js.UndefOr[Name]
+  }
+
+  object DescribeWhatIfForecastExportResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WhatIfForecastArns: js.UndefOr[LongArnList] = js.undefined,
+        WhatIfForecastExportArn: js.UndefOr[LongArn] = js.undefined,
+        WhatIfForecastExportName: js.UndefOr[Name] = js.undefined
+    ): DescribeWhatIfForecastExportResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastArns.foreach(__v => __obj.updateDynamic("WhatIfForecastArns")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastExportArn.foreach(__v => __obj.updateDynamic("WhatIfForecastExportArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastExportName.foreach(__v => __obj.updateDynamic("WhatIfForecastExportName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWhatIfForecastExportResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfForecastRequest extends js.Object {
+    var WhatIfForecastArn: LongArn
+  }
+
+  object DescribeWhatIfForecastRequest {
+    @inline
+    def apply(
+        WhatIfForecastArn: LongArn
+    ): DescribeWhatIfForecastRequest = {
+      val __obj = js.Dynamic.literal(
+        "WhatIfForecastArn" -> WhatIfForecastArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeWhatIfForecastRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeWhatIfForecastResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
+    var ForecastTypes: js.UndefOr[ForecastTypes]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[String]
+    var TimeSeriesReplacementsDataSource: js.UndefOr[TimeSeriesReplacementsDataSource]
+    var TimeSeriesTransformations: js.UndefOr[TimeSeriesTransformations]
+    var WhatIfAnalysisArn: js.UndefOr[Arn]
+    var WhatIfForecastArn: js.UndefOr[LongArn]
+    var WhatIfForecastName: js.UndefOr[Name]
+  }
+
+  object DescribeWhatIfForecastResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        TimeSeriesReplacementsDataSource: js.UndefOr[TimeSeriesReplacementsDataSource] = js.undefined,
+        TimeSeriesTransformations: js.UndefOr[TimeSeriesTransformations] = js.undefined,
+        WhatIfAnalysisArn: js.UndefOr[Arn] = js.undefined,
+        WhatIfForecastArn: js.UndefOr[LongArn] = js.undefined,
+        WhatIfForecastName: js.UndefOr[Name] = js.undefined
+    ): DescribeWhatIfForecastResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimeSeriesReplacementsDataSource.foreach(__v => __obj.updateDynamic("TimeSeriesReplacementsDataSource")(__v.asInstanceOf[js.Any]))
+      TimeSeriesTransformations.foreach(__v => __obj.updateDynamic("TimeSeriesTransformations")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisArn.foreach(__v => __obj.updateDynamic("WhatIfAnalysisArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastArn.foreach(__v => __obj.updateDynamic("WhatIfForecastArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastName.foreach(__v => __obj.updateDynamic("WhatIfForecastName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeWhatIfForecastResponse]
     }
   }
 
@@ -2565,6 +3214,93 @@ package object forecast {
   }
 
   @js.native
+  trait ListMonitorEvaluationsRequest extends js.Object {
+    var MonitorArn: Arn
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMonitorEvaluationsRequest {
+    @inline
+    def apply(
+        MonitorArn: Arn,
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMonitorEvaluationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "MonitorArn" -> MonitorArn.asInstanceOf[js.Any]
+      )
+
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitorEvaluationsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMonitorEvaluationsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var PredictorMonitorEvaluations: js.UndefOr[PredictorMonitorEvaluations]
+  }
+
+  object ListMonitorEvaluationsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        PredictorMonitorEvaluations: js.UndefOr[PredictorMonitorEvaluations] = js.undefined
+    ): ListMonitorEvaluationsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PredictorMonitorEvaluations.foreach(__v => __obj.updateDynamic("PredictorMonitorEvaluations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitorEvaluationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListMonitorsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMonitorsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMonitorsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMonitorsResponse extends js.Object {
+    var Monitors: js.UndefOr[Monitors]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMonitorsResponse {
+    @inline
+    def apply(
+        Monitors: js.UndefOr[Monitors] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMonitorsResponse = {
+      val __obj = js.Dynamic.literal()
+      Monitors.foreach(__v => __obj.updateDynamic("Monitors")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMonitorsResponse]
+    }
+  }
+
+  @js.native
   trait ListPredictorBacktestExportJobsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
@@ -2679,6 +3415,150 @@ package object forecast {
     }
   }
 
+  @js.native
+  trait ListWhatIfAnalysesRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListWhatIfAnalysesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListWhatIfAnalysesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfAnalysesRequest]
+    }
+  }
+
+  @js.native
+  trait ListWhatIfAnalysesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var WhatIfAnalyses: js.UndefOr[WhatIfAnalyses]
+  }
+
+  object ListWhatIfAnalysesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        WhatIfAnalyses: js.UndefOr[WhatIfAnalyses] = js.undefined
+    ): ListWhatIfAnalysesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalyses.foreach(__v => __obj.updateDynamic("WhatIfAnalyses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfAnalysesResponse]
+    }
+  }
+
+  @js.native
+  trait ListWhatIfForecastExportsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListWhatIfForecastExportsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListWhatIfForecastExportsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfForecastExportsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWhatIfForecastExportsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var WhatIfForecastExports: js.UndefOr[WhatIfForecastExports]
+  }
+
+  object ListWhatIfForecastExportsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        WhatIfForecastExports: js.UndefOr[WhatIfForecastExports] = js.undefined
+    ): ListWhatIfForecastExportsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastExports.foreach(__v => __obj.updateDynamic("WhatIfForecastExports")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfForecastExportsResponse]
+    }
+  }
+
+  @js.native
+  trait ListWhatIfForecastsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListWhatIfForecastsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListWhatIfForecastsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfForecastsRequest]
+    }
+  }
+
+  @js.native
+  trait ListWhatIfForecastsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var WhatIfForecasts: js.UndefOr[WhatIfForecasts]
+  }
+
+  object ListWhatIfForecastsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        WhatIfForecasts: js.UndefOr[WhatIfForecasts] = js.undefined
+    ): ListWhatIfForecastsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WhatIfForecasts.foreach(__v => __obj.updateDynamic("WhatIfForecasts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListWhatIfForecastsResponse]
+    }
+  }
+
+  /** An individual metric Forecast calculated when monitoring predictor usage. You can compare the value for this metric to the metric's value in the <a>Baseline</a> to see how your predictor's performance is changing. For more information about metrics generated by Forecast see [[https://docs.aws.amazon.com/forecast/latest/dg/metrics.html|Evaluating Predictor Accuracy]]
+    */
+  @js.native
+  trait MetricResult extends js.Object {
+    var MetricName: js.UndefOr[MetricName]
+    var MetricValue: js.UndefOr[Double]
+  }
+
+  object MetricResult {
+    @inline
+    def apply(
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        MetricValue: js.UndefOr[Double] = js.undefined
+    ): MetricResult = {
+      val __obj = js.Dynamic.literal()
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      MetricValue.foreach(__v => __obj.updateDynamic("MetricValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricResult]
+    }
+  }
+
   /** Provides metrics that are used to evaluate the performance of a predictor. This object is part of the <a>WindowSummary</a> object.
     */
   @js.native
@@ -2703,6 +3583,103 @@ package object forecast {
       RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
       WeightedQuantileLosses.foreach(__v => __obj.updateDynamic("WeightedQuantileLosses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metrics]
+    }
+  }
+
+  /** The configuration details for the predictor monitor.
+    */
+  @js.native
+  trait MonitorConfig extends js.Object {
+    var MonitorName: Name
+  }
+
+  object MonitorConfig {
+    @inline
+    def apply(
+        MonitorName: Name
+    ): MonitorConfig = {
+      val __obj = js.Dynamic.literal(
+        "MonitorName" -> MonitorName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MonitorConfig]
+    }
+  }
+
+  /** The source of the data the monitor used during the evaluation.
+    */
+  @js.native
+  trait MonitorDataSource extends js.Object {
+    var DatasetImportJobArn: js.UndefOr[Arn]
+    var ForecastArn: js.UndefOr[Arn]
+    var PredictorArn: js.UndefOr[Arn]
+  }
+
+  object MonitorDataSource {
+    @inline
+    def apply(
+        DatasetImportJobArn: js.UndefOr[Arn] = js.undefined,
+        ForecastArn: js.UndefOr[Arn] = js.undefined,
+        PredictorArn: js.UndefOr[Arn] = js.undefined
+    ): MonitorDataSource = {
+      val __obj = js.Dynamic.literal()
+      DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitorDataSource]
+    }
+  }
+
+  /** Provides information about the monitor resource.
+    */
+  @js.native
+  trait MonitorInfo extends js.Object {
+    var MonitorArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[Status]
+  }
+
+  object MonitorInfo {
+    @inline
+    def apply(
+        MonitorArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): MonitorInfo = {
+      val __obj = js.Dynamic.literal()
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitorInfo]
+    }
+  }
+
+  /** Provides a summary of the monitor properties used in the <a>ListMonitors</a> operation. To get a complete set of properties, call the <a>DescribeMonitor</a> operation, and provide the listed <code>MonitorArn</code>.
+    */
+  @js.native
+  trait MonitorSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var MonitorArn: js.UndefOr[Arn]
+    var MonitorName: js.UndefOr[Name]
+    var ResourceArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[Status]
+  }
+
+  object MonitorSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        MonitorArn: js.UndefOr[Arn] = js.undefined,
+        MonitorName: js.UndefOr[Name] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): MonitorSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      MonitorName.foreach(__v => __obj.updateDynamic("MonitorName")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MonitorSummary]
     }
   }
 
@@ -2766,6 +3743,45 @@ package object forecast {
     }
   }
 
+  /** Metrics you can use as a baseline for comparison purposes. Use these metrics when you interpret monitoring results for an auto predictor.
+    */
+  @js.native
+  trait PredictorBaseline extends js.Object {
+    var BaselineMetrics: js.UndefOr[BaselineMetrics]
+  }
+
+  object PredictorBaseline {
+    @inline
+    def apply(
+        BaselineMetrics: js.UndefOr[BaselineMetrics] = js.undefined
+    ): PredictorBaseline = {
+      val __obj = js.Dynamic.literal()
+      BaselineMetrics.foreach(__v => __obj.updateDynamic("BaselineMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictorBaseline]
+    }
+  }
+
+  /** Provides details about a predictor event, such as a retraining.
+    */
+  @js.native
+  trait PredictorEvent extends js.Object {
+    var Datetime: js.UndefOr[Timestamp]
+    var Detail: js.UndefOr[Detail]
+  }
+
+  object PredictorEvent {
+    @inline
+    def apply(
+        Datetime: js.UndefOr[Timestamp] = js.undefined,
+        Detail: js.UndefOr[Detail] = js.undefined
+    ): PredictorEvent = {
+      val __obj = js.Dynamic.literal()
+      Datetime.foreach(__v => __obj.updateDynamic("Datetime")(__v.asInstanceOf[js.Any]))
+      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictorEvent]
+    }
+  }
+
   /** The algorithm used to perform a backtest and the status of those tests.
     */
   @js.native
@@ -2802,6 +3818,54 @@ package object forecast {
       val __obj = js.Dynamic.literal()
       PredictorExecutions.foreach(__v => __obj.updateDynamic("PredictorExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictorExecutionDetails]
+    }
+  }
+
+  /** Describes the results of a monitor evaluation.
+    */
+  @js.native
+  trait PredictorMonitorEvaluation extends js.Object {
+    var EvaluationState: js.UndefOr[EvaluationState]
+    var EvaluationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var MetricResults: js.UndefOr[MetricResults]
+    var MonitorArn: js.UndefOr[Arn]
+    var MonitorDataSource: js.UndefOr[MonitorDataSource]
+    var NumItemsEvaluated: js.UndefOr[Double]
+    var PredictorEvent: js.UndefOr[PredictorEvent]
+    var ResourceArn: js.UndefOr[Arn]
+    var WindowEndDatetime: js.UndefOr[Timestamp]
+    var WindowStartDatetime: js.UndefOr[Timestamp]
+  }
+
+  object PredictorMonitorEvaluation {
+    @inline
+    def apply(
+        EvaluationState: js.UndefOr[EvaluationState] = js.undefined,
+        EvaluationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        MetricResults: js.UndefOr[MetricResults] = js.undefined,
+        MonitorArn: js.UndefOr[Arn] = js.undefined,
+        MonitorDataSource: js.UndefOr[MonitorDataSource] = js.undefined,
+        NumItemsEvaluated: js.UndefOr[Double] = js.undefined,
+        PredictorEvent: js.UndefOr[PredictorEvent] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        WindowEndDatetime: js.UndefOr[Timestamp] = js.undefined,
+        WindowStartDatetime: js.UndefOr[Timestamp] = js.undefined
+    ): PredictorMonitorEvaluation = {
+      val __obj = js.Dynamic.literal()
+      EvaluationState.foreach(__v => __obj.updateDynamic("EvaluationState")(__v.asInstanceOf[js.Any]))
+      EvaluationTime.foreach(__v => __obj.updateDynamic("EvaluationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      MetricResults.foreach(__v => __obj.updateDynamic("MetricResults")(__v.asInstanceOf[js.Any]))
+      MonitorArn.foreach(__v => __obj.updateDynamic("MonitorArn")(__v.asInstanceOf[js.Any]))
+      MonitorDataSource.foreach(__v => __obj.updateDynamic("MonitorDataSource")(__v.asInstanceOf[js.Any]))
+      NumItemsEvaluated.foreach(__v => __obj.updateDynamic("NumItemsEvaluated")(__v.asInstanceOf[js.Any]))
+      PredictorEvent.foreach(__v => __obj.updateDynamic("PredictorEvent")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      WindowEndDatetime.foreach(__v => __obj.updateDynamic("WindowEndDatetime")(__v.asInstanceOf[js.Any]))
+      WindowStartDatetime.foreach(__v => __obj.updateDynamic("WindowStartDatetime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictorMonitorEvaluation]
     }
   }
 
@@ -2868,6 +3932,23 @@ package object forecast {
     }
   }
 
+  @js.native
+  trait ResumeResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object ResumeResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): ResumeResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResumeResourceRequest]
+    }
+  }
+
   /** The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object.
     */
   @js.native
@@ -2912,7 +3993,7 @@ package object forecast {
     }
   }
 
-  /** An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The <a>Schema</a> object contains an array of <code>SchemaAttribute</code> objects.
+  /** An attribute of a schema, which defines a dataset field. A schema attribute is required for every field in a dataset. The [[https://docs.aws.amazon.com/forecast/latest/dg/API_Schema.html|Schema]] object contains an array of <code>SchemaAttribute</code> objects.
     */
   @js.native
   trait SchemaAttribute extends js.Object {
@@ -2933,7 +4014,7 @@ package object forecast {
     }
   }
 
-  /** Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a>CreateDatasetImportJob</a> operation.
+  /** Provides statistics for each data field imported into to an Amazon Forecast dataset with the [[https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html|CreateDatasetImportJob]] operation.
     */
   @js.native
   trait Statistics extends js.Object {
@@ -3001,8 +4082,9 @@ package object forecast {
     }
   }
 
-  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>AdditionalDataset</a>. Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations. \```Weather Index``` The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]]. \```Holidays``` Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To
-    * view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
+  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>AdditionalDataset</a>. Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations.
+    * \```Weather Index``` The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
+    * \```Holidays``` Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
     */
   @js.native
   trait SupplementaryFeature extends js.Object {
@@ -3105,6 +4187,150 @@ package object forecast {
     }
   }
 
+  /** The time boundary Forecast uses to align and aggregate your data to match your forecast frequency. Provide the unit of time and the time boundary as a key value pair. If you don't provide a time boundary, Forecast uses a set of [[https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries|Default Time Boundaries]]. For more information about aggregation, see [[https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html|Data Aggregation for Different Forecast Frequencies]]. For more information setting a custom time boundary, see [[https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary|Specifying a Time Boundary]].
+    */
+  @js.native
+  trait TimeAlignmentBoundary extends js.Object {
+    var DayOfMonth: js.UndefOr[DayOfMonth]
+    var DayOfWeek: js.UndefOr[DayOfWeek]
+    var Hour: js.UndefOr[Hour]
+    var Month: js.UndefOr[Month]
+  }
+
+  object TimeAlignmentBoundary {
+    @inline
+    def apply(
+        DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
+        DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
+        Hour: js.UndefOr[Hour] = js.undefined,
+        Month: js.UndefOr[Month] = js.undefined
+    ): TimeAlignmentBoundary = {
+      val __obj = js.Dynamic.literal()
+      DayOfMonth.foreach(__v => __obj.updateDynamic("DayOfMonth")(__v.asInstanceOf[js.Any]))
+      DayOfWeek.foreach(__v => __obj.updateDynamic("DayOfWeek")(__v.asInstanceOf[js.Any]))
+      Hour.foreach(__v => __obj.updateDynamic("Hour")(__v.asInstanceOf[js.Any]))
+      Month.foreach(__v => __obj.updateDynamic("Month")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeAlignmentBoundary]
+    }
+  }
+
+  /** Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost 5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <a>Action</a> operation within the [[CreateWhatIfForecastRequest.TimeSeriesTransformations]] operation to define how the attribute is modified.
+    */
+  @js.native
+  trait TimeSeriesCondition extends js.Object {
+    var AttributeName: Name
+    var AttributeValue: AttributeValue
+    var Condition: Condition
+  }
+
+  object TimeSeriesCondition {
+    @inline
+    def apply(
+        AttributeName: Name,
+        AttributeValue: AttributeValue,
+        Condition: Condition
+    ): TimeSeriesCondition = {
+      val __obj = js.Dynamic.literal(
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "AttributeValue" -> AttributeValue.asInstanceOf[js.Any],
+        "Condition" -> Condition.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TimeSeriesCondition]
+    }
+  }
+
+  /** Details about the import file that contains the time series for which you want to create forecasts.
+    */
+  @js.native
+  trait TimeSeriesIdentifiers extends js.Object {
+    var DataSource: js.UndefOr[DataSource]
+    var Format: js.UndefOr[Format]
+    var Schema: js.UndefOr[Schema]
+  }
+
+  object TimeSeriesIdentifiers {
+    @inline
+    def apply(
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        Format: js.UndefOr[Format] = js.undefined,
+        Schema: js.UndefOr[Schema] = js.undefined
+    ): TimeSeriesIdentifiers = {
+      val __obj = js.Dynamic.literal()
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesIdentifiers]
+    }
+  }
+
+  /** A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast.
+    */
+  @js.native
+  trait TimeSeriesReplacementsDataSource extends js.Object {
+    var S3Config: S3Config
+    var Schema: Schema
+    var Format: js.UndefOr[Format]
+    var TimestampFormat: js.UndefOr[TimestampFormat]
+  }
+
+  object TimeSeriesReplacementsDataSource {
+    @inline
+    def apply(
+        S3Config: S3Config,
+        Schema: Schema,
+        Format: js.UndefOr[Format] = js.undefined,
+        TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
+    ): TimeSeriesReplacementsDataSource = {
+      val __obj = js.Dynamic.literal(
+        "S3Config" -> S3Config.asInstanceOf[js.Any],
+        "Schema" -> Schema.asInstanceOf[js.Any]
+      )
+
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesReplacementsDataSource]
+    }
+  }
+
+  /** Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object. The <code>TimeSeriesIdentifiers</code> object needs the following information: * <code>DataSource</code> * <code>Format</code> * <code>Schema</code>
+    */
+  @js.native
+  trait TimeSeriesSelector extends js.Object {
+    var TimeSeriesIdentifiers: js.UndefOr[TimeSeriesIdentifiers]
+  }
+
+  object TimeSeriesSelector {
+    @inline
+    def apply(
+        TimeSeriesIdentifiers: js.UndefOr[TimeSeriesIdentifiers] = js.undefined
+    ): TimeSeriesSelector = {
+      val __obj = js.Dynamic.literal()
+      TimeSeriesIdentifiers.foreach(__v => __obj.updateDynamic("TimeSeriesIdentifiers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesSelector]
+    }
+  }
+
+  /** A transformation function is a pair of operations that select and modify the rows in a related time series. You select the rows that you want with a condition operation and you modify the rows with a transformation operation. All conditions are joined with an AND operation, meaning that all conditions must be true for the transformation to be applied. Transformations are applied in the order that they are listed.
+    */
+  @js.native
+  trait TimeSeriesTransformation extends js.Object {
+    var Action: js.UndefOr[Action]
+    var TimeSeriesConditions: js.UndefOr[TimeSeriesConditions]
+  }
+
+  object TimeSeriesTransformation {
+    @inline
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        TimeSeriesConditions: js.UndefOr[TimeSeriesConditions] = js.undefined
+    ): TimeSeriesTransformation = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      TimeSeriesConditions.foreach(__v => __obj.updateDynamic("TimeSeriesConditions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesTransformation]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: Arn
@@ -3185,6 +4411,117 @@ package object forecast {
       LossValue.foreach(__v => __obj.updateDynamic("LossValue")(__v.asInstanceOf[js.Any]))
       Quantile.foreach(__v => __obj.updateDynamic("Quantile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WeightedQuantileLoss]
+    }
+  }
+
+  /** Provides a summary of the what-if analysis properties used in the <a>ListWhatIfAnalyses</a> operation. To get the complete set of properties, call the <a>DescribeWhatIfAnalysis</a> operation, and provide the <code>WhatIfAnalysisArn</code> that is listed in the summary.
+    */
+  @js.native
+  trait WhatIfAnalysisSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var ForecastArn: js.UndefOr[Arn]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[Status]
+    var WhatIfAnalysisArn: js.UndefOr[Arn]
+    var WhatIfAnalysisName: js.UndefOr[Name]
+  }
+
+  object WhatIfAnalysisSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        ForecastArn: js.UndefOr[Arn] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WhatIfAnalysisArn: js.UndefOr[Arn] = js.undefined,
+        WhatIfAnalysisName: js.UndefOr[Name] = js.undefined
+    ): WhatIfAnalysisSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisArn.foreach(__v => __obj.updateDynamic("WhatIfAnalysisArn")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisName.foreach(__v => __obj.updateDynamic("WhatIfAnalysisName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WhatIfAnalysisSummary]
+    }
+  }
+
+  /** Provides a summary of the what-if forecast export properties used in the <a>ListWhatIfForecastExports</a> operation. To get the complete set of properties, call the <a>DescribeWhatIfForecastExport</a> operation, and provide the <code>WhatIfForecastExportArn</code> that is listed in the summary.
+    */
+  @js.native
+  trait WhatIfForecastExportSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[Status]
+    var WhatIfForecastArns: js.UndefOr[WhatIfForecastArnListForExport]
+    var WhatIfForecastExportArn: js.UndefOr[LongArn]
+    var WhatIfForecastExportName: js.UndefOr[Name]
+  }
+
+  object WhatIfForecastExportSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WhatIfForecastArns: js.UndefOr[WhatIfForecastArnListForExport] = js.undefined,
+        WhatIfForecastExportArn: js.UndefOr[LongArn] = js.undefined,
+        WhatIfForecastExportName: js.UndefOr[Name] = js.undefined
+    ): WhatIfForecastExportSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastArns.foreach(__v => __obj.updateDynamic("WhatIfForecastArns")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastExportArn.foreach(__v => __obj.updateDynamic("WhatIfForecastExportArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastExportName.foreach(__v => __obj.updateDynamic("WhatIfForecastExportName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WhatIfForecastExportSummary]
+    }
+  }
+
+  /** Provides a summary of the what-if forecast properties used in the <a>ListWhatIfForecasts</a> operation. To get the complete set of properties, call the <a>DescribeWhatIfForecast</a> operation, and provide the <code>WhatIfForecastArn</code> that is listed in the summary.
+    */
+  @js.native
+  trait WhatIfForecastSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[Status]
+    var WhatIfAnalysisArn: js.UndefOr[Arn]
+    var WhatIfForecastArn: js.UndefOr[LongArn]
+    var WhatIfForecastName: js.UndefOr[Name]
+  }
+
+  object WhatIfForecastSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined,
+        WhatIfAnalysisArn: js.UndefOr[Arn] = js.undefined,
+        WhatIfForecastArn: js.UndefOr[LongArn] = js.undefined,
+        WhatIfForecastName: js.UndefOr[Name] = js.undefined
+    ): WhatIfForecastSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WhatIfAnalysisArn.foreach(__v => __obj.updateDynamic("WhatIfAnalysisArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastArn.foreach(__v => __obj.updateDynamic("WhatIfForecastArn")(__v.asInstanceOf[js.Any]))
+      WhatIfForecastName.foreach(__v => __obj.updateDynamic("WhatIfForecastName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WhatIfForecastSummary]
     }
   }
 

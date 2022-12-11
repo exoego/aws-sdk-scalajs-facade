@@ -2,6 +2,16 @@ package facade.amazonaws.services.connect
 
 import scalajs.js
 
+type ActionType = "CREATE_TASK" | "ASSIGN_CONTACT_CATEGORY" | "GENERATE_EVENTBRIDGE_EVENT" | "SEND_NOTIFICATION"
+object ActionType {
+  inline val CREATE_TASK: "CREATE_TASK" = "CREATE_TASK"
+  inline val ASSIGN_CONTACT_CATEGORY: "ASSIGN_CONTACT_CATEGORY" = "ASSIGN_CONTACT_CATEGORY"
+  inline val GENERATE_EVENTBRIDGE_EVENT: "GENERATE_EVENTBRIDGE_EVENT" = "GENERATE_EVENTBRIDGE_EVENT"
+  inline val SEND_NOTIFICATION: "SEND_NOTIFICATION" = "SEND_NOTIFICATION"
+
+  inline def values: js.Array[ActionType] = js.Array(CREATE_TASK, ASSIGN_CONTACT_CATEGORY, GENERATE_EVENTBRIDGE_EVENT, SEND_NOTIFICATION)
+}
+
 type AgentStatusState = "ENABLED" | "DISABLED"
 object AgentStatusState {
   inline val ENABLED: "ENABLED" = "ENABLED"
@@ -86,6 +96,21 @@ object ContactInitiationMethod {
   inline def values: js.Array[ContactInitiationMethod] = js.Array(INBOUND, OUTBOUND, TRANSFER, QUEUE_TRANSFER, CALLBACK, API)
 }
 
+type ContactState = "INCOMING" | "PENDING" | "CONNECTING" | "CONNECTED" | "CONNECTED_ONHOLD" | "MISSED" | "ERROR" | "ENDED" | "REJECTED"
+object ContactState {
+  inline val INCOMING: "INCOMING" = "INCOMING"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val CONNECTING: "CONNECTING" = "CONNECTING"
+  inline val CONNECTED: "CONNECTED" = "CONNECTED"
+  inline val CONNECTED_ONHOLD: "CONNECTED_ONHOLD" = "CONNECTED_ONHOLD"
+  inline val MISSED: "MISSED" = "MISSED"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val ENDED: "ENDED" = "ENDED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+
+  inline def values: js.Array[ContactState] = js.Array(INCOMING, PENDING, CONNECTING, CONNECTED, CONNECTED_ONHOLD, MISSED, ERROR, ENDED, REJECTED)
+}
+
 /** The current metric names.
   */
 type CurrentMetricName = "AGENTS_ONLINE" | "AGENTS_AVAILABLE" | "AGENTS_ON_CALL" | "AGENTS_NON_PRODUCTIVE" | "AGENTS_AFTER_CONTACT_WORK" | "AGENTS_ERROR" | "AGENTS_STAFFED" | "CONTACTS_IN_QUEUE" | "OLDEST_CONTACT_AGE" | "CONTACTS_SCHEDULED" | "AGENTS_ON_CONTACT" | "SLOTS_ACTIVE" | "SLOTS_AVAILABLE"
@@ -137,12 +162,39 @@ object EncryptionType {
   inline def values: js.Array[EncryptionType] = js.Array(KMS)
 }
 
+type EventSourceName = "OnPostCallAnalysisAvailable" | "OnRealTimeCallAnalysisAvailable" | "OnPostChatAnalysisAvailable" | "OnZendeskTicketCreate" | "OnZendeskTicketStatusUpdate" | "OnSalesforceCaseCreate"
+object EventSourceName {
+  inline val OnPostCallAnalysisAvailable: "OnPostCallAnalysisAvailable" = "OnPostCallAnalysisAvailable"
+  inline val OnRealTimeCallAnalysisAvailable: "OnRealTimeCallAnalysisAvailable" = "OnRealTimeCallAnalysisAvailable"
+  inline val OnPostChatAnalysisAvailable: "OnPostChatAnalysisAvailable" = "OnPostChatAnalysisAvailable"
+  inline val OnZendeskTicketCreate: "OnZendeskTicketCreate" = "OnZendeskTicketCreate"
+  inline val OnZendeskTicketStatusUpdate: "OnZendeskTicketStatusUpdate" = "OnZendeskTicketStatusUpdate"
+  inline val OnSalesforceCaseCreate: "OnSalesforceCaseCreate" = "OnSalesforceCaseCreate"
+
+  inline def values: js.Array[EventSourceName] = js.Array(
+    OnPostCallAnalysisAvailable,
+    OnRealTimeCallAnalysisAvailable,
+    OnPostChatAnalysisAvailable,
+    OnZendeskTicketCreate,
+    OnZendeskTicketStatusUpdate,
+    OnSalesforceCaseCreate
+  )
+}
+
 type Grouping = "QUEUE" | "CHANNEL"
 object Grouping {
   inline val QUEUE: "QUEUE" = "QUEUE"
   inline val CHANNEL: "CHANNEL" = "CHANNEL"
 
   inline def values: js.Array[Grouping] = js.Array(QUEUE, CHANNEL)
+}
+
+type HierarchyGroupMatchType = "EXACT" | "WITH_CHILD_GROUPS"
+object HierarchyGroupMatchType {
+  inline val EXACT: "EXACT" = "EXACT"
+  inline val WITH_CHILD_GROUPS: "WITH_CHILD_GROUPS" = "WITH_CHILD_GROUPS"
+
+  inline def values: js.Array[HierarchyGroupMatchType] = js.Array(EXACT, WITH_CHILD_GROUPS)
 }
 
 /** The historical metric names.
@@ -217,7 +269,7 @@ object HoursOfOperationDays {
   inline def values: js.Array[HoursOfOperationDays] = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
 }
 
-type InstanceAttributeType = "INBOUND_CALLS" | "OUTBOUND_CALLS" | "CONTACTFLOW_LOGS" | "CONTACT_LENS" | "AUTO_RESOLVE_BEST_VOICES" | "USE_CUSTOM_TTS_VOICES" | "EARLY_MEDIA"
+type InstanceAttributeType = "INBOUND_CALLS" | "OUTBOUND_CALLS" | "CONTACTFLOW_LOGS" | "CONTACT_LENS" | "AUTO_RESOLVE_BEST_VOICES" | "USE_CUSTOM_TTS_VOICES" | "EARLY_MEDIA" | "MULTI_PARTY_CONFERENCE" | "HIGH_VOLUME_OUTBOUND" | "ENHANCED_CONTACT_MONITORING"
 object InstanceAttributeType {
   inline val INBOUND_CALLS: "INBOUND_CALLS" = "INBOUND_CALLS"
   inline val OUTBOUND_CALLS: "OUTBOUND_CALLS" = "OUTBOUND_CALLS"
@@ -226,8 +278,22 @@ object InstanceAttributeType {
   inline val AUTO_RESOLVE_BEST_VOICES: "AUTO_RESOLVE_BEST_VOICES" = "AUTO_RESOLVE_BEST_VOICES"
   inline val USE_CUSTOM_TTS_VOICES: "USE_CUSTOM_TTS_VOICES" = "USE_CUSTOM_TTS_VOICES"
   inline val EARLY_MEDIA: "EARLY_MEDIA" = "EARLY_MEDIA"
+  inline val MULTI_PARTY_CONFERENCE: "MULTI_PARTY_CONFERENCE" = "MULTI_PARTY_CONFERENCE"
+  inline val HIGH_VOLUME_OUTBOUND: "HIGH_VOLUME_OUTBOUND" = "HIGH_VOLUME_OUTBOUND"
+  inline val ENHANCED_CONTACT_MONITORING: "ENHANCED_CONTACT_MONITORING" = "ENHANCED_CONTACT_MONITORING"
 
-  inline def values: js.Array[InstanceAttributeType] = js.Array(INBOUND_CALLS, OUTBOUND_CALLS, CONTACTFLOW_LOGS, CONTACT_LENS, AUTO_RESOLVE_BEST_VOICES, USE_CUSTOM_TTS_VOICES, EARLY_MEDIA)
+  inline def values: js.Array[InstanceAttributeType] = js.Array(
+    INBOUND_CALLS,
+    OUTBOUND_CALLS,
+    CONTACTFLOW_LOGS,
+    CONTACT_LENS,
+    AUTO_RESOLVE_BEST_VOICES,
+    USE_CUSTOM_TTS_VOICES,
+    EARLY_MEDIA,
+    MULTI_PARTY_CONFERENCE,
+    HIGH_VOLUME_OUTBOUND,
+    ENHANCED_CONTACT_MONITORING
+  )
 }
 
 type InstanceStatus = "CREATION_IN_PROGRESS" | "ACTIVE" | "CREATION_FAILED"
@@ -239,7 +305,7 @@ object InstanceStatus {
   inline def values: js.Array[InstanceStatus] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED)
 }
 
-type InstanceStorageResourceType = "CHAT_TRANSCRIPTS" | "CALL_RECORDINGS" | "SCHEDULED_REPORTS" | "MEDIA_STREAMS" | "CONTACT_TRACE_RECORDS" | "AGENT_EVENTS"
+type InstanceStorageResourceType = "CHAT_TRANSCRIPTS" | "CALL_RECORDINGS" | "SCHEDULED_REPORTS" | "MEDIA_STREAMS" | "CONTACT_TRACE_RECORDS" | "AGENT_EVENTS" | "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
 object InstanceStorageResourceType {
   inline val CHAT_TRANSCRIPTS: "CHAT_TRANSCRIPTS" = "CHAT_TRANSCRIPTS"
   inline val CALL_RECORDINGS: "CALL_RECORDINGS" = "CALL_RECORDINGS"
@@ -247,19 +313,21 @@ object InstanceStorageResourceType {
   inline val MEDIA_STREAMS: "MEDIA_STREAMS" = "MEDIA_STREAMS"
   inline val CONTACT_TRACE_RECORDS: "CONTACT_TRACE_RECORDS" = "CONTACT_TRACE_RECORDS"
   inline val AGENT_EVENTS: "AGENT_EVENTS" = "AGENT_EVENTS"
+  inline val REAL_TIME_CONTACT_ANALYSIS_SEGMENTS: "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" = "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
 
-  inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
+  inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS, REAL_TIME_CONTACT_ANALYSIS_SEGMENTS)
 }
 
-type IntegrationType = "EVENT" | "VOICE_ID" | "PINPOINT_APP" | "WISDOM_ASSISTANT" | "WISDOM_KNOWLEDGE_BASE"
+type IntegrationType = "EVENT" | "VOICE_ID" | "PINPOINT_APP" | "WISDOM_ASSISTANT" | "WISDOM_KNOWLEDGE_BASE" | "CASES_DOMAIN"
 object IntegrationType {
   inline val EVENT: "EVENT" = "EVENT"
   inline val VOICE_ID: "VOICE_ID" = "VOICE_ID"
   inline val PINPOINT_APP: "PINPOINT_APP" = "PINPOINT_APP"
   inline val WISDOM_ASSISTANT: "WISDOM_ASSISTANT" = "WISDOM_ASSISTANT"
   inline val WISDOM_KNOWLEDGE_BASE: "WISDOM_KNOWLEDGE_BASE" = "WISDOM_KNOWLEDGE_BASE"
+  inline val CASES_DOMAIN: "CASES_DOMAIN" = "CASES_DOMAIN"
 
-  inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE)
+  inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE, CASES_DOMAIN)
 }
 
 type LexVersion = "V1" | "V2"
@@ -270,8 +338,30 @@ object LexVersion {
   inline def values: js.Array[LexVersion] = js.Array(V1, V2)
 }
 
-type PhoneNumberCountryCode = "AF" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CK" | "CR" | "HR" | "CU" | "CW" | "CY" | "CZ" | "CD" | "DK" | "DJ" | "DM" | "DO" | "TL" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "PF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "CI" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MK" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" |
-  "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "AN" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "KP" | "MP" | "NO" | "OM" | "PK" | "PW" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "CG" | "RE" | "RO" | "RU" | "RW" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "KR" | "ES" | "LK" | "SD" | "SR" | "SJ" | "SZ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "VI" | "UG" | "UA" | "AE" | "GB" | "US" | "UY" | "UZ" | "VU" | "VA" | "VE" | "VN" | "WF" | "EH" | "YE" | "ZM" | "ZW"
+type MonitorCapability = "SILENT_MONITOR" | "BARGE"
+object MonitorCapability {
+  inline val SILENT_MONITOR: "SILENT_MONITOR" = "SILENT_MONITOR"
+  inline val BARGE: "BARGE" = "BARGE"
+
+  inline def values: js.Array[MonitorCapability] = js.Array(SILENT_MONITOR, BARGE)
+}
+
+type NotificationContentType = "PLAIN_TEXT"
+object NotificationContentType {
+  inline val PLAIN_TEXT: "PLAIN_TEXT" = "PLAIN_TEXT"
+
+  inline def values: js.Array[NotificationContentType] = js.Array(PLAIN_TEXT)
+}
+
+type NotificationDeliveryType = "EMAIL"
+object NotificationDeliveryType {
+  inline val EMAIL: "EMAIL" = "EMAIL"
+
+  inline def values: js.Array[NotificationDeliveryType] = js.Array(EMAIL)
+}
+
+type PhoneNumberCountryCode =
+  "AF" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CK" | "CR" | "HR" | "CU" | "CW" | "CY" | "CZ" | "CD" | "DK" | "DJ" | "DM" | "DO" | "TL" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "PF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "CI" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MK" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "AN" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "KP" | "MP" | "NO" | "OM" | "PK" | "PW" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "CG" | "RE" | "RO" | "RU" | "RW" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "KR" | "ES" | "LK" | "SD" | "SR" | "SJ" | "SZ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "VI" | "UG" | "UA" | "AE" | "GB" | "US" | "UY" | "UZ" | "VU" | "VA" | "VE" | "VN" | "WF" | "EH" | "YE" | "ZM" | "ZW"
 object PhoneNumberCountryCode {
   inline val AF: "AF" = "AF"
   inline val AL: "AL" = "AL"
@@ -760,6 +850,15 @@ object PhoneNumberType {
   inline def values: js.Array[PhoneNumberType] = js.Array(TOLL_FREE, DID)
 }
 
+type PhoneNumberWorkflowStatus = "CLAIMED" | "IN_PROGRESS" | "FAILED"
+object PhoneNumberWorkflowStatus {
+  inline val CLAIMED: "CLAIMED" = "CLAIMED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[PhoneNumberWorkflowStatus] = js.Array(CLAIMED, IN_PROGRESS, FAILED)
+}
+
 type PhoneType = "SOFT_PHONE" | "DESK_PHONE"
 object PhoneType {
   inline val SOFT_PHONE: "SOFT_PHONE" = "SOFT_PHONE"
@@ -801,12 +900,31 @@ object ReferenceStatus {
   inline def values: js.Array[ReferenceStatus] = js.Array(APPROVED, REJECTED)
 }
 
-type ReferenceType = "URL" | "ATTACHMENT"
+type ReferenceType = "URL" | "ATTACHMENT" | "NUMBER" | "STRING" | "DATE" | "EMAIL"
 object ReferenceType {
   inline val URL: "URL" = "URL"
   inline val ATTACHMENT: "ATTACHMENT" = "ATTACHMENT"
+  inline val NUMBER: "NUMBER" = "NUMBER"
+  inline val STRING: "STRING" = "STRING"
+  inline val DATE: "DATE" = "DATE"
+  inline val EMAIL: "EMAIL" = "EMAIL"
 
-  inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT)
+  inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT, NUMBER, STRING, DATE, EMAIL)
+}
+
+type RulePublishStatus = "DRAFT" | "PUBLISHED"
+object RulePublishStatus {
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val PUBLISHED: "PUBLISHED" = "PUBLISHED"
+
+  inline def values: js.Array[RulePublishStatus] = js.Array(DRAFT, PUBLISHED)
+}
+
+type SearchableQueueType = "STANDARD"
+object SearchableQueueType {
+  inline val STANDARD: "STANDARD" = "STANDARD"
+
+  inline def values: js.Array[SearchableQueueType] = js.Array(STANDARD)
 }
 
 type SourceType = "SALESFORCE" | "ZENDESK"
@@ -836,6 +954,53 @@ object StorageType {
   inline def values: js.Array[StorageType] = js.Array(S3, KINESIS_VIDEO_STREAM, KINESIS_STREAM, KINESIS_FIREHOSE)
 }
 
+type StringComparisonType = "STARTS_WITH" | "CONTAINS" | "EXACT"
+object StringComparisonType {
+  inline val STARTS_WITH: "STARTS_WITH" = "STARTS_WITH"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val EXACT: "EXACT" = "EXACT"
+
+  inline def values: js.Array[StringComparisonType] = js.Array(STARTS_WITH, CONTAINS, EXACT)
+}
+
+type TaskTemplateFieldType = "NAME" | "DESCRIPTION" | "SCHEDULED_TIME" | "QUICK_CONNECT" | "URL" | "NUMBER" | "TEXT" | "TEXT_AREA" | "DATE_TIME" | "BOOLEAN" | "SINGLE_SELECT" | "EMAIL"
+object TaskTemplateFieldType {
+  inline val NAME: "NAME" = "NAME"
+  inline val DESCRIPTION: "DESCRIPTION" = "DESCRIPTION"
+  inline val SCHEDULED_TIME: "SCHEDULED_TIME" = "SCHEDULED_TIME"
+  inline val QUICK_CONNECT: "QUICK_CONNECT" = "QUICK_CONNECT"
+  inline val URL: "URL" = "URL"
+  inline val NUMBER: "NUMBER" = "NUMBER"
+  inline val TEXT: "TEXT" = "TEXT"
+  inline val TEXT_AREA: "TEXT_AREA" = "TEXT_AREA"
+  inline val DATE_TIME: "DATE_TIME" = "DATE_TIME"
+  inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  inline val SINGLE_SELECT: "SINGLE_SELECT" = "SINGLE_SELECT"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+
+  inline def values: js.Array[TaskTemplateFieldType] = js.Array(NAME, DESCRIPTION, SCHEDULED_TIME, QUICK_CONNECT, URL, NUMBER, TEXT, TEXT_AREA, DATE_TIME, BOOLEAN, SINGLE_SELECT, EMAIL)
+}
+
+type TaskTemplateStatus = "ACTIVE" | "INACTIVE"
+object TaskTemplateStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+
+  inline def values: js.Array[TaskTemplateStatus] = js.Array(ACTIVE, INACTIVE)
+}
+
+type TrafficDistributionGroupStatus = "CREATION_IN_PROGRESS" | "ACTIVE" | "CREATION_FAILED" | "PENDING_DELETION" | "DELETION_FAILED" | "UPDATE_IN_PROGRESS"
+object TrafficDistributionGroupStatus {
+  inline val CREATION_IN_PROGRESS: "CREATION_IN_PROGRESS" = "CREATION_IN_PROGRESS"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
+  inline val PENDING_DELETION: "PENDING_DELETION" = "PENDING_DELETION"
+  inline val DELETION_FAILED: "DELETION_FAILED" = "DELETION_FAILED"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+
+  inline def values: js.Array[TrafficDistributionGroupStatus] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED, PENDING_DELETION, DELETION_FAILED, UPDATE_IN_PROGRESS)
+}
+
 type TrafficType = "GENERAL" | "CAMPAIGN"
 object TrafficType {
   inline val GENERAL: "GENERAL" = "GENERAL"
@@ -859,6 +1024,65 @@ object UseCaseType {
   inline val CONNECT_CAMPAIGNS: "CONNECT_CAMPAIGNS" = "CONNECT_CAMPAIGNS"
 
   inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION, CONNECT_CAMPAIGNS)
+}
+
+type VocabularyLanguageCode = "ar-AE" | "de-CH" | "de-DE" | "en-AB" | "en-AU" | "en-GB" | "en-IE" | "en-IN" | "en-US" | "en-WL" | "es-ES" | "es-US" | "fr-CA" | "fr-FR" | "hi-IN" | "it-IT" | "ja-JP" | "ko-KR" | "pt-BR" | "pt-PT" | "zh-CN"
+object VocabularyLanguageCode {
+  inline val `ar-AE`: "ar-AE" = "ar-AE"
+  inline val `de-CH`: "de-CH" = "de-CH"
+  inline val `de-DE`: "de-DE" = "de-DE"
+  inline val `en-AB`: "en-AB" = "en-AB"
+  inline val `en-AU`: "en-AU" = "en-AU"
+  inline val `en-GB`: "en-GB" = "en-GB"
+  inline val `en-IE`: "en-IE" = "en-IE"
+  inline val `en-IN`: "en-IN" = "en-IN"
+  inline val `en-US`: "en-US" = "en-US"
+  inline val `en-WL`: "en-WL" = "en-WL"
+  inline val `es-ES`: "es-ES" = "es-ES"
+  inline val `es-US`: "es-US" = "es-US"
+  inline val `fr-CA`: "fr-CA" = "fr-CA"
+  inline val `fr-FR`: "fr-FR" = "fr-FR"
+  inline val `hi-IN`: "hi-IN" = "hi-IN"
+  inline val `it-IT`: "it-IT" = "it-IT"
+  inline val `ja-JP`: "ja-JP" = "ja-JP"
+  inline val `ko-KR`: "ko-KR" = "ko-KR"
+  inline val `pt-BR`: "pt-BR" = "pt-BR"
+  inline val `pt-PT`: "pt-PT" = "pt-PT"
+  inline val `zh-CN`: "zh-CN" = "zh-CN"
+
+  inline def values: js.Array[VocabularyLanguageCode] = js.Array(
+    `ar-AE`,
+    `de-CH`,
+    `de-DE`,
+    `en-AB`,
+    `en-AU`,
+    `en-GB`,
+    `en-IE`,
+    `en-IN`,
+    `en-US`,
+    `en-WL`,
+    `es-ES`,
+    `es-US`,
+    `fr-CA`,
+    `fr-FR`,
+    `hi-IN`,
+    `it-IT`,
+    `ja-JP`,
+    `ko-KR`,
+    `pt-BR`,
+    `pt-PT`,
+    `zh-CN`
+  )
+}
+
+type VocabularyState = "CREATION_IN_PROGRESS" | "ACTIVE" | "CREATION_FAILED" | "DELETE_IN_PROGRESS"
+object VocabularyState {
+  inline val CREATION_IN_PROGRESS: "CREATION_IN_PROGRESS" = "CREATION_IN_PROGRESS"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+
+  inline def values: js.Array[VocabularyState] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED, DELETE_IN_PROGRESS)
 }
 
 type VoiceRecordingTrack = "FROM_AGENT" | "TO_AGENT" | "ALL"

@@ -10,15 +10,17 @@ object BaseModelName {
   inline def values: js.Array[BaseModelName] = js.Array(NarrowBand, WideBand)
 }
 
-type CLMLanguageCode = "en-US" | "hi-IN" | "es-US" | "en-GB" | "en-AU"
+type CLMLanguageCode = "en-US" | "hi-IN" | "es-US" | "en-GB" | "en-AU" | "de-DE" | "ja-JP"
 object CLMLanguageCode {
   inline val `en-US`: "en-US" = "en-US"
   inline val `hi-IN`: "hi-IN" = "hi-IN"
   inline val `es-US`: "es-US" = "es-US"
   inline val `en-GB`: "en-GB" = "en-GB"
   inline val `en-AU`: "en-AU" = "en-AU"
+  inline val `de-DE`: "de-DE" = "de-DE"
+  inline val `ja-JP`: "ja-JP" = "ja-JP"
 
-  inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
+  inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`, `de-DE`, `ja-JP`)
 }
 
 type CallAnalyticsJobStatus = "QUEUED" | "IN_PROGRESS" | "FAILED" | "COMPLETED"
@@ -31,12 +33,19 @@ object CallAnalyticsJobStatus {
   inline def values: js.Array[CallAnalyticsJobStatus] = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
 }
 
-type LanguageCode = "af-ZA" | "ar-AE" | "ar-SA" | "cy-GB" | "da-DK" | "de-CH" | "de-DE" | "en-AB" | "en-AU" | "en-GB" | "en-IE" | "en-IN" | "en-US" | "en-WL" | "es-ES" | "es-US" | "fa-IR" | "fr-CA" | "fr-FR" | "ga-IE" | "gd-GB" | "he-IL" | "hi-IN" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "ms-MY" | "nl-NL" | "pt-BR" | "pt-PT" | "ru-RU" | "ta-IN" | "te-IN" | "tr-TR" | "zh-CN" | "zh-TW" | "th-TH" | "en-ZA" | "en-NZ"
+type InputType = "REAL_TIME" | "POST_CALL"
+object InputType {
+  inline val REAL_TIME: "REAL_TIME" = "REAL_TIME"
+  inline val POST_CALL: "POST_CALL" = "POST_CALL"
+
+  inline def values: js.Array[InputType] = js.Array(REAL_TIME, POST_CALL)
+}
+
+type LanguageCode = "af-ZA" | "ar-AE" | "ar-SA" | "da-DK" | "de-CH" | "de-DE" | "en-AB" | "en-AU" | "en-GB" | "en-IE" | "en-IN" | "en-US" | "en-WL" | "es-ES" | "es-US" | "fa-IR" | "fr-CA" | "fr-FR" | "he-IL" | "hi-IN" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "ms-MY" | "nl-NL" | "pt-BR" | "pt-PT" | "ru-RU" | "ta-IN" | "te-IN" | "tr-TR" | "zh-CN" | "zh-TW" | "th-TH" | "en-ZA" | "en-NZ"
 object LanguageCode {
   inline val `af-ZA`: "af-ZA" = "af-ZA"
   inline val `ar-AE`: "ar-AE" = "ar-AE"
   inline val `ar-SA`: "ar-SA" = "ar-SA"
-  inline val `cy-GB`: "cy-GB" = "cy-GB"
   inline val `da-DK`: "da-DK" = "da-DK"
   inline val `de-CH`: "de-CH" = "de-CH"
   inline val `de-DE`: "de-DE" = "de-DE"
@@ -52,8 +61,6 @@ object LanguageCode {
   inline val `fa-IR`: "fa-IR" = "fa-IR"
   inline val `fr-CA`: "fr-CA" = "fr-CA"
   inline val `fr-FR`: "fr-FR" = "fr-FR"
-  inline val `ga-IE`: "ga-IE" = "ga-IE"
-  inline val `gd-GB`: "gd-GB" = "gd-GB"
   inline val `he-IL`: "he-IL" = "he-IL"
   inline val `hi-IN`: "hi-IN" = "hi-IN"
   inline val `id-ID`: "id-ID" = "id-ID"
@@ -78,7 +85,6 @@ object LanguageCode {
     `af-ZA`,
     `ar-AE`,
     `ar-SA`,
-    `cy-GB`,
     `da-DK`,
     `de-CH`,
     `de-DE`,
@@ -94,8 +100,6 @@ object LanguageCode {
     `fa-IR`,
     `fr-CA`,
     `fr-FR`,
-    `ga-IE`,
-    `gd-GB`,
     `he-IL`,
     `hi-IN`,
     `id-ID`,
@@ -161,6 +165,24 @@ object ParticipantRole {
   inline val CUSTOMER: "CUSTOMER" = "CUSTOMER"
 
   inline def values: js.Array[ParticipantRole] = js.Array(AGENT, CUSTOMER)
+}
+
+type PiiEntityType = "BANK_ACCOUNT_NUMBER" | "BANK_ROUTING" | "CREDIT_DEBIT_NUMBER" | "CREDIT_DEBIT_CVV" | "CREDIT_DEBIT_EXPIRY" | "PIN" | "EMAIL" | "ADDRESS" | "NAME" | "PHONE" | "SSN" | "ALL"
+object PiiEntityType {
+  inline val BANK_ACCOUNT_NUMBER: "BANK_ACCOUNT_NUMBER" = "BANK_ACCOUNT_NUMBER"
+  inline val BANK_ROUTING: "BANK_ROUTING" = "BANK_ROUTING"
+  inline val CREDIT_DEBIT_NUMBER: "CREDIT_DEBIT_NUMBER" = "CREDIT_DEBIT_NUMBER"
+  inline val CREDIT_DEBIT_CVV: "CREDIT_DEBIT_CVV" = "CREDIT_DEBIT_CVV"
+  inline val CREDIT_DEBIT_EXPIRY: "CREDIT_DEBIT_EXPIRY" = "CREDIT_DEBIT_EXPIRY"
+  inline val PIN: "PIN" = "PIN"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val ADDRESS: "ADDRESS" = "ADDRESS"
+  inline val NAME: "NAME" = "NAME"
+  inline val PHONE: "PHONE" = "PHONE"
+  inline val SSN: "SSN" = "SSN"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[PiiEntityType] = js.Array(BANK_ACCOUNT_NUMBER, BANK_ROUTING, CREDIT_DEBIT_NUMBER, CREDIT_DEBIT_CVV, CREDIT_DEBIT_EXPIRY, PIN, EMAIL, ADDRESS, NAME, PHONE, SSN, ALL)
 }
 
 type RedactionOutput = "redacted" | "redacted_and_unredacted"

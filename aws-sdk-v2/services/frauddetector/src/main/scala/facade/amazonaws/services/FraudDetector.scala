@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object frauddetector {
+  type ATIMetricDataPointsList = js.Array[ATIMetricDataPoint]
   type BatchCreateVariableErrorList = js.Array[BatchCreateVariableError]
   type BatchGetVariableErrorList = js.Array[BatchGetVariableError]
   type BatchImportList = js.Array[BatchImport]
@@ -18,7 +19,9 @@ package object frauddetector {
   type DetectorVersionMaxResults = Int
   type DetectorVersionSummaryList = js.Array[DetectorVersionSummary]
   type DetectorsMaxResults = Int
+  type EvaluatedRuleList = js.Array[EvaluatedRule]
   type EventAttributeMap = js.Dictionary[attributeValue]
+  type EventPredictionsMaxResults = Int
   type EventVariableMap = js.Dictionary[variableValue]
   type ExternalModelEndpointDataBlobMap = js.Dictionary[ModelEndpointDataBlob]
   type ExternalModelList = js.Array[ExternalModel]
@@ -26,20 +29,30 @@ package object frauddetector {
   type ExternalModelsMaxResults = Int
   type JsonKeyToVariableMap = js.Dictionary[String]
   type KmsEncryptionKeyArn = String
+  type ListOfAggregatedLogOddsMetrics = js.Array[AggregatedLogOddsMetric]
+  type ListOfAggregatedVariablesImpactExplanations = js.Array[AggregatedVariablesImpactExplanation]
+  type ListOfEvaluatedExternalModels = js.Array[EvaluatedExternalModel]
+  type ListOfEvaluatedModelVersions = js.Array[EvaluatedModelVersion]
+  type ListOfEventPredictionSummaries = js.Array[EventPredictionSummary]
+  type ListOfEventVariableSummaries = js.Array[EventVariableSummary]
   type ListOfExternalModelOutputs = js.Array[ExternalModelOutputs]
   type ListOfLogOddsMetrics = js.Array[LogOddsMetric]
   type ListOfModelScores = js.Array[ModelScores]
+  type ListOfModelVersionEvaluations = js.Array[ModelVersionEvaluation]
   type ListOfModelVersions = js.Array[ModelVersion]
   type ListOfRuleResults = js.Array[RuleResult]
   type ListOfStrings = js.Array[String]
+  type MapOfStrings = js.Dictionary[String]
   type ModelPredictionMap = js.Dictionary[Float]
   type NameList = js.Array[String]
   type NonEmptyListOfStrings = js.Array[String]
+  type OFIMetricDataPointsList = js.Array[OFIMetricDataPoint]
   type OutcomeList = js.Array[Outcome]
   type OutcomesMaxResults = Int
   type RuleDetailList = js.Array[RuleDetail]
   type RuleList = js.Array[Rule]
   type RulesMaxResults = Int
+  type TFIMetricDataPointsList = js.Array[TFIMetricDataPoint]
   type TagsMaxResults = Int
   type UseEventVariables = Boolean
   type VariableEntryList = js.Array[VariableEntry]
@@ -59,14 +72,16 @@ package object frauddetector {
   type eventTypesMaxResults = Int
   type fieldValidationMessageList = js.Array[FieldValidationMessage]
   type fileValidationMessageList = js.Array[FileValidationMessage]
+  type filterString = String
   type floatVersionString = String
   type fraudDetectorArn = String
   type iamRoleArn = String
   type identifier = String
   type labelList = js.Array[Label]
-  type labelMapper = js.Dictionary[NonEmptyListOfStrings]
+  type labelMapper = js.Dictionary[ListOfStrings]
   type labelsMaxResults = Int
   type listOfEntities = js.Array[Entity]
+  type listOfVariableImpactExplanations = js.Array[VariableImpactExplanation]
   type metricDataPointsList = js.Array[MetricDataPoint]
   type modelIdentifier = String
   type modelInputTemplate = String
@@ -76,6 +91,7 @@ package object frauddetector {
   type ruleExpression = String
   type s3BucketLocation = String
   type sageMakerEndpointIdentifier = String
+  type sensitiveString = String
   type tagKey = String
   type tagKeyList = js.Array[tagKey]
   type tagList = js.Array[Tag]
@@ -124,6 +140,7 @@ package object frauddetector {
     @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] = service.getEntityTypes(params).promise().toFuture
     @inline def getEventFuture(params: GetEventRequest): Future[GetEventResult] = service.getEvent(params).promise().toFuture
     @inline def getEventPredictionFuture(params: GetEventPredictionRequest): Future[GetEventPredictionResult] = service.getEventPrediction(params).promise().toFuture
+    @inline def getEventPredictionMetadataFuture(params: GetEventPredictionMetadataRequest): Future[GetEventPredictionMetadataResult] = service.getEventPredictionMetadata(params).promise().toFuture
     @inline def getEventTypesFuture(params: GetEventTypesRequest): Future[GetEventTypesResult] = service.getEventTypes(params).promise().toFuture
     @inline def getExternalModelsFuture(params: GetExternalModelsRequest): Future[GetExternalModelsResult] = service.getExternalModels(params).promise().toFuture
     @inline def getKMSEncryptionKeyFuture(): Future[GetKMSEncryptionKeyResult] = service.getKMSEncryptionKey().promise().toFuture
@@ -133,6 +150,7 @@ package object frauddetector {
     @inline def getOutcomesFuture(params: GetOutcomesRequest): Future[GetOutcomesResult] = service.getOutcomes(params).promise().toFuture
     @inline def getRulesFuture(params: GetRulesRequest): Future[GetRulesResult] = service.getRules(params).promise().toFuture
     @inline def getVariablesFuture(params: GetVariablesRequest): Future[GetVariablesResult] = service.getVariables(params).promise().toFuture
+    @inline def listEventPredictionsFuture(params: ListEventPredictionsRequest): Future[ListEventPredictionsResult] = service.listEventPredictions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
     @inline def putDetectorFuture(params: PutDetectorRequest): Future[PutDetectorResult] = service.putDetector(params).promise().toFuture
     @inline def putEntityTypeFuture(params: PutEntityTypeRequest): Future[PutEntityTypeResult] = service.putEntityType(params).promise().toFuture
@@ -198,6 +216,7 @@ package object frauddetector {
     def getEntityTypes(params: GetEntityTypesRequest): Request[GetEntityTypesResult] = js.native
     def getEvent(params: GetEventRequest): Request[GetEventResult] = js.native
     def getEventPrediction(params: GetEventPredictionRequest): Request[GetEventPredictionResult] = js.native
+    def getEventPredictionMetadata(params: GetEventPredictionMetadataRequest): Request[GetEventPredictionMetadataResult] = js.native
     def getEventTypes(params: GetEventTypesRequest): Request[GetEventTypesResult] = js.native
     def getExternalModels(params: GetExternalModelsRequest): Request[GetExternalModelsResult] = js.native
     def getKMSEncryptionKey(): Request[GetKMSEncryptionKeyResult] = js.native
@@ -207,6 +226,7 @@ package object frauddetector {
     def getOutcomes(params: GetOutcomesRequest): Request[GetOutcomesResult] = js.native
     def getRules(params: GetRulesRequest): Request[GetRulesResult] = js.native
     def getVariables(params: GetVariablesRequest): Request[GetVariablesResult] = js.native
+    def listEventPredictions(params: ListEventPredictionsRequest): Request[ListEventPredictionsResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
     def putDetector(params: PutDetectorRequest): Request[PutDetectorResult] = js.native
     def putEntityType(params: PutEntityTypeRequest): Request[PutEntityTypeResult] = js.native
@@ -232,6 +252,136 @@ package object frauddetector {
   object FraudDetector {
     @inline implicit def toOps(service: FraudDetector): FraudDetectorOps = {
       new FraudDetectorOps(service)
+    }
+  }
+
+  /** The Account Takeover Insights (ATI) model performance metrics data points.
+    */
+  @js.native
+  trait ATIMetricDataPoint extends js.Object {
+    var adr: js.UndefOr[Float]
+    var atodr: js.UndefOr[Float]
+    var cr: js.UndefOr[Float]
+    var threshold: js.UndefOr[Float]
+  }
+
+  object ATIMetricDataPoint {
+    @inline
+    def apply(
+        adr: js.UndefOr[Float] = js.undefined,
+        atodr: js.UndefOr[Float] = js.undefined,
+        cr: js.UndefOr[Float] = js.undefined,
+        threshold: js.UndefOr[Float] = js.undefined
+    ): ATIMetricDataPoint = {
+      val __obj = js.Dynamic.literal()
+      adr.foreach(__v => __obj.updateDynamic("adr")(__v.asInstanceOf[js.Any]))
+      atodr.foreach(__v => __obj.updateDynamic("atodr")(__v.asInstanceOf[js.Any]))
+      cr.foreach(__v => __obj.updateDynamic("cr")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ATIMetricDataPoint]
+    }
+  }
+
+  /** The Account Takeover Insights (ATI) model performance score.
+    */
+  @js.native
+  trait ATIModelPerformance extends js.Object {
+    var asi: js.UndefOr[Float]
+  }
+
+  object ATIModelPerformance {
+    @inline
+    def apply(
+        asi: js.UndefOr[Float] = js.undefined
+    ): ATIModelPerformance = {
+      val __obj = js.Dynamic.literal()
+      asi.foreach(__v => __obj.updateDynamic("asi")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ATIModelPerformance]
+    }
+  }
+
+  /** The Account Takeover Insights (ATI) model training metric details.
+    */
+  @js.native
+  trait ATITrainingMetricsValue extends js.Object {
+    var metricDataPoints: js.UndefOr[ATIMetricDataPointsList]
+    var modelPerformance: js.UndefOr[ATIModelPerformance]
+  }
+
+  object ATITrainingMetricsValue {
+    @inline
+    def apply(
+        metricDataPoints: js.UndefOr[ATIMetricDataPointsList] = js.undefined,
+        modelPerformance: js.UndefOr[ATIModelPerformance] = js.undefined
+    ): ATITrainingMetricsValue = {
+      val __obj = js.Dynamic.literal()
+      metricDataPoints.foreach(__v => __obj.updateDynamic("metricDataPoints")(__v.asInstanceOf[js.Any]))
+      modelPerformance.foreach(__v => __obj.updateDynamic("modelPerformance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ATITrainingMetricsValue]
+    }
+  }
+
+  /** The log odds metric details. Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+    */
+  @js.native
+  trait AggregatedLogOddsMetric extends js.Object {
+    var aggregatedVariablesImportance: Float
+    var variableNames: ListOfStrings
+  }
+
+  object AggregatedLogOddsMetric {
+    @inline
+    def apply(
+        aggregatedVariablesImportance: Float,
+        variableNames: ListOfStrings
+    ): AggregatedLogOddsMetric = {
+      val __obj = js.Dynamic.literal(
+        "aggregatedVariablesImportance" -> aggregatedVariablesImportance.asInstanceOf[js.Any],
+        "variableNames" -> variableNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AggregatedLogOddsMetric]
+    }
+  }
+
+  /** The details of the impact of aggregated variables on the prediction score. Account Takeover Insights (ATI) model uses the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, the model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+    */
+  @js.native
+  trait AggregatedVariablesImpactExplanation extends js.Object {
+    var eventVariableNames: js.UndefOr[ListOfStrings]
+    var logOddsImpact: js.UndefOr[Float]
+    var relativeImpact: js.UndefOr[String]
+  }
+
+  object AggregatedVariablesImpactExplanation {
+    @inline
+    def apply(
+        eventVariableNames: js.UndefOr[ListOfStrings] = js.undefined,
+        logOddsImpact: js.UndefOr[Float] = js.undefined,
+        relativeImpact: js.UndefOr[String] = js.undefined
+    ): AggregatedVariablesImpactExplanation = {
+      val __obj = js.Dynamic.literal()
+      eventVariableNames.foreach(__v => __obj.updateDynamic("eventVariableNames")(__v.asInstanceOf[js.Any]))
+      logOddsImpact.foreach(__v => __obj.updateDynamic("logOddsImpact")(__v.asInstanceOf[js.Any]))
+      relativeImpact.foreach(__v => __obj.updateDynamic("relativeImpact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregatedVariablesImpactExplanation]
+    }
+  }
+
+  /** The details of the relative importance of the aggregated variables. Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+    */
+  @js.native
+  trait AggregatedVariablesImportanceMetrics extends js.Object {
+    var logOddsMetrics: js.UndefOr[ListOfAggregatedLogOddsMetrics]
+  }
+
+  object AggregatedVariablesImportanceMetrics {
+    @inline
+    def apply(
+        logOddsMetrics: js.UndefOr[ListOfAggregatedLogOddsMetrics] = js.undefined
+    ): AggregatedVariablesImportanceMetrics = {
+      val __obj = js.Dynamic.literal()
+      logOddsMetrics.foreach(__v => __obj.updateDynamic("logOddsMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AggregatedVariablesImportanceMetrics]
     }
   }
 
@@ -879,7 +1029,7 @@ package object frauddetector {
     }
   }
 
-  /** The model training validation messages.
+  /** The model training data validation metrics.
     */
   @js.native
   trait DataValidationMetrics extends js.Object {
@@ -1555,6 +1705,96 @@ package object frauddetector {
     }
   }
 
+  /** The details of the external (Amazon Sagemaker) model evaluated for generating predictions.
+    */
+  @js.native
+  trait EvaluatedExternalModel extends js.Object {
+    var inputVariables: js.UndefOr[MapOfStrings]
+    var modelEndpoint: js.UndefOr[String]
+    var outputVariables: js.UndefOr[MapOfStrings]
+    var useEventVariables: js.UndefOr[Boolean]
+  }
+
+  object EvaluatedExternalModel {
+    @inline
+    def apply(
+        inputVariables: js.UndefOr[MapOfStrings] = js.undefined,
+        modelEndpoint: js.UndefOr[String] = js.undefined,
+        outputVariables: js.UndefOr[MapOfStrings] = js.undefined,
+        useEventVariables: js.UndefOr[Boolean] = js.undefined
+    ): EvaluatedExternalModel = {
+      val __obj = js.Dynamic.literal()
+      inputVariables.foreach(__v => __obj.updateDynamic("inputVariables")(__v.asInstanceOf[js.Any]))
+      modelEndpoint.foreach(__v => __obj.updateDynamic("modelEndpoint")(__v.asInstanceOf[js.Any]))
+      outputVariables.foreach(__v => __obj.updateDynamic("outputVariables")(__v.asInstanceOf[js.Any]))
+      useEventVariables.foreach(__v => __obj.updateDynamic("useEventVariables")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluatedExternalModel]
+    }
+  }
+
+  /** The model version evaluated for generating prediction.
+    */
+  @js.native
+  trait EvaluatedModelVersion extends js.Object {
+    var evaluations: js.UndefOr[ListOfModelVersionEvaluations]
+    var modelId: js.UndefOr[String]
+    var modelType: js.UndefOr[String]
+    var modelVersion: js.UndefOr[String]
+  }
+
+  object EvaluatedModelVersion {
+    @inline
+    def apply(
+        evaluations: js.UndefOr[ListOfModelVersionEvaluations] = js.undefined,
+        modelId: js.UndefOr[String] = js.undefined,
+        modelType: js.UndefOr[String] = js.undefined,
+        modelVersion: js.UndefOr[String] = js.undefined
+    ): EvaluatedModelVersion = {
+      val __obj = js.Dynamic.literal()
+      evaluations.foreach(__v => __obj.updateDynamic("evaluations")(__v.asInstanceOf[js.Any]))
+      modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
+      modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
+      modelVersion.foreach(__v => __obj.updateDynamic("modelVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluatedModelVersion]
+    }
+  }
+
+  /** The details of the rule used for evaluating variable values.
+    */
+  @js.native
+  trait EvaluatedRule extends js.Object {
+    var evaluated: js.UndefOr[Boolean]
+    var expression: js.UndefOr[sensitiveString]
+    var expressionWithValues: js.UndefOr[sensitiveString]
+    var matched: js.UndefOr[Boolean]
+    var outcomes: js.UndefOr[ListOfStrings]
+    var ruleId: js.UndefOr[identifier]
+    var ruleVersion: js.UndefOr[wholeNumberVersionString]
+  }
+
+  object EvaluatedRule {
+    @inline
+    def apply(
+        evaluated: js.UndefOr[Boolean] = js.undefined,
+        expression: js.UndefOr[sensitiveString] = js.undefined,
+        expressionWithValues: js.UndefOr[sensitiveString] = js.undefined,
+        matched: js.UndefOr[Boolean] = js.undefined,
+        outcomes: js.UndefOr[ListOfStrings] = js.undefined,
+        ruleId: js.UndefOr[identifier] = js.undefined,
+        ruleVersion: js.UndefOr[wholeNumberVersionString] = js.undefined
+    ): EvaluatedRule = {
+      val __obj = js.Dynamic.literal()
+      evaluated.foreach(__v => __obj.updateDynamic("evaluated")(__v.asInstanceOf[js.Any]))
+      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
+      expressionWithValues.foreach(__v => __obj.updateDynamic("expressionWithValues")(__v.asInstanceOf[js.Any]))
+      matched.foreach(__v => __obj.updateDynamic("matched")(__v.asInstanceOf[js.Any]))
+      outcomes.foreach(__v => __obj.updateDynamic("outcomes")(__v.asInstanceOf[js.Any]))
+      ruleId.foreach(__v => __obj.updateDynamic("ruleId")(__v.asInstanceOf[js.Any]))
+      ruleVersion.foreach(__v => __obj.updateDynamic("ruleVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvaluatedRule]
+    }
+  }
+
   /** The event details.
     */
   @js.native
@@ -1588,6 +1828,39 @@ package object frauddetector {
       eventVariables.foreach(__v => __obj.updateDynamic("eventVariables")(__v.asInstanceOf[js.Any]))
       labelTimestamp.foreach(__v => __obj.updateDynamic("labelTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
+    }
+  }
+
+  /** Information about the summary of an event prediction.
+    */
+  @js.native
+  trait EventPredictionSummary extends js.Object {
+    var detectorId: js.UndefOr[identifier]
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
+    var eventId: js.UndefOr[identifier]
+    var eventTimestamp: js.UndefOr[time]
+    var eventTypeName: js.UndefOr[identifier]
+    var predictionTimestamp: js.UndefOr[time]
+  }
+
+  object EventPredictionSummary {
+    @inline
+    def apply(
+        detectorId: js.UndefOr[identifier] = js.undefined,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
+        eventId: js.UndefOr[identifier] = js.undefined,
+        eventTimestamp: js.UndefOr[time] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        predictionTimestamp: js.UndefOr[time] = js.undefined
+    ): EventPredictionSummary = {
+      val __obj = js.Dynamic.literal()
+      detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
+      detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      eventTimestamp.foreach(__v => __obj.updateDynamic("eventTimestamp")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      predictionTimestamp.foreach(__v => __obj.updateDynamic("predictionTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventPredictionSummary]
     }
   }
 
@@ -1633,6 +1906,30 @@ package object frauddetector {
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventType]
+    }
+  }
+
+  /** Information about the summary of an event variable that was evaluated for generating prediction.
+    */
+  @js.native
+  trait EventVariableSummary extends js.Object {
+    var name: js.UndefOr[sensitiveString]
+    var source: js.UndefOr[sensitiveString]
+    var value: js.UndefOr[sensitiveString]
+  }
+
+  object EventVariableSummary {
+    @inline
+    def apply(
+        name: js.UndefOr[sensitiveString] = js.undefined,
+        source: js.UndefOr[sensitiveString] = js.undefined,
+        value: js.UndefOr[sensitiveString] = js.undefined
+    ): EventVariableSummary = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventVariableSummary]
     }
   }
 
@@ -1793,6 +2090,24 @@ package object frauddetector {
       title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileValidationMessage]
+    }
+  }
+
+  /** A conditional statement for filtering a list of past predictions.
+    */
+  @js.native
+  trait FilterCondition extends js.Object {
+    var value: js.UndefOr[filterString]
+  }
+
+  object FilterCondition {
+    @inline
+    def apply(
+        value: js.UndefOr[filterString] = js.undefined
+    ): FilterCondition = {
+      val __obj = js.Dynamic.literal()
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterCondition]
     }
   }
 
@@ -2059,6 +2374,93 @@ package object frauddetector {
       entityTypes.foreach(__v => __obj.updateDynamic("entityTypes")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntityTypesResult]
+    }
+  }
+
+  @js.native
+  trait GetEventPredictionMetadataRequest extends js.Object {
+    var detectorId: identifier
+    var detectorVersionId: wholeNumberVersionString
+    var eventId: identifier
+    var eventTypeName: identifier
+    var predictionTimestamp: time
+  }
+
+  object GetEventPredictionMetadataRequest {
+    @inline
+    def apply(
+        detectorId: identifier,
+        detectorVersionId: wholeNumberVersionString,
+        eventId: identifier,
+        eventTypeName: identifier,
+        predictionTimestamp: time
+    ): GetEventPredictionMetadataRequest = {
+      val __obj = js.Dynamic.literal(
+        "detectorId" -> detectorId.asInstanceOf[js.Any],
+        "detectorVersionId" -> detectorVersionId.asInstanceOf[js.Any],
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "predictionTimestamp" -> predictionTimestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetEventPredictionMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventPredictionMetadataResult extends js.Object {
+    var detectorId: js.UndefOr[identifier]
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
+    var detectorVersionStatus: js.UndefOr[String]
+    var entityId: js.UndefOr[String]
+    var entityType: js.UndefOr[String]
+    var evaluatedExternalModels: js.UndefOr[ListOfEvaluatedExternalModels]
+    var evaluatedModelVersions: js.UndefOr[ListOfEvaluatedModelVersions]
+    var eventId: js.UndefOr[identifier]
+    var eventTimestamp: js.UndefOr[time]
+    var eventTypeName: js.UndefOr[identifier]
+    var eventVariables: js.UndefOr[ListOfEventVariableSummaries]
+    var outcomes: js.UndefOr[ListOfStrings]
+    var predictionTimestamp: js.UndefOr[time]
+    var ruleExecutionMode: js.UndefOr[RuleExecutionMode]
+    var rules: js.UndefOr[EvaluatedRuleList]
+  }
+
+  object GetEventPredictionMetadataResult {
+    @inline
+    def apply(
+        detectorId: js.UndefOr[identifier] = js.undefined,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
+        detectorVersionStatus: js.UndefOr[String] = js.undefined,
+        entityId: js.UndefOr[String] = js.undefined,
+        entityType: js.UndefOr[String] = js.undefined,
+        evaluatedExternalModels: js.UndefOr[ListOfEvaluatedExternalModels] = js.undefined,
+        evaluatedModelVersions: js.UndefOr[ListOfEvaluatedModelVersions] = js.undefined,
+        eventId: js.UndefOr[identifier] = js.undefined,
+        eventTimestamp: js.UndefOr[time] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        eventVariables: js.UndefOr[ListOfEventVariableSummaries] = js.undefined,
+        outcomes: js.UndefOr[ListOfStrings] = js.undefined,
+        predictionTimestamp: js.UndefOr[time] = js.undefined,
+        ruleExecutionMode: js.UndefOr[RuleExecutionMode] = js.undefined,
+        rules: js.UndefOr[EvaluatedRuleList] = js.undefined
+    ): GetEventPredictionMetadataResult = {
+      val __obj = js.Dynamic.literal()
+      detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
+      detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
+      detectorVersionStatus.foreach(__v => __obj.updateDynamic("detectorVersionStatus")(__v.asInstanceOf[js.Any]))
+      entityId.foreach(__v => __obj.updateDynamic("entityId")(__v.asInstanceOf[js.Any]))
+      entityType.foreach(__v => __obj.updateDynamic("entityType")(__v.asInstanceOf[js.Any]))
+      evaluatedExternalModels.foreach(__v => __obj.updateDynamic("evaluatedExternalModels")(__v.asInstanceOf[js.Any]))
+      evaluatedModelVersions.foreach(__v => __obj.updateDynamic("evaluatedModelVersions")(__v.asInstanceOf[js.Any]))
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      eventTimestamp.foreach(__v => __obj.updateDynamic("eventTimestamp")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      eventVariables.foreach(__v => __obj.updateDynamic("eventVariables")(__v.asInstanceOf[js.Any]))
+      outcomes.foreach(__v => __obj.updateDynamic("outcomes")(__v.asInstanceOf[js.Any]))
+      predictionTimestamp.foreach(__v => __obj.updateDynamic("predictionTimestamp")(__v.asInstanceOf[js.Any]))
+      ruleExecutionMode.foreach(__v => __obj.updateDynamic("ruleExecutionMode")(__v.asInstanceOf[js.Any]))
+      rules.foreach(__v => __obj.updateDynamic("rules")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventPredictionMetadataResult]
     }
   }
 
@@ -2659,22 +3061,73 @@ package object frauddetector {
     */
   @js.native
   trait LabelSchema extends js.Object {
-    var labelMapper: labelMapper
+    var labelMapper: js.UndefOr[labelMapper]
     var unlabeledEventsTreatment: js.UndefOr[UnlabeledEventsTreatment]
   }
 
   object LabelSchema {
     @inline
     def apply(
-        labelMapper: labelMapper,
+        labelMapper: js.UndefOr[labelMapper] = js.undefined,
         unlabeledEventsTreatment: js.UndefOr[UnlabeledEventsTreatment] = js.undefined
     ): LabelSchema = {
-      val __obj = js.Dynamic.literal(
-        "labelMapper" -> labelMapper.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      labelMapper.foreach(__v => __obj.updateDynamic("labelMapper")(__v.asInstanceOf[js.Any]))
       unlabeledEventsTreatment.foreach(__v => __obj.updateDynamic("unlabeledEventsTreatment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelSchema]
+    }
+  }
+
+  @js.native
+  trait ListEventPredictionsRequest extends js.Object {
+    var detectorId: js.UndefOr[FilterCondition]
+    var detectorVersionId: js.UndefOr[FilterCondition]
+    var eventId: js.UndefOr[FilterCondition]
+    var eventType: js.UndefOr[FilterCondition]
+    var maxResults: js.UndefOr[EventPredictionsMaxResults]
+    var nextToken: js.UndefOr[String]
+    var predictionTimeRange: js.UndefOr[PredictionTimeRange]
+  }
+
+  object ListEventPredictionsRequest {
+    @inline
+    def apply(
+        detectorId: js.UndefOr[FilterCondition] = js.undefined,
+        detectorVersionId: js.UndefOr[FilterCondition] = js.undefined,
+        eventId: js.UndefOr[FilterCondition] = js.undefined,
+        eventType: js.UndefOr[FilterCondition] = js.undefined,
+        maxResults: js.UndefOr[EventPredictionsMaxResults] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined,
+        predictionTimeRange: js.UndefOr[PredictionTimeRange] = js.undefined
+    ): ListEventPredictionsRequest = {
+      val __obj = js.Dynamic.literal()
+      detectorId.foreach(__v => __obj.updateDynamic("detectorId")(__v.asInstanceOf[js.Any]))
+      detectorVersionId.foreach(__v => __obj.updateDynamic("detectorVersionId")(__v.asInstanceOf[js.Any]))
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      predictionTimeRange.foreach(__v => __obj.updateDynamic("predictionTimeRange")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventPredictionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEventPredictionsResult extends js.Object {
+    var eventPredictionSummaries: js.UndefOr[ListOfEventPredictionSummaries]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListEventPredictionsResult {
+    @inline
+    def apply(
+        eventPredictionSummaries: js.UndefOr[ListOfEventPredictionSummaries] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListEventPredictionsResult = {
+      val __obj = js.Dynamic.literal()
+      eventPredictionSummaries.foreach(__v => __obj.updateDynamic("eventPredictionSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventPredictionsResult]
     }
   }
 
@@ -2954,6 +3407,7 @@ package object frauddetector {
     var trainingDataSchema: js.UndefOr[TrainingDataSchema]
     var trainingDataSource: js.UndefOr[TrainingDataSourceEnum]
     var trainingResult: js.UndefOr[TrainingResult]
+    var trainingResultV2: js.UndefOr[TrainingResultV2]
   }
 
   object ModelVersionDetail {
@@ -2970,7 +3424,8 @@ package object frauddetector {
         status: js.UndefOr[String] = js.undefined,
         trainingDataSchema: js.UndefOr[TrainingDataSchema] = js.undefined,
         trainingDataSource: js.UndefOr[TrainingDataSourceEnum] = js.undefined,
-        trainingResult: js.UndefOr[TrainingResult] = js.undefined
+        trainingResult: js.UndefOr[TrainingResult] = js.undefined,
+        trainingResultV2: js.UndefOr[TrainingResultV2] = js.undefined
     ): ModelVersionDetail = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -2985,7 +3440,98 @@ package object frauddetector {
       trainingDataSchema.foreach(__v => __obj.updateDynamic("trainingDataSchema")(__v.asInstanceOf[js.Any]))
       trainingDataSource.foreach(__v => __obj.updateDynamic("trainingDataSource")(__v.asInstanceOf[js.Any]))
       trainingResult.foreach(__v => __obj.updateDynamic("trainingResult")(__v.asInstanceOf[js.Any]))
+      trainingResultV2.foreach(__v => __obj.updateDynamic("trainingResultV2")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelVersionDetail]
+    }
+  }
+
+  /** The model version evalutions.
+    */
+  @js.native
+  trait ModelVersionEvaluation extends js.Object {
+    var evaluationScore: js.UndefOr[String]
+    var outputVariableName: js.UndefOr[String]
+    var predictionExplanations: js.UndefOr[PredictionExplanations]
+  }
+
+  object ModelVersionEvaluation {
+    @inline
+    def apply(
+        evaluationScore: js.UndefOr[String] = js.undefined,
+        outputVariableName: js.UndefOr[String] = js.undefined,
+        predictionExplanations: js.UndefOr[PredictionExplanations] = js.undefined
+    ): ModelVersionEvaluation = {
+      val __obj = js.Dynamic.literal()
+      evaluationScore.foreach(__v => __obj.updateDynamic("evaluationScore")(__v.asInstanceOf[js.Any]))
+      outputVariableName.foreach(__v => __obj.updateDynamic("outputVariableName")(__v.asInstanceOf[js.Any]))
+      predictionExplanations.foreach(__v => __obj.updateDynamic("predictionExplanations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelVersionEvaluation]
+    }
+  }
+
+  /** The Online Fraud Insights (OFI) model performance metrics data points.
+    */
+  @js.native
+  trait OFIMetricDataPoint extends js.Object {
+    var fpr: js.UndefOr[Float]
+    var precision: js.UndefOr[Float]
+    var threshold: js.UndefOr[Float]
+    var tpr: js.UndefOr[Float]
+  }
+
+  object OFIMetricDataPoint {
+    @inline
+    def apply(
+        fpr: js.UndefOr[Float] = js.undefined,
+        precision: js.UndefOr[Float] = js.undefined,
+        threshold: js.UndefOr[Float] = js.undefined,
+        tpr: js.UndefOr[Float] = js.undefined
+    ): OFIMetricDataPoint = {
+      val __obj = js.Dynamic.literal()
+      fpr.foreach(__v => __obj.updateDynamic("fpr")(__v.asInstanceOf[js.Any]))
+      precision.foreach(__v => __obj.updateDynamic("precision")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      tpr.foreach(__v => __obj.updateDynamic("tpr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OFIMetricDataPoint]
+    }
+  }
+
+  /** The Online Fraud Insights (OFI) model performance score.
+    */
+  @js.native
+  trait OFIModelPerformance extends js.Object {
+    var auc: js.UndefOr[Float]
+  }
+
+  object OFIModelPerformance {
+    @inline
+    def apply(
+        auc: js.UndefOr[Float] = js.undefined
+    ): OFIModelPerformance = {
+      val __obj = js.Dynamic.literal()
+      auc.foreach(__v => __obj.updateDynamic("auc")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OFIModelPerformance]
+    }
+  }
+
+  /** The Online Fraud Insights (OFI) model training metric details.
+    */
+  @js.native
+  trait OFITrainingMetricsValue extends js.Object {
+    var metricDataPoints: js.UndefOr[OFIMetricDataPointsList]
+    var modelPerformance: js.UndefOr[OFIModelPerformance]
+  }
+
+  object OFITrainingMetricsValue {
+    @inline
+    def apply(
+        metricDataPoints: js.UndefOr[OFIMetricDataPointsList] = js.undefined,
+        modelPerformance: js.UndefOr[OFIModelPerformance] = js.undefined
+    ): OFITrainingMetricsValue = {
+      val __obj = js.Dynamic.literal()
+      metricDataPoints.foreach(__v => __obj.updateDynamic("metricDataPoints")(__v.asInstanceOf[js.Any]))
+      modelPerformance.foreach(__v => __obj.updateDynamic("modelPerformance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OFITrainingMetricsValue]
     }
   }
 
@@ -3016,6 +3562,49 @@ package object frauddetector {
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Outcome]
+    }
+  }
+
+  /** The prediction explanations that provide insight into how each event variable impacted the model version's fraud prediction score.
+    */
+  @js.native
+  trait PredictionExplanations extends js.Object {
+    var aggregatedVariablesImpactExplanations: js.UndefOr[ListOfAggregatedVariablesImpactExplanations]
+    var variableImpactExplanations: js.UndefOr[listOfVariableImpactExplanations]
+  }
+
+  object PredictionExplanations {
+    @inline
+    def apply(
+        aggregatedVariablesImpactExplanations: js.UndefOr[ListOfAggregatedVariablesImpactExplanations] = js.undefined,
+        variableImpactExplanations: js.UndefOr[listOfVariableImpactExplanations] = js.undefined
+    ): PredictionExplanations = {
+      val __obj = js.Dynamic.literal()
+      aggregatedVariablesImpactExplanations.foreach(__v => __obj.updateDynamic("aggregatedVariablesImpactExplanations")(__v.asInstanceOf[js.Any]))
+      variableImpactExplanations.foreach(__v => __obj.updateDynamic("variableImpactExplanations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictionExplanations]
+    }
+  }
+
+  /** The time period for when the predictions were generated.
+    */
+  @js.native
+  trait PredictionTimeRange extends js.Object {
+    var endTime: time
+    var startTime: time
+  }
+
+  object PredictionTimeRange {
+    @inline
+    def apply(
+        endTime: time,
+        startTime: time
+    ): PredictionTimeRange = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PredictionTimeRange]
     }
   }
 
@@ -3422,6 +4011,72 @@ package object frauddetector {
     }
   }
 
+  /** The performance metrics data points for Transaction Fraud Insights (TFI) model.
+    */
+  @js.native
+  trait TFIMetricDataPoint extends js.Object {
+    var fpr: js.UndefOr[Float]
+    var precision: js.UndefOr[Float]
+    var threshold: js.UndefOr[Float]
+    var tpr: js.UndefOr[Float]
+  }
+
+  object TFIMetricDataPoint {
+    @inline
+    def apply(
+        fpr: js.UndefOr[Float] = js.undefined,
+        precision: js.UndefOr[Float] = js.undefined,
+        threshold: js.UndefOr[Float] = js.undefined,
+        tpr: js.UndefOr[Float] = js.undefined
+    ): TFIMetricDataPoint = {
+      val __obj = js.Dynamic.literal()
+      fpr.foreach(__v => __obj.updateDynamic("fpr")(__v.asInstanceOf[js.Any]))
+      precision.foreach(__v => __obj.updateDynamic("precision")(__v.asInstanceOf[js.Any]))
+      threshold.foreach(__v => __obj.updateDynamic("threshold")(__v.asInstanceOf[js.Any]))
+      tpr.foreach(__v => __obj.updateDynamic("tpr")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TFIMetricDataPoint]
+    }
+  }
+
+  /** The Transaction Fraud Insights (TFI) model performance score.
+    */
+  @js.native
+  trait TFIModelPerformance extends js.Object {
+    var auc: js.UndefOr[Float]
+  }
+
+  object TFIModelPerformance {
+    @inline
+    def apply(
+        auc: js.UndefOr[Float] = js.undefined
+    ): TFIModelPerformance = {
+      val __obj = js.Dynamic.literal()
+      auc.foreach(__v => __obj.updateDynamic("auc")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TFIModelPerformance]
+    }
+  }
+
+  /** The Transaction Fraud Insights (TFI) model training metric details.
+    */
+  @js.native
+  trait TFITrainingMetricsValue extends js.Object {
+    var metricDataPoints: js.UndefOr[TFIMetricDataPointsList]
+    var modelPerformance: js.UndefOr[TFIModelPerformance]
+  }
+
+  object TFITrainingMetricsValue {
+    @inline
+    def apply(
+        metricDataPoints: js.UndefOr[TFIMetricDataPointsList] = js.undefined,
+        modelPerformance: js.UndefOr[TFIModelPerformance] = js.undefined
+    ): TFITrainingMetricsValue = {
+      val __obj = js.Dynamic.literal()
+      metricDataPoints.foreach(__v => __obj.updateDynamic("metricDataPoints")(__v.asInstanceOf[js.Any]))
+      modelPerformance.foreach(__v => __obj.updateDynamic("modelPerformance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TFITrainingMetricsValue]
+    }
+  }
+
   /** A key and value pair.
     */
   @js.native
@@ -3479,20 +4134,21 @@ package object frauddetector {
     */
   @js.native
   trait TrainingDataSchema extends js.Object {
-    var labelSchema: LabelSchema
     var modelVariables: ListOfStrings
+    var labelSchema: js.UndefOr[LabelSchema]
   }
 
   object TrainingDataSchema {
     @inline
     def apply(
-        labelSchema: LabelSchema,
-        modelVariables: ListOfStrings
+        modelVariables: ListOfStrings,
+        labelSchema: js.UndefOr[LabelSchema] = js.undefined
     ): TrainingDataSchema = {
       val __obj = js.Dynamic.literal(
-        "labelSchema" -> labelSchema.asInstanceOf[js.Any],
         "modelVariables" -> modelVariables.asInstanceOf[js.Any]
       )
+
+      labelSchema.foreach(__v => __obj.updateDynamic("labelSchema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingDataSchema]
     }
   }
@@ -3518,6 +4174,30 @@ package object frauddetector {
     }
   }
 
+  /** The training metrics details.
+    */
+  @js.native
+  trait TrainingMetricsV2 extends js.Object {
+    var ati: js.UndefOr[ATITrainingMetricsValue]
+    var ofi: js.UndefOr[OFITrainingMetricsValue]
+    var tfi: js.UndefOr[TFITrainingMetricsValue]
+  }
+
+  object TrainingMetricsV2 {
+    @inline
+    def apply(
+        ati: js.UndefOr[ATITrainingMetricsValue] = js.undefined,
+        ofi: js.UndefOr[OFITrainingMetricsValue] = js.undefined,
+        tfi: js.UndefOr[TFITrainingMetricsValue] = js.undefined
+    ): TrainingMetricsV2 = {
+      val __obj = js.Dynamic.literal()
+      ati.foreach(__v => __obj.updateDynamic("ati")(__v.asInstanceOf[js.Any]))
+      ofi.foreach(__v => __obj.updateDynamic("ofi")(__v.asInstanceOf[js.Any]))
+      tfi.foreach(__v => __obj.updateDynamic("tfi")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingMetricsV2]
+    }
+  }
+
   /** The training result details.
     */
   @js.native
@@ -3539,6 +4219,33 @@ package object frauddetector {
       trainingMetrics.foreach(__v => __obj.updateDynamic("trainingMetrics")(__v.asInstanceOf[js.Any]))
       variableImportanceMetrics.foreach(__v => __obj.updateDynamic("variableImportanceMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingResult]
+    }
+  }
+
+  /** The training result details.
+    */
+  @js.native
+  trait TrainingResultV2 extends js.Object {
+    var aggregatedVariablesImportanceMetrics: js.UndefOr[AggregatedVariablesImportanceMetrics]
+    var dataValidationMetrics: js.UndefOr[DataValidationMetrics]
+    var trainingMetricsV2: js.UndefOr[TrainingMetricsV2]
+    var variableImportanceMetrics: js.UndefOr[VariableImportanceMetrics]
+  }
+
+  object TrainingResultV2 {
+    @inline
+    def apply(
+        aggregatedVariablesImportanceMetrics: js.UndefOr[AggregatedVariablesImportanceMetrics] = js.undefined,
+        dataValidationMetrics: js.UndefOr[DataValidationMetrics] = js.undefined,
+        trainingMetricsV2: js.UndefOr[TrainingMetricsV2] = js.undefined,
+        variableImportanceMetrics: js.UndefOr[VariableImportanceMetrics] = js.undefined
+    ): TrainingResultV2 = {
+      val __obj = js.Dynamic.literal()
+      aggregatedVariablesImportanceMetrics.foreach(__v => __obj.updateDynamic("aggregatedVariablesImportanceMetrics")(__v.asInstanceOf[js.Any]))
+      dataValidationMetrics.foreach(__v => __obj.updateDynamic("dataValidationMetrics")(__v.asInstanceOf[js.Any]))
+      trainingMetricsV2.foreach(__v => __obj.updateDynamic("trainingMetricsV2")(__v.asInstanceOf[js.Any]))
+      variableImportanceMetrics.foreach(__v => __obj.updateDynamic("variableImportanceMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrainingResultV2]
     }
   }
 
@@ -4045,6 +4752,30 @@ package object frauddetector {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       variableType.foreach(__v => __obj.updateDynamic("variableType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VariableEntry]
+    }
+  }
+
+  /** The details of the event variable's impact on the prediction score.
+    */
+  @js.native
+  trait VariableImpactExplanation extends js.Object {
+    var eventVariableName: js.UndefOr[String]
+    var logOddsImpact: js.UndefOr[Float]
+    var relativeImpact: js.UndefOr[String]
+  }
+
+  object VariableImpactExplanation {
+    @inline
+    def apply(
+        eventVariableName: js.UndefOr[String] = js.undefined,
+        logOddsImpact: js.UndefOr[Float] = js.undefined,
+        relativeImpact: js.UndefOr[String] = js.undefined
+    ): VariableImpactExplanation = {
+      val __obj = js.Dynamic.literal()
+      eventVariableName.foreach(__v => __obj.updateDynamic("eventVariableName")(__v.asInstanceOf[js.Any]))
+      logOddsImpact.foreach(__v => __obj.updateDynamic("logOddsImpact")(__v.asInstanceOf[js.Any]))
+      relativeImpact.foreach(__v => __obj.updateDynamic("relativeImpact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VariableImpactExplanation]
     }
   }
 

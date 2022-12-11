@@ -12,8 +12,9 @@ object APIName {
   val GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
   val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
   val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
+  val GET_IMAGES = "GET_IMAGES".asInstanceOf[APIName]
 
-  @inline def values: js.Array[APIName] = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
+  @inline def values: js.Array[APIName] = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP, GET_IMAGES)
 }
 
 @js.native
@@ -38,8 +39,9 @@ object ChannelRole {
 sealed trait ChannelType extends js.Any
 object ChannelType {
   val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
+  val FULL_MESH = "FULL_MESH".asInstanceOf[ChannelType]
 
-  @inline def values: js.Array[ChannelType] = js.Array(SINGLE_MASTER)
+  @inline def values: js.Array[ChannelType] = js.Array(SINGLE_MASTER, FULL_MESH)
 }
 
 @js.native
@@ -48,6 +50,41 @@ object ComparisonOperator {
   val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
   @inline def values: js.Array[ComparisonOperator] = js.Array(BEGINS_WITH)
+}
+
+@js.native
+sealed trait ConfigurationStatus extends js.Any
+object ConfigurationStatus {
+  val ENABLED = "ENABLED".asInstanceOf[ConfigurationStatus]
+  val DISABLED = "DISABLED".asInstanceOf[ConfigurationStatus]
+
+  @inline def values: js.Array[ConfigurationStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait Format extends js.Any
+object Format {
+  val JPEG = "JPEG".asInstanceOf[Format]
+  val PNG = "PNG".asInstanceOf[Format]
+
+  @inline def values: js.Array[Format] = js.Array(JPEG, PNG)
+}
+
+@js.native
+sealed trait FormatConfigKey extends js.Any
+object FormatConfigKey {
+  val JPEGQuality = "JPEGQuality".asInstanceOf[FormatConfigKey]
+
+  @inline def values: js.Array[FormatConfigKey] = js.Array(JPEGQuality)
+}
+
+@js.native
+sealed trait ImageSelectorType extends js.Any
+object ImageSelectorType {
+  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ImageSelectorType]
+  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ImageSelectorType]
+
+  @inline def values: js.Array[ImageSelectorType] = js.Array(SERVER_TIMESTAMP, PRODUCER_TIMESTAMP)
 }
 
 @js.native

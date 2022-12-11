@@ -9,9 +9,10 @@ object ActionValue {
   val BLOCK = "BLOCK".asInstanceOf[ActionValue]
   val COUNT = "COUNT".asInstanceOf[ActionValue]
   val CAPTCHA = "CAPTCHA".asInstanceOf[ActionValue]
+  val CHALLENGE = "CHALLENGE".asInstanceOf[ActionValue]
   val EXCLUDED_AS_COUNT = "EXCLUDED_AS_COUNT".asInstanceOf[ActionValue]
 
-  @inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, EXCLUDED_AS_COUNT)
+  @inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, CHALLENGE, EXCLUDED_AS_COUNT)
 }
 
 @js.native
@@ -289,6 +290,7 @@ object CountryCode {
   val YE = "YE".asInstanceOf[CountryCode]
   val ZM = "ZM".asInstanceOf[CountryCode]
   val ZW = "ZW".asInstanceOf[CountryCode]
+  val XK = "XK".asInstanceOf[CountryCode]
 
   @inline def values: js.Array[CountryCode] = js.Array(
     AF,
@@ -539,7 +541,8 @@ object CountryCode {
     EH,
     YE,
     ZM,
-    ZW
+    ZW,
+    XK
   )
 }
 
@@ -548,8 +551,10 @@ sealed trait FailureReason extends js.Any
 object FailureReason {
   val TOKEN_MISSING = "TOKEN_MISSING".asInstanceOf[FailureReason]
   val TOKEN_EXPIRED = "TOKEN_EXPIRED".asInstanceOf[FailureReason]
+  val TOKEN_INVALID = "TOKEN_INVALID".asInstanceOf[FailureReason]
+  val TOKEN_DOMAIN_MISMATCH = "TOKEN_DOMAIN_MISMATCH".asInstanceOf[FailureReason]
 
-  @inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED)
+  @inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED, TOKEN_INVALID, TOKEN_DOMAIN_MISMATCH)
 }
 
 @js.native
@@ -599,6 +604,15 @@ object IPAddressVersion {
 }
 
 @js.native
+sealed trait InspectionLevel extends js.Any
+object InspectionLevel {
+  val COMMON = "COMMON".asInstanceOf[InspectionLevel]
+  val TARGETED = "TARGETED".asInstanceOf[InspectionLevel]
+
+  @inline def values: js.Array[InspectionLevel] = js.Array(COMMON, TARGETED)
+}
+
+@js.native
 sealed trait JsonMatchScope extends js.Any
 object JsonMatchScope {
   val ALL = "ALL".asInstanceOf[JsonMatchScope]
@@ -615,6 +629,44 @@ object LabelMatchScope {
   val NAMESPACE = "NAMESPACE".asInstanceOf[LabelMatchScope]
 
   @inline def values: js.Array[LabelMatchScope] = js.Array(LABEL, NAMESPACE)
+}
+
+@js.native
+sealed trait MapMatchScope extends js.Any
+object MapMatchScope {
+  val ALL = "ALL".asInstanceOf[MapMatchScope]
+  val KEY = "KEY".asInstanceOf[MapMatchScope]
+  val VALUE = "VALUE".asInstanceOf[MapMatchScope]
+
+  @inline def values: js.Array[MapMatchScope] = js.Array(ALL, KEY, VALUE)
+}
+
+@js.native
+sealed trait OversizeHandling extends js.Any
+object OversizeHandling {
+  val CONTINUE = "CONTINUE".asInstanceOf[OversizeHandling]
+  val MATCH = "MATCH".asInstanceOf[OversizeHandling]
+  val NO_MATCH = "NO_MATCH".asInstanceOf[OversizeHandling]
+
+  @inline def values: js.Array[OversizeHandling] = js.Array(CONTINUE, MATCH, NO_MATCH)
+}
+
+@js.native
+sealed trait PayloadType extends js.Any
+object PayloadType {
+  val JSON = "JSON".asInstanceOf[PayloadType]
+  val FORM_ENCODED = "FORM_ENCODED".asInstanceOf[PayloadType]
+
+  @inline def values: js.Array[PayloadType] = js.Array(JSON, FORM_ENCODED)
+}
+
+@js.native
+sealed trait Platform extends js.Any
+object Platform {
+  val IOS = "IOS".asInstanceOf[Platform]
+  val ANDROID = "ANDROID".asInstanceOf[Platform]
+
+  @inline def values: js.Array[Platform] = js.Array(IOS, ANDROID)
 }
 
 @js.native
@@ -644,8 +696,9 @@ object ResourceType {
   val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ResourceType]
   val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
   val APPSYNC = "APPSYNC".asInstanceOf[ResourceType]
+  val COGNITO_USER_POOL = "COGNITO_USER_POOL".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC)
+  @inline def values: js.Array[ResourceType] = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC, COGNITO_USER_POOL)
 }
 
 @js.native
@@ -665,6 +718,15 @@ object Scope {
   val REGIONAL = "REGIONAL".asInstanceOf[Scope]
 
   @inline def values: js.Array[Scope] = js.Array(CLOUDFRONT, REGIONAL)
+}
+
+@js.native
+sealed trait SensitivityLevel extends js.Any
+object SensitivityLevel {
+  val LOW = "LOW".asInstanceOf[SensitivityLevel]
+  val HIGH = "HIGH".asInstanceOf[SensitivityLevel]
+
+  @inline def values: js.Array[SensitivityLevel] = js.Array(LOW, HIGH)
 }
 
 @js.native

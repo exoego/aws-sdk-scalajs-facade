@@ -12,6 +12,7 @@ object AWSRegion {
   val `ap-south-1` = "ap-south-1".asInstanceOf[AWSRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
+  val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[AWSRegion]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[AWSRegion]
   val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
@@ -22,6 +23,8 @@ object AWSRegion {
   val `eu-west-3` = "eu-west-3".asInstanceOf[AWSRegion]
   val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[AWSRegion]
+  val `eu-south-2` = "eu-south-2".asInstanceOf[AWSRegion]
+  val `me-central-1` = "me-central-1".asInstanceOf[AWSRegion]
   val `me-south-1` = "me-south-1".asInstanceOf[AWSRegion]
   val `sa-east-1` = "sa-east-1".asInstanceOf[AWSRegion]
   val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
@@ -37,6 +40,7 @@ object AWSRegion {
     `ap-south-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -47,6 +51,8 @@ object AWSRegion {
     `eu-west-3`,
     `eu-north-1`,
     `eu-south-1`,
+    `eu-south-2`,
+    `me-central-1`,
     `me-south-1`,
     `sa-east-1`,
     `us-east-1`,
