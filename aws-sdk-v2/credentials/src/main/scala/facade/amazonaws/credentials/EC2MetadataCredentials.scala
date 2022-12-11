@@ -9,21 +9,26 @@ import scala.scalajs.js.annotation.JSImport
 @JSImport("aws-sdk/lib/node_loader", "EC2MetadataCredentials", "AWS.EC2MetadataCredentials")
 class EC2MetadataCredentials() extends AWSCredentials {
   def this(options: EC2MetadataCredentialsOptions) = this()
+
+  def originalExpiration: js.UndefOr[js.Date] = js.native
 }
 
 trait EC2MetadataCredentialsOptions extends js.Object {
   var httpOptions: js.UndefOr[EC2MetadataCredentialsOptions.HttpOptions]
   var maxRetries: js.UndefOr[Double]
+  var logger: js.UndefOr[js.Object]
 }
 object EC2MetadataCredentialsOptions {
   def apply(
       httpOptions: js.UndefOr[EC2MetadataCredentialsOptions.HttpOptions] = js.undefined,
-      maxRetries: js.UndefOr[Double] = js.undefined
+      maxRetries: js.UndefOr[Double] = js.undefined,
+      logger: js.UndefOr[js.Object] = js.undefined
   ): EC2MetadataCredentialsOptions = {
     val _obj$ = js.Dynamic.literal(
     )
     httpOptions.foreach(_v => _obj$.updateDynamic("httpOptions")(_v.asInstanceOf[js.Any]))
     maxRetries.foreach(_v => _obj$.updateDynamic("maxRetries")(_v.asInstanceOf[js.Any]))
+    logger.foreach(_v => _obj$.updateDynamic("logger")(_v.asInstanceOf[js.Any]))
     _obj$.asInstanceOf[EC2MetadataCredentialsOptions]
   }
 
