@@ -1,3 +1,9 @@
+# Deprecated
+
+> [!WARNING]
+> Use [ScalablyTyped](https://scalablytyped.org/docs/readme.html) instead 🙇
+
+
 # aws-sdk-scalajs-facade
 
 A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).
